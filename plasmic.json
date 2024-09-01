@@ -5,10 +5,6 @@
     "scheme": "blackbox",
     "reactRuntime": "classic"
   },
-  "style": {
-    "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
-  },
   "images": {
     "scheme": "public-files",
     "publicDir": "../public",
@@ -20,127 +16,8 @@
   },
   "srcDir": "components",
   "defaultPlasmicDir": "./plasmic",
-  "projects": [
-    {
-      "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-      "projectApiToken": "OAb8lpBormiYiN0awLwltDxEM7VDIuPwFZewHTM2lnMBqZ7ScGsDFeODYBfHWjjFc1UfX4MnZZcOutKCg",
-      "projectName": "Website starter",
-      "version": "latest",
-      "cssFilePath": "plasmic/website_starter/plasmic.module.css",
-      "components": [
-        {
-          "id": "JDKbvzOHcQCj",
-          "name": "Homepage",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicHomepage.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/index.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/"
-        }
-      ],
-      "icons": [],
-      "images": [],
-      "indirect": false,
-      "globalContextsFilePath": "plasmic/website_starter/PlasmicGlobalContextsProvider.tsx",
-      "splitsProviderFilePath": "",
-      "codeComponents": [
-        {
-          "id": "VD7g96wRvPMs",
-          "name": "PlasmicHead",
-          "displayName": "hostless-plasmic-head",
-          "componentImportPath": "@plasmicapp/react-web"
-        },
-        {
-          "id": "qBIlw99DgFWf",
-          "name": "Fetcher",
-          "displayName": "plasmic-data-source-fetcher",
-          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
-        },
-        {
-          "id": "MR9MOBuvKPN3",
-          "name": "DatePicker",
-          "displayName": "DatePicker",
-          "componentImportPath": "@/fragment/components/date-picker"
-        },
-        {
-          "id": "BX_o-NqHelDl",
-          "name": "TimePicker",
-          "displayName": "TimePicker",
-          "componentImportPath": "@/fragment/components/time-picker"
-        },
-        {
-          "id": "qrBHkWyQBUyo",
-          "name": "Popover",
-          "displayName": "Popover",
-          "componentImportPath": "@/fragment/components/popover"
-        },
-        {
-          "id": "iTliVh3gcSYo",
-          "name": "Select",
-          "displayName": "Select",
-          "componentImportPath": "@/fragment/components/select"
-        },
-        {
-          "id": "fpBkcjHl6n0Y",
-          "name": "Input",
-          "displayName": "Input",
-          "componentImportPath": "@/fragment/components/input"
-        },
-        {
-          "id": "fYS4AeYPi-91",
-          "name": "Switch",
-          "displayName": "Switch",
-          "componentImportPath": "@/fragment/components/switch"
-        },
-        {
-          "id": "dEiLZ3aroQep",
-          "name": "Slider",
-          "displayName": "Slider",
-          "componentImportPath": "@/fragment/components/slider"
-        },
-        {
-          "id": "a17-BE4K1UE7",
-          "name": "ApiRequest",
-          "displayName": "ApiRequest",
-          "componentImportPath": "@/fragment/components/api-request"
-        },
-        {
-          "id": "2Zx_RdVTcu-q",
-          "name": "Fragment",
-          "displayName": "Fragment",
-          "componentImportPath": "@/fragment/fragment"
-        },
-        {
-          "id": "oyqC-S2Y0_JR",
-          "name": "GrowthBook",
-          "displayName": "GrowthBook",
-          "componentImportPath": "@/fragment/growthbook"
-        },
-        {
-          "id": "1L5rk5eEXbTQ",
-          "name": "Splunk",
-          "displayName": "Splunk",
-          "componentImportPath": "@/fragment/splunk"
-        }
-      ],
-      "customFunctions": []
-    }
-  ],
-  "globalVariants": {
-    "variantGroups": [
-      {
-        "id": "aSUSwU8jUYf-",
-        "name": "Screen",
-        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-        "contextFilePath": "plasmic/website_starter/PlasmicGlobalVariant__Screen.tsx"
-      }
-    ]
-  },
+  "projects": [],
+  "globalVariants": {},
   "wrapPagesWithGlobalContexts": true,
   "nextjsConfig": {
     "pagesDir": "../src/pages"
