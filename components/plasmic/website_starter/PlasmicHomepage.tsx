@@ -59,10 +59,15 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { DataFetcher } from "@plasmicpkgs/plasmic-query";
+import Wallet from "../../Wallet"; // plasmic-import: bHX7IYOtGqc7/component
+import Profile from "../../Profile"; // plasmic-import: 35iXAFb28kzU/component
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
+import DayCell from "../../DayCell"; // plasmic-import: cU6Nt4MA6DXT/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JDKbvzOHcQCj/css
 
@@ -79,7 +84,12 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
+  httpRestApiFetcher?: Flex__<typeof DataFetcher>;
+  wallet?: Flex__<typeof Wallet>;
+  profile?: Flex__<typeof Profile>;
+  calendarView?: Flex__<typeof DataFetcher>;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
+  dayCell?: Flex__<typeof DayCell>;
 };
 
 export interface DefaultHomepageProps {}
@@ -101,7 +111,16 @@ function PlasmicHomepage__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {},
+        Object.fromEntries(
+          Object.entries(props.args).filter(([_, v]) => v !== undefined)
+        )
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -159,34 +178,255 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
             sty.root
           )}
         >
-          <DatePicker
-            data-plasmic-name={"fragmentDatePicker"}
-            data-plasmic-override={overrides.fragmentDatePicker}
-            className={classNames("__wab_instance", sty.fragmentDatePicker)}
-            holidays={[]}
-            locale={"fa"}
-            onChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "fragmentDatePicker",
-                "value"
-              ]).apply(null, eventArgs);
-              generateStateOnChangeProp($state, [
-                "fragmentDatePicker",
-                "values"
-              ]).apply(null, eventArgs);
+          <div className={classNames(projectcss.all, sty.freeBox__co91K)}>
+            <div className={classNames(projectcss.all, sty.freeBox___3Lpss)}>
+              <DataFetcher
+                data-plasmic-name={"httpRestApiFetcher"}
+                data-plasmic-override={overrides.httpRestApiFetcher}
+                className={classNames("__wab_instance", sty.httpRestApiFetcher)}
+                dataName={"fetchedData"}
+                errorDisplay={
+                  <DataCtxReader__>
+                    {$ctx => (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yOg4X
+                        )}
+                      >
+                        {"Error fetching data"}
+                      </div>
+                    )}
+                  </DataCtxReader__>
+                }
+                errorName={"fetchError"}
+                headers={{
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                  authorization:
+                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
+                }}
+                loadingDisplay={
+                  <DataCtxReader__>
+                    {$ctx => (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___8TX84
+                        )}
+                      >
+                        {"Loading..."}
+                      </div>
+                    )}
+                  </DataCtxReader__>
+                }
+                method={"GET"}
+                noLayout={false}
+                url={(() => {
+                  try {
+                    return "https://rentamon-api.liara.run/api/user_info?property_id=1";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              >
+                <DataCtxReader__>
+                  {$ctx => (
+                    <Wallet
+                      data-plasmic-name={"wallet"}
+                      data-plasmic-override={overrides.wallet}
+                      className={classNames("__wab_instance", sty.wallet)}
+                    />
+                  )}
+                </DataCtxReader__>
+              </DataFetcher>
+              <Profile
+                data-plasmic-name={"profile"}
+                data-plasmic-override={overrides.profile}
+                className={classNames("__wab_instance", sty.profile)}
+              />
+            </div>
+          </div>
+          <DataFetcher
+            data-plasmic-name={"calendarView"}
+            data-plasmic-override={overrides.calendarView}
+            className={classNames("__wab_instance", sty.calendarView)}
+            dataName={"fetchedData"}
+            errorDisplay={
+              <DataCtxReader__>{$ctx => "Error fetching data"}</DataCtxReader__>
+            }
+            errorName={"fetchError"}
+            headers={{
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1MTI3MjExLCJpYXQiOjE3MjQ3NTkyMTEsImp0aSI6ImEzMjM0NmZkZDI0YTRhMmM4NTVjYzZjODk0ZTU1OGIyIiwidXNlcl9pZCI6NDY2fQ.lugJMePj_9ncCWnpmlAOqv_dsaoyv41iUWQ7WicQSp4"
             }}
-            value={generateStateValueProp($state, [
-              "fragmentDatePicker",
-              "value"
-            ])}
-            values={generateStateValueProp($state, [
-              "fragmentDatePicker",
-              "values"
-            ])}
-          />
+            loadingDisplay={
+              <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
+            }
+            method={"GET"}
+            noLayout={false}
+            url={
+              "https://rentamon-api.liara.run/api/getcalendar?property_id=1&start_date=1403-06-01&end_date=1403-06-31"
+            }
+          >
+            <DataCtxReader__>
+              {$ctx => (
+                <DatePicker
+                  data-plasmic-name={"fragmentDatePicker"}
+                  data-plasmic-override={overrides.fragmentDatePicker}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.fragmentDatePicker
+                  )}
+                  customDayCell={true}
+                  dayCell={(dateProps: any) => (
+                    <DayCell
+                      data-plasmic-name={"dayCell"}
+                      data-plasmic-override={overrides.dayCell}
+                      className={classNames("__wab_instance", sty.dayCell)}
+                      dayNumber={(() => {
+                        try {
+                          return dateProps.date.day;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
+                      dayStatus={(() => {
+                        try {
+                          return (() => {
+                            if (
+                              dateProps.unix <
+                              new Date().setHours(0, 0, 0, 0) / 1000
+                            ) {
+                              return "disabled";
+                            }
+                            if (dateProps.isSelected) {
+                              return "selected";
+                            }
+                            if (
+                              $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                                .status === "reserved"
+                            ) {
+                              return "reserved";
+                            }
+                            if (
+                              $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                                .status === "blocked"
+                            ) {
+                              return "blocked";
+                            }
+                            if (
+                              $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                                .discount_percentage != 0 &&
+                              $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                                .discount_percentage != null
+                            ) {
+                              return "discount";
+                            }
+                            return $ctx.fetchedData.calendar[
+                              dateProps.date.day - 1
+                            ].status;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
+                          }
+                          throw e;
+                        }
+                      })()}
+                      platform={(() => {
+                        try {
+                          return $ctx.fetchedData.calendar[
+                            dateProps.date.day - 1
+                          ].website;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
+                      price={(() => {
+                        try {
+                          return $ctx.fetchedData.calendar[
+                            dateProps.date.day - 1
+                          ].price;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
+                      selected={(() => {
+                        try {
+                          return dateProps.isSelected;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
+                          }
+                          throw e;
+                        }
+                      })()}
+                    />
+                  )}
+                  holidays={[]}
+                  locale={"fa"}
+                  mode={"multiple"}
+                  onChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "fragmentDatePicker",
+                      "value"
+                    ]).apply(null, eventArgs);
+                    generateStateOnChangeProp($state, [
+                      "fragmentDatePicker",
+                      "values"
+                    ]).apply(null, eventArgs);
+                  }}
+                  value={generateStateValueProp($state, [
+                    "fragmentDatePicker",
+                    "value"
+                  ])}
+                  values={generateStateValueProp($state, [
+                    "fragmentDatePicker",
+                    "values"
+                  ])}
+                />
+              )}
+            </DataCtxReader__>
+          </DataFetcher>
         </div>
       </div>
     </React.Fragment>
@@ -194,15 +434,33 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "fragmentDatePicker"],
-  fragmentDatePicker: ["fragmentDatePicker"]
+  root: [
+    "root",
+    "httpRestApiFetcher",
+    "wallet",
+    "profile",
+    "calendarView",
+    "fragmentDatePicker",
+    "dayCell"
+  ],
+  httpRestApiFetcher: ["httpRestApiFetcher", "wallet"],
+  wallet: ["wallet"],
+  profile: ["profile"],
+  calendarView: ["calendarView", "fragmentDatePicker", "dayCell"],
+  fragmentDatePicker: ["fragmentDatePicker", "dayCell"],
+  dayCell: ["dayCell"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  httpRestApiFetcher: typeof DataFetcher;
+  wallet: typeof Wallet;
+  profile: typeof Profile;
+  calendarView: typeof DataFetcher;
   fragmentDatePicker: typeof DatePicker;
+  dayCell: typeof DayCell;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -265,7 +523,12 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
+    wallet: makeNodeComponent("wallet"),
+    profile: makeNodeComponent("profile"),
+    calendarView: makeNodeComponent("calendarView"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
+    dayCell: makeNodeComponent("dayCell"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

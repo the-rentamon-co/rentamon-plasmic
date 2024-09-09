@@ -19,13 +19,95 @@
 .root > * {
   grid-column: 4;
 }
-@media (min-width: 0px) and (max-width: 768px) {
-  .root > * {
-    grid-column: 4;
-  }
+.freeBox__co91K {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: var(--token--290uurj-8QW);
+  height: auto;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+.freeBox___3Lpss {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  width: var(--token--290uurj-8QW);
+  height: auto;
+  padding: 8px 0px 8px 8px;
+}
+.httpRestApiFetcher:global(.__wab_instance) {
+  width: 429px;
+  max-width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.text___8TX84 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  color: #535353;
+  text-align: left;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none !important;
+  text-overflow: clip !important;
+}
+.text__yOg4X {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  color: #535353;
+  text-align: left;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none !important;
+  text-overflow: clip !important;
+}
+.wallet:global(.__wab_instance) {
+  position: relative;
+  margin-right: 0px;
+}
+.profile:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  width: 440px;
+  margin-bottom: 0px;
+  margin-right: 75px;
+  margin-left: 0px;
+  flex-shrink: 0;
+}
+.calendarView:global(.__wab_instance) {
+  width: var(--token--290uurj-8QW);
+  object-fit: cover;
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
 }
 .fragmentDatePicker:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
+}
+.dayCell:global(.__wab_instance) {
+  max-width: 100%;
+  margin: 2px;
 }
