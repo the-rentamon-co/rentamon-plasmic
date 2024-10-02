@@ -282,7 +282,7 @@ function PlasmicNewPage__RenderFunc(props: {
                                         "PlasmicUndefinedDataError"
                                     ) {
                                       return {
-                                        credentials: "include",
+                                        withCredentials: true,
                                         headers: {
                                           "Content-Type":
                                             "application/x-www-form-urlencoded"
