@@ -143,14 +143,16 @@
   align-self: center;
 }
 .img {
-  object-fit: none;
+  object-fit: cover;
   max-width: 100%;
   width: 44px;
   height: 44px;
   margin-left: 16px;
+  object-position: 50% 50%;
   flex-shrink: 0;
   border-radius: 7px;
 }
 .img > picture > img {
-  object-fit: none;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
