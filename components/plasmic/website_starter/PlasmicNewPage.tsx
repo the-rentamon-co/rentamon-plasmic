@@ -273,7 +273,7 @@ function PlasmicNewPage__RenderFunc(props: {
                                         "Content-Type":
                                           "application/x-www-form-urlencoded"
                                       },
-                                      credentials: "include"
+                                      withCredentials: true
                                     };
                                   } catch (e) {
                                     if (
