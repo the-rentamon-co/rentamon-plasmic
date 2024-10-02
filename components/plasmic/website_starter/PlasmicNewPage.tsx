@@ -266,13 +266,32 @@ function PlasmicNewPage__RenderFunc(props: {
                                     throw e;
                                   }
                                 })(),
-                                {
-                                  credentials: "include",
-                                  headers: {
-                                    "Content-Type":
-                                      "application/x-www-form-urlencoded"
+                                (() => {
+                                  try {
+                                    return {
+                                      headers: {
+                                        "Content-Type":
+                                          "application/x-www-form-urlencoded"
+                                      },
+                                      credentials: "include"
+                                    };
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return {
+                                        credentials: "include",
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded"
+                                        }
+                                      };
+                                    }
+                                    throw e;
                                   }
-                                }
+                                })()
                               ]
                             };
                             return $globalActions["Fragment.apiRequest"]?.apply(
