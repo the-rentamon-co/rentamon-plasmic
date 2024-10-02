@@ -3,12 +3,13 @@
   height: 130px;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
+  width: 100%;
   flex-direction: column;
   display: flex;
   background: #e5e5e5;
+  min-width: 0;
   border-radius: 18px;
-  padding: 14px;
+  padding: 14px 0px;
 }
 .cellselected {
   background: #203647;
@@ -76,6 +77,12 @@
   text-align: center;
   color: var(--token-7MRjbe724hDb);
   min-width: 0;
+}
+@media (max-width: 768px) {
+  .text__ltKp2 {
+    font-size: 16px;
+    display: none;
+  }
 }
 .textselected__ltKp22Pr1U {
   color: #ffffff;

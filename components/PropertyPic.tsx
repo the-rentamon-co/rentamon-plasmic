@@ -2,9 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import {
-  PlasmicProfileCard,
-  DefaultProfileCardProps
-} from "./plasmic/website_starter/PlasmicProfileCard";
+  PlasmicPropertyPic,
+  DefaultPropertyPicProps
+} from "./plasmic/website_starter/PlasmicPropertyPic";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 // Your component props start with props for variants and slots you defined
@@ -14,32 +14,32 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // If you don't want to expose certain variants or slots as a prop, you can use
 // Omit to hide them:
 //
-// interface ProfileCardProps extends Omit<DefaultProfileCardProps, "hideProps1"|"hideProp2"> {
+// interface PropertyPicProps extends Omit<DefaultPropertyPicProps, "hideProps1"|"hideProp2"> {
 //   // etc.
 // }
 //
-// You can also stop extending from DefaultProfileCardProps altogether and have
+// You can also stop extending from DefaultPropertyPicProps altogether and have
 // total control over the props for your component.
-export interface ProfileCardProps extends DefaultProfileCardProps {}
+export interface PropertyPicProps extends DefaultPropertyPicProps {}
 
-function ProfileCard_(props: ProfileCardProps, ref: HTMLElementRefOf<"div">) {
-  // Use PlasmicProfileCard to render this component as it was
+function PropertyPic_(props: PropertyPicProps, ref: HTMLElementRefOf<"div">) {
+  // Use PlasmicPropertyPic to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicProfileCard are:
+  // Props you can pass into PlasmicPropertyPic are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, we are just piping all ProfileCardProps here, but feel free
+  // By default, we are just piping all PropertyPicProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicProfileCard root2={{ ref }} {...props} />;
+  return <PlasmicPropertyPic root={{ ref }} {...props} />;
 }
 
-const ProfileCard = React.forwardRef(ProfileCard_);
-export default ProfileCard;
+const PropertyPic = React.forwardRef(PropertyPic_);
+export default PropertyPic;

@@ -2,15 +2,15 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  background: #232320;
+  background: var(--token-8nedppYkGVaH);
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
   -webkit-transition-property: background;
   -webkit-transition-duration: 0.1s;
-  border-radius: 6px;
-  padding: 12px 20px;
-  border-width: 0px;
+  border-radius: 30px;
+  padding: 12px 0px;
+  border: 0px solid #fcfcfc;
 }
 .root > :global(.__wab_flex-container) {
   flex-direction: row;

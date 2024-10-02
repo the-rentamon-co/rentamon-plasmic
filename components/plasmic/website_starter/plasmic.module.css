@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=ABeeZee%3Aital%2Cwght%400%2C400&family=Vazirmatn%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&display=swap");
 
 .plasmic_tokens {
   --token-2CXdk7410BHW: var(--token-HBTFH2K_vw-c);
@@ -19,6 +19,10 @@
   --plasmic-token-main-purple: var(--token-8nedppYkGVaH);
   --token--290uurj-8QW: 1086px;
   --plasmic-token-page-width: var(--token--290uurj-8QW);
+  --token-kp-6VXCi0jqS: #203647;
+  --plasmic-token-unnamed-style-token-3: var(--token-kp-6VXCi0jqS);
+  --token-rreZmJnN_WRK: var(--token-kp-6VXCi0jqS);
+  --plasmic-token-main-dark: var(--token-rreZmJnN_WRK);
 }
 
 .plasmic_tokens {
@@ -32,12 +36,12 @@
 }
 
 .plasmic_default_styles {
-  --mixin-bqZUocjehiMj_font-family: "Inter", sans-serif;
+  --mixin-bqZUocjehiMj_font-family: "Vazirmatn", sans-serif;
   --mixin-bqZUocjehiMj_font-size: 16px;
   --mixin-bqZUocjehiMj_font-weight: 400;
   --mixin-bqZUocjehiMj_font-style: normal;
-  --mixin-bqZUocjehiMj_color: #535353;
-  --mixin-bqZUocjehiMj_text-align: left;
+  --mixin-bqZUocjehiMj_color: #203647;
+  --mixin-bqZUocjehiMj_text-align: right;
   --mixin-bqZUocjehiMj_text-transform: none;
   --mixin-bqZUocjehiMj_line-height: 1.5;
   --mixin-bqZUocjehiMj_letter-spacing: normal;
@@ -57,7 +61,9 @@
   --mixin-uQM-VRcFt-Zt_letter-spacing: -0.5px;
   --mixin-uQM-VRcFt-Zt_line-height: 1.1;
   --mixin-uQM-VRcFt-Zt_white-space: pre-wrap;
-  --mixin-928ee_lKuGlU_color: #0070f3;
+  --mixin-928ee_lKuGlU_color: var(--token-8nedppYkGVaH);
+  --mixin-928ee_lKuGlU_font-family: "Vazirmatn", sans-serif;
+  --mixin-928ee_lKuGlU_font-weight: 700;
   --mixin-928ee_lKuGlU_white-space: pre-wrap;
   --mixin-peMwqi_rY8F6_color: #000000;
   --mixin-peMwqi_rY8F6_font-size: 32px;
@@ -506,6 +512,8 @@ a:where(.root_reset.a),
 :where(.root_reset_tags) a,
 a:where(.root_reset_tags) {
   color: var(--mixin-928ee_lKuGlU_color);
+  font-family: var(--mixin-928ee_lKuGlU_font-family);
+  font-weight: var(--mixin-928ee_lKuGlU_font-weight);
 }
 
 :where(.root_reset) h3:where(.h3),

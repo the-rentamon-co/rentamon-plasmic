@@ -49,6 +49,11 @@ export default function GlobalContextsProvider(
           ? fragmentProps.previewApiConfig!
           : undefined
       }
+      primaryColor={
+        fragmentProps && "primaryColor" in fragmentProps
+          ? fragmentProps.primaryColor!
+          : "#000000"
+      }
       rtl={
         fragmentProps && "rtl" in fragmentProps ? fragmentProps.rtl! : undefined
       }
@@ -171,11 +176,11 @@ export default function GlobalContextsProvider(
                 ? antdConfigProviderProps.themeStyles!
                 : true
                 ? {
-                    fontFamily: "Inter",
+                    fontFamily: "Vazirmatn",
                     fontSize: "16px",
                     fontWeight: "400",
                     lineHeight: "1.5",
-                    color: "#535353",
+                    color: "#203647",
                     letterSpacing: "normal"
                   }
                 : undefined
