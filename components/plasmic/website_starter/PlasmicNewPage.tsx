@@ -228,18 +228,26 @@ function PlasmicNewPage__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://rentamon-api.liara.run/api/shab_instant/",
+                                "https://api.rentamon.com/api/shab_instant/",
                                 undefined,
                                 (() => {
                                   try {
                                     return $state.fragmentSwitch.checked
                                       ? {
-                                          dates: "1403-06-01",
+                                          dates: `${
+                                            new Date()
+                                              .toISOString()
+                                              .split("T")[0]
+                                          }`,
                                           property_id: 1,
                                           action: "set_instant"
                                         }
                                       : {
-                                          dates: "1403-06-01",
+                                          dates: `${
+                                            new Date()
+                                              .toISOString()
+                                              .split("T")[0]
+                                          }`,
                                           property_id: 1,
                                           action: "unset_instant"
                                         };
@@ -261,10 +269,9 @@ function PlasmicNewPage__RenderFunc(props: {
                                 {
                                   headers: {
                                     "Content-Type":
-                                      "application/x-www-form-urlencoded",
-                                    Authorization:
-                                      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NzU0MTc0LCJpYXQiOjE3MTY5NzgxNzQsImp0aSI6IjJlOWNlMzNkMzhjYzRjNjM5MzdlNmU0ZTIxMjg5ZDM0IiwidXNlcl9pZCI6NDY2fQ.Qk_PJAnOJ_V0oETG8d10yaOnXVpuGhcALBgbGXr_72M"
-                                  }
+                                      "application/x-www-form-urlencoded"
+                                  },
+                                  credentials: "include"
                                 }
                               ]
                             };
