@@ -139,8 +139,7 @@ function PlasmicNewPage__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                if (typeof window === "undefined") return false;
-                return localStorage.getItem("IsShabInstant") === true;
+                return localStorage.getItem("IsShabInstant") === "true";
               })();
             } catch (e) {
               if (
@@ -372,9 +371,9 @@ function PlasmicNewPage__RenderFunc(props: {
                           (() => {
                             try {
                               return (() => {
-                                if (typeof window === "undefined") return false;
                                 return (
-                                  localStorage.getItem("IsShabInstant") === true
+                                  localStorage.getItem("IsShabInstant") ===
+                                  "true"
                                 );
                               })();
                             } catch (e) {
