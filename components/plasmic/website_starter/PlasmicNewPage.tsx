@@ -138,23 +138,20 @@ function PlasmicNewPage__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return $state.isShabInstans;
+              return (() => {
+                if (typeof window === "undefined") return false;
+                return localStorage.getItem("IsShabInstant") === "true";
+              })();
             } catch (e) {
               if (
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return false;
+                return undefined;
               }
               throw e;
             }
           })()
-      },
-      {
-        path: "isShabInstans",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -226,148 +223,182 @@ function PlasmicNewPage__RenderFunc(props: {
           >
             <div className={classNames(projectcss.all, sty.freeBox__gWfWp)}>
               <div className={classNames(projectcss.all, sty.freeBox___07Kpo)}>
-                <Switch
-                  data-plasmic-name={"fragmentSwitch"}
-                  data-plasmic-override={overrides.fragmentSwitch}
-                  checked={generateStateValueProp($state, [
-                    "fragmentSwitch",
-                    "checked"
-                  ])}
-                  className={classNames("__wab_instance", sty.fragmentSwitch)}
-                  onCheckedChange={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
+                {(() => {
+                  const child$Props = {
+                    checked: generateStateValueProp($state, [
                       "fragmentSwitch",
                       "checked"
-                    ]).apply(null, eventArgs);
-                    (async checked => {
-                      const $steps = {};
+                    ]),
+                    className: classNames("__wab_instance", sty.fragmentSwitch),
+                    onCheckedChange: async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                      (async checked => {
+                        const $steps = {};
 
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://api.rentamon.com/api/shab_instant/",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return $state.fragmentSwitch.checked
-                                      ? {
-                                          dates: `${
-                                            new Date()
-                                              .toISOString()
-                                              .split("T")[0]
-                                          }`,
-                                          property_id: 1,
-                                          action: "set_instant"
-                                        }
-                                      : {
-                                          dates: `${
-                                            new Date()
-                                              .toISOString()
-                                              .split("T")[0]
-                                          }`,
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://api.rentamon.com/api/shab_instant/",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $state.fragmentSwitch.checked
+                                        ? {
+                                            dates: `${
+                                              new Date()
+                                                .toISOString()
+                                                .split("T")[0]
+                                            }`,
+                                            property_id: 1,
+                                            action: "set_instant"
+                                          }
+                                        : {
+                                            dates: `${
+                                              new Date()
+                                                .toISOString()
+                                                .split("T")[0]
+                                            }`,
+                                            property_id: 1,
+                                            action: "unset_instant"
+                                          };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          dates: "1403-05-30",
                                           property_id: 1,
                                           action: "unset_instant"
                                         };
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return {
-                                        dates: "1403-05-30",
-                                        property_id: 1,
-                                        action: "unset_instant"
-                                      };
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })(),
-                                (() => {
-                                  try {
-                                    return {
-                                      headers: {
-                                        "Content-Type":
-                                          "application/x-www-form-urlencoded"
-                                      },
-                                      withCredentials: true
-                                    };
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
+                                  })(),
+                                  (() => {
+                                    try {
                                       return {
-                                        withCredentials: true,
                                         headers: {
                                           "Content-Type":
                                             "application/x-www-form-urlencoded"
-                                        }
+                                        },
+                                        withCredentials: true
                                       };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          withCredentials: true,
+                                          headers: {
+                                            "Content-Type":
+                                              "application/x-www-form-urlencoded"
+                                          }
+                                        };
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
-                      }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
 
-                      $steps["updateIsShabInstans"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["isShabInstans"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return localStorage.setItem(
+                                    "IsShabInstant",
+                                    $state.fragmentSwitch.checked
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }).apply(null, eventArgs);
+                    }
+                  };
+                  initializeCodeComponentStates(
+                    $state,
+                    [
+                      {
+                        name: "checked",
+                        plasmicStateName: "fragmentSwitch.checked"
+                      }
+                    ],
+                    [],
+                    undefined ?? {},
+                    child$Props
+                  );
+                  initializePlasmicStates(
+                    $state,
+                    [
+                      {
+                        name: "fragmentSwitch.checked",
+                        initFunc: ({ $props, $state, $queries }) =>
+                          (() => {
+                            try {
+                              return (() => {
+                                if (typeof window === "undefined") return false;
+                                return (
+                                  localStorage.getItem("IsShabInstant") ===
+                                  "true"
+                                );
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
                               }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]);
+                              throw e;
+                            }
                           })()
-                        : undefined;
-                      if (
-                        $steps["updateIsShabInstans"] != null &&
-                        typeof $steps["updateIsShabInstans"] === "object" &&
-                        typeof $steps["updateIsShabInstans"].then === "function"
-                      ) {
-                        $steps["updateIsShabInstans"] = await $steps[
-                          "updateIsShabInstans"
-                        ];
                       }
-                    }).apply(null, eventArgs);
-                  }}
-                />
-
+                    ],
+                    []
+                  );
+                  return (
+                    <Switch
+                      data-plasmic-name={"fragmentSwitch"}
+                      data-plasmic-override={overrides.fragmentSwitch}
+                      {...child$Props}
+                    />
+                  );
+                })()}
                 <div
                   className={classNames(
                     projectcss.all,
