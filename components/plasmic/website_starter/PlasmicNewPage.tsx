@@ -140,14 +140,14 @@ function PlasmicNewPage__RenderFunc(props: {
             try {
               return (() => {
                 if (typeof window === "undefined") return false;
-                return localStorage.getItem("IsShabInstant") === "true";
+                return localStorage.getItem("IsShabInstant") === true;
               })();
             } catch (e) {
               if (
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return undefined;
+                return false;
               }
               throw e;
             }
@@ -230,6 +230,7 @@ function PlasmicNewPage__RenderFunc(props: {
                       "checked"
                     ]),
                     className: classNames("__wab_instance", sty.fragmentSwitch),
+                    disabled: false,
                     onCheckedChange: async (...eventArgs: any) => {
                       generateStateOnChangeProp($state, [
                         "fragmentSwitch",
@@ -237,6 +238,29 @@ function PlasmicNewPage__RenderFunc(props: {
                       ]).apply(null, eventArgs);
                       (async checked => {
                         const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return localStorage.setItem(
+                                    "IsShabInstant",
+                                    $state.fragmentSwitch.checked
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
 
                         $steps["invokeGlobalAction"] = true
                           ? (() => {
@@ -324,29 +348,6 @@ function PlasmicNewPage__RenderFunc(props: {
                             "invokeGlobalAction"
                           ];
                         }
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return localStorage.setItem(
-                                    "IsShabInstant",
-                                    $state.fragmentSwitch.checked
-                                  );
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
                       }).apply(null, eventArgs);
                     }
                   };
@@ -373,8 +374,7 @@ function PlasmicNewPage__RenderFunc(props: {
                               return (() => {
                                 if (typeof window === "undefined") return false;
                                 return (
-                                  localStorage.getItem("IsShabInstant") ===
-                                  "true"
+                                  localStorage.getItem("IsShabInstant") === true
                                 );
                               })();
                             } catch (e) {
@@ -382,7 +382,7 @@ function PlasmicNewPage__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return undefined;
+                                return false;
                               }
                               throw e;
                             }
