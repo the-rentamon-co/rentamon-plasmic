@@ -61,6 +61,8 @@ import {
 
 import Lamp from "../../Lamp"; // plasmic-import: V7sstJTUGr4K/component
 import { AntdSwitch } from "@plasmicpkgs/antd5/skinny/registerSwitch";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -86,6 +88,8 @@ export type PlasmicNazaninTest__OverridesType = {
   columns?: Flex__<"div">;
   lamp?: Flex__<typeof Lamp>;
   _switch?: Flex__<typeof AntdSwitch>;
+  sideEffect?: Flex__<typeof SideEffect>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultNazaninTestProps {}
@@ -247,6 +251,20 @@ function PlasmicNazaninTest__RenderFunc(props: {
               />
             </div>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+          />
+
+          <Embed
+            data-plasmic-name={"embedHtml"}
+            data-plasmic-override={overrides.embedHtml}
+            className={classNames("__wab_instance", sty.embedHtml)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -254,10 +272,12 @@ function PlasmicNazaninTest__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "columns", "lamp", "_switch"],
+  root: ["root", "columns", "lamp", "_switch", "sideEffect", "embedHtml"],
   columns: ["columns", "lamp", "_switch"],
   lamp: ["lamp"],
-  _switch: ["_switch"]
+  _switch: ["_switch"],
+  sideEffect: ["sideEffect"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -267,6 +287,8 @@ type NodeDefaultElementType = {
   columns: "div";
   lamp: typeof Lamp;
   _switch: typeof AntdSwitch;
+  sideEffect: typeof SideEffect;
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -332,6 +354,8 @@ export const PlasmicNazaninTest = Object.assign(
     columns: makeNodeComponent("columns"),
     lamp: makeNodeComponent("lamp"),
     _switch: makeNodeComponent("_switch"),
+    sideEffect: makeNodeComponent("sideEffect"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicNazaninTest
     internalVariantProps: PlasmicNazaninTest__VariantProps,

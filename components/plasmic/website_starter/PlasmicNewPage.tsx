@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -85,6 +86,7 @@ export type PlasmicNewPage__OverridesType = {
   mainSection?: Flex__<"section">;
   fragmentSwitch?: Flex__<typeof Switch>;
   img?: Flex__<typeof PlasmicImg__>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultNewPageProps {}
@@ -429,6 +431,14 @@ function PlasmicNewPage__RenderFunc(props: {
               </div>
             </div>
           </section>
+          <Embed
+            data-plasmic-name={"embedHtml"}
+            data-plasmic-override={overrides.embedHtml}
+            className={classNames("__wab_instance", sty.embedHtml)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -436,11 +446,19 @@ function PlasmicNewPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "topContainer", "mainSection", "fragmentSwitch", "img"],
+  root: [
+    "root",
+    "topContainer",
+    "mainSection",
+    "fragmentSwitch",
+    "img",
+    "embedHtml"
+  ],
   topContainer: ["topContainer"],
   mainSection: ["mainSection", "fragmentSwitch", "img"],
   fragmentSwitch: ["fragmentSwitch"],
-  img: ["img"]
+  img: ["img"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -451,6 +469,7 @@ type NodeDefaultElementType = {
   mainSection: "section";
   fragmentSwitch: typeof Switch;
   img: typeof PlasmicImg__;
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -517,6 +536,7 @@ export const PlasmicNewPage = Object.assign(
     mainSection: makeNodeComponent("mainSection"),
     fragmentSwitch: makeNodeComponent("fragmentSwitch"),
     img: makeNodeComponent("img"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicNewPage
     internalVariantProps: PlasmicNewPage__VariantProps,
