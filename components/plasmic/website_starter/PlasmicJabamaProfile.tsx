@@ -91,6 +91,7 @@ export const PlasmicJabamaProfile__ArgProps = new Array<ArgPropType>();
 export type PlasmicJabamaProfile__OverridesType = {
   root?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
+  httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   img?: Flex__<typeof PlasmicImg__>;
   selectAccess?: Flex__<typeof Select>;
   selectSpeed?: Flex__<typeof Select>;
@@ -211,10 +212,9 @@ function PlasmicJabamaProfile__RenderFunc(props: {
           />
 
           <DataFetcher
-            className={classNames(
-              "__wab_instance",
-              sty.httpRestApiFetcher__v1Cy
-            )}
+            data-plasmic-name={"httpRestApiFetcher"}
+            data-plasmic-override={overrides.httpRestApiFetcher}
+            className={classNames("__wab_instance", sty.httpRestApiFetcher)}
             dataName={"fetchedData"}
             errorDisplay={
               <DataCtxReader__>{$ctx => "Error fetching data"}</DataCtxReader__>
@@ -469,384 +469,360 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__oQdWn
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__k5MDd)}
                   >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (
-                            "به پلتفرم «" +
-                            $ctx.fetchedData.list[0].name +
-                            "» امتیاز دهید"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u0628\u0647 \u067e\u0644\u062a\u0641\u0631\u0645 x \u0627\u0645\u062a\u06cc\u0627\u0632 \u062f\u0647\u06cc\u062f\n\u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0645\u06cc\u200c\u062a\u0648\u0627\u0646\u06cc\u062f \u0628\u0627 \u062b\u0628\u062a \u0646\u0638\u0631 \u062e\u0648\u062f\u060c \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0627 \u062f\u0631 \u0634\u0646\u0627\u062e\u062a \u0628\u0647\u062a\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc\u06cc \u06a9\u0646\u06cc\u062f.";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                  <DataFetcher
-                    className={classNames(
-                      "__wab_instance",
-                      sty.httpRestApiFetcher__tJnKg
-                    )}
-                    dataName={"fetchedData"}
-                    errorDisplay={
-                      <DataCtxReader__>
-                        {$ctx => "Error fetching data"}
-                      </DataCtxReader__>
-                    }
-                    errorName={"fetchError"}
-                    headers={{
-                      "Content-Type": "application/json",
-                      Accept: "application/json"
-                    }}
-                    loadingDisplay={
-                      <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
-                    }
-                    method={"GET"}
-                    noLayout={false}
-                    url={"https://api.github.com/users/plasmicapp/repos"}
-                  >
-                    <DataCtxReader__>
-                      {$ctx => (
-                        <React.Fragment>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.columns__spTc
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.column__xeiyb
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__mAu
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text___9MYqx
-                                  )}
-                                >
-                                  {
-                                    "\u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
-                                  }
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.column__eoPuj
-                              )}
-                            >
-                              <Select
-                                data-plasmic-name={"selectAccess"}
-                                data-plasmic-override={overrides.selectAccess}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.selectAccess
-                                )}
-                                onChange={(...eventArgs) => {
-                                  generateStateOnChangeProp($state, [
-                                    "selectAccess",
-                                    "value"
-                                  ])(eventArgs[0]);
-                                }}
-                                options={(() => {
-                                  const __composite = [
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null }
-                                  ];
-                                  __composite["0"]["value"] = "5";
-                                  __composite["0"]["label"] =
-                                    "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
-                                  __composite["1"]["value"] = "4";
-                                  __composite["1"]["label"] = "\u06f4";
-                                  __composite["2"]["value"] = "3";
-                                  __composite["2"]["label"] = "\u06f3";
-                                  __composite["3"]["value"] = "2";
-                                  __composite["3"]["label"] = "\u06f2";
-                                  __composite["4"]["value"] = "1";
-                                  __composite["4"]["label"] =
-                                    "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
-                                  return __composite;
-                                })()}
-                                placeholder={
-                                  "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
-                                }
-                                value={generateStateValueProp($state, [
-                                  "selectAccess",
-                                  "value"
-                                ])}
-                              />
-                            </div>
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.columns__ds2Q
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.column__epJa1
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__s1T8D
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text___0MMbN
-                                  )}
-                                >
-                                  {
-                                    "\u0633\u0631\u0639\u062a \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
-                                  }
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.column___8M9Gn
-                              )}
-                            >
-                              <Select
-                                data-plasmic-name={"selectSpeed"}
-                                data-plasmic-override={overrides.selectSpeed}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.selectSpeed
-                                )}
-                                onChange={(...eventArgs) => {
-                                  generateStateOnChangeProp($state, [
-                                    "selectSpeed",
-                                    "value"
-                                  ])(eventArgs[0]);
-                                }}
-                                options={(() => {
-                                  const __composite = [
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null }
-                                  ];
-                                  __composite["0"]["value"] = "5";
-                                  __composite["0"]["label"] =
-                                    "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
-                                  __composite["1"]["value"] = "4";
-                                  __composite["1"]["label"] = "\u06f4";
-                                  __composite["2"]["value"] = "3";
-                                  __composite["2"]["label"] = "\u06f3";
-                                  __composite["3"]["value"] = "2";
-                                  __composite["3"]["label"] = "\u06f2";
-                                  __composite["4"]["value"] = "1";
-                                  __composite["4"]["label"] =
-                                    "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
-                                  return __composite;
-                                })()}
-                                placeholder={
-                                  "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
-                                }
-                                value={generateStateValueProp($state, [
-                                  "selectSpeed",
-                                  "value"
-                                ])}
-                              />
-                            </div>
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.columns__tGlbY
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.column__sWh4S
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__x0KzU
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__k2DiB
-                                  )}
-                                >
-                                  {
-                                    "\u0642\u0636\u0627\u0648\u062a \u0645\u0646\u0635\u0641\u0627\u0646\u0647"
-                                  }
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.column__hiLay
-                              )}
-                            >
-                              <Select
-                                data-plasmic-name={"selectJudgment"}
-                                data-plasmic-override={overrides.selectJudgment}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.selectJudgment
-                                )}
-                                onChange={(...eventArgs) => {
-                                  generateStateOnChangeProp($state, [
-                                    "selectJudgment",
-                                    "value"
-                                  ])(eventArgs[0]);
-                                }}
-                                options={(() => {
-                                  const __composite = [
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null },
-                                    { value: null, label: null }
-                                  ];
-                                  __composite["0"]["value"] = "5";
-                                  __composite["0"]["label"] =
-                                    "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
-                                  __composite["1"]["value"] = "4";
-                                  __composite["1"]["label"] = "\u06f4";
-                                  __composite["2"]["value"] = "3";
-                                  __composite["2"]["label"] = "\u06f3";
-                                  __composite["3"]["value"] = "2";
-                                  __composite["3"]["label"] = "\u06f2";
-                                  __composite["4"]["value"] = "1";
-                                  __composite["4"]["label"] =
-                                    "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
-                                  return __composite;
-                                })()}
-                                placeholder={
-                                  "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
-                                }
-                                value={generateStateValueProp($state, [
-                                  "selectJudgment",
-                                  "value"
-                                ])}
-                              />
-                            </div>
-                          </div>
-                        </React.Fragment>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__oQdWn
                       )}
-                    </DataCtxReader__>
-                  </DataFetcher>
-                  <Button
-                    data-plasmic-name={"button"}
-                    data-plasmic-override={overrides.button}
-                    className={classNames("__wab_instance", sty.button)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://app.nocodb.com/api/v2/tables/mnaz831voks0ul4/records",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return {
-                                      platformId: 34,
-                                      supportSpeed: 33,
-                                      supportAccess: 55,
-                                      supportJudgment: 55,
-                                      userId: 111
-                                    };
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })(),
-                                (() => {
-                                  try {
-                                    return {
-                                      "Content-Type": "application/json",
-                                      Accept: "application/json",
-                                      "xc-token":
-                                        "ty7cwczW_JDC0VQq8sEBJtu6E1e3_mX-kpa4d9TJ"
-                                    };
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (
+                              "به پلتفرم «" +
+                              $ctx.fetchedData.list[0].name +
+                              "» امتیاز دهید"
                             );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0628\u0647 \u067e\u0644\u062a\u0641\u0631\u0645 x \u0627\u0645\u062a\u06cc\u0627\u0632 \u062f\u0647\u06cc\u062f\n\u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0645\u06cc\u200c\u062a\u0648\u0627\u0646\u06cc\u062f \u0628\u0627 \u062b\u0628\u062a \u0646\u0638\u0631 \u062e\u0648\u062f\u060c \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0627 \u062f\u0631 \u0634\u0646\u0627\u062e\u062a \u0628\u0647\u062a\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc\u06cc \u06a9\u0646\u06cc\u062f.";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ie4Fa
+                      )}
+                    >
+                      {
+                        "\u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u062f \u062a\u0627 \u0634\u0631\u06cc\u06a9 \u062e\u0648\u062f \u0631\u0627 \u0628\u0647\u062a\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u0646\u062f."
                       }
-                    }}
-                  >
-                    {
-                      "\u0627\u0631\u0633\u0627\u0644 \u0628\u0627\u0632\u062e\u0648\u0631\u062f"
-                    }
-                  </Button>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.columns__spTc)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__xeiyb
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__mAu
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___9MYqx
+                            )}
+                          >
+                            {
+                              "\u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
+                            }
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__eoPuj
+                        )}
+                      >
+                        <Select
+                          data-plasmic-name={"selectAccess"}
+                          data-plasmic-override={overrides.selectAccess}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.selectAccess
+                          )}
+                          onChange={(...eventArgs) => {
+                            generateStateOnChangeProp($state, [
+                              "selectAccess",
+                              "value"
+                            ])(eventArgs[0]);
+                          }}
+                          options={(() => {
+                            const __composite = [
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null }
+                            ];
+                            __composite["0"]["value"] = "5";
+                            __composite["0"]["label"] =
+                              "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
+                            __composite["1"]["value"] = "4";
+                            __composite["1"]["label"] = "\u06f4";
+                            __composite["2"]["value"] = "3";
+                            __composite["2"]["label"] = "\u06f3";
+                            __composite["3"]["value"] = "2";
+                            __composite["3"]["label"] = "\u06f2";
+                            __composite["4"]["value"] = "1";
+                            __composite["4"]["label"] =
+                              "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
+                            return __composite;
+                          })()}
+                          placeholder={
+                            "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                          }
+                          value={generateStateValueProp($state, [
+                            "selectAccess",
+                            "value"
+                          ])}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.columns__ds2Q)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__epJa1
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__s1T8D
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___0MMbN
+                            )}
+                          >
+                            {
+                              "\u0633\u0631\u0639\u062a \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
+                            }
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column___8M9Gn
+                        )}
+                      >
+                        <Select
+                          data-plasmic-name={"selectSpeed"}
+                          data-plasmic-override={overrides.selectSpeed}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.selectSpeed
+                          )}
+                          onChange={(...eventArgs) => {
+                            generateStateOnChangeProp($state, [
+                              "selectSpeed",
+                              "value"
+                            ])(eventArgs[0]);
+                          }}
+                          options={(() => {
+                            const __composite = [
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null }
+                            ];
+                            __composite["0"]["value"] = "5";
+                            __composite["0"]["label"] =
+                              "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
+                            __composite["1"]["value"] = "4";
+                            __composite["1"]["label"] = "\u06f4";
+                            __composite["2"]["value"] = "3";
+                            __composite["2"]["label"] = "\u06f3";
+                            __composite["3"]["value"] = "2";
+                            __composite["3"]["label"] = "\u06f2";
+                            __composite["4"]["value"] = "1";
+                            __composite["4"]["label"] =
+                              "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
+                            return __composite;
+                          })()}
+                          placeholder={
+                            "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                          }
+                          value={generateStateValueProp($state, [
+                            "selectSpeed",
+                            "value"
+                          ])}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.columns__tGlbY)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__sWh4S
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__x0KzU
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__k2DiB
+                            )}
+                          >
+                            {
+                              "\u0642\u0636\u0627\u0648\u062a \u0645\u0646\u0635\u0641\u0627\u0646\u0647"
+                            }
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__hiLay
+                        )}
+                      >
+                        <Select
+                          data-plasmic-name={"selectJudgment"}
+                          data-plasmic-override={overrides.selectJudgment}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.selectJudgment
+                          )}
+                          onChange={(...eventArgs) => {
+                            generateStateOnChangeProp($state, [
+                              "selectJudgment",
+                              "value"
+                            ])(eventArgs[0]);
+                          }}
+                          options={(() => {
+                            const __composite = [
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null },
+                              { value: null, label: null }
+                            ];
+                            __composite["0"]["value"] = "5";
+                            __composite["0"]["label"] =
+                              "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
+                            __composite["1"]["value"] = "4";
+                            __composite["1"]["label"] = "\u06f4";
+                            __composite["2"]["value"] = "3";
+                            __composite["2"]["label"] = "\u06f3";
+                            __composite["3"]["value"] = "2";
+                            __composite["3"]["label"] = "\u06f2";
+                            __composite["4"]["value"] = "1";
+                            __composite["4"]["label"] =
+                              "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
+                            return __composite;
+                          })()}
+                          placeholder={
+                            "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                          }
+                          value={generateStateValueProp($state, [
+                            "selectJudgment",
+                            "value"
+                          ])}
+                        />
+                      </div>
+                    </div>
+                    <Button
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://app.nocodb.com/api/v2/tables/mnaz831voks0ul4/records",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return {
+                                        platformId: 34,
+                                        supportSpeed: 33,
+                                        supportAccess: 55,
+                                        supportJudgment: 55,
+                                        userId: 111
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  (() => {
+                                    try {
+                                      return {
+                                        "Content-Type": "application/json",
+                                        Accept: "application/json",
+                                        "xc-token":
+                                          "ty7cwczW_JDC0VQq8sEBJtu6E1e3_mX-kpa4d9TJ"
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      {
+                        "\u0627\u0631\u0633\u0627\u0644 \u0628\u0627\u0632\u062e\u0648\u0631\u062f"
+                      }
+                    </Button>
+                  </div>
                 </div>
               )}
             </DataCtxReader__>
@@ -861,6 +837,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "embedHtml",
+    "httpRestApiFetcher",
     "img",
     "selectAccess",
     "selectSpeed",
@@ -868,6 +845,14 @@ const PlasmicDescendants = {
     "button"
   ],
   embedHtml: ["embedHtml"],
+  httpRestApiFetcher: [
+    "httpRestApiFetcher",
+    "img",
+    "selectAccess",
+    "selectSpeed",
+    "selectJudgment",
+    "button"
+  ],
   img: ["img"],
   selectAccess: ["selectAccess"],
   selectSpeed: ["selectSpeed"],
@@ -880,6 +865,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   embedHtml: typeof Embed;
+  httpRestApiFetcher: typeof DataFetcher;
   img: typeof PlasmicImg__;
   selectAccess: typeof Select;
   selectSpeed: typeof Select;
@@ -948,6 +934,7 @@ export const PlasmicJabamaProfile = Object.assign(
   {
     // Helper components rendering sub-elements
     embedHtml: makeNodeComponent("embedHtml"),
+    httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     img: makeNodeComponent("img"),
     selectAccess: makeNodeComponent("selectAccess"),
     selectSpeed: makeNodeComponent("selectSpeed"),
