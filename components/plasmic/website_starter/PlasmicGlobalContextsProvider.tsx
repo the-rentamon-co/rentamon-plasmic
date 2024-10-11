@@ -10,20 +10,22 @@ import { Fragment } from "@/fragment/fragment"; // plasmic-import: 2Zx_RdVTcu-q/
 import { GrowthBook } from "@/fragment/growthbook"; // plasmic-import: oyqC-S2Y0_JR/codeComponent
 import { Splunk } from "@/fragment/splunk"; // plasmic-import: 1L5rk5eEXbTQ/codeComponent
 import { AntdConfigProvider } from "@plasmicpkgs/antd5/skinny/registerConfigProvider";
+import { EmbedCss } from "@plasmicpkgs/plasmic-embed-css";
 
 export interface GlobalContextsProviderProps {
   children?: React.ReactElement;
   fragmentProps?: Partial<
     Omit<React.ComponentProps<typeof Fragment>, "children">
   >;
-
   growthBookProps?: Partial<
     Omit<React.ComponentProps<typeof GrowthBook>, "children">
   >;
-
   splunkProps?: Partial<Omit<React.ComponentProps<typeof Splunk>, "children">>;
   antdConfigProviderProps?: Partial<
     Omit<React.ComponentProps<typeof AntdConfigProvider>, "children">
+  >;
+  embedCssProps?: Partial<
+    Omit<React.ComponentProps<typeof EmbedCss>, "children">
   >;
 }
 
@@ -35,7 +37,8 @@ export default function GlobalContextsProvider(
     fragmentProps,
     growthBookProps,
     splunkProps,
-    antdConfigProviderProps
+    antdConfigProviderProps,
+    embedCssProps
   } = props;
 
   return (
@@ -193,7 +196,16 @@ export default function GlobalContextsProvider(
                 : false
             }
           >
-            {children}
+            <EmbedCss
+              {...embedCssProps}
+              css={
+                embedCssProps && "css" in embedCssProps
+                  ? embedCssProps.css!
+                  : "@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Thin.ttf');\r\n  font-weight: 100;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-ExtraLight.ttf');\r\n  font-weight: 200;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Light.ttf');\r\n  font-weight: 300;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Regular.ttf');\r\n  font-weight: 400;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Medium.ttf');\r\n  font-weight: 500;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-SemiBold.ttf');\r\n  font-weight: 600;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-ExtraBold.ttf');\r\n  font-weight: 800;\r\n}\r\n\r\n* {\r\n  direction: rtl;\r\n  font-family: 'Estedad';\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  body::-webkit-scrollbar {\r\n    display: none; \r\n  }\r\n}\r\n\r\n.negative {\r\n  direction: ltr;\r\n}\r\n"
+              }
+            >
+              {children}
+            </EmbedCss>
           </AntdConfigProvider>
         </Splunk>
       </GrowthBook>

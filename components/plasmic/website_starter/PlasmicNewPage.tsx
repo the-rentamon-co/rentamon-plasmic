@@ -59,6 +59,10 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { DataFetcher } from "@plasmicpkgs/plasmic-query";
+import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
+import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
@@ -84,6 +88,9 @@ export type PlasmicNewPage__OverridesType = {
   root?: Flex__<"div">;
   topContainer?: Flex__<"section">;
   mainSection?: Flex__<"section">;
+  httpRestApiFetcher?: Flex__<typeof DataFetcher>;
+  dropdown?: Flex__<typeof AntdDropdown>;
+  button?: Flex__<typeof AntdButton>;
   fragmentSwitch?: Flex__<typeof Switch>;
   img?: Flex__<typeof PlasmicImg__>;
   embedHtml?: Flex__<typeof Embed>;
@@ -222,6 +229,99 @@ function PlasmicNewPage__RenderFunc(props: {
             data-plasmic-override={overrides.mainSection}
             className={classNames(projectcss.all, sty.mainSection)}
           >
+            <DataFetcher
+              data-plasmic-name={"httpRestApiFetcher"}
+              data-plasmic-override={overrides.httpRestApiFetcher}
+              className={classNames("__wab_instance", sty.httpRestApiFetcher)}
+              dataName={"fetchedData"}
+              errorDisplay={
+                <DataCtxReader__>
+                  {$ctx => "Error fetching data"}
+                </DataCtxReader__>
+              }
+              errorName={"fetchError"}
+              headers={{
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              }}
+              loadingDisplay={
+                <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
+              }
+              method={"GET"}
+              noLayout={false}
+              url={"https://api.github.com/users/plasmicapp/repos"}
+            >
+              <DataCtxReader__>
+                {$ctx => (
+                  <AntdDropdown
+                    data-plasmic-name={"dropdown"}
+                    data-plasmic-override={overrides.dropdown}
+                    className={classNames("__wab_instance", sty.dropdown)}
+                    dropdownMenuScopeClassName={sty["dropdown__dropdownMenu"]}
+                    menuItems={() => (
+                      <React.Fragment>
+                        <AntdMenuItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.menuItem___0DgU
+                          )}
+                          key={"menu-item-1"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__ihY1P
+                            )}
+                          >
+                            {"Menu item"}
+                          </div>
+                        </AntdMenuItem>
+                        <AntdMenuItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.menuItem__cn0Fu
+                          )}
+                          key={"menu-item-2"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__o6Dua
+                            )}
+                          >
+                            {"Menu item"}
+                          </div>
+                        </AntdMenuItem>
+                      </React.Fragment>
+                    )}
+                    menuItemsJson={[
+                      { type: "item", value: "action1", label: "Action 1" },
+                      { type: "item", value: "action2", label: "Action 2" }
+                    ]}
+                  >
+                    <AntdButton
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__xatDt
+                        )}
+                      >
+                        {
+                          "\u0627\u0646\u062a\u062e\u0627\u0628 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                        }
+                      </div>
+                    </AntdButton>
+                  </AntdDropdown>
+                )}
+              </DataCtxReader__>
+            </DataFetcher>
             <div className={classNames(projectcss.all, sty.freeBox__gWfWp)}>
               <div className={classNames(projectcss.all, sty.freeBox___07Kpo)}>
                 {(() => {
@@ -450,12 +550,25 @@ const PlasmicDescendants = {
     "root",
     "topContainer",
     "mainSection",
+    "httpRestApiFetcher",
+    "dropdown",
+    "button",
     "fragmentSwitch",
     "img",
     "embedHtml"
   ],
   topContainer: ["topContainer"],
-  mainSection: ["mainSection", "fragmentSwitch", "img"],
+  mainSection: [
+    "mainSection",
+    "httpRestApiFetcher",
+    "dropdown",
+    "button",
+    "fragmentSwitch",
+    "img"
+  ],
+  httpRestApiFetcher: ["httpRestApiFetcher", "dropdown", "button"],
+  dropdown: ["dropdown", "button"],
+  button: ["button"],
   fragmentSwitch: ["fragmentSwitch"],
   img: ["img"],
   embedHtml: ["embedHtml"]
@@ -467,6 +580,9 @@ type NodeDefaultElementType = {
   root: "div";
   topContainer: "section";
   mainSection: "section";
+  httpRestApiFetcher: typeof DataFetcher;
+  dropdown: typeof AntdDropdown;
+  button: typeof AntdButton;
   fragmentSwitch: typeof Switch;
   img: typeof PlasmicImg__;
   embedHtml: typeof Embed;
@@ -534,6 +650,9 @@ export const PlasmicNewPage = Object.assign(
     // Helper components rendering sub-elements
     topContainer: makeNodeComponent("topContainer"),
     mainSection: makeNodeComponent("mainSection"),
+    httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
+    dropdown: makeNodeComponent("dropdown"),
+    button: makeNodeComponent("button"),
     fragmentSwitch: makeNodeComponent("fragmentSwitch"),
     img: makeNodeComponent("img"),
     embedHtml: makeNodeComponent("embedHtml"),
