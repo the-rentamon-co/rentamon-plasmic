@@ -392,9 +392,11 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                       label={"\u0646\u0627\u0645"}
                       name={"name"}
                       rules={[
-                        { ruleType: "required" },
-
-                        { ruleType: "required" }
+                        {
+                          ruleType: "required",
+                          message:
+                            "\u062f\u0648\u0633\u062a \u062f\u0627\u0631\u06cc\u0645 \u0627\u0633\u0645\u062a\u0648 \u0628\u062f\u0648\u0646\u06cc\u0645!"
+                        }
                       ]}
                     >
                       {(() => {
@@ -442,7 +444,13 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
                       }
                       name={"lastName"}
-                      rules={[{ ruleType: "required" }]}
+                      rules={[
+                        {
+                          ruleType: "required",
+                          message:
+                            "\u0644\u0637\u0641\u0627 \u0641\u0627\u0645\u06cc\u0644\u06cc\u062a \u0631\u0648 \u0647\u0645 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                        }
+                      ]}
                     >
                       {(() => {
                         const child$Props = {
@@ -650,7 +658,13 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                       }
                       name={"propertyName"}
-                      rules={[{ ruleType: "required" }]}
+                      rules={[
+                        {
+                          ruleType: "required",
+                          message:
+                            "\u0628\u062f\u0648\u0646 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u06a9\u0647 \u0646\u0645\u06cc\u200c\u0634\u0647!"
+                        }
+                      ]}
                     >
                       {(() => {
                         const child$Props = {
@@ -765,40 +779,39 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["updateFormStep"] =
-                            $state.form.value.phoneNumber.length >= 11
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["formStep"]
-                                    },
-                                    operation: 3
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
+                          $steps["updateFormStep"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["formStep"]
+                                  },
+                                  operation: 3
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
 
-                                    const oldValue = $stateGet(
-                                      objRoot,
-                                      variablePath
-                                    );
-                                    $stateSet(
-                                      objRoot,
-                                      variablePath,
-                                      oldValue - 1
-                                    );
-                                    return oldValue - 1;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
+                                  const oldValue = $stateGet(
+                                    objRoot,
+                                    variablePath
+                                  );
+                                  $stateSet(
+                                    objRoot,
+                                    variablePath,
+                                    oldValue - 1
+                                  );
+                                  return oldValue - 1;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
                           if (
                             $steps["updateFormStep"] != null &&
                             typeof $steps["updateFormStep"] === "object" &&
