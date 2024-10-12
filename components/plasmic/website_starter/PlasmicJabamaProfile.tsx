@@ -365,40 +365,36 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                             })()}
                           </React.Fragment>
                         </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__qOu1H
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "امتیاز کلی: " +
+                                  $ctx.fetchedData.list[0].commissionRate *
+                                    $ctx.fetchedData.list[0].supportScore +
+                                  " از ۱۰۰"
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u06a9\u0644\u06cc: x";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
                       </div>
                     ) : null}
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__oUbSp)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__qOu1H
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return (
-                              "امتیاز کلی: " +
-                              $ctx.fetchedData.list[0].commissionRate *
-                                $ctx.fetchedData.list[0].supportScore +
-                              " از ۱۰۰"
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u06a9\u0644\u06cc: x";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
                   </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__hTDv)}
@@ -580,92 +576,99 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                         : "\u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u062f \u062a\u0627 \u0634\u0631\u06cc\u06a9 \u062e\u0648\u062f \u0631\u0627 \u0628\u0647\u062a\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u0646\u062f."}
                     </div>
                     <div
-                      className={classNames(projectcss.all, sty.columns__spTc)}
+                      className={classNames(projectcss.all, sty.freeBox__laFLy)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.column__xeiyb
+                          sty.columns__spTc
                         )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__mAu
+                            sty.column__xeiyb
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___9MYqx
+                              sty.freeBox__mAu
                             )}
                           >
-                            {hasVariant(globalVariants, "screen", "mobile")
-                              ? "\u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
-                              : "\u0633\u0627\u062f\u06af\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.column__eoPuj
-                        )}
-                      >
-                        <Select
-                          data-plasmic-name={"selectAccess"}
-                          data-plasmic-override={overrides.selectAccess}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.selectAccess
-                          )}
-                          onChange={(...eventArgs) => {
-                            generateStateOnChangeProp($state, [
-                              "selectAccess",
-                              "value"
-                            ])(eventArgs[0]);
-                          }}
-                          options={(() => {
-                            const __composite = [
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null }
-                            ];
-                            __composite["0"]["value"] = "5";
-                            __composite["0"]["label"] =
-                              "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
-                            __composite["1"]["value"] = "4";
-                            __composite["1"]["label"] = "\u06f4";
-                            __composite["2"]["value"] = "3";
-                            __composite["2"]["label"] = "\u06f3";
-                            __composite["3"]["value"] = "2";
-                            __composite["3"]["label"] = "\u06f2";
-                            __composite["4"]["value"] = "1";
-                            __composite["4"]["label"] =
-                              "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
-                            return __composite;
-                          })()}
-                          placeholder={
                             <div
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__agVku
+                                sty.text___9MYqx
                               )}
                             >
-                              {
-                                "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
-                              }
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
+                                : "\u0633\u0627\u062f\u06af\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
                             </div>
-                          }
-                          value={generateStateValueProp($state, [
-                            "selectAccess",
-                            "value"
-                          ])}
-                        />
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.column__eoPuj
+                          )}
+                        >
+                          <Select
+                            data-plasmic-name={"selectAccess"}
+                            data-plasmic-override={overrides.selectAccess}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.selectAccess
+                            )}
+                            onChange={(...eventArgs) => {
+                              generateStateOnChangeProp($state, [
+                                "selectAccess",
+                                "value"
+                              ])(eventArgs[0]);
+                            }}
+                            options={(() => {
+                              const __composite = [
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null }
+                              ];
+                              __composite["0"]["value"] = "5";
+                              __composite["0"]["label"] =
+                                "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
+                              __composite["1"]["value"] = "4";
+                              __composite["1"]["label"] = "\u06f4";
+                              __composite["2"]["value"] = "3";
+                              __composite["2"]["label"] = "\u06f3";
+                              __composite["3"]["value"] = "2";
+                              __composite["3"]["label"] = "\u06f2";
+                              __composite["4"]["value"] = "1";
+                              __composite["4"]["label"] =
+                                "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
+                              return __composite;
+                            })()}
+                            placeholder={
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__agVku
+                                )}
+                              >
+                                {
+                                  "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                                }
+                              </div>
+                            }
+                            value={generateStateValueProp($state, [
+                              "selectAccess",
+                              "value"
+                            ])}
+                          />
+                        </div>
                       </div>
                     </div>
                     <div
@@ -972,19 +975,53 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                       sty.linkToPlatform
                     )}
                     component={Link}
-                    href={(() => {
-                      try {
-                        return $ctx.fetchedData.list[0].url;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
+                    href={""}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToPage"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: (() => {
+                                try {
+                                  return (() => {
+                                    return (window.location.href =
+                                      $ctx.fetchedData.list[0].url);
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToPage"] != null &&
+                        typeof $steps["goToPage"] === "object" &&
+                        typeof $steps["goToPage"].then === "function"
+                      ) {
+                        $steps["goToPage"] = await $steps["goToPage"];
                       }
-                    })()}
+                    }}
                     platform={"nextjs"}
                   >
                     {
