@@ -262,17 +262,20 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                 {...child$Props}
               >
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__m10W)}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.formField___3Kc6P
+                  )}
                   label={"\u0646\u0627\u0645"}
                   name={"name"}
                   rules={[{ ruleType: "required" }]}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__oO18K)}
+                    className={classNames("__wab_instance", sty.input__jLsXv)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__huipz)}
+                  className={classNames("__wab_instance", sty.formField__jDPlp)}
                   label={
                     "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
                   }
@@ -280,11 +283,11 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                   rules={[{ ruleType: "required" }]}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__uwtEc)}
+                    className={classNames("__wab_instance", sty.input__aqsN)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__ks1Or)}
+                  className={classNames("__wab_instance", sty.formField__wSz4H)}
                   hidden={false}
                   label={
                     "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644"
@@ -313,11 +316,11 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                   validateTrigger={[]}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__ibWui)}
+                    className={classNames("__wab_instance", sty.input__datsn)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__yOJmo)}
+                  className={classNames("__wab_instance", sty.formField__jO8KE)}
                   label={
                     "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
@@ -325,58 +328,64 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                   rules={[{ ruleType: "required" }]}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__lbbh)}
+                    className={classNames("__wab_instance", sty.input__bMzOy)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__aSqZr)}
-                  label={"\u06a9\u062f \u062c\u0627\u0628\u0627\u0645\u0627"}
+                  className={classNames("__wab_instance", sty.formField__kwS9)}
+                  label={
+                    "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627"
+                  }
                   name={"jabamaPPID"}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__iuu7O)}
+                    className={classNames("__wab_instance", sty.input__r3V87)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__gRvao)}
-                  label={"\u06a9\u062f \u062c\u0627\u062c\u06cc\u06af\u0627"}
+                  className={classNames("__wab_instance", sty.formField__xihY)}
+                  label={
+                    "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627"
+                  }
                   name={"jajigaPPID"}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__a3HWl)}
+                    className={classNames("__wab_instance", sty.input__ncXuu)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__rFps)}
-                  label={"\u06a9\u062f \u0634\u0628"}
+                  className={classNames("__wab_instance", sty.formField__q2By)}
+                  label={
+                    "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0634\u0628"
+                  }
                   name={"shabPPID"}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__yq1Xd)}
+                    className={classNames("__wab_instance", sty.input__uqDzz)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__nQc5P)}
+                  className={classNames("__wab_instance", sty.formField__l1Mw)}
                   hidden={true}
                   label={"\u06a9\u062f \u0645\u06cc\u0632\u0628\u0648\u0646"}
                   name={"MizbonPPID"}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__vW1S8)}
+                    className={classNames("__wab_instance", sty.input__zbTvj)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__sepdE)}
+                  className={classNames("__wab_instance", sty.formField__xpQo2)}
                   hidden={true}
                   label={"\u06a9\u062f \u0627\u062a\u0627\u0642\u06a9"}
                   name={"OtaghakPPID"}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__s58Aj)}
+                    className={classNames("__wab_instance", sty.input__wG9Mg)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__fPk2)}
+                  className={classNames("__wab_instance", sty.formField__yA0X7)}
                   hidden={true}
                   label={
                     "\u06a9\u062f \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648"
@@ -384,17 +393,17 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                   name={"MihmanshoPPID"}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__mdeg)}
+                    className={classNames("__wab_instance", sty.input__hZagi)}
                   />
                 </FormItemWrapper>
                 <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__bGwLd)}
+                  className={classNames("__wab_instance", sty.formField__y9Zv)}
                   hidden={true}
                   label={"\u06a9\u062f \u0647\u0648\u0645\u0633\u0627"}
                   name={"HomsaPPID"}
                 >
                   <AntdInput
-                    className={classNames("__wab_instance", sty.input__ghL96)}
+                    className={classNames("__wab_instance", sty.input___2Bic)}
                   />
                 </FormItemWrapper>
                 <AntdButton

@@ -96,7 +96,7 @@ export type PlasmicJabamaProfile__OverridesType = {
   selectAccess?: Flex__<typeof Select>;
   selectSpeed?: Flex__<typeof Select>;
   selectJudgment?: Flex__<typeof Select>;
-  button?: Flex__<typeof Button>;
+  submit?: Flex__<typeof Button>;
 };
 
 export interface DefaultJabamaProfileProps {}
@@ -747,9 +747,9 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                       </div>
                     </div>
                     <Button
-                      data-plasmic-name={"button"}
-                      data-plasmic-override={overrides.button}
-                      className={classNames("__wab_instance", sty.button)}
+                      data-plasmic-name={"submit"}
+                      data-plasmic-override={overrides.submit}
+                      className={classNames("__wab_instance", sty.submit)}
                       onClick={async event => {
                         const $steps = {};
 
@@ -758,16 +758,19 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://app.nocodb.com/api/v2/tables/mnaz831voks0ul4/records",
+                                  "https://app.nocodb.com/api/v2/tables/m13p0qumldon4j4/records",
                                   undefined,
                                   (() => {
                                     try {
                                       return {
-                                        platformId: 34,
-                                        supportSpeed: 33,
-                                        supportAccess: 55,
-                                        supportJudgment: 55,
-                                        userId: 111
+                                        Title: "string",
+                                        platformId: $ctx.query.pid,
+                                        supportAccess:
+                                          $state.selectAccess.value,
+                                        supportSpeed: $state.selectSpeed.value,
+                                        supportJudgment:
+                                          $state.selectJudgment.value,
+                                        userId: 122
                                       };
                                     } catch (e) {
                                       if (
@@ -783,10 +786,12 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                                   (() => {
                                     try {
                                       return {
-                                        "Content-Type": "application/json",
-                                        Accept: "application/json",
-                                        "xc-token":
-                                          "ty7cwczW_JDC0VQq8sEBJtu6E1e3_mX-kpa4d9TJ"
+                                        headers: {
+                                          accept: "application/json",
+                                          "xc-token":
+                                            "ty7cwczW_JDC0VQq8sEBJtu6E1e3_mX-kpa4d9TJ",
+                                          "Content-Type": "application/json"
+                                        }
                                       };
                                     } catch (e) {
                                       if (
@@ -816,7 +821,27 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                             "invokeGlobalAction"
                           ];
                         }
+
+                        $steps["invokeGlobalAction2"] = true
+                          ? (() => {
+                              const actionArgs = { args: [] };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction2"] != null &&
+                          typeof $steps["invokeGlobalAction2"] === "object" &&
+                          typeof $steps["invokeGlobalAction2"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction2"] = await $steps[
+                            "invokeGlobalAction2"
+                          ];
+                        }
                       }}
+                      submitsForm={false}
                     >
                       {
                         "\u0627\u0631\u0633\u0627\u0644 \u0628\u0627\u0632\u062e\u0648\u0631\u062f"
@@ -842,7 +867,7 @@ const PlasmicDescendants = {
     "selectAccess",
     "selectSpeed",
     "selectJudgment",
-    "button"
+    "submit"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -851,13 +876,13 @@ const PlasmicDescendants = {
     "selectAccess",
     "selectSpeed",
     "selectJudgment",
-    "button"
+    "submit"
   ],
   img: ["img"],
   selectAccess: ["selectAccess"],
   selectSpeed: ["selectSpeed"],
   selectJudgment: ["selectJudgment"],
-  button: ["button"]
+  submit: ["submit"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -870,7 +895,7 @@ type NodeDefaultElementType = {
   selectAccess: typeof Select;
   selectSpeed: typeof Select;
   selectJudgment: typeof Select;
-  button: typeof Button;
+  submit: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -939,7 +964,7 @@ export const PlasmicJabamaProfile = Object.assign(
     selectAccess: makeNodeComponent("selectAccess"),
     selectSpeed: makeNodeComponent("selectSpeed"),
     selectJudgment: makeNodeComponent("selectJudgment"),
-    button: makeNodeComponent("button"),
+    submit: makeNodeComponent("submit"),
 
     // Metadata about props expected for PlasmicJabamaProfile
     internalVariantProps: PlasmicJabamaProfile__VariantProps,

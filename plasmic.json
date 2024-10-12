@@ -430,6 +430,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/platforms"
+        },
+        {
+          "id": "Z33ICo1zf4Bl",
+          "name": "SelfRegister",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelfRegister.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/self-register.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSelfRegister.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/self-register"
         }
       ],
       "icons": [
@@ -1154,6 +1168,32 @@
       ],
       "customFunctions": [],
       "jsBundleThemes": []
+    },
+    {
+      "projectId": "r3ASNrnyvLLLAtDvzUioQ",
+      "projectApiToken": "eSFGpQaYCtO9sRbPuQ2Ll9dmLOg8I4oKhx6e1PuCrsfmUIVbFbSXcy32UrPTwF9zX2HVXA0xaIKJNhCMHvA",
+      "projectName": "react-slick",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_slick/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "HOQUyOpClJ",
+          "name": "SliderWrapper",
+          "displayName": "hostless-slider",
+          "componentImportPath": "@plasmicpkgs/react-slick",
+          "helper": {
+            "name": "sliderHelpers",
+            "importPath": "@plasmicpkgs/react-slick"
+          }
+        }
+      ],
+      "customFunctions": []
     }
   ],
   "globalVariants": {
