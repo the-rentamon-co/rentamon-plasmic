@@ -98,6 +98,8 @@ export type PlasmicJabamaProfile__OverridesType = {
   selectSpeed?: Flex__<typeof Select>;
   selectJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
+  linkToPlatform?: Flex__<"a"> & Partial<LinkProps>;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultJabamaProfileProps {}
@@ -161,6 +163,24 @@ function PlasmicJabamaProfile__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "variable",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "sur",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "surveyform",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ``
       }
     ],
     [$props, $ctx, $refs]
@@ -338,6 +358,36 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                           </React.Fragment>
                         </div>
                       </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__pw5Yr
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___1OS8N
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $ctx.fetchedData.list[0].url;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.column___6930B)}
@@ -359,9 +409,10 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                             {(() => {
                               try {
                                 return (
-                                  "امتیاز کلی: 💯 " +
+                                  "امتیاز کلی: " +
                                   $ctx.fetchedData.list[0].commissionRate *
-                                    $ctx.fetchedData.list[0].supportScore
+                                    $ctx.fetchedData.list[0].supportScore +
+                                  " از ۱۰۰"
                                 );
                               } catch (e) {
                                 if (
@@ -535,7 +586,7 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
+                              "\u0633\u0627\u062f\u06af\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
                             }
                           </div>
                         </div>
@@ -693,7 +744,7 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0642\u0636\u0627\u0648\u062a \u0645\u0646\u0635\u0641\u0627\u0646\u0647"
+                              "\u0642\u0636\u0627\u0648\u062a \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u062f\u0631 \u0627\u062e\u062a\u0644\u0627\u0641\u0627\u062a"
                             }
                           </div>
                         </div>
@@ -827,7 +878,13 @@ function PlasmicJabamaProfile__RenderFunc(props: {
 
                         $steps["invokeGlobalAction2"] = true
                           ? (() => {
-                              const actionArgs = { args: [] };
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0646\u0638\u0631 \u0634\u0645\u0627 \u062b\u0628\u062a \u0634\u062f. \u0645\u062a\u0634\u06a9\u0631\u06cc\u0645",
+                                  "top-center"
+                                ]
+                              };
                               return $globalActions[
                                 "Fragment.showToast"
                               ]?.apply(null, [...actionArgs.args]);
@@ -846,11 +903,65 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                       }}
                       submitsForm={false}
                     >
-                      {
-                        "\u0627\u0631\u0633\u0627\u0644 \u0628\u0627\u0632\u062e\u0648\u0631\u062f"
-                      }
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__jm4Ux
+                        )}
+                      >
+                        {
+                          "\u0627\u0631\u0633\u0627\u0644 \u0628\u0627\u0632\u062e\u0648\u0631\u062f"
+                        }
+                      </div>
                     </Button>
                   </div>
+                  <PlasmicLink__
+                    data-plasmic-name={"linkToPlatform"}
+                    data-plasmic-override={overrides.linkToPlatform}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.linkToPlatform
+                    )}
+                    component={Link}
+                    href={(() => {
+                      try {
+                        return $ctx.fetchedData.list[0].url;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                    platform={"nextjs"}
+                  >
+                    {
+                      "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f"
+                    }
+                  </PlasmicLink__>
+                  <Button
+                    data-plasmic-name={"button"}
+                    data-plasmic-override={overrides.button}
+                    className={classNames("__wab_instance", sty.button)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__fjWbg
+                      )}
+                    >
+                      {
+                        "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0645\u0642\u0627\u06cc\u0633\u0647"
+                      }
+                    </div>
+                  </Button>
                 </div>
               )}
             </DataCtxReader__>
@@ -871,7 +982,9 @@ const PlasmicDescendants = {
     "selectAccess",
     "selectSpeed",
     "selectJudgment",
-    "submit"
+    "submit",
+    "linkToPlatform",
+    "button"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -881,14 +994,18 @@ const PlasmicDescendants = {
     "selectAccess",
     "selectSpeed",
     "selectJudgment",
-    "submit"
+    "submit",
+    "linkToPlatform",
+    "button"
   ],
   img: ["img"],
   survey: ["survey", "selectAccess", "selectSpeed", "selectJudgment", "submit"],
   selectAccess: ["selectAccess"],
   selectSpeed: ["selectSpeed"],
   selectJudgment: ["selectJudgment"],
-  submit: ["submit"]
+  submit: ["submit"],
+  linkToPlatform: ["linkToPlatform"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -903,6 +1020,8 @@ type NodeDefaultElementType = {
   selectSpeed: typeof Select;
   selectJudgment: typeof Select;
   submit: typeof Button;
+  linkToPlatform: "a";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -973,6 +1092,8 @@ export const PlasmicJabamaProfile = Object.assign(
     selectSpeed: makeNodeComponent("selectSpeed"),
     selectJudgment: makeNodeComponent("selectJudgment"),
     submit: makeNodeComponent("submit"),
+    linkToPlatform: makeNodeComponent("linkToPlatform"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicJabamaProfile
     internalVariantProps: PlasmicJabamaProfile__VariantProps,
