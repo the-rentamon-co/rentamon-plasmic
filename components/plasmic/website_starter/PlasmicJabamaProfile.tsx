@@ -99,7 +99,6 @@ export type PlasmicJabamaProfile__OverridesType = {
   selectJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
   linkToPlatform?: Flex__<"a"> & Partial<LinkProps>;
-  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultJabamaProfileProps {}
@@ -945,23 +944,73 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                       "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f"
                     }
                   </PlasmicLink__>
-                  <Button
-                    data-plasmic-name={"button"}
-                    data-plasmic-override={overrides.button}
-                    className={classNames("__wab_instance", sty.button)}
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__fjWbg)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps[
+                        "goToHttpsRentamonComD8B3D8A7Db8CD8AaD8A7D8AcD8A7D8B1D987D988Db8CD984D8A7"
+                      ] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination:
+                                "https://rentamon.com/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7/"
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps[
+                          "goToHttpsRentamonComD8B3D8A7Db8CD8AaD8A7D8AcD8A7D8B1D987D988Db8CD984D8A7"
+                        ] != null &&
+                        typeof $steps[
+                          "goToHttpsRentamonComD8B3D8A7Db8CD8AaD8A7D8AcD8A7D8B1D987D988Db8CD984D8A7"
+                        ] === "object" &&
+                        typeof $steps[
+                          "goToHttpsRentamonComD8B3D8A7Db8CD8AaD8A7D8AcD8A7D8B1D987D988Db8CD984D8A7"
+                        ].then === "function"
+                      ) {
+                        $steps[
+                          "goToHttpsRentamonComD8B3D8A7Db8CD8AaD8A7D8AcD8A7D8B1D987D988Db8CD984D8A7"
+                        ] = await $steps[
+                          "goToHttpsRentamonComD8B3D8A7Db8CD8AaD8A7D8AcD8A7D8B1D987D988Db8CD984D8A7"
+                        ];
+                      }
+                    }}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__fjWbg
+                        sty.text__rGlTw
                       )}
                     >
-                      {
-                        "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0645\u0642\u0627\u06cc\u0633\u0647"
-                      }
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "var(--token-8nedppYkGVaH)" }}
+                        >
+                          {
+                            "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0645\u0642\u0627\u06cc\u0633\u0647"
+                          }
+                        </span>
+                      </React.Fragment>
                     </div>
-                  </Button>
+                  </div>
                 </div>
               )}
             </DataCtxReader__>
@@ -983,8 +1032,7 @@ const PlasmicDescendants = {
     "selectSpeed",
     "selectJudgment",
     "submit",
-    "linkToPlatform",
-    "button"
+    "linkToPlatform"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -995,8 +1043,7 @@ const PlasmicDescendants = {
     "selectSpeed",
     "selectJudgment",
     "submit",
-    "linkToPlatform",
-    "button"
+    "linkToPlatform"
   ],
   img: ["img"],
   survey: ["survey", "selectAccess", "selectSpeed", "selectJudgment", "submit"],
@@ -1004,8 +1051,7 @@ const PlasmicDescendants = {
   selectSpeed: ["selectSpeed"],
   selectJudgment: ["selectJudgment"],
   submit: ["submit"],
-  linkToPlatform: ["linkToPlatform"],
-  button: ["button"]
+  linkToPlatform: ["linkToPlatform"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1021,7 +1067,6 @@ type NodeDefaultElementType = {
   selectJudgment: typeof Select;
   submit: typeof Button;
   linkToPlatform: "a";
-  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1093,7 +1138,6 @@ export const PlasmicJabamaProfile = Object.assign(
     selectJudgment: makeNodeComponent("selectJudgment"),
     submit: makeNodeComponent("submit"),
     linkToPlatform: makeNodeComponent("linkToPlatform"),
-    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicJabamaProfile
     internalVariantProps: PlasmicJabamaProfile__VariantProps,
