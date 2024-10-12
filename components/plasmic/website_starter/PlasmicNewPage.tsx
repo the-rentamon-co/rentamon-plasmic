@@ -91,8 +91,8 @@ export type PlasmicNewPage__OverridesType = {
   httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   dropdown?: Flex__<typeof AntdDropdown>;
   button?: Flex__<typeof AntdButton>;
-  fragmentSwitch?: Flex__<typeof Switch>;
   img?: Flex__<typeof PlasmicImg__>;
+  fragmentSwitch?: Flex__<typeof Switch>;
   embedHtml?: Flex__<typeof Embed>;
 };
 
@@ -324,6 +324,35 @@ function PlasmicNewPage__RenderFunc(props: {
             </DataFetcher>
             <div className={classNames(projectcss.all, sty.freeBox__gWfWp)}>
               <div className={classNames(projectcss.all, sty.freeBox___07Kpo)}>
+                <PlasmicImg__
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={"44px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"44px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image.png",
+                    fullWidth: 88,
+                    fullHeight: 88,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jbz7
+                  )}
+                >
+                  {"\u0634\u0628"}
+                </div>
                 {(() => {
                   const child$Props = {
                     checked: generateStateValueProp($state, [
@@ -500,34 +529,6 @@ function PlasmicNewPage__RenderFunc(props: {
                     />
                   );
                 })()}
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jbz7
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-                <PlasmicImg__
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
-                  alt={""}
-                  className={classNames(sty.img)}
-                  displayHeight={"44px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"44px"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image.png",
-                    fullWidth: 88,
-                    fullHeight: 88,
-                    aspectRatio: undefined
-                  }}
-                />
               </div>
             </div>
           </section>
@@ -553,8 +554,8 @@ const PlasmicDescendants = {
     "httpRestApiFetcher",
     "dropdown",
     "button",
-    "fragmentSwitch",
     "img",
+    "fragmentSwitch",
     "embedHtml"
   ],
   topContainer: ["topContainer"],
@@ -563,14 +564,14 @@ const PlasmicDescendants = {
     "httpRestApiFetcher",
     "dropdown",
     "button",
-    "fragmentSwitch",
-    "img"
+    "img",
+    "fragmentSwitch"
   ],
   httpRestApiFetcher: ["httpRestApiFetcher", "dropdown", "button"],
   dropdown: ["dropdown", "button"],
   button: ["button"],
-  fragmentSwitch: ["fragmentSwitch"],
   img: ["img"],
+  fragmentSwitch: ["fragmentSwitch"],
   embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -583,8 +584,8 @@ type NodeDefaultElementType = {
   httpRestApiFetcher: typeof DataFetcher;
   dropdown: typeof AntdDropdown;
   button: typeof AntdButton;
-  fragmentSwitch: typeof Switch;
   img: typeof PlasmicImg__;
+  fragmentSwitch: typeof Switch;
   embedHtml: typeof Embed;
 };
 
@@ -653,8 +654,8 @@ export const PlasmicNewPage = Object.assign(
     httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     dropdown: makeNodeComponent("dropdown"),
     button: makeNodeComponent("button"),
-    fragmentSwitch: makeNodeComponent("fragmentSwitch"),
     img: makeNodeComponent("img"),
+    fragmentSwitch: makeNodeComponent("fragmentSwitch"),
     embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicNewPage

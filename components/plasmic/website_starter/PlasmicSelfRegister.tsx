@@ -350,9 +350,12 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
-                    src={
-                      "https://static1.plasmic.app/components/react-slick/slide1.png"
-                    }
+                    src={{
+                      src: "/plasmic/website_starter/images/_643B4F4928A84E43A5C82Cb8D77C9EbdJpg.jpg",
+                      fullWidth: 1365,
+                      fullHeight: 1024,
+                      aspectRatio: undefined
+                    }}
                   />
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__y9OW)}>

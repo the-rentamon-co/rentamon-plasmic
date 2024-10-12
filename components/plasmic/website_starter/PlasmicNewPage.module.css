@@ -175,22 +175,7 @@
   z-index: 1;
   bottom: auto;
   height: auto;
-  padding: 8px;
-}
-.fragmentSwitch:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  margin-right: 139px;
-}
-.text__jbz7 {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: auto;
-  font-size: 22px;
-  text-align: right;
-  padding-left: 0px;
-  align-self: center;
+  padding: 8px 0px 8px 8px;
 }
 .img {
   object-fit: cover;
@@ -205,6 +190,21 @@
 .img > picture > img {
   object-fit: cover;
   object-position: 50% 50%;
+}
+.text__jbz7 {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: auto;
+  font-size: 22px;
+  text-align: right;
+  padding-left: 0px;
+  align-self: center;
+}
+.fragmentSwitch:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  margin-right: 139px;
 }
 .embedHtml:global(.__wab_instance) {
   max-width: 100%;

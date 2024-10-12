@@ -93,6 +93,7 @@ export type PlasmicJabamaProfile__OverridesType = {
   embedHtml?: Flex__<typeof Embed>;
   httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   img?: Flex__<typeof PlasmicImg__>;
+  survey?: Flex__<"div">;
   selectAccess?: Flex__<typeof Select>;
   selectSpeed?: Flex__<typeof Select>;
   selectJudgment?: Flex__<typeof Select>;
@@ -469,7 +470,9 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__k5MDd)}
+                    data-plasmic-name={"survey"}
+                    data-plasmic-override={overrides.survey}
+                    className={classNames(projectcss.all, sty.survey)}
                   >
                     <div
                       className={classNames(
@@ -864,6 +867,7 @@ const PlasmicDescendants = {
     "embedHtml",
     "httpRestApiFetcher",
     "img",
+    "survey",
     "selectAccess",
     "selectSpeed",
     "selectJudgment",
@@ -873,12 +877,14 @@ const PlasmicDescendants = {
   httpRestApiFetcher: [
     "httpRestApiFetcher",
     "img",
+    "survey",
     "selectAccess",
     "selectSpeed",
     "selectJudgment",
     "submit"
   ],
   img: ["img"],
+  survey: ["survey", "selectAccess", "selectSpeed", "selectJudgment", "submit"],
   selectAccess: ["selectAccess"],
   selectSpeed: ["selectSpeed"],
   selectJudgment: ["selectJudgment"],
@@ -892,6 +898,7 @@ type NodeDefaultElementType = {
   embedHtml: typeof Embed;
   httpRestApiFetcher: typeof DataFetcher;
   img: typeof PlasmicImg__;
+  survey: "div";
   selectAccess: typeof Select;
   selectSpeed: typeof Select;
   selectJudgment: typeof Select;
@@ -961,6 +968,7 @@ export const PlasmicJabamaProfile = Object.assign(
     embedHtml: makeNodeComponent("embedHtml"),
     httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     img: makeNodeComponent("img"),
+    survey: makeNodeComponent("survey"),
     selectAccess: makeNodeComponent("selectAccess"),
     selectSpeed: makeNodeComponent("selectSpeed"),
     selectJudgment: makeNodeComponent("selectJudgment"),
