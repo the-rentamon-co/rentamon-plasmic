@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicJabamaProfile } from "../../components/plasmic/website_starter/PlasmicJabamaProfile";
+import { PlasmicPlatformsProfile } from "../../components/plasmic/website_starter/PlasmicPlatformsProfile";
 import { useRouter } from "next/router";
 
-function JabamaProfile() {
-  // Use PlasmicJabamaProfile to render this component as it was
+function PlatformsProfile() {
+  // Use PlasmicPlatformsProfile to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicJabamaProfile are:
+  // Props you can pass into PlasmicPlatformsProfile are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicJabamaProfile is wrapped by your project's global
+  // By default, PlasmicPlatformsProfile is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -31,10 +31,10 @@ function JabamaProfile() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicJabamaProfile />
+        <PlasmicPlatformsProfile />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default JabamaProfile;
+export default PlatformsProfile;

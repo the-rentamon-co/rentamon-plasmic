@@ -418,20 +418,6 @@
           "path": "/self-registration"
         },
         {
-          "id": "3zHUjsxpYABR",
-          "name": "JabamaProfile",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicJabamaProfile.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/platforms.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicJabamaProfile.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/platforms"
-        },
-        {
           "id": "Z33ICo1zf4Bl",
           "name": "SelfRegister",
           "type": "managed",
@@ -444,6 +430,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/self-register"
+        },
+        {
+          "id": "3zHUjsxpYABR",
+          "name": "PlatformsProfile",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPlatformsProfile.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/platforms.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPlatformsProfile.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/platforms"
         }
       ],
       "icons": [
