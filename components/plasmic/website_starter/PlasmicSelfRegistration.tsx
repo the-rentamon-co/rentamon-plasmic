@@ -574,33 +574,36 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         sty.formField__txoxl
                       )}
                       hidden={false}
+                      initialValue={``}
                       label={
                         "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644"
                       }
                       name={"phoneNumber"}
                       rules={[
-                        { ruleType: "required" },
+                        {
+                          ruleType: "required",
+                          message:
+                            "\u0628\u0627\u06cc\u062f \u062d\u062a\u0645\u0627 \u0627\u06cc\u0646\u0648 \u067e\u0631 \u06a9\u0646\u06cc!"
+                        },
 
                         {
                           ruleType: "min",
                           length: 11,
-                          message: "\u06a9\u06a9\u06a9\u06a9\u06a9"
+                          message:
+                            "\u0645\u0648\u0628\u0627\u06cc\u0644 \u06a9\u0647 \u06a9\u0645\u200c\u062a\u0631 \u0627\u0632 \u06f1\u06f1 \u0631\u0642\u0645 \u0646\u0645\u06cc\u200c\u0634\u0647!"
                         },
 
                         {
                           ruleType: "advanced",
                           custom: (rule, value) => {
-                            return /^09\\d{9}$/.test(
+                            return /^[0-9]{11}$/.test(
                               $state.form.value.phoneNumber
-                            )
-                              ? true
-                              : false;
+                            );
                           },
-                          message:
-                            "\u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f"
+                          message: ``
                         }
                       ]}
-                      validateTrigger={[]}
+                      validateTrigger={["onBlur"]}
                     >
                       {(() => {
                         const child$Props = {
@@ -1180,7 +1183,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     "POST",
-                                    "https://rentamon-n8n.darkube.app/webhook-test/7d5142b8-8813-4787-a67b-ea84d93d9a48",
+                                    "https://rentamon-n8n.darkube.app/webhook/selfRegister",
                                     undefined,
                                     (() => {
                                       try {
