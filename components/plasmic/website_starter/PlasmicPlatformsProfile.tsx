@@ -974,7 +974,9 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             const actionArgs = {
                               destination: (() => {
                                 try {
-                                  return $ctx.fetchedData.list[0].url;
+                                  return (
+                                    "https://" + $ctx.fetchedData.list[0].url
+                                  );
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
