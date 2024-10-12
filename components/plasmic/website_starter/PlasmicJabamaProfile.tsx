@@ -268,10 +268,10 @@ function PlasmicJabamaProfile__RenderFunc(props: {
               {$ctx => (
                 <div className={classNames(projectcss.all, sty.freeBox__s5BqJ)}>
                   <div
-                    className={classNames(projectcss.all, sty.columns__eGSlo)}
+                    className={classNames(projectcss.all, sty.freeBox___48ObF)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.column__khJvo)}
+                      className={classNames(projectcss.all, sty.freeBox__kl6Ov)}
                     >
                       <PlasmicImg__
                         data-plasmic-name={"img"}
@@ -280,7 +280,7 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                         className={classNames(sty.img)}
                         displayHeight={"auto"}
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"50%"}
+                        displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
                         displayWidth={"auto"}
@@ -299,75 +299,54 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                           }
                         })()}
                       />
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__rRKpp
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return undefined;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u0646\u0627\u0645 \u0633\u0627\u06cc\u062a";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.column__o10Wi)}
-                    >
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : false
+                    ) ? (
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__xo3PA
+                          sty.freeBox__rwd8X
                         )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__jtpQm
+                            sty.freeBox__nrqPr
                           )}
                         >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return $ctx.fetchedData.list[0].name;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "";
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__qlNl
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $ctx.fetchedData.list[0].name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
+                              })()}
+                            </React.Fragment>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__pw5Yr
-                        )}
-                      >
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text___1OS8N
+                            sty.text__tEs0A
                           )}
                         >
                           <React.Fragment>
@@ -387,45 +366,38 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                           </React.Fragment>
                         </div>
                       </div>
-                    </div>
+                    ) : null}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__oUbSp)}
+                  >
                     <div
-                      className={classNames(projectcss.all, sty.column___6930B)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__qOu1H
+                      )}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__r2KCg
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__qOu1H
-                          )}
-                        >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "امتیاز کلی: " +
-                                  $ctx.fetchedData.list[0].commissionRate *
-                                    $ctx.fetchedData.list[0].supportScore +
-                                  " از ۱۰۰"
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u06a9\u0644\u06cc: x";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        </div>
-                      </div>
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (
+                              "امتیاز کلی: " +
+                              $ctx.fetchedData.list[0].commissionRate *
+                                $ctx.fetchedData.list[0].supportScore +
+                              " از ۱۰۰"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u06a9\u0644\u06cc: x";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                   </div>
                   <div
@@ -454,12 +426,8 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                         })()}
                       </React.Fragment>
                     </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.columns__haZgZ)}
-                  >
                     <div
-                      className={classNames(projectcss.all, sty.column__ekbUf)}
+                      className={classNames(projectcss.all, sty.freeBox__ljlIv)}
                     >
                       <div
                         className={classNames(
@@ -468,29 +436,46 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                           sty.text__gqy8E
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (
-                                "امتیاز پشتیبانی: ⭐️ " +
-                                $ctx.fetchedData.list[0].supportScore
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  " پشتیبانی: ⭐️ " +
+                                  $ctx.fetchedData.list[0].supportScore
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "امتیاز پشتیبانی: ⭐️ " +
+                                  $ctx.fetchedData.list[0].supportScore
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
                       </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.column__dFwEf)}
-                    >
                       <div
                         className={classNames(
                           projectcss.all,
@@ -498,26 +483,58 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                           sty.text__kflBb
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (
-                                "نرخ کمیسیون: % " +
-                                $ctx.fetchedData.list[0].commissionRate
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  " کارمزد: % " +
+                                  $ctx.fetchedData.list[0].commissionRate
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "نرخ کمیسیون: % " +
+                                  $ctx.fetchedData.list[0].commissionRate
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
                       </div>
                     </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.columns__haZgZ)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.column__ekbUf)}
+                    />
+
+                    <div
+                      className={classNames(projectcss.all, sty.column__dFwEf)}
+                    />
                   </div>
                   <div
                     data-plasmic-name={"survey"}
@@ -558,9 +575,9 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                         sty.text__ie4Fa
                       )}
                     >
-                      {
-                        "\u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u062f \u062a\u0627 \u0634\u0631\u06cc\u06a9 \u062e\u0648\u062f \u0631\u0627 \u0628\u0647\u062a\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u0646\u062f."
-                      }
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0628\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u0648 \u062a\u0635\u0645\u06cc\u0645\u200c\u06af\u06cc\u0631\u06cc \u0628\u0647\u062a\u0631 \u0633\u0627\u06cc\u0632 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u0631\u06cc\u06a9 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647."
+                        : "\u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u062f \u062a\u0627 \u0634\u0631\u06cc\u06a9 \u062e\u0648\u062f \u0631\u0627 \u0628\u0647\u062a\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u0646\u062f."}
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.columns__spTc)}
@@ -584,9 +601,9 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                               sty.text___9MYqx
                             )}
                           >
-                            {
-                              "\u0633\u0627\u062f\u06af\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
-                            }
+                            {hasVariant(globalVariants, "screen", "mobile")
+                              ? "\u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
+                              : "\u0633\u0627\u062f\u06af\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
                           </div>
                         </div>
                       </div>
@@ -632,7 +649,17 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                             return __composite;
                           })()}
                           placeholder={
-                            "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__agVku
+                              )}
+                            >
+                              {
+                                "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                              }
+                            </div>
                           }
                           value={generateStateValueProp($state, [
                             "selectAccess",
@@ -711,7 +738,17 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                             return __composite;
                           })()}
                           placeholder={
-                            "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__ih7Aq
+                              )}
+                            >
+                              {
+                                "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                              }
+                            </div>
                           }
                           value={generateStateValueProp($state, [
                             "selectSpeed",
@@ -790,7 +827,17 @@ function PlasmicJabamaProfile__RenderFunc(props: {
                             return __composite;
                           })()}
                           placeholder={
-                            "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__jxvO3
+                              )}
+                            >
+                              {
+                                "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                              }
+                            </div>
                           }
                           value={generateStateValueProp($state, [
                             "selectJudgment",
@@ -1015,6 +1062,12 @@ function PlasmicJabamaProfile__RenderFunc(props: {
               )}
             </DataCtxReader__>
           </DataFetcher>
+          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            <div className={classNames(projectcss.all, sty.freeBox__cJr7H)} />
+          ) : null}
+          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            <div className={classNames(projectcss.all, sty.freeBox___1Jlei)} />
+          ) : null}
         </div>
       </div>
     </React.Fragment>
