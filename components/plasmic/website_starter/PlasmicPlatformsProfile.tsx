@@ -96,8 +96,8 @@ export type PlasmicPlatformsProfile__OverridesType = {
   img?: Flex__<typeof PlasmicImg__>;
   survey?: Flex__<"div">;
   selectAccess?: Flex__<typeof Select>;
-  selectSpeed?: Flex__<typeof Select>;
-  selectJudgment?: Flex__<typeof Select>;
+  supportSpeed?: Flex__<typeof Select>;
+  supportJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
   linkToPlatform?: Flex__<"a"> & Partial<LinkProps>;
 };
@@ -153,18 +153,6 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "selectSpeed.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "selectJudgment.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
         path: "variable",
         type: "private",
         variableType: "text",
@@ -181,6 +169,18 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
+      },
+      {
+        path: "supportSpeed.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "supportJudgment.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -284,7 +284,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "114px"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={(() => {
                           try {
@@ -301,59 +305,26 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         })()}
                       />
                     </div>
-                    {(
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? true
-                        : false
-                    ) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rwd8X)}
+                    >
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__rwd8X
+                          sty.freeBox__nrqPr
                         )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__nrqPr
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__qlNl
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return $ctx.fetchedData.list[0].name;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__tEs0A
+                            sty.text__qlNl
                           )}
                         >
                           <React.Fragment>
                             {(() => {
                               try {
-                                return $ctx.fetchedData.list[0].url;
+                                return $ctx.fetchedData.list[0].name;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -366,36 +337,59 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             })()}
                           </React.Fragment>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__qOu1H
-                          )}
-                        >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "امتیاز کلی: " +
-                                  $ctx.fetchedData.list[0].commissionRate *
-                                    $ctx.fetchedData.list[0].supportScore +
-                                  " از ۱۰۰"
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u06a9\u0644\u06cc: x";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        </div>
                       </div>
-                    ) : null}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__tEs0A
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.fetchedData.list[0].url;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__qOu1H
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                "امتیاز کلی: " +
+                                $ctx.fetchedData.list[0].commissionRate *
+                                  $ctx.fetchedData.list[0].supportScore +
+                                " از ۱۰۰"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u06a9\u0644\u06cc: x";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
                   </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__hTDv)}
@@ -660,183 +654,189 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           />
                         </div>
                       </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.columns__ds2Q)}
-                    >
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.column__epJa1
+                          sty.columns__boBt
                         )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__s1T8D
+                            sty.column__xmHdg
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___0MMbN
+                              sty.freeBox__yPopI
                             )}
                           >
-                            {
-                              "\u0633\u0631\u0639\u062a \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
-                            }
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__o3Stp
+                              )}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u0633\u0631\u0639\u062a \u067e\u06cc\u06af\u06cc\u0631\u06cc"
+                                : "\u0633\u0631\u0639\u062a \u067e\u06cc\u06af\u06cc\u0631\u06cc"}
+                            </div>
                           </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.column__dCcIi
+                          )}
+                        >
+                          <Select
+                            data-plasmic-name={"supportSpeed"}
+                            data-plasmic-override={overrides.supportSpeed}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.supportSpeed
+                            )}
+                            onChange={(...eventArgs) => {
+                              generateStateOnChangeProp($state, [
+                                "supportSpeed",
+                                "value"
+                              ])(eventArgs[0]);
+                            }}
+                            options={(() => {
+                              const __composite = [
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null }
+                              ];
+                              __composite["0"]["value"] = "5";
+                              __composite["0"]["label"] =
+                                "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
+                              __composite["1"]["value"] = "4";
+                              __composite["1"]["label"] = "\u06f4";
+                              __composite["2"]["value"] = "3";
+                              __composite["2"]["label"] = "\u06f3";
+                              __composite["3"]["value"] = "2";
+                              __composite["3"]["label"] = "\u06f2";
+                              __composite["4"]["value"] = "1";
+                              __composite["4"]["label"] =
+                                "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
+                              return __composite;
+                            })()}
+                            placeholder={
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__qg9C6
+                                )}
+                              >
+                                {
+                                  "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                                }
+                              </div>
+                            }
+                            value={generateStateValueProp($state, [
+                              "supportSpeed",
+                              "value"
+                            ])}
+                          />
                         </div>
                       </div>
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.column___8M9Gn
-                        )}
-                      >
-                        <Select
-                          data-plasmic-name={"selectSpeed"}
-                          data-plasmic-override={overrides.selectSpeed}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.selectSpeed
-                          )}
-                          onChange={(...eventArgs) => {
-                            generateStateOnChangeProp($state, [
-                              "selectSpeed",
-                              "value"
-                            ])(eventArgs[0]);
-                          }}
-                          options={(() => {
-                            const __composite = [
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null }
-                            ];
-                            __composite["0"]["value"] = "5";
-                            __composite["0"]["label"] =
-                              "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
-                            __composite["1"]["value"] = "4";
-                            __composite["1"]["label"] = "\u06f4";
-                            __composite["2"]["value"] = "3";
-                            __composite["2"]["label"] = "\u06f3";
-                            __composite["3"]["value"] = "2";
-                            __composite["3"]["label"] = "\u06f2";
-                            __composite["4"]["value"] = "1";
-                            __composite["4"]["label"] =
-                              "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
-                            return __composite;
-                          })()}
-                          placeholder={
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__ih7Aq
-                              )}
-                            >
-                              {
-                                "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
-                              }
-                            </div>
-                          }
-                          value={generateStateValueProp($state, [
-                            "selectSpeed",
-                            "value"
-                          ])}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.columns__tGlbY)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.column__sWh4S
+                          sty.columns___710M2
                         )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__x0KzU
+                            sty.column__qf1Xs
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__k2DiB
+                              sty.freeBox__s2M2O
                             )}
                           >
-                            {
-                              "\u0642\u0636\u0627\u0648\u062a \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u062f\u0631 \u0627\u062e\u062a\u0644\u0627\u0641\u0627\u062a"
-                            }
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.column__hiLay
-                        )}
-                      >
-                        <Select
-                          data-plasmic-name={"selectJudgment"}
-                          data-plasmic-override={overrides.selectJudgment}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.selectJudgment
-                          )}
-                          onChange={(...eventArgs) => {
-                            generateStateOnChangeProp($state, [
-                              "selectJudgment",
-                              "value"
-                            ])(eventArgs[0]);
-                          }}
-                          options={(() => {
-                            const __composite = [
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null },
-                              { value: null, label: null }
-                            ];
-                            __composite["0"]["value"] = "5";
-                            __composite["0"]["label"] =
-                              "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
-                            __composite["1"]["value"] = "4";
-                            __composite["1"]["label"] = "\u06f4";
-                            __composite["2"]["value"] = "3";
-                            __composite["2"]["label"] = "\u06f3";
-                            __composite["3"]["value"] = "2";
-                            __composite["3"]["label"] = "\u06f2";
-                            __composite["4"]["value"] = "1";
-                            __composite["4"]["label"] =
-                              "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
-                            return __composite;
-                          })()}
-                          placeholder={
                             <div
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__jxvO3
+                                sty.text__tUj6E
                               )}
                             >
-                              {
-                                "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
-                              }
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u0642\u0636\u0627\u0648\u062a \u0645\u0646\u0635\u0641\u0627\u0646\u0647"
+                                : "\u0642\u0636\u0627\u0648\u062a \u0645\u0646\u0635\u0641\u0627\u0646\u0647"}
                             </div>
-                          }
-                          value={generateStateValueProp($state, [
-                            "selectJudgment",
-                            "value"
-                          ])}
-                        />
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.column__fkUjV
+                          )}
+                        >
+                          <Select
+                            data-plasmic-name={"supportJudgment"}
+                            data-plasmic-override={overrides.supportJudgment}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.supportJudgment
+                            )}
+                            onChange={(...eventArgs) => {
+                              generateStateOnChangeProp($state, [
+                                "supportJudgment",
+                                "value"
+                              ])(eventArgs[0]);
+                            }}
+                            options={(() => {
+                              const __composite = [
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null }
+                              ];
+                              __composite["0"]["value"] = "5";
+                              __composite["0"]["label"] =
+                                "\u06f5 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646";
+                              __composite["1"]["value"] = "4";
+                              __composite["1"]["label"] = "\u06f4";
+                              __composite["2"]["value"] = "3";
+                              __composite["2"]["label"] = "\u06f3";
+                              __composite["3"]["value"] = "2";
+                              __composite["3"]["label"] = "\u06f2";
+                              __composite["4"]["value"] = "1";
+                              __composite["4"]["label"] =
+                                "\u06f1  \u06a9\u0645\u062a\u0631\u06cc\u0646";
+                              return __composite;
+                            })()}
+                            placeholder={
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__eud5R
+                                )}
+                              >
+                                {
+                                  "\u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                                }
+                              </div>
+                            }
+                            value={generateStateValueProp($state, [
+                              "supportJudgment",
+                              "value"
+                            ])}
+                          />
+                        </div>
                       </div>
                     </div>
                     <Button
@@ -974,9 +974,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             const actionArgs = {
                               destination: (() => {
                                 try {
-                                  return (
-                                    "https://" + $ctx.fetchedData.list[0].url
-                                  );
+                                  return (() => {
+                                    return (window.location.href =
+                                      "https://" +
+                                      $ctx.fetchedData.list[0].url);
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -1108,8 +1110,8 @@ const PlasmicDescendants = {
     "img",
     "survey",
     "selectAccess",
-    "selectSpeed",
-    "selectJudgment",
+    "supportSpeed",
+    "supportJudgment",
     "submit",
     "linkToPlatform"
   ],
@@ -1119,16 +1121,22 @@ const PlasmicDescendants = {
     "img",
     "survey",
     "selectAccess",
-    "selectSpeed",
-    "selectJudgment",
+    "supportSpeed",
+    "supportJudgment",
     "submit",
     "linkToPlatform"
   ],
   img: ["img"],
-  survey: ["survey", "selectAccess", "selectSpeed", "selectJudgment", "submit"],
+  survey: [
+    "survey",
+    "selectAccess",
+    "supportSpeed",
+    "supportJudgment",
+    "submit"
+  ],
   selectAccess: ["selectAccess"],
-  selectSpeed: ["selectSpeed"],
-  selectJudgment: ["selectJudgment"],
+  supportSpeed: ["supportSpeed"],
+  supportJudgment: ["supportJudgment"],
   submit: ["submit"],
   linkToPlatform: ["linkToPlatform"]
 } as const;
@@ -1142,8 +1150,8 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   survey: "div";
   selectAccess: typeof Select;
-  selectSpeed: typeof Select;
-  selectJudgment: typeof Select;
+  supportSpeed: typeof Select;
+  supportJudgment: typeof Select;
   submit: typeof Button;
   linkToPlatform: "a";
 };
@@ -1213,8 +1221,8 @@ export const PlasmicPlatformsProfile = Object.assign(
     img: makeNodeComponent("img"),
     survey: makeNodeComponent("survey"),
     selectAccess: makeNodeComponent("selectAccess"),
-    selectSpeed: makeNodeComponent("selectSpeed"),
-    selectJudgment: makeNodeComponent("selectJudgment"),
+    supportSpeed: makeNodeComponent("supportSpeed"),
+    supportJudgment: makeNodeComponent("supportJudgment"),
     submit: makeNodeComponent("submit"),
     linkToPlatform: makeNodeComponent("linkToPlatform"),
 
