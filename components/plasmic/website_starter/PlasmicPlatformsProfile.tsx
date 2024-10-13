@@ -62,8 +62,8 @@ import {
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
-import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -99,8 +99,8 @@ export type PlasmicPlatformsProfile__OverridesType = {
   selectAccess?: Flex__<typeof Select>;
   supportSpeed?: Flex__<typeof Select>;
   supportJudgment?: Flex__<typeof Select>;
-  linkbtn?: Flex__<typeof AntdButton>;
   submit?: Flex__<typeof Button>;
+  linkbtn?: Flex__<typeof AntdButton>;
 };
 
 export interface DefaultPlatformsProfileProps {}
@@ -839,23 +839,6 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           />
                         </div>
                       </div>
-                      <AntdButton
-                        data-plasmic-name={"linkbtn"}
-                        data-plasmic-override={overrides.linkbtn}
-                        className={classNames("__wab_instance", sty.linkbtn)}
-                        submitsForm={false}
-                        type={"primary"}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__sTSed
-                          )}
-                        >
-                          {"\u0642\u0628\u0644\u06cc"}
-                        </div>
-                      </AntdButton>
                     </div>
                     <Button
                       data-plasmic-name={"submit"}
@@ -973,6 +956,68 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                     </Button>
                   </div>
+                  <AntdButton
+                    data-plasmic-name={"linkbtn"}
+                    data-plasmic-override={overrides.linkbtn}
+                    className={classNames("__wab_instance", sty.linkbtn)}
+                    onClick={async () => {
+                      const $steps = {};
+
+                      $steps["goToPage"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: (() => {
+                                try {
+                                  return $ctx.fetchedData.list[0].url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToPage"] != null &&
+                        typeof $steps["goToPage"] === "object" &&
+                        typeof $steps["goToPage"].then === "function"
+                      ) {
+                        $steps["goToPage"] = await $steps["goToPage"];
+                      }
+                    }}
+                    submitsForm={false}
+                    type={"primary"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sTSed
+                      )}
+                    >
+                      {
+                        "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f"
+                      }
+                    </div>
+                  </AntdButton>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__fjWbg)}
                     onClick={async event => {
@@ -1066,8 +1111,8 @@ const PlasmicDescendants = {
     "selectAccess",
     "supportSpeed",
     "supportJudgment",
-    "linkbtn",
-    "submit"
+    "submit",
+    "linkbtn"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -1077,8 +1122,8 @@ const PlasmicDescendants = {
     "selectAccess",
     "supportSpeed",
     "supportJudgment",
-    "linkbtn",
-    "submit"
+    "submit",
+    "linkbtn"
   ],
   img: ["img"],
   survey: [
@@ -1086,14 +1131,13 @@ const PlasmicDescendants = {
     "selectAccess",
     "supportSpeed",
     "supportJudgment",
-    "linkbtn",
     "submit"
   ],
   selectAccess: ["selectAccess"],
   supportSpeed: ["supportSpeed"],
   supportJudgment: ["supportJudgment"],
-  linkbtn: ["linkbtn"],
-  submit: ["submit"]
+  submit: ["submit"],
+  linkbtn: ["linkbtn"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1107,8 +1151,8 @@ type NodeDefaultElementType = {
   selectAccess: typeof Select;
   supportSpeed: typeof Select;
   supportJudgment: typeof Select;
-  linkbtn: typeof AntdButton;
   submit: typeof Button;
+  linkbtn: typeof AntdButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1178,8 +1222,8 @@ export const PlasmicPlatformsProfile = Object.assign(
     selectAccess: makeNodeComponent("selectAccess"),
     supportSpeed: makeNodeComponent("supportSpeed"),
     supportJudgment: makeNodeComponent("supportJudgment"),
-    linkbtn: makeNodeComponent("linkbtn"),
     submit: makeNodeComponent("submit"),
+    linkbtn: makeNodeComponent("linkbtn"),
 
     // Metadata about props expected for PlasmicPlatformsProfile
     internalVariantProps: PlasmicPlatformsProfile__VariantProps,

@@ -591,7 +591,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         {
                           ruleType: "required",
                           message:
-                            "\u0628\u0627\u06cc\u062f \u062d\u062a\u0645\u0627 \u067e\u0631 \u06a9\u0646\u06cc!"
+                            "\u0644\u0627\u0632\u0645\u0647 \u0627\u06cc\u0646\u0648 \u067e\u0631 \u06a9\u0646\u06cc!"
                         },
 
                         {
