@@ -99,6 +99,7 @@ export type PlasmicPlatformsProfile__OverridesType = {
   supportSpeed?: Flex__<typeof Select>;
   supportJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultPlatformsProfileProps {}
@@ -1079,6 +1080,21 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
+                  <Button
+                    data-plasmic-name={"button"}
+                    data-plasmic-override={overrides.button}
+                    className={classNames("__wab_instance", sty.button)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__twfaw
+                      )}
+                    >
+                      {"Button"}
+                    </div>
+                  </Button>
                 </div>
               )}
             </DataCtxReader__>
@@ -1105,7 +1121,8 @@ const PlasmicDescendants = {
     "selectAccess",
     "supportSpeed",
     "supportJudgment",
-    "submit"
+    "submit",
+    "button"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -1115,7 +1132,8 @@ const PlasmicDescendants = {
     "selectAccess",
     "supportSpeed",
     "supportJudgment",
-    "submit"
+    "submit",
+    "button"
   ],
   img: ["img"],
   survey: [
@@ -1128,7 +1146,8 @@ const PlasmicDescendants = {
   selectAccess: ["selectAccess"],
   supportSpeed: ["supportSpeed"],
   supportJudgment: ["supportJudgment"],
-  submit: ["submit"]
+  submit: ["submit"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1143,6 +1162,7 @@ type NodeDefaultElementType = {
   supportSpeed: typeof Select;
   supportJudgment: typeof Select;
   submit: typeof Button;
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1213,6 +1233,7 @@ export const PlasmicPlatformsProfile = Object.assign(
     supportSpeed: makeNodeComponent("supportSpeed"),
     supportJudgment: makeNodeComponent("supportJudgment"),
     submit: makeNodeComponent("submit"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicPlatformsProfile
     internalVariantProps: PlasmicPlatformsProfile__VariantProps,
