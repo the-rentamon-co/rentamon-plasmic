@@ -591,7 +591,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         {
                           ruleType: "required",
                           message:
-                            "\u0628\u0627\u06cc\u062f \u062d\u062a\u0645\u0627 \u0627\u06cc\u0646\u0648 \u067e\u0631 \u06a9\u0646\u06cc!"
+                            "\u0628\u0627\u06cc\u062f \u062d\u062a\u0645\u0627 \u067e\u0631 \u06a9\u0646\u06cc!"
                         },
 
                         {
@@ -1443,60 +1443,6 @@ function PlasmicSelfRegistration__RenderFunc(props: {
               </FormWrapper>
             );
           })()}
-          <div className={classNames(projectcss.all, sty.freeBox__qAFs)}>
-            <AntdButton
-              className={classNames("__wab_instance", sty.button__sPFwU)}
-              onClick={async () => {
-                const $steps = {};
-
-                $steps["updateFormStep"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["formStep"]
-                        },
-                        operation: 3
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, oldValue - 1);
-                        return oldValue - 1;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateFormStep"] != null &&
-                  typeof $steps["updateFormStep"] === "object" &&
-                  typeof $steps["updateFormStep"].then === "function"
-                ) {
-                  $steps["updateFormStep"] = await $steps["updateFormStep"];
-                }
-              }}
-              submitsForm={false}
-              type={"primary"}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__h3Ek
-                )}
-              >
-                {"\u0642\u0628\u0644\u06cc"}
-              </div>
-            </AntdButton>
-          </div>
         </div>
       </div>
     </React.Fragment>

@@ -430,7 +430,17 @@ function PlasmicNewPage__RenderFunc(props: {
                                       return {
                                         headers: {
                                           "Content-Type":
-                                            "application/x-www-form-urlencoded"
+                                            "application/x-www-form-urlencoded",
+                                          Authorization: `Bearer ${
+                                            document.cookie
+                                              .split("; ")
+                                              .find(row =>
+                                                row.startsWith(
+                                                  "usso_access_token"
+                                                )
+                                              )
+                                              .split("=")[1]
+                                          }`
                                         },
                                         withCredentials: true
                                       };
