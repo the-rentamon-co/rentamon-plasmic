@@ -397,16 +397,22 @@ function PlasmicNewPage__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://api.shab.ir/api/fa/sandbox/v_1_4/house",
+                                  "https://api.rentamon.com/api/shab_instant",
                                   undefined,
                                   (() => {
                                     try {
                                       return $state.fragmentSwitch.checked
                                         ? {
+                                            dates: new Date()
+                                              .toISOString()
+                                              .split("T")[0],
                                             property_id: 1,
                                             action: "set_instant"
                                           }
                                         : {
+                                            dates: new Date()
+                                              .toISOString()
+                                              .split("T")[0],
                                             property_id: 1,
                                             action: "unset_instant"
                                           };
@@ -430,17 +436,7 @@ function PlasmicNewPage__RenderFunc(props: {
                                       return {
                                         headers: {
                                           "Content-Type":
-                                            "application/x-www-form-urlencoded",
-                                          Authorization: `Bearer ${
-                                            document.cookie
-                                              .split("; ")
-                                              .find(row =>
-                                                row.startsWith(
-                                                  "usso_access_token"
-                                                )
-                                              )
-                                              .split("=")[1]
-                                          }`
+                                            "application/x-www-form-urlencoded"
                                         },
                                         withCredentials: true
                                       };
