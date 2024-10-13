@@ -403,20 +403,20 @@ function PlasmicNewPage__RenderFunc(props: {
                                     try {
                                       return $state.fragmentSwitch.checked
                                         ? {
-                                            dates: [
+                                            dates: `${
                                               new Date()
                                                 .toISOString()
                                                 .split("T")[0]
-                                            ],
+                                            }`,
                                             property_id: 1,
                                             action: "set_instant"
                                           }
                                         : {
-                                            dates: [
+                                            dates: `${
                                               new Date()
                                                 .toISOString()
                                                 .split("T")[0]
-                                            ],
+                                            }`,
                                             property_id: 1,
                                             action: "unset_instant"
                                           };
