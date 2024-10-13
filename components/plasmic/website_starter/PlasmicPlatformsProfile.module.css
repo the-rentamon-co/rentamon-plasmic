@@ -802,17 +802,11 @@
   width: auto;
   height: 1em;
 }
-.linkToPlatform {
-  font-weight: 600;
-  padding: 40px;
-  margin: 10px;
-}
-@media (max-width: 768px) {
-  .linkToPlatform {
-    font-size: 13px;
-    padding-right: 6px;
-    padding-left: 6px;
-  }
+.text__lWo8 {
+  font-weight: 700;
+  color: #8165d6;
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
 .freeBox__fjWbg {
   width: 240px;

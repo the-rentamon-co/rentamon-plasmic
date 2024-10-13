@@ -99,7 +99,6 @@ export type PlasmicPlatformsProfile__OverridesType = {
   supportSpeed?: Flex__<typeof Select>;
   supportJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
-  linkToPlatform?: Flex__<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultPlatformsProfileProps {}
@@ -955,17 +954,12 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                     </Button>
                   </div>
-                  <PlasmicLink__
-                    data-plasmic-name={"linkToPlatform"}
-                    data-plasmic-override={overrides.linkToPlatform}
+                  <div
                     className={classNames(
                       projectcss.all,
-                      projectcss.a,
                       projectcss.__wab_text,
-                      sty.linkToPlatform
+                      sty.text__lWo8
                     )}
-                    component={Link}
-                    href={""}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1013,12 +1007,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         $steps["goToPage"] = await $steps["goToPage"];
                       }
                     }}
-                    platform={"nextjs"}
                   >
                     {
                       "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f"
                     }
-                  </PlasmicLink__>
+                  </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__fjWbg)}
                     onClick={async event => {
@@ -1112,8 +1105,7 @@ const PlasmicDescendants = {
     "selectAccess",
     "supportSpeed",
     "supportJudgment",
-    "submit",
-    "linkToPlatform"
+    "submit"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -1123,8 +1115,7 @@ const PlasmicDescendants = {
     "selectAccess",
     "supportSpeed",
     "supportJudgment",
-    "submit",
-    "linkToPlatform"
+    "submit"
   ],
   img: ["img"],
   survey: [
@@ -1137,8 +1128,7 @@ const PlasmicDescendants = {
   selectAccess: ["selectAccess"],
   supportSpeed: ["supportSpeed"],
   supportJudgment: ["supportJudgment"],
-  submit: ["submit"],
-  linkToPlatform: ["linkToPlatform"]
+  submit: ["submit"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1153,7 +1143,6 @@ type NodeDefaultElementType = {
   supportSpeed: typeof Select;
   supportJudgment: typeof Select;
   submit: typeof Button;
-  linkToPlatform: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1224,7 +1213,6 @@ export const PlasmicPlatformsProfile = Object.assign(
     supportSpeed: makeNodeComponent("supportSpeed"),
     supportJudgment: makeNodeComponent("supportJudgment"),
     submit: makeNodeComponent("submit"),
-    linkToPlatform: makeNodeComponent("linkToPlatform"),
 
     // Metadata about props expected for PlasmicPlatformsProfile
     internalVariantProps: PlasmicPlatformsProfile__VariantProps,

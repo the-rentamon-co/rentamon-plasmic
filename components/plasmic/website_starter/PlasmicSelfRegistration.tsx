@@ -604,11 +604,10 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         {
                           ruleType: "advanced",
                           custom: (rule, value) => {
-                            return /^[0-9]{11}$/.test(
-                              $state.form.value.phoneNumber
-                            );
+                            return /^09/.test($state.form.value.phoneNumber);
                           },
-                          message: ``
+                          message:
+                            "\u0634\u0645\u0627\u0631\u0647 \u0645\u0639\u062a\u0628\u0631 \u0646\u06cc\u0633\u062a"
                         }
                       ]}
                       validateTrigger={["onBlur"]}
