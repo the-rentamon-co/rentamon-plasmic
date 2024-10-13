@@ -291,6 +291,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             ? "114px"
                             : "auto"
                         }
+                        height={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "140"
+                            : undefined
+                        }
                         loading={"lazy"}
                         src={(() => {
                           try {
@@ -305,6 +310,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             throw e;
                           }
                         })()}
+                        width={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "140"
+                            : undefined
+                        }
                       />
                     </div>
                     <div
@@ -638,7 +648,10 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                                   const actionArgs = {
                                     destination: (() => {
                                       try {
-                                        return $ctx.fetchedData.list[0].url;
+                                        return (
+                                          "https://" +
+                                          $ctx.fetchedData.list[0].url
+                                        );
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -720,7 +733,9 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             const actionArgs = {
                               destination: (() => {
                                 try {
-                                  return $ctx.fetchedData.list[0].url;
+                                  return (
+                                    "https://" + $ctx.fetchedData.list[0].url
+                                  );
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -765,9 +780,25 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         sty.text__sTSed
                       )}
                     >
-                      {
-                        "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f"
-                      }
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (
+                              "برای ثبت اقامتگاه در " +
+                              $ctx.fetchedData.list[0].name +
+                              " اینجا بزنید"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                   </AntdButton>
                   <div

@@ -150,7 +150,7 @@
   .text__qlNl {
     max-width: 50%;
     align-self: center;
-    font-size: 17px;
+    font-size: 18px;
     padding-right: 0px;
     font-family: "Estedad";
   }
@@ -187,7 +187,7 @@
 }
 @media (max-width: 768px) {
   .text__qOu1H {
-    font-size: 12px;
+    font-size: 13px;
     max-width: 100%;
     margin-right: 0px;
     padding-right: 0px;
@@ -257,7 +257,7 @@
 @media (max-width: 768px) {
   .text__gqy8E {
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 500;
     font-family: "Estedad";
   }
 }
@@ -274,7 +274,7 @@
     font-size: 13px;
     align-self: center;
     padding-right: 30px;
-    font-weight: 400;
+    font-weight: 500;
     font-family: "Estedad";
   }
 }
