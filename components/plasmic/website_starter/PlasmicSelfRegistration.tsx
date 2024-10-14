@@ -588,18 +588,9 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                       }
                       name={"phoneNumber"}
                       rules={[
-                        {
-                          ruleType: "required",
-                          message:
-                            "\u0644\u0627\u0632\u0645\u0647 \u0627\u06cc\u0646\u0648 \u067e\u0631 \u06a9\u0646\u06cc!"
-                        },
+                        { ruleType: "required", message: `` },
 
-                        {
-                          ruleType: "min",
-                          length: 11,
-                          message:
-                            "\u0645\u0648\u0628\u0627\u06cc\u0644 \u06a9\u0647 \u06a9\u0645\u200c\u062a\u0631 \u0627\u0632 \u06f1\u06f1 \u0631\u0642\u0645 \u0646\u0645\u06cc\u200c\u0634\u0647!"
-                        },
+                        { ruleType: "min", length: 11, message: `` },
 
                         {
                           ruleType: "advanced",
@@ -607,7 +598,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             return /^09/.test($state.form.value.phoneNumber);
                           },
                           message:
-                            "\u0634\u0645\u0627\u0631\u0647 \u0645\u0639\u062a\u0628\u0631 \u0646\u06cc\u0633\u062a"
+                            "\u0627\u06cc\u0646 \u0634\u0645\u0627\u0631\u0647 \u0645\u0639\u062a\u0628\u0631 \u0646\u06cc\u0633\u062a!"
                         }
                       ]}
                       validateTrigger={["onBlur"]}
@@ -1195,7 +1186,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     "POST",
-                                    "https://rentamon-n8n.darkube.app/webhook/selfRegister",
+                                    "https://rentamon-n8n.darkube.app/webhook-test/register",
                                     undefined,
                                     (() => {
                                       try {

@@ -397,27 +397,15 @@ function PlasmicNewPage__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://api.rentamon.com/api/shab_instant/",
+                                  "https://dev.rentamon.com/webhook/shab-instant",
                                   undefined,
                                   (() => {
                                     try {
                                       return $state.fragmentSwitch.checked
                                         ? {
-                                            dates: `${
-                                              new Date()
-                                                .toISOString()
-                                                .split("T")[0]
-                                            }`,
-                                            property_id: 1,
                                             action: "set_instant"
                                           }
                                         : {
-                                            dates: `${
-                                              new Date()
-                                                .toISOString()
-                                                .split("T")[0]
-                                            }`,
-                                            property_id: 1,
                                             action: "unset_instant"
                                           };
                                     } catch (e) {
