@@ -853,6 +853,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627"
                       }
                       name={"jabamaPPID"}
+                      rules={[]}
                     >
                       {(() => {
                         const child$Props = {
@@ -1133,6 +1134,25 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0647\u0648\u0645\u0633\u0627"
                       }
                       name={"HomsaPPID"}
+                      rules={[
+                        {
+                          ruleType: "advanced",
+                          custom: (rule, value) => {
+                            return parseInt(
+                              $state.form.value.jabamaPPID.replace(
+                                /[۰-۹]/g,
+                                function (d) {
+                                  return String.fromCharCode(
+                                    d.charCodeAt(0) -
+                                      "۰".charCodeAt(0) +
+                                      "0".charCodeAt(0)
+                                  );
+                                }
+                              )
+                            );
+                          }
+                        }
+                      ]}
                     >
                       {(() => {
                         const child$Props = {
