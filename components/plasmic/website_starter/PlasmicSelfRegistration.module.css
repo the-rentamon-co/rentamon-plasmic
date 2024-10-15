@@ -21,6 +21,31 @@
 .root > * {
   grid-column: 4;
 }
+.freeBox__jUAkS {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-self: flex-start;
+  grid-column-start: 3 !important;
+  grid-column-end: -3 !important;
+  padding: 8px;
+}
+.text__t7Lkf {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: var(--token-8nedppYkGVaH);
+  font-weight: 700;
+  font-size: 16px;
+  text-align: right;
+  min-width: 0;
+}
 .form:global(.__wab_instance) {
   display: flex;
   flex-direction: column;

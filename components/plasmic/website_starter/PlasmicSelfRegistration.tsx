@@ -294,6 +294,19 @@ function PlasmicSelfRegistration__RenderFunc(props: {
             sty.root
           )}
         >
+          <div className={classNames(projectcss.all, sty.freeBox__jUAkS)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__t7Lkf
+              )}
+            >
+              {
+                "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f   \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
+              }
+            </div>
+          </div>
           {(() => {
             const child$Props = {
               className: classNames("__wab_instance", sty.form),
@@ -1352,7 +1365,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0648\u0627\u0631\u062f \u067e\u0646\u0644\u062a \u0634\u06cc!"
+                                    "\u0645\u0628\u0627\u0631\u06a9\u0647! \u0627\u0644\u0622\u0646 \u0645\u06cc\u200c\u0631\u06cc\u0645 \u062f\u0627\u062e\u0644 \u067e\u0646\u0644"
                                   ]
                                 };
                                 return $globalActions[

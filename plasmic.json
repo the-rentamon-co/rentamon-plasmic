@@ -410,7 +410,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicSelfRegistration.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/self-registration.tsx"
+            "modulePath": "../src/pages/register.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicSelfRegistration.module.css",
           "scheme": "blackbox",
