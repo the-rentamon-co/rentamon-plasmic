@@ -208,6 +208,8 @@
 @media (max-width: 768px) {
   .freeBox__hTDv {
     padding-top: 30px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 .text__tpdpv {
@@ -815,12 +817,12 @@
   min-width: 0;
   padding: 8px;
 }
-.supportSpeed:global(.__wab_instance) {
+.selectSpeed:global(.__wab_instance) {
   max-width: 100%;
   width: 100px;
 }
 @media (max-width: 768px) {
-  .supportSpeed:global(.__wab_instance) {
+  .selectSpeed:global(.__wab_instance) {
     flex-grow: 0;
   }
 }

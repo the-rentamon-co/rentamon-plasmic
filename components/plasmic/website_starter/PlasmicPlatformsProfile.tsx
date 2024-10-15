@@ -99,7 +99,7 @@ export type PlasmicPlatformsProfile__OverridesType = {
   linkbtn?: Flex__<typeof AntdButton>;
   survey?: Flex__<"div">;
   selectAccess?: Flex__<typeof Select>;
-  supportSpeed?: Flex__<typeof Select>;
+  selectSpeed?: Flex__<typeof Select>;
   supportJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
 };
@@ -173,7 +173,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
       },
       {
-        path: "supportSpeed.value",
+        path: "selectSpeed.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -1090,15 +1090,15 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           )}
                         >
                           <Select
-                            data-plasmic-name={"supportSpeed"}
-                            data-plasmic-override={overrides.supportSpeed}
+                            data-plasmic-name={"selectSpeed"}
+                            data-plasmic-override={overrides.selectSpeed}
                             className={classNames(
                               "__wab_instance",
-                              sty.supportSpeed
+                              sty.selectSpeed
                             )}
                             onChange={(...eventArgs) => {
                               generateStateOnChangeProp($state, [
-                                "supportSpeed",
+                                "selectSpeed",
                                 "value"
                               ])(eventArgs[0]);
                             }}
@@ -1138,7 +1138,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               </div>
                             }
                             value={generateStateValueProp($state, [
-                              "supportSpeed",
+                              "selectSpeed",
                               "value"
                             ])}
                           />
@@ -1260,7 +1260,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                                           $state.selectAccess.value,
                                         supportSpeed: $state.selectSpeed.value,
                                         supportJudgment:
-                                          $state.selectJudgment.value,
+                                          $state.selectAccess.value,
                                         userId: 122
                                       };
                                     } catch (e) {
@@ -1446,7 +1446,7 @@ const PlasmicDescendants = {
     "linkbtn",
     "survey",
     "selectAccess",
-    "supportSpeed",
+    "selectSpeed",
     "supportJudgment",
     "submit"
   ],
@@ -1458,7 +1458,7 @@ const PlasmicDescendants = {
     "linkbtn",
     "survey",
     "selectAccess",
-    "supportSpeed",
+    "selectSpeed",
     "supportJudgment",
     "submit"
   ],
@@ -1468,12 +1468,12 @@ const PlasmicDescendants = {
   survey: [
     "survey",
     "selectAccess",
-    "supportSpeed",
+    "selectSpeed",
     "supportJudgment",
     "submit"
   ],
   selectAccess: ["selectAccess"],
-  supportSpeed: ["supportSpeed"],
+  selectSpeed: ["selectSpeed"],
   supportJudgment: ["supportJudgment"],
   submit: ["submit"]
 } as const;
@@ -1489,7 +1489,7 @@ type NodeDefaultElementType = {
   linkbtn: typeof AntdButton;
   survey: "div";
   selectAccess: typeof Select;
-  supportSpeed: typeof Select;
+  selectSpeed: typeof Select;
   supportJudgment: typeof Select;
   submit: typeof Button;
 };
@@ -1561,7 +1561,7 @@ export const PlasmicPlatformsProfile = Object.assign(
     linkbtn: makeNodeComponent("linkbtn"),
     survey: makeNodeComponent("survey"),
     selectAccess: makeNodeComponent("selectAccess"),
-    supportSpeed: makeNodeComponent("supportSpeed"),
+    selectSpeed: makeNodeComponent("selectSpeed"),
     supportJudgment: makeNodeComponent("supportJudgment"),
     submit: makeNodeComponent("submit"),
 
