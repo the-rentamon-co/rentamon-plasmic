@@ -1206,7 +1206,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     "POST",
-                                    "https://rentamon-n8n.darkube.app/webhook-test/register",
+                                    "https://dev.rentamon.com/webhook/register",
                                     undefined,
                                     (() => {
                                       try {
