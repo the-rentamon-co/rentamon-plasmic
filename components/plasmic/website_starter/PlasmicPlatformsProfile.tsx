@@ -930,7 +930,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         {(() => {
                           try {
                             return (
-                              "به پلتفرم «" +
+                              "به پشتیبانی «" +
                               $ctx.fetchedData.list[0].name +
                               "» امتیاز دهید"
                             );
@@ -986,8 +986,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               )}
                             >
                               {hasVariant(globalVariants, "screen", "mobile")
-                                ? "\u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
-                                : "\u0633\u0627\u062f\u06af\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
+                                ? "\u0633\u0647\u0648\u0644\u062a \u062f\u0633\u062a\u0631\u0633\u06cc"
+                                : "\u0633\u0647\u0648\u0644\u062a \u062f\u0633\u062a\u0631\u0633\u06cc"}
                             </div>
                           </div>
                         </div>

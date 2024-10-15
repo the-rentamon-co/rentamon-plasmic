@@ -217,7 +217,7 @@
   max-width: 100%;
   padding-right: 20px;
   padding-left: 20px;
-  font-size: 12px;
+  font-size: 13px;
   min-width: 0;
 }
 @media (max-width: 768px) {
@@ -516,6 +516,7 @@
   border-left-style: solid;
   font-family: "Estedad";
   font-weight: 400;
+  font-size: 13px;
   min-width: 0;
   border-radius: 30px;
   padding: 10px 16px 0px;
@@ -523,7 +524,7 @@
 }
 @media (max-width: 768px) {
   .text__ie4Fa {
-    font-size: 12px;
+    font-size: 13px;
     padding-right: 10px;
     padding-left: 4px;
     margin-bottom: 14px;
@@ -646,11 +647,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-size: 13px;
   min-width: 0;
 }
 @media (max-width: 768px) {
   .text___9MYqx {
-    font-size: 12px;
+    font-size: 13px;
     text-align: right;
     font-family: "Estedad";
   }
@@ -676,9 +678,12 @@
     flex-grow: 0;
   }
 }
+.text__agVku {
+  font-size: 13px;
+}
 @media (max-width: 768px) {
   .text__agVku {
-    font-size: 12px;
+    font-size: 13px;
     color: #444444;
     text-align: center;
     padding-right: 6px;
@@ -784,11 +789,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-size: 13px;
   min-width: 0;
 }
 @media (max-width: 768px) {
   .text__o3Stp {
-    font-size: 12px;
+    font-size: 13px;
     text-align: right;
     width: 100%;
     height: auto;
@@ -818,9 +824,12 @@
     flex-grow: 0;
   }
 }
+.text__qg9C6 {
+  font-size: 13px;
+}
 @media (max-width: 768px) {
   .text__qg9C6 {
-    font-size: 12px;
+    font-size: 13px;
     color: #444444;
     text-align: right;
     padding-right: 6px;
@@ -929,11 +938,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-size: 13px;
   min-width: 0;
 }
 @media (max-width: 768px) {
   .text__tUj6E {
-    font-size: 12px;
+    font-size: 13px;
     text-align: right;
     width: 100%;
     height: auto;
@@ -963,9 +973,12 @@
     flex-grow: 0;
   }
 }
+.text__eud5R {
+  font-size: 13px;
+}
 @media (max-width: 768px) {
   .text__eud5R {
-    font-size: 12px;
+    font-size: 13px;
     color: #444444;
     text-align: right;
     padding-right: 6px;
@@ -1034,6 +1047,7 @@
   font-weight: 600;
   color: var(--token-jgohepLVeKvh);
   text-align: center;
+  font-size: 14px;
 }
 .freeBox__cJr7H {
   flex-direction: row;
