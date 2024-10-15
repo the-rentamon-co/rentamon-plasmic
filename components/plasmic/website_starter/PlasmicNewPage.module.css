@@ -102,49 +102,8 @@
   object-fit: cover;
   min-width: 0;
 }
-.dropdown:global(.__wab_instance) {
+.select:global(.__wab_instance) {
   max-width: 100%;
-  object-fit: cover;
-  margin-top: 20px;
-  width: 100%;
-  box-shadow: none;
-  text-align: center;
-  min-width: 0;
-  border: 1px solid #ffffff;
-}
-.menuItem___0DgU:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__ihY1P {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.menuItem__cn0Fu:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__o6Dua {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.button:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__xatDt {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: right;
-  min-width: 0;
 }
 .freeBox__gWfWp {
   display: flex;

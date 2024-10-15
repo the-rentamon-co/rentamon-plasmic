@@ -60,9 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { DataFetcher } from "@plasmicpkgs/plasmic-query";
-import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
-import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
-import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
@@ -89,8 +87,7 @@ export type PlasmicNewPage__OverridesType = {
   topContainer?: Flex__<"section">;
   mainSection?: Flex__<"section">;
   httpRestApiFetcher?: Flex__<typeof DataFetcher>;
-  dropdown?: Flex__<typeof AntdDropdown>;
-  button?: Flex__<typeof AntdButton>;
+  select?: Flex__<typeof Select>;
   img?: Flex__<typeof PlasmicImg__>;
   fragmentSwitch?: Flex__<typeof Switch>;
   embedHtml?: Flex__<typeof Embed>;
@@ -156,6 +153,25 @@ function PlasmicNewPage__RenderFunc(props: {
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
                 return false;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "select.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $ctx.fetchedData.list[0].property_name;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
               }
               throw e;
             }
@@ -242,84 +258,83 @@ function PlasmicNewPage__RenderFunc(props: {
               errorName={"fetchError"}
               headers={{
                 "Content-Type": "application/json",
-                Accept: "application/json"
+                Accept: "application/json",
+                "xc-token": "5O4u01sQy0zwsh7vM62y7_2esWhUcgdLUY4_YzHO"
               }}
               loadingDisplay={
                 <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
               }
               method={"GET"}
               noLayout={false}
-              url={"https://api.github.com/users/plasmicapp/repos"}
+              url={
+                "https://rentamon-nocodb-halvnfmrza.liara.run/api/v2/tables/mo5u0vx6g2jn2m9/records?where=where%3D%28user_id%2Ceq%2C466%29&limit=25&shuffle=0&offset=0"
+              }
             >
               <DataCtxReader__>
-                {$ctx => (
-                  <AntdDropdown
-                    data-plasmic-name={"dropdown"}
-                    data-plasmic-override={overrides.dropdown}
-                    className={classNames("__wab_instance", sty.dropdown)}
-                    dropdownMenuScopeClassName={sty["dropdown__dropdownMenu"]}
-                    menuItems={() => (
-                      <React.Fragment>
-                        <AntdMenuItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.menuItem___0DgU
-                          )}
-                          key={"menu-item-1"}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__ihY1P
-                            )}
-                          >
-                            {"Menu item"}
-                          </div>
-                        </AntdMenuItem>
-                        <AntdMenuItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.menuItem__cn0Fu
-                          )}
-                          key={"menu-item-2"}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__o6Dua
-                            )}
-                          >
-                            {"Menu item"}
-                          </div>
-                        </AntdMenuItem>
-                      </React.Fragment>
-                    )}
-                    menuItemsJson={[
-                      { type: "item", value: "action1", label: "Action 1" },
-                      { type: "item", value: "action2", label: "Action 2" }
-                    ]}
-                  >
-                    <AntdButton
-                      data-plasmic-name={"button"}
-                      data-plasmic-override={overrides.button}
-                      className={classNames("__wab_instance", sty.button)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__xatDt
-                        )}
-                      >
-                        {
-                          "\u0627\u0646\u062a\u062e\u0627\u0628 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                {$ctx =>
+                  (() => {
+                    const child$Props = {
+                      className: classNames("__wab_instance", sty.select),
+                      onChange: (...eventArgs) => {
+                        generateStateOnChangeProp($state, ["select", "value"])(
+                          eventArgs[0]
+                        );
+                      },
+                      options: (() => {
+                        try {
+                          return $ctx.fetchedData.list.map(
+                            item => item.property_name
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return (() => {
+                              const __composite = [{ value: null }];
+                              __composite["0"]["value"] =
+                                $ctx.fetchedData.list[0].property_name;
+                              return __composite;
+                            })();
+                          }
+                          throw e;
                         }
-                      </div>
-                    </AntdButton>
-                  </AntdDropdown>
-                )}
+                      })(),
+                      value: generateStateValueProp($state, ["select", "value"])
+                    };
+
+                    initializePlasmicStates(
+                      $state,
+                      [
+                        {
+                          name: "select.value",
+                          initFunc: ({ $props, $state, $queries }) =>
+                            (() => {
+                              try {
+                                return $ctx.fetchedData.list[0].property_name;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                        }
+                      ],
+                      []
+                    );
+                    return (
+                      <Select
+                        data-plasmic-name={"select"}
+                        data-plasmic-override={overrides.select}
+                        {...child$Props}
+                      />
+                    );
+                  })()
+                }
               </DataCtxReader__>
             </DataFetcher>
             <div className={classNames(projectcss.all, sty.freeBox__gWfWp)}>
@@ -550,8 +565,7 @@ const PlasmicDescendants = {
     "topContainer",
     "mainSection",
     "httpRestApiFetcher",
-    "dropdown",
-    "button",
+    "select",
     "img",
     "fragmentSwitch",
     "embedHtml"
@@ -560,14 +574,12 @@ const PlasmicDescendants = {
   mainSection: [
     "mainSection",
     "httpRestApiFetcher",
-    "dropdown",
-    "button",
+    "select",
     "img",
     "fragmentSwitch"
   ],
-  httpRestApiFetcher: ["httpRestApiFetcher", "dropdown", "button"],
-  dropdown: ["dropdown", "button"],
-  button: ["button"],
+  httpRestApiFetcher: ["httpRestApiFetcher", "select"],
+  select: ["select"],
   img: ["img"],
   fragmentSwitch: ["fragmentSwitch"],
   embedHtml: ["embedHtml"]
@@ -580,8 +592,7 @@ type NodeDefaultElementType = {
   topContainer: "section";
   mainSection: "section";
   httpRestApiFetcher: typeof DataFetcher;
-  dropdown: typeof AntdDropdown;
-  button: typeof AntdButton;
+  select: typeof Select;
   img: typeof PlasmicImg__;
   fragmentSwitch: typeof Switch;
   embedHtml: typeof Embed;
@@ -650,8 +661,7 @@ export const PlasmicNewPage = Object.assign(
     topContainer: makeNodeComponent("topContainer"),
     mainSection: makeNodeComponent("mainSection"),
     httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
-    dropdown: makeNodeComponent("dropdown"),
-    button: makeNodeComponent("button"),
+    select: makeNodeComponent("select"),
     img: makeNodeComponent("img"),
     fragmentSwitch: makeNodeComponent("fragmentSwitch"),
     embedHtml: makeNodeComponent("embedHtml"),
