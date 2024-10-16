@@ -20,6 +20,7 @@
     "@plasmicpkgs/plasmic-embed-css": "^0.1.192",
     "@plasmicpkgs/plasmic-query": "^0.0.224",
     "@plasmicpkgs/plasmic-rich-components": "^1.0.197",
+    "@plasmicpkgs/radix-ui": "^0.0.64",
     "@plasmicpkgs/react-slick": "^0.0.228",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-select": "^2.1.1",

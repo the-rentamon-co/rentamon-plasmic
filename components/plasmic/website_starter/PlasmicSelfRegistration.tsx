@@ -66,6 +66,7 @@ import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import Tooltip from "../../Tooltip"; // plasmic-import: H631TCEpl2Nh/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -96,6 +97,7 @@ export type PlasmicSelfRegistration__OverridesType = {
   input2?: Flex__<typeof AntdInput>;
   input4?: Flex__<typeof AntdInput>;
   input3?: Flex__<typeof AntdInput>;
+  tooltip?: Flex__<typeof Tooltip>;
   input5?: Flex__<typeof AntdInput>;
   input6?: Flex__<typeof AntdInput>;
   input7?: Flex__<typeof AntdInput>;
@@ -971,7 +973,27 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__jLbh1
                       )}
-                      label={""}
+                      label={
+                        <React.Fragment>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__p8NVa
+                            )}
+                          >
+                            {"\u062a\u0633\u062a"}
+                          </div>
+                          <Tooltip
+                            data-plasmic-name={"tooltip"}
+                            data-plasmic-override={overrides.tooltip}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.tooltip
+                            )}
+                          />
+                        </React.Fragment>
+                      }
                       name={"jabamaPPID"}
                       rules={[]}
                     >
@@ -1019,7 +1041,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__xeTmF
                       )}
-                      label={""}
+                      label={"\u062a\u0633\u062a"}
                       name={"jajigaPPID"}
                     >
                       {(() => {
@@ -1598,6 +1620,7 @@ const PlasmicDescendants = {
     "input2",
     "input4",
     "input3",
+    "tooltip",
     "input5",
     "input6",
     "input7",
@@ -1613,6 +1636,7 @@ const PlasmicDescendants = {
     "input2",
     "input4",
     "input3",
+    "tooltip",
     "input5",
     "input6",
     "input7",
@@ -1625,6 +1649,7 @@ const PlasmicDescendants = {
   input2: ["input2"],
   input4: ["input4"],
   input3: ["input3"],
+  tooltip: ["tooltip"],
   input5: ["input5"],
   input6: ["input6"],
   input7: ["input7"],
@@ -1644,6 +1669,7 @@ type NodeDefaultElementType = {
   input2: typeof AntdInput;
   input4: typeof AntdInput;
   input3: typeof AntdInput;
+  tooltip: typeof Tooltip;
   input5: typeof AntdInput;
   input6: typeof AntdInput;
   input7: typeof AntdInput;
@@ -1719,6 +1745,7 @@ export const PlasmicSelfRegistration = Object.assign(
     input2: makeNodeComponent("input2"),
     input4: makeNodeComponent("input4"),
     input3: makeNodeComponent("input3"),
+    tooltip: makeNodeComponent("tooltip"),
     input5: makeNodeComponent("input5"),
     input6: makeNodeComponent("input6"),
     input7: makeNodeComponent("input7"),

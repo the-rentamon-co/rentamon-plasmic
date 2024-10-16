@@ -324,12 +324,6 @@ function PlasmicNewPage__RenderFunc(props: {
               data-plasmic-name={"getPropertyRequest"}
               data-plasmic-override={overrides.getPropertyRequest}
               className={classNames("__wab_instance", sty.getPropertyRequest)}
-              config={{
-                headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json"
-                }
-              }}
               errorDisplay={
                 <div
                   className={classNames(
