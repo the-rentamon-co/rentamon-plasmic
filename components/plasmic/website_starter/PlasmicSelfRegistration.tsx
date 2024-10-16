@@ -66,6 +66,8 @@ import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 
+import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -267,6 +269,10 @@ function PlasmicSelfRegistration__RenderFunc(props: {
     $refs
   });
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsaSuSwU8JUYf()
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -302,9 +308,9 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                 sty.text__t7Lkf
               )}
             >
-              {
-                "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f   \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
-              }
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
+                : "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f   \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"}
             </div>
           </div>
           {(() => {
@@ -402,7 +408,17 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__n4CnG
                       )}
-                      label={"\u0646\u0627\u0645"}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__dbRga
+                          )}
+                        >
+                          {"\u0646\u0627\u0645"}
+                        </div>
+                      }
                       name={"name"}
                       rules={[
                         {
@@ -415,12 +431,15 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input),
+                          disabled: false,
                           onChange: generateStateOnChangePropForCodeComponents(
                             $state,
                             "value",
                             ["input", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder: "\u0646\u0627\u0645",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input",
                             "value"
@@ -454,7 +473,17 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         sty.formField___7OYh
                       )}
                       label={
-                        "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__lejFp
+                          )}
+                        >
+                          {
+                            "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
+                          }
+                        </div>
                       }
                       name={"lastName"}
                       rules={[
@@ -474,6 +503,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input2", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
                           value: generateStateValueProp($state, [
                             "input2",
                             "value"
