@@ -95,8 +95,8 @@ export type PlasmicPlatformsProfile__OverridesType = {
   embedHtml?: Flex__<typeof Embed>;
   httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   img?: Flex__<typeof PlasmicImg__>;
-  linkbtn2?: Flex__<typeof AntdButton>;
   linkbtn?: Flex__<typeof AntdButton>;
+  linkbtn2?: Flex__<typeof AntdButton>;
   survey?: Flex__<"div">;
   selectAccess?: Flex__<typeof Select>;
   selectSpeed?: Flex__<typeof Select>;
@@ -293,7 +293,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         }
                         height={
                           hasVariant(globalVariants, "screen", "mobile")
-                            ? "140"
+                            ? "120"
                             : undefined
                         }
                         loading={"lazy"}
@@ -312,7 +312,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         })()}
                         width={
                           hasVariant(globalVariants, "screen", "mobile")
-                            ? "140"
+                            ? "120"
                             : undefined
                         }
                       />
@@ -421,22 +421,112 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         sty.text__tpdpv
                       )}
                     >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $ctx.fetchedData.list[0].description;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.fetchedData.list[0].tagline;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
+                          })()}
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.fetchedData.list[0].tagline;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      )}
                     </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__iUwZu
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                "شعار: " + $ctx.fetchedData.list[0].tagline
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.fetchedData.list[0].description;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      )}
+                    </div>
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : false
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__n8EfN
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.fetchedData.list[0].description;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    ) : null}
                     <div
                       className={classNames(projectcss.all, sty.freeBox__ljlIv)}
                     >
@@ -444,7 +534,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__gqy8E
+                          sty.text__ryyHn
                         )}
                       >
                         {hasVariant(globalVariants, "screen", "mobile") ? (
@@ -452,15 +542,15 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             {(() => {
                               try {
                                 return (
-                                  " پشتیبانی: ⭐️ " +
-                                  $ctx.fetchedData.list[0].supportScore
+                                  "بازدیدکننده: " +
+                                  $ctx.fetchedData.list[0].visitors
                                 );
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
                                   e?.plasmicType === "PlasmicUndefinedDataError"
                                 ) {
-                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
                                 }
                                 throw e;
                               }
@@ -471,15 +561,15 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             {(() => {
                               try {
                                 return (
-                                  "امتیاز پشتیبانی: ⭐️ " +
-                                  $ctx.fetchedData.list[0].supportScore
+                                  "بازدیدکننده: " +
+                                  $ctx.fetchedData.list[0].visitors
                                 );
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
                                   e?.plasmicType === "PlasmicUndefinedDataError"
                                 ) {
-                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
                                 }
                                 throw e;
                               }
@@ -552,7 +642,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return (
-                                    " رزرو در ماه: 🧳 " +
+                                    "رزرو در ماه: 🧳 " +
                                     $ctx.fetchedData.list[0].reserves +
                                     " روز"
                                   );
@@ -596,6 +686,53 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
+                          sty.text__gqy8E
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "پشتیبانی: ⭐️ " +
+                                  $ctx.fetchedData.list[0].supportScore
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "پشتیبانی: ⭐️ " +
+                                  $ctx.fetchedData.list[0].supportScore
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
                           sty.text__kflBb
                         )}
                       >
@@ -604,7 +741,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             {(() => {
                               try {
                                 return (
-                                  " کارمزد: % " +
+                                  "کارمزد: % " +
                                   $ctx.fetchedData.list[0].commissionRate
                                 );
                               } catch (e) {
@@ -623,7 +760,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             {(() => {
                               try {
                                 return (
-                                  "نرخ کمیسیون: % " +
+                                  "کمیسیون: % " +
                                   $ctx.fetchedData.list[0].commissionRate
                                 );
                               } catch (e) {
@@ -639,200 +776,219 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           </React.Fragment>
                         )}
                       </div>
-                    </div>
-                    {(
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? true
-                        : false
-                    ) ? (
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__yfkxN
+                          projectcss.__wab_text,
+                          sty.text___5KnYr
                         )}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__w7GIp
-                          )}
-                        >
-                          {hasVariant(globalVariants, "screen", "mobile") ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    " پشتیبانی: ⭐️ " +
-                                    $ctx.fetchedData.list[0].supportScore
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
-                                  }
-                                  throw e;
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "واریز درآمد: ⏰ " +
+                                  $ctx.fetchedData.list[0].declaration
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
                                 }
-                              })()}
-                            </React.Fragment>
-                          ) : (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    "امتیاز پشتیبانی: ⭐️ " +
-                                    $ctx.fetchedData.list[0].supportScore
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
-                                  }
-                                  throw e;
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "واریز درآمد: ⏰ " +
+                                  $ctx.fetchedData.list[0].declaration
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
                                 }
-                              })()}
-                            </React.Fragment>
-                          )}
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__m4Kud
-                          )}
-                        >
-                          {hasVariant(globalVariants, "screen", "mobile") ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    " کارمزد: % " +
-                                    $ctx.fetchedData.list[0].commissionRate
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    "نرخ کمیسیون: % " +
-                                    $ctx.fetchedData.list[0].commissionRate
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          )}
-                        </div>
-                        <AntdButton
-                          data-plasmic-name={"linkbtn2"}
-                          data-plasmic-override={overrides.linkbtn2}
-                          className={classNames("__wab_instance", sty.linkbtn2)}
-                          onClick={async () => {
-                            const $steps = {};
-
-                            $steps["goToPage"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: (() => {
-                                      try {
-                                        return (
-                                          "https://" +
-                                          $ctx.fetchedData.list[0].url
-                                        );
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["goToPage"] != null &&
-                              typeof $steps["goToPage"] === "object" &&
-                              typeof $steps["goToPage"].then === "function"
-                            ) {
-                              $steps["goToPage"] = await $steps["goToPage"];
-                            }
-                          }}
-                          submitsForm={false}
-                          type={"primary"}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__kMUa4
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    "برای ثبت اقامتگاه در " +
-                                    $ctx.fetchedData.list[0].name +
-                                    " اینجا بزنید"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </AntdButton>
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
                       </div>
-                    ) : null}
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__uHhnV)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__cn8Pk
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                "کیفیت پشتیبانی: ⭐️ " +
+                                $ctx.fetchedData.list[0].supportScore
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06a9\u06cc\u0641\u06cc\u062a \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc:";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kuxpr
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.fetchedData.list[0]
+                                .supportDescription;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___98Vvy
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__oJqiH
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                "انتظار واریز درآمد: ⏰ " +
+                                $ctx.fetchedData.list[0].declaration
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0627\u0646\u062a\u0638\u0627\u0631 \u0648\u0627\u0631\u06cc\u0632 \u062f\u0631\u0622\u0645\u062f:";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hquPd
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.fetchedData.list[0]
+                                .declarationDescription;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__o0Ow2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__tH3D1
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                "کمیسیون: % " +
+                                $ctx.fetchedData.list[0].commissionRate
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646:";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__lEVj0
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.fetchedData.list[0]
+                                .commissionDescription;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
                   </div>
                   <AntdButton
                     data-plasmic-name={"linkbtn"}
@@ -914,6 +1070,191 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </AntdButton>
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__yfkxN)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__w7GIp
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  " پشتیبانی: ⭐️ " +
+                                  $ctx.fetchedData.list[0].supportScore
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "امتیاز پشتیبانی: ⭐️ " +
+                                  $ctx.fetchedData.list[0].supportScore
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__m4Kud
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  " کارمزد: % " +
+                                  $ctx.fetchedData.list[0].commissionRate
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "نرخ کمیسیون: % " +
+                                  $ctx.fetchedData.list[0].commissionRate
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
+                      </div>
+                      <AntdButton
+                        data-plasmic-name={"linkbtn2"}
+                        data-plasmic-override={overrides.linkbtn2}
+                        className={classNames("__wab_instance", sty.linkbtn2)}
+                        onClick={async () => {
+                          const $steps = {};
+
+                          $steps["goToPage"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: (() => {
+                                    try {
+                                      return (
+                                        "https://" +
+                                        $ctx.fetchedData.list[0].url
+                                      );
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToPage"] != null &&
+                            typeof $steps["goToPage"] === "object" &&
+                            typeof $steps["goToPage"].then === "function"
+                          ) {
+                            $steps["goToPage"] = await $steps["goToPage"];
+                          }
+                        }}
+                        submitsForm={false}
+                        type={"primary"}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__kMUa4
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "برای ثبت اقامتگاه در " +
+                                  $ctx.fetchedData.list[0].name +
+                                  " اینجا بزنید"
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </AntdButton>
+                    </div>
+                  ) : null}
                   <div
                     data-plasmic-name={"survey"}
                     data-plasmic-override={overrides.survey}
@@ -1442,8 +1783,8 @@ const PlasmicDescendants = {
     "embedHtml",
     "httpRestApiFetcher",
     "img",
-    "linkbtn2",
     "linkbtn",
+    "linkbtn2",
     "survey",
     "selectAccess",
     "selectSpeed",
@@ -1454,8 +1795,8 @@ const PlasmicDescendants = {
   httpRestApiFetcher: [
     "httpRestApiFetcher",
     "img",
-    "linkbtn2",
     "linkbtn",
+    "linkbtn2",
     "survey",
     "selectAccess",
     "selectSpeed",
@@ -1463,8 +1804,8 @@ const PlasmicDescendants = {
     "submit"
   ],
   img: ["img"],
-  linkbtn2: ["linkbtn2"],
   linkbtn: ["linkbtn"],
+  linkbtn2: ["linkbtn2"],
   survey: [
     "survey",
     "selectAccess",
@@ -1485,8 +1826,8 @@ type NodeDefaultElementType = {
   embedHtml: typeof Embed;
   httpRestApiFetcher: typeof DataFetcher;
   img: typeof PlasmicImg__;
-  linkbtn2: typeof AntdButton;
   linkbtn: typeof AntdButton;
+  linkbtn2: typeof AntdButton;
   survey: "div";
   selectAccess: typeof Select;
   selectSpeed: typeof Select;
@@ -1557,8 +1898,8 @@ export const PlasmicPlatformsProfile = Object.assign(
     embedHtml: makeNodeComponent("embedHtml"),
     httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     img: makeNodeComponent("img"),
-    linkbtn2: makeNodeComponent("linkbtn2"),
     linkbtn: makeNodeComponent("linkbtn"),
+    linkbtn2: makeNodeComponent("linkbtn2"),
     survey: makeNodeComponent("survey"),
     selectAccess: makeNodeComponent("selectAccess"),
     selectSpeed: makeNodeComponent("selectSpeed"),

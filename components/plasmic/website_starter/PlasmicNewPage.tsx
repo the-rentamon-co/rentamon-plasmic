@@ -326,7 +326,7 @@ function PlasmicNewPage__RenderFunc(props: {
               headers={{
                 "Content-Type": "application/json",
                 Accept: "application/json",
-                "xc-token": "5O4u01sQy0zwsh7vM62y7_2esWhUcgdLUY4_YzHO"
+                withCredentials: true
               }}
               loadingDisplay={
                 <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>

@@ -35,6 +35,10 @@
   grid-column-end: -3 !important;
   padding: 8px;
 }
+.embedHtml:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .text__t7Lkf {
   position: relative;
   width: 100%;

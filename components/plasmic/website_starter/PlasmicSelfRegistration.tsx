@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
@@ -89,6 +90,7 @@ export const PlasmicSelfRegistration__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSelfRegistration__OverridesType = {
   root?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
   input2?: Flex__<typeof AntdInput>;
@@ -301,6 +303,15 @@ function PlasmicSelfRegistration__RenderFunc(props: {
           )}
         >
           <div className={classNames(projectcss.all, sty.freeBox__jUAkS)}>
+            <Embed
+              data-plasmic-name={"embedHtml"}
+              data-plasmic-override={overrides.embedHtml}
+              className={classNames("__wab_instance", sty.embedHtml)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+
             <div
               className={classNames(
                 projectcss.all,
@@ -1507,6 +1518,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "embedHtml",
     "form",
     "input",
     "input2",
@@ -1520,6 +1532,7 @@ const PlasmicDescendants = {
     "input10",
     "input11"
   ],
+  embedHtml: ["embedHtml"],
   form: [
     "form",
     "input",
@@ -1551,6 +1564,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  embedHtml: typeof Embed;
   form: typeof FormWrapper;
   input: typeof AntdInput;
   input2: typeof AntdInput;
@@ -1625,6 +1639,7 @@ export const PlasmicSelfRegistration = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    embedHtml: makeNodeComponent("embedHtml"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     input2: makeNodeComponent("input2"),

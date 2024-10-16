@@ -255,14 +255,6 @@ function PlasmicSelect__RenderFunc(props: {
     $refs
   });
 
-  const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
-    useTrigger("useFocusVisibleWithin", {
-      isTextInput: false
-    });
-  const triggers = {
-    focusVisibleWithin_root: isRootFocusVisibleWithin
-  };
-
   return (
     <PlasmicSelectContext.Provider value={{ variants, args }}>
       <div
@@ -280,7 +272,6 @@ function PlasmicSelect__RenderFunc(props: {
           plasmic_plasmic_rich_components_css.plasmic_tokens,
           sty.root,
           {
-            [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
             [sty.rootcolor_clear]: hasVariant($state, "color", "clear"),
             [sty.rootcolor_softBlue]: hasVariant($state, "color", "softBlue"),
             [sty.rootcolor_softCyan]: hasVariant($state, "color", "softCyan"),
@@ -305,7 +296,6 @@ function PlasmicSelect__RenderFunc(props: {
             [sty.rootisOpen]: hasVariant($state, "isOpen", "isOpen")
           }
         )}
-        data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
       >
         <button
           data-plasmic-name={"trigger"}
@@ -315,8 +305,6 @@ function PlasmicSelect__RenderFunc(props: {
             projectcss.button,
             sty.trigger,
             {
-              [sty.trigger___focusVisibleWithin]:
-                triggers.focusVisibleWithin_root,
               [sty.triggercolor_clear]: hasVariant($state, "color", "clear"),
               [sty.triggercolor_softBlue]: hasVariant(
                 $state,
@@ -555,8 +543,6 @@ function PlasmicSelect__RenderFunc(props: {
                 : ChevronDownSvg2Icon
             }
             className={classNames(projectcss.all, sty.dropdownIcon, {
-              [sty.dropdownIcon___focusVisibleWithin]:
-                triggers.focusVisibleWithin_root,
               [sty.dropdownIconcolor_softBlue]: hasVariant(
                 $state,
                 "color",
