@@ -94,8 +94,8 @@ export type PlasmicSelfRegistration__OverridesType = {
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
   input2?: Flex__<typeof AntdInput>;
-  input3?: Flex__<typeof AntdInput>;
   input4?: Flex__<typeof AntdInput>;
+  input3?: Flex__<typeof AntdInput>;
   input5?: Flex__<typeof AntdInput>;
   input6?: Flex__<typeof AntdInput>;
   input7?: Flex__<typeof AntdInput>;
@@ -312,31 +312,83 @@ function PlasmicSelfRegistration__RenderFunc(props: {
               }
             />
 
-            {(() => {
-              try {
-                return $state.formStep == 0;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
+            <div className={classNames(projectcss.all, sty.freeBox__j5JNe)}>
+              {(() => {
+                try {
+                  return $state.formStep == 0;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
                 }
-                throw e;
-              }
-            })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__t7Lkf
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
-                  : "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f   \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"}
-              </div>
-            ) : null}
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__t7Lkf
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
+                    : "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f   \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"}
+                </div>
+              ) : null}
+              {(() => {
+                try {
+                  return $state.formStep == 1;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jaMdl
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
+                    : "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646"}
+                </div>
+              ) : null}
+              {(() => {
+                try {
+                  return $state.formStep == 2;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___4BXIt
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
+                    : "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0645\u0646\u062d\u0635\u0631\u0628\u0641\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u0628\u062e\u0634 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0647\u0631 \u0633\u0627\u06cc\u062a \u0648\u0627\u0631\u062f \u06a9\u0646"}
+                </div>
+              ) : null}
+            </div>
           </div>
           {(() => {
             const child$Props = {
@@ -646,6 +698,59 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+                        sty.formField__evMvf
+                      )}
+                      label={""}
+                      name={"propertyName"}
+                      rules={[
+                        {
+                          ruleType: "required",
+                          message:
+                            "\u0628\u062f\u0648\u0646 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u06a9\u0647 \u0646\u0645\u06cc\u200c\u0634\u0647!"
+                        }
+                      ]}
+                    >
+                      {(() => {
+                        const child$Props = {
+                          className: classNames("__wab_instance", sty.input4),
+                          onChange: generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "value",
+                            ["input4", "value"],
+                            AntdInput_Helpers
+                          ),
+                          placeholder:
+                            "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
+                          value: generateStateValueProp($state, [
+                            "input4",
+                            "value"
+                          ])
+                        };
+                        initializeCodeComponentStates(
+                          $state,
+                          [
+                            {
+                              name: "value",
+                              plasmicStateName: "input4.value"
+                            }
+                          ],
+                          [],
+                          AntdInput_Helpers ?? {},
+                          child$Props
+                        );
+
+                        return (
+                          <AntdInput
+                            data-plasmic-name={"input4"}
+                            data-plasmic-override={overrides.input4}
+                            {...child$Props}
+                          />
+                        );
+                      })()}
+                    </FormItemWrapper>
+                    <FormItemWrapper
+                      className={classNames(
+                        "__wab_instance",
                         sty.formField__txoxl
                       )}
                       hidden={false}
@@ -701,59 +806,6 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           <AntdInput
                             data-plasmic-name={"input3"}
                             data-plasmic-override={overrides.input3}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      className={classNames(
-                        "__wab_instance",
-                        sty.formField__evMvf
-                      )}
-                      label={""}
-                      name={"propertyName"}
-                      rules={[
-                        {
-                          ruleType: "required",
-                          message:
-                            "\u0628\u062f\u0648\u0646 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u06a9\u0647 \u0646\u0645\u06cc\u200c\u0634\u0647!"
-                        }
-                      ]}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input4),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input4", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder:
-                            "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
-                          value: generateStateValueProp($state, [
-                            "input4",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input4.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input4"}
-                            data-plasmic-override={overrides.input4}
                             {...child$Props}
                           />
                         );
@@ -1534,8 +1586,8 @@ const PlasmicDescendants = {
     "form",
     "input",
     "input2",
-    "input3",
     "input4",
+    "input3",
     "input5",
     "input6",
     "input7",
@@ -1549,8 +1601,8 @@ const PlasmicDescendants = {
     "form",
     "input",
     "input2",
-    "input3",
     "input4",
+    "input3",
     "input5",
     "input6",
     "input7",
@@ -1561,8 +1613,8 @@ const PlasmicDescendants = {
   ],
   input: ["input"],
   input2: ["input2"],
-  input3: ["input3"],
   input4: ["input4"],
+  input3: ["input3"],
   input5: ["input5"],
   input6: ["input6"],
   input7: ["input7"],
@@ -1580,8 +1632,8 @@ type NodeDefaultElementType = {
   form: typeof FormWrapper;
   input: typeof AntdInput;
   input2: typeof AntdInput;
-  input3: typeof AntdInput;
   input4: typeof AntdInput;
+  input3: typeof AntdInput;
   input5: typeof AntdInput;
   input6: typeof AntdInput;
   input7: typeof AntdInput;
@@ -1655,8 +1707,8 @@ export const PlasmicSelfRegistration = Object.assign(
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     input2: makeNodeComponent("input2"),
-    input3: makeNodeComponent("input3"),
     input4: makeNodeComponent("input4"),
+    input3: makeNodeComponent("input3"),
     input5: makeNodeComponent("input5"),
     input6: makeNodeComponent("input6"),
     input7: makeNodeComponent("input7"),

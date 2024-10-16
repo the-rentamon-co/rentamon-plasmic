@@ -323,11 +323,22 @@ function PlasmicNewPage__RenderFunc(props: {
                 </DataCtxReader__>
               }
               errorName={"fetchError"}
-              headers={{
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                withCredentials: true
-              }}
+              headers={(() => {
+                try {
+                  return undefined;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return {
+                      "Content-Type": "application/json",
+                      Accept: "application/json"
+                    };
+                  }
+                  throw e;
+                }
+              })()}
               loadingDisplay={
                 <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
               }
