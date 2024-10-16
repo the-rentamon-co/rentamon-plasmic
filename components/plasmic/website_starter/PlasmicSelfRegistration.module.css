@@ -21,6 +21,11 @@
 .root > * {
   grid-column: 4;
 }
+@media (max-width: 768px) {
+  .root > * {
+    grid-column: 4;
+  }
+}
 .freeBox__jUAkS {
   display: flex;
   flex-direction: column;
@@ -57,8 +62,8 @@
   height: auto;
   max-width: 100%;
   color: var(--token-8nedppYkGVaH);
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
   text-align: right;
   min-width: 0;
 }
@@ -73,8 +78,8 @@
   height: auto;
   max-width: 100%;
   color: var(--token-8nedppYkGVaH);
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
   text-align: right;
   min-width: 0;
 }
@@ -89,8 +94,8 @@
   height: auto;
   max-width: 100%;
   color: var(--token-8nedppYkGVaH);
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
   text-align: right;
   min-width: 0;
 }

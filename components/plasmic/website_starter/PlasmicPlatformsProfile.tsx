@@ -425,7 +425,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $ctx.fetchedData.list[0].tagline;
+                              return ">> " + $ctx.fetchedData.list[0].tagline;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -441,7 +441,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $ctx.fetchedData.list[0].tagline;
+                              return ">> " + $ctx.fetchedData.list[0].tagline;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -504,97 +504,255 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__ryyHn
+                          sty.freeBox__pzWfc
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "mobile") ? (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "بازدیدکننده: " +
-                                  $ctx.fetchedData.list[0].visitors
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ryyHn
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobile") ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "بازدیدکننده: " +
+                                    $ctx.fetchedData.list[0].visitors
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "بازدیدکننده: " +
-                                  $ctx.fetchedData.list[0].visitors
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "بازدیدکننده: " +
+                                    $ctx.fetchedData.list[0].visitors
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        )}
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__zn1R8
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobile") ? (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  " پشتیبانی: ⭐️ " +
-                                  $ctx.fetchedData.list[0].supportScore
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                              })()}
+                            </React.Fragment>
+                          )}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zn1R8
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobile") ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    " پشتیبانی: ⭐️ " +
+                                    $ctx.fetchedData.list[0].supportScore
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  " رزرو در ماه:🧳" +
-                                  $ctx.fetchedData.list[0].reserves +
-                                  " روز"
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    " رزرو در ماه:🧳" +
+                                    $ctx.fetchedData.list[0].reserves +
+                                    " روز"
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        )}
+                              })()}
+                            </React.Fragment>
+                          )}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__gqy8E
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobile") ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "پشتیبانی: ⭐️ " +
+                                    $ctx.fetchedData.list[0].supportScore
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "پشتیبانی: ⭐️ " +
+                                    $ctx.fetchedData.list[0].supportScore
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__kflBb
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobile") ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "کارمزد: % " +
+                                    $ctx.fetchedData.list[0].commissionRate
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "کمیسیون: % " +
+                                    $ctx.fetchedData.list[0].commissionRate
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___5KnYr
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobile") ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "واریز درآمد: ⏰ " +
+                                    $ctx.fetchedData.list[0].declaration
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "واریز درآمد: ⏰ " +
+                                    $ctx.fetchedData.list[0].declaration
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
+                        </div>
                       </div>
                       {(
                         hasVariant(globalVariants, "screen", "mobile")
@@ -653,147 +811,6 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           )}
                         </div>
                       ) : null}
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__gqy8E
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobile") ? (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "پشتیبانی: ⭐️ " +
-                                  $ctx.fetchedData.list[0].supportScore
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "پشتیبانی: ⭐️ " +
-                                  $ctx.fetchedData.list[0].supportScore
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        )}
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__kflBb
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobile") ? (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "کارمزد: % " +
-                                  $ctx.fetchedData.list[0].commissionRate
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "کمیسیون: % " +
-                                  $ctx.fetchedData.list[0].commissionRate
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        )}
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___5KnYr
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobile") ? (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "واریز درآمد: ⏰ " +
-                                  $ctx.fetchedData.list[0].declaration
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "واریز درآمد: ⏰ " +
-                                  $ctx.fetchedData.list[0].declaration
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        )}
-                      </div>
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__jEvgr)}

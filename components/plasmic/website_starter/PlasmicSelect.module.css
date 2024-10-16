@@ -142,6 +142,11 @@
   padding-right: 20px;
   min-width: 0;
 }
+@media (max-width: 768px) {
+  .contentContainer {
+    padding-right: 12px;
+  }
+}
 .rootFocused Within .contentContainer {
   outline: none;
 }
@@ -373,6 +378,11 @@
   z-index: 1;
   margin-left: 20px;
   flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .dropdownIcon {
+    margin-left: 8px;
+  }
 }
 .dropdownIconcolor_softBlue {
   color: #0091ff;

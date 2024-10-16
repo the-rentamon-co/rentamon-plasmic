@@ -334,8 +334,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
-                    : "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f   \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"}
+                    ? "\u0647\u0646\u0648\u0632 \u067e\u0646\u0644 \u0646\u062f\u0627\u0631\u06cc\u061f \u0627\u06cc\u0646\u200c\u062c\u0627 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646"
+                    : "\u0647\u0646\u0648\u0632 \u067e\u0646\u0644 \u0646\u062f\u0627\u0631\u06cc\u061f \u0627\u06cc\u0646\u200c\u062c\u0627 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646"}
                 </div>
               ) : null}
               {(() => {
@@ -360,7 +360,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
-                    : "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646"}
+                    : "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"}
                 </div>
               ) : null}
               {(() => {
@@ -580,6 +580,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input2",
                             "value"
@@ -721,6 +722,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input4",
                             "value"
@@ -784,6 +786,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input3",
                             "value"
@@ -983,6 +986,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input5",
                             "value"
@@ -1029,6 +1033,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input6",
                             "value"
@@ -1075,6 +1080,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0634\u0628",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input7",
                             "value"
@@ -1122,6 +1128,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input8",
                             "value"
@@ -1169,6 +1176,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input9",
                             "value"
@@ -1216,6 +1224,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input10",
                             "value"
@@ -1282,6 +1291,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0647\u0648\u0645\u0633\u0627",
+                          size: "large",
                           value: generateStateValueProp($state, [
                             "input11",
                             "value"

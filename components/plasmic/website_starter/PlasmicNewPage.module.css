@@ -97,9 +97,21 @@
   grid-column: 4;
 }
 .getPropertyRequest:global(.__wab_instance) {
-  width: 100%;
   max-width: 100%;
   object-fit: cover;
+}
+.text__yosUl {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__xsnPs {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
   min-width: 0;
 }
 .selectProperty:global(.__wab_instance) {
