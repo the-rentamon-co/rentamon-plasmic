@@ -86,7 +86,7 @@ export type PlasmicNewPage__OverridesType = {
   root?: Flex__<"div">;
   topContainer?: Flex__<"section">;
   mainSection?: Flex__<"section">;
-  getPropertyRequest?: Flex__<typeof ApiRequest>;
+  properties?: Flex__<typeof ApiRequest>;
   selectProperty?: Flex__<typeof Select>;
   shabContainer?: Flex__<"div">;
   fragmentSwitch?: Flex__<typeof Switch>;
@@ -234,19 +234,19 @@ function PlasmicNewPage__RenderFunc(props: {
           })()
       },
       {
-        path: "getPropertyRequest.data",
+        path: "properties.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "getPropertyRequest.error",
+        path: "properties.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "getPropertyRequest.loading",
+        path: "properties.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -320,9 +320,9 @@ function PlasmicNewPage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.mainSection)}
           >
             <ApiRequest
-              data-plasmic-name={"getPropertyRequest"}
-              data-plasmic-override={overrides.getPropertyRequest}
-              className={classNames("__wab_instance", sty.getPropertyRequest)}
+              data-plasmic-name={"properties"}
+              data-plasmic-override={overrides.properties}
+              className={classNames("__wab_instance", sty.properties)}
               errorDisplay={
                 <div
                   className={classNames(
@@ -347,15 +347,15 @@ function PlasmicNewPage__RenderFunc(props: {
               }
               method={"GET"}
               onError={generateStateOnChangeProp($state, [
-                "getPropertyRequest",
+                "properties",
                 "error"
               ])}
               onLoading={generateStateOnChangeProp($state, [
-                "getPropertyRequest",
+                "properties",
                 "loading"
               ])}
               onSuccess={generateStateOnChangeProp($state, [
-                "getPropertyRequest",
+                "properties",
                 "data"
               ])}
               url={"https://dev.rentamon.com/webhook/property-status"}
@@ -372,8 +372,8 @@ function PlasmicNewPage__RenderFunc(props: {
                 }}
                 options={(() => {
                   try {
-                    return $ctx.getPropertyRequest.map(
-                      data => data.property_name
+                    return $state.properties.data.map(
+                      property => property.property_name
                     );
                   } catch (e) {
                     if (
@@ -397,7 +397,7 @@ function PlasmicNewPage__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.freeBox__gWfWp)}>
                 {(() => {
                   try {
-                    return $ctx.getPropertyRequest
+                    return $state.properties.data
                       .find(
                         property =>
                           property.property_name === $state.selectProperty.value
@@ -504,7 +504,7 @@ function PlasmicNewPage__RenderFunc(props: {
                                             ? {
                                                 action: "set_instant",
                                                 property_id:
-                                                  $ctx.properties.find(
+                                                  $state.properties.data.find(
                                                     property =>
                                                       property.property_name ===
                                                       $state.selectProperty
@@ -514,7 +514,7 @@ function PlasmicNewPage__RenderFunc(props: {
                                             : {
                                                 action: "unset_instant",
                                                 property_id:
-                                                  $ctx.properties.find(
+                                                  $state.properties.data.find(
                                                     property =>
                                                       property.property_name ===
                                                       $state.selectProperty
@@ -1307,7 +1307,7 @@ const PlasmicDescendants = {
     "root",
     "topContainer",
     "mainSection",
-    "getPropertyRequest",
+    "properties",
     "selectProperty",
     "shabContainer",
     "fragmentSwitch",
@@ -1321,7 +1321,7 @@ const PlasmicDescendants = {
   topContainer: ["topContainer"],
   mainSection: [
     "mainSection",
-    "getPropertyRequest",
+    "properties",
     "selectProperty",
     "shabContainer",
     "fragmentSwitch",
@@ -1332,8 +1332,8 @@ const PlasmicDescendants = {
     "homsaContainer",
     "fragmentSwitch4"
   ],
-  getPropertyRequest: [
-    "getPropertyRequest",
+  properties: [
+    "properties",
     "selectProperty",
     "shabContainer",
     "fragmentSwitch",
@@ -1361,7 +1361,7 @@ type NodeDefaultElementType = {
   root: "div";
   topContainer: "section";
   mainSection: "section";
-  getPropertyRequest: typeof ApiRequest;
+  properties: typeof ApiRequest;
   selectProperty: typeof Select;
   shabContainer: "div";
   fragmentSwitch: typeof Switch;
@@ -1435,7 +1435,7 @@ export const PlasmicNewPage = Object.assign(
     // Helper components rendering sub-elements
     topContainer: makeNodeComponent("topContainer"),
     mainSection: makeNodeComponent("mainSection"),
-    getPropertyRequest: makeNodeComponent("getPropertyRequest"),
+    properties: makeNodeComponent("properties"),
     selectProperty: makeNodeComponent("selectProperty"),
     shabContainer: makeNodeComponent("shabContainer"),
     fragmentSwitch: makeNodeComponent("fragmentSwitch"),
