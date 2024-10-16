@@ -325,7 +325,16 @@ function PlasmicNewPage__RenderFunc(props: {
               errorName={"fetchError"}
               headers={(() => {
                 try {
-                  return undefined;
+                  return {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    Authorization: `Bearer ${
+                      document.cookie
+                        .split("; ")
+                        .find(row => row.startsWith("usso_access_token"))
+                        .split("=")[1]
+                    }`
+                  };
                 } catch (e) {
                   if (
                     e instanceof TypeError ||

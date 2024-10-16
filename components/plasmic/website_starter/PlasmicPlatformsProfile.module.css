@@ -225,6 +225,7 @@
 @media (max-width: 768px) {
   .text__tpdpv {
     font-family: "Estedad";
+    font-size: 14px;
     padding: 0px;
   }
 }
@@ -458,7 +459,7 @@
 @media (max-width: 768px) {
   .text__n8EfN {
     font-family: "Estedad";
-    font-size: 16px;
+    font-size: 15px;
     padding: 10px 0px 0px;
   }
 }
@@ -493,6 +494,7 @@
 @media (max-width: 768px) {
   .text__cn8Pk {
     font-family: "Estedad";
+    font-size: 14px;
     padding: 0px;
   }
 }
@@ -510,6 +512,7 @@
 @media (max-width: 768px) {
   .text__kuxpr {
     font-family: "Estedad";
+    font-size: 14px;
     padding: 10px 0px 0px;
   }
 }
