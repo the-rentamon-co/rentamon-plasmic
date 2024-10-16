@@ -86,7 +86,6 @@ export type PlasmicNewPage__OverridesType = {
   root?: Flex__<"div">;
   topContainer?: Flex__<"section">;
   mainSection?: Flex__<"section">;
-  httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   select?: Flex__<typeof Select>;
   img?: Flex__<typeof PlasmicImg__>;
   fragmentSwitch?: Flex__<typeof Switch>;
@@ -246,9 +245,10 @@ function PlasmicNewPage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.mainSection)}
           >
             <DataFetcher
-              data-plasmic-name={"httpRestApiFetcher"}
-              data-plasmic-override={overrides.httpRestApiFetcher}
-              className={classNames("__wab_instance", sty.httpRestApiFetcher)}
+              className={classNames(
+                "__wab_instance",
+                sty.httpRestApiFetcher__qdou6
+              )}
               dataName={"fetchedData"}
               errorDisplay={
                 <DataCtxReader__>
@@ -337,6 +337,31 @@ function PlasmicNewPage__RenderFunc(props: {
                 }
               </DataCtxReader__>
             </DataFetcher>
+            <DataFetcher
+              className={classNames(
+                "__wab_instance",
+                sty.httpRestApiFetcher__byd94
+              )}
+              dataName={"fetchedData"}
+              errorDisplay={
+                <DataCtxReader__>
+                  {$ctx => "Error fetching data"}
+                </DataCtxReader__>
+              }
+              errorName={"fetchError"}
+              headers={{
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                withCredentials: true
+              }}
+              loadingDisplay={
+                <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
+              }
+              method={"GET"}
+              noLayout={false}
+              url={"https://dev.rentamon/webhook/get-instant"}
+            />
+
             <div className={classNames(projectcss.all, sty.freeBox__gWfWp)}>
               <div className={classNames(projectcss.all, sty.freeBox___07Kpo)}>
                 <PlasmicImg__
@@ -564,21 +589,13 @@ const PlasmicDescendants = {
     "root",
     "topContainer",
     "mainSection",
-    "httpRestApiFetcher",
     "select",
     "img",
     "fragmentSwitch",
     "embedHtml"
   ],
   topContainer: ["topContainer"],
-  mainSection: [
-    "mainSection",
-    "httpRestApiFetcher",
-    "select",
-    "img",
-    "fragmentSwitch"
-  ],
-  httpRestApiFetcher: ["httpRestApiFetcher", "select"],
+  mainSection: ["mainSection", "select", "img", "fragmentSwitch"],
   select: ["select"],
   img: ["img"],
   fragmentSwitch: ["fragmentSwitch"],
@@ -591,7 +608,6 @@ type NodeDefaultElementType = {
   root: "div";
   topContainer: "section";
   mainSection: "section";
-  httpRestApiFetcher: typeof DataFetcher;
   select: typeof Select;
   img: typeof PlasmicImg__;
   fragmentSwitch: typeof Switch;
@@ -660,7 +676,6 @@ export const PlasmicNewPage = Object.assign(
     // Helper components rendering sub-elements
     topContainer: makeNodeComponent("topContainer"),
     mainSection: makeNodeComponent("mainSection"),
-    httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     select: makeNodeComponent("select"),
     img: makeNodeComponent("img"),
     fragmentSwitch: makeNodeComponent("fragmentSwitch"),

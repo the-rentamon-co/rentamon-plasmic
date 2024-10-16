@@ -96,14 +96,22 @@
 .mainSection > * {
   grid-column: 4;
 }
-.httpRestApiFetcher:global(.__wab_instance) {
+.httpRestApiFetcher__qdou6:global(.__wab_instance) {
   width: 100%;
   max-width: 100%;
   object-fit: cover;
   min-width: 0;
+  display: none;
 }
 .select:global(.__wab_instance) {
   max-width: 100%;
+  display: none;
+}
+.httpRestApiFetcher__byd94:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  min-width: 0;
   display: none;
 }
 .freeBox__gWfWp {

@@ -444,6 +444,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/platforms"
+        },
+        {
+          "id": "r-EriZGoAYEH",
+          "name": "Testing",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTesting.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/testing.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTesting.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/testing"
         }
       ],
       "icons": [
