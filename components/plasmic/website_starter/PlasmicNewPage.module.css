@@ -104,7 +104,8 @@
 }
 .selectProperty:global(.__wab_instance) {
   max-width: 100%;
-  display: none;
+  margin-top: 27px;
+  height: 35px;
 }
 .freeBox__gWfWp {
   display: flex;
@@ -115,7 +116,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-right: 0px;
   margin-left: 15px;
   min-width: 0;
