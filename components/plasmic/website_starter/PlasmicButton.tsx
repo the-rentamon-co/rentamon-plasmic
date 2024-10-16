@@ -259,6 +259,14 @@ function PlasmicButton__RenderFunc(props: {
     $refs
   });
 
+  const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
+    useTrigger("useFocusVisibleWithin", {
+      isTextInput: false
+    });
+  const triggers = {
+    focusVisibleWithin_root: isRootFocusVisibleWithin
+  };
+
   return (
     <Stack__
       as={"button"}
@@ -278,6 +286,7 @@ function PlasmicButton__RenderFunc(props: {
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root,
         {
+          [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.rootcolor_blue]: hasVariant($state, "color", "blue"),
           [sty.rootcolor_clear]: hasVariant($state, "color", "clear"),
           [sty.rootcolor_green]: hasVariant($state, "color", "green"),
@@ -334,6 +343,7 @@ function PlasmicButton__RenderFunc(props: {
             hasVariant($state, "size", "minimal")
         }
       )}
+      data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
     >
       {(hasVariant($state, "showStartIcon", "showStartIcon") ? true : false) ? (
         <div
@@ -428,6 +438,8 @@ function PlasmicButton__RenderFunc(props: {
         data-plasmic-name={"contentContainer"}
         data-plasmic-override={overrides.contentContainer}
         className={classNames(projectcss.all, sty.contentContainer, {
+          [sty.contentContainer___focusVisibleWithin]:
+            triggers.focusVisibleWithin_root,
           [sty.contentContainerisDisabled]: hasVariant(
             $state,
             "isDisabled",
@@ -449,6 +461,8 @@ function PlasmicButton__RenderFunc(props: {
           defaultContents: "Button",
           value: args.children,
           className: classNames(sty.slotTargetChildren, {
+            [sty.slotTargetChildren___focusVisibleWithin]:
+              triggers.focusVisibleWithin_root,
             [sty.slotTargetChildrencolor_blue]: hasVariant(
               $state,
               "color",

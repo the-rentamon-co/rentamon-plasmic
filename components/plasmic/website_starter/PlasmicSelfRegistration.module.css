@@ -36,6 +36,7 @@
   height: auto;
   max-width: 100%;
   justify-self: flex-start;
+  margin-bottom: 10px;
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
   padding: 8px;
@@ -324,12 +325,22 @@
 }
 .tooltip:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 256px;
+  height: 0px;
+  z-index: 1;
+  right: auto;
+  bottom: auto;
+  margin: 20px 0px 0px;
 }
 .text__zxpZs {
   width: auto;
   height: auto;
   max-width: 100%;
   position: relative;
+  text-align: right;
 }
 .input5:global(.__wab_instance) {
   max-width: 100%;

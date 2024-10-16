@@ -6,12 +6,6 @@
 .rootcolor_softGreen {
   border-color: #ffffff00;
 }
-.rootFocused Within {
-  outline: none;
-}
-.rootFocus Visible Within {
-  outline: none;
-}
 .trigger {
   position: relative;
   display: flex;
@@ -70,13 +64,11 @@
 .triggercolor_clear {
   background: none;
 }
-.rootFocused Within .trigger {
+.root:focus-within .trigger {
   box-shadow: 0px 0px 0px 3px #96c7f2;
-  outline: none;
 }
-.rootFocus Visible Within .trigger {
+.root .trigger___focusVisibleWithin {
   box-shadow: 0px 0px 0px 3px #96c7f2;
-  outline: none;
 }
 .root .trigger:hover {
   background: #eeeeec;
@@ -146,9 +138,6 @@
   .contentContainer {
     padding-right: 12px;
   }
-}
-.rootFocused Within .contentContainer {
-  outline: none;
 }
 .slotTargetSelectedContent {
   white-space: pre;
@@ -239,45 +228,6 @@
 }
 .slotTargetSelectedContentcolor_softPurple {
   color: #793aaf;
-}
-.rootFocused Within .slotTargetSelectedContent > *,
-.rootFocused Within .slotTargetSelectedContent > :global(.__wab_slot) > *,
-.rootFocused
-  Within
-  .slotTargetSelectedContent
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > *,
-.rootFocused
-  Within
-  .slotTargetSelectedContent
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > *,
-.rootFocused Within .slotTargetSelectedContent > picture > img,
-.rootFocused
-  Within
-  .slotTargetSelectedContent
-  > :global(.__wab_slot)
-  > picture
-  > img,
-.rootFocused
-  Within
-  .slotTargetSelectedContent
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > picture
-  > img,
-.rootFocused
-  Within
-  .slotTargetSelectedContent
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  outline: none;
 }
 .slotTargetPlaceholder {
   white-space: pre;
@@ -407,12 +357,6 @@
 }
 .dropdownIconcolor_softPurple {
   color: #8e4ec6;
-}
-.rootFocused Within .dropdownIcon {
-  outline: none;
-}
-.rootFocus Visible Within .dropdownIcon {
-  outline: none;
 }
 .overlay:global(.__wab_instance) {
   position: absolute;

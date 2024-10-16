@@ -48,8 +48,10 @@ export default function GlobalContextsProvider(
         fragmentProps && "apiConfig" in fragmentProps
           ? fragmentProps.apiConfig!
           : {
-              "Content-Type": "application/json",
-              Accept: "application/json",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              },
               withCredentials: true
             }
       }

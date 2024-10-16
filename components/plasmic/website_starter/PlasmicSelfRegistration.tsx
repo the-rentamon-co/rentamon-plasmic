@@ -977,51 +977,34 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__jLbh1
                       )}
-                      label={
-                        <React.Fragment>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__p8NVa
-                            )}
-                          >
-                            {""}
-                          </div>
-                          <Tooltip
-                            data-plasmic-name={"tooltip"}
-                            data-plasmic-override={overrides.tooltip}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.tooltip
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__zxpZs
-                              )}
-                            >
-                              <React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ color: "#203647" }}
-                                >
-                                  {
-                                    "\u06a9\u062f \u0648\u06cc\u0644\u0627 \u06a9\u0647 \u062f\u0631 \u0635\u0641\u062d\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
-                                  }
-                                </span>
-                              </React.Fragment>
-                            </div>
-                          </Tooltip>
-                        </React.Fragment>
-                      }
+                      label={""}
                       name={"jabamaPPID"}
                       rules={[]}
                     >
+                      <Tooltip
+                        data-plasmic-name={"tooltip"}
+                        data-plasmic-override={overrides.tooltip}
+                        className={classNames("__wab_instance", sty.tooltip)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zxpZs
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "#203647" }}
+                            >
+                              {""}
+                            </span>
+                          </React.Fragment>
+                        </div>
+                      </Tooltip>
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input5),
