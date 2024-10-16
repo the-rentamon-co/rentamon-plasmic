@@ -312,17 +312,31 @@ function PlasmicSelfRegistration__RenderFunc(props: {
               }
             />
 
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__t7Lkf
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
-                : "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f   \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"}
-            </div>
+            {(() => {
+              try {
+                return $state.formStep == 0;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__t7Lkf
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f  \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
+                  : "\n\n\u0647\u0646\u0648\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc \u0646\u0634\u062f\u06cc\u061f   \u06a9\u0627\u0641\u06cc\u0647 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"}
+              </div>
+            ) : null}
           </div>
           {(() => {
             const child$Props = {
@@ -427,7 +441,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             sty.text__dbRga
                           )}
                         >
-                          {"\u0646\u0627\u0645"}
+                          {""}
                         </div>
                       }
                       name={"name"}
@@ -491,9 +505,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             sty.text__lejFp
                           )}
                         >
-                          {
-                            "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
-                          }
+                          {""}
                         </div>
                       }
                       name={"lastName"}
@@ -638,9 +650,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                       )}
                       hidden={false}
                       initialValue={``}
-                      label={
-                        "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644"
-                      }
+                      label={""}
                       name={"phoneNumber"}
                       rules={[
                         { ruleType: "required", message: `` },
@@ -667,6 +677,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input3", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644",
                           value: generateStateValueProp($state, [
                             "input3",
                             "value"
@@ -699,9 +711,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__evMvf
                       )}
-                      label={
-                        "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      }
+                      label={""}
                       name={"propertyName"}
                       rules={[
                         {
@@ -720,6 +730,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input4", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
                           value: generateStateValueProp($state, [
                             "input4",
                             "value"
@@ -904,9 +916,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__jLbh1
                       )}
-                      label={
-                        "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627"
-                      }
+                      label={""}
                       name={"jabamaPPID"}
                       rules={[]}
                     >
@@ -919,6 +929,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input5", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627",
                           value: generateStateValueProp($state, [
                             "input5",
                             "value"
@@ -951,9 +963,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__xeTmF
                       )}
-                      label={
-                        "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627"
-                      }
+                      label={""}
                       name={"jajigaPPID"}
                     >
                       {(() => {
@@ -965,6 +975,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input6", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627",
                           value: generateStateValueProp($state, [
                             "input6",
                             "value"
@@ -997,9 +1009,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__m4XbE
                       )}
-                      label={
-                        "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0634\u0628"
-                      }
+                      label={""}
                       name={"shabPPID"}
                     >
                       {(() => {
@@ -1011,6 +1021,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input7", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0634\u0628",
                           value: generateStateValueProp($state, [
                             "input7",
                             "value"
@@ -1044,9 +1056,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         sty.formField__blvav
                       )}
                       hidden={false}
-                      label={
-                        "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646"
-                      }
+                      label={""}
                       name={"MizbonPPID"}
                     >
                       {(() => {
@@ -1058,6 +1068,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input8", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646",
                           value: generateStateValueProp($state, [
                             "input8",
                             "value"
@@ -1091,9 +1103,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         sty.formField___0OHfO
                       )}
                       hidden={false}
-                      label={
-                        "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9"
-                      }
+                      label={""}
                       name={"OtaghakPPID"}
                     >
                       {(() => {
@@ -1105,6 +1115,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input9", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9",
                           value: generateStateValueProp($state, [
                             "input9",
                             "value"
@@ -1138,9 +1150,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         sty.formField__rikUk
                       )}
                       hidden={false}
-                      label={
-                        "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648"
-                      }
+                      label={""}
                       name={"MihmanshoPPID"}
                     >
                       {(() => {
@@ -1152,6 +1162,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input10", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648",
                           value: generateStateValueProp($state, [
                             "input10",
                             "value"
@@ -1185,9 +1197,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                         sty.formField__pu53B
                       )}
                       hidden={false}
-                      label={
-                        "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0647\u0648\u0645\u0633\u0627"
-                      }
+                      label={""}
                       name={"HomsaPPID"}
                       rules={[
                         {
@@ -1218,6 +1228,8 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                             ["input11", "value"],
                             AntdInput_Helpers
                           ),
+                          placeholder:
+                            "\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0647\u0648\u0645\u0633\u0627",
                           value: generateStateValueProp($state, [
                             "input11",
                             "value"

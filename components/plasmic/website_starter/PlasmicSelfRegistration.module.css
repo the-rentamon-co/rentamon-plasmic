@@ -92,7 +92,11 @@
 .formField__n4CnG:global(.__wab_instance) {
   width: 100%;
   font-size: 14px;
+  color: #203647;
   min-width: 0;
+}
+.text__dbRga {
+  color: #203647;
 }
 @media (max-width: 768px) {
   .text__dbRga {

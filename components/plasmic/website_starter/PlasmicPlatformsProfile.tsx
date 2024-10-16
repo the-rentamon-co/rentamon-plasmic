@@ -498,35 +498,6 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </React.Fragment>
                       )}
                     </div>
-                    {(
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? true
-                        : false
-                    ) ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__n8EfN
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return $ctx.fetchedData.list[0].description;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                    ) : null}
                     <div
                       className={classNames(projectcss.all, sty.freeBox__ljlIv)}
                     >
@@ -823,6 +794,39 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           </React.Fragment>
                         )}
                       </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__jEvgr)}
+                    >
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? true
+                          : false
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__n8EfN
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $ctx.fetchedData.list[0].description;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      ) : null}
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__uHhnV)}
