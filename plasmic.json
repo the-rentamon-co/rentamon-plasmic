@@ -550,6 +550,11 @@
           "id": "A_jR4nZeCTjX",
           "name": "homsa.webp",
           "filePath": "../public/plasmic/website_starter/images/homsaWebp.webp"
+        },
+        {
+          "id": "eRJjg_zveUyY",
+          "name": "6ef376da-c887-4374-932c-d018a1e47ba2.jpeg",
+          "filePath": "../public/plasmic/website_starter/images/_6Ef376DaC8874374932CD018A1E47Ba2Jpeg.jpg"
         }
       ],
       "indirect": false,
@@ -1331,7 +1336,8 @@
           "componentImportPath": "@plasmicpkgs/radix-ui"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

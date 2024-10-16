@@ -96,7 +96,6 @@ export type PlasmicNewPage__OverridesType = {
   fragmentSwitch3?: Flex__<typeof Switch>;
   homsaContainer?: Flex__<"div">;
   fragmentSwitch4?: Flex__<typeof Switch>;
-  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultNewPageProps {}
@@ -1285,9 +1284,14 @@ function PlasmicNewPage__RenderFunc(props: {
             </ApiRequest>
           </section>
           <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
+            className={classNames("__wab_instance", sty.embedHtml__epNe8)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
+
+          <Embed
+            className={classNames("__wab_instance", sty.embedHtml___64Fi)}
             code={
               '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
             }
@@ -1312,8 +1316,7 @@ const PlasmicDescendants = {
     "jabamaContainer",
     "fragmentSwitch3",
     "homsaContainer",
-    "fragmentSwitch4",
-    "embedHtml"
+    "fragmentSwitch4"
   ],
   topContainer: ["topContainer"],
   mainSection: [
@@ -1349,8 +1352,7 @@ const PlasmicDescendants = {
   jabamaContainer: ["jabamaContainer", "fragmentSwitch3"],
   fragmentSwitch3: ["fragmentSwitch3"],
   homsaContainer: ["homsaContainer", "fragmentSwitch4"],
-  fragmentSwitch4: ["fragmentSwitch4"],
-  embedHtml: ["embedHtml"]
+  fragmentSwitch4: ["fragmentSwitch4"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1369,7 +1371,6 @@ type NodeDefaultElementType = {
   fragmentSwitch3: typeof Switch;
   homsaContainer: "div";
   fragmentSwitch4: typeof Switch;
-  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1444,7 +1445,6 @@ export const PlasmicNewPage = Object.assign(
     fragmentSwitch3: makeNodeComponent("fragmentSwitch3"),
     homsaContainer: makeNodeComponent("homsaContainer"),
     fragmentSwitch4: makeNodeComponent("fragmentSwitch4"),
-    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicNewPage
     internalVariantProps: PlasmicNewPage__VariantProps,

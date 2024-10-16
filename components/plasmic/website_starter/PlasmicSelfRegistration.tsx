@@ -91,7 +91,6 @@ export const PlasmicSelfRegistration__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSelfRegistration__OverridesType = {
   root?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
   input2?: Flex__<typeof AntdInput>;
@@ -306,9 +305,14 @@ function PlasmicSelfRegistration__RenderFunc(props: {
         >
           <div className={classNames(projectcss.all, sty.freeBox__jUAkS)}>
             <Embed
-              data-plasmic-name={"embedHtml"}
-              data-plasmic-override={overrides.embedHtml}
-              className={classNames("__wab_instance", sty.embedHtml)}
+              className={classNames("__wab_instance", sty.embedHtml__fHYk)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+
+            <Embed
+              className={classNames("__wab_instance", sty.embedHtml__tz89X)}
               code={
                 '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
               }
@@ -982,7 +986,7 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                               sty.text__p8NVa
                             )}
                           >
-                            {"\u062a\u0633\u062a"}
+                            {""}
                           </div>
                           <Tooltip
                             data-plasmic-name={"tooltip"}
@@ -991,7 +995,28 @@ function PlasmicSelfRegistration__RenderFunc(props: {
                               "__wab_instance",
                               sty.tooltip
                             )}
-                          />
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__zxpZs
+                              )}
+                            >
+                              <React.Fragment>
+                                <span
+                                  className={
+                                    "plasmic_default__all plasmic_default__span"
+                                  }
+                                  style={{ color: "#203647" }}
+                                >
+                                  {
+                                    "\u06a9\u062f \u0648\u06cc\u0644\u0627 \u06a9\u0647 \u062f\u0631 \u0635\u0641\u062d\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                                  }
+                                </span>
+                              </React.Fragment>
+                            </div>
+                          </Tooltip>
                         </React.Fragment>
                       }
                       name={"jabamaPPID"}
@@ -1614,7 +1639,6 @@ function PlasmicSelfRegistration__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "embedHtml",
     "form",
     "input",
     "input2",
@@ -1629,7 +1653,6 @@ const PlasmicDescendants = {
     "input10",
     "input11"
   ],
-  embedHtml: ["embedHtml"],
   form: [
     "form",
     "input",
@@ -1663,7 +1686,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  embedHtml: typeof Embed;
   form: typeof FormWrapper;
   input: typeof AntdInput;
   input2: typeof AntdInput;
@@ -1739,7 +1761,6 @@ export const PlasmicSelfRegistration = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    embedHtml: makeNodeComponent("embedHtml"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     input2: makeNodeComponent("input2"),
