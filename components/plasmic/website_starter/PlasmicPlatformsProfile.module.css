@@ -95,7 +95,13 @@
 @media (max-width: 768px) {
   .img {
     width: 114px;
+    object-fit: contain;
     border-radius: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .img > picture > img {
+    object-fit: contain;
   }
 }
 .freeBox__rwd8X {
@@ -509,7 +515,7 @@
 }
 @media (max-width: 768px) {
   .freeBox__uHhnV {
-    padding-top: 10px;
+    padding-top: 20px;
   }
 }
 .text__cn8Pk {
