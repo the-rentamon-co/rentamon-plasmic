@@ -759,13 +759,14 @@ function PlasmicRegistrationTest__RenderFunc(props: {
                       label={""}
                       name={"phoneNumber"}
                       rules={[
-                        { ruleType: "required", message: " " },
+                        { ruleType: "required", message: `` },
 
-                        { ruleType: "min", length: 11, message: " " },
+                        { ruleType: "min", length: 11, message: `` },
 
                         {
                           ruleType: "advanced",
-                          message: ``,
+                          message:
+                            "\u0627\u06cc\u0646 \u0634\u0645\u0627\u0631\u0647 \u0645\u0639\u062a\u0628\u0631 \u0646\u06cc\u0633\u062a!",
                           custom: (rule, value) => {
                             return /^09/.test($state.form.value.phoneNumber);
                           }
