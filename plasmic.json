@@ -418,20 +418,6 @@
           "path": "/self-registration"
         },
         {
-          "id": "Z33ICo1zf4Bl",
-          "name": "SelfRegister",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelfRegister.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/self-register.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicSelfRegister.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/self-register"
-        },
-        {
           "id": "3zHUjsxpYABR",
           "name": "PlatformsProfile",
           "type": "managed",
@@ -471,6 +457,48 @@
           "cssFilePath": "plasmic/website_starter/PlasmicTooltip.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "Q-DZlWM8_2v4",
+          "name": "SelfRegistration2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelfRegistration2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/register-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSelfRegistration2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/register-2"
+        },
+        {
+          "id": "VnMVw1V-1v1h",
+          "name": "TestRegister",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTestRegister.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/test-register.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTestRegister.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/test-register"
+        },
+        {
+          "id": "ErG8wzgBVki3",
+          "name": "Comparison",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicComparison.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/comparison.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicComparison.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/comparison"
         }
       ],
       "icons": [
@@ -555,6 +583,21 @@
           "id": "eRJjg_zveUyY",
           "name": "6ef376da-c887-4374-932c-d018a1e47ba2.jpeg",
           "filePath": "../public/plasmic/website_starter/images/_6Ef376DaC8874374932CD018A1E47Ba2Jpeg.jpg"
+        },
+        {
+          "id": "0LSomDPS3WkL",
+          "name": "websites-desk.jpg",
+          "filePath": "../public/plasmic/website_starter/images/websitesDeskJpg.jpg"
+        },
+        {
+          "id": "JXZ_gzNPgVAF",
+          "name": "photo_2024-10-19_14-01-24.jpg",
+          "filePath": "../public/plasmic/website_starter/images/photo20241019140124Jpg.jpg"
+        },
+        {
+          "id": "7vaEkNLvcjEp",
+          "name": "Idea.png",
+          "filePath": "../public/plasmic/website_starter/images/ideaPng.png"
         }
       ],
       "indirect": false,
