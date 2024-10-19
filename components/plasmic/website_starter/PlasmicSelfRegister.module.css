@@ -26,7 +26,7 @@
     grid-column: 4;
   }
 }
-.freeBox__hyVqq {
+.ebmedHtml {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -39,17 +39,17 @@
   margin-bottom: 10px;
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
-  padding: 8px;
+  padding: 20px 8px 8px;
 }
-.embedHtml__v9Xce:global(.__wab_instance) {
+.goftino:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.embedHtml__hePL:global(.__wab_instance) {
+.clarity:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox__dvVu {
+.guide {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -61,7 +61,7 @@
   min-width: 0;
   padding: 8px;
 }
-.text__meYNx {
+.step0 {
   position: relative;
   width: 100%;
   height: auto;
@@ -73,11 +73,11 @@
   min-width: 0;
 }
 @media (max-width: 768px) {
-  .text__meYNx {
+  .step0 {
     font-weight: 600;
   }
 }
-.text__tk5 {
+.step1 {
   position: relative;
   width: 100%;
   height: auto;
@@ -89,11 +89,11 @@
   min-width: 0;
 }
 @media (max-width: 768px) {
-  .text__tk5 {
+  .step1 {
     font-weight: 600;
   }
 }
-.text__cfU6X {
+.step21 {
   position: relative;
   width: 100%;
   height: auto;
@@ -105,11 +105,21 @@
   min-width: 0;
 }
 @media (max-width: 768px) {
-  .text__cfU6X {
+  .step21 {
     font-weight: 600;
   }
 }
-.form:global(.__wab_instance) {
+.step22 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 14px;
+  padding-top: 10px;
+  color: #203647;
+  min-width: 0;
+}
+.selfRegisterForm:global(.__wab_instance) {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -125,12 +135,12 @@
   padding: 8px;
 }
 @media (max-width: 768px) {
-  .form:global(.__wab_instance) {
+  .selfRegisterForm:global(.__wab_instance) {
     font-size: 14px;
     line-height: 1.7em;
   }
 }
-.freeBox__xJmCc {
+.freeBox___00Tik {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -143,17 +153,17 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__a8MxH:global(.__wab_instance) {
+.formField__n4CnG:global(.__wab_instance) {
   width: 100%;
   font-size: 14px;
   color: #203647;
   min-width: 0;
 }
-.text__xg2Q1 {
+.text__dbRga {
   color: #203647;
 }
 @media (max-width: 768px) {
-  .text__xg2Q1 {
+  .text__dbRga {
     font-size: 14px;
   }
 }
@@ -161,7 +171,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__fMcPr:global(.__wab_instance) {
+.formField___7OYh:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
@@ -169,7 +179,7 @@
   border-radius: 30px;
 }
 @media (max-width: 768px) {
-  .text__xiuMe {
+  .text__lejFp {
     font-size: 14px;
   }
 }
@@ -177,7 +187,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox__en7Zf {
+.freeBox__m8Olh {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -192,7 +202,7 @@
   flex-shrink: 0;
   padding: 8px;
 }
-.button__h6Baq:global(.__wab_instance) {
+.button__duNdL:global(.__wab_instance) {
   object-fit: cover;
   text-align: center;
   color: #fcfcfc;
@@ -206,7 +216,7 @@
   min-width: 0;
   border-radius: 30px;
 }
-.text__xuPRj {
+.text__nvWj {
   position: relative;
   width: 100%;
   height: auto;
@@ -215,7 +225,7 @@
   font-size: 14px;
   min-width: 0;
 }
-.freeBox__rLnJ3 {
+.freeBox___5PCl3 {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -227,7 +237,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__y3Nw:global(.__wab_instance) {
+.formField__evMvf:global(.__wab_instance) {
   width: 100%;
   font-size: 14px;
   min-width: 0;
@@ -236,7 +246,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__qzrPu:global(.__wab_instance) {
+.formField__txoxl:global(.__wab_instance) {
   width: 100%;
   font-size: 14px;
   min-width: 0;
@@ -245,7 +255,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox___3NwT {
+.freeBox___6W7X {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -259,7 +269,7 @@
   min-width: 0;
   padding: 8px;
 }
-.button__tQkPi:global(.__wab_instance) {
+.button__hn2N6:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   text-align: center;
@@ -270,7 +280,7 @@
   min-width: 0;
   border-radius: 30px;
 }
-.text___0NzA {
+.text__eBCq {
   position: relative;
   width: 100%;
   height: auto;
@@ -280,7 +290,7 @@
   font-size: 14px;
   min-width: 0;
 }
-.button__hoBoj:global(.__wab_instance) {
+.button__kyqvN:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   text-align: center;
@@ -296,7 +306,7 @@
   border-radius: 30px;
   border: 2px solid var(--token-8nedppYkGVaH);
 }
-.text__oe67X {
+.text__mLYk {
   position: relative;
   width: 100%;
   height: auto;
@@ -305,7 +315,7 @@
   color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
-.freeBox__xhcq8 {
+.freeBox__zXuXc {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -318,35 +328,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__xR3V:global(.__wab_instance) {
-  width: 100%;
-  font-size: 14px;
-  min-width: 0;
-}
-.tooltip:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  left: auto;
-  top: auto;
-  width: 256px;
-  height: 0px;
-  z-index: 1;
-  right: auto;
-  bottom: auto;
-  margin: 20px 0px 0px;
-}
-.text__dpvGe {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  position: relative;
-  text-align: right;
-}
-.input5:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.formField__ttaRg:global(.__wab_instance) {
+.jabamaFormField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
@@ -356,7 +338,17 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__nHw6Q:global(.__wab_instance) {
+.jajigaFormField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  font-size: 14px;
+  min-width: 0;
+}
+.input12:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.shabFormField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
@@ -366,7 +358,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__xy3Uo:global(.__wab_instance) {
+.mizboonFormField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
@@ -376,7 +368,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__a5FOg:global(.__wab_instance) {
+.otaghakFormField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
@@ -386,7 +378,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField___5KS7T:global(.__wab_instance) {
+.mihmanshoFormField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
@@ -396,7 +388,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__tOwav:global(.__wab_instance) {
+.homsaFormField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
@@ -406,7 +398,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox__gozqc {
+.freeBox__zmsVb {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -418,7 +410,7 @@
   min-width: 0;
   padding: 8px;
 }
-.button__hRfz6:global(.__wab_instance) {
+.button___5DlMs:global(.__wab_instance) {
   max-width: auto;
   object-fit: cover;
   text-align: center;
@@ -429,7 +421,7 @@
   min-width: 0;
   border-radius: 30px;
 }
-.text__tFfJp {
+.text__ediWh {
   position: relative;
   width: 100%;
   height: auto;
@@ -437,7 +429,7 @@
   text-align: center;
   min-width: 0;
 }
-.button__kQpU8:global(.__wab_instance) {
+.button___7ONBb:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   text-align: center;
@@ -449,7 +441,7 @@
   border-radius: 30px;
   border: 2px solid var(--token-8nedppYkGVaH);
 }
-.text___7Ammi {
+.text__pdn82 {
   position: relative;
   width: 100%;
   height: auto;
@@ -458,4 +450,30 @@
   color: var(--token-8nedppYkGVaH);
   font-size: 14px;
   min-width: 0;
+}
+.hintbutton {
+  object-fit: cover;
+  max-width: 100%;
+  align-self: center;
+  height: 69px;
+  display: none !important;
+}
+.hintbutton > picture > img {
+  object-fit: cover;
+}
+.hintpic {
+  object-fit: cover;
+  max-width: 100%;
+  align-self: center;
+  height: 389px;
+  width: 638px;
+  display: none !important;
+}
+.hintpic > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .hintpic {
+    width: auto;
+  }
 }

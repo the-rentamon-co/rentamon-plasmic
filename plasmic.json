@@ -404,20 +404,6 @@
           "componentType": "component"
         },
         {
-          "id": "gnA2OKpdAGdr",
-          "name": "SelfRegistration",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelfRegistration.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/register.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicSelfRegistration.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/self-registration"
-        },
-        {
           "id": "3zHUjsxpYABR",
           "name": "PlatformsProfile",
           "type": "managed",
@@ -459,34 +445,6 @@
           "componentType": "component"
         },
         {
-          "id": "Q-DZlWM8_2v4",
-          "name": "SelfRegistration2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelfRegistration2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/register-2.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicSelfRegistration2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/register-2"
-        },
-        {
-          "id": "VnMVw1V-1v1h",
-          "name": "TestRegister",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicTestRegister.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/test-register.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicTestRegister.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/test-register"
-        },
-        {
           "id": "ErG8wzgBVki3",
           "name": "Comparison",
           "type": "managed",
@@ -499,6 +457,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/comparison"
+        },
+        {
+          "id": "gnA2OKpdAGdr",
+          "name": "SelfRegister",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelfRegister.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/register.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSelfRegister.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/register"
+        },
+        {
+          "id": "DpoRYqi8MTy5",
+          "name": "RegistrationTest",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRegistrationTest.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/registration.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRegistrationTest.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/registration"
         }
       ],
       "icons": [

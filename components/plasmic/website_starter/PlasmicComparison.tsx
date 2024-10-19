@@ -436,6 +436,124 @@ function PlasmicComparison__RenderFunc(props: {
                       ) : null}
                     </div>
                     <div
+                      className={classNames(projectcss.all, sty.columns__xtZul)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__j855M
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__nx1At
+                          )}
+                        >
+                          {
+                            "\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"
+                          }
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__b2HdS
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__nzf8W
+                          )}
+                        >
+                          {
+                            "\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"
+                          }
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__ouhaY
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__cxITo
+                          )}
+                        >
+                          {
+                            "\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"
+                          }
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column___69P6D
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ygXG
+                          )}
+                        >
+                          {
+                            "\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"
+                          }
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__yUSfV
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ybRx6
+                          )}
+                        >
+                          {
+                            "\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"
+                          }
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__moSHw
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__amskb
+                          )}
+                        >
+                          {
+                            "\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"
+                          }
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column___7GVz
+                        )}
+                      />
+                    </div>
+                    <div
                       className={classNames(projectcss.all, sty.freeBox__rYb34)}
                     >
                       {(
