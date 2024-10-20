@@ -152,6 +152,17 @@
   max-width: 100%;
   object-fit: cover;
 }
+.checkbox:global(.__wab_instance) {
+  max-width: 100%;
+  align-self: flex-start;
+}
+.link {
+  font-weight: 600;
+  font-family: "Estedad";
+}
+.text__m08Pi {
+  font-weight: 500;
+}
 .freeBox__f1Jv {
   display: flex;
   flex-direction: row;

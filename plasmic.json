@@ -485,6 +485,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/register"
+        },
+        {
+          "id": "kNwK3iA1B39P",
+          "name": "Checkbox",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCheckbox.tsx",
+          "importSpec": {
+            "modulePath": "Checkbox.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCheckbox.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "checkbox"
         }
       ],
       "icons": [
@@ -517,6 +531,21 @@
           "id": "8ig9rS6CW5se",
           "name": "LampDeskLightSvgrepoComSvgIcon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__LampDeskLightSvgrepoComSvg.tsx"
+        },
+        {
+          "id": "I1VWMiXXoPZO",
+          "name": "SquareSvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__SquareSvg.tsx"
+        },
+        {
+          "id": "A3HzhhoSzxp-",
+          "name": "SquareCheckFilledSvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__SquareCheckFilledSvg.tsx"
+        },
+        {
+          "id": "bRrNIWhK9m-7",
+          "name": "SquareMinusSvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__SquareMinusSvg.tsx"
         }
       ],
       "images": [

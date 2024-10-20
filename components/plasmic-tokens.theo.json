@@ -2101,6 +2101,16 @@
       }
     },
     {
+      "name": "Unnamed Style Token 5",
+      "type": "color",
+      "value": "#1F3546",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "WSyX3-IK-ikH"
+      }
+    },
+    {
       "name": "basic-calendar-day-color",
       "type": "color",
       "value": "#E5E5E5",

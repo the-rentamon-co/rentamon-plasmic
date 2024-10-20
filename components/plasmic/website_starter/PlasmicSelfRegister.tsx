@@ -65,6 +65,7 @@ import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Fo
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -95,6 +96,8 @@ export type PlasmicSelfRegister__OverridesType = {
   input?: Flex__<typeof AntdInput>;
   lastName?: Flex__<typeof FormItemWrapper>;
   input2?: Flex__<typeof AntdInput>;
+  checkbox?: Flex__<typeof Checkbox>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   step1?: Flex__<"div">;
   propertyName?: Flex__<typeof FormItemWrapper>;
   input3?: Flex__<typeof AntdInput>;
@@ -272,6 +275,12 @@ function PlasmicSelfRegister__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "checkbox.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -635,6 +644,63 @@ function PlasmicSelfRegister__RenderFunc(props: {
                         );
                       })()}
                     </FormItemWrapper>
+                    <Checkbox
+                      data-plasmic-name={"checkbox"}
+                      data-plasmic-override={overrides.checkbox}
+                      className={classNames("__wab_instance", sty.checkbox)}
+                      isChecked={
+                        generateStateValueProp($state, [
+                          "checkbox",
+                          "isChecked"
+                        ]) ?? false
+                      }
+                      onChange={(...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }}
+                    >
+                      <PlasmicLink__
+                        data-plasmic-name={"link"}
+                        data-plasmic-override={overrides.link}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          sty.link
+                        )}
+                        component={Link}
+                        href={
+                          "https://rentamon.com/%d9%82%d9%88%d8%a7%d9%86%db%8c%d9%86-%d8%b1%d9%86%d8%aa%d8%a7%d9%85%d9%88%d9%86/"
+                        }
+                        platform={"nextjs"}
+                      >
+                        {
+                          "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
+                        }
+                      </PlasmicLink__>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__m08Pi
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "#1F3546" }}
+                          >
+                            {
+                              " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0627 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645"
+                            }
+                          </span>
+                        </React.Fragment>
+                      </div>
+                    </Checkbox>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__f1Jv)}
                     >
@@ -648,7 +714,8 @@ function PlasmicSelfRegister__RenderFunc(props: {
 
                           $steps["updateFormStep"] =
                             $state.selfRegisterForm.value.name !== "" &&
-                            $state.selfRegisterForm.value.lastName !== ""
+                            $state.selfRegisterForm.value.lastName !== "" &&
+                            $state.checkbox.isChecked
                               ? (() => {
                                   const actionArgs = {
                                     variable: {
@@ -1590,6 +1657,8 @@ const PlasmicDescendants = {
     "input",
     "lastName",
     "input2",
+    "checkbox",
+    "link",
     "step1",
     "propertyName",
     "input3",
@@ -1620,6 +1689,8 @@ const PlasmicDescendants = {
     "input",
     "lastName",
     "input2",
+    "checkbox",
+    "link",
     "step1",
     "propertyName",
     "input3",
@@ -1641,11 +1712,13 @@ const PlasmicDescendants = {
     "homsaPpid",
     "input11"
   ],
-  step0: ["step0", "name", "input", "lastName", "input2"],
+  step0: ["step0", "name", "input", "lastName", "input2", "checkbox", "link"],
   name: ["name", "input"],
   input: ["input"],
   lastName: ["lastName", "input2"],
   input2: ["input2"],
+  checkbox: ["checkbox", "link"],
+  link: ["link"],
   step1: ["step1", "propertyName", "input3", "phoneNumber", "input4"],
   propertyName: ["propertyName", "input3"],
   input3: ["input3"],
@@ -1696,6 +1769,8 @@ type NodeDefaultElementType = {
   input: typeof AntdInput;
   lastName: typeof FormItemWrapper;
   input2: typeof AntdInput;
+  checkbox: typeof Checkbox;
+  link: "a";
   step1: "div";
   propertyName: typeof FormItemWrapper;
   input3: typeof AntdInput;
@@ -1786,6 +1861,8 @@ export const PlasmicSelfRegister = Object.assign(
     input: makeNodeComponent("input"),
     lastName: makeNodeComponent("lastName"),
     input2: makeNodeComponent("input2"),
+    checkbox: makeNodeComponent("checkbox"),
+    link: makeNodeComponent("link"),
     step1: makeNodeComponent("step1"),
     propertyName: makeNodeComponent("propertyName"),
     input3: makeNodeComponent("input3"),
