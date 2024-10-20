@@ -1530,7 +1530,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u0645\u0628\u0627\u0631\u06a9\u0647! \u0627\u0644\u0622\u0646 \u0645\u06cc\u200c\u0631\u06cc\u0645 \u062f\u0627\u062e\u0644 \u067e\u0646\u0644",
+                                    "\u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc! \u0628\u0631\u06cc\u0645 \u062f\u0627\u062e\u0644 \u067e\u0646\u0644",
                                     "bottom-left"
                                   ]
                                 };
