@@ -460,6 +460,20 @@
         },
         {
           "id": "gnA2OKpdAGdr",
+          "name": "XSelfRegisterX",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicXSelfRegisterX.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/testregister.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicXSelfRegisterX.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/testregister"
+        },
+        {
+          "id": "DpoRYqi8MTy5",
           "name": "SelfRegister",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
@@ -471,20 +485,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/register"
-        },
-        {
-          "id": "DpoRYqi8MTy5",
-          "name": "RegistrationTest",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicRegistrationTest.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/registration.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicRegistrationTest.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/registration"
         }
       ],
       "icons": [
