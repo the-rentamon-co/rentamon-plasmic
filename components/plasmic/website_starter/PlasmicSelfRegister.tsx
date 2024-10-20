@@ -68,6 +68,8 @@ import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/reg
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 
+import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -96,7 +98,7 @@ export type PlasmicSelfRegister__OverridesType = {
   input?: Flex__<typeof AntdInput>;
   lastName?: Flex__<typeof FormItemWrapper>;
   input2?: Flex__<typeof AntdInput>;
-  checkbox?: Flex__<typeof Checkbox>;
+  policiesCheckbox?: Flex__<typeof Checkbox>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   step1?: Flex__<"div">;
   propertyName?: Flex__<typeof FormItemWrapper>;
@@ -277,7 +279,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
       },
       {
-        path: "checkbox.isChecked",
+        path: "policiesCheckbox.isChecked",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -290,6 +292,10 @@ function PlasmicSelfRegister__RenderFunc(props: {
     $ctx,
     $queries: {},
     $refs
+  });
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsaSuSwU8JUYf()
   });
 
   return (
@@ -616,7 +622,9 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           ),
                           placeholder:
                             "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
-                          size: "large",
+                          size: hasVariant(globalVariants, "screen", "mobile")
+                            ? "large"
+                            : "large",
                           value: generateStateValueProp($state, [
                             "input2",
                             "value"
@@ -645,18 +653,21 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       })()}
                     </FormItemWrapper>
                     <Checkbox
-                      data-plasmic-name={"checkbox"}
-                      data-plasmic-override={overrides.checkbox}
-                      className={classNames("__wab_instance", sty.checkbox)}
+                      data-plasmic-name={"policiesCheckbox"}
+                      data-plasmic-override={overrides.policiesCheckbox}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.policiesCheckbox
+                      )}
                       isChecked={
                         generateStateValueProp($state, [
-                          "checkbox",
+                          "policiesCheckbox",
                           "isChecked"
                         ]) ?? false
                       }
                       onChange={(...eventArgs) => {
                         generateStateOnChangeProp($state, [
-                          "checkbox",
+                          "policiesCheckbox",
                           "isChecked"
                         ])(eventArgs[0]);
                       }}
@@ -675,6 +686,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           "https://rentamon.com/%d9%82%d9%88%d8%a7%d9%86%db%8c%d9%86-%d8%b1%d9%86%d8%aa%d8%a7%d9%85%d9%88%d9%86/"
                         }
                         platform={"nextjs"}
+                        target={"_blank"}
                       >
                         {
                           "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
@@ -715,7 +727,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           $steps["updateFormStep"] =
                             $state.selfRegisterForm.value.name !== "" &&
                             $state.selfRegisterForm.value.lastName !== "" &&
-                            $state.checkbox.isChecked
+                            $state.policiesCheckbox.isChecked
                               ? (() => {
                                   const actionArgs = {
                                     variable: {
@@ -1657,7 +1669,7 @@ const PlasmicDescendants = {
     "input",
     "lastName",
     "input2",
-    "checkbox",
+    "policiesCheckbox",
     "link",
     "step1",
     "propertyName",
@@ -1689,7 +1701,7 @@ const PlasmicDescendants = {
     "input",
     "lastName",
     "input2",
-    "checkbox",
+    "policiesCheckbox",
     "link",
     "step1",
     "propertyName",
@@ -1712,12 +1724,20 @@ const PlasmicDescendants = {
     "homsaPpid",
     "input11"
   ],
-  step0: ["step0", "name", "input", "lastName", "input2", "checkbox", "link"],
+  step0: [
+    "step0",
+    "name",
+    "input",
+    "lastName",
+    "input2",
+    "policiesCheckbox",
+    "link"
+  ],
   name: ["name", "input"],
   input: ["input"],
   lastName: ["lastName", "input2"],
   input2: ["input2"],
-  checkbox: ["checkbox", "link"],
+  policiesCheckbox: ["policiesCheckbox", "link"],
   link: ["link"],
   step1: ["step1", "propertyName", "input3", "phoneNumber", "input4"],
   propertyName: ["propertyName", "input3"],
@@ -1769,7 +1789,7 @@ type NodeDefaultElementType = {
   input: typeof AntdInput;
   lastName: typeof FormItemWrapper;
   input2: typeof AntdInput;
-  checkbox: typeof Checkbox;
+  policiesCheckbox: typeof Checkbox;
   link: "a";
   step1: "div";
   propertyName: typeof FormItemWrapper;
@@ -1861,7 +1881,7 @@ export const PlasmicSelfRegister = Object.assign(
     input: makeNodeComponent("input"),
     lastName: makeNodeComponent("lastName"),
     input2: makeNodeComponent("input2"),
-    checkbox: makeNodeComponent("checkbox"),
+    policiesCheckbox: makeNodeComponent("policiesCheckbox"),
     link: makeNodeComponent("link"),
     step1: makeNodeComponent("step1"),
     propertyName: makeNodeComponent("propertyName"),
