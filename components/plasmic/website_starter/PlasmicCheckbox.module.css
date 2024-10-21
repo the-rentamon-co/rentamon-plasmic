@@ -38,8 +38,8 @@
   position: relative;
   object-fit: cover;
   color: var(--token-WSyX3-IK-ikH);
-  width: 20px;
-  height: 24px;
+  width: 24px;
+  height: 23px;
   flex-shrink: 0;
 }
 .svgisChecked {
