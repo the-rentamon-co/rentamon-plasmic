@@ -613,6 +613,21 @@
           "id": "7vaEkNLvcjEp",
           "name": "Idea.png",
           "filePath": "../public/plasmic/website_starter/images/ideaPng.png"
+        },
+        {
+          "id": "YWSAAjzYAguM",
+          "name": "otaghak.png",
+          "filePath": "../public/plasmic/website_starter/images/otaghakPng.png"
+        },
+        {
+          "id": "LkFsSuZTRmCn",
+          "name": "mizboon.png",
+          "filePath": "../public/plasmic/website_starter/images/mizboonPng.png"
+        },
+        {
+          "id": "MkzI3JAKze21",
+          "name": "mihmansho.png",
+          "filePath": "../public/plasmic/website_starter/images/mihmanshoPng.png"
         }
       ],
       "indirect": false,

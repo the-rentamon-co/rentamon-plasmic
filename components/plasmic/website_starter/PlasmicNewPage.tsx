@@ -90,10 +90,16 @@ export type PlasmicNewPage__OverridesType = {
   selectProperty?: Flex__<typeof Select>;
   shabContainer?: Flex__<"div">;
   fragmentSwitch?: Flex__<typeof Switch>;
-  jajigaContainer?: Flex__<"div">;
+  otaghakContainer?: Flex__<"div">;
   fragmentSwitch2?: Flex__<typeof Switch>;
   jabamaContainer?: Flex__<"div">;
   fragmentSwitch3?: Flex__<typeof Switch>;
+  jajigaContainer?: Flex__<"div">;
+  fragmentSwitch5?: Flex__<typeof Switch>;
+  mizboonContainer?: Flex__<"div">;
+  fragmentSwitch6?: Flex__<typeof Switch>;
+  mihmanshoContainer?: Flex__<"div">;
+  fragmentSwitch7?: Flex__<typeof Switch>;
   homsaContainer?: Flex__<"div">;
   fragmentSwitch4?: Flex__<typeof Switch>;
 };
@@ -149,9 +155,13 @@ function PlasmicNewPage__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return (() => {
-                return localStorage.getItem("IsShabInstant") === "true";
-              })();
+              return $state.properties.data
+                .find(
+                  property =>
+                    property.property_name === $state.selectProperty.value
+                )
+                .website_ids.find(website => website.website_id === 4)
+                .is_instant;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -174,64 +184,19 @@ function PlasmicNewPage__RenderFunc(props: {
         path: "fragmentSwitch2.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                return localStorage.getItem("IsShabInstant") === "true";
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "fragmentSwitch3.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                return localStorage.getItem("IsShabInstant") === "true";
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "fragmentSwitch4.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                return localStorage.getItem("IsShabInstant") === "true";
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "properties.data",
@@ -249,6 +214,24 @@ function PlasmicNewPage__RenderFunc(props: {
         path: "properties.loading",
         type: "private",
         variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch5.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch6.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch7.checked",
+        type: "private",
+        variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
@@ -311,7 +294,7 @@ function PlasmicNewPage__RenderFunc(props: {
                 sty.text__ngkPi
               )}
             >
-              {"\u062a\u0627 \u06f3\u06f0 \u0645\u0647\u0631"}
+              {"\u062a\u0627 \u06f3\u06f0 \u0622\u0628\u0627\u0646"}
             </div>
           </section>
           <section
@@ -449,278 +432,25 @@ function PlasmicNewPage__RenderFunc(props: {
                         {"\u0634\u0628"}
                       </div>
                     </div>
-                    {(() => {
-                      const child$Props = {
-                        checked: generateStateValueProp($state, [
-                          "fragmentSwitch",
-                          "checked"
-                        ]),
-                        className: classNames(
-                          "__wab_instance",
-                          sty.fragmentSwitch
-                        ),
-                        disabled: false,
-                        onCheckedChange: async (...eventArgs: any) => {
-                          generateStateOnChangeProp($state, [
-                            "fragmentSwitch",
-                            "checked"
-                          ]).apply(null, eventArgs);
-                          (async checked => {
-                            const $steps = {};
-
-                            $steps["runCode"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return localStorage.setItem(
-                                        "IsShabInstant",
-                                        $state.fragmentSwitch.checked
-                                      );
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
-                            ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-
-                            $steps["invokeGlobalAction"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "POST",
-                                      "https://dev.rentamon.com/webhook/shab-instant",
-                                      undefined,
-                                      (() => {
-                                        try {
-                                          return $state.fragmentSwitch.checked
-                                            ? {
-                                                action: "set_instant",
-                                                property_id:
-                                                  $state.properties.data.find(
-                                                    property =>
-                                                      property.property_name ===
-                                                      $state.selectProperty
-                                                        .value
-                                                  ).property_id
-                                              }
-                                            : {
-                                                action: "unset_instant",
-                                                property_id:
-                                                  $state.properties.data.find(
-                                                    property =>
-                                                      property.property_name ===
-                                                      $state.selectProperty
-                                                        .value
-                                                  ).property_id
-                                              };
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return {
-                                              dates: "1403-05-30",
-                                              property_id: 1,
-                                              action: "unset_instant"
-                                            };
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
-                                      (() => {
-                                        try {
-                                          return {
-                                            headers: {
-                                              "Content-Type":
-                                                "application/x-www-form-urlencoded",
-                                              Authorization: `Bearer ${
-                                                document.cookie
-                                                  .split("; ")
-                                                  .find(row =>
-                                                    row.startsWith(
-                                                      "usso_access_token"
-                                                    )
-                                                  )
-                                                  .split("=")[1]
-                                              }`
-                                            },
-                                            withCredentials: true
-                                          };
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return {
-                                              withCredentials: true,
-                                              headers: {
-                                                "Content-Type":
-                                                  "application/x-www-form-urlencoded"
-                                              }
-                                            };
-                                          }
-                                          throw e;
-                                        }
-                                      })()
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.apiRequest"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["invokeGlobalAction"] != null &&
-                              typeof $steps["invokeGlobalAction"] ===
-                                "object" &&
-                              typeof $steps["invokeGlobalAction"].then ===
-                                "function"
-                            ) {
-                              $steps["invokeGlobalAction"] = await $steps[
-                                "invokeGlobalAction"
-                              ];
-                            }
-                          }).apply(null, eventArgs);
-                        }
-                      };
-                      initializeCodeComponentStates(
-                        $state,
-                        [
-                          {
-                            name: "checked",
-                            plasmicStateName: "fragmentSwitch.checked"
-                          }
-                        ],
-                        [],
-                        undefined ?? {},
-                        child$Props
-                      );
-                      initializePlasmicStates(
-                        $state,
-                        [
-                          {
-                            name: "fragmentSwitch.checked",
-                            initFunc: ({ $props, $state, $queries }) =>
-                              (() => {
-                                try {
-                                  return (() => {
-                                    return (
-                                      localStorage.getItem("IsShabInstant") ===
-                                      "true"
-                                    );
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return false;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                          }
-                        ],
-                        []
-                      );
-                      return (
-                        <Switch
-                          data-plasmic-name={"fragmentSwitch"}
-                          data-plasmic-override={overrides.fragmentSwitch}
-                          {...child$Props}
-                        />
-                      );
-                    })()}
-                  </div>
-                ) : null}
-                <div
-                  data-plasmic-name={"jajigaContainer"}
-                  data-plasmic-override={overrides.jajigaContainer}
-                  className={classNames(projectcss.all, sty.jajigaContainer)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__fMwrK)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__yrAV)}
-                      displayHeight={"44px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"44px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/jajigaWebp.webp",
-                        fullWidth: 192,
-                        fullHeight: 192,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__txOIf
-                      )}
-                    >
-                      {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
-                    </div>
-                  </div>
-                  {(() => {
-                    const child$Props = {
-                      checked: generateStateValueProp($state, [
-                        "fragmentSwitch2",
+                    <Switch
+                      data-plasmic-name={"fragmentSwitch"}
+                      data-plasmic-override={overrides.fragmentSwitch}
+                      checked={generateStateValueProp($state, [
+                        "fragmentSwitch",
                         "checked"
-                      ]),
-                      className: classNames(
+                      ])}
+                      className={classNames(
                         "__wab_instance",
-                        sty.fragmentSwitch2
-                      ),
-                      disabled: false,
-                      onCheckedChange: async (...eventArgs: any) => {
+                        sty.fragmentSwitch
+                      )}
+                      disabled={false}
+                      onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "fragmentSwitch2",
+                          "fragmentSwitch",
                           "checked"
                         ]).apply(null, eventArgs);
                         (async checked => {
                           const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return localStorage.setItem(
-                                      "IsShabInstant",
-                                      $state.fragmentSwitch2.checked
-                                    );
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
 
                           $steps["invokeGlobalAction"] = true
                             ? (() => {
@@ -731,11 +461,25 @@ function PlasmicNewPage__RenderFunc(props: {
                                     undefined,
                                     (() => {
                                       try {
-                                        return $ctx.properties.find(
-                                          property =>
-                                            property.property_name ===
-                                            $state.selectProperty.value
-                                        ).property_id;
+                                        return $state.fragmentSwitch.checked
+                                          ? {
+                                              action: "set_instant",
+                                              property_id:
+                                                $state.properties.data.find(
+                                                  property =>
+                                                    property.property_name ===
+                                                    $state.selectProperty.value
+                                                ).property_id
+                                            }
+                                          : {
+                                              action: "unset_instant",
+                                              property_id:
+                                                $state.properties.data.find(
+                                                  property =>
+                                                    property.property_name ===
+                                                    $state.selectProperty.value
+                                                ).property_id
+                                            };
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -805,56 +549,165 @@ function PlasmicNewPage__RenderFunc(props: {
                             ];
                           }
                         }).apply(null, eventArgs);
-                      }
-                    };
-                    initializeCodeComponentStates(
-                      $state,
-                      [
-                        {
-                          name: "checked",
-                          plasmicStateName: "fragmentSwitch2.checked"
-                        }
-                      ],
-                      [],
-                      undefined ?? {},
-                      child$Props
-                    );
-                    initializePlasmicStates(
-                      $state,
-                      [
-                        {
-                          name: "fragmentSwitch2.checked",
-                          initFunc: ({ $props, $state, $queries }) =>
-                            (() => {
-                              try {
-                                return (() => {
-                                  return (
-                                    localStorage.getItem("IsShabInstant") ===
-                                    "true"
-                                  );
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
+                      }}
+                    />
+                  </div>
+                ) : null}
+                <div
+                  data-plasmic-name={"otaghakContainer"}
+                  data-plasmic-override={overrides.otaghakContainer}
+                  className={classNames(projectcss.all, sty.otaghakContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__fMwrK)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__yrAV)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/otaghakPng.png",
+                        fullWidth: 140,
+                        fullHeight: 140,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__txOIf
+                      )}
+                    >
+                      {"\u0627\u062a\u0627\u0642\u06a9"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch2"}
+                    data-plasmic-override={overrides.fragmentSwitch2}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch2",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch2
+                    )}
+                    disabled={false}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch2",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                      (async checked => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://dev.rentamon.com/webhook-test/otaghak-instant",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $state.fragmentSwitch.checked
+                                        ? {
+                                            action: "set_instant",
+                                            property_id:
+                                              $state.properties.data.find(
+                                                property =>
+                                                  property.property_name ===
+                                                  $state.selectProperty.value
+                                              ).property_id
+                                          }
+                                        : {
+                                            action: "unset_instant",
+                                            property_id:
+                                              $state.properties.data.find(
+                                                property =>
+                                                  property.property_name ===
+                                                  $state.selectProperty.value
+                                              ).property_id
+                                          };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          dates: "1403-05-30",
+                                          property_id: 1,
+                                          action: "unset_instant"
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  (() => {
+                                    try {
+                                      return {
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded",
+                                          Authorization: `Bearer ${
+                                            document.cookie
+                                              .split("; ")
+                                              .find(row =>
+                                                row.startsWith(
+                                                  "usso_access_token"
+                                                )
+                                              )
+                                              .split("=")[1]
+                                          }`
+                                        },
+                                        withCredentials: true
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          withCredentials: true,
+                                          headers: {
+                                            "Content-Type":
+                                              "application/x-www-form-urlencoded"
+                                          }
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
                             })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
                         }
-                      ],
-                      []
-                    );
-                    return (
-                      <Switch
-                        data-plasmic-name={"fragmentSwitch2"}
-                        data-plasmic-override={overrides.fragmentSwitch2}
-                        {...child$Props}
-                      />
-                    );
-                  })()}
+                      }).apply(null, eventArgs);
+                    }}
+                  />
                 </div>
                 <div
                   data-plasmic-name={"jabamaContainer"}
@@ -892,181 +745,629 @@ function PlasmicNewPage__RenderFunc(props: {
                       {"\u062c\u0627\u0628\u0627\u0645\u0627"}
                     </div>
                   </div>
-                  {(() => {
-                    const child$Props = {
-                      checked: generateStateValueProp($state, [
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch3"}
+                    data-plasmic-override={overrides.fragmentSwitch3}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch3",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch3
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
                         "fragmentSwitch3",
                         "checked"
-                      ]),
-                      className: classNames(
-                        "__wab_instance",
-                        sty.fragmentSwitch3
-                      ),
-                      disabled: false,
-                      onCheckedChange: async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "fragmentSwitch3",
-                          "checked"
-                        ]).apply(null, eventArgs);
-                        (async checked => {
-                          const $steps = {};
+                      ]).apply(null, eventArgs);
+                      (async checked => {
+                        const $steps = {};
 
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return localStorage.setItem(
-                                      "IsShabInstant",
-                                      $state.fragmentSwitch3.checked
-                                    );
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return localStorage.setItem(
+                                    "IsShabInstant",
+                                    $state.fragmentSwitch3.checked
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
 
-                          $steps["invokeGlobalAction"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://dev.rentamon.com/webhook/shab-instant",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return $ctx.properties.find(
-                                          property =>
-                                            property.property_name ===
-                                            $state.selectProperty.value
-                                        ).property_id;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return {
-                                            dates: "1403-05-30",
-                                            property_id: 1,
-                                            action: "unset_instant"
-                                          };
-                                        }
-                                        throw e;
-                                      }
-                                    })(),
-                                    (() => {
-                                      try {
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://dev.rentamon.com/webhook/shab-instant",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $ctx.properties.find(
+                                        property =>
+                                          property.property_name ===
+                                          $state.selectProperty.value
+                                      ).property_id;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
                                         return {
+                                          dates: "1403-05-30",
+                                          property_id: 1,
+                                          action: "unset_instant"
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  (() => {
+                                    try {
+                                      return {
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded",
+                                          Authorization: `Bearer ${
+                                            document.cookie
+                                              .split("; ")
+                                              .find(row =>
+                                                row.startsWith(
+                                                  "usso_access_token"
+                                                )
+                                              )
+                                              .split("=")[1]
+                                          }`
+                                        },
+                                        withCredentials: true
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          withCredentials: true,
                                           headers: {
                                             "Content-Type":
-                                              "application/x-www-form-urlencoded",
-                                            Authorization: `Bearer ${
-                                              document.cookie
-                                                .split("; ")
-                                                .find(row =>
-                                                  row.startsWith(
-                                                    "usso_access_token"
-                                                  )
-                                                )
-                                                .split("=")[1]
-                                            }`
-                                          },
-                                          withCredentials: true
+                                              "application/x-www-form-urlencoded"
+                                          }
                                         };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return {
-                                            withCredentials: true,
-                                            headers: {
-                                              "Content-Type":
-                                                "application/x-www-form-urlencoded"
-                                            }
-                                          };
-                                        }
-                                        throw e;
                                       }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
-                          }
-                        }).apply(null, eventArgs);
-                      }
-                    };
-                    initializeCodeComponentStates(
-                      $state,
-                      [
-                        {
-                          name: "checked",
-                          plasmicStateName: "fragmentSwitch3.checked"
-                        }
-                      ],
-                      [],
-                      undefined ?? {},
-                      child$Props
-                    );
-                    initializePlasmicStates(
-                      $state,
-                      [
-                        {
-                          name: "fragmentSwitch3.checked",
-                          initFunc: ({ $props, $state, $queries }) =>
-                            (() => {
-                              try {
-                                return (() => {
-                                  return (
-                                    localStorage.getItem("IsShabInstant") ===
-                                    "true"
-                                  );
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
                             })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
                         }
-                      ],
-                      []
-                    );
-                    return (
-                      <Switch
-                        data-plasmic-name={"fragmentSwitch3"}
-                        data-plasmic-override={overrides.fragmentSwitch3}
-                        {...child$Props}
-                      />
-                    );
-                  })()}
+                      }).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"jajigaContainer"}
+                  data-plasmic-override={overrides.jajigaContainer}
+                  className={classNames(projectcss.all, sty.jajigaContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__hp34R)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__kh6GL)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/jajigaWebp.webp",
+                        fullWidth: 192,
+                        fullHeight: 192,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__l6SX
+                      )}
+                    >
+                      {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch5"}
+                    data-plasmic-override={overrides.fragmentSwitch5}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch5",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch5
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch5",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                      (async checked => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return localStorage.setItem(
+                                    "IsShabInstant",
+                                    $state.fragmentSwitch5.checked
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://dev.rentamon.com/webhook/shab-instant",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $ctx.properties.find(
+                                        property =>
+                                          property.property_name ===
+                                          $state.selectProperty.value
+                                      ).property_id;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          dates: "1403-05-30",
+                                          property_id: 1,
+                                          action: "unset_instant"
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  (() => {
+                                    try {
+                                      return {
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded",
+                                          Authorization: `Bearer ${
+                                            document.cookie
+                                              .split("; ")
+                                              .find(row =>
+                                                row.startsWith(
+                                                  "usso_access_token"
+                                                )
+                                              )
+                                              .split("=")[1]
+                                          }`
+                                        },
+                                        withCredentials: true
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          withCredentials: true,
+                                          headers: {
+                                            "Content-Type":
+                                              "application/x-www-form-urlencoded"
+                                          }
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"mizboonContainer"}
+                  data-plasmic-override={overrides.mizboonContainer}
+                  className={classNames(projectcss.all, sty.mizboonContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ioy5M)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__iu45T)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/mizboonPng.png",
+                        fullWidth: 140,
+                        fullHeight: 140,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___1UJkO
+                      )}
+                    >
+                      {"\u0645\u06cc\u0632\u0628\u0648\u0646"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch6"}
+                    data-plasmic-override={overrides.fragmentSwitch6}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch6",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch6
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch6",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                      (async checked => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return localStorage.setItem(
+                                    "IsShabInstant",
+                                    $state.fragmentSwitch6.checked
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://dev.rentamon.com/webhook/shab-instant",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $ctx.properties.find(
+                                        property =>
+                                          property.property_name ===
+                                          $state.selectProperty.value
+                                      ).property_id;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          dates: "1403-05-30",
+                                          property_id: 1,
+                                          action: "unset_instant"
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  (() => {
+                                    try {
+                                      return {
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded",
+                                          Authorization: `Bearer ${
+                                            document.cookie
+                                              .split("; ")
+                                              .find(row =>
+                                                row.startsWith(
+                                                  "usso_access_token"
+                                                )
+                                              )
+                                              .split("=")[1]
+                                          }`
+                                        },
+                                        withCredentials: true
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          withCredentials: true,
+                                          headers: {
+                                            "Content-Type":
+                                              "application/x-www-form-urlencoded"
+                                          }
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"mihmanshoContainer"}
+                  data-plasmic-override={overrides.mihmanshoContainer}
+                  className={classNames(projectcss.all, sty.mihmanshoContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__wmdgx)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__p9Gnf)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/mihmanshoPng.png",
+                        fullWidth: 140,
+                        fullHeight: 140,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__pwh3K
+                      )}
+                    >
+                      {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch7"}
+                    data-plasmic-override={overrides.fragmentSwitch7}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch7",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch7
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch7",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                      (async checked => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return localStorage.setItem(
+                                    "IsShabInstant",
+                                    $state.fragmentSwitch7.checked
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://dev.rentamon.com/webhook/shab-instant",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $ctx.properties.find(
+                                        property =>
+                                          property.property_name ===
+                                          $state.selectProperty.value
+                                      ).property_id;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          dates: "1403-05-30",
+                                          property_id: 1,
+                                          action: "unset_instant"
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  (() => {
+                                    try {
+                                      return {
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded",
+                                          Authorization: `Bearer ${
+                                            document.cookie
+                                              .split("; ")
+                                              .find(row =>
+                                                row.startsWith(
+                                                  "usso_access_token"
+                                                )
+                                              )
+                                              .split("=")[1]
+                                          }`
+                                        },
+                                        withCredentials: true
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          withCredentials: true,
+                                          headers: {
+                                            "Content-Type":
+                                              "application/x-www-form-urlencoded"
+                                          }
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }).apply(null, eventArgs);
+                    }}
+                  />
                 </div>
                 <div
                   data-plasmic-name={"homsaContainer"}
@@ -1104,184 +1405,192 @@ function PlasmicNewPage__RenderFunc(props: {
                       {"\u0647\u0648\u0645\u0633\u0627"}
                     </div>
                   </div>
-                  {(() => {
-                    const child$Props = {
-                      checked: generateStateValueProp($state, [
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch4"}
+                    data-plasmic-override={overrides.fragmentSwitch4}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch4",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch4
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
                         "fragmentSwitch4",
                         "checked"
-                      ]),
-                      className: classNames(
-                        "__wab_instance",
-                        sty.fragmentSwitch4
-                      ),
-                      disabled: false,
-                      onCheckedChange: async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "fragmentSwitch4",
-                          "checked"
-                        ]).apply(null, eventArgs);
-                        (async checked => {
-                          const $steps = {};
+                      ]).apply(null, eventArgs);
+                      (async checked => {
+                        const $steps = {};
 
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return localStorage.setItem(
-                                      "IsShabInstant",
-                                      $state.fragmentSwitch4.checked
-                                    );
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return localStorage.setItem(
+                                    "IsShabInstant",
+                                    $state.fragmentSwitch4.checked
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
 
-                          $steps["invokeGlobalAction"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://dev.rentamon.com/webhook/shab-instant",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return $ctx.properties.find(
-                                          property =>
-                                            property.property_name ===
-                                            $state.selectProperty.value
-                                        ).property_id;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return {
-                                            dates: "1403-05-30",
-                                            property_id: 1,
-                                            action: "unset_instant"
-                                          };
-                                        }
-                                        throw e;
-                                      }
-                                    })(),
-                                    (() => {
-                                      try {
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://dev.rentamon.com/webhook/shab-instant",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $ctx.properties.find(
+                                        property =>
+                                          property.property_name ===
+                                          $state.selectProperty.value
+                                      ).property_id;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
                                         return {
+                                          dates: "1403-05-30",
+                                          property_id: 1,
+                                          action: "unset_instant"
+                                        };
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  (() => {
+                                    try {
+                                      return {
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded",
+                                          Authorization: `Bearer ${
+                                            document.cookie
+                                              .split("; ")
+                                              .find(row =>
+                                                row.startsWith(
+                                                  "usso_access_token"
+                                                )
+                                              )
+                                              .split("=")[1]
+                                          }`
+                                        },
+                                        withCredentials: true
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return {
+                                          withCredentials: true,
                                           headers: {
                                             "Content-Type":
-                                              "application/x-www-form-urlencoded",
-                                            Authorization: `Bearer ${
-                                              document.cookie
-                                                .split("; ")
-                                                .find(row =>
-                                                  row.startsWith(
-                                                    "usso_access_token"
-                                                  )
-                                                )
-                                                .split("=")[1]
-                                            }`
-                                          },
-                                          withCredentials: true
+                                              "application/x-www-form-urlencoded"
+                                          }
                                         };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return {
-                                            withCredentials: true,
-                                            headers: {
-                                              "Content-Type":
-                                                "application/x-www-form-urlencoded"
-                                            }
-                                          };
-                                        }
-                                        throw e;
                                       }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
-                          }
-                        }).apply(null, eventArgs);
-                      }
-                    };
-                    initializeCodeComponentStates(
-                      $state,
-                      [
-                        {
-                          name: "checked",
-                          plasmicStateName: "fragmentSwitch4.checked"
-                        }
-                      ],
-                      [],
-                      undefined ?? {},
-                      child$Props
-                    );
-                    initializePlasmicStates(
-                      $state,
-                      [
-                        {
-                          name: "fragmentSwitch4.checked",
-                          initFunc: ({ $props, $state, $queries }) =>
-                            (() => {
-                              try {
-                                return (() => {
-                                  return (
-                                    localStorage.getItem("IsShabInstant") ===
-                                    "true"
-                                  );
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
                             })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
                         }
-                      ],
-                      []
-                    );
-                    return (
-                      <Switch
-                        data-plasmic-name={"fragmentSwitch4"}
-                        data-plasmic-override={overrides.fragmentSwitch4}
-                        {...child$Props}
-                      />
-                    );
-                  })()}
+                      }).apply(null, eventArgs);
+                    }}
+                  />
                 </div>
               </div>
             </ApiRequest>
+            <div
+              className={classNames(projectcss.all, sty.freeBox___3NzG5)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToHttpsRentamonComPanels"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        destination: "https://rentamon.com/panels"
+                      };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToHttpsRentamonComPanels"] != null &&
+                  typeof $steps["goToHttpsRentamonComPanels"] === "object" &&
+                  typeof $steps["goToHttpsRentamonComPanels"].then ===
+                    "function"
+                ) {
+                  $steps["goToHttpsRentamonComPanels"] = await $steps[
+                    "goToHttpsRentamonComPanels"
+                  ];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__uDvHu
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#FCFCFC" }}
+                  >
+                    {
+                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                    }
+                  </span>
+                </React.Fragment>
+              </div>
+            </div>
           </section>
           <Embed
             className={classNames("__wab_instance", sty.embedHtml__epNe8)}
@@ -1311,10 +1620,16 @@ const PlasmicDescendants = {
     "selectProperty",
     "shabContainer",
     "fragmentSwitch",
-    "jajigaContainer",
+    "otaghakContainer",
     "fragmentSwitch2",
     "jabamaContainer",
     "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mizboonContainer",
+    "fragmentSwitch6",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
     "homsaContainer",
     "fragmentSwitch4"
   ],
@@ -1325,10 +1640,16 @@ const PlasmicDescendants = {
     "selectProperty",
     "shabContainer",
     "fragmentSwitch",
-    "jajigaContainer",
+    "otaghakContainer",
     "fragmentSwitch2",
     "jabamaContainer",
     "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mizboonContainer",
+    "fragmentSwitch6",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
     "homsaContainer",
     "fragmentSwitch4"
   ],
@@ -1337,20 +1658,32 @@ const PlasmicDescendants = {
     "selectProperty",
     "shabContainer",
     "fragmentSwitch",
-    "jajigaContainer",
+    "otaghakContainer",
     "fragmentSwitch2",
     "jabamaContainer",
     "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mizboonContainer",
+    "fragmentSwitch6",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
     "homsaContainer",
     "fragmentSwitch4"
   ],
   selectProperty: ["selectProperty"],
   shabContainer: ["shabContainer", "fragmentSwitch"],
   fragmentSwitch: ["fragmentSwitch"],
-  jajigaContainer: ["jajigaContainer", "fragmentSwitch2"],
+  otaghakContainer: ["otaghakContainer", "fragmentSwitch2"],
   fragmentSwitch2: ["fragmentSwitch2"],
   jabamaContainer: ["jabamaContainer", "fragmentSwitch3"],
   fragmentSwitch3: ["fragmentSwitch3"],
+  jajigaContainer: ["jajigaContainer", "fragmentSwitch5"],
+  fragmentSwitch5: ["fragmentSwitch5"],
+  mizboonContainer: ["mizboonContainer", "fragmentSwitch6"],
+  fragmentSwitch6: ["fragmentSwitch6"],
+  mihmanshoContainer: ["mihmanshoContainer", "fragmentSwitch7"],
+  fragmentSwitch7: ["fragmentSwitch7"],
   homsaContainer: ["homsaContainer", "fragmentSwitch4"],
   fragmentSwitch4: ["fragmentSwitch4"]
 } as const;
@@ -1365,10 +1698,16 @@ type NodeDefaultElementType = {
   selectProperty: typeof Select;
   shabContainer: "div";
   fragmentSwitch: typeof Switch;
-  jajigaContainer: "div";
+  otaghakContainer: "div";
   fragmentSwitch2: typeof Switch;
   jabamaContainer: "div";
   fragmentSwitch3: typeof Switch;
+  jajigaContainer: "div";
+  fragmentSwitch5: typeof Switch;
+  mizboonContainer: "div";
+  fragmentSwitch6: typeof Switch;
+  mihmanshoContainer: "div";
+  fragmentSwitch7: typeof Switch;
   homsaContainer: "div";
   fragmentSwitch4: typeof Switch;
 };
@@ -1439,10 +1778,16 @@ export const PlasmicNewPage = Object.assign(
     selectProperty: makeNodeComponent("selectProperty"),
     shabContainer: makeNodeComponent("shabContainer"),
     fragmentSwitch: makeNodeComponent("fragmentSwitch"),
-    jajigaContainer: makeNodeComponent("jajigaContainer"),
+    otaghakContainer: makeNodeComponent("otaghakContainer"),
     fragmentSwitch2: makeNodeComponent("fragmentSwitch2"),
     jabamaContainer: makeNodeComponent("jabamaContainer"),
     fragmentSwitch3: makeNodeComponent("fragmentSwitch3"),
+    jajigaContainer: makeNodeComponent("jajigaContainer"),
+    fragmentSwitch5: makeNodeComponent("fragmentSwitch5"),
+    mizboonContainer: makeNodeComponent("mizboonContainer"),
+    fragmentSwitch6: makeNodeComponent("fragmentSwitch6"),
+    mihmanshoContainer: makeNodeComponent("mihmanshoContainer"),
+    fragmentSwitch7: makeNodeComponent("fragmentSwitch7"),
     homsaContainer: makeNodeComponent("homsaContainer"),
     fragmentSwitch4: makeNodeComponent("fragmentSwitch4"),
 

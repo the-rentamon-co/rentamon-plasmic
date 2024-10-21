@@ -1440,40 +1440,50 @@ function PlasmicSelfRegister__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["invokeGlobalAction"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://dev.rentamon.com/webhook/register",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return $state.selfRegisterForm.value;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
+                          $steps["invokeGlobalAction"] =
+                            $state.formStep === 2 &&
+                            [
+                              "jabamappid",
+                              "jajaigappid",
+                              "shabppid",
+                              "mizboonppid",
+                              "otaghakppid",
+                              "homsappid",
+                              "mihmanshoppid"
+                            ].some(field => $state.input[field] !== "")
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://dev.rentamon.com/webhook/register",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $state.selfRegisterForm.value;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
                                         }
-                                        throw e;
+                                      })(),
+                                      {
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded"
+                                        }
                                       }
-                                    })(),
-                                    {
-                                      headers: {
-                                        "Content-Type":
-                                          "application/x-www-form-urlencoded"
-                                      }
-                                    }
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
                           if (
                             $steps["invokeGlobalAction"] != null &&
                             typeof $steps["invokeGlobalAction"] === "object" &&
