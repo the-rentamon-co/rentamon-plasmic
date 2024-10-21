@@ -63,7 +63,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--token-8nedppYkGVaH);
   text-align: right;
@@ -75,7 +75,7 @@
   height: auto;
   max-width: 100%;
   color: var(--token-8nedppYkGVaH);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   min-width: 0;
 }
@@ -97,7 +97,7 @@
   max-width: 100%;
   color: var(--token-8nedppYkGVaH);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   min-width: 0;
 }
 .text__pHuo7 {
@@ -105,7 +105,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   color: #203647;
   min-width: 0;
 }
@@ -159,11 +159,11 @@
 .link {
   font-weight: 600;
   font-family: "Estedad";
-  font-size: 14px;
+  font-size: 15px;
 }
 .text__m08Pi {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
 }
 .freeBox__f1Jv {
   display: flex;

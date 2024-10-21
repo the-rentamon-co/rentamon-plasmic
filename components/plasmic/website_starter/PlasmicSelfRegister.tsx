@@ -370,7 +370,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0647\u0646\u0648\u0632 \u067e\u0646\u0644 \u0646\u062f\u0627\u0631\u06cc\u061f \u0627\u06cc\u0646\u200c\u062c\u0627 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646"
+                  "\u0647\u0646\u0648\u0632 \u067e\u0646\u0644 \u0646\u062f\u0627\u0631\u06cc\u061f \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646"
                 }
               </div>
             ) : null}
@@ -943,10 +943,8 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           const $steps = {};
 
                           $steps["updateFormStep"] =
-                            $state.selfRegisterForm.value.phoneNumber.length >=
-                              11 &&
                             $state.selfRegisterForm.value.propertyName.length >
-                              1
+                            1
                               ? (() => {
                                   const actionArgs = {
                                     variable: {
