@@ -90,7 +90,7 @@ type ArgPropType = keyof PlasmicComparison__ArgsType;
 export const PlasmicComparison__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicComparison__OverridesType = {
-  platformsProfile?: Flex__<"div">;
+  comparison?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   img?: Flex__<typeof PlasmicImg__>;
@@ -209,8 +209,8 @@ function PlasmicComparison__RenderFunc(props: {
 
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"platformsProfile"}
-          data-plasmic-override={overrides.platformsProfile}
+          data-plasmic-name={"comparison"}
+          data-plasmic-override={overrides.comparison}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
@@ -221,7 +221,7 @@ function PlasmicComparison__RenderFunc(props: {
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
             plasmic_plasmic_rich_components_css.plasmic_tokens,
-            sty.platformsProfile
+            sty.comparison
           )}
         >
           <Embed
@@ -1632,8 +1632,8 @@ function PlasmicComparison__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  platformsProfile: [
-    "platformsProfile",
+  comparison: [
+    "comparison",
     "embedHtml",
     "httpRestApiFetcher",
     "img",
@@ -1676,7 +1676,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  platformsProfile: "div";
+  comparison: "div";
   embedHtml: typeof Embed;
   httpRestApiFetcher: typeof DataFetcher;
   img: typeof PlasmicImg__;
@@ -1736,7 +1736,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "platformsProfile") {
+  if (nodeName === "comparison") {
     func.displayName = "PlasmicComparison";
   } else {
     func.displayName = `PlasmicComparison.${nodeName}`;
@@ -1746,7 +1746,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicComparison = Object.assign(
   // Top-level PlasmicComparison renders the root element
-  makeNodeComponent("platformsProfile"),
+  makeNodeComponent("comparison"),
   {
     // Helper components rendering sub-elements
     embedHtml: makeNodeComponent("embedHtml"),

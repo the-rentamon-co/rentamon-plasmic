@@ -1,4 +1,4 @@
-.platformsProfile {
+.comparison {
   display: grid;
   flex-direction: column;
   position: relative;
@@ -18,11 +18,11 @@
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
 }
-.platformsProfile > * {
+.comparison > * {
   grid-column: 4;
 }
 @media (max-width: 768px) {
-  .platformsProfile > * {
+  .comparison > * {
     grid-column: 4;
   }
 }

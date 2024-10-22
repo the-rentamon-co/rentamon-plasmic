@@ -410,7 +410,9 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   sty.text___3D5Qe
                 )}
               >
-                {"\u0648\u06cc\u0644\u0627\u06cc \u0645\u0646"}
+                {
+                  "\u0645\u0634\u062e\u0635\u0627\u062a \u0648\u06cc\u0644\u0627\u06cc \u0645\u0646"
+                }
               </div>
             ) : null}
             {(() => {
@@ -1128,21 +1130,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          bordered: (() => {
-                            try {
-                              return (() => {
-                                return ($state.borderRadius = "30px");
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
-                              }
-                              throw e;
-                            }
-                          })(),
+                          bordered: true,
                           className: classNames("__wab_instance", sty.input5),
                           onChange: generateStateOnChangePropForCodeComponents(
                             $state,
@@ -1553,7 +1541,8 @@ function PlasmicSelfRegister__RenderFunc(props: {
                                   args: [
                                     undefined,
                                     "\u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc! \u0628\u0631\u06cc\u0645 \u062f\u0627\u062e\u0644 \u062a\u0642\u0648\u06cc\u0645",
-                                    "bottom-left"
+                                    "top-center",
+                                    7000
                                   ]
                                 };
                                 return $globalActions[

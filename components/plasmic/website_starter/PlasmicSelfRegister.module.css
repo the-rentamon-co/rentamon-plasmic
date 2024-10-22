@@ -213,7 +213,7 @@
   max-width: 100%;
   color: var(--token-jgohepLVeKvh);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   min-width: 0;
 }
 .step1 {
@@ -275,7 +275,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 16px;
   min-width: 0;
 }
 .button__jHcIi:global(.__wab_instance) {
@@ -294,7 +294,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   min-width: 0;
 }
@@ -401,7 +401,7 @@
   height: auto;
   max-width: 100%;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   min-width: 0;
 }
 .button__jGqui:global(.__wab_instance) {
@@ -420,7 +420,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   min-width: 0;
 }

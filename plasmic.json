@@ -499,6 +499,34 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "checkbox"
+        },
+        {
+          "id": "P-CxSrGa5GbD",
+          "name": "PaymentSuccess",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPaymentSuccess.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/payment-success.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPaymentSuccess.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/payment-success"
+        },
+        {
+          "id": "jfPuTUqbVaoo",
+          "name": "PaymentError",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPaymentError.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/payment-error.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPaymentError.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/payment-error"
         }
       ],
       "icons": [
@@ -628,6 +656,21 @@
           "id": "MkzI3JAKze21",
           "name": "mihmansho.png",
           "filePath": "../public/plasmic/website_starter/images/mihmanshoPng.png"
+        },
+        {
+          "id": "59-PMHLoXBZH",
+          "name": "check.png",
+          "filePath": "../public/plasmic/website_starter/images/checkPng.png"
+        },
+        {
+          "id": "N7Yi9a6_0g2P",
+          "name": "cross.png",
+          "filePath": "../public/plasmic/website_starter/images/crossPng.png"
+        },
+        {
+          "id": "QdL2OznGZTAO",
+          "name": "Group 536.png",
+          "filePath": "../public/plasmic/website_starter/images/group536Png.png"
         }
       ],
       "indirect": false,
