@@ -386,7 +386,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0647\u0646\u0648\u0632 \u067e\u0646\u0644 \u0646\u062f\u0627\u0631\u06cc\u061f \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646"
+                  "\u0634\u0631\u0648\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632  \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
                 }
               </div>
             ) : null}
@@ -410,9 +410,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   sty.text___3D5Qe
                 )}
               >
-                {
-                  "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc"
-                }
+                {"\u0648\u06cc\u0644\u0627\u06cc \u0645\u0646"}
               </div>
             ) : null}
             {(() => {
@@ -437,7 +435,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0647\u0631 \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0648 \u062a\u0648\u06cc \u0628\u062e\u0634 \u062e\u0648\u062f\u0634 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                    "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0627\u06cc \u06a9\u0647 \u062f\u0627\u0631\u06cc \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
                   }
                 </div>
                 <div
@@ -448,7 +446,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0647\u0645\u0648\u0646 \u06a9\u062f \u0648\u06cc\u0644\u0627\u062a \u06a9\u0647 \u062f\u0631 \u0628\u062e\u0634 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                    "\u0647\u0645\u0648\u0646 \u06a9\u062f\u06cc \u06a9\u0647 \u062f\u0631 \u0628\u062e\u0634 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
                   }
                 </div>
               </div>
@@ -803,7 +801,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               }
                               style={{ color: "#FCFCFC" }}
                             >
-                              {"\u0628\u0639\u062f\u06cc"}
+                              {"\u062b\u0628\u062a \u0648\u06cc\u0644\u0627"}
                             </span>
                           </React.Fragment>
                         </div>
@@ -1020,7 +1018,9 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               }
                               style={{ color: "#FCFCFC" }}
                             >
-                              {"\u0628\u0639\u062f\u06cc"}
+                              {
+                                "\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627"
+                              }
                             </span>
                           </React.Fragment>
                         </div>
@@ -1128,6 +1128,21 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
+                          bordered: (() => {
+                            try {
+                              return (() => {
+                                return ($state.borderRadius = "30px");
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })(),
                           className: classNames("__wab_instance", sty.input5),
                           onChange: generateStateOnChangePropForCodeComponents(
                             $state,
@@ -1135,8 +1150,19 @@ function PlasmicSelfRegister__RenderFunc(props: {
                             ["input5", "value"],
                             AntdInput_Helpers
                           ),
-                          placeholder:
-                            "\u06a9\u062f \u062c\u0627\u0628\u0627\u0645\u0627",
+                          placeholder: (() => {
+                            try {
+                              return `کد ${$state.selfRegisterForm.value.propertyName} در جاباما`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input5",
@@ -1181,8 +1207,19 @@ function PlasmicSelfRegister__RenderFunc(props: {
                             ["input6", "value"],
                             AntdInput_Helpers
                           ),
-                          placeholder:
-                            "\u06a9\u062f \u062c\u0627\u062c\u06cc\u06af\u0627",
+                          placeholder: (() => {
+                            try {
+                              return `کد ${$state.selfRegisterForm.value.propertyName} در جاجیگا`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input6",
@@ -1227,7 +1264,19 @@ function PlasmicSelfRegister__RenderFunc(props: {
                             ["input7", "value"],
                             AntdInput_Helpers
                           ),
-                          placeholder: "\u06a9\u062f \u0634\u0628",
+                          placeholder: (() => {
+                            try {
+                              return `کد ${$state.selfRegisterForm.value.propertyName} در شب`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input7",
@@ -1272,8 +1321,19 @@ function PlasmicSelfRegister__RenderFunc(props: {
                             ["input8", "value"],
                             AntdInput_Helpers
                           ),
-                          placeholder:
-                            "\u06a9\u062f \u0645\u06cc\u0632\u0628\u0648\u0646",
+                          placeholder: (() => {
+                            try {
+                              return `کد ${$state.selfRegisterForm.value.propertyName} در میزبون`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input8",
@@ -1318,8 +1378,19 @@ function PlasmicSelfRegister__RenderFunc(props: {
                             ["input9", "value"],
                             AntdInput_Helpers
                           ),
-                          placeholder:
-                            "\u06a9\u062f \u0627\u062a\u0627\u0642\u06a9",
+                          placeholder: (() => {
+                            try {
+                              return `کد ${$state.selfRegisterForm.value.propertyName} در اتاقک`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input9",
@@ -1367,8 +1438,19 @@ function PlasmicSelfRegister__RenderFunc(props: {
                             ["input10", "value"],
                             AntdInput_Helpers
                           ),
-                          placeholder:
-                            "\u06a9\u062f \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648",
+                          placeholder: (() => {
+                            try {
+                              return `کد ${$state.selfRegisterForm.value.propertyName} در میهمان‌شو`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input10",
@@ -1413,8 +1495,19 @@ function PlasmicSelfRegister__RenderFunc(props: {
                             ["input11", "value"],
                             AntdInput_Helpers
                           ),
-                          placeholder:
-                            "\u06a9\u062f \u0647\u0648\u0645\u0633\u0627",
+                          placeholder: (() => {
+                            try {
+                              return `کد ${$state.selfRegisterForm.value.propertyName} در هومسا`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input11",
@@ -1453,6 +1546,32 @@ function PlasmicSelfRegister__RenderFunc(props: {
                         )}
                         onClick={async () => {
                           const $steps = {};
+
+                          $steps["invokeGlobalActionToast"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc! \u0628\u0631\u06cc\u0645 \u062f\u0627\u062e\u0644 \u062a\u0642\u0648\u06cc\u0645",
+                                    "bottom-left"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalActionToast"] != null &&
+                            typeof $steps["invokeGlobalActionToast"] ===
+                              "object" &&
+                            typeof $steps["invokeGlobalActionToast"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalActionToast"] = await $steps[
+                              "invokeGlobalActionToast"
+                            ];
+                          }
 
                           $steps["invokeGlobalAction"] =
                             $state.formStep === 2 &&
@@ -1548,32 +1667,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           ) {
                             $steps["goToPage"] = await $steps["goToPage"];
                           }
-
-                          $steps["invokeGlobalActionToast"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc! \u0628\u0631\u06cc\u0645 \u062f\u0627\u062e\u0644 \u067e\u0646\u0644",
-                                    "bottom-left"
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalActionToast"] != null &&
-                            typeof $steps["invokeGlobalActionToast"] ===
-                              "object" &&
-                            typeof $steps["invokeGlobalActionToast"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalActionToast"] = await $steps[
-                              "invokeGlobalActionToast"
-                            ];
-                          }
                         }}
                         submitsForm={false}
                         type={"primary"}
@@ -1592,7 +1685,9 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               }
                               style={{ color: "#FCFCFC" }}
                             >
-                              {"\u062b\u0628\u062a\u200c\u0646\u0627\u0645"}
+                              {
+                                "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645"
+                              }
                             </span>
                           </React.Fragment>
                         </div>
