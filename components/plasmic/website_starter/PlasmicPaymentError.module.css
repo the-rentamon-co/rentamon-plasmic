@@ -36,13 +36,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.httpRestApiFetcher:global(.__wab_instance) {
-  width: 100%;
-  max-width: 100%;
-  object-fit: cover;
-  justify-self: center;
-  min-width: 0;
-}
 .freeBox__kyyXs {
   display: flex;
   flex-direction: column;
