@@ -356,7 +356,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
               data-plasmic-override={overrides.openReplay}
               className={classNames("__wab_instance", sty.openReplay)}
               code={
-                "import Tracker from '@openreplay/tracker';\r\n\r\nconst tracker = new Tracker({\r\n  projectKey: \"3ZxSHuM9j2XKwEJeYX4x\",  \r\n});\r\n// .start() returns a promise\r\ntracker.start().then(sessionData => ... ).catch(e => ... )"
+                '<!-- OpenReplay Tracking Code for my  project -->\r\n<script>\r\n  var initOpts = {\r\n    projectKey: "3ZxSHuM9j2XKwEJeYX4x",\r\n    defaultInputMode: 0,\r\n    obscureTextNumbers: false,\r\n    obscureTextEmails: false,\r\n  };\r\n  var startOpts = { userID: "" };\r\n  (function(A,s,a,y,e,r){\r\n    r=window.OpenReplay=[e,r,y,[s-1, e]];\r\n    s=document.createElement(\'script\');s.src=A;s.async=!a;\r\n    document.getElementsByTagName(\'head\')[0].appendChild(s);\r\n    r.start=function(v){r.push([0])};\r\n    r.stop=function(v){r.push([1])};\r\n    r.setUserID=function(id){r.push([2,id])};\r\n    r.setUserAnonymousID=function(id){r.push([3,id])};\r\n    r.setMetadata=function(k,v){r.push([4,k,v])};\r\n    r.event=function(k,p,i){r.push([5,k,p,i])};\r\n    r.issue=function(k,p){r.push([6,k,p])};\r\n    r.isActive=function(){return false};\r\n    r.getSessionToken=function(){};\r\n  })("//static.openreplay.com/latest/openreplay.js",1,0,initOpts,startOpts);\r\n</script>'
               }
             />
           </div>
