@@ -629,7 +629,7 @@ function PlasmicNewPage__RenderFunc(props: {
                         "__wab_instance",
                         sty.fragmentSwitch2
                       )}
-                      disabled={true}
+                      disabled={false}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
                           "fragmentSwitch2",
