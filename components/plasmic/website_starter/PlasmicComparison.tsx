@@ -546,12 +546,6 @@ function PlasmicComparison__RenderFunc(props: {
                           }
                         </div>
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.column___7GVz
-                        )}
-                      />
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__rYb34)}

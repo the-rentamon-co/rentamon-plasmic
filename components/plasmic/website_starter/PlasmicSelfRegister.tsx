@@ -1542,7 +1542,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                                     undefined,
                                     "\u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc! \u0628\u0631\u06cc\u0645 \u062f\u0627\u062e\u0644 \u062a\u0642\u0648\u06cc\u0645",
                                     "top-center",
-                                    7000
+                                    4000
                                   ]
                                 };
                                 return $globalActions[
