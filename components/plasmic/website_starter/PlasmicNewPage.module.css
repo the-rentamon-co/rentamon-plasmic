@@ -215,9 +215,9 @@
   justify-content: space-between;
   align-items: center;
   background: none;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
-  cursor: not-allowed;
+  cursor: default;
   filter: blur(0px);
   padding: 8px 0px 8px 8px;
 }
@@ -262,7 +262,11 @@
   object-fit: cover;
   margin-right: 0px;
   width: 45px;
+  transition-property: all;
+  transition-duration: 1s;
   flex-shrink: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
 }
 .jabamaContainer {
   display: flex;
