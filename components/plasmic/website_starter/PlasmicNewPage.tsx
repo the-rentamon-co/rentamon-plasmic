@@ -91,7 +91,7 @@ export type PlasmicNewPage__OverridesType = {
   shabContainer?: Flex__<"div">;
   shabSwitch?: Flex__<typeof Switch>;
   otaghakContainer?: Flex__<"div">;
-  otaghakSwitch?: Flex__<typeof Switch>;
+  otaghak?: Flex__<typeof Switch>;
   jabamaContainer?: Flex__<"div">;
   fragmentSwitch3?: Flex__<typeof Switch>;
   jajigaContainer?: Flex__<"div">;
@@ -181,12 +181,6 @@ function PlasmicNewPage__RenderFunc(props: {
           "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
       },
       {
-        path: "otaghakSwitch.checked",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
         path: "fragmentSwitch3.checked",
         type: "private",
         variableType: "text",
@@ -233,6 +227,31 @@ function PlasmicNewPage__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "otaghak.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.properties.data
+                .find(
+                  property =>
+                    property.property_name === $state.selectProperty.value
+                )
+                .website_ids.find(website => website.website_id === 6)
+                .is_instant;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -341,7 +360,7 @@ function PlasmicNewPage__RenderFunc(props: {
                 "properties",
                 "data"
               ])}
-              url={"https://dev.rentamon.com/webhook/multi-platform-test"}
+              url={"https://dev.rentamon.com/webhook/property-status"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}
@@ -616,20 +635,16 @@ function PlasmicNewPage__RenderFunc(props: {
                       </div>
                     </div>
                     <Switch
-                      data-plasmic-name={"otaghakSwitch"}
-                      data-plasmic-override={overrides.otaghakSwitch}
+                      data-plasmic-name={"otaghak"}
+                      data-plasmic-override={overrides.otaghak}
                       checked={generateStateValueProp($state, [
-                        "otaghakSwitch",
+                        "otaghak",
                         "checked"
                       ])}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.otaghakSwitch
-                      )}
-                      disabled={false}
+                      className={classNames("__wab_instance", sty.otaghak)}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "otaghakSwitch",
+                          "otaghak",
                           "checked"
                         ]).apply(null, eventArgs);
                         (async checked => {
@@ -640,11 +655,11 @@ function PlasmicNewPage__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     "POST",
-                                    "https://dev.rentamon.com/webhook-test/otaghak-instant",
+                                    "https://dev.rentamon.com/webhook/otaghak-instant",
                                     undefined,
                                     (() => {
                                       try {
-                                        return $state.otaghakSwitch.checked
+                                        return $state.otaghak.checked
                                           ? {
                                               action: "set_instant",
                                               property_id:
@@ -669,51 +684,18 @@ function PlasmicNewPage__RenderFunc(props: {
                                           e?.plasmicType ===
                                             "PlasmicUndefinedDataError"
                                         ) {
-                                          return {
-                                            dates: "1403-05-30",
-                                            property_id: 1,
-                                            action: "unset_instant"
-                                          };
+                                          return undefined;
                                         }
                                         throw e;
                                       }
                                     })(),
-                                    (() => {
-                                      try {
-                                        return {
-                                          headers: {
-                                            "Content-Type":
-                                              "application/x-www-form-urlencoded",
-                                            Authorization: `Bearer ${
-                                              document.cookie
-                                                .split("; ")
-                                                .find(row =>
-                                                  row.startsWith(
-                                                    "usso_access_token"
-                                                  )
-                                                )
-                                                .split("=")[1]
-                                            }`
-                                          },
-                                          withCredentials: true
-                                        };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return {
-                                            withCredentials: true,
-                                            headers: {
-                                              "Content-Type":
-                                                "application/x-www-form-urlencoded"
-                                            }
-                                          };
-                                        }
-                                        throw e;
-                                      }
-                                    })()
+                                    {
+                                      headers: {
+                                        "Content-Type":
+                                          "application/x-www-form-urlencoded"
+                                      },
+                                      withCredentials: true
+                                    }
                                   ]
                                 };
                                 return $globalActions[
@@ -1746,7 +1728,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghakSwitch",
+    "otaghak",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1766,7 +1748,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghakSwitch",
+    "otaghak",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1784,7 +1766,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghakSwitch",
+    "otaghak",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1799,8 +1781,8 @@ const PlasmicDescendants = {
   selectProperty: ["selectProperty"],
   shabContainer: ["shabContainer", "shabSwitch"],
   shabSwitch: ["shabSwitch"],
-  otaghakContainer: ["otaghakContainer", "otaghakSwitch"],
-  otaghakSwitch: ["otaghakSwitch"],
+  otaghakContainer: ["otaghakContainer", "otaghak"],
+  otaghak: ["otaghak"],
   jabamaContainer: ["jabamaContainer", "fragmentSwitch3"],
   fragmentSwitch3: ["fragmentSwitch3"],
   jajigaContainer: ["jajigaContainer", "fragmentSwitch5"],
@@ -1824,7 +1806,7 @@ type NodeDefaultElementType = {
   shabContainer: "div";
   shabSwitch: typeof Switch;
   otaghakContainer: "div";
-  otaghakSwitch: typeof Switch;
+  otaghak: typeof Switch;
   jabamaContainer: "div";
   fragmentSwitch3: typeof Switch;
   jajigaContainer: "div";
@@ -1904,7 +1886,7 @@ export const PlasmicNewPage = Object.assign(
     shabContainer: makeNodeComponent("shabContainer"),
     shabSwitch: makeNodeComponent("shabSwitch"),
     otaghakContainer: makeNodeComponent("otaghakContainer"),
-    otaghakSwitch: makeNodeComponent("otaghakSwitch"),
+    otaghak: makeNodeComponent("otaghak"),
     jabamaContainer: makeNodeComponent("jabamaContainer"),
     fragmentSwitch3: makeNodeComponent("fragmentSwitch3"),
     jajigaContainer: makeNodeComponent("jajigaContainer"),
