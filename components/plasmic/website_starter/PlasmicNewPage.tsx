@@ -89,9 +89,9 @@ export type PlasmicNewPage__OverridesType = {
   properties?: Flex__<typeof ApiRequest>;
   selectProperty?: Flex__<typeof Select>;
   shabContainer?: Flex__<"div">;
-  fragmentSwitch?: Flex__<typeof Switch>;
+  shabSwitch?: Flex__<typeof Switch>;
   otaghakContainer?: Flex__<"div">;
-  fragmentSwitch2?: Flex__<typeof Switch>;
+  otaghakSwitch?: Flex__<typeof Switch>;
   jabamaContainer?: Flex__<"div">;
   fragmentSwitch3?: Flex__<typeof Switch>;
   jajigaContainer?: Flex__<"div">;
@@ -149,7 +149,7 @@ function PlasmicNewPage__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "fragmentSwitch.checked",
+        path: "shabSwitch.checked",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -181,7 +181,7 @@ function PlasmicNewPage__RenderFunc(props: {
           "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
       },
       {
-        path: "fragmentSwitch2.checked",
+        path: "otaghakSwitch.checked",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -341,7 +341,7 @@ function PlasmicNewPage__RenderFunc(props: {
                 "properties",
                 "data"
               ])}
-              url={"https://dev.rentamon.com/webhook/property-status"}
+              url={"https://dev.rentamon.com/webhook/multi-platform-test"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}
@@ -444,20 +444,17 @@ function PlasmicNewPage__RenderFunc(props: {
                       </div>
                     </div>
                     <Switch
-                      data-plasmic-name={"fragmentSwitch"}
-                      data-plasmic-override={overrides.fragmentSwitch}
+                      data-plasmic-name={"shabSwitch"}
+                      data-plasmic-override={overrides.shabSwitch}
                       checked={generateStateValueProp($state, [
-                        "fragmentSwitch",
+                        "shabSwitch",
                         "checked"
                       ])}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.fragmentSwitch
-                      )}
+                      className={classNames("__wab_instance", sty.shabSwitch)}
                       disabled={false}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "fragmentSwitch",
+                          "shabSwitch",
                           "checked"
                         ]).apply(null, eventArgs);
                         (async checked => {
@@ -472,7 +469,7 @@ function PlasmicNewPage__RenderFunc(props: {
                                     undefined,
                                     (() => {
                                       try {
-                                        return $state.fragmentSwitch.checked
+                                        return $state.shabSwitch.checked
                                           ? {
                                               action: "set_instant",
                                               property_id:
@@ -619,20 +616,20 @@ function PlasmicNewPage__RenderFunc(props: {
                       </div>
                     </div>
                     <Switch
-                      data-plasmic-name={"fragmentSwitch2"}
-                      data-plasmic-override={overrides.fragmentSwitch2}
+                      data-plasmic-name={"otaghakSwitch"}
+                      data-plasmic-override={overrides.otaghakSwitch}
                       checked={generateStateValueProp($state, [
-                        "fragmentSwitch2",
+                        "otaghakSwitch",
                         "checked"
                       ])}
                       className={classNames(
                         "__wab_instance",
-                        sty.fragmentSwitch2
+                        sty.otaghakSwitch
                       )}
                       disabled={false}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "fragmentSwitch2",
+                          "otaghakSwitch",
                           "checked"
                         ]).apply(null, eventArgs);
                         (async checked => {
@@ -647,7 +644,7 @@ function PlasmicNewPage__RenderFunc(props: {
                                     undefined,
                                     (() => {
                                       try {
-                                        return $state.fragmentSwitch.checked
+                                        return $state.otaghakSwitch.checked
                                           ? {
                                               action: "set_instant",
                                               property_id:
@@ -1747,9 +1744,9 @@ const PlasmicDescendants = {
     "properties",
     "selectProperty",
     "shabContainer",
-    "fragmentSwitch",
+    "shabSwitch",
     "otaghakContainer",
-    "fragmentSwitch2",
+    "otaghakSwitch",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1767,9 +1764,9 @@ const PlasmicDescendants = {
     "properties",
     "selectProperty",
     "shabContainer",
-    "fragmentSwitch",
+    "shabSwitch",
     "otaghakContainer",
-    "fragmentSwitch2",
+    "otaghakSwitch",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1785,9 +1782,9 @@ const PlasmicDescendants = {
     "properties",
     "selectProperty",
     "shabContainer",
-    "fragmentSwitch",
+    "shabSwitch",
     "otaghakContainer",
-    "fragmentSwitch2",
+    "otaghakSwitch",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1800,10 +1797,10 @@ const PlasmicDescendants = {
     "fragmentSwitch4"
   ],
   selectProperty: ["selectProperty"],
-  shabContainer: ["shabContainer", "fragmentSwitch"],
-  fragmentSwitch: ["fragmentSwitch"],
-  otaghakContainer: ["otaghakContainer", "fragmentSwitch2"],
-  fragmentSwitch2: ["fragmentSwitch2"],
+  shabContainer: ["shabContainer", "shabSwitch"],
+  shabSwitch: ["shabSwitch"],
+  otaghakContainer: ["otaghakContainer", "otaghakSwitch"],
+  otaghakSwitch: ["otaghakSwitch"],
   jabamaContainer: ["jabamaContainer", "fragmentSwitch3"],
   fragmentSwitch3: ["fragmentSwitch3"],
   jajigaContainer: ["jajigaContainer", "fragmentSwitch5"],
@@ -1825,9 +1822,9 @@ type NodeDefaultElementType = {
   properties: typeof ApiRequest;
   selectProperty: typeof Select;
   shabContainer: "div";
-  fragmentSwitch: typeof Switch;
+  shabSwitch: typeof Switch;
   otaghakContainer: "div";
-  fragmentSwitch2: typeof Switch;
+  otaghakSwitch: typeof Switch;
   jabamaContainer: "div";
   fragmentSwitch3: typeof Switch;
   jajigaContainer: "div";
@@ -1905,9 +1902,9 @@ export const PlasmicNewPage = Object.assign(
     properties: makeNodeComponent("properties"),
     selectProperty: makeNodeComponent("selectProperty"),
     shabContainer: makeNodeComponent("shabContainer"),
-    fragmentSwitch: makeNodeComponent("fragmentSwitch"),
+    shabSwitch: makeNodeComponent("shabSwitch"),
     otaghakContainer: makeNodeComponent("otaghakContainer"),
-    fragmentSwitch2: makeNodeComponent("fragmentSwitch2"),
+    otaghakSwitch: makeNodeComponent("otaghakSwitch"),
     jabamaContainer: makeNodeComponent("jabamaContainer"),
     fragmentSwitch3: makeNodeComponent("fragmentSwitch3"),
     jajigaContainer: makeNodeComponent("jajigaContainer"),

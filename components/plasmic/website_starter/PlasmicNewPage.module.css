@@ -193,7 +193,7 @@
   text-align: right;
   padding-left: 0px;
 }
-.fragmentSwitch:global(.__wab_instance) {
+.shabSwitch:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   margin-right: 0px;
@@ -257,7 +257,7 @@
   text-align: right;
   padding-left: 0px;
 }
-.fragmentSwitch2:global(.__wab_instance) {
+.otaghakSwitch:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   margin-right: 0px;
