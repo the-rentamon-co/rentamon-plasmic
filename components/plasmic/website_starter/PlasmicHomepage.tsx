@@ -63,6 +63,7 @@ import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import Wallet from "../../Wallet"; // plasmic-import: bHX7IYOtGqc7/component
 import PropertyName from "../../PropertyName"; // plasmic-import: 35iXAFb28kzU/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -88,6 +89,7 @@ export type PlasmicHomepage__OverridesType = {
   wallet?: Flex__<typeof Wallet>;
   propertyName?: Flex__<typeof PropertyName>;
   calendar2?: Flex__<typeof Calendar2>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultHomepageProps {}
@@ -260,10 +262,6 @@ function PlasmicHomepage__RenderFunc(props: {
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__sHoIa)}>
-            <div className={classNames(projectcss.all, sty.freeBox__eFxep)} />
-
-            <div className={classNames(projectcss.all, sty.freeBox__nTbjm)} />
-
             <div className={classNames(projectcss.all, sty.freeBox___35LCb)}>
               <div
                 className={classNames(
@@ -274,7 +272,16 @@ function PlasmicHomepage__RenderFunc(props: {
               >
                 {"Enter some text"}
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__rwxec)} />
+              <div className={classNames(projectcss.all, sty.freeBox__rwxec)}>
+                <Embed
+                  data-plasmic-name={"embedHtml"}
+                  data-plasmic-override={overrides.embedHtml}
+                  className={classNames("__wab_instance", sty.embedHtml)}
+                  code={
+                    '<script>\r\n\r\n<html lang="en">\r\n  <head>\r\n    <link\r\n      rel="stylesheet"\r\n      href="https://rentamon.com/wp-content/rentamon-content-files/persian-datepicker.css?ver=1.0.2"\r\n    />\r\n    <script src="https://rentamon.com/wp-content/rentamon-content-files/jquery-2.2.4.min.js?ver=1.0.5"></script>\r\n    <script src="https://rentamon.com/wp-content/rentamon-content-files/persian-date.js?ver=1.0.3"></script>\r\n    <script src="https://the-rentamon-co.github.io/Rentamon-Front/persian-datepicker.js?ver=1.1.4"></script>\r\n    <link\r\n      rel="stylesheet"\r\n      href="https://the-rentamon-co.github.io/Rentamon-Front/rentamon_rebuild.css"\r\n    />\r\n  </head>\r\n  <body>\r\n    <div class="rentamon"></div>\r\n    <script>\r\n      // function for checking authentication\r\n      \r\n      // first function for getting cookies\r\n\r\n    \r\n        // Function to verify token\r\n\r\n    // Function to get the value of a cookie by name\r\n    // Function to refresh the token\r\n    async function refreshToken() {\r\n      try {\r\n    \r\n        const response = await fetch(\'https://sso.rentamon.com/auth/refresh\', {\r\n                method: \'GET\',\r\n                credentials:"include"\r\n\r\n            });\r\n        console.log("Refreshed Token in 10 minutes")\r\n        if (response.ok) {\r\n          const data = await response.json();\r\n          console.log(\'Token refreshed successfully:\', data);\r\n          // You can handle the new token or any other logic here\r\n        } else {\r\n          console.error(\'Failed to refresh token:\', response.status);\r\n          // Optionally handle the failure (like redirecting the user to login)\r\n        }\r\n      } catch (error) {\r\n        console.error(\'Error refreshing token:\', error);\r\n      }\r\n    }\r\n\r\n// Call the refreshToken function every 10 minutes\r\n    setInterval(refreshToken, 300000);\r\n\r\n// Call it once immediately to ensure the token is refreshed right away\r\n    refreshToken();\r\n\r\n    function getCookie(name) {\r\n        const value = `; ${document.cookie}`;\r\n        const parts = value.split(`; ${name}=`);\r\n        if (parts.length === 2) return parts.pop().split(\';\').shift();\r\n    }\r\n    \r\n    // Retrieve the boolean values of the cookies\r\n    // Check for \'usso_refresh_available\' cookie\r\n    const ussoRefreshAvailable = getCookie(\'usso_refresh_available\') || false;\r\n    console.log("this is ussoRefresh: ", ussoRefreshAvailable);\r\n    \r\n    // Check for \'usso_access_available\' cookie\r\n    const ussoAccessAvailable = getCookie(\'usso_access_available\') || false;\r\n    console.log("this is ussoAccessAvailable: ", ussoAccessAvailable);\r\n\r\n\r\n    \r\n    // Check if access is available\r\n    if (!ussoAccessAvailable) {\r\n        // Check the usso_refresh_available flag\r\n        if (!ussoRefreshAvailable) {\r\n            // Redirect the user\r\n            console.log("got here in redirect")\r\n            window.location.href = \'https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel\';\r\n        } else {\r\n            // Call the refresh endpoint\r\n            console.log("got here in refreshToken")\r\n            fetch(\'https://sso.rentamon.com/auth/refresh\', {\r\n                method: \'GET\',\r\n                credentials:"include"\r\n            })\r\n            .then(response => {\r\n                if (!response.ok) {\r\n                    throw new Error(\'Failed to refresh token\');\r\n                }\r\n                return response.json();\r\n            })\r\n            .then(data => {\r\n                // Handle the new access token\r\n                console.log(\'Token refreshed:\', data);\r\n                // You may need to set the new token in your backend or notify the user\r\n            })\r\n            .catch(error => {\r\n                console.error(\'Error:\', error);\r\n                // Redirect if the refresh fails\r\n                window.location.href = \'https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel\';\r\n            });\r\n        }\r\n    }\r\n\r\n  \r\n      // starting the page\r\n      var rBody = document.querySelector(".rentamon");\r\n      var newDiv = document.createElement("div");\r\n      var newScript = document.createElement("script");\r\n      newScript.src =\r\n        "https://the-rentamon-co.github.io/Rentamon-Front/dev_rentamon.js";\r\n      newDiv.innerHTML = `<div class="loading-overlay-calendar" style="display: none">\r\n      <div class="loading-spinner-calendar"></div>\r\n      <p class="loading-text-calendar">\u062f\u0631 \u062d\u0627\u0644 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0627</p>\r\n    </div>\r\n    <div class="inline"></div>\r\n    <script>alert("hi")<\\/script>\r\n    <div class="form">\r\n      <label>\r\n        <input\r\n          type="radio"\r\n          id="reserve"\r\n          name="block"\r\n          value="reserve"\r\n          class="reserve"\r\n        />\r\n\r\n        \u0631\u0632\u0631\u0648</label\r\n      >\r\n\r\n      <label>\r\n        <input\r\n          type="radio"\r\n          id="block"\r\n          name="block"\r\n          value="block"\r\n          class="block"\r\n        />\r\n        \u063a\u06cc\u0631\u0641\u0639\u0627\u0644</label\r\n      >\r\n\r\n      <label>\r\n        <input\r\n          type="radio"\r\n          id="unblock"\r\n          name="block"\r\n          value="unblock"\r\n          class="unblock"\r\n        />\r\n\r\n        \u0641\u0639\u0627\u0644</label\r\n      >\r\n\r\n      <label\r\n        ><input\r\n          type="radio"\r\n          id="price"\r\n          name="block"\r\n          value="price"\r\n          class="price"\r\n        />\u0642\u06cc\u0645\u062a</label\r\n      >\r\n\r\n      <label\r\n        ><input\r\n          type="radio"\r\n          id="discount"\r\n          name="block"\r\n          value="discount"\r\n          class="discount"\r\n        />\u062a\u062e\u0641\u06cc\u0641 %</label\r\n      >\r\n    </div>\r\n    <div class="btnActionCont">\r\n      <button class="submit">\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a</button>\r\n    </div>`;\r\n\r\n      var c = Object.fromEntries(\r\n        document.cookie.split("; ").map((x) => x.split("="))\r\n      );\r\n      document.addEventListener(\'DOMContentLoaded\', async () => {\r\n        \r\n        rBody.appendChild(newDiv);\r\n        rBody.appendChild(newScript); \r\n        \r\n        \r\n    });\r\n\r\n\r\n    </script>\r\n  </body>\r\n</html>\r\n\r\n\r\n\r\n\r\n</script>'
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -284,11 +291,19 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "httpRestApiFetcher", "wallet", "propertyName", "calendar2"],
+  root: [
+    "root",
+    "httpRestApiFetcher",
+    "wallet",
+    "propertyName",
+    "calendar2",
+    "embedHtml"
+  ],
   httpRestApiFetcher: ["httpRestApiFetcher", "wallet"],
   wallet: ["wallet"],
   propertyName: ["propertyName"],
-  calendar2: ["calendar2"]
+  calendar2: ["calendar2"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -299,6 +314,7 @@ type NodeDefaultElementType = {
   wallet: typeof Wallet;
   propertyName: typeof PropertyName;
   calendar2: typeof Calendar2;
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -365,6 +381,7 @@ export const PlasmicHomepage = Object.assign(
     wallet: makeNodeComponent("wallet"),
     propertyName: makeNodeComponent("propertyName"),
     calendar2: makeNodeComponent("calendar2"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
