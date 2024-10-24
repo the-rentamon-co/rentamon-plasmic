@@ -102,7 +102,6 @@ export type PlasmicNewPage__OverridesType = {
   fragmentSwitch7?: Flex__<typeof Switch>;
   homsaContainer?: Flex__<"div">;
   fragmentSwitch4?: Flex__<typeof Switch>;
-  otaghak2?: Flex__<typeof Switch>;
 };
 
 export interface DefaultNewPageProps {}
@@ -231,31 +230,6 @@ function PlasmicNewPage__RenderFunc(props: {
       },
       {
         path: "otaghak.checked",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return $state.properties.data
-                .find(
-                  property =>
-                    property.property_name === $state.selectProperty.value
-                )
-                .website_ids.find(website => website.website_id === 6)
-                .is_instant;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return undefined;
-              }
-              throw e;
-            }
-          })()
-      },
-      {
-        path: "otaghak2.checked",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -1667,88 +1641,6 @@ function PlasmicNewPage__RenderFunc(props: {
                     />
                   </div>
                 ) : null}
-                <Switch
-                  data-plasmic-name={"otaghak2"}
-                  data-plasmic-override={overrides.otaghak2}
-                  checked={generateStateValueProp($state, [
-                    "otaghak2",
-                    "checked"
-                  ])}
-                  className={classNames("__wab_instance", sty.otaghak2)}
-                  onCheckedChange={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "otaghak2",
-                      "checked"
-                    ]).apply(null, eventArgs);
-                    (async checked => {
-                      const $steps = {};
-
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://dev.rentamon.com/webhook/otaghak-instant",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return $state.otaghak2.checked
-                                      ? {
-                                          action: "set_instant",
-                                          property_id:
-                                            $state.properties.data.find(
-                                              property =>
-                                                property.property_name ===
-                                                $state.selectProperty.value
-                                            ).property_id
-                                        }
-                                      : {
-                                          action: "unset_instant",
-                                          property_id:
-                                            $state.properties.data.find(
-                                              property =>
-                                                property.property_name ===
-                                                $state.selectProperty.value
-                                            ).property_id
-                                        };
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })(),
-                                {
-                                  headers: {
-                                    "Content-Type":
-                                      "application/x-www-form-urlencoded"
-                                  },
-                                  withCredentials: true
-                                }
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
-                      }
-                    }).apply(null, eventArgs);
-                  }}
-                />
               </div>
             </ApiRequest>
             <div
@@ -1846,8 +1738,7 @@ const PlasmicDescendants = {
     "mihmanshoContainer",
     "fragmentSwitch7",
     "homsaContainer",
-    "fragmentSwitch4",
-    "otaghak2"
+    "fragmentSwitch4"
   ],
   topContainer: ["topContainer"],
   mainSection: [
@@ -1867,8 +1758,7 @@ const PlasmicDescendants = {
     "mihmanshoContainer",
     "fragmentSwitch7",
     "homsaContainer",
-    "fragmentSwitch4",
-    "otaghak2"
+    "fragmentSwitch4"
   ],
   properties: [
     "properties",
@@ -1886,8 +1776,7 @@ const PlasmicDescendants = {
     "mihmanshoContainer",
     "fragmentSwitch7",
     "homsaContainer",
-    "fragmentSwitch4",
-    "otaghak2"
+    "fragmentSwitch4"
   ],
   selectProperty: ["selectProperty"],
   shabContainer: ["shabContainer", "shabSwitch"],
@@ -1903,8 +1792,7 @@ const PlasmicDescendants = {
   mihmanshoContainer: ["mihmanshoContainer", "fragmentSwitch7"],
   fragmentSwitch7: ["fragmentSwitch7"],
   homsaContainer: ["homsaContainer", "fragmentSwitch4"],
-  fragmentSwitch4: ["fragmentSwitch4"],
-  otaghak2: ["otaghak2"]
+  fragmentSwitch4: ["fragmentSwitch4"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1929,7 +1817,6 @@ type NodeDefaultElementType = {
   fragmentSwitch7: typeof Switch;
   homsaContainer: "div";
   fragmentSwitch4: typeof Switch;
-  otaghak2: typeof Switch;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2010,7 +1897,6 @@ export const PlasmicNewPage = Object.assign(
     fragmentSwitch7: makeNodeComponent("fragmentSwitch7"),
     homsaContainer: makeNodeComponent("homsaContainer"),
     fragmentSwitch4: makeNodeComponent("fragmentSwitch4"),
-    otaghak2: makeNodeComponent("otaghak2"),
 
     // Metadata about props expected for PlasmicNewPage
     internalVariantProps: PlasmicNewPage__VariantProps,
