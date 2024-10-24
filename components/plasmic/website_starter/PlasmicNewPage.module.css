@@ -262,6 +262,7 @@
   transition-property: all;
   transition-duration: 1s;
   pointer-events: auto;
+  cursor: pointer;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
 }
@@ -578,6 +579,16 @@
   margin-right: 0px;
   width: 45px;
   flex-shrink: 0;
+}
+.otaghak2:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  transition-property: all;
+  transition-duration: 1s;
+  pointer-events: auto;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
 }
 .freeBox___3NzG5 {
   background: var(--token-8nedppYkGVaH);
