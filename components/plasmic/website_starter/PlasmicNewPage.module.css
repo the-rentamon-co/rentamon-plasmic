@@ -107,6 +107,7 @@
   max-width: 100%;
   text-align: center;
   min-width: 0;
+  display: none;
 }
 .text__xsnPs {
   position: relative;
