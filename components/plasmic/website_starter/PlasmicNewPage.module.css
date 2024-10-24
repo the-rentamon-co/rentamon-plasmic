@@ -217,7 +217,6 @@
   background: none;
   opacity: 1;
   pointer-events: none;
-  cursor: default;
   filter: blur(0px);
   padding: 8px 0px 8px 8px;
 }
@@ -260,6 +259,11 @@
 .otaghak:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+  transition-property: all;
+  transition-duration: 1s;
+  pointer-events: auto;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
 }
 .jabamaContainer {
   display: flex;
