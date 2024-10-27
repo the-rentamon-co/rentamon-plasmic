@@ -437,7 +437,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0627\u06cc \u06a9\u0647 \u062f\u0627\u0631\u06cc \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                    "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
                   }
                 </div>
                 <div
@@ -1540,7 +1540,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc! \u0628\u0631\u06cc\u0645 \u062f\u0627\u062e\u0644 \u062a\u0642\u0648\u06cc\u0645",
+                                    "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f!",
                                     "top-center",
                                     4000
                                   ]
@@ -1577,7 +1577,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "POST",
-                                      "https://dev.rentamon.com/webhook/register",
+                                      "https://dev.rentamon.com/webhook-test/register",
                                       undefined,
                                       (() => {
                                         try {
