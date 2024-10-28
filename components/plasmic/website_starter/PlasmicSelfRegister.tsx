@@ -437,7 +437,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                    "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0648\u06cc\u0644\u0627\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
                   }
                 </div>
                 <div
@@ -1577,7 +1577,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "POST",
-                                      "https://dev.rentamon.com/webhook-test/register",
+                                      "https://dev.rentamon.com/webhook/register",
                                       undefined,
                                       (() => {
                                         try {
