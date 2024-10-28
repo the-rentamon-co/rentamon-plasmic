@@ -1675,7 +1675,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               style={{ color: "#FCFCFC" }}
                             >
                               {
-                                "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645"
+                                "\u0648\u0631\u0648\u062f \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
                               }
                             </span>
                           </React.Fragment>

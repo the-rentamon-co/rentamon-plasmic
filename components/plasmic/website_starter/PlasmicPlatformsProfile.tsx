@@ -1353,7 +1353,9 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             </div>
                           </div>
                         </div>
-                        <div
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
                           className={classNames(
                             projectcss.all,
                             sty.column__eoPuj
@@ -1412,7 +1414,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               "value"
                             ])}
                           />
-                        </div>
+                        </Stack__>
                       </div>
                       <div
                         className={classNames(
@@ -1640,10 +1642,10 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                                     try {
                                       return {
                                         headers: {
-                                          accept: "application/json",
                                           "xc-token":
                                             "ty7cwczW_JDC0VQq8sEBJtu6E1e3_mX-kpa4d9TJ",
-                                          "Content-Type": "application/json"
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded"
                                         }
                                       };
                                     } catch (e) {
