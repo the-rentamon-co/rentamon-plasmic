@@ -100,7 +100,7 @@ export type PlasmicPlatformsProfile__OverridesType = {
   survey?: Flex__<"div">;
   selectAccess?: Flex__<typeof Select>;
   selectSpeed?: Flex__<typeof Select>;
-  supportJudgment?: Flex__<typeof Select>;
+  selectJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
 };
 
@@ -179,7 +179,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "supportJudgment.value",
+        path: "selectJudgment.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -1546,15 +1546,15 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           )}
                         >
                           <Select
-                            data-plasmic-name={"supportJudgment"}
-                            data-plasmic-override={overrides.supportJudgment}
+                            data-plasmic-name={"selectJudgment"}
+                            data-plasmic-override={overrides.selectJudgment}
                             className={classNames(
                               "__wab_instance",
-                              sty.supportJudgment
+                              sty.selectJudgment
                             )}
                             onChange={(...eventArgs) => {
                               generateStateOnChangeProp($state, [
-                                "supportJudgment",
+                                "selectJudgment",
                                 "value"
                               ])(eventArgs[0]);
                             }}
@@ -1594,7 +1594,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               </div>
                             }
                             value={generateStateValueProp($state, [
-                              "supportJudgment",
+                              "selectJudgment",
                               "value"
                             ])}
                           />
@@ -1620,10 +1620,9 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                                       return {
                                         Title: "string",
                                         platformId: $ctx.query.pid,
-                                        supportAccess:
-                                          $state.selectAccess.value,
-                                        supportSpeed: $state.selectSpeed.value,
-                                        supportJudgment:
+                                        selectAccess: $state.selectAccess.value,
+                                        selectSpeed: $state.selectSpeed.value,
+                                        sselectJudgment:
                                           $state.selectAccess.value,
                                         userId: 122
                                       };
@@ -1811,7 +1810,7 @@ const PlasmicDescendants = {
     "survey",
     "selectAccess",
     "selectSpeed",
-    "supportJudgment",
+    "selectJudgment",
     "submit"
   ],
   embedHtml: ["embedHtml"],
@@ -1823,22 +1822,16 @@ const PlasmicDescendants = {
     "survey",
     "selectAccess",
     "selectSpeed",
-    "supportJudgment",
+    "selectJudgment",
     "submit"
   ],
   img: ["img"],
   linkbtn: ["linkbtn"],
   linkbtn2: ["linkbtn2"],
-  survey: [
-    "survey",
-    "selectAccess",
-    "selectSpeed",
-    "supportJudgment",
-    "submit"
-  ],
+  survey: ["survey", "selectAccess", "selectSpeed", "selectJudgment", "submit"],
   selectAccess: ["selectAccess"],
   selectSpeed: ["selectSpeed"],
-  supportJudgment: ["supportJudgment"],
+  selectJudgment: ["selectJudgment"],
   submit: ["submit"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1854,7 +1847,7 @@ type NodeDefaultElementType = {
   survey: "div";
   selectAccess: typeof Select;
   selectSpeed: typeof Select;
-  supportJudgment: typeof Select;
+  selectJudgment: typeof Select;
   submit: typeof Button;
 };
 
@@ -1926,7 +1919,7 @@ export const PlasmicPlatformsProfile = Object.assign(
     survey: makeNodeComponent("survey"),
     selectAccess: makeNodeComponent("selectAccess"),
     selectSpeed: makeNodeComponent("selectSpeed"),
-    supportJudgment: makeNodeComponent("supportJudgment"),
+    selectJudgment: makeNodeComponent("selectJudgment"),
     submit: makeNodeComponent("submit"),
 
     // Metadata about props expected for PlasmicPlatformsProfile

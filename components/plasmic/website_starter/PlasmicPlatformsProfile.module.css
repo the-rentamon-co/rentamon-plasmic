@@ -1384,12 +1384,12 @@
     padding: 8px 0px;
   }
 }
-.supportJudgment:global(.__wab_instance) {
+.selectJudgment:global(.__wab_instance) {
   max-width: 100%;
   width: 140px;
 }
 @media (max-width: 768px) {
-  .supportJudgment:global(.__wab_instance) {
+  .selectJudgment:global(.__wab_instance) {
     flex-grow: 0;
   }
 }
