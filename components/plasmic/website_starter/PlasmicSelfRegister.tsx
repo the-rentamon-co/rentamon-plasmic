@@ -109,20 +109,20 @@ export type PlasmicSelfRegister__OverridesType = {
   phoneNumber?: Flex__<typeof FormItemWrapper>;
   input4?: Flex__<typeof AntdInput>;
   step2?: Flex__<"div">;
-  jabamaPpid?: Flex__<typeof FormItemWrapper>;
-  input5?: Flex__<typeof AntdInput>;
   jajigaPpid?: Flex__<typeof FormItemWrapper>;
   input6?: Flex__<typeof AntdInput>;
   shabPpid?: Flex__<typeof FormItemWrapper>;
   input7?: Flex__<typeof AntdInput>;
-  mizboonPpid?: Flex__<typeof FormItemWrapper>;
-  input8?: Flex__<typeof AntdInput>;
   otaghakPpid?: Flex__<typeof FormItemWrapper>;
   input9?: Flex__<typeof AntdInput>;
   mihmanshoPpid?: Flex__<typeof FormItemWrapper>;
   input10?: Flex__<typeof AntdInput>;
   homsaPpid?: Flex__<typeof FormItemWrapper>;
   input11?: Flex__<typeof AntdInput>;
+  mizboonPpid?: Flex__<typeof FormItemWrapper>;
+  input8?: Flex__<typeof AntdInput>;
+  jabamaPpid?: Flex__<typeof FormItemWrapper>;
+  input5?: Flex__<typeof AntdInput>;
 };
 
 export interface DefaultSelfRegisterProps {}
@@ -437,7 +437,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0648\u06cc\u0644\u0627\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                    "\u062d\u0627\u0644\u0627 \u06a9\u062f \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
                   }
                 </div>
                 <div
@@ -448,7 +448,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0647\u0645\u0648\u0646 \u06a9\u062f\u06cc \u06a9\u0647 \u062f\u0631 \u0628\u062e\u0634 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                    "\u0647\u0645\u0648\u0646 \u06a9\u062f \u06cc\u0627 \u0644\u06cc\u0646\u06a9\u06cc \u06a9\u0647 \u062f\u0631 \u0628\u062e\u0634 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
                   }
                 </div>
               </div>
@@ -1122,64 +1122,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.step2)}
                   >
                     <FormItemWrapper
-                      data-plasmic-name={"jabamaPpid"}
-                      data-plasmic-override={overrides.jabamaPpid}
-                      className={classNames("__wab_instance", sty.jabamaPpid)}
-                      label={""}
-                      name={"jabamaPPID"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          bordered: true,
-                          className: classNames("__wab_instance", sty.input5),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input5", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `کد ${$state.selfRegisterForm.value.propertyName} در جاباما`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input5",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input5.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input5"}
-                            data-plasmic-override={overrides.input5}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
                       data-plasmic-name={"jajigaPpid"}
                       data-plasmic-override={overrides.jajigaPpid}
                       className={classNames("__wab_instance", sty.jajigaPpid)}
@@ -1288,63 +1230,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           <AntdInput
                             data-plasmic-name={"input7"}
                             data-plasmic-override={overrides.input7}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      data-plasmic-name={"mizboonPpid"}
-                      data-plasmic-override={overrides.mizboonPpid}
-                      className={classNames("__wab_instance", sty.mizboonPpid)}
-                      label={""}
-                      name={"mizboonPPID"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input8),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input8", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `کد ${$state.selfRegisterForm.value.propertyName} در میزبون`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input8",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input8.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input8"}
-                            data-plasmic-override={overrides.input8}
                             {...child$Props}
                           />
                         );
@@ -1519,6 +1404,121 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           <AntdInput
                             data-plasmic-name={"input11"}
                             data-plasmic-override={overrides.input11}
+                            {...child$Props}
+                          />
+                        );
+                      })()}
+                    </FormItemWrapper>
+                    <FormItemWrapper
+                      data-plasmic-name={"mizboonPpid"}
+                      data-plasmic-override={overrides.mizboonPpid}
+                      className={classNames("__wab_instance", sty.mizboonPpid)}
+                      label={""}
+                      name={"mizboonPPID"}
+                    >
+                      {(() => {
+                        const child$Props = {
+                          className: classNames("__wab_instance", sty.input8),
+                          onChange: generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "value",
+                            ["input8", "value"],
+                            AntdInput_Helpers
+                          ),
+                          placeholder: (() => {
+                            try {
+                              return `کد ${$state.selfRegisterForm.value.propertyName} در میزبون`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
+                          size: "large",
+                          value: generateStateValueProp($state, [
+                            "input8",
+                            "value"
+                          ])
+                        };
+                        initializeCodeComponentStates(
+                          $state,
+                          [
+                            {
+                              name: "value",
+                              plasmicStateName: "input8.value"
+                            }
+                          ],
+                          [],
+                          AntdInput_Helpers ?? {},
+                          child$Props
+                        );
+
+                        return (
+                          <AntdInput
+                            data-plasmic-name={"input8"}
+                            data-plasmic-override={overrides.input8}
+                            {...child$Props}
+                          />
+                        );
+                      })()}
+                    </FormItemWrapper>
+                    <FormItemWrapper
+                      data-plasmic-name={"jabamaPpid"}
+                      data-plasmic-override={overrides.jabamaPpid}
+                      className={classNames("__wab_instance", sty.jabamaPpid)}
+                      label={""}
+                      name={"jabamaPPID"}
+                    >
+                      {(() => {
+                        const child$Props = {
+                          bordered: true,
+                          className: classNames("__wab_instance", sty.input5),
+                          onChange: generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "value",
+                            ["input5", "value"],
+                            AntdInput_Helpers
+                          ),
+                          placeholder: (() => {
+                            try {
+                              return `لینک ${$state.selfRegisterForm.value.propertyName} در جاباما`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
+                          size: "large",
+                          value: generateStateValueProp($state, [
+                            "input5",
+                            "value"
+                          ])
+                        };
+                        initializeCodeComponentStates(
+                          $state,
+                          [
+                            {
+                              name: "value",
+                              plasmicStateName: "input5.value"
+                            }
+                          ],
+                          [],
+                          AntdInput_Helpers ?? {},
+                          child$Props
+                        );
+
+                        return (
+                          <AntdInput
+                            data-plasmic-name={"input5"}
+                            data-plasmic-override={overrides.input5}
                             {...child$Props}
                           />
                         );
@@ -1788,20 +1788,20 @@ const PlasmicDescendants = {
     "phoneNumber",
     "input4",
     "step2",
-    "jabamaPpid",
-    "input5",
     "jajigaPpid",
     "input6",
     "shabPpid",
     "input7",
-    "mizboonPpid",
-    "input8",
     "otaghakPpid",
     "input9",
     "mihmanshoPpid",
     "input10",
     "homsaPpid",
-    "input11"
+    "input11",
+    "mizboonPpid",
+    "input8",
+    "jabamaPpid",
+    "input5"
   ],
   html: ["html", "goftino", "clarity", "openReplay"],
   goftino: ["goftino"],
@@ -1823,20 +1823,20 @@ const PlasmicDescendants = {
     "phoneNumber",
     "input4",
     "step2",
-    "jabamaPpid",
-    "input5",
     "jajigaPpid",
     "input6",
     "shabPpid",
     "input7",
-    "mizboonPpid",
-    "input8",
     "otaghakPpid",
     "input9",
     "mihmanshoPpid",
     "input10",
     "homsaPpid",
-    "input11"
+    "input11",
+    "mizboonPpid",
+    "input8",
+    "jabamaPpid",
+    "input5"
   ],
   step0: [
     "step0",
@@ -1860,35 +1860,35 @@ const PlasmicDescendants = {
   input4: ["input4"],
   step2: [
     "step2",
-    "jabamaPpid",
-    "input5",
     "jajigaPpid",
     "input6",
     "shabPpid",
     "input7",
-    "mizboonPpid",
-    "input8",
     "otaghakPpid",
     "input9",
     "mihmanshoPpid",
     "input10",
     "homsaPpid",
-    "input11"
+    "input11",
+    "mizboonPpid",
+    "input8",
+    "jabamaPpid",
+    "input5"
   ],
-  jabamaPpid: ["jabamaPpid", "input5"],
-  input5: ["input5"],
   jajigaPpid: ["jajigaPpid", "input6"],
   input6: ["input6"],
   shabPpid: ["shabPpid", "input7"],
   input7: ["input7"],
-  mizboonPpid: ["mizboonPpid", "input8"],
-  input8: ["input8"],
   otaghakPpid: ["otaghakPpid", "input9"],
   input9: ["input9"],
   mihmanshoPpid: ["mihmanshoPpid", "input10"],
   input10: ["input10"],
   homsaPpid: ["homsaPpid", "input11"],
-  input11: ["input11"]
+  input11: ["input11"],
+  mizboonPpid: ["mizboonPpid", "input8"],
+  input8: ["input8"],
+  jabamaPpid: ["jabamaPpid", "input5"],
+  input5: ["input5"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1914,20 +1914,20 @@ type NodeDefaultElementType = {
   phoneNumber: typeof FormItemWrapper;
   input4: typeof AntdInput;
   step2: "div";
-  jabamaPpid: typeof FormItemWrapper;
-  input5: typeof AntdInput;
   jajigaPpid: typeof FormItemWrapper;
   input6: typeof AntdInput;
   shabPpid: typeof FormItemWrapper;
   input7: typeof AntdInput;
-  mizboonPpid: typeof FormItemWrapper;
-  input8: typeof AntdInput;
   otaghakPpid: typeof FormItemWrapper;
   input9: typeof AntdInput;
   mihmanshoPpid: typeof FormItemWrapper;
   input10: typeof AntdInput;
   homsaPpid: typeof FormItemWrapper;
   input11: typeof AntdInput;
+  mizboonPpid: typeof FormItemWrapper;
+  input8: typeof AntdInput;
+  jabamaPpid: typeof FormItemWrapper;
+  input5: typeof AntdInput;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2009,20 +2009,20 @@ export const PlasmicSelfRegister = Object.assign(
     phoneNumber: makeNodeComponent("phoneNumber"),
     input4: makeNodeComponent("input4"),
     step2: makeNodeComponent("step2"),
-    jabamaPpid: makeNodeComponent("jabamaPpid"),
-    input5: makeNodeComponent("input5"),
     jajigaPpid: makeNodeComponent("jajigaPpid"),
     input6: makeNodeComponent("input6"),
     shabPpid: makeNodeComponent("shabPpid"),
     input7: makeNodeComponent("input7"),
-    mizboonPpid: makeNodeComponent("mizboonPpid"),
-    input8: makeNodeComponent("input8"),
     otaghakPpid: makeNodeComponent("otaghakPpid"),
     input9: makeNodeComponent("input9"),
     mihmanshoPpid: makeNodeComponent("mihmanshoPpid"),
     input10: makeNodeComponent("input10"),
     homsaPpid: makeNodeComponent("homsaPpid"),
     input11: makeNodeComponent("input11"),
+    mizboonPpid: makeNodeComponent("mizboonPpid"),
+    input8: makeNodeComponent("input8"),
+    jabamaPpid: makeNodeComponent("jabamaPpid"),
+    input5: makeNodeComponent("input5"),
 
     // Metadata about props expected for PlasmicSelfRegister
     internalVariantProps: PlasmicSelfRegister__VariantProps,

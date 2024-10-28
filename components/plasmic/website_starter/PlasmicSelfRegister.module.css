@@ -312,14 +312,6 @@
   min-width: 0;
   padding: 8px;
 }
-.jabamaPpid:global(.__wab_instance) {
-  width: 100%;
-  min-width: 0;
-}
-.input5:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .jajigaPpid:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
@@ -335,15 +327,6 @@
   min-width: 0;
 }
 .input7:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.mizboonPpid:global(.__wab_instance) {
-  width: 100%;
-  margin-bottom: 24px;
-  min-width: 0;
-}
-.input8:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -371,6 +354,23 @@
   min-width: 0;
 }
 .input11:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.mizboonPpid:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.input8:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.jabamaPpid:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
+}
+.input5:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
