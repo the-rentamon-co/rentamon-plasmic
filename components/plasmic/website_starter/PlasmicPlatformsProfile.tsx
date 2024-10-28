@@ -1642,11 +1642,12 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                                     try {
                                       return {
                                         headers: {
+                                          accept: "application/json",
                                           "xc-token":
                                             "ty7cwczW_JDC0VQq8sEBJtu6E1e3_mX-kpa4d9TJ",
-                                          "Content-Type":
-                                            "application/x-www-form-urlencoded"
-                                        }
+                                          "Content-Type": "application/json"
+                                        },
+                                        withCredentials: false
                                       };
                                     } catch (e) {
                                       if (
