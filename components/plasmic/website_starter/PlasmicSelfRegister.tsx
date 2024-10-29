@@ -67,6 +67,7 @@ import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -123,6 +124,8 @@ export type PlasmicSelfRegister__OverridesType = {
   input8?: Flex__<typeof AntdInput>;
   jabamaPpid?: Flex__<typeof FormItemWrapper>;
   input5?: Flex__<typeof AntdInput>;
+  enterButton?: Flex__<typeof AntdButton>;
+  htmlVideo?: Flex__<typeof Video>;
 };
 
 export interface DefaultSelfRegisterProps {}
@@ -1528,9 +1531,11 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__xaF)}
                     >
                       <AntdButton
+                        data-plasmic-name={"enterButton"}
+                        data-plasmic-override={overrides.enterButton}
                         className={classNames(
                           "__wab_instance",
-                          sty.button__mnM49
+                          sty.enterButton
                         )}
                         onClick={async () => {
                           const $steps = {};
@@ -1755,6 +1760,32 @@ function PlasmicSelfRegister__RenderFunc(props: {
                         </div>
                       </AntdButton>
                     </div>
+                    {(() => {
+                      try {
+                        return (
+                          $state.selfRegisterForm.isSubmitting === true &&
+                          $ctx.pageRoute === "/register"
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <Video
+                        data-plasmic-name={"htmlVideo"}
+                        data-plasmic-override={overrides.htmlVideo}
+                        className={classNames("__wab_instance", sty.htmlVideo)}
+                        controls={true}
+                        src={
+                          "https://rentamon.com/wp-content/uploads/2024/10/Intro-Demo.mp4"
+                        }
+                      />
+                    ) : null}
                   </div>
                 ) : null}
               </FormWrapper>
@@ -1801,7 +1832,9 @@ const PlasmicDescendants = {
     "mizboonPpid",
     "input8",
     "jabamaPpid",
-    "input5"
+    "input5",
+    "enterButton",
+    "htmlVideo"
   ],
   html: ["html", "goftino", "clarity", "openReplay"],
   goftino: ["goftino"],
@@ -1836,7 +1869,9 @@ const PlasmicDescendants = {
     "mizboonPpid",
     "input8",
     "jabamaPpid",
-    "input5"
+    "input5",
+    "enterButton",
+    "htmlVideo"
   ],
   step0: [
     "step0",
@@ -1873,7 +1908,9 @@ const PlasmicDescendants = {
     "mizboonPpid",
     "input8",
     "jabamaPpid",
-    "input5"
+    "input5",
+    "enterButton",
+    "htmlVideo"
   ],
   jajigaPpid: ["jajigaPpid", "input6"],
   input6: ["input6"],
@@ -1888,7 +1925,9 @@ const PlasmicDescendants = {
   mizboonPpid: ["mizboonPpid", "input8"],
   input8: ["input8"],
   jabamaPpid: ["jabamaPpid", "input5"],
-  input5: ["input5"]
+  input5: ["input5"],
+  enterButton: ["enterButton"],
+  htmlVideo: ["htmlVideo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1928,6 +1967,8 @@ type NodeDefaultElementType = {
   input8: typeof AntdInput;
   jabamaPpid: typeof FormItemWrapper;
   input5: typeof AntdInput;
+  enterButton: typeof AntdButton;
+  htmlVideo: typeof Video;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2023,6 +2064,8 @@ export const PlasmicSelfRegister = Object.assign(
     input8: makeNodeComponent("input8"),
     jabamaPpid: makeNodeComponent("jabamaPpid"),
     input5: makeNodeComponent("input5"),
+    enterButton: makeNodeComponent("enterButton"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
 
     // Metadata about props expected for PlasmicSelfRegister
     internalVariantProps: PlasmicSelfRegister__VariantProps,
