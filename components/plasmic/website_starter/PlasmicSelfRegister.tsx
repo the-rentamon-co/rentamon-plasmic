@@ -1546,7 +1546,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                                   args: [
                                     undefined,
                                     "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f!",
-                                    "top-center",
+                                    "bottom-center",
                                     4000
                                   ]
                                 };
@@ -1760,32 +1760,13 @@ function PlasmicSelfRegister__RenderFunc(props: {
                         </div>
                       </AntdButton>
                     </div>
-                    {(() => {
-                      try {
-                        return (
-                          $state.selfRegisterForm.isSubmitting === true &&
-                          $ctx.pageRoute === "/register"
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <Video
-                        data-plasmic-name={"htmlVideo"}
-                        data-plasmic-override={overrides.htmlVideo}
-                        className={classNames("__wab_instance", sty.htmlVideo)}
-                        controls={true}
-                        src={
-                          "https://rentamon.com/wp-content/uploads/2024/10/Intro-Demo.mp4"
-                        }
-                      />
-                    ) : null}
+                    <Video
+                      data-plasmic-name={"htmlVideo"}
+                      data-plasmic-override={overrides.htmlVideo}
+                      className={classNames("__wab_instance", sty.htmlVideo)}
+                      controls={true}
+                      src={``}
+                    />
                   </div>
                 ) : null}
               </FormWrapper>
