@@ -96,6 +96,7 @@ export type PlasmicSelfRegister__OverridesType = {
   goftino?: Flex__<typeof Embed>;
   clarity?: Flex__<typeof Embed>;
   openReplay?: Flex__<typeof Embed>;
+  favIcon?: Flex__<typeof Embed>;
   guide?: Flex__<"div">;
   selfRegisterForm?: Flex__<typeof FormWrapper>;
   step0?: Flex__<"div">;
@@ -363,6 +364,15 @@ function PlasmicSelfRegister__RenderFunc(props: {
               className={classNames("__wab_instance", sty.openReplay)}
               code={
                 '<!-- OpenReplay Tracking Code for my  project -->\r\n<script>\r\n  var initOpts = {\r\n    projectKey: "3ZxSHuM9j2XKwEJeYX4x",\r\n    defaultInputMode: 0,\r\n    obscureTextNumbers: false,\r\n    obscureTextEmails: false,\r\n  };\r\n  var startOpts = { userID: "" };\r\n  (function(A,s,a,y,e,r){\r\n    r=window.OpenReplay=[e,r,y,[s-1, e]];\r\n    s=document.createElement(\'script\');s.src=A;s.async=!a;\r\n    document.getElementsByTagName(\'head\')[0].appendChild(s);\r\n    r.start=function(v){r.push([0])};\r\n    r.stop=function(v){r.push([1])};\r\n    r.setUserID=function(id){r.push([2,id])};\r\n    r.setUserAnonymousID=function(id){r.push([3,id])};\r\n    r.setMetadata=function(k,v){r.push([4,k,v])};\r\n    r.event=function(k,p,i){r.push([5,k,p,i])};\r\n    r.issue=function(k,p){r.push([6,k,p])};\r\n    r.isActive=function(){return false};\r\n    r.getSessionToken=function(){};\r\n  })("//static.openreplay.com/latest/openreplay.js",1,0,initOpts,startOpts);\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"favIcon"}
+              data-plasmic-override={overrides.favIcon}
+              className={classNames("__wab_instance", sty.favIcon)}
+              code={
+                "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
               }
             />
           </div>
@@ -1815,19 +1825,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       autoPlay={true}
                       className={classNames("__wab_instance", sty.htmlVideo)}
                       controls={false}
-                      muted={(() => {
-                        try {
-                          return ($state.autoplayStarted = true);
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()}
+                      muted={false}
                       src={
                         "https://rentamon.com/wp-content/uploads/2024/10/Intro-Demo.mp4"
                       }
@@ -2002,6 +2000,7 @@ const PlasmicDescendants = {
     "goftino",
     "clarity",
     "openReplay",
+    "favIcon",
     "guide",
     "selfRegisterForm",
     "step0",
@@ -2036,10 +2035,11 @@ const PlasmicDescendants = {
     "htmlVideo",
     "enterButton"
   ],
-  html: ["html", "goftino", "clarity", "openReplay"],
+  html: ["html", "goftino", "clarity", "openReplay", "favIcon"],
   goftino: ["goftino"],
   clarity: ["clarity"],
   openReplay: ["openReplay"],
+  favIcon: ["favIcon"],
   guide: ["guide"],
   selfRegisterForm: [
     "selfRegisterForm",
@@ -2141,6 +2141,7 @@ type NodeDefaultElementType = {
   goftino: typeof Embed;
   clarity: typeof Embed;
   openReplay: typeof Embed;
+  favIcon: typeof Embed;
   guide: "div";
   selfRegisterForm: typeof FormWrapper;
   step0: "div";
@@ -2240,6 +2241,7 @@ export const PlasmicSelfRegister = Object.assign(
     goftino: makeNodeComponent("goftino"),
     clarity: makeNodeComponent("clarity"),
     openReplay: makeNodeComponent("openReplay"),
+    favIcon: makeNodeComponent("favIcon"),
     guide: makeNodeComponent("guide"),
     selfRegisterForm: makeNodeComponent("selfRegisterForm"),
     step0: makeNodeComponent("step0"),
