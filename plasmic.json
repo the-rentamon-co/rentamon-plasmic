@@ -527,6 +527,32 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/payment-error"
+        },
+        {
+          "id": "PT85RDIdexix",
+          "name": "Calendar3",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCalendar3.tsx",
+          "importSpec": {
+            "modulePath": "Calendar3.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCalendar3.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "mE-vol2uSpJp",
+          "name": "Card",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCard.tsx",
+          "importSpec": {
+            "modulePath": "Card.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

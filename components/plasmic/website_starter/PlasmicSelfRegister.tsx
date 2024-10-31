@@ -68,6 +68,7 @@ import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/reg
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -124,8 +125,10 @@ export type PlasmicSelfRegister__OverridesType = {
   input8?: Flex__<typeof AntdInput>;
   jabamaPpid?: Flex__<typeof FormItemWrapper>;
   input5?: Flex__<typeof AntdInput>;
-  enterButton?: Flex__<typeof AntdButton>;
+  submitButton?: Flex__<typeof AntdButton>;
+  step3?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
+  enterButton?: Flex__<typeof AntdButton>;
 };
 
 export interface DefaultSelfRegisterProps {}
@@ -454,6 +457,31 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     "\u0647\u0645\u0648\u0646 \u06a9\u062f \u06cc\u0627 \u0644\u06cc\u0646\u06a9\u06cc \u06a9\u0647 \u062f\u0631 \u0628\u062e\u0634 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
                   }
                 </div>
+              </div>
+            ) : null}
+            {(() => {
+              try {
+                return $state.formStep == 3;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__aSeaT
+                )}
+              >
+                {
+                  "\u0646\u062d\u0648\u0647 \u06a9\u0627\u0631 \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                }
               </div>
             ) : null}
           </div>
@@ -1531,11 +1559,11 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__xaF)}
                     >
                       <AntdButton
-                        data-plasmic-name={"enterButton"}
-                        data-plasmic-override={overrides.enterButton}
+                        data-plasmic-name={"submitButton"}
+                        data-plasmic-override={overrides.submitButton}
                         className={classNames(
                           "__wab_instance",
-                          sty.enterButton
+                          sty.submitButton
                         )}
                         onClick={async () => {
                           const $steps = {};
@@ -1622,44 +1650,47 @@ function PlasmicSelfRegister__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["goToPage"] = true
+                          $steps["updateFormStep"] = true
                             ? (() => {
                                 const actionArgs = {
-                                  destination: (() => {
-                                    try {
-                                      return "https://rentamon.com/panels";
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["formStep"]
+                                  },
+                                  operation: 2
                                 };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
                                   }
+                                  const { objRoot, variablePath } = variable;
+
+                                  const oldValue = $stateGet(
+                                    objRoot,
+                                    variablePath
+                                  );
+                                  $stateSet(
+                                    objRoot,
+                                    variablePath,
+                                    oldValue + 1
+                                  );
+                                  return oldValue + 1;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
                           if (
-                            $steps["goToPage"] != null &&
-                            typeof $steps["goToPage"] === "object" &&
-                            typeof $steps["goToPage"].then === "function"
+                            $steps["updateFormStep"] != null &&
+                            typeof $steps["updateFormStep"] === "object" &&
+                            typeof $steps["updateFormStep"].then === "function"
                           ) {
-                            $steps["goToPage"] = await $steps["goToPage"];
+                            $steps["updateFormStep"] = await $steps[
+                              "updateFormStep"
+                            ];
                           }
                         }}
                         submitsForm={false}
@@ -1679,9 +1710,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               }
                               style={{ color: "#FCFCFC" }}
                             >
-                              {
-                                "\u0648\u0631\u0648\u062f \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                              }
+                              {"\u062b\u0628\u062a"}
                             </span>
                           </React.Fragment>
                         </div>
@@ -1760,13 +1789,201 @@ function PlasmicSelfRegister__RenderFunc(props: {
                         </div>
                       </AntdButton>
                     </div>
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return $state.formStep == 3;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"step3"}
+                    data-plasmic-override={overrides.step3}
+                    className={classNames(projectcss.all, sty.step3)}
+                  >
                     <Video
                       data-plasmic-name={"htmlVideo"}
                       data-plasmic-override={overrides.htmlVideo}
+                      autoPlay={true}
                       className={classNames("__wab_instance", sty.htmlVideo)}
-                      controls={true}
-                      src={``}
+                      controls={false}
+                      muted={(() => {
+                        try {
+                          return ($state.autoplayStarted = true);
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()}
+                      src={
+                        "https://rentamon.com/wp-content/uploads/2024/10/Intro-Demo.mp4"
+                      }
                     />
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__bNoyr)}
+                    >
+                      <AntdButton
+                        data-plasmic-name={"enterButton"}
+                        data-plasmic-override={overrides.enterButton}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.enterButton
+                        )}
+                        onClick={async () => {
+                          const $steps = {};
+
+                          $steps["goToPage"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: (() => {
+                                    try {
+                                      return "https://rentamon.com/panels";
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "";
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToPage"] != null &&
+                            typeof $steps["goToPage"] === "object" &&
+                            typeof $steps["goToPage"].then === "function"
+                          ) {
+                            $steps["goToPage"] = await $steps["goToPage"];
+                          }
+                        }}
+                        submitsForm={false}
+                        type={"primary"}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__djxyH
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "#FCFCFC" }}
+                            >
+                              {
+                                "\u0648\u0631\u0648\u062f \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                      </AntdButton>
+                      <AntdButton
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__kuPS
+                        )}
+                        onClick={async () => {
+                          const $steps = {};
+
+                          $steps["updateFormStep"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["formStep"]
+                                  },
+                                  operation: 3
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  const oldValue = $stateGet(
+                                    objRoot,
+                                    variablePath
+                                  );
+                                  $stateSet(
+                                    objRoot,
+                                    variablePath,
+                                    oldValue - 1
+                                  );
+                                  return oldValue - 1;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateFormStep"] != null &&
+                            typeof $steps["updateFormStep"] === "object" &&
+                            typeof $steps["updateFormStep"].then === "function"
+                          ) {
+                            $steps["updateFormStep"] = await $steps[
+                              "updateFormStep"
+                            ];
+                          }
+                        }}
+                        submitsForm={false}
+                        type={"primary"}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___7W1Zt
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "var(--token-8nedppYkGVaH)" }}
+                            >
+                              {"\u0642\u0628\u0644\u06cc"}
+                            </span>
+                          </React.Fragment>
+                        </div>
+                      </AntdButton>
+                    </div>
                   </div>
                 ) : null}
               </FormWrapper>
@@ -1814,8 +2031,10 @@ const PlasmicDescendants = {
     "input8",
     "jabamaPpid",
     "input5",
-    "enterButton",
-    "htmlVideo"
+    "submitButton",
+    "step3",
+    "htmlVideo",
+    "enterButton"
   ],
   html: ["html", "goftino", "clarity", "openReplay"],
   goftino: ["goftino"],
@@ -1851,8 +2070,10 @@ const PlasmicDescendants = {
     "input8",
     "jabamaPpid",
     "input5",
-    "enterButton",
-    "htmlVideo"
+    "submitButton",
+    "step3",
+    "htmlVideo",
+    "enterButton"
   ],
   step0: [
     "step0",
@@ -1890,8 +2111,7 @@ const PlasmicDescendants = {
     "input8",
     "jabamaPpid",
     "input5",
-    "enterButton",
-    "htmlVideo"
+    "submitButton"
   ],
   jajigaPpid: ["jajigaPpid", "input6"],
   input6: ["input6"],
@@ -1907,8 +2127,10 @@ const PlasmicDescendants = {
   input8: ["input8"],
   jabamaPpid: ["jabamaPpid", "input5"],
   input5: ["input5"],
-  enterButton: ["enterButton"],
-  htmlVideo: ["htmlVideo"]
+  submitButton: ["submitButton"],
+  step3: ["step3", "htmlVideo", "enterButton"],
+  htmlVideo: ["htmlVideo"],
+  enterButton: ["enterButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1948,8 +2170,10 @@ type NodeDefaultElementType = {
   input8: typeof AntdInput;
   jabamaPpid: typeof FormItemWrapper;
   input5: typeof AntdInput;
-  enterButton: typeof AntdButton;
+  submitButton: typeof AntdButton;
+  step3: "div";
   htmlVideo: typeof Video;
+  enterButton: typeof AntdButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2045,8 +2269,10 @@ export const PlasmicSelfRegister = Object.assign(
     input8: makeNodeComponent("input8"),
     jabamaPpid: makeNodeComponent("jabamaPpid"),
     input5: makeNodeComponent("input5"),
-    enterButton: makeNodeComponent("enterButton"),
+    submitButton: makeNodeComponent("submitButton"),
+    step3: makeNodeComponent("step3"),
     htmlVideo: makeNodeComponent("htmlVideo"),
+    enterButton: makeNodeComponent("enterButton"),
 
     // Metadata about props expected for PlasmicSelfRegister
     internalVariantProps: PlasmicSelfRegister__VariantProps,

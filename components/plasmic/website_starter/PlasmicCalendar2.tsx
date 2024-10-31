@@ -261,26 +261,12 @@ function PlasmicCalendar2__RenderFunc(props: {
       errorName={"fetchError"}
       headers={{
         "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1MTI3MjExLCJpYXQiOjE3MjQ3NTkyMTEsImp0aSI6ImEzMjM0NmZkZDI0YTRhMmM4NTVjYzZjODk0ZTU1OGIyIiwidXNlcl9pZCI6NDY2fQ.lugJMePj_9ncCWnpmlAOqv_dsaoyv41iUWQ7WicQSp4"
+        Accept: "application/json"
       }}
       loadingDisplay={<DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>}
       method={"GET"}
       noLayout={false}
-      url={(() => {
-        try {
-          return "https://rentamon-api.liara.run/api/getcalendar?property_id=1&start_date=1403-06-01&end_date=1403-06-31";
-        } catch (e) {
-          if (
-            e instanceof TypeError ||
-            e?.plasmicType === "PlasmicUndefinedDataError"
-          ) {
-            return undefined;
-          }
-          throw e;
-        }
-      })()}
+      url={"https://api.github.com/users/plasmicapp/repos"}
     >
       <DataCtxReader__>
         {$ctx => (
