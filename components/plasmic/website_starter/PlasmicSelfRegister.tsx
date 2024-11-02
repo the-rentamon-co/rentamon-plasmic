@@ -1824,7 +1824,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       data-plasmic-override={overrides.htmlVideo}
                       autoPlay={true}
                       className={classNames("__wab_instance", sty.htmlVideo)}
-                      controls={true}
+                      controls={false}
                       loop={true}
                       muted={true}
                       poster={"/plasmic/website_starter/images/loadingGif.gif"}
