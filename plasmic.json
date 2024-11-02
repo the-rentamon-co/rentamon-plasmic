@@ -702,6 +702,16 @@
           "id": "BipAnPUlLkmu",
           "name": "loading.gif",
           "filePath": "../public/plasmic/website_starter/images/loadingGif.gif"
+        },
+        {
+          "id": "w_KEa66hO117",
+          "name": "image 3",
+          "filePath": "../public/plasmic/website_starter/images/image3.svg"
+        },
+        {
+          "id": "Cd9JIdnarCtN",
+          "name": "rentamon-fa.png",
+          "filePath": "../public/plasmic/website_starter/images/rentamonFaPng.png"
         }
       ],
       "indirect": false,

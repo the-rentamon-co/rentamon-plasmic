@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
@@ -79,6 +80,9 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelfRegister.module.css"; // plasmic-import: DpoRYqi8MTy5/css
 
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
+
 createPlasmicElementProxy;
 
 export type PlasmicSelfRegister__VariantMembers = {};
@@ -92,6 +96,7 @@ export const PlasmicSelfRegister__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSelfRegister__OverridesType = {
   root?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   html?: Flex__<"div">;
   goftino?: Flex__<typeof Embed>;
   clarity?: Flex__<typeof Embed>;
@@ -335,6 +340,110 @@ function PlasmicSelfRegister__RenderFunc(props: {
             sty.root
           )}
         >
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__tjwa5)}
+          >
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__nf730)}
+            >
+              <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"40px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToHttpsRentamonCom"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination: "https://rentamon.com/"
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToHttpsRentamonCom"] != null &&
+                    typeof $steps["goToHttpsRentamonCom"] === "object" &&
+                    typeof $steps["goToHttpsRentamonCom"].then === "function"
+                  ) {
+                    $steps["goToHttpsRentamonCom"] = await $steps[
+                      "goToHttpsRentamonCom"
+                    ];
+                  }
+                }}
+                src={{
+                  src: "/plasmic/website_starter/images/rentamonFaPng.png",
+                  fullWidth: 684,
+                  fullHeight: 306,
+                  aspectRatio: undefined
+                }}
+              />
+
+              {false ? (
+                <div className={classNames(projectcss.all, sty.freeBox__j02WI)}>
+                  <button
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.button,
+                      projectcss.__wab_text,
+                      sty.button__dn7Kb
+                    )}
+                  >
+                    {"Sign up"}
+                  </button>
+                  <Button
+                    className={classNames("__wab_instance", sty.button__gunip)}
+                    color={"clear"}
+                    endIcon={
+                      <IconIcon
+                        className={classNames(projectcss.all, sty.svg__qht3H)}
+                        role={"img"}
+                      />
+                    }
+                    startIcon={
+                      <CheckSvgIcon
+                        className={classNames(projectcss.all, sty.svg__cxd96)}
+                        role={"img"}
+                      />
+                    }
+                    submitsForm={true}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__nbWoJ
+                      )}
+                    >
+                      {"Log in"}
+                    </div>
+                  </Button>
+                </div>
+              ) : null}
+            </Stack__>
+          </Stack__>
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
@@ -1998,6 +2107,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "img",
     "html",
     "goftino",
     "clarity",
@@ -2037,6 +2147,7 @@ const PlasmicDescendants = {
     "htmlVideo",
     "enterButton"
   ],
+  img: ["img"],
   html: ["html", "goftino", "clarity", "openReplay", "favIcon"],
   goftino: ["goftino"],
   clarity: ["clarity"],
@@ -2139,6 +2250,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  img: typeof PlasmicImg__;
   html: "div";
   goftino: typeof Embed;
   clarity: typeof Embed;
@@ -2239,6 +2351,7 @@ export const PlasmicSelfRegister = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    img: makeNodeComponent("img"),
     html: makeNodeComponent("html"),
     goftino: makeNodeComponent("goftino"),
     clarity: makeNodeComponent("clarity"),
