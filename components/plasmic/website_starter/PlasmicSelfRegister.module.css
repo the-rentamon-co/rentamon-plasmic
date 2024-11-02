@@ -456,11 +456,20 @@
   min-width: 0;
   padding: 8px;
 }
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 139px;
+}
+.img > picture > img {
+  object-fit: cover;
+}
 .htmlVideo:global(.__wab_instance) {
   width: 640px;
-  height: auto;
+  height: 781px;
   max-width: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 .freeBox__bNoyr {
   display: flex;

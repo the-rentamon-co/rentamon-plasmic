@@ -128,6 +128,7 @@ export type PlasmicSelfRegister__OverridesType = {
   input5?: Flex__<typeof AntdInput>;
   submitButton?: Flex__<typeof AntdButton>;
   step3?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   htmlVideo?: Flex__<typeof Video>;
   enterButton?: Flex__<typeof AntdButton>;
 };
@@ -1819,15 +1820,38 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     data-plasmic-override={overrides.step3}
                     className={classNames(projectcss.all, sty.step3)}
                   >
+                    {false ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"img"}
+                        data-plasmic-override={overrides.img}
+                        alt={""}
+                        className={classNames(sty.img)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"139px"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/loadingGif.gif",
+                          fullWidth: 441,
+                          fullHeight: 291,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    ) : null}
                     <Video
                       data-plasmic-name={"htmlVideo"}
                       data-plasmic-override={overrides.htmlVideo}
                       autoPlay={true}
                       className={classNames("__wab_instance", sty.htmlVideo)}
                       controls={false}
-                      muted={false}
+                      loop={true}
+                      muted={true}
+                      poster={"/plasmic/website_starter/images/loadingGif.gif"}
                       src={
-                        "https://rentamon.com/wp-content/uploads/2024/10/Intro-Demo.mp4"
+                        "https://rentamon.com/wp-content/uploads/2024/11/Demo-GIF.mp4"
                       }
                     />
 
@@ -2032,6 +2056,7 @@ const PlasmicDescendants = {
     "input5",
     "submitButton",
     "step3",
+    "img",
     "htmlVideo",
     "enterButton"
   ],
@@ -2072,6 +2097,7 @@ const PlasmicDescendants = {
     "input5",
     "submitButton",
     "step3",
+    "img",
     "htmlVideo",
     "enterButton"
   ],
@@ -2128,7 +2154,8 @@ const PlasmicDescendants = {
   jabamaPpid: ["jabamaPpid", "input5"],
   input5: ["input5"],
   submitButton: ["submitButton"],
-  step3: ["step3", "htmlVideo", "enterButton"],
+  step3: ["step3", "img", "htmlVideo", "enterButton"],
+  img: ["img"],
   htmlVideo: ["htmlVideo"],
   enterButton: ["enterButton"]
 } as const;
@@ -2173,6 +2200,7 @@ type NodeDefaultElementType = {
   input5: typeof AntdInput;
   submitButton: typeof AntdButton;
   step3: "div";
+  img: typeof PlasmicImg__;
   htmlVideo: typeof Video;
   enterButton: typeof AntdButton;
 };
@@ -2273,6 +2301,7 @@ export const PlasmicSelfRegister = Object.assign(
     input5: makeNodeComponent("input5"),
     submitButton: makeNodeComponent("submitButton"),
     step3: makeNodeComponent("step3"),
+    img: makeNodeComponent("img"),
     htmlVideo: makeNodeComponent("htmlVideo"),
     enterButton: makeNodeComponent("enterButton"),
 

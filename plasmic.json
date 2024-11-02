@@ -697,6 +697,11 @@
           "id": "QdL2OznGZTAO",
           "name": "Group 536.png",
           "filePath": "../public/plasmic/website_starter/images/group536Png.png"
+        },
+        {
+          "id": "BipAnPUlLkmu",
+          "name": "loading.gif",
+          "filePath": "../public/plasmic/website_starter/images/loadingGif.gif"
         }
       ],
       "indirect": false,
