@@ -649,13 +649,14 @@
   font-size: 16px;
   min-width: 0;
 }
-.button__kuPS:global(.__wab_instance) {
+.backButton:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   width: 100%;
   background: #ffffff00;
   height: 40px;
   min-width: 0;
+  display: none;
   border-radius: 30px;
   margin: 10px;
   border: 2px solid var(--token-8nedppYkGVaH);

@@ -135,6 +135,7 @@ export type PlasmicSelfRegister__OverridesType = {
   step3?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
   enterButton?: Flex__<typeof AntdButton>;
+  backButton?: Flex__<typeof AntdButton>;
 };
 
 export interface DefaultSelfRegisterProps {}
@@ -599,7 +600,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0646\u062d\u0648\u0647 \u06a9\u0627\u0631 \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                  "\u0646\u062d\u0648\u0647 \u06a9\u0627\u0631 \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645"
                 }
               </div>
             ) : null}
@@ -2020,10 +2021,9 @@ function PlasmicSelfRegister__RenderFunc(props: {
                         </div>
                       </AntdButton>
                       <AntdButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__kuPS
-                        )}
+                        data-plasmic-name={"backButton"}
+                        data-plasmic-override={overrides.backButton}
+                        className={classNames("__wab_instance", sty.backButton)}
                         onClick={async () => {
                           const $steps = {};
 
@@ -2145,7 +2145,8 @@ const PlasmicDescendants = {
     "submitButton",
     "step3",
     "htmlVideo",
-    "enterButton"
+    "enterButton",
+    "backButton"
   ],
   img: ["img"],
   html: ["html", "goftino", "clarity", "openReplay", "favIcon"],
@@ -2186,7 +2187,8 @@ const PlasmicDescendants = {
     "submitButton",
     "step3",
     "htmlVideo",
-    "enterButton"
+    "enterButton",
+    "backButton"
   ],
   step0: [
     "step0",
@@ -2241,9 +2243,10 @@ const PlasmicDescendants = {
   jabamaPpid: ["jabamaPpid", "input5"],
   input5: ["input5"],
   submitButton: ["submitButton"],
-  step3: ["step3", "htmlVideo", "enterButton"],
+  step3: ["step3", "htmlVideo", "enterButton", "backButton"],
   htmlVideo: ["htmlVideo"],
-  enterButton: ["enterButton"]
+  enterButton: ["enterButton"],
+  backButton: ["backButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2289,6 +2292,7 @@ type NodeDefaultElementType = {
   step3: "div";
   htmlVideo: typeof Video;
   enterButton: typeof AntdButton;
+  backButton: typeof AntdButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2390,6 +2394,7 @@ export const PlasmicSelfRegister = Object.assign(
     step3: makeNodeComponent("step3"),
     htmlVideo: makeNodeComponent("htmlVideo"),
     enterButton: makeNodeComponent("enterButton"),
+    backButton: makeNodeComponent("backButton"),
 
     // Metadata about props expected for PlasmicSelfRegister
     internalVariantProps: PlasmicSelfRegister__VariantProps,

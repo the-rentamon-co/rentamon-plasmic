@@ -377,20 +377,6 @@
           "componentType": "component"
         },
         {
-          "id": "2NGLBkmhMP3i",
-          "name": "NazaninTest",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNazaninTest.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/nazanin-test.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNazaninTest.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/nazanin-test"
-        },
-        {
           "id": "V7sstJTUGr4K",
           "name": "Lamp",
           "type": "managed",
@@ -457,20 +443,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/comparison"
-        },
-        {
-          "id": "gnA2OKpdAGdr",
-          "name": "XSelfRegisterX",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicXSelfRegisterX.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/testregister.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicXSelfRegisterX.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/testregister"
         },
         {
           "id": "DpoRYqi8MTy5",
@@ -551,6 +523,33 @@
             "modulePath": "Card.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "W8sEZ2mUdV1j",
+          "name": "Activation",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicActivation.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/activation.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicActivation.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/activation"
+        },
+        {
+          "id": "1PmLaqEvRFmS",
+          "name": "ConnectionOtp",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicConnectionOtp.tsx",
+          "importSpec": {
+            "modulePath": "ConnectionOtp.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicConnectionOtp.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
