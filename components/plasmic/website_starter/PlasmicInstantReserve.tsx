@@ -325,7 +325,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 </span>
                 <React.Fragment>
                   {
-                    " \u26a1\ufe0f (\u062a\u0627 \u06f3\u06f0 \u0622\u0628\u0627\u0646)"
+                    "\u26a1\ufe0f(\u062a\u0627 \u06f3\u06f0 \u0622\u0628\u0627\u0646)"
                   }
                 </React.Fragment>
               </React.Fragment>
