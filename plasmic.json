@@ -97,20 +97,6 @@
           "path": "/new-page"
         },
         {
-          "id": "qnoSvk5APDQU",
-          "name": "NewPage",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/instant-reserve.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-2"
-        },
-        {
           "id": "g8UqCmyjUW7S",
           "name": "Calendar",
           "type": "managed",
@@ -552,6 +538,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicConnectionOtp.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "qnoSvk5APDQU",
+          "name": "InstantReserve",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicInstantReserve.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/instant-reserve.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicInstantReserve.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/instant-reserve"
         }
       ],
       "icons": [
