@@ -177,20 +177,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "selectProperty.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return ($state.selectProperty = $state.properties.data[0]);
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "fragmentSwitch3.checked",
