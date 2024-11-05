@@ -1708,62 +1708,61 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 ) : null}
               </div>
             </ApiRequest>
-            <div
-              className={classNames(projectcss.all, sty.freeBox___3NzG5)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpsRentamonComPanels"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://rentamon.com/panels"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpsRentamonComPanels"] != null &&
-                  typeof $steps["goToHttpsRentamonComPanels"] === "object" &&
-                  typeof $steps["goToHttpsRentamonComPanels"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpsRentamonComPanels"] = await $steps[
-                    "goToHttpsRentamonComPanels"
-                  ];
-                }
-              }}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__uDvHu
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FCFCFC" }}
-                  >
-                    {
-                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                    }
-                  </span>
-                </React.Fragment>
-              </div>
-            </div>
           </section>
+          <div
+            className={classNames(projectcss.all, sty.freeBox___3NzG5)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["goToHttpsRentamonComPanels"] = true
+                ? (() => {
+                    const actionArgs = {
+                      destination: "https://rentamon.com/panels"
+                    };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToHttpsRentamonComPanels"] != null &&
+                typeof $steps["goToHttpsRentamonComPanels"] === "object" &&
+                typeof $steps["goToHttpsRentamonComPanels"].then === "function"
+              ) {
+                $steps["goToHttpsRentamonComPanels"] = await $steps[
+                  "goToHttpsRentamonComPanels"
+                ];
+              }
+            }}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__uDvHu
+              )}
+            >
+              <React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ color: "#FCFCFC" }}
+                >
+                  {
+                    "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                  }
+                </span>
+              </React.Fragment>
+            </div>
+          </div>
           <Embed
             className={classNames("__wab_instance", sty.embedHtml__epNe8)}
             code={
