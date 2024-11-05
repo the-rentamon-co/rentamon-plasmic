@@ -314,18 +314,21 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 sty.text__qkgw
               )}
             >
-              {
-                "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u26a1\ufe0f"
-              }
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ngkPi
-              )}
-            >
-              {"\u062a\u0627 \u06f3\u06f0 \u0622\u0628\u0627\u0646"}
+              <React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {
+                    "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"
+                  }
+                </span>
+                <React.Fragment>
+                  {
+                    " \u26a1\ufe0f (\u062a\u0627 \u06f3\u06f0 \u0622\u0628\u0627\u0646)"
+                  }
+                </React.Fragment>
+              </React.Fragment>
             </div>
           </section>
           <section
@@ -587,6 +590,31 @@ function PlasmicInstantReserve__RenderFunc(props: {
                               "invokeGlobalAction"
                             ];
                           }
+
+                          $steps["invokeGlobalAction2"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "success",
+                                    "\u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0639\u0645\u0627\u0644 \u0634\u062f",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction2"] != null &&
+                            typeof $steps["invokeGlobalAction2"] === "object" &&
+                            typeof $steps["invokeGlobalAction2"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction2"] = await $steps[
+                              "invokeGlobalAction2"
+                            ];
+                          }
                         }).apply(null, eventArgs);
                       }}
                     />
@@ -723,6 +751,31 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           ) {
                             $steps["invokeGlobalAction"] = await $steps[
                               "invokeGlobalAction"
+                            ];
+                          }
+
+                          $steps["invokeGlobalAction2"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0639\u0645\u0627\u0644 \u0634\u062f",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction2"] != null &&
+                            typeof $steps["invokeGlobalAction2"] === "object" &&
+                            typeof $steps["invokeGlobalAction2"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction2"] = await $steps[
+                              "invokeGlobalAction2"
                             ];
                           }
                         }).apply(null, eventArgs);

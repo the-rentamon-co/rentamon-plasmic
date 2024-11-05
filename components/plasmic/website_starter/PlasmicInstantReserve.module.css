@@ -29,7 +29,7 @@
   width: 100%;
   padding-left: 0;
   padding-right: 0;
-  height: 109px;
+  height: auto;
   margin-bottom: 0px;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
@@ -50,27 +50,13 @@
   height: 37px;
   max-width: 100%;
   font-family: "Vazirmatn", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   font-size: var(--token-2CXdk7410BHW);
   color: #444444;
   margin-top: 28px;
   margin-bottom: 0px;
   min-width: 0;
-}
-.text__ngkPi {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  color: #444444cc;
-  text-align: center;
-  font-size: 18px;
-  transition-property: all;
-  transition-duration: 1s;
-  min-width: 0;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 1s;
 }
 .mainSection {
   display: grid;
