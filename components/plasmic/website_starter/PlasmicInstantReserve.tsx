@@ -264,6 +264,12 @@ function PlasmicInstantReserve__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "variable",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -615,6 +621,45 @@ function PlasmicInstantReserve__RenderFunc(props: {
                               "invokeGlobalAction2"
                             ];
                           }
+
+                          $steps["updateShabSwitchChecked"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["shabSwitch", "checked"]
+                                  },
+                                  operation: 0,
+                                  value: ($state.shabSwitch.checked =
+                                    !$state.shabSwitch.checked)
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateShabSwitchChecked"] != null &&
+                            typeof $steps["updateShabSwitchChecked"] ===
+                              "object" &&
+                            typeof $steps["updateShabSwitchChecked"].then ===
+                              "function"
+                          ) {
+                            $steps["updateShabSwitchChecked"] = await $steps[
+                              "updateShabSwitchChecked"
+                            ];
+                          }
                         }).apply(null, eventArgs);
                       }}
                     />
@@ -776,6 +821,45 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           ) {
                             $steps["invokeGlobalAction2"] = await $steps[
                               "invokeGlobalAction2"
+                            ];
+                          }
+
+                          $steps["updateOtaghakChecked"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["otaghak", "checked"]
+                                  },
+                                  operation: 0,
+                                  value: ($state.otaghak.checked =
+                                    !$state.otaghak.checked)
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateOtaghakChecked"] != null &&
+                            typeof $steps["updateOtaghakChecked"] ===
+                              "object" &&
+                            typeof $steps["updateOtaghakChecked"].then ===
+                              "function"
+                          ) {
+                            $steps["updateOtaghakChecked"] = await $steps[
+                              "updateOtaghakChecked"
                             ];
                           }
                         }).apply(null, eventArgs);
