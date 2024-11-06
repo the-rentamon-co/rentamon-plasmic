@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import ConnectionOtp from "../../ConnectionOtp"; // plasmic-import: 1PmLaqEvRFmS/component
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -67,6 +67,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicActivation.module.css"; // plasmic-import: W8sEZ2mUdV1j/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -81,7 +84,8 @@ export const PlasmicActivation__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicActivation__OverridesType = {
   root?: Flex__<"div">;
-  connectionOtp?: Flex__<typeof ConnectionOtp>;
+  freeBox?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultActivationProps {}
@@ -124,6 +128,8 @@ function PlasmicActivation__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -151,11 +157,80 @@ function PlasmicActivation__RenderFunc(props: {
             sty.root
           )}
         >
-          <ConnectionOtp
-            data-plasmic-name={"connectionOtp"}
-            data-plasmic-override={overrides.connectionOtp}
-            className={classNames("__wab_instance", sty.connectionOtp)}
-          />
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://dev.rentamon.com/webhook-test/3b12628d-bbf6-4e78-b8d3-e6fca81a792d"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+            }}
+          >
+            <Button
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://dev.rentamon.com/webhook-test/3b12628d-bbf6-4e78-b8d3-e6fca81a792d",
+                          undefined,
+                          undefined,
+                          {
+                            headers: {
+                              "Content-Type":
+                                "application/x-www-form-urlencoded"
+                            }
+                          }
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
+                }
+              }}
+            >
+              {"\u0641\u0639\u0627\u0644 \u0634\u0648"}
+            </Button>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -163,15 +238,17 @@ function PlasmicActivation__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "connectionOtp"],
-  connectionOtp: ["connectionOtp"]
+  root: ["root", "freeBox", "button"],
+  freeBox: ["freeBox", "button"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  connectionOtp: typeof ConnectionOtp;
+  freeBox: "div";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -234,7 +311,8 @@ export const PlasmicActivation = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    connectionOtp: makeNodeComponent("connectionOtp"),
+    freeBox: makeNodeComponent("freeBox"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,
