@@ -630,8 +630,10 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                     variablePath: ["shabSwitch", "checked"]
                                   },
                                   operation: 0,
-                                  value: ($state.shabSwitch.checked =
-                                    !$state.shabSwitch.checked)
+                                  value: (() => {
+                                    return ($state.shabSwitch.checked =
+                                      checked);
+                                  })()
                                 };
                                 return (({
                                   variable,
@@ -833,7 +835,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   },
                                   operation: 0,
                                   value: ($state.otaghak.checked =
-                                    !$state.otaghak.checked)
+                                    $state.otaghak.checked)
                                 };
                                 return (({
                                   variable,
