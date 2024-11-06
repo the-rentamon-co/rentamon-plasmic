@@ -630,10 +630,15 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                     variablePath: ["shabSwitch", "checked"]
                                   },
                                   operation: 0,
-                                  value: (() => {
-                                    return ($state.shabSwitch.checked =
-                                      checked);
-                                  })()
+                                  value: ($state.properties.data
+                                    .find(
+                                      property =>
+                                        property.property_name ===
+                                        $state.selectProperty.value
+                                    )
+                                    .website_ids.find(
+                                      website => website.website_id === 4
+                                    ).is_instant = $state.shabSwitch.checked)
                                 };
                                 return (({
                                   variable,
@@ -834,8 +839,15 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                     variablePath: ["otaghak", "checked"]
                                   },
                                   operation: 0,
-                                  value: ($state.otaghak.checked =
-                                    $state.otaghak.checked)
+                                  value: ($state.properties.data
+                                    .find(
+                                      property =>
+                                        property.property_name ===
+                                        $state.selectProperty.value
+                                    )
+                                    .website_ids.find(
+                                      website => website.website_id === 6
+                                    ).is_instant = $state.otaghak.checked)
                                 };
                                 return (({
                                   variable,
