@@ -200,7 +200,7 @@ function PlasmicActivation__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://dev.rentamon.com/webhook-test/3b12628d-bbf6-4e78-b8d3-e6fca81a792d",
+                          "https://dev.rentamon.com/webhook/activeme",
                           undefined,
                           undefined,
                           {
