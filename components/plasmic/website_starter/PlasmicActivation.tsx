@@ -66,6 +66,7 @@ import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -90,12 +91,12 @@ export const PlasmicActivation__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicActivation__OverridesType = {
   root?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
   input2?: Flex__<typeof AntdInput>;
   input3?: Flex__<typeof AntdInput>;
-  input4?: Flex__<typeof AntdInput>;
+  demoButton?: Flex__<typeof AntdButton>;
+  htmlVideo?: Flex__<typeof Video>;
 };
 
 export interface DefaultActivationProps {}
@@ -183,14 +184,6 @@ function PlasmicActivation__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
-        path: "input4.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -230,9 +223,18 @@ function PlasmicActivation__RenderFunc(props: {
           )}
         >
           <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__glOQf
+            )}
+          >
+            {
+              "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u0628\u0627\u0645\u0627"
+            }
+          </div>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__uh0Zl)}
             onClick={async event => {
               const $steps = {};
 
@@ -355,11 +357,15 @@ function PlasmicActivation__RenderFunc(props: {
               >
                 <FormItemWrapper
                   className={classNames("__wab_instance", sty.formField___7MoS)}
-                  label={"\u0634\u0645\u0627\u0631\u0647"}
-                  name={"name"}
+                  label={
+                    "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627"
+                  }
+                  name={"jabamaPhone"}
                 >
                   {(() => {
                     const child$Props = {
+                      allowClear: true,
+                      bordered: false,
                       className: classNames("__wab_instance", sty.input),
                       onChange: generateStateOnChangePropForCodeComponents(
                         $state,
@@ -367,6 +373,9 @@ function PlasmicActivation__RenderFunc(props: {
                         ["input", "value"],
                         AntdInput_Helpers
                       ),
+                      placeholder:
+                        "\u06f0\u06f9\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9 \u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0632\u0646 \u0627\u06cc\u0646\u200c\u062c\u0627",
+                      size: "small",
                       value: generateStateValueProp($state, ["input", "value"])
                     };
                     initializeCodeComponentStates(
@@ -408,174 +417,213 @@ function PlasmicActivation__RenderFunc(props: {
                     </div>
                   </AntdButton>
                 </FormItemWrapper>
-                <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__axSro)}
-                  label={"\u0634\u0645\u0627\u0631\u0647"}
-                  name={"name"}
-                >
-                  {(() => {
-                    const child$Props = {
-                      className: classNames("__wab_instance", sty.input2),
-                      onChange: generateStateOnChangePropForCodeComponents(
-                        $state,
-                        "value",
-                        ["input2", "value"],
-                        AntdInput_Helpers
-                      ),
-                      value: generateStateValueProp($state, ["input2", "value"])
-                    };
-                    initializeCodeComponentStates(
-                      $state,
-                      [
-                        {
-                          name: "value",
-                          plasmicStateName: "input2.value"
-                        }
-                      ],
-                      [],
-                      AntdInput_Helpers ?? {},
-                      child$Props
-                    );
-
-                    return (
-                      <AntdInput
-                        data-plasmic-name={"input2"}
-                        data-plasmic-override={overrides.input2}
-                        {...child$Props}
-                      />
-                    );
-                  })()}
-                  <AntdButton
-                    className={classNames("__wab_instance", sty.button__rtuRf)}
-                    submitsForm={true}
-                    type={"primary"}
+                <div className={classNames(projectcss.all, sty.freeBox__nwSdk)}>
+                  <FormItemWrapper
+                    className={classNames(
+                      "__wab_instance",
+                      sty.formField__fZsKh
+                    )}
+                    label={
+                      "\u06a9\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627"
+                    }
+                    name={"jabamaPlatformID"}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__bJAdb
-                      )}
-                    >
-                      {
-                        "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
-                      }
-                    </div>
-                  </AntdButton>
-                </FormItemWrapper>
-                <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__jlbt4)}
-                  label={"\u0634\u0645\u0627\u0631\u0647"}
-                  name={"name"}
-                >
-                  {(() => {
-                    const child$Props = {
-                      className: classNames("__wab_instance", sty.input3),
-                      onChange: generateStateOnChangePropForCodeComponents(
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input2),
+                        onChange: generateStateOnChangePropForCodeComponents(
+                          $state,
+                          "value",
+                          ["input2", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return undefined;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input2",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
                         $state,
-                        "value",
-                        ["input3", "value"],
-                        AntdInput_Helpers
-                      ),
-                      value: generateStateValueProp($state, ["input3", "value"])
-                    };
-                    initializeCodeComponentStates(
-                      $state,
-                      [
-                        {
-                          name: "value",
-                          plasmicStateName: "input3.value"
-                        }
-                      ],
-                      [],
-                      AntdInput_Helpers ?? {},
-                      child$Props
-                    );
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input2.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
 
-                    return (
-                      <AntdInput
-                        data-plasmic-name={"input3"}
-                        data-plasmic-override={overrides.input3}
-                        {...child$Props}
-                      />
-                    );
-                  })()}
-                  <AntdButton
-                    className={classNames("__wab_instance", sty.button__wx9Ii)}
-                    submitsForm={true}
-                    type={"primary"}
-                  >
-                    <div
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input2"}
+                          data-plasmic-override={overrides.input2}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                    <AntdButton
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__kuqoV
+                        "__wab_instance",
+                        sty.button__n0Mx9
                       )}
+                      submitsForm={true}
+                      type={"primary"}
                     >
-                      {
-                        "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
-                      }
-                    </div>
-                  </AntdButton>
-                </FormItemWrapper>
-                <FormItemWrapper
-                  className={classNames("__wab_instance", sty.formField__bocxh)}
-                  label={"\u0634\u0645\u0627\u0631\u0647"}
-                  name={"name"}
-                >
-                  {(() => {
-                    const child$Props = {
-                      className: classNames("__wab_instance", sty.input4),
-                      onChange: generateStateOnChangePropForCodeComponents(
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hpP
+                        )}
+                      >
+                        {"\u0627\u062a\u0635\u0627\u0644"}
+                      </div>
+                    </AntdButton>
+                    <AntdButton
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__ntqGk
+                      )}
+                      submitsForm={true}
+                      type={"primary"}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hqd3C
+                        )}
+                      >
+                        {"\u062b\u0628\u062a"}
+                      </div>
+                    </AntdButton>
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    className={classNames(
+                      "__wab_instance",
+                      sty.formField__lqQs6
+                    )}
+                    label={"\u06a9\u062f \u0639\u0628\u0648\u0631"}
+                    name={"jabamaOTP"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input3),
+                        onChange: generateStateOnChangePropForCodeComponents(
+                          $state,
+                          "value",
+                          ["input3", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return undefined;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input3",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
                         $state,
-                        "value",
-                        ["input4", "value"],
-                        AntdInput_Helpers
-                      ),
-                      value: generateStateValueProp($state, ["input4", "value"])
-                    };
-                    initializeCodeComponentStates(
-                      $state,
-                      [
-                        {
-                          name: "value",
-                          plasmicStateName: "input4.value"
-                        }
-                      ],
-                      [],
-                      AntdInput_Helpers ?? {},
-                      child$Props
-                    );
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input3.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
 
-                    return (
-                      <AntdInput
-                        data-plasmic-name={"input4"}
-                        data-plasmic-override={overrides.input4}
-                        {...child$Props}
-                      />
-                    );
-                  })()}
-                  <AntdButton
-                    className={classNames("__wab_instance", sty.button__svgAf)}
-                    submitsForm={true}
-                    type={"primary"}
-                  >
-                    <div
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input3"}
+                          data-plasmic-override={overrides.input3}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                    <AntdButton
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__fjaqv
+                        "__wab_instance",
+                        sty.button___9Nl4N
                       )}
+                      submitsForm={true}
+                      type={"primary"}
                     >
-                      {
-                        "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
-                      }
-                    </div>
-                  </AntdButton>
-                </FormItemWrapper>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__aeMyF
+                        )}
+                      >
+                        {"\u0627\u062a\u0635\u0627\u0644"}
+                      </div>
+                    </AntdButton>
+                  </FormItemWrapper>
+                </div>
               </FormWrapper>
             );
           })()}
+          <div className={classNames(projectcss.all, sty.freeBox__oSjS)}>
+            <AntdButton
+              data-plasmic-name={"demoButton"}
+              data-plasmic-override={overrides.demoButton}
+              className={classNames("__wab_instance", sty.demoButton)}
+              submitsForm={true}
+              type={"primary"}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__u4BCy
+                )}
+              >
+                {
+                  "\u067e\u06cc\u062f\u0627 \u06a9\u0631\u062f\u0646 \u06a9\u062f \u0648 \u0644\u06cc\u0646\u06a9 \u062c\u0627\u0628\u0627\u0645\u0627"
+                }
+              </div>
+            </AntdButton>
+            <Video
+              data-plasmic-name={"htmlVideo"}
+              data-plasmic-override={overrides.htmlVideo}
+              className={classNames("__wab_instance", sty.htmlVideo)}
+              controls={true}
+              src={
+                "https://rentamon.com/wp-content/uploads/2024/11/JabamaCode.mp4"
+              }
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -583,25 +631,33 @@ function PlasmicActivation__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "form", "input", "input2", "input3", "input4"],
-  freeBox: ["freeBox"],
-  form: ["form", "input", "input2", "input3", "input4"],
+  root: [
+    "root",
+    "form",
+    "input",
+    "input2",
+    "input3",
+    "demoButton",
+    "htmlVideo"
+  ],
+  form: ["form", "input", "input2", "input3"],
   input: ["input"],
   input2: ["input2"],
   input3: ["input3"],
-  input4: ["input4"]
+  demoButton: ["demoButton"],
+  htmlVideo: ["htmlVideo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
   form: typeof FormWrapper;
   input: typeof AntdInput;
   input2: typeof AntdInput;
   input3: typeof AntdInput;
-  input4: typeof AntdInput;
+  demoButton: typeof AntdButton;
+  htmlVideo: typeof Video;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -664,12 +720,12 @@ export const PlasmicActivation = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     input2: makeNodeComponent("input2"),
     input3: makeNodeComponent("input3"),
-    input4: makeNodeComponent("input4"),
+    demoButton: makeNodeComponent("demoButton"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,

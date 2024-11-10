@@ -1165,6 +1165,65 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               "updateFormStep"
                             ];
                           }
+
+                          $steps["invokeGlobalAction"] =
+                            $state.selfRegisterForm.value.propertyName !== ""
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://dev.rentamon.com/webhook/register",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $state.selfRegisterForm.value;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      (() => {
+                                        try {
+                                          return {
+                                            headers: {
+                                              "Content-Type":
+                                                "application/x-www-form-urlencoded"
+                                            }
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                          if (
+                            $steps["invokeGlobalAction"] != null &&
+                            typeof $steps["invokeGlobalAction"] === "object" &&
+                            typeof $steps["invokeGlobalAction"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction"] = await $steps[
+                              "invokeGlobalAction"
+                            ];
+                          }
                         }}
                         submitsForm={false}
                         type={"primary"}
@@ -1724,61 +1783,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           ) {
                             $steps["invokeGlobalActionToast"] = await $steps[
                               "invokeGlobalActionToast"
-                            ];
-                          }
-
-                          $steps["invokeGlobalAction"] =
-                            $state.formStep === 2 &&
-                            [
-                              "jabamappid",
-                              "jajaigappid",
-                              "shabppid",
-                              "mizboonppid",
-                              "otaghakppid",
-                              "homsappid",
-                              "mihmanshoppid"
-                            ].some(field => $state.input[field] !== "")
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "POST",
-                                      "https://dev.rentamon.com/webhook/register",
-                                      undefined,
-                                      (() => {
-                                        try {
-                                          return $state.selfRegisterForm.value;
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
-                                      {
-                                        headers: {
-                                          "Content-Type":
-                                            "application/x-www-form-urlencoded"
-                                        }
-                                      }
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.apiRequest"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                          if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
                             ];
                           }
 
