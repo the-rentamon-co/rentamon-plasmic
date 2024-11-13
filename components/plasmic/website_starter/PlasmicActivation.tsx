@@ -459,6 +459,48 @@ function PlasmicActivation__RenderFunc(props: {
                   </AntdButton>
                   <AntdButton
                     className={classNames("__wab_instance", sty.button__ntqGk)}
+                    onClick={async () => {
+                      const $steps = {};
+
+                      $steps["invokeGlobalAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "GET",
+                                "https://dev.rentamon.com/webhook-test/sendOTP",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return $state.form.value.jabamaPlatformID;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
+                        ];
+                      }
+                    }}
                     submitsForm={true}
                     type={"primary"}
                   >
@@ -526,8 +568,23 @@ function PlasmicActivation__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               args: [
-                                "POST",
-                                "https://dev.rentamon.com/webhook-test/31a5d51a-bf68-4914-9705-2583c89b83ae"
+                                "GET",
+                                "https://gateway.rentamon.com/webhook/sendOTP",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return $state.form.value.jabamaPhone;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
                               ]
                             };
                             return $globalActions["Fragment.apiRequest"]?.apply(
@@ -546,7 +603,7 @@ function PlasmicActivation__RenderFunc(props: {
                         ];
                       }
                     }}
-                    submitsForm={true}
+                    submitsForm={false}
                     type={"primary"}
                   >
                     <div
@@ -632,8 +689,23 @@ function PlasmicActivation__RenderFunc(props: {
                           ? (() => {
                               const actionArgs = {
                                 args: [
-                                  "POST",
-                                  "https://dev.rentamon.com/webhook-test/31a5d51a-bf68-4914-9705-2583c89b83ae"
+                                  "GET",
+                                  "https://dev.rentamon.com/webhook-test/sendOTP",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $state.form.value.jabamaOTP;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
                                 ]
                               };
                               return $globalActions[
