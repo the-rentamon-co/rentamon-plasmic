@@ -67,6 +67,8 @@ import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -97,6 +99,8 @@ export type PlasmicActivation__OverridesType = {
   input3?: Flex__<typeof AntdInput>;
   demoButton?: Flex__<typeof AntdButton>;
   htmlVideo?: Flex__<typeof Video>;
+  apiRequest?: Flex__<typeof ApiRequest>;
+  httpRestApiFetcher?: Flex__<typeof DataFetcher>;
 };
 
 export interface DefaultActivationProps {}
@@ -184,6 +188,24 @@ function PlasmicActivation__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -401,6 +423,48 @@ function PlasmicActivation__RenderFunc(props: {
                   })()}
                   <AntdButton
                     className={classNames("__wab_instance", sty.button__fp4QP)}
+                    onClick={async () => {
+                      const $steps = {};
+
+                      $steps["invokeGlobalAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "POST",
+                                "https://dev.rentamon.com/webhook-test/jabama-send-otp",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return "09038778606";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
+                        ];
+                      }
+                    }}
                     submitsForm={true}
                     type={"primary"}
                   >
@@ -624,6 +688,64 @@ function PlasmicActivation__RenderFunc(props: {
               }
             />
           </div>
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___9QvR8
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__hjyWs
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={generateStateOnChangeProp($state, ["apiRequest", "error"])}
+            onLoading={generateStateOnChangeProp($state, [
+              "apiRequest",
+              "loading"
+            ])}
+            onSuccess={generateStateOnChangeProp($state, [
+              "apiRequest",
+              "data"
+            ])}
+          />
+
+          <DataFetcher
+            data-plasmic-name={"httpRestApiFetcher"}
+            data-plasmic-override={overrides.httpRestApiFetcher}
+            className={classNames("__wab_instance", sty.httpRestApiFetcher)}
+            dataName={"fetchedData"}
+            errorDisplay={
+              <DataCtxReader__>{$ctx => "Error fetching data"}</DataCtxReader__>
+            }
+            errorName={"fetchError"}
+            headers={{
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            }}
+            loadingDisplay={
+              <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
+            }
+            method={"POST"}
+            noLayout={false}
+            url={"https://dev.rentamon.com/webhook/activate"}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -638,14 +760,18 @@ const PlasmicDescendants = {
     "input2",
     "input3",
     "demoButton",
-    "htmlVideo"
+    "htmlVideo",
+    "apiRequest",
+    "httpRestApiFetcher"
   ],
   form: ["form", "input", "input2", "input3"],
   input: ["input"],
   input2: ["input2"],
   input3: ["input3"],
   demoButton: ["demoButton"],
-  htmlVideo: ["htmlVideo"]
+  htmlVideo: ["htmlVideo"],
+  apiRequest: ["apiRequest"],
+  httpRestApiFetcher: ["httpRestApiFetcher"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -658,6 +784,8 @@ type NodeDefaultElementType = {
   input3: typeof AntdInput;
   demoButton: typeof AntdButton;
   htmlVideo: typeof Video;
+  apiRequest: typeof ApiRequest;
+  httpRestApiFetcher: typeof DataFetcher;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -726,6 +854,8 @@ export const PlasmicActivation = Object.assign(
     input3: makeNodeComponent("input3"),
     demoButton: makeNodeComponent("demoButton"),
     htmlVideo: makeNodeComponent("htmlVideo"),
+    apiRequest: makeNodeComponent("apiRequest"),
+    httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,
