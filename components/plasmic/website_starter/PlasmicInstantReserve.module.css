@@ -621,3 +621,19 @@
   max-width: 100%;
   object-fit: cover;
 }
+.desc {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  line-height: 1.8;
+  min-width: 0;
+  padding: 40px 40px 50px;
+}
+@media (max-width: 768px) {
+  .desc {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+}

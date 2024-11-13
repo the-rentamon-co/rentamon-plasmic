@@ -102,6 +102,7 @@ export type PlasmicInstantReserve__OverridesType = {
   fragmentSwitch7?: Flex__<typeof Switch>;
   homsaContainer?: Flex__<"div">;
   fragmentSwitch4?: Flex__<typeof Switch>;
+  desc?: Flex__<"div">;
 };
 
 export interface DefaultInstantReserveProps {}
@@ -1874,6 +1875,20 @@ function PlasmicInstantReserve__RenderFunc(props: {
               '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
             }
           />
+
+          <div
+            data-plasmic-name={"desc"}
+            data-plasmic-override={overrides.desc}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.desc
+            )}
+          >
+            {
+              "\u0648\u06cc\u0698\u06af\u06cc \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0628\u0647 \u0645\u0647\u0645\u0627\u0646 \u0627\u062c\u0627\u0632\u0647 \u0645\u06cc\u062f\u0647 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u062a\u0627\u06cc\u06cc\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u0628\u0627\u0639\u062b \u0628\u06cc\u0634\u062a\u0631 \u0634\u062f\u0646 \u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u06a9\u0627\u0647\u0634 \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0648 \u0628\u0627\u0644\u0627\u062a\u0631 \u0631\u0641\u062a\u0646 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u062c\u0633\u062a\u062c\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0645\u06cc\u200c\u0634\u0647."
+            }
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1900,7 +1915,8 @@ const PlasmicDescendants = {
     "mihmanshoContainer",
     "fragmentSwitch7",
     "homsaContainer",
-    "fragmentSwitch4"
+    "fragmentSwitch4",
+    "desc"
   ],
   topContainer: ["topContainer"],
   mainSection: [
@@ -1954,7 +1970,8 @@ const PlasmicDescendants = {
   mihmanshoContainer: ["mihmanshoContainer", "fragmentSwitch7"],
   fragmentSwitch7: ["fragmentSwitch7"],
   homsaContainer: ["homsaContainer", "fragmentSwitch4"],
-  fragmentSwitch4: ["fragmentSwitch4"]
+  fragmentSwitch4: ["fragmentSwitch4"],
+  desc: ["desc"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1979,6 +1996,7 @@ type NodeDefaultElementType = {
   fragmentSwitch7: typeof Switch;
   homsaContainer: "div";
   fragmentSwitch4: typeof Switch;
+  desc: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2059,6 +2077,7 @@ export const PlasmicInstantReserve = Object.assign(
     fragmentSwitch7: makeNodeComponent("fragmentSwitch7"),
     homsaContainer: makeNodeComponent("homsaContainer"),
     fragmentSwitch4: makeNodeComponent("fragmentSwitch4"),
+    desc: makeNodeComponent("desc"),
 
     // Metadata about props expected for PlasmicInstantReserve
     internalVariantProps: PlasmicInstantReserve__VariantProps,

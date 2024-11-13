@@ -68,7 +68,6 @@ import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/reg
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -94,13 +93,26 @@ export const PlasmicActivation__ArgProps = new Array<ArgPropType>();
 export type PlasmicActivation__OverridesType = {
   root?: Flex__<"div">;
   form?: Flex__<typeof FormWrapper>;
-  input?: Flex__<typeof AntdInput>;
   input2?: Flex__<typeof AntdInput>;
+  input?: Flex__<typeof AntdInput>;
   input3?: Flex__<typeof AntdInput>;
   demoButton?: Flex__<typeof AntdButton>;
   htmlVideo?: Flex__<typeof Video>;
-  apiRequest?: Flex__<typeof ApiRequest>;
-  httpRestApiFetcher?: Flex__<typeof DataFetcher>;
+  getStatus?: Flex__<typeof ApiRequest>;
+  jabamaOn?: Flex__<typeof PlasmicImg__>;
+  jabamaOff?: Flex__<typeof PlasmicImg__>;
+  jajigaOn?: Flex__<typeof PlasmicImg__>;
+  jajigaOff?: Flex__<typeof PlasmicImg__>;
+  shabOn?: Flex__<typeof PlasmicImg__>;
+  shabOff?: Flex__<typeof PlasmicImg__>;
+  mizboonOn?: Flex__<typeof PlasmicImg__>;
+  mizboonOff2?: Flex__<typeof PlasmicImg__>;
+  otaghakOn?: Flex__<typeof PlasmicImg__>;
+  otaghakOff?: Flex__<typeof PlasmicImg__>;
+  mihmanshoOn?: Flex__<typeof PlasmicImg__>;
+  mihmanshoOff?: Flex__<typeof PlasmicImg__>;
+  homsaOn?: Flex__<typeof PlasmicImg__>;
+  homsaOff?: Flex__<typeof PlasmicImg__>;
 };
 
 export interface DefaultActivationProps {}
@@ -190,19 +202,19 @@ function PlasmicActivation__RenderFunc(props: {
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
       {
-        path: "apiRequest.data",
+        path: "getStatus.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "apiRequest.error",
+        path: "getStatus.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "apiRequest.loading",
+        path: "getStatus.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -378,6 +390,90 @@ function PlasmicActivation__RenderFunc(props: {
                 {...child$Props}
               >
                 <FormItemWrapper
+                  className={classNames("__wab_instance", sty.formField__fZsKh)}
+                  label={
+                    "\u06a9\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627"
+                  }
+                  name={"jabamaPlatformID"}
+                >
+                  {(() => {
+                    const child$Props = {
+                      className: classNames("__wab_instance", sty.input2),
+                      onChange: generateStateOnChangePropForCodeComponents(
+                        $state,
+                        "value",
+                        ["input2", "value"],
+                        AntdInput_Helpers
+                      ),
+                      placeholder: (() => {
+                        try {
+                          return undefined;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })(),
+                      size: "large",
+                      value: generateStateValueProp($state, ["input2", "value"])
+                    };
+                    initializeCodeComponentStates(
+                      $state,
+                      [
+                        {
+                          name: "value",
+                          plasmicStateName: "input2.value"
+                        }
+                      ],
+                      [],
+                      AntdInput_Helpers ?? {},
+                      child$Props
+                    );
+
+                    return (
+                      <AntdInput
+                        data-plasmic-name={"input2"}
+                        data-plasmic-override={overrides.input2}
+                        {...child$Props}
+                      />
+                    );
+                  })()}
+                  <AntdButton
+                    className={classNames("__wab_instance", sty.button__n0Mx9)}
+                    submitsForm={true}
+                    type={"primary"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hpP
+                      )}
+                    >
+                      {"\u0627\u062a\u0635\u0627\u0644"}
+                    </div>
+                  </AntdButton>
+                  <AntdButton
+                    className={classNames("__wab_instance", sty.button__ntqGk)}
+                    submitsForm={true}
+                    type={"primary"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hqd3C
+                      )}
+                    >
+                      {"\u062b\u0628\u062a"}
+                    </div>
+                  </AntdButton>
+                </FormItemWrapper>
+                <FormItemWrapper
                   className={classNames("__wab_instance", sty.formField___7MoS)}
                   label={
                     "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627"
@@ -431,22 +527,7 @@ function PlasmicActivation__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://dev.rentamon.com/webhook-test/jabama-send-otp",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return "09038778606";
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
+                                "https://dev.rentamon.com/webhook-test/31a5d51a-bf68-4914-9705-2583c89b83ae"
                               ]
                             };
                             return $globalActions["Fragment.apiRequest"]?.apply(
@@ -482,102 +563,6 @@ function PlasmicActivation__RenderFunc(props: {
                   </AntdButton>
                 </FormItemWrapper>
                 <div className={classNames(projectcss.all, sty.freeBox__nwSdk)}>
-                  <FormItemWrapper
-                    className={classNames(
-                      "__wab_instance",
-                      sty.formField__fZsKh
-                    )}
-                    label={
-                      "\u06a9\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627"
-                    }
-                    name={"jabamaPlatformID"}
-                  >
-                    {(() => {
-                      const child$Props = {
-                        className: classNames("__wab_instance", sty.input2),
-                        onChange: generateStateOnChangePropForCodeComponents(
-                          $state,
-                          "value",
-                          ["input2", "value"],
-                          AntdInput_Helpers
-                        ),
-                        placeholder: (() => {
-                          try {
-                            return undefined;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })(),
-                        size: "large",
-                        value: generateStateValueProp($state, [
-                          "input2",
-                          "value"
-                        ])
-                      };
-                      initializeCodeComponentStates(
-                        $state,
-                        [
-                          {
-                            name: "value",
-                            plasmicStateName: "input2.value"
-                          }
-                        ],
-                        [],
-                        AntdInput_Helpers ?? {},
-                        child$Props
-                      );
-
-                      return (
-                        <AntdInput
-                          data-plasmic-name={"input2"}
-                          data-plasmic-override={overrides.input2}
-                          {...child$Props}
-                        />
-                      );
-                    })()}
-                    <AntdButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__n0Mx9
-                      )}
-                      submitsForm={true}
-                      type={"primary"}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__hpP
-                        )}
-                      >
-                        {"\u0627\u062a\u0635\u0627\u0644"}
-                      </div>
-                    </AntdButton>
-                    <AntdButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__ntqGk
-                      )}
-                      submitsForm={true}
-                      type={"primary"}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__hqd3C
-                        )}
-                      >
-                        {"\u062b\u0628\u062a"}
-                      </div>
-                    </AntdButton>
-                  </FormItemWrapper>
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
@@ -640,6 +625,33 @@ function PlasmicActivation__RenderFunc(props: {
                         "__wab_instance",
                         sty.button___9Nl4N
                       )}
+                      onClick={async () => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://dev.rentamon.com/webhook-test/31a5d51a-bf68-4914-9705-2583c89b83ae"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
                       submitsForm={true}
                       type={"primary"}
                     >
@@ -689,9 +701,9 @@ function PlasmicActivation__RenderFunc(props: {
             />
           </div>
           <ApiRequest
-            data-plasmic-name={"apiRequest"}
-            data-plasmic-override={overrides.apiRequest}
-            className={classNames("__wab_instance", sty.apiRequest)}
+            data-plasmic-name={"getStatus"}
+            data-plasmic-override={overrides.getStatus}
+            className={classNames("__wab_instance", sty.getStatus)}
             errorDisplay={
               <div
                 className={classNames(
@@ -715,39 +727,465 @@ function PlasmicActivation__RenderFunc(props: {
               </div>
             }
             method={"POST"}
-            onError={generateStateOnChangeProp($state, ["apiRequest", "error"])}
+            onError={generateStateOnChangeProp($state, ["getStatus", "error"])}
             onLoading={generateStateOnChangeProp($state, [
-              "apiRequest",
+              "getStatus",
               "loading"
             ])}
-            onSuccess={generateStateOnChangeProp($state, [
-              "apiRequest",
-              "data"
-            ])}
-            url={"https://dev.rentamon.com/webhook/activate"}
-          />
-
-          <DataFetcher
-            data-plasmic-name={"httpRestApiFetcher"}
-            data-plasmic-override={overrides.httpRestApiFetcher}
-            className={classNames("__wab_instance", sty.httpRestApiFetcher)}
-            dataName={"fetchedData"}
-            errorDisplay={
-              <DataCtxReader__>{$ctx => "Error fetching data"}</DataCtxReader__>
-            }
-            errorName={"fetchError"}
-            headers={{
-              "Content-Type": "application/json",
-              Accept: "application/json",
-              withCredentials: true
-            }}
-            loadingDisplay={
-              <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
-            }
-            method={"POST"}
-            noLayout={false}
-            url={``}
-          />
+            onSuccess={generateStateOnChangeProp($state, ["getStatus", "data"])}
+            url={"https://gateway.rentamon.com/webhook/activate"}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___2UYl)}>
+              {(() => {
+                try {
+                  return $state.getStatus.data[6].status === "true";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"jabamaOn"}
+                  data-plasmic-override={overrides.jabamaOn}
+                  alt={""}
+                  className={classNames(sty.jabamaOn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/jabama.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[6].status === "false";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"jabamaOff"}
+                  data-plasmic-override={overrides.jabamaOff}
+                  alt={""}
+                  className={classNames(sty.jabamaOff)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/jabama.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[0].status === "true";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"jajigaOn"}
+                  data-plasmic-override={overrides.jajigaOn}
+                  alt={""}
+                  className={classNames(sty.jajigaOn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/jajiga.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[0].status === "false";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"jajigaOff"}
+                  data-plasmic-override={overrides.jajigaOff}
+                  alt={""}
+                  className={classNames(sty.jajigaOff)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/jajiga.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[3].status === "true";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"shabOn"}
+                  data-plasmic-override={overrides.shabOn}
+                  alt={""}
+                  className={classNames(sty.shabOn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/shab.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[3].status === "false";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"shabOff"}
+                  data-plasmic-override={overrides.shabOff}
+                  alt={""}
+                  className={classNames(sty.shabOff)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/shab.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[3].status === "true";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"mizboonOn"}
+                  data-plasmic-override={overrides.mizboonOn}
+                  alt={""}
+                  className={classNames(sty.mizboonOn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/mizboon.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[3].status === "false";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"mizboonOff2"}
+                  data-plasmic-override={overrides.mizboonOff2}
+                  alt={""}
+                  className={classNames(sty.mizboonOff2)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/mizboon.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[2].status === "true";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"otaghakOn"}
+                  data-plasmic-override={overrides.otaghakOn}
+                  alt={""}
+                  className={classNames(sty.otaghakOn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/otaghak-1.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[2].status === "false";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"otaghakOff"}
+                  data-plasmic-override={overrides.otaghakOff}
+                  alt={""}
+                  className={classNames(sty.otaghakOff)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/otaghak-1.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[5].status === "true";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"mihmanshoOn"}
+                  data-plasmic-override={overrides.mihmanshoOn}
+                  alt={""}
+                  className={classNames(sty.mihmanshoOn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/mihmansho2.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[5].status === "false";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"mihmanshoOff"}
+                  data-plasmic-override={overrides.mihmanshoOff}
+                  alt={""}
+                  className={classNames(sty.mihmanshoOff)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/mihmansho2.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[4].status === "true";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"homsaOn"}
+                  data-plasmic-override={overrides.homsaOn}
+                  alt={""}
+                  className={classNames(sty.homsaOn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/homsa.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.getStatus.data[4].status === "false";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  data-plasmic-name={"homsaOff"}
+                  data-plasmic-override={overrides.homsaOff}
+                  alt={""}
+                  className={classNames(sty.homsaOff)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/02/homsa.png"
+                  }
+                  width={"40"}
+                />
+              ) : null}
+            </div>
+          </ApiRequest>
         </div>
       </div>
     </React.Fragment>
@@ -758,22 +1196,64 @@ const PlasmicDescendants = {
   root: [
     "root",
     "form",
-    "input",
     "input2",
+    "input",
     "input3",
     "demoButton",
     "htmlVideo",
-    "apiRequest",
-    "httpRestApiFetcher"
+    "getStatus",
+    "jabamaOn",
+    "jabamaOff",
+    "jajigaOn",
+    "jajigaOff",
+    "shabOn",
+    "shabOff",
+    "mizboonOn",
+    "mizboonOff2",
+    "otaghakOn",
+    "otaghakOff",
+    "mihmanshoOn",
+    "mihmanshoOff",
+    "homsaOn",
+    "homsaOff"
   ],
-  form: ["form", "input", "input2", "input3"],
-  input: ["input"],
+  form: ["form", "input2", "input", "input3"],
   input2: ["input2"],
+  input: ["input"],
   input3: ["input3"],
   demoButton: ["demoButton"],
   htmlVideo: ["htmlVideo"],
-  apiRequest: ["apiRequest"],
-  httpRestApiFetcher: ["httpRestApiFetcher"]
+  getStatus: [
+    "getStatus",
+    "jabamaOn",
+    "jabamaOff",
+    "jajigaOn",
+    "jajigaOff",
+    "shabOn",
+    "shabOff",
+    "mizboonOn",
+    "mizboonOff2",
+    "otaghakOn",
+    "otaghakOff",
+    "mihmanshoOn",
+    "mihmanshoOff",
+    "homsaOn",
+    "homsaOff"
+  ],
+  jabamaOn: ["jabamaOn"],
+  jabamaOff: ["jabamaOff"],
+  jajigaOn: ["jajigaOn"],
+  jajigaOff: ["jajigaOff"],
+  shabOn: ["shabOn"],
+  shabOff: ["shabOff"],
+  mizboonOn: ["mizboonOn"],
+  mizboonOff2: ["mizboonOff2"],
+  otaghakOn: ["otaghakOn"],
+  otaghakOff: ["otaghakOff"],
+  mihmanshoOn: ["mihmanshoOn"],
+  mihmanshoOff: ["mihmanshoOff"],
+  homsaOn: ["homsaOn"],
+  homsaOff: ["homsaOff"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -781,13 +1261,26 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   form: typeof FormWrapper;
-  input: typeof AntdInput;
   input2: typeof AntdInput;
+  input: typeof AntdInput;
   input3: typeof AntdInput;
   demoButton: typeof AntdButton;
   htmlVideo: typeof Video;
-  apiRequest: typeof ApiRequest;
-  httpRestApiFetcher: typeof DataFetcher;
+  getStatus: typeof ApiRequest;
+  jabamaOn: typeof PlasmicImg__;
+  jabamaOff: typeof PlasmicImg__;
+  jajigaOn: typeof PlasmicImg__;
+  jajigaOff: typeof PlasmicImg__;
+  shabOn: typeof PlasmicImg__;
+  shabOff: typeof PlasmicImg__;
+  mizboonOn: typeof PlasmicImg__;
+  mizboonOff2: typeof PlasmicImg__;
+  otaghakOn: typeof PlasmicImg__;
+  otaghakOff: typeof PlasmicImg__;
+  mihmanshoOn: typeof PlasmicImg__;
+  mihmanshoOff: typeof PlasmicImg__;
+  homsaOn: typeof PlasmicImg__;
+  homsaOff: typeof PlasmicImg__;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -851,13 +1344,26 @@ export const PlasmicActivation = Object.assign(
   {
     // Helper components rendering sub-elements
     form: makeNodeComponent("form"),
-    input: makeNodeComponent("input"),
     input2: makeNodeComponent("input2"),
+    input: makeNodeComponent("input"),
     input3: makeNodeComponent("input3"),
     demoButton: makeNodeComponent("demoButton"),
     htmlVideo: makeNodeComponent("htmlVideo"),
-    apiRequest: makeNodeComponent("apiRequest"),
-    httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
+    getStatus: makeNodeComponent("getStatus"),
+    jabamaOn: makeNodeComponent("jabamaOn"),
+    jabamaOff: makeNodeComponent("jabamaOff"),
+    jajigaOn: makeNodeComponent("jajigaOn"),
+    jajigaOff: makeNodeComponent("jajigaOff"),
+    shabOn: makeNodeComponent("shabOn"),
+    shabOff: makeNodeComponent("shabOff"),
+    mizboonOn: makeNodeComponent("mizboonOn"),
+    mizboonOff2: makeNodeComponent("mizboonOff2"),
+    otaghakOn: makeNodeComponent("otaghakOn"),
+    otaghakOff: makeNodeComponent("otaghakOff"),
+    mihmanshoOn: makeNodeComponent("mihmanshoOn"),
+    mihmanshoOff: makeNodeComponent("mihmanshoOff"),
+    homsaOn: makeNodeComponent("homsaOn"),
+    homsaOff: makeNodeComponent("homsaOff"),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,

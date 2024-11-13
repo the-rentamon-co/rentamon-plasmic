@@ -415,78 +415,64 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                   width={"40"}
                 />
 
-                {(() => {
-                  try {
-                    return $ctx.fetchedData.status.jabama === true;
-                  } catch (e) {
+                <PlasmicImg__
+                  data-plasmic-name={"jabamaCon"}
+                  data-plasmic-override={overrides.jabamaCon}
+                  alt={""}
+                  className={classNames(sty.jabamaCon)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40"}
+                  loading={"lazy"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateJabamaModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["jabamaModal", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                     if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
+                      $steps["updateJabamaModalOpen"] != null &&
+                      typeof $steps["updateJabamaModalOpen"] === "object" &&
+                      typeof $steps["updateJabamaModalOpen"].then === "function"
                     ) {
-                      return true;
+                      $steps["updateJabamaModalOpen"] = await $steps[
+                        "updateJabamaModalOpen"
+                      ];
                     }
-                    throw e;
+                  }}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2023/12/jabama.png"
                   }
-                })() ? (
-                  <PlasmicImg__
-                    data-plasmic-name={"jabamaCon"}
-                    data-plasmic-override={overrides.jabamaCon}
-                    alt={""}
-                    className={classNames(sty.jabamaCon)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    height={"40"}
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
+                  width={"40"}
+                />
 
-                      $steps["updateJabamaModalOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["jabamaModal", "open"]
-                              },
-                              operation: 0,
-                              value: true
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateJabamaModalOpen"] != null &&
-                        typeof $steps["updateJabamaModalOpen"] === "object" &&
-                        typeof $steps["updateJabamaModalOpen"].then ===
-                          "function"
-                      ) {
-                        $steps["updateJabamaModalOpen"] = await $steps[
-                          "updateJabamaModalOpen"
-                        ];
-                      }
-                    }}
-                    src={
-                      "https://rentamon.com/wp-content/uploads/2023/12/jabama.png"
-                    }
-                    width={"40"}
-                  />
-                ) : null}
                 {(() => {
                   try {
                     return $ctx.fetchedData.status.otaghak === false;
