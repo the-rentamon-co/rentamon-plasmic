@@ -724,6 +724,7 @@ function PlasmicActivation__RenderFunc(props: {
               "apiRequest",
               "data"
             ])}
+            url={"https://dev.rentamon.com/webhook/activate"}
           />
 
           <DataFetcher
@@ -745,7 +746,7 @@ function PlasmicActivation__RenderFunc(props: {
             }
             method={"POST"}
             noLayout={false}
-            url={"https://dev.rentamon.com/webhook/activate"}
+            url={``}
           />
         </div>
       </div>
