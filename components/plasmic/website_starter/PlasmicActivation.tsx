@@ -714,7 +714,7 @@ function PlasmicActivation__RenderFunc(props: {
                 {"Loading..."}
               </div>
             }
-            method={"GET"}
+            method={"POST"}
             onError={generateStateOnChangeProp($state, ["apiRequest", "error"])}
             onLoading={generateStateOnChangeProp($state, [
               "apiRequest",
@@ -737,7 +737,8 @@ function PlasmicActivation__RenderFunc(props: {
             errorName={"fetchError"}
             headers={{
               "Content-Type": "application/json",
-              Accept: "application/json"
+              Accept: "application/json",
+              withCredentials: true
             }}
             loadingDisplay={
               <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
