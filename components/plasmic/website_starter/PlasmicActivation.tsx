@@ -568,23 +568,10 @@ function PlasmicActivation__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook-test/31a5d51a-bf68-4914-9705-2583c89b83ae",
+                                "GET",
+                                "https://dev.rentamon.com/webhook-test/sendOTP",
                                 undefined,
-                                (() => {
-                                  try {
-                                    return $state.form.value.jabamaPhone;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
+                                undefined
                               ]
                             };
                             return $globalActions["Fragment.apiRequest"]?.apply(
@@ -775,6 +762,19 @@ function PlasmicActivation__RenderFunc(props: {
           <ApiRequest
             data-plasmic-name={"getStatus"}
             data-plasmic-override={overrides.getStatus}
+            body={(() => {
+              try {
+                return $state.form.value.jabamaPhone;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
             className={classNames("__wab_instance", sty.getStatus)}
             errorDisplay={
               <div
@@ -805,20 +805,7 @@ function PlasmicActivation__RenderFunc(props: {
               "loading"
             ])}
             onSuccess={generateStateOnChangeProp($state, ["getStatus", "data"])}
-            params={(() => {
-              try {
-                return $state.form.value.jabamaPhone;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
-            url={"https://gateway.rentamon.com/webhook/activate"}
+            url={"https://gateway.rentamon.com/webhook/sendOTP"}
           >
             <div className={classNames(projectcss.all, sty.freeBox___2UYl)}>
               {(() => {

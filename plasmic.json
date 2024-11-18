@@ -552,6 +552,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/instant-reserve"
+        },
+        {
+          "id": "vITsvNxG_t4v",
+          "name": "NewActivation",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewActivation.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/active.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewActivation.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/active"
         }
       ],
       "icons": [
