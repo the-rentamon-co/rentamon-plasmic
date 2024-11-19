@@ -919,7 +919,7 @@ function PlasmicNewActivation__RenderFunc(props: {
                                 (() => {
                                   try {
                                     return {
-                                      phone: "$state.form.value.jabamaphone"
+                                      phone: $state.form.value.jabamaphone
                                     };
                                   } catch (e) {
                                     if (
@@ -1044,8 +1044,8 @@ function PlasmicNewActivation__RenderFunc(props: {
                                 (() => {
                                   try {
                                     return {
-                                      phone: "$state.form.value.jabamaphone",
-                                      otp: "$state.form.value.jabamaOTP"
+                                      phone: $state.form.value.jabamaphone,
+                                      otp: $state.form.value.jabamaOTP
                                     };
                                   } catch (e) {
                                     if (
@@ -1169,7 +1169,7 @@ function PlasmicNewActivation__RenderFunc(props: {
                                 (() => {
                                   try {
                                     return {
-                                      phone: "$state.form.value.jajigaphone"
+                                      phone: $state.form.value.jajigaphone
                                     };
                                   } catch (e) {
                                     if (
@@ -1294,8 +1294,8 @@ function PlasmicNewActivation__RenderFunc(props: {
                                 (() => {
                                   try {
                                     return {
-                                      phone: "$state.form.value.jajigaphone",
-                                      otp: "$state.form.value.jajigaOTP"
+                                      phone: $state.form.value.jajigaphone,
+                                      otp: $state.form.value.jajigaOTP
                                     };
                                   } catch (e) {
                                     if (
