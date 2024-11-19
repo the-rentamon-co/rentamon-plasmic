@@ -258,7 +258,7 @@
   min-width: 0;
   padding: 8px;
 }
-.button__yfLoP:global(.__wab_instance) {
+.submitButton:global(.__wab_instance) {
   max-width: 50%;
   object-fit: cover;
   background: var(--token-8nedppYkGVaH);
@@ -284,12 +284,12 @@
   align-self: center;
   font-size: 14px;
   min-width: 0;
+  display: none;
 }
 .formField__sKGoo:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
-  display: none;
 }
 .text___9Qabr {
   padding-left: 0px;
@@ -309,6 +309,96 @@
   margin: 10px;
 }
 .text__tB7Bi {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-right: 0px;
+  min-width: 0;
+}
+.formField__avCWg:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__rr7As {
+  padding-left: 0px;
+  font-size: 16px;
+}
+.input8:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.button__mGiwY:global(.__wab_instance) {
+  max-width: 50%;
+  object-fit: cover;
+  width: 100%;
+  background: var(--token-8nedppYkGVaH);
+  min-width: 0;
+  border-radius: 30px;
+  margin: 10px;
+}
+.text__cQivN {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-right: 0px;
+  min-width: 0;
+}
+.formField__zjTmv:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__noIQz {
+  padding-left: 0px;
+  font-size: 16px;
+}
+.input7:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.button__bbILh:global(.__wab_instance) {
+  max-width: 50%;
+  object-fit: cover;
+  width: 100%;
+  background: var(--token-8nedppYkGVaH);
+  min-width: 0;
+  border-radius: 30px;
+  margin: 10px;
+}
+.text__e2Q4E {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-right: 0px;
+  min-width: 0;
+}
+.formField__ag5Gd:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text___7G9Yk {
+  padding-left: 0px;
+  font-size: 16px;
+}
+.input6:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.button__mXShh:global(.__wab_instance) {
+  max-width: 50%;
+  object-fit: cover;
+  width: 100%;
+  background: var(--token-8nedppYkGVaH);
+  min-width: 0;
+  border-radius: 30px;
+  margin: 10px;
+}
+.text___54Y {
   position: relative;
   width: 100%;
   height: auto;
