@@ -1289,7 +1289,7 @@ function PlasmicNewActivation__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://jajiga.rentamon.com/webhook/jajiga-verify-otp",
+                                "https://gateway.rentamon.com/webhook/jajiga-verify-otp",
                                 undefined,
                                 (() => {
                                   try {
