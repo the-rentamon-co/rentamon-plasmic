@@ -1799,7 +1799,7 @@ function PlasmicNewActivation__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://dev.rentamon.com/webhook/otaghak-send-otp",
+                                  "https://gateway.rentamon.com/webhook/otaghak-send-otp",
                                   undefined,
                                   (() => {
                                     try {
@@ -1933,7 +1933,7 @@ function PlasmicNewActivation__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://gateway.rentamon.com/webhook/shab-verify-otp",
+                                  "https://gateway.rentamon.com/webhook/otaghak-verify-otp",
                                   undefined,
                                   (() => {
                                     try {
