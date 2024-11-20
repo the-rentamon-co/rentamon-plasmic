@@ -108,6 +108,9 @@ export type PlasmicNewActivation__OverridesType = {
   shabVerticalStack?: Flex__<"div">;
   input9?: Flex__<typeof AntdInput>;
   input10?: Flex__<typeof AntdInput>;
+  otaghakVerticalStack?: Flex__<"div">;
+  input11?: Flex__<typeof AntdInput>;
+  input12?: Flex__<typeof AntdInput>;
 };
 
 export interface DefaultNewActivationProps {}
@@ -274,6 +277,22 @@ function PlasmicNewActivation__RenderFunc(props: {
       },
       {
         path: "input10.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "input11.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "input12.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -1692,6 +1711,280 @@ function PlasmicNewActivation__RenderFunc(props: {
                     </AntdButton>
                   </FormItemWrapper>
                 </div>
+                <div
+                  data-plasmic-name={"otaghakVerticalStack"}
+                  data-plasmic-override={overrides.otaghakVerticalStack}
+                  className={classNames(
+                    projectcss.all,
+                    sty.otaghakVerticalStack
+                  )}
+                >
+                  <FormItemWrapper
+                    className={classNames(
+                      "__wab_instance",
+                      sty.formField__jib0
+                    )}
+                    initialValue={(() => {
+                      try {
+                        return $state.apiRequest.data[0].phone;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__xgdh8
+                        )}
+                      >
+                        {
+                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9:"
+                        }
+                      </div>
+                    }
+                    name={"otaghakphone"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input11),
+                        onChange: generateStateOnChangePropForCodeComponents(
+                          $state,
+                          "value",
+                          ["input11", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: ``,
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input11",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input11.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
+
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input11"}
+                          data-plasmic-override={overrides.input11}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                    <AntdButton
+                      className={classNames("__wab_instance", sty.button__x3HO)}
+                      onClick={async () => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://dev.rentamon.com/webhook/otaghak-send-otp",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return {
+                                        phone: $state.form.value.otaghakphone
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                      submitsForm={true}
+                      type={"primary"}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__sW7Ng
+                        )}
+                      >
+                        {
+                          "\u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
+                        }
+                      </div>
+                    </AntdButton>
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    className={classNames(
+                      "__wab_instance",
+                      sty.formField__xfDv9
+                    )}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__lerIh
+                        )}
+                      >
+                        {
+                          "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0627\u062a\u0627\u0642\u06a9 (\u067e\u06cc\u0627\u0645\u06a9):"
+                        }
+                      </div>
+                    }
+                    name={"otaghakOTP"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input12),
+                        onChange: generateStateOnChangePropForCodeComponents(
+                          $state,
+                          "value",
+                          ["input12", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return undefined;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input12",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input12.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
+
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input12"}
+                          data-plasmic-override={overrides.input12}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                    <AntdButton
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button___1Y4H
+                      )}
+                      onClick={async () => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/shab-verify-otp",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return {
+                                        phone: $state.form.value.otaghakphone,
+                                        otp: $state.form.value.otaghakOTP
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                      submitsForm={true}
+                      type={"primary"}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__mio5R
+                        )}
+                      >
+                        {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                      </div>
+                    </AntdButton>
+                  </FormItemWrapper>
+                </div>
               </FormWrapper>
             );
           })()}
@@ -1723,7 +2016,10 @@ const PlasmicDescendants = {
     "input6",
     "shabVerticalStack",
     "input9",
-    "input10"
+    "input10",
+    "otaghakVerticalStack",
+    "input11",
+    "input12"
   ],
   apiRequest: ["apiRequest"],
   form: [
@@ -1745,7 +2041,10 @@ const PlasmicDescendants = {
     "input6",
     "shabVerticalStack",
     "input9",
-    "input10"
+    "input10",
+    "otaghakVerticalStack",
+    "input11",
+    "input12"
   ],
   platforms: [
     "platforms",
@@ -1774,7 +2073,10 @@ const PlasmicDescendants = {
   input6: ["input6"],
   shabVerticalStack: ["shabVerticalStack", "input9", "input10"],
   input9: ["input9"],
-  input10: ["input10"]
+  input10: ["input10"],
+  otaghakVerticalStack: ["otaghakVerticalStack", "input11", "input12"],
+  input11: ["input11"],
+  input12: ["input12"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1801,6 +2103,9 @@ type NodeDefaultElementType = {
   shabVerticalStack: "div";
   input9: typeof AntdInput;
   input10: typeof AntdInput;
+  otaghakVerticalStack: "div";
+  input11: typeof AntdInput;
+  input12: typeof AntdInput;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1883,6 +2188,9 @@ export const PlasmicNewActivation = Object.assign(
     shabVerticalStack: makeNodeComponent("shabVerticalStack"),
     input9: makeNodeComponent("input9"),
     input10: makeNodeComponent("input10"),
+    otaghakVerticalStack: makeNodeComponent("otaghakVerticalStack"),
+    input11: makeNodeComponent("input11"),
+    input12: makeNodeComponent("input12"),
 
     // Metadata about props expected for PlasmicNewActivation
     internalVariantProps: PlasmicNewActivation__VariantProps,
