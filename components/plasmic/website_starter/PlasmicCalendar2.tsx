@@ -259,10 +259,6 @@ function PlasmicCalendar2__RenderFunc(props: {
         <DataCtxReader__>{$ctx => "Error fetching data"}</DataCtxReader__>
       }
       errorName={"fetchError"}
-      headers={{
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }}
       loadingDisplay={<DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>}
       method={"GET"}
       noLayout={false}
