@@ -519,7 +519,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicActivation.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/activation.tsx"
+            "modulePath": "../src/pages/active0.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicActivation.module.css",
           "scheme": "blackbox",
@@ -566,6 +566,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/active"
+        },
+        {
+          "id": "Gq0MFDDWDv-U",
+          "name": "NewtarActivation",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewtarActivation.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/active-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewtarActivation.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/active-2"
         }
       ],
       "icons": [
