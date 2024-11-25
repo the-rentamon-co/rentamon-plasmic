@@ -5648,7 +5648,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                  "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645     >"
                 }
               </div>
             </AntdButton>
