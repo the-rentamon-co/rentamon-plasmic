@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
@@ -68,12 +69,17 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 
+import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNewtarActivation.module.css"; // plasmic-import: Gq0MFDDWDv-U/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -89,6 +95,7 @@ export const PlasmicNewtarActivation__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewtarActivation__OverridesType = {
   root?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   apiRequest?: Flex__<typeof ApiRequest>;
   form?: Flex__<typeof FormWrapper>;
   platforms?: Flex__<typeof FormItemWrapper>;
@@ -466,6 +473,10 @@ function PlasmicNewtarActivation__RenderFunc(props: {
     $refs
   });
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsaSuSwU8JUYf()
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -493,6 +504,110 @@ function PlasmicNewtarActivation__RenderFunc(props: {
             sty.root
           )}
         >
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__b7MeS)}
+          >
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__tTxAt)}
+            >
+              <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"40px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToHttpsRentamonCom"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination: "https://rentamon.com/"
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToHttpsRentamonCom"] != null &&
+                    typeof $steps["goToHttpsRentamonCom"] === "object" &&
+                    typeof $steps["goToHttpsRentamonCom"].then === "function"
+                  ) {
+                    $steps["goToHttpsRentamonCom"] = await $steps[
+                      "goToHttpsRentamonCom"
+                    ];
+                  }
+                }}
+                src={{
+                  src: "/plasmic/website_starter/images/rentamonFaPng.png",
+                  fullWidth: 684,
+                  fullHeight: 306,
+                  aspectRatio: undefined
+                }}
+              />
+
+              {false ? (
+                <div className={classNames(projectcss.all, sty.freeBox__iMCaT)}>
+                  <button
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.button,
+                      projectcss.__wab_text,
+                      sty.button__aTpRj
+                    )}
+                  >
+                    {"Sign up"}
+                  </button>
+                  <Button
+                    className={classNames("__wab_instance", sty.button__bdtSo)}
+                    color={"clear"}
+                    endIcon={
+                      <IconIcon
+                        className={classNames(projectcss.all, sty.svg___4PgDn)}
+                        role={"img"}
+                      />
+                    }
+                    startIcon={
+                      <CheckSvgIcon
+                        className={classNames(projectcss.all, sty.svg___1WUq0)}
+                        role={"img"}
+                      />
+                    }
+                    submitsForm={true}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__egU70
+                      )}
+                    >
+                      {"Log in"}
+                    </div>
+                  </Button>
+                </div>
+              ) : null}
+            </Stack__>
+          </Stack__>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
@@ -5511,6 +5626,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "img",
     "apiRequest",
     "form",
     "platforms",
@@ -5581,6 +5697,7 @@ const PlasmicDescendants = {
     "platformpropertyButton2",
     "backToPanel"
   ],
+  img: ["img"],
   apiRequest: ["apiRequest"],
   form: [
     "form",
@@ -5752,6 +5869,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  img: typeof PlasmicImg__;
   apiRequest: typeof ApiRequest;
   form: typeof FormWrapper;
   platforms: typeof FormItemWrapper;
@@ -5883,6 +6001,7 @@ export const PlasmicNewtarActivation = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    img: makeNodeComponent("img"),
     apiRequest: makeNodeComponent("apiRequest"),
     form: makeNodeComponent("form"),
     platforms: makeNodeComponent("platforms"),

@@ -136,6 +136,8 @@ export type PlasmicSelfRegister__OverridesType = {
   htmlVideo?: Flex__<typeof Video>;
   enterButton?: Flex__<typeof AntdButton>;
   backButton?: Flex__<typeof AntdButton>;
+  guide2?: Flex__<"div">;
+  submitButton2?: Flex__<typeof AntdButton>;
 };
 
 export interface DefaultSelfRegisterProps {}
@@ -565,29 +567,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   {
                     "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc"
                   }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pHuo7
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>
-                      {
-                        "\u0628\u0631\u0627\u06cc \u0648\u0635\u0644 \u06a9\u0631\u062f\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u062a \u0628\u0647 \u0632\u0648\u062f\u06cc "
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        "\u062a\u0645\u0627\u0633 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645"
-                      }
-                    </span>
-                  </React.Fragment>
                 </div>
               </div>
             ) : null}
@@ -2083,6 +2062,195 @@ function PlasmicSelfRegister__RenderFunc(props: {
               </FormWrapper>
             );
           })()}
+          <div
+            data-plasmic-name={"guide2"}
+            data-plasmic-override={overrides.guide2}
+            className={classNames(projectcss.all, sty.guide2)}
+          >
+            {(() => {
+              try {
+                return $state.formStep == 0;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__c5ApU
+                )}
+              >
+                {
+                  "\u0634\u0631\u0648\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632  \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
+                }
+              </div>
+            ) : null}
+            {(() => {
+              try {
+                return $state.formStep == 1;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__k8Jom
+                )}
+              >
+                {
+                  "\u0645\u0634\u062e\u0635\u0627\u062a \u0648\u06cc\u0644\u0627"
+                }
+              </div>
+            ) : null}
+            {(() => {
+              try {
+                return $state.formStep == 2;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox__aiqtL)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___0HnY
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "\u0648\u0644\u06cc \u0642\u0628\u0644\u0634 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u062a\u0635\u0644 \u06a9\u0646"
+                      }
+                    </span>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kJ79W
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {""}
+                    </span>
+                  </React.Fragment>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__upJs)}>
+                  <AntdButton
+                    data-plasmic-name={"submitButton2"}
+                    data-plasmic-override={overrides.submitButton2}
+                    className={classNames("__wab_instance", sty.submitButton2)}
+                    onClick={async () => {
+                      const $steps = {};
+
+                      $steps["goToPage"] = true
+                        ? (() => {
+                            const actionArgs = { destination: "" };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToPage"] != null &&
+                        typeof $steps["goToPage"] === "object" &&
+                        typeof $steps["goToPage"].then === "function"
+                      ) {
+                        $steps["goToPage"] = await $steps["goToPage"];
+                      }
+                    }}
+                    submitsForm={false}
+                    type={"primary"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__fonm4
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "#FCFCFC" }}
+                        >
+                          {
+                            "\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627"
+                          }
+                        </span>
+                      </React.Fragment>
+                    </div>
+                  </AntdButton>
+                </div>
+              </div>
+            ) : null}
+            {(() => {
+              try {
+                return $state.formStep == 3;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__cSmIw
+                )}
+              >
+                {
+                  "\u0646\u062d\u0648\u0647 \u06a9\u0627\u0631 \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645"
+                }
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -2131,7 +2299,9 @@ const PlasmicDescendants = {
     "step3",
     "htmlVideo",
     "enterButton",
-    "backButton"
+    "backButton",
+    "guide2",
+    "submitButton2"
   ],
   img: ["img"],
   html: ["html", "goftino", "clarity", "openReplay", "favIcon"],
@@ -2231,7 +2401,9 @@ const PlasmicDescendants = {
   step3: ["step3", "htmlVideo", "enterButton", "backButton"],
   htmlVideo: ["htmlVideo"],
   enterButton: ["enterButton"],
-  backButton: ["backButton"]
+  backButton: ["backButton"],
+  guide2: ["guide2", "submitButton2"],
+  submitButton2: ["submitButton2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2278,6 +2450,8 @@ type NodeDefaultElementType = {
   htmlVideo: typeof Video;
   enterButton: typeof AntdButton;
   backButton: typeof AntdButton;
+  guide2: "div";
+  submitButton2: typeof AntdButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2380,6 +2554,8 @@ export const PlasmicSelfRegister = Object.assign(
     htmlVideo: makeNodeComponent("htmlVideo"),
     enterButton: makeNodeComponent("enterButton"),
     backButton: makeNodeComponent("backButton"),
+    guide2: makeNodeComponent("guide2"),
+    submitButton2: makeNodeComponent("submitButton2"),
 
     // Metadata about props expected for PlasmicSelfRegister
     internalVariantProps: PlasmicSelfRegister__VariantProps,
