@@ -2900,7 +2900,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                     variablePath: ["step"]
                                   },
                                   operation: 0,
-                                  value: $state.step == 9
+                                  value: $state.step + 2
                                 };
                                 return (({
                                   variable,
