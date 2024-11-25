@@ -580,6 +580,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/active-2"
+        },
+        {
+          "id": "ssh21My6pq8y",
+          "name": "PanelCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPanelCalendar.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/panel-calendar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPanelCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/panel-calendar"
         }
       ],
       "icons": [

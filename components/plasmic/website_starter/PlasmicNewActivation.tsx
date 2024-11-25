@@ -67,6 +67,7 @@ import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -74,6 +75,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNewActivation.module.css"; // plasmic-import: vITsvNxG_t4v/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -110,6 +114,7 @@ export type PlasmicNewActivation__OverridesType = {
   input7?: Flex__<typeof AntdInput>;
   jajigasend?: Flex__<typeof AntdButton>;
   jajigasend2?: Flex__<typeof AntdButton>;
+  button?: Flex__<typeof Button>;
   input6?: Flex__<typeof AntdInput>;
   jajigaverify?: Flex__<typeof AntdButton>;
   jajigaverify2?: Flex__<typeof AntdButton>;
@@ -443,7 +448,22 @@ function PlasmicNewActivation__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return Object.keys($state)
+                .filter(key => key.includes("Checkbox") && $state[key].checked)
+                .map(key => $state[key]);
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return 0;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "subStep",
@@ -2055,6 +2075,49 @@ function PlasmicNewActivation__RenderFunc(props: {
                         ) : null}
                       </div>
                     </FormItemWrapper>
+                    <Button
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateStep"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["step"]
+                                },
+                                operation: 0,
+                                value: ($state.step += 2)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateStep"] != null &&
+                          typeof $steps["updateStep"] === "object" &&
+                          typeof $steps["updateStep"].then === "function"
+                        ) {
+                          $steps["updateStep"] = await $steps["updateStep"];
+                        }
+                      }}
+                    />
+
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
@@ -4503,6 +4566,7 @@ const PlasmicDescendants = {
     "input7",
     "jajigasend",
     "jajigasend2",
+    "button",
     "input6",
     "jajigaverify",
     "jajigaverify2",
@@ -4564,6 +4628,7 @@ const PlasmicDescendants = {
     "input7",
     "jajigasend",
     "jajigasend2",
+    "button",
     "input6",
     "jajigaverify",
     "jajigaverify2",
@@ -4640,6 +4705,7 @@ const PlasmicDescendants = {
     "input7",
     "jajigasend",
     "jajigasend2",
+    "button",
     "input6",
     "jajigaverify",
     "jajigaverify2"
@@ -4647,6 +4713,7 @@ const PlasmicDescendants = {
   input7: ["input7"],
   jajigasend: ["jajigasend"],
   jajigasend2: ["jajigasend2"],
+  button: ["button"],
   input6: ["input6"],
   jajigaverify: ["jajigaverify"],
   jajigaverify2: ["jajigaverify2"],
@@ -4751,6 +4818,7 @@ type NodeDefaultElementType = {
   input7: typeof AntdInput;
   jajigasend: typeof AntdButton;
   jajigasend2: typeof AntdButton;
+  button: typeof Button;
   input6: typeof AntdInput;
   jajigaverify: typeof AntdButton;
   jajigaverify2: typeof AntdButton;
@@ -4872,6 +4940,7 @@ export const PlasmicNewActivation = Object.assign(
     input7: makeNodeComponent("input7"),
     jajigasend: makeNodeComponent("jajigasend"),
     jajigasend2: makeNodeComponent("jajigasend2"),
+    button: makeNodeComponent("button"),
     input6: makeNodeComponent("input6"),
     jajigaverify: makeNodeComponent("jajigaverify"),
     jajigaverify2: makeNodeComponent("jajigaverify2"),

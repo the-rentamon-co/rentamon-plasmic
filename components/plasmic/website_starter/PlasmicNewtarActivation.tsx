@@ -455,12 +455,6 @@ function PlasmicNewtarActivation__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
-        path: "ckeck",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -1120,6 +1114,41 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             "invokeGlobalAction"
                           ];
                         }
+
+                        $steps["updateInput6Value"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["input6", "value"]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateInput6Value"] != null &&
+                          typeof $steps["updateInput6Value"] === "object" &&
+                          typeof $steps["updateInput6Value"].then === "function"
+                        ) {
+                          $steps["updateInput6Value"] = await $steps[
+                            "updateInput6Value"
+                          ];
+                        }
                       }}
                       submitsForm={true}
                       type={"primary"}
@@ -1138,7 +1167,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                 ) : null}
                 {(() => {
                   try {
-                    return $state.step === 1 && $state.jabamaCheckbox.isChecked;
+                    return $state.step === 1;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -1343,7 +1372,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                     objRoot: $state,
                                     variablePath: ["step"]
                                   },
-                                  operation: 3
+                                  operation: 0,
+                                  value: $state.step + 2
                                 };
                                 return (({
                                   variable,
@@ -1356,16 +1386,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                   }
                                   const { objRoot, variablePath } = variable;
 
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -1387,7 +1409,9 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text___4WdSj
                           )}
                         >
-                          {"\u0642\u0628\u0644\u06cc"}
+                          {
+                            "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
+                          }
                         </div>
                       </AntdButton>
                     </div>
@@ -1858,7 +1882,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                     objRoot: $state,
                                     variablePath: ["step"]
                                   },
-                                  operation: 3
+                                  operation: 0,
+                                  value: $state.step + 2
                                 };
                                 return (({
                                   variable,
@@ -1871,16 +1896,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                   }
                                   const { objRoot, variablePath } = variable;
 
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -1902,7 +1919,9 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text__rGudO
                           )}
                         >
-                          {"\u0642\u0628\u0644\u06cc"}
+                          {
+                            "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
+                          }
                         </div>
                       </AntdButton>
                     </div>
@@ -2370,7 +2389,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                     objRoot: $state,
                                     variablePath: ["step"]
                                   },
-                                  operation: 3
+                                  operation: 0,
+                                  value: $state.step + 2
                                 };
                                 return (({
                                   variable,
@@ -2383,16 +2403,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                   }
                                   const { objRoot, variablePath } = variable;
 
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -2414,7 +2426,9 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text__pb10
                           )}
                         >
-                          {"\u0642\u0628\u0644\u06cc"}
+                          {
+                            "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                          }
                         </div>
                       </AntdButton>
                     </div>
@@ -2885,7 +2899,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                     objRoot: $state,
                                     variablePath: ["step"]
                                   },
-                                  operation: 3
+                                  operation: 0,
+                                  value: $state.step + 2
                                 };
                                 return (({
                                   variable,
@@ -2898,16 +2913,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                   }
                                   const { objRoot, variablePath } = variable;
 
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -2929,7 +2936,9 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text__ggNWi
                           )}
                         >
-                          {"\u0642\u0628\u0644\u06cc"}
+                          {
+                            "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                          }
                         </div>
                       </AntdButton>
                     </div>
@@ -3404,7 +3413,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                     objRoot: $state,
                                     variablePath: ["step"]
                                   },
-                                  operation: 3
+                                  operation: 0,
+                                  value: $state.step + 2
                                 };
                                 return (({
                                   variable,
@@ -3417,16 +3427,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                   }
                                   const { objRoot, variablePath } = variable;
 
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -3448,7 +3450,9 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text___0L4Ph
                           )}
                         >
-                          {"\u0642\u0628\u0644\u06cc"}
+                          {
+                            "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                          }
                         </div>
                       </AntdButton>
                     </div>
@@ -3999,7 +4003,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                       objRoot: $state,
                                       variablePath: ["step"]
                                     },
-                                    operation: 3
+                                    operation: 0,
+                                    value: $state.step + 2
                                   };
                                   return (({
                                     variable,
@@ -4012,16 +4017,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                     }
                                     const { objRoot, variablePath } = variable;
 
-                                    const oldValue = $stateGet(
-                                      objRoot,
-                                      variablePath
-                                    );
-                                    $stateSet(
-                                      objRoot,
-                                      variablePath,
-                                      oldValue - 1
-                                    );
-                                    return oldValue - 1;
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
                                   })?.apply(null, [actionArgs]);
                                 })()
                               : undefined;
@@ -4043,7 +4040,9 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                               sty.text__x08KA
                             )}
                           >
-                            {"\u0642\u0628\u0644\u06cc"}
+                            {
+                              "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                            }
                           </div>
                         </AntdButton>
                       </div>
@@ -4526,7 +4525,8 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                       objRoot: $state,
                                       variablePath: ["step"]
                                     },
-                                    operation: 3
+                                    operation: 2,
+                                    value: $state.step + 2
                                   };
                                   return (({
                                     variable,
@@ -4546,9 +4546,9 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                                     $stateSet(
                                       objRoot,
                                       variablePath,
-                                      oldValue - 1
+                                      oldValue + 1
                                     );
-                                    return oldValue - 1;
+                                    return oldValue + 1;
                                   })?.apply(null, [actionArgs]);
                                 })()
                               : undefined;
@@ -4570,7 +4570,9 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                               sty.text__kuod
                             )}
                           >
-                            {"\u0642\u0628\u0644\u06cc"}
+                            {
+                              "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                            }
                           </div>
                         </AntdButton>
                       </div>
