@@ -305,9 +305,6 @@
 .text__ptf2Y {
   color: #20364763;
 }
-.text__xzvgg {
-  text-align: right;
-}
 .modalChangePrice:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -408,8 +405,8 @@
   padding-bottom: 5px;
   cursor: pointer;
   min-width: 0;
-  border-top: 1px solid var(--token-RnEx0jP-LzD7);
-  border-bottom: 1px solid var(--token-RnEx0jP-LzD7);
+  border-top: 0.5px solid var(--token-rhmrUZBooWNo);
+  border-bottom: 0.5px solid var(--token-rhmrUZBooWNo);
 }
 .text__wnE1G {
   width: 100%;
@@ -428,8 +425,8 @@
   padding-bottom: 5px;
   cursor: pointer;
   min-width: 0;
-  border-top: 1px solid var(--token-RnEx0jP-LzD7);
-  border-bottom: 1px solid var(--token-RnEx0jP-LzD7);
+  border-top: 0.5px solid var(--token-rhmrUZBooWNo);
+  border-bottom: 0.5px solid var(--token-rhmrUZBooWNo);
 }
 .text__haKoZ {
   width: 100%;

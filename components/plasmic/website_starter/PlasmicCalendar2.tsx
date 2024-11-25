@@ -729,17 +729,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "open"
                 ])}
                 open={generateStateValueProp($state, ["modal", "open"])}
-                title={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xzvgg
-                    )}
-                  >
-                    {"\u062f\u0631\u062e\u0648\u0627\u0633\u062a"}
-                  </div>
-                }
+                title={null}
                 trigger={null}
                 width={"200"}
               >
@@ -1404,40 +1394,22 @@ function PlasmicCalendar2__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["updateFragmentDatePickerValue"] = true
+                  $steps["invokeGlobalAction"] = true
                     ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["fragmentDatePicker", "value"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
+                        const actionArgs = { args: ["POST"] };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
                       })()
                     : undefined;
                   if (
-                    $steps["updateFragmentDatePickerValue"] != null &&
-                    typeof $steps["updateFragmentDatePickerValue"] ===
-                      "object" &&
-                    typeof $steps["updateFragmentDatePickerValue"].then ===
-                      "function"
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["updateFragmentDatePickerValue"] = await $steps[
-                      "updateFragmentDatePickerValue"
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
                     ];
                   }
                 }}

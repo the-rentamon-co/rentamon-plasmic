@@ -5350,6 +5350,72 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                           onClick={async () => {
                             const $steps = {};
 
+                            $steps["showToast"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return "با موفقیت ثبت شد!";
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      "bottom-center",
+                                      6000
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["showToast"] != null &&
+                              typeof $steps["showToast"] === "object" &&
+                              typeof $steps["showToast"].then === "function"
+                            ) {
+                              $steps["showToast"] = await $steps["showToast"];
+                            }
+
+                            $steps["goToHttpsRentamonComPanels"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: "https://rentamon.com/panels"
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["goToHttpsRentamonComPanels"] != null &&
+                              typeof $steps["goToHttpsRentamonComPanels"] ===
+                                "object" &&
+                              typeof $steps["goToHttpsRentamonComPanels"]
+                                .then === "function"
+                            ) {
+                              $steps["goToHttpsRentamonComPanels"] =
+                                await $steps["goToHttpsRentamonComPanels"];
+                            }
+
                             $steps["invokeGlobalAction"] = true
                               ? (() => {
                                   const actionArgs = {
@@ -5403,36 +5469,6 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                               $steps["invokeGlobalAction"] = await $steps[
                                 "invokeGlobalAction"
                               ];
-                            }
-
-                            $steps["goToHttpsRentamonComPanels"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: "https://rentamon.com/panels"
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["goToHttpsRentamonComPanels"] != null &&
-                              typeof $steps["goToHttpsRentamonComPanels"] ===
-                                "object" &&
-                              typeof $steps["goToHttpsRentamonComPanels"]
-                                .then === "function"
-                            ) {
-                              $steps["goToHttpsRentamonComPanels"] =
-                                await $steps["goToHttpsRentamonComPanels"];
                             }
                           }}
                           submitsForm={true}
