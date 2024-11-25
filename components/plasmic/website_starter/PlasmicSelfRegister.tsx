@@ -514,7 +514,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0634\u0631\u0648\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632  \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
+                  "\u062b\u0628\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0641\u0631\u062f\u06cc"
                 }
               </div>
             ) : null}
@@ -945,7 +945,9 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               }
                               style={{ color: "#FCFCFC" }}
                             >
-                              {"\u062b\u0628\u062a \u0648\u06cc\u0644\u0627"}
+                              {
+                                "\u0645\u0631\u062d\u0644\u0647 \u0628\u0639\u062f"
+                              }
                             </span>
                           </React.Fragment>
                         </div>
@@ -1221,9 +1223,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               }
                               style={{ color: "#FCFCFC" }}
                             >
-                              {
-                                "\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc"
-                              }
+                              {"\u062b\u0628\u062a \u0648\u06cc\u0644\u0627"}
                             </span>
                           </React.Fragment>
                         </div>
@@ -1296,7 +1296,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               }
                               style={{ color: "var(--token-8nedppYkGVaH)" }}
                             >
-                              {"\u0642\u0628\u0644\u06cc"}
+                              {"\u0642\u0628\u0644\u06cc     >"}
                             </span>
                           </React.Fragment>
                         </div>
@@ -1888,7 +1888,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               }
                               style={{ color: "var(--token-8nedppYkGVaH)" }}
                             >
-                              {"\u0642\u0628\u0644\u06cc"}
+                              {"\u0642\u0628\u0644\u06cc     >"}
                             </span>
                           </React.Fragment>
                         </div>
@@ -2067,56 +2067,26 @@ function PlasmicSelfRegister__RenderFunc(props: {
             data-plasmic-override={overrides.guide2}
             className={classNames(projectcss.all, sty.guide2)}
           >
-            {(() => {
-              try {
-                return $state.formStep == 0;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__c5ApU
+              )}
+            >
+              {
+                "\u0634\u0631\u0648\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632  \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
               }
-            })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__c5ApU
-                )}
-              >
-                {
-                  "\u0634\u0631\u0648\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632  \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
-                }
-              </div>
-            ) : null}
-            {(() => {
-              try {
-                return $state.formStep == 1;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__k8Jom
-                )}
-              >
-                {
-                  "\u0645\u0634\u062e\u0635\u0627\u062a \u0648\u06cc\u0644\u0627"
-                }
-              </div>
-            ) : null}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__k8Jom
+              )}
+            >
+              {"\u0645\u0634\u062e\u0635\u0627\u062a \u0648\u06cc\u0644\u0627"}
+            </div>
             {(() => {
               try {
                 return $state.formStep == 2;

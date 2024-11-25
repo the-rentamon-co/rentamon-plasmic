@@ -450,12 +450,12 @@
   max-width: 100%;
   object-fit: cover;
   width: 100%;
-  background: #ffffff00;
+  background: none;
   height: 40px;
   min-width: 0;
   border-radius: 30px;
   margin: 10px;
-  border: 2px solid var(--token-8nedppYkGVaH);
+  border: 0px solid var(--token-8nedppYkGVaH);
 }
 .text__jrhB4 {
   position: relative;
@@ -583,12 +583,12 @@
   max-width: 100%;
   object-fit: cover;
   width: 100%;
-  background: #ffffff00;
+  background: none;
   height: 40px;
   min-width: 0;
   border-radius: 30px;
   margin: 10px;
-  border: 2px solid var(--token-8nedppYkGVaH);
+  border: 0px solid var(--token-8nedppYkGVaH);
 }
 .text__ugfax {
   position: relative;
@@ -691,6 +691,7 @@
   color: var(--token-8nedppYkGVaH);
   text-align: right;
   min-width: 0;
+  display: none;
 }
 .text__k8Jom {
   position: relative;
@@ -701,6 +702,7 @@
   font-size: 20px;
   font-weight: 600;
   min-width: 0;
+  display: none;
 }
 .freeBox__aiqtL {
   display: flex;
