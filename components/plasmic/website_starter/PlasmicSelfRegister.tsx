@@ -564,9 +564,27 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     sty.text__aeiK5
                   )}
                 >
-                  {
-                    "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc"
-                  }
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (
+                          "✅ " +
+                          $state.selfRegisterForm.value.name +
+                          " " +
+                          $state.selfRegisterForm.value.lastName +
+                          " عزیز، ثبت نامت با موفقیت انجام شد."
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
               </div>
             ) : null}
@@ -1304,598 +1322,572 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     </div>
                   </div>
                 ) : null}
-                {(() => {
-                  try {
-                    return $state.formStep == 2;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <div
-                    data-plasmic-name={"step2"}
-                    data-plasmic-override={overrides.step2}
-                    className={classNames(projectcss.all, sty.step2)}
+                <div
+                  data-plasmic-name={"step2"}
+                  data-plasmic-override={overrides.step2}
+                  className={classNames(projectcss.all, sty.step2)}
+                >
+                  <FormItemWrapper
+                    data-plasmic-name={"jajigaPpid"}
+                    data-plasmic-override={overrides.jajigaPpid}
+                    className={classNames("__wab_instance", sty.jajigaPpid)}
+                    label={""}
+                    name={"jajigaPPID"}
                   >
-                    <FormItemWrapper
-                      data-plasmic-name={"jajigaPpid"}
-                      data-plasmic-override={overrides.jajigaPpid}
-                      className={classNames("__wab_instance", sty.jajigaPpid)}
-                      label={""}
-                      name={"jajigaPPID"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input6),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input6", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `کد ${$state.selfRegisterForm.value.propertyName} در جاجیگا`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input6",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input6),
+                        onChange: generateStateOnChangePropForCodeComponents(
                           $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input6.value"
+                          "value",
+                          ["input6", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return `کد ${$state.selfRegisterForm.value.propertyName} در جاجیگا`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
                             }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input6",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input6.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input6"}
-                            data-plasmic-override={overrides.input6}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      data-plasmic-name={"shabPpid"}
-                      data-plasmic-override={overrides.shabPpid}
-                      className={classNames("__wab_instance", sty.shabPpid)}
-                      label={""}
-                      name={"shabPPID"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input7),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input7", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `کد ${$state.selfRegisterForm.value.propertyName} در شب`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input7",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input6"}
+                          data-plasmic-override={overrides.input6}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    data-plasmic-name={"shabPpid"}
+                    data-plasmic-override={overrides.shabPpid}
+                    className={classNames("__wab_instance", sty.shabPpid)}
+                    label={""}
+                    name={"shabPPID"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input7),
+                        onChange: generateStateOnChangePropForCodeComponents(
                           $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input7.value"
+                          "value",
+                          ["input7", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return `کد ${$state.selfRegisterForm.value.propertyName} در شب`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
                             }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input7",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input7.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input7"}
-                            data-plasmic-override={overrides.input7}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      data-plasmic-name={"otaghakPpid"}
-                      data-plasmic-override={overrides.otaghakPpid}
-                      className={classNames("__wab_instance", sty.otaghakPpid)}
-                      label={""}
-                      name={"otaghakPPID"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input9),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input9", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `کد ${$state.selfRegisterForm.value.propertyName} در اتاقک`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input9",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input7"}
+                          data-plasmic-override={overrides.input7}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    data-plasmic-name={"otaghakPpid"}
+                    data-plasmic-override={overrides.otaghakPpid}
+                    className={classNames("__wab_instance", sty.otaghakPpid)}
+                    label={""}
+                    name={"otaghakPPID"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input9),
+                        onChange: generateStateOnChangePropForCodeComponents(
                           $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input9.value"
+                          "value",
+                          ["input9", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return `کد ${$state.selfRegisterForm.value.propertyName} در اتاقک`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
                             }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input9",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input9.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input9"}
-                            data-plasmic-override={overrides.input9}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      data-plasmic-name={"mihmanshoPpid"}
-                      data-plasmic-override={overrides.mihmanshoPpid}
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input9"}
+                          data-plasmic-override={overrides.input9}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    data-plasmic-name={"mihmanshoPpid"}
+                    data-plasmic-override={overrides.mihmanshoPpid}
+                    className={classNames("__wab_instance", sty.mihmanshoPpid)}
+                    label={""}
+                    name={"mihmanshoPPID"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input10),
+                        onChange: generateStateOnChangePropForCodeComponents(
+                          $state,
+                          "value",
+                          ["input10", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return `کد ${$state.selfRegisterForm.value.propertyName} در میهمان‌شو`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input10",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input10.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
+
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input10"}
+                          data-plasmic-override={overrides.input10}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    data-plasmic-name={"homsaPpid"}
+                    data-plasmic-override={overrides.homsaPpid}
+                    className={classNames("__wab_instance", sty.homsaPpid)}
+                    label={""}
+                    name={"homsaPPID"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input11),
+                        onChange: generateStateOnChangePropForCodeComponents(
+                          $state,
+                          "value",
+                          ["input11", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return `کد ${$state.selfRegisterForm.value.propertyName} در هومسا`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input11",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input11.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
+
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input11"}
+                          data-plasmic-override={overrides.input11}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    data-plasmic-name={"mizboonPpid"}
+                    data-plasmic-override={overrides.mizboonPpid}
+                    className={classNames("__wab_instance", sty.mizboonPpid)}
+                    label={""}
+                    name={"mizboonPPID"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.input8),
+                        onChange: generateStateOnChangePropForCodeComponents(
+                          $state,
+                          "value",
+                          ["input8", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return `کد ${$state.selfRegisterForm.value.propertyName} در میزبون`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input8",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input8.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
+
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input8"}
+                          data-plasmic-override={overrides.input8}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    data-plasmic-name={"jabamaPpid"}
+                    data-plasmic-override={overrides.jabamaPpid}
+                    className={classNames("__wab_instance", sty.jabamaPpid)}
+                    label={""}
+                    name={"jabamaPPID"}
+                  >
+                    {(() => {
+                      const child$Props = {
+                        bordered: true,
+                        className: classNames("__wab_instance", sty.input5),
+                        onChange: generateStateOnChangePropForCodeComponents(
+                          $state,
+                          "value",
+                          ["input5", "value"],
+                          AntdInput_Helpers
+                        ),
+                        placeholder: (() => {
+                          try {
+                            return `لینک ${$state.selfRegisterForm.value.propertyName} در جاباما`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        size: "large",
+                        value: generateStateValueProp($state, [
+                          "input5",
+                          "value"
+                        ])
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "value",
+                            plasmicStateName: "input5.value"
+                          }
+                        ],
+                        [],
+                        AntdInput_Helpers ?? {},
+                        child$Props
+                      );
+
+                      return (
+                        <AntdInput
+                          data-plasmic-name={"input5"}
+                          data-plasmic-override={overrides.input5}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                  </FormItemWrapper>
+                  <div className={classNames(projectcss.all, sty.freeBox__xaF)}>
+                    <AntdButton
+                      data-plasmic-name={"submitButton"}
+                      data-plasmic-override={overrides.submitButton}
+                      className={classNames("__wab_instance", sty.submitButton)}
+                      onClick={async () => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalActionToast"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f!",
+                                  "bottom-center",
+                                  4000
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalActionToast"] != null &&
+                          typeof $steps["invokeGlobalActionToast"] ===
+                            "object" &&
+                          typeof $steps["invokeGlobalActionToast"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalActionToast"] = await $steps[
+                            "invokeGlobalActionToast"
+                          ];
+                        }
+
+                        $steps["goToHttpsRentamonComPanels"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                destination: "https://rentamon.com/panels/"
+                              };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToHttpsRentamonComPanels"] != null &&
+                          typeof $steps["goToHttpsRentamonComPanels"] ===
+                            "object" &&
+                          typeof $steps["goToHttpsRentamonComPanels"].then ===
+                            "function"
+                        ) {
+                          $steps["goToHttpsRentamonComPanels"] = await $steps[
+                            "goToHttpsRentamonComPanels"
+                          ];
+                        }
+                      }}
+                      submitsForm={false}
+                      type={"primary"}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__om8Of
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "#FCFCFC" }}
+                          >
+                            {
+                              "\u0648\u0631\u0648\u062f \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                            }
+                          </span>
+                        </React.Fragment>
+                      </div>
+                    </AntdButton>
+                    <AntdButton
                       className={classNames(
                         "__wab_instance",
-                        sty.mihmanshoPpid
+                        sty.button__jGqui
                       )}
-                      label={""}
-                      name={"mihmanshoPPID"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input10),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input10", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `کد ${$state.selfRegisterForm.value.propertyName} در میهمان‌شو`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input10",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input10.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                      onClick={async () => {
+                        const $steps = {};
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input10"}
-                            data-plasmic-override={overrides.input10}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      data-plasmic-name={"homsaPpid"}
-                      data-plasmic-override={overrides.homsaPpid}
-                      className={classNames("__wab_instance", sty.homsaPpid)}
-                      label={""}
-                      name={"homsaPPID"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input11),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input11", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `کد ${$state.selfRegisterForm.value.propertyName} در هومسا`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input11",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input11.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                        $steps["updateFormStep"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["formStep"]
+                                },
+                                operation: 3
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input11"}
-                            data-plasmic-override={overrides.input11}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      data-plasmic-name={"mizboonPpid"}
-                      data-plasmic-override={overrides.mizboonPpid}
-                      className={classNames("__wab_instance", sty.mizboonPpid)}
-                      label={""}
-                      name={"mizboonPPID"}
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, oldValue - 1);
+                                return oldValue - 1;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateFormStep"] != null &&
+                          typeof $steps["updateFormStep"] === "object" &&
+                          typeof $steps["updateFormStep"].then === "function"
+                        ) {
+                          $steps["updateFormStep"] = await $steps[
+                            "updateFormStep"
+                          ];
+                        }
+                      }}
+                      submitsForm={false}
+                      type={"primary"}
                     >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input8),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input8", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `کد ${$state.selfRegisterForm.value.propertyName} در میزبون`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input8",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input8.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input8"}
-                            data-plasmic-override={overrides.input8}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      data-plasmic-name={"jabamaPpid"}
-                      data-plasmic-override={overrides.jabamaPpid}
-                      className={classNames("__wab_instance", sty.jabamaPpid)}
-                      label={""}
-                      name={"jabamaPPID"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          bordered: true,
-                          className: classNames("__wab_instance", sty.input5),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input5", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return `لینک ${$state.selfRegisterForm.value.propertyName} در جاباما`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input5",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input5.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input5"}
-                            data-plasmic-override={overrides.input5}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__xaF)}
-                    >
-                      <AntdButton
-                        data-plasmic-name={"submitButton"}
-                        data-plasmic-override={overrides.submitButton}
+                      <div
                         className={classNames(
-                          "__wab_instance",
-                          sty.submitButton
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ugfax
                         )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["invokeGlobalActionToast"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f!",
-                                    "bottom-center",
-                                    4000
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalActionToast"] != null &&
-                            typeof $steps["invokeGlobalActionToast"] ===
-                              "object" &&
-                            typeof $steps["invokeGlobalActionToast"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalActionToast"] = await $steps[
-                              "invokeGlobalActionToast"
-                            ];
-                          }
-
-                          $steps["goToHttpsRentamonComPanels"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  destination: "https://rentamon.com/panels/"
-                                };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["goToHttpsRentamonComPanels"] != null &&
-                            typeof $steps["goToHttpsRentamonComPanels"] ===
-                              "object" &&
-                            typeof $steps["goToHttpsRentamonComPanels"].then ===
-                              "function"
-                          ) {
-                            $steps["goToHttpsRentamonComPanels"] = await $steps[
-                              "goToHttpsRentamonComPanels"
-                            ];
-                          }
-                        }}
-                        submitsForm={false}
-                        type={"primary"}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__om8Of
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "#FCFCFC" }}
-                            >
-                              {
-                                "\u0648\u0631\u0648\u062f \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                              }
-                            </span>
-                          </React.Fragment>
-                        </div>
-                      </AntdButton>
-                      <AntdButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__jGqui
-                        )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateFormStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["formStep"]
-                                  },
-                                  operation: 3
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateFormStep"] != null &&
-                            typeof $steps["updateFormStep"] === "object" &&
-                            typeof $steps["updateFormStep"].then === "function"
-                          ) {
-                            $steps["updateFormStep"] = await $steps[
-                              "updateFormStep"
-                            ];
-                          }
-                        }}
-                        submitsForm={false}
-                        type={"primary"}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__ugfax
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-8nedppYkGVaH)" }}
-                            >
-                              {"\u0642\u0628\u0644\u06cc     >"}
-                            </span>
-                          </React.Fragment>
-                        </div>
-                      </AntdButton>
-                    </div>
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "var(--token-8nedppYkGVaH)" }}
+                          >
+                            {"\u0642\u0628\u0644\u06cc     >"}
+                          </span>
+                        </React.Fragment>
+                      </div>
+                    </AntdButton>
                   </div>
-                ) : null}
+                </div>
                 <div
                   data-plasmic-name={"step3"}
                   data-plasmic-override={overrides.step3}
@@ -2114,7 +2106,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       style={{ fontWeight: 700 }}
                     >
                       {
-                        "\u0648\u0644\u06cc \u0642\u0628\u0644\u0634 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u062a\u0635\u0644 \u06a9\u0646"
+                        "\u062d\u0627\u0644\u0627 \u0628\u0631\u06cc\u0645 \u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc"
                       }
                     </span>
                   </React.Fragment>
@@ -2143,9 +2135,9 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     onClick={async () => {
                       const $steps = {};
 
-                      $steps["goToPage"] = true
+                      $steps["goToNewtarActivation"] = true
                         ? (() => {
-                            const actionArgs = { destination: "" };
+                            const actionArgs = { destination: `/active-2` };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&
@@ -2161,11 +2153,14 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToPage"] != null &&
-                        typeof $steps["goToPage"] === "object" &&
-                        typeof $steps["goToPage"].then === "function"
+                        $steps["goToNewtarActivation"] != null &&
+                        typeof $steps["goToNewtarActivation"] === "object" &&
+                        typeof $steps["goToNewtarActivation"].then ===
+                          "function"
                       ) {
-                        $steps["goToPage"] = await $steps["goToPage"];
+                        $steps["goToNewtarActivation"] = await $steps[
+                          "goToNewtarActivation"
+                        ];
                       }
                     }}
                     submitsForm={false}
@@ -2185,9 +2180,7 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           }
                           style={{ color: "#FCFCFC" }}
                         >
-                          {
-                            "\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627"
-                          }
+                          {"\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645"}
                         </span>
                       </React.Fragment>
                     </div>

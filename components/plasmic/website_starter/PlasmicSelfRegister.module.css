@@ -467,7 +467,6 @@
   min-width: 0;
 }
 .step2 {
-  display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -477,6 +476,7 @@
   max-width: 100%;
   margin-bottom: 24px;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .jajigaPpid:global(.__wab_instance) {
