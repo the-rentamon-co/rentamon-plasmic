@@ -1784,16 +1784,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text__jQoFl
                           )}
                         >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-8nedppYkGVaH)" }}
-                            >
-                              {"\u0642\u0628\u0644\u06cc     >"}
-                            </span>
-                          </React.Fragment>
+                          {"\u0642\u0628\u0644\u06cc     >"}
                         </div>
                       </AntdButton>
                     </div>
@@ -2303,16 +2294,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text__kc1US
                           )}
                         >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-8nedppYkGVaH)" }}
-                            >
-                              {"\u0642\u0628\u0644\u06cc     >"}
-                            </span>
-                          </React.Fragment>
+                          {"\u0642\u0628\u0644\u06cc     >"}
                         </div>
                       </AntdButton>
                     </div>
@@ -2816,16 +2798,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text__fCf4I
                           )}
                         >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-8nedppYkGVaH)" }}
-                            >
-                              {"\u0642\u0628\u0644\u06cc     >"}
-                            </span>
-                          </React.Fragment>
+                          {"\u0642\u0628\u0644\u06cc     >"}
                         </div>
                       </AntdButton>
                     </div>
@@ -3338,16 +3311,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             sty.text__idM7
                           )}
                         >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ color: "var(--token-8nedppYkGVaH)" }}
-                            >
-                              {"\u0642\u0628\u0644\u06cc     >"}
-                            </span>
-                          </React.Fragment>
+                          {"\u0642\u0628\u0644\u06cc     >"}
                         </div>
                       </AntdButton>
                     </div>
@@ -5357,7 +5321,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                     </div>
                     {(() => {
                       try {
-                        return $state.step >= 14 && $state.step <= 20;
+                        return true;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -5577,7 +5541,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                               sty.text__jHeRa
                             )}
                           >
-                            {"\u0642\u0628\u0644\u06cc"}
+                            {"\u0642\u0628\u0644\u06cc     >"}
                           </div>
                         </AntdButton>
                       </div>
@@ -5648,7 +5612,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645     >"
+                  "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
                 }
               </div>
             </AntdButton>

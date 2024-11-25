@@ -102,6 +102,7 @@ export type PlasmicCalendar2__OverridesType = {
   modal?: Flex__<typeof AntdModal>;
   modalChangePrice?: Flex__<typeof AntdModal>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
+  block?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultCalendar2Props {
@@ -223,6 +224,18 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "block.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "variable",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -266,381 +279,990 @@ function PlasmicCalendar2__RenderFunc(props: {
     >
       <DataCtxReader__>
         {$ctx => (
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
-            <DatePicker
-              data-plasmic-name={"fragmentDatePicker"}
-              data-plasmic-override={overrides.fragmentDatePicker}
-              className={classNames("__wab_instance", sty.fragmentDatePicker)}
-              customDayCell={true}
-              dayCell={(dateProps: any) => (
-                <DayCell
-                  data-plasmic-name={"dayCell"}
-                  data-plasmic-override={overrides.dayCell}
-                  className={classNames("__wab_instance", sty.dayCell)}
-                  dayNumber={(() => {
-                    try {
-                      return dateProps.date.day;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
+          <React.Fragment>
+            <div
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              className={classNames(projectcss.all, sty.freeBox)}
+            >
+              <DatePicker
+                data-plasmic-name={"fragmentDatePicker"}
+                data-plasmic-override={overrides.fragmentDatePicker}
+                className={classNames("__wab_instance", sty.fragmentDatePicker)}
+                customDayCell={true}
+                dayCell={(dateProps: any) => (
+                  <DayCell
+                    data-plasmic-name={"dayCell"}
+                    data-plasmic-override={overrides.dayCell}
+                    className={classNames("__wab_instance", sty.dayCell)}
+                    dayNumber={(() => {
+                      try {
+                        return dateProps.date.day;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                  dayStatus={(() => {
-                    try {
-                      return (() => {
+                    })()}
+                    dayStatus={(() => {
+                      try {
+                        return (() => {
+                          if (
+                            dateProps.unix <
+                            new Date().setHours(0, 0, 0, 0) / 1000
+                          ) {
+                            return "disabled";
+                          }
+                          if (dateProps.isSelected) {
+                            return "selected";
+                          }
+                          if (
+                            $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                              .status === "reserved"
+                          ) {
+                            return "reserved";
+                          }
+                          if (
+                            $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                              .status === "blocked"
+                          ) {
+                            return "blocked";
+                          }
+                          if (
+                            $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                              .discount_percentage != 0 &&
+                            $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                              .discount_percentage != null
+                          ) {
+                            return "discount";
+                          }
+                          return $ctx.fetchedData.calendar[
+                            dateProps.date.day - 1
+                          ].status;
+                        })();
+                      } catch (e) {
                         if (
-                          dateProps.unix <
-                          new Date().setHours(0, 0, 0, 0) / 1000
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "disabled";
+                          return [];
                         }
-                        if (dateProps.isSelected) {
-                          return "selected";
-                        }
-                        if (
-                          $ctx.fetchedData.calendar[dateProps.date.day - 1]
-                            .status === "reserved"
-                        ) {
-                          return "reserved";
-                        }
-                        if (
-                          $ctx.fetchedData.calendar[dateProps.date.day - 1]
-                            .status === "blocked"
-                        ) {
-                          return "blocked";
-                        }
-                        if (
-                          $ctx.fetchedData.calendar[dateProps.date.day - 1]
-                            .discount_percentage != 0 &&
-                          $ctx.fetchedData.calendar[dateProps.date.day - 1]
-                            .discount_percentage != null
-                        ) {
-                          return "discount";
-                        }
+                        throw e;
+                      }
+                    })()}
+                    platform={(() => {
+                      try {
                         return $ctx.fetchedData.calendar[dateProps.date.day - 1]
-                          .status;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return [];
+                          .website;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                  platform={(() => {
-                    try {
-                      return $ctx.fetchedData.calendar[dateProps.date.day - 1]
-                        .website;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
+                    })()}
+                    price={(() => {
+                      try {
+                        return $ctx.fetchedData.calendar[dateProps.date.day - 1]
+                          .price;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                  price={(() => {
-                    try {
-                      return $ctx.fetchedData.calendar[dateProps.date.day - 1]
-                        .price;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
+                    })()}
+                    selected={(() => {
+                      try {
+                        return dateProps.isSelected;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                  selected={(() => {
-                    try {
-                      return dateProps.isSelected;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return [];
-                      }
-                      throw e;
-                    }
-                  })()}
-                />
-              )}
-              holidays={[]}
-              locale={"fa"}
-              mode={"multiple"}
-              onChange={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
+                    })()}
+                  />
+                )}
+                holidays={[]}
+                locale={"fa"}
+                mode={"multiple"}
+                onChange={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "fragmentDatePicker",
+                    "value"
+                  ]).apply(null, eventArgs);
+                  generateStateOnChangeProp($state, [
+                    "fragmentDatePicker",
+                    "values"
+                  ]).apply(null, eventArgs);
+                }}
+                onMonthChange={generateStateOnChangeProp($state, [
+                  "fragmentDatePicker",
+                  "month"
+                ])}
+                onYearChange={generateStateOnChangeProp($state, [
+                  "fragmentDatePicker",
+                  "year"
+                ])}
+                value={generateStateValueProp($state, [
                   "fragmentDatePicker",
                   "value"
-                ]).apply(null, eventArgs);
-                generateStateOnChangeProp($state, [
+                ])}
+                values={generateStateValueProp($state, [
                   "fragmentDatePicker",
                   "values"
-                ]).apply(null, eventArgs);
-              }}
-              onMonthChange={generateStateOnChangeProp($state, [
-                "fragmentDatePicker",
-                "month"
-              ])}
-              onYearChange={generateStateOnChangeProp($state, [
-                "fragmentDatePicker",
-                "year"
-              ])}
-              value={generateStateValueProp($state, [
-                "fragmentDatePicker",
-                "value"
-              ])}
-              values={generateStateValueProp($state, [
-                "fragmentDatePicker",
-                "values"
-              ])}
-            />
+                ])}
+              />
 
-            <AntdModal
-              data-plasmic-name={"modalDiscount"}
-              data-plasmic-override={overrides.modalDiscount}
-              cancelText={"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644\u0634"}
-              className={classNames("__wab_instance", sty.modalDiscount)}
-              closeButtonClassName={classNames({
-                [sty["pcls_vDiFMqMbDVYz"]]: true
-              })}
-              defaultStylesClassName={classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
-                projectcss.plasmic_tokens,
-                plasmic_antd_5_hostless_css.plasmic_tokens,
-                plasmic_plasmic_rich_components_css.plasmic_tokens
-              )}
-              modalContentClassName={classNames({
-                [sty["pcls_sRCzGPSdqNqE"]]: true
-              })}
-              modalScopeClassName={sty["modalDiscount__modal"]}
-              okText={"\u062a\u0627\u06cc\u06cc\u062f"}
-              onOk={async () => {
-                const $steps = {};
+              <AntdModal
+                data-plasmic-name={"modalDiscount"}
+                data-plasmic-override={overrides.modalDiscount}
+                cancelText={"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644\u0634"}
+                className={classNames("__wab_instance", sty.modalDiscount)}
+                closeButtonClassName={classNames({
+                  [sty["pcls_vDiFMqMbDVYz"]]: true
+                })}
+                defaultStylesClassName={classNames(
+                  projectcss.root_reset,
+                  projectcss.plasmic_default_styles,
+                  projectcss.plasmic_mixins,
+                  projectcss.plasmic_tokens,
+                  plasmic_antd_5_hostless_css.plasmic_tokens,
+                  plasmic_plasmic_rich_components_css.plasmic_tokens
+                )}
+                modalContentClassName={classNames({
+                  [sty["pcls_sRCzGPSdqNqE"]]: true
+                })}
+                modalScopeClassName={sty["modalDiscount__modal"]}
+                okText={"\u062a\u0627\u06cc\u06cc\u062f"}
+                onOk={async () => {
+                  const $steps = {};
 
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://rentamon-api.liara.run/api/setdiscount",
-                          undefined,
-                          (() => {
-                            try {
-                              return {
-                                days: $state.fragmentDatePicker.values.map(
-                                  value =>
-                                    new Date(value * 1000)
-                                      .toLocaleDateString("fa-IR")
-                                      .replace(/\//g, "-")
-                                ),
-                                property_id: "1",
-                                discount: $state.numberInput3.value
-                              };
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://rentamon-api.liara.run/api/setdiscount",
+                            undefined,
+                            (() => {
+                              try {
+                                return {
+                                  days: $state.fragmentDatePicker.values.map(
+                                    value =>
+                                      new Date(value * 1000)
+                                        .toLocaleDateString("fa-IR")
+                                        .replace(/\//g, "-")
+                                  ),
+                                  property_id: "1",
+                                  discount: $state.numberInput3.value
+                                };
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
                               }
-                              throw e;
+                            })(),
+                            {
+                              headers: {
+                                Authorization:
+                                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
+                              }
                             }
-                          })(),
-                          {
-                            headers: {
-                              Authorization:
-                                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                            }
-                          }
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+                }}
+                onOpenChange={generateStateOnChangeProp($state, [
+                  "modalDiscount",
+                  "open"
+                ])}
+                open={generateStateValueProp($state, ["modalDiscount", "open"])}
+                title={
+                  "\u062f\u0631\u0635\u062f \u062a\u062e\u0641\u06cc\u0641\ud83d\udd25\u0631\u0648 \u0645\u0634\u062e\u0635 \u06a9\u0646\n"
                 }
-              }}
-              onOpenChange={generateStateOnChangeProp($state, [
-                "modalDiscount",
-                "open"
-              ])}
-              open={generateStateValueProp($state, ["modalDiscount", "open"])}
-              title={
-                "\u062f\u0631\u0635\u062f \u062a\u062e\u0641\u06cc\u0641\ud83d\udd25\u0631\u0648 \u0645\u0634\u062e\u0635 \u06a9\u0646\n"
-              }
-              trigger={null}
-              wrapClassName={classNames({ [sty["pcls_vzTJKtxZntdc"]]: true })}
-            >
-              <div className={classNames(projectcss.all, sty.columns__iCQj8)}>
-                <div className={classNames(projectcss.all, sty.column__mqAFp)}>
-                  <Button
-                    className={classNames("__wab_instance", sty.button__eiNeQ)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateCount"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: ($state.count = Math.max(
-                                0,
-                                $state.count - 5
-                              )),
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["count"]
-                              }
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateCount"] != null &&
-                        typeof $steps["updateCount"] === "object" &&
-                        typeof $steps["updateCount"].then === "function"
-                      ) {
-                        $steps["updateCount"] = await $steps["updateCount"];
-                      }
-                    }}
+                trigger={null}
+                wrapClassName={classNames({ [sty["pcls_vzTJKtxZntdc"]]: true })}
+              >
+                <div className={classNames(projectcss.all, sty.columns__iCQj8)}>
+                  <div
+                    className={classNames(projectcss.all, sty.column__mqAFp)}
                   >
-                    <div
+                    <Button
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__muGte
+                        "__wab_instance",
+                        sty.button__eiNeQ
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateCount"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                operation: 0,
+                                value: ($state.count = Math.max(
+                                  0,
+                                  $state.count - 5
+                                )),
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["count"]
+                                }
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateCount"] != null &&
+                          typeof $steps["updateCount"] === "object" &&
+                          typeof $steps["updateCount"].then === "function"
+                        ) {
+                          $steps["updateCount"] = await $steps["updateCount"];
+                        }
+                      }}
                     >
-                      {"+"}
-                    </div>
-                  </Button>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__aLaJh)}>
-                  <AntdInputNumber
-                    data-plasmic-name={"numberInput3"}
-                    data-plasmic-override={overrides.numberInput3}
-                    className={classNames("__wab_instance", sty.numberInput3)}
-                    controls={false}
-                    onChange={generateStateOnChangeProp($state, [
-                      "numberInput3",
-                      "value"
-                    ])}
-                    placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
-                    readOnly={true}
-                    type={"number"}
-                    value={generateStateValueProp($state, [
-                      "numberInput3",
-                      "value"
-                    ])}
-                  />
-                </div>
-                <div className={classNames(projectcss.all, sty.column___5TW2A)}>
-                  <Button
-                    className={classNames("__wab_instance", sty.button___8UkxY)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateCount"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["count"]
-                              },
-                              value: ($state.count = Math.min(
-                                $state.count + 5,
-                                60
-                              ))
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateCount"] != null &&
-                        typeof $steps["updateCount"] === "object" &&
-                        typeof $steps["updateCount"].then === "function"
-                      ) {
-                        $steps["updateCount"] = await $steps["updateCount"];
-                      }
-                    }}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__muGte
+                        )}
+                      >
+                        {"+"}
+                      </div>
+                    </Button>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.column__aLaJh)}
                   >
-                    <div
+                    <AntdInputNumber
+                      data-plasmic-name={"numberInput3"}
+                      data-plasmic-override={overrides.numberInput3}
+                      className={classNames("__wab_instance", sty.numberInput3)}
+                      controls={false}
+                      onChange={generateStateOnChangeProp($state, [
+                        "numberInput3",
+                        "value"
+                      ])}
+                      placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
+                      readOnly={true}
+                      type={"number"}
+                      value={generateStateValueProp($state, [
+                        "numberInput3",
+                        "value"
+                      ])}
+                    />
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.column___5TW2A)}
+                  >
+                    <Button
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__fwejG
+                        "__wab_instance",
+                        sty.button___8UkxY
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateCount"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                operation: 0,
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["count"]
+                                },
+                                value: ($state.count = Math.min(
+                                  $state.count + 5,
+                                  60
+                                ))
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateCount"] != null &&
+                          typeof $steps["updateCount"] === "object" &&
+                          typeof $steps["updateCount"].then === "function"
+                        ) {
+                          $steps["updateCount"] = await $steps["updateCount"];
+                        }
+                      }}
                     >
-                      {"+"}
-                    </div>
-                  </Button>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__fwejG
+                        )}
+                      >
+                        {"+"}
+                      </div>
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </AntdModal>
+              </AntdModal>
+              <AntdModal
+                data-plasmic-name={"modal"}
+                data-plasmic-override={overrides.modal}
+                cancelText={``}
+                className={classNames("__wab_instance", sty.modal)}
+                closeButtonClassName={classNames({
+                  [sty["pcls_KoCmthm6Q3G0"]]: true
+                })}
+                defaultStylesClassName={classNames(
+                  projectcss.root_reset,
+                  projectcss.plasmic_default_styles,
+                  projectcss.plasmic_mixins,
+                  projectcss.plasmic_tokens,
+                  plasmic_antd_5_hostless_css.plasmic_tokens,
+                  plasmic_plasmic_rich_components_css.plasmic_tokens
+                )}
+                hideFooter={true}
+                maskClosable={true}
+                modalContentClassName={classNames({
+                  [sty["pcls_4Zf6687U_eIh"]]: true
+                })}
+                modalScopeClassName={sty["modal__modal"]}
+                okText={``}
+                onOk={async () => {
+                  const $steps = {};
+
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            undefined,
+                            undefined,
+                            undefined,
+                            (() => {
+                              try {
+                                return undefined;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+                }}
+                onOpenChange={generateStateOnChangeProp($state, [
+                  "modal",
+                  "open"
+                ])}
+                open={generateStateValueProp($state, ["modal", "open"])}
+                title={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xzvgg
+                    )}
+                  >
+                    {"\u062f\u0631\u062e\u0648\u0627\u0633\u062a"}
+                  </div>
+                }
+                trigger={null}
+                width={"200"}
+              >
+                <section
+                  className={classNames(projectcss.all, sty.section__rqNfm)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateBlockOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["block", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateBlockOpen"] != null &&
+                      typeof $steps["updateBlockOpen"] === "object" &&
+                      typeof $steps["updateBlockOpen"].then === "function"
+                    ) {
+                      $steps["updateBlockOpen"] = await $steps[
+                        "updateBlockOpen"
+                      ];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gTTy
+                    )}
+                  >
+                    {"\u067e\u064f\u0640\u0631"}
+                  </div>
+                </section>
+                <section
+                  className={classNames(projectcss.all, sty.section__xsRl)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["invokeGlobalAction"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "POST",
+                              "https://rentamon-api.liara.run/api/setunblock",
+                              undefined,
+                              (() => {
+                                try {
+                                  return {
+                                    days: $state.fragmentDatePicker.values.map(
+                                      value =>
+                                        new Date(value * 1000)
+                                          .toLocaleDateString("fa-IR")
+                                          .replace(/\//g, "-")
+                                    ),
+                                    property_id: 1
+                                  };
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })(),
+                              {
+                                headers: {
+                                  Authorization:
+                                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
+                                }
+                              }
+                            ]
+                          };
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                    if (
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
+                    ) {
+                      $steps["invokeGlobalAction"] = await $steps[
+                        "invokeGlobalAction"
+                      ];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rlhEr
+                    )}
+                  >
+                    {"\u062e\u0627\u0644\u06cc"}
+                  </div>
+                </section>
+                <section
+                  className={classNames(projectcss.all, sty.section__gaoiv)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateModalChangePriceOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modalChangePrice", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalChangePriceOpen"] != null &&
+                      typeof $steps["updateModalChangePriceOpen"] ===
+                        "object" &&
+                      typeof $steps["updateModalChangePriceOpen"].then ===
+                        "function"
+                    ) {
+                      $steps["updateModalChangePriceOpen"] = await $steps[
+                        "updateModalChangePriceOpen"
+                      ];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dBhqK
+                    )}
+                  >
+                    {"\u0642\u06cc\u0645\u062a"}
+                  </div>
+                </section>
+                <section
+                  className={classNames(projectcss.all, sty.section__wGeqr)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateModalDiscountOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modalDiscount", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalDiscountOpen"] != null &&
+                      typeof $steps["updateModalDiscountOpen"] === "object" &&
+                      typeof $steps["updateModalDiscountOpen"].then ===
+                        "function"
+                    ) {
+                      $steps["updateModalDiscountOpen"] = await $steps[
+                        "updateModalDiscountOpen"
+                      ];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__qtZio
+                    )}
+                  >
+                    {"\u062a\u062e\u0641\u06cc\u0641 \u066a"}
+                  </div>
+                </section>
+                <section
+                  className={classNames(projectcss.all, sty.section__y202M)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["invokeGlobalAction"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "POST",
+                              "https://rentamon-api.liara.run/api/setblock",
+                              undefined,
+                              (() => {
+                                try {
+                                  return {
+                                    days: $state.fragmentDatePicker.values.map(
+                                      value =>
+                                        new Date(value * 1000)
+                                          .toLocaleDateString("fa-IR")
+                                          .replace(/\//g, "-")
+                                    ),
+                                    property_id: 1,
+                                    requested_by: "user",
+                                    request_for: "block"
+                                  };
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })(),
+                              {
+                                headers: {
+                                  Authorization:
+                                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
+                                }
+                              }
+                            ]
+                          };
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                    if (
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
+                    ) {
+                      $steps["invokeGlobalAction"] = await $steps[
+                        "invokeGlobalAction"
+                      ];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ptf2Y
+                    )}
+                  >
+                    {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u26a1\ufe0f"}
+                  </div>
+                </section>
+              </AntdModal>
+              <AntdModal
+                data-plasmic-name={"modalChangePrice"}
+                data-plasmic-override={overrides.modalChangePrice}
+                cancelText={"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644\u0634"}
+                className={classNames("__wab_instance", sty.modalChangePrice)}
+                closeButtonClassName={classNames({
+                  [sty["pcls_4YBbExIs29oE"]]: true
+                })}
+                defaultStylesClassName={classNames(
+                  projectcss.root_reset,
+                  projectcss.plasmic_default_styles,
+                  projectcss.plasmic_mixins,
+                  projectcss.plasmic_tokens,
+                  plasmic_antd_5_hostless_css.plasmic_tokens,
+                  plasmic_plasmic_rich_components_css.plasmic_tokens
+                )}
+                modalScopeClassName={sty["modalChangePrice__modal"]}
+                okText={"\u062a\u0627\u06cc\u06cc\u062f"}
+                onOk={async () => {
+                  const $steps = {};
+
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://rentamon-api.liara.run/api/setprice",
+                            undefined,
+                            (() => {
+                              try {
+                                return {
+                                  days: $state.fragmentDatePicker.values.map(
+                                    value =>
+                                      new Date(value * 1000)
+                                        .toLocaleDateString("fa-IR")
+                                        .replace(/\//g, "-")
+                                  ),
+                                  property_id: "1",
+                                  price: $state.numberInput2.value
+                                };
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            {
+                              headers: {
+                                Authorization:
+                                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
+                              }
+                            }
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+                }}
+                onOpenChange={generateStateOnChangeProp($state, [
+                  "modalChangePrice",
+                  "open"
+                ])}
+                open={generateStateValueProp($state, [
+                  "modalChangePrice",
+                  "open"
+                ])}
+                title={
+                  "\u0646\u0631\u062e \ud83d\udcb5 \u0631\u0648 \u0628\u0647 \u062a\u0648\u0645\u0646 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                }
+                trigger={null}
+              >
+                <div className={classNames(projectcss.all, sty.columns__rmQ4G)}>
+                  <div
+                    className={classNames(projectcss.all, sty.column__n3LFm)}
+                  >
+                    <AntdInputNumber
+                      data-plasmic-name={"numberInput2"}
+                      data-plasmic-override={overrides.numberInput2}
+                      className={classNames("__wab_instance", sty.numberInput2)}
+                      controls={false}
+                      onChange={generateStateOnChangeProp($state, [
+                        "numberInput2",
+                        "value"
+                      ])}
+                      onPressEnter={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://rentamon-api.liara.run/api/setprice",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return {
+                                        days: $state.fragmentDatePicker.values.map(
+                                          value =>
+                                            new Date(value * 1000)
+                                              .toLocaleDateString("fa-IR")
+                                              .replace(/\//g, "-")
+                                        ),
+                                        property_id: "1",
+                                        price: $state.numberInput2.value
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  {
+                                    headers: {
+                                      Authorization:
+                                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
+                                    }
+                                  }
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                      placeholder={
+                        "\u0645\u062b\u0644\u0627 \u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0"
+                      }
+                      readOnly={false}
+                      type={"number"}
+                      value={generateStateValueProp($state, [
+                        "numberInput2",
+                        "value"
+                      ])}
+                    />
+                  </div>
+                </div>
+              </AntdModal>
+              <Button
+                className={classNames("__wab_instance", sty.button__fNtwK)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalOpen"] != null &&
+                    typeof $steps["updateModalOpen"] === "object" &&
+                    typeof $steps["updateModalOpen"].then === "function"
+                  ) {
+                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                  }
+                }}
+              >
+                {
+                  "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+                }
+              </Button>
+            </div>
             <AntdModal
-              data-plasmic-name={"modal"}
-              data-plasmic-override={overrides.modal}
-              cancelText={``}
-              className={classNames("__wab_instance", sty.modal)}
-              closeButtonClassName={classNames({
-                [sty["pcls_KoCmthm6Q3G0"]]: true
-              })}
+              data-plasmic-name={"block"}
+              data-plasmic-override={overrides.block}
+              className={classNames("__wab_instance", sty.block)}
+              closeIcon={null}
               defaultStylesClassName={classNames(
                 projectcss.root_reset,
                 projectcss.plasmic_default_styles,
@@ -650,224 +1272,44 @@ function PlasmicCalendar2__RenderFunc(props: {
                 plasmic_plasmic_rich_components_css.plasmic_tokens
               )}
               hideFooter={true}
-              maskClosable={true}
-              modalContentClassName={classNames({
-                [sty["pcls_4Zf6687U_eIh"]]: true
-              })}
-              modalScopeClassName={sty["modal__modal"]}
-              okText={``}
-              onOk={async () => {
-                const $steps = {};
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          undefined,
-                          undefined,
-                          undefined,
-                          (() => {
-                            try {
-                              return undefined;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
-                }
-              }}
+              modalScopeClassName={sty["block__modal"]}
               onOpenChange={generateStateOnChangeProp($state, [
-                "modal",
+                "block",
                 "open"
               ])}
-              open={generateStateValueProp($state, ["modal", "open"])}
+              open={generateStateValueProp($state, ["block", "open"])}
               title={
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__xzvgg
+                    sty.text__haKoZ
                   )}
                 >
-                  {"\u062f\u0631\u062e\u0648\u0627\u0633\u062a"}
+                  {
+                    "\u0639\u0644\u062a \u067e\u0631 \u0628\u0648\u062f\u0646 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                  }
                 </div>
               }
               trigger={null}
-              width={"200"}
             >
-              <section
-                className={classNames(projectcss.all, sty.section__rqNfm)}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ekvPr
+                )}
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["invokeGlobalAction"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            "POST",
-                            "https://rentamon-api.liara.run/api/setblock",
-                            undefined,
-                            (() => {
-                              try {
-                                return {
-                                  days: $state.fragmentDatePicker.values.map(
-                                    value =>
-                                      new Date(value * 1000)
-                                        .toLocaleDateString("fa-IR")
-                                        .replace(/\//g, "-")
-                                  ),
-                                  property_id: 1,
-                                  requested_by: "user",
-                                  request_for: "block"
-                                };
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })(),
-                            {
-                              headers: {
-                                Authorization:
-                                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                              }
-                            }
-                          ]
-                        };
-                        return $globalActions["Fragment.apiRequest"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
-                  if (
-                    $steps["invokeGlobalAction"] != null &&
-                    typeof $steps["invokeGlobalAction"] === "object" &&
-                    typeof $steps["invokeGlobalAction"].then === "function"
-                  ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__gTTy
-                  )}
-                >
-                  {"\u067e\u064f\u0640\u0631"}
-                </div>
-              </section>
-              <section
-                className={classNames(projectcss.all, sty.section__xsRl)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["invokeGlobalAction"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            "POST",
-                            "https://rentamon-api.liara.run/api/setunblock",
-                            undefined,
-                            (() => {
-                              try {
-                                return {
-                                  days: $state.fragmentDatePicker.values.map(
-                                    value =>
-                                      new Date(value * 1000)
-                                        .toLocaleDateString("fa-IR")
-                                        .replace(/\//g, "-")
-                                  ),
-                                  property_id: 1
-                                };
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })(),
-                            {
-                              headers: {
-                                Authorization:
-                                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                              }
-                            }
-                          ]
-                        };
-                        return $globalActions["Fragment.apiRequest"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
-                  if (
-                    $steps["invokeGlobalAction"] != null &&
-                    typeof $steps["invokeGlobalAction"] === "object" &&
-                    typeof $steps["invokeGlobalAction"].then === "function"
-                  ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rlhEr
-                  )}
-                >
-                  {"\u062e\u0627\u0644\u06cc"}
-                </div>
-              </section>
-              <section
-                className={classNames(projectcss.all, sty.section__gaoiv)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateModalChangePriceOpen"] = true
+                  $steps["updateFragmentDatePickerValue"] = true
                     ? (() => {
                         const actionArgs = {
                           variable: {
                             objRoot: $state,
-                            variablePath: ["modalChangePrice", "open"]
+                            variablePath: ["fragmentDatePicker", "value"]
                           },
-                          operation: 0,
-                          value: true
+                          operation: 0
                         };
                         return (({
                           variable,
@@ -886,41 +1328,39 @@ function PlasmicCalendar2__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["updateModalChangePriceOpen"] != null &&
-                    typeof $steps["updateModalChangePriceOpen"] === "object" &&
-                    typeof $steps["updateModalChangePriceOpen"].then ===
+                    $steps["updateFragmentDatePickerValue"] != null &&
+                    typeof $steps["updateFragmentDatePickerValue"] ===
+                      "object" &&
+                    typeof $steps["updateFragmentDatePickerValue"].then ===
                       "function"
                   ) {
-                    $steps["updateModalChangePriceOpen"] = await $steps[
-                      "updateModalChangePriceOpen"
+                    $steps["updateFragmentDatePickerValue"] = await $steps[
+                      "updateFragmentDatePickerValue"
                     ];
                   }
                 }}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dBhqK
-                  )}
-                >
-                  {"\u0642\u06cc\u0645\u062a"}
-                </div>
-              </section>
-              <section
-                className={classNames(projectcss.all, sty.section__wGeqr)}
+                {
+                  "\u0627\u0632 \u062c\u0627\u06cc \u062f\u06cc\u06af\u0647 \u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645 \ud83c\udf92"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wnE1G
+                )}
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["updateModalDiscountOpen"] = true
+                  $steps["updateFragmentDatePickerValue"] = true
                     ? (() => {
                         const actionArgs = {
                           variable: {
                             objRoot: $state,
-                            variablePath: ["modalDiscount", "open"]
+                            variablePath: ["fragmentDatePicker", "value"]
                           },
-                          operation: 0,
-                          value: true
+                          operation: 0
                         };
                         return (({
                           variable,
@@ -939,310 +1379,75 @@ function PlasmicCalendar2__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["updateModalDiscountOpen"] != null &&
-                    typeof $steps["updateModalDiscountOpen"] === "object" &&
-                    typeof $steps["updateModalDiscountOpen"].then === "function"
+                    $steps["updateFragmentDatePickerValue"] != null &&
+                    typeof $steps["updateFragmentDatePickerValue"] ===
+                      "object" &&
+                    typeof $steps["updateFragmentDatePickerValue"].then ===
+                      "function"
                   ) {
-                    $steps["updateModalDiscountOpen"] = await $steps[
-                      "updateModalDiscountOpen"
+                    $steps["updateFragmentDatePickerValue"] = await $steps[
+                      "updateFragmentDatePickerValue"
                     ];
                   }
                 }}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qtZio
-                  )}
-                >
-                  {"\u062a\u062e\u0641\u06cc\u0641 \u066a"}
-                </div>
-              </section>
-              <section
-                className={classNames(projectcss.all, sty.section__y202M)}
+                {
+                  "\u0646\u0645\u06cc\u200c\u062e\u0648\u0627\u0645 \u0627\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u0645 \u26d4\ufe0f"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___4Wf5
+                )}
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["invokeGlobalAction"] = true
+                  $steps["updateFragmentDatePickerValue"] = true
                     ? (() => {
                         const actionArgs = {
-                          args: [
-                            "POST",
-                            "https://rentamon-api.liara.run/api/setblock",
-                            undefined,
-                            (() => {
-                              try {
-                                return {
-                                  days: $state.fragmentDatePicker.values.map(
-                                    value =>
-                                      new Date(value * 1000)
-                                        .toLocaleDateString("fa-IR")
-                                        .replace(/\//g, "-")
-                                  ),
-                                  property_id: 1,
-                                  requested_by: "user",
-                                  request_for: "block"
-                                };
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })(),
-                            {
-                              headers: {
-                                Authorization:
-                                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                              }
-                            }
-                          ]
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["fragmentDatePicker", "value"]
+                          },
+                          operation: 0
                         };
-                        return $globalActions["Fragment.apiRequest"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
                   if (
-                    $steps["invokeGlobalAction"] != null &&
-                    typeof $steps["invokeGlobalAction"] === "object" &&
-                    typeof $steps["invokeGlobalAction"].then === "function"
+                    $steps["updateFragmentDatePickerValue"] != null &&
+                    typeof $steps["updateFragmentDatePickerValue"] ===
+                      "object" &&
+                    typeof $steps["updateFragmentDatePickerValue"].then ===
+                      "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
+                    $steps["updateFragmentDatePickerValue"] = await $steps[
+                      "updateFragmentDatePickerValue"
                     ];
                   }
                 }}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ptf2Y
-                  )}
-                >
-                  {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u26a1\ufe0f"}
-                </div>
-              </section>
-            </AntdModal>
-            <AntdModal
-              data-plasmic-name={"modalChangePrice"}
-              data-plasmic-override={overrides.modalChangePrice}
-              cancelText={"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644\u0634"}
-              className={classNames("__wab_instance", sty.modalChangePrice)}
-              closeButtonClassName={classNames({
-                [sty["pcls_4YBbExIs29oE"]]: true
-              })}
-              defaultStylesClassName={classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
-                projectcss.plasmic_tokens,
-                plasmic_antd_5_hostless_css.plasmic_tokens,
-                plasmic_plasmic_rich_components_css.plasmic_tokens
-              )}
-              modalScopeClassName={sty["modalChangePrice__modal"]}
-              okText={"\u062a\u0627\u06cc\u06cc\u062f"}
-              onOk={async () => {
-                const $steps = {};
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://rentamon-api.liara.run/api/setprice",
-                          undefined,
-                          (() => {
-                            try {
-                              return {
-                                days: $state.fragmentDatePicker.values.map(
-                                  value =>
-                                    new Date(value * 1000)
-                                      .toLocaleDateString("fa-IR")
-                                      .replace(/\//g, "-")
-                                ),
-                                property_id: "1",
-                                price: $state.numberInput2.value
-                              };
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
-                          {
-                            headers: {
-                              Authorization:
-                                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                            }
-                          }
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                {
+                  "\u0648\u0627\u0633\u0634 \u0628\u0631\u0646\u0627\u0645\u0647 \u062f\u0627\u0631\u0645 \ud83d\ude0e"
                 }
-              }}
-              onOpenChange={generateStateOnChangeProp($state, [
-                "modalChangePrice",
-                "open"
-              ])}
-              open={generateStateValueProp($state, [
-                "modalChangePrice",
-                "open"
-              ])}
-              title={
-                "\u0646\u0631\u062e \ud83d\udcb5 \u0631\u0648 \u0628\u0647 \u062a\u0648\u0645\u0646 \u0648\u0627\u0631\u062f \u06a9\u0646"
-              }
-              trigger={null}
-            >
-              <div className={classNames(projectcss.all, sty.columns__rmQ4G)}>
-                <div className={classNames(projectcss.all, sty.column__n3LFm)}>
-                  <AntdInputNumber
-                    data-plasmic-name={"numberInput2"}
-                    data-plasmic-override={overrides.numberInput2}
-                    className={classNames("__wab_instance", sty.numberInput2)}
-                    controls={false}
-                    onChange={generateStateOnChangeProp($state, [
-                      "numberInput2",
-                      "value"
-                    ])}
-                    onPressEnter={async event => {
-                      const $steps = {};
-
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://rentamon-api.liara.run/api/setprice",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return {
-                                      days: $state.fragmentDatePicker.values.map(
-                                        value =>
-                                          new Date(value * 1000)
-                                            .toLocaleDateString("fa-IR")
-                                            .replace(/\//g, "-")
-                                      ),
-                                      property_id: "1",
-                                      price: $state.numberInput2.value
-                                    };
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })(),
-                                {
-                                  headers: {
-                                    Authorization:
-                                      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                                  }
-                                }
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
-                      }
-                    }}
-                    placeholder={
-                      "\u0645\u062b\u0644\u0627 \u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0"
-                    }
-                    readOnly={false}
-                    type={"number"}
-                    value={generateStateValueProp($state, [
-                      "numberInput2",
-                      "value"
-                    ])}
-                  />
-                </div>
               </div>
             </AntdModal>
-            <Button
-              className={classNames("__wab_instance", sty.button__fNtwK)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
-                ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                }
-              }}
-            >
-              {
-                "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
-              }
-            </Button>
-          </div>
+          </React.Fragment>
         )}
       </DataCtxReader__>
     </DataFetcher>
@@ -1259,7 +1464,8 @@ const PlasmicDescendants = {
     "numberInput3",
     "modal",
     "modalChangePrice",
-    "numberInput2"
+    "numberInput2",
+    "block"
   ],
   freeBox: [
     "freeBox",
@@ -1277,7 +1483,8 @@ const PlasmicDescendants = {
   numberInput3: ["numberInput3"],
   modal: ["modal"],
   modalChangePrice: ["modalChangePrice", "numberInput2"],
-  numberInput2: ["numberInput2"]
+  numberInput2: ["numberInput2"],
+  block: ["block"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1292,6 +1499,7 @@ type NodeDefaultElementType = {
   modal: typeof AntdModal;
   modalChangePrice: typeof AntdModal;
   numberInput2: typeof AntdInputNumber;
+  block: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1362,6 +1570,7 @@ export const PlasmicCalendar2 = Object.assign(
     modal: makeNodeComponent("modal"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
     numberInput2: makeNodeComponent("numberInput2"),
+    block: makeNodeComponent("block"),
 
     // Metadata about props expected for PlasmicCalendar2
     internalVariantProps: PlasmicCalendar2__VariantProps,

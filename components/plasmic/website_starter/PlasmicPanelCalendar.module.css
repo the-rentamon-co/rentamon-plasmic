@@ -37,3 +37,11 @@
   right: auto;
   margin-top: 0px;
 }
+@media (max-width: 768px) {
+  .calendar2:global(.__wab_instance):global(.__wab_instance) {
+    width: 100%;
+    max-width: auto;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
+  }
+}
