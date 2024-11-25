@@ -224,7 +224,6 @@
   overflow: hidden;
 }
 .freeBox__bfei2 {
-  display: flex;
   flex-direction: row;
   position: relative;
   align-items: stretch;
@@ -233,6 +232,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .freeBox__jwgpa {
@@ -300,7 +300,6 @@
   overflow: hidden;
 }
 .freeBox__fHf0F {
-  display: flex;
   flex-direction: row;
   position: relative;
   align-items: stretch;
@@ -309,6 +308,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .freeBox__bzrbb {
@@ -859,6 +859,7 @@
 .formField__bg02G:global(.__wab_instance) {
   width: 100%;
   min-width: 0;
+  display: none;
 }
 .text___7Pxu {
   padding-left: 0px;
@@ -920,6 +921,7 @@
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
+  display: none;
 }
 .text__jy6Cu {
   padding-left: 0px;
@@ -978,7 +980,6 @@
   min-width: 0;
 }
 .freeBox__wsgcn {
-  display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -987,6 +988,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .formField__jwl5L:global(.__wab_instance) {
@@ -1065,6 +1067,7 @@
 .formField__zpGg1:global(.__wab_instance) {
   width: 100%;
   min-width: 0;
+  display: none;
 }
 .text__iEnQ2 {
   padding-left: 0px;
@@ -1279,7 +1282,6 @@
   object-fit: cover;
 }
 .mihmanshopp {
-  display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -1288,6 +1290,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .formField__cTbj:global(.__wab_instance) {
@@ -1303,7 +1306,6 @@
   object-fit: cover;
 }
 .homsapp {
-  display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -1312,6 +1314,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .formField__oz3H6:global(.__wab_instance) {
@@ -1327,7 +1330,6 @@
   object-fit: cover;
 }
 .mizboonpp {
-  display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -1336,6 +1338,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .formField__kHud4:global(.__wab_instance) {
