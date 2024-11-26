@@ -6,6 +6,7 @@
   transition-property: background;
   transition-duration: 0.1s;
   background: #8165d6;
+  margin-top: 14px;
   -webkit-transition-property: background;
   -webkit-transition-duration: 0.1s;
   border-radius: 30px;

@@ -549,7 +549,6 @@
   object-fit: cover;
 }
 .freeBox__xaF {
-  display: flex;
   flex-direction: row;
   position: relative;
   align-items: stretch;
@@ -558,6 +557,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .submitButton:global(.__wab_instance) {
@@ -691,6 +691,7 @@
   color: var(--token-8nedppYkGVaH);
   text-align: right;
   min-width: 0;
+  display: none;
 }
 .text__k8Jom {
   position: relative;
@@ -701,6 +702,7 @@
   font-size: 20px;
   font-weight: 600;
   min-width: 0;
+  display: none;
 }
 .freeBox__aiqtL {
   display: flex;

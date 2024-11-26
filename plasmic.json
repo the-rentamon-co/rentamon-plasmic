@@ -594,6 +594,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/panel-calendar"
+        },
+        {
+          "id": "XZmf7ZlhFOgx",
+          "name": "Calendar4",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCalendar4.tsx",
+          "importSpec": {
+            "modulePath": "Calendar4.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCalendar4.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -641,6 +654,11 @@
           "id": "bRrNIWhK9m-7",
           "name": "SquareMinusSvgIcon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__SquareMinusSvg.tsx"
+        },
+        {
+          "id": "M1D97sPB9eVt",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon2.tsx"
         }
       ],
       "images": [
@@ -753,6 +771,26 @@
           "id": "Cd9JIdnarCtN",
           "name": "rentamon-fa.png",
           "filePath": "../public/plasmic/website_starter/images/rentamonFaPng.png"
+        },
+        {
+          "id": "i-WLBC0YhGGb",
+          "name": "image 4",
+          "filePath": "../public/plasmic/website_starter/images/image4.png"
+        },
+        {
+          "id": "eJtWeqOkhAeh",
+          "name": "image 5",
+          "filePath": "../public/plasmic/website_starter/images/image5.png"
+        },
+        {
+          "id": "EiquG5danBZz",
+          "name": "check-circle-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg"
+        },
+        {
+          "id": "h3gqtGfbhhZK",
+          "name": "image 6",
+          "filePath": "../public/plasmic/website_starter/images/image6.png"
         }
       ],
       "indirect": false,

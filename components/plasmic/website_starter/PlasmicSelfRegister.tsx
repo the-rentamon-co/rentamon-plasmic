@@ -564,9 +564,29 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     sty.text__aeiK5
                   )}
                 >
-                  {
-                    "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc"
-                  }
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (
+                          "✅" +
+                          $state.selfRegisterForm.value.name +
+                          " " +
+                          $state.selfRegisterForm.value.lastName +
+                          " عزیز، " +
+                          $state.selfRegisterForm.value.propertyName +
+                          " با موفقیت ثبت شد."
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
               </div>
             ) : null}
@@ -2067,56 +2087,26 @@ function PlasmicSelfRegister__RenderFunc(props: {
             data-plasmic-override={overrides.guide2}
             className={classNames(projectcss.all, sty.guide2)}
           >
-            {(() => {
-              try {
-                return $state.formStep == 0;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__c5ApU
+              )}
+            >
+              {
+                "\u0634\u0631\u0648\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632  \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
               }
-            })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__c5ApU
-                )}
-              >
-                {
-                  "\u0634\u0631\u0648\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632  \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
-                }
-              </div>
-            ) : null}
-            {(() => {
-              try {
-                return $state.formStep == 1;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__k8Jom
-                )}
-              >
-                {
-                  "\u0645\u0634\u062e\u0635\u0627\u062a \u0648\u06cc\u0644\u0627"
-                }
-              </div>
-            ) : null}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__k8Jom
+              )}
+            >
+              {"\u0645\u0634\u062e\u0635\u0627\u062a \u0648\u06cc\u0644\u0627"}
+            </div>
             {(() => {
               try {
                 return $state.formStep == 2;
@@ -2173,9 +2163,11 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     onClick={async () => {
                       const $steps = {};
 
-                      $steps["goToPage"] = true
+                      $steps["goToHttpsAppRentamonComActive2"] = true
                         ? (() => {
-                            const actionArgs = { destination: "" };
+                            const actionArgs = {
+                              destination: "https://app.rentamon.com/active-2/"
+                            };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&
@@ -2191,11 +2183,15 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToPage"] != null &&
-                        typeof $steps["goToPage"] === "object" &&
-                        typeof $steps["goToPage"].then === "function"
+                        $steps["goToHttpsAppRentamonComActive2"] != null &&
+                        typeof $steps["goToHttpsAppRentamonComActive2"] ===
+                          "object" &&
+                        typeof $steps["goToHttpsAppRentamonComActive2"].then ===
+                          "function"
                       ) {
-                        $steps["goToPage"] = await $steps["goToPage"];
+                        $steps["goToHttpsAppRentamonComActive2"] = await $steps[
+                          "goToHttpsAppRentamonComActive2"
+                        ];
                       }
                     }}
                     submitsForm={false}

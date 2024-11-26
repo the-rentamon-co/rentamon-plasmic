@@ -2348,6 +2348,7 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                   >
                     {(() => {
                       const child$Props = {
+                        autoFocus: true,
                         className: classNames("__wab_instance", sty.input9),
                         onChange: generateStateOnChangePropForCodeComponents(
                           $state,
@@ -2393,47 +2394,6 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["invokeGlobalAction"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/shab-send-otp",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return {
-                                          phone: $state.form.value.shabphone
-                                        };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
-                          }
-
                           $steps["updateStep"] = true
                             ? (() => {
                                 const actionArgs = {
@@ -2473,6 +2433,47 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                             typeof $steps["updateStep"].then === "function"
                           ) {
                             $steps["updateStep"] = await $steps["updateStep"];
+                          }
+
+                          $steps["invokeGlobalAction"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "POST",
+                                    "https://gateway.rentamon.com/webhook/shab-send-otp",
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return {
+                                          phone: $state.form.value.shabphone
+                                        };
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction"] != null &&
+                            typeof $steps["invokeGlobalAction"] === "object" &&
+                            typeof $steps["invokeGlobalAction"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction"] = await $steps[
+                              "invokeGlobalAction"
+                            ];
                           }
                         }}
                         submitsForm={true}
