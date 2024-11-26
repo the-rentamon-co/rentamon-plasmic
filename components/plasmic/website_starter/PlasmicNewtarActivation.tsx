@@ -1298,19 +1298,6 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                       "__wab_instance",
                       sty.formField__lGbMw
                     )}
-                    initialValue={(() => {
-                      try {
-                        return $state.apiRequest.data[0].phone;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
                     label={
                       <div
                         className={classNames(
@@ -1808,19 +1795,6 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                       "__wab_instance",
                       sty.formField__zVrCk
                     )}
-                    initialValue={(() => {
-                      try {
-                        return $state.apiRequest.data[0].phone;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
                     label={
                       <div
                         className={classNames(
@@ -2318,19 +2292,6 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                       "__wab_instance",
                       sty.formField__jNtmT
                     )}
-                    initialValue={(() => {
-                      try {
-                        return $state.apiRequest.data[0].phone;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
                     label={
                       <div
                         className={classNames(
@@ -2823,19 +2784,6 @@ function PlasmicNewtarActivation__RenderFunc(props: {
                       "__wab_instance",
                       sty.formField__idApY
                     )}
-                    initialValue={(() => {
-                      try {
-                        return $state.apiRequest.data[0].phone;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
                     label={
                       <div
                         className={classNames(

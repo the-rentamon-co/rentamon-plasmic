@@ -1258,25 +1258,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 }
               }}
             >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return ($state.fragmentDatePicker.onChange = value => {
-                      if (value === 2) {
-                        return value;
-                      }
-                    });
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a";
-                    }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
+              {
+                "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+              }
             </Button>
             <AntdModal
               data-plasmic-name={"fetchModal"}
