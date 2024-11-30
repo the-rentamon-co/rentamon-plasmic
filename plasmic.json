@@ -607,6 +607,19 @@
           "cssFilePath": "plasmic/website_starter/PlasmicCalendar4.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "RUWcL-66g8Jn",
+          "name": "Alert",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicAlert.tsx",
+          "importSpec": {
+            "modulePath": "Alert.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicAlert.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -659,6 +672,11 @@
           "id": "M1D97sPB9eVt",
           "name": "Icon2Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon2.tsx"
+        },
+        {
+          "id": "MOdODf-qwVQb",
+          "name": "Icon3Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon3.tsx"
         }
       ],
       "images": [

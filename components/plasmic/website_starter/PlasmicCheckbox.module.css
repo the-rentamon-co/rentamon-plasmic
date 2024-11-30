@@ -38,8 +38,8 @@
   position: relative;
   object-fit: cover;
   color: var(--token-WSyX3-IK-ikH);
-  width: 30px;
-  height: 23px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
 }
 .svgisChecked {
@@ -69,6 +69,7 @@
 }
 .slotTargetChildren {
   white-space: pre;
+  font-size: 14px;
 }
 .slotTargetChildren > :global(.__wab_text),
 .slotTargetChildren > :global(.__wab_expr_html_text),
