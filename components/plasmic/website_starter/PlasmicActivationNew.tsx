@@ -630,21 +630,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                   sty.text__osfWm
                 )}
               >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return "خطا در دسترسی به اطلاعات";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "Error fetching data";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
+                {"Error fetching data"}
               </div>
             }
             loadingDisplay={
@@ -672,7 +658,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                 </React.Fragment>
               </div>
             }
-            method={"GET"}
+            method={"POST"}
             onError={generateStateOnChangeProp($state, ["apiRequest", "error"])}
             onLoading={generateStateOnChangeProp($state, [
               "apiRequest",
@@ -682,7 +668,7 @@ function PlasmicActivationNew__RenderFunc(props: {
               "apiRequest",
               "data"
             ])}
-            url={"https://gateway.rentamon.com/webhook/active1"}
+            url={"https://gateway.rentamon.com/webhook/self"}
           >
             <div
               className={classNames(
@@ -1705,8 +1691,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     objRoot: $state,
                                     variablePath: ["step"]
                                   },
-                                  operation: 3,
-                                  value: $state.step + 2
+                                  operation: 0,
+                                  value: $state.step - 2
                                 };
                                 return (({
                                   variable,
@@ -1719,16 +1705,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   }
                                   const { objRoot, variablePath } = variable;
 
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -2279,8 +2257,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     objRoot: $state,
                                     variablePath: ["step"]
                                   },
-                                  operation: 3,
-                                  value: $state.step + 2
+                                  operation: 0,
+                                  value: $state.step - 2
                                 };
                                 return (({
                                   variable,
@@ -2293,16 +2271,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   }
                                   const { objRoot, variablePath } = variable;
 
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -2852,8 +2822,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     objRoot: $state,
                                     variablePath: ["step"]
                                   },
-                                  operation: 3,
-                                  value: $state.step + 2
+                                  operation: 0,
+                                  value: $state.step - 2
                                 };
                                 return (({
                                   variable,
@@ -2866,16 +2836,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   }
                                   const { objRoot, variablePath } = variable;
 
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
