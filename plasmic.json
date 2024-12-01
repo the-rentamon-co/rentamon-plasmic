@@ -606,6 +606,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/activation"
+        },
+        {
+          "id": "4kdcaD2KbS-w",
+          "name": "Policies",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPolicies.tsx",
+          "importSpec": {
+            "modulePath": "Policies.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPolicies.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
