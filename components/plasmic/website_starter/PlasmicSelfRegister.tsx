@@ -520,6 +520,31 @@ function PlasmicSelfRegister__RenderFunc(props: {
             ) : null}
             {(() => {
               try {
+                return $state.formStep == 0;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__nlgw
+                )}
+              >
+                {
+                  "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u062a \u0633\u0627\u062e\u062a\u0647 \u0628\u0634\u0647"
+                }
+              </div>
+            ) : null}
+            {(() => {
+              try {
                 return $state.formStep == 1;
               } catch (e) {
                 if (
@@ -2163,10 +2188,10 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     onClick={async () => {
                       const $steps = {};
 
-                      $steps["goToHttpsAppRentamonComActive2"] = true
+                      $steps["goToHttpsAppRentamonComActive"] = true
                         ? (() => {
                             const actionArgs = {
-                              destination: "https://app.rentamon.com/active-2/"
+                              destination: "https://app.rentamon.com/active"
                             };
                             return (({ destination }) => {
                               if (
@@ -2183,14 +2208,14 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToHttpsAppRentamonComActive2"] != null &&
-                        typeof $steps["goToHttpsAppRentamonComActive2"] ===
+                        $steps["goToHttpsAppRentamonComActive"] != null &&
+                        typeof $steps["goToHttpsAppRentamonComActive"] ===
                           "object" &&
-                        typeof $steps["goToHttpsAppRentamonComActive2"].then ===
+                        typeof $steps["goToHttpsAppRentamonComActive"].then ===
                           "function"
                       ) {
-                        $steps["goToHttpsAppRentamonComActive2"] = await $steps[
-                          "goToHttpsAppRentamonComActive2"
+                        $steps["goToHttpsAppRentamonComActive"] = await $steps[
+                          "goToHttpsAppRentamonComActive"
                         ];
                       }
                     }}

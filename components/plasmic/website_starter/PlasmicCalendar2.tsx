@@ -67,6 +67,8 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
+import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -282,6 +284,10 @@ function PlasmicCalendar2__RenderFunc(props: {
     $refs
   });
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsaSuSwU8JUYf()
+  });
+
   return (
     <div
       data-plasmic-name={"root"}
@@ -357,7 +363,47 @@ function PlasmicCalendar2__RenderFunc(props: {
               className={classNames("__wab_instance", sty.dayCell)}
               dayNumber={(() => {
                 try {
-                  return dateProps.date.day;
+                  return (() => {
+                    function convertEnglishNumbersToPersian(str) {
+                      const englishNumbers = [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9"
+                      ];
+
+                      const persianNumbers = [
+                        "۰",
+                        "۱",
+                        "۲",
+                        "۳",
+                        "۴",
+                        "۵",
+                        "۶",
+                        "۷",
+                        "۸",
+                        "۹"
+                      ];
+
+                      return str
+                        .toString()
+                        .replace(
+                          /[0-9]/g,
+                          char =>
+                            persianNumbers[englishNumbers.indexOf(char)] || char
+                        );
+                    }
+                    const englishNumber = dateProps.date.day;
+                    const persianNumber =
+                      convertEnglishNumbersToPersian(englishNumber);
+                    return persianNumber;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -535,20 +581,53 @@ function PlasmicCalendar2__RenderFunc(props: {
                   throw e;
                 }
               })()}
-              price={(() => {
-                try {
-                  return $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                    .price;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
+              price={
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return (() => {
+                          const price =
+                            $state.apiRequest.data.calendar[
+                              dateProps.date.day - 1
+                            ]?.price;
+                          const formattedPersianPrice = price
+                            ? new Intl.NumberFormat("fa-IR").format(price)
+                            : null;
+                          return formattedPersianPrice;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  : (() => {
+                      try {
+                        return (() => {
+                          const price =
+                            $state.apiRequest.data.calendar[
+                              dateProps.date.day - 1
+                            ]?.price;
+                          const formattedPersianPrice = price
+                            ? new Intl.NumberFormat("fa-IR").format(price)
+                            : null;
+                          return formattedPersianPrice;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+              }
               selected={(() => {
                 try {
                   return dateProps.isSelected;
@@ -1845,13 +1924,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                         undefined,
                         (() => {
                           try {
-                            return {
-                              days: [$state.fragmentDatePicker.values],
-
-                              property_id: $props.propertyId,
-                              requested_by: "user",
-                              request_for: "reserve"
-                            };
+                            return (() => {
+                              function convertTimestampToPersianDate(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                return date.toLocaleDateString("fa");
+                              }
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                requested_by: "user",
+                                request_for: "reserve"
+                              };
+                              data.days = data.days.map(timestampArray =>
+                                timestampArray.map(timestamp =>
+                                  convertTimestampToPersianDate(timestamp)
+                                )
+                              );
+                              return data;
+                            })();
                           } catch (e) {
                             if (
                               e instanceof TypeError ||

@@ -239,6 +239,17 @@
   text-align: right;
   min-width: 0;
 }
+.text__nlgw {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--token-WxvvgatuPYoJ);
+  text-align: right;
+  min-width: 0;
+}
 .text___3D5Qe {
   position: relative;
   width: 100%;

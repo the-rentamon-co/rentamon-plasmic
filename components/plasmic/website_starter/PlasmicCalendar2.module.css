@@ -10,6 +10,12 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 768px) {
+  .root {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .apiRequest:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -38,12 +44,17 @@
   position: relative;
 }
 .dayCell:global(.__wab_instance) {
-  max-width: 97%;
+  max-width: 95%;
+  align-self: flex-end;
+  left: auto;
+  top: auto;
+  z-index: 1;
+  position: relative;
   margin: 2px;
 }
 @media (max-width: 768px) {
   .dayCell:global(.__wab_instance) {
-    margin: 0px;
+    margin: 5px 0px 0px;
   }
 }
 .modalDiscount:global(.__wab_instance) {
