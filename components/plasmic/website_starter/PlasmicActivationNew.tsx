@@ -668,7 +668,7 @@ function PlasmicActivationNew__RenderFunc(props: {
               "apiRequest",
               "data"
             ])}
-            url={"https://gateway.rentamon.com/webhook/self"}
+            url={"https://dev.rentamon.com/webhook/user-registration"}
           >
             <div
               className={classNames(
@@ -1380,7 +1380,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     "POST",
-                                    "https://gateway.rentamon.com/webhook/jabama-verify-otp",
+                                    "https://gateway.rentamon.com/webhook/jabama-verify-test",
                                     undefined,
                                     (() => {
                                       try {
