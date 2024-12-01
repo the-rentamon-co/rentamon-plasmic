@@ -668,7 +668,7 @@ function PlasmicActivationNew__RenderFunc(props: {
               "apiRequest",
               "data"
             ])}
-            url={"https://dev.rentamon.com/webhook/user-registration"}
+            url={"https://gateway.rentamon.com/webhook/user-registration"}
           >
             <div
               className={classNames(
