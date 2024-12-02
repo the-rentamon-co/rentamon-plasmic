@@ -591,7 +591,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                               dateProps.date.day - 1
                             ]?.price;
                           const formattedPersianPrice = price
-                            ? new Intl.NumberFormat("fa-IR").format(price)
+                            ? new Intl.NumberFormat("fa-IR").format(
+                                price / 1000
+                              )
                             : null;
                           return formattedPersianPrice;
                         })();
@@ -613,7 +615,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                               dateProps.date.day - 1
                             ]?.price;
                           const formattedPersianPrice = price
-                            ? new Intl.NumberFormat("fa-IR").format(price)
+                            ? new Intl.NumberFormat("fa-IR").format(
+                                price / 1000
+                              )
                             : null;
                           return formattedPersianPrice;
                         })();
@@ -734,24 +738,67 @@ function PlasmicCalendar2__RenderFunc(props: {
           onOk={async () => {
             const $steps = {};
 
+            $steps["updateFetchModalOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["fetchModal", "open"]
+                    },
+                    operation: 0,
+                    value: true
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateFetchModalOpen"] != null &&
+              typeof $steps["updateFetchModalOpen"] === "object" &&
+              typeof $steps["updateFetchModalOpen"].then === "function"
+            ) {
+              $steps["updateFetchModalOpen"] = await $steps[
+                "updateFetchModalOpen"
+              ];
+            }
+
             $steps["invokeGlobalAction"] = true
               ? (() => {
                   const actionArgs = {
                     args: [
                       "POST",
-                      "https://rentamon-api.liara.run/api/setdiscount",
+                      "https://api.rentamon.com/api/setdiscount",
                       undefined,
                       (() => {
                         try {
-                          return {
-                            days: $state.fragmentDatePicker.values.map(value =>
-                              new Date(value * 1000)
-                                .toLocaleDateString("fa-IR")
-                                .replace(/\//g, "-")
-                            ),
-                            property_id: "1",
-                            discount: $state.numberInput3.value
-                          };
+                          return (() => {
+                            function convertTimestampToPersianDate(timestamp) {
+                              const date = new Date(timestamp * 1000);
+                              return date
+                                .toLocaleDateString("fa")
+                                .replace(/\//g, "-");
+                            }
+                            const data = {
+                              days: [$state.fragmentDatePicker.values],
+                              property_id: $props.propertyId,
+                              discount: $state.numberInput3.value
+                            };
+                            data.days = data.days
+                              .map(timestampArray =>
+                                timestampArray.map(timestamp =>
+                                  convertTimestampToPersianDate(timestamp)
+                                )
+                              )
+                              .flat();
+                            return data;
+                          })();
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -762,12 +809,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           throw e;
                         }
                       })(),
-                      {
-                        headers: {
-                          Authorization:
-                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                        }
-                      }
+                      {}
                     ]
                   };
                   return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -781,6 +823,36 @@ function PlasmicCalendar2__RenderFunc(props: {
               typeof $steps["invokeGlobalAction"].then === "function"
             ) {
               $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+            }
+
+            $steps["updateStateVariable"] = true
+              ? (() => {
+                  const actionArgs = {
+                    operation: 0,
+                    value: (() => {
+                      $state.fragmentDatePicker.values = [];
+                      return $state.fragmentDatePicker.values;
+                    })()
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateStateVariable"] != null &&
+              typeof $steps["updateStateVariable"] === "object" &&
+              typeof $steps["updateStateVariable"].then === "function"
+            ) {
+              $steps["updateStateVariable"] = await $steps[
+                "updateStateVariable"
+              ];
             }
           }}
           onOpenChange={generateStateOnChangeProp($state, [
@@ -1036,57 +1108,6 @@ function PlasmicCalendar2__RenderFunc(props: {
             className={classNames(projectcss.all, sty.section__xsRl)}
             onClick={async event => {
               const $steps = {};
-
-              $steps["invokeGlobalAction"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://rentamon-api.liara.run/api/setunblock",
-                        undefined,
-                        (() => {
-                          try {
-                            return {
-                              days: $state.fragmentDatePicker.values.map(
-                                value =>
-                                  new Date(value * 1000)
-                                    .toLocaleDateString("fa-IR")
-                                    .replace(/\//g, "-")
-                              ),
-                              property_id: 1
-                            };
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })(),
-                        {
-                          headers: {
-                            Authorization:
-                              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                          }
-                        }
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
             }}
           >
             <div
@@ -1095,6 +1116,139 @@ function PlasmicCalendar2__RenderFunc(props: {
                 projectcss.__wab_text,
                 sty.text__rlhEr
               )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateFetchModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["fetchModal", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateFetchModalOpen"] != null &&
+                  typeof $steps["updateFetchModalOpen"] === "object" &&
+                  typeof $steps["updateFetchModalOpen"].then === "function"
+                ) {
+                  $steps["updateFetchModalOpen"] = await $steps[
+                    "updateFetchModalOpen"
+                  ];
+                }
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://api.rentamon.com/api/setunblock",
+                          undefined,
+                          (() => {
+                            try {
+                              return (() => {
+                                function convertTimestampToPersianDate(
+                                  timestamp
+                                ) {
+                                  const date = new Date(timestamp * 1000);
+                                  return date
+                                    .toLocaleDateString("fa")
+                                    .replace(/\//g, "-");
+                                }
+                                const data = {
+                                  days: [$state.fragmentDatePicker.values],
+                                  property_id: $props.propertyId
+                                };
+                                data.days = data.days
+                                  .map(timestampArray =>
+                                    timestampArray.map(timestamp =>
+                                      convertTimestampToPersianDate(timestamp)
+                                    )
+                                  )
+                                  .flat();
+                                return data;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
+                }
+
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: (() => {
+                          $state.fragmentDatePicker.values = [];
+                          return $state.fragmentDatePicker.values;
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
+              }}
             >
               {"\u062e\u0627\u0644\u06cc"}
             </div>
@@ -1284,24 +1438,67 @@ function PlasmicCalendar2__RenderFunc(props: {
           onOk={async () => {
             const $steps = {};
 
+            $steps["updateFetchModalOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["fetchModal", "open"]
+                    },
+                    operation: 0,
+                    value: true
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateFetchModalOpen"] != null &&
+              typeof $steps["updateFetchModalOpen"] === "object" &&
+              typeof $steps["updateFetchModalOpen"].then === "function"
+            ) {
+              $steps["updateFetchModalOpen"] = await $steps[
+                "updateFetchModalOpen"
+              ];
+            }
+
             $steps["invokeGlobalAction"] = true
               ? (() => {
                   const actionArgs = {
                     args: [
                       "POST",
-                      "https://rentamon-api.liara.run/api/setprice",
+                      "https://api.rentamon.com/api/setprice",
                       undefined,
                       (() => {
                         try {
-                          return {
-                            days: $state.fragmentDatePicker.values.map(value =>
-                              new Date(value * 1000)
-                                .toLocaleDateString("fa-IR")
-                                .replace(/\//g, "-")
-                            ),
-                            property_id: "1",
-                            price: $state.numberInput2.value
-                          };
+                          return (() => {
+                            function convertTimestampToPersianDate(timestamp) {
+                              const date = new Date(timestamp * 1000);
+                              return date
+                                .toLocaleDateString("fa")
+                                .replace(/\//g, "-");
+                            }
+                            const data = {
+                              days: [$state.fragmentDatePicker.values],
+                              property_id: $props.propertyId,
+                              price: $state.numberInput2.value
+                            };
+                            data.days = data.days
+                              .map(timestampArray =>
+                                timestampArray.map(timestamp =>
+                                  convertTimestampToPersianDate(timestamp)
+                                )
+                              )
+                              .flat();
+                            return data;
+                          })();
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -1312,12 +1509,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           throw e;
                         }
                       })(),
-                      {
-                        headers: {
-                          Authorization:
-                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                        }
-                      }
+                      {}
                     ]
                   };
                   return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -1331,6 +1523,36 @@ function PlasmicCalendar2__RenderFunc(props: {
               typeof $steps["invokeGlobalAction"].then === "function"
             ) {
               $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+            }
+
+            $steps["updateStateVariable"] = true
+              ? (() => {
+                  const actionArgs = {
+                    operation: 0,
+                    value: (() => {
+                      $state.fragmentDatePicker.values = [];
+                      return $state.fragmentDatePicker.values;
+                    })()
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateStateVariable"] != null &&
+              typeof $steps["updateStateVariable"] === "object" &&
+              typeof $steps["updateStateVariable"].then === "function"
+            ) {
+              $steps["updateStateVariable"] = await $steps[
+                "updateStateVariable"
+              ];
             }
           }}
           onOpenChange={generateStateOnChangeProp($state, [
@@ -1356,59 +1578,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ])}
                 onPressEnter={async event => {
                   const $steps = {};
-
-                  $steps["invokeGlobalAction"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            "POST",
-                            "https://rentamon-api.liara.run/api/setprice",
-                            undefined,
-                            (() => {
-                              try {
-                                return {
-                                  days: $state.fragmentDatePicker.values.map(
-                                    value =>
-                                      new Date(value * 1000)
-                                        .toLocaleDateString("fa-IR")
-                                        .replace(/\//g, "-")
-                                  ),
-                                  property_id: "1",
-                                  price: $state.numberInput2.value
-                                };
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })(),
-                            {
-                              headers: {
-                                Authorization:
-                                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MjQ5MTYwLCJpYXQiOjE3MjM4ODExNjAsImp0aSI6IjZjZmQ0YWZhNjMwZTQ1Yzg4ZmY1ZGU4NmY4Y2YyNjAzIiwidXNlcl9pZCI6NDY2fQ.clklsxrxx5HrjKxBi8rmb1sl2lrmGJ2tc0_Lkb_4T84"
-                              }
-                            }
-                          ]
-                        };
-                        return $globalActions["Fragment.apiRequest"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
-                  if (
-                    $steps["invokeGlobalAction"] != null &&
-                    typeof $steps["invokeGlobalAction"] === "object" &&
-                    typeof $steps["invokeGlobalAction"].then === "function"
-                  ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
-                  }
                 }}
                 placeholder={
                   "\u0645\u062b\u0644\u0627 \u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0"
@@ -1929,7 +2098,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 timestamp
                               ) {
                                 const date = new Date(timestamp * 1000);
-                                return date.toLocaleDateString("fa");
+                                return date
+                                  .toLocaleDateString("fa")
+                                  .replace(/\//g, "-");
                               }
                               const data = {
                                 days: [$state.fragmentDatePicker.values],
@@ -1937,11 +2108,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 requested_by: "user",
                                 request_for: "reserve"
                               };
-                              data.days = data.days.map(timestampArray =>
-                                timestampArray.map(timestamp =>
-                                  convertTimestampToPersianDate(timestamp)
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray.map(timestamp =>
+                                    convertTimestampToPersianDate(timestamp)
+                                  )
                                 )
-                              );
+                                .flat();
                               return data;
                             })();
                           } catch (e) {
@@ -1973,6 +2146,36 @@ function PlasmicCalendar2__RenderFunc(props: {
               ) {
                 $steps["invokeGlobalAction"] = await $steps[
                   "invokeGlobalAction"
+                ];
+              }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        $state.fragmentDatePicker.values = [];
+                        return $state.fragmentDatePicker.values;
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
                 ];
               }
             }}
@@ -2030,13 +2233,30 @@ function PlasmicCalendar2__RenderFunc(props: {
                         undefined,
                         (() => {
                           try {
-                            return {
-                              days: [$state.fragmentDatePicker.values],
-
-                              property_id: $props.propertyId,
-                              requested_by: "user",
-                              request_for: "block"
-                            };
+                            return (() => {
+                              function convertTimestampToPersianDate(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                return date
+                                  .toLocaleDateString("fa")
+                                  .replace(/\//g, "-");
+                              }
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                requested_by: "user",
+                                request_for: "block"
+                              };
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray.map(timestamp =>
+                                    convertTimestampToPersianDate(timestamp)
+                                  )
+                                )
+                                .flat();
+                              return data;
+                            })();
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -2066,6 +2286,36 @@ function PlasmicCalendar2__RenderFunc(props: {
               ) {
                 $steps["invokeGlobalAction"] = await $steps[
                   "invokeGlobalAction"
+                ];
+              }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        $state.fragmentDatePicker.values = [];
+                        return $state.fragmentDatePicker.values;
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
                 ];
               }
             }}

@@ -193,7 +193,7 @@ function PlasmicPolicies__RenderFunc(props: {
             style={{ color: "#1F3546" }}
           >
             {
-              " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645"
+              " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645."
             }
           </span>
         </React.Fragment>

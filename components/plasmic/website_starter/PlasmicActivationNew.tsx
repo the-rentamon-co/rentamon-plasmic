@@ -64,7 +64,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
-import Policies from "../../Policies"; // plasmic-import: 4kdcaD2KbS-w/component
+import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
@@ -98,7 +98,8 @@ export type PlasmicActivationNew__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   form?: Flex__<typeof FormWrapper>;
   platforms?: Flex__<typeof FormItemWrapper>;
-  policies?: Flex__<typeof Policies>;
+  policiesCheckbox?: Flex__<typeof Checkbox>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   submitButton?: Flex__<typeof AntdButton>;
   input26?: Flex__<typeof AntdInput>;
   jabamasend2?: Flex__<typeof AntdButton>;
@@ -416,6 +417,12 @@ function PlasmicActivationNew__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "policiesCheckbox.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -621,6 +628,7 @@ function PlasmicActivationNew__RenderFunc(props: {
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
+            children={null}
             className={classNames("__wab_instance", sty.apiRequest)}
             errorDisplay={
               <div
@@ -630,7 +638,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                   sty.text__osfWm
                 )}
               >
-                {"Error fetching data"}
+                {
+                  "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a  \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0634\u0645\u0627"
+                }
               </div>
             }
             loadingDisplay={
@@ -669,35 +679,8 @@ function PlasmicActivationNew__RenderFunc(props: {
               "data"
             ])}
             url={"https://gateway.rentamon.com/webhook/user-registration"}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___9KNrc
-              )}
-            >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return (
-                      "اتصال " +
-                      $state.apiRequest.data[0].property_name +
-                      " به پلتفرم‌ها"
-                    );
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "\u0627\u062a\u0635\u0627\u0644 \u0648\u06cc\u0644\u0627\u062a \u0628\u0647 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627";
-                    }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </div>
-          </ApiRequest>
+          />
+
           {(() => {
             const child$Props = {
               className: classNames("__wab_instance", sty.form),
@@ -791,7 +774,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return `${$state.apiRequest.data[0].property_name} در چه پلتفرم‌هایی فعاله؟`;
+                              return undefined;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -817,22 +800,27 @@ function PlasmicActivationNew__RenderFunc(props: {
                           sty.text__uDhb
                         )}
                       >
-                        {
-                          "\u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u06a9\u0647 \u0628\u062a\u0648\u0646\u06cc \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u060c \u0644\u0627\u0632\u0645\u0647 \u0627\u0648\u0644 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u062a \u0648\u0635\u0644 \u06a9\u0646\u06cc"
-                        }
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{
+                              fontWeight: 700,
+                              color: "var(--token-8nedppYkGVaH)"
+                            }}
+                          >
+                            {
+                              "\u0631\u0627\u0647\u200c\u0627\u0646\u062f\u0627\u0632\u06cc"
+                            }
+                          </span>
+                          <React.Fragment>
+                            {
+                              "\n\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u060c \u0644\u0627\u0632\u0645\u0647 \u0627\u0628\u062a\u062f\u0627 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062a\u0635\u0644 \u0628\u0634\u0647."
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
                       </div>
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___3ENkg
-                      )}
-                    >
-                      <Policies
-                        data-plasmic-name={"policies"}
-                        data-plasmic-override={overrides.policies}
-                        className={classNames("__wab_instance", sty.policies)}
-                      />
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__vzQTs)}
@@ -868,6 +856,74 @@ function PlasmicActivationNew__RenderFunc(props: {
                         )}
                       />
                     </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___0H6Wx
+                      )}
+                    >
+                      <Checkbox
+                        data-plasmic-name={"policiesCheckbox"}
+                        data-plasmic-override={overrides.policiesCheckbox}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.policiesCheckbox
+                        )}
+                        isChecked={
+                          generateStateValueProp($state, [
+                            "policiesCheckbox",
+                            "isChecked"
+                          ]) ?? false
+                        }
+                        onChange={(...eventArgs) => {
+                          generateStateOnChangeProp($state, [
+                            "policiesCheckbox",
+                            "isChecked"
+                          ])(eventArgs[0]);
+                        }}
+                      >
+                        <PlasmicLink__
+                          data-plasmic-name={"link"}
+                          data-plasmic-override={overrides.link}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.link
+                          )}
+                          component={Link}
+                          href={
+                            "https://rentamon.com/%d9%82%d9%88%d8%a7%d9%86%db%8c%d9%86-%d8%b1%d9%86%d8%aa%d8%a7%d9%85%d9%88%d9%86/"
+                          }
+                          platform={"nextjs"}
+                          target={"_blank"}
+                        >
+                          {
+                            "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
+                          }
+                        </PlasmicLink__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__lHi
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ color: "#1F3546" }}
+                            >
+                              {
+                                " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645"
+                              }
+                            </span>
+                          </React.Fragment>
+                        </div>
+                      </Checkbox>
+                    </div>
                     <AntdButton
                       data-plasmic-name={"submitButton"}
                       data-plasmic-override={overrides.submitButton}
@@ -875,7 +931,11 @@ function PlasmicActivationNew__RenderFunc(props: {
                       onClick={async () => {
                         const $steps = {};
 
-                        $steps["updateStep"] = true
+                        $steps["updateStep"] = (
+                          $state.policiesCheckbox.isChecked
+                            ? $state.step++
+                            : undefined
+                        )
                           ? (() => {
                               const actionArgs = {
                                 variable: {
@@ -929,7 +989,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                 ) : null}
                 {(() => {
                   try {
-                    return $state.step === 1;
+                    return $state.step == 1;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -954,7 +1014,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         )}
                       >
                         {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627:"
+                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627:"
                         }
                       </div>
                     }
@@ -1230,9 +1290,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               sty.text__o8JSl
                             )}
                           >
-                            {
-                              "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
-                            }
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ textDecorationLine: "underline" }}
+                              >
+                                {
+                                  "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
+                                }
+                              </span>
+                            </React.Fragment>
                           </div>
                         </AntdButton>
                       </div>
@@ -1375,7 +1444,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                             $steps["updateStep"] = await $steps["updateStep"];
                           }
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["jabamaVerify"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -1407,13 +1476,50 @@ function PlasmicActivationNew__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
+                            $steps["jabamaVerify"] != null &&
+                            typeof $steps["jabamaVerify"] === "object" &&
+                            typeof $steps["jabamaVerify"].then === "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
+                            $steps["jabamaVerify"] = await $steps[
+                              "jabamaVerify"
+                            ];
+                          }
+
+                          $steps["jabamaContact"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "POST",
+                                    "https://gateway.rentamon.com/webhook/jabamacontact",
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return ($state.user_id = 466);
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["jabamaContact"] != null &&
+                            typeof $steps["jabamaContact"] === "object" &&
+                            typeof $steps["jabamaContact"].then === "function"
+                          ) {
+                            $steps["jabamaContact"] = await $steps[
+                              "jabamaContact"
                             ];
                           }
                         }}
@@ -1524,7 +1630,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         )}
                       >
                         {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627:"
+                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627:"
                         }
                       </div>
                     }
@@ -1798,9 +1904,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               sty.text__zXgk
                             )}
                           >
-                            {
-                              "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
-                            }
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ textDecorationLine: "underline" }}
+                              >
+                                {
+                                  "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
+                                }
+                              </span>
+                            </React.Fragment>
                           </div>
                         </AntdButton>
                       </div>
@@ -2092,7 +2207,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         )}
                       >
                         {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0634\u0628:"
+                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0634\u0628:"
                         }
                       </div>
                     }
@@ -2361,9 +2476,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               sty.text__zvjvy
                             )}
                           >
-                            {
-                              "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
-                            }
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ textDecorationLine: "underline" }}
+                              >
+                                {
+                                  "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                }
+                              </span>
+                            </React.Fragment>
                           </div>
                         </AntdButton>
                       </div>
@@ -2652,7 +2776,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         )}
                       >
                         {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9:"
+                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9:"
                         }
                       </div>
                     }
@@ -2915,6 +3039,81 @@ function PlasmicActivationNew__RenderFunc(props: {
                             ) {
                               $steps["updateStep"] = await $steps["updateStep"];
                             }
+
+                            $steps["connectionStatus"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/connection",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return (() => {
+                                            $state.form.value.otaghakphone !==
+                                            ""
+                                              ? "otaghak=true"
+                                              : "otaghak=false";
+                                            $state.form.value.shabphone !== ""
+                                              ? "shab=true"
+                                              : "shab=false";
+                                            $state.form.value.jajigaphone !== ""
+                                              ? "jajiga=true"
+                                              : "jajiga=false";
+                                            $state.form.value.jabamaphone !== ""
+                                              ? "jabama=true"
+                                              : "jabama=false";
+                                            return (
+                                              "jabama=" +
+                                              ($state.form.value.jabamaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              " shab=" +
+                                              ($state.form.value.shabphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              " jajiga=" +
+                                              ($state.form.value.jajigaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              " otaghak=" +
+                                              ($state.form.value
+                                                .otaghakphone !== ""
+                                                ? "true"
+                                                : "false")
+                                            );
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["connectionStatus"] != null &&
+                              typeof $steps["connectionStatus"] === "object" &&
+                              typeof $steps["connectionStatus"].then ===
+                                "function"
+                            ) {
+                              $steps["connectionStatus"] = await $steps[
+                                "connectionStatus"
+                              ];
+                            }
                           }}
                           submitsForm={true}
                           type={"primary"}
@@ -2926,9 +3125,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               sty.text__i8VJz
                             )}
                           >
-                            {
-                              "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
-                            }
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ textDecorationLine: "underline" }}
+                              >
+                                {
+                                  "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                }
+                              </span>
+                            </React.Fragment>
                           </div>
                         </AntdButton>
                       </div>
@@ -3112,6 +3320,79 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "invokeGlobalAction"
                             ];
                           }
+
+                          $steps["connectionStatus"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "POST",
+                                    "https://gateway.rentamon.com/webhook/connection",
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return (() => {
+                                          $state.form.value.otaghakphone !== ""
+                                            ? "otaghak=true"
+                                            : "otaghak=false";
+                                          $state.form.value.shabphone !== ""
+                                            ? "shab=true"
+                                            : "shab=false";
+                                          $state.form.value.jajigaphone !== ""
+                                            ? "jajiga=true"
+                                            : "jajiga=false";
+                                          $state.form.value.jabamaphone !== ""
+                                            ? "jabama=true"
+                                            : "jabama=false";
+                                          return (
+                                            "jabama=" +
+                                            ($state.form.value.jabamaphone !==
+                                            ""
+                                              ? "true"
+                                              : "false") +
+                                            " shab=" +
+                                            ($state.form.value.shabphone !== ""
+                                              ? "true"
+                                              : "false") +
+                                            " jajiga=" +
+                                            ($state.form.value.jajigaphone !==
+                                            ""
+                                              ? "true"
+                                              : "false") +
+                                            " otaghak=" +
+                                            ($state.form.value.otaghakphone !==
+                                            ""
+                                              ? "true"
+                                              : "false")
+                                          );
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["connectionStatus"] != null &&
+                            typeof $steps["connectionStatus"] === "object" &&
+                            typeof $steps["connectionStatus"].then ===
+                              "function"
+                          ) {
+                            $steps["connectionStatus"] = await $steps[
+                              "connectionStatus"
+                            ];
+                          }
                         }}
                         submitsForm={true}
                         type={"primary"}
@@ -3217,7 +3498,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648:"
+                        "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648:"
                       }
                     </div>
                   }
@@ -3420,9 +3701,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                           sty.text__wmKfj
                         )}
                       >
-                        {
-                          "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
-                        }
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ textDecorationLine: "underline" }}
+                          >
+                            {
+                              "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                            }
+                          </span>
+                        </React.Fragment>
                       </div>
                     </AntdButton>
                   </div>
@@ -3688,7 +3978,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         )}
                       >
                         {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0647\u0648\u0645\u0633\u0627:"
+                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0647\u0648\u0645\u0633\u0627:"
                         }
                       </div>
                     }
@@ -3964,9 +4254,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                             sty.text__bmLnD
                           )}
                         >
-                          {
-                            "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
-                          }
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ textDecorationLine: "underline" }}
+                            >
+                              {
+                                "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                              }
+                            </span>
+                          </React.Fragment>
                         </div>
                       </AntdButton>
                     </div>
@@ -5310,7 +5609,8 @@ const PlasmicDescendants = {
     "apiRequest",
     "form",
     "platforms",
-    "policies",
+    "policiesCheckbox",
+    "link",
     "submitButton",
     "input26",
     "jabamasend2",
@@ -5379,7 +5679,8 @@ const PlasmicDescendants = {
   form: [
     "form",
     "platforms",
-    "policies",
+    "policiesCheckbox",
+    "link",
     "submitButton",
     "input26",
     "jabamasend2",
@@ -5443,8 +5744,9 @@ const PlasmicDescendants = {
     "platformpropertyButton",
     "platformpropertyButton2"
   ],
-  platforms: ["platforms", "policies", "submitButton"],
-  policies: ["policies"],
+  platforms: ["platforms", "policiesCheckbox", "link", "submitButton"],
+  policiesCheckbox: ["policiesCheckbox", "link"],
+  link: ["link"],
   submitButton: ["submitButton"],
   input26: ["input26"],
   jabamasend2: ["jabamasend2"],
@@ -5535,7 +5837,8 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   form: typeof FormWrapper;
   platforms: typeof FormItemWrapper;
-  policies: typeof Policies;
+  policiesCheckbox: typeof Checkbox;
+  link: "a";
   submitButton: typeof AntdButton;
   input26: typeof AntdInput;
   jabamasend2: typeof AntdButton;
@@ -5664,7 +5967,8 @@ export const PlasmicActivationNew = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     form: makeNodeComponent("form"),
     platforms: makeNodeComponent("platforms"),
-    policies: makeNodeComponent("policies"),
+    policiesCheckbox: makeNodeComponent("policiesCheckbox"),
+    link: makeNodeComponent("link"),
     submitButton: makeNodeComponent("submitButton"),
     input26: makeNodeComponent("input26"),
     jabamasend2: makeNodeComponent("jabamasend2"),

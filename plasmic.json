@@ -619,6 +619,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicPolicies.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "7KjdVT2JykAk",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
         }
       ],
       "icons": [
@@ -676,6 +690,11 @@
           "id": "MOdODf-qwVQb",
           "name": "Icon3Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon3.tsx"
+        },
+        {
+          "id": "xpwiGbFxHMB2",
+          "name": "SearchSvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__SearchSvg.tsx"
         }
       ],
       "images": [
