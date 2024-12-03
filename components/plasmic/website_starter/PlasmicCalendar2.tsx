@@ -95,6 +95,7 @@ export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>("propertyId");
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  مشکلدربرقراریارتط?: Flex__<"div">;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   dayCell?: Flex__<typeof DayCell>;
   modalDiscount?: Flex__<typeof AntdModal>;
@@ -102,7 +103,13 @@ export type PlasmicCalendar2__OverridesType = {
   modal?: Flex__<typeof AntdModal>;
   modalChangePrice?: Flex__<typeof AntdModal>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
+  img?: Flex__<typeof PlasmicImg__>;
   fetchModal?: Flex__<typeof AntdModal>;
+  userPlatform?: Flex__<typeof ApiRequest>;
+  loading2?: Flex__<typeof PlasmicImg__>;
+  ok?: Flex__<typeof PlasmicImg__>;
+  fail?: Flex__<typeof PlasmicImg__>;
+  loading?: Flex__<typeof PlasmicImg__>;
   block?: Flex__<typeof AntdModal>;
 };
 
@@ -199,7 +206,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "modalDiscount.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "numberInput3.value",
@@ -273,6 +280,30 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "userPlatform.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "userPlatform.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "userPlatform.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "platformRequestStatus",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       }
     ],
     [$props, $ctx, $refs]
@@ -312,13 +343,19 @@ function PlasmicCalendar2__RenderFunc(props: {
         className={classNames("__wab_instance", sty.apiRequest)}
         errorDisplay={
           <div
+            data-plasmic-name={
+              "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637"
+            }
+            data-plasmic-override={overrides.مشکلدربرقراریارتط}
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
-              sty.text__o5Inr
+              sty.مشکلدربرقراریارتط
             )}
           >
-            {"Error fetching data"}
+            {
+              "\u0645\u0634\u06a9\u0644 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
+            }
           </div>
         }
         loadingDisplay={null}
@@ -769,60 +806,75 @@ function PlasmicCalendar2__RenderFunc(props: {
               ];
             }
 
-            $steps["invokeGlobalAction"] = true
+            $steps["runCode"] = true
               ? (() => {
                   const actionArgs = {
-                    args: [
-                      "POST",
-                      "https://api.rentamon.com/api/setdiscount",
-                      undefined,
-                      (() => {
-                        try {
-                          return (() => {
-                            function convertTimestampToPersianDate(timestamp) {
-                              const date = new Date(timestamp * 1000);
-                              return date
-                                .toLocaleDateString("fa")
-                                .replace(/\//g, "-");
-                            }
-                            const data = {
-                              days: [$state.fragmentDatePicker.values],
-                              property_id: $props.propertyId,
-                              discount: $state.numberInput3.value
-                            };
-                            data.days = data.days
-                              .map(timestampArray =>
-                                timestampArray.map(timestamp =>
-                                  convertTimestampToPersianDate(timestamp)
-                                )
-                              )
-                              .flat();
-                            return data;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
+                    customFunction: async () => {
+                      return (() => {
+                        undefined;
+                        function convertTimestampToPersianDate(timestamp) {
+                          const date = new Date(timestamp * 1000);
+                          return date
+                            .toLocaleDateString("fa")
+                            .replace(/\//g, "-");
                         }
-                      })(),
-                      {}
-                    ]
+                        const data = {
+                          days: [$state.fragmentDatePicker.values],
+                          property_id: $props.propertyId,
+                          discount: $state.numberInput3.value
+                        };
+                        data.days = data.days
+                          .map(timestampArray =>
+                            timestampArray.map(timestamp =>
+                              convertTimestampToPersianDate(timestamp)
+                            )
+                          )
+                          .flat();
+                        return fetch(
+                          "https://api.rentamon.com/api/setdiscount",
+                          {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                              Accept: "*/*",
+                              authorization:
+                                "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzY5OTAsImV4cCI6MTczMzIzODc5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.NKEw3CPFvWL6GJWDVU6nhy_TpFwxjETRvtsJxByLx8dGOeWABbOygME4R0V9UqhvaOD5AP6bxwJPwoi7YFTbQRwoqrEiAim07Mime4LpbegTc7s1982O7OXfzBnolnlgLExjAnwsdsy28CD0q1dXYWAaKqP3Zlk2dVuUjA9HpZ8VDTWviCLpOgKAFM8mV_yioe7W5TN0EdRjRRVJlb0CXLXZYLfbefSmJwYkq_Z5jglKHYDE62IYk2DIan6HsXdEOa6oCUSuA8N3iih_Sr2OPBpCGqlXexGs03vbYq6ki-hlujIhV6B1zZFIiU3CHfwHFIvV8T-goLNUwGkMshE2ow"
+                            },
+                            body: JSON.stringify(data)
+                          }
+                        )
+                          .then(response => {
+                            if (!response.ok) {
+                              throw new Error(
+                                `HTTP error! status: ${response.status}`
+                              );
+                            }
+                            return response.json();
+                          })
+                          .then(result => {
+                            $state.platformRequestStatus = result;
+                            console.log("Response saved to state:", result);
+                          })
+                          .catch(error => {
+                            console.error("Error:", error);
+                            $state.platformRequestStatus = {
+                              error: error.message
+                            };
+                          });
+                      })();
+                    }
                   };
-                  return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                    ...actionArgs.args
-                  ]);
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
                 })()
               : undefined;
             if (
-              $steps["invokeGlobalAction"] != null &&
-              typeof $steps["invokeGlobalAction"] === "object" &&
-              typeof $steps["invokeGlobalAction"].then === "function"
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
             ) {
-              $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+              $steps["runCode"] = await $steps["runCode"];
             }
 
             $steps["updateStateVariable"] = true
@@ -915,7 +967,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     sty.text__muGte
                   )}
                 >
-                  {"+"}
+                  {"-"}
                 </div>
               </Button>
             </div>
@@ -989,6 +1041,21 @@ function PlasmicCalendar2__RenderFunc(props: {
                   {"+"}
                 </div>
               </Button>
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.columns__yd7Mi)}>
+            <div className={classNames(projectcss.all, sty.column__vGth9)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___7Vj2
+                )}
+              >
+                {
+                  "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u06a9\u0645\u200c\u062a\u0631 \u0627\u0632 \u06f1\u06f0\u066a \u0628\u0631\u0627\u06cc \u0634\u0628 \u0646\u06cc\u0633\u062a"
+                }
+              </div>
             </div>
           </div>
         </AntdModal>
@@ -1155,63 +1222,73 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ];
                 }
 
-                $steps["invokeGlobalAction"] = true
+                $steps["runCode"] = true
                   ? (() => {
                       const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://api.rentamon.com/api/setunblock",
-                          undefined,
-                          (() => {
-                            try {
-                              return (() => {
-                                function convertTimestampToPersianDate(
-                                  timestamp
-                                ) {
-                                  const date = new Date(timestamp * 1000);
-                                  return date
-                                    .toLocaleDateString("fa")
-                                    .replace(/\//g, "-");
-                                }
-                                const data = {
-                                  days: [$state.fragmentDatePicker.values],
-                                  property_id: $props.propertyId
-                                };
-                                data.days = data.days
-                                  .map(timestampArray =>
-                                    timestampArray.map(timestamp =>
-                                      convertTimestampToPersianDate(timestamp)
-                                    )
-                                  )
-                                  .flat();
-                                return data;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
+                        customFunction: async () => {
+                          return (() => {
+                            function convertTimestampToPersianDate(timestamp) {
+                              const date = new Date(timestamp * 1000);
+                              return date
+                                .toLocaleDateString("fa")
+                                .replace(/\//g, "-");
                             }
-                          })()
-                        ]
+                            const data = {
+                              days: [$state.fragmentDatePicker.values],
+                              property_id: $props.propertyId
+                            };
+                            data.days = data.days
+                              .map(timestampArray =>
+                                timestampArray.map(timestamp =>
+                                  convertTimestampToPersianDate(timestamp)
+                                )
+                              )
+                              .flat();
+                            return fetch(
+                              "https://api.rentamon.com/api/setunblock",
+                              {
+                                method: "POST",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                  Accept: "*/*",
+                                  authorization:
+                                    "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzY5OTAsImV4cCI6MTczMzIzODc5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.NKEw3CPFvWL6GJWDVU6nhy_TpFwxjETRvtsJxByLx8dGOeWABbOygME4R0V9UqhvaOD5AP6bxwJPwoi7YFTbQRwoqrEiAim07Mime4LpbegTc7s1982O7OXfzBnolnlgLExjAnwsdsy28CD0q1dXYWAaKqP3Zlk2dVuUjA9HpZ8VDTWviCLpOgKAFM8mV_yioe7W5TN0EdRjRRVJlb0CXLXZYLfbefSmJwYkq_Z5jglKHYDE62IYk2DIan6HsXdEOa6oCUSuA8N3iih_Sr2OPBpCGqlXexGs03vbYq6ki-hlujIhV6B1zZFIiU3CHfwHFIvV8T-goLNUwGkMshE2ow"
+                                },
+                                body: JSON.stringify(data)
+                              }
+                            )
+                              .then(response => {
+                                if (!response.ok) {
+                                  throw new Error(
+                                    `HTTP error! status: ${response.status}`
+                                  );
+                                }
+                                return response.json();
+                              })
+                              .then(result => {
+                                $state.platformRequestStatus = result;
+                                console.log("Response saved to state:", result);
+                              })
+                              .catch(error => {
+                                console.error("Error:", error);
+                                $state.platformRequestStatus = {
+                                  error: error.message
+                                };
+                              });
+                          })();
+                        }
                       };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
                 ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                  $steps["runCode"] = await $steps["runCode"];
                 }
 
                 $steps["updateStateVariable"] = true
@@ -1469,60 +1546,71 @@ function PlasmicCalendar2__RenderFunc(props: {
               ];
             }
 
-            $steps["invokeGlobalAction"] = true
+            $steps["runCode"] = true
               ? (() => {
                   const actionArgs = {
-                    args: [
-                      "POST",
-                      "https://api.rentamon.com/api/setprice",
-                      undefined,
-                      (() => {
-                        try {
-                          return (() => {
-                            function convertTimestampToPersianDate(timestamp) {
-                              const date = new Date(timestamp * 1000);
-                              return date
-                                .toLocaleDateString("fa")
-                                .replace(/\//g, "-");
-                            }
-                            const data = {
-                              days: [$state.fragmentDatePicker.values],
-                              property_id: $props.propertyId,
-                              price: $state.numberInput2.value
-                            };
-                            data.days = data.days
-                              .map(timestampArray =>
-                                timestampArray.map(timestamp =>
-                                  convertTimestampToPersianDate(timestamp)
-                                )
-                              )
-                              .flat();
-                            return data;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
+                    customFunction: async () => {
+                      return (() => {
+                        function convertTimestampToPersianDate(timestamp) {
+                          const date = new Date(timestamp * 1000);
+                          return date
+                            .toLocaleDateString("fa")
+                            .replace(/\//g, "-");
                         }
-                      })(),
-                      {}
-                    ]
+                        const data = {
+                          days: [$state.fragmentDatePicker.values],
+                          property_id: $props.propertyId,
+                          price: $state.numberInput2.value
+                        };
+                        data.days = data.days
+                          .map(timestampArray =>
+                            timestampArray.map(timestamp =>
+                              convertTimestampToPersianDate(timestamp)
+                            )
+                          )
+                          .flat();
+                        return fetch("https://api.rentamon.com/api/setprice", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                            Accept: "*/*",
+                            authorization:
+                              "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzY5OTAsImV4cCI6MTczMzIzODc5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.NKEw3CPFvWL6GJWDVU6nhy_TpFwxjETRvtsJxByLx8dGOeWABbOygME4R0V9UqhvaOD5AP6bxwJPwoi7YFTbQRwoqrEiAim07Mime4LpbegTc7s1982O7OXfzBnolnlgLExjAnwsdsy28CD0q1dXYWAaKqP3Zlk2dVuUjA9HpZ8VDTWviCLpOgKAFM8mV_yioe7W5TN0EdRjRRVJlb0CXLXZYLfbefSmJwYkq_Z5jglKHYDE62IYk2DIan6HsXdEOa6oCUSuA8N3iih_Sr2OPBpCGqlXexGs03vbYq6ki-hlujIhV6B1zZFIiU3CHfwHFIvV8T-goLNUwGkMshE2ow"
+                          },
+                          body: JSON.stringify(data)
+                        })
+                          .then(response => {
+                            if (!response.ok) {
+                              throw new Error(
+                                `HTTP error! status: ${response.status}`
+                              );
+                            }
+                            return response.json();
+                          })
+                          .then(result => {
+                            $state.platformRequestStatus = result;
+                            console.log("Response saved to state:", result);
+                          })
+                          .catch(error => {
+                            console.error("Error:", error);
+                            $state.platformRequestStatus = {
+                              error: error.message
+                            };
+                          });
+                      })();
+                    }
                   };
-                  return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                    ...actionArgs.args
-                  ]);
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
                 })()
               : undefined;
             if (
-              $steps["invokeGlobalAction"] != null &&
-              typeof $steps["invokeGlobalAction"] === "object" &&
-              typeof $steps["invokeGlobalAction"].then === "function"
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
             ) {
-              $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+              $steps["runCode"] = await $steps["runCode"];
             }
 
             $steps["updateStateVariable"] = true
@@ -1683,8 +1771,10 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             })() ? (
               <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img__rzHqA)}
+                className={classNames(sty.img)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -1723,6 +1813,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             plasmic_plasmic_rich_components_css.plasmic_tokens
           )}
           hideFooter={true}
+          maskClosable={false}
           modalScopeClassName={sty["fetchModal__modal"]}
           onOpenChange={generateStateOnChangeProp($state, [
             "fetchModal",
@@ -1734,178 +1825,323 @@ function PlasmicCalendar2__RenderFunc(props: {
           }
           trigger={null}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___94MzW)}>
-            <div className={classNames(projectcss.all, sty.freeBox__x5Cy6)}>
+          <ApiRequest
+            data-plasmic-name={"userPlatform"}
+            data-plasmic-override={overrides.userPlatform}
+            className={classNames("__wab_instance", sty.userPlatform)}
+            errorDisplay={
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__s4Fv8
+                  sty.text__y1Tc
                 )}
               >
-                {"\u062c\u0627\u0628\u0627\u0645\u0627"}
+                {"Error fetching data"}
               </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__sJeR7)}
-                displayHeight={"34px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg",
-                  fullWidth: 24,
-                  fullHeight: 24,
-                  aspectRatio: 1
-                }}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__cbSew)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___8ToMe
-                )}
-              >
-                {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
+            }
+            loadingDisplay={
+              <div className={classNames(projectcss.all, sty.freeBox__iAx3T)}>
+                {(() => {
+                  try {
+                    return (() => {
+                      if (
+                        !$state.platformRequestStatus ||
+                        !$state.platformRequestStatus.data ||
+                        Object.keys($state.platformRequestStatus.data)
+                          .length === 0
+                      ) {
+                        return true;
+                      } else {
+                        return false;
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <PlasmicImg__
+                    data-plasmic-name={"loading2"}
+                    data-plasmic-override={overrides.loading2}
+                    alt={""}
+                    className={classNames(sty.loading2)}
+                    displayHeight={"34px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    }
+                  />
+                ) : null}
               </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__yUeB)}
-                displayHeight={"34px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg",
-                  fullWidth: 24,
-                  fullHeight: 24,
-                  aspectRatio: 1
-                }}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__tpp8C)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mwjmY
-                )}
-              >
-                {"\u0627\u062a\u0627\u0642\u06a9"}
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___8Pi4B)}
-                displayHeight={"34px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg",
-                  fullWidth: 24,
-                  fullHeight: 24,
-                  aspectRatio: 1
-                }}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__yVl8X)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__agrzI
-                )}
-              >
-                {"\u0634\u0628"}
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__he8My)}
-                displayHeight={"34px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg",
-                  fullWidth: 24,
-                  fullHeight: 24,
-                  aspectRatio: 1
-                }}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__eW3Kd)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__zz0ZZ
-                )}
-              >
-                {"\u0647\u0648\u0645\u0633\u0627"}
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__sxHc4)}
-                displayHeight={"34px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg",
-                  fullWidth: 24,
-                  fullHeight: 24,
-                  aspectRatio: 1
-                }}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__fjsL1)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pkT1C
-                )}
-              >
-                {"\u0645\u06cc\u0632\u0628\u0648\u0646"}
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__jad4W)}
-                displayHeight={"34px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg",
-                  fullWidth: 24,
-                  fullHeight: 24,
-                  aspectRatio: 1
-                }}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__miFo6)}>
+            }
+            method={"GET"}
+            onError={generateStateOnChangeProp($state, [
+              "userPlatform",
+              "error"
+            ])}
+            onLoading={generateStateOnChangeProp($state, [
+              "userPlatform",
+              "loading"
+            ])}
+            onSuccess={generateStateOnChangeProp($state, [
+              "userPlatform",
+              "data"
+            ])}
+            url={(() => {
+              try {
+                return `https://api.rentamon.com/api/website_statuses/?property_id=${$props.propertyId}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__xAfjs)}>
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return (() => {
+                      const status = $state.userPlatform.data.status;
+                      const platforms = Object.keys(status);
+                      return platforms;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zeq8A)}
+                    key={currentIndex}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rfsi)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__i0Ncp
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                const nameMapping = {
+                                  jajiga: "جاجیگا",
+                                  mizboon: "میزبون",
+                                  otaghak: "اتاقک",
+                                  shab: "شب",
+                                  homsa: "هومسا",
+                                  jabama: "جاباما",
+                                  mihmansho: "میهمانشو"
+                                };
+                                const translatedName =
+                                  nameMapping[currentItem] || currentItem;
+                                return translatedName;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u062c\u0627\u062c\u06cc\u06af\u0627";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__x9Ue1
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                !$state.platformRequestStatus ||
+                                !$state.platformRequestStatus.data ||
+                                Object.keys($state.platformRequestStatus.data)
+                                  .length === 0
+                              ) {
+                                return false;
+                              }
+                              const platforms =
+                                $state.platformRequestStatus.data;
+                              if (platforms[currentItem]) {
+                                if (
+                                  platforms[currentItem].final_status === true
+                                ) {
+                                  return true;
+                                } else {
+                                  return false;
+                                }
+                              } else {
+                                return false;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"ok"}
+                            data-plasmic-override={overrides.ok}
+                            alt={""}
+                            className={classNames(sty.ok)}
+                            displayHeight={"34px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg",
+                              fullWidth: 24,
+                              fullHeight: 24,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                !$state.platformRequestStatus ||
+                                !$state.platformRequestStatus.data ||
+                                Object.keys($state.platformRequestStatus.data)
+                                  .length === 0
+                              ) {
+                                return false;
+                              }
+                              const platforms =
+                                $state.platformRequestStatus.data;
+                              if (platforms[currentItem]) {
+                                if (
+                                  platforms[currentItem].final_status === false
+                                ) {
+                                  return true;
+                                } else {
+                                  return false;
+                                }
+                              } else {
+                                return false;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"fail"}
+                            data-plasmic-override={overrides.fail}
+                            alt={""}
+                            className={classNames(sty.fail)}
+                            displayHeight={"34px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/failSvgrepoComPng.png",
+                              fullWidth: 640,
+                              fullHeight: 640,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                !$state.platformRequestStatus ||
+                                !$state.platformRequestStatus.data ||
+                                Object.keys($state.platformRequestStatus.data)
+                                  .length === 0
+                              ) {
+                                return true;
+                              } else {
+                                return false;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"loading"}
+                            data-plasmic-override={overrides.loading}
+                            alt={""}
+                            className={classNames(sty.loading)}
+                            displayHeight={"34px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={
+                              "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                            }
+                          />
+                        ) : null}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
               <Button
-                className={classNames("__wab_instance", sty.button__pkDCc)}
+                className={classNames("__wab_instance", sty.button__g0Rqs)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1951,16 +2187,14 @@ function PlasmicCalendar2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__a62Nz
+                    sty.text__c5JgP
                   )}
                 >
                   {"\u062a\u0644\u0627\u0634 \u0645\u062c\u062f\u062f"}
                 </div>
               </Button>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__nJc7Q)}>
               <Button
-                className={classNames("__wab_instance", sty.button__zqh23)}
+                className={classNames("__wab_instance", sty.button__sWmv0)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1975,7 +2209,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                           value: (() => {
                             $state.fetchModal.open = false;
                             $state.block.open = false;
-                            return ($state.modal.open = false);
+                            $state.modal.open = false;
+                            return ($state.platformRequestStatus = []);
                           })()
                         };
                         return (({
@@ -2010,7 +2245,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 {"\u0628\u0627\u0634\u0647"}
               </Button>
             </div>
-          </div>
+          </ApiRequest>
         </AntdModal>
         <AntdModal
           data-plasmic-name={"block"}
@@ -2084,72 +2319,78 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["invokeGlobalAction"] = true
+              $steps["reserveRequest"] = true
                 ? (() => {
                     const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://api.rentamon.com/api/setblock",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              function convertTimestampToPersianDate(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                return date
-                                  .toLocaleDateString("fa")
-                                  .replace(/\//g, "-");
-                              }
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                requested_by: "user",
-                                request_for: "reserve"
-                              };
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray.map(timestamp =>
-                                    convertTimestampToPersianDate(timestamp)
-                                  )
-                                )
-                                .flat();
-                              return data;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return {
-                                days: ["1403-09-21"],
-                                property_id: "1",
-                                requested_by: "user",
-                                request_for: "reserve"
-                              };
-                            }
-                            throw e;
+                      customFunction: async () => {
+                        return (() => {
+                          function convertTimestampToPersianDate(timestamp) {
+                            const date = new Date(timestamp * 1000);
+                            return date
+                              .toLocaleDateString("fa")
+                              .replace(/\//g, "-");
                           }
-                        })()
-                      ]
+                          const data = {
+                            days: [$state.fragmentDatePicker.values],
+                            property_id: $props.propertyId,
+                            requested_by: "user",
+                            request_for: "reserve"
+                          };
+                          data.days = data.days
+                            .map(timestampArray =>
+                              timestampArray.map(timestamp =>
+                                convertTimestampToPersianDate(timestamp)
+                              )
+                            )
+                            .flat();
+                          return fetch(
+                            "https://api.rentamon.com/api/setblock",
+                            {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                                Accept: "*/*",
+                                authorization:
+                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzUxOTAsImV4cCI6MTczMzIzNjk5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.gAg0VFdUhx9h11ThW-5gem620TLkXeWoiIAMlP4f9kxOs0Y_QnkuDeooxlBcIgeAaLy-RBFY_biZswp6S9O6kyMOnD6E8I70TCjlq-zCEKmcc2gJhtxLEA75K3ppwWLViPQjsoSiEIz9K2_ynNUDUXE__dfknY9aEUsR8Vc72n7GWbCzIR0YWOaJyG10egQHsIDK_8pWoAvo4pR0p0_JFcaSlcR6Pag7BlqmIwy15Z_XcDhAoxYRX0JiQSa4PqMcw_LCprSBA9Xwp9dx7ZzHuoCvjPATdTxR5GDdnJxMhKWWjm_-BUwSJYu-qJDs8yen3vhqqwIo_y9FFULKkTlbTg"
+                              },
+                              body: JSON.stringify(data)
+                            }
+                          )
+                            .then(response => {
+                              if (!response.ok) {
+                                throw new Error(
+                                  `HTTP error! status: ${response.status}`
+                                );
+                              }
+                              return response.json();
+                            })
+                            .then(result => {
+                              $state.platformRequestStatus = result;
+                              console.log("Response saved to state:", result);
+                            })
+                            .catch(error => {
+                              console.error("Error:", error);
+                              $state.platformRequestStatus = {
+                                error: error.message
+                              };
+                            });
+                        })();
+                      }
                     };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
                   })()
                 : undefined;
               if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
+                $steps["reserveRequest"] != null &&
+                typeof $steps["reserveRequest"] === "object" &&
+                typeof $steps["reserveRequest"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["reserveRequest"] = await $steps["reserveRequest"];
               }
 
-              $steps["updateStateVariable"] = true
+              $steps["clearDatePickerValue"] = true
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
@@ -2170,12 +2411,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
+                $steps["clearDatePickerValue"] != null &&
+                typeof $steps["clearDatePickerValue"] === "object" &&
+                typeof $steps["clearDatePickerValue"].then === "function"
               ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
+                $steps["clearDatePickerValue"] = await $steps[
+                  "clearDatePickerValue"
                 ];
               }
             }}
@@ -2224,69 +2465,75 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["invokeGlobalAction"] = true
+              $steps["blockRequest"] = true
                 ? (() => {
                     const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://api.rentamon.com/api/setblock",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              function convertTimestampToPersianDate(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                return date
-                                  .toLocaleDateString("fa")
-                                  .replace(/\//g, "-");
-                              }
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                requested_by: "user",
-                                request_for: "block"
-                              };
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray.map(timestamp =>
-                                    convertTimestampToPersianDate(timestamp)
-                                  )
-                                )
-                                .flat();
-                              return data;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return {
-                                days: ["1403-09-27"],
-                                property_id: "1",
-                                requested_by: "user",
-                                request_for: "block"
-                              };
-                            }
-                            throw e;
+                      customFunction: async () => {
+                        return (() => {
+                          function convertTimestampToPersianDate(timestamp) {
+                            const date = new Date(timestamp * 1000);
+                            return date
+                              .toLocaleDateString("fa")
+                              .replace(/\//g, "-");
                           }
-                        })()
-                      ]
+                          const data = {
+                            days: [$state.fragmentDatePicker.values],
+                            property_id: $props.propertyId,
+                            requested_by: "user",
+                            request_for: "block"
+                          };
+                          data.days = data.days
+                            .map(timestampArray =>
+                              timestampArray.map(timestamp =>
+                                convertTimestampToPersianDate(timestamp)
+                              )
+                            )
+                            .flat();
+                          return fetch(
+                            "https://api.rentamon.com/api/setblock",
+                            {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                                Accept: "*/*",
+                                authorization:
+                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzQyOTAsImV4cCI6MTczMzIzNjA5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.ctZrpnThv4cXWPhOdGVZkfTTnHeZjoEeuaikaqujnmrUM1pxtag9Pk-UWpXAqtk-YkEm-rCD8-Sg8ApBvLWyGX_X8JmzuB1EwaBSeqkOgeOnpRw0aRg_w5oxG_Z9unafA3j-MpJp33iFzKT54oFYc40_BSkj7GSt-5OgU1yR-EpIhKCbCJnW8ehQK2D_S39C-GdjWfzGJ0Y7fYiL71f17ERVaAATc-sJUYmZlML5XsPZHZnSfBzxHAZoyu-MKNgIFV8dwFWTLYnwd1dq0fcBxM-r4dhyhsRlHCUcUm9wgLL8YbboYcSHZI0INK1oHHTEN8c13az750OgkIZWPIZ0KA"
+                              },
+                              body: JSON.stringify(data)
+                            }
+                          )
+                            .then(response => {
+                              if (!response.ok) {
+                                throw new Error(
+                                  `HTTP error! status: ${response.status}`
+                                );
+                              }
+                              return response.json();
+                            })
+                            .then(result => {
+                              $state.platformRequestStatus = result;
+                              console.log("Response saved to state:", result);
+                            })
+                            .catch(error => {
+                              console.error("Error:", error);
+                              $state.platformRequestStatus = {
+                                error: error.message
+                              };
+                            });
+                        })();
+                      }
                     };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
                   })()
                 : undefined;
               if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
+                $steps["blockRequest"] != null &&
+                typeof $steps["blockRequest"] === "object" &&
+                typeof $steps["blockRequest"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["blockRequest"] = await $steps["blockRequest"];
               }
 
               $steps["updateStateVariable"] = true
@@ -2332,6 +2579,97 @@ function PlasmicCalendar2__RenderFunc(props: {
             )}
             onClick={async event => {
               const $steps = {};
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://api.rentamon.com/api/setblock",
+                        undefined,
+                        (() => {
+                          try {
+                            return (() => {
+                              function convertTimestampToPersianDate(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                return date
+                                  .toLocaleDateString("fa")
+                                  .replace(/\//g, "-");
+                              }
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                requested_by: "user",
+                                request_for: "block"
+                              };
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray.map(timestamp =>
+                                    convertTimestampToPersianDate(timestamp)
+                                  )
+                                )
+                                .flat();
+                              return data;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        $state.platformRequestStatus =
+                          $steps.invokeGlobalAction.data;
+                        return console.log($state.platformRequestStatus);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
             }}
           >
             {
@@ -2348,6 +2686,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
+    "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637",
     "fragmentDatePicker",
     "dayCell",
     "modalDiscount",
@@ -2355,10 +2694,22 @@ const PlasmicDescendants = {
     "modal",
     "modalChangePrice",
     "numberInput2",
+    "img",
     "fetchModal",
+    "userPlatform",
+    "loading2",
+    "ok",
+    "fail",
+    "loading",
     "block"
   ],
-  apiRequest: ["apiRequest"],
+  apiRequest: [
+    "apiRequest",
+    "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637"
+  ],
+  مشکلدربرقراریارتط: [
+    "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637"
+  ],
   fragmentDatePicker: ["fragmentDatePicker", "dayCell"],
   dayCell: ["dayCell"],
   modalDiscount: ["modalDiscount", "numberInput3"],
@@ -2366,7 +2717,20 @@ const PlasmicDescendants = {
   modal: ["modal"],
   modalChangePrice: ["modalChangePrice", "numberInput2"],
   numberInput2: ["numberInput2"],
-  fetchModal: ["fetchModal"],
+  img: ["img"],
+  fetchModal: [
+    "fetchModal",
+    "userPlatform",
+    "loading2",
+    "ok",
+    "fail",
+    "loading"
+  ],
+  userPlatform: ["userPlatform", "loading2", "ok", "fail", "loading"],
+  loading2: ["loading2"],
+  ok: ["ok"],
+  fail: ["fail"],
+  loading: ["loading"],
   block: ["block"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -2375,6 +2739,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
+  مشکلدربرقراریارتط: "div";
   fragmentDatePicker: typeof DatePicker;
   dayCell: typeof DayCell;
   modalDiscount: typeof AntdModal;
@@ -2382,7 +2747,13 @@ type NodeDefaultElementType = {
   modal: typeof AntdModal;
   modalChangePrice: typeof AntdModal;
   numberInput2: typeof AntdInputNumber;
+  img: typeof PlasmicImg__;
   fetchModal: typeof AntdModal;
+  userPlatform: typeof ApiRequest;
+  loading2: typeof PlasmicImg__;
+  ok: typeof PlasmicImg__;
+  fail: typeof PlasmicImg__;
+  loading: typeof PlasmicImg__;
   block: typeof AntdModal;
 };
 
@@ -2447,6 +2818,9 @@ export const PlasmicCalendar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
+    مشکلدربرقراریارتط: makeNodeComponent(
+      "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637"
+    ),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     dayCell: makeNodeComponent("dayCell"),
     modalDiscount: makeNodeComponent("modalDiscount"),
@@ -2454,7 +2828,13 @@ export const PlasmicCalendar2 = Object.assign(
     modal: makeNodeComponent("modal"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
     numberInput2: makeNodeComponent("numberInput2"),
+    img: makeNodeComponent("img"),
     fetchModal: makeNodeComponent("fetchModal"),
+    userPlatform: makeNodeComponent("userPlatform"),
+    loading2: makeNodeComponent("loading2"),
+    ok: makeNodeComponent("ok"),
+    fail: makeNodeComponent("fail"),
+    loading: makeNodeComponent("loading"),
     block: makeNodeComponent("block"),
 
     // Metadata about props expected for PlasmicCalendar2

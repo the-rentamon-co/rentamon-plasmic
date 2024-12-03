@@ -827,6 +827,11 @@
           "id": "h3gqtGfbhhZK",
           "name": "image 6",
           "filePath": "../public/plasmic/website_starter/images/image6.png"
+        },
+        {
+          "id": "6aHMOrH-RyTW",
+          "name": "fail-svgrepo-com.png",
+          "filePath": "../public/plasmic/website_starter/images/failSvgrepoComPng.png"
         }
       ],
       "indirect": false,

@@ -3330,41 +3330,24 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     undefined,
                                     (() => {
                                       try {
-                                        return (() => {
-                                          $state.form.value.otaghakphone !== ""
-                                            ? "otaghak=true"
-                                            : "otaghak=false";
-                                          $state.form.value.shabphone !== ""
-                                            ? "shab=true"
-                                            : "shab=false";
-                                          $state.form.value.jajigaphone !== ""
-                                            ? "jajiga=true"
-                                            : "jajiga=false";
-                                          $state.form.value.jabamaphone !== ""
-                                            ? "jabama=true"
-                                            : "jabama=false";
-                                          return (
-                                            "jabama=" +
-                                            ($state.form.value.jabamaphone !==
-                                            ""
-                                              ? "true"
-                                              : "false") +
-                                            " shab=" +
-                                            ($state.form.value.shabphone !== ""
-                                              ? "true"
-                                              : "false") +
-                                            " jajiga=" +
-                                            ($state.form.value.jajigaphone !==
-                                            ""
-                                              ? "true"
-                                              : "false") +
-                                            " otaghak=" +
-                                            ($state.form.value.otaghakphone !==
-                                            ""
-                                              ? "true"
-                                              : "false")
-                                          );
-                                        })();
+                                        return (
+                                          "jabama=" +
+                                          ($state.form.value.jabamaphone !== ""
+                                            ? "true"
+                                            : "false") +
+                                          ", shab=" +
+                                          ($state.form.value.shabphone !== ""
+                                            ? "true"
+                                            : "false") +
+                                          ", jajiga=" +
+                                          ($state.form.value.jajigaphone !== ""
+                                            ? "true"
+                                            : "false") +
+                                          ", otaghak=" +
+                                          ($state.form.value.otaghakphone !== ""
+                                            ? "true"
+                                            : "false")
+                                        );
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
