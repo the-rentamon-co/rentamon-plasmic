@@ -2339,12 +2339,12 @@ function PlasmicActivationNew__RenderFunc(props: {
                             $steps["updateStep"] = await $steps["updateStep"];
                           }
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["shabSend"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
                                     "POST",
-                                    "https://gateway.rentamon.com/webhook/shab-send-otp",
+                                    "https://gateway.rentamon.com/webhook/shabnewsend",
                                     undefined,
                                     (() => {
                                       try {
@@ -2370,14 +2370,11 @@ function PlasmicActivationNew__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
+                            $steps["shabSend"] != null &&
+                            typeof $steps["shabSend"] === "object" &&
+                            typeof $steps["shabSend"].then === "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
+                            $steps["shabSend"] = await $steps["shabSend"];
                           }
                         }}
                         submitsForm={true}
@@ -2669,7 +2666,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     "POST",
-                                    "https://gateway.rentamon.com/webhook/shab-verify-otp",
+                                    "https://gateway.rentamon.com/webhook/shabnewverify",
                                     undefined,
                                     (() => {
                                       try {
@@ -2943,7 +2940,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                             $steps["updateStep"] = await $steps["updateStep"];
                           }
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["otaghakSend"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -2974,14 +2971,11 @@ function PlasmicActivationNew__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
+                            $steps["otaghakSend"] != null &&
+                            typeof $steps["otaghakSend"] === "object" &&
+                            typeof $steps["otaghakSend"].then === "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
+                            $steps["otaghakSend"] = await $steps["otaghakSend"];
                           }
                         }}
                         submitsForm={true}
@@ -3349,7 +3343,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                             $steps["updateStep"] = await $steps["updateStep"];
                           }
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["otaghakVerify"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -3381,13 +3375,12 @@ function PlasmicActivationNew__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
+                            $steps["otaghakVerify"] != null &&
+                            typeof $steps["otaghakVerify"] === "object" &&
+                            typeof $steps["otaghakVerify"].then === "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
+                            $steps["otaghakVerify"] = await $steps[
+                              "otaghakVerify"
                             ];
                           }
 

@@ -163,6 +163,7 @@ export type PlasmicActivation__OverridesType = {
   input27?: Flex__<typeof AntdInput>;
   platformpropertyButton?: Flex__<typeof AntdButton>;
   platformpropertyButton2?: Flex__<typeof AntdButton>;
+  apiRequest2?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultActivationProps {}
@@ -460,6 +461,24 @@ function PlasmicActivation__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "apiRequest2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -5590,6 +5609,63 @@ function PlasmicActivation__RenderFunc(props: {
               </FormWrapper>
             );
           })()}
+          <div className={classNames(projectcss.all, sty.freeBox__j9ALj)}>
+            <ApiRequest
+              data-plasmic-name={"apiRequest2"}
+              data-plasmic-override={overrides.apiRequest2}
+              className={classNames("__wab_instance", sty.apiRequest2)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___0Lbqk
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return undefined;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "Error fetching data";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              }
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___5GIMi
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"GET"}
+              onError={generateStateOnChangeProp($state, [
+                "apiRequest2",
+                "error"
+              ])}
+              onLoading={generateStateOnChangeProp($state, [
+                "apiRequest2",
+                "loading"
+              ])}
+              onSuccess={generateStateOnChangeProp($state, [
+                "apiRequest2",
+                "data"
+              ])}
+              url={"https://ws.alibaba.ir/api/v2/basic-info/calendar-events"}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -5667,7 +5743,8 @@ const PlasmicDescendants = {
     "jabamapp",
     "input27",
     "platformpropertyButton",
-    "platformpropertyButton2"
+    "platformpropertyButton2",
+    "apiRequest2"
   ],
   img: ["img"],
   apiRequest: ["apiRequest"],
@@ -5833,7 +5910,8 @@ const PlasmicDescendants = {
   jabamapp: ["jabamapp", "input27"],
   input27: ["input27"],
   platformpropertyButton: ["platformpropertyButton"],
-  platformpropertyButton2: ["platformpropertyButton2"]
+  platformpropertyButton2: ["platformpropertyButton2"],
+  apiRequest2: ["apiRequest2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -5909,6 +5987,7 @@ type NodeDefaultElementType = {
   input27: typeof AntdInput;
   platformpropertyButton: typeof AntdButton;
   platformpropertyButton2: typeof AntdButton;
+  apiRequest2: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -6040,6 +6119,7 @@ export const PlasmicActivation = Object.assign(
     input27: makeNodeComponent("input27"),
     platformpropertyButton: makeNodeComponent("platformpropertyButton"),
     platformpropertyButton2: makeNodeComponent("platformpropertyButton2"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,

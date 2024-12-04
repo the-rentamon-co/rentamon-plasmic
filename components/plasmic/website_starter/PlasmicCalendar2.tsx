@@ -310,6 +310,381 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "holidays",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                function extractTimestamps(data) {
+                  if (!data || !data.result || !data.result.events) {
+                    return [];
+                  }
+                  return data.result.events.map(event => {
+                    const date = new Date(event.gregorianDate);
+                    return date.getTime() / 1000;
+                  });
+                }
+                const timestamps = extractTimestamps({
+                  result: {
+                    events: [
+                      {
+                        title: "جشن نوروز/جشن سال نو",
+                        gregorianDate: "2023-03-21"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2023-03-22"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2023-03-23"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2023-03-24"
+                      },
+                      {
+                        title: "روز جمهوری اسلامی",
+                        gregorianDate: "2023-04-01"
+                      },
+                      {
+                        title: "جشن سیزده به در",
+                        gregorianDate: "2023-04-02"
+                      },
+                      {
+                        title: "شهادت حضرت علی علیه السلام",
+                        gregorianDate: "2023-04-12"
+                      },
+                      {
+                        title: "عید سعید فطر",
+                        gregorianDate: "2023-04-22"
+                      },
+                      {
+                        title: "تعطیل به مناسبت عید سعید فطر",
+                        gregorianDate: "2023-04-23"
+                      },
+                      {
+                        title: "شهادت امام جعفر صادق علیه السلام",
+                        gregorianDate: "2023-05-16"
+                      },
+                      {
+                        title: "رحلت حضرت امام خمینی",
+                        gregorianDate: "2023-06-04"
+                      },
+                      {
+                        title: "قیام 15 خرداد",
+                        gregorianDate: "2023-06-05"
+                      },
+                      {
+                        title: "عید سعید قربان",
+                        gregorianDate: "2023-06-29"
+                      },
+                      {
+                        title: "عید سعید غدیر خم",
+                        gregorianDate: "2023-07-07"
+                      },
+                      {
+                        title: "تاسوعای حسینی",
+                        gregorianDate: "2023-07-27"
+                      },
+                      {
+                        title: "عاشورای حسینی",
+                        gregorianDate: "2023-07-28"
+                      },
+                      {
+                        title: "اربعین حسینی",
+                        gregorianDate: "2023-09-06"
+                      },
+                      {
+                        title:
+                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
+                        gregorianDate: "2023-09-14"
+                      },
+                      {
+                        title: "شهادت امام رضا علیه السلام",
+                        gregorianDate: "2023-09-16"
+                      },
+                      {
+                        title: "شهادت امام حسن عسکری علیه السلام",
+                        gregorianDate: "2023-09-24"
+                      },
+                      {
+                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
+                        gregorianDate: "2023-10-03"
+                      },
+                      {
+                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
+                        gregorianDate: "2023-12-17"
+                      },
+                      {
+                        title: "ولادت امام علی علیه السلام و روز پدر",
+                        gregorianDate: "2024-01-25"
+                      },
+                      {
+                        title: "مبعث رسول اکرم (ص)",
+                        gregorianDate: "2024-02-08"
+                      },
+                      {
+                        title: "پیروزی انقلاب اسلامی",
+                        gregorianDate: "2024-02-11"
+                      },
+                      {
+                        title:
+                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
+                        gregorianDate: "2024-02-25"
+                      },
+                      {
+                        title: "روز ملی شدن صنعت نفت ایران",
+                        gregorianDate: "2024-03-19"
+                      },
+                      {
+                        title: "جشن نوروز/جشن سال نو",
+                        gregorianDate: "2024-03-20"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2024-03-21"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2024-03-22"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2024-03-23"
+                      },
+                      {
+                        title: "روز جمهوری اسلامی",
+                        gregorianDate: "2024-03-31"
+                      },
+                      {
+                        title: "جشن سیزده به در",
+                        gregorianDate: "2024-04-01"
+                      },
+                      {
+                        title: "شهادت حضرت علی علیه السلام",
+                        gregorianDate: "2024-04-01"
+                      },
+                      {
+                        title: "عید سعید فطر",
+                        gregorianDate: "2024-04-10"
+                      },
+                      {
+                        title: "تعطیل به مناسبت عید سعید فطر",
+                        gregorianDate: "2024-04-11"
+                      },
+                      {
+                        title: "شهادت امام جعفر صادق علیه السلام",
+                        gregorianDate: "2024-05-04"
+                      },
+                      {
+                        title: "رحلت حضرت امام خمینی",
+                        gregorianDate: "2024-06-03"
+                      },
+                      {
+                        title: "قیام 15 خرداد",
+                        gregorianDate: "2024-06-04"
+                      },
+                      {
+                        title: "عید سعید قربان",
+                        gregorianDate: "2024-06-17"
+                      },
+                      {
+                        title: "عید سعید غدیر خم",
+                        gregorianDate: "2024-06-25"
+                      },
+                      {
+                        title: "تاسوعای حسینی",
+                        gregorianDate: "2024-07-15"
+                      },
+                      {
+                        title: "عاشورای حسینی",
+                        gregorianDate: "2024-07-16"
+                      },
+                      {
+                        title: "اربعین حسینی",
+                        gregorianDate: "2024-08-25"
+                      },
+                      {
+                        title:
+                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
+                        gregorianDate: "2024-09-02"
+                      },
+                      {
+                        title: "شهادت امام رضا علیه السلام",
+                        gregorianDate: "2024-09-04"
+                      },
+                      {
+                        title: "شهادت امام حسن عسکری علیه السلام",
+                        gregorianDate: "2024-09-12"
+                      },
+                      {
+                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
+                        gregorianDate: "2024-09-21"
+                      },
+                      {
+                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
+                        gregorianDate: "2024-12-05"
+                      },
+                      {
+                        title: "ولادت امام علی علیه السلام و روز پدر",
+                        gregorianDate: "2025-01-14"
+                      },
+                      {
+                        title: "مبعث رسول اکرم (ص)",
+                        gregorianDate: "2025-01-28"
+                      },
+                      {
+                        title: "پیروزی انقلاب اسلامی",
+                        gregorianDate: "2025-02-10"
+                      },
+                      {
+                        title:
+                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
+                        gregorianDate: "2025-02-14"
+                      },
+                      {
+                        title: "روز ملی شدن صنعت نفت ایران",
+                        gregorianDate: "2025-03-19"
+                      },
+                      {
+                        title: "آخرین روز سال",
+                        gregorianDate: "2025-03-20"
+                      },
+                      {
+                        title: "جشن نوروز/جشن سال نو",
+                        gregorianDate: "2025-03-21"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2025-03-22"
+                      },
+                      {
+                        title: "شهادت حضرت علی علیه السلام",
+                        gregorianDate: "2025-03-22"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2025-03-23"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2025-03-24"
+                      },
+                      {
+                        title: "عید سعید فطر",
+                        gregorianDate: "2025-03-31"
+                      },
+                      {
+                        title: "روز جمهوری اسلامی",
+                        gregorianDate: "2025-04-01"
+                      },
+                      {
+                        title: "تعطیل به مناسبت عید سعید فطر",
+                        gregorianDate: "2025-04-01"
+                      },
+                      {
+                        title: "جشن سیزده به در",
+                        gregorianDate: "2025-04-02"
+                      },
+                      {
+                        title: "شهادت امام جعفر صادق علیه السلام",
+                        gregorianDate: "2025-04-24"
+                      },
+                      {
+                        title: "رحلت حضرت امام خمینی",
+                        gregorianDate: "2025-06-04"
+                      },
+                      {
+                        title: "قیام 15 خرداد",
+                        gregorianDate: "2025-06-05"
+                      },
+                      {
+                        title: "عید سعید قربان",
+                        gregorianDate: "2025-06-07"
+                      },
+                      {
+                        title: "عید سعید غدیر خم",
+                        gregorianDate: "2025-06-15"
+                      },
+                      {
+                        title: "تاسوعای حسینی",
+                        gregorianDate: "2025-07-05"
+                      },
+                      {
+                        title: "عاشورای حسینی",
+                        gregorianDate: "2025-07-06"
+                      },
+                      {
+                        title: "اربعین حسینی",
+                        gregorianDate: "2025-08-15"
+                      },
+                      {
+                        title:
+                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
+                        gregorianDate: "2025-08-23"
+                      },
+                      {
+                        title: "شهادت امام رضا علیه السلام",
+                        gregorianDate: "2025-08-24"
+                      },
+                      {
+                        title: "شهادت امام حسن عسکری علیه السلام",
+                        gregorianDate: "2025-09-01"
+                      },
+                      {
+                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
+                        gregorianDate: "2025-09-10"
+                      },
+                      {
+                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
+                        gregorianDate: "2025-11-25"
+                      },
+                      {
+                        title: "ولادت امام علی علیه السلام و روز پدر",
+                        gregorianDate: "2026-01-03"
+                      },
+                      {
+                        title: "مبعث رسول اکرم (ص)",
+                        gregorianDate: "2026-01-17"
+                      },
+                      {
+                        title:
+                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
+                        gregorianDate: "2026-02-04"
+                      },
+                      {
+                        title: "پیروزی انقلاب اسلامی",
+                        gregorianDate: "2026-02-11"
+                      },
+                      {
+                        title: "شهادت حضرت علی علیه السلام",
+                        gregorianDate: "2026-03-11"
+                      },
+                      {
+                        title: "روز ملی شدن صنعت نفت ایران",
+                        gregorianDate: "2026-03-20"
+                      }
+                    ]
+                  },
+                  success: true
+                });
+                return timestamps;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -550,32 +925,41 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ) {
                       return "disabled";
                     }
+                    if ($state.holidays && $state.holidays.length > 0) {
+                      const isHoliday = $state.holidays.some(
+                        holidayTimestamp => holidayTimestamp === dateProps.unix
+                      );
+                      if (isHoliday) {
+                        return "holidays";
+                      }
+                    }
                     if (dateProps.isSelected) {
                       return "selected";
                     }
                     if (
                       $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .status === "reserved"
+                        ?.status === "reserved"
                     ) {
                       return "reserved";
                     }
                     if (
                       $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .status === "blocked"
+                        ?.status === "blocked"
                     ) {
                       return "blocked";
                     }
                     if (
                       $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .discount_percentage != 0 &&
+                        ?.discount_percentage != 0 &&
                       $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .discount_percentage != null
+                        ?.discount_percentage != null
                     ) {
                       return "discount";
                     }
-                    return $state.apiRequest.data.calendar[
-                      dateProps.date.day - 1
-                    ].status;
+                    return (
+                      $state.apiRequest.data.calendar[dateProps.date.day - 1]
+                        ?.status || ""
+                    );
                   })();
                 } catch (e) {
                   if (
@@ -589,31 +973,44 @@ function PlasmicCalendar2__RenderFunc(props: {
               })()}
               platform={(() => {
                 try {
-                  return $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                    .website === "host"
-                    ? "رزرو"
-                    : $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .website === "jajiga"
-                    ? "جاجیگا"
-                    : $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .website === "jabama"
-                    ? "جاباما"
-                    : $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .website === "shab"
-                    ? "شب"
-                    : $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .website === "homsa"
-                    ? "هومسا"
-                    : $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .website === "mihmansho"
-                    ? "میهمان شو"
-                    : $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .website === "otaghak"
-                    ? "اتاقک"
-                    : $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        .website === "mizboon"
-                    ? "میزبون"
-                    : "";
+                  return (() => {
+                    return $state.apiRequest.data.calendar[
+                      dateProps.date.day - 1
+                    ].status === "reserved"
+                      ? $state.apiRequest.data.calendar[dateProps.date.day - 1]
+                          .website === "host"
+                        ? "رزرو"
+                        : $state.apiRequest.data.calendar[
+                            dateProps.date.day - 1
+                          ].website === "jajiga"
+                        ? "جاجیگا"
+                        : $state.apiRequest.data.calendar[
+                            dateProps.date.day - 1
+                          ].website === "jabama"
+                        ? "جاباما"
+                        : $state.apiRequest.data.calendar[
+                            dateProps.date.day - 1
+                          ].website === "shab"
+                        ? "شب"
+                        : $state.apiRequest.data.calendar[
+                            dateProps.date.day - 1
+                          ].website === "homsa"
+                        ? "هومسا"
+                        : $state.apiRequest.data.calendar[
+                            dateProps.date.day - 1
+                          ].website === "mihmansho"
+                        ? "میهمان شو"
+                        : $state.apiRequest.data.calendar[
+                            dateProps.date.day - 1
+                          ].website === "otaghak"
+                        ? "اتاقک"
+                        : $state.apiRequest.data.calendar[
+                            dateProps.date.day - 1
+                          ].website === "mizboon"
+                        ? "میزبون"
+                        : ""
+                      : "";
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -700,7 +1097,375 @@ function PlasmicCalendar2__RenderFunc(props: {
               })()}
             />
           )}
-          holidays={[]}
+          holidays={(() => {
+            try {
+              return (() => {
+                function extractTimestamps(data) {
+                  if (!data || !data.result || !data.result.events) {
+                    return [];
+                  }
+                  return data.result.events.map(event => {
+                    const date = new Date(event.gregorianDate);
+                    return date.getTime() / 1000;
+                  });
+                }
+                const timestamps = extractTimestamps({
+                  result: {
+                    events: [
+                      {
+                        title: "جشن نوروز/جشن سال نو",
+                        gregorianDate: "2023-03-21"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2023-03-22"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2023-03-23"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2023-03-24"
+                      },
+                      {
+                        title: "روز جمهوری اسلامی",
+                        gregorianDate: "2023-04-01"
+                      },
+                      {
+                        title: "جشن سیزده به در",
+                        gregorianDate: "2023-04-02"
+                      },
+                      {
+                        title: "شهادت حضرت علی علیه السلام",
+                        gregorianDate: "2023-04-12"
+                      },
+                      {
+                        title: "عید سعید فطر",
+                        gregorianDate: "2023-04-22"
+                      },
+                      {
+                        title: "تعطیل به مناسبت عید سعید فطر",
+                        gregorianDate: "2023-04-23"
+                      },
+                      {
+                        title: "شهادت امام جعفر صادق علیه السلام",
+                        gregorianDate: "2023-05-16"
+                      },
+                      {
+                        title: "رحلت حضرت امام خمینی",
+                        gregorianDate: "2023-06-04"
+                      },
+                      {
+                        title: "قیام 15 خرداد",
+                        gregorianDate: "2023-06-05"
+                      },
+                      {
+                        title: "عید سعید قربان",
+                        gregorianDate: "2023-06-29"
+                      },
+                      {
+                        title: "عید سعید غدیر خم",
+                        gregorianDate: "2023-07-07"
+                      },
+                      {
+                        title: "تاسوعای حسینی",
+                        gregorianDate: "2023-07-27"
+                      },
+                      {
+                        title: "عاشورای حسینی",
+                        gregorianDate: "2023-07-28"
+                      },
+                      {
+                        title: "اربعین حسینی",
+                        gregorianDate: "2023-09-06"
+                      },
+                      {
+                        title:
+                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
+                        gregorianDate: "2023-09-14"
+                      },
+                      {
+                        title: "شهادت امام رضا علیه السلام",
+                        gregorianDate: "2023-09-16"
+                      },
+                      {
+                        title: "شهادت امام حسن عسکری علیه السلام",
+                        gregorianDate: "2023-09-24"
+                      },
+                      {
+                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
+                        gregorianDate: "2023-10-03"
+                      },
+                      {
+                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
+                        gregorianDate: "2023-12-17"
+                      },
+                      {
+                        title: "ولادت امام علی علیه السلام و روز پدر",
+                        gregorianDate: "2024-01-25"
+                      },
+                      {
+                        title: "مبعث رسول اکرم (ص)",
+                        gregorianDate: "2024-02-08"
+                      },
+                      {
+                        title: "پیروزی انقلاب اسلامی",
+                        gregorianDate: "2024-02-11"
+                      },
+                      {
+                        title:
+                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
+                        gregorianDate: "2024-02-25"
+                      },
+                      {
+                        title: "روز ملی شدن صنعت نفت ایران",
+                        gregorianDate: "2024-03-19"
+                      },
+                      {
+                        title: "جشن نوروز/جشن سال نو",
+                        gregorianDate: "2024-03-20"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2024-03-21"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2024-03-22"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2024-03-23"
+                      },
+                      {
+                        title: "روز جمهوری اسلامی",
+                        gregorianDate: "2024-03-31"
+                      },
+                      {
+                        title: "جشن سیزده به در",
+                        gregorianDate: "2024-04-01"
+                      },
+                      {
+                        title: "شهادت حضرت علی علیه السلام",
+                        gregorianDate: "2024-04-01"
+                      },
+                      {
+                        title: "عید سعید فطر",
+                        gregorianDate: "2024-04-10"
+                      },
+                      {
+                        title: "تعطیل به مناسبت عید سعید فطر",
+                        gregorianDate: "2024-04-11"
+                      },
+                      {
+                        title: "شهادت امام جعفر صادق علیه السلام",
+                        gregorianDate: "2024-05-04"
+                      },
+                      {
+                        title: "رحلت حضرت امام خمینی",
+                        gregorianDate: "2024-06-03"
+                      },
+                      {
+                        title: "قیام 15 خرداد",
+                        gregorianDate: "2024-06-04"
+                      },
+                      {
+                        title: "عید سعید قربان",
+                        gregorianDate: "2024-06-17"
+                      },
+                      {
+                        title: "عید سعید غدیر خم",
+                        gregorianDate: "2024-06-25"
+                      },
+                      {
+                        title: "تاسوعای حسینی",
+                        gregorianDate: "2024-07-15"
+                      },
+                      {
+                        title: "عاشورای حسینی",
+                        gregorianDate: "2024-07-16"
+                      },
+                      {
+                        title: "اربعین حسینی",
+                        gregorianDate: "2024-08-25"
+                      },
+                      {
+                        title:
+                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
+                        gregorianDate: "2024-09-02"
+                      },
+                      {
+                        title: "شهادت امام رضا علیه السلام",
+                        gregorianDate: "2024-09-04"
+                      },
+                      {
+                        title: "شهادت امام حسن عسکری علیه السلام",
+                        gregorianDate: "2024-09-12"
+                      },
+                      {
+                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
+                        gregorianDate: "2024-09-21"
+                      },
+                      {
+                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
+                        gregorianDate: "2024-12-05"
+                      },
+                      {
+                        title: "ولادت امام علی علیه السلام و روز پدر",
+                        gregorianDate: "2025-01-14"
+                      },
+                      {
+                        title: "مبعث رسول اکرم (ص)",
+                        gregorianDate: "2025-01-28"
+                      },
+                      {
+                        title: "پیروزی انقلاب اسلامی",
+                        gregorianDate: "2025-02-10"
+                      },
+                      {
+                        title:
+                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
+                        gregorianDate: "2025-02-14"
+                      },
+                      {
+                        title: "روز ملی شدن صنعت نفت ایران",
+                        gregorianDate: "2025-03-19"
+                      },
+                      {
+                        title: "آخرین روز سال",
+                        gregorianDate: "2025-03-20"
+                      },
+                      {
+                        title: "جشن نوروز/جشن سال نو",
+                        gregorianDate: "2025-03-21"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2025-03-22"
+                      },
+                      {
+                        title: "شهادت حضرت علی علیه السلام",
+                        gregorianDate: "2025-03-22"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2025-03-23"
+                      },
+                      {
+                        title: "عیدنوروز",
+                        gregorianDate: "2025-03-24"
+                      },
+                      {
+                        title: "عید سعید فطر",
+                        gregorianDate: "2025-03-31"
+                      },
+                      {
+                        title: "روز جمهوری اسلامی",
+                        gregorianDate: "2025-04-01"
+                      },
+                      {
+                        title: "تعطیل به مناسبت عید سعید فطر",
+                        gregorianDate: "2025-04-01"
+                      },
+                      {
+                        title: "جشن سیزده به در",
+                        gregorianDate: "2025-04-02"
+                      },
+                      {
+                        title: "شهادت امام جعفر صادق علیه السلام",
+                        gregorianDate: "2025-04-24"
+                      },
+                      {
+                        title: "رحلت حضرت امام خمینی",
+                        gregorianDate: "2025-06-04"
+                      },
+                      {
+                        title: "قیام 15 خرداد",
+                        gregorianDate: "2025-06-05"
+                      },
+                      {
+                        title: "عید سعید قربان",
+                        gregorianDate: "2025-06-07"
+                      },
+                      {
+                        title: "عید سعید غدیر خم",
+                        gregorianDate: "2025-06-15"
+                      },
+                      {
+                        title: "تاسوعای حسینی",
+                        gregorianDate: "2025-07-05"
+                      },
+                      {
+                        title: "عاشورای حسینی",
+                        gregorianDate: "2025-07-06"
+                      },
+                      {
+                        title: "اربعین حسینی",
+                        gregorianDate: "2025-08-15"
+                      },
+                      {
+                        title:
+                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
+                        gregorianDate: "2025-08-23"
+                      },
+                      {
+                        title: "شهادت امام رضا علیه السلام",
+                        gregorianDate: "2025-08-24"
+                      },
+                      {
+                        title: "شهادت امام حسن عسکری علیه السلام",
+                        gregorianDate: "2025-09-01"
+                      },
+                      {
+                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
+                        gregorianDate: "2025-09-10"
+                      },
+                      {
+                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
+                        gregorianDate: "2025-11-25"
+                      },
+                      {
+                        title: "ولادت امام علی علیه السلام و روز پدر",
+                        gregorianDate: "2026-01-03"
+                      },
+                      {
+                        title: "مبعث رسول اکرم (ص)",
+                        gregorianDate: "2026-01-17"
+                      },
+                      {
+                        title:
+                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
+                        gregorianDate: "2026-02-04"
+                      },
+                      {
+                        title: "پیروزی انقلاب اسلامی",
+                        gregorianDate: "2026-02-11"
+                      },
+                      {
+                        title: "شهادت حضرت علی علیه السلام",
+                        gregorianDate: "2026-03-11"
+                      },
+                      {
+                        title: "روز ملی شدن صنعت نفت ایران",
+                        gregorianDate: "2026-03-20"
+                      }
+                    ]
+                  },
+                  success: true
+                });
+                return timestamps;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return [];
+              }
+              throw e;
+            }
+          })()}
           locale={"fa"}
           mode={"multiple"}
           onChange={async (...eventArgs: any) => {
@@ -767,6 +1532,63 @@ function PlasmicCalendar2__RenderFunc(props: {
           ])}
         />
 
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox___3AobZ)}
+        >
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__sZgZ)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__bNcp)} />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__c7Dd
+              )}
+            >
+              {"\u0631\u0632\u0631\u0648"}
+            </div>
+          </Stack__>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__yeclM)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__qPx3C)} />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ynzkJ
+              )}
+            >
+              {"\u063a\u06cc\u0631\u0641\u0639\u0627\u0644"}
+            </div>
+          </Stack__>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__cfHXh)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___8V028)} />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ghiWo
+              )}
+            >
+              {"\u062a\u062e\u0641\u06cc\u0641"}
+            </div>
+          </Stack__>
+        </Stack__>
         <AntdModal
           data-plasmic-name={"modalDiscount"}
           data-plasmic-override={overrides.modalDiscount}
@@ -839,6 +1661,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           property_id: $props.propertyId,
                           discount: $state.numberInput3.value
                         };
+                        $state.requestdata = data;
                         data.days = data.days
                           .map(timestampArray =>
                             timestampArray.map(timestamp =>
@@ -854,7 +1677,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               "Content-Type": "application/json",
                               Accept: "*/*",
                               authorization:
-                                "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzY5OTAsImV4cCI6MTczMzIzODc5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.NKEw3CPFvWL6GJWDVU6nhy_TpFwxjETRvtsJxByLx8dGOeWABbOygME4R0V9UqhvaOD5AP6bxwJPwoi7YFTbQRwoqrEiAim07Mime4LpbegTc7s1982O7OXfzBnolnlgLExjAnwsdsy28CD0q1dXYWAaKqP3Zlk2dVuUjA9HpZ8VDTWviCLpOgKAFM8mV_yioe7W5TN0EdRjRRVJlb0CXLXZYLfbefSmJwYkq_Z5jglKHYDE62IYk2DIan6HsXdEOa6oCUSuA8N3iih_Sr2OPBpCGqlXexGs03vbYq6ki-hlujIhV6B1zZFIiU3CHfwHFIvV8T-goLNUwGkMshE2ow"
+                                "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTY3MjEsImV4cCI6MTczMzMxODUyMSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.AmcfG_iyqwDuq0x_dPJlARGkMkUtlo1idwwMC-RaZk4jh1RaVsBggmIy0sJzEOcgsd7w1gM0Il82-MtpOv8nLQ91EEFNh6nGfL2LCLugNryc7c3_qTrmoFzSWXK2Mld_GZmZKBKRVXigzx6UytMwP6KNMTLeY6duyJmDBGat7MnWSVqSSJ9Nz0kyzdcnhiIunMe9jLzN3XlBzXHayWk1-JclIwv9wdMEhUT8zp7Ht6hjZBeOA-upQHb_yM3QWatyZwBDOsUHxJ8M7u7kbHrX-IDBRwJKgC87QZNvMBx6VQBAnqMLqg_0eEfeCsNUr2z5QpyMCJmTrou7aekw202dNA"
                             },
                             body: JSON.stringify(data)
                           }
@@ -891,36 +1714,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               typeof $steps["runCode"].then === "function"
             ) {
               $steps["runCode"] = await $steps["runCode"];
-            }
-
-            $steps["updateStateVariable"] = true
-              ? (() => {
-                  const actionArgs = {
-                    operation: 0,
-                    value: (() => {
-                      $state.fragmentDatePicker.values = [];
-                      return $state.fragmentDatePicker.values;
-                    })()
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateStateVariable"] != null &&
-              typeof $steps["updateStateVariable"] === "object" &&
-              typeof $steps["updateStateVariable"].then === "function"
-            ) {
-              $steps["updateStateVariable"] = await $steps[
-                "updateStateVariable"
-              ];
             }
           }}
           onOpenChange={generateStateOnChangeProp($state, [
@@ -1253,6 +2046,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               days: [$state.fragmentDatePicker.values],
                               property_id: $props.propertyId
                             };
+                            $state.requestdata = data;
                             data.days = data.days
                               .map(timestampArray =>
                                 timestampArray.map(timestamp =>
@@ -1268,7 +2062,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   "Content-Type": "application/json",
                                   Accept: "*/*",
                                   authorization:
-                                    "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzY5OTAsImV4cCI6MTczMzIzODc5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.NKEw3CPFvWL6GJWDVU6nhy_TpFwxjETRvtsJxByLx8dGOeWABbOygME4R0V9UqhvaOD5AP6bxwJPwoi7YFTbQRwoqrEiAim07Mime4LpbegTc7s1982O7OXfzBnolnlgLExjAnwsdsy28CD0q1dXYWAaKqP3Zlk2dVuUjA9HpZ8VDTWviCLpOgKAFM8mV_yioe7W5TN0EdRjRRVJlb0CXLXZYLfbefSmJwYkq_Z5jglKHYDE62IYk2DIan6HsXdEOa6oCUSuA8N3iih_Sr2OPBpCGqlXexGs03vbYq6ki-hlujIhV6B1zZFIiU3CHfwHFIvV8T-goLNUwGkMshE2ow"
+                                    "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTkyNDksImV4cCI6MTczMzMyMTA0OSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.XWKbciA3lqcI5nDQGYQN2i8cDVhPi989CUazOfeM-QTJvO4SimVBI_UbG2djjmfyIvSwN4A77zOWFGLEoz0KUHAR1a9IDg-Lbn4QzFZ3H9oXdJbJ7kJ4EIpZR-HQIrY0ZCkGHQ7FDPp_to8Isxagy5mXB03JLE9eY6X9CGU0ekjCvNroJUyNi_UD2gtPvhIdcL1wg_ujE6jpFXCo5XhFSL19rbms7Ypowv5gsb650TJS0s6dFoFukLny1NH4Xk8K2WTML9Pa9i0M0iT7JDyaqyz64w5QVY5_OUhKOc4rTW7GP0ll3VsHV13hTclYnG2X3pYWOxOJUbgeZIwswMUoUA"
                                 },
                                 body: JSON.stringify(data)
                               }
@@ -1305,41 +2099,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   typeof $steps["runCode"].then === "function"
                 ) {
                   $steps["runCode"] = await $steps["runCode"];
-                }
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          $state.fragmentDatePicker.values = [];
-                          return $state.fragmentDatePicker.values;
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
                 }
               }}
             >
@@ -1578,6 +2337,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           property_id: $props.propertyId,
                           price: $state.numberInput2.value
                         };
+                        $state.requestdata = data;
                         data.days = data.days
                           .map(timestampArray =>
                             timestampArray.map(timestamp =>
@@ -1591,7 +2351,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             "Content-Type": "application/json",
                             Accept: "*/*",
                             authorization:
-                              "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzY5OTAsImV4cCI6MTczMzIzODc5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.NKEw3CPFvWL6GJWDVU6nhy_TpFwxjETRvtsJxByLx8dGOeWABbOygME4R0V9UqhvaOD5AP6bxwJPwoi7YFTbQRwoqrEiAim07Mime4LpbegTc7s1982O7OXfzBnolnlgLExjAnwsdsy28CD0q1dXYWAaKqP3Zlk2dVuUjA9HpZ8VDTWviCLpOgKAFM8mV_yioe7W5TN0EdRjRRVJlb0CXLXZYLfbefSmJwYkq_Z5jglKHYDE62IYk2DIan6HsXdEOa6oCUSuA8N3iih_Sr2OPBpCGqlXexGs03vbYq6ki-hlujIhV6B1zZFIiU3CHfwHFIvV8T-goLNUwGkMshE2ow"
+                              "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTQ5MjksImV4cCI6MTczMzMxNjcyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.etyXGY91M1sW7Ww7v7Z8APQweSdlX6B0elPOFLlUkzNXKX4jOF7VZm9QKWGHtzcikluBZFfLqyCr3xDNTJml22aQpSaPEVQtfl07IthaWDayRufmD85uF1T3Qk8w3yLFydfgRuDGwOP_NMbLl57POYugqIWbOD3XxKLzp4mRCLTrqWMqTgm_nlH2oI_PD-x0tOJKoIPirX0UST0y3RtxKrOxq23WPHMJou6Smv4BZ87d2xlS4dR52hWzJqkWEK8TASWjrHkxuuAIItdusa72LSibr61JeVJm0ygPUiNE88lNu6NUe_B5u1pHLkL9gWRdlijY2qEmrIf9PJRhipp5FQ"
                           },
                           body: JSON.stringify(data)
                         })
@@ -1627,36 +2387,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               typeof $steps["runCode"].then === "function"
             ) {
               $steps["runCode"] = await $steps["runCode"];
-            }
-
-            $steps["updateStateVariable"] = true
-              ? (() => {
-                  const actionArgs = {
-                    operation: 0,
-                    value: (() => {
-                      $state.fragmentDatePicker.values = [];
-                      return $state.fragmentDatePicker.values;
-                    })()
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateStateVariable"] != null &&
-              typeof $steps["updateStateVariable"] === "object" &&
-              typeof $steps["updateStateVariable"].then === "function"
-            ) {
-              $steps["updateStateVariable"] = await $steps[
-                "updateStateVariable"
-              ];
             }
           }}
           onOpenChange={generateStateOnChangeProp($state, [
@@ -2390,19 +3120,43 @@ function PlasmicCalendar2__RenderFunc(props: {
                             const updatedCalendar =
                               $state.apiRequest.data.calendar.map(day => {
                                 if (changedDaysDates.includes(day.date)) {
-                                  const newDayData =
+                                  const updates = {};
+                                  if (
                                     $state.requestdata.request_for === "block"
-                                      ? { status: "blocked" }
-                                      : { status: "unblocked" };
+                                  ) {
+                                    updates.status = "blocked";
+                                  } else if (
+                                    $state.requestdata.request_for === "reserve"
+                                  ) {
+                                    updates.status = "reserved";
+                                  } else if (
+                                    $state.requestdata.request_for ===
+                                      "unblock" ||
+                                    !$state.requestdata.request_for
+                                  ) {
+                                    updates.status = "unblocked";
+                                  }
+                                  if ($state.requestdata.price !== undefined) {
+                                    updates.price = $state.requestdata.price;
+                                  }
+                                  if (
+                                    $state.requestdata.discount !== undefined
+                                  ) {
+                                    updates.discount_percentage =
+                                      $state.requestdata.discount;
+                                  }
                                   return {
                                     ...day,
-                                    ...newDayData
+                                    ...updates
                                   };
                                 }
                                 return day;
                               });
                             $state.apiRequest.data.calendar = updatedCalendar;
-                            console.log("Calendar updated:", updatedCalendar);
+                            console.log(
+                              "Calendar updated with changes:",
+                              updatedCalendar
+                            );
                             $state.platformRequestStatus = [];
                             $state.requestdata = [];
                             return ($state.fragmentDatePicker.values = []);
@@ -2547,7 +3301,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 "Content-Type": "application/json",
                                 Accept: "*/*",
                                 authorization:
-                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMDU2MjksImV4cCI6MTczMzMwNzQyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.UC8MnsvVh_0-xzDrqNPsH-xkfjHXGD0kD5vpew4--SLFTQvpzXVNDQOXDIdtprs_kGc6EBDczwHE3UrwIdDAYiOfRtT2TiOvNq5h7qCuSNeIo2-VqlL5U4_i3jrGbEQlWv5UJvm1MXR_AOHQRcB8zSpUfoT3D5XpqM-HIUn6_83I-mndEDerR3xydOV7OwxDNkhXA-oFtlsNjJXaeTxOiUOAcoEkt_QpKHK-oiLH1oeSixUZHSNg4_AoRXjx1XQmteFLGSQ48-OyMfUh4oPsQsGwEjxXB8DBG9aPDPO4yq1JvRBa9Ik0KXcXsl8kWKMmWJol6crYm4mYv1ckqgu14A"
+                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTQ5MjksImV4cCI6MTczMzMxNjcyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.etyXGY91M1sW7Ww7v7Z8APQweSdlX6B0elPOFLlUkzNXKX4jOF7VZm9QKWGHtzcikluBZFfLqyCr3xDNTJml22aQpSaPEVQtfl07IthaWDayRufmD85uF1T3Qk8w3yLFydfgRuDGwOP_NMbLl57POYugqIWbOD3XxKLzp4mRCLTrqWMqTgm_nlH2oI_PD-x0tOJKoIPirX0UST0y3RtxKrOxq23WPHMJou6Smv4BZ87d2xlS4dR52hWzJqkWEK8TASWjrHkxuuAIItdusa72LSibr61JeVJm0ygPUiNE88lNu6NUe_B5u1pHLkL9gWRdlijY2qEmrIf9PJRhipp5FQ"
                               },
                               body: JSON.stringify(data)
                             }
@@ -2664,7 +3418,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 "Content-Type": "application/json",
                                 Accept: "*/*",
                                 authorization:
-                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMDU2MjksImV4cCI6MTczMzMwNzQyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.UC8MnsvVh_0-xzDrqNPsH-xkfjHXGD0kD5vpew4--SLFTQvpzXVNDQOXDIdtprs_kGc6EBDczwHE3UrwIdDAYiOfRtT2TiOvNq5h7qCuSNeIo2-VqlL5U4_i3jrGbEQlWv5UJvm1MXR_AOHQRcB8zSpUfoT3D5XpqM-HIUn6_83I-mndEDerR3xydOV7OwxDNkhXA-oFtlsNjJXaeTxOiUOAcoEkt_QpKHK-oiLH1oeSixUZHSNg4_AoRXjx1XQmteFLGSQ48-OyMfUh4oPsQsGwEjxXB8DBG9aPDPO4yq1JvRBa9Ik0KXcXsl8kWKMmWJol6crYm4mYv1ckqgu14A"
+                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTQ5MjksImV4cCI6MTczMzMxNjcyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.etyXGY91M1sW7Ww7v7Z8APQweSdlX6B0elPOFLlUkzNXKX4jOF7VZm9QKWGHtzcikluBZFfLqyCr3xDNTJml22aQpSaPEVQtfl07IthaWDayRufmD85uF1T3Qk8w3yLFydfgRuDGwOP_NMbLl57POYugqIWbOD3XxKLzp4mRCLTrqWMqTgm_nlH2oI_PD-x0tOJKoIPirX0UST0y3RtxKrOxq23WPHMJou6Smv4BZ87d2xlS4dR52hWzJqkWEK8TASWjrHkxuuAIItdusa72LSibr61JeVJm0ygPUiNE88lNu6NUe_B5u1pHLkL9gWRdlijY2qEmrIf9PJRhipp5FQ"
                               },
                               body: JSON.stringify(data)
                             }

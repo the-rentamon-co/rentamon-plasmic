@@ -72,12 +72,18 @@ createPlasmicElementProxy;
 
 export type PlasmicDayCell__VariantMembers = {
   selected: "selected";
-  dayStatus: "reserved" | "discount" | "disabled" | "blocked" | "selected";
+  dayStatus:
+    | "reserved"
+    | "discount"
+    | "disabled"
+    | "blocked"
+    | "selected"
+    | "holidays";
 };
 export type PlasmicDayCell__VariantsArgs = {
   selected?: SingleBooleanChoiceArg<"selected">;
   dayStatus?: SingleChoiceArg<
-    "reserved" | "discount" | "disabled" | "blocked" | "selected"
+    "reserved" | "discount" | "disabled" | "blocked" | "selected" | "holidays"
   >;
 };
 type VariantPropType = keyof PlasmicDayCell__VariantsArgs;
@@ -108,7 +114,7 @@ export interface DefaultDayCellProps {
   price?: string;
   selected?: SingleBooleanChoiceArg<"selected">;
   dayStatus?: SingleChoiceArg<
-    "reserved" | "discount" | "disabled" | "blocked" | "selected"
+    "reserved" | "discount" | "disabled" | "blocked" | "selected" | "holidays"
   >;
   className?: string;
 }
@@ -218,6 +224,11 @@ function PlasmicDayCell__RenderFunc(props: {
             "dayStatus",
             "discount"
           ),
+          [sty.celldayStatus_holidays]: hasVariant(
+            $state,
+            "dayStatus",
+            "holidays"
+          ),
           [sty.celldayStatus_reserved]: hasVariant(
             $state,
             "dayStatus",
@@ -247,6 +258,11 @@ function PlasmicDayCell__RenderFunc(props: {
               $state,
               "dayStatus",
               "discount"
+            ),
+            [sty.textdayStatus_holidays__sLeDqqQrei]: hasVariant(
+              $state,
+              "dayStatus",
+              "holidays"
             ),
             [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
               $state,
@@ -293,6 +309,11 @@ function PlasmicDayCell__RenderFunc(props: {
               "dayStatus",
               "discount"
             ),
+            [sty.textdayStatus_holidays__kqTCqQrei]: hasVariant(
+              $state,
+              "dayStatus",
+              "holidays"
+            ),
             [sty.textdayStatus_reserved__kqTC6WcTl]: hasVariant(
               $state,
               "dayStatus",
@@ -337,6 +358,11 @@ function PlasmicDayCell__RenderFunc(props: {
               $state,
               "dayStatus",
               "discount"
+            ),
+            [sty.textdayStatus_holidays__ltKp2QQrei]: hasVariant(
+              $state,
+              "dayStatus",
+              "holidays"
             ),
             [sty.textdayStatus_reserved__ltKp26WcTl]: hasVariant(
               $state,
