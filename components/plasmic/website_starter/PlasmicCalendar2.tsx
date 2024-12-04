@@ -2404,6 +2404,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.apiRequest.data.calendar = updatedCalendar;
                             console.log("Calendar updated:", updatedCalendar);
                             $state.platformRequestStatus = [];
+                            $state.requestdata = [];
                             return ($state.fragmentDatePicker.values = []);
                           })()
                         };
@@ -2530,6 +2531,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             requested_by: "user",
                             request_for: "reserve"
                           };
+                          $state.requestdata = data;
                           data.days = data.days
                             .map(timestampArray =>
                               timestampArray.map(timestamp =>
@@ -2545,7 +2547,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 "Content-Type": "application/json",
                                 Accept: "*/*",
                                 authorization:
-                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzUxOTAsImV4cCI6MTczMzIzNjk5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.gAg0VFdUhx9h11ThW-5gem620TLkXeWoiIAMlP4f9kxOs0Y_QnkuDeooxlBcIgeAaLy-RBFY_biZswp6S9O6kyMOnD6E8I70TCjlq-zCEKmcc2gJhtxLEA75K3ppwWLViPQjsoSiEIz9K2_ynNUDUXE__dfknY9aEUsR8Vc72n7GWbCzIR0YWOaJyG10egQHsIDK_8pWoAvo4pR0p0_JFcaSlcR6Pag7BlqmIwy15Z_XcDhAoxYRX0JiQSa4PqMcw_LCprSBA9Xwp9dx7ZzHuoCvjPATdTxR5GDdnJxMhKWWjm_-BUwSJYu-qJDs8yen3vhqqwIo_y9FFULKkTlbTg"
+                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMDU2MjksImV4cCI6MTczMzMwNzQyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.UC8MnsvVh_0-xzDrqNPsH-xkfjHXGD0kD5vpew4--SLFTQvpzXVNDQOXDIdtprs_kGc6EBDczwHE3UrwIdDAYiOfRtT2TiOvNq5h7qCuSNeIo2-VqlL5U4_i3jrGbEQlWv5UJvm1MXR_AOHQRcB8zSpUfoT3D5XpqM-HIUn6_83I-mndEDerR3xydOV7OwxDNkhXA-oFtlsNjJXaeTxOiUOAcoEkt_QpKHK-oiLH1oeSixUZHSNg4_AoRXjx1XQmteFLGSQ48-OyMfUh4oPsQsGwEjxXB8DBG9aPDPO4yq1JvRBa9Ik0KXcXsl8kWKMmWJol6crYm4mYv1ckqgu14A"
                               },
                               body: JSON.stringify(data)
                             }
@@ -2582,36 +2584,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 typeof $steps["reserveRequest"].then === "function"
               ) {
                 $steps["reserveRequest"] = await $steps["reserveRequest"];
-              }
-
-              $steps["clearDatePickerValue"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        $state.fragmentDatePicker.values = [];
-                        return $state.fragmentDatePicker.values;
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["clearDatePickerValue"] != null &&
-                typeof $steps["clearDatePickerValue"] === "object" &&
-                typeof $steps["clearDatePickerValue"].then === "function"
-              ) {
-                $steps["clearDatePickerValue"] = await $steps[
-                  "clearDatePickerValue"
-                ];
               }
             }}
           >
@@ -2692,7 +2664,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 "Content-Type": "application/json",
                                 Accept: "*/*",
                                 authorization:
-                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMDQwNzYsImV4cCI6MTczMzMwNTg3NiwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.MDcgep7AwBk7gTUBPP3Ep4CJShY4DQoiPd5chcKtM4Xd1huDleSd41CUAHvEdDH1dc6IQDqrPIIRM5DQ_KuXPuVjOoVvWJfxpWdDeNKqHbj0bVK7uGZVGn3blt1F5zR-lafLNRUlbyiqs0N_RNwuH09MtNGjodYnTTCB0Ees-a0HNcCSVvpb3xOCDykj-NqemNa1KAi7cZwQW8Zi1GcYP9DUrselx3RpxyVXWSIEX01cLFVRAlYmlJvG_ldoU170VHaIXp6ZEqWqRJnK9waqrBdyzorF_c7TtUHTBGpBP4jG4aBf-puPH688yGIXzwITbTyy_DeyPoZsNNbE3bdQIw"
+                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMDU2MjksImV4cCI6MTczMzMwNzQyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.UC8MnsvVh_0-xzDrqNPsH-xkfjHXGD0kD5vpew4--SLFTQvpzXVNDQOXDIdtprs_kGc6EBDczwHE3UrwIdDAYiOfRtT2TiOvNq5h7qCuSNeIo2-VqlL5U4_i3jrGbEQlWv5UJvm1MXR_AOHQRcB8zSpUfoT3D5XpqM-HIUn6_83I-mndEDerR3xydOV7OwxDNkhXA-oFtlsNjJXaeTxOiUOAcoEkt_QpKHK-oiLH1oeSixUZHSNg4_AoRXjx1XQmteFLGSQ48-OyMfUh4oPsQsGwEjxXB8DBG9aPDPO4yq1JvRBa9Ik0KXcXsl8kWKMmWJol6crYm4mYv1ckqgu14A"
                               },
                               body: JSON.stringify(data)
                             }

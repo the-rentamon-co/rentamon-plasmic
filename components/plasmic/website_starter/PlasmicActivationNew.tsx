@@ -2058,7 +2058,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                             $steps["updateStep"] = await $steps["updateStep"];
                           }
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["jajigaVerify"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -2090,13 +2090,12 @@ function PlasmicActivationNew__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
+                            $steps["jajigaVerify"] != null &&
+                            typeof $steps["jajigaVerify"] === "object" &&
+                            typeof $steps["jajigaVerify"].then === "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
+                            $steps["jajigaVerify"] = await $steps[
+                              "jajigaVerify"
                             ];
                           }
 
@@ -2665,7 +2664,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                             $steps["updateStep"] = await $steps["updateStep"];
                           }
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["shabVerify"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -2697,14 +2696,11 @@ function PlasmicActivationNew__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
+                            $steps["shabVerify"] != null &&
+                            typeof $steps["shabVerify"] === "object" &&
+                            typeof $steps["shabVerify"].then === "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
+                            $steps["shabVerify"] = await $steps["shabVerify"];
                           }
 
                           $steps["shabContact"] = true
@@ -3448,6 +3444,44 @@ function PlasmicActivationNew__RenderFunc(props: {
                           ) {
                             $steps["connectionStatus"] = await $steps[
                               "connectionStatus"
+                            ];
+                          }
+
+                          $steps["otaghakContact"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "POST",
+                                    "https://gateway.rentamon.com/webhook/otaghakcontact",
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return $state.user_id;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["otaghakContact"] != null &&
+                            typeof $steps["otaghakContact"] === "object" &&
+                            typeof $steps["otaghakContact"].then === "function"
+                          ) {
+                            $steps["otaghakContact"] = await $steps[
+                              "otaghakContact"
                             ];
                           }
                         }}
