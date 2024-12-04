@@ -306,7 +306,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       },
       {
-        path: "requestData",
+        path: "requestdata",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => ({})
@@ -2366,9 +2366,41 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.fetchModal.open = false;
                             $state.block.open = false;
                             $state.modal.open = false;
+                            const platformStatus = Object.values(
+                              $state.platformRequestStatus.data || {}
+                            );
+                            const allFailed = platformStatus.every(
+                              platform => platform.final_status === false
+                            );
+                            if (allFailed) {
+                              console.log(
+                                "تمام پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
+                              );
+                              return;
+                            }
+                            const changedDaysTimestamps = (
+                              $state.requestdata.days || []
+                            ).flat();
+                            const changedDaysDates = changedDaysTimestamps.map(
+                              timestamp => {
+                                const date = new Date(timestamp * 1000);
+                                return date.toISOString().split("T")[0];
+                              }
+                            );
+                            const updatedCalendar =
+                              $state.apiRequest.data.calendar.map(day => {
+                                if (changedDaysDates.includes(day.date)) {
+                                  return {
+                                    ...day,
+                                    status: $state.requestdata.request_for
+                                  };
+                                }
+                                return day;
+                              });
+                            $state.apiRequest.data.calendar = updatedCalendar;
+                            console.log("Calendar updated:", updatedCalendar);
                             $state.platformRequestStatus = [];
-                            $state.fragmentDatePicker.values = [];
-                            return console.log($state.requestData);
+                            return ($state.fragmentDatePicker.values = []);
                           })()
                         };
                         return (({
@@ -2634,13 +2666,14 @@ function PlasmicCalendar2__RenderFunc(props: {
                               .toLocaleDateString("fa")
                               .replace(/\//g, "-");
                           }
-                          $state.requestData = {
+                          const data = {
                             days: [$state.fragmentDatePicker.values],
                             property_id: $props.propertyId,
                             requested_by: "user",
                             request_for: "block"
                           };
-                          $state.requestData.days = $state.requestData.days
+                          $state.requestdata = data;
+                          data.days = data.days
                             .map(timestampArray =>
                               timestampArray.map(timestamp =>
                                 convertTimestampToPersianDate(timestamp)
@@ -2655,9 +2688,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 "Content-Type": "application/json",
                                 Accept: "*/*",
                                 authorization:
-                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMDA3NzAsImV4cCI6MTczMzMwMjU3MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.XQKeA-qxz4Sv5UyVTpqEmEnojfDkdLCVZt5ovnFBTu7mqKLBhRzQL7ArZNf1xBruq0uP3bJo3l0lbZGBcgTctcgcTCItnnZp-N1VNNrqSy6Vv4g_dvpIgIP3gXek8bong2sqsXcnnJQNt1o08FeXlxQMcJvojwDWLIf_yiflDagDAz-zVeBEx9sCAPihwAlTThShxTkucFVxoSGiCs5J8iyerljQhwabkIDIXUKDMtjzwDbo-M2fV5fKfN_F_YqtNHyt6OHBmD7pQSoMHgchTJBgsIZuwovjJZGbVZ7UohrdXO4PXla9qHGa1q5j_Tt2yKDeAdl5NPrzmvIE5Hw2Eg"
+                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMDQwNzYsImV4cCI6MTczMzMwNTg3NiwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.MDcgep7AwBk7gTUBPP3Ep4CJShY4DQoiPd5chcKtM4Xd1huDleSd41CUAHvEdDH1dc6IQDqrPIIRM5DQ_KuXPuVjOoVvWJfxpWdDeNKqHbj0bVK7uGZVGn3blt1F5zR-lafLNRUlbyiqs0N_RNwuH09MtNGjodYnTTCB0Ees-a0HNcCSVvpb3xOCDykj-NqemNa1KAi7cZwQW8Zi1GcYP9DUrselx3RpxyVXWSIEX01cLFVRAlYmlJvG_ldoU170VHaIXp6ZEqWqRJnK9waqrBdyzorF_c7TtUHTBGpBP4jG4aBf-puPH688yGIXzwITbTyy_DeyPoZsNNbE3bdQIw"
                               },
-                              body: JSON.stringify($state.requestData)
+                              body: JSON.stringify(data)
                             }
                           )
                             .then(response => {
