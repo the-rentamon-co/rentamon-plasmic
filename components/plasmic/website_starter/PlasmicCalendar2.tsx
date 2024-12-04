@@ -2390,9 +2390,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                             const updatedCalendar =
                               $state.apiRequest.data.calendar.map(day => {
                                 if (changedDaysDates.includes(day.date)) {
+                                  const newDayData =
+                                    $state.requestdata.request_for === "block"
+                                      ? { status: "blocked" }
+                                      : { status: "unblocked" };
                                   return {
                                     ...day,
-                                    status: $state.requestdata.request_for
+                                    ...newDayData
                                   };
                                 }
                                 return day;
