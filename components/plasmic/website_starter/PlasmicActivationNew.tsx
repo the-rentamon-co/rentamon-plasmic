@@ -1494,7 +1494,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     undefined,
                                     (() => {
                                       try {
-                                        return ($state.user_id = 466);
+                                        return $state.user_id;
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -1520,6 +1520,44 @@ function PlasmicActivationNew__RenderFunc(props: {
                           ) {
                             $steps["jabamaContact"] = await $steps[
                               "jabamaContact"
+                            ];
+                          }
+
+                          $steps["jajigaContact"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "POST",
+                                    "https://gateway.rentamon.com/webhook/jajigacontact",
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return $state.user_id;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["jajigaContact"] != null &&
+                            typeof $steps["jajigaContact"] === "object" &&
+                            typeof $steps["jajigaContact"].then === "function"
+                          ) {
+                            $steps["jajigaContact"] = await $steps[
+                              "jajigaContact"
                             ];
                           }
                         }}

@@ -206,7 +206,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "modalDiscount.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "numberInput3.value",
@@ -301,6 +301,12 @@ function PlasmicCalendar2__RenderFunc(props: {
       },
       {
         path: "platformRequestStatus",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "requestData",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => ({})
@@ -647,16 +653,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                   : (() => {
                       try {
                         return (() => {
-                          const price =
+                          const calendarItem =
                             $state.apiRequest.data.calendar[
                               dateProps.date.day - 1
-                            ]?.price;
-                          const formattedPersianPrice = price
-                            ? new Intl.NumberFormat("fa-IR").format(
-                                price / 1000
-                              )
-                            : null;
-                          return formattedPersianPrice;
+                            ];
+                          if (calendarItem) {
+                            const price = calendarItem.price;
+                            const discountPercentage =
+                              calendarItem.discount_percentage;
+                            const finalPrice = discountPercentage
+                              ? price - (price * discountPercentage) / 100
+                              : price;
+                            const formattedPersianPrice = finalPrice
+                              ? new Intl.NumberFormat("fa-IR").format(
+                                  finalPrice / 1000
+                                )
+                              : null;
+                            return formattedPersianPrice;
+                          } else {
+                            return null;
+                          }
                         })();
                       } catch (e) {
                         if (
@@ -919,77 +935,6 @@ function PlasmicCalendar2__RenderFunc(props: {
           wrapClassName={classNames({ [sty["pcls_vzTJKtxZntdc"]]: true })}
         >
           <div className={classNames(projectcss.all, sty.columns__iCQj8)}>
-            <div className={classNames(projectcss.all, sty.column__mqAFp)}>
-              <Button
-                className={classNames("__wab_instance", sty.button__eiNeQ)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateCount"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          value: ($state.count = Math.max(0, $state.count - 5)),
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["count"]
-                          }
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateCount"] != null &&
-                    typeof $steps["updateCount"] === "object" &&
-                    typeof $steps["updateCount"].then === "function"
-                  ) {
-                    $steps["updateCount"] = await $steps["updateCount"];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__muGte
-                  )}
-                >
-                  {"-"}
-                </div>
-              </Button>
-            </div>
-            <div className={classNames(projectcss.all, sty.column__aLaJh)}>
-              <AntdInputNumber
-                data-plasmic-name={"numberInput3"}
-                data-plasmic-override={overrides.numberInput3}
-                className={classNames("__wab_instance", sty.numberInput3)}
-                controls={false}
-                onChange={generateStateOnChangeProp($state, [
-                  "numberInput3",
-                  "value"
-                ])}
-                placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
-                readOnly={true}
-                type={"number"}
-                value={generateStateValueProp($state, [
-                  "numberInput3",
-                  "value"
-                ])}
-              />
-            </div>
             <div className={classNames(projectcss.all, sty.column___5TW2A)}>
               <Button
                 className={classNames("__wab_instance", sty.button___8UkxY)}
@@ -1039,6 +984,77 @@ function PlasmicCalendar2__RenderFunc(props: {
                   )}
                 >
                   {"+"}
+                </div>
+              </Button>
+            </div>
+            <div className={classNames(projectcss.all, sty.column__aLaJh)}>
+              <AntdInputNumber
+                data-plasmic-name={"numberInput3"}
+                data-plasmic-override={overrides.numberInput3}
+                className={classNames("__wab_instance", sty.numberInput3)}
+                controls={false}
+                onChange={generateStateOnChangeProp($state, [
+                  "numberInput3",
+                  "value"
+                ])}
+                placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
+                readOnly={true}
+                type={"number"}
+                value={generateStateValueProp($state, [
+                  "numberInput3",
+                  "value"
+                ])}
+              />
+            </div>
+            <div className={classNames(projectcss.all, sty.column__mqAFp)}>
+              <Button
+                className={classNames("__wab_instance", sty.button__eiNeQ)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateCount"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.count = Math.max(0, $state.count - 5)),
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["count"]
+                          }
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCount"] != null &&
+                    typeof $steps["updateCount"] === "object" &&
+                    typeof $steps["updateCount"].then === "function"
+                  ) {
+                    $steps["updateCount"] = await $steps["updateCount"];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__muGte
+                  )}
+                >
+                  {"-"}
                 </div>
               </Button>
             </div>
@@ -1654,7 +1670,11 @@ function PlasmicCalendar2__RenderFunc(props: {
           trigger={null}
         >
           <div className={classNames(projectcss.all, sty.columns__rmQ4G)}>
-            <div className={classNames(projectcss.all, sty.column__n3LFm)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.column__n3LFm)}
+            >
               <AntdInputNumber
                 data-plasmic-name={"numberInput2"}
                 data-plasmic-override={overrides.numberInput2}
@@ -1664,9 +1684,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "numberInput2",
                   "value"
                 ])}
-                onPressEnter={async event => {
-                  const $steps = {};
-                }}
                 placeholder={
                   "\u0645\u062b\u0644\u0627 \u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0"
                 }
@@ -1677,7 +1694,146 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "value"
                 ])}
               />
-            </div>
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___4M0Jd
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return (() => {
+                        function numberToPersian(num) {
+                          const units = [
+                            "",
+                            "یک",
+                            "دو",
+                            "سه",
+                            "چهار",
+                            "پنج",
+                            "شش",
+                            "هفت",
+                            "هشت",
+                            "نه"
+                          ];
+
+                          const tens = [
+                            "",
+                            "ده",
+                            "بیست",
+                            "سی",
+                            "چهل",
+                            "پنجاه",
+                            "شصت",
+                            "هفتاد",
+                            "هشتاد",
+                            "نود"
+                          ];
+
+                          const teens = [
+                            "ده",
+                            "یازده",
+                            "دوازده",
+                            "سیزده",
+                            "چهارده",
+                            "پانزده",
+                            "شانزده",
+                            "هفده",
+                            "هجده",
+                            "نوزده"
+                          ];
+
+                          const hundreds = [
+                            "",
+                            "صد",
+                            "دویست",
+                            "سیصد",
+                            "چهارصد",
+                            "پانصد",
+                            "ششصد",
+                            "هفتصد",
+                            "هشتصد",
+                            "نهصد"
+                          ];
+
+                          const groupNames = ["", "هزار", "میلیون", "میلیارد"];
+
+                          if (num == null || num === "" || num === 0)
+                            return "صفر";
+                          const splitNumber = n => {
+                            const str = n.toString();
+                            const len = str.length;
+                            if (len <= 3) return [n];
+                            const groups = [];
+                            let i = len;
+                            while (i > 0) {
+                              groups.unshift(
+                                Number(str.substring(Math.max(0, i - 3), i))
+                              );
+                              i -= 3;
+                            }
+                            return groups;
+                          };
+                          const convertGroup = n => {
+                            if (n === 0) return "";
+                            const h = Math.floor(n / 100);
+                            const t = Math.floor((n % 100) / 10);
+                            const u = n % 10;
+                            const hundred = hundreds[h];
+                            let tenUnit = "";
+                            if (t === 1) {
+                              tenUnit = teens[u];
+                            } else {
+                              tenUnit =
+                                tens[t] + (u > 0 ? " و " + units[u] : "");
+                            }
+                            return [hundred, tenUnit]
+                              .filter(Boolean)
+                              .join(" و ")
+                              .trim();
+                          };
+                          const groups = splitNumber(num);
+                          const result = groups
+                            .map((g, i) => {
+                              const groupText = convertGroup(g);
+                              if (groupText) {
+                                return (
+                                  groupText +
+                                  (groupNames[groups.length - i - 1]
+                                    ? " " + groupNames[groups.length - i - 1]
+                                    : "")
+                                );
+                              }
+                              return "";
+                            })
+                            .filter(Boolean)
+                            .join(" و ");
+                          const finalResult = result.startsWith("و ")
+                            ? result.slice(2)
+                            : result;
+                          return finalResult.trim() + " تومان";
+                        }
+                        const input = $state.numberInput2?.value || "";
+                        const output =
+                          input === "" ? "صفر" : numberToPersian(Number(input));
+                        return output;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            </Stack__>
           </div>
         </AntdModal>
         <Button
@@ -2210,7 +2366,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.fetchModal.open = false;
                             $state.block.open = false;
                             $state.modal.open = false;
-                            return ($state.platformRequestStatus = []);
+                            $state.platformRequestStatus = [];
+                            $state.fragmentDatePicker.values = [];
+                            return console.log($state.requestData);
                           })()
                         };
                         return (({
@@ -2476,13 +2634,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                               .toLocaleDateString("fa")
                               .replace(/\//g, "-");
                           }
-                          const data = {
+                          $state.requestData = {
                             days: [$state.fragmentDatePicker.values],
                             property_id: $props.propertyId,
                             requested_by: "user",
                             request_for: "block"
                           };
-                          data.days = data.days
+                          $state.requestData.days = $state.requestData.days
                             .map(timestampArray =>
                               timestampArray.map(timestamp =>
                                 convertTimestampToPersianDate(timestamp)
@@ -2497,9 +2655,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 "Content-Type": "application/json",
                                 Accept: "*/*",
                                 authorization:
-                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMyMzQyOTAsImV4cCI6MTczMzIzNjA5MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.ctZrpnThv4cXWPhOdGVZkfTTnHeZjoEeuaikaqujnmrUM1pxtag9Pk-UWpXAqtk-YkEm-rCD8-Sg8ApBvLWyGX_X8JmzuB1EwaBSeqkOgeOnpRw0aRg_w5oxG_Z9unafA3j-MpJp33iFzKT54oFYc40_BSkj7GSt-5OgU1yR-EpIhKCbCJnW8ehQK2D_S39C-GdjWfzGJ0Y7fYiL71f17ERVaAATc-sJUYmZlML5XsPZHZnSfBzxHAZoyu-MKNgIFV8dwFWTLYnwd1dq0fcBxM-r4dhyhsRlHCUcUm9wgLL8YbboYcSHZI0INK1oHHTEN8c13az750OgkIZWPIZ0KA"
+                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMDA3NzAsImV4cCI6MTczMzMwMjU3MCwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.XQKeA-qxz4Sv5UyVTpqEmEnojfDkdLCVZt5ovnFBTu7mqKLBhRzQL7ArZNf1xBruq0uP3bJo3l0lbZGBcgTctcgcTCItnnZp-N1VNNrqSy6Vv4g_dvpIgIP3gXek8bong2sqsXcnnJQNt1o08FeXlxQMcJvojwDWLIf_yiflDagDAz-zVeBEx9sCAPihwAlTThShxTkucFVxoSGiCs5J8iyerljQhwabkIDIXUKDMtjzwDbo-M2fV5fKfN_F_YqtNHyt6OHBmD7pQSoMHgchTJBgsIZuwovjJZGbVZ7UohrdXO4PXla9qHGa1q5j_Tt2yKDeAdl5NPrzmvIE5Hw2Eg"
                               },
-                              body: JSON.stringify(data)
+                              body: JSON.stringify($state.requestData)
                             }
                           )
                             .then(response => {
@@ -2534,36 +2692,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 typeof $steps["blockRequest"].then === "function"
               ) {
                 $steps["blockRequest"] = await $steps["blockRequest"];
-              }
-
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        $state.fragmentDatePicker.values = [];
-                        return $state.fragmentDatePicker.values;
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
               }
             }}
           >
