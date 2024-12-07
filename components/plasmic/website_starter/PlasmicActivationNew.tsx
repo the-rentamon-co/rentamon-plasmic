@@ -3506,7 +3506,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       undefined,
-                                      "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f!",
+                                      "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f! \u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0648\u0627\u0631\u062f \u062a\u0642\u0648\u06cc\u0645 \u0628\u0634\u06cc",
                                       "bottom-center",
                                       6000
                                     ]

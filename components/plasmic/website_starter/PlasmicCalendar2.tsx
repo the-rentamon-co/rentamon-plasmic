@@ -754,7 +754,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 $state.fragmentDatePicker?.month?.number ?? initialMonth
               }-01&end_date=1403-${
                 $state.fragmentDatePicker?.month?.number ?? initialMonth
-              }-30&property_id=1`;
+              }-30&property_id=${$props.propertyId}`;
             })();
           } catch (e) {
             if (

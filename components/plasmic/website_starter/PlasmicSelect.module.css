@@ -8,15 +8,15 @@
 }
 .trigger {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  border-top-width: 0px;
-  border-right-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
-  background: none;
   height: 30px;
+  background: none;
+  border-left-width: 0px;
+  border-bottom-width: 1px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
   flex-shrink: 0;
   border-radius: 6px;
   padding: 8px 0px;

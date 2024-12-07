@@ -695,6 +695,51 @@
           "id": "xpwiGbFxHMB2",
           "name": "SearchSvgIcon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__SearchSvg.tsx"
+        },
+        {
+          "id": "70NMIzJpHGDO",
+          "name": "Icon4Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon4.tsx"
+        },
+        {
+          "id": "GlNmRVfZkYuK",
+          "name": "Icon5Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon5.tsx"
+        },
+        {
+          "id": "7-GvAf5G7Hmg",
+          "name": "Icon6Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon6.tsx"
+        },
+        {
+          "id": "G4zLKDdGFlpV",
+          "name": "Icon7Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon7.tsx"
+        },
+        {
+          "id": "-_4Hku3Lxjme",
+          "name": "Icon8Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon8.tsx"
+        },
+        {
+          "id": "-W2vZqDz6R8K",
+          "name": "Icon9Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon9.tsx"
+        },
+        {
+          "id": "7sh_t4EcJ6f3",
+          "name": "Icon10Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon10.tsx"
+        },
+        {
+          "id": "PfTCttn7BvdX",
+          "name": "Icon11Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon11.tsx"
+        },
+        {
+          "id": "3oBehEC0FyOz",
+          "name": "Icon12Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon12.tsx"
         }
       ],
       "images": [
@@ -832,6 +877,11 @@
           "id": "6aHMOrH-RyTW",
           "name": "fail-svgrepo-com.png",
           "filePath": "../public/plasmic/website_starter/images/failSvgrepoComPng.png"
+        },
+        {
+          "id": "rQ1vl2-xRsNA",
+          "name": "image 7",
+          "filePath": "../public/plasmic/website_starter/images/image7.svg"
         }
       ],
       "indirect": false,
