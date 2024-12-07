@@ -1043,13 +1043,86 @@ function PlasmicActivationNew__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__tVwE
+                          sty.freeBox__roiUg
                         )}
                       >
-                        {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627:"
-                        }
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__mayzL
+                          )}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__syrE0)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"70%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "114px"
+                                : "auto"
+                            }
+                            height={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "120"
+                                : "120"
+                            }
+                            loading={"lazy"}
+                            src={
+                              "https://rentamon.com/wp-content/uploads/2024/02/jabama.png"
+                            }
+                            width={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "120"
+                                : "120"
+                            }
+                          />
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__i8PlQ
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__hm06
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $ctx.fetchedData.list[0].url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__wrjRn
+                            )}
+                          >
+                            {
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627:"
+                            }
+                          </div>
+                        </div>
                       </div>
                     }
                     name={"jabamaphone"}
@@ -1273,27 +1346,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                           sty.freeBox___8LS27
                         )}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__qsTnp
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__igcH1)}
-                            displayHeight={"50px"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"50px"}
-                            loading={"lazy"}
-                            src={
-                              "https://rentamon.com/wp-content/uploads/2024/02/jabama.png"
-                            }
-                          />
-                        </div>
                         <AntdButton
                           data-plasmic-name={"skip"}
                           data-plasmic-override={overrides.skip}
@@ -1680,13 +1732,86 @@ function PlasmicActivationNew__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___1Omvu
+                          sty.freeBox___4WvCs
                         )}
                       >
-                        {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627:"
-                        }
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___1SFw
+                          )}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__fl0Nu)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"70%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "114px"
+                                : "auto"
+                            }
+                            height={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "120"
+                                : "120"
+                            }
+                            loading={"lazy"}
+                            src={
+                              "https://rentamon.com/wp-content/uploads/2024/02/jajiga.png"
+                            }
+                            width={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "120"
+                                : "120"
+                            }
+                          />
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__dz8NE
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__zNqRl
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $ctx.fetchedData.list[0].url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__paDiB
+                            )}
+                          >
+                            {
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627:"
+                            }
+                          </div>
+                        </div>
                       </div>
                     }
                     name={"jajigaphone"}
@@ -2294,13 +2419,86 @@ function PlasmicActivationNew__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__lpSbU
+                          sty.freeBox__qNu06
                         )}
                       >
-                        {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0634\u0628:"
-                        }
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__uxgTt
+                          )}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__mO1Dp)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"70%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "114px"
+                                : "auto"
+                            }
+                            height={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "120"
+                                : "120"
+                            }
+                            loading={"lazy"}
+                            src={
+                              "https://rentamon.com/wp-content/uploads/2024/02/shab.png"
+                            }
+                            width={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "120"
+                                : "120"
+                            }
+                          />
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__tnf1O
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__jMu2F
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $ctx.fetchedData.list[0].url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___9UerX
+                            )}
+                          >
+                            {
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0634\u0628:"
+                            }
+                          </div>
+                        </div>
                       </div>
                     }
                     name={"shabphone"}
@@ -2893,13 +3091,86 @@ function PlasmicActivationNew__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__uvWff
+                          sty.freeBox__xnFqS
                         )}
                       >
-                        {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9:"
-                        }
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__yviX3
+                          )}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__hoHzN)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"70%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "114px"
+                                : "auto"
+                            }
+                            height={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "120"
+                                : "120"
+                            }
+                            loading={"lazy"}
+                            src={
+                              "https://rentamon.com/wp-content/uploads/2024/02/otaghak-1.png"
+                            }
+                            width={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "120"
+                                : "120"
+                            }
+                          />
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___8Bgkb
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__wi6Yi
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $ctx.fetchedData.list[0].url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__uQKwh
+                            )}
+                          >
+                            {
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9:"
+                            }
+                          </div>
+                        </div>
                       </div>
                     }
                     name={"otaghakphone"}
