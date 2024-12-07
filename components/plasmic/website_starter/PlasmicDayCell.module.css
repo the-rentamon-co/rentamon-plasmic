@@ -79,13 +79,13 @@
 }
 .text__sLeDq {
   position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  font-weight: 700;
-  color: var(--token-7MRjbe724hDb);
+  color: var(--token-C-5xNZALkGon);
   font-family: "Estedad";
+  font-weight: 700;
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
   min-width: 0;
 }
 .textselected__sLeDq2Pr1U {
@@ -100,8 +100,28 @@
 .textdayStatus_selected__sLeDqmbNkx {
   color: #ffffff;
 }
-.textdayStatus_holidays__sLeDqqQrei {
+.holidays2 {
+  position: relative;
   color: var(--token-j-ZwOKbpUCqd);
+  font-family: "Estedad";
+  font-weight: 700;
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  min-width: 0;
+}
+.holidays2selected {
+  color: #ffffff;
+}
+.holidays2dayStatus_reserved {
+  color: var(--token-7MRjbe724hDb);
+}
+.holidays2dayStatus_disabled {
+  color: #c5c5c5;
+}
+.holidays2dayStatus_selected {
+  color: #ffffff;
 }
 .text__kqTC {
   position: relative;
@@ -126,10 +146,6 @@
 .textdayStatus_discount__kqTC2ON9H {
   display: block;
 }
-.textdayStatus_holidays__kqTCqQrei {
-  color: var(--token-j-ZwOKbpUCqd);
-  display: block;
-}
 .text__ltKp2 {
   position: relative;
   width: 100%;
@@ -138,7 +154,6 @@
   text-align: center;
   color: var(--token-7MRjbe724hDb);
   min-width: 0;
-  display: none;
 }
 @media (max-width: 768px) {
   .text__ltKp2 {
@@ -160,8 +175,4 @@
 }
 .textdayStatus_selected__ltKp2MbNkx {
   color: #ffffff;
-}
-.textdayStatus_holidays__ltKp2QQrei {
-  color: var(--token-j-ZwOKbpUCqd);
-  display: block;
 }

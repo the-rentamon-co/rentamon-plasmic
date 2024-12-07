@@ -72,18 +72,12 @@ createPlasmicElementProxy;
 
 export type PlasmicDayCell__VariantMembers = {
   selected: "selected";
-  dayStatus:
-    | "reserved"
-    | "discount"
-    | "disabled"
-    | "blocked"
-    | "selected"
-    | "holidays";
+  dayStatus: "reserved" | "discount" | "disabled" | "blocked" | "selected";
 };
 export type PlasmicDayCell__VariantsArgs = {
   selected?: SingleBooleanChoiceArg<"selected">;
   dayStatus?: SingleChoiceArg<
-    "reserved" | "discount" | "disabled" | "blocked" | "selected" | "holidays"
+    "reserved" | "discount" | "disabled" | "blocked" | "selected"
   >;
 };
 type VariantPropType = keyof PlasmicDayCell__VariantsArgs;
@@ -96,25 +90,29 @@ export type PlasmicDayCell__ArgsType = {
   dayNumber?: string;
   platform?: string;
   price?: string;
+  holidays?: string;
 };
 type ArgPropType = keyof PlasmicDayCell__ArgsType;
 export const PlasmicDayCell__ArgProps = new Array<ArgPropType>(
   "dayNumber",
   "platform",
-  "price"
+  "price",
+  "holidays"
 );
 
 export type PlasmicDayCell__OverridesType = {
   cell?: Flex__<"div">;
+  holidays2?: Flex__<"div">;
 };
 
 export interface DefaultDayCellProps {
   dayNumber?: string;
   platform?: string;
   price?: string;
+  holidays?: string;
   selected?: SingleBooleanChoiceArg<"selected">;
   dayStatus?: SingleChoiceArg<
-    "reserved" | "discount" | "disabled" | "blocked" | "selected" | "holidays"
+    "reserved" | "discount" | "disabled" | "blocked" | "selected"
   >;
   className?: string;
 }
@@ -139,7 +137,9 @@ function PlasmicDayCell__RenderFunc(props: {
   const args = React.useMemo(
     () =>
       Object.assign(
-        {},
+        {
+          holidays: "false"
+        },
         Object.fromEntries(
           Object.entries(props.args).filter(([_, v]) => v !== undefined)
         )
@@ -224,11 +224,6 @@ function PlasmicDayCell__RenderFunc(props: {
             "dayStatus",
             "discount"
           ),
-          [sty.celldayStatus_holidays]: hasVariant(
-            $state,
-            "dayStatus",
-            "holidays"
-          ),
           [sty.celldayStatus_reserved]: hasVariant(
             $state,
             "dayStatus",
@@ -243,61 +238,148 @@ function PlasmicDayCell__RenderFunc(props: {
         }
       )}
     >
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__sLeDq,
-          {
-            [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
-              $state,
-              "dayStatus",
-              "disabled"
-            ),
-            [sty.textdayStatus_discount__sLeDq2ON9H]: hasVariant(
-              $state,
-              "dayStatus",
-              "discount"
-            ),
-            [sty.textdayStatus_holidays__sLeDqqQrei]: hasVariant(
-              $state,
-              "dayStatus",
-              "holidays"
-            ),
-            [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
-              $state,
-              "dayStatus",
-              "reserved"
-            ),
-            [sty.textdayStatus_selected__sLeDqmbNkx]: hasVariant(
-              $state,
-              "dayStatus",
-              "selected"
-            ),
-            [sty.textselected__sLeDq2Pr1U]: hasVariant(
-              $state,
-              "selected",
-              "selected"
-            )
-          }
-        )}
-      >
-        <React.Fragment>
-          {(() => {
-            try {
-              return $props.dayNumber;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "";
-              }
-              throw e;
+      {(() => {
+        try {
+          return (() => {
+            if ($props.holidays === "true") {
+              return false;
+            } else {
+              return true;
             }
-          })()}
-        </React.Fragment>
-      </div>
+          })();
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return true;
+          }
+          throw e;
+        }
+      })() ? (
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__sLeDq,
+            {
+              [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
+                $state,
+                "dayStatus",
+                "disabled"
+              ),
+              [sty.textdayStatus_discount__sLeDq2ON9H]: hasVariant(
+                $state,
+                "dayStatus",
+                "discount"
+              ),
+              [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
+                $state,
+                "dayStatus",
+                "reserved"
+              ),
+              [sty.textdayStatus_selected__sLeDqmbNkx]: hasVariant(
+                $state,
+                "dayStatus",
+                "selected"
+              ),
+              [sty.textselected__sLeDq2Pr1U]: hasVariant(
+                $state,
+                "selected",
+                "selected"
+              )
+            }
+          )}
+        >
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.dayNumber;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        </div>
+      ) : null}
+      {(() => {
+        try {
+          return (() => {
+            if ($props.holidays === "true") {
+              return true;
+            } else {
+              return false;
+            }
+          })();
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return true;
+          }
+          throw e;
+        }
+      })() ? (
+        <div
+          data-plasmic-name={"holidays2"}
+          data-plasmic-override={overrides.holidays2}
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.holidays2,
+            {
+              [sty.holidays2dayStatus_disabled]: hasVariant(
+                $state,
+                "dayStatus",
+                "disabled"
+              ),
+              [sty.holidays2dayStatus_discount]: hasVariant(
+                $state,
+                "dayStatus",
+                "discount"
+              ),
+              [sty.holidays2dayStatus_reserved]: hasVariant(
+                $state,
+                "dayStatus",
+                "reserved"
+              ),
+              [sty.holidays2dayStatus_selected]: hasVariant(
+                $state,
+                "dayStatus",
+                "selected"
+              ),
+              [sty.holidays2selected]: hasVariant(
+                $state,
+                "selected",
+                "selected"
+              )
+            }
+          )}
+        >
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.dayNumber;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        </div>
+      ) : null}
       <div
         className={classNames(
           projectcss.all,
@@ -308,11 +390,6 @@ function PlasmicDayCell__RenderFunc(props: {
               $state,
               "dayStatus",
               "discount"
-            ),
-            [sty.textdayStatus_holidays__kqTCqQrei]: hasVariant(
-              $state,
-              "dayStatus",
-              "holidays"
             ),
             [sty.textdayStatus_reserved__kqTC6WcTl]: hasVariant(
               $state,
@@ -359,11 +436,6 @@ function PlasmicDayCell__RenderFunc(props: {
               "dayStatus",
               "discount"
             ),
-            [sty.textdayStatus_holidays__ltKp2QQrei]: hasVariant(
-              $state,
-              "dayStatus",
-              "holidays"
-            ),
             [sty.textdayStatus_reserved__ltKp26WcTl]: hasVariant(
               $state,
               "dayStatus",
@@ -403,13 +475,15 @@ function PlasmicDayCell__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  cell: ["cell"]
+  cell: ["cell", "holidays2"],
+  holidays2: ["holidays2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   cell: "div";
+  holidays2: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -472,6 +546,7 @@ export const PlasmicDayCell = Object.assign(
   makeNodeComponent("cell"),
   {
     // Helper components rendering sub-elements
+    holidays2: makeNodeComponent("holidays2"),
 
     // Metadata about props expected for PlasmicDayCell
     internalVariantProps: PlasmicDayCell__VariantProps,

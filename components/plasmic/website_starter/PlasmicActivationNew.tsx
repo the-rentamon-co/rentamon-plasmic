@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
@@ -94,6 +95,10 @@ export const PlasmicActivationNew__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicActivationNew__OverridesType = {
   root?: Flex__<"div">;
+  html?: Flex__<"div">;
+  clarity?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
+  favIcon?: Flex__<typeof Embed>;
   img?: Flex__<typeof PlasmicImg__>;
   apiRequest?: Flex__<typeof ApiRequest>;
   form?: Flex__<typeof FormWrapper>;
@@ -408,7 +413,7 @@ function PlasmicActivationNew__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $ctx }) => 9
       },
       {
         path: "input27.value",
@@ -465,6 +470,38 @@ function PlasmicActivationNew__RenderFunc(props: {
             sty.root
           )}
         >
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"clarity"}
+              data-plasmic-override={overrides.clarity}
+              className={classNames("__wab_instance", sty.clarity)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"favIcon"}
+              data-plasmic-override={overrides.favIcon}
+              className={classNames("__wab_instance", sty.favIcon)}
+              code={
+                "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
+              }
+            />
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__btynj)}>
             <div
               className={classNames(
@@ -3302,45 +3339,31 @@ function PlasmicActivationNew__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["updateStep"] = true
+                          $steps["goToPage"] = true
                             ? (() => {
                                 const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 2
+                                  destination: "https://rentamon.com/panels"
                                 };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
                                   }
-                                  const { objRoot, variablePath } = variable;
-
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue + 1
-                                  );
-                                  return oldValue + 1;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
                           if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
+                            $steps["goToPage"] != null &&
+                            typeof $steps["goToPage"] === "object" &&
+                            typeof $steps["goToPage"].then === "function"
                           ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
+                            $steps["goToPage"] = await $steps["goToPage"];
                           }
 
                           $steps["otaghakVerify"] = true
@@ -5689,6 +5712,10 @@ function PlasmicActivationNew__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "html",
+    "clarity",
+    "goftino",
+    "favIcon",
     "img",
     "apiRequest",
     "form",
@@ -5758,6 +5785,10 @@ const PlasmicDescendants = {
     "platformpropertyButton",
     "platformpropertyButton2"
   ],
+  html: ["html", "clarity", "goftino", "favIcon"],
+  clarity: ["clarity"],
+  goftino: ["goftino"],
+  favIcon: ["favIcon"],
   img: ["img"],
   apiRequest: ["apiRequest"],
   form: [
@@ -5917,6 +5948,10 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  html: "div";
+  clarity: typeof Embed;
+  goftino: typeof Embed;
+  favIcon: typeof Embed;
   img: typeof PlasmicImg__;
   apiRequest: typeof ApiRequest;
   form: typeof FormWrapper;
@@ -6047,6 +6082,10 @@ export const PlasmicActivationNew = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    html: makeNodeComponent("html"),
+    clarity: makeNodeComponent("clarity"),
+    goftino: makeNodeComponent("goftino"),
+    favIcon: makeNodeComponent("favIcon"),
     img: makeNodeComponent("img"),
     apiRequest: makeNodeComponent("apiRequest"),
     form: makeNodeComponent("form"),

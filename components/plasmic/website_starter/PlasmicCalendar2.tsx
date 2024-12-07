@@ -925,14 +925,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ) {
                       return "disabled";
                     }
-                    if ($state.holidays && $state.holidays.length > 0) {
-                      const isHoliday = $state.holidays.some(
-                        holidayTimestamp => holidayTimestamp === dateProps.unix
-                      );
-                      if (isHoliday) {
-                        return "holidays";
-                      }
-                    }
                     if (dateProps.isSelected) {
                       return "selected";
                     }
@@ -967,6 +959,25 @@ function PlasmicCalendar2__RenderFunc(props: {
                     e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
                     return [];
+                  }
+                  throw e;
+                }
+              })()}
+              holidays={(() => {
+                try {
+                  return (() => {
+                    if (dateProps.isHoliday) {
+                      return "true";
+                    } else {
+                      return "false";
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
                   }
                   throw e;
                 }

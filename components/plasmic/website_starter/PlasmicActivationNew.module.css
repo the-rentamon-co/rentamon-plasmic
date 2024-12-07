@@ -21,6 +21,30 @@
 .root > * {
   grid-column: 4;
 }
+.html {
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
+.clarity:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.goftino:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.favIcon:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .freeBox__btynj {
   display: flex;
   flex-direction: row;
@@ -1478,7 +1502,6 @@
   object-fit: cover;
 }
 .shabpp {
-  display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -1487,6 +1510,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .formField__qGiao:global(.__wab_instance) {
@@ -1502,7 +1526,6 @@
   object-fit: cover;
 }
 .otaghakpp {
-  display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -1511,6 +1534,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .formField__dGrRx:global(.__wab_instance) {
