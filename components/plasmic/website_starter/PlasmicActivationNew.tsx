@@ -412,7 +412,7 @@ function PlasmicActivationNew__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 8
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       },
       {
         path: "input27.value",

@@ -173,7 +173,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             data-plasmic-name={"calendar2"}
             data-plasmic-override={overrides.calendar2}
             className={classNames("__wab_instance", sty.calendar2)}
-            propertyId={1}
+            propertyId={2}
           />
         </div>
       </div>
