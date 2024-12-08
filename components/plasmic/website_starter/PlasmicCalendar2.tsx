@@ -240,28 +240,29 @@ function PlasmicCalendar2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "variable",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
-        path: "variable2",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
         path: "variable3",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return undefined;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "apiRequest.data",
@@ -318,363 +319,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return (() => {
-                function extractTimestamps(data) {
-                  if (!data || !data.result || !data.result.events) {
-                    return [];
-                  }
-                  return data.result.events.map(event => {
-                    const date = new Date(event.gregorianDate);
-                    return date.getTime() / 1000;
-                  });
-                }
-                const timestamps = extractTimestamps({
-                  result: {
-                    events: [
-                      {
-                        title: "جشن نوروز/جشن سال نو",
-                        gregorianDate: "2023-03-21"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2023-03-22"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2023-03-23"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2023-03-24"
-                      },
-                      {
-                        title: "روز جمهوری اسلامی",
-                        gregorianDate: "2023-04-01"
-                      },
-                      {
-                        title: "جشن سیزده به در",
-                        gregorianDate: "2023-04-02"
-                      },
-                      {
-                        title: "شهادت حضرت علی علیه السلام",
-                        gregorianDate: "2023-04-12"
-                      },
-                      {
-                        title: "عید سعید فطر",
-                        gregorianDate: "2023-04-22"
-                      },
-                      {
-                        title: "تعطیل به مناسبت عید سعید فطر",
-                        gregorianDate: "2023-04-23"
-                      },
-                      {
-                        title: "شهادت امام جعفر صادق علیه السلام",
-                        gregorianDate: "2023-05-16"
-                      },
-                      {
-                        title: "رحلت حضرت امام خمینی",
-                        gregorianDate: "2023-06-04"
-                      },
-                      {
-                        title: "قیام 15 خرداد",
-                        gregorianDate: "2023-06-05"
-                      },
-                      {
-                        title: "عید سعید قربان",
-                        gregorianDate: "2023-06-29"
-                      },
-                      {
-                        title: "عید سعید غدیر خم",
-                        gregorianDate: "2023-07-07"
-                      },
-                      {
-                        title: "تاسوعای حسینی",
-                        gregorianDate: "2023-07-27"
-                      },
-                      {
-                        title: "عاشورای حسینی",
-                        gregorianDate: "2023-07-28"
-                      },
-                      {
-                        title: "اربعین حسینی",
-                        gregorianDate: "2023-09-06"
-                      },
-                      {
-                        title:
-                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
-                        gregorianDate: "2023-09-14"
-                      },
-                      {
-                        title: "شهادت امام رضا علیه السلام",
-                        gregorianDate: "2023-09-16"
-                      },
-                      {
-                        title: "شهادت امام حسن عسکری علیه السلام",
-                        gregorianDate: "2023-09-24"
-                      },
-                      {
-                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
-                        gregorianDate: "2023-10-03"
-                      },
-                      {
-                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
-                        gregorianDate: "2023-12-17"
-                      },
-                      {
-                        title: "ولادت امام علی علیه السلام و روز پدر",
-                        gregorianDate: "2024-01-25"
-                      },
-                      {
-                        title: "مبعث رسول اکرم (ص)",
-                        gregorianDate: "2024-02-08"
-                      },
-                      {
-                        title: "پیروزی انقلاب اسلامی",
-                        gregorianDate: "2024-02-11"
-                      },
-                      {
-                        title:
-                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
-                        gregorianDate: "2024-02-25"
-                      },
-                      {
-                        title: "روز ملی شدن صنعت نفت ایران",
-                        gregorianDate: "2024-03-19"
-                      },
-                      {
-                        title: "جشن نوروز/جشن سال نو",
-                        gregorianDate: "2024-03-20"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2024-03-21"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2024-03-22"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2024-03-23"
-                      },
-                      {
-                        title: "روز جمهوری اسلامی",
-                        gregorianDate: "2024-03-31"
-                      },
-                      {
-                        title: "جشن سیزده به در",
-                        gregorianDate: "2024-04-01"
-                      },
-                      {
-                        title: "شهادت حضرت علی علیه السلام",
-                        gregorianDate: "2024-04-01"
-                      },
-                      {
-                        title: "عید سعید فطر",
-                        gregorianDate: "2024-04-10"
-                      },
-                      {
-                        title: "تعطیل به مناسبت عید سعید فطر",
-                        gregorianDate: "2024-04-11"
-                      },
-                      {
-                        title: "شهادت امام جعفر صادق علیه السلام",
-                        gregorianDate: "2024-05-04"
-                      },
-                      {
-                        title: "رحلت حضرت امام خمینی",
-                        gregorianDate: "2024-06-03"
-                      },
-                      {
-                        title: "قیام 15 خرداد",
-                        gregorianDate: "2024-06-04"
-                      },
-                      {
-                        title: "عید سعید قربان",
-                        gregorianDate: "2024-06-17"
-                      },
-                      {
-                        title: "عید سعید غدیر خم",
-                        gregorianDate: "2024-06-25"
-                      },
-                      {
-                        title: "تاسوعای حسینی",
-                        gregorianDate: "2024-07-15"
-                      },
-                      {
-                        title: "عاشورای حسینی",
-                        gregorianDate: "2024-07-16"
-                      },
-                      {
-                        title: "اربعین حسینی",
-                        gregorianDate: "2024-08-25"
-                      },
-                      {
-                        title:
-                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
-                        gregorianDate: "2024-09-02"
-                      },
-                      {
-                        title: "شهادت امام رضا علیه السلام",
-                        gregorianDate: "2024-09-04"
-                      },
-                      {
-                        title: "شهادت امام حسن عسکری علیه السلام",
-                        gregorianDate: "2024-09-12"
-                      },
-                      {
-                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
-                        gregorianDate: "2024-09-21"
-                      },
-                      {
-                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
-                        gregorianDate: "2024-12-05"
-                      },
-                      {
-                        title: "ولادت امام علی علیه السلام و روز پدر",
-                        gregorianDate: "2025-01-14"
-                      },
-                      {
-                        title: "مبعث رسول اکرم (ص)",
-                        gregorianDate: "2025-01-28"
-                      },
-                      {
-                        title: "پیروزی انقلاب اسلامی",
-                        gregorianDate: "2025-02-10"
-                      },
-                      {
-                        title:
-                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
-                        gregorianDate: "2025-02-14"
-                      },
-                      {
-                        title: "روز ملی شدن صنعت نفت ایران",
-                        gregorianDate: "2025-03-19"
-                      },
-                      {
-                        title: "آخرین روز سال",
-                        gregorianDate: "2025-03-20"
-                      },
-                      {
-                        title: "جشن نوروز/جشن سال نو",
-                        gregorianDate: "2025-03-21"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2025-03-22"
-                      },
-                      {
-                        title: "شهادت حضرت علی علیه السلام",
-                        gregorianDate: "2025-03-22"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2025-03-23"
-                      },
-                      {
-                        title: "عیدنوروز",
-                        gregorianDate: "2025-03-24"
-                      },
-                      {
-                        title: "عید سعید فطر",
-                        gregorianDate: "2025-03-31"
-                      },
-                      {
-                        title: "روز جمهوری اسلامی",
-                        gregorianDate: "2025-04-01"
-                      },
-                      {
-                        title: "تعطیل به مناسبت عید سعید فطر",
-                        gregorianDate: "2025-04-01"
-                      },
-                      {
-                        title: "جشن سیزده به در",
-                        gregorianDate: "2025-04-02"
-                      },
-                      {
-                        title: "شهادت امام جعفر صادق علیه السلام",
-                        gregorianDate: "2025-04-24"
-                      },
-                      {
-                        title: "رحلت حضرت امام خمینی",
-                        gregorianDate: "2025-06-04"
-                      },
-                      {
-                        title: "قیام 15 خرداد",
-                        gregorianDate: "2025-06-05"
-                      },
-                      {
-                        title: "عید سعید قربان",
-                        gregorianDate: "2025-06-07"
-                      },
-                      {
-                        title: "عید سعید غدیر خم",
-                        gregorianDate: "2025-06-15"
-                      },
-                      {
-                        title: "تاسوعای حسینی",
-                        gregorianDate: "2025-07-05"
-                      },
-                      {
-                        title: "عاشورای حسینی",
-                        gregorianDate: "2025-07-06"
-                      },
-                      {
-                        title: "اربعین حسینی",
-                        gregorianDate: "2025-08-15"
-                      },
-                      {
-                        title:
-                          "رحلت  رسول اکرم\u061Bشهادت امام حسن مجتبی علیه السلام",
-                        gregorianDate: "2025-08-23"
-                      },
-                      {
-                        title: "شهادت امام رضا علیه السلام",
-                        gregorianDate: "2025-08-24"
-                      },
-                      {
-                        title: "شهادت امام حسن عسکری علیه السلام",
-                        gregorianDate: "2025-09-01"
-                      },
-                      {
-                        title: "میلاد رسول اکرم و امام جعفر صادق علیه السلام",
-                        gregorianDate: "2025-09-10"
-                      },
-                      {
-                        title: "شهادت حضرت فاطمه زهرا سلام الله علیها",
-                        gregorianDate: "2025-11-25"
-                      },
-                      {
-                        title: "ولادت امام علی علیه السلام و روز پدر",
-                        gregorianDate: "2026-01-03"
-                      },
-                      {
-                        title: "مبعث رسول اکرم (ص)",
-                        gregorianDate: "2026-01-17"
-                      },
-                      {
-                        title:
-                          "ولادت حضرت قائم عجل الله تعالی فرجه و جشن نیمه شعبان",
-                        gregorianDate: "2026-02-04"
-                      },
-                      {
-                        title: "پیروزی انقلاب اسلامی",
-                        gregorianDate: "2026-02-11"
-                      },
-                      {
-                        title: "شهادت حضرت علی علیه السلام",
-                        gregorianDate: "2026-03-11"
-                      },
-                      {
-                        title: "روز ملی شدن صنعت نفت ایران",
-                        gregorianDate: "2026-03-20"
-                      }
-                    ]
-                  },
-                  success: true
-                });
-                return timestamps;
-              })();
+              return [];
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -773,7 +418,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           data-plasmic-name={"fragmentDatePicker"}
           data-plasmic-override={overrides.fragmentDatePicker}
           className={classNames("__wab_instance", sty.fragmentDatePicker)}
-          customDayCell={true}
+          customDayCell={false}
           dayCell={(dateProps: any) => (
             <DayCell
               data-plasmic-name={"dayCell"}
@@ -836,83 +481,37 @@ function PlasmicCalendar2__RenderFunc(props: {
                 try {
                   return (() => {
                     function convertPersianNumbersToEnglish(str) {
-                      const persianNumbers = [
-                        "۰",
-                        "۱",
-                        "۲",
-                        "۳",
-                        "۴",
-                        "۵",
-                        "۶",
-                        "۷",
-                        "۸",
-                        "۹"
-                      ];
-
-                      const englishNumbers = [
-                        "0",
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "5",
-                        "6",
-                        "7",
-                        "8",
-                        "9"
-                      ];
-
-                      return str.replace(
-                        /[۰-۹]/g,
-                        char =>
-                          englishNumbers[persianNumbers.indexOf(char)] || char
+                      const persianNumbers = "۰۱۲۳۴۵۶۷۸۹";
+                      return str.replace(/[۰-۹]/g, char =>
+                        persianNumbers.indexOf(char)
                       );
                     }
                     const currentDate = new Date();
-                    const currentDay = parseInt(
-                      convertPersianNumbersToEnglish(
-                        currentDate.toLocaleDateString("fa").split("/")[2]
-                      )
-                    );
-                    const currentMonth = parseInt(
-                      convertPersianNumbersToEnglish(
-                        currentDate.toLocaleDateString("fa").split("/")[1]
-                      )
-                    );
-                    const currentYear = parseInt(
-                      convertPersianNumbersToEnglish(
-                        currentDate.toLocaleDateString("fa").split("/")[0]
-                      )
-                    );
-                    const nextMonthDate = new Date(
-                      new Date().setMonth(currentDate.getMonth() + 1)
-                    );
-                    const nextMonth = parseInt(
-                      convertPersianNumbersToEnglish(
-                        nextMonthDate.toLocaleDateString("fa").split("/")[1]
-                      )
-                    );
-                    const nextMonthYear = parseInt(
-                      convertPersianNumbersToEnglish(
-                        nextMonthDate.toLocaleDateString("fa").split("/")[0]
-                      )
-                    );
+                    const nextMonthDate = new Date(currentDate);
+                    nextMonthDate.setMonth(currentDate.getMonth() + 1);
+                    const [currentYear, currentMonth, currentDay] = currentDate
+                      .toLocaleDateString("fa")
+                      .split("/")
+                      .map(val =>
+                        parseInt(convertPersianNumbersToEnglish(val))
+                      );
+                    const [nextMonthYear, nextMonth] = nextMonthDate
+                      .toLocaleDateString("fa")
+                      .split("/")
+                      .slice(0, 2)
+                      .map(val =>
+                        parseInt(convertPersianNumbersToEnglish(val))
+                      );
                     const targetDate = new Date(dateProps.unix * 1000);
-                    const targetDay = parseInt(
-                      convertPersianNumbersToEnglish(
-                        targetDate.toLocaleDateString("fa").split("/")[2]
-                      )
-                    );
-                    const targetMonth = parseInt(
-                      convertPersianNumbersToEnglish(
-                        targetDate.toLocaleDateString("fa").split("/")[1]
-                      )
-                    );
-                    const targetYear = parseInt(
-                      convertPersianNumbersToEnglish(
-                        targetDate.toLocaleDateString("fa").split("/")[0]
-                      )
-                    );
+                    const [targetYear, targetMonth, targetDay] = targetDate
+                      .toLocaleDateString("fa")
+                      .split("/")
+                      .map(val =>
+                        parseInt(convertPersianNumbersToEnglish(val))
+                      );
+                    const calendarItem =
+                      $state.apiRequest.data.calendar[dateProps.date.day - 1] ||
+                      {};
                     if (
                       (targetYear === currentYear &&
                         targetMonth === currentMonth &&
@@ -925,33 +524,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ) {
                       return "disabled";
                     }
-                    if (dateProps.isSelected) {
-                      return "selected";
-                    }
-                    if (
-                      $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        ?.status === "reserved"
-                    ) {
-                      return "reserved";
-                    }
-                    if (
-                      $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        ?.status === "blocked"
-                    ) {
-                      return "blocked";
-                    }
-                    if (
-                      $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        ?.discount_percentage != 0 &&
-                      $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        ?.discount_percentage != null
-                    ) {
-                      return "discount";
-                    }
-                    return (
-                      $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                        ?.status || ""
-                    );
+                    if (dateProps.isSelected) return "selected";
+                    if (calendarItem.status === "reserved") return "reserved";
+                    if (calendarItem.status === "blocked") return "blocked";
+                    if (calendarItem.discount_percentage) return "discount";
+                    return calendarItem.status || "";
                   })();
                 } catch (e) {
                   if (
@@ -985,42 +562,24 @@ function PlasmicCalendar2__RenderFunc(props: {
               platform={(() => {
                 try {
                   return (() => {
-                    return $state.apiRequest.data.calendar[
-                      dateProps.date.day - 1
-                    ].status === "reserved"
-                      ? $state.apiRequest.data.calendar[dateProps.date.day - 1]
-                          .website === "host"
-                        ? "رزرو"
-                        : $state.apiRequest.data.calendar[
-                            dateProps.date.day - 1
-                          ].website === "jajiga"
-                        ? "جاجیگا"
-                        : $state.apiRequest.data.calendar[
-                            dateProps.date.day - 1
-                          ].website === "jabama"
-                        ? "جاباما"
-                        : $state.apiRequest.data.calendar[
-                            dateProps.date.day - 1
-                          ].website === "shab"
-                        ? "شب"
-                        : $state.apiRequest.data.calendar[
-                            dateProps.date.day - 1
-                          ].website === "homsa"
-                        ? "هومسا"
-                        : $state.apiRequest.data.calendar[
-                            dateProps.date.day - 1
-                          ].website === "mihmansho"
-                        ? "میهمان شو"
-                        : $state.apiRequest.data.calendar[
-                            dateProps.date.day - 1
-                          ].website === "otaghak"
-                        ? "اتاقک"
-                        : $state.apiRequest.data.calendar[
-                            dateProps.date.day - 1
-                          ].website === "mizboon"
-                        ? "میزبون"
-                        : ""
-                      : "";
+                    const websiteNames = {
+                      host: "رزرو",
+                      jajiga: "جاجیگا",
+                      jabama: "جاباما",
+                      shab: "شب",
+                      homsa: "هومسا",
+                      mihmansho: "میهمان شو",
+                      otaghak: "اتاقک",
+                      mizboon: "میزبون"
+                    };
+                    const dayIndex = dateProps.date.day - 1;
+                    const calendarData =
+                      $state.apiRequest.data.calendar[dayIndex];
+                    const status =
+                      calendarData?.status === "reserved"
+                        ? websiteNames[calendarData.website] || ""
+                        : "";
+                    return status;
                   })();
                 } catch (e) {
                   if (
@@ -1066,12 +625,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                               dateProps.date.day - 1
                             ];
                           if (calendarItem) {
-                            const price = calendarItem.price;
-                            const discountPercentage =
-                              calendarItem.discount_percentage;
-                            const finalPrice = discountPercentage
-                              ? price - (price * discountPercentage) / 100
-                              : price;
+                            const {
+                              price = 0,
+                              discount_percentage: discountPercentage = 0
+                            } = calendarItem;
+                            const finalPrice =
+                              price * (1 - discountPercentage / 100);
                             const formattedPersianPrice = finalPrice
                               ? new Intl.NumberFormat("fa-IR").format(
                                   finalPrice / 1000
@@ -2714,59 +2273,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   </div>
                 );
               })}
-              <Button
-                className={classNames("__wab_instance", sty.button__g0Rqs)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateFragmentDatePickerValue"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["fragmentDatePicker", "value"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateFragmentDatePickerValue"] != null &&
-                    typeof $steps["updateFragmentDatePickerValue"] ===
-                      "object" &&
-                    typeof $steps["updateFragmentDatePickerValue"].then ===
-                      "function"
-                  ) {
-                    $steps["updateFragmentDatePickerValue"] = await $steps[
-                      "updateFragmentDatePickerValue"
-                    ];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__c5JgP
-                  )}
-                >
-                  {"\u062a\u0644\u0627\u0634 \u0645\u062c\u062f\u062f"}
-                </div>
-              </Button>
               <Button
                 className={classNames("__wab_instance", sty.button__sWmv0)}
                 onClick={async event => {
