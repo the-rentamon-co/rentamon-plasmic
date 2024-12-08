@@ -249,7 +249,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "variable2",
@@ -3029,6 +3029,42 @@ function PlasmicCalendar2__RenderFunc(props: {
                             }
                           />
                         ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              const platformStatus =
+                                $state.platformRequestStatus?.data || {};
+                              if (
+                                Object.keys(platformStatus).length > 0 &&
+                                !platformStatus[currentItem]
+                              ) {
+                                return true;
+                              } else {
+                                return false;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__vJgZx
+                            )}
+                          >
+                            {
+                              "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0646\u062f\u0627\u0631\u062f"
+                            }
+                          </div>
+                        ) : null}
                       </div>
                     </div>
                   </div>
@@ -3417,7 +3453,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               )
                             )
                             .flat();
-                          return f("ht    i.rentamon.com/api/setblock", {
+                          return fetch("https://api.rentamon.com/setblock", {
                             method: "POST",
                             headers: {
                               "Content-Type": "application/json",
