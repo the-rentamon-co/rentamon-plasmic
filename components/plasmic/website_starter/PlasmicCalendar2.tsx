@@ -1688,7 +1688,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               "Content-Type": "application/json",
                               Accept: "*/*"
                             },
-                            credintials: "include",
+                            credentials: "include",
                             body: JSON.stringify(data)
                           }
                         )
@@ -2072,7 +2072,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   "Content-Type": "application/json",
                                   Accept: "*/*"
                                 },
-                                credintials: "include",
+                                credentials: "include",
                                 body: JSON.stringify(data)
                               }
                             )
@@ -2360,7 +2360,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             "Content-Type": "application/json",
                             Accept: "*/*"
                           },
-                          credintials: "include",
+                          credentials: "include",
                           body: JSON.stringify(data)
                         })
                           .then(response => {
@@ -3309,7 +3309,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 "Content-Type": "application/json",
                                 Accept: "*/*"
                               },
-                              credintials: "include",
+                              credentials: "include",
                               body: JSON.stringify(data)
                             }
                           )
@@ -3417,13 +3417,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                               )
                             )
                             .flat();
-                          return fetch("ht    i.rentamon.com/api/setblock", {
+                          return f("ht    i.rentamon.com/api/setblock", {
                             method: "POST",
                             headers: {
                               "Content-Type": "application/json",
                               Accept: "*/*"
                             },
-                            credintials: "include",
+                            credentials: "include",
                             body: JSON.stringify(data)
                           })
                             .then(response => {
