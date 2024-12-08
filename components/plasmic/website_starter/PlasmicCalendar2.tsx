@@ -418,7 +418,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           data-plasmic-name={"fragmentDatePicker"}
           data-plasmic-override={overrides.fragmentDatePicker}
           className={classNames("__wab_instance", sty.fragmentDatePicker)}
-          customDayCell={false}
+          customDayCell={true}
           dayCell={(dateProps: any) => (
             <DayCell
               data-plasmic-name={"dayCell"}
