@@ -633,6 +633,20 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "text-input"
+        },
+        {
+          "id": "FDBji6QDqVJ5",
+          "name": "CalendarTest",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCalendarTest.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/calendar-test.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCalendarTest.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/calendar-test"
         }
       ],
       "icons": [
