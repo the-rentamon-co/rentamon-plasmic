@@ -141,8 +141,9 @@ export type PlasmicActivationNew__OverridesType = {
   mihmanshoverify7?: Flex__<typeof AntdButton>;
   input15?: Flex__<typeof AntdInput>;
   input16?: Flex__<typeof AntdInput>;
-  homsaverify?: Flex__<typeof AntdButton>;
-  homsaverify2?: Flex__<typeof AntdButton>;
+  homsaVerify?: Flex__<typeof AntdButton>;
+  homsaBack?: Flex__<typeof AntdButton>;
+  homsaSkip?: Flex__<typeof AntdButton>;
   input17?: Flex__<typeof AntdInput>;
   mizboonsend?: Flex__<typeof AntdButton>;
   mizboonsend3?: Flex__<typeof AntdButton>;
@@ -3396,132 +3397,38 @@ function PlasmicActivationNew__RenderFunc(props: {
                           onClick={async () => {
                             const $steps = {};
 
-                            $steps["goToHttpsRentamonComPanels"] = true
+                            $steps["updateStep"] = true
                               ? (() => {
                                   const actionArgs = {
-                                    destination: "https://rentamon.com/panels"
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["step"]
+                                    },
+                                    operation: 0,
+                                    value: $state.step + 2
                                   };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
                                     }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
                                   })?.apply(null, [actionArgs]);
                                 })()
                               : undefined;
                             if (
-                              $steps["goToHttpsRentamonComPanels"] != null &&
-                              typeof $steps["goToHttpsRentamonComPanels"] ===
-                                "object" &&
-                              typeof $steps["goToHttpsRentamonComPanels"]
-                                .then === "function"
+                              $steps["updateStep"] != null &&
+                              typeof $steps["updateStep"] === "object" &&
+                              typeof $steps["updateStep"].then === "function"
                             ) {
-                              $steps["goToHttpsRentamonComPanels"] =
-                                await $steps["goToHttpsRentamonComPanels"];
-                            }
-
-                            $steps["connectionStatus"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "POST",
-                                      "https://gateway.rentamon.com/webhook/connection",
-                                      undefined,
-                                      (() => {
-                                        try {
-                                          return (() => {
-                                            $state.form.value.otaghakphone !==
-                                            ""
-                                              ? "otaghak=true"
-                                              : "otaghak=false";
-                                            $state.form.value.shabphone !== ""
-                                              ? "shab=true"
-                                              : "shab=false";
-                                            $state.form.value.jajigaphone !== ""
-                                              ? "jajiga=true"
-                                              : "jajiga=false";
-                                            $state.form.value.jabamaphone !== ""
-                                              ? "jabama=true"
-                                              : "jabama=false";
-                                            return (
-                                              "jabama=" +
-                                              ($state.form.value.jabamaphone !==
-                                              ""
-                                                ? "true"
-                                                : "false") +
-                                              " shab=" +
-                                              ($state.form.value.shabphone !==
-                                              ""
-                                                ? "true"
-                                                : "false") +
-                                              " jajiga=" +
-                                              ($state.form.value.jajigaphone !==
-                                              ""
-                                                ? "true"
-                                                : "false") +
-                                              " otaghak=" +
-                                              ($state.form.value
-                                                .otaghakphone !== ""
-                                                ? "true"
-                                                : "false")
-                                            );
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })()
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.apiRequest"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["connectionStatus"] != null &&
-                              typeof $steps["connectionStatus"] === "object" &&
-                              typeof $steps["connectionStatus"].then ===
-                                "function"
-                            ) {
-                              $steps["connectionStatus"] = await $steps[
-                                "connectionStatus"
-                              ];
-                            }
-
-                            $steps["toast"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      undefined,
-                                      "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f! \u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0648\u0627\u0631\u062f \u062a\u0642\u0648\u06cc\u0645 \u0628\u0634\u06cc",
-                                      "bottom-center",
-                                      6000
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["toast"] != null &&
-                              typeof $steps["toast"] === "object" &&
-                              typeof $steps["toast"].then === "function"
-                            ) {
-                              $steps["toast"] = await $steps["toast"];
+                              $steps["updateStep"] = await $steps["updateStep"];
                             }
                           }}
                           submitsForm={true}
@@ -3647,31 +3554,45 @@ function PlasmicActivationNew__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["goToPage"] = true
+                          $steps["updateStep"] = true
                             ? (() => {
                                 const actionArgs = {
-                                  destination: "https://rentamon.com/panels"
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["step"]
+                                  },
+                                  operation: 2
                                 };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
                                   }
+                                  const { objRoot, variablePath } = variable;
+
+                                  const oldValue = $stateGet(
+                                    objRoot,
+                                    variablePath
+                                  );
+                                  $stateSet(
+                                    objRoot,
+                                    variablePath,
+                                    oldValue + 1
+                                  );
+                                  return oldValue + 1;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
                           if (
-                            $steps["goToPage"] != null &&
-                            typeof $steps["goToPage"] === "object" &&
-                            typeof $steps["goToPage"].then === "function"
+                            $steps["updateStep"] != null &&
+                            typeof $steps["updateStep"] === "object" &&
+                            typeof $steps["updateStep"].then === "function"
                           ) {
-                            $steps["goToPage"] = await $steps["goToPage"];
+                            $steps["updateStep"] = await $steps["updateStep"];
                           }
 
                           $steps["otaghakVerify"] = true
@@ -3715,62 +3636,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["connectionStatus"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/connection",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return (
-                                          "jabama=" +
-                                          ($state.form.value.jabamaphone !== ""
-                                            ? "true"
-                                            : "false") +
-                                          ", shab=" +
-                                          ($state.form.value.shabphone !== ""
-                                            ? "true"
-                                            : "false") +
-                                          ", jajiga=" +
-                                          ($state.form.value.jajigaphone !== ""
-                                            ? "true"
-                                            : "false") +
-                                          ", otaghak=" +
-                                          ($state.form.value.otaghakphone !== ""
-                                            ? "true"
-                                            : "false")
-                                        );
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["connectionStatus"] != null &&
-                            typeof $steps["connectionStatus"] === "object" &&
-                            typeof $steps["connectionStatus"].then ===
-                              "function"
-                          ) {
-                            $steps["connectionStatus"] = await $steps[
-                              "connectionStatus"
-                            ];
-                          }
-
                           $steps["otaghakContact"] = true
                             ? (() => {
                                 const actionArgs = {
@@ -3807,29 +3672,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                             $steps["otaghakContact"] = await $steps[
                               "otaghakContact"
                             ];
-                          }
-
-                          $steps["toast"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f!",
-                                    "bottom-center",
-                                    6000
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["toast"] != null &&
-                            typeof $steps["toast"] === "object" &&
-                            typeof $steps["toast"].then === "function"
-                          ) {
-                            $steps["toast"] = await $steps["toast"];
                           }
                         }}
                         submitsForm={true}
@@ -4388,327 +4230,664 @@ function PlasmicActivationNew__RenderFunc(props: {
                     </AntdButton>
                   </div>
                 </FormItemWrapper>
-                <div className={classNames(projectcss.all, sty.freeBox__r2Ses)}>
-                  <FormItemWrapper
-                    className={classNames(
-                      "__wab_instance",
-                      sty.formField___3FYu8
-                    )}
-                    initialValue={(() => {
-                      try {
-                        return $state.apiRequest.data[0].phone;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
-                    label={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__c7V1T
-                        )}
-                      >
-                        {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0647\u0648\u0645\u0633\u0627:"
-                        }
-                      </div>
+                {(() => {
+                  try {
+                    return $state.step == 9;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
                     }
-                    name={"homsaphone"}
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__r2Ses)}
                   >
-                    {(() => {
-                      const child$Props = {
-                        className: classNames("__wab_instance", sty.input15),
-                        onChange: generateStateOnChangePropForCodeComponents(
-                          $state,
-                          "value",
-                          ["input15", "value"],
-                          AntdInput_Helpers
-                        ),
-                        placeholder: ``,
-                        size: "large",
-                        value: generateStateValueProp($state, [
-                          "input15",
-                          "value"
-                        ])
-                      };
-                      initializeCodeComponentStates(
-                        $state,
-                        [
-                          {
-                            name: "value",
-                            plasmicStateName: "input15.value"
-                          }
-                        ],
-                        [],
-                        AntdInput_Helpers ?? {},
-                        child$Props
-                      );
-
-                      return (
-                        <AntdInput
-                          data-plasmic-name={"input15"}
-                          data-plasmic-override={overrides.input15}
-                          {...child$Props}
-                        />
-                      );
-                    })()}
-                  </FormItemWrapper>
-                  <FormItemWrapper
-                    className={classNames(
-                      "__wab_instance",
-                      sty.formField__xlxst
-                    )}
-                    label={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___1V2Wr
-                        )}
-                      >
-                        {
-                          "\u0631\u0645\u0632 \u0639\u0628\u0648\u0631 \u0647\u0648\u0645\u0633\u0627:"
-                        }
-                      </div>
-                    }
-                    name={"homsaOTP"}
-                  >
-                    {(() => {
-                      const child$Props = {
-                        className: classNames("__wab_instance", sty.input16),
-                        onChange: generateStateOnChangePropForCodeComponents(
-                          $state,
-                          "value",
-                          ["input16", "value"],
-                          AntdInput_Helpers
-                        ),
-                        placeholder: (() => {
-                          try {
+                    <FormItemWrapper
+                      className={classNames(
+                        "__wab_instance",
+                        sty.formField___3FYu8
+                      )}
+                      initialValue={(() => {
+                        try {
+                          return $state.apiRequest.data[0].phone;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
                             return undefined;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
                           }
-                        })(),
-                        size: "large",
-                        value: generateStateValueProp($state, [
-                          "input16",
-                          "value"
-                        ])
-                      };
-                      initializeCodeComponentStates(
-                        $state,
-                        [
-                          {
-                            name: "value",
-                            plasmicStateName: "input16.value"
-                          }
-                        ],
-                        [],
-                        AntdInput_Helpers ?? {},
-                        child$Props
-                      );
-
-                      return (
-                        <AntdInput
-                          data-plasmic-name={"input16"}
-                          data-plasmic-override={overrides.input16}
-                          {...child$Props}
-                        />
-                      );
-                    })()}
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__yeJoz)}
-                    >
-                      <AntdButton
-                        data-plasmic-name={"homsaverify"}
-                        data-plasmic-override={overrides.homsaverify}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.homsaverify
-                        )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 2
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue + 1
-                                  );
-                                  return oldValue + 1;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
-                          ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
-                          }
-
-                          $steps["invokeGlobalAction"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook-test/homsa-verify-otp",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return {
-                                          phone: $state.form.value.homsaphone,
-                                          otp: $state.form.value.homsaOTP
-                                        };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
-                      >
+                          throw e;
+                        }
+                      })()}
+                      label={
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___1XeQd
+                            sty.freeBox__j8DaR
                           )}
                         >
-                          {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
-                        </div>
-                      </AntdButton>
-                      <AntdButton
-                        data-plasmic-name={"homsaverify2"}
-                        data-plasmic-override={overrides.homsaverify2}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.homsaverify2
-                        )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 0,
-                                  value: $state.step + 2
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
-                          ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__bmLnD
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__dNb06
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__ep2Jj)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"70%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "114px"
+                                  : "auto"
                               }
-                              style={{ textDecorationLine: "underline" }}
+                              height={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "120"
+                                  : "120"
+                              }
+                              loading={"lazy"}
+                              src={
+                                "https://rentamon.com/wp-content/uploads/2024/02/homsa.png"
+                              }
+                              width={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "120"
+                                  : "120"
+                              }
+                            />
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__vq4C
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___0GkUs
+                              )}
+                            >
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return $ctx.fetchedData.list[0].url;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            </div>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__p91Dr
+                              )}
                             >
                               {
-                                "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0647\u0648\u0645\u0633\u0627:"
                               }
-                            </span>
-                          </React.Fragment>
+                            </div>
+                          </div>
                         </div>
-                      </AntdButton>
-                    </div>
-                  </FormItemWrapper>
-                </div>
+                      }
+                      name={"homsaphone"}
+                    >
+                      {(() => {
+                        const child$Props = {
+                          className: classNames("__wab_instance", sty.input15),
+                          onChange: generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "value",
+                            ["input15", "value"],
+                            AntdInput_Helpers
+                          ),
+                          placeholder: ``,
+                          size: "large",
+                          value: generateStateValueProp($state, [
+                            "input15",
+                            "value"
+                          ])
+                        };
+                        initializeCodeComponentStates(
+                          $state,
+                          [
+                            {
+                              name: "value",
+                              plasmicStateName: "input15.value"
+                            }
+                          ],
+                          [],
+                          AntdInput_Helpers ?? {},
+                          child$Props
+                        );
+
+                        return (
+                          <AntdInput
+                            data-plasmic-name={"input15"}
+                            data-plasmic-override={overrides.input15}
+                            {...child$Props}
+                          />
+                        );
+                      })()}
+                    </FormItemWrapper>
+                    <FormItemWrapper
+                      className={classNames(
+                        "__wab_instance",
+                        sty.formField__xlxst
+                      )}
+                      label={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___1V2Wr
+                          )}
+                        >
+                          {
+                            "\u0631\u0645\u0632 \u0639\u0628\u0648\u0631 \u0647\u0648\u0645\u0633\u0627:"
+                          }
+                        </div>
+                      }
+                      name={"homsaOTP"}
+                    >
+                      {(() => {
+                        const child$Props = {
+                          className: classNames("__wab_instance", sty.input16),
+                          onChange: generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "value",
+                            ["input16", "value"],
+                            AntdInput_Helpers
+                          ),
+                          placeholder: (() => {
+                            try {
+                              return undefined;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
+                          size: "large",
+                          value: generateStateValueProp($state, [
+                            "input16",
+                            "value"
+                          ])
+                        };
+                        initializeCodeComponentStates(
+                          $state,
+                          [
+                            {
+                              name: "value",
+                              plasmicStateName: "input16.value"
+                            }
+                          ],
+                          [],
+                          AntdInput_Helpers ?? {},
+                          child$Props
+                        );
+
+                        return (
+                          <AntdInput
+                            data-plasmic-name={"input16"}
+                            data-plasmic-override={overrides.input16}
+                            {...child$Props}
+                          />
+                        );
+                      })()}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__jyoiK
+                        )}
+                      >
+                        <AntdButton
+                          data-plasmic-name={"homsaVerify"}
+                          data-plasmic-override={overrides.homsaVerify}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.homsaVerify
+                          )}
+                          onClick={async () => {
+                            const $steps = {};
+
+                            $steps["goToHttpsRentamonComPanels"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: "https://rentamon.com/panels"
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["goToHttpsRentamonComPanels"] != null &&
+                              typeof $steps["goToHttpsRentamonComPanels"] ===
+                                "object" &&
+                              typeof $steps["goToHttpsRentamonComPanels"]
+                                .then === "function"
+                            ) {
+                              $steps["goToHttpsRentamonComPanels"] =
+                                await $steps["goToHttpsRentamonComPanels"];
+                            }
+
+                            $steps["homsaVerify"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/homsa-verify-otp",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return {
+                                            phone: $state.form.value.homsaphone,
+                                            otp: $state.form.value.homsaOTP
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["homsaVerify"] != null &&
+                              typeof $steps["homsaVerify"] === "object" &&
+                              typeof $steps["homsaVerify"].then === "function"
+                            ) {
+                              $steps["homsaVerify"] = await $steps[
+                                "homsaVerify"
+                              ];
+                            }
+
+                            $steps["connectionStatus"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/connection",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return (
+                                            "jabama=" +
+                                            ($state.form.value.jabamaphone !==
+                                            ""
+                                              ? "true"
+                                              : "false") +
+                                            ", shab=" +
+                                            ($state.form.value.shabphone !== ""
+                                              ? "true"
+                                              : "false") +
+                                            ", jajiga=" +
+                                            ($state.form.value.jajigaphone !==
+                                            ""
+                                              ? "true"
+                                              : "false") +
+                                            ", otaghak=" +
+                                            ($state.form.value.otaghakphone !==
+                                            ""
+                                              ? "true"
+                                              : "false")
+                                          );
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["connectionStatus"] != null &&
+                              typeof $steps["connectionStatus"] === "object" &&
+                              typeof $steps["connectionStatus"].then ===
+                                "function"
+                            ) {
+                              $steps["connectionStatus"] = await $steps[
+                                "connectionStatus"
+                              ];
+                            }
+
+                            $steps["homsaContactX"] = true
+                              ? (() => {
+                                  const actionArgs = { args: ["POST"] };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["homsaContactX"] != null &&
+                              typeof $steps["homsaContactX"] === "object" &&
+                              typeof $steps["homsaContactX"].then === "function"
+                            ) {
+                              $steps["homsaContactX"] = await $steps[
+                                "homsaContactX"
+                              ];
+                            }
+
+                            $steps["showToast"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f! \u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0648\u0627\u0631\u062f \u062a\u0642\u0648\u06cc\u0645 \u0628\u0634\u06cc",
+                                      "bottom-center",
+                                      6000
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["showToast"] != null &&
+                              typeof $steps["showToast"] === "object" &&
+                              typeof $steps["showToast"].then === "function"
+                            ) {
+                              $steps["showToast"] = await $steps["showToast"];
+                            }
+                          }}
+                          submitsForm={true}
+                          type={"primary"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__yHf2
+                            )}
+                          >
+                            {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                          </div>
+                        </AntdButton>
+                        <AntdButton
+                          data-plasmic-name={"homsaBack"}
+                          data-plasmic-override={overrides.homsaBack}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.homsaBack
+                          )}
+                          onClick={async () => {
+                            const $steps = {};
+
+                            $steps["updateStep"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["step"]
+                                    },
+                                    operation: 0,
+                                    value: $state.step - 2
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateStep"] != null &&
+                              typeof $steps["updateStep"] === "object" &&
+                              typeof $steps["updateStep"].then === "function"
+                            ) {
+                              $steps["updateStep"] = await $steps["updateStep"];
+                            }
+                          }}
+                          submitsForm={true}
+                          type={"primary"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__o1GmK
+                            )}
+                          >
+                            {"\u0642\u0628\u0644\u06cc >"}
+                          </div>
+                        </AntdButton>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__kFfLe
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__ulUx
+                          )}
+                        >
+                          <AntdButton
+                            data-plasmic-name={"homsaSkip"}
+                            data-plasmic-override={overrides.homsaSkip}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.homsaSkip
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["goToHttpsRentamonComPanels"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: "https://rentamon.com/panels"
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["goToHttpsRentamonComPanels"] != null &&
+                                typeof $steps["goToHttpsRentamonComPanels"] ===
+                                  "object" &&
+                                typeof $steps["goToHttpsRentamonComPanels"]
+                                  .then === "function"
+                              ) {
+                                $steps["goToHttpsRentamonComPanels"] =
+                                  await $steps["goToHttpsRentamonComPanels"];
+                              }
+
+                              $steps["connectionStatus"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/connection",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return (
+                                              "jabama=" +
+                                              ($state.form.value.jabamaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", shab=" +
+                                              ($state.form.value.shabphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", jajiga=" +
+                                              ($state.form.value.jajigaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", otaghak=" +
+                                              ($state.form.value
+                                                .otaghakphone !== ""
+                                                ? "true"
+                                                : "false")
+                                            );
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["connectionStatus"] != null &&
+                                typeof $steps["connectionStatus"] ===
+                                  "object" &&
+                                typeof $steps["connectionStatus"].then ===
+                                  "function"
+                              ) {
+                                $steps["connectionStatus"] = await $steps[
+                                  "connectionStatus"
+                                ];
+                              }
+
+                              $steps["invokeGlobalAction"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f! \u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0648\u0627\u0631\u062f \u062a\u0642\u0648\u06cc\u0645 \u0628\u0634\u06cc",
+                                        "bottom-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["invokeGlobalAction"] != null &&
+                                typeof $steps["invokeGlobalAction"] ===
+                                  "object" &&
+                                typeof $steps["invokeGlobalAction"].then ===
+                                  "function"
+                              ) {
+                                $steps["invokeGlobalAction"] = await $steps[
+                                  "invokeGlobalAction"
+                                ];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__qYWs
+                              )}
+                            >
+                              <React.Fragment>
+                                <span
+                                  className={
+                                    "plasmic_default__all plasmic_default__span"
+                                  }
+                                  style={{ textDecorationLine: "underline" }}
+                                >
+                                  {
+                                    "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                  }
+                                </span>
+                              </React.Fragment>
+                            </div>
+                          </AntdButton>
+                        </div>
+                      </div>
+                    </FormItemWrapper>
+                  </div>
+                ) : null}
                 <FormItemWrapper
                   className={classNames("__wab_instance", sty.formField__gR1Fp)}
                   initialValue={(() => {
@@ -6017,8 +6196,9 @@ const PlasmicDescendants = {
     "mihmanshoverify7",
     "input15",
     "input16",
-    "homsaverify",
-    "homsaverify2",
+    "homsaVerify",
+    "homsaBack",
+    "homsaSkip",
     "input17",
     "mizboonsend",
     "mizboonsend3",
@@ -6090,8 +6270,9 @@ const PlasmicDescendants = {
     "mihmanshoverify7",
     "input15",
     "input16",
-    "homsaverify",
-    "homsaverify2",
+    "homsaVerify",
+    "homsaBack",
+    "homsaSkip",
     "input17",
     "mizboonsend",
     "mizboonsend3",
@@ -6156,8 +6337,9 @@ const PlasmicDescendants = {
   mihmanshoverify7: ["mihmanshoverify7"],
   input15: ["input15"],
   input16: ["input16"],
-  homsaverify: ["homsaverify"],
-  homsaverify2: ["homsaverify2"],
+  homsaVerify: ["homsaVerify"],
+  homsaBack: ["homsaBack"],
+  homsaSkip: ["homsaSkip"],
   input17: ["input17"],
   mizboonsend: ["mizboonsend"],
   mizboonsend3: ["mizboonsend3"],
@@ -6251,8 +6433,9 @@ type NodeDefaultElementType = {
   mihmanshoverify7: typeof AntdButton;
   input15: typeof AntdInput;
   input16: typeof AntdInput;
-  homsaverify: typeof AntdButton;
-  homsaverify2: typeof AntdButton;
+  homsaVerify: typeof AntdButton;
+  homsaBack: typeof AntdButton;
+  homsaSkip: typeof AntdButton;
   input17: typeof AntdInput;
   mizboonsend: typeof AntdButton;
   mizboonsend3: typeof AntdButton;
@@ -6384,8 +6567,9 @@ export const PlasmicActivationNew = Object.assign(
     mihmanshoverify7: makeNodeComponent("mihmanshoverify7"),
     input15: makeNodeComponent("input15"),
     input16: makeNodeComponent("input16"),
-    homsaverify: makeNodeComponent("homsaverify"),
-    homsaverify2: makeNodeComponent("homsaverify2"),
+    homsaVerify: makeNodeComponent("homsaVerify"),
+    homsaBack: makeNodeComponent("homsaBack"),
+    homsaSkip: makeNodeComponent("homsaSkip"),
     input17: makeNodeComponent("input17"),
     mizboonsend: makeNodeComponent("mizboonsend"),
     mizboonsend3: makeNodeComponent("mizboonsend3"),

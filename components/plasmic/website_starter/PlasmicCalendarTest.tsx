@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
+import Calendar3 from "../../Calendar3"; // plasmic-import: PT85RDIdexix/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -81,7 +81,7 @@ export const PlasmicCalendarTest__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicCalendarTest__OverridesType = {
   root?: Flex__<"div">;
-  calendar2?: Flex__<typeof Calendar2>;
+  calendar3?: Flex__<typeof Calendar3>;
 };
 
 export interface DefaultCalendarTestProps {}
@@ -151,10 +151,10 @@ function PlasmicCalendarTest__RenderFunc(props: {
             sty.root
           )}
         >
-          <Calendar2
-            data-plasmic-name={"calendar2"}
-            data-plasmic-override={overrides.calendar2}
-            className={classNames("__wab_instance", sty.calendar2)}
+          <Calendar3
+            data-plasmic-name={"calendar3"}
+            data-plasmic-override={overrides.calendar3}
+            className={classNames("__wab_instance", sty.calendar3)}
           />
         </div>
       </div>
@@ -163,15 +163,15 @@ function PlasmicCalendarTest__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "calendar2"],
-  calendar2: ["calendar2"]
+  root: ["root", "calendar3"],
+  calendar3: ["calendar3"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  calendar2: typeof Calendar2;
+  calendar3: typeof Calendar3;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -234,7 +234,7 @@ export const PlasmicCalendarTest = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    calendar2: makeNodeComponent("calendar2"),
+    calendar3: makeNodeComponent("calendar3"),
 
     // Metadata about props expected for PlasmicCalendarTest
     internalVariantProps: PlasmicCalendarTest__VariantProps,

@@ -21,6 +21,6 @@
 .root > * {
   grid-column: 4;
 }
-.calendar2:global(.__wab_instance) {
+.calendar3:global(.__wab_instance) {
   max-width: 100%;
 }
