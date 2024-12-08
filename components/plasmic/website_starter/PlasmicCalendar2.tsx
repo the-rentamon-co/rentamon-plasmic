@@ -1686,10 +1686,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                             method: "POST",
                             headers: {
                               "Content-Type": "application/json",
-                              Accept: "*/*",
-                              authorization:
-                                "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTY3MjEsImV4cCI6MTczMzMxODUyMSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.AmcfG_iyqwDuq0x_dPJlARGkMkUtlo1idwwMC-RaZk4jh1RaVsBggmIy0sJzEOcgsd7w1gM0Il82-MtpOv8nLQ91EEFNh6nGfL2LCLugNryc7c3_qTrmoFzSWXK2Mld_GZmZKBKRVXigzx6UytMwP6KNMTLeY6duyJmDBGat7MnWSVqSSJ9Nz0kyzdcnhiIunMe9jLzN3XlBzXHayWk1-JclIwv9wdMEhUT8zp7Ht6hjZBeOA-upQHb_yM3QWatyZwBDOsUHxJ8M7u7kbHrX-IDBRwJKgC87QZNvMBx6VQBAnqMLqg_0eEfeCsNUr2z5QpyMCJmTrou7aekw202dNA"
+                              Accept: "*/*"
                             },
+                            credintials: "include",
                             body: JSON.stringify(data)
                           }
                         )
@@ -2071,10 +2070,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 method: "POST",
                                 headers: {
                                   "Content-Type": "application/json",
-                                  Accept: "*/*",
-                                  authorization:
-                                    "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTkyNDksImV4cCI6MTczMzMyMTA0OSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.XWKbciA3lqcI5nDQGYQN2i8cDVhPi989CUazOfeM-QTJvO4SimVBI_UbG2djjmfyIvSwN4A77zOWFGLEoz0KUHAR1a9IDg-Lbn4QzFZ3H9oXdJbJ7kJ4EIpZR-HQIrY0ZCkGHQ7FDPp_to8Isxagy5mXB03JLE9eY6X9CGU0ekjCvNroJUyNi_UD2gtPvhIdcL1wg_ujE6jpFXCo5XhFSL19rbms7Ypowv5gsb650TJS0s6dFoFukLny1NH4Xk8K2WTML9Pa9i0M0iT7JDyaqyz64w5QVY5_OUhKOc4rTW7GP0ll3VsHV13hTclYnG2X3pYWOxOJUbgeZIwswMUoUA"
+                                  Accept: "*/*"
                                 },
+                                credintials: "include",
                                 body: JSON.stringify(data)
                               }
                             )
@@ -2360,10 +2358,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                           method: "POST",
                           headers: {
                             "Content-Type": "application/json",
-                            Accept: "*/*",
-                            authorization:
-                              "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTQ5MjksImV4cCI6MTczMzMxNjcyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.etyXGY91M1sW7Ww7v7Z8APQweSdlX6B0elPOFLlUkzNXKX4jOF7VZm9QKWGHtzcikluBZFfLqyCr3xDNTJml22aQpSaPEVQtfl07IthaWDayRufmD85uF1T3Qk8w3yLFydfgRuDGwOP_NMbLl57POYugqIWbOD3XxKLzp4mRCLTrqWMqTgm_nlH2oI_PD-x0tOJKoIPirX0UST0y3RtxKrOxq23WPHMJou6Smv4BZ87d2xlS4dR52hWzJqkWEK8TASWjrHkxuuAIItdusa72LSibr61JeVJm0ygPUiNE88lNu6NUe_B5u1pHLkL9gWRdlijY2qEmrIf9PJRhipp5FQ"
+                            Accept: "*/*"
                           },
+                          credintials: "include",
                           body: JSON.stringify(data)
                         })
                           .then(response => {
@@ -3310,10 +3307,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                               method: "POST",
                               headers: {
                                 "Content-Type": "application/json",
-                                Accept: "*/*",
-                                authorization:
-                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTQ5MjksImV4cCI6MTczMzMxNjcyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.etyXGY91M1sW7Ww7v7Z8APQweSdlX6B0elPOFLlUkzNXKX4jOF7VZm9QKWGHtzcikluBZFfLqyCr3xDNTJml22aQpSaPEVQtfl07IthaWDayRufmD85uF1T3Qk8w3yLFydfgRuDGwOP_NMbLl57POYugqIWbOD3XxKLzp4mRCLTrqWMqTgm_nlH2oI_PD-x0tOJKoIPirX0UST0y3RtxKrOxq23WPHMJou6Smv4BZ87d2xlS4dR52hWzJqkWEK8TASWjrHkxuuAIItdusa72LSibr61JeVJm0ygPUiNE88lNu6NUe_B5u1pHLkL9gWRdlijY2qEmrIf9PJRhipp5FQ"
+                                Accept: "*/*"
                               },
+                              credintials: "include",
                               body: JSON.stringify(data)
                             }
                           )
@@ -3421,19 +3417,15 @@ function PlasmicCalendar2__RenderFunc(props: {
                               )
                             )
                             .flat();
-                          return fetch(
-                            "https://api.rentamon.com/api/setblock",
-                            {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json",
-                                Accept: "*/*",
-                                authorization:
-                                  "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzMzMTQ5MjksImV4cCI6MTczMzMxNjcyOSwianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.etyXGY91M1sW7Ww7v7Z8APQweSdlX6B0elPOFLlUkzNXKX4jOF7VZm9QKWGHtzcikluBZFfLqyCr3xDNTJml22aQpSaPEVQtfl07IthaWDayRufmD85uF1T3Qk8w3yLFydfgRuDGwOP_NMbLl57POYugqIWbOD3XxKLzp4mRCLTrqWMqTgm_nlH2oI_PD-x0tOJKoIPirX0UST0y3RtxKrOxq23WPHMJou6Smv4BZ87d2xlS4dR52hWzJqkWEK8TASWjrHkxuuAIItdusa72LSibr61JeVJm0ygPUiNE88lNu6NUe_B5u1pHLkL9gWRdlijY2qEmrIf9PJRhipp5FQ"
-                              },
-                              body: JSON.stringify(data)
-                            }
-                          )
+                          return fetch("ht    i.rentamon.com/api/setblock", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                              Accept: "*/*"
+                            },
+                            credintials: "include",
+                            body: JSON.stringify(data)
+                          })
                             .then(response => {
                               if (!response.ok) {
                                 throw new Error(

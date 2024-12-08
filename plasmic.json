@@ -740,6 +740,16 @@
           "id": "3oBehEC0FyOz",
           "name": "Icon12Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon12.tsx"
+        },
+        {
+          "id": "523_R9Q_1fOL",
+          "name": "Icon13Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon13.tsx"
+        },
+        {
+          "id": "ephTBPt3GwGA",
+          "name": "Icon14Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon14.tsx"
         }
       ],
       "images": [

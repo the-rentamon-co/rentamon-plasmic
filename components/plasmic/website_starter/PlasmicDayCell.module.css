@@ -17,7 +17,7 @@
 }
 .cell > :global(.__wab_flex-container) {
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   min-width: 0;
 }
@@ -36,7 +36,7 @@
 @media (max-width: 768px) {
   .cell > :global(.__wab_flex-container) {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     min-width: 0;
     margin-left: calc(0px - 0px);
@@ -86,7 +86,13 @@
   max-width: 100%;
   height: auto;
   width: 100%;
+  margin-top: 2px;
   min-width: 0;
+}
+@media (max-width: 768px) {
+  .text__sLeDq {
+    margin-top: calc(4px + 1px) !important;
+  }
 }
 .textselected__sLeDq2Pr1U {
   color: #ffffff;

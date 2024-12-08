@@ -77,9 +77,9 @@ import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: 70NMIzJpH
 import Icon5Icon from "./icons/PlasmicIcon__Icon5"; // plasmic-import: GlNmRVfZkYuK/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
 import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
-import Icon8Icon from "./icons/PlasmicIcon__Icon8"; // plasmic-import: -_4Hku3Lxjme/icon
+import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: 523_R9Q_1fOL/icon
 import Icon9Icon from "./icons/PlasmicIcon__Icon9"; // plasmic-import: -W2vZqDz6R8K/icon
-import Icon10Icon from "./icons/PlasmicIcon__Icon10"; // plasmic-import: 7sh_t4EcJ6f3/icon
+import Icon14Icon from "./icons/PlasmicIcon__Icon14"; // plasmic-import: ephTBPt3GwGA/icon
 import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: PfTCttn7BvdX/icon
 import Icon12Icon from "./icons/PlasmicIcon__Icon12"; // plasmic-import: 3oBehEC0FyOz/icon
 
@@ -199,7 +199,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -354,10 +354,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           return (() => {
                             const balance_info =
                               $state.profile.data.user_info.balance_info;
+                            const reducedBalance = balance_info.balance / 10;
                             const formattedBalance = new Intl.NumberFormat(
                               "fa-IR"
-                            ).format(balance_info.balance);
-                            return `اعتبار شما ${formattedBalance}`;
+                            ).format(reducedBalance);
+                            return `اعتبار شما ${formattedBalance} تومان`;
                           })();
                         } catch (e) {
                           if (
@@ -376,6 +377,51 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   as={"div"}
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__mvJr)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToPage"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: (() => {
+                              try {
+                                return (() => {
+                                  return (window.location.href =
+                                    "https://rentamon.com/pricing");
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToPage"] != null &&
+                      typeof $steps["goToPage"] === "object" &&
+                      typeof $steps["goToPage"].then === "function"
+                    ) {
+                      $steps["goToPage"] = await $steps["goToPage"];
+                    }
+                  }}
                 >
                   <Icon5Icon
                     className={classNames(projectcss.all, sty.svg__wr7Sj)}
@@ -398,6 +444,36 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   as={"div"}
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__dnl0L)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToPanelCalendar"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/panel-calendar` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToPanelCalendar"] != null &&
+                      typeof $steps["goToPanelCalendar"] === "object" &&
+                      typeof $steps["goToPanelCalendar"].then === "function"
+                    ) {
+                      $steps["goToPanelCalendar"] = await $steps[
+                        "goToPanelCalendar"
+                      ];
+                    }
+                  }}
                 >
                   <Icon6Icon
                     className={classNames(projectcss.all, sty.svg__zUOqi)}
@@ -420,6 +496,38 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   as={"div"}
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__of0PC)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToInstantReserve"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/instant-reserve`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToInstantReserve"] != null &&
+                      typeof $steps["goToInstantReserve"] === "object" &&
+                      typeof $steps["goToInstantReserve"].then === "function"
+                    ) {
+                      $steps["goToInstantReserve"] = await $steps[
+                        "goToInstantReserve"
+                      ];
+                    }
+                  }}
                 >
                   <Icon7Icon
                     className={classNames(projectcss.all, sty.svg__g0W2)}
@@ -441,7 +549,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__pyNcp)}
                 >
-                  <Icon8Icon
+                  <Icon13Icon
                     className={classNames(projectcss.all, sty.svg__cbeGx)}
                     role={"img"}
                   />
@@ -478,6 +586,32 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       projectcss.__wab_text,
                       sty.text__orFuZ
                     )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return (window.location.href =
+                                    "https://rentamon.com/");
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
                   >
                     {"\u0635\u0641\u062d\u0647 \u0627\u0635\u0644\u06cc"}
                   </div>
@@ -486,8 +620,34 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   as={"div"}
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__qksiY)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return (window.location.href =
+                                  "https://rentamon.com/download");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
                 >
-                  <Icon10Icon
+                  <Icon14Icon
                     className={classNames(projectcss.all, sty.svg__jGEcY)}
                     role={"img"}
                   />
@@ -528,6 +688,37 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__nJmZa)}
                   >
+                    <Icon12Icon
+                      className={classNames(projectcss.all, sty.svg___9SQEw)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return (window.location.href =
+                                      "https://rentamon.com/");
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }}
+                      role={"img"}
+                    />
+
                     <div
                       className={classNames(
                         projectcss.all,
@@ -539,10 +730,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\n\u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u062a\u0627 \u06f1\u06f7"
                       }
                     </div>
-                    <Icon12Icon
-                      className={classNames(projectcss.all, sty.svg___9SQEw)}
-                      role={"img"}
-                    />
                   </div>
                 </div>
               </div>
@@ -662,7 +849,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   />
                 </Stack__>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__csjXw)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__csjXw)}
+              >
                 {(() => {
                   const child$Props = {
                     className: classNames("__wab_instance", sty.select),
@@ -770,7 +961,39 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     />
                   );
                 })()}
-              </div>
+                {(() => {
+                  try {
+                    return $state.profile.loading;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___896U)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "39px"
+                        : "45px"
+                    }
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    }
+                  />
+                ) : null}
+              </Stack__>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__ot5TM)}>
               <PlasmicImg__
