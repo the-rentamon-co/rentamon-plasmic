@@ -835,18 +835,38 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__oD7Mz)}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__g0Mwq
-                    )}
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__hTVt3)}
                   >
-                    {"\u0627\u062a\u0635\u0627\u0644"}
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__wnS2U)}
-                  />
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__g0Mwq
+                      )}
+                    >
+                      {"\u0627\u062a\u0635\u0627\u0644"}
+                    </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___7EUeo)}
+                      displayHeight={"24px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image8.svg",
+                        fullWidth: 30,
+                        fullHeight: 30,
+                        aspectRatio: 1
+                      }}
+                    />
+                  </Stack__>
                 </Stack__>
               </div>
               <Stack__

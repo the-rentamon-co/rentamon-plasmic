@@ -892,6 +892,11 @@
           "id": "rQ1vl2-xRsNA",
           "name": "image 7",
           "filePath": "../public/plasmic/website_starter/images/image7.svg"
+        },
+        {
+          "id": "AOpmy2VCHhxN",
+          "name": "image 8",
+          "filePath": "../public/plasmic/website_starter/images/image8.svg"
         }
       ],
       "indirect": false,

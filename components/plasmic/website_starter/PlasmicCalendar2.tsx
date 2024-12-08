@@ -3453,15 +3453,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                               )
                             )
                             .flat();
-                          return fetch("https://api.rentamon.com/setblock", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                              Accept: "*/*"
-                            },
-                            credentials: "include",
-                            body: JSON.stringify(data)
-                          })
+                          return fetch(
+                            "https://api.rentamon.com/api/setblock",
+                            {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                                Accept: "*/*"
+                              },
+                              credentials: "include",
+                              body: JSON.stringify(data)
+                            }
+                          )
                             .then(response => {
                               if (!response.ok) {
                                 throw new Error(
