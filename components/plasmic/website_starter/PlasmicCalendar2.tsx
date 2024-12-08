@@ -486,6 +486,35 @@ function PlasmicCalendar2__RenderFunc(props: {
                         persianNumbers.indexOf(char)
                       );
                     }
+                    function isPastDate(
+                      targetY,
+                      targetM,
+                      targetD,
+                      currentY,
+                      currentM,
+                      currentD
+                    ) {
+                      if (targetY < currentY) return true;
+                      if (targetY === currentY && targetM < currentM)
+                        return true;
+                      if (
+                        targetY === currentY &&
+                        targetM === currentM &&
+                        targetD < currentD
+                      )
+                        return true;
+                      return false;
+                    }
+                    function isOutOfNextMonthRange(
+                      targetY,
+                      targetM,
+                      nextY,
+                      nextM
+                    ) {
+                      if (targetY > nextY) return true;
+                      if (targetY === nextY && targetM > nextM) return true;
+                      return false;
+                    }
                     const currentDate = new Date();
                     const nextMonthDate = new Date(currentDate);
                     nextMonthDate.setMonth(currentDate.getMonth() + 1);
@@ -502,33 +531,45 @@ function PlasmicCalendar2__RenderFunc(props: {
                       .map(val =>
                         parseInt(convertPersianNumbersToEnglish(val))
                       );
-                    const targetDate = new Date(dateProps.unix * 1000);
-                    const [targetYear, targetMonth, targetDay] = targetDate
-                      .toLocaleDateString("fa")
-                      .split("/")
-                      .map(val =>
-                        parseInt(convertPersianNumbersToEnglish(val))
-                      );
-                    const calendarItem =
-                      $state.apiRequest.data.calendar[dateProps.date.day - 1] ||
-                      {};
-                    if (
-                      (targetYear === currentYear &&
-                        targetMonth === currentMonth &&
-                        targetDay < currentDay) ||
-                      targetYear < currentYear ||
-                      (targetYear === currentYear &&
-                        targetMonth < currentMonth) ||
-                      targetYear > nextMonthYear ||
-                      (targetYear === nextMonthYear && targetMonth > nextMonth)
-                    ) {
-                      return "disabled";
+                    function getDayClass(dateProps, calendarData) {
+                      const targetDate = new Date(dateProps.unix * 1000);
+                      const [targetYear, targetMonth, targetDay] = targetDate
+                        .toLocaleDateString("fa")
+                        .split("/")
+                        .map(val =>
+                          parseInt(convertPersianNumbersToEnglish(val))
+                        );
+                      const dayIndex = dateProps.date.day - 1;
+                      const calendarItem = calendarData[dayIndex] || {};
+                      if (
+                        isPastDate(
+                          targetYear,
+                          targetMonth,
+                          targetDay,
+                          currentYear,
+                          currentMonth,
+                          currentDay
+                        ) ||
+                        isOutOfNextMonthRange(
+                          targetYear,
+                          targetMonth,
+                          nextMonthYear,
+                          nextMonth
+                        )
+                      ) {
+                        return "disabled";
+                      }
+                      if (dateProps.isSelected) return "selected";
+                      if (calendarItem.status === "reserved") return "reserved";
+                      if (calendarItem.status === "blocked") return "blocked";
+                      if (calendarItem.discount_percentage) return "discount";
+                      return calendarItem.status || "";
                     }
-                    if (dateProps.isSelected) return "selected";
-                    if (calendarItem.status === "reserved") return "reserved";
-                    if (calendarItem.status === "blocked") return "blocked";
-                    if (calendarItem.discount_percentage) return "discount";
-                    return calendarItem.status || "";
+                    const className = getDayClass(
+                      dateProps,
+                      $state.apiRequest.data.calendar
+                    );
+                    return className;
                   })();
                 } catch (e) {
                   if (
