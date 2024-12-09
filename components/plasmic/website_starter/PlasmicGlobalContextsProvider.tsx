@@ -17,16 +17,13 @@ export interface GlobalContextsProviderProps {
   fragmentProps?: Partial<
     Omit<React.ComponentProps<typeof Fragment>, "children">
   >;
-
   growthBookProps?: Partial<
     Omit<React.ComponentProps<typeof GrowthBook>, "children">
   >;
-
   splunkProps?: Partial<Omit<React.ComponentProps<typeof Splunk>, "children">>;
   antdConfigProviderProps?: Partial<
     Omit<React.ComponentProps<typeof AntdConfigProvider>, "children">
   >;
-
   embedCssProps?: Partial<
     Omit<React.ComponentProps<typeof EmbedCss>, "children">
   >;
@@ -208,7 +205,7 @@ export default function GlobalContextsProvider(
               css={
                 embedCssProps && "css" in embedCssProps
                   ? embedCssProps.css!
-                  : "@font-face {\n  font-family: 'Estedad';\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Thin.ttf');\n  font-weight: 100;\n}\n@font-face {\n  font-family: 'Estedad';\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-ExtraLight.ttf');\n  font-weight: 200;\n}\n@font-face {\n  font-family: 'Estedad';\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Light.ttf');\n  font-weight: 300;\n}\n@font-face {\n  font-family: 'Estedad';\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Regular.ttf');\n  font-weight: 400;\n}\n@font-face {\n  font-family: 'Estedad';\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Medium.ttf');\n  font-weight: 500;\n}\n@font-face {\n  font-family: 'Estedad';\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-SemiBold.ttf');\n  font-weight: 600;\n}\n@font-face {\n  font-family: 'Estedad';\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-ExtraBold.ttf');\n  font-weight: 800;\n}\n\nbody {\n  direction: rtl;\n  font-family: 'Estedad';\n}\n\n@media (max-width: 767px) {\n  body::-webkit-scrollbar {\n    display: none; \n  }\n}\n\n.negative {\n  direction: ltr;\n}\n"
+                  : "@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Thin.ttf');\r\n  font-weight: 100;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-ExtraLight.ttf');\r\n  font-weight: 200;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Light.ttf');\r\n  font-weight: 300;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Regular.ttf');\r\n  font-weight: 400;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Medium.ttf');\r\n  font-weight: 500;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-SemiBold.ttf');\r\n  font-weight: 600;\r\n}\r\n@font-face {\r\n  font-family: 'Estedad';\r\n  src: url('https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-ExtraBold.ttf');\r\n  font-weight: 800;\r\n}\r\n\r\nbody {\r\n  direction: rtl;\r\n  font-family: 'Estedad';\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  body::-webkit-scrollbar {\r\n    display: none; \r\n  }\r\n}\r\n\r\n.negative {\r\n  direction: ltr;\r\n}\r\n\r\n\r\n:where(.css-10hmd9l).ant-modal .ant-modal-close{\r\n  display: none;\r\n}"
               }
             >
               {children}

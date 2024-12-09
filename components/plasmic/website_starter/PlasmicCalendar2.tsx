@@ -103,7 +103,6 @@ export type PlasmicCalendar2__OverridesType = {
   modal?: Flex__<typeof AntdModal>;
   modalChangePrice?: Flex__<typeof AntdModal>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
-  img?: Flex__<typeof PlasmicImg__>;
   fetchModal?: Flex__<typeof AntdModal>;
   userPlatform?: Flex__<typeof ApiRequest>;
   loading2?: Flex__<typeof PlasmicImg__>;
@@ -237,13 +236,13 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "block.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "variable3",
@@ -637,16 +636,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ? (() => {
                       try {
                         return (() => {
-                          const price =
+                          const calendarItem =
                             $state.apiRequest.data.calendar[
                               dateProps.date.day - 1
-                            ]?.price;
-                          const formattedPersianPrice = price
-                            ? new Intl.NumberFormat("fa-IR").format(
-                                price / 1000
-                              )
-                            : null;
-                          return formattedPersianPrice;
+                            ];
+                          if (calendarItem) {
+                            const {
+                              price = 0,
+                              discount_percentage: discountPercentage = 0
+                            } = calendarItem;
+                            const finalPrice =
+                              price * (1 - discountPercentage / 100);
+                            const formattedPersianPrice = finalPrice
+                              ? new Intl.NumberFormat("fa-IR").format(
+                                  finalPrice / 1000
+                                )
+                              : null;
+                            return formattedPersianPrice;
+                          } else {
+                            return null;
+                          }
                         })();
                       } catch (e) {
                         if (
@@ -1597,7 +1606,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             )
                           )
                           .flat();
-                        return fetch("https://api.rentamon.com/api/setprice", {
+                        fetch("https://api.rentamon.com/api/setprice", {
                           method: "POST",
                           headers: {
                             "Content-Type": "application/json",
@@ -1624,6 +1633,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               error: error.message
                             };
                           });
+                        return ($state.numberInput2.value = "");
                       })();
                     }
                   };
@@ -1666,7 +1676,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "value"
                 ])}
                 placeholder={
-                  "\u0645\u062b\u0644\u0627 \u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0"
+                  "\u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
                 }
                 readOnly={false}
                 type={"number"}
@@ -1908,10 +1918,8 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             })() ? (
               <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img__rzHqA)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -1961,6 +1969,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a :"
           }
           trigger={null}
+          width={"92%"}
         >
           <ApiRequest
             data-plasmic-name={"userPlatform"}
@@ -2448,19 +2457,30 @@ function PlasmicCalendar2__RenderFunc(props: {
           onOpenChange={generateStateOnChangeProp($state, ["block", "open"])}
           open={generateStateValueProp($state, ["block", "open"])}
           title={
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__haKoZ
-              )}
-            >
-              {
-                "\u0639\u0644\u062a \u067e\u0631 \u0628\u0648\u062f\u0646 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
-              }
+            <div className={classNames(projectcss.all, sty.freeBox__hOc0)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__dw8EQ)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"15px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/closeSquareSvgrepoComSvg.svg",
+                  fullWidth: 24,
+                  fullHeight: 24,
+                  aspectRatio: 1
+                }}
+              />
             </div>
           }
           trigger={null}
+          width={
+            hasVariant(globalVariants, "screen", "mobile") ? "95%" : undefined
+          }
         >
           <div
             className={classNames(
@@ -2817,7 +2837,6 @@ const PlasmicDescendants = {
     "modal",
     "modalChangePrice",
     "numberInput2",
-    "img",
     "fetchModal",
     "userPlatform",
     "loading2",
@@ -2840,7 +2859,6 @@ const PlasmicDescendants = {
   modal: ["modal"],
   modalChangePrice: ["modalChangePrice", "numberInput2"],
   numberInput2: ["numberInput2"],
-  img: ["img"],
   fetchModal: [
     "fetchModal",
     "userPlatform",
@@ -2870,7 +2888,6 @@ type NodeDefaultElementType = {
   modal: typeof AntdModal;
   modalChangePrice: typeof AntdModal;
   numberInput2: typeof AntdInputNumber;
-  img: typeof PlasmicImg__;
   fetchModal: typeof AntdModal;
   userPlatform: typeof ApiRequest;
   loading2: typeof PlasmicImg__;
@@ -2951,7 +2968,6 @@ export const PlasmicCalendar2 = Object.assign(
     modal: makeNodeComponent("modal"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
     numberInput2: makeNodeComponent("numberInput2"),
-    img: makeNodeComponent("img"),
     fetchModal: makeNodeComponent("fetchModal"),
     userPlatform: makeNodeComponent("userPlatform"),
     loading2: makeNodeComponent("loading2"),

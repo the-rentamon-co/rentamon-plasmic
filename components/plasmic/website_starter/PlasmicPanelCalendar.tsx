@@ -270,7 +270,67 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 "open"
               ])}
               open={generateStateValueProp($state, ["modal", "open"])}
-              title={null}
+              title={
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__xueqP)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modal", "open"]
+                            }
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen"] != null &&
+                      typeof $steps["updateModalOpen"] === "object" &&
+                      typeof $steps["updateModalOpen"].then === "function"
+                    ) {
+                      $steps["updateModalOpen"] = await $steps[
+                        "updateModalOpen"
+                      ];
+                    }
+                  }}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__pGqH)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"20px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/closeSquareSvgrepoComSvg.svg",
+                      fullWidth: 24,
+                      fullHeight: 24,
+                      aspectRatio: 1
+                    }}
+                  />
+                </div>
+              }
               trigger={null}
               width={
                 hasVariant(globalVariants, "screen", "mobile") ? "75%" : "50%"

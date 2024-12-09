@@ -487,6 +487,33 @@
   padding-right: 0px;
   color: var(--token-RnEx0jP-LzD7);
 }
+.freeBox__xueqP {
+  display: flex;
+  flex-direction: row;
+  width: 42px;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-self: flex-end;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  position: absolute;
+  bottom: auto;
+  cursor: pointer;
+  padding: 8px;
+}
+.img__pGqH {
+  object-fit: cover;
+  max-width: 100%;
+  margin-right: 0px;
+  width: 20px;
+  flex-shrink: 0;
+}
+.img__pGqH > picture > img {
+  object-fit: cover;
+}
 .freeBox__sal78 {
   display: flex;
   flex-direction: row;

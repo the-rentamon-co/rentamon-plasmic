@@ -911,6 +911,11 @@
           "id": "AOpmy2VCHhxN",
           "name": "image 8",
           "filePath": "../public/plasmic/website_starter/images/image8.svg"
+        },
+        {
+          "id": "dI3Fu-DU_q7t",
+          "name": "close-square-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/closeSquareSvgrepoComSvg.svg"
         }
       ],
       "indirect": false,
