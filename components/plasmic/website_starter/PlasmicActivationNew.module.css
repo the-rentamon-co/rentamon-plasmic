@@ -22,6 +22,7 @@
   grid-column: 4;
 }
 .html {
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -29,8 +30,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  opacity: 0;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 .clarity:global(.__wab_instance) {

@@ -43,6 +43,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 768px) {
+  .freeBox__ppyHd {
+    padding: 1px;
+  }
+}
 .fragmentDatePicker:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -59,6 +64,7 @@
 }
 @media (max-width: 768px) {
   .dayCell:global(.__wab_instance) {
+    max-width: 40px;
     margin: 5px 0px 0px;
   }
 }

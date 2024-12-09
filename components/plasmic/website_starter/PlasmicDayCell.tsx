@@ -399,21 +399,39 @@ function PlasmicDayCell__RenderFunc(props: {
           }
         )}
       >
-        <React.Fragment>
-          {(() => {
-            try {
-              return $props.platform;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "\u0631\u0632\u0648\u0631 ";
+        {hasVariant(globalVariants, "screen", "mobile") ? (
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.platform;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "\u0631\u0632\u0648\u0631 ";
+                }
+                throw e;
               }
-              throw e;
-            }
-          })()}
-        </React.Fragment>
+            })()}
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.platform;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "\u0631\u0632\u0648\u0631 ";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        )}
       </div>
       <div
         className={classNames(

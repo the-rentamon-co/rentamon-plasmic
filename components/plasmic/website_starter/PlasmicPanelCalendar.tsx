@@ -762,8 +762,17 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   throw e;
                 }
               })()}
-            />
-
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__x80Vo
+                )}
+              >
+                {"Enter some text"}
+              </div>
+            </ApiRequest>
             <div className={classNames(projectcss.all, sty.freeBox__fbYPi)}>
               <div className={classNames(projectcss.all, sty.freeBox__xzWrY)}>
                 <div
@@ -818,7 +827,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={
                       hasVariant(globalVariants, "screen", "mobile")
-                        ? "26px"
+                        ? "28px"
                         : "44px"
                     }
                     loading={"lazy"}
@@ -852,7 +861,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img___7EUeo)}
-                      displayHeight={"24px"}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "20px"
+                          : "24px"
+                      }
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}

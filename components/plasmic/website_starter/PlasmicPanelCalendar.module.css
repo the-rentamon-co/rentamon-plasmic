@@ -512,6 +512,13 @@
   max-width: 100%;
   object-fit: cover;
 }
+.text__x80Vo {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+}
 .freeBox__fbYPi {
   display: flex;
   flex-direction: column;
@@ -540,6 +547,13 @@
   align-items: center;
   min-width: 0;
   padding: 4px;
+}
+@media (max-width: 768px) {
+  .freeBox__xzWrY {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0px;
+  }
 }
 .freeBox__fk0MR {
   display: flex;
@@ -570,7 +584,7 @@
 }
 @media (max-width: 768px) {
   .img__jgkwH {
-    width: 26px;
+    width: 28px;
     margin-bottom: 5px;
   }
 }
@@ -603,6 +617,11 @@
   > img {
   margin-left: 8px;
 }
+@media (max-width: 768px) {
+  .freeBox__oD7Mz {
+    padding-top: 0px;
+  }
+}
 .freeBox__hTVt3 {
   display: flex;
   flex-direction: row;
@@ -631,6 +650,38 @@
   > img {
   margin-left: 10px;
 }
+@media (max-width: 768px) {
+  .freeBox__hTVt3 {
+    min-width: 40px;
+    max-width: 100%;
+    height: 28px;
+    border-radius: 30px;
+    padding: 0px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .freeBox__hTVt3 > :global(.__wab_flex-container) {
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: calc(0px - 6px);
+    width: calc(100% + 6px);
+    margin-top: calc(0px - 0px);
+    height: calc(100% + 0px);
+  }
+}
+@media (max-width: 768px) {
+  .freeBox__hTVt3 > :global(.__wab_flex-container) > *,
+  .freeBox__hTVt3 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .freeBox__hTVt3 > :global(.__wab_flex-container) > picture > img,
+  .freeBox__hTVt3
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 6px;
+    margin-top: 0px;
+  }
+}
 .text__g0Mwq {
   position: relative;
   width: auto;
@@ -642,6 +693,14 @@
   text-align: center;
   align-self: flex-start;
 }
+@media (max-width: 768px) {
+  .text__g0Mwq {
+    font-size: 14px;
+    text-align: center;
+    align-self: center;
+    padding: 0px;
+  }
+}
 .img___7EUeo {
   object-fit: cover;
   max-width: 100%;
@@ -649,6 +708,12 @@
 }
 .img___7EUeo > picture > img {
   object-fit: cover;
+}
+@media (max-width: 768px) {
+  .img___7EUeo {
+    margin-left: calc(0px + 6px) !important;
+    height: 20px;
+  }
 }
 .freeBox__csjXw {
   display: flex;
