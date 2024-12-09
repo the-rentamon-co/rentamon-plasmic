@@ -242,7 +242,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "variable3",
@@ -561,7 +561,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                       if (dateProps.isSelected) return "selected";
                       if (calendarItem.status === "reserved") return "reserved";
                       if (calendarItem.status === "blocked") return "blocked";
-                      if (calendarItem.discount_percentage) return "discount";
+                      if (
+                        calendarItem.discount_percentage &&
+                        calendarItem.discount_percentage > 0
+                      )
+                        return "discount";
+                      return calendarItem.status || "";
                       return calendarItem.status || "";
                     }
                     const className = getDayClass(
@@ -913,11 +918,48 @@ function PlasmicCalendar2__RenderFunc(props: {
                   const actionArgs = {
                     customFunction: async () => {
                       return (() => {
-                        function convertTimestampToPersianDate(timestamp) {
+                        function convertPersianNumbersToEnglish(str) {
+                          const persianNumbers = [
+                            "۰",
+                            "۱",
+                            "۲",
+                            "۳",
+                            "۴",
+                            "۵",
+                            "۶",
+                            "۷",
+                            "۸",
+                            "۹"
+                          ];
+
+                          const englishNumbers = [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9"
+                          ];
+
+                          return str.replace(
+                            /[۰-۹]/g,
+                            char =>
+                              englishNumbers[persianNumbers.indexOf(char)] ||
+                              char
+                          );
+                        }
+                        function convertTimestampToPersianDateWithEnglishNumbers(
+                          timestamp
+                        ) {
                           const date = new Date(timestamp * 1000);
-                          return date
+                          const persianDate = date
                             .toLocaleDateString("fa")
                             .replace(/\//g, "-");
+                          return convertPersianNumbersToEnglish(persianDate);
                         }
                         const data = {
                           days: [$state.fragmentDatePicker.values],
@@ -928,7 +970,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                         data.days = data.days
                           .map(timestampArray =>
                             timestampArray.map(timestamp =>
-                              convertTimestampToPersianDate(timestamp)
+                              convertTimestampToPersianDateWithEnglishNumbers(
+                                timestamp
+                              )
                             )
                           )
                           .flat();
@@ -1969,7 +2013,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a :"
           }
           trigger={null}
-          width={"92%"}
+          width={hasVariant(globalVariants, "screen", "mobile") ? "92%" : "50%"}
         >
           <ApiRequest
             data-plasmic-name={"userPlatform"}
