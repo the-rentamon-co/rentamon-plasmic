@@ -1074,14 +1074,22 @@ function PlasmicCalendar2__RenderFunc(props: {
                               char
                           );
                         }
+                        function padZero(num) {
+                          return num.length === 1 ? `0${num}` : num;
+                        }
                         function convertTimestampToPersianDateWithEnglishNumbers(
                           timestamp
                         ) {
                           const date = new Date(timestamp * 1000);
-                          const persianDate = date
+                          const [year, month, day] = date
                             .toLocaleDateString("fa")
-                            .replace(/\//g, "-");
-                          return convertPersianNumbersToEnglish(persianDate);
+                            .split("/");
+                          const formattedDate = `${convertPersianNumbersToEnglish(
+                            year
+                          )}-${padZero(
+                            convertPersianNumbersToEnglish(month)
+                          )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                          return formattedDate;
                         }
                         const data = {
                           days: [$state.fragmentDatePicker.values],
@@ -1753,11 +1761,56 @@ function PlasmicCalendar2__RenderFunc(props: {
                   const actionArgs = {
                     customFunction: async () => {
                       return (() => {
-                        function convertTimestampToPersianDate(timestamp) {
+                        function convertPersianNumbersToEnglish(str) {
+                          const persianNumbers = [
+                            "۰",
+                            "۱",
+                            "۲",
+                            "۳",
+                            "۴",
+                            "۵",
+                            "۶",
+                            "۷",
+                            "۸",
+                            "۹"
+                          ];
+
+                          const englishNumbers = [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9"
+                          ];
+
+                          return str.replace(
+                            /[۰-۹]/g,
+                            char =>
+                              englishNumbers[persianNumbers.indexOf(char)] ||
+                              char
+                          );
+                        }
+                        function padZero(num) {
+                          return num.length === 1 ? `0${num}` : num;
+                        }
+                        function convertTimestampToPersianDateWithEnglishNumbers(
+                          timestamp
+                        ) {
                           const date = new Date(timestamp * 1000);
-                          return date
+                          const [year, month, day] = date
                             .toLocaleDateString("fa")
-                            .replace(/\//g, "-");
+                            .split("/");
+                          const formattedDate = `${convertPersianNumbersToEnglish(
+                            year
+                          )}-${padZero(
+                            convertPersianNumbersToEnglish(month)
+                          )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                          return formattedDate;
                         }
                         const data = {
                           days: [$state.fragmentDatePicker.values],
@@ -1768,7 +1821,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                         data.days = data.days
                           .map(timestampArray =>
                             timestampArray.map(timestamp =>
-                              convertTimestampToPersianDate(timestamp)
+                              convertTimestampToPersianDateWithEnglishNumbers(
+                                timestamp
+                              )
                             )
                           )
                           .flat();
@@ -2693,11 +2748,56 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          function convertTimestampToPersianDate(timestamp) {
+                          function convertPersianNumbersToEnglish(str) {
+                            const persianNumbers = [
+                              "۰",
+                              "۱",
+                              "۲",
+                              "۳",
+                              "۴",
+                              "۵",
+                              "۶",
+                              "۷",
+                              "۸",
+                              "۹"
+                            ];
+
+                            const englishNumbers = [
+                              "0",
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5",
+                              "6",
+                              "7",
+                              "8",
+                              "9"
+                            ];
+
+                            return str.replace(
+                              /[۰-۹]/g,
+                              char =>
+                                englishNumbers[persianNumbers.indexOf(char)] ||
+                                char
+                            );
+                          }
+                          function padZero(num) {
+                            return num.length === 1 ? `0${num}` : num;
+                          }
+                          function convertTimestampToPersianDateWithEnglishNumbers(
+                            timestamp
+                          ) {
                             const date = new Date(timestamp * 1000);
-                            return date
+                            const [year, month, day] = date
                               .toLocaleDateString("fa")
-                              .replace(/\//g, "-");
+                              .split("/");
+                            const formattedDate = `${convertPersianNumbersToEnglish(
+                              year
+                            )}-${padZero(
+                              convertPersianNumbersToEnglish(month)
+                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                            return formattedDate;
                           }
                           const data = {
                             days: [$state.fragmentDatePicker.values],
@@ -2709,7 +2809,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                           data.days = data.days
                             .map(timestampArray =>
                               timestampArray.map(timestamp =>
-                                convertTimestampToPersianDate(timestamp)
+                                convertTimestampToPersianDateWithEnglishNumbers(
+                                  timestamp
+                                )
                               )
                             )
                             .flat();
@@ -2809,11 +2911,56 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          function convertTimestampToPersianDate(timestamp) {
+                          function convertPersianNumbersToEnglish(str) {
+                            const persianNumbers = [
+                              "۰",
+                              "۱",
+                              "۲",
+                              "۳",
+                              "۴",
+                              "۵",
+                              "۶",
+                              "۷",
+                              "۸",
+                              "۹"
+                            ];
+
+                            const englishNumbers = [
+                              "0",
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5",
+                              "6",
+                              "7",
+                              "8",
+                              "9"
+                            ];
+
+                            return str.replace(
+                              /[۰-۹]/g,
+                              char =>
+                                englishNumbers[persianNumbers.indexOf(char)] ||
+                                char
+                            );
+                          }
+                          function padZero(num) {
+                            return num.length === 1 ? `0${num}` : num;
+                          }
+                          function convertTimestampToPersianDateWithEnglishNumbers(
+                            timestamp
+                          ) {
                             const date = new Date(timestamp * 1000);
-                            return date
+                            const [year, month, day] = date
                               .toLocaleDateString("fa")
-                              .replace(/\//g, "-");
+                              .split("/");
+                            const formattedDate = `${convertPersianNumbersToEnglish(
+                              year
+                            )}-${padZero(
+                              convertPersianNumbersToEnglish(month)
+                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                            return formattedDate;
                           }
                           const data = {
                             days: [$state.fragmentDatePicker.values],
@@ -2825,7 +2972,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                           data.days = data.days
                             .map(timestampArray =>
                               timestampArray.map(timestamp =>
-                                convertTimestampToPersianDate(timestamp)
+                                convertTimestampToPersianDateWithEnglishNumbers(
+                                  timestamp
+                                )
                               )
                             )
                             .flat();
