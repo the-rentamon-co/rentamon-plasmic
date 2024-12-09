@@ -243,7 +243,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "variable3",
@@ -904,7 +904,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   const actionArgs = {
                     customFunction: async () => {
                       return (() => {
-                        undefined;
                         function convertTimestampToPersianDate(timestamp) {
                           const date = new Date(timestamp * 1000);
                           return date
@@ -914,7 +913,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const data = {
                           days: [$state.fragmentDatePicker.values],
                           property_id: $props.propertyId,
-                          discount: $state.numberInput3.value
+                          discount: String($state.numberInput3.value)
                         };
                         $state.requestdata = data;
                         data.days = data.days
@@ -1588,7 +1587,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const data = {
                           days: [$state.fragmentDatePicker.values],
                           property_id: $props.propertyId,
-                          price: $state.numberInput2.value
+                          price: String($state.numberInput2.value)
                         };
                         $state.requestdata = data;
                         data.days = data.days
