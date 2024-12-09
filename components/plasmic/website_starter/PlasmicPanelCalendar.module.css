@@ -656,8 +656,8 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  border-radius: 12px;
-  padding: 4px;
+  border-radius: 30px;
+  padding: 4px 10px;
   border: 2px solid var(--token-JP-pI4-MAOWS);
 }
 .freeBox__hTVt3 > :global(.__wab_flex-container) {
@@ -719,6 +719,7 @@
   top: auto;
   text-align: center;
   align-self: flex-start;
+  color: #389e0d;
 }
 @media (max-width: 768px) {
   .text__g0Mwq {
