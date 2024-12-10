@@ -395,6 +395,11 @@ function PlasmicDayCell__RenderFunc(props: {
               $state,
               "dayStatus",
               "reserved"
+            ),
+            [sty.textselected__kqTC2Pr1U]: hasVariant(
+              $state,
+              "selected",
+              "selected"
             )
           }
         )}

@@ -3214,9 +3214,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 displayWidth={"15px"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/website_starter/images/closeSquareSvgrepoComSvg.svg",
-                  fullWidth: 24,
-                  fullHeight: 24,
+                  src: "/plasmic/website_starter/images/cancelSvgrepoComSvg.svg",
+                  fullWidth: 64,
+                  fullHeight: 64,
                   aspectRatio: 1
                 }}
               />

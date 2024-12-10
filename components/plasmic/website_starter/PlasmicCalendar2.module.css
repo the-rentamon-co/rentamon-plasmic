@@ -919,7 +919,7 @@
 }
 .button__fNtwK:global(.__wab_instance) {
   max-width: 100%;
-  width: 98%;
+  width: 90%;
 }
 @media (max-width: 508px) {
   .button__fNtwK:global(.__wab_instance) {
@@ -958,6 +958,8 @@
 .text__psStq {
   margin-left: 0px;
   margin-right: 10px;
+  font-weight: 600;
+  font-size: 15px;
 }
 .svg__jsKQ {
   position: relative;

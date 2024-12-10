@@ -73,7 +73,6 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPanelCalendar.module.css"; // plasmic-import: ssh21My6pq8y/css
 
-import Icon4Icon from "./icons/PlasmicIcon__Icon4"; // plasmic-import: 70NMIzJpHGDO/icon
 import Icon5Icon from "./icons/PlasmicIcon__Icon5"; // plasmic-import: GlNmRVfZkYuK/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
 import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
@@ -323,9 +322,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     displayWidth={"20px"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/closeSquareSvgrepoComSvg.svg",
-                      fullWidth: 24,
-                      fullHeight: 24,
+                      src: "/plasmic/website_starter/images/cancelSvgrepoComSvg.svg",
+                      fullWidth: 64,
+                      fullHeight: 64,
                       aspectRatio: 1
                     }}
                   />
@@ -396,11 +395,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__vak0O)}
                 >
-                  <Icon4Icon
-                    className={classNames(projectcss.all, sty.svg___943Q3)}
-                    role={"img"}
-                  />
-
                   <div
                     className={classNames(
                       projectcss.all,
@@ -433,6 +427,10 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 </Stack__>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___1HoJ)}
+                />
+
                 <Stack__
                   as={"div"}
                   hasGap={true}
@@ -627,7 +625,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   </div>
                 </Stack__>
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___1HoJ)}
+                  className={classNames(projectcss.all, sty.freeBox__p4Mry)}
                 />
 
                 <Stack__
@@ -728,6 +726,32 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   as={"div"}
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__tQjW)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return (window.location.href =
+                                  "https://sso.rentamon.com/auth/logout?callback=https://rentamon.com/panel");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
                 >
                   <Icon11Icon
                     className={classNames(projectcss.all, sty.svg__kvNqp)}
