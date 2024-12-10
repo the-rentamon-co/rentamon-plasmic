@@ -764,6 +764,16 @@
           "id": "ephTBPt3GwGA",
           "name": "Icon14Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon14.tsx"
+        },
+        {
+          "id": "kdHrOLvph_JQ",
+          "name": "ArrowDownSvgrepoCom1SvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__ArrowDownSvgrepoCom1Svg.tsx"
+        },
+        {
+          "id": "mmPtFHknd4hG",
+          "name": "Icon15Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon15.tsx"
         }
       ],
       "images": [

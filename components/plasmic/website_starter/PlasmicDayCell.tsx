@@ -386,6 +386,11 @@ function PlasmicDayCell__RenderFunc(props: {
           projectcss.__wab_text,
           sty.text__kqTC,
           {
+            [sty.textdayStatus_disabled__kqTCokz0Z]: hasVariant(
+              $state,
+              "dayStatus",
+              "disabled"
+            ),
             [sty.textdayStatus_discount__kqTC2ON9H]: hasVariant(
               $state,
               "dayStatus",

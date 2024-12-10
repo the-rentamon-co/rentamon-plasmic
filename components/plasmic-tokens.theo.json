@@ -2191,6 +2191,26 @@
       }
     },
     {
+      "name": "Unnamed Style Token 8",
+      "type": "color",
+      "value": "#C5C5C5",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "WRVnC_GIUCgN"
+      }
+    },
+    {
+      "name": "Unnamed Style Token 9",
+      "type": "color",
+      "value": "#C5C5C5",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "aAU8kfeqE6Ao"
+      }
+    },
+    {
       "name": "basic-calendar-day-color",
       "type": "color",
       "value": "#E5E5E5",

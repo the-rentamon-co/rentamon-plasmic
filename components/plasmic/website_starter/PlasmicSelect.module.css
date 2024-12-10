@@ -8,7 +8,7 @@
 }
 .trigger {
   position: relative;
-  height: 30px;
+  height: 38px;
   background: none;
   border-left-width: 0px;
   border-bottom-width: 1px;
@@ -141,7 +141,8 @@
 }
 .slotTargetSelectedContent {
   white-space: pre;
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: 600;
 }
 .slotTargetSelectedContent > :global(.__wab_text),
 .slotTargetSelectedContent > :global(.__wab_expr_html_text),
@@ -229,9 +230,16 @@
 .slotTargetSelectedContentcolor_softPurple {
   color: #793aaf;
 }
+.slotTargetSelectedContentcolor_softGray {
+  font-size: 17px;
+}
+.slotTargetSelectedContentcolor_clear {
+  font-size: 17px;
+}
 .slotTargetPlaceholder {
   white-space: pre;
   color: #706f6c;
+  font-size: 17px;
 }
 .slotTargetPlaceholder > :global(.__wab_text),
 .slotTargetPlaceholder > :global(.__wab_expr_html_text),
@@ -293,6 +301,14 @@
   > img {
   overflow: hidden;
 }
+.slotTargetPlaceholdershowPlaceholder {
+  font-size: 17px;
+  font-weight: 600;
+}
+.slotTargetPlaceholderisOpen {
+  font-size: 17px;
+  font-weight: 600;
+}
 .slotTargetPlaceholdershowPlaceholder_color_softBlue {
   color: #006adc;
 }
@@ -334,6 +350,10 @@
     margin-left: 8px;
   }
 }
+.dropdownIconshowPlaceholder {
+  width: 20px;
+  flex-shrink: 0;
+}
 .dropdownIconcolor_softBlue {
   color: #0091ff;
 }
@@ -373,4 +393,8 @@
   width: 100%;
   height: auto;
   min-width: 0;
+}
+.slotTargetChildren {
+  font-size: 17px;
+  font-weight: 400;
 }

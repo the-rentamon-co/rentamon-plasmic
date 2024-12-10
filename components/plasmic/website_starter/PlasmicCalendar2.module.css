@@ -923,8 +923,14 @@
 }
 @media (max-width: 508px) {
   .button__fNtwK:global(.__wab_instance) {
-    height: 45px;
+    height: 60px;
     margin-top: 10px;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 380px) {
+  .button__fNtwK:global(.__wab_instance) {
+    height: 60px;
     flex-shrink: 0;
   }
 }
@@ -960,6 +966,17 @@
   margin-right: 10px;
   font-weight: 600;
   font-size: 15px;
+}
+@media (max-width: 508px) {
+  .text__psStq {
+    font-size: 17px;
+  }
+}
+@media (max-width: 380px) {
+  .text__psStq {
+    font-size: 17px;
+    font-weight: 600;
+  }
 }
 .svg__jsKQ {
   position: relative;

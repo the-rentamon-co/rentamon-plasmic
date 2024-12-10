@@ -854,7 +854,9 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
               selected={(() => {
                 try {
-                  return dateProps.isSelected;
+                  return (
+                    dateProps.isSelected && dateProps.unix >= Date.now() / 1000
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -1117,6 +1119,19 @@ function PlasmicCalendar2__RenderFunc(props: {
                           )}-${padZero(convertPersianNumbersToEnglish(day))}`;
                           return formattedDate;
                         }
+                        function getTodayInPersian() {
+                          const today = new Date();
+                          const [year, month, day] = today
+                            .toLocaleDateString("fa")
+                            .split("/");
+                          const formattedDate = `${convertPersianNumbersToEnglish(
+                            year
+                          )}-${padZero(
+                            convertPersianNumbersToEnglish(month)
+                          )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                          return formattedDate;
+                        }
+                        const todayInPersian = getTodayInPersian();
                         const data = {
                           days: [$state.fragmentDatePicker.values],
                           property_id: $props.propertyId,
@@ -1125,11 +1140,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                         $state.requestdata = data;
                         data.days = data.days
                           .map(timestampArray =>
-                            timestampArray.map(timestamp =>
-                              convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
+                            timestampArray
+                              .map(timestamp =>
+                                convertTimestampToPersianDateWithEnglishNumbers(
+                                  timestamp
+                                )
                               )
-                            )
+                              .filter(day => day >= todayInPersian)
                           )
                           .flat();
                         return fetch(
@@ -1818,12 +1835,75 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         customFunction: async () => {
                           return (() => {
-                            function convertTimestampToPersianDate(timestamp) {
-                              const date = new Date(timestamp * 1000);
-                              return date
-                                .toLocaleDateString("fa")
-                                .replace(/\//g, "-");
+                            function convertPersianNumbersToEnglish(str) {
+                              const persianNumbers = [
+                                "۰",
+                                "۱",
+                                "۲",
+                                "۳",
+                                "۴",
+                                "۵",
+                                "۶",
+                                "۷",
+                                "۸",
+                                "۹"
+                              ];
+
+                              const englishNumbers = [
+                                "0",
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9"
+                              ];
+
+                              return str.replace(
+                                /[۰-۹]/g,
+                                char =>
+                                  englishNumbers[
+                                    persianNumbers.indexOf(char)
+                                  ] || char
+                              );
                             }
+                            function padZero(num) {
+                              return num.length === 1 ? `0${num}` : num;
+                            }
+                            function convertTimestampToPersianDateWithEnglishNumbers(
+                              timestamp
+                            ) {
+                              const date = new Date(timestamp * 1000);
+                              const [year, month, day] = date
+                                .toLocaleDateString("fa")
+                                .split("/");
+                              const formattedDate = `${convertPersianNumbersToEnglish(
+                                year
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(month)
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(day)
+                              )}`;
+                              return formattedDate;
+                            }
+                            function getTodayInPersian() {
+                              const today = new Date();
+                              const [year, month, day] = today
+                                .toLocaleDateString("fa")
+                                .split("/");
+                              const formattedDate = `${convertPersianNumbersToEnglish(
+                                year
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(month)
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(day)
+                              )}`;
+                              return formattedDate;
+                            }
+                            const todayInPersian = getTodayInPersian();
                             const data = {
                               days: [$state.fragmentDatePicker.values],
                               property_id: $props.propertyId
@@ -1831,23 +1911,24 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.requestdata = data;
                             data.days = data.days
                               .map(timestampArray =>
-                                timestampArray.map(timestamp =>
-                                  convertTimestampToPersianDate(timestamp)
-                                )
+                                timestampArray
+                                  .map(timestamp =>
+                                    convertTimestampToPersianDateWithEnglishNumbers(
+                                      timestamp
+                                    )
+                                  )
+                                  .filter(day => day >= todayInPersian)
                               )
                               .flat();
-                            return fetch(
-                              "https://api.rentamon.com/api/setunblock",
-                              {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json",
-                                  Accept: "*/*"
-                                },
-                                credentials: "include",
-                                body: JSON.stringify(data)
-                              }
-                            )
+                            fetch("https://api.rentamon.com/api/setunblock", {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                                Accept: "*/*"
+                              },
+                              credentials: "include",
+                              body: JSON.stringify(data)
+                            })
                               .then(response => {
                                 if (!response.ok) {
                                   throw new Error(
@@ -1866,6 +1947,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   error: error.message
                                 };
                               });
+                            return console.log(data);
                           })();
                         }
                       };
@@ -2160,6 +2242,19 @@ function PlasmicCalendar2__RenderFunc(props: {
                           )}-${padZero(convertPersianNumbersToEnglish(day))}`;
                           return formattedDate;
                         }
+                        function getTodayInPersian() {
+                          const today = new Date();
+                          const [year, month, day] = today
+                            .toLocaleDateString("fa")
+                            .split("/");
+                          const formattedDate = `${convertPersianNumbersToEnglish(
+                            year
+                          )}-${padZero(
+                            convertPersianNumbersToEnglish(month)
+                          )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                          return formattedDate;
+                        }
+                        const todayInPersian = getTodayInPersian();
                         const data = {
                           days: [$state.fragmentDatePicker.values],
                           property_id: $props.propertyId,
@@ -2168,11 +2263,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                         $state.requestdata = data;
                         data.days = data.days
                           .map(timestampArray =>
-                            timestampArray.map(timestamp =>
-                              convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
+                            timestampArray
+                              .map(timestamp =>
+                                convertTimestampToPersianDateWithEnglishNumbers(
+                                  timestamp
+                                )
                               )
-                            )
+                              .filter(day => day >= todayInPersian)
                           )
                           .flat();
                         fetch("https://api.rentamon.com/api/setprice", {
@@ -3321,22 +3418,38 @@ function PlasmicCalendar2__RenderFunc(props: {
                             )}-${padZero(convertPersianNumbersToEnglish(day))}`;
                             return formattedDate;
                           }
+                          function getTodayInPersian() {
+                            const today = new Date();
+                            const [year, month, day] = today
+                              .toLocaleDateString("fa")
+                              .split("/");
+                            const formattedDate = `${convertPersianNumbersToEnglish(
+                              year
+                            )}-${padZero(
+                              convertPersianNumbersToEnglish(month)
+                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                            return formattedDate;
+                          }
+                          const todayInPersian = getTodayInPersian();
                           const data = {
                             days: [$state.fragmentDatePicker.values],
                             property_id: $props.propertyId,
                             requested_by: "user",
                             request_for: "reserve"
                           };
-                          $state.requestdata = data;
+                          console.log(data);
                           data.days = data.days
                             .map(timestampArray =>
-                              timestampArray.map(timestamp =>
-                                convertTimestampToPersianDateWithEnglishNumbers(
-                                  timestamp
+                              timestampArray
+                                .map(timestamp =>
+                                  convertTimestampToPersianDateWithEnglishNumbers(
+                                    timestamp
+                                  )
                                 )
-                              )
+                                .filter(day => day >= todayInPersian)
                             )
                             .flat();
+                          $state.requestdata = data;
                           return fetch(
                             "https://api.rentamon.com/api/setblock",
                             {
@@ -3484,6 +3597,19 @@ function PlasmicCalendar2__RenderFunc(props: {
                             )}-${padZero(convertPersianNumbersToEnglish(day))}`;
                             return formattedDate;
                           }
+                          function getTodayInPersian() {
+                            const today = new Date();
+                            const [year, month, day] = today
+                              .toLocaleDateString("fa")
+                              .split("/");
+                            const formattedDate = `${convertPersianNumbersToEnglish(
+                              year
+                            )}-${padZero(
+                              convertPersianNumbersToEnglish(month)
+                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                            return formattedDate;
+                          }
+                          const todayInPersian = getTodayInPersian();
                           const data = {
                             days: [$state.fragmentDatePicker.values],
                             property_id: $props.propertyId,
@@ -3493,11 +3619,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                           $state.requestdata = data;
                           data.days = data.days
                             .map(timestampArray =>
-                              timestampArray.map(timestamp =>
-                                convertTimestampToPersianDateWithEnglishNumbers(
-                                  timestamp
+                              timestampArray
+                                .map(timestamp =>
+                                  convertTimestampToPersianDateWithEnglishNumbers(
+                                    timestamp
+                                  )
                                 )
-                              )
+                                .filter(day => day >= todayInPersian)
                             )
                             .flat();
                           return fetch(

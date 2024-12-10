@@ -71,7 +71,7 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelect.module.css"; // plasmic-import: GgjLI5qwOqwu/css
 
-import ChevronDownSvg2Icon from "./icons/PlasmicIcon__ChevronDownSvg2"; // plasmic-import: yYSPm8myGH_V/icon
+import ArrowDownSvgrepoCom1SvgIcon from "./icons/PlasmicIcon__ArrowDownSvgrepoCom1Svg"; // plasmic-import: kdHrOLvph_JQ/icon
 import ChevronUpSvg2Icon from "./icons/PlasmicIcon__ChevronUpSvg2"; // plasmic-import: RY0dcn4jJVPf/icon
 
 createPlasmicElementProxy;
@@ -368,7 +368,12 @@ function PlasmicSelect__RenderFunc(props: {
                 "isDisabled",
                 "isDisabled"
               ),
-              [sty.triggerisOpen]: hasVariant($state, "isOpen", "isOpen")
+              [sty.triggerisOpen]: hasVariant($state, "isOpen", "isOpen"),
+              [sty.triggershowPlaceholder]: hasVariant(
+                $state,
+                "showPlaceholder",
+                "showPlaceholder"
+              )
             }
           )}
           disabled={
@@ -392,6 +397,11 @@ function PlasmicSelect__RenderFunc(props: {
                 "isDisabled",
                 "isDisabled"
               ),
+              [sty.contentContainerisOpen]: hasVariant(
+                $state,
+                "isOpen",
+                "isOpen"
+              ),
               [sty.contentContainershowPlaceholder]: hasVariant(
                 $state,
                 "showPlaceholder",
@@ -408,6 +418,11 @@ function PlasmicSelect__RenderFunc(props: {
                   defaultContents: "Selected",
                   value: args.selectedContent,
                   className: classNames(sty.slotTargetSelectedContent, {
+                    [sty.slotTargetSelectedContentcolor_clear]: hasVariant(
+                      $state,
+                      "color",
+                      "clear"
+                    ),
                     [sty.slotTargetSelectedContentcolor_softBlue]: hasVariant(
                       $state,
                       "color",
@@ -417,6 +432,11 @@ function PlasmicSelect__RenderFunc(props: {
                       $state,
                       "color",
                       "softCyan"
+                    ),
+                    [sty.slotTargetSelectedContentcolor_softGray]: hasVariant(
+                      $state,
+                      "color",
+                      "softGray"
                     ),
                     [sty.slotTargetSelectedContentcolor_softGreen]: hasVariant(
                       $state,
@@ -487,6 +507,13 @@ function PlasmicSelect__RenderFunc(props: {
                   defaultContents: "Select\u2026",
                   value: args.placeholder,
                   className: classNames(sty.slotTargetPlaceholder, {
+                    [sty.slotTargetPlaceholder___focusVisibleWithin]:
+                      triggers.focusVisibleWithin_root,
+                    [sty.slotTargetPlaceholdercolor_clear]: hasVariant(
+                      $state,
+                      "color",
+                      "clear"
+                    ),
                     [sty.slotTargetPlaceholdercolor_softBlue]: hasVariant(
                       $state,
                       "color",
@@ -498,6 +525,11 @@ function PlasmicSelect__RenderFunc(props: {
                         "showPlaceholder",
                         "showPlaceholder"
                       ) && hasVariant($state, "color", "softCyan"),
+                    [sty.slotTargetPlaceholdercolor_softGray]: hasVariant(
+                      $state,
+                      "color",
+                      "softGray"
+                    ),
                     [sty.slotTargetPlaceholdercolor_softGreen_showPlaceholder]:
                       hasVariant(
                         $state,
@@ -525,6 +557,16 @@ function PlasmicSelect__RenderFunc(props: {
                         "showPlaceholder",
                         "showPlaceholder"
                       ) && hasVariant($state, "color", "softYellow"),
+                    [sty.slotTargetPlaceholderisDisabled]: hasVariant(
+                      $state,
+                      "isDisabled",
+                      "isDisabled"
+                    ),
+                    [sty.slotTargetPlaceholderisOpen]: hasVariant(
+                      $state,
+                      "isOpen",
+                      "isOpen"
+                    ),
                     [sty.slotTargetPlaceholdershowPlaceholder]: hasVariant(
                       $state,
                       "showPlaceholder",
@@ -550,13 +592,22 @@ function PlasmicSelect__RenderFunc(props: {
             data-plasmic-name={"dropdownIcon"}
             data-plasmic-override={overrides.dropdownIcon}
             PlasmicIconType={
-              hasVariant($state, "isOpen", "isOpen")
+              hasVariant($state, "isDisabled", "isDisabled")
+                ? ArrowDownSvgrepoCom1SvgIcon
+                : hasVariant($state, "isOpen", "isOpen")
                 ? ChevronUpSvg2Icon
-                : ChevronDownSvg2Icon
+                : hasVariant($state, "showPlaceholder", "showPlaceholder")
+                ? ArrowDownSvgrepoCom1SvgIcon
+                : ArrowDownSvgrepoCom1SvgIcon
             }
             className={classNames(projectcss.all, sty.dropdownIcon, {
               [sty.dropdownIcon___focusVisibleWithin]:
                 triggers.focusVisibleWithin_root,
+              [sty.dropdownIconcolor_clear]: hasVariant(
+                $state,
+                "color",
+                "clear"
+              ),
               [sty.dropdownIconcolor_softBlue]: hasVariant(
                 $state,
                 "color",
@@ -607,7 +658,12 @@ function PlasmicSelect__RenderFunc(props: {
                 "isDisabled",
                 "isDisabled"
               ),
-              [sty.dropdownIconisOpen]: hasVariant($state, "isOpen", "isOpen")
+              [sty.dropdownIconisOpen]: hasVariant($state, "isOpen", "isOpen"),
+              [sty.dropdownIconshowPlaceholder]: hasVariant(
+                $state,
+                "showPlaceholder",
+                "showPlaceholder"
+              )
             })}
             role={"img"}
           />
@@ -634,7 +690,14 @@ function PlasmicSelect__RenderFunc(props: {
             >
               {renderPlasmicSlot({
                 defaultContents: null,
-                value: args.children
+                value: args.children,
+                className: classNames(sty.slotTargetChildren, {
+                  [sty.slotTargetChildrenisOpen]: hasVariant(
+                    $state,
+                    "isOpen",
+                    "isOpen"
+                  )
+                })
               })}
             </div>
           </Select__Overlay>

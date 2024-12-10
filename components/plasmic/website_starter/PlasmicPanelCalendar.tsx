@@ -80,7 +80,7 @@ import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: 523_R9Q
 import Icon9Icon from "./icons/PlasmicIcon__Icon9"; // plasmic-import: -W2vZqDz6R8K/icon
 import Icon14Icon from "./icons/PlasmicIcon__Icon14"; // plasmic-import: ephTBPt3GwGA/icon
 import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: PfTCttn7BvdX/icon
-import Icon12Icon from "./icons/PlasmicIcon__Icon12"; // plasmic-import: 3oBehEC0FyOz/icon
+import Icon15Icon from "./icons/PlasmicIcon__Icon15"; // plasmic-import: mmPtFHknd4hG/icon
 
 createPlasmicElementProxy;
 
@@ -173,20 +173,35 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return $state.profile.data.properties[$ctx.query.prop_id - 1]
-                .property_name;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
-              }
-              throw e;
-            }
-          })()
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? (() => {
+                try {
+                  return $state.profile.data.properties[$ctx.query.prop_id - 1]
+                    .property_name;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
+                  }
+                  throw e;
+                }
+              })()
+            : (() => {
+                try {
+                  return $state.profile.data.properties[$ctx.query.prop_id - 1]
+                    .property_name;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
+                  }
+                  throw e;
+                }
+              })()
       },
       {
         path: "pageUrl",
@@ -345,7 +360,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"80px"}
+                  displayWidth={"100px"}
                   height={"100px"}
                   loading={"lazy"}
                   src={(() => {
@@ -412,7 +427,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                             const formattedBalance = new Intl.NumberFormat(
                               "fa-IR"
                             ).format(reducedBalance);
-                            return `اعتبار شما ${formattedBalance} تومان`;
+                            return `اعتبار: ${formattedBalance} تومان`;
                           })();
                         } catch (e) {
                           if (
@@ -768,54 +783,58 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     {"\u062e\u0631\u0648\u062c"}
                   </div>
                 </Stack__>
-                <div className={classNames(projectcss.all, sty.freeBox__jhHxX)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__nJmZa)}
-                  >
-                    <Icon12Icon
-                      className={classNames(projectcss.all, sty.svg___9SQEw)}
-                      onClick={async event => {
-                        const $steps = {};
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__jhHxX)}
+                />
 
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return (window.location.href =
-                                      "https://rentamon.com/");
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                      role={"img"}
-                    />
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__cwo4)}
+                >
+                  <Icon15Icon
+                    className={classNames(projectcss.all, sty.svg___3Mdrv)}
+                    onClick={async event => {
+                      const $steps = {};
 
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___68EVh
-                      )}
-                    >
-                      {
-                        "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\n\u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u062a\u0627 \u06f1\u06f7"
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return (window.location.href =
+                                    "https://rentamon.com/");
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
                       }
-                    </div>
+                    }}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zawSm
+                    )}
+                  >
+                    {
+                      "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\n\u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u062a\u0627 \u06f1\u06f7"
+                    }
                   </div>
-                </div>
+                </Stack__>
               </div>
             </AntdModal>
           </div>
@@ -1027,21 +1046,48 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         }
                       }).apply(null, eventArgs);
                     },
-                    options: (() => {
-                      try {
-                        return $state.profile.data.properties.map(
-                          property => property.property_name
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return [{}];
-                        }
-                        throw e;
-                      }
-                    })(),
+                    options: hasVariant(globalVariants, "screen", "smallMobile")
+                      ? (() => {
+                          try {
+                            return $state.profile.data.properties.map(
+                              property => property.property_name
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [{}];
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return $state.profile.data.properties.map(
+                              property => property.property_name
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [{}];
+                            }
+                            throw e;
+                          }
+                        })(),
+                    placeholder: (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ixdkM
+                        )}
+                      >
+                        {"Select\u2026"}
+                      </div>
+                    ),
                     value: generateStateValueProp($state, ["select", "value"])
                   };
 
@@ -1051,21 +1097,39 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       {
                         name: "select.value",
                         initFunc: ({ $props, $state, $queries }) =>
-                          (() => {
-                            try {
-                              return $state.profile.data.properties[
-                                $ctx.query.prop_id - 1
-                              ].property_name;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
-                              }
-                              throw e;
-                            }
-                          })()
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? (() => {
+                                try {
+                                  return $state.profile.data.properties[
+                                    $ctx.query.prop_id - 1
+                                  ].property_name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return $state.profile.data.properties[
+                                    $ctx.query.prop_id - 1
+                                  ].property_name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
+                                  }
+                                  throw e;
+                                }
+                              })()
                       }
                     ],
                     []
@@ -1122,7 +1186,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={
-                  hasVariant(globalVariants, "screen", "mobile")
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "220px"
+                    : hasVariant(globalVariants, "screen", "mobile")
                     ? "200px"
                     : "300px"
                 }
