@@ -774,6 +774,11 @@
           "id": "mmPtFHknd4hG",
           "name": "Icon15Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon15.tsx"
+        },
+        {
+          "id": "PIv_Q4vxdPrZ",
+          "name": "Icon16Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon16.tsx"
         }
       ],
       "images": [

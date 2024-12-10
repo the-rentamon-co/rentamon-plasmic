@@ -78,6 +78,7 @@ import sty from "./PlasmicCalendar2.module.css"; // plasmic-import: RNhZtlNmydsH
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
+import Icon16Icon from "./icons/PlasmicIcon__Icon16"; // plasmic-import: PIv_Q4vxdPrZ/icon
 
 createPlasmicElementProxy;
 
@@ -100,10 +101,13 @@ export type PlasmicCalendar2__OverridesType = {
   dayCell?: Flex__<typeof DayCell>;
   modalDiscount?: Flex__<typeof AntdModal>;
   numberInput3?: Flex__<typeof AntdInputNumber>;
+  main?: Flex__<"div">;
   numberInput4?: Flex__<typeof AntdInputNumber>;
   modal?: Flex__<typeof AntdModal>;
   modalChangePrice?: Flex__<typeof AntdModal>;
+  main2?: Flex__<"div">;
   numberInput2?: Flex__<typeof AntdInputNumber>;
+  img?: Flex__<typeof PlasmicImg__>;
   fetchModal?: Flex__<typeof AntdModal>;
   userPlatform?: Flex__<typeof ApiRequest>;
   loading2?: Flex__<typeof PlasmicImg__>;
@@ -188,14 +192,19 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? true : true
       },
       {
         path: "modalChangePrice.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
       },
       {
         path: "numberInput2.value",
@@ -208,7 +217,11 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
       },
       {
         path: "numberInput3.value",
@@ -246,7 +259,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
       },
       {
         path: "variable3",
@@ -1032,6 +1050,33 @@ function PlasmicCalendar2__RenderFunc(props: {
           onOk={async () => {
             const $steps = {};
 
+            $steps["updateStateVariable"] = true
+              ? (() => {
+                  const actionArgs = {
+                    operation: 0,
+                    value: ($state.modalDiscount.open = false)
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateStateVariable"] != null &&
+              typeof $steps["updateStateVariable"] === "object" &&
+              typeof $steps["updateStateVariable"].then === "function"
+            ) {
+              $steps["updateStateVariable"] = await $steps[
+                "updateStateVariable"
+              ];
+            }
+
             $steps["updateFetchModalOpen"] = true
               ? (() => {
                   const actionArgs = {
@@ -1213,69 +1258,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "\u062f\u0631\u0635\u062f \u062a\u062e\u0641\u06cc\u0641\ud83d\udd25\u0631\u0648 \u0645\u0634\u062e\u0635 \u06a9\u0646\n"
                 }
               </div>
-              <div
-                className={classNames(projectcss.all, sty.freeBox__lQQiN)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateModalDiscountOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modalDiscount", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalDiscountOpen"] != null &&
-                    typeof $steps["updateModalDiscountOpen"] === "object" &&
-                    typeof $steps["updateModalDiscountOpen"].then === "function"
-                  ) {
-                    $steps["updateModalDiscountOpen"] = await $steps[
-                      "updateModalDiscountOpen"
-                    ];
-                  }
-                }}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__sLnJl)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"15px"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/closeSquareSvgrepoComSvg.svg",
-                    fullWidth: 24,
-                    fullHeight: 24,
-                    aspectRatio: 1
-                  }}
-                />
-              </div>
             </div>
           }
           trigger={null}
-          width={hasVariant(globalVariants, "screen", "mobile") ? "92%" : "50%"}
+          width={
+            hasVariant(globalVariants, "screen", "mobile")
+              ? "320px"
+              : hasVariant(globalVariants, "screen", "tablet")
+              ? "320px"
+              : "320px"
+          }
           wrapClassName={classNames({ [sty["pcls_vzTJKtxZntdc"]]: true })}
         >
           <div className={classNames(projectcss.all, sty.columns__iCQj8)}>
@@ -1352,147 +1344,171 @@ function PlasmicCalendar2__RenderFunc(props: {
             </div>
             <div className={classNames(projectcss.all, sty.column__mqAFp)} />
           </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__eCwSf)}
+          <div
+            data-plasmic-name={"main"}
+            data-plasmic-override={overrides.main}
+            className={classNames(projectcss.all, sty.main)}
           >
-            <Button
-              className={classNames("__wab_instance", sty.button__eiNeQ)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateCount"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: ($state.count = Math.max(0, $state.count - 5)),
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["count"]
-                        }
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateCount"] != null &&
-                  typeof $steps["updateCount"] === "object" &&
-                  typeof $steps["updateCount"].then === "function"
-                ) {
-                  $steps["updateCount"] = await $steps["updateCount"];
-                }
-              }}
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__eCwSf)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__muGte
-                )}
+              <Button
+                className={classNames("__wab_instance", sty.button__q70Wl)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateCount"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["count"]
+                          },
+                          value: ($state.count = Math.min($state.count + 5, 60))
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCount"] != null &&
+                    typeof $steps["updateCount"] === "object" &&
+                    typeof $steps["updateCount"].then === "function"
+                  ) {
+                    $steps["updateCount"] = await $steps["updateCount"];
+                  }
+                }}
               >
-                {"-"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___2Lc4
+                  )}
+                >
+                  {"+"}
+                </div>
+              </Button>
+              <div className={classNames(projectcss.all, sty.freeBox__paPfn)}>
+                <AntdInputNumber
+                  data-plasmic-name={"numberInput4"}
+                  data-plasmic-override={overrides.numberInput4}
+                  className={classNames("__wab_instance", sty.numberInput4)}
+                  controls={false}
+                  onChange={generateStateOnChangeProp($state, [
+                    "numberInput4",
+                    "value"
+                  ])}
+                  placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
+                  readOnly={true}
+                  type={"number"}
+                  value={generateStateValueProp($state, [
+                    "numberInput4",
+                    "value"
+                  ])}
+                />
               </div>
-            </Button>
-            <div className={classNames(projectcss.all, sty.freeBox__paPfn)}>
-              <AntdInputNumber
-                data-plasmic-name={"numberInput4"}
-                data-plasmic-override={overrides.numberInput4}
-                className={classNames("__wab_instance", sty.numberInput4)}
-                controls={false}
-                onChange={generateStateOnChangeProp($state, [
-                  "numberInput4",
-                  "value"
-                ])}
-                placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
-                readOnly={true}
-                type={"number"}
-                value={generateStateValueProp($state, [
-                  "numberInput4",
-                  "value"
-                ])}
-              />
-            </div>
-            <Button
-              className={classNames("__wab_instance", sty.button__q70Wl)}
-              onClick={async event => {
-                const $steps = {};
+              <Button
+                className={classNames("__wab_instance", sty.button__eiNeQ)}
+                onClick={async event => {
+                  const $steps = {};
 
-                $steps["updateCount"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["count"]
-                        },
-                        value: ($state.count = Math.min($state.count + 5, 60))
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+                  $steps["updateCount"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.count = Math.max(0, $state.count - 5)),
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["count"]
+                          }
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateCount"] != null &&
+                    typeof $steps["updateCount"] === "object" &&
+                    typeof $steps["updateCount"].then === "function"
+                  ) {
+                    $steps["updateCount"] = await $steps["updateCount"];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__muGte
+                  )}
+                >
+                  {"-"}
+                </div>
+              </Button>
+            </Stack__>
+            {(() => {
+              try {
+                return (() => {
+                  if ($state.numberInput4.value == "10") {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                })();
+              } catch (e) {
                 if (
-                  $steps["updateCount"] != null &&
-                  typeof $steps["updateCount"] === "object" &&
-                  typeof $steps["updateCount"].then === "function"
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
                 ) {
-                  $steps["updateCount"] = await $steps["updateCount"];
+                  return true;
                 }
-              }}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___2Lc4
-                )}
-              >
-                {"+"}
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.columns__yd7Mi)}>
+                <div className={classNames(projectcss.all, sty.column__vGth9)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___7Vj2
+                    )}
+                  >
+                    {
+                      "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u06a9\u0645\u200c\u062a\u0631 \u0627\u0632 \u06f1\u06f0\u066a \u0628\u0631\u0627\u06cc \u0634\u0628 \u0646\u06cc\u0633\u062a"
+                    }
+                  </div>
+                </div>
               </div>
-            </Button>
-          </Stack__>
-          <div className={classNames(projectcss.all, sty.columns__yd7Mi)}>
-            <div className={classNames(projectcss.all, sty.column__vGth9)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___7Vj2
-                )}
-              >
-                {
-                  "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u06a9\u0645\u200c\u062a\u0631 \u0627\u0632 \u06f1\u06f0\u066a \u0628\u0631\u0627\u06cc \u0634\u0628 \u0646\u06cc\u0633\u062a"
-                }
-              </div>
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox___5UIo)}>
+            ) : null}
             <Button
               className={classNames("__wab_instance", sty.button__jbEaL)}
               onClick={async event => {
@@ -1653,6 +1669,38 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ) {
                   $steps["runCode"] = await $steps["runCode"];
                 }
+
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: ($state.modalDiscount.open = false)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
               }}
             >
               <div
@@ -1662,7 +1710,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___0TClQ
                 )}
               >
-                {"\u062b\u0628\u062a"}
+                {
+                  "\u0627\u0639\u0645\u0627\u0644 \u062a\u062e\u0641\u06cc\u0641"
+                }
               </div>
             </Button>
           </div>
@@ -1732,7 +1782,13 @@ function PlasmicCalendar2__RenderFunc(props: {
           open={generateStateValueProp($state, ["modal", "open"])}
           title={null}
           trigger={null}
-          width={hasVariant(globalVariants, "screen", "mobile") ? "92%" : "50%"}
+          width={
+            hasVariant(globalVariants, "screen", "mobile")
+              ? "320px"
+              : hasVariant(globalVariants, "screen", "tablet")
+              ? "320px"
+              : "320px"
+          }
         >
           <section
             className={classNames(projectcss.all, sty.section__rqNfm)}
@@ -1767,16 +1823,49 @@ function PlasmicCalendar2__RenderFunc(props: {
               ) {
                 $steps["updateBlockOpen"] = await $steps["updateBlockOpen"];
               }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.modal.open = false)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
             }}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__gTTy
-              )}
-            >
-              {"\u067e\u064f\u0640\u0631"}
+            <div className={classNames(projectcss.all, sty.freeBox__p8HqH)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gTTy
+                )}
+              >
+                {"\u067e\u064f\u0640\u0631"}
+              </div>
+              <Icon16Icon
+                className={classNames(projectcss.all, sty.svg__wFeRl)}
+                role={"img"}
+              />
             </div>
           </section>
           <section
@@ -2003,16 +2092,51 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "updateModalChangePriceOpen"
                 ];
               }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        return ($state.modal.open = false);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
             }}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__dBhqK
-              )}
-            >
-              {"\u0642\u06cc\u0645\u062a"}
+            <div className={classNames(projectcss.all, sty.freeBox__abqGe)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dBhqK
+                )}
+              >
+                {"\u0642\u06cc\u0645\u062a"}
+              </div>
+              <Icon16Icon
+                className={classNames(projectcss.all, sty.svg__ocuJf)}
+                role={"img"}
+              />
             </div>
           </section>
           <section
@@ -2050,16 +2174,51 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "updateModalDiscountOpen"
                 ];
               }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        return ($state.modal.open = false);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
             }}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__qtZio
-              )}
-            >
-              {"\u062a\u062e\u0641\u06cc\u0641 \u066a"}
+            <div className={classNames(projectcss.all, sty.freeBox__icirs)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qtZio
+                )}
+              >
+                {"\u062a\u062e\u0641\u06cc\u0641 \u066a"}
+              </div>
+              <Icon16Icon
+                className={classNames(projectcss.all, sty.svg__ekicd)}
+                role={"img"}
+              />
             </div>
           </section>
           <section
@@ -2128,7 +2287,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 sty.text__ptf2Y
               )}
             >
-              {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u26a1\ufe0f"}
+              {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
             </div>
           </section>
         </AntdModal>
@@ -2154,6 +2313,33 @@ function PlasmicCalendar2__RenderFunc(props: {
           okText={"\u062a\u0627\u06cc\u06cc\u062f"}
           onOk={async () => {
             const $steps = {};
+
+            $steps["updateStateVariable"] = true
+              ? (() => {
+                  const actionArgs = {
+                    operation: 0,
+                    value: ($state.modalChangePrice.open = false)
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateStateVariable"] != null &&
+              typeof $steps["updateStateVariable"] === "object" &&
+              typeof $steps["updateStateVariable"].then === "function"
+            ) {
+              $steps["updateStateVariable"] = await $steps[
+                "updateStateVariable"
+              ];
+            }
 
             $steps["updateFetchModalOpen"] = true
               ? (() => {
@@ -2325,13 +2511,19 @@ function PlasmicCalendar2__RenderFunc(props: {
             "\u0646\u0631\u062e \ud83d\udcb5 \u0631\u0648 \u0628\u0647 \u062a\u0648\u0645\u0646 \u0648\u0627\u0631\u062f \u06a9\u0646"
           }
           trigger={null}
-          width={hasVariant(globalVariants, "screen", "mobile") ? "92%" : "50%"}
+          width={
+            hasVariant(globalVariants, "screen", "mobile")
+              ? "320px"
+              : hasVariant(globalVariants, "screen", "tablet")
+              ? "320px"
+              : "320px"
+          }
         >
-          <div className={classNames(projectcss.all, sty.columns__rmQ4G)}>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.column__n3LFm)}
+          <div className={classNames(projectcss.all, sty.freeBox__nvznn)}>
+            <div
+              data-plasmic-name={"main2"}
+              data-plasmic-override={overrides.main2}
+              className={classNames(projectcss.all, sty.main2)}
             >
               <AntdInputNumber
                 data-plasmic-name={"numberInput2"}
@@ -2491,182 +2683,217 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()}
                 </React.Fragment>
               </div>
-            </Stack__>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__b1AS4)}>
-            <Button
-              className={classNames("__wab_instance", sty.button__tWagl)}
-              onClick={async event => {
-                const $steps = {};
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__b1AS4)}>
+              <Button
+                className={classNames("__wab_instance", sty.button__tWagl)}
+                onClick={async event => {
+                  const $steps = {};
 
-                $steps["updateFetchModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["fetchModal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.modalChangePrice.open = false)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateFetchModalOpen"] != null &&
-                  typeof $steps["updateFetchModalOpen"] === "object" &&
-                  typeof $steps["updateFetchModalOpen"].then === "function"
-                ) {
-                  $steps["updateFetchModalOpen"] = await $steps[
-                    "updateFetchModalOpen"
-                  ];
-                }
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] = await $steps[
+                      "updateStateVariable"
+                    ];
+                  }
 
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            function convertPersianNumbersToEnglish(str) {
-                              const persianNumbers = [
-                                "۰",
-                                "۱",
-                                "۲",
-                                "۳",
-                                "۴",
-                                "۵",
-                                "۶",
-                                "۷",
-                                "۸",
-                                "۹"
-                              ];
+                  $steps["updateFetchModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["fetchModal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                              const englishNumbers = [
-                                "0",
-                                "1",
-                                "2",
-                                "3",
-                                "4",
-                                "5",
-                                "6",
-                                "7",
-                                "8",
-                                "9"
-                              ];
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateFetchModalOpen"] != null &&
+                    typeof $steps["updateFetchModalOpen"] === "object" &&
+                    typeof $steps["updateFetchModalOpen"].then === "function"
+                  ) {
+                    $steps["updateFetchModalOpen"] = await $steps[
+                      "updateFetchModalOpen"
+                    ];
+                  }
 
-                              return str.replace(
-                                /[۰-۹]/g,
-                                char =>
-                                  englishNumbers[
-                                    persianNumbers.indexOf(char)
-                                  ] || char
-                              );
-                            }
-                            function padZero(num) {
-                              return num.length === 1 ? `0${num}` : num;
-                            }
-                            function convertTimestampToPersianDateWithEnglishNumbers(
-                              timestamp
-                            ) {
-                              const date = new Date(timestamp * 1000);
-                              const [year, month, day] = date
-                                .toLocaleDateString("fa")
-                                .split("/");
-                              const formattedDate = `${convertPersianNumbersToEnglish(
-                                year
-                              )}-${padZero(
-                                convertPersianNumbersToEnglish(month)
-                              )}-${padZero(
-                                convertPersianNumbersToEnglish(day)
-                              )}`;
-                              return formattedDate;
-                            }
-                            const data = {
-                              days: [$state.fragmentDatePicker.values],
-                              property_id: $props.propertyId,
-                              price: String($state.numberInput2.value)
-                            };
-                            $state.requestdata = data;
-                            data.days = data.days
-                              .map(timestampArray =>
-                                timestampArray.map(timestamp =>
-                                  convertTimestampToPersianDateWithEnglishNumbers(
-                                    timestamp
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function convertPersianNumbersToEnglish(str) {
+                                const persianNumbers = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                const englishNumbers = [
+                                  "0",
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9"
+                                ];
+
+                                return str.replace(
+                                  /[۰-۹]/g,
+                                  char =>
+                                    englishNumbers[
+                                      persianNumbers.indexOf(char)
+                                    ] || char
+                                );
+                              }
+                              function padZero(num) {
+                                return num.length === 1 ? `0${num}` : num;
+                              }
+                              function convertTimestampToPersianDateWithEnglishNumbers(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                const [year, month, day] = date
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
+                              }
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                price: String($state.numberInput2.value)
+                              };
+                              $state.requestdata = data;
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray.map(timestamp =>
+                                    convertTimestampToPersianDateWithEnglishNumbers(
+                                      timestamp
+                                    )
                                   )
                                 )
-                              )
-                              .flat();
-                            fetch("https://api.rentamon.com/api/setprice", {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json",
-                                Accept: "*/*"
-                              },
-                              credentials: "include",
-                              body: JSON.stringify(data)
-                            })
-                              .then(response => {
-                                if (!response.ok) {
-                                  throw new Error(
-                                    `HTTP error! status: ${response.status}`
+                                .flat();
+                              fetch("https://api.rentamon.com/api/setprice", {
+                                method: "POST",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                  Accept: "*/*"
+                                },
+                                credentials: "include",
+                                body: JSON.stringify(data)
+                              })
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error(
+                                      `HTTP error! status: ${response.status}`
+                                    );
+                                  }
+                                  return response.json();
+                                })
+                                .then(result => {
+                                  $state.platformRequestStatus = result;
+                                  console.log(
+                                    "Response saved to state:",
+                                    result
                                   );
-                                }
-                                return response.json();
-                              })
-                              .then(result => {
-                                $state.platformRequestStatus = result;
-                                console.log("Response saved to state:", result);
-                              })
-                              .catch(error => {
-                                console.error("Error:", error);
-                                $state.platformRequestStatus = {
-                                  error: error.message
-                                };
-                              });
-                            $state.numberInput2.value = "";
-                            return console.log(data, "done");
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__zYb5O
-                )}
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  $state.platformRequestStatus = {
+                                    error: error.message
+                                  };
+                                });
+                              $state.numberInput2.value = "";
+                              return console.log(data, "done");
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
               >
-                {
-                  "\u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
-                }
-              </div>
-            </Button>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zYb5O
+                  )}
+                >
+                  {
+                    "\u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+                  }
+                </div>
+              </Button>
+            </div>
           </div>
         </AntdModal>
         <Button
@@ -2760,8 +2987,10 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             })() ? (
               <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img__rzHqA)}
+                className={classNames(sty.img)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -2811,7 +3040,13 @@ function PlasmicCalendar2__RenderFunc(props: {
             "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a :"
           }
           trigger={null}
-          width={hasVariant(globalVariants, "screen", "mobile") ? "92%" : "50%"}
+          width={
+            hasVariant(globalVariants, "screen", "mobile")
+              ? "320px"
+              : hasVariant(globalVariants, "screen", "tablet")
+              ? "320px"
+              : "320px"
+          }
         >
           <ApiRequest
             data-plasmic-name={"userPlatform"}
@@ -3181,6 +3416,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.fetchModal.open = false;
                             $state.block.open = false;
                             $state.modal.open = false;
+                            $state.modalDiscount.open = false;
+                            $state.modalChangePrice.open = false;
                             const platformStatus = Object.values(
                               $state.platformRequestStatus.data || {}
                             );
@@ -3299,28 +3536,20 @@ function PlasmicCalendar2__RenderFunc(props: {
           onOpenChange={generateStateOnChangeProp($state, ["block", "open"])}
           open={generateStateValueProp($state, ["block", "open"])}
           title={
-            <div className={classNames(projectcss.all, sty.freeBox__hOc0)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__dw8EQ)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"15px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/cancelSvgrepoComSvg.svg",
-                  fullWidth: 64,
-                  fullHeight: 64,
-                  aspectRatio: 1
-                }}
-              />
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___6FaXn
+              )}
+            >
+              {"\u0686\u0631\u0627 \u067e\u0631\u0647\u061f"}
             </div>
           }
           trigger={null}
-          width={hasVariant(globalVariants, "screen", "mobile") ? "92%" : "50%"}
+          width={
+            hasVariant(globalVariants, "screen", "mobile") ? "320px" : "320px"
+          }
         >
           <div
             className={classNames(
@@ -3330,6 +3559,33 @@ function PlasmicCalendar2__RenderFunc(props: {
             )}
             onClick={async event => {
               const $steps = {};
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.block.open = false)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
 
               $steps["updateFetchModalOpen"] = true
                 ? (() => {
@@ -3497,9 +3753,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             }}
           >
-            {
-              "\u0627\u0632 \u062c\u0627\u06cc \u062f\u06cc\u06af\u0647 \u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645 \ud83c\udf92"
-            }
+            {"\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645"}
           </div>
           <div
             className={classNames(
@@ -3509,6 +3763,33 @@ function PlasmicCalendar2__RenderFunc(props: {
             )}
             onClick={async event => {
               const $steps = {};
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.block.open = false)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
 
               $steps["updateFetchModalOpen"] = true
                 ? (() => {
@@ -3676,7 +3957,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             }}
           >
             {
-              "\u0646\u0645\u06cc\u200c\u062e\u0648\u0627\u0645 \u0627\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u0645 \u26d4\ufe0f"
+              "\u0641\u0639\u0644\u0627 \u0627\u062c\u0627\u0631\u0647 \u0646\u0645\u06cc\u200c\u062f\u0645"
             }
           </div>
           <div
@@ -3799,10 +4080,13 @@ const PlasmicDescendants = {
     "dayCell",
     "modalDiscount",
     "numberInput3",
+    "main",
     "numberInput4",
     "modal",
     "modalChangePrice",
+    "main2",
     "numberInput2",
+    "img",
     "fetchModal",
     "userPlatform",
     "loading2",
@@ -3820,12 +4104,15 @@ const PlasmicDescendants = {
   ],
   fragmentDatePicker: ["fragmentDatePicker", "dayCell"],
   dayCell: ["dayCell"],
-  modalDiscount: ["modalDiscount", "numberInput3", "numberInput4"],
+  modalDiscount: ["modalDiscount", "numberInput3", "main", "numberInput4"],
   numberInput3: ["numberInput3"],
+  main: ["main", "numberInput4"],
   numberInput4: ["numberInput4"],
   modal: ["modal"],
-  modalChangePrice: ["modalChangePrice", "numberInput2"],
+  modalChangePrice: ["modalChangePrice", "main2", "numberInput2"],
+  main2: ["main2", "numberInput2"],
   numberInput2: ["numberInput2"],
+  img: ["img"],
   fetchModal: [
     "fetchModal",
     "userPlatform",
@@ -3852,10 +4139,13 @@ type NodeDefaultElementType = {
   dayCell: typeof DayCell;
   modalDiscount: typeof AntdModal;
   numberInput3: typeof AntdInputNumber;
+  main: "div";
   numberInput4: typeof AntdInputNumber;
   modal: typeof AntdModal;
   modalChangePrice: typeof AntdModal;
+  main2: "div";
   numberInput2: typeof AntdInputNumber;
+  img: typeof PlasmicImg__;
   fetchModal: typeof AntdModal;
   userPlatform: typeof ApiRequest;
   loading2: typeof PlasmicImg__;
@@ -3933,10 +4223,13 @@ export const PlasmicCalendar2 = Object.assign(
     dayCell: makeNodeComponent("dayCell"),
     modalDiscount: makeNodeComponent("modalDiscount"),
     numberInput3: makeNodeComponent("numberInput3"),
+    main: makeNodeComponent("main"),
     numberInput4: makeNodeComponent("numberInput4"),
     modal: makeNodeComponent("modal"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
+    main2: makeNodeComponent("main2"),
     numberInput2: makeNodeComponent("numberInput2"),
+    img: makeNodeComponent("img"),
     fetchModal: makeNodeComponent("fetchModal"),
     userPlatform: makeNodeComponent("userPlatform"),
     loading2: makeNodeComponent("loading2"),
