@@ -19,7 +19,7 @@
 .root > * {
   grid-column: 4;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .root > * {
     grid-column: 4;
   }

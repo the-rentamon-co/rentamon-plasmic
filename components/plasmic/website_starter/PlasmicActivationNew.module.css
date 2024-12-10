@@ -45,6 +45,8 @@
 .favIcon:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+  height: 2px;
+  flex-shrink: 0;
 }
 .freeBox__btynj {
   display: flex;
@@ -94,7 +96,7 @@
   > img {
   margin-left: 16px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__ezxHy {
     padding: 12px 32px 32px;
   }
@@ -125,13 +127,13 @@
   > img {
   margin-left: 16px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__dL0Eq {
     display: flex;
     flex-direction: column;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__dL0Eq > :global(.__wab_flex-container) {
     flex-direction: column;
     align-items: center;
@@ -141,7 +143,7 @@
     height: calc(100% + 16px);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__dL0Eq > :global(.__wab_flex-container) > *,
   .freeBox__dL0Eq > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__dL0Eq > :global(.__wab_flex-container) > picture > img,
@@ -437,7 +439,7 @@
   max-width: 140px;
   padding: 8px 0px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__mayzL {
     max-width: 30%;
     align-items: center;
@@ -456,14 +458,14 @@
 .img__syrE0 > picture > img {
   object-fit: cover;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__syrE0 {
     width: 114px;
     object-fit: contain;
     border-radius: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__syrE0 > picture > img {
     object-fit: contain;
   }
@@ -480,7 +482,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__i8PlQ {
     max-width: 70%;
     padding-right: 10px;
@@ -499,7 +501,7 @@
   padding-right: 10px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text__hm06 {
     max-width: 50%;
     align-self: flex-start;
@@ -522,7 +524,7 @@
   padding-top: 4px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text__wrjRn {
     font-size: 15px;
     max-width: 100%;
@@ -722,7 +724,7 @@
   max-width: 140px;
   padding: 8px 0px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox___1SFw {
     max-width: 30%;
     align-items: center;
@@ -741,14 +743,14 @@
 .img__fl0Nu > picture > img {
   object-fit: cover;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__fl0Nu {
     width: 114px;
     object-fit: contain;
     border-radius: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__fl0Nu > picture > img {
     object-fit: contain;
   }
@@ -765,7 +767,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__dz8NE {
     max-width: 70%;
     padding-right: 10px;
@@ -784,7 +786,7 @@
   padding-right: 10px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text__zNqRl {
     max-width: 50%;
     align-self: flex-start;
@@ -807,7 +809,7 @@
   padding-top: 4px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text__paDiB {
     font-size: 15px;
     max-width: 100%;
@@ -1006,7 +1008,7 @@
   max-width: 140px;
   padding: 8px 0px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__uxgTt {
     max-width: 30%;
     align-items: center;
@@ -1025,14 +1027,14 @@
 .img__mO1Dp > picture > img {
   object-fit: cover;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__mO1Dp {
     width: 114px;
     object-fit: contain;
     border-radius: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__mO1Dp > picture > img {
     object-fit: contain;
   }
@@ -1049,7 +1051,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__tnf1O {
     max-width: 70%;
     padding-right: 10px;
@@ -1068,7 +1070,7 @@
   padding-right: 10px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text__jMu2F {
     max-width: 50%;
     align-self: flex-start;
@@ -1091,7 +1093,7 @@
   padding-top: 4px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text___9UerX {
     font-size: 15px;
     max-width: 100%;
@@ -1298,7 +1300,7 @@
   max-width: 140px;
   padding: 8px 0px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__yviX3 {
     max-width: 30%;
     align-items: center;
@@ -1317,14 +1319,14 @@
 .img__hoHzN > picture > img {
   object-fit: cover;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__hoHzN {
     width: 114px;
     object-fit: contain;
     border-radius: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__hoHzN > picture > img {
     object-fit: contain;
   }
@@ -1341,7 +1343,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox___8Bgkb {
     max-width: 70%;
     padding-right: 10px;
@@ -1360,7 +1362,7 @@
   padding-right: 10px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text__wi6Yi {
     max-width: 50%;
     align-self: flex-start;
@@ -1383,7 +1385,7 @@
   padding-top: 4px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text__uQKwh {
     font-size: 15px;
     max-width: 100%;
@@ -1729,7 +1731,7 @@
   max-width: 140px;
   padding: 8px 0px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__dNb06 {
     max-width: 30%;
     align-items: center;
@@ -1748,14 +1750,14 @@
 .img__ep2Jj > picture > img {
   object-fit: cover;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__ep2Jj {
     width: 114px;
     object-fit: contain;
     border-radius: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .img__ep2Jj > picture > img {
     object-fit: contain;
   }
@@ -1772,7 +1774,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__vq4C {
     max-width: 70%;
     padding-right: 10px;
@@ -1791,7 +1793,7 @@
   padding-right: 10px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text___0GkUs {
     max-width: 50%;
     align-self: flex-start;
@@ -1814,7 +1816,7 @@
   padding-top: 4px;
   min-width: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .text__p91Dr {
     font-size: 15px;
     max-width: 100%;

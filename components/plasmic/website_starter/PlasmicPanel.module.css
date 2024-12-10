@@ -21,7 +21,7 @@
 .root > * {
   grid-column: 4;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .root > * {
     grid-column: 4;
   }
@@ -188,7 +188,7 @@
   display: none;
   padding: 8px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__nbaxH {
     display: flex;
   }
@@ -197,7 +197,7 @@
   max-width: 100%;
   width: 750px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .platformConnectionOtp__b61Ea:global(.__wab_instance) {
     display: none;
   }

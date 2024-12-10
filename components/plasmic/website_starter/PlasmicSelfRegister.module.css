@@ -21,7 +21,7 @@
 .root > * {
   grid-column: 4;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .root > * {
     grid-column: 4;
   }
@@ -52,7 +52,7 @@
   > img {
   margin-left: 16px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__tjwa5 {
     padding: 32px;
   }
@@ -83,13 +83,13 @@
   > img {
   margin-left: 16px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__nf730 {
     display: flex;
     flex-direction: column;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__nf730 > :global(.__wab_flex-container) {
     flex-direction: column;
     align-items: center;
@@ -99,7 +99,7 @@
     height: calc(100% + 16px);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__nf730 > :global(.__wab_flex-container) > *,
   .freeBox__nf730 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__nf730 > :global(.__wab_flex-container) > picture > img,
@@ -361,7 +361,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .freeBox__f1Jv {
     width: 100%;
     min-width: 0;
@@ -378,7 +378,7 @@
   border-radius: 30px;
   margin: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 508px) {
   .button__xqgLb:global(.__wab_instance) {
     width: 100%;
     max-width: 100%;
