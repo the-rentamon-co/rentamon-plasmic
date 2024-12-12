@@ -98,6 +98,8 @@ export type PlasmicPanelCalendar__OverridesType = {
   sideBar?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
   profile?: Flex__<typeof ApiRequest>;
+  main?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
   select?: Flex__<typeof Select>;
   calendar2?: Flex__<typeof Calendar2>;
 };
@@ -220,6 +222,24 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 1
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -950,31 +970,102 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 </div>
                 <Stack__
                   as={"div"}
+                  data-plasmic-name={"main"}
+                  data-plasmic-override={overrides.main}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__oD7Mz)}
-                >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__hTVt3)}
-                  >
+                  className={classNames(projectcss.all, sty.main)}
+                />
+
+                <ApiRequest
+                  data-plasmic-name={"apiRequest"}
+                  data-plasmic-override={overrides.apiRequest}
+                  className={classNames("__wab_instance", sty.apiRequest)}
+                  errorDisplay={
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__g0Mwq
+                        sty.text__soLq4
                       )}
                     >
-                      {"\u0627\u062a\u0635\u0627\u0644"}
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequest.error.detail;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "Error fetching data";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
+                  }
+                  loadingDisplay={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__can0H
+                      )}
+                    >
+                      {"Loading..."}
+                    </div>
+                  }
+                  method={"GET"}
+                  onError={generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "error"
+                  ])}
+                  onLoading={generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "loading"
+                  ])}
+                  onSuccess={generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "data"
+                  ])}
+                  url={(() => {
+                    try {
+                      return `https://api.rentamon.com/api/website_statuses/?property_id=${$state.propId}`;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                >
+                  {(() => {
+                    try {
+                      return (() => {
+                        const statuses = $state.apiRequest.data.status;
+                        const allTrue = Object.values(statuses).every(
+                          value => value === true
+                        );
+                        return allTrue ? true : false;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img___7EUeo)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "20px"
-                          : "24px"
-                      }
+                      className={classNames(sty.img__tnqU9)}
+                      displayHeight={"34px"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
@@ -982,14 +1073,51 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/image8.svg",
-                        fullWidth: 30,
-                        fullHeight: 30,
-                        aspectRatio: 1
+                        src: "/plasmic/website_starter/images/image26.svg",
+                        fullWidth: 86,
+                        fullHeight: 35,
+                        aspectRatio: 2.457143
                       }}
                     />
-                  </Stack__>
-                </Stack__>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return (() => {
+                        const statuses = $state.apiRequest.data.status;
+                        const anyFalse = Object.values(statuses).some(
+                          value => value === false
+                        );
+                        return anyFalse ? true : false;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__bVtw7)}
+                      displayHeight={"34px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image25.svg",
+                        fullWidth: 86,
+                        fullHeight: 35,
+                        aspectRatio: 2.457143
+                      }}
+                    />
+                  ) : null}
+                </ApiRequest>
               </div>
               <Stack__
                 as={"div"}
@@ -1239,10 +1367,21 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "sideBar", "modal", "profile", "select", "calendar2"],
+  root: [
+    "root",
+    "sideBar",
+    "modal",
+    "profile",
+    "main",
+    "apiRequest",
+    "select",
+    "calendar2"
+  ],
   sideBar: ["sideBar", "modal"],
   modal: ["modal"],
   profile: ["profile"],
+  main: ["main"],
+  apiRequest: ["apiRequest"],
   select: ["select"],
   calendar2: ["calendar2"]
 } as const;
@@ -1254,6 +1393,8 @@ type NodeDefaultElementType = {
   sideBar: "div";
   modal: typeof AntdModal;
   profile: typeof ApiRequest;
+  main: "div";
+  apiRequest: typeof ApiRequest;
   select: typeof Select;
   calendar2: typeof Calendar2;
 };
@@ -1321,6 +1462,8 @@ export const PlasmicPanelCalendar = Object.assign(
     sideBar: makeNodeComponent("sideBar"),
     modal: makeNodeComponent("modal"),
     profile: makeNodeComponent("profile"),
+    main: makeNodeComponent("main"),
+    apiRequest: makeNodeComponent("apiRequest"),
     select: makeNodeComponent("select"),
     calendar2: makeNodeComponent("calendar2"),
 
