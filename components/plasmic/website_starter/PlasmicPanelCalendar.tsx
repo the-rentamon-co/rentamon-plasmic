@@ -190,7 +190,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               })()
             : (() => {
                 try {
-                  return $state.profile.data.properties[$ctx.query.prop_id - 1]
+                  return $state.profile.data.properties[$state.propId - 1]
                     .property_name;
                 } catch (e) {
                   if (
@@ -214,6 +214,12 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "propId",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1
       }
     ],
     [$props, $ctx, $refs]
@@ -854,7 +860,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               onSuccess={generateStateOnChangeProp($state, ["profile", "data"])}
               url={(() => {
                 try {
-                  return `https://api.rentamon.com/api/user_info?property_id=${$ctx.query.prop_id}`;
+                  return `https://api.rentamon.com/api/user_info?property_id=${$state.propId}`;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -1014,8 +1020,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                                         $state.select.value
                                     );
                                   $state.pageUrl = value.link;
-                                  $ctx.query.prop_id = value.id;
-                                  return console.log($ctx.query.prop_id);
+                                  return ($state.propId = value.id);
                                 })()
                               };
                               return (({
@@ -1117,7 +1122,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                             : (() => {
                                 try {
                                   return $state.profile.data.properties[
-                                    $ctx.query.prop_id - 1
+                                    $state.propId - 1
                                   ].property_name;
                                 } catch (e) {
                                   if (
@@ -1215,7 +1220,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             className={classNames("__wab_instance", sty.calendar2)}
             propertyId={(() => {
               try {
-                return $ctx.query.prop_id;
+                return $state.propId;
               } catch (e) {
                 if (
                   e instanceof TypeError ||

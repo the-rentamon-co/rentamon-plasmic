@@ -733,6 +733,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       }
                     })()
               }
+              holidays={``}
               platform={(() => {
                 try {
                   return (() => {
