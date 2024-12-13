@@ -80,6 +80,7 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicActivationNew.module.css"; // plasmic-import: zXAOwfcgu5NZ/css
 
+import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: TftNRT31euw0/icon
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 import Icon17Icon from "./icons/PlasmicIcon__Icon17"; // plasmic-import: o43p7K39C_K5/icon
@@ -112,16 +113,16 @@ export type PlasmicActivationNew__OverridesType = {
   link?: Flex__<"a"> & Partial<LinkProps>;
   submitButton?: Flex__<typeof AntdButton>;
   jabamaSend?: Flex__<typeof FormItemWrapper>;
-  input26?: Flex__<typeof AntdInput>;
+  jabamaPhoneInput?: Flex__<typeof AntdInput>;
   jabamasend2?: Flex__<typeof AntdButton>;
   back?: Flex__<typeof AntdButton>;
   skip?: Flex__<typeof AntdButton>;
   jabamaVerify?: Flex__<typeof FormItemWrapper>;
-  input8?: Flex__<typeof AntdInput>;
+  jabamaOtpInput?: Flex__<typeof AntdInput>;
   jabamaverify?: Flex__<typeof AntdButton>;
   jabamaverify2?: Flex__<typeof AntdButton>;
-  jajigaSend?: Flex__<typeof FormItemWrapper>;
-  input7?: Flex__<typeof AntdInput>;
+  jajigaSendForm?: Flex__<typeof FormItemWrapper>;
+  jajigaPhoneInput?: Flex__<typeof AntdInput>;
   jajigasend?: Flex__<typeof AntdButton>;
   jajigasend2?: Flex__<typeof AntdButton>;
   jajigasend4?: Flex__<typeof AntdButton>;
@@ -313,7 +314,7 @@ function PlasmicActivationNew__RenderFunc(props: {
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
       {
-        path: "input7.value",
+        path: "jajigaPhoneInput.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -321,7 +322,7 @@ function PlasmicActivationNew__RenderFunc(props: {
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
       {
-        path: "input8.value",
+        path: "jabamaOtpInput.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -457,7 +458,7 @@ function PlasmicActivationNew__RenderFunc(props: {
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
       {
-        path: "input26.value",
+        path: "jabamaPhoneInput.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -608,12 +609,8 @@ function PlasmicActivationNew__RenderFunc(props: {
             />
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__btynj)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___7Wmd4
-              )}
+            <Icon23Icon
+              className={classNames(projectcss.all, sty.svg__bwrmg)}
               onClick={async event => {
                 const $steps = {};
 
@@ -622,10 +619,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                       const actionArgs = {
                         destination: (() => {
                           try {
-                            return (() => {
-                              return (window.location.href =
-                                "https://rentamon.com/panels/?prop_id=1");
-                            })();
+                            return undefined;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -659,9 +653,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                   $steps["goToPage"] = await $steps["goToPage"];
                 }
               }}
-            >
-              {"x"}
-            </div>
+              role={"img"}
+            />
           </div>
           <Stack__
             as={"div"}
@@ -929,6 +922,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                       </div>
                     }
                     name={"platforms"}
+                    rules={[]}
                   >
                     <div
                       className={classNames(projectcss.all, sty.freeBox__gTtK)}
@@ -1071,11 +1065,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                       onClick={async () => {
                         const $steps = {};
 
-                        $steps["updateStep"] = (
-                          $state.policiesCheckbox.isChecked
-                            ? $state.step++
-                            : undefined
-                        )
+                        $steps["updateStep"] = $state.policiesCheckbox.isChecked
                           ? (() => {
                               const actionArgs = {
                                 variable: {
@@ -1234,17 +1224,20 @@ function PlasmicActivationNew__RenderFunc(props: {
                   >
                     {(() => {
                       const child$Props = {
-                        className: classNames("__wab_instance", sty.input26),
+                        className: classNames(
+                          "__wab_instance",
+                          sty.jabamaPhoneInput
+                        ),
                         onChange: generateStateOnChangePropForCodeComponents(
                           $state,
                           "value",
-                          ["input26", "value"],
+                          ["jabamaPhoneInput", "value"],
                           AntdInput_Helpers
                         ),
                         placeholder: ``,
                         size: "large",
                         value: generateStateValueProp($state, [
-                          "input26",
+                          "jabamaPhoneInput",
                           "value"
                         ])
                       };
@@ -1253,7 +1246,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         [
                           {
                             name: "value",
-                            plasmicStateName: "input26.value"
+                            plasmicStateName: "jabamaPhoneInput.value"
                           }
                         ],
                         [],
@@ -1263,8 +1256,8 @@ function PlasmicActivationNew__RenderFunc(props: {
 
                       return (
                         <AntdInput
-                          data-plasmic-name={"input26"}
-                          data-plasmic-override={overrides.input26}
+                          data-plasmic-name={"jabamaPhoneInput"}
+                          data-plasmic-override={overrides.jabamaPhoneInput}
                           {...child$Props}
                         />
                       );
@@ -1554,11 +1547,14 @@ function PlasmicActivationNew__RenderFunc(props: {
                   >
                     {(() => {
                       const child$Props = {
-                        className: classNames("__wab_instance", sty.input8),
+                        className: classNames(
+                          "__wab_instance",
+                          sty.jabamaOtpInput
+                        ),
                         onChange: generateStateOnChangePropForCodeComponents(
                           $state,
                           "value",
-                          ["input8", "value"],
+                          ["jabamaOtpInput", "value"],
                           AntdInput_Helpers
                         ),
                         placeholder: (() => {
@@ -1576,7 +1572,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         })(),
                         size: "large",
                         value: generateStateValueProp($state, [
-                          "input8",
+                          "jabamaOtpInput",
                           "value"
                         ])
                       };
@@ -1585,7 +1581,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         [
                           {
                             name: "value",
-                            plasmicStateName: "input8.value"
+                            plasmicStateName: "jabamaOtpInput.value"
                           }
                         ],
                         [],
@@ -1595,8 +1591,8 @@ function PlasmicActivationNew__RenderFunc(props: {
 
                       return (
                         <AntdInput
-                          data-plasmic-name={"input8"}
-                          data-plasmic-override={overrides.input8}
+                          data-plasmic-name={"jabamaOtpInput"}
+                          data-plasmic-override={overrides.jabamaOtpInput}
                           {...child$Props}
                         />
                       );
@@ -1872,9 +1868,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                   }
                 })() ? (
                   <FormItemWrapper
-                    data-plasmic-name={"jajigaSend"}
-                    data-plasmic-override={overrides.jajigaSend}
-                    className={classNames("__wab_instance", sty.jajigaSend)}
+                    data-plasmic-name={"jajigaSendForm"}
+                    data-plasmic-override={overrides.jajigaSendForm}
+                    className={classNames("__wab_instance", sty.jajigaSendForm)}
                     label={
                       <div
                         className={classNames(
@@ -1962,20 +1958,24 @@ function PlasmicActivationNew__RenderFunc(props: {
                       </div>
                     }
                     name={"jajigaphone"}
+                    rules={[{ ruleType: "required", message: `` }]}
                   >
                     {(() => {
                       const child$Props = {
-                        className: classNames("__wab_instance", sty.input7),
+                        className: classNames(
+                          "__wab_instance",
+                          sty.jajigaPhoneInput
+                        ),
                         onChange: generateStateOnChangePropForCodeComponents(
                           $state,
                           "value",
-                          ["input7", "value"],
+                          ["jajigaPhoneInput", "value"],
                           AntdInput_Helpers
                         ),
                         placeholder: ``,
                         size: "large",
                         value: generateStateValueProp($state, [
-                          "input7",
+                          "jajigaPhoneInput",
                           "value"
                         ])
                       };
@@ -1984,7 +1984,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         [
                           {
                             name: "value",
-                            plasmicStateName: "input7.value"
+                            plasmicStateName: "jajigaPhoneInput.value"
                           }
                         ],
                         [],
@@ -1994,8 +1994,8 @@ function PlasmicActivationNew__RenderFunc(props: {
 
                       return (
                         <AntdInput
-                          data-plasmic-name={"input7"}
-                          data-plasmic-override={overrides.input7}
+                          data-plasmic-name={"jajigaPhoneInput"}
+                          data-plasmic-override={overrides.jajigaPhoneInput}
                           {...child$Props}
                         />
                       );
@@ -6798,9 +6798,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image10.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image30.svg",
+                            fullWidth: 27,
+                            fullHeight: 27,
                             aspectRatio: 1
                           }}
                         />
@@ -6959,9 +6959,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image11.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image29.svg",
+                            fullWidth: 27,
+                            fullHeight: 27,
                             aspectRatio: 1
                           }}
                         />
@@ -7231,9 +7231,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image10.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image30.svg",
+                            fullWidth: 27,
+                            fullHeight: 27,
                             aspectRatio: 1
                           }}
                         />
@@ -7298,9 +7298,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image11.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image29.svg",
+                            fullWidth: 27,
+                            fullHeight: 27,
                             aspectRatio: 1
                           }}
                         />
@@ -7593,9 +7593,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image10.svg",
-                              fullWidth: 19,
-                              fullHeight: 19,
+                              src: "/plasmic/website_starter/images/image30.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
                               aspectRatio: 1
                             }}
                           />
@@ -7634,9 +7634,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image11.svg",
-                              fullWidth: 19,
-                              fullHeight: 19,
+                              src: "/plasmic/website_starter/images/image29.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
                               aspectRatio: 1
                             }}
                           />
@@ -7913,9 +7913,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image10.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image30.svg",
+                            fullWidth: 27,
+                            fullHeight: 27,
                             aspectRatio: 1
                           }}
                         />
@@ -7952,9 +7952,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image11.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image29.svg",
+                            fullWidth: 27,
+                            fullHeight: 27,
                             aspectRatio: 1
                           }}
                         />
@@ -8520,9 +8520,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image11.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image29.svg",
+                            fullWidth: 27,
+                            fullHeight: 27,
                             aspectRatio: 1
                           }}
                         />
@@ -9131,16 +9131,16 @@ const PlasmicDescendants = {
     "link",
     "submitButton",
     "jabamaSend",
-    "input26",
+    "jabamaPhoneInput",
     "jabamasend2",
     "back",
     "skip",
     "jabamaVerify",
-    "input8",
+    "jabamaOtpInput",
     "jabamaverify",
     "jabamaverify2",
-    "jajigaSend",
-    "input7",
+    "jajigaSendForm",
+    "jajigaPhoneInput",
     "jajigasend",
     "jajigasend2",
     "jajigasend4",
@@ -9254,16 +9254,16 @@ const PlasmicDescendants = {
     "link",
     "submitButton",
     "jabamaSend",
-    "input26",
+    "jabamaPhoneInput",
     "jabamasend2",
     "back",
     "skip",
     "jabamaVerify",
-    "input8",
+    "jabamaOtpInput",
     "jabamaverify",
     "jabamaverify2",
-    "jajigaSend",
-    "input7",
+    "jajigaSendForm",
+    "jajigaPhoneInput",
     "jajigasend",
     "jajigasend2",
     "jajigasend4",
@@ -9330,23 +9330,28 @@ const PlasmicDescendants = {
   policiesCheckbox: ["policiesCheckbox", "link"],
   link: ["link"],
   submitButton: ["submitButton"],
-  jabamaSend: ["jabamaSend", "input26", "jabamasend2", "back", "skip"],
-  input26: ["input26"],
+  jabamaSend: ["jabamaSend", "jabamaPhoneInput", "jabamasend2", "back", "skip"],
+  jabamaPhoneInput: ["jabamaPhoneInput"],
   jabamasend2: ["jabamasend2"],
   back: ["back"],
   skip: ["skip"],
-  jabamaVerify: ["jabamaVerify", "input8", "jabamaverify", "jabamaverify2"],
-  input8: ["input8"],
+  jabamaVerify: [
+    "jabamaVerify",
+    "jabamaOtpInput",
+    "jabamaverify",
+    "jabamaverify2"
+  ],
+  jabamaOtpInput: ["jabamaOtpInput"],
   jabamaverify: ["jabamaverify"],
   jabamaverify2: ["jabamaverify2"],
-  jajigaSend: [
-    "jajigaSend",
-    "input7",
+  jajigaSendForm: [
+    "jajigaSendForm",
+    "jajigaPhoneInput",
     "jajigasend",
     "jajigasend2",
     "jajigasend4"
   ],
-  input7: ["input7"],
+  jajigaPhoneInput: ["jajigaPhoneInput"],
   jajigasend: ["jajigasend"],
   jajigasend2: ["jajigasend2"],
   jajigasend4: ["jajigasend4"],
@@ -9580,16 +9585,16 @@ type NodeDefaultElementType = {
   link: "a";
   submitButton: typeof AntdButton;
   jabamaSend: typeof FormItemWrapper;
-  input26: typeof AntdInput;
+  jabamaPhoneInput: typeof AntdInput;
   jabamasend2: typeof AntdButton;
   back: typeof AntdButton;
   skip: typeof AntdButton;
   jabamaVerify: typeof FormItemWrapper;
-  input8: typeof AntdInput;
+  jabamaOtpInput: typeof AntdInput;
   jabamaverify: typeof AntdButton;
   jabamaverify2: typeof AntdButton;
-  jajigaSend: typeof FormItemWrapper;
-  input7: typeof AntdInput;
+  jajigaSendForm: typeof FormItemWrapper;
+  jajigaPhoneInput: typeof AntdInput;
   jajigasend: typeof AntdButton;
   jajigasend2: typeof AntdButton;
   jajigasend4: typeof AntdButton;
@@ -9763,16 +9768,16 @@ export const PlasmicActivationNew = Object.assign(
     link: makeNodeComponent("link"),
     submitButton: makeNodeComponent("submitButton"),
     jabamaSend: makeNodeComponent("jabamaSend"),
-    input26: makeNodeComponent("input26"),
+    jabamaPhoneInput: makeNodeComponent("jabamaPhoneInput"),
     jabamasend2: makeNodeComponent("jabamasend2"),
     back: makeNodeComponent("back"),
     skip: makeNodeComponent("skip"),
     jabamaVerify: makeNodeComponent("jabamaVerify"),
-    input8: makeNodeComponent("input8"),
+    jabamaOtpInput: makeNodeComponent("jabamaOtpInput"),
     jabamaverify: makeNodeComponent("jabamaverify"),
     jabamaverify2: makeNodeComponent("jabamaverify2"),
-    jajigaSend: makeNodeComponent("jajigaSend"),
-    input7: makeNodeComponent("input7"),
+    jajigaSendForm: makeNodeComponent("jajigaSendForm"),
+    jajigaPhoneInput: makeNodeComponent("jajigaPhoneInput"),
     jajigasend: makeNodeComponent("jajigasend"),
     jajigasend2: makeNodeComponent("jajigasend2"),
     jajigasend4: makeNodeComponent("jajigasend4"),

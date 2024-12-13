@@ -100,9 +100,9 @@ export type PlasmicCalendar2__OverridesType = {
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   dayCell?: Flex__<typeof DayCell>;
   modalDiscount?: Flex__<typeof AntdModal>;
-  numberInput3?: Flex__<typeof AntdInputNumber>;
   main?: Flex__<"div">;
   numberInput4?: Flex__<typeof AntdInputNumber>;
+  numberInput3?: Flex__<typeof AntdInputNumber>;
   modal?: Flex__<typeof AntdModal>;
   modalChangePrice?: Flex__<typeof AntdModal>;
   main2?: Flex__<"div">;
@@ -1225,104 +1225,194 @@ function PlasmicCalendar2__RenderFunc(props: {
           }
           wrapClassName={classNames({ [sty["pcls_vzTJKtxZntdc"]]: true })}
         >
-          <div className={classNames(projectcss.all, sty.columns__iCQj8)}>
-            <div className={classNames(projectcss.all, sty.column___5TW2A)}>
-              <Button
-                className={classNames("__wab_instance", sty.button___8UkxY)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateCount"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["count"]
-                          },
-                          value: ($state.count = Math.min($state.count + 5, 60))
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateCount"] != null &&
-                    typeof $steps["updateCount"] === "object" &&
-                    typeof $steps["updateCount"].then === "function"
-                  ) {
-                    $steps["updateCount"] = await $steps["updateCount"];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fwejG
-                  )}
-                >
-                  {"+"}
-                </div>
-              </Button>
-            </div>
-            <div className={classNames(projectcss.all, sty.column__aLaJh)}>
-              <AntdInputNumber
-                data-plasmic-name={"numberInput3"}
-                data-plasmic-override={overrides.numberInput3}
-                className={classNames("__wab_instance", sty.numberInput3)}
-                controls={false}
-                onChange={generateStateOnChangeProp($state, [
-                  "numberInput3",
-                  "value"
-                ])}
-                placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
-                readOnly={true}
-                type={"number"}
-                value={generateStateValueProp($state, [
-                  "numberInput3",
-                  "value"
-                ])}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.column__mqAFp)} />
-          </div>
-          <div
-            data-plasmic-name={"main"}
-            data-plasmic-override={overrides.main}
-            className={classNames(projectcss.all, sty.main)}
-          >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__eCwSf)}
+          <div className={classNames(projectcss.all, sty.freeBox__ds4X1)}>
+            <div
+              data-plasmic-name={"main"}
+              data-plasmic-override={overrides.main}
+              className={classNames(projectcss.all, sty.main, "bordeRadius")}
             >
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__eCwSf)}
+              >
+                <Button
+                  className={classNames("__wab_instance", sty.button__q70Wl)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateCount"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["count"]
+                            },
+                            value: ($state.count = Math.min(
+                              $state.count + 5,
+                              60
+                            ))
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateCount"] != null &&
+                      typeof $steps["updateCount"] === "object" &&
+                      typeof $steps["updateCount"].then === "function"
+                    ) {
+                      $steps["updateCount"] = await $steps["updateCount"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___2Lc4
+                    )}
+                  >
+                    {"+"}
+                  </div>
+                </Button>
+                <div className={classNames(projectcss.all, sty.freeBox__paPfn)}>
+                  <AntdInputNumber
+                    data-plasmic-name={"numberInput4"}
+                    data-plasmic-override={overrides.numberInput4}
+                    className={classNames("__wab_instance", sty.numberInput4)}
+                    controls={false}
+                    onChange={generateStateOnChangeProp($state, [
+                      "numberInput4",
+                      "value"
+                    ])}
+                    placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
+                    readOnly={true}
+                    type={"number"}
+                    value={generateStateValueProp($state, [
+                      "numberInput4",
+                      "value"
+                    ])}
+                  />
+                </div>
+                <Button
+                  className={classNames("__wab_instance", sty.button__eiNeQ)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateCount"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            value: ($state.count = Math.max(
+                              0,
+                              $state.count - 5
+                            )),
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["count"]
+                            }
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateCount"] != null &&
+                      typeof $steps["updateCount"] === "object" &&
+                      typeof $steps["updateCount"].then === "function"
+                    ) {
+                      $steps["updateCount"] = await $steps["updateCount"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__muGte
+                    )}
+                  >
+                    {"-"}
+                  </div>
+                </Button>
+              </Stack__>
+              {(() => {
+                try {
+                  return (() => {
+                    if ($state.numberInput4.value == "10") {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div className={classNames(projectcss.all, sty.columns__yd7Mi)}>
+                  <div
+                    className={classNames(projectcss.all, sty.column__vGth9)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___7Vj2
+                      )}
+                    >
+                      {
+                        "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u06a9\u0645\u200c\u062a\u0631 \u0627\u0632 \u06f1\u06f0\u066a \u0628\u0631\u0627\u06cc \u0634\u0628 \u0646\u06cc\u0633\u062a"
+                      }
+                    </div>
+                  </div>
+                </div>
+              ) : null}
               <Button
-                className={classNames("__wab_instance", sty.button__q70Wl)}
+                className={classNames("__wab_instance", sty.button__jbEaL)}
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["updateCount"] = true
+                  $steps["updateFetchModalOpen"] = true
                     ? (() => {
                         const actionArgs = {
-                          operation: 0,
                           variable: {
                             objRoot: $state,
-                            variablePath: ["count"]
+                            variablePath: ["fetchModal", "open"]
                           },
-                          value: ($state.count = Math.min($state.count + 5, 60))
+                          operation: 0,
+                          value: true
                         };
                         return (({
                           variable,
@@ -1341,11 +1431,168 @@ function PlasmicCalendar2__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["updateCount"] != null &&
-                    typeof $steps["updateCount"] === "object" &&
-                    typeof $steps["updateCount"].then === "function"
+                    $steps["updateFetchModalOpen"] != null &&
+                    typeof $steps["updateFetchModalOpen"] === "object" &&
+                    typeof $steps["updateFetchModalOpen"].then === "function"
                   ) {
-                    $steps["updateCount"] = await $steps["updateCount"];
+                    $steps["updateFetchModalOpen"] = await $steps[
+                      "updateFetchModalOpen"
+                    ];
+                  }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function convertPersianNumbersToEnglish(str) {
+                                const persianNumbers = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                const englishNumbers = [
+                                  "0",
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9"
+                                ];
+
+                                return str.replace(
+                                  /[۰-۹]/g,
+                                  char =>
+                                    englishNumbers[
+                                      persianNumbers.indexOf(char)
+                                    ] || char
+                                );
+                              }
+                              function padZero(num) {
+                                return num.length === 1 ? `0${num}` : num;
+                              }
+                              function convertTimestampToPersianDateWithEnglishNumbers(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                const [year, month, day] = date
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
+                              }
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                discount: String($state.numberInput4.value)
+                              };
+                              $state.requestdata = data;
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray.map(timestamp =>
+                                    convertTimestampToPersianDateWithEnglishNumbers(
+                                      timestamp
+                                    )
+                                  )
+                                )
+                                .flat();
+                              return fetch(
+                                "https://api.rentamon.com/api/setdiscount",
+                                {
+                                  method: "POST",
+                                  headers: {
+                                    "Content-Type": "application/json",
+                                    Accept: "*/*"
+                                  },
+                                  credentials: "include",
+                                  body: JSON.stringify(data)
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error(
+                                      `HTTP error! status: ${response.status}`
+                                    );
+                                  }
+                                  return response.json();
+                                })
+                                .then(result => {
+                                  $state.platformRequestStatus = result;
+                                  console.log(
+                                    "Response saved to state:",
+                                    result
+                                  );
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  $state.platformRequestStatus = {
+                                    error: error.message
+                                  };
+                                });
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.modalDiscount.open = false)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] = await $steps[
+                      "updateStateVariable"
+                    ];
                   }
                 }}
               >
@@ -1353,323 +1600,98 @@ function PlasmicCalendar2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___2Lc4
+                    sty.text___0TClQ
                   )}
                 >
-                  {"+"}
+                  {
+                    "\u0627\u0639\u0645\u0627\u0644 \u062a\u062e\u0641\u06cc\u0641"
+                  }
                 </div>
               </Button>
-              <div className={classNames(projectcss.all, sty.freeBox__paPfn)}>
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.columns__iCQj8,
+                "bordeRadius"
+              )}
+            >
+              <div className={classNames(projectcss.all, sty.column___5TW2A)}>
+                <Button
+                  className={classNames("__wab_instance", sty.button___8UkxY)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateCount"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["count"]
+                            },
+                            value: ($state.count = Math.min(
+                              $state.count + 5,
+                              60
+                            ))
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateCount"] != null &&
+                      typeof $steps["updateCount"] === "object" &&
+                      typeof $steps["updateCount"].then === "function"
+                    ) {
+                      $steps["updateCount"] = await $steps["updateCount"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fwejG
+                    )}
+                  >
+                    {"+"}
+                  </div>
+                </Button>
+              </div>
+              <div className={classNames(projectcss.all, sty.column__aLaJh)}>
                 <AntdInputNumber
-                  data-plasmic-name={"numberInput4"}
-                  data-plasmic-override={overrides.numberInput4}
-                  className={classNames("__wab_instance", sty.numberInput4)}
+                  data-plasmic-name={"numberInput3"}
+                  data-plasmic-override={overrides.numberInput3}
+                  className={classNames("__wab_instance", sty.numberInput3)}
                   controls={false}
                   onChange={generateStateOnChangeProp($state, [
-                    "numberInput4",
+                    "numberInput3",
                     "value"
                   ])}
                   placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
                   readOnly={true}
                   type={"number"}
                   value={generateStateValueProp($state, [
-                    "numberInput4",
+                    "numberInput3",
                     "value"
                   ])}
                 />
               </div>
-              <Button
-                className={classNames("__wab_instance", sty.button__eiNeQ)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateCount"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          value: ($state.count = Math.max(0, $state.count - 5)),
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["count"]
-                          }
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateCount"] != null &&
-                    typeof $steps["updateCount"] === "object" &&
-                    typeof $steps["updateCount"].then === "function"
-                  ) {
-                    $steps["updateCount"] = await $steps["updateCount"];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__muGte
-                  )}
-                >
-                  {"-"}
-                </div>
-              </Button>
-            </Stack__>
-            {(() => {
-              try {
-                return (() => {
-                  if ($state.numberInput4.value == "10") {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div className={classNames(projectcss.all, sty.columns__yd7Mi)}>
-                <div className={classNames(projectcss.all, sty.column__vGth9)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___7Vj2
-                    )}
-                  >
-                    {
-                      "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u06a9\u0645\u200c\u062a\u0631 \u0627\u0632 \u06f1\u06f0\u066a \u0628\u0631\u0627\u06cc \u0634\u0628 \u0646\u06cc\u0633\u062a"
-                    }
-                  </div>
-                </div>
-              </div>
-            ) : null}
-            <Button
-              className={classNames("__wab_instance", sty.button__jbEaL)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateFetchModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["fetchModal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateFetchModalOpen"] != null &&
-                  typeof $steps["updateFetchModalOpen"] === "object" &&
-                  typeof $steps["updateFetchModalOpen"].then === "function"
-                ) {
-                  $steps["updateFetchModalOpen"] = await $steps[
-                    "updateFetchModalOpen"
-                  ];
-                }
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            function convertPersianNumbersToEnglish(str) {
-                              const persianNumbers = [
-                                "۰",
-                                "۱",
-                                "۲",
-                                "۳",
-                                "۴",
-                                "۵",
-                                "۶",
-                                "۷",
-                                "۸",
-                                "۹"
-                              ];
-
-                              const englishNumbers = [
-                                "0",
-                                "1",
-                                "2",
-                                "3",
-                                "4",
-                                "5",
-                                "6",
-                                "7",
-                                "8",
-                                "9"
-                              ];
-
-                              return str.replace(
-                                /[۰-۹]/g,
-                                char =>
-                                  englishNumbers[
-                                    persianNumbers.indexOf(char)
-                                  ] || char
-                              );
-                            }
-                            function padZero(num) {
-                              return num.length === 1 ? `0${num}` : num;
-                            }
-                            function convertTimestampToPersianDateWithEnglishNumbers(
-                              timestamp
-                            ) {
-                              const date = new Date(timestamp * 1000);
-                              const [year, month, day] = date
-                                .toLocaleDateString("fa")
-                                .split("/");
-                              const formattedDate = `${convertPersianNumbersToEnglish(
-                                year
-                              )}-${padZero(
-                                convertPersianNumbersToEnglish(month)
-                              )}-${padZero(
-                                convertPersianNumbersToEnglish(day)
-                              )}`;
-                              return formattedDate;
-                            }
-                            const data = {
-                              days: [$state.fragmentDatePicker.values],
-                              property_id: $props.propertyId,
-                              discount: String($state.numberInput4.value)
-                            };
-                            $state.requestdata = data;
-                            data.days = data.days
-                              .map(timestampArray =>
-                                timestampArray.map(timestamp =>
-                                  convertTimestampToPersianDateWithEnglishNumbers(
-                                    timestamp
-                                  )
-                                )
-                              )
-                              .flat();
-                            return fetch(
-                              "https://api.rentamon.com/api/setdiscount",
-                              {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json",
-                                  Accept: "*/*"
-                                },
-                                credentials: "include",
-                                body: JSON.stringify(data)
-                              }
-                            )
-                              .then(response => {
-                                if (!response.ok) {
-                                  throw new Error(
-                                    `HTTP error! status: ${response.status}`
-                                  );
-                                }
-                                return response.json();
-                              })
-                              .then(result => {
-                                $state.platformRequestStatus = result;
-                                console.log("Response saved to state:", result);
-                              })
-                              .catch(error => {
-                                console.error("Error:", error);
-                                $state.platformRequestStatus = {
-                                  error: error.message
-                                };
-                              });
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: ($state.modalDiscount.open = false)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
-                }
-              }}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___0TClQ
-                )}
-              >
-                {
-                  "\u0627\u0639\u0645\u0627\u0644 \u062a\u062e\u0641\u06cc\u0641"
-                }
-              </div>
-            </Button>
+              <div className={classNames(projectcss.all, sty.column__mqAFp)} />
+            </div>
           </div>
         </AntdModal>
         <AntdModal
@@ -2965,9 +2987,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 sty.text__psStq
               )}
             >
-              {
-                "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
-              }
+              {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
             </div>
           </div>
         </Button>
@@ -3210,9 +3230,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/checkCircleSvgrepoComSvg.svg",
-                              fullWidth: 24,
-                              fullHeight: 24,
+                              src: "/plasmic/website_starter/images/image27.svg",
+                              fullWidth: 26,
+                              fullHeight: 26,
                               aspectRatio: 1
                             }}
                           />
@@ -3265,10 +3285,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/failSvgrepoComPng.png",
-                              fullWidth: 640,
-                              fullHeight: 640,
-                              aspectRatio: undefined
+                              src: "/plasmic/website_starter/images/image28.svg",
+                              fullWidth: 26,
+                              fullHeight: 26,
+                              aspectRatio: 1
                             }}
                           />
                         ) : null}
@@ -4034,9 +4054,9 @@ const PlasmicDescendants = {
     "fragmentDatePicker",
     "dayCell",
     "modalDiscount",
-    "numberInput3",
     "main",
     "numberInput4",
+    "numberInput3",
     "modal",
     "modalChangePrice",
     "main2",
@@ -4059,10 +4079,10 @@ const PlasmicDescendants = {
   ],
   fragmentDatePicker: ["fragmentDatePicker", "dayCell"],
   dayCell: ["dayCell"],
-  modalDiscount: ["modalDiscount", "numberInput3", "main", "numberInput4"],
-  numberInput3: ["numberInput3"],
+  modalDiscount: ["modalDiscount", "main", "numberInput4", "numberInput3"],
   main: ["main", "numberInput4"],
   numberInput4: ["numberInput4"],
+  numberInput3: ["numberInput3"],
   modal: ["modal"],
   modalChangePrice: ["modalChangePrice", "main2", "numberInput2"],
   main2: ["main2", "numberInput2"],
@@ -4093,9 +4113,9 @@ type NodeDefaultElementType = {
   fragmentDatePicker: typeof DatePicker;
   dayCell: typeof DayCell;
   modalDiscount: typeof AntdModal;
-  numberInput3: typeof AntdInputNumber;
   main: "div";
   numberInput4: typeof AntdInputNumber;
+  numberInput3: typeof AntdInputNumber;
   modal: typeof AntdModal;
   modalChangePrice: typeof AntdModal;
   main2: "div";
@@ -4177,9 +4197,9 @@ export const PlasmicCalendar2 = Object.assign(
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     dayCell: makeNodeComponent("dayCell"),
     modalDiscount: makeNodeComponent("modalDiscount"),
-    numberInput3: makeNodeComponent("numberInput3"),
     main: makeNodeComponent("main"),
     numberInput4: makeNodeComponent("numberInput4"),
+    numberInput3: makeNodeComponent("numberInput3"),
     modal: makeNodeComponent("modal"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
     main2: makeNodeComponent("main2"),

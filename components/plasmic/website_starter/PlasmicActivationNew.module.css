@@ -75,15 +75,13 @@
   min-width: 0;
   padding: 8px;
 }
-.text___7Wmd4 {
-  position: relative;
-  width: auto;
-  height: auto;
+.svg__bwrmg {
+  object-fit: cover;
   max-width: 100%;
-  font-size: 20px;
-  text-align: left;
-  order: 1;
-  color: #9d9d9d;
+  color: #7e7e7e;
+  width: 20px;
+  height: 17px;
+  flex-shrink: 0;
 }
 .freeBox__ezxHy {
   display: flex;
@@ -549,7 +547,7 @@
     padding-right: 0px;
   }
 }
-.input26:global(.__wab_instance) {
+.jabamaPhoneInput:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -659,7 +657,7 @@
   padding-left: 0px;
   font-size: 16px;
 }
-.input8:global(.__wab_instance) {
+.jabamaOtpInput:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -715,7 +713,7 @@
   font-size: 14px;
   min-width: 0;
 }
-.jajigaSend:global(.__wab_instance) {
+.jajigaSendForm:global(.__wab_instance) {
   width: 100%;
   min-width: 0;
 }
@@ -834,7 +832,7 @@
     padding-right: 0px;
   }
 }
-.input7:global(.__wab_instance) {
+.jajigaPhoneInput:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }

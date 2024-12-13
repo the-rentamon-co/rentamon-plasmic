@@ -377,7 +377,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               }
               wrapClassName={classNames({ [sty["pcls_JsyiZwISw6eZ"]]: true })}
             >
-              <div className={classNames(projectcss.all, sty.freeBox___2DDW)}>
+              <div
+                className={classNames(projectcss.all, sty.freeBox___2DDW, "vh")}
+              >
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__w9Qn)}
@@ -548,7 +550,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 
                     $steps["goToPanelCalendar"] = true
                       ? (() => {
-                          const actionArgs = { destination: `/panel-calendar` };
+                          const actionArgs = { destination: `/panel-2` };
                           return (({ destination }) => {
                             if (
                               typeof destination === "string" &&
@@ -1072,6 +1074,36 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
                       loading={"lazy"}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["goToActivationNew"] = true
+                          ? (() => {
+                              const actionArgs = { destination: `/activation` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToActivationNew"] != null &&
+                          typeof $steps["goToActivationNew"] === "object" &&
+                          typeof $steps["goToActivationNew"].then === "function"
+                        ) {
+                          $steps["goToActivationNew"] = await $steps[
+                            "goToActivationNew"
+                          ];
+                        }
+                      }}
                       src={{
                         src: "/plasmic/website_starter/images/image26.svg",
                         fullWidth: 86,
@@ -1109,6 +1141,36 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
                       loading={"lazy"}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["goToActivationNew"] = true
+                          ? (() => {
+                              const actionArgs = { destination: `/activation` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToActivationNew"] != null &&
+                          typeof $steps["goToActivationNew"] === "object" &&
+                          typeof $steps["goToActivationNew"].then === "function"
+                        ) {
+                          $steps["goToActivationNew"] = await $steps[
+                            "goToActivationNew"
+                          ];
+                        }
+                      }}
                       src={{
                         src: "/plasmic/website_starter/images/image25.svg",
                         fullWidth: 86,

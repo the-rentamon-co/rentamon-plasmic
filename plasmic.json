@@ -546,7 +546,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicPanelCalendar.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/panel-calendar.tsx"
+            "modulePath": "../src/pages/panel-2.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicPanelCalendar.module.css",
           "scheme": "blackbox",
@@ -823,6 +823,11 @@
           "id": "vDSfCAHiQsnP",
           "name": "Icon22Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon22.tsx"
+        },
+        {
+          "id": "TftNRT31euw0",
+          "name": "Icon23Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon23.tsx"
         }
       ],
       "images": [
@@ -1070,6 +1075,26 @@
           "id": "G8lvCa8FDgY_",
           "name": "image 26",
           "filePath": "../public/plasmic/website_starter/images/image26.svg"
+        },
+        {
+          "id": "UyxduRssPYJi",
+          "name": "image 27",
+          "filePath": "../public/plasmic/website_starter/images/image27.svg"
+        },
+        {
+          "id": "Bb0ywk4Pi764",
+          "name": "image 28",
+          "filePath": "../public/plasmic/website_starter/images/image28.svg"
+        },
+        {
+          "id": "VGRxTMNJW_RL",
+          "name": "image 29",
+          "filePath": "../public/plasmic/website_starter/images/image29.svg"
+        },
+        {
+          "id": "n4-6iOwXDJP4",
+          "name": "image 30",
+          "filePath": "../public/plasmic/website_starter/images/image30.svg"
         }
       ],
       "indirect": false,
@@ -1225,8 +1250,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -1626,8 +1650,7 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -1655,8 +1678,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -1710,8 +1732,7 @@
           }
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "8PtdGodUbexNYgkuyBUcWu",
@@ -1733,8 +1754,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -1760,8 +1780,7 @@
           }
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "sqPBLwEBBKHA2WDuGb17eV",
@@ -1851,8 +1870,7 @@
           "componentImportPath": "@plasmicpkgs/radix-ui"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     }
   ],
   "globalVariants": {
