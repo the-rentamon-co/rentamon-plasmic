@@ -81,6 +81,7 @@
   color: #7e7e7e;
   width: 20px;
   height: 17px;
+  cursor: pointer;
   flex-shrink: 0;
 }
 .freeBox__ezxHy {
@@ -179,6 +180,7 @@
   margin-bottom: 0px;
   margin-left: calc(0px + 16px) !important;
   max-width: 108px;
+  cursor: pointer;
   min-width: 0;
 }
 .img__oFjq5 > picture > img {

@@ -897,6 +897,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 44px;
+  cursor: pointer;
 }
 .img__jgkwH > picture > img {
   object-fit: cover;
