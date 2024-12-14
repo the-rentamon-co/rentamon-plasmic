@@ -828,6 +828,16 @@
           "id": "TftNRT31euw0",
           "name": "Icon23Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon23.tsx"
+        },
+        {
+          "id": "zCddQXMUCxH0",
+          "name": "Icon24Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon24.tsx"
+        },
+        {
+          "id": "JGzy20bJEzcD",
+          "name": "Icon25Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon25.tsx"
         }
       ],
       "images": [
@@ -1095,6 +1105,21 @@
           "id": "n4-6iOwXDJP4",
           "name": "image 30",
           "filePath": "../public/plasmic/website_starter/images/image30.svg"
+        },
+        {
+          "id": "ClztdWqy4h2W",
+          "name": "image 31",
+          "filePath": "../public/plasmic/website_starter/images/image31.svg"
+        },
+        {
+          "id": "171DLKAgtiCB",
+          "name": "image 32",
+          "filePath": "../public/plasmic/website_starter/images/image32.svg"
+        },
+        {
+          "id": "gWJspHjx9-gP",
+          "name": "image 33",
+          "filePath": "../public/plasmic/website_starter/images/image33.svg"
         }
       ],
       "indirect": false,
@@ -1250,7 +1275,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -1650,7 +1676,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -1678,7 +1705,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -1732,7 +1760,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "8PtdGodUbexNYgkuyBUcWu",
@@ -1754,7 +1783,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -1780,7 +1810,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "sqPBLwEBBKHA2WDuGb17eV",
@@ -1870,7 +1901,8 @@
           "componentImportPath": "@plasmicpkgs/radix-ui"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

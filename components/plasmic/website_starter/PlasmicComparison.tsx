@@ -304,6 +304,46 @@ function PlasmicComparison__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.text__cNz0X
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateSelectAccessValue"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["selectAccess", "value"]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateSelectAccessValue"] != null &&
+                          typeof $steps["updateSelectAccessValue"] ===
+                            "object" &&
+                          typeof $steps["updateSelectAccessValue"].then ===
+                            "function"
+                        ) {
+                          $steps["updateSelectAccessValue"] = await $steps[
+                            "updateSelectAccessValue"
+                          ];
+                        }
+                      }}
                     >
                       {hasVariant(globalVariants, "screen", "mobile") ? (
                         <React.Fragment>

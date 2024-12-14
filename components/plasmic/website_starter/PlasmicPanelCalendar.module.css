@@ -58,13 +58,12 @@
   max-width: 100%;
   object-fit: cover;
   left: auto;
-  top: 0;
+  top: -12px;
   z-index: 1;
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: -15px;
   overflow: hidden;
-  border-radius: 30px 0px 0px 30px;
 }
 .modal__modal :global(.ant-modal-content) {
   display: block;
@@ -83,8 +82,6 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  border-bottom-left-radius: 30px;
-  border-top-left-radius: 30px;
   min-width: 0;
   padding: 8px;
 }
@@ -968,9 +965,15 @@
   object-fit: cover;
   max-width: 100%;
   height: 34px;
+  margin-top: 7px;
 }
 .img__tnqU9 > picture > img {
   object-fit: cover;
+}
+@media (max-width: 380px) {
+  .img__tnqU9 {
+    margin-top: 0px;
+  }
 }
 .img__bVtw7 {
   object-fit: cover;
