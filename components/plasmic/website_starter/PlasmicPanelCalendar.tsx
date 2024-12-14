@@ -63,6 +63,7 @@ import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -102,6 +103,8 @@ export type PlasmicPanelCalendar__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   select?: Flex__<typeof Select>;
   calendar2?: Flex__<typeof Calendar2>;
+  clarity?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
 };
 
 export interface DefaultPanelCalendarProps {}
@@ -1415,6 +1418,24 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               }
             })()}
           />
+
+          <Embed
+            data-plasmic-name={"clarity"}
+            data-plasmic-override={overrides.clarity}
+            className={classNames("__wab_instance", sty.clarity)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
+
+          <Embed
+            data-plasmic-name={"goftino"}
+            data-plasmic-override={overrides.goftino}
+            className={classNames("__wab_instance", sty.goftino)}
+            code={
+              '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1430,7 +1451,9 @@ const PlasmicDescendants = {
     "main",
     "apiRequest",
     "select",
-    "calendar2"
+    "calendar2",
+    "clarity",
+    "goftino"
   ],
   sideBar: ["sideBar", "modal"],
   modal: ["modal"],
@@ -1438,7 +1461,9 @@ const PlasmicDescendants = {
   main: ["main"],
   apiRequest: ["apiRequest"],
   select: ["select"],
-  calendar2: ["calendar2"]
+  calendar2: ["calendar2"],
+  clarity: ["clarity"],
+  goftino: ["goftino"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1452,6 +1477,8 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   select: typeof Select;
   calendar2: typeof Calendar2;
+  clarity: typeof Embed;
+  goftino: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1521,6 +1548,8 @@ export const PlasmicPanelCalendar = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     select: makeNodeComponent("select"),
     calendar2: makeNodeComponent("calendar2"),
+    clarity: makeNodeComponent("clarity"),
+    goftino: makeNodeComponent("goftino"),
 
     // Metadata about props expected for PlasmicPanelCalendar
     internalVariantProps: PlasmicPanelCalendar__VariantProps,
