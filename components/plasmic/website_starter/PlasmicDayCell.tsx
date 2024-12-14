@@ -238,52 +238,202 @@ function PlasmicDayCell__RenderFunc(props: {
         }
       )}
     >
-      {(() => {
-        try {
-          return (() => {
-            if ($props.holidays === "true") {
-              return false;
-            } else {
+      <div
+        className={classNames(projectcss.all, sty.freeBox__aE9Ge, {
+          [sty.freeBoxdayStatus_reserved__aE9Ge6WcTl]: hasVariant(
+            $state,
+            "dayStatus",
+            "reserved"
+          ),
+          [sty.freeBoxselected__aE9Ge2Pr1U]: hasVariant(
+            $state,
+            "selected",
+            "selected"
+          )
+        })}
+      >
+        {(() => {
+          try {
+            return (() => {
+              if ($props.holidays === "true") {
+                return false;
+              } else {
+                return true;
+              }
+            })();
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
               return true;
             }
-          })();
-        } catch (e) {
-          if (
-            e instanceof TypeError ||
-            e?.plasmicType === "PlasmicUndefinedDataError"
-          ) {
-            return true;
+            throw e;
           }
-          throw e;
-        }
-      })() ? (
+        })() ? (
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__sLeDq,
+              {
+                [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabled"
+                ),
+                [sty.textdayStatus_discount__sLeDq2ON9H]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "discount"
+                ),
+                [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                ),
+                [sty.textdayStatus_selected__sLeDqmbNkx]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "selected"
+                ),
+                [sty.textselected__sLeDq2Pr1U]: hasVariant(
+                  $state,
+                  "selected",
+                  "selected"
+                )
+              }
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.dayNumber;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
+        ) : null}
+      </div>
+      <div
+        className={classNames(projectcss.all, sty.freeBox__gKj3, {
+          [sty.freeBoxdayStatus_reserved__gKj36WcTl]: hasVariant(
+            $state,
+            "dayStatus",
+            "reserved"
+          ),
+          [sty.freeBoxselected__gKj32Pr1U]: hasVariant(
+            $state,
+            "selected",
+            "selected"
+          )
+        })}
+      >
         <div
           className={classNames(
             projectcss.all,
             projectcss.__wab_text,
-            sty.text__sLeDq,
+            sty.text__kqTC,
             {
-              [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
+              [sty.textdayStatus_disabled__kqTCokz0Z]: hasVariant(
                 $state,
                 "dayStatus",
                 "disabled"
               ),
-              [sty.textdayStatus_discount__sLeDq2ON9H]: hasVariant(
+              [sty.textdayStatus_discount__kqTC2ON9H]: hasVariant(
                 $state,
                 "dayStatus",
                 "discount"
               ),
-              [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
+              [sty.textdayStatus_reserved__kqTC6WcTl]: hasVariant(
                 $state,
                 "dayStatus",
                 "reserved"
               ),
-              [sty.textdayStatus_selected__sLeDqmbNkx]: hasVariant(
+              [sty.textselected__kqTC2Pr1U]: hasVariant(
+                $state,
+                "selected",
+                "selected"
+              )
+            }
+          )}
+        >
+          {hasVariant(globalVariants, "screen", "mobile") ? (
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.platform;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "\u0631\u0632\u0648\u0631 ";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.platform;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "\u0631\u0632\u0648\u0631 ";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          )}
+        </div>
+      </div>
+      <div className={classNames(projectcss.all, sty.freeBox__cD9Fr)}>
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__ltKp2,
+            {
+              [sty.textdayStatus_blocked__ltKp277F30]: hasVariant(
+                $state,
+                "dayStatus",
+                "blocked"
+              ),
+              [sty.textdayStatus_disabled__ltKp2Okz0Z]: hasVariant(
+                $state,
+                "dayStatus",
+                "disabled"
+              ),
+              [sty.textdayStatus_discount__ltKp22ON9H]: hasVariant(
+                $state,
+                "dayStatus",
+                "discount"
+              ),
+              [sty.textdayStatus_reserved__ltKp26WcTl]: hasVariant(
+                $state,
+                "dayStatus",
+                "reserved"
+              ),
+              [sty.textdayStatus_selected__ltKp2MbNkx]: hasVariant(
                 $state,
                 "dayStatus",
                 "selected"
               ),
-              [sty.textselected__sLeDq2Pr1U]: hasVariant(
+              [sty.textselected__ltKp22Pr1U]: hasVariant(
                 $state,
                 "selected",
                 "selected"
@@ -294,7 +444,7 @@ function PlasmicDayCell__RenderFunc(props: {
           <React.Fragment>
             {(() => {
               try {
-                return $props.dayNumber;
+                return $props.price;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -307,7 +457,7 @@ function PlasmicDayCell__RenderFunc(props: {
             })()}
           </React.Fragment>
         </div>
-      ) : null}
+      </div>
       {(() => {
         try {
           return (() => {
@@ -380,124 +530,6 @@ function PlasmicDayCell__RenderFunc(props: {
           </React.Fragment>
         </div>
       ) : null}
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__kqTC,
-          {
-            [sty.textdayStatus_disabled__kqTCokz0Z]: hasVariant(
-              $state,
-              "dayStatus",
-              "disabled"
-            ),
-            [sty.textdayStatus_discount__kqTC2ON9H]: hasVariant(
-              $state,
-              "dayStatus",
-              "discount"
-            ),
-            [sty.textdayStatus_reserved__kqTC6WcTl]: hasVariant(
-              $state,
-              "dayStatus",
-              "reserved"
-            ),
-            [sty.textselected__kqTC2Pr1U]: hasVariant(
-              $state,
-              "selected",
-              "selected"
-            )
-          }
-        )}
-      >
-        {hasVariant(globalVariants, "screen", "mobile") ? (
-          <React.Fragment>
-            {(() => {
-              try {
-                return $props.platform;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return "\u0631\u0632\u0648\u0631 ";
-                }
-                throw e;
-              }
-            })()}
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            {(() => {
-              try {
-                return $props.platform;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return "\u0631\u0632\u0648\u0631 ";
-                }
-                throw e;
-              }
-            })()}
-          </React.Fragment>
-        )}
-      </div>
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__ltKp2,
-          {
-            [sty.textdayStatus_blocked__ltKp277F30]: hasVariant(
-              $state,
-              "dayStatus",
-              "blocked"
-            ),
-            [sty.textdayStatus_disabled__ltKp2Okz0Z]: hasVariant(
-              $state,
-              "dayStatus",
-              "disabled"
-            ),
-            [sty.textdayStatus_discount__ltKp22ON9H]: hasVariant(
-              $state,
-              "dayStatus",
-              "discount"
-            ),
-            [sty.textdayStatus_reserved__ltKp26WcTl]: hasVariant(
-              $state,
-              "dayStatus",
-              "reserved"
-            ),
-            [sty.textdayStatus_selected__ltKp2MbNkx]: hasVariant(
-              $state,
-              "dayStatus",
-              "selected"
-            ),
-            [sty.textselected__ltKp22Pr1U]: hasVariant(
-              $state,
-              "selected",
-              "selected"
-            )
-          }
-        )}
-      >
-        <React.Fragment>
-          {(() => {
-            try {
-              return $props.price;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "";
-              }
-              throw e;
-            }
-          })()}
-        </React.Fragment>
-      </div>
     </Stack__>
   ) as React.ReactElement | null;
 }

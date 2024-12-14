@@ -17,7 +17,7 @@
 }
 .cell > :global(.__wab_flex-container) {
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
   min-width: 0;
 }
@@ -83,6 +83,21 @@
 .celldayStatus_selected {
   background: #203647;
 }
+.freeBox__aE9Ge {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  width: 100%;
+  height: 30%;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 3px;
+  z-index: 1;
+  min-width: 0;
+  padding: 0px;
+}
 .text__sLeDq {
   position: relative;
   color: var(--token-C-5xNZALkGon);
@@ -93,11 +108,14 @@
   height: auto;
   width: 100%;
   margin-top: 2px;
+  left: auto;
+  top: auto;
+  z-index: 1;
   min-width: 0;
 }
 @media (max-width: 508px) {
   .text__sLeDq {
-    margin-top: calc(0px + 1px) !important;
+    margin-top: 0px;
     font-weight: 400;
     padding-right: 0px;
     font-size: 14px;
@@ -118,28 +136,20 @@
 .textdayStatus_selected__sLeDqmbNkx {
   color: #ffffff;
 }
-.holidays2 {
-  position: relative;
-  color: var(--token-j-ZwOKbpUCqd);
-  font-family: "Estedad";
-  font-weight: 700;
-  text-align: center;
-  max-width: 100%;
-  height: auto;
+.freeBox__gKj3 {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
   width: 100%;
+  height: 30%;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 19px;
+  z-index: 1;
   min-width: 0;
-}
-.holidays2selected {
-  color: #ffffff;
-}
-.holidays2dayStatus_reserved {
-  color: var(--token-7MRjbe724hDb);
-}
-.holidays2dayStatus_disabled {
-  color: #c5c5c5;
-}
-.holidays2dayStatus_selected {
-  color: #ffffff;
+  padding: 0px;
 }
 .text__kqTC {
   position: relative;
@@ -179,14 +189,29 @@
   font-weight: 300;
   display: block;
 }
-.text__ltKp2 {
+.freeBox__cD9Fr {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  width: 100%;
+  height: 40%;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  padding: 0px;
+}
+.text__ltKp2 {
+  position: sticky;
   width: 100%;
   height: auto;
   max-width: 100%;
   text-align: center;
   color: var(--token-7MRjbe724hDb);
   font-weight: 600;
+  left: 0px;
+  top: 10px;
+  z-index: 1;
   min-width: 0;
 }
 @media (max-width: 508px) {
@@ -211,5 +236,28 @@
   display: none;
 }
 .textdayStatus_selected__ltKp2MbNkx {
+  color: #ffffff;
+}
+.holidays2 {
+  position: relative;
+  color: var(--token-j-ZwOKbpUCqd);
+  font-family: "Estedad";
+  font-weight: 700;
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  min-width: 0;
+}
+.holidays2selected {
+  color: #ffffff;
+}
+.holidays2dayStatus_reserved {
+  color: var(--token-7MRjbe724hDb);
+}
+.holidays2dayStatus_disabled {
+  color: #c5c5c5;
+}
+.holidays2dayStatus_selected {
   color: #ffffff;
 }
