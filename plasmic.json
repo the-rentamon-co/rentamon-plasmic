@@ -136,20 +136,6 @@
           "componentType": "component"
         },
         {
-          "id": "S61C2Y5oZIVA",
-          "name": "Panel",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicPanel.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/panel.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicPanel.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/panel"
-        },
-        {
           "id": "U9dycEYfxuDv",
           "name": "PropertyPic",
           "type": "managed",
@@ -546,7 +532,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicPanelCalendar.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/panel-2.tsx"
+            "modulePath": "../src/pages/panel.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicPanelCalendar.module.css",
           "scheme": "blackbox",

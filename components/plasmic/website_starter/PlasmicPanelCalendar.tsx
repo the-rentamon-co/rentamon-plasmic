@@ -543,7 +543,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 
                     $steps["goToPanelCalendar"] = true
                       ? (() => {
-                          const actionArgs = { destination: `/panel-2` };
+                          const actionArgs = { destination: `/panel` };
                           return (({ destination }) => {
                             if (
                               typeof destination === "string" &&
