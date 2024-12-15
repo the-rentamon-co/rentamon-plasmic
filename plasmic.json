@@ -1106,6 +1106,11 @@
           "id": "gWJspHjx9-gP",
           "name": "image 33",
           "filePath": "../public/plasmic/website_starter/images/image33.svg"
+        },
+        {
+          "id": "Iom0_pwJcJSt",
+          "name": "image 34",
+          "filePath": "../public/plasmic/website_starter/images/image34.svg"
         }
       ],
       "indirect": false,

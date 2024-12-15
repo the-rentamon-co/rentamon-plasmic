@@ -16,7 +16,7 @@
       "fileLocks": [
         {
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
-          "checksum": "2ecf99ecd33c1c56f0e07db079cc2a02",
+          "checksum": "9a1e94a5fb3acaa512d35d381d9b1874",
           "type": "globalContexts"
         },
         {
@@ -32,12 +32,12 @@
         {
           "type": "renderModule",
           "assetId": "cU6Nt4MA6DXT",
-          "checksum": "bd94b1bd939f338172b70e5b4c305ba3"
+          "checksum": "c439191ae6ac002544a7431bc0086530"
         },
         {
           "type": "cssRules",
           "assetId": "cU6Nt4MA6DXT",
-          "checksum": "bd94b1bd939f338172b70e5b4c305ba3"
+          "checksum": "c439191ae6ac002544a7431bc0086530"
         },
         {
           "type": "renderModule",
@@ -562,12 +562,12 @@
         {
           "type": "renderModule",
           "assetId": "ssh21My6pq8y",
-          "checksum": "612901abf7d20765b050a9728d79fccd"
+          "checksum": "0d6fd29da84767c1351a14c5c7593d2c"
         },
         {
           "type": "cssRules",
           "assetId": "ssh21My6pq8y",
-          "checksum": "612901abf7d20765b050a9728d79fccd"
+          "checksum": "0d6fd29da84767c1351a14c5c7593d2c"
         },
         {
           "type": "renderModule",
@@ -622,12 +622,12 @@
         {
           "type": "renderModule",
           "assetId": "zXAOwfcgu5NZ",
-          "checksum": "7808d1fe38daed8bbb52d0e42df6ad8a"
+          "checksum": "299705de0f52527595648a35f478df8b"
         },
         {
           "type": "cssRules",
           "assetId": "zXAOwfcgu5NZ",
-          "checksum": "7808d1fe38daed8bbb52d0e42df6ad8a"
+          "checksum": "299705de0f52527595648a35f478df8b"
         },
         {
           "type": "renderModule",
@@ -942,7 +942,12 @@
         {
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
           "type": "projectCss",
-          "checksum": "b2d5d93eb5162dc3203a6bbd42dc17c7"
+          "checksum": "78f338aa94b7e0cd8095237bb60ff216"
+        },
+        {
+          "type": "image",
+          "assetId": "Iom0_pwJcJSt",
+          "checksum": "8f53e8a602be761e333d00ce113a234a"
         }
       ],
       "codegenVersion": "0.0.1"

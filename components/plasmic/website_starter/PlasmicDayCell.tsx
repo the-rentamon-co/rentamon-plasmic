@@ -366,7 +366,23 @@ function PlasmicDayCell__RenderFunc(props: {
             }
           )}
         >
-          {hasVariant(globalVariants, "screen", "mobile") ? (
+          {hasVariant(globalVariants, "screen", "smallMobile") ? (
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.platform;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "\u0631\u0632\u0648\u0631 ";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          ) : hasVariant(globalVariants, "screen", "mobile") ? (
             <React.Fragment>
               {(() => {
                 try {

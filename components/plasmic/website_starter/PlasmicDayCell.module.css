@@ -170,6 +170,7 @@
 }
 @media (max-width: 380px) {
   .text__kqTC {
+    font-size: 14px;
     display: block;
   }
 }

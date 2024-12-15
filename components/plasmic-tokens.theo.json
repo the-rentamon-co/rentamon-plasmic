@@ -2131,6 +2131,16 @@
       }
     },
     {
+      "name": "Unnamed Style Token 10",
+      "type": "color",
+      "value": "#D9D9D9",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "BribYzXeckiT"
+      }
+    },
+    {
       "name": "Unnamed Style Token 2",
       "type": "spacing",
       "value": "1px",
