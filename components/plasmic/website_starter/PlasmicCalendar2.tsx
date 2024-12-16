@@ -746,7 +746,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       jabama: "جاباما",
                       shab: "شب",
                       homsa: "هومسا",
-                      mihmansho: "مهمان شو",
+                      mihmansho: "مهمانشو",
                       otaghak: "اتاقک",
                       mizboon: "میزبون"
                     };

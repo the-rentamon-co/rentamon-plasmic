@@ -189,7 +189,7 @@ function PlasmicTestimonial__RenderFunc(props: {
       <div
         data-plasmic-name={"quotes"}
         data-plasmic-override={overrides.quotes}
-        className={classNames(projectcss.all, sty.quotes, "card\u06f1")}
+        className={classNames(projectcss.all, sty.quotes, "card")}
       >
         <div className={classNames(projectcss.all, sty.freeBox__y46Mm)}>
           <ApiRequest
