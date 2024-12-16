@@ -738,13 +738,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
               holidays={(() => {
                 try {
-                  return (() => {
-                    if (dateProps.isWeekend == true) {
-                      return "true";
-                    } else {
-                      return "false";
-                    }
-                  })();
+                  return undefined;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
