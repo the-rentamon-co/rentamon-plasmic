@@ -736,7 +736,25 @@ function PlasmicCalendar2__RenderFunc(props: {
                       }
                     })()
               }
-              holidays={``}
+              holidays={(() => {
+                try {
+                  return (() => {
+                    if (dateProps.isWeekend == true) {
+                      return "true";
+                    } else {
+                      return "false";
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
               platform={(() => {
                 try {
                   return (() => {

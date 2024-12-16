@@ -322,6 +322,78 @@ function PlasmicDayCell__RenderFunc(props: {
             </React.Fragment>
           </div>
         ) : null}
+        {(() => {
+          try {
+            return (() => {
+              if ($props.holidays == "true") {
+                return true;
+              } else {
+                return false;
+              }
+            })();
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return true;
+            }
+            throw e;
+          }
+        })() ? (
+          <div
+            data-plasmic-name={"holidays2"}
+            data-plasmic-override={overrides.holidays2}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.holidays2,
+              {
+                [sty.holidays2dayStatus_disabled]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabled"
+                ),
+                [sty.holidays2dayStatus_discount]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "discount"
+                ),
+                [sty.holidays2dayStatus_reserved]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                ),
+                [sty.holidays2dayStatus_selected]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "selected"
+                ),
+                [sty.holidays2selected]: hasVariant(
+                  $state,
+                  "selected",
+                  "selected"
+                )
+              }
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.dayNumber;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
+        ) : null}
       </div>
       <div
         className={classNames(projectcss.all, sty.freeBox__gKj3, {
@@ -474,78 +546,6 @@ function PlasmicDayCell__RenderFunc(props: {
           </React.Fragment>
         </div>
       </div>
-      {(() => {
-        try {
-          return (() => {
-            if ($props.holidays === "true") {
-              return true;
-            } else {
-              return false;
-            }
-          })();
-        } catch (e) {
-          if (
-            e instanceof TypeError ||
-            e?.plasmicType === "PlasmicUndefinedDataError"
-          ) {
-            return true;
-          }
-          throw e;
-        }
-      })() ? (
-        <div
-          data-plasmic-name={"holidays2"}
-          data-plasmic-override={overrides.holidays2}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.holidays2,
-            {
-              [sty.holidays2dayStatus_disabled]: hasVariant(
-                $state,
-                "dayStatus",
-                "disabled"
-              ),
-              [sty.holidays2dayStatus_discount]: hasVariant(
-                $state,
-                "dayStatus",
-                "discount"
-              ),
-              [sty.holidays2dayStatus_reserved]: hasVariant(
-                $state,
-                "dayStatus",
-                "reserved"
-              ),
-              [sty.holidays2dayStatus_selected]: hasVariant(
-                $state,
-                "dayStatus",
-                "selected"
-              ),
-              [sty.holidays2selected]: hasVariant(
-                $state,
-                "selected",
-                "selected"
-              )
-            }
-          )}
-        >
-          <React.Fragment>
-            {(() => {
-              try {
-                return $props.dayNumber;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return "";
-                }
-                throw e;
-              }
-            })()}
-          </React.Fragment>
-        </div>
-      ) : null}
     </Stack__>
   ) as React.ReactElement | null;
 }

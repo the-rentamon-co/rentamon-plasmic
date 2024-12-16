@@ -3506,6 +3506,8 @@
 }
 @media (max-width: 380px) {
   .quotes {
+    justify-content: flex-end;
+    align-items: center;
     padding: 0px;
   }
 }
