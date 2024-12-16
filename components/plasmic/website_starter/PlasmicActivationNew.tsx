@@ -70,6 +70,7 @@ import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import Tooltip from "../../Tooltip"; // plasmic-import: H631TCEpl2Nh/component
 import Testimonial from "../../Testimonial"; // plasmic-import: MWmH78o8OGcS/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -3410,7 +3411,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0633\u0627\u06cc\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u0646\u0634\u062f\u0647"
+                        "\u0633\u0627\u06cc\u062a \u0647\u0646\u0648\u0632 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u0646\u0634\u062f\u0647"
                       }
                     </div>
                   </Stack__>
@@ -3432,7 +3433,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u06cc\u0633\u062a"
+                        "\u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0642\u0637\u0639 \u0647\u0633\u062a"
                       }
                     </div>
                   </Stack__>
@@ -4259,7 +4260,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   style={{ textDecorationLine: "underline" }}
                                 >
                                   {
-                                    "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
+                                    "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
                                   }
                                 </span>
                               </React.Fragment>
@@ -4287,17 +4288,35 @@ function PlasmicActivationNew__RenderFunc(props: {
                       data-plasmic-override={overrides.jabamaVerify}
                       className={classNames("__wab_instance", sty.jabamaVerify)}
                       label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__xed8V
-                          )}
-                        >
-                          {
-                            "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u0628\u0627\u0645\u0627 (\u067e\u06cc\u0627\u0645\u06a9):"
-                          }
-                        </div>
+                        <React.Fragment>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__xed8V
+                            )}
+                          >
+                            {
+                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u0628\u0627\u0645\u0627:"
+                            }
+                          </div>
+                          <Tooltip
+                            className={classNames(
+                              "__wab_instance",
+                              sty.tooltip__iSuhf
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__zhcfd
+                              )}
+                            >
+                              {""}
+                            </div>
+                          </Tooltip>
+                        </React.Fragment>
                       }
                       name={"jabamaOTP"}
                       rules={[
@@ -5038,7 +5057,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   style={{ textDecorationLine: "underline" }}
                                 >
                                   {
-                                    "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
+                                    "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645   "
                                   }
                                 </span>
                               </React.Fragment>
@@ -5066,17 +5085,35 @@ function PlasmicActivationNew__RenderFunc(props: {
                       data-plasmic-override={overrides.jajigaVerify}
                       className={classNames("__wab_instance", sty.jajigaVerify)}
                       label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___8Ej4Q
-                          )}
-                        >
-                          {
-                            "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u062c\u06cc\u06af\u0627 (\u067e\u06cc\u0627\u0645\u06a9):"
-                          }
-                        </div>
+                        <React.Fragment>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___8Ej4Q
+                            )}
+                          >
+                            {
+                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u062c\u06cc\u06af\u0627:"
+                            }
+                          </div>
+                          <Tooltip
+                            className={classNames(
+                              "__wab_instance",
+                              sty.tooltip__v6SWj
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__sdQcx
+                              )}
+                            >
+                              {""}
+                            </div>
+                          </Tooltip>
+                        </React.Fragment>
                       }
                       name={"jajigaOTP"}
                       rules={[
@@ -5839,7 +5876,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   style={{ textDecorationLine: "underline" }}
                                 >
                                   {
-                                    "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                    "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
                                   }
                                 </span>
                               </React.Fragment>
@@ -5867,17 +5904,35 @@ function PlasmicActivationNew__RenderFunc(props: {
                       data-plasmic-override={overrides.shabVerify}
                       className={classNames("__wab_instance", sty.shabVerify)}
                       label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__hv4Vo
-                          )}
-                        >
-                          {
-                            "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0634\u0628 (\u067e\u06cc\u0627\u0645\u06a9):"
-                          }
-                        </div>
+                        <React.Fragment>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__hv4Vo
+                            )}
+                          >
+                            {
+                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0634\u0628:"
+                            }
+                          </div>
+                          <Tooltip
+                            className={classNames(
+                              "__wab_instance",
+                              sty.tooltip__kGoeQ
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__fGqon
+                              )}
+                            >
+                              {""}
+                            </div>
+                          </Tooltip>
+                        </React.Fragment>
                       }
                       name={"shabOTP"}
                       rules={[
@@ -6610,7 +6665,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   style={{ textDecorationLine: "underline" }}
                                 >
                                   {
-                                    "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                    "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
                                   }
                                 </span>
                               </React.Fragment>
@@ -6644,17 +6699,35 @@ function PlasmicActivationNew__RenderFunc(props: {
                         sty.otaghakVerify
                       )}
                       label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___5TXxI
-                          )}
-                        >
-                          {
-                            "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0627\u062a\u0627\u0642\u06a9 (\u067e\u06cc\u0627\u0645\u06a9):"
-                          }
-                        </div>
+                        <React.Fragment>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___5TXxI
+                            )}
+                          >
+                            {
+                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0627\u062a\u0627\u0642\u06a9:"
+                            }
+                          </div>
+                          <Tooltip
+                            className={classNames(
+                              "__wab_instance",
+                              sty.tooltip__av5Mw
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__hNaZw
+                              )}
+                            >
+                              {""}
+                            </div>
+                          </Tooltip>
+                        </React.Fragment>
                       }
                       name={"otaghakOTP"}
                       rules={[
@@ -8303,7 +8376,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     style={{ textDecorationLine: "underline" }}
                                   >
                                     {
-                                      "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                      "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
                                     }
                                   </span>
                                 </React.Fragment>

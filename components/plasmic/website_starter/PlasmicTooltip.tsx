@@ -185,7 +185,7 @@ function PlasmicTooltip__RenderFunc(props: {
               <React.Fragment>
                 {(() => {
                   try {
-                    return "کد ویلات که در صفحه مدیریت برنامه‌ها می‌بینی";
+                    return "همون کدی که برات پیامک شد";
                   } catch (e) {
                     if (
                       e instanceof TypeError ||

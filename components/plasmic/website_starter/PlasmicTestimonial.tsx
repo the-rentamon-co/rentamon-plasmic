@@ -83,12 +83,12 @@ export const PlasmicTestimonial__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTestimonial__OverridesType = {
   root?: Flex__<"div">;
+  userTestimonial?: Flex__<typeof ApiRequest>;
   quotes?: Flex__<"div">;
   userName4?: Flex__<"div">;
   userPlatform?: Flex__<"div">;
   userCity?: Flex__<"div">;
   userQuote2?: Flex__<"div">;
-  userTestimonial?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultTestimonialProps {
@@ -136,19 +136,22 @@ function PlasmicTestimonial__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "userTestimonial[].data",
+        path: "userTestimonial.data",
         type: "private",
-        variableType: "object"
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "userTestimonial[].error",
+        path: "userTestimonial.error",
         type: "private",
-        variableType: "object"
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "userTestimonial[].loading",
+        path: "userTestimonial.loading",
         type: "private",
-        variableType: "boolean"
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -181,6 +184,49 @@ function PlasmicTestimonial__RenderFunc(props: {
         sty.root
       )}
     >
+      <ApiRequest
+        data-plasmic-name={"userTestimonial"}
+        data-plasmic-override={overrides.userTestimonial}
+        children={null}
+        className={classNames("__wab_instance", sty.userTestimonial)}
+        errorDisplay={
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__sgD2M
+            )}
+          >
+            {"Error fetching data"}
+          </div>
+        }
+        loadingDisplay={
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__rqWgH
+            )}
+          >
+            {"Loading..."}
+          </div>
+        }
+        method={"GET"}
+        onError={generateStateOnChangeProp($state, [
+          "userTestimonial",
+          "error"
+        ])}
+        onLoading={generateStateOnChangeProp($state, [
+          "userTestimonial",
+          "loading"
+        ])}
+        onSuccess={generateStateOnChangeProp($state, [
+          "userTestimonial",
+          "data"
+        ])}
+        url={"https://gateway.rentamon.com/webhook/testimonial"}
+      />
+
       <div
         data-plasmic-name={"quotes"}
         data-plasmic-override={overrides.quotes}
@@ -190,7 +236,7 @@ function PlasmicTestimonial__RenderFunc(props: {
           {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
             (() => {
               try {
-                return $state.userTestimonial[0].data;
+                return $state.userTestimonial.data;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -247,9 +293,8 @@ function PlasmicTestimonial__RenderFunc(props: {
                             })()
                           : (() => {
                               try {
-                                return $state.userTestimonial[0].data[
-                                  currentIndex
-                                ].userPic;
+                                return $state.userTestimonial.data[currentIndex]
+                                  .userPic;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -302,9 +347,8 @@ function PlasmicTestimonial__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.userTestimonial[0].data[
-                                currentIndex
-                              ].userName;
+                              return $state.userTestimonial.data[currentIndex]
+                                .userName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -357,7 +401,7 @@ function PlasmicTestimonial__RenderFunc(props: {
                             try {
                               return (
                                 "میزبان " +
-                                $state.userTestimonial[0].data[currentIndex]
+                                $state.userTestimonial.data[currentIndex]
                                   .userPlatform
                               );
                             } catch (e) {
@@ -434,9 +478,8 @@ function PlasmicTestimonial__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.userTestimonial[0].data[
-                                currentIndex
-                              ].userCity;
+                              return $state.userTestimonial.data[currentIndex]
+                                .userCity;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -465,7 +508,7 @@ function PlasmicTestimonial__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return $state.userTestimonial[0].data[currentIndex]
+                          return $state.userTestimonial.data[currentIndex]
                             .userQuote;
                         } catch (e) {
                           if (
@@ -480,60 +523,6 @@ function PlasmicTestimonial__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 </div>
-                <ApiRequest
-                  data-plasmic-name={"userTestimonial"}
-                  data-plasmic-override={overrides.userTestimonial}
-                  className={classNames("__wab_instance", sty.userTestimonial)}
-                  errorDisplay={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__sgD2M
-                      )}
-                    >
-                      {"Error fetching data"}
-                    </div>
-                  }
-                  loadingDisplay={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__rqWgH
-                      )}
-                    >
-                      {"Loading..."}
-                    </div>
-                  }
-                  method={"GET"}
-                  onError={generateStateOnChangeProp($state, [
-                    "userTestimonial",
-                    __plasmic_idx_0,
-                    "error"
-                  ])}
-                  onLoading={generateStateOnChangeProp($state, [
-                    "userTestimonial",
-                    __plasmic_idx_0,
-                    "loading"
-                  ])}
-                  onSuccess={generateStateOnChangeProp($state, [
-                    "userTestimonial",
-                    __plasmic_idx_0,
-                    "data"
-                  ])}
-                  url={"https://gateway.rentamon.com/webhook/testimonial"}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__cQBpZ
-                    )}
-                  >
-                    {"Enter some text"}
-                  </div>
-                </ApiRequest>
               </div>
             );
           })}
@@ -546,38 +535,31 @@ function PlasmicTestimonial__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "userTestimonial",
     "quotes",
     "userName4",
     "userPlatform",
     "userCity",
-    "userQuote2",
-    "userTestimonial"
+    "userQuote2"
   ],
-  quotes: [
-    "quotes",
-    "userName4",
-    "userPlatform",
-    "userCity",
-    "userQuote2",
-    "userTestimonial"
-  ],
+  userTestimonial: ["userTestimonial"],
+  quotes: ["quotes", "userName4", "userPlatform", "userCity", "userQuote2"],
   userName4: ["userName4"],
   userPlatform: ["userPlatform"],
   userCity: ["userCity"],
-  userQuote2: ["userQuote2"],
-  userTestimonial: ["userTestimonial"]
+  userQuote2: ["userQuote2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  userTestimonial: typeof ApiRequest;
   quotes: "div";
   userName4: "div";
   userPlatform: "div";
   userCity: "div";
   userQuote2: "div";
-  userTestimonial: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -640,12 +622,12 @@ export const PlasmicTestimonial = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    userTestimonial: makeNodeComponent("userTestimonial"),
     quotes: makeNodeComponent("quotes"),
     userName4: makeNodeComponent("userName4"),
     userPlatform: makeNodeComponent("userPlatform"),
     userCity: makeNodeComponent("userCity"),
     userQuote2: makeNodeComponent("userQuote2"),
-    userTestimonial: makeNodeComponent("userTestimonial"),
 
     // Metadata about props expected for PlasmicTestimonial
     internalVariantProps: PlasmicTestimonial__VariantProps,
