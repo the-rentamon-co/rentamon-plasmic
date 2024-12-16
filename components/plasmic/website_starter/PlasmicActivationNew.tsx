@@ -3516,7 +3516,25 @@ function PlasmicActivationNew__RenderFunc(props: {
               "apiRequest",
               "data"
             ])}
-            url={"https://gateway.rentamon.com/webhook/user-registration"}
+            url={(() => {
+              try {
+                return (() => {
+                  if ($ctx.params.type == 1) {
+                    return "https://gateway.rentamon.com/webhook/user-registration";
+                  } else {
+                    return "";
+                  }
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           <div

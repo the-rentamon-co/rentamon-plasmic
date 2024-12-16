@@ -70,6 +70,12 @@
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
+@media (max-width: 380px) {
+  .freeBox__y46Mm {
+    padding-right: 0em;
+    padding-left: 0em;
+  }
+}
 .freeBox__qJcEw {
   display: flex;
   flex-direction: column;
@@ -79,6 +85,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
   min-width: 0;
   border-radius: 30px;
   padding: 8px;
@@ -145,18 +152,18 @@
   justify-content: flex-start;
   width: 100%;
   height: auto;
-  max-width: 45%;
+  max-width: 40%;
   min-width: 0;
   padding: 8px 0px;
 }
 @media (max-width: 508px) {
   .freeBox__ftEea {
-    max-width: 40%;
+    max-width: 34%;
   }
 }
 @media (max-width: 380px) {
   .freeBox__ftEea {
-    max-width: 45%;
+    max-width: 37%;
   }
 }
 .userName4 {
@@ -194,13 +201,13 @@
   justify-content: flex-start;
   width: 100%;
   height: auto;
-  max-width: 25%;
+  max-width: 28%;
   min-width: 0;
   padding: 8px 3px 8px 2px;
 }
 @media (max-width: 380px) {
   .freeBox___1A60J {
-    max-width: 30%;
+    max-width: 28%;
     padding-right: 0px;
   }
 }
@@ -227,7 +234,7 @@
 }
 @media (max-width: 380px) {
   .userPlatform {
-    padding-right: 2px;
+    padding-right: 8px;
     font-size: 14px;
   }
 }
@@ -292,7 +299,7 @@
 }
 @media (max-width: 380px) {
   .userCity {
-    padding-right: 4px;
+    padding-right: 2px;
   }
 }
 .freeBox__bQnRy {

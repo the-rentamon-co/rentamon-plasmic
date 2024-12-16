@@ -278,9 +278,8 @@ function PlasmicTestimonial__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? (() => {
                               try {
-                                return $state.userTestimonial[0].data[
-                                  currentIndex
-                                ].userPic;
+                                return $state.userTestimonial.data[currentIndex]
+                                  .userPic;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -329,9 +328,8 @@ function PlasmicTestimonial__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.userTestimonial[0].data[
-                                currentIndex
-                              ].userName;
+                              return $state.userTestimonial.data[currentIndex]
+                                .userName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -381,7 +379,7 @@ function PlasmicTestimonial__RenderFunc(props: {
                             try {
                               return (
                                 "میزبان " +
-                                $state.userTestimonial[0].data[currentIndex]
+                                $state.userTestimonial.data[currentIndex]
                                   .userPlatform
                               );
                             } catch (e) {
@@ -460,9 +458,8 @@ function PlasmicTestimonial__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.userTestimonial[0].data[
-                                currentIndex
-                              ].userCity;
+                              return $state.userTestimonial.data[currentIndex]
+                                .userCity;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
