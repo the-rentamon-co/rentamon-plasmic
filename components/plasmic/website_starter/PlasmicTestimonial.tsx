@@ -84,13 +84,13 @@ export const PlasmicTestimonial__ArgProps = new Array<ArgPropType>();
 export type PlasmicTestimonial__OverridesType = {
   root?: Flex__<"div">;
   quotes?: Flex__<"div">;
-  userTestimonial?: Flex__<typeof ApiRequest>;
   userPic?: Flex__<typeof PlasmicImg__>;
   userName2?: Flex__<"div">;
   userName?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
   userName3?: Flex__<"div">;
   userQuote?: Flex__<"div">;
+  userTestimonial?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultTestimonialProps {
@@ -189,76 +189,9 @@ function PlasmicTestimonial__RenderFunc(props: {
       <div
         data-plasmic-name={"quotes"}
         data-plasmic-override={overrides.quotes}
-        className={classNames(projectcss.all, sty.quotes, "card")}
+        className={classNames(projectcss.all, sty.quotes, "card1")}
       >
         <div className={classNames(projectcss.all, sty.freeBox__y46Mm)}>
-          <ApiRequest
-            data-plasmic-name={"userTestimonial"}
-            data-plasmic-override={overrides.userTestimonial}
-            className={classNames("__wab_instance", sty.userTestimonial)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__sgD2M
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rqWgH
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"GET"}
-            onError={generateStateOnChangeProp($state, [
-              "userTestimonial",
-              "error"
-            ])}
-            onLoading={generateStateOnChangeProp($state, [
-              "userTestimonial",
-              "loading"
-            ])}
-            onSuccess={generateStateOnChangeProp($state, [
-              "userTestimonial",
-              "data"
-            ])}
-            url={"https://gateway.rentamon.com/webhook/testimonial"}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__uwqmL
-              )}
-            >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return undefined;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "";
-                    }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </div>
-          </ApiRequest>
-        </div>
-        <div className={classNames(projectcss.all, sty.freeBox__jvSsk, ``)}>
           {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
             (() => {
               try {
@@ -385,52 +318,58 @@ function PlasmicTestimonial__RenderFunc(props: {
                         })()}
                       </React.Fragment>
                     </div>
-                    <PlasmicImg__
-                      data-plasmic-name={"img"}
-                      data-plasmic-override={overrides.img}
-                      alt={""}
-                      className={classNames(sty.img)}
-                      displayHeight={"25px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"17px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/pinPng.png",
-                        fullWidth: 50,
-                        fullHeight: 73,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      data-plasmic-name={"userName3"}
-                      data-plasmic-override={overrides.userName3}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.userName3
-                      )}
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__wj6UC)}
                     >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.userTestimonial.data[currentIndex]
-                              .userCity;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
+                      <PlasmicImg__
+                        data-plasmic-name={"img"}
+                        data-plasmic-override={overrides.img}
+                        alt={""}
+                        className={classNames(sty.img)}
+                        displayHeight={"25px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"17px"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/pinPng.png",
+                          fullWidth: 50,
+                          fullHeight: 73,
+                          aspectRatio: undefined
+                        }}
+                      />
+
+                      <div
+                        data-plasmic-name={"userName3"}
+                        data-plasmic-override={overrides.userName3}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.userName3
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.userTestimonial.data[currentIndex]
+                                .userCity;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </Stack__>
                   </div>
                   <div
                     data-plasmic-name={"userQuote"}
@@ -464,6 +403,48 @@ function PlasmicTestimonial__RenderFunc(props: {
           })}
         </div>
       </div>
+      <ApiRequest
+        data-plasmic-name={"userTestimonial"}
+        data-plasmic-override={overrides.userTestimonial}
+        children={null}
+        className={classNames("__wab_instance", sty.userTestimonial)}
+        errorDisplay={
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__sgD2M
+            )}
+          >
+            {"Error fetching data"}
+          </div>
+        }
+        loadingDisplay={
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__rqWgH
+            )}
+          >
+            {"Loading..."}
+          </div>
+        }
+        method={"GET"}
+        onError={generateStateOnChangeProp($state, [
+          "userTestimonial",
+          "error"
+        ])}
+        onLoading={generateStateOnChangeProp($state, [
+          "userTestimonial",
+          "loading"
+        ])}
+        onSuccess={generateStateOnChangeProp($state, [
+          "userTestimonial",
+          "data"
+        ])}
+        url={"https://gateway.rentamon.com/webhook/testimonial"}
+      />
     </div>
   ) as React.ReactElement | null;
 }
@@ -472,17 +453,16 @@ const PlasmicDescendants = {
   root: [
     "root",
     "quotes",
-    "userTestimonial",
     "userPic",
     "userName2",
     "userName",
     "img",
     "userName3",
-    "userQuote"
+    "userQuote",
+    "userTestimonial"
   ],
   quotes: [
     "quotes",
-    "userTestimonial",
     "userPic",
     "userName2",
     "userName",
@@ -490,13 +470,13 @@ const PlasmicDescendants = {
     "userName3",
     "userQuote"
   ],
-  userTestimonial: ["userTestimonial"],
   userPic: ["userPic"],
   userName2: ["userName2"],
   userName: ["userName"],
   img: ["img"],
   userName3: ["userName3"],
-  userQuote: ["userQuote"]
+  userQuote: ["userQuote"],
+  userTestimonial: ["userTestimonial"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -504,13 +484,13 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   quotes: "div";
-  userTestimonial: typeof ApiRequest;
   userPic: typeof PlasmicImg__;
   userName2: "div";
   userName: "div";
   img: typeof PlasmicImg__;
   userName3: "div";
   userQuote: "div";
+  userTestimonial: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -574,13 +554,13 @@ export const PlasmicTestimonial = Object.assign(
   {
     // Helper components rendering sub-elements
     quotes: makeNodeComponent("quotes"),
-    userTestimonial: makeNodeComponent("userTestimonial"),
     userPic: makeNodeComponent("userPic"),
     userName2: makeNodeComponent("userName2"),
     userName: makeNodeComponent("userName"),
     img: makeNodeComponent("img"),
     userName3: makeNodeComponent("userName3"),
     userQuote: makeNodeComponent("userQuote"),
+    userTestimonial: makeNodeComponent("userTestimonial"),
 
     // Metadata about props expected for PlasmicTestimonial
     internalVariantProps: PlasmicTestimonial__VariantProps,
