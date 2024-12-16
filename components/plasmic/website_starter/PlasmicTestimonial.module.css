@@ -112,7 +112,8 @@
   justify-content: flex-start;
   height: auto;
   max-width: 140px;
-  padding: 0px 0px 10px;
+  margin-bottom: 0px;
+  padding: 0px;
 }
 @media (max-width: 508px) {
   .freeBox__dqrSi {
@@ -126,7 +127,7 @@
 .userPic {
   object-fit: cover;
   max-width: 70%;
-  border-radius: 30px;
+  border-radius: 50px;
   border-width: 2px;
   border-style: solid;
 }
@@ -251,7 +252,7 @@
   }
 }
 .userQuote {
-  width: 100%;
+  width: 420px;
   height: auto;
   max-width: 100%;
   font-size: 16px;
@@ -261,7 +262,6 @@
   padding-right: 0px;
   padding-top: 4px;
   color: var(--token-VC1CUzrVcfix);
-  min-width: 0;
 }
 @media (max-width: 508px) {
   .userQuote {
