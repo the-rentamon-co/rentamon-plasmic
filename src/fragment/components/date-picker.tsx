@@ -56,9 +56,8 @@ export const DatePicker = ({
         })}
         shadow={false}
         mapDays={({ date, today, isSameDate, selectedDate }) => {
-          let isWeekend = (locale === "fa" ? [6] : [0, 6]).includes(
-            date.weekDay.index
-          );
+         let isWeekend = (locale === "fa" ? [5, 6] : [0, 6]).includes(date.weekDay.index);
+
           if (customDayCell && !!dayCell) {
             return {
               style: {},
