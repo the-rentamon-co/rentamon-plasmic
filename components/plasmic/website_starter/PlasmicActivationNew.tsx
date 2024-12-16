@@ -70,6 +70,7 @@ import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import Testimonial from "../../Testimonial"; // plasmic-import: MWmH78o8OGcS/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -223,6 +224,8 @@ export type PlasmicActivationNew__OverridesType = {
   input27?: Flex__<typeof AntdInput>;
   platformpropertyButton?: Flex__<typeof AntdButton>;
   platformpropertyButton2?: Flex__<typeof AntdButton>;
+  quotes?: Flex__<"div">;
+  testimonial?: Flex__<typeof Testimonial>;
 };
 
 export interface DefaultActivationNewProps {}
@@ -469,7 +472,26 @@ function PlasmicActivationNew__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                if ($ctx.params.type == 3) {
+                  return 1;
+                } else {
+                  return 0;
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return 0;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "input27.value",
@@ -858,7 +880,13 @@ function PlasmicActivationNew__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               operation: 0,
-                              value: ($state.step = 3)
+                              value: (() => {
+                                if (
+                                  $state.platformstatus.status.jajiga !== true
+                                ) {
+                                  return ($state.step = 3);
+                                }
+                              })()
                             };
                             return (({
                               variable,
@@ -883,6 +911,31 @@ function PlasmicActivationNew__RenderFunc(props: {
                       ) {
                         $steps["updateStateVariable"] = await $steps[
                           "updateStateVariable"
+                        ];
+                      }
+
+                      $steps["invokeGlobalAction"] =
+                        $state.platformstatus.status.jajiga == true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
                         ];
                       }
                     }}
@@ -1242,7 +1295,13 @@ function PlasmicActivationNew__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               operation: 0,
-                              value: ($state.step = 1)
+                              value: (() => {
+                                if (
+                                  $state.platformstatus.status.jabama !== true
+                                ) {
+                                  return ($state.step = 1);
+                                }
+                              })()
                             };
                             return (({
                               variable,
@@ -1267,6 +1326,31 @@ function PlasmicActivationNew__RenderFunc(props: {
                       ) {
                         $steps["updateStateVariable"] = await $steps[
                           "updateStateVariable"
+                        ];
+                      }
+
+                      $steps["invokeGlobalAction"] =
+                        $state.platformstatus.status.jabama == true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u062c\u0627\u0628\u0627\u0645\u0627 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
                         ];
                       }
                     }}
@@ -1594,7 +1678,14 @@ function PlasmicActivationNew__RenderFunc(props: {
                           ? (() => {
                               const actionArgs = {
                                 operation: 0,
-                                value: ($state.step = 7)
+                                value: (() => {
+                                  if (
+                                    $state.platformstatus.status.otaghak !==
+                                    true
+                                  ) {
+                                    return ($state.step = 7);
+                                  }
+                                })()
                               };
                               return (({
                                 variable,
@@ -1620,6 +1711,32 @@ function PlasmicActivationNew__RenderFunc(props: {
                         ) {
                           $steps["updateStateVariable"] = await $steps[
                             "updateStateVariable"
+                          ];
+                        }
+
+                        $steps["invokeGlobalAction"] =
+                          $state.platformstatus.status.otaghak == true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u0627\u062a\u0627\u0642\u06a9 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
                           ];
                         }
                       }}
@@ -1928,7 +2045,13 @@ function PlasmicActivationNew__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               operation: 0,
-                              value: ($state.step = 5)
+                              value: (() => {
+                                if (
+                                  $state.platformstatus.status.shab !== true
+                                ) {
+                                  return ($state.step = 5);
+                                }
+                              })()
                             };
                             return (({
                               variable,
@@ -1953,6 +2076,31 @@ function PlasmicActivationNew__RenderFunc(props: {
                       ) {
                         $steps["updateStateVariable"] = await $steps[
                           "updateStateVariable"
+                        ];
+                      }
+
+                      $steps["invokeGlobalAction"] =
+                        $state.platformstatus.status.shab == true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0634\u0628 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
                         ];
                       }
                     }}
@@ -2514,7 +2662,13 @@ function PlasmicActivationNew__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               operation: 0,
-                              value: ($state.step = 9)
+                              value: (() => {
+                                if (
+                                  $state.platformstatus.status.homsa !== true
+                                ) {
+                                  return ($state.step = 9);
+                                }
+                              })()
                             };
                             return (({
                               variable,
@@ -2539,6 +2693,31 @@ function PlasmicActivationNew__RenderFunc(props: {
                       ) {
                         $steps["updateStateVariable"] = await $steps[
                           "updateStateVariable"
+                        ];
+                      }
+
+                      $steps["invokeGlobalAction"] =
+                        $state.platformstatus.status.homsa == true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0647\u0648\u0645\u0633\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
                         ];
                       }
                     }}
@@ -3403,7 +3582,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                 >
                   {(() => {
                     try {
-                      return $state.step == 0;
+                      return $state.step == 0 && $ctx.params.type == 1;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -3671,7 +3850,10 @@ function PlasmicActivationNew__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.step == 1;
+                      return (
+                        $state.step == 1 &&
+                        $state.platformstatus.status.jabama !== true
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -4446,7 +4628,10 @@ function PlasmicActivationNew__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.step == 3;
+                      return (
+                        $state.step == 3 &&
+                        $state.platformstatus.status.jajiga != true
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -5219,7 +5404,10 @@ function PlasmicActivationNew__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.step == 5;
+                      return (
+                        $state.step == 5 &&
+                        $state.platformstatus.status.shab !== true
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -6434,7 +6622,10 @@ function PlasmicActivationNew__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.step == 8;
+                      return (
+                        $state.step == 8 &&
+                        $state.platformstatus.status.otaghak !== true
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -7366,7 +7557,10 @@ function PlasmicActivationNew__RenderFunc(props: {
                   </FormItemWrapper>
                   {(() => {
                     try {
-                      return $state.step == 9;
+                      return (
+                        $state.step == 9 &&
+                        $state.platformstatus.status.homsa !== true
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -9437,6 +9631,110 @@ function PlasmicActivationNew__RenderFunc(props: {
                 </FormWrapper>
               );
             })()}
+            {(() => {
+              try {
+                return (() => {
+                  const platforms = $state.platformstatus.status;
+                  if (platforms && Object.keys(platforms).length > 0) {
+                    const allTrue = Object.values(platforms).every(
+                      value => value === true
+                    );
+                    return allTrue ? true : false;
+                  }
+                  return false;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox__iDkE7)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img___4N2W)}
+                  displayHeight={"105px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image27.svg",
+                    fullWidth: 26,
+                    fullHeight: 26,
+                    aspectRatio: 1
+                  }}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ixc0V
+                  )}
+                >
+                  {
+                    "\u062a\u0645\u0627\u0645\u06cc \u0633\u0627\u06cc\u062a \u0647\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a"
+                  }
+                </div>
+              </div>
+            ) : null}
+          </div>
+          {(() => {
+            try {
+              return $ctx.params.type == 1;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div
+              data-plasmic-name={"quotes"}
+              data-plasmic-override={overrides.quotes}
+              className={classNames(projectcss.all, sty.quotes)}
+            >
+              <Testimonial
+                data-plasmic-name={"testimonial"}
+                data-plasmic-override={overrides.testimonial}
+                className={classNames("__wab_instance", sty.testimonial)}
+              />
+            </div>
+          ) : null}
+          <div className={classNames(projectcss.all, sty.freeBox___69Q1V)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__g3UOj
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $ctx.fetchedData.list[0].url;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
           </div>
         </div>
       </div>
@@ -9567,7 +9865,9 @@ const PlasmicDescendants = {
     "jabamapp",
     "input27",
     "platformpropertyButton",
-    "platformpropertyButton2"
+    "platformpropertyButton2",
+    "quotes",
+    "testimonial"
   ],
   html: ["html", "clarity", "goftino", "favIcon"],
   clarity: ["clarity"],
@@ -9894,7 +10194,9 @@ const PlasmicDescendants = {
   jabamapp: ["jabamapp", "input27"],
   input27: ["input27"],
   platformpropertyButton: ["platformpropertyButton"],
-  platformpropertyButton2: ["platformpropertyButton2"]
+  platformpropertyButton2: ["platformpropertyButton2"],
+  quotes: ["quotes", "testimonial"],
+  testimonial: ["testimonial"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -10022,6 +10324,8 @@ type NodeDefaultElementType = {
   input27: typeof AntdInput;
   platformpropertyButton: typeof AntdButton;
   platformpropertyButton2: typeof AntdButton;
+  quotes: "div";
+  testimonial: typeof Testimonial;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -10205,6 +10509,8 @@ export const PlasmicActivationNew = Object.assign(
     input27: makeNodeComponent("input27"),
     platformpropertyButton: makeNodeComponent("platformpropertyButton"),
     platformpropertyButton2: makeNodeComponent("platformpropertyButton2"),
+    quotes: makeNodeComponent("quotes"),
+    testimonial: makeNodeComponent("testimonial"),
 
     // Metadata about props expected for PlasmicActivationNew
     internalVariantProps: PlasmicActivationNew__VariantProps,

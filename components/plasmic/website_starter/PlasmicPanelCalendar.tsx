@@ -1075,7 +1075,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 
                         $steps["goToActivationNew"] = true
                           ? (() => {
-                              const actionArgs = { destination: `/activation` };
+                              const actionArgs = {
+                                destination: `/activation/${"3"}`
+                              };
                               return (({ destination }) => {
                                 if (
                                   typeof destination === "string" &&
@@ -1142,7 +1144,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 
                         $steps["goToActivationNew"] = true
                           ? (() => {
-                              const actionArgs = { destination: `/activation` };
+                              const actionArgs = {
+                                destination: `/activation/${"3"}`
+                              };
                               return (({ destination }) => {
                                 if (
                                   typeof destination === "string" &&

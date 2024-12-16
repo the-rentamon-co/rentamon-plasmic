@@ -586,7 +586,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicActivationNew.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/activation.tsx"
+            "modulePath": "../src/pages/activation/[type].tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicActivationNew.module.css",
           "scheme": "blackbox",
@@ -647,6 +647,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/activation-2"
+        },
+        {
+          "id": "MWmH78o8OGcS",
+          "name": "Testimonial",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTestimonial.tsx",
+          "importSpec": {
+            "modulePath": "Testimonial.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTestimonial.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -1111,6 +1124,11 @@
           "id": "Iom0_pwJcJSt",
           "name": "image 34",
           "filePath": "../public/plasmic/website_starter/images/image34.svg"
+        },
+        {
+          "id": "l0Ijs_azoVTm",
+          "name": "pin.png",
+          "filePath": "../public/plasmic/website_starter/images/pinPng.png"
         }
       ],
       "indirect": false,
