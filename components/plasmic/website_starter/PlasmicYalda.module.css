@@ -120,13 +120,14 @@
   font-size: 22px;
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 26px;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__lpo8D {
     max-width: 76.05%;
     width: 100%;
+    padding-bottom: 30px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
   }
@@ -147,55 +148,165 @@
     width: 100%;
     height: 89px;
     padding-bottom: 16px;
+    line-height: 1.8;
+    font-size: 17px;
     min-width: 0;
   }
 }
-.spacer {
-  display: grid;
+.freeBox__jmM3K {
+  display: flex;
+  flex-direction: row;
   position: relative;
-  align-content: flex-start;
-  justify-items: center;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  grid-column-start: 1 !important;
-  grid-column-end: -1 !important;
-  grid-template-columns:
-    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
-    min(
-      var(--plsmc-standard-width),
-      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
-    )
-    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
-}
-.spacer > * {
-  grid-column: 4;
-}
-@media (max-width: 1200px) {
-  .spacer > * {
-    grid-column: 4;
-  }
-}
-@media (max-width: 380px) {
-  .spacer > * {
-    grid-column: 4;
-  }
-}
-.text__btZli {
-  position: relative;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
-  text-align: center;
-  margin-top: 26px;
-  margin-bottom: 28px;
   min-width: 0;
+  padding: 8px;
 }
 @media (max-width: 380px) {
-  .text__btZli {
-    margin-bottom: 10px;
-    margin-top: 10px;
+  .freeBox__jmM3K {
+    padding-top: 12px;
   }
+}
+.img__nkgvk {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__nkgvk > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .img__nkgvk {
+    display: block !important;
+  }
+}
+.img__rbfT0 {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__rbfT0 > picture > img {
+  object-fit: cover;
+}
+.img__lKbt2 {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__lKbt2 > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 380px) {
+  .img__lKbt2 {
+    display: none !important;
+  }
+}
+.img__jCjcs {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__jCjcs > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 380px) {
+  .img__jCjcs {
+    display: none !important;
+  }
+}
+.img__qVlXl {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__qVlXl > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 508px) {
+  .img__qVlXl {
+    display: none !important;
+  }
+}
+.img__pgXp8 {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__pgXp8 > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 508px) {
+  .img__pgXp8 {
+    display: none !important;
+  }
+}
+.img___8Y03M {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img___8Y03M > picture > img {
+  object-fit: cover;
+}
+.img__z5Kq {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__z5Kq > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 380px) {
+  .img__z5Kq {
+    display: none !important;
+  }
+}
+.img__hBCn {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__hBCn > picture > img {
+  object-fit: cover;
+}
+.img__us1Lv {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__us1Lv > picture > img {
+  object-fit: cover;
+}
+.img___6F9Uc {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img___6F9Uc > picture > img {
+  object-fit: cover;
+}
+.img__tja38 {
+  object-fit: cover;
+  max-width: 100%;
+  height: 12px;
+  margin-left: 6px;
+}
+.img__tja38 > picture > img {
+  object-fit: cover;
 }
 .freeBox__t8Bp8 {
   display: flex;
@@ -1083,7 +1194,7 @@
   left: auto;
   top: auto;
   z-index: 500;
-  background: url("/plasmic/website_starter/images/yalda2Jpg.jpg") top 50% left 50% / cover repeat;
+  background: url("/plasmic/website_starter/images/yalda3Jpg.jpg") top 50% left 50% / cover repeat;
   color: #fcfcfc;
   text-align: center;
   font-weight: 600;
@@ -1096,7 +1207,7 @@
     font-size: 40px;
     left: auto;
     top: auto;
-    background: url("/plasmic/website_starter/images/yalda2Jpg.jpg") top 50% left 50% / cover repeat;
+    background: url("/plasmic/website_starter/images/yalda3Jpg.jpg") top 50% left 50% / cover repeat;
     margin-top: 43px;
     width: 100%;
     height: 440px;

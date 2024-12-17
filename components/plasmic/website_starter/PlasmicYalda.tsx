@@ -89,7 +89,6 @@ export const PlasmicYalda__ArgProps = new Array<ArgPropType>();
 export type PlasmicYalda__OverridesType = {
   yalda?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
-  spacer?: Flex__<"section">;
   button5?: Flex__<"div">;
   button4?: Flex__<"div">;
   button3?: Flex__<"div">;
@@ -227,29 +226,241 @@ function PlasmicYalda__RenderFunc(props: {
               sty.text__lpo8D
             )}
           >
-            {
-              "\u0627\u0632 \u06f2\u06f7 \u0622\u0630\u0631 \u062a\u0627 \u06f1 \u062f\u06cc\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u062a\u062e\u0641\u06cc\u0641\u200c\u0647\u0627\u06cc \u062c\u0634\u0646\u0648\u0627\u0631\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc :)"
-            }
+            <React.Fragment>
+              <React.Fragment>{"\u0627\u0632 "}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ textDecorationLine: "underline" }}
+              >
+                {
+                  "\u06f2\u06f7 \u0622\u0630\u0631 \u062a\u0627 \u06f1 \u062f\u06cc"
+                }
+              </span>
+              <React.Fragment>
+                {
+                  " \u0628\u0627 \u062a\u062e\u0641\u06cc\u0641\u200c\u0647\u0627\u06cc \u062c\u0630\u0627\u0628 \u0628\u0647 \u0645\u0646\u0627\u0633\u0628\u062a \u062c\u0634\u0646 \u06cc\u0644\u062f\u0627"
+                }
+              </React.Fragment>
+            </React.Fragment>
           </div>
-          <section
-            data-plasmic-name={"spacer"}
-            data-plasmic-override={overrides.spacer}
-            className={classNames(projectcss.all, sty.spacer)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__btZli
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68"
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? "\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68"
-                : "\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68\ud83d\ude68"}
-            </div>
-          </section>
+          <div className={classNames(projectcss.all, sty.freeBox__jmM3K)}>
+            {(hasVariant(globalVariants, "screen", "tablet") ? true : false) ? (
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__nkgvk)}
+                displayHeight={"12px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image35.png",
+                  fullWidth: 464,
+                  fullHeight: 173,
+                  aspectRatio: undefined
+                }}
+              />
+            ) : null}
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__rbfT0)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__lKbt2)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__jCjcs)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__qVlXl)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__pgXp8)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img___8Y03M)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__z5Kq)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__hBCn)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__us1Lv)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img___6F9Uc)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__tja38)}
+              displayHeight={"12px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image35.png",
+                fullWidth: 464,
+                fullHeight: 173,
+                aspectRatio: undefined
+              }}
+            />
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__t8Bp8)}>
             <div className={classNames(projectcss.all, sty.freeBox___5Eo9V)}>
               <div className={classNames(projectcss.all, sty.freeBox__p2Vgj)}>
@@ -1123,7 +1334,6 @@ const PlasmicDescendants = {
   yalda: [
     "yalda",
     "embedHtml",
-    "spacer",
     "button5",
     "button4",
     "button3",
@@ -1131,7 +1341,6 @@ const PlasmicDescendants = {
     "button"
   ],
   embedHtml: ["embedHtml"],
-  spacer: ["spacer"],
   button5: ["button5"],
   button4: ["button4"],
   button3: ["button3"],
@@ -1144,7 +1353,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   yalda: "div";
   embedHtml: typeof Embed;
-  spacer: "section";
   button5: "div";
   button4: "div";
   button3: "div";
@@ -1213,7 +1421,6 @@ export const PlasmicYalda = Object.assign(
   {
     // Helper components rendering sub-elements
     embedHtml: makeNodeComponent("embedHtml"),
-    spacer: makeNodeComponent("spacer"),
     button5: makeNodeComponent("button5"),
     button4: makeNodeComponent("button4"),
     button3: makeNodeComponent("button3"),

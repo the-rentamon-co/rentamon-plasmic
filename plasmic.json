@@ -1178,6 +1178,16 @@
           "id": "90JTk6Y4Mvwa",
           "name": "yalda.jpg 2",
           "filePath": "../public/plasmic/website_starter/images/yaldaJpg2.jpg"
+        },
+        {
+          "id": "BTRKTlB7Bba8",
+          "name": "image 35",
+          "filePath": "../public/plasmic/website_starter/images/image35.png"
+        },
+        {
+          "id": "96Wn39lNe47b",
+          "name": "yalda-3.jpg",
+          "filePath": "../public/plasmic/website_starter/images/yalda3Jpg.jpg"
         }
       ],
       "indirect": false,
