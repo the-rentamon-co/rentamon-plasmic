@@ -116,10 +116,10 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         calendar: persian,
         locale: {
           ...persian_fa,
-          weekDays: persian_fa.weekDays.map((item: [string, string]) => [
-            item[0],
-            item[1].slice(0, 1),
-          ]),
+          weekDays: persian_fa.weekDays.map((item: string[]) => {
+            const dayShort = item[1] ? item[1].slice(0, 1) : "";
+            return [item[0], dayShort];
+          }),
         },
       })}
       shadow={false}
