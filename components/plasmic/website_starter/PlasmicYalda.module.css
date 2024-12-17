@@ -75,9 +75,12 @@
   background: url("/plasmic/website_starter/images/yaldaJpg2.jpg") top 50% left 50% / cover repeat;
   color: #fcfcfc;
   text-align: center;
-  padding-bottom: 160px;
+  padding-bottom: 76px;
   padding-top: 160px;
   font-weight: 600;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-top: 0px;
 }
 @media (max-width: 1200px) {
   .text__et14 {
@@ -1243,7 +1246,7 @@
   user-select: text;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  border-radius: 30px 30px 0px;
+  border-radius: 30px 30px 0px 0px;
   padding: 193px 0px 298px;
 }
 @media (max-width: 1200px) {
