@@ -29,7 +29,6 @@ interface DatePickerProps {
   dayCell?: React.ComponentType<DayCellProps>;
 }
 
-// تعریف انواع Month و Year
 interface MonthType {
   number: number;
   index: number;
@@ -41,9 +40,17 @@ interface YearType {
   number: number;
 }
 
-// تابع کمکی برای محاسبه زمان شروع روز (بدون moment)
+// تابع کمکی برای محاسبه زمان شروع روز
 function startOfDayUnix(timestampInSeconds: number): number {
   return Math.floor(timestampInSeconds / 86400) * 86400;
+}
+
+// تابع کمکی برای استخراج year/month/day به صورت عددی از DateObject
+function extractNumbersFromDateObject(date: DateObject): {day: number; month: number; year: number} {
+  const m = date.month as unknown as MonthType;
+  const y = date.year as unknown as YearType;
+  // date.day خود یک number است
+  return { day: date.day, month: m.number, year: y.number };
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
@@ -60,10 +67,8 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 }) => {
   const isFaLocale = locale === "fa";
 
-  // محاسبه weekend ها بر اساس locale
   const weekendDays = isFaLocale ? [5, 6] : [0, 6];
 
-  // ساخت Set برای holidays با استفاده از useMemo
   const holidaysSet = useMemo(() => {
     return new Set(
       holidays.map((h: number) => {
@@ -72,7 +77,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     );
   }, [holidays]);
 
-  // ساخت Set برای روزهای انتخاب‌شده
   const selectedDaysSet = useMemo(() => {
     if (mode === "multiple" && Array.isArray(values)) {
       return new Set(values.map((d: number) => startOfDayUnix(d)));
@@ -135,11 +139,12 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         selectedDate: DateObject | DateObject[];
       }) => {
         const dayUnix = startOfDayUnix(date.unix);
-
         const isHoliday = holidaysSet.has(dayUnix);
         const isSelected = selectedDaysSet.has(dayUnix);
         const isWeekend = weekendDays.includes(date.weekDay.index);
         const isToday = isSameDate(date, today);
+
+        const { day, month, year } = extractNumbersFromDateObject(date);
 
         if (customDayCell && dayCell) {
           return {
@@ -147,7 +152,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
             class: "fragment-day-reset-cell",
             children: React.createElement(dayCell, {
               unix: date.unix,
-              date: { day: date.day, month: date.month, year: date.year },
+              date: { day, month, year },
               isToday,
               isWeekend,
               isHoliday,
