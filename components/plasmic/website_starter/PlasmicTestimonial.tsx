@@ -197,47 +197,34 @@ function PlasmicTestimonial__RenderFunc(props: {
               sty.text__sgD2M
             )}
           >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return خطا;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "Error fetching data";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
+            {
+              "\u062e\u0637\u0627\u06cc\u06cc \u0631\u062e \u062f\u0627\u062f\u0647 \u0627\u0633\u062a"
+            }
           </div>
         }
         loadingDisplay={
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__rqWgH
-            )}
-          >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return نظرات;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "Loading...";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          </div>
+          <React.Fragment>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__rqWgH
+              )}
+            >
+              {"Loading..."}
+            </div>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__jjq5N)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+            />
+          </React.Fragment>
         }
         method={"GET"}
         onError={async (...eventArgs: any) => {
@@ -270,7 +257,7 @@ function PlasmicTestimonial__RenderFunc(props: {
             return;
           }
         }}
-        url={"https://gateway.rentamon.com/webhook/testimonial"}
+        url={"https://gateway.rentamon.com/webh2ook/testimonial"}
       />
 
       <div

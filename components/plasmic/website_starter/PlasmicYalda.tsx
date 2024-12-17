@@ -585,250 +585,74 @@ function PlasmicYalda__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__xuiG6
+                    sty.text__wqpX6
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile") ? (
+                  {hasVariant(globalVariants, "screen", "smallMobile") ? (
                     <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <ul
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            sty.ul__thuVk
-                          )}
-                        >
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__es6Dy
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile") ? (
-                              <React.Fragment>
-                                <React.Fragment>
-                                  {
-                                    "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0641\u0642\u0637 "
-                                  }
-                                </React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ fontWeight: 700 }}
-                                >
-                                  {
-                                    "\u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u060c \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc"
-                                  }
-                                </span>
-                                <React.Fragment>
-                                  {" \u0631\u0648 \u0628\u062e\u0631\u06cc!"}
-                                </React.Fragment>
-                              </React.Fragment>
-                            ) : (
-                              <React.Fragment>
-                                <React.Fragment>
-                                  {
-                                    "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
-                                  }
-                                </React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ fontWeight: 700 }}
-                                >
-                                  {
-                                    "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
-                                  }
-                                </span>
-                                <React.Fragment>
-                                  {"\u0628\u062e\u0631\u06cc!"}
-                                </React.Fragment>
-                              </React.Fragment>
-                            )}
-                          </li>
-                        </ul>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <ul
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            sty.ul__iY86U
-                          )}
-                        >
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__awcZh
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile")
-                              ? "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f1\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"
-                              : "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"}
-                          </li>
-                        </ul>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <ul
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            sty.ul__thuVk
-                          )}
-                        >
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__es6Dy
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile") ? (
-                              <React.Fragment>
-                                <React.Fragment>
-                                  {
-                                    "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0641\u0642\u0637 "
-                                  }
-                                </React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ fontWeight: 700 }}
-                                >
-                                  {
-                                    "\u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u060c \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc"
-                                  }
-                                </span>
-                                <React.Fragment>
-                                  {" \u0631\u0648 \u0628\u062e\u0631\u06cc!"}
-                                </React.Fragment>
-                              </React.Fragment>
-                            ) : (
-                              <React.Fragment>
-                                <React.Fragment>
-                                  {
-                                    "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
-                                  }
-                                </React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ fontWeight: 700 }}
-                                >
-                                  {
-                                    "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
-                                  }
-                                </span>
-                                <React.Fragment>
-                                  {"\u0628\u062e\u0631\u06cc!"}
-                                </React.Fragment>
-                              </React.Fragment>
-                            )}
-                          </li>
-                        </ul>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <ul
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            sty.ul__iY86U
-                          )}
-                        >
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__awcZh
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile")
-                              ? "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f1\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"
-                              : "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"}
-                          </li>
-                        </ul>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  )}
-                </div>
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kaL09
-                    )}
-                  >
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <ul
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            sty.ul__dkgcw
-                          )}
-                        >
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__nqjEg
-                            )}
-                          >
-                            <React.Fragment>
-                              <React.Fragment>
-                                {
-                                  "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
-                                }
-                              </React.Fragment>
-                              <span
-                                className={
-                                  "plasmic_default__all plasmic_default__span"
-                                }
-                                style={{ fontWeight: 700 }}
-                              >
-                                {
-                                  "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
-                                }
-                              </span>
-                              <React.Fragment>
-                                {"\u0628\u062e\u0631\u06cc!"}
-                              </React.Fragment>
-                            </React.Fragment>
-                          </li>
-                        </ul>
-                      }
                       <React.Fragment>
                         {
-                          "\u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647\n"
+                          "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647.\n"
                         }
                       </React.Fragment>
                     </React.Fragment>
-                  </div>
-                ) : null}
+                  ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646"
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          " \u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647.\n"
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  )}
+                </div>
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___4SbGy)}>
