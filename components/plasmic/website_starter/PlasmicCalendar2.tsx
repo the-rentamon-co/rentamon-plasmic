@@ -499,9 +499,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 .toLocaleDateString("fa")
                 .split("/")[1];
               return `https://api.rentamon.com/api/getcalendar?start_date=1403-${
-                $state.fragmentDatePicker?.month?.number ?? initialMonth
+                $state.fragmentDatePicker?.month ?? initialMonth
               }-01&end_date=1403-${
-                $state.fragmentDatePicker?.month?.number ?? initialMonth
+                $state.fragmentDatePicker?.month ?? initialMonth
               }-30&property_id=${$props.propertyId}`;
             })();
           } catch (e) {
@@ -699,6 +699,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   : (() => {
                       try {
                         return (() => {
+                          console.log("home");
                           function convertPersianNumbersToEnglish(str) {
                             const persianNumbers = "۰۱۲۳۴۵۶۷۸۹";
                             return str.replace(/[۰-۹]/g, char =>

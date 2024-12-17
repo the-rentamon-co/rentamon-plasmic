@@ -463,7 +463,8 @@
   max-width: 100%;
   position: relative;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
 .text__xuiG6 {
@@ -504,7 +505,7 @@
   height: auto;
   max-width: 100%;
   margin-top: 0px;
-  padding-top: 2px;
+  padding-top: 8px;
   font-size: 15px;
   font-weight: 400;
   min-width: 0;
@@ -529,6 +530,10 @@
   .text__kaL09 {
     font-size: 14px;
   }
+}
+.ul__dkgcw {
+  display: flex;
+  flex-direction: column;
 }
 .freeBox___4SbGy {
   display: flex;
@@ -558,6 +563,7 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 0px;
+  cursor: pointer;
   border-radius: 30px;
   padding: 8px 30px;
   border: 3px solid var(--token-8nedppYkGVaH);
@@ -708,7 +714,8 @@
   max-width: 100%;
   position: relative;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
 .text___68DZb {
@@ -720,11 +727,18 @@
   margin-top: 0px;
   padding-top: 10px;
   font-size: 15px;
+  line-height: 1.8;
   min-width: 0;
+}
+@media (max-width: 508px) {
+  .text___68DZb {
+    padding-bottom: 0px;
+  }
 }
 @media (max-width: 380px) {
   .text___68DZb {
     font-size: 14px;
+    padding-left: 3px;
   }
 }
 .freeBox__pdjDi {
@@ -762,6 +776,7 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 0px;
+  cursor: pointer;
   border-radius: 30px;
   padding: 8px 30px;
   border: 3px solid var(--token-8nedppYkGVaH);
@@ -779,7 +794,7 @@
   margin-bottom: 0px;
   min-width: 0;
   border-radius: 30px;
-  padding: 8px;
+  padding: 11px 8px 8px;
   border-width: 4px;
 }
 @media (max-width: 1200px) {
@@ -911,7 +926,8 @@
   max-width: 100%;
   position: relative;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
 .text__g1Uxk {
@@ -923,11 +939,22 @@
   margin-top: 0px;
   padding-top: 10px;
   font-size: 15px;
+  line-height: 1.8;
   min-width: 0;
 }
 @media (max-width: 380px) {
   .text__g1Uxk {
     font-size: 14px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 3px;
+    font-weight: 400;
+    line-height: 1.8;
+    min-width: 0;
   }
 }
 .freeBox___4D7G {
@@ -965,6 +992,7 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 0px;
+  cursor: pointer;
   border-radius: 30px;
   padding: 8px 30px;
   border: 3px solid var(--token-8nedppYkGVaH);
@@ -1022,6 +1050,11 @@
 @media (max-width: 508px) {
   .freeBox___0DrsG {
     padding-right: 0px;
+  }
+}
+@media (max-width: 380px) {
+  .freeBox___0DrsG {
+    padding-left: 0px;
   }
 }
 .freeBox__zFg1J {
@@ -1088,13 +1121,19 @@
     padding-right: 0px;
   }
 }
+@media (max-width: 380px) {
+  .freeBox__bhvyT {
+    padding-left: 0px;
+  }
+}
 .text___3O9Q {
   width: 100%;
   height: auto;
   max-width: 100%;
   position: relative;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
 .text__jwoUt {
@@ -1106,6 +1145,7 @@
   margin-top: 0px;
   padding-top: 10px;
   font-size: 15px;
+  line-height: 1.8;
   min-width: 0;
 }
 @media (max-width: 380px) {
@@ -1148,6 +1188,7 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 0px;
+  cursor: pointer;
   border-radius: 30px;
   padding: 8px 30px;
   border: 3px solid var(--token-8nedppYkGVaH);
@@ -1195,11 +1236,14 @@
   top: auto;
   z-index: 500;
   background: url("/plasmic/website_starter/images/yalda3Jpg.jpg") top 50% left 50% / cover repeat;
-  color: #fcfcfc;
+  color: var(--token-jgohepLVeKvh);
   text-align: center;
   font-weight: 600;
+  box-shadow: none;
+  user-select: text;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
+  border-radius: 30px 30px 0px;
   padding: 193px 0px 298px;
 }
 @media (max-width: 1200px) {
@@ -1213,7 +1257,7 @@
     height: 440px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
-    border-radius: 30px;
+    border-radius: 30px 30px 0px 0px;
     padding: 131px 0px 122px;
   }
 }
@@ -1230,6 +1274,8 @@
     width: 100%;
     height: 300px;
     padding-top: 90px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
   }
