@@ -461,7 +461,7 @@ function PlasmicYalda__RenderFunc(props: {
                           >
                             {hasVariant(globalVariants, "screen", "mobile")
                               ? "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f1\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"
-                              : "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f1\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"}
+                              : "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"}
                           </li>
                         </ul>
                       }
@@ -551,7 +551,7 @@ function PlasmicYalda__RenderFunc(props: {
                           >
                             {hasVariant(globalVariants, "screen", "mobile")
                               ? "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f1\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"
-                              : "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f1\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"}
+                              : "\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647"}
                           </li>
                         </ul>
                       }
@@ -585,7 +585,7 @@ function PlasmicYalda__RenderFunc(props: {
                       </span>
                       <React.Fragment>
                         {
-                          "\u0631\u0648 \u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f1\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647\n"
+                          "\u0631\u0648 \u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647\n"
                         }
                       </React.Fragment>
                     </React.Fragment>
