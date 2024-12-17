@@ -3,10 +3,15 @@ import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 
 import { CodeComponentMeta } from "@plasmicapp/host";
-
 import moment from "jalali-moment";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useMemo } from "react";
+
+// تابع کمکی برای محاسبه زمان شروع روز (بدون moment)
+function startOfDayUnix(timestampInSeconds) {
+  // تعداد ثانیه‌های یک روز: 86400
+  return Math.floor(timestampInSeconds / 86400) * 86400;
+}
 
 export const DatePicker = ({
   onChange,
@@ -19,7 +24,37 @@ export const DatePicker = ({
   values = [],
   dayCell,
   customDayCell,
+  selectedDate, // اگر selectedDate از بیرون پاس داده می‌شود
 }: any) => {
+  // اگر selectedDate را از props دریافت نمی‌کنید و باید از تقویم بگیرید، 
+  // می‌توانید این قسمت را متناسب با کد خود تنظیم کنید.
+  // اینجا فرض بر این است که selectedDate را از Calendar می‌گیرید یا از props می‌آید.
+
+  const isFaLocale = locale === "fa";
+
+  // محاسبه weekend ها بر اساس locale
+  const weekendDays = isFaLocale ? [5, 6] : [0, 6];
+
+  // با استفاده از useMemo فقط زمانی که holidays عوض شود Set ساخته می‌شود
+  const holidaysSet = useMemo(() => {
+    return new Set(
+      holidays.map((h: number) => {
+        return startOfDayUnix(h);
+      })
+    );
+  }, [holidays]);
+
+  // ساخت Set برای روزهای انتخاب‌شده
+  const selectedDaysSet = useMemo(() => {
+    if (Array.isArray(values) && mode === "multiple") {
+      return new Set(values.map((d: number) => startOfDayUnix(d)));
+    } else if (mode === "single" && value) {
+      return new Set([startOfDayUnix(value)]);
+    } else {
+      return new Set();
+    }
+  }, [values, value, mode]);
+
   return (
     <>
       <Calendar
@@ -30,35 +65,43 @@ export const DatePicker = ({
             ? (Array.isArray(values) ? values : [values]).map(
                 (item: any) => item * 1000
               )
-            : value * 1000
+            : value
+            ? value * 1000
+            : undefined
         }
         onChange={(value: any) => {
-          Array.isArray(value)
-            ? onChange(value.map((item) => item.unix))
-            : onChange(value.unix);
+          if (Array.isArray(value)) {
+            onChange(value.map((item: any) => item.unix));
+          } else {
+            onChange(value.unix);
+          }
         }}
-        onMonthChange={(value: DateObject) => {
-          onMonthChange(value.month);
+        onMonthChange={(val: DateObject) => {
+          onMonthChange(val.month);
         }}
-        onYearChange={(value: DateObject) => {
-          onYearChange(value.year);
+        onYearChange={(val: DateObject) => {
+          onYearChange(val.year);
         }}
         className={cn("fragment", { "custom-day-cell": customDayCell })}
-        {...(locale === "fa" && {
+        {...(isFaLocale && {
           calendar: persian,
           locale: {
             ...persian_fa,
-            weekDays: persian_fa.weekDays.map((item) => [
-              item[0],
-              item[1].slice(0, 1),
-            ]),
+            weekDays: persian_fa.weekDays.map((item) => [item[0], item[1].slice(0, 1)]),
           },
         })}
         shadow={false}
         mapDays={({ date, today, isSameDate, selectedDate }) => {
-         let isWeekend = (locale === "fa" ? [5, 6] : [0, 6]).includes(date.weekDay.index);
+          // محاسبه‌ی ابتدای روز فقط یکبار
+          const dayUnix = startOfDayUnix(date.unix);
+
+          const isHoliday = holidaysSet.has(dayUnix);
+          const isSelected = selectedDaysSet.has(dayUnix);
+          const isWeekend = weekendDays.includes(date.weekDay.index);
 
           if (customDayCell && !!dayCell) {
+            // اگر dayCell یک کامپوننت React است، توصیه می‌شود آن را خارج از این فایل
+            // با React.memo اکسپورت کنید تا رندر اضافی نداشته باشد.
             return {
               style: {},
               class: "fragment-day-reset-cell",
@@ -67,66 +110,21 @@ export const DatePicker = ({
                 date: { day: date.day, month: date.month, year: date.year },
                 isToday: isSameDate(date, today),
                 isWeekend,
-                isHoliday: holidays.some(
-                  (item: number) =>
-                    moment(+item * 1000)
-                      .startOf("day")
-                      .unix() ==
-                    moment(date.unix * 1000)
-                      .startOf("day")
-                      .unix()
-                ),
-                isSelected: Array.isArray(selectedDate)
-                  ? selectedDate.some(
-                      (item) =>
-                        moment(+item.unix * 1000)
-                          .startOf("day")
-                          .unix() ==
-                        moment(date.unix * 1000)
-                          .startOf("day")
-                          .unix()
-                    )
-                  : isSameDate(date, selectedDate),
+                isHoliday,
+                isSelected,
               }),
             };
           }
-          let props: any = {};
 
-          props.class = "fragment-day-cell";
+          // اگر از customDayCell استفاده نمی‌کنید، کلاس ها را مستقیماً اختصاص می‌دهیم:
+          let className = "fragment-day-cell";
 
-          if (isWeekend) props.class = "fragment-day-holiday-cell";
+          if (isWeekend) className = "fragment-day-holiday-cell";
+          if (isSameDate(date, today)) className = "fragment-day-today-cell";
+          if (isHoliday) className = "fragment-day-holiday-cell";
+          if (isSelected) className = "fragment-day-active-cell";
 
-          if (isSameDate(date, today)) props.class = "fragment-day-today-cell";
-
-          if (
-            holidays.some(
-              (item: number) =>
-                moment(+item * 1000)
-                  .startOf("day")
-                  .unix() ==
-                moment(date.unix * 1000)
-                  .startOf("day")
-                  .unix()
-            )
-          )
-            props.class = "fragment-day-holiday-cell";
-
-          if (
-            Array.isArray(selectedDate)
-              ? selectedDate.some(
-                  (item) =>
-                    moment(+item.unix * 1000)
-                      .startOf("day")
-                      .unix() ==
-                    moment(date.unix * 1000)
-                      .startOf("day")
-                      .unix()
-                )
-              : isSameDate(date, selectedDate)
-          )
-            props.class = "fragment-day-active-cell";
-
-          return props;
+          return { class: className };
         }}
       />
     </>
