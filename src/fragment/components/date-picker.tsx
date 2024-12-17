@@ -94,10 +94,10 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         }
       }}
       onMonthChange={(val: DateObject) => {
-        onMonthChange(val.month);
+        onMonthChange(val.month.number);
       }}
       onYearChange={(val: DateObject) => {
-        onYearChange(val.year);
+        onYearChange(val.year.number);
       }}
       className={cn("fragment", { "custom-day-cell": customDayCell })}
       {...(isFaLocale && {
@@ -131,8 +131,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         const isToday = isSameDate(date, today);
 
         if (customDayCell && dayCell) {
-          // اگر dayCell یک کامپوننت React است، توصیه می‌شود آن را خارج از این فایل
-          // با React.memo اکسپورت کنید تا رندر اضافی نداشته باشد.
           return {
             style: {},
             class: "fragment-day-reset-cell",
@@ -147,7 +145,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           };
         }
 
-        // اگر از customDayCell استفاده نمی‌کنید، کلاس ها را مستقیماً اختصاص می‌دهیم:
         let className = "fragment-day-cell";
 
         if (isWeekend) className = "fragment-day-holiday-cell";
