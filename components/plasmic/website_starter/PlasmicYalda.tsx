@@ -88,12 +88,12 @@ export const PlasmicYalda__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicYalda__OverridesType = {
   yalda?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
   button5?: Flex__<"div">;
   button4?: Flex__<"div">;
   button3?: Flex__<"div">;
   button2?: Flex__<"div">;
   button?: Flex__<typeof Button>;
+  html?: Flex__<"div">;
 };
 
 export interface DefaultYaldaProps {}
@@ -211,9 +211,7 @@ function PlasmicYalda__RenderFunc(props: {
             </div>
           </div>
           <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
+            className={classNames("__wab_instance", sty.embedHtml___2HyAg)}
             code={
               "<script>\r\n        String.prototype.EntoFa = function() {\r\n            return this.replace(/\\d/g, d => '\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9'[d]);\r\n        }\r\n        function convertNumbersInPage() {\r\n            const elements = document.querySelectorAll('body *:not(script):not(style)');\r\n            elements.forEach(element => {\r\n                element.childNodes.forEach(node => {\r\n                    if (node.nodeType === Node.TEXT_NODE) {\r\n                        node.nodeValue = node.nodeValue.EntoFa();\r\n                    }\r\n                });\r\n            });\r\n        }\r\n    setTimeout(convertNumbersInPage, 1000);\r\n    </script>"
             }
@@ -1187,6 +1185,25 @@ function PlasmicYalda__RenderFunc(props: {
               </div>
             </Button>
           </div>
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              className={classNames("__wab_instance", sty.embedHtml___6BcBe)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              className={classNames("__wab_instance", sty.embedHtml__oBhY2)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1196,31 +1213,31 @@ function PlasmicYalda__RenderFunc(props: {
 const PlasmicDescendants = {
   yalda: [
     "yalda",
-    "embedHtml",
     "button5",
     "button4",
     "button3",
     "button2",
-    "button"
+    "button",
+    "html"
   ],
-  embedHtml: ["embedHtml"],
   button5: ["button5"],
   button4: ["button4"],
   button3: ["button3"],
   button2: ["button2"],
-  button: ["button"]
+  button: ["button"],
+  html: ["html"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   yalda: "div";
-  embedHtml: typeof Embed;
   button5: "div";
   button4: "div";
   button3: "div";
   button2: "div";
   button: typeof Button;
+  html: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1283,12 +1300,12 @@ export const PlasmicYalda = Object.assign(
   makeNodeComponent("yalda"),
   {
     // Helper components rendering sub-elements
-    embedHtml: makeNodeComponent("embedHtml"),
     button5: makeNodeComponent("button5"),
     button4: makeNodeComponent("button4"),
     button3: makeNodeComponent("button3"),
     button2: makeNodeComponent("button2"),
     button: makeNodeComponent("button"),
+    html: makeNodeComponent("html"),
 
     // Metadata about props expected for PlasmicYalda
     internalVariantProps: PlasmicYalda__VariantProps,

@@ -60,8 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
-import { SliderWrapper } from "@plasmicpkgs/react-slick";
-import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -85,7 +83,6 @@ export type PlasmicCalendar3__OverridesType = {
   root?: Flex__<"div">;
   datePicker?: Flex__<typeof DatePicker>;
   text?: Flex__<"div">;
-  sliderCarousel?: Flex__<typeof SliderWrapper>;
 };
 
 export interface DefaultCalendar3Props {
@@ -155,15 +152,6 @@ function PlasmicCalendar3__RenderFunc(props: {
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "sliderCarousel.currentSlide",
-        type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
-
-        refName: "sliderCarousel",
-        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -318,113 +306,14 @@ function PlasmicCalendar3__RenderFunc(props: {
         value={generateStateValueProp($state, ["datePicker", "value"])}
         values={generateStateValueProp($state, ["datePicker", "values"])}
       />
-
-      {(() => {
-        const child$Props = {
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 0,
-          beforeChange: async (...eventArgs: any) => {
-            generateStateOnChangePropForCodeComponents(
-              $state,
-              "currentSlide",
-              ["sliderCarousel", "currentSlide"],
-              SliderWrapper_Helpers
-            ).apply(null, eventArgs);
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
-          },
-          centerMode: true,
-          className: classNames("__wab_instance", sty.sliderCarousel),
-          cssEase: "linear",
-          initialSlide: generateStateValueProp($state, [
-            "sliderCarousel",
-            "currentSlide"
-          ]),
-          ref: ref => {
-            $refs["sliderCarousel"] = ref;
-          },
-          sliderScopeClassName: sty["sliderCarousel__slider"],
-          speed: 5000
-        };
-        initializeCodeComponentStates(
-          $state,
-          [
-            {
-              name: "currentSlide",
-              plasmicStateName: "sliderCarousel.currentSlide"
-            }
-          ],
-          [],
-          SliderWrapper_Helpers ?? {},
-          child$Props
-        );
-
-        return (
-          <SliderWrapper
-            data-plasmic-name={"sliderCarousel"}
-            data-plasmic-override={overrides.sliderCarousel}
-            {...child$Props}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__ySHkQ)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__kCkLf)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                src={
-                  "https://static1.plasmic.app/components/react-slick/slide1.png"
-                }
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__oOho1)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__wzg8J)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                src={
-                  "https://static1.plasmic.app/components/react-slick/slide2.png"
-                }
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__imnzF)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__bF6Tu)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                src={
-                  "https://static1.plasmic.app/components/react-slick/slide3.png"
-                }
-              />
-            </div>
-          </SliderWrapper>
-        );
-      })()}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "datePicker", "text", "sliderCarousel"],
+  root: ["root", "datePicker", "text"],
   datePicker: ["datePicker", "text"],
-  text: ["text"],
-  sliderCarousel: ["sliderCarousel"]
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -433,7 +322,6 @@ type NodeDefaultElementType = {
   root: "div";
   datePicker: typeof DatePicker;
   text: "div";
-  sliderCarousel: typeof SliderWrapper;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -498,7 +386,6 @@ export const PlasmicCalendar3 = Object.assign(
     // Helper components rendering sub-elements
     datePicker: makeNodeComponent("datePicker"),
     text: makeNodeComponent("text"),
-    sliderCarousel: makeNodeComponent("sliderCarousel"),
 
     // Metadata about props expected for PlasmicCalendar3
     internalVariantProps: PlasmicCalendar3__VariantProps,

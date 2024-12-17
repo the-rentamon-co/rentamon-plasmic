@@ -60,6 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Calendar3 from "../../Calendar3"; // plasmic-import: PT85RDIdexix/component
+import { SliderWrapper } from "@plasmicpkgs/react-slick";
+import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -82,6 +84,7 @@ export const PlasmicCalendarTest__ArgProps = new Array<ArgPropType>();
 export type PlasmicCalendarTest__OverridesType = {
   root?: Flex__<"div">;
   calendar3?: Flex__<typeof Calendar3>;
+  sliderCarousel?: Flex__<typeof SliderWrapper>;
 };
 
 export interface DefaultCalendarTestProps {}
@@ -124,6 +127,27 @@ function PlasmicCalendarTest__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "sliderCarousel.currentSlide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
+
+        refName: "sliderCarousel",
+        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -156,6 +180,92 @@ function PlasmicCalendarTest__RenderFunc(props: {
             data-plasmic-override={overrides.calendar3}
             className={classNames("__wab_instance", sty.calendar3)}
           />
+
+          {(() => {
+            const child$Props = {
+              arrows: false,
+              autoplay: true,
+              autoplaySpeed: 10,
+              beforeChange: async (...eventArgs: any) => {
+                generateStateOnChangePropForCodeComponents(
+                  $state,
+                  "currentSlide",
+                  ["sliderCarousel", "currentSlide"],
+                  SliderWrapper_Helpers
+                ).apply(null, eventArgs);
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              },
+              centerMode: true,
+              className: classNames("__wab_instance", sty.sliderCarousel),
+              cssEase: "linear",
+              initialSlide: generateStateValueProp($state, [
+                "sliderCarousel",
+                "currentSlide"
+              ]),
+              ref: ref => {
+                $refs["sliderCarousel"] = ref;
+              },
+              sliderScopeClassName: sty["sliderCarousel__slider"],
+              speed: 5000
+            };
+            initializeCodeComponentStates(
+              $state,
+              [
+                {
+                  name: "currentSlide",
+                  plasmicStateName: "sliderCarousel.currentSlide"
+                }
+              ],
+              [],
+              SliderWrapper_Helpers ?? {},
+              child$Props
+            );
+
+            return (
+              <SliderWrapper
+                data-plasmic-name={"sliderCarousel"}
+                data-plasmic-override={overrides.sliderCarousel}
+                {...child$Props}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__qCa47)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___46NiV
+                    )}
+                  >
+                    {"Enter some text"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__pAZg)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__w2H3A
+                    )}
+                  >
+                    {"Enter some text"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__gkoDx)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___3TyPw
+                    )}
+                  >
+                    {"Enter some text"}
+                  </div>
+                </div>
+              </SliderWrapper>
+            );
+          })()}
         </div>
       </div>
     </React.Fragment>
@@ -163,8 +273,9 @@ function PlasmicCalendarTest__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "calendar3"],
-  calendar3: ["calendar3"]
+  root: ["root", "calendar3", "sliderCarousel"],
+  calendar3: ["calendar3"],
+  sliderCarousel: ["sliderCarousel"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -172,6 +283,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   calendar3: typeof Calendar3;
+  sliderCarousel: typeof SliderWrapper;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -235,6 +347,7 @@ export const PlasmicCalendarTest = Object.assign(
   {
     // Helper components rendering sub-elements
     calendar3: makeNodeComponent("calendar3"),
+    sliderCarousel: makeNodeComponent("sliderCarousel"),
 
     // Metadata about props expected for PlasmicCalendarTest
     internalVariantProps: PlasmicCalendarTest__VariantProps,

@@ -84,6 +84,7 @@ export const PlasmicTestimonial__ArgProps = new Array<ArgPropType>();
 export type PlasmicTestimonial__OverridesType = {
   root?: Flex__<"div">;
   userTestimonial?: Flex__<typeof ApiRequest>;
+  text?: Flex__<"div">;
   quotes?: Flex__<"div">;
   userName4?: Flex__<"div">;
   userPlatform?: Flex__<"div">;
@@ -191,10 +192,12 @@ function PlasmicTestimonial__RenderFunc(props: {
         className={classNames("__wab_instance", sty.userTestimonial)}
         errorDisplay={
           <div
+            data-plasmic-name={"text"}
+            data-plasmic-override={overrides.text}
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
-              sty.text__sgD2M
+              sty.text
             )}
           >
             {
@@ -203,28 +206,20 @@ function PlasmicTestimonial__RenderFunc(props: {
           </div>
         }
         loadingDisplay={
-          <React.Fragment>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__rqWgH
-              )}
-            >
-              {"Loading..."}
-            </div>
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__jjq5N)}
-              displayHeight={"auto"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"auto"}
-              loading={"lazy"}
-            />
-          </React.Fragment>
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img__jjq5N)}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"auto"}
+            loading={"lazy"}
+            src={
+              "https://rentamon.com/wp-content/uploads/2024/03/loading-e1718024098941.gif"
+            }
+          />
         }
         method={"GET"}
         onError={async (...eventArgs: any) => {
@@ -257,7 +252,7 @@ function PlasmicTestimonial__RenderFunc(props: {
             return;
           }
         }}
-        url={"https://gateway.rentamon.com/webh2ook/testimonial"}
+        url={"https://gateway.rentamon.com/webhook/testimonial"}
       />
 
       <div
@@ -566,13 +561,15 @@ const PlasmicDescendants = {
   root: [
     "root",
     "userTestimonial",
+    "text",
     "quotes",
     "userName4",
     "userPlatform",
     "userCity",
     "userQuote2"
   ],
-  userTestimonial: ["userTestimonial"],
+  userTestimonial: ["userTestimonial", "text"],
+  text: ["text"],
   quotes: ["quotes", "userName4", "userPlatform", "userCity", "userQuote2"],
   userName4: ["userName4"],
   userPlatform: ["userPlatform"],
@@ -585,6 +582,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   userTestimonial: typeof ApiRequest;
+  text: "div";
   quotes: "div";
   userName4: "div";
   userPlatform: "div";
@@ -653,6 +651,7 @@ export const PlasmicTestimonial = Object.assign(
   {
     // Helper components rendering sub-elements
     userTestimonial: makeNodeComponent("userTestimonial"),
+    text: makeNodeComponent("text"),
     quotes: makeNodeComponent("quotes"),
     userName4: makeNodeComponent("userName4"),
     userPlatform: makeNodeComponent("userPlatform"),
