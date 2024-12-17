@@ -94,10 +94,12 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         }
       }}
       onMonthChange={(val: DateObject) => {
-        onMonthChange(val.month.number);
+        // مستقیماً از val.month استفاده کنید
+        onMonthChange(val.month);
       }}
       onYearChange={(val: DateObject) => {
-        onYearChange(val.year.number);
+        // مستقیماً از val.year استفاده کنید
+        onYearChange(val.year);
       }}
       className={cn("fragment", { "custom-day-cell": customDayCell })}
       {...(isFaLocale && {
