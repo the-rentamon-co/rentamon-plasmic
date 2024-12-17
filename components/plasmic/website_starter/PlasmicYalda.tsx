@@ -867,9 +867,9 @@ function PlasmicYalda__RenderFunc(props: {
                   }
                 }}
               >
-                {
-                  "\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645 \u062e\u0631\u06cc\u062f"
-                }
+                {hasVariant(globalVariants, "screen", "tablet")
+                  ? "\u0645\u0646\u0645 \u062a\u062e\u0641\u06cc\u0641 \u0645\u06cc\u200c\u062e\u0648\u0627\u0645"
+                  : "\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645 \u062e\u0631\u06cc\u062f"}
               </div>
             </div>
           </div>
@@ -1118,22 +1118,41 @@ function PlasmicYalda__RenderFunc(props: {
                     sty.text__g1Uxk
                   )}
                 >
-                  <React.Fragment>
+                  {hasVariant(globalVariants, "screen", "tablet") ? (
                     <React.Fragment>
-                      {
-                        "\u0627\u06af\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u062f\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0646\u0648\u0632 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u0646\u06a9\u0631\u062f\u06cc\u060c \u0627\u0644\u0627\u0646 \u0648\u0642\u062a\u0634\u0647! \u0648\u0627\u0633\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062c\u062f\u06cc\u062f\u060c \u0633\u06cc\u0633\u062a\u0645 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb"
-                      }
+                      <React.Fragment>
+                        {
+                          "\u0647\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u06a9\u0647 \u062a\u0627 \u0634\u0646\u0628\u0647 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646\u06cc\u060c \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u0634\u00bb \u0628\u0631\u0627\u06cc "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u06f2 \u0645\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"
+                        }
+                      </span>
+                      <React.Fragment>{"."}</React.Fragment>
                     </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        " \u062a\u0627 \u06f2 \u0645\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"
-                      }
-                    </span>
-                    <React.Fragment>{"!"}</React.Fragment>
-                  </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0627\u06af\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u062f\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0646\u0648\u0632 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u0646\u06a9\u0631\u062f\u06cc\u060c \u0627\u0644\u0627\u0646 \u0648\u0642\u062a\u0634\u0647! \u0648\u0627\u0633\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062c\u062f\u06cc\u062f\u060c \u0633\u06cc\u0633\u062a\u0645 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          " \u062a\u0627 \u06f2 \u0645\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"
+                        }
+                      </span>
+                      <React.Fragment>{"!"}</React.Fragment>
+                    </React.Fragment>
+                  )}
                 </div>
               </div>
             </div>
@@ -1298,7 +1317,7 @@ function PlasmicYalda__RenderFunc(props: {
                 }}
               >
                 {
-                  "\u06af\u0641\u062a\u06af\u0648 \u0628\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
+                  "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u0645 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646\u06cc\u062f"
                 }
               </div>
             </div>
@@ -1315,9 +1334,8 @@ function PlasmicYalda__RenderFunc(props: {
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {
-                          return window.history.length > 1
-                            ? window.history.back()
-                            : (window.location.href = "rentamon.com/panels");
+                          return (window.location.href =
+                            "https://www.rentamon.com/");
                         }
                       };
                       return (({ customFunction }) => {
@@ -1344,33 +1362,6 @@ function PlasmicYalda__RenderFunc(props: {
                 {"\u0628\u0627\u0632\u06af\u0634\u062a"}
               </div>
             </Button>
-          </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__d30Dg
-            )}
-          >
-            {hasVariant(globalVariants, "screen", "tablet") ? (
-              <React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {"\u06cc\u0644\u062f\u0627 \u0645\u0628\u0627\u0631\u06a9"}
-                </span>
-                <React.Fragment>{"\n"}</React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {""}
-                </span>
-              </React.Fragment>
-            ) : (
-              "\u06cc\u0644\u062f\u0627 \u0645\u0628\u0627\u0631\u06a9"
-            )}
           </div>
         </div>
       </div>

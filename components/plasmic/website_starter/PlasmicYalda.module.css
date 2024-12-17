@@ -219,6 +219,11 @@
 .img__jCjcs > picture > img {
   object-fit: cover;
 }
+@media (max-width: 508px) {
+  .img__jCjcs {
+    display: none !important;
+  }
+}
 @media (max-width: 380px) {
   .img__jCjcs {
     display: none !important;
@@ -538,6 +543,18 @@
   display: flex;
   flex-direction: column;
 }
+.li__nqjEg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  min-width: 0;
+}
 .freeBox___4SbGy {
   display: flex;
   flex-direction: column;
@@ -567,6 +584,7 @@
   text-align: center;
   margin-bottom: 0px;
   cursor: pointer;
+  user-select: none;
   border-radius: 30px;
   padding: 8px 30px;
   border: 3px solid var(--token-8nedppYkGVaH);
@@ -780,6 +798,7 @@
   text-align: center;
   margin-bottom: 0px;
   cursor: pointer;
+  user-select: none;
   border-radius: 30px;
   padding: 8px 30px;
   border: 3px solid var(--token-8nedppYkGVaH);
@@ -996,6 +1015,7 @@
   text-align: center;
   margin-bottom: 0px;
   cursor: pointer;
+  user-select: none;
   border-radius: 30px;
   padding: 8px 30px;
   border: 3px solid var(--token-8nedppYkGVaH);
@@ -1182,7 +1202,7 @@
 }
 .button2 {
   position: relative;
-  width: 205px;
+  width: 240px;
   height: auto;
   max-width: 100%;
   color: var(--token-8nedppYkGVaH);
@@ -1192,8 +1212,9 @@
   text-align: center;
   margin-bottom: 0px;
   cursor: pointer;
+  user-select: none;
   border-radius: 30px;
-  padding: 8px 30px;
+  padding: 8px 18px 8px 14px;
   border: 3px solid var(--token-8nedppYkGVaH);
 }
 .freeBox__olNiN {
@@ -1205,6 +1226,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 147px;
   min-width: 0;
   padding: 8px;
 }
@@ -1228,58 +1250,4 @@
   object-fit: cover;
   width: auto;
   height: 1em;
-}
-.text__d30Dg {
-  width: 100%;
-  height: 713px;
-  max-width: 100%;
-  font-size: 100px;
-  position: relative;
-  left: auto;
-  top: auto;
-  z-index: 500;
-  background: url("/plasmic/website_starter/images/yalda3Jpg.jpg") top 50% left 50% / cover repeat;
-  color: var(--token-jgohepLVeKvh);
-  text-align: center;
-  font-weight: 600;
-  box-shadow: none;
-  user-select: text;
-  grid-column-start: 1 !important;
-  grid-column-end: -1 !important;
-  border-radius: 30px 30px 0px 0px;
-  padding: 193px 0px 298px;
-}
-@media (max-width: 1200px) {
-  .text__d30Dg {
-    font-size: 40px;
-    left: auto;
-    top: auto;
-    background: url("/plasmic/website_starter/images/yalda3Jpg.jpg") top 50% left 50% / cover repeat;
-    margin-top: 43px;
-    width: 100%;
-    height: 440px;
-    grid-column-start: 1 !important;
-    grid-column-end: -1 !important;
-    border-radius: 30px 30px 0px 0px;
-    padding: 131px 0px 122px;
-  }
-}
-@media (max-width: 508px) {
-  .text__d30Dg {
-    height: 400px;
-  }
-}
-@media (max-width: 380px) {
-  .text__d30Dg {
-    font-size: 30px;
-    left: auto;
-    top: auto;
-    width: 100%;
-    height: 300px;
-    padding-top: 90px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    grid-column-start: 1 !important;
-    grid-column-end: -1 !important;
-  }
 }
