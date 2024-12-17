@@ -197,7 +197,21 @@ function PlasmicTestimonial__RenderFunc(props: {
               sty.text__sgD2M
             )}
           >
-            {"Error fetching data"}
+            <React.Fragment>
+              {(() => {
+                try {
+                  return خطا;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "Error fetching data";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
           </div>
         }
         loadingDisplay={
@@ -208,22 +222,54 @@ function PlasmicTestimonial__RenderFunc(props: {
               sty.text__rqWgH
             )}
           >
-            {"Loading..."}
+            <React.Fragment>
+              {(() => {
+                try {
+                  return نظرات;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "Loading...";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
           </div>
         }
         method={"GET"}
-        onError={generateStateOnChangeProp($state, [
-          "userTestimonial",
-          "error"
-        ])}
-        onLoading={generateStateOnChangeProp($state, [
-          "userTestimonial",
-          "loading"
-        ])}
-        onSuccess={generateStateOnChangeProp($state, [
-          "userTestimonial",
-          "data"
-        ])}
+        onError={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["userTestimonial", "error"]).apply(
+            null,
+            eventArgs
+          );
+
+          if (eventArgs.length > 1 && eventArgs[1]) {
+            return;
+          }
+        }}
+        onLoading={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, [
+            "userTestimonial",
+            "loading"
+          ]).apply(null, eventArgs);
+
+          if (eventArgs.length > 1 && eventArgs[1]) {
+            return;
+          }
+        }}
+        onSuccess={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["userTestimonial", "data"]).apply(
+            null,
+            eventArgs
+          );
+
+          if (eventArgs.length > 1 && eventArgs[1]) {
+            return;
+          }
+        }}
         url={"https://gateway.rentamon.com/webhook/testimonial"}
       />
 

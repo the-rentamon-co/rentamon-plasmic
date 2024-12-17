@@ -1368,11 +1368,17 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               "__wab_instance",
                               sty.supportAccess
                             )}
-                            onChange={(...eventArgs) => {
-                              generateStateOnChangeProp($state, [
-                                "supportAccess",
-                                "value"
-                              ])(eventArgs[0]);
+                            onChange={async (...eventArgs: any) => {
+                              ((...eventArgs) => {
+                                generateStateOnChangeProp($state, [
+                                  "supportAccess",
+                                  "value"
+                                ])(eventArgs[0]);
+                              }).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
                             }}
                             options={(() => {
                               const __composite = [
@@ -1460,11 +1466,17 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               "__wab_instance",
                               sty.supportSpeed
                             )}
-                            onChange={(...eventArgs) => {
-                              generateStateOnChangeProp($state, [
-                                "supportSpeed",
-                                "value"
-                              ])(eventArgs[0]);
+                            onChange={async (...eventArgs: any) => {
+                              ((...eventArgs) => {
+                                generateStateOnChangeProp($state, [
+                                  "supportSpeed",
+                                  "value"
+                                ])(eventArgs[0]);
+                              }).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
                             }}
                             options={(() => {
                               const __composite = [
@@ -1552,11 +1564,17 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               "__wab_instance",
                               sty.supportJudgment
                             )}
-                            onChange={(...eventArgs) => {
-                              generateStateOnChangeProp($state, [
-                                "supportJudgment",
-                                "value"
-                              ])(eventArgs[0]);
+                            onChange={async (...eventArgs: any) => {
+                              ((...eventArgs) => {
+                                generateStateOnChangeProp($state, [
+                                  "supportJudgment",
+                                  "value"
+                                ])(eventArgs[0]);
+                              }).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
                             }}
                             options={(() => {
                               const __composite = [

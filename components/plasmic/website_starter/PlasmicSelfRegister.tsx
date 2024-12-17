@@ -645,13 +645,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
             const child$Props = {
               autoDisableWhileSubmitting: true,
               className: classNames("__wab_instance", sty.selfRegisterForm),
-              extendedOnValuesChange:
+              extendedOnValuesChange: async (...eventArgs: any) => {
                 generateStateOnChangePropForCodeComponents(
                   $state,
                   "value",
                   ["selfRegisterForm", "value"],
                   FormWrapper_Helpers
-                ),
+                ).apply(null, eventArgs);
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              },
               formItems: [
                 { label: "Name", name: "name", inputType: "Text" },
                 { label: "Message", name: "message", inputType: "Text Area" }
@@ -695,12 +700,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   $steps["updateInputValue"] = await $steps["updateInputValue"];
                 }
               },
-              onIsSubmittingChange: generateStateOnChangePropForCodeComponents(
-                $state,
-                "isSubmitting",
-                ["selfRegisterForm", "isSubmitting"],
-                FormWrapper_Helpers
-              ),
+              onIsSubmittingChange: async (...eventArgs: any) => {
+                generateStateOnChangePropForCodeComponents(
+                  $state,
+                  "isSubmitting",
+                  ["selfRegisterForm", "isSubmitting"],
+                  FormWrapper_Helpers
+                ).apply(null, eventArgs);
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              },
               ref: ref => {
                 $refs["selfRegisterForm"] = ref;
               },
@@ -765,12 +776,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: "\u0646\u0627\u0645",
                           size: "large",
                           value: generateStateValueProp($state, [
@@ -817,12 +834,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input2),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input2", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input2", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder:
                             "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
                           size: hasVariant(globalVariants, "screen", "mobile")
@@ -868,11 +891,17 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           "isChecked"
                         ]) ?? false
                       }
-                      onChange={(...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "policiesCheckbox",
-                          "isChecked"
-                        ])(eventArgs[0]);
+                      onChange={async (...eventArgs: any) => {
+                        ((...eventArgs) => {
+                          generateStateOnChangeProp($state, [
+                            "policiesCheckbox",
+                            "isChecked"
+                          ])(eventArgs[0]);
+                        }).apply(null, eventArgs);
+
+                        if (eventArgs.length > 1 && eventArgs[1]) {
+                          return;
+                        }
                       }}
                     >
                       <PlasmicLink__
@@ -1033,12 +1062,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input3),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input3", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input3", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder:
                             "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
                           size: "large",
@@ -1095,12 +1130,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input4),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input4", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input4", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder:
                             "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644",
                           size: "large",
@@ -1377,12 +1418,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input6),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input6", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input6", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: (() => {
                             try {
                               return `کد ${$state.selfRegisterForm.value.propertyName} در جاجیگا`;
@@ -1434,12 +1481,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input7),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input7", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input7", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: (() => {
                             try {
                               return `کد ${$state.selfRegisterForm.value.propertyName} در شب`;
@@ -1491,12 +1544,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input9),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input9", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input9", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: (() => {
                             try {
                               return `کد ${$state.selfRegisterForm.value.propertyName} در اتاقک`;
@@ -1551,12 +1610,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input10),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input10", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input10", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: (() => {
                             try {
                               return `کد ${$state.selfRegisterForm.value.propertyName} در میهمان‌شو`;
@@ -1608,12 +1673,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input11),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input11", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input11", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: (() => {
                             try {
                               return `کد ${$state.selfRegisterForm.value.propertyName} در هومسا`;
@@ -1665,12 +1736,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input8),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input8", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input8", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: (() => {
                             try {
                               return `کد ${$state.selfRegisterForm.value.propertyName} در میزبون`;
@@ -1723,12 +1800,18 @@ function PlasmicSelfRegister__RenderFunc(props: {
                         const child$Props = {
                           bordered: true,
                           className: classNames("__wab_instance", sty.input5),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input5", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input5", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: (() => {
                             try {
                               return `لینک ${$state.selfRegisterForm.value.propertyName} در جاباما`;

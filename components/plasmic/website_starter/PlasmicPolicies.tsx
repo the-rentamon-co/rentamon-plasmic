@@ -156,10 +156,16 @@ function PlasmicPolicies__RenderFunc(props: {
         generateStateValueProp($state, ["policiesCheckbox", "isChecked"]) ??
         false
       }
-      onChange={(...eventArgs) => {
-        generateStateOnChangeProp($state, ["policiesCheckbox", "isChecked"])(
-          eventArgs[0]
-        );
+      onChange={async (...eventArgs: any) => {
+        ((...eventArgs) => {
+          generateStateOnChangeProp($state, ["policiesCheckbox", "isChecked"])(
+            eventArgs[0]
+          );
+        }).apply(null, eventArgs);
+
+        if (eventArgs.length > 1 && eventArgs[1]) {
+          return;
+        }
       }}
     >
       <PlasmicLink__

@@ -431,10 +431,16 @@ function PlasmicPropertyName__RenderFunc(props: {
                               })}
                             </div>
                           }
-                          onOpenChange={generateStateOnChangeProp($state, [
-                            "fragmentPopover",
-                            "open"
-                          ])}
+                          onOpenChange={async (...eventArgs: any) => {
+                            generateStateOnChangeProp($state, [
+                              "fragmentPopover",
+                              "open"
+                            ]).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          }}
                           open={generateStateValueProp($state, [
                             "fragmentPopover",
                             "open"
@@ -632,12 +638,18 @@ function PlasmicPropertyName__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 ),
-                onChange: generateStateOnChangePropForCodeComponents(
-                  $state,
-                  "open",
-                  ["collapse", "open"],
-                  AntdSingleCollapse_Helpers
-                ),
+                onChange: async (...eventArgs: any) => {
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "open",
+                    ["collapse", "open"],
+                    AntdSingleCollapse_Helpers
+                  ).apply(null, eventArgs);
+
+                  if (eventArgs.length > 1 && eventArgs[1]) {
+                    return;
+                  }
+                },
                 open: generateStateValueProp($state, ["collapse", "open"]),
                 showArrow: true
               };

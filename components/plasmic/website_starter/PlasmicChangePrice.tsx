@@ -206,10 +206,16 @@ function PlasmicChangePrice__RenderFunc(props: {
         )}
         modalScopeClassName={sty["modalChangePrice__modal"]}
         okText={"\u062a\u0627\u06cc\u06cc\u062f"}
-        onOpenChange={generateStateOnChangeProp($state, [
-          "modalChangePrice",
-          "open"
-        ])}
+        onOpenChange={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["modalChangePrice", "open"]).apply(
+            null,
+            eventArgs
+          );
+
+          if (eventArgs.length > 1 && eventArgs[1]) {
+            return;
+          }
+        }}
         open={generateStateValueProp($state, ["modalChangePrice", "open"])}
         title={
           "\u0646\u0631\u062e \ud83d\udcb5 \u0631\u0648 \u0628\u0647 \u062a\u0648\u0645\u0646 \u0648\u0627\u0631\u062f \u06a9\u0646"
@@ -233,10 +239,16 @@ function PlasmicChangePrice__RenderFunc(props: {
               controls={false}
               max={50}
               min={200000}
-              onChange={generateStateOnChangeProp($state, [
-                "numberInput2",
-                "value"
-              ])}
+              onChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "numberInput2",
+                  "value"
+                ]).apply(null, eventArgs);
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
               placeholder={
                 "\u0645\u062b\u0644\u0627 \u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0"
               }

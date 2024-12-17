@@ -458,7 +458,8 @@ function PlasmicButton__RenderFunc(props: {
         })}
       >
         {renderPlasmicSlot({
-          defaultContents: "Button",
+          defaultContents:
+            "\u0627\u06cc\u0646\u062c\u0627 \u06a9\u0644\u06cc\u06a9 \u06a9\u0646\u06cc\u062f",
           value: args.children,
           className: classNames(sty.slotTargetChildren, {
             [sty.slotTargetChildren___focusVisibleWithin]:

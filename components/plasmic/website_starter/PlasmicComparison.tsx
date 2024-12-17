@@ -1233,11 +1233,17 @@ function PlasmicComparison__RenderFunc(props: {
                               "__wab_instance",
                               sty.selectAccess
                             )}
-                            onChange={(...eventArgs) => {
-                              generateStateOnChangeProp($state, [
-                                "selectAccess",
-                                "value"
-                              ])(eventArgs[0]);
+                            onChange={async (...eventArgs: any) => {
+                              ((...eventArgs) => {
+                                generateStateOnChangeProp($state, [
+                                  "selectAccess",
+                                  "value"
+                                ])(eventArgs[0]);
+                              }).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
                             }}
                             options={(() => {
                               const __composite = [
@@ -1325,11 +1331,17 @@ function PlasmicComparison__RenderFunc(props: {
                               "__wab_instance",
                               sty.selectSpeed
                             )}
-                            onChange={(...eventArgs) => {
-                              generateStateOnChangeProp($state, [
-                                "selectSpeed",
-                                "value"
-                              ])(eventArgs[0]);
+                            onChange={async (...eventArgs: any) => {
+                              ((...eventArgs) => {
+                                generateStateOnChangeProp($state, [
+                                  "selectSpeed",
+                                  "value"
+                                ])(eventArgs[0]);
+                              }).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
                             }}
                             options={(() => {
                               const __composite = [
@@ -1417,11 +1429,17 @@ function PlasmicComparison__RenderFunc(props: {
                               "__wab_instance",
                               sty.supportJudgment
                             )}
-                            onChange={(...eventArgs) => {
-                              generateStateOnChangeProp($state, [
-                                "supportJudgment",
-                                "value"
-                              ])(eventArgs[0]);
+                            onChange={async (...eventArgs: any) => {
+                              ((...eventArgs) => {
+                                generateStateOnChangeProp($state, [
+                                  "supportJudgment",
+                                  "value"
+                                ])(eventArgs[0]);
+                              }).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
                             }}
                             options={(() => {
                               const __composite = [

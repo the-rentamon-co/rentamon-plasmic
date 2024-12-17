@@ -7,6 +7,9 @@
   transition-duration: 0.1s;
   background: #8165d6;
   margin-top: 14px;
+  max-width: 164px;
+  width: 100%;
+  min-width: 0;
   -webkit-transition-property: background;
   -webkit-transition-duration: 0.1s;
   border-radius: 30px;
@@ -17,6 +20,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  min-width: 0;
   margin-left: calc(0px - 8px);
   width: calc(100% + 8px);
 }
@@ -25,6 +29,11 @@
 .root > :global(.__wab_flex-container) > picture > img,
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-left: 8px;
+}
+@media (max-width: 1200px) {
+  .root {
+    background: #8165d6;
+  }
 }
 .rootshowStartIcon {
   padding-left: 16px;

@@ -56,12 +56,8 @@
 }
 .dayCell:global(.__wab_instance) {
   max-width: 95%;
-  align-self: auto;
-  left: auto;
-  top: auto;
-  z-index: 1;
-  position: relative;
-  margin: 2px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 @media (max-width: 1200px) {
   .dayCell:global(.__wab_instance) {
@@ -72,7 +68,6 @@
 @media (max-width: 508px) {
   .dayCell:global(.__wab_instance) {
     max-width: 95%;
-    margin: 5px 0px 0px;
   }
 }
 @media (max-width: 380px) {

@@ -368,29 +368,53 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 </div>
               }
               method={"GET"}
-              onError={generateStateOnChangeProp($state, [
-                "properties",
-                "error"
-              ])}
-              onLoading={generateStateOnChangeProp($state, [
-                "properties",
-                "loading"
-              ])}
-              onSuccess={generateStateOnChangeProp($state, [
-                "properties",
-                "data"
-              ])}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "properties",
+                  "error"
+                ]).apply(null, eventArgs);
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "properties",
+                  "loading"
+                ]).apply(null, eventArgs);
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["properties", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
               url={"https://dev.rentamon.com/webhook/property-status"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}
                 data-plasmic-override={overrides.selectProperty}
                 className={classNames("__wab_instance", sty.selectProperty)}
-                onChange={(...eventArgs) => {
-                  generateStateOnChangeProp($state, [
-                    "selectProperty",
-                    "value"
-                  ])(eventArgs[0]);
+                onChange={async (...eventArgs: any) => {
+                  ((...eventArgs) => {
+                    generateStateOnChangeProp($state, [
+                      "selectProperty",
+                      "value"
+                    ])(eventArgs[0]);
+                  }).apply(null, eventArgs);
+
+                  if (eventArgs.length > 1 && eventArgs[1]) {
+                    return;
+                  }
                 }}
                 options={(() => {
                   try {
@@ -496,6 +520,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "shabSwitch",
                           "checked"
                         ]).apply(null, eventArgs);
+
+                        if (eventArgs.length > 1 && eventArgs[1]) {
+                          return;
+                        }
+
                         (async checked => {
                           const $steps = {};
 
@@ -738,6 +767,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "otaghak",
                           "checked"
                         ]).apply(null, eventArgs);
+
+                        if (eventArgs.length > 1 && eventArgs[1]) {
+                          return;
+                        }
+
                         (async checked => {
                           const $steps = {};
 
@@ -951,6 +985,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "fragmentSwitch3",
                           "checked"
                         ]).apply(null, eventArgs);
+
+                        if (eventArgs.length > 1 && eventArgs[1]) {
+                          return;
+                        }
+
                         (async checked => {
                           const $steps = {};
 
@@ -1135,6 +1174,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "fragmentSwitch5",
                           "checked"
                         ]).apply(null, eventArgs);
+
+                        if (eventArgs.length > 1 && eventArgs[1]) {
+                          return;
+                        }
+
                         (async checked => {
                           const $steps = {};
 
@@ -1319,6 +1363,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "fragmentSwitch6",
                           "checked"
                         ]).apply(null, eventArgs);
+
+                        if (eventArgs.length > 1 && eventArgs[1]) {
+                          return;
+                        }
+
                         (async checked => {
                           const $steps = {};
 
@@ -1506,6 +1555,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "fragmentSwitch7",
                           "checked"
                         ]).apply(null, eventArgs);
+
+                        if (eventArgs.length > 1 && eventArgs[1]) {
+                          return;
+                        }
+
                         (async checked => {
                           const $steps = {};
 
@@ -1690,6 +1744,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "fragmentSwitch4",
                           "checked"
                         ]).apply(null, eventArgs);
+
+                        if (eventArgs.length > 1 && eventArgs[1]) {
+                          return;
+                        }
+
                         (async checked => {
                           const $steps = {};
 

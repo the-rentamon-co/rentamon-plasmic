@@ -704,10 +704,16 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                     plasmic_plasmic_rich_components_css.plasmic_tokens
                   )}
                   modalScopeClassName={sty["jabamaModal__modal"]}
-                  onOpenChange={generateStateOnChangeProp($state, [
-                    "jabamaModal",
-                    "open"
-                  ])}
+                  onOpenChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "jabamaModal",
+                      "open"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
                   open={generateStateValueProp($state, ["jabamaModal", "open"])}
                   title={
                     <React.Fragment>
@@ -730,10 +736,16 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                           "__wab_instance",
                           sty.numberInput
                         )}
-                        onChange={generateStateOnChangeProp($state, [
-                          "numberInput",
-                          "value"
-                        ])}
+                        onChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "numberInput",
+                            "value"
+                          ]).apply(null, eventArgs);
+
+                          if (eventArgs.length > 1 && eventArgs[1]) {
+                            return;
+                          }
+                        }}
                         prefix={null}
                         type={"number"}
                         value={generateStateValueProp($state, [
@@ -776,10 +788,16 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                   })}
                   modalScopeClassName={sty["jajigaModal__modal"]}
                   okText={"\u0627\u0631\u0633\u0627\u0644"}
-                  onOpenChange={generateStateOnChangeProp($state, [
-                    "jajigaModal",
-                    "open"
-                  ])}
+                  onOpenChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "jajigaModal",
+                      "open"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
                   open={generateStateValueProp($state, ["jajigaModal", "open"])}
                   title={
                     <div
@@ -842,10 +860,16 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                     className={classNames("__wab_instance", sty.numberJajiga)}
                     controls={false}
                     disabled={false}
-                    onChange={generateStateOnChangeProp($state, [
-                      "numberJajiga",
-                      "value"
-                    ])}
+                    onChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "numberJajiga",
+                        "value"
+                      ]).apply(null, eventArgs);
+
+                      if (eventArgs.length > 1 && eventArgs[1]) {
+                        return;
+                      }
+                    }}
                     placeholder={
                       "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u06cc \u06a9\u0647 \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627 \u062b\u0628\u062a \u06a9\u0631\u062f\u06cc \u0648\u0627\u0631\u062f \u06a9\u0646"
                     }
@@ -946,10 +970,16 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                     data-plasmic-name={"otpJajiga"}
                     data-plasmic-override={overrides.otpJajiga}
                     className={classNames("__wab_instance", sty.otpJajiga)}
-                    onChange={generateStateOnChangeProp($state, [
-                      "otpJajiga",
-                      "value"
-                    ])}
+                    onChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "otpJajiga",
+                        "value"
+                      ]).apply(null, eventArgs);
+
+                      if (eventArgs.length > 1 && eventArgs[1]) {
+                        return;
+                      }
+                    }}
                     placeholder={
                       "\ud83d\udcac \u06a9\u062f \u0648\u0631\u0648\u062f \u067e\u06cc\u0627\u0645\u06a9\u06cc \u06a9\u0647 \u0627\u0644\u0627\u0646 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc"
                     }

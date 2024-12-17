@@ -92,9 +92,13 @@ export const PlasmicCalendar2__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicCalendar2__ArgsType = {
   propertyId?: number;
+  daystatuses?: any;
 };
 type ArgPropType = keyof PlasmicCalendar2__ArgsType;
-export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>("propertyId");
+export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
+  "propertyId",
+  "daystatuses"
+);
 
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
@@ -122,6 +126,7 @@ export type PlasmicCalendar2__OverridesType = {
 
 export interface DefaultCalendar2Props {
   propertyId?: number;
+  daystatuses?: any;
   className?: string;
 }
 
@@ -358,6 +363,49 @@ function PlasmicCalendar2__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "dayStatus",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const websiteNames = {
+                  host: "رزرو",
+                  jajiga: "جاجیگا",
+                  jabama: "جاباما",
+                  shab: "شب",
+                  homsa: "هومسا",
+                  mihmansho: "مهمانشو",
+                  otaghak: "اتاقک",
+                  mizboon: "میزبون"
+                };
+                const calendar = $state.apiRequest.data.calendar.map(item => {
+                  if (
+                    item.status === "reserved" &&
+                    websiteNames[item.website]
+                  ) {
+                    return {
+                      ...item,
+                      website: websiteNames[item.website]
+                    };
+                  }
+                  return item;
+                });
+                return calendar;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return {};
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -414,9 +462,36 @@ function PlasmicCalendar2__RenderFunc(props: {
         }
         loadingDisplay={null}
         method={"GET"}
-        onError={generateStateOnChangeProp($state, ["apiRequest", "error"])}
-        onLoading={generateStateOnChangeProp($state, ["apiRequest", "loading"])}
-        onSuccess={generateStateOnChangeProp($state, ["apiRequest", "data"])}
+        onError={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+            null,
+            eventArgs
+          );
+
+          if (eventArgs.length > 1 && eventArgs[1]) {
+            return;
+          }
+        }}
+        onLoading={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["apiRequest", "loading"]).apply(
+            null,
+            eventArgs
+          );
+
+          if (eventArgs.length > 1 && eventArgs[1]) {
+            return;
+          }
+        }}
+        onSuccess={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+            null,
+            eventArgs
+          );
+
+          if (eventArgs.length > 1 && eventArgs[1]) {
+            return;
+          }
+        }}
         url={(() => {
           try {
             return (() => {
@@ -854,9 +929,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
               selected={(() => {
                 try {
-                  return (
-                    dateProps.isSelected && dateProps.unix >= Date.now() / 1000
-                  );
+                  return dateProps.isSelected;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -881,16 +954,31 @@ function PlasmicCalendar2__RenderFunc(props: {
               "fragmentDatePicker",
               "values"
             ]).apply(null, eventArgs);
+
+            if (eventArgs.length > 1 && eventArgs[1]) {
+              return;
+            }
           }}
-          onMonthChange={generateStateOnChangeProp($state, [
-            "fragmentDatePicker",
-            "month"
-          ])}
+          onMonthChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, [
+              "fragmentDatePicker",
+              "month"
+            ]).apply(null, eventArgs);
+
+            if (eventArgs.length > 1 && eventArgs[1]) {
+              return;
+            }
+          }}
           onYearChange={async (...eventArgs: any) => {
             generateStateOnChangeProp($state, [
               "fragmentDatePicker",
               "year"
             ]).apply(null, eventArgs);
+
+            if (eventArgs.length > 1 && eventArgs[1]) {
+              return;
+            }
+
             (async year => {
               const $steps = {};
 
@@ -1210,10 +1298,16 @@ function PlasmicCalendar2__RenderFunc(props: {
               $steps["runCode"] = await $steps["runCode"];
             }
           }}
-          onOpenChange={generateStateOnChangeProp($state, [
-            "modalDiscount",
-            "open"
-          ])}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["modalDiscount", "open"]).apply(
+              null,
+              eventArgs
+            );
+
+            if (eventArgs.length > 1 && eventArgs[1]) {
+              return;
+            }
+          }}
           open={generateStateValueProp($state, ["modalDiscount", "open"])}
           title={
             <div className={classNames(projectcss.all, sty.freeBox___8MNjo)}>
@@ -1352,10 +1446,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                     data-plasmic-override={overrides.numberInput4}
                     className={classNames("__wab_instance", sty.numberInput4)}
                     controls={false}
-                    onChange={generateStateOnChangeProp($state, [
-                      "numberInput4",
-                      "value"
-                    ])}
+                    onChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "numberInput4",
+                        "value"
+                      ]).apply(null, eventArgs);
+
+                      if (eventArgs.length > 1 && eventArgs[1]) {
+                        return;
+                      }
+                    }}
                     placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
                     readOnly={true}
                     type={"number"}
@@ -1734,10 +1834,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                   data-plasmic-override={overrides.numberInput3}
                   className={classNames("__wab_instance", sty.numberInput3)}
                   controls={false}
-                  onChange={generateStateOnChangeProp($state, [
-                    "numberInput3",
-                    "value"
-                  ])}
+                  onChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "numberInput3",
+                      "value"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
                   placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
                   readOnly={true}
                   type={"number"}
@@ -1812,7 +1918,16 @@ function PlasmicCalendar2__RenderFunc(props: {
               $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
             }
           }}
-          onOpenChange={generateStateOnChangeProp($state, ["modal", "open"])}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["modal", "open"]).apply(
+              null,
+              eventArgs
+            );
+
+            if (eventArgs.length > 1 && eventArgs[1]) {
+              return;
+            }
+          }}
           open={generateStateValueProp($state, ["modal", "open"])}
           title={
             <div className={classNames(projectcss.all, sty.freeBox__qQsuM)}>
@@ -2579,10 +2694,16 @@ function PlasmicCalendar2__RenderFunc(props: {
               $steps["runCode"] = await $steps["runCode"];
             }
           }}
-          onOpenChange={generateStateOnChangeProp($state, [
-            "modalChangePrice",
-            "open"
-          ])}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, [
+              "modalChangePrice",
+              "open"
+            ]).apply(null, eventArgs);
+
+            if (eventArgs.length > 1 && eventArgs[1]) {
+              return;
+            }
+          }}
           open={generateStateValueProp($state, ["modalChangePrice", "open"])}
           title={
             <div className={classNames(projectcss.all, sty.freeBox__d2E3K)}>
@@ -2663,10 +2784,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                 data-plasmic-override={overrides.numberInput2}
                 className={classNames("__wab_instance", sty.numberInput2)}
                 controls={false}
-                onChange={generateStateOnChangeProp($state, [
-                  "numberInput2",
-                  "value"
-                ])}
+                onChange={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "numberInput2",
+                    "value"
+                  ]).apply(null, eventArgs);
+
+                  if (eventArgs.length > 1 && eventArgs[1]) {
+                    return;
+                  }
+                }}
                 placeholder={
                   "\u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
                 }
@@ -3162,10 +3289,16 @@ function PlasmicCalendar2__RenderFunc(props: {
           hideFooter={true}
           maskClosable={false}
           modalScopeClassName={sty["fetchModal__modal"]}
-          onOpenChange={generateStateOnChangeProp($state, [
-            "fetchModal",
-            "open"
-          ])}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["fetchModal", "open"]).apply(
+              null,
+              eventArgs
+            );
+
+            if (eventArgs.length > 1 && eventArgs[1]) {
+              return;
+            }
+          }}
           open={generateStateValueProp($state, ["fetchModal", "open"])}
           title={
             "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a :"
@@ -3240,18 +3373,36 @@ function PlasmicCalendar2__RenderFunc(props: {
               </div>
             }
             method={"GET"}
-            onError={generateStateOnChangeProp($state, [
-              "userPlatform",
-              "error"
-            ])}
-            onLoading={generateStateOnChangeProp($state, [
-              "userPlatform",
-              "loading"
-            ])}
-            onSuccess={generateStateOnChangeProp($state, [
-              "userPlatform",
-              "data"
-            ])}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userPlatform",
+                "error"
+              ]).apply(null, eventArgs);
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userPlatform",
+                "loading"
+              ]).apply(null, eventArgs);
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["userPlatform", "data"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
             url={(() => {
               try {
                 return `https://api.rentamon.com/api/website_statuses/?property_id=${$props.propertyId}`;
@@ -3664,7 +3815,16 @@ function PlasmicCalendar2__RenderFunc(props: {
           )}
           hideFooter={true}
           modalScopeClassName={sty["block__modal"]}
-          onOpenChange={generateStateOnChangeProp($state, ["block", "open"])}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["block", "open"]).apply(
+              null,
+              eventArgs
+            );
+
+            if (eventArgs.length > 1 && eventArgs[1]) {
+              return;
+            }
+          }}
           open={generateStateValueProp($state, ["block", "open"])}
           title={
             <div className={classNames(projectcss.all, sty.freeBox__oV0Zq)}>

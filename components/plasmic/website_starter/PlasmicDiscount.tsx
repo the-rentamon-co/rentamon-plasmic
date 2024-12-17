@@ -223,10 +223,16 @@ function PlasmicDiscount__RenderFunc(props: {
         modalContentClassName={classNames({ [sty["pcls_D8H_Dylqgqwp"]]: true })}
         modalScopeClassName={sty["modalDiscount__modal"]}
         okText={"\u062a\u0627\u06cc\u06cc\u062f"}
-        onOpenChange={generateStateOnChangeProp($state, [
-          "modalDiscount",
-          "open"
-        ])}
+        onOpenChange={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["modalDiscount", "open"]).apply(
+            null,
+            eventArgs
+          );
+
+          if (eventArgs.length > 1 && eventArgs[1]) {
+            return;
+          }
+        }}
         open={generateStateValueProp($state, ["modalDiscount", "open"])}
         title={
           "\u062f\u0631\u0635\u062f \u062a\u062e\u0641\u06cc\u0641\ud83d\udd25\u0631\u0648 \u0645\u0634\u062e\u0635 \u06a9\u0646\n"
@@ -299,10 +305,16 @@ function PlasmicDiscount__RenderFunc(props: {
               controls={false}
               max={50}
               min={200000}
-              onChange={generateStateOnChangeProp($state, [
-                "numberInput3",
-                "value"
-              ])}
+              onChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "numberInput3",
+                  "value"
+                ]).apply(null, eventArgs);
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
               placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
               readOnly={true}
               type={"number"}

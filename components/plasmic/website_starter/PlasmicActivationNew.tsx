@@ -70,7 +70,6 @@ import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
-import Tooltip from "../../Tooltip"; // plasmic-import: H631TCEpl2Nh/component
 import Testimonial from "../../Testimonial"; // plasmic-import: MWmH78o8OGcS/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -3267,18 +3266,36 @@ function PlasmicActivationNew__RenderFunc(props: {
                   }
                   loadingDisplay={null}
                   method={"GET"}
-                  onError={generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "error"
-                  ])}
-                  onLoading={generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "loading"
-                  ])}
-                  onSuccess={generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "data"
-                  ])}
+                  onError={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest2",
+                      "error"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
+                  onLoading={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest2",
+                      "loading"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
+                  onSuccess={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest2",
+                      "data"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
                   url={
                     "https://api.rentamon.com/api/website_statuses/?property_id=1"
                   }
@@ -3299,10 +3316,16 @@ function PlasmicActivationNew__RenderFunc(props: {
                 hideFooter={true}
                 maskClosable={true}
                 modalScopeClassName={sty["modal__modal"]}
-                onOpenChange={generateStateOnChangeProp($state, [
-                  "modal",
-                  "open"
-                ])}
+                onOpenChange={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                    null,
+                    eventArgs
+                  );
+
+                  if (eventArgs.length > 1 && eventArgs[1]) {
+                    return;
+                  }
+                }}
                 open={generateStateValueProp($state, ["modal", "open"])}
                 title={
                   <React.Fragment>
@@ -3507,15 +3530,36 @@ function PlasmicActivationNew__RenderFunc(props: {
               </div>
             }
             method={"POST"}
-            onError={generateStateOnChangeProp($state, ["apiRequest", "error"])}
-            onLoading={generateStateOnChangeProp($state, [
-              "apiRequest",
-              "loading"
-            ])}
-            onSuccess={generateStateOnChangeProp($state, [
-              "apiRequest",
-              "data"
-            ])}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
             url={(() => {
               try {
                 return (() => {
@@ -3549,13 +3593,18 @@ function PlasmicActivationNew__RenderFunc(props: {
             {(() => {
               const child$Props = {
                 className: classNames("__wab_instance", sty.form),
-                extendedOnValuesChange:
+                extendedOnValuesChange: async (...eventArgs: any) => {
                   generateStateOnChangePropForCodeComponents(
                     $state,
                     "value",
                     ["form", "value"],
                     FormWrapper_Helpers
-                  ),
+                  ).apply(null, eventArgs);
+
+                  if (eventArgs.length > 1 && eventArgs[1]) {
+                    return;
+                  }
+                },
                 formItems: [
                   { label: "Name", name: "name", inputType: "Text" },
                   { label: "Message", name: "message", inputType: "Text Area" }
@@ -3563,13 +3612,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                 labelCol: { span: 8, horizontalOnly: true },
                 layout: "vertical",
                 mode: "advanced",
-                onIsSubmittingChange:
+                onIsSubmittingChange: async (...eventArgs: any) => {
                   generateStateOnChangePropForCodeComponents(
                     $state,
                     "isSubmitting",
                     ["form", "isSubmitting"],
                     FormWrapper_Helpers
-                  ),
+                  ).apply(null, eventArgs);
+
+                  if (eventArgs.length > 1 && eventArgs[1]) {
+                    return;
+                  }
+                },
                 ref: ref => {
                   $refs["form"] = ref;
                 },
@@ -3681,12 +3735,12 @@ function PlasmicActivationNew__RenderFunc(props: {
                               }}
                             >
                               {
-                                "\u0631\u0627\u0647\u200c\u0627\u0646\u062f\u0627\u0632\u06cc"
+                                "\u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc\ud83d\udc4b"
                               }
                             </span>
                             <React.Fragment>
                               {
-                                "\n\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u060c \u0644\u0627\u0632\u0645\u0647 \u0627\u0628\u062a\u062f\u0627 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062a\u0635\u0644 \u0628\u0634\u0647."
+                                "\n\u0628\u0631\u0627\u06cc \u0631\u0627\u0647\u200c\u0627\u0646\u062f\u0627\u0632\u06cc \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u060c \u0644\u0627\u0632\u0645\u0647 \u0627\u0648\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0648\u0635\u0644\u0634  \u06a9\u0646\u06cc."
                               }
                             </React.Fragment>
                           </React.Fragment>
@@ -3751,11 +3805,17 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "isChecked"
                             ]) ?? false
                           }
-                          onChange={(...eventArgs) => {
-                            generateStateOnChangeProp($state, [
-                              "policiesCheckbox",
-                              "isChecked"
-                            ])(eventArgs[0]);
+                          onChange={async (...eventArgs: any) => {
+                            ((...eventArgs) => {
+                              generateStateOnChangeProp($state, [
+                                "policiesCheckbox",
+                                "isChecked"
+                              ])(eventArgs[0]);
+                            }).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
                           }}
                         >
                           <PlasmicLink__
@@ -3991,12 +4051,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                             "__wab_instance",
                             sty.jabamaPhoneInput
                           ),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["jabamaPhoneInput", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["jabamaPhoneInput", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: ``,
                           size: "large",
                           value: generateStateValueProp($state, [
@@ -4306,35 +4372,17 @@ function PlasmicActivationNew__RenderFunc(props: {
                       data-plasmic-override={overrides.jabamaVerify}
                       className={classNames("__wab_instance", sty.jabamaVerify)}
                       label={
-                        <React.Fragment>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__xed8V
-                            )}
-                          >
-                            {
-                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u0628\u0627\u0645\u0627:"
-                            }
-                          </div>
-                          <Tooltip
-                            className={classNames(
-                              "__wab_instance",
-                              sty.tooltip__iSuhf
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__zhcfd
-                              )}
-                            >
-                              {""}
-                            </div>
-                          </Tooltip>
-                        </React.Fragment>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__xed8V
+                          )}
+                        >
+                          {
+                            "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u0628\u0627\u0645\u0627:"
+                          }
+                        </div>
                       }
                       name={"jabamaOTP"}
                       rules={[
@@ -4351,25 +4399,20 @@ function PlasmicActivationNew__RenderFunc(props: {
                             "__wab_instance",
                             sty.jabamaOtpInput
                           ),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["jabamaOtpInput", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return undefined;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["jabamaOtpInput", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
                             }
-                          })(),
+                          },
+                          placeholder:
+                            "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
                           size: "large",
                           value: generateStateValueProp($state, [
                             "jabamaOtpInput",
@@ -4790,12 +4833,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                             "__wab_instance",
                             sty.jajigaPhoneInput
                           ),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["jajigaPhoneInput", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["jajigaPhoneInput", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: ``,
                           size: "large",
                           value: generateStateValueProp($state, [
@@ -5103,35 +5152,17 @@ function PlasmicActivationNew__RenderFunc(props: {
                       data-plasmic-override={overrides.jajigaVerify}
                       className={classNames("__wab_instance", sty.jajigaVerify)}
                       label={
-                        <React.Fragment>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___8Ej4Q
-                            )}
-                          >
-                            {
-                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u062c\u06cc\u06af\u0627:"
-                            }
-                          </div>
-                          <Tooltip
-                            className={classNames(
-                              "__wab_instance",
-                              sty.tooltip__v6SWj
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__sdQcx
-                              )}
-                            >
-                              {""}
-                            </div>
-                          </Tooltip>
-                        </React.Fragment>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___8Ej4Q
+                          )}
+                        >
+                          {
+                            "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062c\u0627\u062c\u06cc\u06af\u0627:"
+                          }
+                        </div>
                       }
                       name={"jajigaOTP"}
                       rules={[
@@ -5145,25 +5176,20 @@ function PlasmicActivationNew__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input6),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input6", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return undefined;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input6", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
                             }
-                          })(),
+                          },
+                          placeholder:
+                            "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input6",
@@ -5579,12 +5605,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                         const child$Props = {
                           autoFocus: true,
                           className: classNames("__wab_instance", sty.input9),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input9", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input9", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: ``,
                           size: "large",
                           value: generateStateValueProp($state, [
@@ -5922,35 +5954,17 @@ function PlasmicActivationNew__RenderFunc(props: {
                       data-plasmic-override={overrides.shabVerify}
                       className={classNames("__wab_instance", sty.shabVerify)}
                       label={
-                        <React.Fragment>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__hv4Vo
-                            )}
-                          >
-                            {
-                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0634\u0628:"
-                            }
-                          </div>
-                          <Tooltip
-                            className={classNames(
-                              "__wab_instance",
-                              sty.tooltip__kGoeQ
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__fGqon
-                              )}
-                            >
-                              {""}
-                            </div>
-                          </Tooltip>
-                        </React.Fragment>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__hv4Vo
+                          )}
+                        >
+                          {
+                            "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0634\u0628:"
+                          }
+                        </div>
                       }
                       name={"shabOTP"}
                       rules={[
@@ -5964,25 +5978,20 @@ function PlasmicActivationNew__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input10),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input10", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return undefined;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input10", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
                             }
-                          })(),
+                          },
+                          placeholder:
+                            "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input10",
@@ -6396,12 +6405,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input11),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input11", "value"],
-                            AntdInput_Helpers
-                          ),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input11", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
+                            }
+                          },
                           placeholder: ``,
                           size: "large",
                           value: generateStateValueProp($state, [
@@ -6717,35 +6732,17 @@ function PlasmicActivationNew__RenderFunc(props: {
                         sty.otaghakVerify
                       )}
                       label={
-                        <React.Fragment>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___5TXxI
-                            )}
-                          >
-                            {
-                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0627\u062a\u0627\u0642\u06a9:"
-                            }
-                          </div>
-                          <Tooltip
-                            className={classNames(
-                              "__wab_instance",
-                              sty.tooltip__av5Mw
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__hNaZw
-                              )}
-                            >
-                              {""}
-                            </div>
-                          </Tooltip>
-                        </React.Fragment>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___5TXxI
+                          )}
+                        >
+                          {
+                            "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0627\u062a\u0627\u0642\u06a9:"
+                          }
+                        </div>
                       }
                       name={"otaghakOTP"}
                       rules={[
@@ -6759,25 +6756,20 @@ function PlasmicActivationNew__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           className: classNames("__wab_instance", sty.input12),
-                          onChange: generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input12", "value"],
-                            AntdInput_Helpers
-                          ),
-                          placeholder: (() => {
-                            try {
-                              return undefined;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input12", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+
+                            if (eventArgs.length > 1 && eventArgs[1]) {
+                              return;
                             }
-                          })(),
+                          },
+                          placeholder:
+                            "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input12",
@@ -7073,331 +7065,35 @@ function PlasmicActivationNew__RenderFunc(props: {
                       </div>
                     </FormItemWrapper>
                   ) : null}
-                  <FormItemWrapper
-                    data-plasmic-name={"mihmanshoSend"}
-                    data-plasmic-override={overrides.mihmanshoSend}
-                    className={classNames("__wab_instance", sty.mihmanshoSend)}
-                    initialValue={(() => {
-                      try {
-                        return $state.apiRequest.data[0].phone;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
+                  {(() => {
+                    try {
+                      return $state.step == 10;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
                       }
-                    })()}
-                    label={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__mH3Hx
-                        )}
-                      >
-                        {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648:"
-                        }
-                      </div>
+                      throw e;
                     }
-                    name={"mihmanshophone"}
-                  >
-                    {(() => {
-                      const child$Props = {
-                        className: classNames("__wab_instance", sty.input13),
-                        onChange: generateStateOnChangePropForCodeComponents(
-                          $state,
-                          "value",
-                          ["input13", "value"],
-                          AntdInput_Helpers
-                        ),
-                        onPressEnter: async event => {
-                          const $steps = {};
-
-                          $steps["invokeGlobalAction"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    undefined,
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return undefined;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
-                          }
-                        },
-                        placeholder: ``,
-                        size: "large",
-                        value: generateStateValueProp($state, [
-                          "input13",
-                          "value"
-                        ])
-                      };
-                      initializeCodeComponentStates(
-                        $state,
-                        [
-                          {
-                            name: "value",
-                            plasmicStateName: "input13.value"
-                          }
-                        ],
-                        [],
-                        AntdInput_Helpers ?? {},
-                        child$Props
-                      );
-
-                      return (
-                        <AntdInput
-                          data-plasmic-name={"input13"}
-                          data-plasmic-override={overrides.input13}
-                          {...child$Props}
-                        />
-                      );
-                    })()}
+                  })() ? (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__eRoDw)}
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___91T8K
+                      )}
                     >
-                      <AntdButton
-                        data-plasmic-name={"mihmanshosend"}
-                        data-plasmic-override={overrides.mihmanshosend}
+                      <FormItemWrapper
+                        data-plasmic-name={"mihmanshoSend"}
+                        data-plasmic-override={overrides.mihmanshoSend}
                         className={classNames(
                           "__wab_instance",
-                          sty.mihmanshosend
+                          sty.mihmanshoSend
                         )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 2
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue + 1
-                                  );
-                                  return oldValue + 1;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
-                          ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
-                          }
-
-                          $steps["mihmanshoSend"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/mihmansho-send-otp",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return {
-                                          phone:
-                                            $state.form.value.mihmanshophone
-                                        };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["mihmanshoSend"] != null &&
-                            typeof $steps["mihmanshoSend"] === "object" &&
-                            typeof $steps["mihmanshoSend"].then === "function"
-                          ) {
-                            $steps["mihmanshoSend"] = await $steps[
-                              "mihmanshoSend"
-                            ];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__yTFsx
-                          )}
-                        >
-                          {
-                            "\u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
-                          }
-                        </div>
-                      </AntdButton>
-                      <AntdButton
-                        data-plasmic-name={"mihmanshosend6"}
-                        data-plasmic-override={overrides.mihmanshosend6}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.mihmanshosend6
-                        )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 0,
-                                  value: $state.step + 2
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
-                          ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__wmKfj
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ textDecorationLine: "underline" }}
-                            >
-                              {
-                                "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
-                              }
-                            </span>
-                          </React.Fragment>
-                        </div>
-                      </AntdButton>
-                    </div>
-                  </FormItemWrapper>
-                  <FormItemWrapper
-                    data-plasmic-name={"mihmanshoVerify"}
-                    data-plasmic-override={overrides.mihmanshoVerify}
-                    className={classNames(
-                      "__wab_instance",
-                      sty.mihmanshoVerify
-                    )}
-                    label={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__iIg1I
-                        )}
-                      >
-                        {
-                          "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648 (\u067e\u06cc\u0627\u0645\u06a9):"
-                        }
-                      </div>
-                    }
-                    name={"mihmanshoOTP"}
-                  >
-                    {(() => {
-                      const child$Props = {
-                        className: classNames("__wab_instance", sty.input14),
-                        onChange: generateStateOnChangePropForCodeComponents(
-                          $state,
-                          "value",
-                          ["input14", "value"],
-                          AntdInput_Helpers
-                        ),
-                        placeholder: (() => {
+                        initialValue={(() => {
                           try {
-                            return undefined;
+                            return $state.apiRequest.data[0].phone;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -7407,245 +7103,608 @@ function PlasmicActivationNew__RenderFunc(props: {
                             }
                             throw e;
                           }
-                        })(),
-                        size: "large",
-                        value: generateStateValueProp($state, [
-                          "input14",
-                          "value"
-                        ])
-                      };
-                      initializeCodeComponentStates(
-                        $state,
-                        [
-                          {
-                            name: "value",
-                            plasmicStateName: "input14.value"
-                          }
-                        ],
-                        [],
-                        AntdInput_Helpers ?? {},
-                        child$Props
-                      );
-
-                      return (
-                        <AntdInput
-                          data-plasmic-name={"input14"}
-                          data-plasmic-override={overrides.input14}
-                          {...child$Props}
-                        />
-                      );
-                    })()}
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__pwt8S)}
-                    >
-                      <AntdButton
-                        data-plasmic-name={"mihmanshoverify"}
-                        data-plasmic-override={overrides.mihmanshoverify}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.mihmanshoverify
-                        )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 2
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue + 1
-                                  );
-                                  return oldValue + 1;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
-                          ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
-                          }
-
-                          $steps["mihmanshoVerify"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/mihmansho-verify-otp",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return {
-                                          phone:
-                                            $state.form.value.mihmanshophone,
-                                          otp: $state.form.value.mihmanshoOTP
-                                        };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["mihmanshoVerify"] != null &&
-                            typeof $steps["mihmanshoVerify"] === "object" &&
-                            typeof $steps["mihmanshoVerify"].then === "function"
-                          ) {
-                            $steps["mihmanshoVerify"] = await $steps[
-                              "mihmanshoVerify"
-                            ];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
+                        })()}
+                        label={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__mH3Hx
+                            )}
+                          >
+                            {
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648:"
+                            }
+                          </div>
+                        }
+                        name={"mihmanshophone"}
                       >
+                        {(() => {
+                          const child$Props = {
+                            className: classNames(
+                              "__wab_instance",
+                              sty.input13
+                            ),
+                            onChange: async (...eventArgs: any) => {
+                              generateStateOnChangePropForCodeComponents(
+                                $state,
+                                "value",
+                                ["input13", "value"],
+                                AntdInput_Helpers
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
+                            onPressEnter: async event => {
+                              const $steps = {};
+
+                              $steps["invokeGlobalAction"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        undefined,
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return undefined;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["invokeGlobalAction"] != null &&
+                                typeof $steps["invokeGlobalAction"] ===
+                                  "object" &&
+                                typeof $steps["invokeGlobalAction"].then ===
+                                  "function"
+                              ) {
+                                $steps["invokeGlobalAction"] = await $steps[
+                                  "invokeGlobalAction"
+                                ];
+                              }
+                            },
+                            placeholder: ``,
+                            size: "large",
+                            value: generateStateValueProp($state, [
+                              "input13",
+                              "value"
+                            ])
+                          };
+                          initializeCodeComponentStates(
+                            $state,
+                            [
+                              {
+                                name: "value",
+                                plasmicStateName: "input13.value"
+                              }
+                            ],
+                            [],
+                            AntdInput_Helpers ?? {},
+                            child$Props
+                          );
+
+                          return (
+                            <AntdInput
+                              data-plasmic-name={"input13"}
+                              data-plasmic-override={overrides.input13}
+                              {...child$Props}
+                            />
+                          );
+                        })()}
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__do2Kb
+                            sty.freeBox__eRoDw
                           )}
                         >
-                          {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                          <AntdButton
+                            data-plasmic-name={"mihmanshosend"}
+                            data-plasmic-override={overrides.mihmanshosend}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.mihmanshosend
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["updateStep"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 2
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      const oldValue = $stateGet(
+                                        objRoot,
+                                        variablePath
+                                      );
+                                      $stateSet(
+                                        objRoot,
+                                        variablePath,
+                                        oldValue + 1
+                                      );
+                                      return oldValue + 1;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateStep"] != null &&
+                                typeof $steps["updateStep"] === "object" &&
+                                typeof $steps["updateStep"].then === "function"
+                              ) {
+                                $steps["updateStep"] = await $steps[
+                                  "updateStep"
+                                ];
+                              }
+
+                              $steps["mihmanshoSend"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/mihmansho-send-otp",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return {
+                                              phone:
+                                                $state.form.value.mihmanshophone
+                                            };
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["mihmanshoSend"] != null &&
+                                typeof $steps["mihmanshoSend"] === "object" &&
+                                typeof $steps["mihmanshoSend"].then ===
+                                  "function"
+                              ) {
+                                $steps["mihmanshoSend"] = await $steps[
+                                  "mihmanshoSend"
+                                ];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__yTFsx
+                              )}
+                            >
+                              {
+                                "\u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
+                              }
+                            </div>
+                          </AntdButton>
+                          <AntdButton
+                            data-plasmic-name={"mihmanshosend6"}
+                            data-plasmic-override={overrides.mihmanshosend6}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.mihmanshosend6
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["updateStep"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 0,
+                                      value: $state.step + 2
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateStep"] != null &&
+                                typeof $steps["updateStep"] === "object" &&
+                                typeof $steps["updateStep"].then === "function"
+                              ) {
+                                $steps["updateStep"] = await $steps[
+                                  "updateStep"
+                                ];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__wmKfj
+                              )}
+                            >
+                              <React.Fragment>
+                                <span
+                                  className={
+                                    "plasmic_default__all plasmic_default__span"
+                                  }
+                                  style={{ textDecorationLine: "underline" }}
+                                >
+                                  {
+                                    "\u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                  }
+                                </span>
+                              </React.Fragment>
+                            </div>
+                          </AntdButton>
                         </div>
-                      </AntdButton>
-                      <AntdButton
-                        data-plasmic-name={"mihmanshoverify7"}
-                        data-plasmic-override={overrides.mihmanshoverify7}
+                      </FormItemWrapper>
+                      <FormItemWrapper
+                        data-plasmic-name={"mihmanshoVerify"}
+                        data-plasmic-override={overrides.mihmanshoVerify}
                         className={classNames(
                           "__wab_instance",
-                          sty.mihmanshoverify7
+                          sty.mihmanshoVerify
                         )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 3
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
-                          ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
-                          }
-
-                          $steps["mockRequest"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/e751d172-6387-485d-be13-c2782c4fc5ef",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return undefined;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["mockRequest"] != null &&
-                            typeof $steps["mockRequest"] === "object" &&
-                            typeof $steps["mockRequest"].then === "function"
-                          ) {
-                            $steps["mockRequest"] = await $steps["mockRequest"];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
+                        label={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__iIg1I
+                            )}
+                          >
+                            {
+                              "\u0631\u0645\u0632 \u0639\u0628\u0648\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648:"
+                            }
+                          </div>
+                        }
+                        name={"mihmanshoPass"}
                       >
+                        {(() => {
+                          const child$Props = {
+                            className: classNames(
+                              "__wab_instance",
+                              sty.input14
+                            ),
+                            onChange: async (...eventArgs: any) => {
+                              generateStateOnChangePropForCodeComponents(
+                                $state,
+                                "value",
+                                ["input14", "value"],
+                                AntdInput_Helpers
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
+                            placeholder: (() => {
+                              try {
+                                return undefined;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            size: "large",
+                            value: generateStateValueProp($state, [
+                              "input14",
+                              "value"
+                            ])
+                          };
+                          initializeCodeComponentStates(
+                            $state,
+                            [
+                              {
+                                name: "value",
+                                plasmicStateName: "input14.value"
+                              }
+                            ],
+                            [],
+                            AntdInput_Helpers ?? {},
+                            child$Props
+                          );
+
+                          return (
+                            <AntdInput
+                              data-plasmic-name={"input14"}
+                              data-plasmic-override={overrides.input14}
+                              {...child$Props}
+                            />
+                          );
+                        })()}
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__kbZYu
+                            sty.freeBox__pwt8S
                           )}
                         >
-                          {"\u0642\u0628\u0644\u06cc"}
+                          <AntdButton
+                            data-plasmic-name={"mihmanshoverify"}
+                            data-plasmic-override={overrides.mihmanshoverify}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.mihmanshoverify
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["updateStep"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 2
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      const oldValue = $stateGet(
+                                        objRoot,
+                                        variablePath
+                                      );
+                                      $stateSet(
+                                        objRoot,
+                                        variablePath,
+                                        oldValue + 1
+                                      );
+                                      return oldValue + 1;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateStep"] != null &&
+                                typeof $steps["updateStep"] === "object" &&
+                                typeof $steps["updateStep"].then === "function"
+                              ) {
+                                $steps["updateStep"] = await $steps[
+                                  "updateStep"
+                                ];
+                              }
+
+                              $steps["mihmanshoVerify"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://nazanintest.app.n8n.cloud/webhook/mihmansho-send-otp",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return {
+                                              phone:
+                                                $state.form.value
+                                                  .mihmanshophone,
+                                              pass: $state.form.value
+                                                .mihmanshoPass
+                                            };
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["mihmanshoVerify"] != null &&
+                                typeof $steps["mihmanshoVerify"] === "object" &&
+                                typeof $steps["mihmanshoVerify"].then ===
+                                  "function"
+                              ) {
+                                $steps["mihmanshoVerify"] = await $steps[
+                                  "mihmanshoVerify"
+                                ];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__do2Kb
+                              )}
+                            >
+                              {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                            </div>
+                          </AntdButton>
+                          <AntdButton
+                            data-plasmic-name={"mihmanshoverify7"}
+                            data-plasmic-override={overrides.mihmanshoverify7}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.mihmanshoverify7
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["updateStep"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 3
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      const oldValue = $stateGet(
+                                        objRoot,
+                                        variablePath
+                                      );
+                                      $stateSet(
+                                        objRoot,
+                                        variablePath,
+                                        oldValue - 1
+                                      );
+                                      return oldValue - 1;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateStep"] != null &&
+                                typeof $steps["updateStep"] === "object" &&
+                                typeof $steps["updateStep"].then === "function"
+                              ) {
+                                $steps["updateStep"] = await $steps[
+                                  "updateStep"
+                                ];
+                              }
+
+                              $steps["mockRequest"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/e751d172-6387-485d-be13-c2782c4fc5ef",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return undefined;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["mockRequest"] != null &&
+                                typeof $steps["mockRequest"] === "object" &&
+                                typeof $steps["mockRequest"].then === "function"
+                              ) {
+                                $steps["mockRequest"] = await $steps[
+                                  "mockRequest"
+                                ];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__kbZYu
+                              )}
+                            >
+                              {"\u0642\u0628\u0644\u06cc"}
+                            </div>
+                          </AntdButton>
                         </div>
-                      </AntdButton>
+                      </FormItemWrapper>
                     </div>
-                  </FormItemWrapper>
+                  ) : null}
                   {(() => {
                     try {
                       return (
@@ -7791,13 +7850,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input15
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input15", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: ``,
                             size: "large",
                             value: generateStateValueProp($state, [
@@ -7860,13 +7924,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input16
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input16", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: (() => {
                               try {
                                 return undefined;
@@ -8088,7 +8157,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         undefined,
-                                        "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062b\u0628\u062a \u0634\u062f! \u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0648\u0627\u0631\u062f \u062a\u0642\u0648\u06cc\u0645 \u0628\u0634\u06cc",
+                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
                                         "bottom-center",
                                         6000
                                       ]
@@ -8441,12 +8510,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                     {(() => {
                       const child$Props = {
                         className: classNames("__wab_instance", sty.input17),
-                        onChange: generateStateOnChangePropForCodeComponents(
-                          $state,
-                          "value",
-                          ["input17", "value"],
-                          AntdInput_Helpers
-                        ),
+                        onChange: async (...eventArgs: any) => {
+                          generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "value",
+                            ["input17", "value"],
+                            AntdInput_Helpers
+                          ).apply(null, eventArgs);
+
+                          if (eventArgs.length > 1 && eventArgs[1]) {
+                            return;
+                          }
+                        },
                         placeholder: ``,
                         size: "large",
                         value: generateStateValueProp($state, [
@@ -8695,13 +8770,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                                 "__wab_instance",
                                 sty.input18
                               ),
-                              onChange:
+                              onChange: async (...eventArgs: any) => {
                                 generateStateOnChangePropForCodeComponents(
                                   $state,
                                   "value",
                                   ["input18", "value"],
                                   AntdInput_Helpers
-                                ),
+                                ).apply(null, eventArgs);
+
+                                if (eventArgs.length > 1 && eventArgs[1]) {
+                                  return;
+                                }
+                              },
                               placeholder: (() => {
                                 try {
                                   return undefined;
@@ -8978,13 +9058,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input19
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input19", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: ``,
                             size: "large",
                             value: generateStateValueProp($state, [
@@ -9046,13 +9131,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input20
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input20", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: ``,
                             size: "large",
                             value: generateStateValueProp($state, [
@@ -9114,13 +9204,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input21
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input21", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: ``,
                             size: "large",
                             value: generateStateValueProp($state, [
@@ -9199,13 +9294,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input22
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input22", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: ``,
                             size: "large",
                             value: generateStateValueProp($state, [
@@ -9284,13 +9384,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input23
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input23", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: ``,
                             size: "large",
                             value: generateStateValueProp($state, [
@@ -9369,13 +9474,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input24
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input24", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: ``,
                             size: "large",
                             value: generateStateValueProp($state, [
@@ -9437,13 +9547,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               "__wab_instance",
                               sty.input27
                             ),
-                            onChange:
+                            onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
                                 "value",
                                 ["input27", "value"],
                                 AntdInput_Helpers
-                              ),
+                              ).apply(null, eventArgs);
+
+                              if (eventArgs.length > 1 && eventArgs[1]) {
+                                return;
+                              }
+                            },
                             placeholder: ``,
                             size: "large",
                             value: generateStateValueProp($state, [
@@ -9771,7 +9886,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062a\u0645\u0627\u0645\u06cc \u0633\u0627\u06cc\u062a \u0647\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a"
+                    "\u062a\u0645\u0627\u0645\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a"
                   }
                 </div>
               </div>
@@ -9795,11 +9910,24 @@ function PlasmicActivationNew__RenderFunc(props: {
               data-plasmic-override={overrides.quotes}
               className={classNames(projectcss.all, sty.quotes)}
             >
-              <Testimonial
-                data-plasmic-name={"testimonial"}
-                data-plasmic-override={overrides.testimonial}
-                className={classNames("__wab_instance", sty.testimonial)}
-              />
+              <div className={classNames(projectcss.all, sty.freeBox__fSXj5)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___4JwlT
+                  )}
+                >
+                  {
+                    "\u0646\u0638\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u0645\u0648\u0631\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc\u0647\u061f"
+                  }
+                </div>
+                <Testimonial
+                  data-plasmic-name={"testimonial"}
+                  data-plasmic-override={overrides.testimonial}
+                  className={classNames("__wab_instance", sty.testimonial)}
+                />
+              </div>
             </div>
           ) : null}
           <div className={classNames(projectcss.all, sty.freeBox___69Q1V)}>

@@ -660,6 +660,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicTestimonial.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "AFCQqK02hfZM",
+          "name": "Yalda",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicYalda.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/yalda.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicYalda.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/yalda"
         }
       ],
       "icons": [
@@ -1129,6 +1143,41 @@
           "id": "l0Ijs_azoVTm",
           "name": "pin.png",
           "filePath": "../public/plasmic/website_starter/images/pinPng.png"
+        },
+        {
+          "id": "QiN31aICUeZV",
+          "name": "yalda.jpg",
+          "filePath": "../public/plasmic/website_starter/images/yaldaJpg.jpg"
+        },
+        {
+          "id": "iRu3CqSY-Xq8",
+          "name": "13549867.png",
+          "filePath": "../public/plasmic/website_starter/images/_13549867Png.png"
+        },
+        {
+          "id": "irfT3VLRILXG",
+          "name": "off.png",
+          "filePath": "../public/plasmic/website_starter/images/offPng.png"
+        },
+        {
+          "id": "k5zhrVe5t_90",
+          "name": "yalda2.jpg",
+          "filePath": "../public/plasmic/website_starter/images/yalda2Jpg.jpg"
+        },
+        {
+          "id": "QeQDHbbuni8V",
+          "name": "villa.png",
+          "filePath": "../public/plasmic/website_starter/images/villaPng.png"
+        },
+        {
+          "id": "m02kmnq5WGMX",
+          "name": "ADD.png",
+          "filePath": "../public/plasmic/website_starter/images/addPng.png"
+        },
+        {
+          "id": "90JTk6Y4Mvwa",
+          "name": "yalda.jpg 2",
+          "filePath": "../public/plasmic/website_starter/images/yaldaJpg2.jpg"
         }
       ],
       "indirect": false,
@@ -1912,6 +1961,28 @@
       ],
       "customFunctions": [],
       "jsBundleThemes": []
+    },
+    {
+      "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
+      "projectApiToken": "DIkcfhBwjMCJSjcxfBkMuy4NImyytq5EWylxVcpS9t9EpdhnPQuBgBGxmk00AB1itMFa1KXTxOKnrjN2PN9nlA",
+      "projectName": "react-awesome-reveal",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_awesome_reveal/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6s1FdhksG",
+          "name": "Reveal",
+          "displayName": "hostless-reveal",
+          "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
+        }
+      ],
+      "customFunctions": []
     }
   ],
   "globalVariants": {

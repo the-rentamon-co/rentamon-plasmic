@@ -308,10 +308,16 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 [sty["pcls_tXYB74UUZC2B"]]: true
               })}
               modalScopeClassName={sty["modal__modal"]}
-              onOpenChange={generateStateOnChangeProp($state, [
-                "modal",
-                "open"
-              ])}
+              onOpenChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                  null,
+                  eventArgs
+                );
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
               open={generateStateValueProp($state, ["modal", "open"])}
               title={
                 <div
@@ -870,12 +876,36 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               errorDisplay={null}
               loadingDisplay={null}
               method={"GET"}
-              onError={generateStateOnChangeProp($state, ["profile", "error"])}
-              onLoading={generateStateOnChangeProp($state, [
-                "profile",
-                "loading"
-              ])}
-              onSuccess={generateStateOnChangeProp($state, ["profile", "data"])}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "error"]).apply(
+                  null,
+                  eventArgs
+                );
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "loading"]).apply(
+                  null,
+                  eventArgs
+                );
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+
+                if (eventArgs.length > 1 && eventArgs[1]) {
+                  return;
+                }
+              }}
               url={(() => {
                 try {
                   return `https://api.rentamon.com/api/user_info?property_id=${$state.propId}`;
@@ -1015,18 +1045,36 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     </div>
                   }
                   method={"GET"}
-                  onError={generateStateOnChangeProp($state, [
-                    "apiRequest",
-                    "error"
-                  ])}
-                  onLoading={generateStateOnChangeProp($state, [
-                    "apiRequest",
-                    "loading"
-                  ])}
-                  onSuccess={generateStateOnChangeProp($state, [
-                    "apiRequest",
-                    "data"
-                  ])}
+                  onError={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest",
+                      "error"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
+                  onLoading={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest",
+                      "loading"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
+                  onSuccess={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest",
+                      "data"
+                    ]).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+                  }}
                   url={(() => {
                     try {
                       return `https://api.rentamon.com/api/website_statuses/?property_id=${$state.propId}`;
@@ -1196,6 +1244,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         eventArgs[0]
                       );
                     }).apply(null, eventArgs);
+
+                    if (eventArgs.length > 1 && eventArgs[1]) {
+                      return;
+                    }
+
                     (async value => {
                       const $steps = {};
 
