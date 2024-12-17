@@ -1,7 +1,6 @@
 import { Calendar, DateObject } from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
-
 import { CodeComponentMeta } from "@plasmicapp/host";
 import { cn } from "@/lib/utils";
 import React, { useMemo } from "react";
@@ -30,9 +29,20 @@ interface DatePickerProps {
   dayCell?: React.ComponentType<DayCellProps>;
 }
 
+// تعریف انواع Month و Year
+interface MonthType {
+  number: number;
+  index: number;
+  name: string;
+  shortName: string;
+}
+
+interface YearType {
+  number: number;
+}
+
 // تابع کمکی برای محاسبه زمان شروع روز (بدون moment)
 function startOfDayUnix(timestampInSeconds: number): number {
-  // تعداد ثانیه‌های یک روز: 86400
   return Math.floor(timestampInSeconds / 86400) * 86400;
 }
 
@@ -94,12 +104,12 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         }
       }}
       onMonthChange={(val: DateObject) => {
-        // مستقیماً از val.month استفاده کنید
-        onMonthChange(val.month);
+        const m = val.month as unknown as MonthType;
+        onMonthChange(m.number);
       }}
       onYearChange={(val: DateObject) => {
-        // مستقیماً از val.year استفاده کنید
-        onYearChange(val.year);
+        const y = val.year as unknown as YearType;
+        onYearChange(y.number);
       }}
       className={cn("fragment", { "custom-day-cell": customDayCell })}
       {...(isFaLocale && {
@@ -124,7 +134,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         isSameDate: (d1: DateObject, d2: DateObject) => boolean;
         selectedDate: DateObject | DateObject[];
       }) => {
-        // محاسبه‌ی ابتدای روز فقط یکبار
         const dayUnix = startOfDayUnix(date.unix);
 
         const isHoliday = holidaysSet.has(dayUnix);
