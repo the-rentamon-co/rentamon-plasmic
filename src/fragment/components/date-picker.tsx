@@ -233,7 +233,7 @@ export const datePickerMeta: CodeComponentMeta<DatePickerProps> = {
     holidays: {
       defaultValue: [],
       type: "array",
-      helpText: "Array of day timestamps, e.g., [1710534600, 1710707400].",
+      helpText: "Array of day timestamps, e.g., [1710534600, 1710707402].",
     },
     customDayCell: "boolean",
     dayCell: {
