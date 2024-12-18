@@ -580,177 +580,57 @@ function PlasmicCalendar2__RenderFunc(props: {
                   throw e;
                 }
               })()}
-              dayStatus={
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? (() => {
-                      try {
-                        return (() => {
-                          function convertPersianNumbersToEnglish(str) {
-                            const persianNumbers = "۰۱۲۳۴۵۶۷۸۹";
-                            return str.replace(/[۰-۹]/g, char =>
-                              persianNumbers.indexOf(char)
-                            );
-                          }
-                          function isPastDate(
-                            targetY,
-                            targetM,
-                            targetD,
-                            currentY,
-                            currentM,
-                            currentD
-                          ) {
-                            if (targetY < currentY) return true;
-                            if (targetY === currentY && targetM < currentM)
-                              return true;
-                            if (
-                              targetY === currentY &&
-                              targetM === currentM &&
-                              targetD < currentD
-                            )
-                              return true;
-                            return false;
-                          }
-                          function isOutOfNextMonthRange(
-                            targetY,
-                            targetM,
-                            nextY,
-                            nextM
-                          ) {
-                            if (targetY > nextY) return true;
-                            if (targetY === nextY && targetM > nextM)
-                              return true;
-                            return false;
-                          }
-                          const currentDate = new Date();
-                          const nextMonthDate = new Date(currentDate);
-                          nextMonthDate.setMonth(currentDate.getMonth() + 1);
-                          const [currentYear, currentMonth, currentDay] =
-                            currentDate
-                              .toLocaleDateString("fa")
-                              .split("/")
-                              .map(val =>
-                                parseInt(convertPersianNumbersToEnglish(val))
-                              );
-                          const [nextMonthYear, nextMonth] = nextMonthDate
-                            .toLocaleDateString("fa")
-                            .split("/")
-                            .slice(0, 2)
-                            .map(val =>
-                              parseInt(convertPersianNumbersToEnglish(val))
-                            );
-                          function getDayClass(dateProps, calendarData) {
-                            const targetDate = new Date(dateProps.unix * 1000);
-                            const [targetYear, targetMonth, targetDay] =
-                              targetDate
-                                .toLocaleDateString("fa")
-                                .split("/")
-                                .map(val =>
-                                  parseInt(convertPersianNumbersToEnglish(val))
-                                );
-                            const dayIndex = dateProps.date.day - 1;
-                            const calendarItem = calendarData[dayIndex] || {};
-                            if (
-                              isPastDate(
-                                targetYear,
-                                targetMonth,
-                                targetDay,
-                                currentYear,
-                                currentMonth,
-                                currentDay
-                              ) ||
-                              isOutOfNextMonthRange(
-                                targetYear,
-                                targetMonth,
-                                nextMonthYear,
-                                nextMonth
-                              )
-                            ) {
-                              return "disabled";
-                            }
-                            if (dateProps.isSelected) return "selected";
-                            if (calendarItem.status === "reserved")
-                              return "reserved";
-                            if (calendarItem.status === "blocked")
-                              return "blocked";
-                            if (
-                              calendarItem.discount_percentage &&
-                              calendarItem.discount_percentage > 0
-                            )
-                              return "discount";
-                            return calendarItem.status || "";
-                            return calendarItem.status || "";
-                          }
-                          const className = getDayClass(
-                            dateProps,
-                            $state.apiRequest.data.calendar
-                          );
-                          return className;
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return [];
-                        }
-                        throw e;
+              dayStatus={(() => {
+                try {
+                  return (() => {
+                    const currentDate = new Date();
+                    const yesterdayDate = new Date(
+                      currentDate.getTime() - 24 * 60 * 60 * 1000
+                    );
+                    const yesterdayTimestamp = Math.floor(
+                      yesterdayDate.getTime() / 1000
+                    );
+                    const minTimestamp = yesterdayTimestamp;
+                    const maxTimestamp = 1739945463;
+                    function getDayClass(dateProps, calendarData) {
+                      const dayIndex = dateProps.date.day - 1;
+                      const calendarItem = calendarData[dayIndex] || {};
+                      if (
+                        dateProps.unix < minTimestamp ||
+                        dateProps.unix > maxTimestamp
+                      ) {
+                        return "disabled";
                       }
-                    })()
-                  : (() => {
-                      try {
-                        return (() => {
-                          const currentDate = new Date();
-                          const yesterdayDate = new Date(
-                            currentDate.getTime() - 24 * 60 * 60 * 1000
-                          );
-                          const yesterdayTimestamp = Math.floor(
-                            yesterdayDate.getTime() / 1000
-                          );
-                          const minTimestamp = yesterdayTimestamp;
-                          const maxTimestamp = 1739945463;
-                          function getDayClass(dateProps, calendarData) {
-                            const dayIndex = dateProps.date.day - 1;
-                            const calendarItem = calendarData[dayIndex] || {};
-                            if (
-                              dateProps.unix < minTimestamp ||
-                              dateProps.unix > maxTimestamp
-                            ) {
-                              return "disabled";
-                            }
-                            if (
-                              $state.fragmentDatePicker.values.includes(
-                                dateProps.unix
-                              )
-                            )
-                              return "selected";
-                            if (calendarItem.status === "reserved")
-                              return "reserved";
-                            if (calendarItem.status === "blocked")
-                              return "blocked";
-                            if (
-                              calendarItem.discount_percentage &&
-                              calendarItem.discount_percentage > 0
-                            )
-                              return "discount";
-                            return calendarItem.status || "";
-                          }
-                          const className = getDayClass(
-                            dateProps,
-                            $state.apiRequest.data.calendar
-                          );
-                          return className;
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return [];
-                        }
-                        throw e;
-                      }
-                    })()
-              }
+                      if (
+                        $state.fragmentDatePicker.values.includes(
+                          dateProps.unix
+                        )
+                      )
+                        return "selected";
+                      if (calendarItem.status === "reserved") return "reserved";
+                      if (calendarItem.status === "blocked") return "blocked";
+                      if (
+                        calendarItem.discount_percentage &&
+                        calendarItem.discount_percentage > 0
+                      )
+                        return "discount";
+                      return calendarItem.status || "";
+                    }
+                    return getDayClass(
+                      dateProps,
+                      $state.apiRequest.data.calendar
+                    );
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return [];
+                  }
+                  throw e;
+                }
+              })()}
               holidays={(() => {
                 try {
                   return undefined;
@@ -796,79 +676,36 @@ function PlasmicCalendar2__RenderFunc(props: {
                   throw e;
                 }
               })()}
-              price={
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? (() => {
-                      try {
-                        return (() => {
-                          const calendarItem =
-                            $state.apiRequest.data.calendar[
-                              dateProps.date.day - 1
-                            ];
-                          if (calendarItem) {
-                            const {
-                              price = 0,
-                              discount_percentage: discountPercentage = 0
-                            } = calendarItem;
-                            const finalPrice =
-                              price * (1 - discountPercentage / 100);
-                            const roundedPrice = Math.round(finalPrice / 1000);
-                            const formattedPersianPrice = roundedPrice
-                              ? new Intl.NumberFormat("fa-IR").format(
-                                  roundedPrice
-                                )
-                              : null;
-                            return formattedPersianPrice;
-                          } else {
-                            return null;
-                          }
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()
-                  : (() => {
-                      try {
-                        return (() => {
-                          const calendarItem =
-                            $state.apiRequest.data.calendar[
-                              dateProps.date.day - 1
-                            ];
-                          if (calendarItem) {
-                            const {
-                              price = 0,
-                              discount_percentage: discountPercentage = 0
-                            } = calendarItem;
-                            const finalPrice =
-                              price * (1 - discountPercentage / 100);
-                            const roundedPrice = Math.round(finalPrice / 1000);
-                            const formattedPersianPrice = roundedPrice
-                              ? new Intl.NumberFormat("fa-IR").format(
-                                  roundedPrice
-                                )
-                              : null;
-                            return formattedPersianPrice;
-                          } else {
-                            return null;
-                          }
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()
-              }
+              price={(() => {
+                try {
+                  return (() => {
+                    const calendarItem =
+                      $state.apiRequest.data.calendar[dateProps.date.day - 1];
+                    if (calendarItem) {
+                      const {
+                        price = 0,
+                        discount_percentage: discountPercentage = 0
+                      } = calendarItem;
+                      const finalPrice = price * (1 - discountPercentage / 100);
+                      const roundedPrice = Math.round(finalPrice / 1000);
+                      const formattedPersianPrice = roundedPrice
+                        ? new Intl.NumberFormat("fa-IR").format(roundedPrice)
+                        : null;
+                      return formattedPersianPrice;
+                    } else {
+                      return null;
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
               selected={(() => {
                 try {
                   return $state.fragmentDatePicker.values.includes(
