@@ -140,7 +140,7 @@ export type PlasmicActivationNew__OverridesType = {
   true6?: Flex__<typeof PlasmicImg__>;
   false6?: Flex__<typeof PlasmicImg__>;
   add6?: Flex__<typeof PlasmicImg__>;
-  mehmansho?: Flex__<"div">;
+  mihmansho2?: Flex__<"div">;
   paltform7?: Flex__<typeof PlasmicImg__>;
   true7?: Flex__<typeof PlasmicImg__>;
   false7?: Flex__<typeof PlasmicImg__>;
@@ -195,8 +195,9 @@ export type PlasmicActivationNew__OverridesType = {
   mihmanshosend6?: Flex__<typeof AntdButton>;
   mihmanshoVerify?: Flex__<typeof FormItemWrapper>;
   input14?: Flex__<typeof AntdInput>;
-  mihmanshoverify?: Flex__<typeof AntdButton>;
-  mihmanshoverify7?: Flex__<typeof AntdButton>;
+  mihmanshoVerify3?: Flex__<typeof AntdButton>;
+  mihmanshoBack3?: Flex__<typeof AntdButton>;
+  mihmanshoSkip4?: Flex__<typeof AntdButton>;
   input15?: Flex__<typeof AntdInput>;
   input16?: Flex__<typeof AntdInput>;
   homsaVerify?: Flex__<typeof AntdButton>;
@@ -2973,9 +2974,80 @@ function PlasmicActivationNew__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"mehmansho"}
-                    data-plasmic-override={overrides.mehmansho}
-                    className={classNames(projectcss.all, sty.mehmansho)}
+                    data-plasmic-name={"mihmansho2"}
+                    data-plasmic-override={overrides.mihmansho2}
+                    className={classNames(projectcss.all, sty.mihmansho2)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateInput6Value"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["input6", "value"]
+                              },
+                              operation: 0,
+                              value: (() => {
+                                if (
+                                  $state.platformstatus.status.mihmansho !==
+                                  true
+                                ) {
+                                  return ($state.step = 10);
+                                }
+                              })()
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateInput6Value"] != null &&
+                        typeof $steps["updateInput6Value"] === "object" &&
+                        typeof $steps["updateInput6Value"].then === "function"
+                      ) {
+                        $steps["updateInput6Value"] = await $steps[
+                          "updateInput6Value"
+                        ];
+                      }
+
+                      $steps["updateInput6Value2"] =
+                        $state.platformstatus.status.mihmansho == true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["updateInput6Value2"] != null &&
+                        typeof $steps["updateInput6Value2"] === "object" &&
+                        typeof $steps["updateInput6Value2"].then === "function"
+                      ) {
+                        $steps["updateInput6Value2"] = await $steps[
+                          "updateInput6Value2"
+                        ];
+                      }
+                    }}
                   >
                     <div
                       className={classNames(projectcss.all, sty.freeBox__xfhh6)}
@@ -3017,8 +3089,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   return (() => {
                                     if (
                                       !(
-                                        "mehmansho" in
-                                        $state.apiRequest2.data.status
+                                        "mihmansho" in
+                                        $state.platformstatus.status
                                       )
                                     ) {
                                       return "disable";
@@ -3057,7 +3129,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         try {
                           return (() => {
                             if (
-                              $state.platformstatus.status.mehmansho !== true
+                              $state.platformstatus.status.mihmansho !== true
                             ) {
                               return false;
                             } else {
@@ -3087,9 +3159,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image10.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image8.svg",
+                            fullWidth: 30,
+                            fullHeight: 30,
                             aspectRatio: 1
                           }}
                         />
@@ -3098,7 +3170,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         try {
                           return (() => {
                             if (
-                              !("mehmansho" in $state.platformstatus.status)
+                              !("mihmansho" in $state.platformstatus.status)
                             ) {
                               return true;
                             } else {
@@ -3137,7 +3209,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                         try {
                           return (() => {
                             if (
-                              $state.apiRequest2.data.status.mehmansho !== false
+                              $state.platformstatus.status.mihmansho !== false
                             ) {
                               return false;
                             } else {
@@ -3210,8 +3282,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                 return (() => {
                                   if (
                                     !(
-                                      "mehmansho" in
-                                      $state.apiRequest2.data.status
+                                      "mihmansho" in
+                                      $state.platformstatus.status
                                     )
                                   ) {
                                     return "disable";
@@ -7111,16 +7183,103 @@ function PlasmicActivationNew__RenderFunc(props: {
                           <div
                             className={classNames(
                               projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__mH3Hx
+                              sty.freeBox__hAxPb
                             )}
                           >
-                            {
-                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648:"
-                            }
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__hOySy
+                              )}
+                            >
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__eprZj)}
+                                displayHeight={"auto"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"70%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "114px"
+                                    : "auto"
+                                }
+                                height={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "120"
+                                    : "120"
+                                }
+                                loading={"lazy"}
+                                src={
+                                  "https://rentamon.com/wp-content/uploads/2024/02/mihmansho2.png"
+                                }
+                                width={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "120"
+                                    : "120"
+                                }
+                              />
+                            </div>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__aoJs
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__o8BtQ
+                                )}
+                              >
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return $ctx.fetchedData.list[0].url;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___6Z0J8
+                                )}
+                              >
+                                {
+                                  "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648:"
+                                }
+                              </div>
+                            </div>
                           </div>
                         }
                         name={"mihmanshophone"}
+                        rules={[
+                          {
+                            ruleType: "required",
+                            message:
+                              "\u0644\u0637\u0641\u0627 \u0634\u0645\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                          },
+
+                          {
+                            ruleType: "min",
+                            length: 11,
+                            message:
+                              "\u0634\u0645\u0627\u0631\u0647 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                          }
+                        ]}
                       >
                         {(() => {
                           const child$Props = {
@@ -7422,6 +7581,13 @@ function PlasmicActivationNew__RenderFunc(props: {
                           </div>
                         }
                         name={"mihmanshoPass"}
+                        rules={[
+                          {
+                            ruleType: "required",
+                            message:
+                              "\u0644\u0637\u0641\u0627 \u0631\u0645\u0632 \u0639\u0628\u0648\u0631 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                          }
+                        ]}
                       >
                         {(() => {
                           const child$Props = {
@@ -7484,79 +7650,141 @@ function PlasmicActivationNew__RenderFunc(props: {
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__pwt8S
+                            sty.freeBox__vGf6E
                           )}
                         >
                           <AntdButton
-                            data-plasmic-name={"mihmanshoverify"}
-                            data-plasmic-override={overrides.mihmanshoverify}
+                            data-plasmic-name={"mihmanshoVerify3"}
+                            data-plasmic-override={overrides.mihmanshoVerify3}
                             className={classNames(
                               "__wab_instance",
-                              sty.mihmanshoverify
+                              sty.mihmanshoVerify3
                             )}
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["updateStep"] = false
+                              $steps["goToHttpsRentamonComPanels"] = true
                                 ? (() => {
                                     const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 2
+                                      destination: "https://rentamon.com/panels"
                                     };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
                                       }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        oldValue + 1
-                                      );
-                                      return oldValue + 1;
                                     })?.apply(null, [actionArgs]);
                                   })()
                                 : undefined;
                               if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
+                                $steps["goToHttpsRentamonComPanels"] != null &&
+                                typeof $steps["goToHttpsRentamonComPanels"] ===
+                                  "object" &&
+                                typeof $steps["goToHttpsRentamonComPanels"]
+                                  .then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
+                                $steps["goToHttpsRentamonComPanels"] =
+                                  await $steps["goToHttpsRentamonComPanels"];
+                              }
+
+                              $steps["mihmanshoVerify"] =
+                                $state.form.value.mihmanshophone !==
+                                  undefined &&
+                                $state.form.value.mihmanshophone.length >= 11 &&
+                                $state.form.value.mihmanshoPass !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://gateway.rentamon.com/webhook/mihmansho",
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return {
+                                                phone:
+                                                  $state.form.value
+                                                    .mihmanshophone,
+                                                otp: $state.form.value
+                                                  .mihmanshoPass
+                                              };
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["mihmanshoVerify"] != null &&
+                                typeof $steps["mihmanshoVerify"] === "object" &&
+                                typeof $steps["mihmanshoVerify"].then ===
+                                  "function"
+                              ) {
+                                $steps["mihmanshoVerify"] = await $steps[
+                                  "mihmanshoVerify"
                                 ];
                               }
 
-                              $steps["mihmanshoVerify"] = true
+                              $steps["connectionStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://nazanintest.app.n8n.cloud/webhook/mihmansho-send-otp",
+                                        "https://gateway.rentamon.com/webhook/connection",
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone:
-                                                $state.form.value
-                                                  .mihmanshophone,
-                                              pass: $state.form.value
-                                                .mihmanshoPass
-                                            };
+                                            return (
+                                              "jabama=" +
+                                              ($state.form.value.jabamaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", shab=" +
+                                              ($state.form.value.shabphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", jajiga=" +
+                                              ($state.form.value.jajigaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", otaghak=" +
+                                              ($state.form.value
+                                                .otaghakphone !== ""
+                                                ? "true"
+                                                : "false") +
+                                              ", homsa=" +
+                                              ($state.form.value.homsaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", mihmansho=" +
+                                              ($state.form.value
+                                                .mihmanshophone !== ""
+                                                ? "true"
+                                                : "false")
+                                            );
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -7576,13 +7804,109 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["mihmanshoVerify"] != null &&
-                                typeof $steps["mihmanshoVerify"] === "object" &&
-                                typeof $steps["mihmanshoVerify"].then ===
+                                $steps["connectionStatus"] != null &&
+                                typeof $steps["connectionStatus"] ===
+                                  "object" &&
+                                typeof $steps["connectionStatus"].then ===
                                   "function"
                               ) {
-                                $steps["mihmanshoVerify"] = await $steps[
-                                  "mihmanshoVerify"
+                                $steps["connectionStatus"] = await $steps[
+                                  "connectionStatus"
+                                ];
+                              }
+
+                              $steps["mihmanshoContactX"] =
+                                $state.form.value.homsaphone !== undefined &&
+                                $state.form.value.homsaphone.length >= 11 &&
+                                $state.form.value.homsaOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = { args: ["POST"] };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["mihmanshoContactX"] != null &&
+                                typeof $steps["mihmanshoContactX"] ===
+                                  "object" &&
+                                typeof $steps["mihmanshoContactX"].then ===
+                                  "function"
+                              ) {
+                                $steps["mihmanshoContactX"] = await $steps[
+                                  "mihmanshoContactX"
+                                ];
+                              }
+
+                              $steps["showToast"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
+                                        "bottom-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["showToast"] != null &&
+                                typeof $steps["showToast"] === "object" &&
+                                typeof $steps["showToast"].then === "function"
+                              ) {
+                                $steps["showToast"] = await $steps["showToast"];
+                              }
+
+                              $steps["platformSatus"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      operation: 0,
+                                      value: (() => {
+                                        if (
+                                          $steps.mihmanshoVerify.data.status ===
+                                          true
+                                        ) {
+                                          $state.platformstatus.status.homsa =
+                                            true;
+                                        } else {
+                                          $state.platformstatus.status.homsa =
+                                            false;
+                                        }
+                                        console.log($steps.mihmanshoVerify);
+                                        return console.log(
+                                          $state.platformstatus
+                                        );
+                                      })()
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["platformSatus"] != null &&
+                                typeof $steps["platformSatus"] === "object" &&
+                                typeof $steps["platformSatus"].then ===
+                                  "function"
+                              ) {
+                                $steps["platformSatus"] = await $steps[
+                                  "platformSatus"
                                 ];
                               }
                             }}
@@ -7593,18 +7917,18 @@ function PlasmicActivationNew__RenderFunc(props: {
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__do2Kb
+                                sty.text___1WRCt
                               )}
                             >
                               {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
                             </div>
                           </AntdButton>
                           <AntdButton
-                            data-plasmic-name={"mihmanshoverify7"}
-                            data-plasmic-override={overrides.mihmanshoverify7}
+                            data-plasmic-name={"mihmanshoBack3"}
+                            data-plasmic-override={overrides.mihmanshoBack3}
                             className={classNames(
                               "__wab_instance",
-                              sty.mihmanshoverify7
+                              sty.mihmanshoBack3
                             )}
                             onClick={async () => {
                               const $steps = {};
@@ -7616,7 +7940,8 @@ function PlasmicActivationNew__RenderFunc(props: {
                                         objRoot: $state,
                                         variablePath: ["step"]
                                       },
-                                      operation: 3
+                                      operation: 3,
+                                      value: $state.step - 2
                                     };
                                     return (({
                                       variable,
@@ -7652,17 +7977,117 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   "updateStep"
                                 ];
                               }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__eIe7U
+                              )}
+                            >
+                              {"\u0642\u0628\u0644\u06cc >"}
+                            </div>
+                          </AntdButton>
+                        </div>
+                      </FormItemWrapper>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__rQFnH
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__is7Og
+                          )}
+                        >
+                          <AntdButton
+                            data-plasmic-name={"mihmanshoSkip4"}
+                            data-plasmic-override={overrides.mihmanshoSkip4}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.mihmanshoSkip4
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
 
-                              $steps["mockRequest"] = true
+                              $steps["goToHttpsRentamonComPanels"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: "https://rentamon.com/panels"
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["goToHttpsRentamonComPanels"] != null &&
+                                typeof $steps["goToHttpsRentamonComPanels"] ===
+                                  "object" &&
+                                typeof $steps["goToHttpsRentamonComPanels"]
+                                  .then === "function"
+                              ) {
+                                $steps["goToHttpsRentamonComPanels"] =
+                                  await $steps["goToHttpsRentamonComPanels"];
+                              }
+
+                              $steps["connectionStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/e751d172-6387-485d-be13-c2782c4fc5ef",
+                                        "https://gateway.rentamon.com/webhook/connection",
                                         undefined,
                                         (() => {
                                           try {
-                                            return undefined;
+                                            return (
+                                              "jabama=" +
+                                              ($state.form.value.jabamaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", shab=" +
+                                              ($state.form.value.shabphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", jajiga=" +
+                                              ($state.form.value.jajigaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", otaghak=" +
+                                              ($state.form.value
+                                                .otaghakphone !== ""
+                                                ? "true"
+                                                : "false") +
+                                              ", homsa=" +
+                                              ($state.form.value.homsaphone !==
+                                              ""
+                                                ? "true"
+                                                : "false") +
+                                              ", mihmansho=" +
+                                              ($state.form.value
+                                                .mihmanshophone !== ""
+                                                ? "true"
+                                                : "false")
+                                            );
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -7682,13 +8107,38 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["mockRequest"] != null &&
-                                typeof $steps["mockRequest"] === "object" &&
-                                typeof $steps["mockRequest"].then === "function"
+                                $steps["connectionStatus"] != null &&
+                                typeof $steps["connectionStatus"] ===
+                                  "object" &&
+                                typeof $steps["connectionStatus"].then ===
+                                  "function"
                               ) {
-                                $steps["mockRequest"] = await $steps[
-                                  "mockRequest"
+                                $steps["connectionStatus"] = await $steps[
+                                  "connectionStatus"
                                 ];
+                              }
+
+                              $steps["showToast"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
+                                        "bottom-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["showToast"] != null &&
+                                typeof $steps["showToast"] === "object" &&
+                                typeof $steps["showToast"].then === "function"
+                              ) {
+                                $steps["showToast"] = await $steps["showToast"];
                               }
                             }}
                             submitsForm={true}
@@ -7698,14 +8148,25 @@ function PlasmicActivationNew__RenderFunc(props: {
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__kbZYu
+                                sty.text__mhRe
                               )}
                             >
-                              {"\u0642\u0628\u0644\u06cc"}
+                              <React.Fragment>
+                                <span
+                                  className={
+                                    "plasmic_default__all plasmic_default__span"
+                                  }
+                                  style={{ textDecorationLine: "underline" }}
+                                >
+                                  {
+                                    "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
+                                  }
+                                </span>
+                              </React.Fragment>
                             </div>
                           </AntdButton>
                         </div>
-                      </FormItemWrapper>
+                      </div>
                     </div>
                   ) : null}
                   {(() => {
@@ -7995,36 +8456,51 @@ function PlasmicActivationNew__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToHttpsRentamonComPanels"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: "https://rentamon.com/panels"
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                              $steps["updateState"] =
+                                $state.form.value.homsaphone !== undefined &&
+                                $state.form.value.homsaphone.length >= 11 &&
+                                $state.form.value.homsaOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["step"]
+                                        },
+                                        operation: 2
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        const oldValue = $stateGet(
+                                          objRoot,
+                                          variablePath
+                                        );
+                                        $stateSet(
+                                          objRoot,
+                                          variablePath,
+                                          oldValue + 1
+                                        );
+                                        return oldValue + 1;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
                               if (
-                                $steps["goToHttpsRentamonComPanels"] != null &&
-                                typeof $steps["goToHttpsRentamonComPanels"] ===
-                                  "object" &&
-                                typeof $steps["goToHttpsRentamonComPanels"]
-                                  .then === "function"
+                                $steps["updateState"] != null &&
+                                typeof $steps["updateState"] === "object" &&
+                                typeof $steps["updateState"].then === "function"
                               ) {
-                                $steps["goToHttpsRentamonComPanels"] =
-                                  await $steps["goToHttpsRentamonComPanels"];
+                                $steps["updateState"] = await $steps[
+                                  "updateState"
+                                ];
                               }
 
                               $steps["homsaVerify"] =
@@ -8072,67 +8548,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["connectionStatus"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "POST",
-                                        "https://gateway.rentamon.com/webhook/connection",
-                                        undefined,
-                                        (() => {
-                                          try {
-                                            return (
-                                              "jabama=" +
-                                              ($state.form.value.jabamaphone !==
-                                              ""
-                                                ? "true"
-                                                : "false") +
-                                              ", shab=" +
-                                              ($state.form.value.shabphone !==
-                                              ""
-                                                ? "true"
-                                                : "false") +
-                                              ", jajiga=" +
-                                              ($state.form.value.jajigaphone !==
-                                              ""
-                                                ? "true"
-                                                : "false") +
-                                              ", otaghak=" +
-                                              ($state.form.value
-                                                .otaghakphone !== ""
-                                                ? "true"
-                                                : "false")
-                                            );
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })()
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.apiRequest"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["connectionStatus"] != null &&
-                                typeof $steps["connectionStatus"] ===
-                                  "object" &&
-                                typeof $steps["connectionStatus"].then ===
-                                  "function"
-                              ) {
-                                $steps["connectionStatus"] = await $steps[
-                                  "connectionStatus"
-                                ];
-                              }
-
                               $steps["homsaContactX"] =
                                 $state.form.value.homsaphone !== undefined &&
                                 $state.form.value.homsaphone.length >= 11 &&
@@ -8152,78 +8567,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                               ) {
                                 $steps["homsaContactX"] = await $steps[
                                   "homsaContactX"
-                                ];
-                              }
-
-                              $steps["showToast"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        undefined,
-                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
-                                        "bottom-center",
-                                        6000
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["showToast"] != null &&
-                                typeof $steps["showToast"] === "object" &&
-                                typeof $steps["showToast"].then === "function"
-                              ) {
-                                $steps["showToast"] = await $steps["showToast"];
-                              }
-
-                              $steps["platformSatus"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      operation: 0,
-                                      value: (() => {
-                                        if (
-                                          $steps.homsaVerify.data.status ===
-                                          true
-                                        ) {
-                                          $state.platformstatus.status.homsa =
-                                            true;
-                                        } else {
-                                          $state.platformstatus.status.homsa =
-                                            false;
-                                        }
-                                        console.log($steps.homsaVerify);
-                                        return console.log(
-                                          $state.platformstatus
-                                        );
-                                      })()
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["platformSatus"] != null &&
-                                typeof $steps["platformSatus"] === "object" &&
-                                typeof $steps["platformSatus"].then ===
-                                  "function"
-                              ) {
-                                $steps["platformSatus"] = await $steps[
-                                  "platformSatus"
                                 ];
                               }
                             }}
@@ -8323,128 +8666,48 @@ function PlasmicActivationNew__RenderFunc(props: {
                               onClick={async () => {
                                 const $steps = {};
 
-                                $steps["goToHttpsRentamonComPanels"] = true
+                                $steps["updateStep"] = true
                                   ? (() => {
                                       const actionArgs = {
-                                        destination:
-                                          "https://rentamon.com/panels"
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["step"]
+                                        },
+                                        operation: 2
                                       };
-                                      return (({ destination }) => {
-                                        if (
-                                          typeof destination === "string" &&
-                                          destination.startsWith("#")
-                                        ) {
-                                          document
-                                            .getElementById(
-                                              destination.substr(1)
-                                            )
-                                            .scrollIntoView({
-                                              behavior: "smooth"
-                                            });
-                                        } else {
-                                          __nextRouter?.push(destination);
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
                                         }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        const oldValue = $stateGet(
+                                          objRoot,
+                                          variablePath
+                                        );
+                                        $stateSet(
+                                          objRoot,
+                                          variablePath,
+                                          oldValue + 1
+                                        );
+                                        return oldValue + 1;
                                       })?.apply(null, [actionArgs]);
                                     })()
                                   : undefined;
                                 if (
-                                  $steps["goToHttpsRentamonComPanels"] !=
-                                    null &&
-                                  typeof $steps[
-                                    "goToHttpsRentamonComPanels"
-                                  ] === "object" &&
-                                  typeof $steps["goToHttpsRentamonComPanels"]
-                                    .then === "function"
-                                ) {
-                                  $steps["goToHttpsRentamonComPanels"] =
-                                    await $steps["goToHttpsRentamonComPanels"];
-                                }
-
-                                $steps["connectionStatus"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://gateway.rentamon.com/webhook/connection",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return (
-                                                "jabama=" +
-                                                ($state.form.value
-                                                  .jabamaphone !== ""
-                                                  ? "true"
-                                                  : "false") +
-                                                ", shab=" +
-                                                ($state.form.value.shabphone !==
-                                                ""
-                                                  ? "true"
-                                                  : "false") +
-                                                ", jajiga=" +
-                                                ($state.form.value
-                                                  .jajigaphone !== ""
-                                                  ? "true"
-                                                  : "false") +
-                                                ", otaghak=" +
-                                                ($state.form.value
-                                                  .otaghakphone !== ""
-                                                  ? "true"
-                                                  : "false")
-                                              );
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["connectionStatus"] != null &&
-                                  typeof $steps["connectionStatus"] ===
-                                    "object" &&
-                                  typeof $steps["connectionStatus"].then ===
+                                  $steps["updateStep"] != null &&
+                                  typeof $steps["updateStep"] === "object" &&
+                                  typeof $steps["updateStep"].then ===
                                     "function"
                                 ) {
-                                  $steps["connectionStatus"] = await $steps[
-                                    "connectionStatus"
-                                  ];
-                                }
-
-                                $steps["invokeGlobalAction"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          undefined,
-                                          "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f! \u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0648\u0627\u0631\u062f \u062a\u0642\u0648\u06cc\u0645 \u0628\u0634\u06cc",
-                                          "bottom-center",
-                                          6000
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["invokeGlobalAction"] != null &&
-                                  typeof $steps["invokeGlobalAction"] ===
-                                    "object" &&
-                                  typeof $steps["invokeGlobalAction"].then ===
-                                    "function"
-                                ) {
-                                  $steps["invokeGlobalAction"] = await $steps[
-                                    "invokeGlobalAction"
+                                  $steps["updateStep"] = await $steps[
+                                    "updateStep"
                                   ];
                                 }
                               }}
@@ -10004,7 +10267,7 @@ const PlasmicDescendants = {
     "true6",
     "false6",
     "add6",
-    "mehmansho",
+    "mihmansho2",
     "paltform7",
     "true7",
     "false7",
@@ -10059,8 +10322,9 @@ const PlasmicDescendants = {
     "mihmanshosend6",
     "mihmanshoVerify",
     "input14",
-    "mihmanshoverify",
-    "mihmanshoverify7",
+    "mihmanshoVerify3",
+    "mihmanshoBack3",
+    "mihmanshoSkip4",
     "input15",
     "input16",
     "homsaVerify",
@@ -10130,7 +10394,7 @@ const PlasmicDescendants = {
     "true6",
     "false6",
     "add6",
-    "mehmansho",
+    "mihmansho2",
     "paltform7",
     "true7",
     "false7",
@@ -10170,7 +10434,7 @@ const PlasmicDescendants = {
     "true6",
     "false6",
     "add6",
-    "mehmansho",
+    "mihmansho2",
     "paltform7",
     "true7",
     "false7",
@@ -10206,7 +10470,7 @@ const PlasmicDescendants = {
   true6: ["true6"],
   false6: ["false6"],
   add6: ["add6"],
-  mehmansho: ["mehmansho", "paltform7", "true7", "false7"],
+  mihmansho2: ["mihmansho2", "paltform7", "true7", "false7"],
   paltform7: ["paltform7"],
   true7: ["true7"],
   false7: ["false7"],
@@ -10262,8 +10526,9 @@ const PlasmicDescendants = {
     "mihmanshosend6",
     "mihmanshoVerify",
     "input14",
-    "mihmanshoverify",
-    "mihmanshoverify7",
+    "mihmanshoVerify3",
+    "mihmanshoBack3",
+    "mihmanshoSkip4",
     "input15",
     "input16",
     "homsaVerify",
@@ -10363,8 +10628,9 @@ const PlasmicDescendants = {
     "mihmanshosend6",
     "mihmanshoVerify",
     "input14",
-    "mihmanshoverify",
-    "mihmanshoverify7"
+    "mihmanshoVerify3",
+    "mihmanshoBack3",
+    "mihmanshoSkip4"
   ],
   mihmanshoSend: [
     "mihmanshoSend",
@@ -10378,12 +10644,13 @@ const PlasmicDescendants = {
   mihmanshoVerify: [
     "mihmanshoVerify",
     "input14",
-    "mihmanshoverify",
-    "mihmanshoverify7"
+    "mihmanshoVerify3",
+    "mihmanshoBack3"
   ],
   input14: ["input14"],
-  mihmanshoverify: ["mihmanshoverify"],
-  mihmanshoverify7: ["mihmanshoverify7"],
+  mihmanshoVerify3: ["mihmanshoVerify3"],
+  mihmanshoBack3: ["mihmanshoBack3"],
+  mihmanshoSkip4: ["mihmanshoSkip4"],
   input15: ["input15"],
   input16: ["input16"],
   homsaVerify: ["homsaVerify"],
@@ -10475,7 +10742,7 @@ type NodeDefaultElementType = {
   true6: typeof PlasmicImg__;
   false6: typeof PlasmicImg__;
   add6: typeof PlasmicImg__;
-  mehmansho: "div";
+  mihmansho2: "div";
   paltform7: typeof PlasmicImg__;
   true7: typeof PlasmicImg__;
   false7: typeof PlasmicImg__;
@@ -10530,8 +10797,9 @@ type NodeDefaultElementType = {
   mihmanshosend6: typeof AntdButton;
   mihmanshoVerify: typeof FormItemWrapper;
   input14: typeof AntdInput;
-  mihmanshoverify: typeof AntdButton;
-  mihmanshoverify7: typeof AntdButton;
+  mihmanshoVerify3: typeof AntdButton;
+  mihmanshoBack3: typeof AntdButton;
+  mihmanshoSkip4: typeof AntdButton;
   input15: typeof AntdInput;
   input16: typeof AntdInput;
   homsaVerify: typeof AntdButton;
@@ -10661,7 +10929,7 @@ export const PlasmicActivationNew = Object.assign(
     true6: makeNodeComponent("true6"),
     false6: makeNodeComponent("false6"),
     add6: makeNodeComponent("add6"),
-    mehmansho: makeNodeComponent("mehmansho"),
+    mihmansho2: makeNodeComponent("mihmansho2"),
     paltform7: makeNodeComponent("paltform7"),
     true7: makeNodeComponent("true7"),
     false7: makeNodeComponent("false7"),
@@ -10716,8 +10984,9 @@ export const PlasmicActivationNew = Object.assign(
     mihmanshosend6: makeNodeComponent("mihmanshosend6"),
     mihmanshoVerify: makeNodeComponent("mihmanshoVerify"),
     input14: makeNodeComponent("input14"),
-    mihmanshoverify: makeNodeComponent("mihmanshoverify"),
-    mihmanshoverify7: makeNodeComponent("mihmanshoverify7"),
+    mihmanshoVerify3: makeNodeComponent("mihmanshoVerify3"),
+    mihmanshoBack3: makeNodeComponent("mihmanshoBack3"),
+    mihmanshoSkip4: makeNodeComponent("mihmanshoSkip4"),
     input15: makeNodeComponent("input15"),
     input16: makeNodeComponent("input16"),
     homsaVerify: makeNodeComponent("homsaVerify"),
