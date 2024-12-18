@@ -17,13 +17,14 @@ interface DayCellProps {
 }
 
 interface DatePickerProps {
-  onChange?: (value: number | number[]) => void;
-  onMonthChange?: (month: number) => void;
-  onYearChange?: (year: number) => void;
+  onChange: (value: number | number[]) => void;
+  onMonthChange: (month: number) => void;
+  onYearChange: (year: number) => void;
   locale?: LocaleType;
   holidays?: number[];
-  // حذف value و values برای جلوگیری از کنترل خارجی
+  value?: number;
   mode?: "single" | "multiple";
+  values?: number[];
   customDayCell?: boolean;
   dayCell?: React.ComponentType<DayCellProps>;
 }
@@ -45,9 +46,10 @@ function startOfDayUnix(timestampInSeconds: number): number {
 }
 
 // تابع کمکی برای استخراج year/month/day به صورت عددی از DateObject
-function extractNumbersFromDateObject(date: DateObject): { day: number; month: number; year: number } {
+function extractNumbersFromDateObject(date: DateObject): {day: number; month: number; year: number} {
   const m = date.month as unknown as MonthType;
   const y = date.year as unknown as YearType;
+  // date.day خود یک number است
   return { day: date.day, month: m.number, year: y.number };
 }
 
@@ -57,9 +59,11 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   onYearChange,
   locale = "fa",
   holidays = [],
+  value,
   mode = "single",
-  customDayCell,
+  values = [],
   dayCell,
+  customDayCell,
 }) => {
   const isFaLocale = locale === "fa";
 
@@ -73,33 +77,43 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     );
   }, [holidays]);
 
+  const selectedDaysSet = useMemo(() => {
+    if (mode === "multiple" && Array.isArray(values)) {
+      return new Set(values.map((d: number) => startOfDayUnix(d)));
+    } else if (mode === "single" && typeof value === "number") {
+      return new Set([startOfDayUnix(value)]);
+    } else {
+      return new Set<number>();
+    }
+  }, [values, value, mode]);
+
   return (
     <Calendar
       monthYearSeparator="|"
       multiple={mode === "multiple"}
-      // بدون value یا values کنترل شده
+      value={
+        mode === "multiple"
+          ? (Array.isArray(values) ? values : [values]).map(
+              (item: number) => item * 1000
+            )
+          : typeof value === "number"
+          ? value * 1000
+          : undefined
+      }
       onChange={(val: DateObject | DateObject[]) => {
-        // انتخاب روز دیگر state والد را تغییر نمی‌دهد
-        // فقط console.log برای نمایش انتخاب
         if (Array.isArray(val)) {
-          const selected = val.map((item) => item.unix);
-          console.log("Selected multiple days:", selected);
-          onChange && onChange(selected);
+          onChange(val.map((item: DateObject) => item.unix));
         } else {
-          console.log("Selected single day:", val.unix);
-          onChange && onChange(val.unix);
+          onChange(val.unix);
         }
-        // چون props تغییر نمی‌کند، mapDays مجدداً اجرا نمی‌شود
       }}
       onMonthChange={(val: DateObject) => {
         const m = val.month as unknown as MonthType;
-        console.log("Month changed:", m.number);
-        onMonthChange && onMonthChange(m.number);
+        onMonthChange(m.number);
       }}
       onYearChange={(val: DateObject) => {
         const y = val.year as unknown as YearType;
-        console.log("Year changed:", y.number);
-        onYearChange && onYearChange(y.number);
+        onYearChange(y.number);
       }}
       className={cn("fragment", { "custom-day-cell": customDayCell })}
       {...(isFaLocale && {
@@ -117,18 +131,16 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         date,
         today,
         isSameDate,
+        selectedDate: currentSelectedDate,
       }: {
         date: DateObject;
         today: DateObject;
         isSameDate: (d1: DateObject, d2: DateObject) => boolean;
+        selectedDate: DateObject | DateObject[];
       }) => {
         const dayUnix = startOfDayUnix(date.unix);
         const isHoliday = holidaysSet.has(dayUnix);
-
-        // در این نسخه دیگر انتخاب روز باعث تغییر props و رندر مجدد نمی‌شود
-        // بنابراین isSelected را می‌توان حذف یا ثابت فرض کرد
-        // اما اگر بخواهید isSelected داشته باشید بدون تغییر props، باید logic داخلی داشته باشید
-        const isSelected = false; // بدون تغییری در props، Selected هم ثابت می‌ماند مگر با راهکار داخلی
+        const isSelected = selectedDaysSet.has(dayUnix);
         const isWeekend = weekendDays.includes(date.weekDay.index);
         const isToday = isSameDate(date, today);
 
@@ -167,7 +179,12 @@ export const datePickerMeta: CodeComponentMeta<DatePickerProps> = {
   displayName: "Fragment/DatePicker",
   importPath: "@/fragment/components/date-picker",
   props: {
-    // value و values حذف شدند و تقویم دیگر کنترل خارجی ندارد
+    value: { type: "number", hidden: (ps) => ps.mode === "multiple" },
+    values: {
+      type: "array",
+      hidden: (ps) => ps.mode === "single",
+      defaultValue: [],
+    },
     onChange: {
       type: "eventHandler",
       argTypes: [
@@ -227,7 +244,20 @@ export const datePickerMeta: CodeComponentMeta<DatePickerProps> = {
     },
   },
   states: {
-    // value و values state حذف شدند
+    value: {
+      type: "writable",
+      variableType: "number",
+      valueProp: "value",
+      onChangeProp: "onChange",
+      hidden: (ps) => ps.mode === "multiple",
+    },
+    values: {
+      type: "writable",
+      variableType: "array",
+      valueProp: "values",
+      onChangeProp: "onChange",
+      hidden: (ps) => ps.mode === "single",
+    },
     month: {
       type: "readonly",
       variableType: "object",
