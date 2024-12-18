@@ -47,7 +47,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 0px 8px 8px;
 }
 @media (max-width: 1200px) {
   .freeBox__jzgX9 {
@@ -350,9 +350,17 @@
   font-weight: 600;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .text__b6RRy {
+    font-size: 24px;
+  }
+}
 .img__pg8Dn {
   object-fit: cover;
-  max-width: 100%;
+  max-width: 50%;
+  height: 200px;
+  max-height: 200px;
+  flex-shrink: 0;
 }
 .img__pg8Dn > picture > img {
   object-fit: cover;

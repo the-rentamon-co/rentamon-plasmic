@@ -241,22 +241,9 @@ function PlasmicYalda__RenderFunc(props: {
               sty.text__lpo8D
             )}
           >
-            <React.Fragment>
-              <React.Fragment>{"\u0627\u0632 "}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ textDecorationLine: "underline" }}
-              >
-                {
-                  "\u06f2\u06f7 \u0622\u0630\u0631 \u062a\u0627 \u06f1 \u062f\u06cc"
-                }
-              </span>
-              <React.Fragment>
-                {
-                  " \u0628\u0627 \u062a\u062e\u0641\u06cc\u0641\u200c\u0647\u0627\u06cc \u062c\u0630\u0627\u0628 \u0628\u0647 \u0645\u0646\u0627\u0633\u0628\u062a \u062c\u0634\u0646 \u06cc\u0644\u062f\u0627"
-                }
-              </React.Fragment>
-            </React.Fragment>
+            {
+              "\u062a\u062e\u0641\u06cc\u0641\u200c\u0647\u0627\u06cc \u062f\u0627\u063a\u060c \u0627\u0632 \u06f2\u06f7 \u0622\u0630\u0631 \u062a\u0627 \u06f1 \u062f\u06cc "
+            }
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__jmM3K)}>
             {(hasVariant(globalVariants, "screen", "tablet") ? true : false) ? (
@@ -507,9 +494,9 @@ function PlasmicYalda__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__pg8Dn)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
+                  displayHeight={"200px"}
+                  displayMaxHeight={"200px"}
+                  displayMaxWidth={"50%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
@@ -552,7 +539,9 @@ function PlasmicYalda__RenderFunc(props: {
               }
             }}
             url={
-              "https://gateway.rentamon.com/webhook/b9529eda-6650-438b-88e0-ff5ce680a9c3"
+              hasVariant(globalVariants, "screen", "mobile")
+                ? "https://gateway.rentamon.com/webhook/b9529eda-6650-438b-88e0-ff5ce680a9c3"
+                : "https://gateway.rentamon.com/webhook/b9529eda-6650-438b-88e0-ff5ce680a9c3"
             }
           />
 
