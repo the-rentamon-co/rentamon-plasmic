@@ -64,6 +64,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -104,6 +105,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   select?: Flex__<typeof Select>;
   calendar2?: Flex__<typeof Calendar2>;
   clarity?: Flex__<typeof Embed>;
+  sideEffect?: Flex__<typeof SideEffect>;
   goftino?: Flex__<typeof Embed>;
 };
 
@@ -1441,6 +1443,116 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             }
           />
 
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
+
           <Embed
             data-plasmic-name={"goftino"}
             data-plasmic-override={overrides.goftino}
@@ -1466,6 +1578,7 @@ const PlasmicDescendants = {
     "select",
     "calendar2",
     "clarity",
+    "sideEffect",
     "goftino"
   ],
   sideBar: ["sideBar", "modal"],
@@ -1476,6 +1589,7 @@ const PlasmicDescendants = {
   select: ["select"],
   calendar2: ["calendar2"],
   clarity: ["clarity"],
+  sideEffect: ["sideEffect"],
   goftino: ["goftino"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1491,6 +1605,7 @@ type NodeDefaultElementType = {
   select: typeof Select;
   calendar2: typeof Calendar2;
   clarity: typeof Embed;
+  sideEffect: typeof SideEffect;
   goftino: typeof Embed;
 };
 
@@ -1562,6 +1677,7 @@ export const PlasmicPanelCalendar = Object.assign(
     select: makeNodeComponent("select"),
     calendar2: makeNodeComponent("calendar2"),
     clarity: makeNodeComponent("clarity"),
+    sideEffect: makeNodeComponent("sideEffect"),
     goftino: makeNodeComponent("goftino"),
 
     // Metadata about props expected for PlasmicPanelCalendar
