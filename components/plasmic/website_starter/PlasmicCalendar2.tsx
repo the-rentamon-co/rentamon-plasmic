@@ -871,7 +871,9 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
               selected={(() => {
                 try {
-                  return dateProps.isSelected;
+                  return $state.fragmentDatePicker.values.includes(
+                    dateProps.unix
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
