@@ -21,7 +21,7 @@
 .root > * {
   grid-column: 4;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .root > * {
     grid-column: 4;
   }
@@ -87,7 +87,7 @@
 .mainSection > * {
   grid-column: 4;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .mainSection > * {
     grid-column: 4;
   }
@@ -590,7 +590,7 @@
   border-style: solid;
   border-color: var(--token-8nedppYkGVaH);
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .freeBox___3NzG5 {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -608,7 +608,7 @@
   text-align: center;
   font-size: 15px;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .text__uDvHu {
     font-size: 15px;
   }
@@ -631,7 +631,7 @@
   min-width: 0;
   padding: 40px 40px 50px;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .desc {
     padding-right: 0px;
     padding-left: 0px;

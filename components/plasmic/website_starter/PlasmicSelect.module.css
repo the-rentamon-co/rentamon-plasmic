@@ -142,7 +142,7 @@
   padding-right: 20px;
   min-width: 0;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .contentContainer {
     padding-right: 12px;
   }
@@ -458,7 +458,7 @@
   margin-left: 20px;
   flex-shrink: 0;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .dropdownIcon {
     margin-left: 8px;
   }

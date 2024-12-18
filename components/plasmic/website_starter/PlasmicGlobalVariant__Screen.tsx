@@ -12,7 +12,7 @@ export const ScreenContext = React.createContext<ScreenValue[] | undefined>(
 );
 
 export const useScreenVariants = createUseScreenVariants(true, {
-  mobile: "(max-width:508px)",
+  mobile: "(max-width:500px)",
   tablet: "(max-width:1200px)",
   smallMobile: "(max-width:380px)",
 });

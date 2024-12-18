@@ -807,9 +807,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                             } = calendarItem;
                             const finalPrice =
                               price * (1 - discountPercentage / 100);
-                            const formattedPersianPrice = finalPrice
+                            const roundedPrice = Math.round(finalPrice / 1000);
+                            const formattedPersianPrice = roundedPrice
                               ? new Intl.NumberFormat("fa-IR").format(
-                                  finalPrice / 1000
+                                  roundedPrice
                                 )
                               : null;
                             return formattedPersianPrice;

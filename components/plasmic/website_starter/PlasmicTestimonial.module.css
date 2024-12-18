@@ -68,7 +68,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .freeBox__y46Mm {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -159,7 +159,7 @@
   min-width: 0;
   padding: 8px 0px;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .freeBox__ftEea {
     max-width: 34%;
   }
@@ -182,7 +182,7 @@
   color: var(--token-8nedppYkGVaH);
   padding-bottom: 10px;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .userName4 {
     font-size: 15px;
     max-width: 100%;
@@ -228,7 +228,7 @@
   padding-bottom: 10px;
   min-width: 0;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .userPlatform {
     font-size: 15px;
     max-width: 100%;
@@ -293,7 +293,7 @@
   padding-bottom: 10px;
   min-width: 0;
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .userCity {
     font-size: 15px;
     max-width: 100%;
@@ -329,7 +329,7 @@
   padding-top: 4px;
   color: var(--token-VC1CUzrVcfix);
 }
-@media (max-width: 508px) {
+@media (max-width: 500px) {
   .userQuote2 {
     font-size: 15px;
     max-width: 100%;
