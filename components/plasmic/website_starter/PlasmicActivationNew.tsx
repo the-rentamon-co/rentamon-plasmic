@@ -188,6 +188,7 @@ export type PlasmicActivationNew__OverridesType = {
   input12?: Flex__<typeof AntdInput>;
   otaghakverify?: Flex__<typeof AntdButton>;
   otaghakverify5?: Flex__<typeof AntdButton>;
+  mihmansho?: Flex__<"div">;
   mihmanshoSend?: Flex__<typeof FormItemWrapper>;
   input13?: Flex__<typeof AntdInput>;
   mihmanshosend?: Flex__<typeof AntdButton>;
@@ -7067,7 +7068,10 @@ function PlasmicActivationNew__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.step == 10;
+                      return (
+                        $state.step == 10 &&
+                        $state.platformstatus.status.mihmansho !== true
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -7079,10 +7083,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                   })() ? (
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___91T8K
-                      )}
+                      data-plasmic-name={"mihmansho"}
+                      data-plasmic-override={overrides.mihmansho}
+                      className={classNames(projectcss.all, sty.mihmansho)}
                     >
                       <FormItemWrapper
                         data-plasmic-name={"mihmanshoSend"}
@@ -10049,6 +10052,7 @@ const PlasmicDescendants = {
     "input12",
     "otaghakverify",
     "otaghakverify5",
+    "mihmansho",
     "mihmanshoSend",
     "input13",
     "mihmanshosend",
@@ -10251,6 +10255,7 @@ const PlasmicDescendants = {
     "input12",
     "otaghakverify",
     "otaghakverify5",
+    "mihmansho",
     "mihmanshoSend",
     "input13",
     "mihmanshosend",
@@ -10350,6 +10355,17 @@ const PlasmicDescendants = {
   input12: ["input12"],
   otaghakverify: ["otaghakverify"],
   otaghakverify5: ["otaghakverify5"],
+  mihmansho: [
+    "mihmansho",
+    "mihmanshoSend",
+    "input13",
+    "mihmanshosend",
+    "mihmanshosend6",
+    "mihmanshoVerify",
+    "input14",
+    "mihmanshoverify",
+    "mihmanshoverify7"
+  ],
   mihmanshoSend: [
     "mihmanshoSend",
     "input13",
@@ -10507,6 +10523,7 @@ type NodeDefaultElementType = {
   input12: typeof AntdInput;
   otaghakverify: typeof AntdButton;
   otaghakverify5: typeof AntdButton;
+  mihmansho: "div";
   mihmanshoSend: typeof FormItemWrapper;
   input13: typeof AntdInput;
   mihmanshosend: typeof AntdButton;
@@ -10692,6 +10709,7 @@ export const PlasmicActivationNew = Object.assign(
     input12: makeNodeComponent("input12"),
     otaghakverify: makeNodeComponent("otaghakverify"),
     otaghakverify5: makeNodeComponent("otaghakverify5"),
+    mihmansho: makeNodeComponent("mihmansho"),
     mihmanshoSend: makeNodeComponent("mihmanshoSend"),
     input13: makeNodeComponent("input13"),
     mihmanshosend: makeNodeComponent("mihmanshosend"),

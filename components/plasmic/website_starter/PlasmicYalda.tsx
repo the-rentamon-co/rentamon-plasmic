@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -88,10 +89,8 @@ export const PlasmicYalda__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicYalda__OverridesType = {
   yalda?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
   button5?: Flex__<"div">;
-  button4?: Flex__<"div">;
-  button3?: Flex__<"div">;
-  button2?: Flex__<"div">;
   button?: Flex__<typeof Button>;
   html?: Flex__<"div">;
 };
@@ -155,6 +154,24 @@ function PlasmicYalda__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -197,6 +214,68 @@ function PlasmicYalda__RenderFunc(props: {
             sty.yalda
           )}
         >
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rjCyl
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__b6RRy
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            url={
+              "https://gateway.rentamon.com/webhook/b9529eda-6650-438b-88e0-ff5ce680a9c3"
+            }
+          />
+
           <div className={classNames(projectcss.all, sty.freeBox__jzgX9)}>
             <div
               className={classNames(
@@ -459,691 +538,341 @@ function PlasmicYalda__RenderFunc(props: {
               }}
             />
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__t8Bp8)}>
-            <div className={classNames(projectcss.all, sty.freeBox___5Eo9V)}>
-              <div className={classNames(projectcss.all, sty.freeBox__p2Vgj)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__ytbos)}
-                  displayHeight={"91px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "114px"
-                      : "auto"
-                  }
-                  height={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "120"
-                      : undefined
-                  }
-                  loading={"lazy"}
-                  src={
-                    hasVariant(globalVariants, "screen", "tablet")
-                      ? (() => {
+          {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+            (() => {
+              try {
+                return $state.apiRequest.data;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return [];
+                }
+                throw e;
+              }
+            })()
+          ).map((__plasmic_item_0, __plasmic_idx_0) => {
+            const currentItem = __plasmic_item_0;
+            const currentIndex = __plasmic_idx_0;
+            return (
+              <div
+                className={classNames(projectcss.all, sty.freeBox__t8Bp8)}
+                key={currentIndex}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___5Eo9V)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__p2Vgj)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__ytbos)}
+                      displayHeight={"91px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "114px"
+                          : "auto"
+                      }
+                      height={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "120"
+                          : undefined
+                      }
+                      loading={"lazy"}
+                      src={
+                        hasVariant(globalVariants, "screen", "tablet")
+                          ? (() => {
+                              try {
+                                return $state.apiRequest.data[currentIndex].pic;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return {
+                                    src: "/plasmic/website_starter/images/offPng.png",
+                                    fullWidth: 100,
+                                    fullHeight: 100,
+                                    aspectRatio: undefined
+                                  };
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return $state.apiRequest.data[currentIndex].pic;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return {
+                                    src: "/plasmic/website_starter/images/offPng.png",
+                                    fullWidth: 100,
+                                    fullHeight: 100,
+                                    aspectRatio: undefined
+                                  };
+                                }
+                                throw e;
+                              }
+                            })()
+                      }
+                      width={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "120"
+                          : undefined
+                      }
+                    />
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : false
+                    ) ? (
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__hAap1)}
+                        displayHeight={"91px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "114px"
+                            : "auto"
+                        }
+                        height={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "120"
+                            : undefined
+                        }
+                        loading={"lazy"}
+                        src={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return $state.apiRequest.data[currentIndex]
+                                    .pic;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return {
+                                      src: "/plasmic/website_starter/images/offPng.png",
+                                      fullWidth: 100,
+                                      fullHeight: 100,
+                                      aspectRatio: undefined
+                                    };
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? {
+                                src: "/plasmic/website_starter/images/_13549867Png.png",
+                                fullWidth: 256,
+                                fullHeight: 256,
+                                aspectRatio: undefined
+                              }
+                            : {
+                                src: "/plasmic/website_starter/images/_13549867Png.png",
+                                fullWidth: 256,
+                                fullHeight: 256,
+                                aspectRatio: undefined
+                              }
+                        }
+                        width={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "120"
+                            : undefined
+                        }
+                      />
+                    ) : null}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__nqQ96)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hdmux
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
                           try {
-                            return $ctx.fetchedData.list[0].logo;
+                            return $state.apiRequest.data[currentIndex].title;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return {
-                                src: "/plasmic/website_starter/images/offPng.png",
-                                fullWidth: 100,
-                                fullHeight: 100,
-                                aspectRatio: undefined
-                              };
+                              return "\u06f3\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644";
                             }
                             throw e;
                           }
-                        })()
-                      : {
-                          src: "/plasmic/website_starter/images/offPng.png",
-                          fullWidth: 100,
-                          fullHeight: 100,
-                          aspectRatio: undefined
-                        }
-                  }
-                  width={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "120"
-                      : undefined
-                  }
-                />
-
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__hAap1)}
-                    displayHeight={"91px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "114px"
-                        : "auto"
-                    }
-                    height={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "120"
-                        : undefined
-                    }
-                    loading={"lazy"}
-                    src={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? {
-                            src: "/plasmic/website_starter/images/offPng.png",
-                            fullWidth: 100,
-                            fullHeight: 100,
-                            aspectRatio: undefined
-                          }
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? {
-                            src: "/plasmic/website_starter/images/_13549867Png.png",
-                            fullWidth: 256,
-                            fullHeight: 256,
-                            aspectRatio: undefined
-                          }
-                        : {
-                            src: "/plasmic/website_starter/images/_13549867Png.png",
-                            fullWidth: 256,
-                            fullHeight: 256,
-                            aspectRatio: undefined
-                          }
-                    }
-                    width={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "120"
-                        : undefined
-                    }
-                  />
-                ) : null}
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__nqQ96)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hdmux
-                  )}
-                >
-                  {
-                    "\u06f3\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wqpX6
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
-                        }
+                        })()}
                       </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647.\n"
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  ) : hasVariant(globalVariants, "screen", "mobile") ? (
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646"
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          " \u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647.\n"
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647."
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  )}
-                </div>
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox___4SbGy)}>
-              <div
-                data-plasmic-name={"button5"}
-                data-plasmic-override={overrides.button5}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.button5
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://www.rentamon.com/pricing");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                {hasVariant(globalVariants, "screen", "tablet")
-                  ? "\u0645\u0646\u0645 \u062a\u062e\u0641\u06cc\u0641 \u0645\u06cc\u200c\u062e\u0648\u0627\u0645"
-                  : "\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645 \u062e\u0631\u06cc\u062f"}
-              </div>
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__wq6IS)}>
-            <div className={classNames(projectcss.all, sty.freeBox__ot7Fp)}>
-              <div className={classNames(projectcss.all, sty.freeBox__qWaNs)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img___0Zquy)}
-                  displayHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "80px"
-                      : "91px"
-                  }
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "114px"
-                      : "auto"
-                  }
-                  height={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "120"
-                      : undefined
-                  }
-                  loading={"lazy"}
-                  src={
-                    hasVariant(globalVariants, "screen", "tablet")
-                      ? {
-                          src: "/plasmic/website_starter/images/_13549867Png.png",
-                          fullWidth: 256,
-                          fullHeight: 256,
-                          aspectRatio: undefined
-                        }
-                      : {
-                          src: "/plasmic/website_starter/images/_13549867Png.png",
-                          fullWidth: 256,
-                          fullHeight: 256,
-                          aspectRatio: undefined
-                        }
-                  }
-                  width={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "120"
-                      : undefined
-                  }
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__pgsIm)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ekvu0
-                  )}
-                >
-                  {"\u0647\u062f\u06cc\u0647 \u062f\u0639\u0648\u062a \u06f2x"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___68DZb
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0627\u06af\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0639\u0631\u0641\u06cc \u06a9\u0646\u06cc\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 "
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc!"
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  ) : hasVariant(globalVariants, "screen", "mobile") ? (
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0627\u06af\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0639\u0631\u0641\u06cc \u06a9\u0646\u06cc\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 "
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc!"
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0627\u06af\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0639\u0631\u0641\u06cc \u06a9\u0646\u06cc\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 "
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc!"
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  )}
-                </div>
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__pdjDi)}>
-              <div
-                data-plasmic-name={"button4"}
-                data-plasmic-override={overrides.button4}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.button4
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://www.rentamon.com/referral");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                {
-                  "\u062f\u0639\u0648\u062a \u0627\u0632 \u062f\u0648\u0633\u062a\u0627\u0646"
-                }
-              </div>
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__ss2QW)}>
-            <div className={classNames(projectcss.all, sty.freeBox__sUAb4)}>
-              <div className={classNames(projectcss.all, sty.freeBox__s4Ucl)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__idRX)}
-                  displayHeight={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "91px"
-                      : "91px"
-                  }
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "100%"
-                      : "100%"
-                  }
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "114px"
-                      : "auto"
-                  }
-                  height={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "120"
-                      : undefined
-                  }
-                  loading={"lazy"}
-                  src={
-                    hasVariant(globalVariants, "screen", "tablet")
-                      ? {
-                          src: "/plasmic/website_starter/images/villaPng.png",
-                          fullWidth: 512,
-                          fullHeight: 512,
-                          aspectRatio: undefined
-                        }
-                      : {
-                          src: "/plasmic/website_starter/images/villaPng.png",
-                          fullWidth: 512,
-                          fullHeight: 512,
-                          aspectRatio: undefined
-                        }
-                  }
-                  width={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "120"
-                      : undefined
-                  }
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__dxrni)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__j09Me
-                  )}
-                >
-                  {
-                    " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062c\u062f\u06cc\u062f \u06f2 \u0645\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__g1Uxk
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "tablet") ? (
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0647\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u06a9\u0647 \u062a\u0627 \u0634\u0646\u0628\u0647 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646\u06cc\u060c \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u0634\u00bb \u0628\u0631\u0627\u06cc "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u06f2 \u0645\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"
-                        }
-                      </span>
-                      <React.Fragment>{"."}</React.Fragment>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0627\u06af\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u062f\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0646\u0648\u0632 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u0646\u06a9\u0631\u062f\u06cc\u060c \u0627\u0644\u0627\u0646 \u0648\u0642\u062a\u0634\u0647! \u0648\u0627\u0633\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062c\u062f\u06cc\u062f\u060c \u0633\u06cc\u0633\u062a\u0645 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb"
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          " \u062a\u0627 \u06f2 \u0645\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"
-                        }
-                      </span>
-                      <React.Fragment>{"!"}</React.Fragment>
-                    </React.Fragment>
-                  )}
-                </div>
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox___4D7G)}>
-              <div
-                data-plasmic-name={"button3"}
-                data-plasmic-override={overrides.button3}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.button3
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://www.goftino.com/c/WgsGXv");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                {
-                  "\u06af\u0641\u062a\u06af\u0648 \u0628\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"
-                }
-              </div>
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__mwimi)}>
-            <div className={classNames(projectcss.all, sty.freeBox___0DrsG)}>
-              <div className={classNames(projectcss.all, sty.freeBox__zFg1J)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__lSTn)}
-                  displayHeight={"91px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "114px"
-                      : "auto"
-                  }
-                  height={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "120"
-                      : undefined
-                  }
-                  loading={"lazy"}
-                  src={
-                    hasVariant(globalVariants, "screen", "tablet")
-                      ? {
-                          src: "/plasmic/website_starter/images/addPng.png",
-                          fullWidth: 200,
-                          fullHeight: 200,
-                          aspectRatio: undefined
-                        }
-                      : {
-                          src: "/plasmic/website_starter/images/addPng.png",
-                          fullWidth: 200,
-                          fullHeight: 200,
-                          aspectRatio: undefined
-                        }
-                  }
-                  width={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "120"
-                      : undefined
-                  }
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__bhvyT)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___3O9Q
-                  )}
-                >
-                  {
-                    "\u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u062f\u0631 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jwoUt
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>
-                      {
-                        "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f7 \u062a\u0627 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u062a\u062d\u062a \u067e\u0648\u0634\u0634 \u062f\u0627\u0631\u0647. \u0627\u06af\u0647 \u0648\u06cc\u0644\u0627\u062a \u062a\u0648\u06cc \u0647\u0645\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062b\u0628\u062a \u0646\u0634\u062f\u0647\u060c "
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wqpX6
+                      )}
                     >
-                      {
-                        "\u0645\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0646\u062c\u0627\u0645\u0634 \u0645\u06cc\u200c\u062f\u06cc\u0645"
+                      {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                        <React.Fragment>
+                          <React.Fragment>
+                            {
+                              "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
+                            }
+                          </React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {
+                              "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
+                            }
+                          </span>
+                          <React.Fragment>
+                            {
+                              "\u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647.\n"
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          <React.Fragment>
+                            {
+                              "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
+                            }
+                          </React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {
+                              "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646"
+                            }
+                          </span>
+                          <React.Fragment>
+                            {
+                              " \u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647.\n"
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex].desc;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___4SbGy)}
+                >
+                  <div
+                    data-plasmic-name={"button5"}
+                    data-plasmic-override={overrides.button5}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.button5
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return (window.location.href = `${$state.apiRequest.data[currentIndex].link}`);
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
                       }
-                    </span>
-                    <React.Fragment>{"!"}</React.Fragment>
-                  </React.Fragment>
+                    }}
+                  >
+                    {hasVariant(globalVariants, "screen", "tablet") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequest.data[currentIndex].button;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0645\u0646\u0645 \u062a\u062e\u0641\u06cc\u0641 \u0645\u06cc\u200c\u062e\u0648\u0627\u0645";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequest.data[currentIndex].button;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645 \u062e\u0631\u06cc\u062f";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox___51EI4)}>
-              <div
-                data-plasmic-name={"button2"}
-                data-plasmic-override={overrides.button2}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.button2
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://www.goftino.com/c/WgsGXv");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                {
-                  "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u0645 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646\u06cc\u062f"
-                }
-              </div>
-            </div>
-          </div>
+            );
+          })}
           <div className={classNames(projectcss.all, sty.freeBox__olNiN)}>
             <Button
               data-plasmic-name={"button"}
@@ -1211,19 +940,9 @@ function PlasmicYalda__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  yalda: [
-    "yalda",
-    "button5",
-    "button4",
-    "button3",
-    "button2",
-    "button",
-    "html"
-  ],
+  yalda: ["yalda", "apiRequest", "button5", "button", "html"],
+  apiRequest: ["apiRequest"],
   button5: ["button5"],
-  button4: ["button4"],
-  button3: ["button3"],
-  button2: ["button2"],
   button: ["button"],
   html: ["html"]
 } as const;
@@ -1232,10 +951,8 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   yalda: "div";
+  apiRequest: typeof ApiRequest;
   button5: "div";
-  button4: "div";
-  button3: "div";
-  button2: "div";
   button: typeof Button;
   html: "div";
 };
@@ -1300,10 +1017,8 @@ export const PlasmicYalda = Object.assign(
   makeNodeComponent("yalda"),
   {
     // Helper components rendering sub-elements
+    apiRequest: makeNodeComponent("apiRequest"),
     button5: makeNodeComponent("button5"),
-    button4: makeNodeComponent("button4"),
-    button3: makeNodeComponent("button3"),
-    button2: makeNodeComponent("button2"),
     button: makeNodeComponent("button"),
     html: makeNodeComponent("html"),
 

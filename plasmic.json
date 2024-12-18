@@ -1188,6 +1188,21 @@
           "id": "96Wn39lNe47b",
           "name": "yalda-3.jpg",
           "filePath": "../public/plasmic/website_starter/images/yalda3Jpg.jpg"
+        },
+        {
+          "id": "WWJuK8V-SPTz",
+          "name": "Group 4.png",
+          "filePath": "../public/plasmic/website_starter/images/group4Png.png"
+        },
+        {
+          "id": "d6N7XzuSo6eS",
+          "name": "Group 4 (1).png",
+          "filePath": "../public/plasmic/website_starter/images/group41Png.png"
+        },
+        {
+          "id": "EMWJTaK-S-l5",
+          "name": "Group 4 (2).png",
+          "filePath": "../public/plasmic/website_starter/images/group42Png.png"
         }
       ],
       "indirect": false,

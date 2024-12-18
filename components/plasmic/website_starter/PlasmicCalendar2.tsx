@@ -699,86 +699,21 @@ function PlasmicCalendar2__RenderFunc(props: {
                   : (() => {
                       try {
                         return (() => {
-                          console.log("home");
-                          function convertPersianNumbersToEnglish(str) {
-                            const persianNumbers = "۰۱۲۳۴۵۶۷۸۹";
-                            return str.replace(/[۰-۹]/g, char =>
-                              persianNumbers.indexOf(char)
-                            );
-                          }
-                          function isPastDate(
-                            targetY,
-                            targetM,
-                            targetD,
-                            currentY,
-                            currentM,
-                            currentD
-                          ) {
-                            if (targetY < currentY) return true;
-                            if (targetY === currentY && targetM < currentM)
-                              return true;
-                            if (
-                              targetY === currentY &&
-                              targetM === currentM &&
-                              targetD < currentD
-                            )
-                              return true;
-                            return false;
-                          }
-                          function isOutOfNextMonthRange(
-                            targetY,
-                            targetM,
-                            nextY,
-                            nextM
-                          ) {
-                            if (targetY > nextY) return true;
-                            if (targetY === nextY && targetM > nextM)
-                              return true;
-                            return false;
-                          }
                           const currentDate = new Date();
-                          const nextMonthDate = new Date(currentDate);
-                          nextMonthDate.setMonth(currentDate.getMonth() + 1);
-                          const [currentYear, currentMonth, currentDay] =
-                            currentDate
-                              .toLocaleDateString("fa")
-                              .split("/")
-                              .map(val =>
-                                parseInt(convertPersianNumbersToEnglish(val))
-                              );
-                          const [nextMonthYear, nextMonth] = nextMonthDate
-                            .toLocaleDateString("fa")
-                            .split("/")
-                            .slice(0, 2)
-                            .map(val =>
-                              parseInt(convertPersianNumbersToEnglish(val))
-                            );
+                          const yesterdayDate = new Date(
+                            currentDate.getTime() - 24 * 60 * 60 * 1000
+                          );
+                          const yesterdayTimestamp = Math.floor(
+                            yesterdayDate.getTime() / 1000
+                          );
+                          const minTimestamp = yesterdayTimestamp;
+                          const maxTimestamp = 1739945463;
                           function getDayClass(dateProps, calendarData) {
-                            const targetDate = new Date(dateProps.unix * 1000);
-                            const [targetYear, targetMonth, targetDay] =
-                              targetDate
-                                .toLocaleDateString("fa")
-                                .split("/")
-                                .map(val =>
-                                  parseInt(convertPersianNumbersToEnglish(val))
-                                );
                             const dayIndex = dateProps.date.day - 1;
                             const calendarItem = calendarData[dayIndex] || {};
                             if (
-                              isPastDate(
-                                targetYear,
-                                targetMonth,
-                                targetDay,
-                                currentYear,
-                                currentMonth,
-                                currentDay
-                              ) ||
-                              isOutOfNextMonthRange(
-                                targetYear,
-                                targetMonth,
-                                nextMonthYear,
-                                nextMonth
-                              )
+                              dateProps.unix < minTimestamp ||
+                              dateProps.unix > maxTimestamp
                             ) {
                               return "disabled";
                             }
@@ -792,7 +727,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                               calendarItem.discount_percentage > 0
                             )
                               return "discount";
-                            return calendarItem.status || "";
                             return calendarItem.status || "";
                           }
                           const className = getDayClass(
@@ -907,9 +841,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                             } = calendarItem;
                             const finalPrice =
                               price * (1 - discountPercentage / 100);
-                            const formattedPersianPrice = finalPrice
+                            const roundedPrice = Math.round(finalPrice / 1000);
+                            const formattedPersianPrice = roundedPrice
                               ? new Intl.NumberFormat("fa-IR").format(
-                                  finalPrice / 1000
+                                  roundedPrice
                                 )
                               : null;
                             return formattedPersianPrice;
