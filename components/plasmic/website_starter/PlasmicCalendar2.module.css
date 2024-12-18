@@ -67,7 +67,8 @@
 }
 @media (max-width: 508px) {
   .dayCell:global(.__wab_instance) {
-    max-width: 95%;
+    max-width: 55px;
+    width: 95%;
   }
 }
 @media (max-width: 380px) {

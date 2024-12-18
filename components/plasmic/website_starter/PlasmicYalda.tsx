@@ -734,49 +734,35 @@ function PlasmicYalda__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile") ? (
                         <React.Fragment>
-                          <React.Fragment>
-                            {
-                              "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex].desc;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
                             }
-                          </React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {
-                              "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646 "
-                            }
-                          </span>
-                          <React.Fragment>
-                            {
-                              "\u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647.\n"
-                            }
-                          </React.Fragment>
+                          })()}
                         </React.Fragment>
                       ) : hasVariant(globalVariants, "screen", "mobile") ? (
                         <React.Fragment>
-                          <React.Fragment>
-                            {
-                              "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0633\u062a\u0647 \u0634\u0627\u0631\u0698 \u06cc\u06a9 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0631\u0648 "
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex].desc;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
                             }
-                          </React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {
-                              "\u0641\u0642\u0637 \u0628\u0627 \u06f7\u06f0\u06f0 \u062a\u0648\u0645\u0646"
-                            }
-                          </span>
-                          <React.Fragment>
-                            {
-                              " \u0628\u062e\u0631\u06cc!\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0633\u062a\u0647 \u06f5\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646\u06cc \u0647\u0645 \u06f2\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u062f\u0627\u0631\u0647.\n"
-                            }
-                          </React.Fragment>
+                          })()}
                         </React.Fragment>
                       ) : (
                         <React.Fragment>
