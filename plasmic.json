@@ -674,6 +674,32 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/yalda"
+        },
+        {
+          "id": "JS02cj_l1MoU",
+          "name": "Calendar22",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCalendar22.tsx",
+          "importSpec": {
+            "modulePath": "Calendar22.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCalendar22.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "gvvFSjX--a-Y",
+          "name": "DaycellWrapper",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDaycellWrapper.tsx",
+          "importSpec": {
+            "modulePath": "DaycellWrapper.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDaycellWrapper.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
