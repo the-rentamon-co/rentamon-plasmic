@@ -3,17 +3,16 @@ import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import { CodeComponentMeta } from "@plasmicapp/host";
 import { cn } from "@/lib/utils";
-import React, { useMemo } from "react";
+import React from "react";
 
 type LocaleType = "fa" | "en";
 
 interface DayCellProps {
   unix: number;
   date: { day: number; month: number; year: number };
-  isToday: boolean;
+  // isToday, isHoliday, isSelected حذف شدند
+  // اگر نیاز به isWeekend ندارید، می‌توانید آن را هم حذف کنید
   isWeekend: boolean;
-  isHoliday: boolean;
-  isSelected: boolean;
 }
 
 interface DatePickerProps {
@@ -21,7 +20,7 @@ interface DatePickerProps {
   onMonthChange: (month: number) => void;
   onYearChange: (year: number) => void;
   locale?: LocaleType;
-  holidays?: number[];
+  holidays?: number[]; // اگر دیگر نیاز ندارید می‌توانید حذف کنید
   value?: number;
   mode?: "single" | "multiple";
   values?: number[];
@@ -40,16 +39,10 @@ interface YearType {
   number: number;
 }
 
-// تابع کمکی برای محاسبه زمان شروع روز
-function startOfDayUnix(timestampInSeconds: number): number {
-  return Math.floor(timestampInSeconds / 86400) * 86400;
-}
-
 // تابع کمکی برای استخراج year/month/day به صورت عددی از DateObject
 function extractNumbersFromDateObject(date: DateObject): {day: number; month: number; year: number} {
   const m = date.month as unknown as MonthType;
   const y = date.year as unknown as YearType;
-  // date.day خود یک number است
   return { day: date.day, month: m.number, year: y.number };
 }
 
@@ -58,6 +51,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   onMonthChange,
   onYearChange,
   locale = "fa",
+  // holidays را اگر دیگر نیاز نیست، می‌توانید حذف کنید
   holidays = [],
   value,
   mode = "single",
@@ -67,25 +61,8 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 }) => {
   const isFaLocale = locale === "fa";
 
+  // محاسبه weekend ها
   const weekendDays = isFaLocale ? [5, 6] : [0, 6];
-
-  const holidaysSet = useMemo(() => {
-    return new Set(
-      holidays.map((h: number) => {
-        return startOfDayUnix(h);
-      })
-    );
-  }, [holidays]);
-
-  const selectedDaysSet = useMemo(() => {
-    if (mode === "multiple" && Array.isArray(values)) {
-      return new Set(values.map((d: number) => startOfDayUnix(d)));
-    } else if (mode === "single" && typeof value === "number") {
-      return new Set([startOfDayUnix(value)]);
-    } else {
-      return new Set<number>();
-    }
-  }, [values, value, mode]);
 
   return (
     <Calendar
@@ -129,21 +106,10 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       shadow={false}
       mapDays={({
         date,
-        today,
-        isSameDate,
-        selectedDate: currentSelectedDate,
       }: {
         date: DateObject;
-        today: DateObject;
-        isSameDate: (d1: DateObject, d2: DateObject) => boolean;
-        selectedDate: DateObject | DateObject[];
       }) => {
-        const dayUnix = startOfDayUnix(date.unix);
-        const isHoliday = holidaysSet.has(dayUnix);
-        const isSelected = selectedDaysSet.has(dayUnix);
         const isWeekend = weekendDays.includes(date.weekDay.index);
-        const isToday = isSameDate(date, today);
-
         const { day, month, year } = extractNumbersFromDateObject(date);
 
         if (customDayCell && dayCell) {
@@ -153,22 +119,13 @@ export const DatePicker: React.FC<DatePickerProps> = ({
             children: React.createElement(dayCell, {
               unix: date.unix,
               date: { day, month, year },
-              isToday,
               isWeekend,
-              isHoliday,
-              isSelected,
             }),
           };
         }
 
-        let className = "fragment-day-cell";
-
-        if (isWeekend) className = "fragment-day-holiday-cell";
-        if (isToday) className = "fragment-day-today-cell";
-        if (isHoliday) className = "fragment-day-holiday-cell";
-        if (isSelected) className = "fragment-day-active-cell";
-
-        return { class: className };
+        // کلاس ثابت بدون isSelected, isHoliday, isToday
+        return { class: "fragment-day-cell" };
       }}
     />
   );
