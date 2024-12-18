@@ -1,7 +1,5 @@
 .cell {
   position: relative;
-  padding-left: 0px;
-  padding-bottom: 10px;
   height: 80px;
   width: 100%;
   flex-direction: column;
@@ -11,9 +9,9 @@
   margin-right: 0px;
   justify-self: flex-start;
   overflow: hidden;
-  padding-top: 10px;
   min-width: 0;
   border-radius: 10px;
+  padding: 10px 0px;
 }
 .cell > :global(.__wab_flex-container) {
   align-items: center;
@@ -27,11 +25,10 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 0px;
     height: 74px;
-    padding-top: 2px;
     min-width: 0;
     border-radius: 9px;
+    padding: 2px 0px 0px;
   }
 }
 @media (max-width: 500px) {
@@ -206,7 +203,6 @@
 @media (max-width: 500px) {
   .freeBox__gKj3 {
     width: 100%;
-    min-width: 0;
   }
 }
 .text__kqTC {
@@ -223,7 +219,7 @@
 @media (max-width: 500px) {
   .text__kqTC {
     font-size: 17px;
-    display: none;
+    display: block;
   }
 }
 @media (max-width: 380px) {

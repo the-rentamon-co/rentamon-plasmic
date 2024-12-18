@@ -59,8 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -214,68 +214,6 @@ function PlasmicYalda__RenderFunc(props: {
             sty.yalda
           )}
         >
-          <ApiRequest
-            data-plasmic-name={"apiRequest"}
-            data-plasmic-override={overrides.apiRequest}
-            className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rjCyl
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__b6RRy
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
-                null,
-                eventArgs
-              );
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequest",
-                "loading"
-              ]).apply(null, eventArgs);
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                null,
-                eventArgs
-              );
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
-            }}
-            url={
-              "https://gateway.rentamon.com/webhook/b9529eda-6650-438b-88e0-ff5ce680a9c3"
-            }
-          />
-
           <div className={classNames(projectcss.all, sty.freeBox__jzgX9)}>
             <div
               className={classNames(
@@ -538,6 +476,86 @@ function PlasmicYalda__RenderFunc(props: {
               }}
             />
           </div>
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rjCyl
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div className={classNames(projectcss.all, sty.freeBox__vlXvJ)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__b6RRy
+                  )}
+                >
+                  {
+                    "\u0644\u0638\u0641\u0627 \u0635\u0628\u0631 \u06a9\u0646\u06cc\u062f"
+                  }
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__pg8Dn)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                  }
+                />
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (eventArgs.length > 1 && eventArgs[1]) {
+                return;
+              }
+            }}
+            url={
+              "https://gateway.rentamon.com/webhook/b9529eda-6650-438b-88e0-ff5ce680a9c3"
+            }
+          />
+
           {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
             (() => {
               try {
