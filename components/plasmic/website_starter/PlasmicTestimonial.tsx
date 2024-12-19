@@ -215,10 +215,12 @@ function PlasmicTestimonial__RenderFunc(props: {
             displayMinHeight={"0"}
             displayMinWidth={"0"}
             displayWidth={"auto"}
+            height={"100px"}
             loading={"lazy"}
             src={
-              "https://rentamon.com/wp-content/uploads/2024/03/loading-e1718024098941.gif"
+              "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
             }
+            width={"100px"}
           />
         }
         method={"GET"}

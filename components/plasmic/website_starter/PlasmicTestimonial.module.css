@@ -14,11 +14,11 @@
   object-fit: cover;
 }
 .img__jjq5N {
-  object-fit: cover;
+  object-fit: contain;
   max-width: 100%;
 }
 .img__jjq5N > picture > img {
-  object-fit: cover;
+  object-fit: contain;
 }
 .text {
   position: relative;
