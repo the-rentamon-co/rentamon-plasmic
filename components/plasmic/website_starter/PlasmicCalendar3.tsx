@@ -244,10 +244,6 @@ function PlasmicCalendar3__RenderFunc(props: {
             eventArgs
           );
 
-          if (eventArgs.length > 1 && eventArgs[1]) {
-            return;
-          }
-
           (async date => {
             const $steps = {};
 
@@ -288,20 +284,12 @@ function PlasmicCalendar3__RenderFunc(props: {
             null,
             eventArgs
           );
-
-          if (eventArgs.length > 1 && eventArgs[1]) {
-            return;
-          }
         }}
         onYearChange={async (...eventArgs: any) => {
           generateStateOnChangeProp($state, ["datePicker", "year"]).apply(
             null,
             eventArgs
           );
-
-          if (eventArgs.length > 1 && eventArgs[1]) {
-            return;
-          }
         }}
         value={generateStateValueProp($state, ["datePicker", "value"])}
         values={generateStateValueProp($state, ["datePicker", "values"])}

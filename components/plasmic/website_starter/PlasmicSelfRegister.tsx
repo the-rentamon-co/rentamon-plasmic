@@ -652,10 +652,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   ["selfRegisterForm", "value"],
                   FormWrapper_Helpers
                 ).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               },
               formItems: [
                 { label: "Name", name: "name", inputType: "Text" },
@@ -707,10 +703,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   ["selfRegisterForm", "isSubmitting"],
                   FormWrapper_Helpers
                 ).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               },
               ref: ref => {
                 $refs["selfRegisterForm"] = ref;
@@ -783,10 +775,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder: "\u0646\u0627\u0645",
                           size: "large",
@@ -841,10 +829,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input2", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder:
                             "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
@@ -899,7 +883,11 @@ function PlasmicSelfRegister__RenderFunc(props: {
                           ])(eventArgs[0]);
                         }).apply(null, eventArgs);
 
-                        if (eventArgs.length > 1 && eventArgs[1]) {
+                        if (
+                          eventArgs.length > 1 &&
+                          eventArgs[1] &&
+                          eventArgs[1]._plasmic_state_init_
+                        ) {
                           return;
                         }
                       }}
@@ -1069,10 +1057,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input3", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder:
                             "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
@@ -1137,10 +1121,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input4", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder:
                             "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644",
@@ -1425,10 +1405,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input6", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder: (() => {
                             try {
@@ -1488,10 +1464,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input7", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder: (() => {
                             try {
@@ -1551,10 +1523,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input9", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder: (() => {
                             try {
@@ -1617,10 +1585,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input10", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder: (() => {
                             try {
@@ -1680,10 +1644,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input11", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder: (() => {
                             try {
@@ -1743,10 +1703,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input8", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder: (() => {
                             try {
@@ -1807,10 +1763,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                               ["input5", "value"],
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           },
                           placeholder: (() => {
                             try {

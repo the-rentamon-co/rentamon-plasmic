@@ -211,10 +211,6 @@ function PlasmicChangePrice__RenderFunc(props: {
             null,
             eventArgs
           );
-
-          if (eventArgs.length > 1 && eventArgs[1]) {
-            return;
-          }
         }}
         open={generateStateValueProp($state, ["modalChangePrice", "open"])}
         title={
@@ -244,10 +240,6 @@ function PlasmicChangePrice__RenderFunc(props: {
                   "numberInput2",
                   "value"
                 ]).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               placeholder={
                 "\u0645\u062b\u0644\u0627 \u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0"

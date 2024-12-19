@@ -436,10 +436,6 @@ function PlasmicPropertyName__RenderFunc(props: {
                               "fragmentPopover",
                               "open"
                             ]).apply(null, eventArgs);
-
-                            if (eventArgs.length > 1 && eventArgs[1]) {
-                              return;
-                            }
                           }}
                           open={generateStateValueProp($state, [
                             "fragmentPopover",
@@ -645,10 +641,6 @@ function PlasmicPropertyName__RenderFunc(props: {
                     ["collapse", "open"],
                     AntdSingleCollapse_Helpers
                   ).apply(null, eventArgs);
-
-                  if (eventArgs.length > 1 && eventArgs[1]) {
-                    return;
-                  }
                 },
                 open: generateStateValueProp($state, ["collapse", "open"]),
                 showArrow: true

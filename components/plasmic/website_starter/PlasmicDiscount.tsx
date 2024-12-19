@@ -228,10 +228,6 @@ function PlasmicDiscount__RenderFunc(props: {
             null,
             eventArgs
           );
-
-          if (eventArgs.length > 1 && eventArgs[1]) {
-            return;
-          }
         }}
         open={generateStateValueProp($state, ["modalDiscount", "open"])}
         title={
@@ -310,10 +306,6 @@ function PlasmicDiscount__RenderFunc(props: {
                   "numberInput3",
                   "value"
                 ]).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
               readOnly={true}

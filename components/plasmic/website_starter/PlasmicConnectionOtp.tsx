@@ -709,10 +709,6 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                       "jabamaModal",
                       "open"
                     ]).apply(null, eventArgs);
-
-                    if (eventArgs.length > 1 && eventArgs[1]) {
-                      return;
-                    }
                   }}
                   open={generateStateValueProp($state, ["jabamaModal", "open"])}
                   title={
@@ -741,10 +737,6 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                             "numberInput",
                             "value"
                           ]).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         }}
                         prefix={null}
                         type={"number"}
@@ -793,10 +785,6 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                       "jajigaModal",
                       "open"
                     ]).apply(null, eventArgs);
-
-                    if (eventArgs.length > 1 && eventArgs[1]) {
-                      return;
-                    }
                   }}
                   open={generateStateValueProp($state, ["jajigaModal", "open"])}
                   title={
@@ -865,10 +853,6 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                         "numberJajiga",
                         "value"
                       ]).apply(null, eventArgs);
-
-                      if (eventArgs.length > 1 && eventArgs[1]) {
-                        return;
-                      }
                     }}
                     placeholder={
                       "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u06cc \u06a9\u0647 \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627 \u062b\u0628\u062a \u06a9\u0631\u062f\u06cc \u0648\u0627\u0631\u062f \u06a9\u0646"
@@ -975,10 +959,6 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                         "otpJajiga",
                         "value"
                       ]).apply(null, eventArgs);
-
-                      if (eventArgs.length > 1 && eventArgs[1]) {
-                        return;
-                      }
                     }}
                     placeholder={
                       "\ud83d\udcac \u06a9\u062f \u0648\u0631\u0648\u062f \u067e\u06cc\u0627\u0645\u06a9\u06cc \u06a9\u0647 \u0627\u0644\u0627\u0646 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc"

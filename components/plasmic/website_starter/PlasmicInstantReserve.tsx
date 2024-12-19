@@ -373,30 +373,18 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   "properties",
                   "error"
                 ]).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               onLoading={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, [
                   "properties",
                   "loading"
                 ]).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               onSuccess={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, ["properties", "data"]).apply(
                   null,
                   eventArgs
                 );
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               url={"https://dev.rentamon.com/webhook/property-status"}
             >
@@ -412,7 +400,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     ])(eventArgs[0]);
                   }).apply(null, eventArgs);
 
-                  if (eventArgs.length > 1 && eventArgs[1]) {
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
                     return;
                   }
                 }}
@@ -520,10 +512,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "shabSwitch",
                           "checked"
                         ]).apply(null, eventArgs);
-
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
 
                         (async checked => {
                           const $steps = {};
@@ -768,10 +756,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "checked"
                         ]).apply(null, eventArgs);
 
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
-
                         (async checked => {
                           const $steps = {};
 
@@ -986,10 +970,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "checked"
                         ]).apply(null, eventArgs);
 
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
-
                         (async checked => {
                           const $steps = {};
 
@@ -1175,10 +1155,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "checked"
                         ]).apply(null, eventArgs);
 
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
-
                         (async checked => {
                           const $steps = {};
 
@@ -1363,10 +1339,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "fragmentSwitch6",
                           "checked"
                         ]).apply(null, eventArgs);
-
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
 
                         (async checked => {
                           const $steps = {};
@@ -1556,10 +1528,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "checked"
                         ]).apply(null, eventArgs);
 
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
-
                         (async checked => {
                           const $steps = {};
 
@@ -1744,10 +1712,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "fragmentSwitch4",
                           "checked"
                         ]).apply(null, eventArgs);
-
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
 
                         (async checked => {
                           const $steps = {};

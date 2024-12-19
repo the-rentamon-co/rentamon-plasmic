@@ -1376,7 +1376,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                                 ])(eventArgs[0]);
                               }).apply(null, eventArgs);
 
-                              if (eventArgs.length > 1 && eventArgs[1]) {
+                              if (
+                                eventArgs.length > 1 &&
+                                eventArgs[1] &&
+                                eventArgs[1]._plasmic_state_init_
+                              ) {
                                 return;
                               }
                             }}
@@ -1474,7 +1478,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                                 ])(eventArgs[0]);
                               }).apply(null, eventArgs);
 
-                              if (eventArgs.length > 1 && eventArgs[1]) {
+                              if (
+                                eventArgs.length > 1 &&
+                                eventArgs[1] &&
+                                eventArgs[1]._plasmic_state_init_
+                              ) {
                                 return;
                               }
                             }}
@@ -1572,7 +1580,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                                 ])(eventArgs[0]);
                               }).apply(null, eventArgs);
 
-                              if (eventArgs.length > 1 && eventArgs[1]) {
+                              if (
+                                eventArgs.length > 1 &&
+                                eventArgs[1] &&
+                                eventArgs[1]._plasmic_state_init_
+                              ) {
                                 return;
                               }
                             }}

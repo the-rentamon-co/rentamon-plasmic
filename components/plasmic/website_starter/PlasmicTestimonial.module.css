@@ -66,11 +66,16 @@
 @media (max-width: 1200px) {
   .freeBox__y46Mm {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-right: 0em;
+    padding-left: 0em;
+    grid-column-gap: 1em;
   }
 }
 @media (max-width: 500px) {
   .freeBox__y46Mm {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding-right: 0em;
+    padding-left: 0em;
   }
 }
 @media (max-width: 380px) {

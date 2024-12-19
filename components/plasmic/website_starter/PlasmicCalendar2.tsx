@@ -467,30 +467,18 @@ function PlasmicCalendar2__RenderFunc(props: {
             null,
             eventArgs
           );
-
-          if (eventArgs.length > 1 && eventArgs[1]) {
-            return;
-          }
         }}
         onLoading={async (...eventArgs: any) => {
           generateStateOnChangeProp($state, ["apiRequest", "loading"]).apply(
             null,
             eventArgs
           );
-
-          if (eventArgs.length > 1 && eventArgs[1]) {
-            return;
-          }
         }}
         onSuccess={async (...eventArgs: any) => {
           generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
             null,
             eventArgs
           );
-
-          if (eventArgs.length > 1 && eventArgs[1]) {
-            return;
-          }
         }}
         url={(() => {
           try {
@@ -735,30 +723,18 @@ function PlasmicCalendar2__RenderFunc(props: {
               "fragmentDatePicker",
               "values"
             ]).apply(null, eventArgs);
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
           }}
           onMonthChange={async (...eventArgs: any) => {
             generateStateOnChangeProp($state, [
               "fragmentDatePicker",
               "month"
             ]).apply(null, eventArgs);
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
           }}
           onYearChange={async (...eventArgs: any) => {
             generateStateOnChangeProp($state, [
               "fragmentDatePicker",
               "year"
             ]).apply(null, eventArgs);
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
 
             (async year => {
               const $steps = {};
@@ -1084,10 +1060,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               null,
               eventArgs
             );
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
           }}
           open={generateStateValueProp($state, ["modalDiscount", "open"])}
           title={
@@ -1232,10 +1204,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                         "numberInput4",
                         "value"
                       ]).apply(null, eventArgs);
-
-                      if (eventArgs.length > 1 && eventArgs[1]) {
-                        return;
-                      }
                     }}
                     placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
                     readOnly={true}
@@ -1620,10 +1588,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                       "numberInput3",
                       "value"
                     ]).apply(null, eventArgs);
-
-                    if (eventArgs.length > 1 && eventArgs[1]) {
-                      return;
-                    }
                   }}
                   placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
                   readOnly={true}
@@ -1704,10 +1668,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               null,
               eventArgs
             );
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
           }}
           open={generateStateValueProp($state, ["modal", "open"])}
           title={
@@ -2480,10 +2440,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               "modalChangePrice",
               "open"
             ]).apply(null, eventArgs);
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
           }}
           open={generateStateValueProp($state, ["modalChangePrice", "open"])}
           title={
@@ -2570,10 +2526,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                     "numberInput2",
                     "value"
                   ]).apply(null, eventArgs);
-
-                  if (eventArgs.length > 1 && eventArgs[1]) {
-                    return;
-                  }
                 }}
                 placeholder={
                   "\u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
@@ -3075,10 +3027,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               null,
               eventArgs
             );
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
           }}
           open={generateStateValueProp($state, ["fetchModal", "open"])}
           title={
@@ -3159,30 +3107,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                 "userPlatform",
                 "error"
               ]).apply(null, eventArgs);
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
             }}
             onLoading={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, [
                 "userPlatform",
                 "loading"
               ]).apply(null, eventArgs);
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
             }}
             onSuccess={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["userPlatform", "data"]).apply(
                 null,
                 eventArgs
               );
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
             }}
             url={(() => {
               try {
@@ -3601,10 +3537,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               null,
               eventArgs
             );
-
-            if (eventArgs.length > 1 && eventArgs[1]) {
-              return;
-            }
           }}
           open={generateStateValueProp($state, ["block", "open"])}
           title={

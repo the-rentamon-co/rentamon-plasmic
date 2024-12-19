@@ -315,10 +315,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   null,
                   eventArgs
                 );
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               open={generateStateValueProp($state, ["modal", "open"])}
               title={
@@ -883,30 +879,18 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   null,
                   eventArgs
                 );
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               onLoading={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, ["profile", "loading"]).apply(
                   null,
                   eventArgs
                 );
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               onSuccess={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, ["profile", "data"]).apply(
                   null,
                   eventArgs
                 );
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               url={(() => {
                 try {
@@ -1052,30 +1036,18 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       "apiRequest",
                       "error"
                     ]).apply(null, eventArgs);
-
-                    if (eventArgs.length > 1 && eventArgs[1]) {
-                      return;
-                    }
                   }}
                   onLoading={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
                       "apiRequest",
                       "loading"
                     ]).apply(null, eventArgs);
-
-                    if (eventArgs.length > 1 && eventArgs[1]) {
-                      return;
-                    }
                   }}
                   onSuccess={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
                       "apiRequest",
                       "data"
                     ]).apply(null, eventArgs);
-
-                    if (eventArgs.length > 1 && eventArgs[1]) {
-                      return;
-                    }
                   }}
                   url={(() => {
                     try {
@@ -1247,7 +1219,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       );
                     }).apply(null, eventArgs);
 
-                    if (eventArgs.length > 1 && eventArgs[1]) {
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
                       return;
                     }
 

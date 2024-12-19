@@ -193,10 +193,6 @@ function PlasmicCalendarTest__RenderFunc(props: {
                   ["sliderCarousel", "currentSlide"],
                   SliderWrapper_Helpers
                 ).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               },
               centerMode: true,
               className: classNames("__wab_instance", sty.sliderCarousel),

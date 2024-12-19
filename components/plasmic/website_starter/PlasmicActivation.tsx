@@ -741,30 +741,18 @@ function PlasmicActivation__RenderFunc(props: {
                 null,
                 eventArgs
               );
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
             }}
             onLoading={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, [
                 "apiRequest",
                 "loading"
               ]).apply(null, eventArgs);
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
             }}
             onSuccess={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
                 null,
                 eventArgs
               );
-
-              if (eventArgs.length > 1 && eventArgs[1]) {
-                return;
-              }
             }}
             url={"https://gateway.rentamon.com/webhook/active1"}
           >
@@ -806,10 +794,6 @@ function PlasmicActivation__RenderFunc(props: {
                   ["form", "value"],
                   FormWrapper_Helpers
                 ).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               },
               formItems: [
                 { label: "Name", name: "name", inputType: "Text" },
@@ -825,10 +809,6 @@ function PlasmicActivation__RenderFunc(props: {
                   ["form", "isSubmitting"],
                   FormWrapper_Helpers
                 ).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               },
               ref: ref => {
                 $refs["form"] = ref;
@@ -946,7 +926,11 @@ function PlasmicActivation__RenderFunc(props: {
                               ])(eventArgs[0]);
                             }).apply(null, eventArgs);
 
-                            if (eventArgs.length > 1 && eventArgs[1]) {
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
                               return;
                             }
                           }}
@@ -989,7 +973,11 @@ function PlasmicActivation__RenderFunc(props: {
                               ])(eventArgs[0]);
                             }).apply(null, eventArgs);
 
-                            if (eventArgs.length > 1 && eventArgs[1]) {
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
                               return;
                             }
                           }}
@@ -1037,7 +1025,11 @@ function PlasmicActivation__RenderFunc(props: {
                               ])(eventArgs[0]);
                             }).apply(null, eventArgs);
 
-                            if (eventArgs.length > 1 && eventArgs[1]) {
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
                               return;
                             }
                           }}
@@ -1080,7 +1072,11 @@ function PlasmicActivation__RenderFunc(props: {
                               ])(eventArgs[0]);
                             }).apply(null, eventArgs);
 
-                            if (eventArgs.length > 1 && eventArgs[1]) {
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
                               return;
                             }
                           }}
@@ -1127,7 +1123,11 @@ function PlasmicActivation__RenderFunc(props: {
                               ])(eventArgs[0]);
                             }).apply(null, eventArgs);
 
-                            if (eventArgs.length > 1 && eventArgs[1]) {
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
                               return;
                             }
                           }}
@@ -1172,7 +1172,11 @@ function PlasmicActivation__RenderFunc(props: {
                               ])(eventArgs[0]);
                             }).apply(null, eventArgs);
 
-                            if (eventArgs.length > 1 && eventArgs[1]) {
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
                               return;
                             }
                           }}
@@ -1219,7 +1223,11 @@ function PlasmicActivation__RenderFunc(props: {
                               ])(eventArgs[0]);
                             }).apply(null, eventArgs);
 
-                            if (eventArgs.length > 1 && eventArgs[1]) {
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
                               return;
                             }
                           }}
@@ -1470,10 +1478,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input26", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: ``,
                         size: "large",
@@ -1715,10 +1719,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input8", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: (() => {
                           try {
@@ -1979,10 +1979,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input7", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: ``,
                         size: "large",
@@ -2224,10 +2220,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input6", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: (() => {
                           try {
@@ -2489,10 +2481,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input9", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: ``,
                         size: "large",
@@ -2731,10 +2719,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input10", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: (() => {
                           try {
@@ -2992,10 +2976,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input11", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: ``,
                         size: "large",
@@ -3240,10 +3220,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input12", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: (() => {
                           try {
@@ -3501,10 +3477,6 @@ function PlasmicActivation__RenderFunc(props: {
                           ["input13", "value"],
                           AntdInput_Helpers
                         ).apply(null, eventArgs);
-
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
                       },
                       placeholder: ``,
                       size: "large",
@@ -3728,10 +3700,6 @@ function PlasmicActivation__RenderFunc(props: {
                           ["input14", "value"],
                           AntdInput_Helpers
                         ).apply(null, eventArgs);
-
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
                       },
                       placeholder: (() => {
                         try {
@@ -3984,10 +3952,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input15", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: ``,
                         size: "large",
@@ -4048,10 +4012,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ["input16", "value"],
                             AntdInput_Helpers
                           ).apply(null, eventArgs);
-
-                          if (eventArgs.length > 1 && eventArgs[1]) {
-                            return;
-                          }
                         },
                         placeholder: (() => {
                           try {
@@ -4304,10 +4264,6 @@ function PlasmicActivation__RenderFunc(props: {
                           ["input17", "value"],
                           AntdInput_Helpers
                         ).apply(null, eventArgs);
-
-                        if (eventArgs.length > 1 && eventArgs[1]) {
-                          return;
-                        }
                       },
                       placeholder: ``,
                       size: "large",
@@ -4547,10 +4503,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 ["input18", "value"],
                                 AntdInput_Helpers
                               ).apply(null, eventArgs);
-
-                              if (eventArgs.length > 1 && eventArgs[1]) {
-                                return;
-                              }
                             },
                             placeholder: (() => {
                               try {
@@ -4873,10 +4825,6 @@ function PlasmicActivation__RenderFunc(props: {
                                   ["input19", "value"],
                                   AntdInput_Helpers
                                 ).apply(null, eventArgs);
-
-                                if (eventArgs.length > 1 && eventArgs[1]) {
-                                  return;
-                                }
                               },
                               placeholder: ``,
                               size: "large",
@@ -4977,10 +4925,6 @@ function PlasmicActivation__RenderFunc(props: {
                                   ["input20", "value"],
                                   AntdInput_Helpers
                                 ).apply(null, eventArgs);
-
-                                if (eventArgs.length > 1 && eventArgs[1]) {
-                                  return;
-                                }
                               },
                               placeholder: ``,
                               size: "large",
@@ -5081,10 +5025,6 @@ function PlasmicActivation__RenderFunc(props: {
                                   ["input21", "value"],
                                   AntdInput_Helpers
                                 ).apply(null, eventArgs);
-
-                                if (eventArgs.length > 1 && eventArgs[1]) {
-                                  return;
-                                }
                               },
                               placeholder: ``,
                               size: "large",
@@ -5185,10 +5125,6 @@ function PlasmicActivation__RenderFunc(props: {
                                   ["input22", "value"],
                                   AntdInput_Helpers
                                 ).apply(null, eventArgs);
-
-                                if (eventArgs.length > 1 && eventArgs[1]) {
-                                  return;
-                                }
                               },
                               placeholder: ``,
                               size: "large",
@@ -5289,10 +5225,6 @@ function PlasmicActivation__RenderFunc(props: {
                                   ["input23", "value"],
                                   AntdInput_Helpers
                                 ).apply(null, eventArgs);
-
-                                if (eventArgs.length > 1 && eventArgs[1]) {
-                                  return;
-                                }
                               },
                               placeholder: ``,
                               size: "large",
@@ -5393,10 +5325,6 @@ function PlasmicActivation__RenderFunc(props: {
                                   ["input24", "value"],
                                   AntdInput_Helpers
                                 ).apply(null, eventArgs);
-
-                                if (eventArgs.length > 1 && eventArgs[1]) {
-                                  return;
-                                }
                               },
                               placeholder: ``,
                               size: "large",
@@ -5497,10 +5425,6 @@ function PlasmicActivation__RenderFunc(props: {
                                   ["input27", "value"],
                                   AntdInput_Helpers
                                 ).apply(null, eventArgs);
-
-                                if (eventArgs.length > 1 && eventArgs[1]) {
-                                  return;
-                                }
                               },
                               placeholder: ``,
                               size: "large",
@@ -5848,30 +5772,18 @@ function PlasmicActivation__RenderFunc(props: {
                   "apiRequest2",
                   "error"
                 ]).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               onLoading={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, [
                   "apiRequest2",
                   "loading"
                 ]).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               onSuccess={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, [
                   "apiRequest2",
                   "data"
                 ]).apply(null, eventArgs);
-
-                if (eventArgs.length > 1 && eventArgs[1]) {
-                  return;
-                }
               }}
               url={"https://ws.alibaba.ir/api/v2/basic-info/calendar-events"}
             />
