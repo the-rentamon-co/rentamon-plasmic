@@ -440,7 +440,7 @@ function PlasmicTestimonial__RenderFunc(props: {
                       className={classNames(sty.img___7HCkr)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "18px"
+                          ? "17px"
                           : "25px"
                       }
                       displayMaxHeight={"none"}
