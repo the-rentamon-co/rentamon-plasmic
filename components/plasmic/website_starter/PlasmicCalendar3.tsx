@@ -231,7 +231,6 @@ function PlasmicCalendar3__RenderFunc(props: {
             {"Enter some text"}
           </div>
         )}
-        holidays={[]}
         locale={"fa"}
         mode={"multiple"}
         onChange={async (...eventArgs: any) => {

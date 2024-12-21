@@ -1171,6 +1171,42 @@ function PlasmicYalda__RenderFunc(props: {
             className={classNames("__wab_instance", sty.testimonial)}
           />
 
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__pA2So
+            )}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          return (window.location.href = "tel:02191096227");
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          >
+            {
+              "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+            }
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__yswi5)}>
             <Button
               data-plasmic-name={"button"}

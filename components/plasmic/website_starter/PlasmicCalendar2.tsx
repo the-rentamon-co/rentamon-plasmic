@@ -678,7 +678,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               })()}
             />
           )}
-          holidays={[]}
           locale={"fa"}
           mode={"multiple"}
           onChange={async (...eventArgs: any) => {

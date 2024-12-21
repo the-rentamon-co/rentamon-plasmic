@@ -530,7 +530,6 @@ function PlasmicCalendar22__RenderFunc(props: {
               })()}
             />
           )}
-          holidays={[]}
           locale={"fa"}
           mode={"multiple"}
           onChange={async (...eventArgs: any) => {
