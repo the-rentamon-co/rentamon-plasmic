@@ -135,14 +135,54 @@
 }
 .holidays2 {
   position: relative;
-  color: var(--token-j-ZwOKbpUCqd);
+  color: var(--token-Bo2_tT25lwh4);
   font-family: "Estedad";
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   max-width: 100%;
   height: auto;
   width: 100%;
+  margin-top: 2px;
   min-width: 0;
+}
+@media (max-width: 1200px) {
+  .holidays2 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-top: 2px;
+    font-family: "Estedad";
+    font-weight: 500;
+    color: var(--token-Bo2_tT25lwh4);
+    text-align: center;
+    min-width: 0;
+  }
+}
+@media (max-width: 500px) {
+  .holidays2 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-top: 2px;
+    font-family: "Estedad";
+    font-weight: 500;
+    color: var(--token-Bo2_tT25lwh4);
+    text-align: center;
+    min-width: 0;
+  }
+}
+@media (max-width: 380px) {
+  .holidays2 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-top: 2px;
+    font-family: "Estedad";
+    font-weight: 500;
+    color: var(--token-Bo2_tT25lwh4);
+    text-align: center;
+    min-width: 0;
+  }
 }
 .holidays2selected {
   color: var(--token-j-ZwOKbpUCqd);
@@ -155,13 +195,14 @@
   min-width: 0;
 }
 .holidays2dayStatus_reserved {
-  color: var(--token-j-ZwOKbpUCqd);
+  color: var(--token-Bo2_tT25lwh4);
   width: 100%;
   height: auto;
   max-width: 100%;
   font-family: "Estedad";
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
+  margin-top: 2px;
   min-width: 0;
 }
 .holidays2dayStatus_disabled {
@@ -203,6 +244,7 @@
 @media (max-width: 500px) {
   .freeBox__gKj3 {
     width: 100%;
+    max-width: 50px;
   }
 }
 .text__kqTC {

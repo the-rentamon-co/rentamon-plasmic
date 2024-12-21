@@ -369,12 +369,21 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={"20px"}
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/cancelSvgrepoComSvg.svg",
-                      fullWidth: 64,
-                      fullHeight: 64,
-                      aspectRatio: 1
-                    }}
+                    src={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? {
+                            src: "/plasmic/website_starter/images/image36.svg",
+                            fullWidth: 21,
+                            fullHeight: 24,
+                            aspectRatio: 0.875
+                          }
+                        : {
+                            src: "/plasmic/website_starter/images/image36.svg",
+                            fullWidth: 21,
+                            fullHeight: 24,
+                            aspectRatio: 0.875
+                          }
+                    }
                   />
                 </div>
               }
@@ -970,15 +979,15 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={
                       hasVariant(globalVariants, "screen", "mobile")
-                        ? "28px"
-                        : "44px"
+                        ? "20px"
+                        : "30px"
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/image7.svg",
-                      fullWidth: 36,
-                      fullHeight: 36,
-                      aspectRatio: 1
+                      src: "/plasmic/website_starter/images/image37.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
                     }}
                   />
                 </div>
@@ -1002,21 +1011,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         sty.text__soLq4
                       )}
                     >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequest.error.detail;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "Error fetching data";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
+                      {
+                        "\u062e\u0637\u0627 \u062f\u0631 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0633\u0631\u0648\u0631"
+                      }
                     </div>
                   }
                   loadingDisplay={
@@ -1312,7 +1309,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         sty.text__ixdkM
                       )}
                     >
-                      {"Select\u2026"}
+                      {
+                        "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
+                      }
                     </div>
                   }
                   value={generateStateValueProp($state, ["select", "value"])}

@@ -62,6 +62,9 @@ import {
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -92,6 +95,12 @@ export type PlasmicYalda__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   button5?: Flex__<"div">;
   button?: Flex__<typeof Button>;
+  accordion?: Flex__<typeof AntdAccordion>;
+  q1?: Flex__<typeof AntdAccordionItem>;
+  q2?: Flex__<typeof AntdAccordionItem>;
+  q3?: Flex__<typeof AntdAccordionItem>;
+  q4?: Flex__<typeof AntdAccordionItem>;
+  q5?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
 };
 
@@ -172,6 +181,17 @@ function PlasmicYalda__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "accordion.activePanelId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec(
+          "activePanelId",
+          AntdAccordion_Helpers
+        )
       }
     ],
     [$props, $ctx, $refs]
@@ -487,9 +507,21 @@ function PlasmicYalda__RenderFunc(props: {
                     sty.text__b6RRy
                   )}
                 >
-                  {
-                    "\u0644\u0638\u0641\u0627 \u0635\u0628\u0631 \u06a9\u0646\u06cc\u062f"
-                  }
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return "لطفا صبر کنید";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0644\u0638\u0641\u0627 \u0635\u0628\u0631 \u06a9\u0646\u06cc\u062f";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
                 <PlasmicImg__
                   alt={""}
@@ -895,6 +927,281 @@ function PlasmicYalda__RenderFunc(props: {
               </div>
             </Button>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__eVub)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__sHjOf
+              )}
+            >
+              {
+                "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644:"
+              }
+            </div>
+            {(() => {
+              const child$Props = {
+                activeKey: generateStateValueProp($state, [
+                  "accordion",
+                  "activePanelId"
+                ]),
+                bordered: true,
+                className: classNames("__wab_instance", sty.accordion),
+                items: (
+                  <React.Fragment>
+                    <AntdAccordionItem
+                      data-plasmic-name={"q1"}
+                      data-plasmic-override={overrides.q1}
+                      className={classNames("__wab_instance", sty.q1)}
+                      id={1}
+                      label2={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__s3Dcx
+                          )}
+                        >
+                          {
+                            "\u062a\u0627 \u06a9\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u062f\u0631 \u062c\u0634\u0646\u0648\u0627\u0631\u0647 \u0634\u0631\u06a9\u062a \u06a9\u0646\u0645\u061f"
+                          }
+                        </div>
+                      }
+                      showArrow={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__zqYmL
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return "فقط تا پایان ۱ دی ماه می‌تونی این تخفیف‌ها رو دریافت کنی. ";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "First Children";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </AntdAccordionItem>
+                    <AntdAccordionItem
+                      data-plasmic-name={"q2"}
+                      data-plasmic-override={overrides.q2}
+                      className={classNames("__wab_instance", sty.q2)}
+                      id={2}
+                      label2={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___90OvE
+                          )}
+                        >
+                          {
+                            "\u062a\u0627 \u06a9\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u00ab\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u00bb \u0628\u062f\u0645\u061f"
+                          }
+                        </div>
+                      }
+                      showArrow={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dBuKb
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return "اگه تا پایان تاریخ جشنواره تخفیف رو دریافت کنی یا به پشتیبانی رنتامون اطلاع بدی، بعد از این تاریخ هم قابل استفاده است.";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Second Children";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </AntdAccordionItem>
+                    <AntdAccordionItem
+                      data-plasmic-name={"q3"}
+                      data-plasmic-override={overrides.q3}
+                      className={classNames("__wab_instance", sty.q3)}
+                      id={"3"}
+                      label2={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___6HdMs
+                          )}
+                        >
+                          {
+                            "\u062a\u062e\u0641\u06cc\u0641\u200c\u0647\u0627\u06cc \u00ab\u0627\u0639\u062a\u0628\u0627\u0631 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u00bb \u062a\u0627 \u06a9\u06cc \u0645\u0639\u062a\u0628\u0631\u0647\u061f"
+                          }
+                        </div>
+                      }
+                      showArrow={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__byiMj
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return "تا پایان جشنواره فرصت داری تا اعتبار رو دریافت کنی. اما اعتبار بعد از جشنواره هم توی کیف پولت می‌مونه.";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Second Children";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </AntdAccordionItem>
+                    <AntdAccordionItem
+                      data-plasmic-name={"q4"}
+                      data-plasmic-override={overrides.q4}
+                      className={classNames("__wab_instance", sty.q4)}
+                      id={"4"}
+                      label2={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__sQvIq
+                          )}
+                        >
+                          {
+                            "\u0628\u0631\u0627\u06cc \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u200c\u0647\u200c\u0647\u0627\u0645 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627\u06cc\u062f \u0686\u06cc\u06a9\u0627\u0631 \u06a9\u0646\u0645\u061f"
+                          }
+                        </div>
+                      }
+                      showArrow={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dii0Q
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return "کافیه به پشتیبانی رنتامون اطلاع بدی. سه‌سوته همه‌ی کارها رو واست انجام می‌دیم.";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Second Children";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </AntdAccordionItem>
+                    <AntdAccordionItem
+                      data-plasmic-name={"q5"}
+                      data-plasmic-override={overrides.q5}
+                      className={classNames("__wab_instance", sty.q5)}
+                      id={"5"}
+                      label2={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__kpjjV
+                          )}
+                        >
+                          {
+                            "\u062a\u062e\u0641\u06cc\u0641\u200c\u0647\u0627\u06cc \u00ab\u0627\u0639\u062a\u0628\u0627\u0631 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u00bb \u062a\u0627 \u06a9\u06cc \u0645\u0639\u062a\u0628\u0631\u0647\u061f"
+                          }
+                        </div>
+                      }
+                      showArrow={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ojyBl
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return "به پشتیبانی رنتامون اطلاع بده تا به‌جای شما همه کارها رو انجام بدیم. و تا فعال شدن اقامتگاه شما در سایت‌های مورد نظر پیگیری می‌کنیم.";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Second Children";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </AntdAccordionItem>
+                  </React.Fragment>
+                ),
+                onChange: async (...eventArgs: any) => {
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "activePanelId",
+                    ["accordion", "activePanelId"],
+                    AntdAccordion_Helpers
+                  ).apply(null, eventArgs);
+                }
+              };
+              initializeCodeComponentStates(
+                $state,
+                [
+                  {
+                    name: "activePanelId",
+                    plasmicStateName: "accordion.activePanelId"
+                  }
+                ],
+                [],
+                AntdAccordion_Helpers ?? {},
+                child$Props
+              );
+
+              return (
+                <AntdAccordion
+                  data-plasmic-name={"accordion"}
+                  data-plasmic-override={overrides.accordion}
+                  {...child$Props}
+                />
+              );
+            })()}
+          </div>
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
@@ -921,10 +1228,28 @@ function PlasmicYalda__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  yalda: ["yalda", "apiRequest", "button5", "button", "html"],
+  yalda: [
+    "yalda",
+    "apiRequest",
+    "button5",
+    "button",
+    "accordion",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "html"
+  ],
   apiRequest: ["apiRequest"],
   button5: ["button5"],
   button: ["button"],
+  accordion: ["accordion", "q1", "q2", "q3", "q4", "q5"],
+  q1: ["q1"],
+  q2: ["q2"],
+  q3: ["q3"],
+  q4: ["q4"],
+  q5: ["q5"],
   html: ["html"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -935,6 +1260,12 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   button5: "div";
   button: typeof Button;
+  accordion: typeof AntdAccordion;
+  q1: typeof AntdAccordionItem;
+  q2: typeof AntdAccordionItem;
+  q3: typeof AntdAccordionItem;
+  q4: typeof AntdAccordionItem;
+  q5: typeof AntdAccordionItem;
   html: "div";
 };
 
@@ -1001,6 +1332,12 @@ export const PlasmicYalda = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     button5: makeNodeComponent("button5"),
     button: makeNodeComponent("button"),
+    accordion: makeNodeComponent("accordion"),
+    q1: makeNodeComponent("q1"),
+    q2: makeNodeComponent("q2"),
+    q3: makeNodeComponent("q3"),
+    q4: makeNodeComponent("q4"),
+    q5: makeNodeComponent("q5"),
     html: makeNodeComponent("html"),
 
     // Metadata about props expected for PlasmicYalda

@@ -480,9 +480,28 @@ function PlasmicCalendar2__RenderFunc(props: {
             eventArgs
           );
         }}
-        url={
-          "https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12"
-        }
+        url={(() => {
+          try {
+            return (() => {
+              let initialMonth = new Date()
+                .toLocaleDateString("fa")
+                .split("/")[1];
+              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=1403-${
+                $state.fragmentDatePicker?.month ?? initialMonth
+              }-01&end_date=1403-${
+                $state.fragmentDatePicker?.month ?? initialMonth
+              }-30&property_id=${$props.propertyId}`;
+            })();
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
       />
 
       <div className={classNames(projectcss.all, sty.freeBox__ppyHd)}>
@@ -631,31 +650,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               })()}
               price={(() => {
                 try {
-                  return (
-                    // // استخراج اطلاعات تقویم
-                    // const calendarItem = $state.apiRequest.data.calendar[dateProps.date.day - 1];
-
-                    // if (calendarItem) {
-                    //     const { price = 0, discount_percentage: discountPercentage = 0 } = calendarItem;
-
-                    //     // محاسبه قیمت نهایی با تخفیف
-                    //     const finalPrice = price * (1 - discountPercentage / 100);
-
-                    //     // رند کردن عدد نهایی و تقسیم بر 1000
-                    //     const roundedPrice = Math.round(finalPrice / 1000);
-
-                    //     // فرمت کردن قیمت نهایی به صورت فارسی
-                    //     const formattedPersianPrice = roundedPrice
-                    //         ? new Intl.NumberFormat('fa-IR').format(roundedPrice)
-                    //         : null;
-
-                    //     formattedPersianPrice; // مقدار نهایی
-                    // } else {
-                    //     null; // داده‌ای موجود نیست
-                    // }
-
-                    $state.apiRequest.data[dateProps.date.day - 1].price
-                  );
+                  return $state.apiRequest.data[dateProps.date.day - 1].price;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
