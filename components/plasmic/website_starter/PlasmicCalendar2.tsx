@@ -480,28 +480,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             eventArgs
           );
         }}
-        url={(() => {
-          try {
-            return (() => {
-              let initialMonth = new Date()
-                .toLocaleDateString("fa")
-                .split("/")[1];
-              return `https://api.rentamon.com/api/getcalendar?start_date=1403-${
-                $state.fragmentDatePicker?.month ?? initialMonth
-              }-01&end_date=1403-${
-                $state.fragmentDatePicker?.month ?? initialMonth
-              }-30&property_id=${$props.propertyId}`;
-            })();
-          } catch (e) {
-            if (
-              e instanceof TypeError ||
-              e?.plasmicType === "PlasmicUndefinedDataError"
-            ) {
-              return undefined;
-            }
-            throw e;
-          }
-        })()}
+        url={
+          "https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12"
+        }
       />
 
       <div className={classNames(projectcss.all, sty.freeBox__ppyHd)}>
@@ -604,10 +585,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         return "discount";
                       return calendarItem.status || "";
                     }
-                    return getDayClass(
-                      dateProps,
-                      $state.apiRequest.data.calendar
-                    );
+                    return getDayClass(dateProps, $state.apiRequest.data);
                   })();
                 } catch (e) {
                   if (
@@ -621,7 +599,10 @@ function PlasmicCalendar2__RenderFunc(props: {
               })()}
               holidays={(() => {
                 try {
-                  return undefined;
+                  return (() => {
+                    return $state.apiRequest.data[dateProps.date.day - 1]
+                      .isholiday;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -635,24 +616,8 @@ function PlasmicCalendar2__RenderFunc(props: {
               platform={(() => {
                 try {
                   return (() => {
-                    const websiteNames = {
-                      host: "رزرو",
-                      jajiga: "جاجیگا",
-                      jabama: "جاباما",
-                      shab: "شب",
-                      homsa: "هومسا",
-                      mihmansho: "مهمانشو",
-                      otaghak: "اتاقک",
-                      mizboon: "میزبون"
-                    };
                     const dayIndex = dateProps.date.day - 1;
-                    const calendarData =
-                      $state.apiRequest.data.calendar[dayIndex];
-                    const status =
-                      calendarData?.status === "reserved"
-                        ? websiteNames[calendarData.website] || ""
-                        : "";
-                    return status;
+                    return $state.apiRequest.data[dayIndex].website;
                   })();
                 } catch (e) {
                   if (
@@ -666,24 +631,31 @@ function PlasmicCalendar2__RenderFunc(props: {
               })()}
               price={(() => {
                 try {
-                  return (() => {
-                    const calendarItem =
-                      $state.apiRequest.data.calendar[dateProps.date.day - 1];
-                    if (calendarItem) {
-                      const {
-                        price = 0,
-                        discount_percentage: discountPercentage = 0
-                      } = calendarItem;
-                      const finalPrice = price * (1 - discountPercentage / 100);
-                      const roundedPrice = Math.round(finalPrice / 1000);
-                      const formattedPersianPrice = roundedPrice
-                        ? new Intl.NumberFormat("fa-IR").format(roundedPrice)
-                        : null;
-                      return formattedPersianPrice;
-                    } else {
-                      return null;
-                    }
-                  })();
+                  return (
+                    // // استخراج اطلاعات تقویم
+                    // const calendarItem = $state.apiRequest.data.calendar[dateProps.date.day - 1];
+
+                    // if (calendarItem) {
+                    //     const { price = 0, discount_percentage: discountPercentage = 0 } = calendarItem;
+
+                    //     // محاسبه قیمت نهایی با تخفیف
+                    //     const finalPrice = price * (1 - discountPercentage / 100);
+
+                    //     // رند کردن عدد نهایی و تقسیم بر 1000
+                    //     const roundedPrice = Math.round(finalPrice / 1000);
+
+                    //     // فرمت کردن قیمت نهایی به صورت فارسی
+                    //     const formattedPersianPrice = roundedPrice
+                    //         ? new Intl.NumberFormat('fa-IR').format(roundedPrice)
+                    //         : null;
+
+                    //     formattedPersianPrice; // مقدار نهایی
+                    // } else {
+                    //     null; // داده‌ای موجود نیست
+                    // }
+
+                    $state.apiRequest.data[dateProps.date.day - 1].price
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||

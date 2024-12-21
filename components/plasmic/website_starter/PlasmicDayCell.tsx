@@ -322,7 +322,25 @@ function PlasmicDayCell__RenderFunc(props: {
             </React.Fragment>
           </div>
         ) : null}
-        {false ? (
+        {(() => {
+          try {
+            return (() => {
+              if ($props.holidays == "true") {
+                return true;
+              } else {
+                return false;
+              }
+            })();
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return true;
+            }
+            throw e;
+          }
+        })() ? (
           <div
             data-plasmic-name={"holidays2"}
             data-plasmic-override={overrides.holidays2}
