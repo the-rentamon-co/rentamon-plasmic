@@ -3405,8 +3405,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 return date.toISOString().split("T")[0];
                               }
                             );
-                            const updatedCalendar =
-                              $state.apiRequest.data.calendar.map(day => {
+                            const updatedCalendar = $state.apiRequest.data.map(
+                              day => {
                                 if (changedDaysDates.includes(day.date)) {
                                   const updates = {};
                                   if (
@@ -3439,8 +3439,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   };
                                 }
                                 return day;
-                              });
-                            $state.apiRequest.data.calendar = updatedCalendar;
+                              }
+                            );
+                            $state.apiRequest.data = updatedCalendar;
                             console.log(
                               "Calendar updated with changes:",
                               updatedCalendar
