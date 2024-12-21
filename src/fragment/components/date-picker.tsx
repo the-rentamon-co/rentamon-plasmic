@@ -10,9 +10,6 @@ type LocaleType = "fa" | "en";
 interface DayCellProps {
   unix: number;
   date: { day: number; month: number; year: number };
-  // isToday, isHoliday, isSelected حذف شدند
-  // اگر نیاز به isWeekend ندارید، می‌توانید آن را هم حذف کنید
-  isWeekend: boolean;
 }
 
 interface DatePickerProps {
@@ -20,7 +17,6 @@ interface DatePickerProps {
   onMonthChange: (month: number) => void;
   onYearChange: (year: number) => void;
   locale?: LocaleType;
-  holidays?: number[]; // اگر دیگر نیاز ندارید می‌توانید حذف کنید
   value?: number;
   mode?: "single" | "multiple";
   values?: number[];
@@ -40,7 +36,7 @@ interface YearType {
 }
 
 // تابع کمکی برای استخراج year/month/day به صورت عددی از DateObject
-function extractNumbersFromDateObject(date: DateObject): {day: number; month: number; year: number} {
+function extractNumbersFromDateObject(date: DateObject): { day: number; month: number; year: number } {
   const m = date.month as unknown as MonthType;
   const y = date.year as unknown as YearType;
   return { day: date.day, month: m.number, year: y.number };
@@ -51,8 +47,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   onMonthChange,
   onYearChange,
   locale = "fa",
-  // holidays را اگر دیگر نیاز نیست، می‌توانید حذف کنید
-  holidays = [],
   value,
   mode = "single",
   values = [],
@@ -60,9 +54,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   customDayCell,
 }) => {
   const isFaLocale = locale === "fa";
-
-  // محاسبه weekend ها
-  const weekendDays = isFaLocale ? [5, 6] : [0, 6];
 
   return (
     <Calendar
@@ -109,7 +100,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       }: {
         date: DateObject;
       }) => {
-        const isWeekend = weekendDays.includes(date.weekDay.index);
         const { day, month, year } = extractNumbersFromDateObject(date);
 
         if (customDayCell && dayCell) {
@@ -119,12 +109,11 @@ export const DatePicker: React.FC<DatePickerProps> = ({
             children: React.createElement(dayCell, {
               unix: date.unix,
               date: { day, month, year },
-              isWeekend,
             }),
           };
         }
 
-        // کلاس ثابت بدون isSelected, isHoliday, isToday
+        // کلاس ثابت
         return { class: "fragment-day-cell" };
       }}
     />
@@ -186,11 +175,6 @@ export const datePickerMeta: CodeComponentMeta<DatePickerProps> = {
           value: "multiple",
         },
       ],
-    },
-    holidays: {
-      defaultValue: [],
-      type: "array",
-      helpText: "Array of day timestamps, e.g., [1710534600, 1710707402].",
     },
     customDayCell: "boolean",
     dayCell: {
