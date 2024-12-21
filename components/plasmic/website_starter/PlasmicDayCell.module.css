@@ -152,7 +152,7 @@
     max-width: 100%;
     margin-top: 2px;
     font-family: "Estedad";
-    font-weight: 500;
+    font-weight: 400;
     color: var(--token-Bo2_tT25lwh4);
     text-align: center;
     min-width: 0;
@@ -165,7 +165,7 @@
     max-width: 100%;
     margin-top: 2px;
     font-family: "Estedad";
-    font-weight: 500;
+    font-weight: 400;
     color: var(--token-Bo2_tT25lwh4);
     text-align: center;
     min-width: 0;
@@ -178,20 +178,21 @@
     max-width: 100%;
     margin-top: 2px;
     font-family: "Estedad";
-    font-weight: 500;
+    font-weight: 400;
     color: var(--token-Bo2_tT25lwh4);
     text-align: center;
     min-width: 0;
   }
 }
 .holidays2selected {
-  color: var(--token-j-ZwOKbpUCqd);
+  color: var(--token-Bo2_tT25lwh4);
   width: 100%;
   height: auto;
   max-width: 100%;
   font-family: "Estedad";
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
+  margin-top: 2px;
   min-width: 0;
 }
 .holidays2dayStatus_reserved {

@@ -489,7 +489,15 @@ function PlasmicDayCell__RenderFunc(props: {
           )}
         </div>
       </div>
-      <div className={classNames(projectcss.all, sty.freeBox__cD9Fr)}>
+      <div
+        className={classNames(projectcss.all, sty.freeBox__cD9Fr, {
+          [sty.freeBoxselected__cD9Fr2Pr1U]: hasVariant(
+            $state,
+            "selected",
+            "selected"
+          )
+        })}
+      >
         <div
           className={classNames(
             projectcss.all,

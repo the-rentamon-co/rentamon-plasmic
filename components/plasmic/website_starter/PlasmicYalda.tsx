@@ -61,10 +61,11 @@ import {
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import Testimonial from "../../Testimonial"; // plasmic-import: MWmH78o8OGcS/component
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -94,13 +95,14 @@ export type PlasmicYalda__OverridesType = {
   yalda?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   button5?: Flex__<"div">;
-  button?: Flex__<typeof Button>;
   accordion?: Flex__<typeof AntdAccordion>;
   q1?: Flex__<typeof AntdAccordionItem>;
   q2?: Flex__<typeof AntdAccordionItem>;
   q3?: Flex__<typeof AntdAccordionItem>;
   q4?: Flex__<typeof AntdAccordionItem>;
   q5?: Flex__<typeof AntdAccordionItem>;
+  testimonial?: Flex__<typeof Testimonial>;
+  button?: Flex__<typeof Button>;
   html?: Flex__<"div">;
 };
 
@@ -886,47 +888,8 @@ function PlasmicYalda__RenderFunc(props: {
               </div>
             );
           })}
-          <div className={classNames(projectcss.all, sty.freeBox__olNiN)}>
-            <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
-              onClick={async event => {
-                const $steps = {};
+          <div className={classNames(projectcss.all, sty.freeBox__olNiN)} />
 
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (window.location.href =
-                            "https://www.rentamon.com/");
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hKseF
-                )}
-              >
-                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
-              </div>
-            </Button>
-          </div>
           <div className={classNames(projectcss.all, sty.freeBox__eVub)}>
             <div
               className={classNames(
@@ -1139,7 +1102,7 @@ function PlasmicYalda__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u062a\u062e\u0641\u06cc\u0641\u200c\u0647\u0627\u06cc \u00ab\u0627\u0639\u062a\u0628\u0627\u0631 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u00bb \u062a\u0627 \u06a9\u06cc \u0645\u0639\u062a\u0628\u0631\u0647\u061f"
+                            "\u0686\u0637\u0648\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u0645 \u0631\u0648 \u062a\u0648\u06cc \u0628\u0642\u06cc\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062a\u062d\u062a \u067e\u0648\u0634\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a \u06a9\u0646\u0645\u061f"
                           }
                         </div>
                       }
@@ -1202,6 +1165,53 @@ function PlasmicYalda__RenderFunc(props: {
               );
             })()}
           </div>
+          <Testimonial
+            data-plasmic-name={"testimonial"}
+            data-plasmic-override={overrides.testimonial}
+            className={classNames("__wab_instance", sty.testimonial)}
+          />
+
+          <div className={classNames(projectcss.all, sty.freeBox__yswi5)}>
+            <Button
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (window.location.href =
+                            "https://www.rentamon.com/");
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__lP5Gb
+                )}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+              </div>
+            </Button>
+          </div>
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
@@ -1232,24 +1242,26 @@ const PlasmicDescendants = {
     "yalda",
     "apiRequest",
     "button5",
-    "button",
     "accordion",
     "q1",
     "q2",
     "q3",
     "q4",
     "q5",
+    "testimonial",
+    "button",
     "html"
   ],
   apiRequest: ["apiRequest"],
   button5: ["button5"],
-  button: ["button"],
   accordion: ["accordion", "q1", "q2", "q3", "q4", "q5"],
   q1: ["q1"],
   q2: ["q2"],
   q3: ["q3"],
   q4: ["q4"],
   q5: ["q5"],
+  testimonial: ["testimonial"],
+  button: ["button"],
   html: ["html"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1259,13 +1271,14 @@ type NodeDefaultElementType = {
   yalda: "div";
   apiRequest: typeof ApiRequest;
   button5: "div";
-  button: typeof Button;
   accordion: typeof AntdAccordion;
   q1: typeof AntdAccordionItem;
   q2: typeof AntdAccordionItem;
   q3: typeof AntdAccordionItem;
   q4: typeof AntdAccordionItem;
   q5: typeof AntdAccordionItem;
+  testimonial: typeof Testimonial;
+  button: typeof Button;
   html: "div";
 };
 
@@ -1331,13 +1344,14 @@ export const PlasmicYalda = Object.assign(
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
     button5: makeNodeComponent("button5"),
-    button: makeNodeComponent("button"),
     accordion: makeNodeComponent("accordion"),
     q1: makeNodeComponent("q1"),
     q2: makeNodeComponent("q2"),
     q3: makeNodeComponent("q3"),
     q4: makeNodeComponent("q4"),
     q5: makeNodeComponent("q5"),
+    testimonial: makeNodeComponent("testimonial"),
+    button: makeNodeComponent("button"),
     html: makeNodeComponent("html"),
 
     // Metadata about props expected for PlasmicYalda

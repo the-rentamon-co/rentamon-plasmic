@@ -1484,7 +1484,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
                               return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel");
+                                "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/");
                             } else {
                               console.log("got here in refreshToken");
                               return fetch(
@@ -1506,7 +1506,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/";
                                 });
                             }
                           }
