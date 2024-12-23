@@ -3578,7 +3578,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 $state.platformRequestStatus.data;
                               if (platforms[currentItem]) {
                                 if (
-                                  platforms[currentItem].final_status === false
+                                  platforms[currentItem].final_status !== true
                                 ) {
                                   return true;
                                 } else {
@@ -3771,9 +3771,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     updates.status = "unblocked";
                                     updates.website = null;
                                   }
-                                  let numericPrice = null;
                                   if ($state.requestdata.price !== undefined) {
-                                    numericPrice = Number(
+                                    let numericPrice = Number(
                                       $state.requestdata.price
                                     )
                                       ? Number($state.requestdata.price)
@@ -3796,8 +3795,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                                       updates.price =
                                         formatPriceToPersian(discountedPrice);
                                     } else {
+                                      const finalPrice = Math.round(
+                                        numericPrice / 1000
+                                      );
                                       updates.price =
-                                        formatPriceToPersian(numericPrice);
+                                        formatPriceToPersian(finalPrice);
                                     }
                                   } else {
                                     if (
@@ -3837,7 +3839,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                             );
                             $state.platformRequestStatus = [];
                             $state.requestdata = [];
-                            return ($state.fragmentDatePicker.values = []);
+                            $state.fragmentDatePicker.values = [];
+                            $state.numberInput2.value = 0;
+                            return ($state.numberInput4.value = 0);
                           })()
                         };
                         return (({
