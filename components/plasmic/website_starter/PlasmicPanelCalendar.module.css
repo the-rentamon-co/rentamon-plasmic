@@ -43,7 +43,7 @@
     grid-column: 4;
   }
 }
-.modal:global(.__wab_instance) {
+.modalSidebar:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   overflow: hidden;
@@ -54,12 +54,12 @@
   top: -12px;
   position: fixed;
 }
-.modal__modal :global(.ant-modal-content) {
+.modalSidebar__modal :global(.ant-modal-content) {
   display: block;
   outline: none;
 }
 @media (max-width: 500px) {
-  .modal:global(.__wab_instance) {
+  .modalSidebar:global(.__wab_instance) {
     border-radius: 30px 0px 0px 30px;
   }
 }

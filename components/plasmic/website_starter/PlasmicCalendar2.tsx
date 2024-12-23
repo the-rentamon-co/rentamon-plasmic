@@ -216,13 +216,13 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : false
+            : true
       },
       {
         path: "numberInput2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "modalDiscount.open",
@@ -1885,6 +1885,166 @@ function PlasmicCalendar2__RenderFunc(props: {
             )}
             onClick={async event => {
               const $steps = {};
+
+              $steps["updateFetchModalOpen"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["fetchModal", "open"]
+                      },
+                      operation: 0,
+                      value: true
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateFetchModalOpen"] != null &&
+                typeof $steps["updateFetchModalOpen"] === "object" &&
+                typeof $steps["updateFetchModalOpen"].then === "function"
+              ) {
+                $steps["updateFetchModalOpen"] = await $steps[
+                  "updateFetchModalOpen"
+                ];
+              }
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function convertPersianNumbersToEnglish(str) {
+                            const persianNumbers = [
+                              "۰",
+                              "۱",
+                              "۲",
+                              "۳",
+                              "۴",
+                              "۵",
+                              "۶",
+                              "۷",
+                              "۸",
+                              "۹"
+                            ];
+
+                            const englishNumbers = [
+                              "0",
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5",
+                              "6",
+                              "7",
+                              "8",
+                              "9"
+                            ];
+
+                            return str.replace(
+                              /[۰-۹]/g,
+                              char =>
+                                englishNumbers[persianNumbers.indexOf(char)] ||
+                                char
+                            );
+                          }
+                          function padZero(num) {
+                            return num.length === 1 ? `0${num}` : num;
+                          }
+                          function convertTimestampToPersianDateWithEnglishNumbers(
+                            timestamp
+                          ) {
+                            const date = new Date(timestamp * 1000);
+                            const [year, month, day] = date
+                              .toLocaleDateString("fa")
+                              .split("/");
+                            const formattedDate = `${convertPersianNumbersToEnglish(
+                              year
+                            )}-${padZero(
+                              convertPersianNumbersToEnglish(month)
+                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                            return formattedDate;
+                          }
+                          function getTodayInPersian() {
+                            const today = new Date();
+                            const [year, month, day] = today
+                              .toLocaleDateString("fa")
+                              .split("/");
+                            const formattedDate = `${convertPersianNumbersToEnglish(
+                              year
+                            )}-${padZero(
+                              convertPersianNumbersToEnglish(month)
+                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                            return formattedDate;
+                          }
+                          const todayInPersian = getTodayInPersian();
+                          const data = {
+                            days: [$state.fragmentDatePicker.values],
+                            property_id: $props.propertyId
+                          };
+                          $state.requestdata = data;
+                          data.days = data.days
+                            .map(timestampArray =>
+                              timestampArray
+                                .map(timestamp =>
+                                  convertTimestampToPersianDateWithEnglishNumbers(
+                                    timestamp
+                                  )
+                                )
+                                .filter(day => day >= todayInPersian)
+                            )
+                            .flat();
+                          fetch("https://api.rentamon.com/api/setunblock", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                              Accept: "*/*"
+                            },
+                            credentials: "include",
+                            body: JSON.stringify(data)
+                          })
+                            .then(response => {
+                              if (!response.ok) {
+                                throw new Error(
+                                  `HTTP error! status: ${response.status}`
+                                );
+                              }
+                              return response.json();
+                            })
+                            .then(result => {
+                              $state.platformRequestStatus = result;
+                              console.log("Response saved to state:", result);
+                            })
+                            .catch(error => {
+                              console.error("Error:", error);
+                              $state.platformRequestStatus = {
+                                error: error.message
+                              };
+                            });
+                          return console.log(data);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
             }}
           >
             <div
@@ -2655,7 +2815,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ]).apply(null, eventArgs);
                 }}
                 placeholder={
-                  "\u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                  "\u0645\u062b\u0644\u0627 \u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"
                 }
                 readOnly={false}
                 type={"number"}

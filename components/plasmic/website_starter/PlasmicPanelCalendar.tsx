@@ -97,7 +97,7 @@ export const PlasmicPanelCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPanelCalendar__OverridesType = {
   root?: Flex__<"div">;
-  modal?: Flex__<typeof AntdModal>;
+  modalSidebar?: Flex__<typeof AntdModal>;
   sideBar?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -225,7 +225,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
-        path: "modal.open",
+        path: "modalSidebar.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -331,9 +331,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
           )}
         >
           <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
+            data-plasmic-name={"modalSidebar"}
+            data-plasmic-override={overrides.modalSidebar}
+            className={classNames("__wab_instance", sty.modalSidebar)}
             defaultStylesClassName={classNames(
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
@@ -347,14 +347,14 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             modalContentClassName={classNames({
               [sty["pcls_tXYB74UUZC2B"]]: true
             })}
-            modalScopeClassName={sty["modal__modal"]}
+            modalScopeClassName={sty["modalSidebar__modal"]}
             onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+              generateStateOnChangeProp($state, ["modalSidebar", "open"]).apply(
                 null,
                 eventArgs
               );
             }}
-            open={generateStateValueProp($state, ["modal", "open"])}
+            open={generateStateValueProp($state, ["modalSidebar", "open"])}
             title={
               <div
                 className={classNames(projectcss.all, sty.freeBox__xueqP)}
@@ -367,7 +367,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           operation: 0,
                           variable: {
                             objRoot: $state,
-                            variablePath: ["modal", "open"]
+                            variablePath: ["modalSidebar", "open"]
                           }
                         };
                         return (({
@@ -962,7 +962,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["modal", "open"]
+                                variablePath: ["modalSidebar", "open"]
                               },
                               operation: 0,
                               value: true
@@ -1455,7 +1455,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           const actionArgs = {
                             variable: {
                               objRoot: $state,
-                              variablePath: ["modal", "open"]
+                              variablePath: ["modalSidebar", "open"]
                             },
                             operation: 0,
                             value: true
@@ -1862,7 +1862,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "modal",
+    "modalSidebar",
     "sideBar",
     "header",
     "right",
@@ -1881,7 +1881,7 @@ const PlasmicDescendants = {
     "sideEffect",
     "goftino"
   ],
-  modal: ["modal"],
+  modalSidebar: ["modalSidebar"],
   sideBar: [
     "sideBar",
     "header",
@@ -1936,7 +1936,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  modal: typeof AntdModal;
+  modalSidebar: typeof AntdModal;
   sideBar: "div";
   header: "div";
   right: "div";
@@ -2016,7 +2016,7 @@ export const PlasmicPanelCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    modal: makeNodeComponent("modal"),
+    modalSidebar: makeNodeComponent("modalSidebar"),
     sideBar: makeNodeComponent("sideBar"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
