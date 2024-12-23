@@ -3546,8 +3546,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.modal.open = false;
                             $state.modalDiscount.open = false;
                             $state.modalChangePrice.open = false;
-                            const platformStatus =
-                              $state.platformRequestStatus.data;
+                            const platformStatus = Object.values(
+                              $state.platformRequestStatus.data || {}
+                            );
                             const allFailed = platformStatus.every(
                               platform => platform.final_status === false
                             );
@@ -3578,7 +3579,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     $state.requestdata.request_for === "reserve"
                                   ) {
                                     updates.status = "reserved";
-                                    updates.website = "رزرو";
                                   } else if (
                                     $state.requestdata.request_for ===
                                       "unblock" ||
