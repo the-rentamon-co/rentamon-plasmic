@@ -3583,6 +3583,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     !$state.requestdata.request_for
                                   ) {
                                     updates.status = "unblocked";
+                                    updates.website = null;
                                   }
                                   if ($state.requestdata.price !== undefined) {
                                     updates.price = $state.requestdata.price;
