@@ -3579,6 +3579,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     $state.requestdata.request_for === "reserve"
                                   ) {
                                     updates.status = "reserved";
+                                    updates.website = "رزرو";
                                   } else if (
                                     $state.requestdata.request_for ===
                                       "unblock" ||
