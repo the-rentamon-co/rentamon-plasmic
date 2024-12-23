@@ -2389,6 +2389,7 @@
   width: 100%;
   background: var(--token-8nedppYkGVaH);
   height: 40px;
+  cursor: auto;
   min-width: 0;
   border-radius: 30px;
   margin: 10px 0px;
@@ -3643,7 +3644,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .img___4N2W {
   object-fit: cover;

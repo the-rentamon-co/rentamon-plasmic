@@ -3065,7 +3065,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     if (
                                       !(
                                         "mehmansho" in
-                                        $state.apiRequest2.data.status
+                                        $state.platformstatus.status
                                       )
                                     ) {
                                       return "disable";
@@ -3089,7 +3089,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   return (() => {
                                     if (
                                       !(
-                                        "mihmansho" in
+                                        "mehmansho" in
                                         $state.platformstatus.status
                                       )
                                     ) {
@@ -3259,7 +3259,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   if (
                                     !(
                                       "mehmansho" in
-                                      $state.apiRequest2.data.status
+                                      $state.platformstatus.status
                                     )
                                   ) {
                                     return "disable";
@@ -7591,36 +7591,24 @@ function PlasmicActivationNew__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToHttpsRentamonComPanels"] = true
+                              $steps["runCode"] = true
                                 ? (() => {
                                     const actionArgs = {
-                                      destination: "https://rentamon.com/panels"
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
+                                      customFunction: async () => {
+                                        return window.history.back();
                                       }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
                                     })?.apply(null, [actionArgs]);
                                   })()
                                 : undefined;
                               if (
-                                $steps["goToHttpsRentamonComPanels"] != null &&
-                                typeof $steps["goToHttpsRentamonComPanels"] ===
-                                  "object" &&
-                                typeof $steps["goToHttpsRentamonComPanels"]
-                                  .then === "function"
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
                               ) {
-                                $steps["goToHttpsRentamonComPanels"] =
-                                  await $steps["goToHttpsRentamonComPanels"];
+                                $steps["runCode"] = await $steps["runCode"];
                               }
 
                               $steps["mihmanshoVerify"] =
@@ -7943,36 +7931,24 @@ function PlasmicActivationNew__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToHttpsRentamonComPanels"] = true
+                              $steps["runCode"] = true
                                 ? (() => {
                                     const actionArgs = {
-                                      destination: "https://rentamon.com/panels"
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
+                                      customFunction: async () => {
+                                        return window.history.back();
                                       }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
                                     })?.apply(null, [actionArgs]);
                                   })()
                                 : undefined;
                               if (
-                                $steps["goToHttpsRentamonComPanels"] != null &&
-                                typeof $steps["goToHttpsRentamonComPanels"] ===
-                                  "object" &&
-                                typeof $steps["goToHttpsRentamonComPanels"]
-                                  .then === "function"
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
                               ) {
-                                $steps["goToHttpsRentamonComPanels"] =
-                                  await $steps["goToHttpsRentamonComPanels"];
+                                $steps["runCode"] = await $steps["runCode"];
                               }
 
                               $steps["connectionStatus"] = true
@@ -9987,61 +9963,61 @@ function PlasmicActivationNew__RenderFunc(props: {
                 </FormWrapper>
               );
             })()}
-            {(() => {
-              try {
-                return (() => {
-                  const platforms = $state.platformstatus.status;
-                  if (platforms && Object.keys(platforms).length > 0) {
-                    const allTrue = Object.values(platforms).every(
-                      value => value === true
-                    );
-                    return allTrue ? true : false;
-                  }
-                  return false;
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox__iDkE7)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img___4N2W)}
-                  displayHeight={"105px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image27.svg",
-                    fullWidth: 26,
-                    fullHeight: 26,
-                    aspectRatio: 1
-                  }}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ixc0V
-                  )}
-                >
-                  {
-                    "\u062a\u0645\u0627\u0645\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a"
-                  }
-                </div>
-              </div>
-            ) : null}
           </div>
+          {(() => {
+            try {
+              return (() => {
+                const platforms = $state.platformstatus.status;
+                if (platforms && Object.keys(platforms).length > 0) {
+                  const allTrue = Object.values(platforms).every(
+                    value => value === true
+                  );
+                  return allTrue ? true : false;
+                }
+                return false;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__iDkE7)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___4N2W)}
+                displayHeight={"105px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image27.svg",
+                  fullWidth: 26,
+                  fullHeight: 26,
+                  aspectRatio: 1
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ixc0V
+                )}
+              >
+                {
+                  "\u062a\u0645\u0627\u0645\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a"
+                }
+              </div>
+            </div>
+          ) : null}
           {(() => {
             try {
               return $ctx.params.type == 1;
