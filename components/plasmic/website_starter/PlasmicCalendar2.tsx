@@ -3546,13 +3546,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.modal.open = false;
                             $state.modalDiscount.open = false;
                             $state.modalChangePrice.open = false;
-                            const platformStatus = Object.values(
-                              $state.platformRequestStatus.data || {}
-                            );
-                            const anySuccess = platformStatus.some(
-                              platform => platform.final_status !== false
-                            );
-                            if (!anySuccess) {
+                            const allFalse = Object.values(
+                              $state.platformRequestStatus.data
+                            ).every(item => item.final_status === false);
+                            if (allFalse) {
                               console.log(
                                 "همه پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
                               );
