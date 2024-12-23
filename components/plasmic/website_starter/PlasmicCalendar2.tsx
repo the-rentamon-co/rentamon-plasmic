@@ -3549,12 +3549,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                             const platformStatus = Object.values(
                               $state.platformRequestStatus.data || {}
                             );
-                            const allFailed = platformStatus.every(
-                              platform => platform.final_status === false
+                            const anySuccess = platformStatus.some(
+                              platform => platform.final_status !== false
                             );
-                            if (allFailed) {
+                            if (!anySuccess) {
                               console.log(
-                                "تمام پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
+                                "همه پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
                               );
                               return;
                             }
