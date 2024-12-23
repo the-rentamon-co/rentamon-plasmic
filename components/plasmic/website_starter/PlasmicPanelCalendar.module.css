@@ -800,7 +800,7 @@
   .sideBar {
     padding-right: 0px;
     padding-left: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 4px;
   }
 }
 .header {
@@ -813,13 +813,13 @@
   justify-content: space-between;
   align-items: stretch;
   min-width: 0;
-  padding: 8px 8px 0px;
+  padding: 8px;
 }
 @media (max-width: 500px) {
   .header {
     padding-left: 0px;
     padding-right: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 6px;
   }
 }
 .right {

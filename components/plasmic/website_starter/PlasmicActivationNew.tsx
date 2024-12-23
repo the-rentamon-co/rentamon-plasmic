@@ -7591,24 +7591,36 @@ function PlasmicActivationNew__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["runCode"] = true
+                              $steps["goToHttpsRentamonComPanels"] = true
                                 ? (() => {
                                     const actionArgs = {
-                                      customFunction: async () => {
-                                        return window.history.back();
-                                      }
+                                      destination: "https://rentamon.com/panels"
                                     };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
                                     })?.apply(null, [actionArgs]);
                                   })()
                                 : undefined;
                               if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
+                                $steps["goToHttpsRentamonComPanels"] != null &&
+                                typeof $steps["goToHttpsRentamonComPanels"] ===
+                                  "object" &&
+                                typeof $steps["goToHttpsRentamonComPanels"]
+                                  .then === "function"
                               ) {
-                                $steps["runCode"] = await $steps["runCode"];
+                                $steps["goToHttpsRentamonComPanels"] =
+                                  await $steps["goToHttpsRentamonComPanels"];
                               }
 
                               $steps["mihmanshoVerify"] =
@@ -7931,24 +7943,36 @@ function PlasmicActivationNew__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["runCode"] = true
+                              $steps["goToHttpsRentamonComPanels"] = true
                                 ? (() => {
                                     const actionArgs = {
-                                      customFunction: async () => {
-                                        return window.history.back();
-                                      }
+                                      destination: "https://rentamon.com/panels"
                                     };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
                                     })?.apply(null, [actionArgs]);
                                   })()
                                 : undefined;
                               if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
+                                $steps["goToHttpsRentamonComPanels"] != null &&
+                                typeof $steps["goToHttpsRentamonComPanels"] ===
+                                  "object" &&
+                                typeof $steps["goToHttpsRentamonComPanels"]
+                                  .then === "function"
                               ) {
-                                $steps["runCode"] = await $steps["runCode"];
+                                $steps["goToHttpsRentamonComPanels"] =
+                                  await $steps["goToHttpsRentamonComPanels"];
                               }
 
                               $steps["connectionStatus"] = true
