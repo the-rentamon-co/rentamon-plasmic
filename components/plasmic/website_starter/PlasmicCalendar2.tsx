@@ -216,7 +216,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : true
+            : false
       },
       {
         path: "numberInput2.value",
@@ -2807,7 +2807,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 data-plasmic-override={overrides.numberInput2}
                 className={classNames("__wab_instance", sty.numberInput2)}
                 controls={false}
-                min={50000}
                 onChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
                     "numberInput2",
@@ -2948,9 +2947,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         }
                         const input = $state.numberInput2?.value || "";
                         const output =
-                          input === ""
-                            ? "قیمت قابل قبول نیست"
-                            : numberToPersian(Number(input));
+                          input === "" ? "صفر" : numberToPersian(Number(input));
                         return output;
                       })();
                     } catch (e) {

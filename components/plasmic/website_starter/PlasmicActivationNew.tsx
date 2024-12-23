@@ -5681,42 +5681,39 @@ function PlasmicActivationNew__RenderFunc(props: {
                           onClick={async () => {
                             const $steps = {};
 
-                            $steps["updateStep"] =
-                              $state.form.value.shabphone !== undefined &&
-                              $state.form.value.shabphone.length >= 11
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 2
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
+                            $steps["updateStep"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["step"]
+                                    },
+                                    operation: 2
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
 
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        oldValue + 1
-                                      );
-                                      return oldValue + 1;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                                    const oldValue = $stateGet(
+                                      objRoot,
+                                      variablePath
+                                    );
+                                    $stateSet(
+                                      objRoot,
+                                      variablePath,
+                                      oldValue + 1
+                                    );
+                                    return oldValue + 1;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
                               $steps["updateStep"] != null &&
                               typeof $steps["updateStep"] === "object" &&
@@ -5725,38 +5722,36 @@ function PlasmicActivationNew__RenderFunc(props: {
                               $steps["updateStep"] = await $steps["updateStep"];
                             }
 
-                            $steps["shabSend"] =
-                              $state.form.value.shabphone !== undefined &&
-                              $state.form.value.shabphone.length >= 11
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "POST",
-                                        "https://gateway.rentamon.com/webhook/shabnewsend",
-                                        undefined,
-                                        (() => {
-                                          try {
-                                            return {
-                                              phone: $state.form.value.shabphone
-                                            };
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
+                            $steps["shabSend"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/shabnewsend",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return {
+                                            phone: $state.form.value.shabphone
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
                                           }
-                                        })()
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.apiRequest"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
                             if (
                               $steps["shabSend"] != null &&
                               typeof $steps["shabSend"] === "object" &&
@@ -5797,6 +5792,48 @@ function PlasmicActivationNew__RenderFunc(props: {
                               $steps["updateStateVariable"] = await $steps[
                                 "updateStateVariable"
                               ];
+                            }
+
+                            $steps["repeatTest"] = (() => {
+                              if (!$state.form.submitTimes) {
+                                $state.form.submitTimes = [];
+                              }
+                              const now = Date.now();
+                              $state.form.submitTimes =
+                                $state.form.submitTimes.filter(
+                                  time => now - time <= 15 * 60 * 1000
+                                );
+                              if ($state.form.submitTimes.length < 2) {
+                                $state.form.submitTimes.push(now);
+                                $state.form.isSubmitting = true;
+                                console.log("Form submitted!");
+                                return setTimeout(() => {
+                                  $state.form.isSubmitting = false;
+                                }, 1000);
+                              } else {
+                                return console.log(
+                                  "You can only submit the form 2 times in 15 minutes."
+                                );
+                              }
+                            })()
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/shabnewsend"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["repeatTest"] != null &&
+                              typeof $steps["repeatTest"] === "object" &&
+                              typeof $steps["repeatTest"].then === "function"
+                            ) {
+                              $steps["repeatTest"] = await $steps["repeatTest"];
                             }
                           }}
                           submitsForm={true}
