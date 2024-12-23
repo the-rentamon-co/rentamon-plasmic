@@ -1382,6 +1382,38 @@ function PlasmicCalendar2__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.modalDiscount.open = false)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] = await $steps[
+                      "updateStateVariable"
+                    ];
+                  }
+
                   $steps["updateFetchModalOpen"] = true
                     ? (() => {
                         const actionArgs = {
@@ -1539,38 +1571,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                     typeof $steps["runCode"].then === "function"
                   ) {
                     $steps["runCode"] = await $steps["runCode"];
-                  }
-
-                  $steps["updateStateVariable"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          value: ($state.modalDiscount.open = false)
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateStateVariable"] != null &&
-                    typeof $steps["updateStateVariable"] === "object" &&
-                    typeof $steps["updateStateVariable"].then === "function"
-                  ) {
-                    $steps["updateStateVariable"] = await $steps[
-                      "updateStateVariable"
-                    ];
                   }
                 }}
               >
@@ -2966,6 +2966,22 @@ function PlasmicCalendar2__RenderFunc(props: {
             <div className={classNames(projectcss.all, sty.freeBox__b1AS4)}>
               <Button
                 className={classNames("__wab_instance", sty.button__tWagl)}
+                isDisabled={(() => {
+                  try {
+                    return (
+                      $state.numberInput2.value == 0 ||
+                      $state.numberInput2.value == null
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
                 onClick={async event => {
                   const $steps = {};
 
@@ -3645,18 +3661,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                         ) : null}
                         {(() => {
                           try {
-                            return (() => {
-                              const platformStatus =
-                                $state.platformRequestStatus?.data || {};
-                              if (
-                                Object.keys(platformStatus).length > 0 &&
-                                !platformStatus[currentItem]
-                              ) {
-                                return true;
-                              } else {
-                                return false;
-                              }
-                            })();
+                            return (
+                              // const platformStatus = $state.platformRequestStatus?.data || {};
+
+                              // // اگر آرایه خالی نیست و currentItem داخل آن وجود ندارد
+                              // if (Object.keys(platformStatus).length > 0 && !platformStatus[currentItem]) {
+                              //     return true; // اگر currentItem در داده‌ها وجود نداشت
+                              // } else {
+                              //     return false; // اگر currentItem در داده‌ها وجود داشت یا آرایه خالی بود
+                              // }
+
+                              false
+                            );
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -3698,6 +3714,19 @@ function PlasmicCalendar2__RenderFunc(props: {
                           },
                           operation: 0,
                           value: (() => {
+                            function convertToEnglishNumber(persianStr = "") {
+                              let str = persianStr.replace(/٬/g, "");
+                              const faDigits = /[۰-۹]/g;
+                              const faMap = "۰۱۲۳۴۵۶۷۸۹";
+                              str = str.replace(faDigits, char =>
+                                faMap.indexOf(char)
+                              );
+                              return Number(str);
+                            }
+                            function formatPriceToPersian(num = 0) {
+                              const formatter = new Intl.NumberFormat("fa-IR");
+                              return formatter.format(num);
+                            }
                             $state.fetchModal.open = false;
                             $state.block.open = false;
                             $state.modal.open = false;
@@ -3742,14 +3771,56 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     updates.status = "unblocked";
                                     updates.website = null;
                                   }
+                                  let numericPrice = null;
                                   if ($state.requestdata.price !== undefined) {
-                                    updates.price = $state.requestdata.price;
-                                  }
-                                  if (
-                                    $state.requestdata.discount !== undefined
-                                  ) {
-                                    updates.discount_percentage =
-                                      $state.requestdata.discount;
+                                    numericPrice = Number(
+                                      $state.requestdata.price
+                                    )
+                                      ? Number($state.requestdata.price)
+                                      : convertToEnglishNumber(
+                                          $state.requestdata.price
+                                        );
+                                    if (
+                                      $state.requestdata.discount !== undefined
+                                    ) {
+                                      updates.discount_percentage =
+                                        $state.requestdata.discount;
+                                      const discountedPrice = Math.round(
+                                        numericPrice *
+                                          (1 -
+                                            Number(
+                                              $state.requestdata.discount
+                                            ) /
+                                              100)
+                                      );
+                                      updates.price =
+                                        formatPriceToPersian(discountedPrice);
+                                    } else {
+                                      updates.price =
+                                        formatPriceToPersian(numericPrice);
+                                    }
+                                  } else {
+                                    if (
+                                      $state.requestdata.discount !== undefined
+                                    ) {
+                                      updates.discount_percentage =
+                                        $state.requestdata.discount;
+                                      const currentDayPrice = day.price
+                                        ? convertToEnglishNumber(
+                                            day.price.toString()
+                                          )
+                                        : 0;
+                                      const discountedPrice = Math.round(
+                                        currentDayPrice *
+                                          (1 -
+                                            Number(
+                                              $state.requestdata.discount
+                                            ) /
+                                              100)
+                                      );
+                                      updates.price =
+                                        formatPriceToPersian(discountedPrice);
+                                    }
                                   }
                                   return {
                                     ...day,
