@@ -3578,7 +3578,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 $state.platformRequestStatus.data;
                               if (platforms[currentItem]) {
                                 if (
-                                  platforms[currentItem].final_status !== true
+                                  platforms[currentItem].final_status === false
                                 ) {
                                   return true;
                                 } else {
