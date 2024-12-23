@@ -1269,6 +1269,21 @@
           "id": "vxXPP8PjqfMa",
           "name": "1.jpg",
           "filePath": "../public/plasmic/website_starter/images/_1Jpg.jpg"
+        },
+        {
+          "id": "-qe_7BHGc3lj",
+          "name": "1l.jpg",
+          "filePath": "../public/plasmic/website_starter/images/_1LJpg.jpg"
+        },
+        {
+          "id": "GML88m379S8e",
+          "name": "2l.jpg",
+          "filePath": "../public/plasmic/website_starter/images/_2LJpg.jpg"
+        },
+        {
+          "id": "BZJqIgeK-XT4",
+          "name": "3l.jpg",
+          "filePath": "../public/plasmic/website_starter/images/_3LJpg.jpg"
         }
       ],
       "indirect": false,

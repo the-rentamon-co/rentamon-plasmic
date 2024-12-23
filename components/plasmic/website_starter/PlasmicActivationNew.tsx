@@ -10231,9 +10231,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_1Jpg.jpg",
-                      fullWidth: 1220,
-                      fullHeight: 2366,
+                      src: "/plasmic/website_starter/images/_1LJpg.jpg",
+                      fullWidth: 386,
+                      fullHeight: 754,
                       aspectRatio: undefined
                     }}
                   />
@@ -10329,9 +10329,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_1Jpg.jpg",
-                      fullWidth: 1220,
-                      fullHeight: 2366,
+                      src: "/plasmic/website_starter/images/_2LJpg.jpg",
+                      fullWidth: 386,
+                      fullHeight: 754,
                       aspectRatio: undefined
                     }}
                   />
@@ -10484,9 +10484,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_1Jpg.jpg",
-                      fullWidth: 1220,
-                      fullHeight: 2366,
+                      src: "/plasmic/website_starter/images/_3LJpg.jpg",
+                      fullWidth: 386,
+                      fullHeight: 754,
                       aspectRatio: undefined
                     }}
                   />
