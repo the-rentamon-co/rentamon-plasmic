@@ -3553,6 +3553,7 @@
   max-width: 100%;
   width: 500px;
   flex-shrink: 0;
+  border-radius: 30px;
 }
 .img__rqtJe > picture > img {
   object-fit: cover;
@@ -3615,6 +3616,7 @@
   margin-right: 10px;
   margin-left: calc(10px + 20px) !important;
   flex-shrink: 0;
+  border-radius: 30px;
 }
 .img__hDx89 > picture > img {
   object-fit: cover;
@@ -3686,6 +3688,7 @@
   max-width: 100%;
   width: 500px;
   flex-shrink: 0;
+  border-radius: 30px;
 }
 .img__jBri > picture > img {
   object-fit: cover;

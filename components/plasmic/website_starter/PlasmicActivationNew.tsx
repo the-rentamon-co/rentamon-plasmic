@@ -10032,7 +10032,7 @@ function PlasmicActivationNew__RenderFunc(props: {
           ) : null}
           {(() => {
             try {
-              return $state.step == 14;
+              return $state.step == 14 && $ctx.params.type == 1;
             } catch (e) {
               if (
                 e instanceof TypeError ||

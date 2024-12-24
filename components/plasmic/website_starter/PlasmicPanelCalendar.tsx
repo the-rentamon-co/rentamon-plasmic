@@ -448,12 +448,24 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 }
                 height={"100px"}
                 loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image31.svg",
-                  fullWidth: 96,
-                  fullHeight: 96,
-                  aspectRatio: 1
-                }}
+                src={(() => {
+                  try {
+                    return $state.profile.data.user_info.profile_image;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return {
+                        src: "/plasmic/website_starter/images/image31.svg",
+                        fullWidth: 96,
+                        fullHeight: 96,
+                        aspectRatio: 1
+                      };
+                    }
+                    throw e;
+                  }
+                })()}
                 width={"100px"}
               />
 
