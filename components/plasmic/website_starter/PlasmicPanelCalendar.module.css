@@ -9,6 +9,7 @@
   justify-content: flex-start;
   align-items: center;
   overflow: auto;
+  background: #fcfcfc;
   min-width: 0;
   min-height: 0;
   grid-template-columns:

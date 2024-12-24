@@ -17,7 +17,7 @@
       "fileLocks": [
         {
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
-          "checksum": "bc6a2c137a21c424c7182f9c74f2fa4f",
+          "checksum": "eb395ecc6823c48b0b2428a3ec81e2d3",
           "type": "globalContexts"
         },
         {
@@ -178,12 +178,12 @@
         {
           "type": "renderModule",
           "assetId": "RNhZtlNmydsH",
-          "checksum": "5914d8fb869974c54d3e2b0a4ab579a2"
+          "checksum": "813e0f1c65b31f268d74251019606840"
         },
         {
           "type": "cssRules",
           "assetId": "RNhZtlNmydsH",
-          "checksum": "5914d8fb869974c54d3e2b0a4ab579a2"
+          "checksum": "813e0f1c65b31f268d74251019606840"
         },
         {
           "type": "renderModule",
@@ -563,12 +563,12 @@
         {
           "type": "renderModule",
           "assetId": "ssh21My6pq8y",
-          "checksum": "bba323cb1b7e1a47a62db939ba2ca847"
+          "checksum": "c37d063b122705c7e91ffe7ab1be599b"
         },
         {
           "type": "cssRules",
           "assetId": "ssh21My6pq8y",
-          "checksum": "bba323cb1b7e1a47a62db939ba2ca847"
+          "checksum": "c37d063b122705c7e91ffe7ab1be599b"
         },
         {
           "type": "renderModule",
@@ -623,12 +623,12 @@
         {
           "type": "renderModule",
           "assetId": "zXAOwfcgu5NZ",
-          "checksum": "7c6c13dc295c02e92c5c279b5bc068cb"
+          "checksum": "63c663b4296fc7050995dcd56e8fad2c"
         },
         {
           "type": "cssRules",
           "assetId": "zXAOwfcgu5NZ",
-          "checksum": "7c6c13dc295c02e92c5c279b5bc068cb"
+          "checksum": "63c663b4296fc7050995dcd56e8fad2c"
         },
         {
           "type": "renderModule",
@@ -643,12 +643,12 @@
         {
           "type": "renderModule",
           "assetId": "7KjdVT2JykAk",
-          "checksum": "1fce2ac7fefe7e51ba9ec8a5bc57cdc2"
+          "checksum": "7bec39ac583d97be8fd2fdc3bd7d511d"
         },
         {
           "type": "cssRules",
           "assetId": "7KjdVT2JykAk",
-          "checksum": "1fce2ac7fefe7e51ba9ec8a5bc57cdc2"
+          "checksum": "7bec39ac583d97be8fd2fdc3bd7d511d"
         },
         {
           "type": "icon",
@@ -1109,6 +1109,11 @@
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
           "type": "projectCss",
           "checksum": "8563aa4a89ca36e8008904af5f8174bf"
+        },
+        {
+          "type": "image",
+          "assetId": "U2C9eSWRk94y",
+          "checksum": "cbbf2a569a27f207cc3ec2e2fc690d96"
         }
       ],
       "codegenVersion": "0.0.1"

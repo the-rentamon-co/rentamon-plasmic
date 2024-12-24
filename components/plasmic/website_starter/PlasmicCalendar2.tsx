@@ -65,6 +65,7 @@ import DayCell from "../../DayCell"; // plasmic-import: cU6Nt4MA6DXT/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
+import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -80,6 +81,7 @@ import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHR
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: TftNRT31euw0/icon
 import Icon16Icon from "./icons/PlasmicIcon__Icon16"; // plasmic-import: PIv_Q4vxdPrZ/icon
+import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import Icon25Icon from "./icons/PlasmicIcon__Icon25"; // plasmic-import: JGzy20bJEzcD/icon
 import Icon24Icon from "./icons/PlasmicIcon__Icon24"; // plasmic-import: zCddQXMUCxH0/icon
 
@@ -113,6 +115,7 @@ export type PlasmicCalendar2__OverridesType = {
   modal?: Flex__<typeof AntdModal>;
   modalChangePrice?: Flex__<typeof AntdModal>;
   main2?: Flex__<"div">;
+  textInput?: Flex__<typeof TextInput>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
   img?: Flex__<typeof PlasmicImg__>;
   fetchModal?: Flex__<typeof AntdModal>;
@@ -408,6 +411,12 @@ function PlasmicCalendar2__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "textInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -2804,28 +2813,57 @@ function PlasmicCalendar2__RenderFunc(props: {
               data-plasmic-override={overrides.main2}
               className={classNames(projectcss.all, sty.main2)}
             >
-              <AntdInputNumber
-                data-plasmic-name={"numberInput2"}
-                data-plasmic-override={overrides.numberInput2}
-                className={classNames("__wab_instance", sty.numberInput2)}
-                controls={false}
+              <TextInput
+                data-plasmic-name={"textInput"}
+                data-plasmic-override={overrides.textInput}
+                className={classNames("__wab_instance", sty.textInput)}
                 onChange={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "numberInput2",
-                    "value"
-                  ]).apply(null, eventArgs);
+                  ((...eventArgs) => {
+                    generateStateOnChangeProp($state, ["textInput", "value"])(
+                      (e => e.target?.value).apply(null, eventArgs)
+                    );
+                  }).apply(null, eventArgs);
+
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
+                    return;
+                  }
                 }}
                 placeholder={
                   "\u0645\u062b\u0644\u0627 \u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"
                 }
-                readOnly={false}
                 type={"number"}
-                value={generateStateValueProp($state, [
-                  "numberInput2",
-                  "value"
-                ])}
+                value={
+                  generateStateValueProp($state, ["textInput", "value"]) ?? ""
+                }
               />
 
+              {false ? (
+                <AntdInputNumber
+                  data-plasmic-name={"numberInput2"}
+                  data-plasmic-override={overrides.numberInput2}
+                  className={classNames("__wab_instance", sty.numberInput2)}
+                  controls={false}
+                  onChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "numberInput2",
+                      "value"
+                    ]).apply(null, eventArgs);
+                  }}
+                  placeholder={
+                    "\u0645\u062b\u0644\u0627 \u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"
+                  }
+                  readOnly={false}
+                  type={"number"}
+                  value={generateStateValueProp($state, [
+                    "numberInput2",
+                    "value"
+                  ])}
+                />
+              ) : null}
               <div
                 className={classNames(
                   projectcss.all,
@@ -2947,7 +2985,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             : result;
                           return finalResult.trim() + " تومان";
                         }
-                        const input = $state.numberInput2?.value || "";
+                        const input = $state.textInput?.value || "";
                         const output =
                           input === "" ? "صفر" : numberToPersian(Number(input));
                         return output;
@@ -2971,8 +3009,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                 isDisabled={(() => {
                   try {
                     return (
-                      $state.numberInput2.value == 0 ||
-                      $state.numberInput2.value == null
+                      $state.textInput.value <= 99999 ||
+                      $state.textInput.value == null
                     );
                   } catch (e) {
                     if (
@@ -3117,7 +3155,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               const data = {
                                 days: [$state.fragmentDatePicker.values],
                                 property_id: $props.propertyId,
-                                price: String($state.numberInput2.value)
+                                price: String($state.textInput.value)
                               };
                               $state.requestdata = data;
                               data.days = data.days
@@ -3334,7 +3372,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["fetchModal", "open"])}
           title={
-            "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a :"
+            "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a  : "
           }
           trigger={null}
           width={
@@ -3504,7 +3542,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                           })()}
                         </React.Fragment>
                       </div>
-                      <div
+                      <Stack__
+                        as={"div"}
+                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__x9Ue1
@@ -3663,18 +3703,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                         ) : null}
                         {(() => {
                           try {
-                            return (
-                              // const platformStatus = $state.platformRequestStatus?.data || {};
-
-                              // // اگر آرایه خالی نیست و currentItem داخل آن وجود ندارد
-                              // if (Object.keys(platformStatus).length > 0 && !platformStatus[currentItem]) {
-                              //     return true; // اگر currentItem در داده‌ها وجود نداشت
-                              // } else {
-                              //     return false; // اگر currentItem در داده‌ها وجود داشت یا آرایه خالی بود
-                              // }
-
-                              false
-                            );
+                            return (() => {
+                              const platformStatus =
+                                $state.platformRequestStatus?.data || {};
+                              if (
+                                Object.keys(platformStatus).length > 0 &&
+                                !platformStatus[currentItem]
+                              ) {
+                                return true;
+                              } else {
+                                return false;
+                              }
+                            })();
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -3697,7 +3737,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             }
                           </div>
                         ) : null}
-                      </div>
+                      </Stack__>
                     </div>
                   </div>
                 );
@@ -3842,7 +3882,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.platformRequestStatus = [];
                             $state.requestdata = [];
                             $state.fragmentDatePicker.values = [];
-                            $state.numberInput2.value = 0;
+                            $state.textInput.value = 0;
                             return ($state.numberInput4.value = 0);
                           })()
                         };
@@ -4556,6 +4596,7 @@ const PlasmicDescendants = {
     "modal",
     "modalChangePrice",
     "main2",
+    "textInput",
     "numberInput2",
     "img",
     "fetchModal",
@@ -4582,8 +4623,9 @@ const PlasmicDescendants = {
   numberInput4: ["numberInput4"],
   numberInput3: ["numberInput3"],
   modal: ["modal"],
-  modalChangePrice: ["modalChangePrice", "main2", "numberInput2"],
-  main2: ["main2", "numberInput2"],
+  modalChangePrice: ["modalChangePrice", "main2", "textInput", "numberInput2"],
+  main2: ["main2", "textInput", "numberInput2"],
+  textInput: ["textInput"],
   numberInput2: ["numberInput2"],
   img: ["img"],
   fetchModal: [
@@ -4619,6 +4661,7 @@ type NodeDefaultElementType = {
   modal: typeof AntdModal;
   modalChangePrice: typeof AntdModal;
   main2: "div";
+  textInput: typeof TextInput;
   numberInput2: typeof AntdInputNumber;
   img: typeof PlasmicImg__;
   fetchModal: typeof AntdModal;
@@ -4705,6 +4748,7 @@ export const PlasmicCalendar2 = Object.assign(
     modal: makeNodeComponent("modal"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
     main2: makeNodeComponent("main2"),
+    textInput: makeNodeComponent("textInput"),
     numberInput2: makeNodeComponent("numberInput2"),
     img: makeNodeComponent("img"),
     fetchModal: makeNodeComponent("fetchModal"),

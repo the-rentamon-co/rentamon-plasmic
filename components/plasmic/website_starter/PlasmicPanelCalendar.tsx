@@ -1385,7 +1385,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return undefined;
+                        return "https://rentamon.com/wp-content/uploads/2024/10/default-property.png";
                       }
                       throw e;
                     }

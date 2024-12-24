@@ -95,8 +95,6 @@ export const PlasmicTextInput__VariantProps = new Array<VariantPropType>(
 
 export type PlasmicTextInput__ArgsType = {
   placeholder?: string;
-  endIcon?: React.ReactNode;
-  startIcon?: React.ReactNode;
   value?: string;
   name?: string;
   required?: boolean;
@@ -114,12 +112,12 @@ export type PlasmicTextInput__ArgsType = {
     | "email"
     | "tel";
   autoFocus?: boolean;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicTextInput__ArgsType;
 export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
   "placeholder",
-  "endIcon",
-  "startIcon",
   "value",
   "name",
   "required",
@@ -127,7 +125,9 @@ export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
   "aria-labelledby",
   "onChange",
   "type",
-  "autoFocus"
+  "autoFocus",
+  "startIcon",
+  "endIcon"
 );
 
 export type PlasmicTextInput__OverridesType = {
@@ -270,6 +270,11 @@ function PlasmicTextInput__RenderFunc(props: {
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.rootcolor_dark]: hasVariant($state, "color", "dark"),
           [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
+          [sty.rootshowEndIcon]: hasVariant(
+            $state,
+            "showEndIcon",
+            "showEndIcon"
+          ),
           [sty.rootshowStartIcon]: hasVariant(
             $state,
             "showStartIcon",
@@ -335,6 +340,11 @@ function PlasmicTextInput__RenderFunc(props: {
           [sty.input___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.inputcolor_dark]: hasVariant($state, "color", "dark"),
           [sty.inputisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
+          [sty.inputshowEndIcon]: hasVariant(
+            $state,
+            "showEndIcon",
+            "showEndIcon"
+          ),
           [sty.inputshowStartIcon]: hasVariant(
             $state,
             "showStartIcon",
