@@ -569,6 +569,19 @@ function PlasmicActivationNew__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 1
+      },
+      {
+        path: "rateLimit",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({
+          shab: 0,
+          jabama: 0,
+          jajiga: 0,
+          otaghak: 0,
+          mihmansho: 0,
+          homsa: 0
+        })
       }
     ],
     [$props, $ctx, $refs]
@@ -6350,6 +6363,51 @@ function PlasmicActivationNew__RenderFunc(props: {
                             ) {
                               $steps["otaghakSend"] = await $steps[
                                 "otaghakSend"
+                              ];
+                            }
+
+                            $steps["updateRateLimitOtaghak"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["rateLimit", "otaghak"]
+                                    },
+                                    operation: 2
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    const oldValue = $stateGet(
+                                      objRoot,
+                                      variablePath
+                                    );
+                                    $stateSet(
+                                      objRoot,
+                                      variablePath,
+                                      oldValue + 1
+                                    );
+                                    return oldValue + 1;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateRateLimitOtaghak"] != null &&
+                              typeof $steps["updateRateLimitOtaghak"] ===
+                                "object" &&
+                              typeof $steps["updateRateLimitOtaghak"].then ===
+                                "function"
+                            ) {
+                              $steps["updateRateLimitOtaghak"] = await $steps[
+                                "updateRateLimitOtaghak"
                               ];
                             }
                           }}

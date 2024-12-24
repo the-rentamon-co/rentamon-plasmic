@@ -1792,7 +1792,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["runCode"] = false
+              $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -1871,6 +1871,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                                 })
                                 .then(data => {
                                   console.log("Token refreshed:", data);
+                                  window.location.reload();
                                 })
                                 .catch(error => {
                                   console.error("Error:", error);
