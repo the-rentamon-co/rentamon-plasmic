@@ -3627,24 +3627,11 @@ function PlasmicActivationNew__RenderFunc(props: {
                 eventArgs
               );
             }}
-            params={(() => {
-              try {
-                return $ctx.params.type;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
             url={` ${(() => {
               if ($ctx.params.type == "1") {
-                return "https://gateway.rentamon.com/webhook/user-registration";
+                return "https://gateway.rentamon.com/webhook/user-registration?param=1";
               } else {
-                return "gflfhlf";
+                return "";
               }
             })()}`}
           />
