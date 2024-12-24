@@ -1067,7 +1067,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                             sty.text__can0H
                           )}
                         >
-                          {"Loading..."}
+                          {
+                            "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a ...."
+                          }
                         </div>
                       }
                       method={"GET"}
