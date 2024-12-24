@@ -215,6 +215,10 @@ export type PlasmicActivationNew__OverridesType = {
   _1?: Flex__<"div">;
   _2?: Flex__<"div">;
   _3?: Flex__<"div">;
+  guidePanel?: Flex__<"div">;
+  _4?: Flex__<"div">;
+  _5?: Flex__<"div">;
+  _6?: Flex__<"div">;
   quotes?: Flex__<"div">;
   testimonial?: Flex__<typeof Testimonial>;
 };
@@ -553,6 +557,12 @@ function PlasmicActivationNew__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 1
+      },
+      {
+        path: "panelGuide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1
       }
     ],
     [$props, $ctx, $refs]
@@ -788,7 +798,11 @@ function PlasmicActivationNew__RenderFunc(props: {
           {(() => {
             try {
               return (() => {
-                if ($state.step === 0 || $state.step === 13) {
+                if (
+                  $state.step === 0 ||
+                  $state.step === 13 ||
+                  $state.step === 14
+                ) {
                   return false;
                 } else {
                   return true;
@@ -9294,6 +9308,442 @@ function PlasmicActivationNew__RenderFunc(props: {
           ) : null}
           {(() => {
             try {
+              return $state.step == 14;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div
+              data-plasmic-name={"guidePanel"}
+              data-plasmic-override={overrides.guidePanel}
+              className={classNames(projectcss.all, sty.guidePanel)}
+            >
+              {(() => {
+                try {
+                  return $state.panelGuide == 1;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"_4"}
+                  data-plasmic-override={overrides._4}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty._4)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__vnp3)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "30px"
+                        : "50px"
+                    }
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: ($state.panelGuide = 2)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image36.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
+                    }}
+                  />
+
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__rqtJe)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "250px"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "400px"
+                        : "500px"
+                    }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/_1LowJpg.jpg",
+                      fullWidth: 386,
+                      fullHeight: 754,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </Stack__>
+              ) : null}
+              {(() => {
+                try {
+                  return $state.panelGuide == 2;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"_5"}
+                  data-plasmic-override={overrides._5}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty._5)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__dPDbb)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "30px"
+                        : "50px"
+                    }
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: ($state.panelGuide = 3)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image36.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
+                    }}
+                  />
+
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__hDx89)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "250px"
+                        : "500px"
+                    }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/_2LowJpg.jpg",
+                      fullWidth: 386,
+                      fullHeight: 754,
+                      aspectRatio: undefined
+                    }}
+                  />
+
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___06L1I)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "30px"
+                        : "50px"
+                    }
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: ($state.panelGuide = 1)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image37.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
+                    }}
+                  />
+                </Stack__>
+              ) : null}
+              {(() => {
+                try {
+                  return $state.panelGuide == 3 && $ctx.params.type == 1;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"_6"}
+                  data-plasmic-override={overrides._6}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty._6)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__knA1E)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "30px"
+                        : "50px"
+                    }
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: ($state.step = 1)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image36.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
+                    }}
+                  />
+
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__jBri)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "250px"
+                        : "500px"
+                    }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/_3LowJpg.jpg",
+                      fullWidth: 386,
+                      fullHeight: 754,
+                      aspectRatio: undefined
+                    }}
+                  />
+
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__cjuPj)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "30px"
+                        : "50px"
+                    }
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: ($state.panelGuide = 2)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image37.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
+                    }}
+                  />
+                </Stack__>
+              ) : null}
+            </div>
+          ) : null}
+          {(() => {
+            try {
               return $ctx.params.type == 1;
             } catch (e) {
               if (
@@ -9476,6 +9926,10 @@ const PlasmicDescendants = {
     "_1",
     "_2",
     "_3",
+    "guidePanel",
+    "_4",
+    "_5",
+    "_6",
     "quotes",
     "testimonial"
   ],
@@ -9765,6 +10219,10 @@ const PlasmicDescendants = {
   _1: ["_1"],
   _2: ["_2"],
   _3: ["_3"],
+  guidePanel: ["guidePanel", "_4", "_5", "_6"],
+  _4: ["_4"],
+  _5: ["_5"],
+  _6: ["_6"],
   quotes: ["quotes", "testimonial"],
   testimonial: ["testimonial"]
 } as const;
@@ -9885,6 +10343,10 @@ type NodeDefaultElementType = {
   _1: "div";
   _2: "div";
   _3: "div";
+  guidePanel: "div";
+  _4: "div";
+  _5: "div";
+  _6: "div";
   quotes: "div";
   testimonial: typeof Testimonial;
 };
@@ -10061,6 +10523,10 @@ export const PlasmicActivationNew = Object.assign(
     _1: makeNodeComponent("_1"),
     _2: makeNodeComponent("_2"),
     _3: makeNodeComponent("_3"),
+    guidePanel: makeNodeComponent("guidePanel"),
+    _4: makeNodeComponent("_4"),
+    _5: makeNodeComponent("_5"),
+    _6: makeNodeComponent("_6"),
     quotes: makeNodeComponent("quotes"),
     testimonial: makeNodeComponent("testimonial"),
 

@@ -1289,6 +1289,21 @@
           "id": "U2C9eSWRk94y",
           "name": "Untitled-1.jpg",
           "filePath": "../public/plasmic/website_starter/images/untitled1Jpg.jpg"
+        },
+        {
+          "id": "e6xXd-k-sj91",
+          "name": "1low.jpg",
+          "filePath": "../public/plasmic/website_starter/images/_1LowJpg.jpg"
+        },
+        {
+          "id": "H8_KMJntgiON",
+          "name": "2low.jpg",
+          "filePath": "../public/plasmic/website_starter/images/_2LowJpg.jpg"
+        },
+        {
+          "id": "T3rifnNoxCsM",
+          "name": "3low.jpg",
+          "filePath": "../public/plasmic/website_starter/images/_3LowJpg.jpg"
         }
       ],
       "indirect": false,
