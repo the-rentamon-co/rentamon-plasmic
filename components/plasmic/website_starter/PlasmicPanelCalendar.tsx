@@ -1108,7 +1108,29 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       })() ? (
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__bVtw7)}
+                          className={classNames(
+                            sty.img__bVtw7,
+                            (() => {
+                              try {
+                                return (() => {
+                                  const statuses =
+                                    $state.apiRequest.data.status;
+                                  const anyFalse = Object.values(statuses).some(
+                                    value => value === false
+                                  );
+                                  return anyFalse ? "true" : "hidden";
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          )}
                           displayHeight={"34px"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
@@ -1178,7 +1200,29 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       })() ? (
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__tnqU9)}
+                          className={classNames(
+                            sty.img__tnqU9,
+                            (() => {
+                              try {
+                                return (() => {
+                                  const statuses =
+                                    $state.apiRequest.data.status;
+                                  const allTrue = Object.values(statuses).every(
+                                    value => value === true
+                                  );
+                                  return allTrue ? "true " : "hidden";
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          )}
                           displayHeight={"34px"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
@@ -1385,7 +1429,12 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return "https://rentamon.com/wp-content/uploads/2024/10/default-property.png";
+                        return {
+                          src: "/plasmic/website_starter/images/untitled1Jpg.jpg",
+                          fullWidth: 38,
+                          fullHeight: 32,
+                          aspectRatio: undefined
+                        };
                       }
                       throw e;
                     }
@@ -1743,7 +1792,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
