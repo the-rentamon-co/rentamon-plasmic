@@ -59,10 +59,10 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
@@ -97,6 +97,7 @@ export const PlasmicPanelCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPanelCalendar__OverridesType = {
   root?: Flex__<"div">;
+  refreshToken?: Flex__<typeof Embed>;
   modalSidebar?: Flex__<typeof AntdModal>;
   sideBar?: Flex__<"div">;
   header?: Flex__<"div">;
@@ -115,7 +116,6 @@ export type PlasmicPanelCalendar__OverridesType = {
   calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
   goftino?: Flex__<typeof Embed>;
-  refreshToken?: Flex__<typeof Embed>;
 };
 
 export interface DefaultPanelCalendarProps {}
@@ -331,6 +331,15 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             sty.root
           )}
         >
+          <Embed
+            data-plasmic-name={"refreshToken"}
+            data-plasmic-override={overrides.refreshToken}
+            className={classNames("__wab_instance", sty.refreshToken)}
+            code={
+              "<script type=\"text/javascript\">\r\n  // \u0686\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0622\u062f\u0631\u0633 \u06a9\u0627\u0645\u0644 \u0628\u0627 https://app.rentamon.com/panel/ \u06cc\u06a9\u06cc \u0628\u0627\u0634\u062f\r\n  if (window.location.href === \"https://app.rentamon.com/panel/\") {\r\n    \r\n    console.log(\"test started\");\r\n\r\n    async function refreshToken() {\r\n      try {\r\n        const response = await fetch('https://sso.rentamon.com/auth/refresh', {\r\n          method: 'GET',\r\n          credentials: \"include\",\r\n        });\r\n        console.log(\"Refreshed Token in 10 minutes\");\r\n        if (response.ok) {\r\n          const data = await response.json();\r\n          console.log('Token refreshed successfully:', data);\r\n          // You can handle the new token or any other logic here\r\n        } else {\r\n          console.error('Failed to refresh token:', response.status);\r\n          // Optionally handle the failure (like redirecting the user to login)\r\n        }\r\n      } catch (error) {\r\n        console.error('Error refreshing token:', error);\r\n      }\r\n    }\r\n\r\n    // Call the refreshToken function every 10 minutes\r\n    setInterval(refreshToken, 300000);\r\n\r\n    // Call it once immediately to ensure the token is refreshed right away\r\n    refreshToken();\r\n\r\n    function getCookie(name) {\r\n      const value = `; ${globalThis.document.cookie}`;\r\n      const parts = value.split(`; ${name}=`);\r\n      if (parts.length === 2) return parts.pop().split(';').shift();\r\n    }\r\n\r\n    // Retrieve the boolean values of the cookies\r\n    const ussoRefreshAvailable = getCookie('usso_refresh_available') || false;\r\n    console.log(\"this is ussoRefresh: \", ussoRefreshAvailable);\r\n\r\n    const ussoAccessAvailable = getCookie('usso_access_available') || false;\r\n    console.log(\"this is ussoAccessAvailable: \", ussoAccessAvailable);\r\n\r\n\r\n    // Check if access is available\r\n    if (!ussoAccessAvailable) {\r\n      // Check the usso_refresh_available flag\r\n      if (!ussoRefreshAvailable) {\r\n        // Redirect the user\r\n        console.log(\"got here in redirect\")\r\n        window.location.href = 'https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/';\r\n      } else {\r\n        // Call the refresh endpoint\r\n        console.log(\"got here in refreshToken\")\r\n        fetch('https://sso.rentamon.com/auth/refresh', {\r\n          method: 'GET',\r\n          credentials: \"include\"\r\n        })\r\n          .then(response => {\r\n            if (!response.ok) {\r\n              throw new Error('Failed to refresh token');\r\n            }\r\n            return response.json();\r\n          })\r\n          .then(data => {\r\n            console.log('Token refreshed:', data);\r\n            // You may need to set the new token in your backend or notify the user\r\n          })\r\n          .catch(error => {\r\n            console.error('Error:', error);\r\n            // Redirect if the refresh fails\r\n            window.location.href = 'https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/';\r\n          });\r\n      }\r\n    }\r\n\r\n  } else {\r\n    // \u0627\u06af\u0631 \u062f\u0631 https://app.rentamon.com/panel/ \u0646\u0628\u0648\u062f\u06cc\u0645\u060c \u0647\u06cc\u0686 \u06a9\u062f\u06cc \u0627\u062c\u0631\u0627 \u0646\u0634\u0648\u062f\r\n    console.log(\"Not in https://app.rentamon.com/panel/, script won't run.\");\r\n  }\r\n</script>\r\n"
+            }
+          />
+
           <AntdModal
             data-plasmic-name={"modalSidebar"}
             data-plasmic-override={overrides.modalSidebar}
@@ -441,7 +450,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"100px"}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "60px"
+                    : "100px"
+                }
                 height={"100px"}
                 loading={"lazy"}
                 src={{
@@ -1792,7 +1805,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -1906,15 +1919,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
             }
           />
-
-          <Embed
-            data-plasmic-name={"refreshToken"}
-            data-plasmic-override={overrides.refreshToken}
-            className={classNames("__wab_instance", sty.refreshToken)}
-            code={
-              "<!-- <script type=\"text/javascript\">\r\n  // \u0686\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0622\u062f\u0631\u0633 \u06a9\u0627\u0645\u0644 \u0628\u0627 https://app.rentamon.com/panel/ \u06cc\u06a9\u06cc \u0628\u0627\u0634\u062f\r\n  if (window.location.href === \"https://app.rentamon.com/panel/\") {\r\n    \r\n    console.log(\"test started\");\r\n\r\n    async function refreshToken() {\r\n      try {\r\n        const response = await fetch('https://sso.rentamon.com/auth/refresh', {\r\n          method: 'GET',\r\n          credentials: \"include\",\r\n        });\r\n        console.log(\"Refreshed Token in 10 minutes\");\r\n        if (response.ok) {\r\n          const data = await response.json();\r\n          console.log('Token refreshed successfully:', data);\r\n          // You can handle the new token or any other logic here\r\n        } else {\r\n          console.error('Failed to refresh token:', response.status);\r\n          // Optionally handle the failure (like redirecting the user to login)\r\n        }\r\n      } catch (error) {\r\n        console.error('Error refreshing token:', error);\r\n      }\r\n    }\r\n\r\n    // Call the refreshToken function every 10 minutes\r\n    setInterval(refreshToken, 300000);\r\n\r\n    // Call it once immediately to ensure the token is refreshed right away\r\n    refreshToken();\r\n\r\n    function getCookie(name) {\r\n      const value = `; ${globalThis.document.cookie}`;\r\n      const parts = value.split(`; ${name}=`);\r\n      if (parts.length === 2) return parts.pop().split(';').shift();\r\n    }\r\n\r\n    // Retrieve the boolean values of the cookies\r\n    const ussoRefreshAvailable = getCookie('usso_refresh_available') || false;\r\n    console.log(\"this is ussoRefresh: \", ussoRefreshAvailable);\r\n\r\n    const ussoAccessAvailable = getCookie('usso_access_available') || false;\r\n    console.log(\"this is ussoAccessAvailable: \", ussoAccessAvailable);\r\n\r\n\r\n    // Check if access is available\r\n    if (!ussoAccessAvailable) {\r\n      // Check the usso_refresh_available flag\r\n      if (!ussoRefreshAvailable) {\r\n        // Redirect the user\r\n        console.log(\"got here in redirect\")\r\n        window.location.href = 'https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/';\r\n      } else {\r\n        // Call the refresh endpoint\r\n        console.log(\"got here in refreshToken\")\r\n        fetch('https://sso.rentamon.com/auth/refresh', {\r\n          method: 'GET',\r\n          credentials: \"include\"\r\n        })\r\n          .then(response => {\r\n            if (!response.ok) {\r\n              throw new Error('Failed to refresh token');\r\n            }\r\n            return response.json();\r\n          })\r\n          .then(data => {\r\n            console.log('Token refreshed:', data);\r\n            // You may need to set the new token in your backend or notify the user\r\n          })\r\n          .catch(error => {\r\n            console.error('Error:', error);\r\n            // Redirect if the refresh fails\r\n            window.location.href = 'https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/';\r\n          });\r\n      }\r\n    }\r\n\r\n  } else {\r\n    // \u0627\u06af\u0631 \u062f\u0631 https://app.rentamon.com/panel/ \u0646\u0628\u0648\u062f\u06cc\u0645\u060c \u0647\u06cc\u0686 \u06a9\u062f\u06cc \u0627\u062c\u0631\u0627 \u0646\u0634\u0648\u062f\r\n    console.log(\"Not in https://app.rentamon.com/panel/, script won't run.\");\r\n  }\r\n</script> -->\r\n"
-            }
-          />
         </div>
       </div>
     </React.Fragment>
@@ -1924,6 +1928,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "refreshToken",
     "modalSidebar",
     "sideBar",
     "header",
@@ -1941,9 +1946,9 @@ const PlasmicDescendants = {
     "clarity",
     "calendar2",
     "sideEffect",
-    "goftino",
-    "refreshToken"
+    "goftino"
   ],
+  refreshToken: ["refreshToken"],
   modalSidebar: ["modalSidebar"],
   sideBar: [
     "sideBar",
@@ -1992,14 +1997,14 @@ const PlasmicDescendants = {
   clarity: ["clarity"],
   calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
-  goftino: ["goftino"],
-  refreshToken: ["refreshToken"]
+  goftino: ["goftino"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  refreshToken: typeof Embed;
   modalSidebar: typeof AntdModal;
   sideBar: "div";
   header: "div";
@@ -2018,7 +2023,6 @@ type NodeDefaultElementType = {
   calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
   goftino: typeof Embed;
-  refreshToken: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2081,6 +2085,7 @@ export const PlasmicPanelCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    refreshToken: makeNodeComponent("refreshToken"),
     modalSidebar: makeNodeComponent("modalSidebar"),
     sideBar: makeNodeComponent("sideBar"),
     header: makeNodeComponent("header"),
@@ -2099,7 +2104,6 @@ export const PlasmicPanelCalendar = Object.assign(
     calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
     goftino: makeNodeComponent("goftino"),
-    refreshToken: makeNodeComponent("refreshToken"),
 
     // Metadata about props expected for PlasmicPanelCalendar
     internalVariantProps: PlasmicPanelCalendar__VariantProps,
