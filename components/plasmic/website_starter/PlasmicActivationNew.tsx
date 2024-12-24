@@ -4453,7 +4453,26 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/jabamacontact",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              if ($ctx.params.type == "1") {
+                                                return "https://gateway.rentamon.com/webhook/jabamacontact";
+                                              } else {
+                                                return "";
+                                              }
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
                                         undefined,
                                         (() => {
                                           try {
@@ -5016,7 +5035,26 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/jajigacontact",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              if ($ctx.params.type == "1") {
+                                                return "https://gateway.rentamon.com/webhook/jajigacontact";
+                                              } else {
+                                                return "";
+                                              }
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
                                         undefined,
                                         (() => {
                                           try {
@@ -5639,7 +5677,26 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/shabcontact",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              if ($ctx.params.type == "1") {
+                                                return "https://gateway.rentamon.com/webhook/shabcontact";
+                                              } else {
+                                                return "";
+                                              }
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
                                         undefined,
                                         (() => {
                                           try {
@@ -6205,7 +6262,26 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/otaghakcontact",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              if ($ctx.params.type == "1") {
+                                                return "https://gateway.rentamon.com/webhook/otaghakcontact";
+                                              } else {
+                                                return "";
+                                              }
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
                                         undefined,
                                         (() => {
                                           try {
