@@ -155,24 +155,28 @@ export type PlasmicActivationNew__OverridesType = {
   jabamaSend?: Flex__<typeof FormItemWrapper>;
   jabamaPhoneInput?: Flex__<typeof AntdInput>;
   jabamasend2?: Flex__<typeof AntdButton>;
+  jabamasend3?: Flex__<typeof AntdButton>;
   jabamaVerify?: Flex__<typeof FormItemWrapper>;
   jabamaOtpInput?: Flex__<typeof AntdInput>;
   jabamaverify?: Flex__<typeof AntdButton>;
   jajigaSendForm?: Flex__<typeof FormItemWrapper>;
   jajigaPhoneInput?: Flex__<typeof AntdInput>;
   jajigasend?: Flex__<typeof AntdButton>;
+  jabamasend4?: Flex__<typeof AntdButton>;
   jajigaVerify?: Flex__<typeof FormItemWrapper>;
   input6?: Flex__<typeof AntdInput>;
   jajigaverify?: Flex__<typeof AntdButton>;
   shabSend?: Flex__<typeof FormItemWrapper>;
   input9?: Flex__<typeof AntdInput>;
   shabsend?: Flex__<typeof AntdButton>;
+  jabamasend5?: Flex__<typeof AntdButton>;
   shabVerify?: Flex__<typeof FormItemWrapper>;
   input10?: Flex__<typeof AntdInput>;
   shabverify?: Flex__<typeof AntdButton>;
   otaghakSend?: Flex__<typeof FormItemWrapper>;
   input11?: Flex__<typeof AntdInput>;
   otaghaksend?: Flex__<typeof AntdButton>;
+  jabamasend6?: Flex__<typeof AntdButton>;
   otaghakVerify?: Flex__<typeof FormItemWrapper>;
   input12?: Flex__<typeof AntdInput>;
   otaghakverify?: Flex__<typeof AntdButton>;
@@ -184,10 +188,12 @@ export type PlasmicActivationNew__OverridesType = {
   mihmanshoVerify?: Flex__<typeof FormItemWrapper>;
   input14?: Flex__<typeof AntdInput>;
   mihmanshoVerify3?: Flex__<typeof AntdButton>;
+  jabamasend8?: Flex__<typeof AntdButton>;
   homsaverify?: Flex__<"div">;
   input15?: Flex__<typeof AntdInput>;
   input16?: Flex__<typeof AntdInput>;
   homsaVerify?: Flex__<typeof AntdButton>;
+  jabamasend7?: Flex__<typeof AntdButton>;
   input17?: Flex__<typeof AntdInput>;
   mizboonsend?: Flex__<typeof AntdButton>;
   mizboonsend3?: Flex__<typeof AntdButton>;
@@ -643,51 +649,65 @@ function PlasmicActivationNew__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["runCode"] = false
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return window.history.back();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+                $steps["update1"] =
+                  $ctx.params.type == 1
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["step"]
+                          },
+                          operation: 0,
+                          value: ($state.step = 14)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
                 if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
+                  $steps["update1"] != null &&
+                  typeof $steps["update1"] === "object" &&
+                  typeof $steps["update1"].then === "function"
                 ) {
-                  $steps["runCode"] = await $steps["runCode"];
+                  $steps["update1"] = await $steps["update1"];
                 }
 
-                $steps["goToPanelCalendar"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/panel` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+                $steps["goToPage3"] =
+                  $ctx.params.type == 3
+                    ? (() => {
+                        const actionArgs = { destination: `/panel` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
                 if (
-                  $steps["goToPanelCalendar"] != null &&
-                  typeof $steps["goToPanelCalendar"] === "object" &&
-                  typeof $steps["goToPanelCalendar"].then === "function"
+                  $steps["goToPage3"] != null &&
+                  typeof $steps["goToPage3"] === "object" &&
+                  typeof $steps["goToPage3"].then === "function"
                 ) {
-                  $steps["goToPanelCalendar"] = await $steps[
-                    "goToPanelCalendar"
-                  ];
+                  $steps["goToPage3"] = await $steps["goToPage3"];
                 }
               }}
               role={"img"}
@@ -4260,6 +4280,100 @@ function PlasmicActivationNew__RenderFunc(props: {
                             }
                           </div>
                         </AntdButton>
+                        <AntdButton
+                          data-plasmic-name={"jabamasend3"}
+                          data-plasmic-override={overrides.jabamasend3}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.jabamasend3
+                          )}
+                          onClick={async () => {
+                            const $steps = {};
+
+                            $steps["update1"] =
+                              $ctx.params.type == 1
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.step = 14)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["update1"] != null &&
+                              typeof $steps["update1"] === "object" &&
+                              typeof $steps["update1"].then === "function"
+                            ) {
+                              $steps["update1"] = await $steps["update1"];
+                            }
+
+                            $steps["goToPanelCalendar"] =
+                              $ctx.params.type == 3
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/panel`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["goToPanelCalendar"] != null &&
+                              typeof $steps["goToPanelCalendar"] === "object" &&
+                              typeof $steps["goToPanelCalendar"].then ===
+                                "function"
+                            ) {
+                              $steps["goToPanelCalendar"] = await $steps[
+                                "goToPanelCalendar"
+                              ];
+                            }
+                          }}
+                          submitsForm={true}
+                          type={"primary"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__jKat9
+                            )}
+                          >
+                            {
+                              "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                            }
+                          </div>
+                        </AntdButton>
                       </div>
                     </FormItemWrapper>
                   ) : null}
@@ -4842,6 +4956,100 @@ function PlasmicActivationNew__RenderFunc(props: {
                           >
                             {
                               "\u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
+                            }
+                          </div>
+                        </AntdButton>
+                        <AntdButton
+                          data-plasmic-name={"jabamasend4"}
+                          data-plasmic-override={overrides.jabamasend4}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.jabamasend4
+                          )}
+                          onClick={async () => {
+                            const $steps = {};
+
+                            $steps["update1"] =
+                              $ctx.params.type == 1
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.step = 14)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["update1"] != null &&
+                              typeof $steps["update1"] === "object" &&
+                              typeof $steps["update1"].then === "function"
+                            ) {
+                              $steps["update1"] = await $steps["update1"];
+                            }
+
+                            $steps["goToPanelCalendar"] =
+                              $ctx.params.type == 3
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/panel`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["goToPanelCalendar"] != null &&
+                              typeof $steps["goToPanelCalendar"] === "object" &&
+                              typeof $steps["goToPanelCalendar"].then ===
+                                "function"
+                            ) {
+                              $steps["goToPanelCalendar"] = await $steps[
+                                "goToPanelCalendar"
+                              ];
+                            }
+                          }}
+                          submitsForm={true}
+                          type={"primary"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__ctiGm
+                            )}
+                          >
+                            {
+                              "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
                             }
                           </div>
                         </AntdButton>
@@ -5489,6 +5697,100 @@ function PlasmicActivationNew__RenderFunc(props: {
                             }
                           </div>
                         </AntdButton>
+                        <AntdButton
+                          data-plasmic-name={"jabamasend5"}
+                          data-plasmic-override={overrides.jabamasend5}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.jabamasend5
+                          )}
+                          onClick={async () => {
+                            const $steps = {};
+
+                            $steps["update1"] =
+                              $ctx.params.type == 1
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.step = 14)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["update1"] != null &&
+                              typeof $steps["update1"] === "object" &&
+                              typeof $steps["update1"].then === "function"
+                            ) {
+                              $steps["update1"] = await $steps["update1"];
+                            }
+
+                            $steps["goToPanelCalendar"] =
+                              $ctx.params.type == 3
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/panel`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["goToPanelCalendar"] != null &&
+                              typeof $steps["goToPanelCalendar"] === "object" &&
+                              typeof $steps["goToPanelCalendar"].then ===
+                                "function"
+                            ) {
+                              $steps["goToPanelCalendar"] = await $steps[
+                                "goToPanelCalendar"
+                              ];
+                            }
+                          }}
+                          submitsForm={true}
+                          type={"primary"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__wOCr
+                            )}
+                          >
+                            {
+                              "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                            }
+                          </div>
+                        </AntdButton>
                       </div>
                     </FormItemWrapper>
                   ) : null}
@@ -6063,6 +6365,100 @@ function PlasmicActivationNew__RenderFunc(props: {
                           >
                             {
                               "\u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
+                            }
+                          </div>
+                        </AntdButton>
+                        <AntdButton
+                          data-plasmic-name={"jabamasend6"}
+                          data-plasmic-override={overrides.jabamasend6}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.jabamasend6
+                          )}
+                          onClick={async () => {
+                            const $steps = {};
+
+                            $steps["update1"] =
+                              $ctx.params.type == 1
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.step = 14)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["update1"] != null &&
+                              typeof $steps["update1"] === "object" &&
+                              typeof $steps["update1"].then === "function"
+                            ) {
+                              $steps["update1"] = await $steps["update1"];
+                            }
+
+                            $steps["goToPanelCalendar"] =
+                              $ctx.params.type == 3
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/panel`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["goToPanelCalendar"] != null &&
+                              typeof $steps["goToPanelCalendar"] === "object" &&
+                              typeof $steps["goToPanelCalendar"].then ===
+                                "function"
+                            ) {
+                              $steps["goToPanelCalendar"] = await $steps[
+                                "goToPanelCalendar"
+                              ];
+                            }
+                          }}
+                          submitsForm={true}
+                          type={"primary"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__cVdoM
+                            )}
+                          >
+                            {
+                              "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
                             }
                           </div>
                         </AntdButton>
@@ -7154,6 +7550,103 @@ function PlasmicActivationNew__RenderFunc(props: {
                               {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
                             </div>
                           </AntdButton>
+                          <AntdButton
+                            data-plasmic-name={"jabamasend8"}
+                            data-plasmic-override={overrides.jabamasend8}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.jabamasend8
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["update1"] =
+                                $ctx.params.type == 1
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["step"]
+                                        },
+                                        operation: 0,
+                                        value: ($state.step = 14)
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["update1"] != null &&
+                                typeof $steps["update1"] === "object" &&
+                                typeof $steps["update1"].then === "function"
+                              ) {
+                                $steps["update1"] = await $steps["update1"];
+                              }
+
+                              $steps["goToPanelCalendar"] =
+                                $ctx.params.type == 3
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/panel`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToPanelCalendar"] != null &&
+                                typeof $steps["goToPanelCalendar"] ===
+                                  "object" &&
+                                typeof $steps["goToPanelCalendar"].then ===
+                                  "function"
+                              ) {
+                                $steps["goToPanelCalendar"] = await $steps[
+                                  "goToPanelCalendar"
+                                ];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__lebDs
+                              )}
+                            >
+                              {
+                                "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                              }
+                            </div>
+                          </AntdButton>
                         </div>
                       </FormItemWrapper>
                     </div>
@@ -7564,6 +8057,103 @@ function PlasmicActivationNew__RenderFunc(props: {
                               )}
                             >
                               {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                            </div>
+                          </AntdButton>
+                          <AntdButton
+                            data-plasmic-name={"jabamasend7"}
+                            data-plasmic-override={overrides.jabamasend7}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.jabamasend7
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["update1"] =
+                                $ctx.params.type == 1
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["step"]
+                                        },
+                                        operation: 0,
+                                        value: ($state.step = 14)
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["update1"] != null &&
+                                typeof $steps["update1"] === "object" &&
+                                typeof $steps["update1"].then === "function"
+                              ) {
+                                $steps["update1"] = await $steps["update1"];
+                              }
+
+                              $steps["goToPanelCalendar"] =
+                                $ctx.params.type == 3
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/panel`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToPanelCalendar"] != null &&
+                                typeof $steps["goToPanelCalendar"] ===
+                                  "object" &&
+                                typeof $steps["goToPanelCalendar"].then ===
+                                  "function"
+                              ) {
+                                $steps["goToPanelCalendar"] = await $steps[
+                                  "goToPanelCalendar"
+                                ];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__ymnEy
+                              )}
+                            >
+                              {
+                                "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                              }
                             </div>
                           </AntdButton>
                         </div>
@@ -9942,24 +10532,28 @@ const PlasmicDescendants = {
     "jabamaSend",
     "jabamaPhoneInput",
     "jabamasend2",
+    "jabamasend3",
     "jabamaVerify",
     "jabamaOtpInput",
     "jabamaverify",
     "jajigaSendForm",
     "jajigaPhoneInput",
     "jajigasend",
+    "jabamasend4",
     "jajigaVerify",
     "input6",
     "jajigaverify",
     "shabSend",
     "input9",
     "shabsend",
+    "jabamasend5",
     "shabVerify",
     "input10",
     "shabverify",
     "otaghakSend",
     "input11",
     "otaghaksend",
+    "jabamasend6",
     "otaghakVerify",
     "input12",
     "otaghakverify",
@@ -9971,10 +10565,12 @@ const PlasmicDescendants = {
     "mihmanshoVerify",
     "input14",
     "mihmanshoVerify3",
+    "jabamasend8",
     "homsaverify",
     "input15",
     "input16",
     "homsaVerify",
+    "jabamasend7",
     "input17",
     "mizboonsend",
     "mizboonsend3",
@@ -10139,24 +10735,28 @@ const PlasmicDescendants = {
     "jabamaSend",
     "jabamaPhoneInput",
     "jabamasend2",
+    "jabamasend3",
     "jabamaVerify",
     "jabamaOtpInput",
     "jabamaverify",
     "jajigaSendForm",
     "jajigaPhoneInput",
     "jajigasend",
+    "jabamasend4",
     "jajigaVerify",
     "input6",
     "jajigaverify",
     "shabSend",
     "input9",
     "shabsend",
+    "jabamasend5",
     "shabVerify",
     "input10",
     "shabverify",
     "otaghakSend",
     "input11",
     "otaghaksend",
+    "jabamasend6",
     "otaghakVerify",
     "input12",
     "otaghakverify",
@@ -10168,10 +10768,12 @@ const PlasmicDescendants = {
     "mihmanshoVerify",
     "input14",
     "mihmanshoVerify3",
+    "jabamasend8",
     "homsaverify",
     "input15",
     "input16",
     "homsaVerify",
+    "jabamasend7",
     "input17",
     "mizboonsend",
     "mizboonsend3",
@@ -10200,27 +10802,36 @@ const PlasmicDescendants = {
   policiesCheckbox: ["policiesCheckbox", "link"],
   link: ["link"],
   submitButton: ["submitButton"],
-  jabamaSend: ["jabamaSend", "jabamaPhoneInput", "jabamasend2"],
+  jabamaSend: ["jabamaSend", "jabamaPhoneInput", "jabamasend2", "jabamasend3"],
   jabamaPhoneInput: ["jabamaPhoneInput"],
   jabamasend2: ["jabamasend2"],
+  jabamasend3: ["jabamasend3"],
   jabamaVerify: ["jabamaVerify", "jabamaOtpInput", "jabamaverify"],
   jabamaOtpInput: ["jabamaOtpInput"],
   jabamaverify: ["jabamaverify"],
-  jajigaSendForm: ["jajigaSendForm", "jajigaPhoneInput", "jajigasend"],
+  jajigaSendForm: [
+    "jajigaSendForm",
+    "jajigaPhoneInput",
+    "jajigasend",
+    "jabamasend4"
+  ],
   jajigaPhoneInput: ["jajigaPhoneInput"],
   jajigasend: ["jajigasend"],
+  jabamasend4: ["jabamasend4"],
   jajigaVerify: ["jajigaVerify", "input6", "jajigaverify"],
   input6: ["input6"],
   jajigaverify: ["jajigaverify"],
-  shabSend: ["shabSend", "input9", "shabsend"],
+  shabSend: ["shabSend", "input9", "shabsend", "jabamasend5"],
   input9: ["input9"],
   shabsend: ["shabsend"],
+  jabamasend5: ["jabamasend5"],
   shabVerify: ["shabVerify", "input10", "shabverify"],
   input10: ["input10"],
   shabverify: ["shabverify"],
-  otaghakSend: ["otaghakSend", "input11", "otaghaksend"],
+  otaghakSend: ["otaghakSend", "input11", "otaghaksend", "jabamasend6"],
   input11: ["input11"],
   otaghaksend: ["otaghaksend"],
+  jabamasend6: ["jabamasend6"],
   otaghakVerify: ["otaghakVerify", "input12", "otaghakverify"],
   input12: ["input12"],
   otaghakverify: ["otaghakverify"],
@@ -10232,7 +10843,8 @@ const PlasmicDescendants = {
     "mihmanshosend6",
     "mihmanshoVerify",
     "input14",
-    "mihmanshoVerify3"
+    "mihmanshoVerify3",
+    "jabamasend8"
   ],
   mihmanshoSend: [
     "mihmanshoSend",
@@ -10243,13 +10855,26 @@ const PlasmicDescendants = {
   input13: ["input13"],
   mihmanshosend: ["mihmanshosend"],
   mihmanshosend6: ["mihmanshosend6"],
-  mihmanshoVerify: ["mihmanshoVerify", "input14", "mihmanshoVerify3"],
+  mihmanshoVerify: [
+    "mihmanshoVerify",
+    "input14",
+    "mihmanshoVerify3",
+    "jabamasend8"
+  ],
   input14: ["input14"],
   mihmanshoVerify3: ["mihmanshoVerify3"],
-  homsaverify: ["homsaverify", "input15", "input16", "homsaVerify"],
+  jabamasend8: ["jabamasend8"],
+  homsaverify: [
+    "homsaverify",
+    "input15",
+    "input16",
+    "homsaVerify",
+    "jabamasend7"
+  ],
   input15: ["input15"],
   input16: ["input16"],
   homsaVerify: ["homsaVerify"],
+  jabamasend7: ["jabamasend7"],
   input17: ["input17"],
   mizboonsend: ["mizboonsend"],
   mizboonsend3: ["mizboonsend3"],
@@ -10359,24 +10984,28 @@ type NodeDefaultElementType = {
   jabamaSend: typeof FormItemWrapper;
   jabamaPhoneInput: typeof AntdInput;
   jabamasend2: typeof AntdButton;
+  jabamasend3: typeof AntdButton;
   jabamaVerify: typeof FormItemWrapper;
   jabamaOtpInput: typeof AntdInput;
   jabamaverify: typeof AntdButton;
   jajigaSendForm: typeof FormItemWrapper;
   jajigaPhoneInput: typeof AntdInput;
   jajigasend: typeof AntdButton;
+  jabamasend4: typeof AntdButton;
   jajigaVerify: typeof FormItemWrapper;
   input6: typeof AntdInput;
   jajigaverify: typeof AntdButton;
   shabSend: typeof FormItemWrapper;
   input9: typeof AntdInput;
   shabsend: typeof AntdButton;
+  jabamasend5: typeof AntdButton;
   shabVerify: typeof FormItemWrapper;
   input10: typeof AntdInput;
   shabverify: typeof AntdButton;
   otaghakSend: typeof FormItemWrapper;
   input11: typeof AntdInput;
   otaghaksend: typeof AntdButton;
+  jabamasend6: typeof AntdButton;
   otaghakVerify: typeof FormItemWrapper;
   input12: typeof AntdInput;
   otaghakverify: typeof AntdButton;
@@ -10388,10 +11017,12 @@ type NodeDefaultElementType = {
   mihmanshoVerify: typeof FormItemWrapper;
   input14: typeof AntdInput;
   mihmanshoVerify3: typeof AntdButton;
+  jabamasend8: typeof AntdButton;
   homsaverify: "div";
   input15: typeof AntdInput;
   input16: typeof AntdInput;
   homsaVerify: typeof AntdButton;
+  jabamasend7: typeof AntdButton;
   input17: typeof AntdInput;
   mizboonsend: typeof AntdButton;
   mizboonsend3: typeof AntdButton;
@@ -10539,24 +11170,28 @@ export const PlasmicActivationNew = Object.assign(
     jabamaSend: makeNodeComponent("jabamaSend"),
     jabamaPhoneInput: makeNodeComponent("jabamaPhoneInput"),
     jabamasend2: makeNodeComponent("jabamasend2"),
+    jabamasend3: makeNodeComponent("jabamasend3"),
     jabamaVerify: makeNodeComponent("jabamaVerify"),
     jabamaOtpInput: makeNodeComponent("jabamaOtpInput"),
     jabamaverify: makeNodeComponent("jabamaverify"),
     jajigaSendForm: makeNodeComponent("jajigaSendForm"),
     jajigaPhoneInput: makeNodeComponent("jajigaPhoneInput"),
     jajigasend: makeNodeComponent("jajigasend"),
+    jabamasend4: makeNodeComponent("jabamasend4"),
     jajigaVerify: makeNodeComponent("jajigaVerify"),
     input6: makeNodeComponent("input6"),
     jajigaverify: makeNodeComponent("jajigaverify"),
     shabSend: makeNodeComponent("shabSend"),
     input9: makeNodeComponent("input9"),
     shabsend: makeNodeComponent("shabsend"),
+    jabamasend5: makeNodeComponent("jabamasend5"),
     shabVerify: makeNodeComponent("shabVerify"),
     input10: makeNodeComponent("input10"),
     shabverify: makeNodeComponent("shabverify"),
     otaghakSend: makeNodeComponent("otaghakSend"),
     input11: makeNodeComponent("input11"),
     otaghaksend: makeNodeComponent("otaghaksend"),
+    jabamasend6: makeNodeComponent("jabamasend6"),
     otaghakVerify: makeNodeComponent("otaghakVerify"),
     input12: makeNodeComponent("input12"),
     otaghakverify: makeNodeComponent("otaghakverify"),
@@ -10568,10 +11203,12 @@ export const PlasmicActivationNew = Object.assign(
     mihmanshoVerify: makeNodeComponent("mihmanshoVerify"),
     input14: makeNodeComponent("input14"),
     mihmanshoVerify3: makeNodeComponent("mihmanshoVerify3"),
+    jabamasend8: makeNodeComponent("jabamasend8"),
     homsaverify: makeNodeComponent("homsaverify"),
     input15: makeNodeComponent("input15"),
     input16: makeNodeComponent("input16"),
     homsaVerify: makeNodeComponent("homsaVerify"),
+    jabamasend7: makeNodeComponent("jabamasend7"),
     input17: makeNodeComponent("input17"),
     mizboonsend: makeNodeComponent("mizboonsend"),
     mizboonsend3: makeNodeComponent("mizboonsend3"),
