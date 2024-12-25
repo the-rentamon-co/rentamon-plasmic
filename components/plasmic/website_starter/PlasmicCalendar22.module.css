@@ -504,7 +504,7 @@
     width: 87%;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .button__f5BPv:global(.__wab_instance) {
     width: 100%;
   }
@@ -976,7 +976,7 @@
     width: 100%;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .button__o6Iyl:global(.__wab_instance) {
     width: 100%;
   }
@@ -1032,7 +1032,7 @@
     flex-shrink: 0;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .button__gI4Sq:global(.__wab_instance) {
     height: 60px;
     flex-shrink: 0;
@@ -1076,7 +1076,7 @@
     font-size: 17px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .text__iJ44 {
     font-size: 17px;
     font-weight: 600;

@@ -616,7 +616,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["goToPanelCalendar"] = true
+                  $steps["goToPanelCalendar"] = false
                     ? (() => {
                         const actionArgs = { destination: `/panel` };
                         return (({ destination }) => {
@@ -1026,7 +1026,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       displayWidth={
                         hasVariant(globalVariants, "screen", "mobile")
                           ? "22px"
-                          : "30px"
+                          : "33px"
                       }
                       loading={"lazy"}
                       src={{

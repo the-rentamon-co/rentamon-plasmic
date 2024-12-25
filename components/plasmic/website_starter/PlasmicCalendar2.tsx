@@ -3503,7 +3503,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox__zeq8A)}
                     key={currentIndex}
                   >
-                    <div
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
                       className={classNames(projectcss.all, sty.freeBox__rfsi)}
                     >
                       <div
@@ -3738,12 +3740,25 @@ function PlasmicCalendar2__RenderFunc(props: {
                           </div>
                         ) : null}
                       </Stack__>
-                    </div>
+                    </Stack__>
                   </div>
                 );
               })}
               <Button
                 className={classNames("__wab_instance", sty.button__sWmv0)}
+                isDisabled={(() => {
+                  try {
+                    return !Object.keys($state.platformRequestStatus).length;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
                 onClick={async event => {
                   const $steps = {};
 

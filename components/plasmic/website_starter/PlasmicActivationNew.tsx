@@ -217,6 +217,7 @@ export type PlasmicActivationNew__OverridesType = {
   input27?: Flex__<typeof AntdInput>;
   platformpropertyButton?: Flex__<typeof AntdButton>;
   platformpropertyButton2?: Flex__<typeof AntdButton>;
+  jabamasend9?: Flex__<typeof AntdButton>;
   guide?: Flex__<"div">;
   _1?: Flex__<"div">;
   _2?: Flex__<"div">;
@@ -3133,7 +3134,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   return (() => {
                                     if (
                                       !(
-                                        "mehmansho" in
+                                        "mihmansho" in
                                         $state.platformstatus.status
                                       )
                                     ) {
@@ -3158,7 +3159,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                   return (() => {
                                     if (
                                       !(
-                                        "mehmansho" in
+                                        "mihmansho" in
                                         $state.platformstatus.status
                                       )
                                     ) {
@@ -9598,6 +9599,91 @@ function PlasmicActivationNew__RenderFunc(props: {
                   "\u062a\u0645\u0627\u0645\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a"
                 }
               </div>
+              <AntdButton
+                data-plasmic-name={"jabamasend9"}
+                data-plasmic-override={overrides.jabamasend9}
+                className={classNames("__wab_instance", sty.jabamasend9)}
+                onClick={async () => {
+                  const $steps = {};
+
+                  $steps["update1"] =
+                    $ctx.params.type == 1
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["step"]
+                            },
+                            operation: 0,
+                            value: ($state.step = 14)
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["update1"] != null &&
+                    typeof $steps["update1"] === "object" &&
+                    typeof $steps["update1"].then === "function"
+                  ) {
+                    $steps["update1"] = await $steps["update1"];
+                  }
+
+                  $steps["goToPanelCalendar"] =
+                    $ctx.params.type == 3
+                      ? (() => {
+                          const actionArgs = { destination: `/panel` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["goToPanelCalendar"] != null &&
+                    typeof $steps["goToPanelCalendar"] === "object" &&
+                    typeof $steps["goToPanelCalendar"].then === "function"
+                  ) {
+                    $steps["goToPanelCalendar"] = await $steps[
+                      "goToPanelCalendar"
+                    ];
+                  }
+                }}
+                submitsForm={true}
+                type={"primary"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__w8Gmv
+                  )}
+                >
+                  {
+                    "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                  }
+                </div>
+              </AntdButton>
             </div>
           ) : null}
           {(() => {
@@ -10652,6 +10738,7 @@ const PlasmicDescendants = {
     "input27",
     "platformpropertyButton",
     "platformpropertyButton2",
+    "jabamasend9",
     "guide",
     "_1",
     "_2",
@@ -10974,6 +11061,7 @@ const PlasmicDescendants = {
   input27: ["input27"],
   platformpropertyButton: ["platformpropertyButton"],
   platformpropertyButton2: ["platformpropertyButton2"],
+  jabamasend9: ["jabamasend9"],
   guide: ["guide", "_1", "_2", "_3"],
   _1: ["_1"],
   _2: ["_2"],
@@ -11104,6 +11192,7 @@ type NodeDefaultElementType = {
   input27: typeof AntdInput;
   platformpropertyButton: typeof AntdButton;
   platformpropertyButton2: typeof AntdButton;
+  jabamasend9: typeof AntdButton;
   guide: "div";
   _1: "div";
   _2: "div";
@@ -11290,6 +11379,7 @@ export const PlasmicActivationNew = Object.assign(
     input27: makeNodeComponent("input27"),
     platformpropertyButton: makeNodeComponent("platformpropertyButton"),
     platformpropertyButton2: makeNodeComponent("platformpropertyButton2"),
+    jabamasend9: makeNodeComponent("jabamasend9"),
     guide: makeNodeComponent("guide"),
     _1: makeNodeComponent("_1"),
     _2: makeNodeComponent("_2"),

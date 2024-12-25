@@ -26,7 +26,7 @@
     grid-column: 4;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .root > * {
     grid-column: 4;
   }
@@ -2334,7 +2334,7 @@
     padding-bottom: 0px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .platformStatus {
     margin-bottom: 8px;
   }
@@ -2355,7 +2355,7 @@
     margin-bottom: 4px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .text__oPjss {
     margin-top: 6px;
     margin-bottom: 6px;
@@ -2389,7 +2389,7 @@
     grid-row-gap: 2px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__n1Rm {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-column-gap: 5px;
@@ -2420,7 +2420,7 @@
   align-items: center;
   padding: 4px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox___5T3K9 {
     padding: 0px;
   }
@@ -2555,7 +2555,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .otaghak {
     padding: 0px;
   }
@@ -2571,7 +2571,7 @@
   align-items: center;
   padding: 4px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__wgUp6 {
     padding: 0px;
   }
@@ -2635,7 +2635,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .shab {
     padding: 0px;
   }
@@ -2651,7 +2651,7 @@
   align-items: center;
   padding: 4px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__m5XwO {
     padding: 0px;
   }
@@ -2716,7 +2716,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .mizbon {
     padding: 0px;
   }
@@ -2732,7 +2732,7 @@
   align-items: center;
   padding: 4px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__tvxWc {
     padding: 0px;
   }
@@ -2796,7 +2796,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .homsa {
     padding: 0px;
   }
@@ -2812,7 +2812,7 @@
   align-items: center;
   padding: 4px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox___38UXr {
     padding: 0px;
   }
@@ -2876,7 +2876,7 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .mehmansho {
     padding: 0px;
   }
@@ -2892,7 +2892,7 @@
   align-items: center;
   padding: 4px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__zIpD5 {
     padding: 0px;
   }

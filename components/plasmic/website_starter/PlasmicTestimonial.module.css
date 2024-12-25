@@ -78,7 +78,7 @@
     padding-left: 0em;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__y46Mm {
     padding-right: 0em;
     padding-left: 0em;
@@ -116,7 +116,7 @@
     padding-right: 0px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__fSkb0 {
     padding-right: 0px;
     justify-content: flex-start;
@@ -147,7 +147,7 @@
     padding-left: 0px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__yhng7 {
     padding-right: 0px;
     padding-left: 0px;
@@ -184,7 +184,7 @@
     max-width: 30%;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__ftEea {
     max-width: 37%;
   }
@@ -209,7 +209,7 @@
     padding-right: 0px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .userName4 {
     font-size: 14px;
     padding-right: 8px;
@@ -228,7 +228,7 @@
   min-width: 0;
   padding: 8px 3px 8px 2px;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox___1A60J {
     max-width: 28%;
     padding-right: 0px;
@@ -255,7 +255,7 @@
     padding-right: 2px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .userPlatform {
     padding-right: 8px;
     font-size: 14px;
@@ -278,7 +278,7 @@
     max-width: 24%;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .freeBox__hzifl {
     padding-right: 0px;
     padding-left: 0px;
@@ -295,7 +295,7 @@
 .img___7HCkr > picture > img {
   object-fit: cover;
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .img___7HCkr {
     width: 12px;
     height: 17px;
@@ -325,7 +325,7 @@
     padding-right: 6px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .userCity {
     padding-right: 2px;
   }

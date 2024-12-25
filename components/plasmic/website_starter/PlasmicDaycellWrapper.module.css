@@ -14,7 +14,7 @@
     width: 95%;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .root:global(.__wab_instance) {
     max-width: 40px;
   }
