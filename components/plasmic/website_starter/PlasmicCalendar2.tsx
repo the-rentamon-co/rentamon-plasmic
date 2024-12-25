@@ -3803,6 +3803,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             const updatedCalendar = $state.apiRequest.data.map(
                               day => {
                                 if (!changedDaysDates.includes(day.date)) {
+                                  console.log("روزش تو محدوده نبود");
                                   return day;
                                 }
                                 if (day.status === "reserved") {
@@ -3827,7 +3828,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     }
                                   }
                                 }
-                                console.log($state.requestdata);
+                                console.log(
+                                  "پی لود ریکوئست",
+                                  $state.requestdata
+                                );
                                 const updates = {};
                                 if (
                                   $state.requestdata.request_for === "block"
