@@ -3771,6 +3771,15 @@ function PlasmicCalendar2__RenderFunc(props: {
                           },
                           operation: 0,
                           value: (() => {
+                            const changedDaysTimestamps = (
+                              $state.requestdata.days || []
+                            ).flat();
+                            const changedDaysDates = changedDaysTimestamps.map(
+                              timestamp => {
+                                const date = new Date(timestamp * 1000);
+                                return date.toISOString().split("T")[0];
+                              }
+                            );
                             const updatedCalendar = $state.apiRequest.data.map(
                               day => {
                                 if (changedDaysDates.includes(day.date)) {
