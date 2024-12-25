@@ -3771,6 +3771,33 @@ function PlasmicCalendar2__RenderFunc(props: {
                           },
                           operation: 0,
                           value: (() => {
+                            function convertToEnglishNumber(persianStr = "") {
+                              let str = persianStr.replace(/٬/g, "");
+                              const faDigits = /[۰-۹]/g;
+                              const faMap = "۰۱۲۳۴۵۶۷۸۹";
+                              str = str.replace(faDigits, char =>
+                                faMap.indexOf(char)
+                              );
+                              return Number(str);
+                            }
+                            function formatPriceToPersian(num = 0) {
+                              const formatter = new Intl.NumberFormat("fa-IR");
+                              return formatter.format(num);
+                            }
+                            $state.fetchModal.open = false;
+                            $state.block.open = false;
+                            $state.modal.open = false;
+                            $state.modalDiscount.open = false;
+                            $state.modalChangePrice.open = false;
+                            const allFalse = Object.values(
+                              $state.platformRequestStatus.data
+                            ).every(item => item.final_status === false);
+                            if (allFalse) {
+                              console.log(
+                                "همه پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
+                              );
+                              return;
+                            }
                             const changedDaysTimestamps = (
                               $state.requestdata.days || []
                             ).flat();
@@ -3783,20 +3810,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                             const updatedCalendar = $state.apiRequest.data.map(
                               day => {
                                 if (changedDaysDates.includes(day.date)) {
-                                  if (day.status === "reserved") {
-                                    if (
-                                      $state.requestdata.request_for ===
-                                        "unblock" &&
-                                      day.website === "رزرو"
-                                    ) {
-                                      return {
-                                        ...day,
-                                        status: "unblocked",
-                                        website: null
-                                      };
-                                    }
-                                    return day;
-                                  }
                                   const updates = {};
                                   if (
                                     $state.requestdata.request_for === "block"
