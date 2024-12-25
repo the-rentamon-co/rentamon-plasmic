@@ -3837,7 +3837,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     $state.requestdata
                                   );
                                   const updates = {};
-                                  $;
                                   if (
                                     $state.requestdata.request_for === "block"
                                   ) {
