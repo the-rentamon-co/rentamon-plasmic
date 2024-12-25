@@ -3785,10 +3785,17 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   return day;
                                 }
                                 if (day.status === "reserved") {
-                                  console.log(
-                                    `روز ${day.date} دارای وضعیت reserved است و تغییری اعمال نمی‌شود.`
-                                  );
-                                  return day;
+                                  if (
+                                    !(
+                                      $state.requestdata.request_for ===
+                                        "unblock" && day.website === "رزرو"
+                                    )
+                                  ) {
+                                    console.log(
+                                      `روز ${day.date} دارای وضعیت reserved است و تغییری اعمال نمی‌شود.`
+                                    );
+                                    return day;
+                                  }
                                 }
                                 const updates = {};
                                 if (

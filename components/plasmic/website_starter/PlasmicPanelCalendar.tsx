@@ -62,8 +62,8 @@ import {
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
-import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -111,8 +111,8 @@ export type PlasmicPanelCalendar__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   main?: Flex__<"div">;
   select?: Flex__<typeof Select>;
-  calendar2?: Flex__<typeof Calendar2>;
   clarity?: Flex__<typeof Embed>;
+  calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
   refreshToken?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -1775,6 +1775,15 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               />
             </div>
           </div>
+          <Embed
+            data-plasmic-name={"clarity"}
+            data-plasmic-override={overrides.clarity}
+            className={classNames("__wab_instance", sty.clarity)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
+
           <Calendar2
             data-plasmic-name={"calendar2"}
             data-plasmic-override={overrides.calendar2}
@@ -1792,15 +1801,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 throw e;
               }
             })()}
-          />
-
-          <Embed
-            data-plasmic-name={"clarity"}
-            data-plasmic-override={overrides.clarity}
-            className={classNames("__wab_instance", sty.clarity)}
-            code={
-              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-            }
           />
 
           <SideEffect
@@ -1956,8 +1956,8 @@ const PlasmicDescendants = {
     "profile",
     "main",
     "select",
-    "calendar2",
     "clarity",
+    "calendar2",
     "sideEffect",
     "refreshToken",
     "goftino"
@@ -2007,8 +2007,8 @@ const PlasmicDescendants = {
   profile: ["profile"],
   main: ["main"],
   select: ["select"],
-  calendar2: ["calendar2"],
   clarity: ["clarity"],
+  calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
   refreshToken: ["refreshToken"],
   goftino: ["goftino"]
@@ -2032,8 +2032,8 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   main: "div";
   select: typeof Select;
-  calendar2: typeof Calendar2;
   clarity: typeof Embed;
+  calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
   refreshToken: typeof Embed;
   goftino: typeof Embed;
@@ -2113,8 +2113,8 @@ export const PlasmicPanelCalendar = Object.assign(
     profile: makeNodeComponent("profile"),
     main: makeNodeComponent("main"),
     select: makeNodeComponent("select"),
-    calendar2: makeNodeComponent("calendar2"),
     clarity: makeNodeComponent("clarity"),
+    calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
     refreshToken: makeNodeComponent("refreshToken"),
     goftino: makeNodeComponent("goftino"),
