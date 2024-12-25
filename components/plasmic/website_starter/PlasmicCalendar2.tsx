@@ -3771,6 +3771,55 @@ function PlasmicCalendar2__RenderFunc(props: {
                           },
                           operation: 0,
                           value: (() => {
+                            function jalaliToGregorian(jy, jm, jd) {
+                              jy = parseInt(jy, 10);
+                              jm = parseInt(jm, 10);
+                              jd = parseInt(jd, 10);
+                              let a = Math.floor((jy - 8) / 33) * 4;
+                              let b = jy % 33;
+                              let c = Math.floor((b + 3) / 4) + a + 1600;
+                              jy = jy >= 0 ? jy : jy - 1;
+                              let marchDay =
+                                79 +
+                                (b * 365 + Math.floor((b + 3) / 4)) -
+                                Math.floor(b / 128);
+                              let gDayNo =
+                                365 * c +
+                                Math.floor(c / 4) -
+                                Math.floor(c / 100) +
+                                Math.floor(c / 400) +
+                                jd +
+                                (jm > 7 ? (jm - 7) * 30 + 186 : (jm - 1) * 31) +
+                                marchDay -
+                                80;
+                              let gy = 400 * Math.floor(gDayNo / 146097);
+                              gDayNo = gDayNo % 146097;
+                              if (gDayNo >= 36525) {
+                                gy += 100 * Math.floor(--gDayNo / 36524);
+                                gDayNo = gDayNo % 36524;
+                                if (gDayNo >= 365) {
+                                  gDayNo++;
+                                }
+                              }
+                              gy += 4 * Math.floor(gDayNo / 1461);
+                              gDayNo = gDayNo % 1461;
+                              if (gDayNo >= 366) {
+                                gy += Math.floor((gDayNo - 1) / 365);
+                                gDayNo = (gDayNo - 1) % 365;
+                              }
+                              let gmArr = [
+                                0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
+                                31
+                              ];
+
+                              let gm = 1;
+                              while (gm <= 12 && gDayNo >= gmArr[gm]) {
+                                gDayNo -= gmArr[gm];
+                                gm++;
+                              }
+                              let gd = gDayNo + 1;
+                              return [gy, gm, gd];
+                            }
                             function convertToEnglishNumber(persianStr = "") {
                               let str = persianStr.replace(/٬/g, "");
                               const faDigits = /[۰-۹]/g;
@@ -3798,95 +3847,124 @@ function PlasmicCalendar2__RenderFunc(props: {
                               );
                               return;
                             }
-                            const changedDaysTimestamps = (
-                              $state.requestdata.days || []
-                            ).flat();
-                            const changedDaysDates = changedDaysTimestamps.map(
-                              timestamp => {
-                                const date = new Date(timestamp * 1000);
-                                return date.toISOString().split("T")[0];
-                              }
-                            );
+                            let changedDaysDates = [];
+                            if (Array.isArray($state.requestdata.days)) {
+                              changedDaysDates = $state.requestdata.days.map(
+                                shamsiDate => {
+                                  const [jy, jm, jd] = shamsiDate.split("-");
+                                  const [gy, gm, gd] = jalaliToGregorian(
+                                    jy,
+                                    jm,
+                                    jd
+                                  );
+                                  const gYear = gy;
+                                  const gMonth = String(gm).padStart(2, "0");
+                                  const gDay = String(gd).padStart(2, "0");
+                                  return `${gYear}-${gMonth}-${gDay}`;
+                                }
+                              );
+                            }
                             const updatedCalendar = $state.apiRequest.data.map(
                               day => {
-                                if (changedDaysDates.includes(day.date)) {
-                                  const updates = {};
+                                if (!changedDaysDates.includes(day.date)) {
+                                  return day;
+                                }
+                                const updates = {};
+                                if (
+                                  day.status === "reserved" &&
+                                  day.website !== "رزرو"
+                                ) {
+                                  return day;
+                                }
+                                if (
+                                  day.status === "reserved" &&
+                                  day.website === "رزرو"
+                                ) {
                                   if (
-                                    $state.requestdata.request_for === "block"
-                                  ) {
-                                    updates.status = "blocked";
-                                  } else if (
-                                    $state.requestdata.request_for === "reserve"
-                                  ) {
-                                    updates.status = "reserved";
-                                    updates.website = "رزرو";
-                                  } else if (
                                     $state.requestdata.request_for ===
                                       "unblock" ||
                                     !$state.requestdata.request_for
                                   ) {
                                     updates.status = "unblocked";
                                     updates.website = null;
-                                  }
-                                  if ($state.requestdata.price !== undefined) {
-                                    let numericPrice = Number(
-                                      $state.requestdata.price
-                                    )
-                                      ? Number($state.requestdata.price)
-                                      : convertToEnglishNumber(
-                                          $state.requestdata.price
-                                        );
-                                    if (
-                                      $state.requestdata.discount !== undefined
-                                    ) {
-                                      updates.discount_percentage =
-                                        $state.requestdata.discount;
-                                      const discountedPrice = Math.round(
-                                        numericPrice *
-                                          (1 -
-                                            Number(
-                                              $state.requestdata.discount
-                                            ) /
-                                              100)
-                                      );
-                                      updates.price =
-                                        formatPriceToPersian(discountedPrice);
-                                    } else {
-                                      const finalPrice = Math.round(
-                                        numericPrice / 1000
-                                      );
-                                      updates.price =
-                                        formatPriceToPersian(finalPrice);
-                                    }
                                   } else {
-                                    if (
-                                      $state.requestdata.discount !== undefined
-                                    ) {
-                                      updates.discount_percentage =
-                                        $state.requestdata.discount;
-                                      const currentDayPrice = day.price
-                                        ? convertToEnglishNumber(
-                                            day.price.toString()
-                                          )
-                                        : 0;
-                                      const discountedPrice = Math.round(
-                                        currentDayPrice *
-                                          (1 -
-                                            Number(
-                                              $state.requestdata.discount
-                                            ) /
-                                              100)
-                                      );
-                                      updates.price =
-                                        formatPriceToPersian(discountedPrice);
-                                    }
+                                    return day;
                                   }
                                   return {
                                     ...day,
                                     ...updates
                                   };
                                 }
-                                return day;
+                                if (
+                                  $state.requestdata.request_for === "block"
+                                ) {
+                                  updates.status = "blocked";
+                                } else if (
+                                  $state.requestdata.request_for === "reserve"
+                                ) {
+                                  updates.status = "reserved";
+                                  updates.website = "رزرو";
+                                } else if (
+                                  $state.requestdata.request_for ===
+                                    "unblock" ||
+                                  !$state.requestdata.request_for
+                                ) {
+                                  updates.status = "unblocked";
+                                  updates.website = null;
+                                }
+                                if ($state.requestdata.price !== undefined) {
+                                  let numericPrice = Number(
+                                    $state.requestdata.price
+                                  )
+                                    ? Number($state.requestdata.price)
+                                    : convertToEnglishNumber(
+                                        $state.requestdata.price
+                                      );
+                                  if (
+                                    $state.requestdata.discount !== undefined
+                                  ) {
+                                    updates.discount_percentage =
+                                      $state.requestdata.discount;
+                                    const discountedPrice = Math.round(
+                                      numericPrice *
+                                        (1 -
+                                          Number($state.requestdata.discount) /
+                                            100)
+                                    );
+                                    updates.price =
+                                      formatPriceToPersian(discountedPrice);
+                                  } else {
+                                    const finalPrice = Math.round(
+                                      numericPrice / 1000
+                                    );
+                                    updates.price =
+                                      formatPriceToPersian(finalPrice);
+                                  }
+                                } else {
+                                  if (
+                                    $state.requestdata.discount !== undefined
+                                  ) {
+                                    updates.discount_percentage =
+                                      $state.requestdata.discount;
+                                    const currentDayPrice = day.price
+                                      ? convertToEnglishNumber(
+                                          day.price.toString()
+                                        )
+                                      : 0;
+                                    const discountedPrice = Math.round(
+                                      currentDayPrice *
+                                        (1 -
+                                          Number($state.requestdata.discount) /
+                                            100)
+                                    );
+                                    updates.price =
+                                      formatPriceToPersian(discountedPrice);
+                                  }
+                                }
+                                return {
+                                  ...day,
+                                  ...updates
+                                };
                               }
                             );
                             $state.apiRequest.data = updatedCalendar;
