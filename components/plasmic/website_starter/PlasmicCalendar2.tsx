@@ -3821,8 +3821,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                       return day;
                                     } else {
                                       if (
-                                        $state.requestdata.request_for !==
-                                        "unblock"
+                                        $state.requestdata.request_for != null
                                       ) {
                                         console.log(
                                           "درخواست برابر نبود با مقدار اصلی",
@@ -3838,6 +3837,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     $state.requestdata
                                   );
                                   const updates = {};
+                                  $;
                                   if (
                                     $state.requestdata.request_for === "block"
                                   ) {
