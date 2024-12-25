@@ -3827,6 +3827,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     }
                                   }
                                 }
+                                console.log($state.requestdata);
                                 const updates = {};
                                 if (
                                   $state.requestdata.request_for === "block"
@@ -3838,9 +3839,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   updates.status = "reserved";
                                   updates.website = "رزرو";
                                 } else if (
-                                  $state.requestdata.request_for ===
-                                    "unblock" ||
-                                  !$state.requestdata.request_for
+                                  $state.requestdata.request_for === "unblock"
                                 ) {
                                   updates.status = "unblocked";
                                   updates.website = null;
