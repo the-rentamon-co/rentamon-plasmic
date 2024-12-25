@@ -3822,9 +3822,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     } else {
                                       if (
                                         $state.requestdata.request_for !=
-                                          null &&
-                                        $state.requestdata.price != null &&
-                                        $state.discount != null
+                                          null ||
+                                        $state.requestdata.price != null ||
+                                        $state.requestdata.discount != null
                                       ) {
                                         console.log(
                                           "درخواست برابر نبود با مقدار اصلی",
