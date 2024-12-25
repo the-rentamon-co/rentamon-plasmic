@@ -700,6 +700,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicDaycellWrapper.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "XbkImpYhGpSs",
+          "name": "PanelCalendar2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPanelCalendar2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/panel-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPanelCalendar2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/panel-2"
         }
       ],
       "icons": [

@@ -3744,194 +3744,200 @@ function PlasmicCalendar2__RenderFunc(props: {
                   </div>
                 );
               })}
-              <Button
-                className={classNames("__wab_instance", sty.button__sWmv0)}
-                isDisabled={(() => {
-                  try {
-                    return !Object.keys($state.platformRequestStatus).length;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
+              {(() => {
+                try {
+                  return !Object.keys($state.platformRequestStatus).length;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
                   }
-                })()}
-                onClick={async event => {
-                  const $steps = {};
+                  throw e;
+                }
+              })() ? (
+                <Button
+                  className={classNames("__wab_instance", sty.button__sWmv0)}
+                  onClick={async event => {
+                    const $steps = {};
 
-                  $steps["updateFragmentDatePickerValue"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["fragmentDatePicker", "value"]
-                          },
-                          operation: 0,
-                          value: (() => {
-                            function convertToEnglishNumber(persianStr = "") {
-                              let str = persianStr.replace(/٬/g, "");
-                              const faDigits = /[۰-۹]/g;
-                              const faMap = "۰۱۲۳۴۵۶۷۸۹";
-                              str = str.replace(faDigits, char =>
-                                faMap.indexOf(char)
-                              );
-                              return Number(str);
-                            }
-                            function formatPriceToPersian(num = 0) {
-                              const formatter = new Intl.NumberFormat("fa-IR");
-                              return formatter.format(num);
-                            }
-                            $state.fetchModal.open = false;
-                            $state.block.open = false;
-                            $state.modal.open = false;
-                            $state.modalDiscount.open = false;
-                            $state.modalChangePrice.open = false;
-                            const allFalse = Object.values(
-                              $state.platformRequestStatus.data
-                            ).every(item => item.final_status === false);
-                            if (allFalse) {
+                    $steps["updateFragmentDatePickerValue"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["fragmentDatePicker", "value"]
+                            },
+                            operation: 0,
+                            value: (() => {
+                              function convertToEnglishNumber(persianStr = "") {
+                                let str = persianStr.replace(/٬/g, "");
+                                const faDigits = /[۰-۹]/g;
+                                const faMap = "۰۱۲۳۴۵۶۷۸۹";
+                                str = str.replace(faDigits, char =>
+                                  faMap.indexOf(char)
+                                );
+                                return Number(str);
+                              }
+                              function formatPriceToPersian(num = 0) {
+                                const formatter = new Intl.NumberFormat(
+                                  "fa-IR"
+                                );
+                                return formatter.format(num);
+                              }
+                              $state.fetchModal.open = false;
+                              $state.block.open = false;
+                              $state.modal.open = false;
+                              $state.modalDiscount.open = false;
+                              $state.modalChangePrice.open = false;
+                              const allFalse = Object.values(
+                                $state.platformRequestStatus.data
+                              ).every(item => item.final_status === false);
+                              if (allFalse) {
+                                console.log(
+                                  "همه پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
+                                );
+                                return;
+                              }
+                              const changedDaysTimestamps = (
+                                $state.requestdata.days || []
+                              ).flat();
+                              const changedDaysDates =
+                                changedDaysTimestamps.map(timestamp => {
+                                  const date = new Date(timestamp * 1000);
+                                  return date.toISOString().split("T")[0];
+                                });
+                              const updatedCalendar =
+                                $state.apiRequest.data.map(day => {
+                                  if (changedDaysDates.includes(day.date)) {
+                                    const updates = {};
+                                    if (
+                                      $state.requestdata.request_for === "block"
+                                    ) {
+                                      updates.status = "blocked";
+                                    } else if (
+                                      $state.requestdata.request_for ===
+                                      "reserve"
+                                    ) {
+                                      updates.status = "reserved";
+                                      updates.website = "رزرو";
+                                    } else if (
+                                      $state.requestdata.request_for ===
+                                        "unblock" ||
+                                      !$state.requestdata.request_for
+                                    ) {
+                                      updates.status = "unblocked";
+                                      updates.website = null;
+                                    }
+                                    if (
+                                      $state.requestdata.price !== undefined
+                                    ) {
+                                      let numericPrice = Number(
+                                        $state.requestdata.price
+                                      )
+                                        ? Number($state.requestdata.price)
+                                        : convertToEnglishNumber(
+                                            $state.requestdata.price
+                                          );
+                                      if (
+                                        $state.requestdata.discount !==
+                                        undefined
+                                      ) {
+                                        updates.discount_percentage =
+                                          $state.requestdata.discount;
+                                        const discountedPrice = Math.round(
+                                          numericPrice *
+                                            (1 -
+                                              Number(
+                                                $state.requestdata.discount
+                                              ) /
+                                                100)
+                                        );
+                                        updates.price =
+                                          formatPriceToPersian(discountedPrice);
+                                      } else {
+                                        const finalPrice = Math.round(
+                                          numericPrice / 1000
+                                        );
+                                        updates.price =
+                                          formatPriceToPersian(finalPrice);
+                                      }
+                                    } else {
+                                      if (
+                                        $state.requestdata.discount !==
+                                        undefined
+                                      ) {
+                                        updates.discount_percentage =
+                                          $state.requestdata.discount;
+                                        const currentDayPrice = day.price
+                                          ? convertToEnglishNumber(
+                                              day.price.toString()
+                                            )
+                                          : 0;
+                                        const discountedPrice = Math.round(
+                                          currentDayPrice *
+                                            (1 -
+                                              Number(
+                                                $state.requestdata.discount
+                                              ) /
+                                                100)
+                                        );
+                                        updates.price =
+                                          formatPriceToPersian(discountedPrice);
+                                      }
+                                    }
+                                    return {
+                                      ...day,
+                                      ...updates
+                                    };
+                                  }
+                                  return day;
+                                });
+                              $state.apiRequest.data = updatedCalendar;
                               console.log(
-                                "همه پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
+                                "Calendar updated with changes:",
+                                updatedCalendar
                               );
+                              $state.platformRequestStatus = [];
+                              $state.requestdata = [];
+                              $state.fragmentDatePicker.values = [];
+                              $state.textInput.value = 0;
+                              return ($state.numberInput4.value = 0);
+                            })()
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
                               return;
                             }
-                            const changedDaysTimestamps = (
-                              $state.requestdata.days || []
-                            ).flat();
-                            const changedDaysDates = changedDaysTimestamps.map(
-                              timestamp => {
-                                const date = new Date(timestamp * 1000);
-                                return date.toISOString().split("T")[0];
-                              }
-                            );
-                            const updatedCalendar = $state.apiRequest.data.map(
-                              day => {
-                                if (changedDaysDates.includes(day.date)) {
-                                  const updates = {};
-                                  if (
-                                    $state.requestdata.request_for === "block"
-                                  ) {
-                                    updates.status = "blocked";
-                                  } else if (
-                                    $state.requestdata.request_for === "reserve"
-                                  ) {
-                                    updates.status = "reserved";
-                                    updates.website = "رزرو";
-                                  } else if (
-                                    $state.requestdata.request_for ===
-                                      "unblock" ||
-                                    !$state.requestdata.request_for
-                                  ) {
-                                    updates.status = "unblocked";
-                                    updates.website = null;
-                                  }
-                                  if ($state.requestdata.price !== undefined) {
-                                    let numericPrice = Number(
-                                      $state.requestdata.price
-                                    )
-                                      ? Number($state.requestdata.price)
-                                      : convertToEnglishNumber(
-                                          $state.requestdata.price
-                                        );
-                                    if (
-                                      $state.requestdata.discount !== undefined
-                                    ) {
-                                      updates.discount_percentage =
-                                        $state.requestdata.discount;
-                                      const discountedPrice = Math.round(
-                                        numericPrice *
-                                          (1 -
-                                            Number(
-                                              $state.requestdata.discount
-                                            ) /
-                                              100)
-                                      );
-                                      updates.price =
-                                        formatPriceToPersian(discountedPrice);
-                                    } else {
-                                      const finalPrice = Math.round(
-                                        numericPrice / 1000
-                                      );
-                                      updates.price =
-                                        formatPriceToPersian(finalPrice);
-                                    }
-                                  } else {
-                                    if (
-                                      $state.requestdata.discount !== undefined
-                                    ) {
-                                      updates.discount_percentage =
-                                        $state.requestdata.discount;
-                                      const currentDayPrice = day.price
-                                        ? convertToEnglishNumber(
-                                            day.price.toString()
-                                          )
-                                        : 0;
-                                      const discountedPrice = Math.round(
-                                        currentDayPrice *
-                                          (1 -
-                                            Number(
-                                              $state.requestdata.discount
-                                            ) /
-                                              100)
-                                      );
-                                      updates.price =
-                                        formatPriceToPersian(discountedPrice);
-                                    }
-                                  }
-                                  return {
-                                    ...day,
-                                    ...updates
-                                  };
-                                }
-                                return day;
-                              }
-                            );
-                            $state.apiRequest.data = updatedCalendar;
-                            console.log(
-                              "Calendar updated with changes:",
-                              updatedCalendar
-                            );
-                            $state.platformRequestStatus = [];
-                            $state.requestdata = [];
-                            $state.fragmentDatePicker.values = [];
-                            $state.textInput.value = 0;
-                            return ($state.numberInput4.value = 0);
-                          })()
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                            const { objRoot, variablePath } = variable;
 
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateFragmentDatePickerValue"] != null &&
-                    typeof $steps["updateFragmentDatePickerValue"] ===
-                      "object" &&
-                    typeof $steps["updateFragmentDatePickerValue"].then ===
-                      "function"
-                  ) {
-                    $steps["updateFragmentDatePickerValue"] = await $steps[
-                      "updateFragmentDatePickerValue"
-                    ];
-                  }
-                }}
-              >
-                {"\u0628\u0627\u0634\u0647"}
-              </Button>
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateFragmentDatePickerValue"] != null &&
+                      typeof $steps["updateFragmentDatePickerValue"] ===
+                        "object" &&
+                      typeof $steps["updateFragmentDatePickerValue"].then ===
+                        "function"
+                    ) {
+                      $steps["updateFragmentDatePickerValue"] = await $steps[
+                        "updateFragmentDatePickerValue"
+                      ];
+                    }
+                  }}
+                >
+                  {"\u0628\u0627\u0634\u0647"}
+                </Button>
+              ) : null}
             </div>
           </ApiRequest>
         </AntdModal>

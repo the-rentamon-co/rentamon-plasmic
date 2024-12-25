@@ -9596,7 +9596,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u062a\u0645\u0627\u0645\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a"
+                  "\u0647\u0645\u0647\u200c\u06cc  \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a\u0646"
                 }
               </div>
               <AntdButton
