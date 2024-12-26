@@ -265,19 +265,25 @@ function PlasmicActivationBackup__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "input6.value",
@@ -751,6 +757,9 @@ function PlasmicActivationBackup__RenderFunc(props: {
                 null,
                 eventArgs
               );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
             }}
             url={"https://gateway.rentamon.com/webhook/user-registration"}
           />

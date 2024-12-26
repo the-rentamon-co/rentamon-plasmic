@@ -170,19 +170,25 @@ function PlasmicYalda__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "accordion.activePanelId",
@@ -559,6 +565,9 @@ function PlasmicYalda__RenderFunc(props: {
                 null,
                 eventArgs
               );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
             }}
             url={
               hasVariant(globalVariants, "screen", "mobile")

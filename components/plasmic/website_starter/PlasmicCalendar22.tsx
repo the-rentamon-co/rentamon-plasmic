@@ -301,37 +301,49 @@ function PlasmicCalendar22__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "userPlatform.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userPlatform"
       },
       {
         path: "userPlatform.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userPlatform"
       },
       {
         path: "userPlatform.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userPlatform"
       },
       {
         path: "platformRequestStatus",
@@ -479,6 +491,9 @@ function PlasmicCalendar22__RenderFunc(props: {
             null,
             eventArgs
           );
+        }}
+        ref={ref => {
+          $refs["apiRequest"] = ref;
         }}
         url={(() => {
           try {
@@ -2937,6 +2952,9 @@ function PlasmicCalendar22__RenderFunc(props: {
                 null,
                 eventArgs
               );
+            }}
+            ref={ref => {
+              $refs["userPlatform"] = ref;
             }}
             url={(() => {
               try {

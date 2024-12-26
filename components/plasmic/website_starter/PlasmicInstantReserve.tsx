@@ -209,19 +209,25 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "properties.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "properties"
       },
       {
         path: "properties.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "properties"
       },
       {
         path: "properties.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "properties"
       },
       {
         path: "fragmentSwitch5.checked",
@@ -385,6 +391,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   null,
                   eventArgs
                 );
+              }}
+              ref={ref => {
+                $refs["properties"] = ref;
               }}
               url={"https://dev.rentamon.com/webhook/property-status"}
             >

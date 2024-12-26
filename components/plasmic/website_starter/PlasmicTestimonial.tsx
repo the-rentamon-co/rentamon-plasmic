@@ -140,19 +140,25 @@ function PlasmicTestimonial__RenderFunc(props: {
         path: "userTestimonial.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userTestimonial"
       },
       {
         path: "userTestimonial.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userTestimonial"
       },
       {
         path: "userTestimonial.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userTestimonial"
       }
     ],
     [$props, $ctx, $refs]
@@ -241,6 +247,9 @@ function PlasmicTestimonial__RenderFunc(props: {
             null,
             eventArgs
           );
+        }}
+        ref={ref => {
+          $refs["userTestimonial"] = ref;
         }}
         url={"https://gateway.rentamon.com/webhook/testimonial"}
       />

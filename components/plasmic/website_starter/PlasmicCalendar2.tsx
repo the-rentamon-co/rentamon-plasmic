@@ -66,6 +66,7 @@ import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -127,6 +128,7 @@ export type PlasmicCalendar2__OverridesType = {
   block?: Flex__<typeof AntdModal>;
   reserve?: Flex__<"div">;
   block2?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultCalendar2Props {
@@ -281,7 +283,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : false
+            : true
       },
       {
         path: "variable3",
@@ -306,37 +308,49 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "userPlatform.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userPlatform"
       },
       {
         path: "userPlatform.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userPlatform"
       },
       {
         path: "userPlatform.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userPlatform"
       },
       {
         path: "platformRequestStatus",
@@ -480,6 +494,43 @@ function PlasmicCalendar2__RenderFunc(props: {
             null,
             eventArgs
           );
+
+          (async data => {
+            const $steps = {};
+
+            $steps["updateFragmentDatePickerValue"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["fragmentDatePicker", "value"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateFragmentDatePickerValue"] != null &&
+              typeof $steps["updateFragmentDatePickerValue"] === "object" &&
+              typeof $steps["updateFragmentDatePickerValue"].then === "function"
+            ) {
+              $steps["updateFragmentDatePickerValue"] = await $steps[
+                "updateFragmentDatePickerValue"
+              ];
+            }
+          }).apply(null, eventArgs);
+        }}
+        ref={ref => {
+          $refs["apiRequest"] = ref;
         }}
         url={(() => {
           try {
@@ -3297,6 +3348,15 @@ function PlasmicCalendar2__RenderFunc(props: {
                     },
                     operation: 0,
                     value: (() => {
+                      const startOfToday = new Date();
+                      startOfToday.setHours(0, 0, 0, 0);
+                      const startOfTodayTimestamp = Math.floor(
+                        startOfToday.getTime() / 1000
+                      );
+                      $state.fragmentDatePicker.values =
+                        $state.fragmentDatePicker.values.filter(timestamp => {
+                          return timestamp >= startOfTodayTimestamp;
+                        });
                       if ($state.fragmentDatePicker.values == 0) {
                         return false;
                       } else {
@@ -3513,6 +3573,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 null,
                 eventArgs
               );
+            }}
+            ref={ref => {
+              $refs["userPlatform"] = ref;
             }}
             url={(() => {
               try {
@@ -3762,7 +3825,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 $state.platformRequestStatus?.data || {};
                               if (
                                 Object.keys(platformStatus).length > 0 &&
-                                !platformStatus[currentItem]
+                                (!platformStatus[currentItem] ||
+                                  ["mihmansho", "mizboon"].includes(
+                                    currentItem
+                                  ))
                               ) {
                                 return true;
                               } else {
@@ -4674,6 +4740,58 @@ function PlasmicCalendar2__RenderFunc(props: {
           </div>
         </AntdModal>
       </div>
+      <SideEffect
+        data-plasmic-name={"sideEffect"}
+        data-plasmic-override={overrides.sideEffect}
+        className={classNames("__wab_instance", sty.sideEffect)}
+        deps={(() => {
+          try {
+            return [$props.propertyId];
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
+        onMount={async () => {
+          const $steps = {};
+
+          $steps["updateFragmentDatePickerValue"] = true
+            ? (() => {
+                const actionArgs = {
+                  variable: {
+                    objRoot: $state,
+                    variablePath: ["fragmentDatePicker", "value"]
+                  },
+                  operation: 0,
+                  value: ($state.fragmentDatePicker.values = [])
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateFragmentDatePickerValue"] != null &&
+            typeof $steps["updateFragmentDatePickerValue"] === "object" &&
+            typeof $steps["updateFragmentDatePickerValue"].then === "function"
+          ) {
+            $steps["updateFragmentDatePickerValue"] = await $steps[
+              "updateFragmentDatePickerValue"
+            ];
+          }
+        }}
+      />
     </div>
   ) as React.ReactElement | null;
 }
@@ -4703,7 +4821,8 @@ const PlasmicDescendants = {
     "loading",
     "block",
     "reserve",
-    "block2"
+    "block2",
+    "sideEffect"
   ],
   apiRequest: ["apiRequest"],
   fragmentDatePicker: ["fragmentDatePicker", "dayCell"],
@@ -4740,7 +4859,8 @@ const PlasmicDescendants = {
   loading: ["loading"],
   block: ["block", "reserve", "block2"],
   reserve: ["reserve"],
-  block2: ["block2"]
+  block2: ["block2"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -4770,6 +4890,7 @@ type NodeDefaultElementType = {
   block: typeof AntdModal;
   reserve: "div";
   block2: "div";
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -4855,6 +4976,7 @@ export const PlasmicCalendar2 = Object.assign(
     block: makeNodeComponent("block"),
     reserve: makeNodeComponent("reserve"),
     block2: makeNodeComponent("block2"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicCalendar2
     internalVariantProps: PlasmicCalendar2__VariantProps,

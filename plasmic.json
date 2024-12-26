@@ -700,6 +700,34 @@
           "cssFilePath": "plasmic/website_starter/PlasmicDaycellWrapper.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "sQu22rJFNRn7",
+          "name": "CrossListing",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCrossListing.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/cross-listing.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCrossListing.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/cross-listing"
+        },
+        {
+          "id": "jDOqSUN8wbXO",
+          "name": "Reservations",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicReservations.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/reservations.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicReservations.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/reservations"
         }
       ],
       "icons": [
@@ -1309,6 +1337,36 @@
           "id": "i4vtzajgan1L",
           "name": "Group 600.png",
           "filePath": "../public/plasmic/website_starter/images/group600Png.png"
+        },
+        {
+          "id": "09QEweoAg14o",
+          "name": "3low (2).jpg",
+          "filePath": "../public/plasmic/website_starter/images/_3Low2Jpg.jpg"
+        },
+        {
+          "id": "u-SxDYTj1W5M",
+          "name": "2low (2).jpg",
+          "filePath": "../public/plasmic/website_starter/images/_2Low2Jpg.jpg"
+        },
+        {
+          "id": "tCQ0rzjbdyda",
+          "name": "1low (2).jpg",
+          "filePath": "../public/plasmic/website_starter/images/_1Low2Jpg.jpg"
+        },
+        {
+          "id": "hcbYJijibtEV",
+          "name": "1l (2).jpg",
+          "filePath": "../public/plasmic/website_starter/images/_1L2Jpg.jpg"
+        },
+        {
+          "id": "Zi7U4hyZttuh",
+          "name": "2l (2).jpg",
+          "filePath": "../public/plasmic/website_starter/images/_2L2Jpg.jpg"
+        },
+        {
+          "id": "ruHDWRltM0rM",
+          "name": "3l (2).jpg",
+          "filePath": "../public/plasmic/website_starter/images/_3L2Jpg.jpg"
         }
       ],
       "indirect": false,

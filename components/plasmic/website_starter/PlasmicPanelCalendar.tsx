@@ -99,6 +99,9 @@ export type PlasmicPanelCalendar__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   modalSidebar?: Flex__<typeof AntdModal>;
+  main?: Flex__<"div">;
+  select?: Flex__<typeof Select>;
+  clarity?: Flex__<typeof Embed>;
   sideBar?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -109,9 +112,6 @@ export type PlasmicPanelCalendar__OverridesType = {
   select2?: Flex__<typeof Select>;
   left?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
-  main?: Flex__<"div">;
-  select?: Flex__<typeof Select>;
-  clarity?: Flex__<typeof Embed>;
   calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
   refreshToken?: Flex__<typeof Embed>;
@@ -170,19 +170,25 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         path: "profile.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
       },
       {
         path: "profile.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
       },
       {
         path: "profile.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
       },
       {
         path: "select.value",
@@ -241,19 +247,25 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "select2.value",
@@ -336,7 +348,31 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             data-plasmic-override={overrides.apiRequest}
             children={null}
             className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={null}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rUfb
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.apiRequest.error.detail;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            }
             loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
@@ -356,6 +392,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 null,
                 eventArgs
               );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
             }}
             url={(() => {
               try {
@@ -988,6 +1027,280 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               </Stack__>
             </div>
           </AntdModal>
+          <div className={classNames(projectcss.all, sty.freeBox__sal78)}>
+            <div className={classNames(projectcss.all, sty.freeBox__fbYPi)}>
+              <div className={classNames(projectcss.all, sty.freeBox__xzWrY)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__fk0MR)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modalSidebar", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen"] != null &&
+                      typeof $steps["updateModalOpen"] === "object" &&
+                      typeof $steps["updateModalOpen"].then === "function"
+                    ) {
+                      $steps["updateModalOpen"] = await $steps[
+                        "updateModalOpen"
+                      ];
+                    }
+                  }}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__jgkwH)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "20px"
+                        : "30px"
+                    }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image37.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
+                    }}
+                  />
+                </div>
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"main"}
+                  data-plasmic-override={overrides.main}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.main)}
+                />
+              </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__csjXw)}
+              >
+                <Select
+                  data-plasmic-name={"select"}
+                  data-plasmic-override={overrides.select}
+                  className={classNames("__wab_instance", sty.select)}
+                  onChange={async (...eventArgs: any) => {
+                    ((...eventArgs) => {
+                      generateStateOnChangeProp($state, ["select", "value"])(
+                        eventArgs[0]
+                      );
+                    }).apply(null, eventArgs);
+
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
+
+                    (async value => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: (() => {
+                                let value = $state.profile.data.properties.find(
+                                  property =>
+                                    property.property_name ===
+                                    $state.select.value
+                                );
+                                $state.pageUrl = value.link;
+                                return ($state.propId = value.id);
+                              })()
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+                    }).apply(null, eventArgs);
+                  }}
+                  options={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? (() => {
+                          try {
+                            return $state.profile.data.properties.map(
+                              property => property.property_name
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [{}];
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return $state.profile.data.properties.map(
+                              property => property.property_name
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [{}];
+                            }
+                            throw e;
+                          }
+                        })()
+                  }
+                  placeholder={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ixdkM
+                      )}
+                    >
+                      {
+                        "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
+                      }
+                    </div>
+                  }
+                  value={generateStateValueProp($state, ["select", "value"])}
+                />
+
+                {(() => {
+                  try {
+                    return $state.profile.loading;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___896U)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "39px"
+                        : "45px"
+                    }
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    }
+                  />
+                ) : null}
+              </Stack__>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__ot5TM)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__grKvP)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "97px"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "100px"
+                    : "150px"
+                }
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "220px"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "100%"
+                    : "100%"
+                }
+                loading={"lazy"}
+                src={(() => {
+                  try {
+                    return $state.profile.data.user_info.profile_pic_link;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </div>
+          </div>
+          <Embed
+            data-plasmic-name={"clarity"}
+            data-plasmic-override={overrides.clarity}
+            className={classNames("__wab_instance", sty.clarity)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
+
           <div
             data-plasmic-name={"sideBar"}
             data-plasmic-override={overrides.sideBar}
@@ -1492,6 +1805,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     eventArgs
                   );
                 }}
+                ref={ref => {
+                  $refs["profile"] = ref;
+                }}
                 url={(() => {
                   try {
                     return `https://api.rentamon.com/api/user_info?property_id=${$state.propId}`;
@@ -1518,280 +1834,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               </ApiRequest>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__sal78)}>
-            <div className={classNames(projectcss.all, sty.freeBox__fbYPi)}>
-              <div className={classNames(projectcss.all, sty.freeBox__xzWrY)}>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__fk0MR)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["modalSidebar", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
-                    ) {
-                      $steps["updateModalOpen"] = await $steps[
-                        "updateModalOpen"
-                      ];
-                    }
-                  }}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__jgkwH)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "20px"
-                        : "30px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image37.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
-                </div>
-                <Stack__
-                  as={"div"}
-                  data-plasmic-name={"main"}
-                  data-plasmic-override={overrides.main}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.main)}
-                />
-              </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__csjXw)}
-              >
-                <Select
-                  data-plasmic-name={"select"}
-                  data-plasmic-override={overrides.select}
-                  className={classNames("__wab_instance", sty.select)}
-                  onChange={async (...eventArgs: any) => {
-                    ((...eventArgs) => {
-                      generateStateOnChangeProp($state, ["select", "value"])(
-                        eventArgs[0]
-                      );
-                    }).apply(null, eventArgs);
-
-                    if (
-                      eventArgs.length > 1 &&
-                      eventArgs[1] &&
-                      eventArgs[1]._plasmic_state_init_
-                    ) {
-                      return;
-                    }
-
-                    (async value => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: (() => {
-                                let value = $state.profile.data.properties.find(
-                                  property =>
-                                    property.property_name ===
-                                    $state.select.value
-                                );
-                                $state.pageUrl = value.link;
-                                return ($state.propId = value.id);
-                              })()
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-                    }).apply(null, eventArgs);
-                  }}
-                  options={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? (() => {
-                          try {
-                            return $state.profile.data.properties.map(
-                              property => property.property_name
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [{}];
-                            }
-                            throw e;
-                          }
-                        })()
-                      : (() => {
-                          try {
-                            return $state.profile.data.properties.map(
-                              property => property.property_name
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [{}];
-                            }
-                            throw e;
-                          }
-                        })()
-                  }
-                  placeholder={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__ixdkM
-                      )}
-                    >
-                      {
-                        "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
-                      }
-                    </div>
-                  }
-                  value={generateStateValueProp($state, ["select", "value"])}
-                />
-
-                {(() => {
-                  try {
-                    return $state.profile.loading;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___896U)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "39px"
-                        : "45px"
-                    }
-                    loading={"lazy"}
-                    src={
-                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
-                  />
-                ) : null}
-              </Stack__>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__ot5TM)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__grKvP)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "97px"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "100px"
-                    : "150px"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "220px"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "100%"
-                    : "100%"
-                }
-                loading={"lazy"}
-                src={(() => {
-                  try {
-                    return $state.profile.data.user_info.profile_pic_link;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-              />
-            </div>
-          </div>
-          <Embed
-            data-plasmic-name={"clarity"}
-            data-plasmic-override={overrides.clarity}
-            className={classNames("__wab_instance", sty.clarity)}
-            code={
-              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-            }
-          />
-
           <Calendar2
             data-plasmic-name={"calendar2"}
             data-plasmic-override={overrides.calendar2}
@@ -1952,6 +1994,9 @@ const PlasmicDescendants = {
     "root",
     "apiRequest",
     "modalSidebar",
+    "main",
+    "select",
+    "clarity",
     "sideBar",
     "header",
     "right",
@@ -1962,9 +2007,6 @@ const PlasmicDescendants = {
     "select2",
     "left",
     "profile",
-    "main",
-    "select",
-    "clarity",
     "calendar2",
     "sideEffect",
     "refreshToken",
@@ -1972,6 +2014,9 @@ const PlasmicDescendants = {
   ],
   apiRequest: ["apiRequest"],
   modalSidebar: ["modalSidebar"],
+  main: ["main"],
+  select: ["select"],
+  clarity: ["clarity"],
   sideBar: [
     "sideBar",
     "header",
@@ -2003,9 +2048,6 @@ const PlasmicDescendants = {
   select2: ["select2"],
   left: ["left"],
   profile: ["profile"],
-  main: ["main"],
-  select: ["select"],
-  clarity: ["clarity"],
   calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
   refreshToken: ["refreshToken"],
@@ -2018,6 +2060,9 @@ type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
   modalSidebar: typeof AntdModal;
+  main: "div";
+  select: typeof Select;
+  clarity: typeof Embed;
   sideBar: "div";
   header: "div";
   right: "div";
@@ -2028,9 +2073,6 @@ type NodeDefaultElementType = {
   select2: typeof Select;
   left: "div";
   profile: typeof ApiRequest;
-  main: "div";
-  select: typeof Select;
-  clarity: typeof Embed;
   calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
   refreshToken: typeof Embed;
@@ -2099,6 +2141,9 @@ export const PlasmicPanelCalendar = Object.assign(
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
     modalSidebar: makeNodeComponent("modalSidebar"),
+    main: makeNodeComponent("main"),
+    select: makeNodeComponent("select"),
+    clarity: makeNodeComponent("clarity"),
     sideBar: makeNodeComponent("sideBar"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
@@ -2109,9 +2154,6 @@ export const PlasmicPanelCalendar = Object.assign(
     select2: makeNodeComponent("select2"),
     left: makeNodeComponent("left"),
     profile: makeNodeComponent("profile"),
-    main: makeNodeComponent("main"),
-    select: makeNodeComponent("select"),
-    clarity: makeNodeComponent("clarity"),
     calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
     refreshToken: makeNodeComponent("refreshToken"),

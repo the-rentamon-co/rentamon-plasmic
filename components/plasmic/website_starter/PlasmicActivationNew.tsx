@@ -296,19 +296,25 @@ function PlasmicActivationNew__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
         path: "input6.value",
@@ -513,19 +519,25 @@ function PlasmicActivationNew__RenderFunc(props: {
         path: "apiRequest2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
       },
       {
         path: "apiRequest2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
       },
       {
         path: "apiRequest2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
       },
       {
         path: "modal.open",
@@ -3427,6 +3439,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                       "data"
                     ]).apply(null, eventArgs);
                   }}
+                  ref={ref => {
+                    $refs["apiRequest2"] = ref;
+                  }}
                   url={
                     "https://api.rentamon.com/api/website_statuses/?property_id=1"
                   }
@@ -3674,6 +3689,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                 null,
                 eventArgs
               );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
             }}
             url={` ${(() => {
               if ($ctx.params.type == "1") {
@@ -9796,9 +9814,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_1LJpg.jpg",
-                      fullWidth: 386,
-                      fullHeight: 754,
+                      src: "/plasmic/website_starter/images/_1L2Jpg.jpg",
+                      fullWidth: 278,
+                      fullHeight: 575,
                       aspectRatio: undefined
                     }}
                   />
@@ -9894,9 +9912,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_2LJpg.jpg",
-                      fullWidth: 386,
-                      fullHeight: 754,
+                      src: "/plasmic/website_starter/images/_2L2Jpg.jpg",
+                      fullWidth: 278,
+                      fullHeight: 575,
                       aspectRatio: undefined
                     }}
                   />
@@ -10049,9 +10067,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_3LJpg.jpg",
-                      fullWidth: 386,
-                      fullHeight: 754,
+                      src: "/plasmic/website_starter/images/_3L2Jpg.jpg",
+                      fullWidth: 278,
+                      fullHeight: 575,
                       aspectRatio: undefined
                     }}
                   />
@@ -10228,9 +10246,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_1LowJpg.jpg",
-                      fullWidth: 386,
-                      fullHeight: 754,
+                      src: "/plasmic/website_starter/images/_1Low2Jpg.jpg",
+                      fullWidth: 278,
+                      fullHeight: 575,
                       aspectRatio: undefined
                     }}
                   />
@@ -10328,9 +10346,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_2LowJpg.jpg",
-                      fullWidth: 386,
-                      fullHeight: 754,
+                      src: "/plasmic/website_starter/images/_2Low2Jpg.jpg",
+                      fullWidth: 278,
+                      fullHeight: 575,
                       aspectRatio: undefined
                     }}
                   />
@@ -10480,9 +10498,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_3LowJpg.jpg",
-                      fullWidth: 386,
-                      fullHeight: 754,
+                      src: "/plasmic/website_starter/images/_3Low2Jpg.jpg",
+                      fullWidth: 278,
+                      fullHeight: 575,
                       aspectRatio: undefined
                     }}
                   />
