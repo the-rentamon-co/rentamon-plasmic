@@ -21,18 +21,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.مشکلدربرقراریارتط {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  margin-bottom: 0px;
-  font-size: 16px;
-  color: var(--token-Bo2_tT25lwh4);
-  padding-top: 3px;
-  box-shadow: none;
-}
 .freeBox__ppyHd {
   display: flex;
   flex-direction: column;

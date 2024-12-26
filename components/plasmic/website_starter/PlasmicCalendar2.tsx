@@ -105,7 +105,6 @@ export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
-  مشکلدربرقراریارتط?: Flex__<"div">;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   dayCell?: Flex__<typeof DayCell>;
   modalDiscount?: Flex__<typeof AntdModal>;
@@ -461,23 +460,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         data-plasmic-override={overrides.apiRequest}
         children={null}
         className={classNames("__wab_instance", sty.apiRequest)}
-        errorDisplay={
-          <div
-            data-plasmic-name={
-              "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637"
-            }
-            data-plasmic-override={overrides.مشکلدربرقراریارتط}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.مشکلدربرقراریارتط
-            )}
-          >
-            {
-              "\u0645\u0634\u06a9\u0644 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
-            }
-          </div>
-        }
+        errorDisplay={null}
         loadingDisplay={null}
         method={"GET"}
         onError={async (...eventArgs: any) => {
@@ -4699,7 +4682,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
-    "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637",
     "fragmentDatePicker",
     "dayCell",
     "modalDiscount",
@@ -4723,13 +4705,7 @@ const PlasmicDescendants = {
     "reserve",
     "block2"
   ],
-  apiRequest: [
-    "apiRequest",
-    "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637"
-  ],
-  مشکلدربرقراریارتط: [
-    "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637"
-  ],
+  apiRequest: ["apiRequest"],
   fragmentDatePicker: ["fragmentDatePicker", "dayCell"],
   dayCell: ["dayCell"],
   modalDiscount: [
@@ -4772,7 +4748,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
-  مشکلدربرقراریارتط: "div";
   fragmentDatePicker: typeof DatePicker;
   dayCell: typeof DayCell;
   modalDiscount: typeof AntdModal;
@@ -4858,9 +4833,6 @@ export const PlasmicCalendar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
-    مشکلدربرقراریارتط: makeNodeComponent(
-      "\u0645\u0634\u06a9\u0644\u062f\u0631\u0628\u0631\u0642\u0631\u0627\u0631\u06cc\u0627\u0631\u062a\u0637"
-    ),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     dayCell: makeNodeComponent("dayCell"),
     modalDiscount: makeNodeComponent("modalDiscount"),
