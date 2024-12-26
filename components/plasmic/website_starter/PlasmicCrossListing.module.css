@@ -179,27 +179,6 @@
   align-self: center;
   min-width: 0;
 }
-.button__peN:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  background: none;
-  height: 40px;
-  width: 100%;
-  min-width: 0;
-  border-radius: 30px;
-  border: 2px solid var(--token-8nedppYkGVaH);
-}
-.text___6BD2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 16px;
-  text-align: center;
-  align-self: center;
-  color: var(--token-8nedppYkGVaH);
-  min-width: 0;
-}
 .step2Documentation {
   display: flex;
   flex-direction: column;
@@ -344,6 +323,160 @@
   border: 2px solid var(--token-8nedppYkGVaH);
 }
 .text__tVuDh {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+  align-self: center;
+  color: var(--token-8nedppYkGVaH);
+  min-width: 0;
+}
+.step3Documentation2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.text__hmWpx {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-bottom: 30px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
+  font-weight: 700;
+  padding-top: 30px;
+  min-width: 0;
+}
+.nameField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__kKCI {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input13:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.lastNameField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__hMvr9 {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input14:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.nationalCodeField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__xIJsr {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input15:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dateofBirthField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text___00Hm {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input16:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.postalCodeField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text___2SPZy {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input17:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.phone2Field3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__eSbJo {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input18:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.step1Buttons3 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.button__ryGlp:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  background: var(--token-8nedppYkGVaH);
+  height: 40px;
+  width: 100%;
+  margin-right: 5px;
+  margin-left: 5px;
+  min-width: 0;
+  border-radius: 30px;
+}
+.text__vlUPz {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+  align-self: center;
+  min-width: 0;
+}
+.button__elLWc:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  background: none;
+  height: 40px;
+  width: 100%;
+  min-width: 0;
+  border-radius: 30px;
+  border: 2px solid var(--token-8nedppYkGVaH);
+}
+.text__bIs9I {
   position: relative;
   width: 100%;
   height: auto;

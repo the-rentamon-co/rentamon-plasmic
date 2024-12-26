@@ -3884,10 +3884,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                         formatPriceToPersian(discountedPrice),
                                         discountedPrice
                                       );
-                                      if (
-                                        formatPriceToPersian(discountedPrice) ==
-                                        0
-                                      ) {
+                                      if (discountedPrice == 0) {
                                         console.log("here in null condition");
                                         updates.price = null;
                                       } else {
