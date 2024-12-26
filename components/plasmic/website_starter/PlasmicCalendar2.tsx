@@ -79,9 +79,9 @@ import sty from "./PlasmicCalendar2.module.css"; // plasmic-import: RNhZtlNmydsH
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
+import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: TftNRT31euw0/icon
 import Icon16Icon from "./icons/PlasmicIcon__Icon16"; // plasmic-import: PIv_Q4vxdPrZ/icon
-import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import Icon25Icon from "./icons/PlasmicIcon__Icon25"; // plasmic-import: JGzy20bJEzcD/icon
 import Icon24Icon from "./icons/PlasmicIcon__Icon24"; // plasmic-import: zCddQXMUCxH0/icon
 
@@ -111,6 +111,7 @@ export type PlasmicCalendar2__OverridesType = {
   modalDiscount?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
   numberInput4?: Flex__<typeof AntdInputNumber>;
+  textInput2?: Flex__<typeof TextInput>;
   numberInput3?: Flex__<typeof AntdInputNumber>;
   modal?: Flex__<typeof AntdModal>;
   modalChangePrice?: Flex__<typeof AntdModal>;
@@ -238,7 +239,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : false
+            : true
       },
       {
         path: "numberInput3.value",
@@ -414,6 +415,12 @@ function PlasmicCalendar2__RenderFunc(props: {
       },
       {
         path: "textInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "textInput2.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
@@ -972,7 +979,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const data = {
                           days: [$state.fragmentDatePicker.values],
                           property_id: $props.propertyId,
-                          discount: String($state.numberInput3.value)
+                          discount: String($state.textInput2.value)
                         };
                         $state.requestdata = data;
                         data.days = data.days
@@ -1153,21 +1160,20 @@ function PlasmicCalendar2__RenderFunc(props: {
               >
                 <Button
                   className={classNames("__wab_instance", sty.button__q70Wl)}
+                  color={"softSand"}
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["updateCount"] = true
+                    $steps["updateStateVariable"] = true
                       ? (() => {
                           const actionArgs = {
                             operation: 0,
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["count"]
-                            },
-                            value: ($state.count = Math.min(
-                              $state.count + 5,
-                              95
-                            ))
+                            value: (() => {
+                              if (Number($state.textInput2.value) < 95) {
+                                return ($state.textInput2.value =
+                                  (Number($state.textInput2.value) || 0) + 5);
+                              }
+                            })()
                           };
                           return (({
                             variable,
@@ -1186,11 +1192,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["updateCount"] != null &&
-                      typeof $steps["updateCount"] === "object" &&
-                      typeof $steps["updateCount"].then === "function"
+                      $steps["updateStateVariable"] != null &&
+                      typeof $steps["updateStateVariable"] === "object" &&
+                      typeof $steps["updateStateVariable"].then === "function"
                     ) {
-                      $steps["updateCount"] = await $steps["updateCount"];
+                      $steps["updateStateVariable"] = await $steps[
+                        "updateStateVariable"
+                      ];
                     }
                   }}
                 >
@@ -1205,43 +1213,75 @@ function PlasmicCalendar2__RenderFunc(props: {
                   </div>
                 </Button>
                 <div className={classNames(projectcss.all, sty.freeBox__paPfn)}>
-                  <AntdInputNumber
-                    data-plasmic-name={"numberInput4"}
-                    data-plasmic-override={overrides.numberInput4}
-                    className={classNames("__wab_instance", sty.numberInput4)}
-                    controls={false}
-                    onChange={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <AntdInputNumber
+                      data-plasmic-name={"numberInput4"}
+                      data-plasmic-override={overrides.numberInput4}
+                      className={classNames("__wab_instance", sty.numberInput4)}
+                      controls={false}
+                      onChange={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "numberInput4",
+                          "value"
+                        ]).apply(null, eventArgs);
+                      }}
+                      placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
+                      readOnly={true}
+                      type={"number"}
+                      value={generateStateValueProp($state, [
                         "numberInput4",
                         "value"
-                      ]).apply(null, eventArgs);
+                      ])}
+                    />
+                  ) : null}
+                  <TextInput
+                    data-plasmic-name={"textInput2"}
+                    data-plasmic-override={overrides.textInput2}
+                    className={classNames("__wab_instance", sty.textInput2)}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "textInput2",
+                          "value"
+                        ])((e => e.target?.value).apply(null, eventArgs));
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
                     }}
                     placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
-                    readOnly={true}
                     type={"number"}
-                    value={generateStateValueProp($state, [
-                      "numberInput4",
-                      "value"
-                    ])}
+                    value={
+                      generateStateValueProp($state, ["textInput2", "value"]) ??
+                      ""
+                    }
                   />
                 </div>
                 <Button
                   className={classNames("__wab_instance", sty.button__eiNeQ)}
+                  color={"softSand"}
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["updateCount"] = true
+                    $steps["updateStateVariable"] = true
                       ? (() => {
                           const actionArgs = {
                             operation: 0,
-                            value: ($state.count = Math.max(
-                              0,
-                              $state.count - 5
-                            )),
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["count"]
-                            }
+                            value: (() => {
+                              if (Number($state.textInput2.value) > 0) {
+                                return ($state.textInput2.value =
+                                  (Number($state.textInput2.value) || 0) - 5);
+                              }
+                            })()
                           };
                           return (({
                             variable,
@@ -1260,11 +1300,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["updateCount"] != null &&
-                      typeof $steps["updateCount"] === "object" &&
-                      typeof $steps["updateCount"].then === "function"
+                      $steps["updateStateVariable"] != null &&
+                      typeof $steps["updateStateVariable"] === "object" &&
+                      typeof $steps["updateStateVariable"].then === "function"
                     ) {
-                      $steps["updateCount"] = await $steps["updateCount"];
+                      $steps["updateStateVariable"] = await $steps[
+                        "updateStateVariable"
+                      ];
                     }
                   }}
                 >
@@ -1523,7 +1565,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               const data = {
                                 days: [$state.fragmentDatePicker.values],
                                 property_id: $props.propertyId,
-                                discount: String($state.numberInput4.value)
+                                discount: String($state.textInput2.value)
                               };
                               $state.requestdata = data;
                               data.days = data.days
@@ -3598,7 +3640,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
-                            loading={"lazy"}
+                            loading={"eager"}
                             src={{
                               src: "/plasmic/website_starter/images/image27.svg",
                               fullWidth: 26,
@@ -3653,7 +3695,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
-                            loading={"lazy"}
+                            loading={"eager"}
                             src={{
                               src: "/plasmic/website_starter/images/image28.svg",
                               fullWidth: 26,
@@ -4636,6 +4678,7 @@ const PlasmicDescendants = {
     "modalDiscount",
     "main",
     "numberInput4",
+    "textInput2",
     "numberInput3",
     "modal",
     "modalChangePrice",
@@ -4662,9 +4705,16 @@ const PlasmicDescendants = {
   ],
   fragmentDatePicker: ["fragmentDatePicker", "dayCell"],
   dayCell: ["dayCell"],
-  modalDiscount: ["modalDiscount", "main", "numberInput4", "numberInput3"],
-  main: ["main", "numberInput4"],
+  modalDiscount: [
+    "modalDiscount",
+    "main",
+    "numberInput4",
+    "textInput2",
+    "numberInput3"
+  ],
+  main: ["main", "numberInput4", "textInput2"],
   numberInput4: ["numberInput4"],
+  textInput2: ["textInput2"],
   numberInput3: ["numberInput3"],
   modal: ["modal"],
   modalChangePrice: ["modalChangePrice", "main2", "textInput", "numberInput2"],
@@ -4701,6 +4751,7 @@ type NodeDefaultElementType = {
   modalDiscount: typeof AntdModal;
   main: "div";
   numberInput4: typeof AntdInputNumber;
+  textInput2: typeof TextInput;
   numberInput3: typeof AntdInputNumber;
   modal: typeof AntdModal;
   modalChangePrice: typeof AntdModal;
@@ -4788,6 +4839,7 @@ export const PlasmicCalendar2 = Object.assign(
     modalDiscount: makeNodeComponent("modalDiscount"),
     main: makeNodeComponent("main"),
     numberInput4: makeNodeComponent("numberInput4"),
+    textInput2: makeNodeComponent("textInput2"),
     numberInput3: makeNodeComponent("numberInput3"),
     modal: makeNodeComponent("modal"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
