@@ -134,7 +134,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.dateofBirthField3:global(.__wab_instance) {
+.phone2Field:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;

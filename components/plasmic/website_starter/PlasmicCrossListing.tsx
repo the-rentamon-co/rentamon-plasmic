@@ -98,7 +98,7 @@ export type PlasmicCrossListing__OverridesType = {
   input4?: Flex__<typeof AntdInput>;
   postalCodeField?: Flex__<typeof FormItemWrapper>;
   input5?: Flex__<typeof AntdInput>;
-  dateofBirthField3?: Flex__<typeof FormItemWrapper>;
+  phone2Field?: Flex__<typeof FormItemWrapper>;
   input6?: Flex__<typeof AntdInput>;
   step1Buttons?: Flex__<"div">;
 };
@@ -635,12 +635,9 @@ function PlasmicCrossListing__RenderFunc(props: {
                     })()}
                   </FormItemWrapper>
                   <FormItemWrapper
-                    data-plasmic-name={"dateofBirthField3"}
-                    data-plasmic-override={overrides.dateofBirthField3}
-                    className={classNames(
-                      "__wab_instance",
-                      sty.dateofBirthField3
-                    )}
+                    data-plasmic-name={"phone2Field"}
+                    data-plasmic-override={overrides.phone2Field}
+                    className={classNames("__wab_instance", sty.phone2Field)}
                     label={
                       <div
                         className={classNames(
@@ -744,6 +741,32 @@ function PlasmicCrossListing__RenderFunc(props: {
                         ) {
                           $steps["submit"] = await $steps["submit"];
                         }
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0645\u062a\u0634\u06a9\u0631\u060c \u062f\u0631\u06cc\u0627\u0641\u062a \u0634\u062f!",
+                                  "top-center",
+                                  3000
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
                       }}
                       submitsForm={true}
                       type={"primary"}
@@ -799,7 +822,7 @@ const PlasmicDescendants = {
     "input4",
     "postalCodeField",
     "input5",
-    "dateofBirthField3",
+    "phone2Field",
     "input6",
     "step1Buttons"
   ],
@@ -816,7 +839,7 @@ const PlasmicDescendants = {
     "input4",
     "postalCodeField",
     "input5",
-    "dateofBirthField3",
+    "phone2Field",
     "input6",
     "step1Buttons"
   ],
@@ -832,7 +855,7 @@ const PlasmicDescendants = {
     "input4",
     "postalCodeField",
     "input5",
-    "dateofBirthField3",
+    "phone2Field",
     "input6",
     "step1Buttons"
   ],
@@ -846,7 +869,7 @@ const PlasmicDescendants = {
   input4: ["input4"],
   postalCodeField: ["postalCodeField", "input5"],
   input5: ["input5"],
-  dateofBirthField3: ["dateofBirthField3", "input6"],
+  phone2Field: ["phone2Field", "input6"],
   input6: ["input6"],
   step1Buttons: ["step1Buttons"]
 } as const;
@@ -867,7 +890,7 @@ type NodeDefaultElementType = {
   input4: typeof AntdInput;
   postalCodeField: typeof FormItemWrapper;
   input5: typeof AntdInput;
-  dateofBirthField3: typeof FormItemWrapper;
+  phone2Field: typeof FormItemWrapper;
   input6: typeof AntdInput;
   step1Buttons: "div";
 };
@@ -944,7 +967,7 @@ export const PlasmicCrossListing = Object.assign(
     input4: makeNodeComponent("input4"),
     postalCodeField: makeNodeComponent("postalCodeField"),
     input5: makeNodeComponent("input5"),
-    dateofBirthField3: makeNodeComponent("dateofBirthField3"),
+    phone2Field: makeNodeComponent("phone2Field"),
     input6: makeNodeComponent("input6"),
     step1Buttons: makeNodeComponent("step1Buttons"),
 

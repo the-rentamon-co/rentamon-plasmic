@@ -283,7 +283,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : true
+            : false
       },
       {
         path: "variable3",
@@ -3825,10 +3825,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 $state.platformRequestStatus?.data || {};
                               if (
                                 Object.keys(platformStatus).length > 0 &&
-                                (!platformStatus[currentItem] ||
-                                  ["mihmansho", "mizboon"].includes(
-                                    currentItem
-                                  ))
+                                !platformStatus[currentItem] &&
+                                ["mihmansho", "mizboon"].includes(currentItem)
                               ) {
                                 return true;
                               } else {
