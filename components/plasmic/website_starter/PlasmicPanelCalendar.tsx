@@ -1086,11 +1086,15 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     {(() => {
                       try {
                         return (() => {
-                          const statuses = $state.apiRequest.data.status;
-                          const anyFalse = Object.values(statuses).some(
-                            value => value === false
-                          );
-                          return anyFalse ? true : false;
+                          if ($state.apiRequest.data == null) {
+                            return false;
+                          } else {
+                            const statuses = $state.apiRequest.data.status;
+                            const anyFalse = Object.values(statuses).some(
+                              value => value === false
+                            );
+                            return anyFalse ? true : false;
+                          }
                         })();
                       } catch (e) {
                         if (
@@ -1156,11 +1160,15 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     {(() => {
                       try {
                         return (() => {
-                          const statuses = $state.apiRequest.data.status;
-                          const allTrue = Object.values(statuses).every(
-                            value => value === true
-                          );
-                          return allTrue ? true : false;
+                          if ($state.apiRequest.data == null) {
+                            return false;
+                          } else {
+                            const statuses = $state.apiRequest.data.status;
+                            const allTrue = Object.values(statuses).every(
+                              value => value === true
+                            );
+                            return allTrue ? true : false;
+                          }
                         })();
                       } catch (e) {
                         if (
@@ -1225,7 +1233,10 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     ) : null}
                     {(() => {
                       try {
-                        return $state.apiRequest.loading;
+                        return (
+                          $state.apiRequest.loading ||
+                          $state.apiRequest.data == null
+                        );
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -1238,28 +1249,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     })() ? (
                       <PlasmicImg__
                         alt={""}
-                        className={classNames(
-                          sty.img___5PCMw,
-                          (() => {
-                            try {
-                              return (() => {
-                                const statuses = $state.apiRequest.data.status;
-                                const allTrue = Object.values(statuses).every(
-                                  value => value === true
-                                );
-                                return allTrue ? "true " : "hidden";
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        )}
+                        className={classNames(sty.img___5PCMw)}
                         displayHeight={"34px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
