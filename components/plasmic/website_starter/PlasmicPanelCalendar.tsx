@@ -1185,8 +1185,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       }
                       errorName={"fetchError"}
                       headers={{
-                        authorization:
-                          "Bearer eyJhbGciOiJSUzI1NiIsImhvc3QiOiJzc28ucmVudGFtb24uY29tIiwia2lkIjoiMmFkMGFmNTQ3NmI5NjA1NjIwODc3ZDc1MTUzNGU3NWMxNWMwMzAwNmEzNWZlN2UyZWNkNGMwYmY1ZDg0MTE5OSIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidV85OGUwZmFhMy1jMzI2LTQwZjUtODJiYS03NWJmMTcwYTJjYWYiLCJ3b3Jrc3BhY2VfaWQiOiJ1Xzk4ZTBmYWEzLWMzMjYtNDBmNS04MmJhLTc1YmYxNzBhMmNhZiIsIndvcmtzcGFjZV9pZHMiOltdLCJpYXQiOjE3MzUyMDE5MDMsImV4cCI6MTczNTIwMzcwMywianRpIjoianRpXzZkZDJhZDk2LWNlYzctNDVlNS04ZjE2LTY1NzVjNjU1NmYxNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJwaG9uZSI6Ijk4OTAzODc3ODYwNiIsImF1dGhlbnRpY2F0aW9uX21ldGhvZCI6InBob25lL290cCIsImlzX2FjdGl2ZSI6dHJ1ZX0.e7r3IZqRizQEUCxiAYYJqTWK-NEaOkQs7hOhQAAXJsxwZxW9_a08nFADO9WdndcF5rsYUDyC20VGWVIHVSmiPeWgCM4jlHk1lPtFSps3WJ3WS9pAFOnpFf7kjKO429HP8BNFyZLhmyUSi0_C1_50GAs3zDnMJLsMaveoTt0uRRcg0iS48F_3UwoIVv5lZ4CD3s6QD9f5tXdeiGte-PIFfLxnUzgc88yarJVjoHXrhaiKp6xkaFnZd2X3xJER2HsD4ZKAA894mP8g_2pUG7DhxVkfyqAVTTRM02GYbm5uyICHoL8SIY8dgGukMqDBLCdCkp_WEeCsgTqw7ivQ7r82Zg"
+                        "Content-Type": "application/json",
+                        Accept: "*/*",
+                        credentials: "include"
                       }}
                       loadingDisplay={
                         <DataCtxReader__>
