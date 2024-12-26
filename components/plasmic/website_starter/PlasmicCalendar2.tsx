@@ -239,7 +239,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : true
+            : false
       },
       {
         path: "numberInput3.value",
@@ -1324,7 +1324,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               {(() => {
                 try {
                   return (() => {
-                    if ($state.numberInput4.value == "5") {
+                    if ($state.textInput2.value == "5") {
                       return true;
                     } else {
                       return false;
@@ -1362,9 +1362,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 try {
                   return (() => {
                     if (
-                      $state.numberInput4.value == "55" ||
-                      $state.numberInput4.value == "60" ||
-                      $state.numberInput4.value == "65"
+                      $state.textInput2.value == "55" ||
+                      $state.textInput2.value == "60" ||
+                      $state.textInput2.value == "65"
                     ) {
                       return true;
                     } else {
@@ -1401,7 +1401,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               ) : null}
               {(() => {
                 try {
-                  return $state.numberInput4.value >= 70;
+                  return $state.textInput2.value >= 70;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -1970,6 +1970,33 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.modal.open = false)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
+
               $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
@@ -2109,7 +2136,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["updateFetchModalOpen"] = true
+                $steps["updateFetchModalOpen"] = false
                   ? (() => {
                       const actionArgs = {
                         variable: {
@@ -2145,7 +2172,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ];
                 }
 
-                $steps["runCode"] = true
+                $steps["runCode"] = false
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {
@@ -3969,7 +3996,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.requestdata = [];
                             $state.fragmentDatePicker.values = [];
                             $state.textInput.value = 0;
-                            return ($state.numberInput4.value = 0);
+                            return ($state.textInput2.value = 0);
                           })()
                         };
                         return (({
