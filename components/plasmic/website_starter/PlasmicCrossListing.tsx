@@ -102,17 +102,17 @@ export type PlasmicCrossListing__OverridesType = {
   input6?: Flex__<typeof AntdInput>;
   step1Buttons?: Flex__<"div">;
   step2Documentation?: Flex__<"div">;
-  nameField2?: Flex__<typeof FormItemWrapper>;
+  profilePicField?: Flex__<typeof FormItemWrapper>;
   input7?: Flex__<typeof AntdInput>;
-  lastNameField2?: Flex__<typeof FormItemWrapper>;
+  nationalCardPicField?: Flex__<typeof FormItemWrapper>;
   input8?: Flex__<typeof AntdInput>;
-  nationalCodeField2?: Flex__<typeof FormItemWrapper>;
+  sanadPicField?: Flex__<typeof FormItemWrapper>;
   input9?: Flex__<typeof AntdInput>;
-  dateofBirthField2?: Flex__<typeof FormItemWrapper>;
+  rentalPicField?: Flex__<typeof FormItemWrapper>;
   input10?: Flex__<typeof AntdInput>;
-  postalCodeField2?: Flex__<typeof FormItemWrapper>;
+  representationPicField?: Flex__<typeof FormItemWrapper>;
   input11?: Flex__<typeof AntdInput>;
-  step1Buttons2?: Flex__<"div">;
+  step2Buttons?: Flex__<"div">;
   step3PropertyInfo?: Flex__<"div">;
   nameField3?: Flex__<typeof FormItemWrapper>;
   input13?: Flex__<typeof AntdInput>;
@@ -1002,9 +1002,12 @@ function PlasmicCrossListing__RenderFunc(props: {
                       }
                     </div>
                     <FormItemWrapper
-                      data-plasmic-name={"nameField2"}
-                      data-plasmic-override={overrides.nameField2}
-                      className={classNames("__wab_instance", sty.nameField2)}
+                      data-plasmic-name={"profilePicField"}
+                      data-plasmic-override={overrides.profilePicField}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.profilePicField
+                      )}
                       label={
                         <div
                           className={classNames(
@@ -1033,6 +1036,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           placeholder:
                             "\u062a\u0635\u0648\u06cc\u0631 \u067e\u0631\u0648\u0641\u0627\u06cc\u0644",
                           size: "large",
+                          type: "number",
                           value: generateStateValueProp($state, [
                             "input7",
                             "value"
@@ -1061,11 +1065,11 @@ function PlasmicCrossListing__RenderFunc(props: {
                       })()}
                     </FormItemWrapper>
                     <FormItemWrapper
-                      data-plasmic-name={"lastNameField2"}
-                      data-plasmic-override={overrides.lastNameField2}
+                      data-plasmic-name={"nationalCardPicField"}
+                      data-plasmic-override={overrides.nationalCardPicField}
                       className={classNames(
                         "__wab_instance",
-                        sty.lastNameField2
+                        sty.nationalCardPicField
                       )}
                       label={
                         <div
@@ -1095,6 +1099,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           placeholder:
                             "\u062a\u0635\u0648\u06cc\u0631 \u06a9\u0627\u0631\u062a \u0645\u0644\u06cc",
                           size: "large",
+                          type: "number",
                           value: generateStateValueProp($state, [
                             "input8",
                             "value"
@@ -1123,11 +1128,11 @@ function PlasmicCrossListing__RenderFunc(props: {
                       })()}
                     </FormItemWrapper>
                     <FormItemWrapper
-                      data-plasmic-name={"nationalCodeField2"}
-                      data-plasmic-override={overrides.nationalCodeField2}
+                      data-plasmic-name={"sanadPicField"}
+                      data-plasmic-override={overrides.sanadPicField}
                       className={classNames(
                         "__wab_instance",
-                        sty.nationalCodeField2
+                        sty.sanadPicField
                       )}
                       label={
                         <div
@@ -1154,8 +1159,10 @@ function PlasmicCrossListing__RenderFunc(props: {
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
                           },
-                          placeholder: "\u06a9\u062f \u0645\u0644\u06cc",
+                          placeholder:
+                            "\u062a\u0635\u0648\u06cc\u0631 \u0633\u0646\u062f",
                           size: "large",
+                          type: "number",
                           value: generateStateValueProp($state, [
                             "input9",
                             "value"
@@ -1184,11 +1191,11 @@ function PlasmicCrossListing__RenderFunc(props: {
                       })()}
                     </FormItemWrapper>
                     <FormItemWrapper
-                      data-plasmic-name={"dateofBirthField2"}
-                      data-plasmic-override={overrides.dateofBirthField2}
+                      data-plasmic-name={"rentalPicField"}
+                      data-plasmic-override={overrides.rentalPicField}
                       className={classNames(
                         "__wab_instance",
-                        sty.dateofBirthField2
+                        sty.rentalPicField
                       )}
                       label={
                         <div
@@ -1216,9 +1223,9 @@ function PlasmicCrossListing__RenderFunc(props: {
                             ).apply(null, eventArgs);
                           },
                           placeholder:
-                            "\u062a\u0627\u0631\u06cc\u062e \u062a\u0648\u0644\u062f",
+                            "\u062a\u0635\u0648\u06cc\u0631 \u0627\u062c\u0627\u0631\u0647 \u0646\u0627\u0645\u0647",
                           size: "large",
-                          type: "date",
+                          type: "number",
                           value: generateStateValueProp($state, [
                             "input10",
                             "value"
@@ -1247,11 +1254,11 @@ function PlasmicCrossListing__RenderFunc(props: {
                       })()}
                     </FormItemWrapper>
                     <FormItemWrapper
-                      data-plasmic-name={"postalCodeField2"}
-                      data-plasmic-override={overrides.postalCodeField2}
+                      data-plasmic-name={"representationPicField"}
+                      data-plasmic-override={overrides.representationPicField}
                       className={classNames(
                         "__wab_instance",
-                        sty.postalCodeField2
+                        sty.representationPicField
                       )}
                       label={
                         <div
@@ -1278,8 +1285,10 @@ function PlasmicCrossListing__RenderFunc(props: {
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
                           },
-                          placeholder: "\u06a9\u062f \u067e\u0633\u062a\u06cc",
+                          placeholder:
+                            "\u062a\u0635\u0648\u06cc\u0631 \u0648\u06a9\u0627\u0644\u062a \u0646\u0627\u0645\u0647",
                           size: "large",
+                          type: "number",
                           value: generateStateValueProp($state, [
                             "input11",
                             "value"
@@ -1308,9 +1317,9 @@ function PlasmicCrossListing__RenderFunc(props: {
                       })()}
                     </FormItemWrapper>
                     <div
-                      data-plasmic-name={"step1Buttons2"}
-                      data-plasmic-override={overrides.step1Buttons2}
-                      className={classNames(projectcss.all, sty.step1Buttons2)}
+                      data-plasmic-name={"step2Buttons"}
+                      data-plasmic-override={overrides.step2Buttons}
+                      className={classNames(projectcss.all, sty.step2Buttons)}
                     >
                       <AntdButton
                         className={classNames(
@@ -2113,17 +2122,17 @@ const PlasmicDescendants = {
     "input6",
     "step1Buttons",
     "step2Documentation",
-    "nameField2",
+    "profilePicField",
     "input7",
-    "lastNameField2",
+    "nationalCardPicField",
     "input8",
-    "nationalCodeField2",
+    "sanadPicField",
     "input9",
-    "dateofBirthField2",
+    "rentalPicField",
     "input10",
-    "postalCodeField2",
+    "representationPicField",
     "input11",
-    "step1Buttons2",
+    "step2Buttons",
     "step3PropertyInfo",
     "nameField3",
     "input13",
@@ -2156,17 +2165,17 @@ const PlasmicDescendants = {
     "input6",
     "step1Buttons",
     "step2Documentation",
-    "nameField2",
+    "profilePicField",
     "input7",
-    "lastNameField2",
+    "nationalCardPicField",
     "input8",
-    "nationalCodeField2",
+    "sanadPicField",
     "input9",
-    "dateofBirthField2",
+    "rentalPicField",
     "input10",
-    "postalCodeField2",
+    "representationPicField",
     "input11",
-    "step1Buttons2",
+    "step2Buttons",
     "step3PropertyInfo",
     "nameField3",
     "input13",
@@ -2213,29 +2222,29 @@ const PlasmicDescendants = {
   step1Buttons: ["step1Buttons"],
   step2Documentation: [
     "step2Documentation",
-    "nameField2",
+    "profilePicField",
     "input7",
-    "lastNameField2",
+    "nationalCardPicField",
     "input8",
-    "nationalCodeField2",
+    "sanadPicField",
     "input9",
-    "dateofBirthField2",
+    "rentalPicField",
     "input10",
-    "postalCodeField2",
+    "representationPicField",
     "input11",
-    "step1Buttons2"
+    "step2Buttons"
   ],
-  nameField2: ["nameField2", "input7"],
+  profilePicField: ["profilePicField", "input7"],
   input7: ["input7"],
-  lastNameField2: ["lastNameField2", "input8"],
+  nationalCardPicField: ["nationalCardPicField", "input8"],
   input8: ["input8"],
-  nationalCodeField2: ["nationalCodeField2", "input9"],
+  sanadPicField: ["sanadPicField", "input9"],
   input9: ["input9"],
-  dateofBirthField2: ["dateofBirthField2", "input10"],
+  rentalPicField: ["rentalPicField", "input10"],
   input10: ["input10"],
-  postalCodeField2: ["postalCodeField2", "input11"],
+  representationPicField: ["representationPicField", "input11"],
   input11: ["input11"],
-  step1Buttons2: ["step1Buttons2"],
+  step2Buttons: ["step2Buttons"],
   step3PropertyInfo: [
     "step3PropertyInfo",
     "nameField3",
@@ -2287,17 +2296,17 @@ type NodeDefaultElementType = {
   input6: typeof AntdInput;
   step1Buttons: "div";
   step2Documentation: "div";
-  nameField2: typeof FormItemWrapper;
+  profilePicField: typeof FormItemWrapper;
   input7: typeof AntdInput;
-  lastNameField2: typeof FormItemWrapper;
+  nationalCardPicField: typeof FormItemWrapper;
   input8: typeof AntdInput;
-  nationalCodeField2: typeof FormItemWrapper;
+  sanadPicField: typeof FormItemWrapper;
   input9: typeof AntdInput;
-  dateofBirthField2: typeof FormItemWrapper;
+  rentalPicField: typeof FormItemWrapper;
   input10: typeof AntdInput;
-  postalCodeField2: typeof FormItemWrapper;
+  representationPicField: typeof FormItemWrapper;
   input11: typeof AntdInput;
-  step1Buttons2: "div";
+  step2Buttons: "div";
   step3PropertyInfo: "div";
   nameField3: typeof FormItemWrapper;
   input13: typeof AntdInput;
@@ -2390,17 +2399,17 @@ export const PlasmicCrossListing = Object.assign(
     input6: makeNodeComponent("input6"),
     step1Buttons: makeNodeComponent("step1Buttons"),
     step2Documentation: makeNodeComponent("step2Documentation"),
-    nameField2: makeNodeComponent("nameField2"),
+    profilePicField: makeNodeComponent("profilePicField"),
     input7: makeNodeComponent("input7"),
-    lastNameField2: makeNodeComponent("lastNameField2"),
+    nationalCardPicField: makeNodeComponent("nationalCardPicField"),
     input8: makeNodeComponent("input8"),
-    nationalCodeField2: makeNodeComponent("nationalCodeField2"),
+    sanadPicField: makeNodeComponent("sanadPicField"),
     input9: makeNodeComponent("input9"),
-    dateofBirthField2: makeNodeComponent("dateofBirthField2"),
+    rentalPicField: makeNodeComponent("rentalPicField"),
     input10: makeNodeComponent("input10"),
-    postalCodeField2: makeNodeComponent("postalCodeField2"),
+    representationPicField: makeNodeComponent("representationPicField"),
     input11: makeNodeComponent("input11"),
-    step1Buttons2: makeNodeComponent("step1Buttons2"),
+    step2Buttons: makeNodeComponent("step2Buttons"),
     step3PropertyInfo: makeNodeComponent("step3PropertyInfo"),
     nameField3: makeNodeComponent("nameField3"),
     input13: makeNodeComponent("input13"),

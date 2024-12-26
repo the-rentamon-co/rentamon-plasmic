@@ -202,7 +202,7 @@
   padding-top: 30px;
   min-width: 0;
 }
-.nameField2:global(.__wab_instance) {
+.profilePicField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -215,7 +215,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.lastNameField2:global(.__wab_instance) {
+.nationalCardPicField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -228,7 +228,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.nationalCodeField2:global(.__wab_instance) {
+.sanadPicField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -241,7 +241,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.dateofBirthField2:global(.__wab_instance) {
+.rentalPicField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -254,7 +254,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.postalCodeField2:global(.__wab_instance) {
+.representationPicField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -267,7 +267,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.step1Buttons2 {
+.step2Buttons {
   display: flex;
   flex-direction: row;
   align-items: stretch;

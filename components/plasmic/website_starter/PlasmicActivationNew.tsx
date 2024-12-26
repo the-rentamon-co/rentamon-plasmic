@@ -5600,36 +5600,38 @@ function PlasmicActivationNew__RenderFunc(props: {
                               $steps["updateStep"] = await $steps["updateStep"];
                             }
 
-                            $steps["shabSend"] = false
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "POST",
-                                      "https://gateway.rentamon.com/webhook/shabnewsend",
-                                      undefined,
-                                      (() => {
-                                        try {
-                                          return {
-                                            phone: $state.form.value.shabphone
-                                          };
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
+                            $steps["shabSend"] =
+                              $state.form.value.shabphone !== undefined &&
+                              $state.form.value.shabphone.length >= 11
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/shabnewsend",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return {
+                                              phone: $state.form.value.shabphone
+                                            };
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
                                           }
-                                          throw e;
-                                        }
-                                      })()
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.apiRequest"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
                             if (
                               $steps["shabSend"] != null &&
                               typeof $steps["shabSend"] === "object" &&
