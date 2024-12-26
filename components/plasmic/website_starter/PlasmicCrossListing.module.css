@@ -267,19 +267,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.phone2Field2:global(.__wab_instance) {
-  width: 100%;
-  margin-bottom: 24px;
-  min-width: 0;
-}
-.text__quBav {
-  font-size: 16px;
-  color: var(--token-VC1CUzrVcfix);
-}
-.input12:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .step1Buttons2 {
   display: flex;
   flex-direction: row;
@@ -333,7 +320,7 @@
   color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
-.step3Documentation2 {
+.step3PropertyInfo {
   display: flex;
   flex-direction: column;
   width: 100%;

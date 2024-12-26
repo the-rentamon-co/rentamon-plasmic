@@ -112,10 +112,8 @@ export type PlasmicCrossListing__OverridesType = {
   input10?: Flex__<typeof AntdInput>;
   postalCodeField2?: Flex__<typeof FormItemWrapper>;
   input11?: Flex__<typeof AntdInput>;
-  phone2Field2?: Flex__<typeof FormItemWrapper>;
-  input12?: Flex__<typeof AntdInput>;
   step1Buttons2?: Flex__<"div">;
-  step3Documentation2?: Flex__<"div">;
+  step3PropertyInfo?: Flex__<"div">;
   nameField3?: Flex__<typeof FormItemWrapper>;
   input13?: Flex__<typeof AntdInput>;
   lastNameField3?: Flex__<typeof FormItemWrapper>;
@@ -275,14 +273,6 @@ function PlasmicCrossListing__RenderFunc(props: {
       },
       {
         path: "input11.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
-        path: "input12.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -1026,7 +1016,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           {""}
                         </div>
                       }
-                      name={"name"}
+                      name={"profilePic"}
                     >
                       {(() => {
                         const child$Props = {
@@ -1040,7 +1030,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                               AntdInput_Helpers
                             ).apply(null, eventArgs);
                           },
-                          placeholder: "\u0646\u0627\u0645",
+                          placeholder:
+                            "\u062a\u0635\u0648\u06cc\u0631 \u067e\u0631\u0648\u0641\u0627\u06cc\u0644",
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input7",
@@ -1087,7 +1078,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           {""}
                         </div>
                       }
-                      name={"lastName"}
+                      name={"nationalCardPic"}
                     >
                       {(() => {
                         const child$Props = {
@@ -1102,7 +1093,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                             ).apply(null, eventArgs);
                           },
                           placeholder:
-                            "\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
+                            "\u062a\u0635\u0648\u06cc\u0631 \u06a9\u0627\u0631\u062a \u0645\u0644\u06cc",
                           size: "large",
                           value: generateStateValueProp($state, [
                             "input8",
@@ -1149,7 +1140,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           {""}
                         </div>
                       }
-                      name={"nationalCode"}
+                      name={"sanadPic"}
                     >
                       {(() => {
                         const child$Props = {
@@ -1210,7 +1201,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           {""}
                         </div>
                       }
-                      name={"dateofBirth"}
+                      name={"rentalPic"}
                     >
                       {(() => {
                         const child$Props = {
@@ -1273,7 +1264,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           {""}
                         </div>
                       }
-                      name={"postalCode"}
+                      name={"representationPic"}
                     >
                       {(() => {
                         const child$Props = {
@@ -1311,65 +1302,6 @@ function PlasmicCrossListing__RenderFunc(props: {
                           <AntdInput
                             data-plasmic-name={"input11"}
                             data-plasmic-override={overrides.input11}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      data-plasmic-name={"phone2Field2"}
-                      data-plasmic-override={overrides.phone2Field2}
-                      className={classNames("__wab_instance", sty.phone2Field2)}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__quBav
-                          )}
-                        >
-                          {""}
-                        </div>
-                      }
-                      name={"phone2"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          bordered: true,
-                          className: classNames("__wab_instance", sty.input12),
-                          onChange: async (...eventArgs: any) => {
-                            generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "value",
-                              ["input12", "value"],
-                              AntdInput_Helpers
-                            ).apply(null, eventArgs);
-                          },
-                          placeholder:
-                            "\u062a\u0644\u0641\u0646 \u062b\u0627\u0628\u062a",
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input12",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input12.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input12"}
-                            data-plasmic-override={overrides.input12}
                             {...child$Props}
                           />
                         );
@@ -1568,7 +1500,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                 ) : null}
                 {(() => {
                   try {
-                    return $state.step == 1;
+                    return $state.step == 2;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -1580,11 +1512,11 @@ function PlasmicCrossListing__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    data-plasmic-name={"step3Documentation2"}
-                    data-plasmic-override={overrides.step3Documentation2}
+                    data-plasmic-name={"step3PropertyInfo"}
+                    data-plasmic-override={overrides.step3PropertyInfo}
                     className={classNames(
                       projectcss.all,
-                      sty.step3Documentation2
+                      sty.step3PropertyInfo
                     )}
                   >
                     <div
@@ -1595,7 +1527,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0627\u0633\u0646\u0627\u062f \u0648 \u0645\u062f\u0627\u0631\u06a9 \u06f2/\u06f8"
+                        "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0644\u06a9 \u06f3/\u06f8"
                       }
                     </div>
                     <FormItemWrapper
@@ -2191,10 +2123,8 @@ const PlasmicDescendants = {
     "input10",
     "postalCodeField2",
     "input11",
-    "phone2Field2",
-    "input12",
     "step1Buttons2",
-    "step3Documentation2",
+    "step3PropertyInfo",
     "nameField3",
     "input13",
     "lastNameField3",
@@ -2236,10 +2166,8 @@ const PlasmicDescendants = {
     "input10",
     "postalCodeField2",
     "input11",
-    "phone2Field2",
-    "input12",
     "step1Buttons2",
-    "step3Documentation2",
+    "step3PropertyInfo",
     "nameField3",
     "input13",
     "lastNameField3",
@@ -2295,8 +2223,6 @@ const PlasmicDescendants = {
     "input10",
     "postalCodeField2",
     "input11",
-    "phone2Field2",
-    "input12",
     "step1Buttons2"
   ],
   nameField2: ["nameField2", "input7"],
@@ -2309,11 +2235,9 @@ const PlasmicDescendants = {
   input10: ["input10"],
   postalCodeField2: ["postalCodeField2", "input11"],
   input11: ["input11"],
-  phone2Field2: ["phone2Field2", "input12"],
-  input12: ["input12"],
   step1Buttons2: ["step1Buttons2"],
-  step3Documentation2: [
-    "step3Documentation2",
+  step3PropertyInfo: [
+    "step3PropertyInfo",
     "nameField3",
     "input13",
     "lastNameField3",
@@ -2373,10 +2297,8 @@ type NodeDefaultElementType = {
   input10: typeof AntdInput;
   postalCodeField2: typeof FormItemWrapper;
   input11: typeof AntdInput;
-  phone2Field2: typeof FormItemWrapper;
-  input12: typeof AntdInput;
   step1Buttons2: "div";
-  step3Documentation2: "div";
+  step3PropertyInfo: "div";
   nameField3: typeof FormItemWrapper;
   input13: typeof AntdInput;
   lastNameField3: typeof FormItemWrapper;
@@ -2478,10 +2400,8 @@ export const PlasmicCrossListing = Object.assign(
     input10: makeNodeComponent("input10"),
     postalCodeField2: makeNodeComponent("postalCodeField2"),
     input11: makeNodeComponent("input11"),
-    phone2Field2: makeNodeComponent("phone2Field2"),
-    input12: makeNodeComponent("input12"),
     step1Buttons2: makeNodeComponent("step1Buttons2"),
-    step3Documentation2: makeNodeComponent("step3Documentation2"),
+    step3PropertyInfo: makeNodeComponent("step3PropertyInfo"),
     nameField3: makeNodeComponent("nameField3"),
     input13: makeNodeComponent("input13"),
     lastNameField3: makeNodeComponent("lastNameField3"),

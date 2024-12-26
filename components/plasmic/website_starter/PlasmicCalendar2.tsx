@@ -3880,10 +3880,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                                             ) /
                                               100)
                                       );
-                                      console.log(
-                                        formatPriceToPersian(discountedPrice),
-                                        discountedPrice
-                                      );
                                       if (discountedPrice == 0) {
                                         console.log("here in null condition");
                                         updates.price = null;

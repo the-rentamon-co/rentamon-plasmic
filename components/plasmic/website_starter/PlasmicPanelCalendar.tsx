@@ -348,31 +348,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             data-plasmic-override={overrides.apiRequest}
             children={null}
             className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rUfb
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $state.apiRequest.error.detail;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            }
+            errorDisplay={null}
             loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
