@@ -1834,33 +1834,26 @@ function PlasmicInstantReserve__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToHttpsRentamonComPanels"] = true
+              $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
-                      destination: "https://rentamon.com/panels"
-                    };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
+                      customFunction: async () => {
+                        return (() => {
+                          return window.history.back();
+                        })();
                       }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
                     })?.apply(null, [actionArgs]);
                   })()
                 : undefined;
               if (
-                $steps["goToHttpsRentamonComPanels"] != null &&
-                typeof $steps["goToHttpsRentamonComPanels"] === "object" &&
-                typeof $steps["goToHttpsRentamonComPanels"].then === "function"
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
               ) {
-                $steps["goToHttpsRentamonComPanels"] = await $steps[
-                  "goToHttpsRentamonComPanels"
-                ];
+                $steps["runCode"] = await $steps["runCode"];
               }
             }}
           >

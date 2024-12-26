@@ -10430,35 +10430,30 @@ function PlasmicActivationNew__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateStateVariable"] = true
+                      $steps["goToPanelCalendar"] = true
                         ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: ($state.step = 1)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
+                            const actionArgs = { destination: `/panel` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
                               }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
                       if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
+                        $steps["goToPanelCalendar"] != null &&
+                        typeof $steps["goToPanelCalendar"] === "object" &&
+                        typeof $steps["goToPanelCalendar"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
+                        $steps["goToPanelCalendar"] = await $steps[
+                          "goToPanelCalendar"
                         ];
                       }
                     }}

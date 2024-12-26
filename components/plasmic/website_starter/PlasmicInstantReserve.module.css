@@ -585,6 +585,7 @@
   display: flex;
   justify-content: center;
   width: 240px;
+  cursor: pointer;
   border-radius: 30px;
   padding: 0px;
   border-style: solid;
