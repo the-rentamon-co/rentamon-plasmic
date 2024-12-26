@@ -423,7 +423,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "textInput2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $ctx }) => "10"
       }
     ],
     [$props, $ctx, $refs]
@@ -1169,7 +1169,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           const actionArgs = {
                             operation: 0,
                             value: (() => {
-                              if (Number($state.textInput2.value) < 95) {
+                              if (Number($state.textInput2.value) < 60) {
                                 return ($state.textInput2.value =
                                   (Number($state.textInput2.value) || 0) + 5);
                               }
@@ -1277,7 +1277,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           const actionArgs = {
                             operation: 0,
                             value: (() => {
-                              if (Number($state.textInput2.value) > 0) {
+                              if (Number($state.textInput2.value) > 10) {
                                 return ($state.textInput2.value =
                                   (Number($state.textInput2.value) || 0) - 5);
                               }
@@ -3996,7 +3996,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.requestdata = [];
                             $state.fragmentDatePicker.values = [];
                             $state.textInput.value = 0;
-                            return ($state.textInput2.value = 0);
+                            return ($state.textInput2.value = 10);
                           })()
                         };
                         return (({

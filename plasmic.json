@@ -1304,6 +1304,11 @@
           "id": "T3rifnNoxCsM",
           "name": "3low.jpg",
           "filePath": "../public/plasmic/website_starter/images/_3LowJpg.jpg"
+        },
+        {
+          "id": "i4vtzajgan1L",
+          "name": "Group 600.png",
+          "filePath": "../public/plasmic/website_starter/images/group600Png.png"
         }
       ],
       "indirect": false,
