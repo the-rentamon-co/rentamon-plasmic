@@ -238,7 +238,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : true
+            : false
       },
       {
         path: "count",
@@ -3563,7 +3563,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
-                            loading={"eager"}
+                            loading={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "lazy"
+                                : "eager"
+                            }
                             src={{
                               src: "/plasmic/website_starter/images/image27.svg",
                               fullWidth: 26,
@@ -3618,7 +3622,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
-                            loading={"eager"}
+                            loading={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "lazy"
+                                : "eager"
+                            }
                             src={{
                               src: "/plasmic/website_starter/images/image28.svg",
                               fullWidth: 26,
@@ -3872,12 +3880,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                                             ) /
                                               100)
                                       );
+                                      console.log(
+                                        formatPriceToPersian(discountedPrice),
+                                        discountedPrice
+                                      );
                                       if (
                                         formatPriceToPersian(discountedPrice) ==
                                         0
                                       ) {
+                                        console.log("here in null condition");
                                         updates.price = null;
                                       } else {
+                                        console.log("here in else");
                                         updates.price =
                                           formatPriceToPersian(discountedPrice);
                                       }

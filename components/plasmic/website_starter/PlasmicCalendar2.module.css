@@ -1284,6 +1284,11 @@
 .ok > picture > img {
   object-fit: cover;
 }
+@media (max-width: 500px) {
+  .ok {
+    margin-top: calc(0px + 4px) !important;
+  }
+}
 .fail {
   object-fit: cover;
   max-width: 100%;
@@ -1297,6 +1302,11 @@
 .fail > picture > img {
   object-fit: cover;
 }
+@media (max-width: 500px) {
+  .fail {
+    margin-top: calc(0px + 4px) !important;
+  }
+}
 .loading {
   object-fit: cover;
   max-width: 100%;
@@ -1309,6 +1319,11 @@
 }
 .loading > picture > img {
   object-fit: cover;
+}
+@media (max-width: 500px) {
+  .loading {
+    margin-top: calc(0px + 4px) !important;
+  }
 }
 .text__vJgZx {
   position: relative;

@@ -274,6 +274,12 @@ function PlasmicCrossListing__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "step",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -406,7 +412,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           sty.text___1B0X9
                         )}
                       >
-                        {"\u062a\u062a\u062a"}
+                        {""}
                       </div>
                     }
                     name={"name"}
@@ -464,7 +470,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                           sty.text___3Rgwa
                         )}
                       >
-                        {"\u062a\u062a\u062a"}
+                        {""}
                       </div>
                     }
                     name={"lastName"}
@@ -545,6 +551,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                         },
                         placeholder: "\u06a9\u062f \u0645\u0644\u06cc",
                         size: "large",
+                        type: "number",
                         value: generateStateValueProp($state, [
                           "input3",
                           "value"
@@ -587,7 +594,9 @@ function PlasmicCrossListing__RenderFunc(props: {
                           sty.text__lh5Yk
                         )}
                       >
-                        {""}
+                        {
+                          "\u062a\u0627\u0631\u06cc\u062e \u062a\u0648\u0644\u062f"
+                        }
                       </div>
                     }
                     name={"dateofBirth"}
@@ -669,6 +678,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                         },
                         placeholder: "\u06a9\u062f \u067e\u0633\u062a\u06cc",
                         size: "large",
+                        type: "number",
                         value: generateStateValueProp($state, [
                           "input5",
                           "value"
@@ -728,6 +738,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                         placeholder:
                           "\u062a\u0644\u0641\u0646 \u062b\u0627\u0628\u062a",
                         size: "large",
+                        type: "tel",
                         value: generateStateValueProp($state, [
                           "input6",
                           "value"
@@ -845,6 +856,46 @@ function PlasmicCrossListing__RenderFunc(props: {
                     </AntdButton>
                     <AntdButton
                       className={classNames("__wab_instance", sty.button__peN)}
+                      onClick={async () => {
+                        const $steps = {};
+
+                        $steps["updateStep"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["step"]
+                                },
+                                operation: 3
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, oldValue - 1);
+                                return oldValue - 1;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateStep"] != null &&
+                          typeof $steps["updateStep"] === "object" &&
+                          typeof $steps["updateStep"].then === "function"
+                        ) {
+                          $steps["updateStep"] = await $steps["updateStep"];
+                        }
+                      }}
                       submitsForm={true}
                       type={"primary"}
                     >
