@@ -5972,7 +5972,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/shabnewverify",
+                                        "https://gateway.rentamon.com/webhook/shab-verify",
                                         undefined,
                                         (() => {
                                           try {
