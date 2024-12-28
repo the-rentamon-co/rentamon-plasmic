@@ -59,7 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import Modal from "../../Modal"; // plasmic-import: 8gY04qWB10zk/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
@@ -98,11 +97,6 @@ export const PlasmicPanelCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPanelCalendar__OverridesType = {
   root?: Flex__<"div">;
-  modal?: Flex__<typeof Modal>;
-  g4?: Flex__<"div">;
-  g3?: Flex__<"div">;
-  g2?: Flex__<"div">;
-  g1?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   modalSidebar?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
@@ -307,18 +301,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   throw e;
                 }
               })()
-      },
-      {
-        path: "modal.isOpen",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
-      },
-      {
-        path: "guideStep",
-        type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 1
       }
     ],
     [$props, $ctx, $refs]
@@ -361,334 +343,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             sty.root
           )}
         >
-          <Modal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            content={
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__y0G6Y)}
-              >
-                {(() => {
-                  try {
-                    return $state.guideStep == 4;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <div
-                    data-plasmic-name={"g4"}
-                    data-plasmic-override={overrides.g4}
-                    className={classNames(projectcss.all, sty.g4)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__sPd5C)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/_3Low2Jpg.jpg",
-                        fullWidth: 278,
-                        fullHeight: 575,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                ) : null}
-                {(() => {
-                  try {
-                    return $state.guideStep == 3;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <div
-                    data-plasmic-name={"g3"}
-                    data-plasmic-override={overrides.g3}
-                    className={classNames(projectcss.all, sty.g3)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__aBur0)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/_2Low2Jpg.jpg",
-                        fullWidth: 278,
-                        fullHeight: 575,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                ) : null}
-                {(() => {
-                  try {
-                    return $state.guideStep == 2;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <div
-                    data-plasmic-name={"g2"}
-                    data-plasmic-override={overrides.g2}
-                    className={classNames(projectcss.all, sty.g2)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__jh7Wq)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/_1Low2Jpg.jpg",
-                        fullWidth: 278,
-                        fullHeight: 575,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                ) : null}
-                {(() => {
-                  try {
-                    return $state.guideStep == 1;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <div
-                    data-plasmic-name={"g1"}
-                    data-plasmic-override={overrides.g1}
-                    className={classNames(projectcss.all, sty.g1)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__ft4Sq
-                      )}
-                    >
-                      {
-                        "\u0646\u062d\u0648\u0647\u200c\u06cc \u06a9\u0627\u0631\u0634 \u062e\u06cc\u0644\u06cc \u0633\u0627\u062f\u0647 \u0627\u0633\u062a"
-                      }
-                    </div>
-                  </div>
-                ) : null}
-              </Stack__>
-            }
-            footer={
-              <div className={classNames(projectcss.all, sty.freeBox__vPqCw)}>
-                <div className={classNames(projectcss.all, sty.freeBox__q1AVs)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__nlZtd
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateGuideStep"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["guideStep"]
-                              },
-                              operation: 2
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, oldValue + 1);
-                              return oldValue + 1;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateGuideStep"] != null &&
-                        typeof $steps["updateGuideStep"] === "object" &&
-                        typeof $steps["updateGuideStep"].then === "function"
-                      ) {
-                        $steps["updateGuideStep"] = await $steps[
-                          "updateGuideStep"
-                        ];
-                      }
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return $state.guideStep === 5
-                                  ? ($state.modal.isOpen = false)
-                                  : null;
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-                    }}
-                  >
-                    {"\u0628\u0639\u062f\u06cc"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__iAtMr)}>
-                  {(() => {
-                    try {
-                      return $state.guideStep !== 1;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__lSKjq
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["updateGuideStep"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["guideStep"]
-                                },
-                                operation: 3
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                const oldValue = $stateGet(
-                                  objRoot,
-                                  variablePath
-                                );
-                                $stateSet(objRoot, variablePath, oldValue - 1);
-                                return oldValue - 1;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["updateGuideStep"] != null &&
-                          typeof $steps["updateGuideStep"] === "object" &&
-                          typeof $steps["updateGuideStep"].then === "function"
-                        ) {
-                          $steps["updateGuideStep"] = await $steps[
-                            "updateGuideStep"
-                          ];
-                        }
-                      }}
-                    >
-                      {"\u0642\u0628\u0644\u06cc"}
-                    </div>
-                  ) : null}
-                </div>
-              </div>
-            }
-            heading={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__buF1Z
-                )}
-              >
-                {
-                  "\u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u062f \ud83c\udf89"
-                }
-              </div>
-            }
-            isOpen={generateStateValueProp($state, ["modal", "isOpen"])}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "isOpen"]).apply(
-                null,
-                eventArgs
-              );
-
-              if (
-                eventArgs.length > 1 &&
-                eventArgs[1] &&
-                eventArgs[1]._plasmic_state_init_
-              ) {
-                return;
-              }
-            }}
-            trigger={null}
-          />
-
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
@@ -2314,11 +1968,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "modal",
-    "g4",
-    "g3",
-    "g2",
-    "g1",
     "apiRequest",
     "modalSidebar",
     "main",
@@ -2339,11 +1988,6 @@ const PlasmicDescendants = {
     "refreshToken",
     "goftino"
   ],
-  modal: ["modal", "g4", "g3", "g2", "g1"],
-  g4: ["g4"],
-  g3: ["g3"],
-  g2: ["g2"],
-  g1: ["g1"],
   apiRequest: ["apiRequest"],
   modalSidebar: ["modalSidebar"],
   main: ["main"],
@@ -2390,11 +2034,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  modal: typeof Modal;
-  g4: "div";
-  g3: "div";
-  g2: "div";
-  g1: "div";
   apiRequest: typeof ApiRequest;
   modalSidebar: typeof AntdModal;
   main: "div";
@@ -2476,11 +2115,6 @@ export const PlasmicPanelCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    modal: makeNodeComponent("modal"),
-    g4: makeNodeComponent("g4"),
-    g3: makeNodeComponent("g3"),
-    g2: makeNodeComponent("g2"),
-    g1: makeNodeComponent("g1"),
     apiRequest: makeNodeComponent("apiRequest"),
     modalSidebar: makeNodeComponent("modalSidebar"),
     main: makeNodeComponent("main"),

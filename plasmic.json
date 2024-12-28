@@ -728,32 +728,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/reservations"
-        },
-        {
-          "id": "26yHxXP7psys",
-          "name": "Button2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicButton2.tsx",
-          "importSpec": {
-            "modulePath": "Button2.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicButton2.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "8gY04qWB10zk",
-          "name": "Modal",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicModal.tsx",
-          "importSpec": {
-            "modulePath": "Modal.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicModal.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         }
       ],
       "icons": [
@@ -931,16 +905,6 @@
           "id": "JGzy20bJEzcD",
           "name": "Icon25Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon25.tsx"
-        },
-        {
-          "id": "wihA-dd--7Fq",
-          "name": "CircleIcon",
-          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Circle.tsx"
-        },
-        {
-          "id": "ePtJ4x_6dB92",
-          "name": "ChevronDownIcon",
-          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__ChevronDown.tsx"
         }
       ],
       "images": [
@@ -1403,11 +1367,6 @@
           "id": "ruHDWRltM0rM",
           "name": "3l (2).jpg",
           "filePath": "../public/plasmic/website_starter/images/_3L2Jpg.jpg"
-        },
-        {
-          "id": "H8-2C_lrwkeg",
-          "name": "1.jpg 2",
-          "filePath": "../public/plasmic/website_starter/images/_1Jpg2.jpg"
         }
       ],
       "indirect": false,

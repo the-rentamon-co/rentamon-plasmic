@@ -64,9 +64,7 @@ import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Fo
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
-import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
-import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -97,7 +95,7 @@ export type PlasmicCrossListing__OverridesType = {
   nationalCodeField?: Flex__<typeof FormItemWrapper>;
   input3?: Flex__<typeof AntdInput>;
   dateofBirthField?: Flex__<typeof FormItemWrapper>;
-  datePicker?: Flex__<typeof DatePicker>;
+  input4?: Flex__<typeof AntdInput>;
   postalCodeField?: Flex__<typeof FormItemWrapper>;
   input5?: Flex__<typeof AntdInput>;
   phone2Field?: Flex__<typeof FormItemWrapper>;
@@ -118,7 +116,6 @@ export type PlasmicCrossListing__OverridesType = {
   step3PropertyInfo?: Flex__<"div">;
   nameField3?: Flex__<typeof FormItemWrapper>;
   input13?: Flex__<typeof AntdInput>;
-  upload?: Flex__<typeof UploadWrapper>;
   lastNameField3?: Flex__<typeof FormItemWrapper>;
   input14?: Flex__<typeof AntdInput>;
   nationalCodeField3?: Flex__<typeof FormItemWrapper>;
@@ -212,6 +209,14 @@ function PlasmicCrossListing__RenderFunc(props: {
       },
       {
         path: "input3.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "input4.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -327,36 +332,6 @@ function PlasmicCrossListing__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
-        path: "upload.files",
-        type: "private",
-        variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
-      },
-      {
-        path: "datePicker.value",
-        type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "datePicker.values",
-        type: "private",
-        variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
-      },
-      {
-        path: "datePicker.month",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "datePicker.year",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -697,42 +672,48 @@ function PlasmicCrossListing__RenderFunc(props: {
                       }
                       name={"dateofBirth"}
                     >
-                      <DatePicker
-                        data-plasmic-name={"datePicker"}
-                        data-plasmic-override={overrides.datePicker}
-                        className={classNames("__wab_instance", sty.datePicker)}
-                        locale={"fa"}
-                        onChange={async (...eventArgs: any) => {
-                          generateStateOnChangeProp($state, [
-                            "datePicker",
+                      {(() => {
+                        const child$Props = {
+                          bordered: true,
+                          className: classNames("__wab_instance", sty.input4),
+                          onChange: async (...eventArgs: any) => {
+                            generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["input4", "value"],
+                              AntdInput_Helpers
+                            ).apply(null, eventArgs);
+                          },
+                          placeholder:
+                            "\u062a\u0627\u0631\u06cc\u062e \u062a\u0648\u0644\u062f",
+                          size: "large",
+                          type: "date",
+                          value: generateStateValueProp($state, [
+                            "input4",
                             "value"
-                          ]).apply(null, eventArgs);
-                          generateStateOnChangeProp($state, [
-                            "datePicker",
-                            "values"
-                          ]).apply(null, eventArgs);
-                        }}
-                        onMonthChange={async (...eventArgs: any) => {
-                          generateStateOnChangeProp($state, [
-                            "datePicker",
-                            "month"
-                          ]).apply(null, eventArgs);
-                        }}
-                        onYearChange={async (...eventArgs: any) => {
-                          generateStateOnChangeProp($state, [
-                            "datePicker",
-                            "year"
-                          ]).apply(null, eventArgs);
-                        }}
-                        value={generateStateValueProp($state, [
-                          "datePicker",
-                          "value"
-                        ])}
-                        values={generateStateValueProp($state, [
-                          "datePicker",
-                          "values"
-                        ])}
-                      />
+                          ])
+                        };
+                        initializeCodeComponentStates(
+                          $state,
+                          [
+                            {
+                              name: "value",
+                              plasmicStateName: "input4.value"
+                            }
+                          ],
+                          [],
+                          AntdInput_Helpers ?? {},
+                          child$Props
+                        );
+
+                        return (
+                          <AntdInput
+                            data-plasmic-name={"input4"}
+                            data-plasmic-override={overrides.input4}
+                            {...child$Props}
+                          />
+                        );
+                      })()}
                     </FormItemWrapper>
                     <FormItemWrapper
                       data-plasmic-name={"postalCodeField"}
@@ -1704,40 +1685,6 @@ function PlasmicCrossListing__RenderFunc(props: {
                         );
                       })()}
                     </FormItemWrapper>
-                    <UploadWrapper
-                      data-plasmic-name={"upload"}
-                      data-plasmic-override={overrides.upload}
-                      accept={""}
-                      className={classNames("__wab_instance", sty.upload)}
-                      files={generateStateValueProp($state, [
-                        "upload",
-                        "files"
-                      ])}
-                      onFilesChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "upload",
-                          "files"
-                        ]).apply(null, eventArgs);
-                      }}
-                      showUploadList={true}
-                    >
-                      <AntdButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__aOtA6
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__lwdAl
-                          )}
-                        >
-                          {"Upload"}
-                        </div>
-                      </AntdButton>
-                    </UploadWrapper>
                     <FormItemWrapper
                       data-plasmic-name={"lastNameField3"}
                       data-plasmic-override={overrides.lastNameField3}
@@ -2256,7 +2203,7 @@ const PlasmicDescendants = {
     "nationalCodeField",
     "input3",
     "dateofBirthField",
-    "datePicker",
+    "input4",
     "postalCodeField",
     "input5",
     "phone2Field",
@@ -2277,7 +2224,6 @@ const PlasmicDescendants = {
     "step3PropertyInfo",
     "nameField3",
     "input13",
-    "upload",
     "lastNameField3",
     "input14",
     "nationalCodeField3",
@@ -2300,7 +2246,7 @@ const PlasmicDescendants = {
     "nationalCodeField",
     "input3",
     "dateofBirthField",
-    "datePicker",
+    "input4",
     "postalCodeField",
     "input5",
     "phone2Field",
@@ -2321,7 +2267,6 @@ const PlasmicDescendants = {
     "step3PropertyInfo",
     "nameField3",
     "input13",
-    "upload",
     "lastNameField3",
     "input14",
     "nationalCodeField3",
@@ -2343,7 +2288,7 @@ const PlasmicDescendants = {
     "nationalCodeField",
     "input3",
     "dateofBirthField",
-    "datePicker",
+    "input4",
     "postalCodeField",
     "input5",
     "phone2Field",
@@ -2356,8 +2301,8 @@ const PlasmicDescendants = {
   input2: ["input2"],
   nationalCodeField: ["nationalCodeField", "input3"],
   input3: ["input3"],
-  dateofBirthField: ["dateofBirthField", "datePicker"],
-  datePicker: ["datePicker"],
+  dateofBirthField: ["dateofBirthField", "input4"],
+  input4: ["input4"],
   postalCodeField: ["postalCodeField", "input5"],
   input5: ["input5"],
   phone2Field: ["phone2Field", "input6"],
@@ -2392,7 +2337,6 @@ const PlasmicDescendants = {
     "step3PropertyInfo",
     "nameField3",
     "input13",
-    "upload",
     "lastNameField3",
     "input14",
     "nationalCodeField3",
@@ -2407,7 +2351,6 @@ const PlasmicDescendants = {
   ],
   nameField3: ["nameField3", "input13"],
   input13: ["input13"],
-  upload: ["upload"],
   lastNameField3: ["lastNameField3", "input14"],
   input14: ["input14"],
   nationalCodeField3: ["nationalCodeField3", "input15"],
@@ -2434,7 +2377,7 @@ type NodeDefaultElementType = {
   nationalCodeField: typeof FormItemWrapper;
   input3: typeof AntdInput;
   dateofBirthField: typeof FormItemWrapper;
-  datePicker: typeof DatePicker;
+  input4: typeof AntdInput;
   postalCodeField: typeof FormItemWrapper;
   input5: typeof AntdInput;
   phone2Field: typeof FormItemWrapper;
@@ -2455,7 +2398,6 @@ type NodeDefaultElementType = {
   step3PropertyInfo: "div";
   nameField3: typeof FormItemWrapper;
   input13: typeof AntdInput;
-  upload: typeof UploadWrapper;
   lastNameField3: typeof FormItemWrapper;
   input14: typeof AntdInput;
   nationalCodeField3: typeof FormItemWrapper;
@@ -2538,7 +2480,7 @@ export const PlasmicCrossListing = Object.assign(
     nationalCodeField: makeNodeComponent("nationalCodeField"),
     input3: makeNodeComponent("input3"),
     dateofBirthField: makeNodeComponent("dateofBirthField"),
-    datePicker: makeNodeComponent("datePicker"),
+    input4: makeNodeComponent("input4"),
     postalCodeField: makeNodeComponent("postalCodeField"),
     input5: makeNodeComponent("input5"),
     phone2Field: makeNodeComponent("phone2Field"),
@@ -2559,7 +2501,6 @@ export const PlasmicCrossListing = Object.assign(
     step3PropertyInfo: makeNodeComponent("step3PropertyInfo"),
     nameField3: makeNodeComponent("nameField3"),
     input13: makeNodeComponent("input13"),
-    upload: makeNodeComponent("upload"),
     lastNameField3: makeNodeComponent("lastNameField3"),
     input14: makeNodeComponent("input14"),
     nationalCodeField3: makeNodeComponent("nationalCodeField3"),
