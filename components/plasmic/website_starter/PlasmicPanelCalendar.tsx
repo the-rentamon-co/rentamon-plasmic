@@ -99,6 +99,7 @@ export const PlasmicPanelCalendar__ArgProps = new Array<ArgPropType>();
 export type PlasmicPanelCalendar__OverridesType = {
   root?: Flex__<"div">;
   modal?: Flex__<typeof Modal>;
+  g4?: Flex__<"div">;
   g3?: Flex__<"div">;
   g2?: Flex__<"div">;
   g1?: Flex__<"div">;
@@ -372,6 +373,43 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               >
                 {(() => {
                   try {
+                    return $state.guideStep == 4;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"g4"}
+                    data-plasmic-override={overrides.g4}
+                    className={classNames(projectcss.all, sty.g4)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__sPd5C)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/_3Low2Jpg.jpg",
+                        fullWidth: 278,
+                        fullHeight: 575,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
                     return $state.guideStep == 3;
                   } catch (e) {
                     if (
@@ -390,7 +428,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__sPd5C)}
+                      className={classNames(sty.img__aBur0)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -399,7 +437,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/_3Low2Jpg.jpg",
+                        src: "/plasmic/website_starter/images/_2Low2Jpg.jpg",
                         fullWidth: 278,
                         fullHeight: 575,
                         aspectRatio: undefined
@@ -427,7 +465,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__aBur0)}
+                      className={classNames(sty.img__jh7Wq)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -436,7 +474,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/_2Low2Jpg.jpg",
+                        src: "/plasmic/website_starter/images/_1Low2Jpg.jpg",
                         fullWidth: 278,
                         fullHeight: 575,
                         aspectRatio: undefined
@@ -462,37 +500,17 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     data-plasmic-override={overrides.g1}
                     className={classNames(projectcss.all, sty.g1)}
                   >
-                    {(() => {
-                      try {
-                        return $state.guideStep == 1;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ft4Sq
+                      )}
+                    >
+                      {
+                        "\u0646\u062d\u0648\u0647\u200c\u06cc \u06a9\u0627\u0631\u0634 \u062e\u06cc\u0644\u06cc \u0633\u0627\u062f\u0647 \u0627\u0633\u062a"
                       }
-                    })() ? (
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__jh7Wq)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/_1Low2Jpg.jpg",
-                          fullWidth: 278,
-                          fullHeight: 575,
-                          aspectRatio: undefined
-                        }}
-                      />
-                    ) : null}
+                    </div>
                   </div>
                 ) : null}
               </Stack__>
@@ -549,7 +567,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return $state.guideStep === 4
+                                return $state.guideStep === 5
                                   ? ($state.modal.isOpen = false)
                                   : null;
                               }
@@ -572,42 +590,71 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__iAtMr)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__lSKjq
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  return $state.guideStep === 1
-                                    ? ($state.modal.isOpen = false)
-                                    : $state.guideStep--;
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
+                  {(() => {
+                    try {
+                      return $state.guideStep !== 1;
+                    } catch (e) {
                       if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        $steps["runCode"] = await $steps["runCode"];
+                        return true;
                       }
-                    }}
-                  >
-                    {"\u0642\u0628\u0644\u06cc"}
-                  </div>
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__lSKjq
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateGuideStep"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["guideStep"]
+                                },
+                                operation: 3
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, oldValue - 1);
+                                return oldValue - 1;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateGuideStep"] != null &&
+                          typeof $steps["updateGuideStep"] === "object" &&
+                          typeof $steps["updateGuideStep"].then === "function"
+                        ) {
+                          $steps["updateGuideStep"] = await $steps[
+                            "updateGuideStep"
+                          ];
+                        }
+                      }}
+                    >
+                      {"\u0642\u0628\u0644\u06cc"}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             }
@@ -620,7 +667,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0646\u062d\u0648\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f"
+                  "\u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u062f \ud83c\udf89"
                 }
               </div>
             }
@@ -2268,6 +2315,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "modal",
+    "g4",
     "g3",
     "g2",
     "g1",
@@ -2291,7 +2339,8 @@ const PlasmicDescendants = {
     "refreshToken",
     "goftino"
   ],
-  modal: ["modal", "g3", "g2", "g1"],
+  modal: ["modal", "g4", "g3", "g2", "g1"],
+  g4: ["g4"],
   g3: ["g3"],
   g2: ["g2"],
   g1: ["g1"],
@@ -2342,6 +2391,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   modal: typeof Modal;
+  g4: "div";
   g3: "div";
   g2: "div";
   g1: "div";
@@ -2427,6 +2477,7 @@ export const PlasmicPanelCalendar = Object.assign(
   {
     // Helper components rendering sub-elements
     modal: makeNodeComponent("modal"),
+    g4: makeNodeComponent("g4"),
     g3: makeNodeComponent("g3"),
     g2: makeNodeComponent("g2"),
     g1: makeNodeComponent("g1"),
