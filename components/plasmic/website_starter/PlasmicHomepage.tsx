@@ -62,6 +62,8 @@ import {
 import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import Wallet from "../../Wallet"; // plasmic-import: bHX7IYOtGqc7/component
 import PropertyName from "../../PropertyName"; // plasmic-import: 35iXAFb28kzU/component
+import Modal from "../../Modal"; // plasmic-import: aunOa22wupq9/component
+import Button2 from "../../Button2"; // plasmic-import: y_Hyoqc7OByL/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -69,6 +71,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JDKbvzOHcQCj/css
+
+import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: 2Q1ZfBgAAOJG/icon
+import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: SeUDGRrWUiFE/icon
 
 createPlasmicElementProxy;
 
@@ -86,6 +91,7 @@ export type PlasmicHomepage__OverridesType = {
   httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   wallet?: Flex__<typeof Wallet>;
   propertyName?: Flex__<typeof PropertyName>;
+  modal?: Flex__<typeof Modal>;
 };
 
 export interface DefaultHomepageProps {}
@@ -135,6 +141,12 @@ function PlasmicHomepage__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "modal.isOpen",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -250,6 +262,39 @@ function PlasmicHomepage__RenderFunc(props: {
               />
             </div>
           </div>
+          <Modal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            isOpen={generateStateValueProp($state, ["modal", "isOpen"])}
+            noTrigger={(() => {
+              try {
+                return undefined;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return [];
+                }
+                throw e;
+              }
+            })()}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "isOpen"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (
+                eventArgs.length > 1 &&
+                eventArgs[1] &&
+                eventArgs[1]._plasmic_state_init_
+              ) {
+                return;
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -257,10 +302,11 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "httpRestApiFetcher", "wallet", "propertyName"],
+  root: ["root", "httpRestApiFetcher", "wallet", "propertyName", "modal"],
   httpRestApiFetcher: ["httpRestApiFetcher", "wallet"],
   wallet: ["wallet"],
-  propertyName: ["propertyName"]
+  propertyName: ["propertyName"],
+  modal: ["modal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -270,6 +316,7 @@ type NodeDefaultElementType = {
   httpRestApiFetcher: typeof DataFetcher;
   wallet: typeof Wallet;
   propertyName: typeof PropertyName;
+  modal: typeof Modal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -335,6 +382,7 @@ export const PlasmicHomepage = Object.assign(
     httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     wallet: makeNodeComponent("wallet"),
     propertyName: makeNodeComponent("propertyName"),
+    modal: makeNodeComponent("modal"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
