@@ -68,6 +68,9 @@ import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import Modal from "../../Modal"; // plasmic-import: 8gY04qWB10zk/component
+import Button2 from "../../Button2"; // plasmic-import: 26yHxXP7psys/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -80,6 +83,8 @@ import sty from "./PlasmicActivation.module.css"; // plasmic-import: Gq0MFDDWDv-
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
+import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: wihA-dd--7Fq/icon
+import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: ePtJ4x_6dB92/icon
 
 createPlasmicElementProxy;
 
@@ -164,6 +169,9 @@ export type PlasmicActivation__OverridesType = {
   platformpropertyButton?: Flex__<typeof AntdButton>;
   platformpropertyButton2?: Flex__<typeof AntdButton>;
   apiRequest2?: Flex__<typeof ApiRequest>;
+  modal2?: Flex__<typeof Modal>;
+  checkbox?: Flex__<typeof Checkbox>;
+  button2?: Flex__<typeof Button2>;
 };
 
 export interface DefaultActivationProps {}
@@ -491,6 +499,18 @@ function PlasmicActivation__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest2"
+      },
+      {
+        path: "modal2.isOpen",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
+      },
+      {
+        path: "checkbox.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -5806,6 +5826,182 @@ function PlasmicActivation__RenderFunc(props: {
               url={"https://ws.alibaba.ir/api/v2/basic-info/calendar-events"}
             />
           </div>
+          <Modal
+            data-plasmic-name={"modal2"}
+            data-plasmic-override={overrides.modal2}
+            className={classNames("__wab_instance", sty.modal2)}
+            content={
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__qPPiG)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___6Obmm
+                  )}
+                >
+                  {""}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__sr1DG
+                  )}
+                >
+                  {
+                    "\u0628\u0627 \u06a9\u0644\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f \u0627\u0648\u0645\u062f\u06cc\u0645!"
+                  }
+                </div>
+              </Stack__>
+            }
+            footer={
+              <div className={classNames(projectcss.all, sty.freeBox__xJPt5)}>
+                <div className={classNames(projectcss.all, sty.freeBox__gSbyD)}>
+                  <Checkbox
+                    data-plasmic-name={"checkbox"}
+                    data-plasmic-override={overrides.checkbox}
+                    className={classNames("__wab_instance", sty.checkbox)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    {
+                      "\u062f\u06cc\u06af\u0647 \u0627\u06cc\u0646 \u0631\u0648 \u0646\u0634\u0648\u0646 \u0646\u062f\u0647"
+                    }
+                  </Checkbox>
+                  <Button2
+                    data-plasmic-name={"button2"}
+                    data-plasmic-override={overrides.button2}
+                    color={"muted"}
+                    label={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ij9Yz
+                        )}
+                      >
+                        {"\u0628\u0633\u062a\u0646"}
+                      </div>
+                    }
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = false
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return ($state.modal2.isOpen = false);
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+
+                      $steps["updateModal2IsOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["modal2", "isOpen"]
+                              },
+                              operation: 0,
+                              value: ($state.modal2.isOpen = false)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateModal2IsOpen"] != null &&
+                        typeof $steps["updateModal2IsOpen"] === "object" &&
+                        typeof $steps["updateModal2IsOpen"].then === "function"
+                      ) {
+                        $steps["updateModal2IsOpen"] = await $steps[
+                          "updateModal2IsOpen"
+                        ];
+                      }
+                    }}
+                    type={"soft"}
+                  />
+                </div>
+              </div>
+            }
+            heading={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__q2BWv
+                )}
+              >
+                {
+                  "\u0628\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u067e\u0646\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc!"
+                }
+              </div>
+            }
+            isOpen={generateStateValueProp($state, ["modal2", "isOpen"])}
+            noTrigger={undefined}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal2", "isOpen"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (
+                eventArgs.length > 1 &&
+                eventArgs[1] &&
+                eventArgs[1]._plasmic_state_init_
+              ) {
+                return;
+              }
+            }}
+            showFooter={true}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -5884,7 +6080,10 @@ const PlasmicDescendants = {
     "input27",
     "platformpropertyButton",
     "platformpropertyButton2",
-    "apiRequest2"
+    "apiRequest2",
+    "modal2",
+    "checkbox",
+    "button2"
   ],
   img: ["img"],
   apiRequest: ["apiRequest"],
@@ -6051,7 +6250,10 @@ const PlasmicDescendants = {
   input27: ["input27"],
   platformpropertyButton: ["platformpropertyButton"],
   platformpropertyButton2: ["platformpropertyButton2"],
-  apiRequest2: ["apiRequest2"]
+  apiRequest2: ["apiRequest2"],
+  modal2: ["modal2", "checkbox", "button2"],
+  checkbox: ["checkbox"],
+  button2: ["button2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -6128,6 +6330,9 @@ type NodeDefaultElementType = {
   platformpropertyButton: typeof AntdButton;
   platformpropertyButton2: typeof AntdButton;
   apiRequest2: typeof ApiRequest;
+  modal2: typeof Modal;
+  checkbox: typeof Checkbox;
+  button2: typeof Button2;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -6260,6 +6465,9 @@ export const PlasmicActivation = Object.assign(
     platformpropertyButton: makeNodeComponent("platformpropertyButton"),
     platformpropertyButton2: makeNodeComponent("platformpropertyButton2"),
     apiRequest2: makeNodeComponent("apiRequest2"),
+    modal2: makeNodeComponent("modal2"),
+    checkbox: makeNodeComponent("checkbox"),
+    button2: makeNodeComponent("button2"),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,
