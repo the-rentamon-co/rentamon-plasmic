@@ -1953,7 +1953,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__iand5
+                      sty.formField__u9USm
                     )}
                     label={"Name"}
                     name={"name"}
@@ -1965,7 +1965,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__iF6Nj
+                      sty.formField__kwQvR
                     )}
                     label={"Message"}
                     name={"message"}
@@ -1975,7 +1975,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                     />
                   </FormItemWrapper>
                   <AntdButton
-                    className={classNames("__wab_instance", sty.button__mlpK2)}
+                    className={classNames("__wab_instance", sty.button__oaOft)}
                     submitsForm={true}
                     type={"primary"}
                   >
@@ -1983,7 +1983,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__cttSr
+                        sty.text__unTqz
                       )}
                     >
                       {"Submit"}
