@@ -116,6 +116,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   refreshToken?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
+  modal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultPanelCalendarProps {}
@@ -301,6 +302,12 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   throw e;
                 }
               })()
+      },
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1959,6 +1966,111 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
             }
           />
+
+          <AntdModal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["modal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["modal", "open"])}
+            title={
+              <div
+                className={classNames(projectcss.all, sty.freeBox__oipWr)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modal", "open"]
+                          }
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalOpen"] != null &&
+                    typeof $steps["updateModalOpen"] === "object" &&
+                    typeof $steps["updateModalOpen"].then === "function"
+                  ) {
+                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                  }
+                }}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__zmQIx)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"20px"}
+                  loading={"lazy"}
+                  src={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? {
+                          src: "/plasmic/website_starter/images/image36.svg",
+                          fullWidth: 21,
+                          fullHeight: 24,
+                          aspectRatio: 0.875
+                        }
+                      : {
+                          src: "/plasmic/website_starter/images/image33.svg",
+                          fullWidth: 20,
+                          fullHeight: 18,
+                          aspectRatio: 1.111111
+                        }
+                  }
+                />
+              </div>
+            }
+            trigger={null}
+            width={"380"}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__h6SSe
+              )}
+            >
+              {
+                "\u26a0\ufe0f \u062f\u0631 \u0627\u062a\u0635\u0627\u0644 \u00ab\u062c\u0627\u062c\u06cc\u06af\u0627\u00bb \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0648\u0627\u062c\u0647\u06cc\u0645\n\n\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062a\u0648\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u062b\u0628\u062a \u0646\u0645\u06cc\u200c\u0634\u0647\u060c \u0644\u0637\u0641\u0627 \u062e\u0648\u062f\u062a \u0645\u0631\u0627\u0642\u0628\u0634 \u0628\u0627\u0634"
+              }
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -1986,7 +2098,8 @@ const PlasmicDescendants = {
     "calendar2",
     "sideEffect",
     "refreshToken",
-    "goftino"
+    "goftino",
+    "modal"
   ],
   apiRequest: ["apiRequest"],
   modalSidebar: ["modalSidebar"],
@@ -2027,7 +2140,8 @@ const PlasmicDescendants = {
   calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
   refreshToken: ["refreshToken"],
-  goftino: ["goftino"]
+  goftino: ["goftino"],
+  modal: ["modal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2053,6 +2167,7 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   refreshToken: typeof Embed;
   goftino: typeof Embed;
+  modal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2134,6 +2249,7 @@ export const PlasmicPanelCalendar = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     refreshToken: makeNodeComponent("refreshToken"),
     goftino: makeNodeComponent("goftino"),
+    modal: makeNodeComponent("modal"),
 
     // Metadata about props expected for PlasmicPanelCalendar
     internalVariantProps: PlasmicPanelCalendar__VariantProps,
