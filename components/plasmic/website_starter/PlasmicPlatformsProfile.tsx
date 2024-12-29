@@ -1885,13 +1885,13 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
             title={"Modal title"}
             trigger={
               <AntdButton
-                className={classNames("__wab_instance", sty.button__nWap)}
+                className={classNames("__wab_instance", sty.button__ktCOs)}
               >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__rzv8X
+                    sty.text__cWCb
                   )}
                 >
                   {"Show modal"}
@@ -1953,7 +1953,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__u9USm
+                      sty.formField__pFnS
                     )}
                     label={"Name"}
                     name={"name"}
@@ -1965,7 +1965,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__kwQvR
+                      sty.formField___12LwA
                     )}
                     label={"Message"}
                     name={"message"}
@@ -1975,7 +1975,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                     />
                   </FormItemWrapper>
                   <AntdButton
-                    className={classNames("__wab_instance", sty.button__oaOft)}
+                    className={classNames("__wab_instance", sty.button__zIjTw)}
                     submitsForm={true}
                     type={"primary"}
                   >
@@ -1983,7 +1983,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__unTqz
+                        sty.text__jvfL
                       )}
                     >
                       {"Submit"}
@@ -1996,7 +1996,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__mJgjJ
+                sty.text__c83Og
               )}
             >
               {"\u062a\u0633\u062a \u0641\u0648\u0646\u062a"}
