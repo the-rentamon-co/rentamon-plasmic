@@ -1518,60 +1518,67 @@
     display: none;
   }
 }
-.modal2:global(.__wab_instance):global(.__wab_instance) {
+.modal:global(.__wab_instance) {
   max-width: 100%;
+  object-fit: cover;
 }
-.svg__zdphp {
-  position: relative;
-  height: 1em;
-}
-.svg__aIsc {
-  position: relative;
-  height: 1em;
-}
-.freeBox__te8Ww {
+.form:global(.__wab_instance) {
   display: flex;
   flex-direction: column;
   position: relative;
-}
-.freeBox__te8Ww > :global(.__wab_flex-container) {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: calc(0px - var(--token-K4E8adEIaIBi));
-  height: calc(100% + var(--token-K4E8adEIaIBi));
-}
-.freeBox__te8Ww > :global(.__wab_flex-container) > *,
-.freeBox__te8Ww > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__te8Ww > :global(.__wab_flex-container) > picture > img,
-.freeBox__te8Ww
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-top: var(--token-K4E8adEIaIBi);
-}
-.text__fmAs {
-  position: relative;
-  font-size: 20px;
-}
-.freeBox__pZw9Z {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  align-items: center;
-  justify-content: flex-end;
   width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  object-fit: cover;
+  min-width: 0;
+  padding: 8px;
+}
+.formField__iand5:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
   min-width: 0;
 }
-.svg__iDmgH {
-  position: relative;
-  height: 1em;
+.input:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }
-.text__ntfac {
-  padding-left: 0px;
+.formField__iF6Nj:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
 }
-.svg___5T3Vu {
+.textArea:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.button__mlpK2:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__cttSr {
   position: relative;
-  height: 1em;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__mJgjJ {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.button__nWap:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__rzv8X {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
 }
