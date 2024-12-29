@@ -64,6 +64,8 @@ import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import Modal2 from "../../Modal2"; // plasmic-import: HaRcCLE-Zyux/component
+import Button3 from "../../Button3"; // plasmic-import: Wp3oKoOgrbtq/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -77,6 +79,8 @@ import sty from "./PlasmicPlatformsProfile.module.css"; // plasmic-import: 3zHUj
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
+import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: RxgjWUbTt0eK/icon
+import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: maTqXVHqE-KH/icon
 
 createPlasmicElementProxy;
 
@@ -102,6 +106,7 @@ export type PlasmicPlatformsProfile__OverridesType = {
   supportSpeed?: Flex__<typeof Select>;
   supportJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
+  modal2?: Flex__<typeof Modal2>;
 };
 
 export interface DefaultPlatformsProfileProps {}
@@ -183,6 +188,12 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "modal2.isOpen",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1825,6 +1836,52 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
             <div className={classNames(projectcss.all, sty.freeBox___1Jlei)} />
           ) : null}
+          <Modal2
+            data-plasmic-name={"modal2"}
+            data-plasmic-override={overrides.modal2}
+            className={classNames("__wab_instance", sty.modal2)}
+            content={
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__te8Ww)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__msKlW
+                  )}
+                >
+                  {"This is a Modal!"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fmAs
+                  )}
+                >
+                  {"\u062a\u0633\u062a"}
+                </div>
+              </Stack__>
+            }
+            isOpen={generateStateValueProp($state, ["modal2", "isOpen"])}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal2", "isOpen"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (
+                eventArgs.length > 1 &&
+                eventArgs[1] &&
+                eventArgs[1]._plasmic_state_init_
+              ) {
+                return;
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1843,7 +1900,8 @@ const PlasmicDescendants = {
     "supportAccess",
     "supportSpeed",
     "supportJudgment",
-    "submit"
+    "submit",
+    "modal2"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -1870,7 +1928,8 @@ const PlasmicDescendants = {
   supportAccess: ["supportAccess"],
   supportSpeed: ["supportSpeed"],
   supportJudgment: ["supportJudgment"],
-  submit: ["submit"]
+  submit: ["submit"],
+  modal2: ["modal2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1887,6 +1946,7 @@ type NodeDefaultElementType = {
   supportSpeed: typeof Select;
   supportJudgment: typeof Select;
   submit: typeof Button;
+  modal2: typeof Modal2;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1959,6 +2019,7 @@ export const PlasmicPlatformsProfile = Object.assign(
     supportSpeed: makeNodeComponent("supportSpeed"),
     supportJudgment: makeNodeComponent("supportJudgment"),
     submit: makeNodeComponent("submit"),
+    modal2: makeNodeComponent("modal2"),
 
     // Metadata about props expected for PlasmicPlatformsProfile
     internalVariantProps: PlasmicPlatformsProfile__VariantProps,

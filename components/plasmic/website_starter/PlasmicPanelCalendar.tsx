@@ -65,6 +65,8 @@ import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import Modal from "../../Modal"; // plasmic-import: I9fGrD8jmEnh/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -116,6 +118,11 @@ export type PlasmicPanelCalendar__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   refreshToken?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
+  modal?: Flex__<typeof Modal>;
+  g4?: Flex__<"div">;
+  g3?: Flex__<"div">;
+  g2?: Flex__<"div">;
+  g1?: Flex__<"div">;
 };
 
 export interface DefaultPanelCalendarProps {}
@@ -301,6 +308,18 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   throw e;
                 }
               })()
+      },
+      {
+        path: "modal.isOpen",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
+      },
+      {
+        path: "guide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1
       }
     ],
     [$props, $ctx, $refs]
@@ -847,6 +866,58 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   }}
                 >
                   {"\u0635\u0641\u062d\u0647 \u0627\u0635\u0644\u06cc"}
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__sgBVt,
+                  "clickable"
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return (window.location.href =
+                                "https://rentamon.com/panels/?prop_id=1");
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              >
+                <Icon9Icon
+                  className={classNames(projectcss.all, sty.svg__e0Ev5)}
+                  role={"img"}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9C2Gb
+                  )}
+                >
+                  {
+                    "\u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645 \u0642\u062f\u06cc\u0645\u06cc"
+                  }
                 </div>
               </Stack__>
               <Stack__
@@ -1959,6 +2030,301 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
             }
           />
+
+          <Modal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            content={
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__zbu9A)}
+              >
+                {(() => {
+                  try {
+                    return $state.guide == 4;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"g4"}
+                    data-plasmic-override={overrides.g4}
+                    className={classNames(projectcss.all, sty.g4)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__g8XF9)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/_3Low2Jpg.jpg",
+                        fullWidth: 278,
+                        fullHeight: 575,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return $state.guide == 3;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"g3"}
+                    data-plasmic-override={overrides.g3}
+                    className={classNames(projectcss.all, sty.g3)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__rVi5Z)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/_2Low2Jpg.jpg",
+                        fullWidth: 278,
+                        fullHeight: 575,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return $state.guide == 2;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"g2"}
+                    data-plasmic-override={overrides.g2}
+                    className={classNames(projectcss.all, sty.g2)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__lJ6Sc)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/_1Low2Jpg.jpg",
+                        fullWidth: 278,
+                        fullHeight: 575,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return $state.guide == 1;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"g1"}
+                    data-plasmic-override={overrides.g1}
+                    className={classNames(projectcss.all, sty.g1)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__qbzOq
+                      )}
+                    >
+                      {
+                        "\u0646\u062d\u0648\u0647\u200c\u06cc \u06a9\u0627\u0631\u0634 \u062e\u06cc\u0644\u06cc \u0633\u0627\u062f\u0647 \u0627\u0633\u062a"
+                      }
+                    </div>
+                  </div>
+                ) : null}
+              </Stack__>
+            }
+            footer={
+              <div className={classNames(projectcss.all, sty.freeBox__nrQhB)}>
+                <div className={classNames(projectcss.all, sty.freeBox__zFgd9)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yunZ
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  $state.guide++;
+                                  if ($state.guide === 5) {
+                                    return ($state.modal.isOpen = false);
+                                  }
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
+                  >
+                    {"\u0628\u0639\u062f\u06cc"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___1Oq2B)}
+                >
+                  {(() => {
+                    try {
+                      return $state.guide != 1;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__gg6Ha
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateGuide"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["guide"]
+                                },
+                                operation: 3
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, oldValue - 1);
+                                return oldValue - 1;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateGuide"] != null &&
+                          typeof $steps["updateGuide"] === "object" &&
+                          typeof $steps["updateGuide"].then === "function"
+                        ) {
+                          $steps["updateGuide"] = await $steps["updateGuide"];
+                        }
+                      }}
+                    >
+                      {"\u0642\u0628\u0644\u06cc"}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            }
+            heading={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___3XphC
+                )}
+              >
+                {
+                  "\u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u062f \ud83c\udf89"
+                }
+              </div>
+            }
+            isOpen={generateStateValueProp($state, ["modal", "isOpen"])}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "isOpen"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (
+                eventArgs.length > 1 &&
+                eventArgs[1] &&
+                eventArgs[1]._plasmic_state_init_
+              ) {
+                return;
+              }
+            }}
+            trigger={null}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1986,7 +2352,12 @@ const PlasmicDescendants = {
     "calendar2",
     "sideEffect",
     "refreshToken",
-    "goftino"
+    "goftino",
+    "modal",
+    "g4",
+    "g3",
+    "g2",
+    "g1"
   ],
   apiRequest: ["apiRequest"],
   modalSidebar: ["modalSidebar"],
@@ -2027,7 +2398,12 @@ const PlasmicDescendants = {
   calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
   refreshToken: ["refreshToken"],
-  goftino: ["goftino"]
+  goftino: ["goftino"],
+  modal: ["modal", "g4", "g3", "g2", "g1"],
+  g4: ["g4"],
+  g3: ["g3"],
+  g2: ["g2"],
+  g1: ["g1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2053,6 +2429,11 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   refreshToken: typeof Embed;
   goftino: typeof Embed;
+  modal: typeof Modal;
+  g4: "div";
+  g3: "div";
+  g2: "div";
+  g1: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2134,6 +2515,11 @@ export const PlasmicPanelCalendar = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     refreshToken: makeNodeComponent("refreshToken"),
     goftino: makeNodeComponent("goftino"),
+    modal: makeNodeComponent("modal"),
+    g4: makeNodeComponent("g4"),
+    g3: makeNodeComponent("g3"),
+    g2: makeNodeComponent("g2"),
+    g1: makeNodeComponent("g1"),
 
     // Metadata about props expected for PlasmicPanelCalendar
     internalVariantProps: PlasmicPanelCalendar__VariantProps,
