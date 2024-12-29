@@ -2036,7 +2036,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"20px"}
+                  displayWidth={"15px"}
                   loading={"lazy"}
                   src={
                     hasVariant(globalVariants, "screen", "mobile")
