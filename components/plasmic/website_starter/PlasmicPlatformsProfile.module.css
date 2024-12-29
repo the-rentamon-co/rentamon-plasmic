@@ -1518,63 +1518,7 @@
     display: none;
   }
 }
-.modal:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.form:global(.__wab_instance) {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
-  object-fit: cover;
-  min-width: 0;
-  padding: 8px;
-}
-.formField__pFnS:global(.__wab_instance) {
-  width: 100%;
-  margin-bottom: 24px;
-  min-width: 0;
-}
-.input:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.formField___12LwA:global(.__wab_instance) {
-  width: 100%;
-  margin-bottom: 24px;
-  min-width: 0;
-}
-.textArea:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.button__zIjTw:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__jvfL {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__c83Og {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.button__ktCOs:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__cWCb {
+.text__siAkp {
   position: relative;
   width: 100%;
   height: auto;

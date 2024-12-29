@@ -64,14 +64,6 @@ import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
-import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
-import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
-import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
-import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
-import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
-import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
-import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput";
-import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -110,10 +102,6 @@ export type PlasmicPlatformsProfile__OverridesType = {
   supportSpeed?: Flex__<typeof Select>;
   supportJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
-  modal?: Flex__<typeof AntdModal>;
-  form?: Flex__<typeof FormWrapper>;
-  input?: Flex__<typeof AntdInput>;
-  textArea?: Flex__<typeof AntdTextArea>;
 };
 
 export interface DefaultPlatformsProfileProps {}
@@ -195,30 +183,6 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "modal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
-      },
-      {
-        path: "form.value",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "form",
-        onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
-      },
-      {
-        path: "form.isSubmitting",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
-
-        refName: "form",
-        onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -1861,147 +1825,15 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
             <div className={classNames(projectcss.all, sty.freeBox___1Jlei)} />
           ) : null}
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__siAkp
             )}
-            hideFooter={true}
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={"Modal title"}
-            trigger={
-              <AntdButton
-                className={classNames("__wab_instance", sty.button__ktCOs)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cWCb
-                  )}
-                >
-                  {"Show modal"}
-                </div>
-              </AntdButton>
-            }
           >
-            {(() => {
-              const child$Props = {
-                className: classNames("__wab_instance", sty.form),
-                extendedOnValuesChange: async (...eventArgs: any) => {
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "value",
-                    ["form", "value"],
-                    FormWrapper_Helpers
-                  ).apply(null, eventArgs);
-                },
-                formItems: undefined,
-                labelCol: { span: 8, horizontalOnly: true },
-                layout: "vertical",
-                mode: undefined,
-                onIsSubmittingChange: async (...eventArgs: any) => {
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "isSubmitting",
-                    ["form", "isSubmitting"],
-                    FormWrapper_Helpers
-                  ).apply(null, eventArgs);
-                },
-                ref: ref => {
-                  $refs["form"] = ref;
-                },
-                wrapperCol: { span: 16, horizontalOnly: true }
-              };
-              initializeCodeComponentStates(
-                $state,
-                [
-                  {
-                    name: "value",
-                    plasmicStateName: "form.value"
-                  },
-                  {
-                    name: "isSubmitting",
-                    plasmicStateName: "form.isSubmitting"
-                  }
-                ],
-                [],
-                FormWrapper_Helpers ?? {},
-                child$Props
-              );
-
-              return (
-                <FormWrapper
-                  data-plasmic-name={"form"}
-                  data-plasmic-override={overrides.form}
-                  {...child$Props}
-                >
-                  <FormItemWrapper
-                    className={classNames(
-                      "__wab_instance",
-                      sty.formField__pFnS
-                    )}
-                    label={"Name"}
-                    name={"name"}
-                  >
-                    <AntdInput
-                      className={classNames("__wab_instance", sty.input)}
-                    />
-                  </FormItemWrapper>
-                  <FormItemWrapper
-                    className={classNames(
-                      "__wab_instance",
-                      sty.formField___12LwA
-                    )}
-                    label={"Message"}
-                    name={"message"}
-                  >
-                    <AntdTextArea
-                      className={classNames("__wab_instance", sty.textArea)}
-                    />
-                  </FormItemWrapper>
-                  <AntdButton
-                    className={classNames("__wab_instance", sty.button__zIjTw)}
-                    submitsForm={true}
-                    type={"primary"}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__jvfL
-                      )}
-                    >
-                      {"Submit"}
-                    </div>
-                  </AntdButton>
-                </FormWrapper>
-              );
-            })()}
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__c83Og
-              )}
-            >
-              {"\u062a\u0633\u062a \u0641\u0648\u0646\u062a"}
-            </div>
-          </AntdModal>
+            {"\u0628\u06cc\u0633\u062a"}
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -2020,11 +1852,7 @@ const PlasmicDescendants = {
     "supportAccess",
     "supportSpeed",
     "supportJudgment",
-    "submit",
-    "modal",
-    "form",
-    "input",
-    "textArea"
+    "submit"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -2051,11 +1879,7 @@ const PlasmicDescendants = {
   supportAccess: ["supportAccess"],
   supportSpeed: ["supportSpeed"],
   supportJudgment: ["supportJudgment"],
-  submit: ["submit"],
-  modal: ["modal", "form", "input", "textArea"],
-  form: ["form", "input", "textArea"],
-  input: ["input"],
-  textArea: ["textArea"]
+  submit: ["submit"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2072,10 +1896,6 @@ type NodeDefaultElementType = {
   supportSpeed: typeof Select;
   supportJudgment: typeof Select;
   submit: typeof Button;
-  modal: typeof AntdModal;
-  form: typeof FormWrapper;
-  input: typeof AntdInput;
-  textArea: typeof AntdTextArea;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2148,10 +1968,6 @@ export const PlasmicPlatformsProfile = Object.assign(
     supportSpeed: makeNodeComponent("supportSpeed"),
     supportJudgment: makeNodeComponent("supportJudgment"),
     submit: makeNodeComponent("submit"),
-    modal: makeNodeComponent("modal"),
-    form: makeNodeComponent("form"),
-    input: makeNodeComponent("input"),
-    textArea: makeNodeComponent("textArea"),
 
     // Metadata about props expected for PlasmicPlatformsProfile
     internalVariantProps: PlasmicPlatformsProfile__VariantProps,
