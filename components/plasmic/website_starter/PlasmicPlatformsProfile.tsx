@@ -1825,15 +1825,6 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
             <div className={classNames(projectcss.all, sty.freeBox___1Jlei)} />
           ) : null}
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__siAkp
-            )}
-          >
-            {"\u0628\u06cc\u0633\u062a"}
-          </div>
         </div>
       </div>
     </React.Fragment>
