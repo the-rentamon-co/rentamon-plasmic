@@ -89,6 +89,7 @@ export type PlasmicReservations2__OverridesType = {
   root?: Flex__<"div">;
   reserveMainStack?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  img?: Flex__<typeof PlasmicImg__>;
   button?: Flex__<typeof Button>;
 };
 
@@ -250,15 +251,22 @@ function PlasmicReservations2__RenderFunc(props: {
                   </div>
                 }
                 loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___6DkFr
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
+                  <PlasmicImg__
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
+                    alt={""}
+                    className={classNames(sty.img)}
+                    displayHeight={"160px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    }
+                  />
                 }
                 method={"GET"}
                 onError={async (...eventArgs: any) => {
@@ -422,9 +430,10 @@ function PlasmicReservations2__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "reserveMainStack", "apiRequest", "button"],
-  reserveMainStack: ["reserveMainStack", "apiRequest"],
-  apiRequest: ["apiRequest"],
+  root: ["root", "reserveMainStack", "apiRequest", "img", "button"],
+  reserveMainStack: ["reserveMainStack", "apiRequest", "img"],
+  apiRequest: ["apiRequest", "img"],
+  img: ["img"],
   button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -434,6 +443,7 @@ type NodeDefaultElementType = {
   root: "div";
   reserveMainStack: "div";
   apiRequest: typeof ApiRequest;
+  img: typeof PlasmicImg__;
   button: typeof Button;
 };
 
@@ -499,6 +509,7 @@ export const PlasmicReservations2 = Object.assign(
     // Helper components rendering sub-elements
     reserveMainStack: makeNodeComponent("reserveMainStack"),
     apiRequest: makeNodeComponent("apiRequest"),
+    img: makeNodeComponent("img"),
     button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicReservations2
