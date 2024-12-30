@@ -114,7 +114,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
-  modal?: Flex__<typeof AntdModal>;
+  notifyModal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultPanelCalendarProps {}
@@ -302,7 +302,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               })()
       },
       {
-        path: "modal.open",
+        path: "notifyModal.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -1948,9 +1948,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
           />
 
           <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
+            data-plasmic-name={"notifyModal"}
+            data-plasmic-override={overrides.notifyModal}
+            className={classNames("__wab_instance", sty.notifyModal)}
             defaultStylesClassName={classNames(
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
@@ -1960,14 +1960,14 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               plasmic_plasmic_rich_components_css.plasmic_tokens
             )}
             hideFooter={true}
-            modalScopeClassName={sty["modal__modal"]}
+            modalScopeClassName={sty["notifyModal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+              generateStateOnChangeProp($state, ["notifyModal", "open"]).apply(
                 null,
                 eventArgs
               );
             }}
-            open={generateStateValueProp($state, ["modal", "open"])}
+            open={generateStateValueProp($state, ["notifyModal", "open"])}
             title={
               <div
                 className={classNames(projectcss.all, sty.freeBox__bd758)}
@@ -1980,7 +1980,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           operation: 0,
                           variable: {
                             objRoot: $state,
-                            variablePath: ["modal", "open"]
+                            variablePath: ["notifyModal", "open"]
                           }
                         };
                         return (({
@@ -2051,6 +2051,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 : "\u26a0\ufe0f \u062f\u0631 \u0627\u062a\u0635\u0627\u0644 \u00ab\u062c\u0627\u062c\u06cc\u06af\u0627\u00bb \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0648\u0627\u062c\u0647\u06cc\u0645\n\n\u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0628\u0631\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u06a9\u0627\u0631 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647.\n\n\ud83d\udea8\u0644\u0637\u0641\u0627 \u062d\u0648\u0627\u0633\u062a \u0628\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0627\u0634\u0647"}
             </div>
           </AntdModal>
+          <div className={classNames(projectcss.all, sty.freeBox___7Ce9F)} />
         </div>
       </div>
     </React.Fragment>
@@ -2077,7 +2078,7 @@ const PlasmicDescendants = {
     "profile",
     "calendar2",
     "sideEffect",
-    "modal"
+    "notifyModal"
   ],
   apiRequest: ["apiRequest"],
   modalSidebar: ["modalSidebar"],
@@ -2117,7 +2118,7 @@ const PlasmicDescendants = {
   profile: ["profile"],
   calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
-  modal: ["modal"]
+  notifyModal: ["notifyModal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2141,7 +2142,7 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
-  modal: typeof AntdModal;
+  notifyModal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2221,7 +2222,7 @@ export const PlasmicPanelCalendar = Object.assign(
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
-    modal: makeNodeComponent("modal"),
+    notifyModal: makeNodeComponent("notifyModal"),
 
     // Metadata about props expected for PlasmicPanelCalendar
     internalVariantProps: PlasmicPanelCalendar__VariantProps,
