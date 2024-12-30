@@ -213,12 +213,12 @@ function PlasmicReservations2__RenderFunc(props: {
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__kXe5B)}>
+              <div className={classNames(projectcss.all, sty.freeBox__it5Yl)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__tkXiU
+                    sty.text__x4Sz0
                   )}
                 >
                   {
@@ -229,7 +229,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__ebJrT
+                    sty.text___631Fn
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -238,18 +238,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__v6Lsb
+                    sty.text__ddrqr
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__bbynx)}>
+              <div className={classNames(projectcss.all, sty.freeBox___0Y61H)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__rHosZ
+                    sty.text__aVqbt
                   )}
                 >
                   {
@@ -260,7 +260,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___7GKYy
+                    sty.text__iX79F
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -269,18 +269,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__cl9Rr
+                    sty.text__pkPD
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__z6VEd)}>
+              <div className={classNames(projectcss.all, sty.freeBox__h5YeI)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__ahU5O
+                    sty.text__kfVk
                   )}
                 >
                   {
@@ -291,7 +291,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__rbObr
+                    sty.text__dTKp
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -300,18 +300,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___5AqYg
+                    sty.text__rcxsQ
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__kihA8)}>
+              <div className={classNames(projectcss.all, sty.freeBox__oLSdz)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__sHYrC
+                    sty.text__tRoJb
                   )}
                 >
                   {
@@ -322,7 +322,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__lefKm
+                    sty.text__x5HRi
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -331,18 +331,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__iByu3
+                    sty.text__eZk7A
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__k7ZG5)}>
+              <div className={classNames(projectcss.all, sty.freeBox__wqq6W)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__wpJ0H
+                    sty.text__o9ApZ
                   )}
                 >
                   {
@@ -353,7 +353,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__cjExe
+                    sty.text___1MLfz
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -362,18 +362,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__dIyiw
+                    sty.text__eylAf
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__seq6Q)}>
+              <div className={classNames(projectcss.all, sty.freeBox__suz4W)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__lzfrr
+                    sty.text__av1Co
                   )}
                 >
                   {
@@ -384,7 +384,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___8Nglo
+                    sty.text__kenFp
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -393,18 +393,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__ejR0X
+                    sty.text__j3X5O
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__it6Sn)}>
+              <div className={classNames(projectcss.all, sty.freeBox__fXsb2)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___6Ja99
+                    sty.text__l4GHr
                   )}
                 >
                   {
@@ -415,7 +415,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__yJkBi
+                    sty.text__s0HwC
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -424,18 +424,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__kbzdl
+                    sty.text__aUjDg
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__xcv7O)}>
+              <div className={classNames(projectcss.all, sty.freeBox__uLXfl)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___4F9W
+                    sty.text__z2D4
                   )}
                 >
                   {
@@ -446,7 +446,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___75Kb3
+                    sty.text__wgbOx
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -455,193 +455,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__eqohV
+                    sty.text__wTlko
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__xCeNz)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pV1Ut
-                    )}
-                  >
-                    {
-                      "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                    }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rxeP
-                    )}
-                  >
-                    {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__y9W1Y
-                    )}
-                  >
-                    {"\u0634\u0628"}
-                  </div>
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__zdyDu)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m8Evx
-                    )}
-                  >
-                    {
-                      "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                    }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___4Cbeh
-                    )}
-                  >
-                    {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sdCbG
-                    )}
-                  >
-                    {"\u0634\u0628"}
-                  </div>
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__wmC5I)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hqCjo
-                    )}
-                  >
-                    {
-                      "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                    }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__tjOgT
-                    )}
-                  >
-                    {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sLxx8
-                    )}
-                  >
-                    {"\u0634\u0628"}
-                  </div>
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__kArYx)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vqUzW
-                    )}
-                  >
-                    {
-                      "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                    }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__shujB
-                    )}
-                  >
-                    {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__iQx1Y
-                    )}
-                  >
-                    {"\u0634\u0628"}
-                  </div>
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__na4Fo)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___4YBrC
-                    )}
-                  >
-                    {
-                      "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                    }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ckaQg
-                    )}
-                  >
-                    {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yIv1N
-                    )}
-                  >
-                    {"\u0634\u0628"}
-                  </div>
-                </div>
-              ) : null}
-              <div className={classNames(projectcss.all, sty.freeBox__mr7K9)}>
+              <div className={classNames(projectcss.all, sty.freeBox__bVaD)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__mXwnh
+                    sty.text___1EkD
                   )}
                 >
                   {
@@ -652,7 +477,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__qjyk1
+                    sty.text__yQiUl
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -661,18 +486,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__doY0
+                    sty.text___9QFpu
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___5C3Na)}>
+              <div className={classNames(projectcss.all, sty.freeBox__wEcG1)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__lVqec
+                    sty.text__qbWi
                   )}
                 >
                   {
@@ -683,7 +508,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__kdXc3
+                    sty.text__oAdoT
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -692,18 +517,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__l9AsB
+                    sty.text__uDvwK
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__uuyij)}>
+              <div className={classNames(projectcss.all, sty.freeBox___3C0PR)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__hjQ4J
+                    sty.text__rPwl
                   )}
                 >
                   {
@@ -714,7 +539,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__oJneh
+                    sty.text___6ZmGt
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -723,18 +548,18 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__bp5T
+                    sty.text___8USjc
                   )}
                 >
                   {"\u0634\u0628"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__zbOOh)}>
+              <div className={classNames(projectcss.all, sty.freeBox__vHMj)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___6DGrv
+                    sty.text__gmSic
                   )}
                 >
                   {
@@ -745,7 +570,7 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__xBzsy
+                    sty.text___2Kps
                   )}
                 >
                   {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
@@ -754,7 +579,69 @@ function PlasmicReservations2__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__q36Oj
+                    sty.text__vmrBo
+                  )}
+                >
+                  {"\u0634\u0628"}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__lNNhu)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vPrHh
+                  )}
+                >
+                  {
+                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ieK0G
+                  )}
+                >
+                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___52BLh
+                  )}
+                >
+                  {"\u0634\u0628"}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox___0EDlV)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tJgf5
+                  )}
+                >
+                  {
+                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jjw8Z
+                  )}
+                >
+                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qgATy
                   )}
                 >
                   {"\u0634\u0628"}
