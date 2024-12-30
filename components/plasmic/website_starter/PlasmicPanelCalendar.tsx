@@ -114,9 +114,6 @@ export type PlasmicPanelCalendar__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
-  refreshToken?: Flex__<typeof Embed>;
-  goftino?: Flex__<typeof Embed>;
-  modal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultPanelCalendarProps {}
@@ -302,12 +299,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   throw e;
                 }
               })()
-      },
-      {
-        path: "modal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1948,129 +1939,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               }
             }}
           />
-
-          <Embed
-            data-plasmic-name={"refreshToken"}
-            data-plasmic-override={overrides.refreshToken}
-            className={classNames("__wab_instance", sty.refreshToken)}
-            code={
-              "<!-- <script type=\"text/javascript\">\r\n  // \u0686\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0622\u062f\u0631\u0633 \u06a9\u0627\u0645\u0644 \u0628\u0627 https://app.rentamon.com/panel/ \u06cc\u06a9\u06cc \u0628\u0627\u0634\u062f\r\n  if (window.location.href === \"https://app.rentamon.com/panel/\") {\r\n    \r\n    console.log(\"test started\");\r\n\r\n    async function refreshToken() {\r\n      try {\r\n        const response = await fetch('https://sso.rentamon.com/auth/refresh', {\r\n          method: 'GET',\r\n          credentials: \"include\",\r\n        });\r\n        console.log(\"Refreshed Token in 10 minutes\");\r\n        if (response.ok) {\r\n          const data = await response.json();\r\n          console.log('Token refreshed successfully:', data);\r\n          // You can handle the new token or any other logic here\r\n        } else {\r\n          console.error('Failed to refresh token:', response.status);\r\n          // Optionally handle the failure (like redirecting the user to login)\r\n        }\r\n      } catch (error) {\r\n        console.error('Error refreshing token:', error);\r\n      }\r\n    }\r\n\r\n    // Call the refreshToken function every 10 minutes\r\n    setInterval(refreshToken, 300000);\r\n\r\n    // Call it once immediately to ensure the token is refreshed right away\r\n    refreshToken();\r\n\r\n    function getCookie(name) {\r\n      const value = `; ${globalThis.document.cookie}`;\r\n      const parts = value.split(`; ${name}=`);\r\n      if (parts.length === 2) return parts.pop().split(';').shift();\r\n    }\r\n\r\n    // Retrieve the boolean values of the cookies\r\n    const ussoRefreshAvailable = getCookie('usso_refresh_available') || false;\r\n    console.log(\"this is ussoRefresh: \", ussoRefreshAvailable);\r\n\r\n    const ussoAccessAvailable = getCookie('usso_access_available') || false;\r\n    console.log(\"this is ussoAccessAvailable: \", ussoAccessAvailable);\r\n\r\n\r\n    // Check if access is available\r\n    if (!ussoAccessAvailable) {\r\n      // Check the usso_refresh_available flag\r\n      if (!ussoRefreshAvailable) {\r\n        // Redirect the user\r\n        console.log(\"got here in redirect\")\r\n        window.location.href = 'https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/';\r\n      } else {\r\n        // Call the refresh endpoint\r\n        console.log(\"got here in refreshToken\")\r\n        fetch('https://sso.rentamon.com/auth/refresh', {\r\n          method: 'GET',\r\n          credentials: \"include\"\r\n        })\r\n          .then(response => {\r\n            if (!response.ok) {\r\n              throw new Error('Failed to refresh token');\r\n            }\r\n            return response.json();\r\n          })\r\n          .then(data => {\r\n            console.log('Token refreshed:', data);\r\n            // You may need to set the new token in your backend or notify the user\r\n          })\r\n          .catch(error => {\r\n            console.error('Error:', error);\r\n            // Redirect if the refresh fails\r\n            window.location.href = 'https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/';\r\n          });\r\n      }\r\n    }\r\n\r\n  } else {\r\n    // \u0627\u06af\u0631 \u062f\u0631 https://app.rentamon.com/panel/ \u0646\u0628\u0648\u062f\u06cc\u0645\u060c \u0647\u06cc\u0686 \u06a9\u062f\u06cc \u0627\u062c\u0631\u0627 \u0646\u0634\u0648\u062f\r\n    console.log(\"Not in https://app.rentamon.com/panel/, script won't run.\");\r\n  }\r\n</script> -->\r\n"
-            }
-          />
-
-          <Embed
-            data-plasmic-name={"goftino"}
-            data-plasmic-override={overrides.goftino}
-            className={classNames("__wab_instance", sty.goftino)}
-            code={
-              '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-            }
-          />
-
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={
-              <div
-                className={classNames(projectcss.all, sty.freeBox__oipWr)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modal", "open"]
-                          }
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalOpen"] != null &&
-                    typeof $steps["updateModalOpen"] === "object" &&
-                    typeof $steps["updateModalOpen"].then === "function"
-                  ) {
-                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                  }
-                }}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__zmQIx)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"15px"}
-                  loading={"lazy"}
-                  src={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? {
-                          src: "/plasmic/website_starter/images/image36.svg",
-                          fullWidth: 21,
-                          fullHeight: 24,
-                          aspectRatio: 0.875
-                        }
-                      : {
-                          src: "/plasmic/website_starter/images/image33.svg",
-                          fullWidth: 20,
-                          fullHeight: 18,
-                          aspectRatio: 1.111111
-                        }
-                  }
-                />
-              </div>
-            }
-            trigger={null}
-            width={"380"}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__h6SSe
-              )}
-            >
-              {
-                "\u26a0\ufe0f \u062f\u0631 \u0627\u062a\u0635\u0627\u0644 \u00ab\u062c\u0627\u062c\u06cc\u06af\u0627\u00bb \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0648\u0627\u062c\u0647\u06cc\u0645\n\n\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062a\u0648\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u062b\u0628\u062a \u0646\u0645\u06cc\u200c\u0634\u0647\u060c \u0644\u0637\u0641\u0627 \u062e\u0648\u062f\u062a \u0645\u0631\u0627\u0642\u0628\u0634 \u0628\u0627\u0634"
-              }
-            </div>
-          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -2096,10 +1964,7 @@ const PlasmicDescendants = {
     "left",
     "profile",
     "calendar2",
-    "sideEffect",
-    "refreshToken",
-    "goftino",
-    "modal"
+    "sideEffect"
   ],
   apiRequest: ["apiRequest"],
   modalSidebar: ["modalSidebar"],
@@ -2138,10 +2003,7 @@ const PlasmicDescendants = {
   left: ["left"],
   profile: ["profile"],
   calendar2: ["calendar2"],
-  sideEffect: ["sideEffect"],
-  refreshToken: ["refreshToken"],
-  goftino: ["goftino"],
-  modal: ["modal"]
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2165,9 +2027,6 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
-  refreshToken: typeof Embed;
-  goftino: typeof Embed;
-  modal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2247,9 +2106,6 @@ export const PlasmicPanelCalendar = Object.assign(
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
-    refreshToken: makeNodeComponent("refreshToken"),
-    goftino: makeNodeComponent("goftino"),
-    modal: makeNodeComponent("modal"),
 
     // Metadata about props expected for PlasmicPanelCalendar
     internalVariantProps: PlasmicPanelCalendar__VariantProps,
