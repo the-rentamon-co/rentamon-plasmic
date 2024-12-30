@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -87,6 +88,7 @@ export const PlasmicReservations2__ArgProps = new Array<ArgPropType>();
 export type PlasmicReservations2__OverridesType = {
   root?: Flex__<"div">;
   reserveMainStack?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
   button?: Flex__<typeof Button>;
 };
 
@@ -129,6 +131,42 @@ function PlasmicReservations2__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
@@ -182,471 +220,171 @@ function PlasmicReservations2__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.reserveMainStack)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__uJ85I)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eu8Pg
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___5Q5Ku
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___4Gucm
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__it5Yl)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__x4Sz0
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___631Fn
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ddrqr
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox___0Y61H)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aVqbt
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__iX79F
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pkPD
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__h5YeI)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kfVk
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dTKp
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rcxsQ
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__oLSdz)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tRoJb
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__x5HRi
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eZk7A
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__wqq6W)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__o9ApZ
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___1MLfz
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eylAf
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__suz4W)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__av1Co
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kenFp
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__j3X5O
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__fXsb2)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__l4GHr
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__s0HwC
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aUjDg
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__uLXfl)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__z2D4
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wgbOx
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wTlko
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__bVaD)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___1EkD
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yQiUl
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___9QFpu
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__wEcG1)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qbWi
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__oAdoT
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__uDvwK
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox___3C0PR)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rPwl
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___6ZmGt
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___8USjc
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__vHMj)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__gmSic
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___2Kps
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__vmrBo
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__lNNhu)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__vPrHh
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ieK0G
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___52BLh
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox___0EDlV)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tJgf5
-                  )}
-                >
-                  {
-                    "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jjw8Z
-                  )}
-                >
-                  {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qgATy
-                  )}
-                >
-                  {"\u0634\u0628"}
-                </div>
-              </div>
+              <ApiRequest
+                data-plasmic-name={"apiRequest"}
+                data-plasmic-override={overrides.apiRequest}
+                className={classNames("__wab_instance", sty.apiRequest)}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eqa1B
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.apiRequest.error.message;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "Error fetching data";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6DkFr
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequest"] = ref;
+                }}
+                url={
+                  "https://gateway.rentamon.com/webhook/2beea5b6-eb8c-47d6-9746-fe093e22ea39"
+                }
+              >
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $state.apiRequest.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__uJ85I)}
+                      key={currentIndex}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__eu8Pg
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex]
+                                .GuestName;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___5Q5Ku
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[
+                                currentIndex
+                              ].date.split(" ")[0];
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___4Gucm
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex]
+                                .platfromName;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0634\u0628";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  );
+                })}
+              </ApiRequest>
             </Stack__>
           </Stack__>
           <div
@@ -684,8 +422,9 @@ function PlasmicReservations2__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "reserveMainStack", "button"],
-  reserveMainStack: ["reserveMainStack"],
+  root: ["root", "reserveMainStack", "apiRequest", "button"],
+  reserveMainStack: ["reserveMainStack", "apiRequest"],
+  apiRequest: ["apiRequest"],
   button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -694,6 +433,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   reserveMainStack: "div";
+  apiRequest: typeof ApiRequest;
   button: typeof Button;
 };
 
@@ -758,6 +498,7 @@ export const PlasmicReservations2 = Object.assign(
   {
     // Helper components rendering sub-elements
     reserveMainStack: makeNodeComponent("reserveMainStack"),
+    apiRequest: makeNodeComponent("apiRequest"),
     button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicReservations2
