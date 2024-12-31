@@ -211,6 +211,27 @@
 ._2 > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-top: 8px;
 }
+._16 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+  padding: 0px;
+}
+.text__gBs01 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 15px;
+  text-align: center;
+  min-width: 0;
+}
 ._13 {
   display: flex;
   flex-direction: row;

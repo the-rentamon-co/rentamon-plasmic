@@ -96,6 +96,7 @@ export type PlasmicReservations__OverridesType = {
   _12?: Flex__<"div">;
   userPhone?: Flex__<"div">;
   _2?: Flex__<"div">;
+  _16?: Flex__<"div">;
   _13?: Flex__<"div">;
   _14?: Flex__<"div">;
   _15?: Flex__<"div">;
@@ -626,6 +627,35 @@ function PlasmicReservations__RenderFunc(props: {
                   className={classNames(projectcss.all, sty._2)}
                 >
                   <div
+                    data-plasmic-name={"_16"}
+                    data-plasmic-override={overrides._16}
+                    className={classNames(projectcss.all, sty._16)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__gBs01
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData[0].propertyName;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "1403/4/5";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                  <div
                     data-plasmic-name={"_13"}
                     data-plasmic-override={overrides._13}
                     className={classNames(projectcss.all, sty._13)}
@@ -646,7 +676,21 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text__v23TN
                       )}
                     >
-                      {"1403/4/5"}
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData[0].enterDate;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "1403/4/5";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                   </div>
                   <div
@@ -792,7 +836,10 @@ function PlasmicReservations__RenderFunc(props: {
                                   enterDate:
                                     $state.reserveData.data[
                                       currentIndex
-                                    ].enterDate.split(" ")[0]
+                                    ].enterDate.split(" ")[0],
+                                  propertyName:
+                                    $state.reserveData.data[currentIndex]
+                                      .houseName
                                 }
                               ])
                             };
@@ -1147,6 +1194,7 @@ const PlasmicDescendants = {
     "_12",
     "userPhone",
     "_2",
+    "_16",
     "_13",
     "_14",
     "_15",
@@ -1174,6 +1222,7 @@ const PlasmicDescendants = {
     "_12",
     "userPhone",
     "_2",
+    "_16",
     "_13",
     "_14",
     "_15",
@@ -1199,6 +1248,7 @@ const PlasmicDescendants = {
     "_12",
     "userPhone",
     "_2",
+    "_16",
     "_13",
     "_14",
     "_15",
@@ -1210,12 +1260,24 @@ const PlasmicDescendants = {
     "homsa",
     "otaghak"
   ],
-  main: ["main", "_1", "_11", "_12", "userPhone", "_2", "_13", "_14", "_15"],
+  main: [
+    "main",
+    "_1",
+    "_11",
+    "_12",
+    "userPhone",
+    "_2",
+    "_16",
+    "_13",
+    "_14",
+    "_15"
+  ],
   _1: ["_1", "_11", "_12", "userPhone"],
   _11: ["_11"],
   _12: ["_12", "userPhone"],
   userPhone: ["userPhone"],
-  _2: ["_2", "_13", "_14", "_15"],
+  _2: ["_2", "_16", "_13", "_14", "_15"],
+  _16: ["_16"],
   _13: ["_13"],
   _14: ["_14"],
   _15: ["_15"],
@@ -1254,6 +1316,7 @@ type NodeDefaultElementType = {
   _12: "div";
   userPhone: "div";
   _2: "div";
+  _16: "div";
   _13: "div";
   _14: "div";
   _15: "div";
@@ -1341,6 +1404,7 @@ export const PlasmicReservations = Object.assign(
     _12: makeNodeComponent("_12"),
     userPhone: makeNodeComponent("userPhone"),
     _2: makeNodeComponent("_2"),
+    _16: makeNodeComponent("_16"),
     _13: makeNodeComponent("_13"),
     _14: makeNodeComponent("_14"),
     _15: makeNodeComponent("_15"),
