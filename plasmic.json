@@ -716,20 +716,6 @@
           "path": "/cross-listing"
         },
         {
-          "id": "jDOqSUN8wbXO",
-          "name": "Reservations",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicReservations.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/reservations.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicReservations.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/reservations"
-        },
-        {
           "id": "PKdB_gw5IUMc",
           "name": "Homepage2",
           "type": "managed",
@@ -759,17 +745,17 @@
         },
         {
           "id": "gvjKIi6-pXeG",
-          "name": "Reservations2",
+          "name": "Reservations",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicReservations2.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicReservations.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/reservations-2.tsx"
+            "modulePath": "../src/pages/reservations.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicReservations2.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicReservations.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/reservations-2"
+          "path": "/reservations"
         }
       ],
       "icons": [
