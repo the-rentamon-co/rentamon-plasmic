@@ -675,33 +675,32 @@ function PlasmicActivationNew__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["update1"] =
-                  $ctx.params.type == 1
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["step"]
-                          },
-                          operation: 0,
-                          value: ($state.step = 14)
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                $steps["update1"] = false
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["step"]
+                        },
+                        operation: 0,
+                        value: ($state.step = 14)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
 
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
                 if (
                   $steps["update1"] != null &&
                   typeof $steps["update1"] === "object" &&
@@ -710,24 +709,21 @@ function PlasmicActivationNew__RenderFunc(props: {
                   $steps["update1"] = await $steps["update1"];
                 }
 
-                $steps["goToPage3"] =
-                  $ctx.params.type == 3
-                    ? (() => {
-                        const actionArgs = { destination: `/panel` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                $steps["goToPage3"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return (window.location.href =
+                              "https://rentamon.com/panels/?prop_id=1");
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
                 if (
                   $steps["goToPage3"] != null &&
                   typeof $steps["goToPage3"] === "object" &&
@@ -4322,34 +4318,32 @@ function PlasmicActivationNew__RenderFunc(props: {
                           onClick={async () => {
                             const $steps = {};
 
-                            $steps["update1"] =
-                              $ctx.params.type == 1
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 0,
-                                      value: ($state.step = 14)
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
+                            $steps["update1"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["step"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.step = 14)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
 
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
                               $steps["update1"] != null &&
                               typeof $steps["update1"] === "object" &&
@@ -4358,37 +4352,27 @@ function PlasmicActivationNew__RenderFunc(props: {
                               $steps["update1"] = await $steps["update1"];
                             }
 
-                            $steps["goToPanelCalendar"] =
-                              $ctx.params.type == 3
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/panel`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return (() => {
+                                        return (window.location.href =
+                                          "https://rentamon.com/panels/?prop_id=1");
+                                      })();
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
-                              $steps["goToPanelCalendar"] != null &&
-                              typeof $steps["goToPanelCalendar"] === "object" &&
-                              typeof $steps["goToPanelCalendar"].then ===
-                                "function"
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
                             ) {
-                              $steps["goToPanelCalendar"] = await $steps[
-                                "goToPanelCalendar"
-                              ];
+                              $steps["runCode"] = await $steps["runCode"];
                             }
                           }}
                           submitsForm={true}
@@ -5001,34 +4985,32 @@ function PlasmicActivationNew__RenderFunc(props: {
                           onClick={async () => {
                             const $steps = {};
 
-                            $steps["update1"] =
-                              $ctx.params.type == 1
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 0,
-                                      value: ($state.step = 14)
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
+                            $steps["update1"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["step"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.step = 14)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
 
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
                               $steps["update1"] != null &&
                               typeof $steps["update1"] === "object" &&
@@ -5037,37 +5019,27 @@ function PlasmicActivationNew__RenderFunc(props: {
                               $steps["update1"] = await $steps["update1"];
                             }
 
-                            $steps["goToPanelCalendar"] =
-                              $ctx.params.type == 3
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/panel`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return (() => {
+                                        return (window.location.href =
+                                          "https://rentamon.com/panels/?prop_id=1");
+                                      })();
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
-                              $steps["goToPanelCalendar"] != null &&
-                              typeof $steps["goToPanelCalendar"] === "object" &&
-                              typeof $steps["goToPanelCalendar"].then ===
-                                "function"
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
                             ) {
-                              $steps["goToPanelCalendar"] = await $steps[
-                                "goToPanelCalendar"
-                              ];
+                              $steps["runCode"] = await $steps["runCode"];
                             }
                           }}
                           submitsForm={true}
@@ -5744,34 +5716,32 @@ function PlasmicActivationNew__RenderFunc(props: {
                           onClick={async () => {
                             const $steps = {};
 
-                            $steps["update1"] =
-                              $ctx.params.type == 1
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 0,
-                                      value: ($state.step = 14)
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
+                            $steps["update1"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["step"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.step = 14)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
 
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
                               $steps["update1"] != null &&
                               typeof $steps["update1"] === "object" &&
@@ -5780,37 +5750,27 @@ function PlasmicActivationNew__RenderFunc(props: {
                               $steps["update1"] = await $steps["update1"];
                             }
 
-                            $steps["goToPanelCalendar"] =
-                              $ctx.params.type == 3
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/panel`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return (() => {
+                                        return (window.location.href =
+                                          "https://rentamon.com/panels/?prop_id=1");
+                                      })();
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
-                              $steps["goToPanelCalendar"] != null &&
-                              typeof $steps["goToPanelCalendar"] === "object" &&
-                              typeof $steps["goToPanelCalendar"].then ===
-                                "function"
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
                             ) {
-                              $steps["goToPanelCalendar"] = await $steps[
-                                "goToPanelCalendar"
-                              ];
+                              $steps["runCode"] = await $steps["runCode"];
                             }
                           }}
                           submitsForm={true}
@@ -6460,34 +6420,32 @@ function PlasmicActivationNew__RenderFunc(props: {
                           onClick={async () => {
                             const $steps = {};
 
-                            $steps["update1"] =
-                              $ctx.params.type == 1
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 0,
-                                      value: ($state.step = 14)
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
+                            $steps["update1"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["step"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.step = 14)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
 
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
                               $steps["update1"] != null &&
                               typeof $steps["update1"] === "object" &&
@@ -6496,37 +6454,27 @@ function PlasmicActivationNew__RenderFunc(props: {
                               $steps["update1"] = await $steps["update1"];
                             }
 
-                            $steps["goToPanelCalendar"] =
-                              $ctx.params.type == 3
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/panel`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return (() => {
+                                        return (window.location.href =
+                                          "https://rentamon.com/panels/?prop_id=1");
+                                      })();
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
-                              $steps["goToPanelCalendar"] != null &&
-                              typeof $steps["goToPanelCalendar"] === "object" &&
-                              typeof $steps["goToPanelCalendar"].then ===
-                                "function"
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
                             ) {
-                              $steps["goToPanelCalendar"] = await $steps[
-                                "goToPanelCalendar"
-                              ];
+                              $steps["runCode"] = await $steps["runCode"];
                             }
                           }}
                           submitsForm={true}
@@ -7372,36 +7320,29 @@ function PlasmicActivationNew__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToHttpsRentamonComPanels"] = true
+                              $steps["redirectToOldPanel"] = true
                                 ? (() => {
                                     const actionArgs = {
-                                      destination: "https://rentamon.com/panels"
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
+                                      customFunction: async () => {
+                                        return (window.location.href =
+                                          "https://rentamon.com/panels/?prop_id=1");
                                       }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
                                     })?.apply(null, [actionArgs]);
                                   })()
                                 : undefined;
                               if (
-                                $steps["goToHttpsRentamonComPanels"] != null &&
-                                typeof $steps["goToHttpsRentamonComPanels"] ===
+                                $steps["redirectToOldPanel"] != null &&
+                                typeof $steps["redirectToOldPanel"] ===
                                   "object" &&
-                                typeof $steps["goToHttpsRentamonComPanels"]
-                                  .then === "function"
+                                typeof $steps["redirectToOldPanel"].then ===
+                                  "function"
                               ) {
-                                $steps["goToHttpsRentamonComPanels"] =
-                                  await $steps["goToHttpsRentamonComPanels"];
+                                $steps["redirectToOldPanel"] = await $steps[
+                                  "redirectToOldPanel"
+                                ];
                               }
 
                               $steps["mihmanshoVerify"] =
@@ -7642,34 +7583,33 @@ function PlasmicActivationNew__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["update1"] =
-                                $ctx.params.type == 1
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 0,
-                                        value: ($state.step = 14)
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
+                              $steps["update1"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.step = 14)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
 
-                                        $stateSet(objRoot, variablePath, value);
-                                        return value;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                               if (
                                 $steps["update1"] != null &&
                                 typeof $steps["update1"] === "object" &&
@@ -7678,40 +7618,27 @@ function PlasmicActivationNew__RenderFunc(props: {
                                 $steps["update1"] = await $steps["update1"];
                               }
 
-                              $steps["goToPanelCalendar"] =
-                                $ctx.params.type == 3
-                                  ? (() => {
-                                      const actionArgs = {
-                                        destination: `/panel`
-                                      };
-                                      return (({ destination }) => {
-                                        if (
-                                          typeof destination === "string" &&
-                                          destination.startsWith("#")
-                                        ) {
-                                          document
-                                            .getElementById(
-                                              destination.substr(1)
-                                            )
-                                            .scrollIntoView({
-                                              behavior: "smooth"
-                                            });
-                                        } else {
-                                          __nextRouter?.push(destination);
-                                        }
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          return (window.location.href =
+                                            "https://rentamon.com/panels/?prop_id=1");
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                               if (
-                                $steps["goToPanelCalendar"] != null &&
-                                typeof $steps["goToPanelCalendar"] ===
-                                  "object" &&
-                                typeof $steps["goToPanelCalendar"].then ===
-                                  "function"
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
                               ) {
-                                $steps["goToPanelCalendar"] = await $steps[
-                                  "goToPanelCalendar"
-                                ];
+                                $steps["runCode"] = await $steps["runCode"];
                               }
                             }}
                             submitsForm={true}
@@ -8151,34 +8078,33 @@ function PlasmicActivationNew__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["update1"] =
-                                $ctx.params.type == 1
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 0,
-                                        value: ($state.step = 14)
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
+                              $steps["update1"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.step = 14)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
 
-                                        $stateSet(objRoot, variablePath, value);
-                                        return value;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                               if (
                                 $steps["update1"] != null &&
                                 typeof $steps["update1"] === "object" &&
@@ -8187,40 +8113,27 @@ function PlasmicActivationNew__RenderFunc(props: {
                                 $steps["update1"] = await $steps["update1"];
                               }
 
-                              $steps["goToPanelCalendar"] =
-                                $ctx.params.type == 3
-                                  ? (() => {
-                                      const actionArgs = {
-                                        destination: `/panel`
-                                      };
-                                      return (({ destination }) => {
-                                        if (
-                                          typeof destination === "string" &&
-                                          destination.startsWith("#")
-                                        ) {
-                                          document
-                                            .getElementById(
-                                              destination.substr(1)
-                                            )
-                                            .scrollIntoView({
-                                              behavior: "smooth"
-                                            });
-                                        } else {
-                                          __nextRouter?.push(destination);
-                                        }
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          return (window.location.href =
+                                            "https://rentamon.com/panels/?prop_id=1");
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                               if (
-                                $steps["goToPanelCalendar"] != null &&
-                                typeof $steps["goToPanelCalendar"] ===
-                                  "object" &&
-                                typeof $steps["goToPanelCalendar"].then ===
-                                  "function"
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
                               ) {
-                                $steps["goToPanelCalendar"] = await $steps[
-                                  "goToPanelCalendar"
-                                ];
+                                $steps["runCode"] = await $steps["runCode"];
                               }
                             }}
                             submitsForm={true}
