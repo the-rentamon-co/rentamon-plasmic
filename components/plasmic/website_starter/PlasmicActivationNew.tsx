@@ -9542,33 +9542,32 @@ function PlasmicActivationNew__RenderFunc(props: {
                 onClick={async () => {
                   const $steps = {};
 
-                  $steps["update1"] =
-                    $ctx.params.type == 1
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["step"]
-                            },
-                            operation: 0,
-                            value: ($state.step = 14)
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
+                  $steps["update1"] = false
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["step"]
+                          },
+                          operation: 0,
+                          value: ($state.step = 14)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
                   if (
                     $steps["update1"] != null &&
                     typeof $steps["update1"] === "object" &&
@@ -9577,32 +9576,27 @@ function PlasmicActivationNew__RenderFunc(props: {
                     $steps["update1"] = await $steps["update1"];
                   }
 
-                  $steps["goToPanelCalendar"] =
-                    $ctx.params.type == 3
-                      ? (() => {
-                          const actionArgs = { destination: `/panel` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return (window.location.href =
+                                "https://rentamon.com/panels/?prop_id=1");
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
                   if (
-                    $steps["goToPanelCalendar"] != null &&
-                    typeof $steps["goToPanelCalendar"] === "object" &&
-                    typeof $steps["goToPanelCalendar"].then === "function"
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
                   ) {
-                    $steps["goToPanelCalendar"] = await $steps[
-                      "goToPanelCalendar"
-                    ];
+                    $steps["runCode"] = await $steps["runCode"];
                   }
                 }}
                 submitsForm={true}
@@ -9720,15 +9714,19 @@ function PlasmicActivationNew__RenderFunc(props: {
                     className={classNames(sty.img__pmG)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? "100%"
+                        : "100%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "400px"
-                        : "500px"
+                        ? "300px"
+                        : "300px"
                     }
                     loading={"lazy"}
                     src={{
@@ -9820,13 +9818,19 @@ function PlasmicActivationNew__RenderFunc(props: {
                     className={classNames(sty.img__gEeUa)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? "100%"
+                        : "100%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
-                        : "500px"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "300px"
+                        : "300px"
                     }
                     loading={"lazy"}
                     src={{
@@ -9975,13 +9979,19 @@ function PlasmicActivationNew__RenderFunc(props: {
                     className={classNames(sty.img__vhaBw)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? "100%"
+                        : "100%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
-                        : "500px"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "300px"
+                        : "300px"
                     }
                     loading={"lazy"}
                     src={{
