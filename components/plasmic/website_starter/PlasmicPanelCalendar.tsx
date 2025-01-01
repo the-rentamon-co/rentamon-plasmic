@@ -2048,33 +2048,87 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             >
               {hasVariant(globalVariants, "screen", "mobile") ? (
                 <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\u26a0\ufe0f\u0628\u0647 \u0639\u0644\u062a \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u067e\u06cc\u0634\u200c\u0628\u06cc\u0646\u06cc \u0646\u0634\u062f\u0647 \u0633\u0631\u0648\u06cc\u0633 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a\u06cc\u060c \u0633\u0627\u0639\u0627\u062a\u06cc \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a\u06cc\u0645.\n\n"
-                    }
-                  </React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 600 }}
                   >
                     {
-                      "\u26a0\ufe0f \u0644\u0637\u0641\u0627 \u062a\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u0639\u062f\u06cc \u062d\u0648\u0627\u0633\u062a \u0628\u0647 \u0647\u0645\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0627\u0634\u0647."
+                      "\u26a0\ufe0f \u062f\u0631 \u0627\u062a\u0635\u0627\u0644 \u00ab\u062c\u0627\u062c\u06cc\u06af\u0627\u00bb \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0648\u0627\u062c\u0647\u06cc\u0645"
+                    }
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {""}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {
+                      "\u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0628\u0631\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u06a9\u0627\u0631 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647."
+                    }
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {""}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {
+                      "\ud83d\udea8\u0644\u0637\u0641\u0627 \u062d\u0648\u0627\u0633\u062a \u0628\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0627\u0634\u0647"
                     }
                   </span>
                 </React.Fragment>
               ) : (
                 <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\u26a0\ufe0f\u0628\u0647 \u0639\u0644\u062a \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u067e\u06cc\u0634\u200c\u0628\u06cc\u0646\u06cc \u0646\u0634\u062f\u0647 \u0633\u0631\u0648\u06cc\u0633 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a\u06cc\u060c \u0633\u0627\u0639\u0627\u062a\u06cc \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a\u06cc\u0645.\n\n"
-                    }
-                  </React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 600 }}
                   >
                     {
-                      "\u26a0\ufe0f \u0644\u0637\u0641\u0627 \u062a\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u0639\u062f\u06cc \u062d\u0648\u0627\u0633\u062a \u0628\u0647 \u0647\u0645\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0627\u0634\u0647."
+                      "\u26a0\ufe0f \u062f\u0631 \u0627\u062a\u0635\u0627\u0644 \u00ab\u062c\u0627\u062c\u06cc\u06af\u0627\u00bb \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0648\u0627\u062c\u0647\u06cc\u0645"
+                    }
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {""}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {
+                      "\u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0628\u0631\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u06a9\u0627\u0631 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647."
+                    }
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {""}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {
+                      "\ud83d\udea8\u0644\u0637\u0641\u0627 \u062d\u0648\u0627\u0633\u062a \u0628\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0627\u0634\u0647"
                     }
                   </span>
                 </React.Fragment>
