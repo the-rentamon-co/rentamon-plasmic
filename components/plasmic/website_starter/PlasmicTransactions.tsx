@@ -495,7 +495,21 @@ function PlasmicTransactions__RenderFunc(props: {
                           sty.text__tYydp
                         )}
                       >
-                        {"\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f9/\u06f2\u06f5"}
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex].date;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f9/\u06f2\u06f5";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       </div>
                     </div>
                     <div
@@ -508,7 +522,21 @@ function PlasmicTransactions__RenderFunc(props: {
                           sty.text__kzc8T
                         )}
                       >
-                        {"-"}
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex].night;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "-";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       </div>
                     </div>
                     <div
@@ -521,7 +549,21 @@ function PlasmicTransactions__RenderFunc(props: {
                           sty.text__jQXc
                         )}
                       >
-                        {"\u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0"}
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex].price;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       </div>
                     </div>
                   </div>
@@ -552,7 +594,9 @@ function PlasmicTransactions__RenderFunc(props: {
                   sty.text__nqKbX
                 )}
               >
-                {"Loading..."}
+                {
+                  "\u062f\u0631 \u062d\u0627\u0644  \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
+                }
               </div>
             }
             method={"GET"}

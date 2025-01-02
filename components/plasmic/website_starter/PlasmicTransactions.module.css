@@ -329,7 +329,7 @@
   width: 30%;
   height: auto;
   max-width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 0px;
 }
@@ -633,6 +633,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-size: 18px;
   min-width: 0;
 }
 .text___05ZQ {
