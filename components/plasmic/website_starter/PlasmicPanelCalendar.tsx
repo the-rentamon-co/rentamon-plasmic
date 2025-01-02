@@ -114,7 +114,6 @@ export type PlasmicPanelCalendar__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
-  notifyModal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultPanelCalendarProps {}
@@ -300,12 +299,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   throw e;
                 }
               })()
-      },
-      {
-        path: "notifyModal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -1946,196 +1939,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               }
             }}
           />
-
-          <AntdModal
-            data-plasmic-name={"notifyModal"}
-            data-plasmic-override={overrides.notifyModal}
-            className={classNames("__wab_instance", sty.notifyModal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            modalScopeClassName={sty["notifyModal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["notifyModal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["notifyModal", "open"])}
-            title={
-              <div
-                className={classNames(projectcss.all, sty.freeBox__bd758)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["notifyModal", "open"]
-                          }
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalOpen"] != null &&
-                    typeof $steps["updateModalOpen"] === "object" &&
-                    typeof $steps["updateModalOpen"].then === "function"
-                  ) {
-                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                  }
-                }}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__oVSdY)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"20px"}
-                  loading={"lazy"}
-                  src={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? {
-                          src: "/plasmic/website_starter/images/image33.svg",
-                          fullWidth: 20,
-                          fullHeight: 18,
-                          aspectRatio: 1.111111
-                        }
-                      : {
-                          src: "/plasmic/website_starter/images/image33.svg",
-                          fullWidth: 20,
-                          fullHeight: 18,
-                          aspectRatio: 1.111111
-                        }
-                  }
-                />
-              </div>
-            }
-            trigger={null}
-            width={"340"}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__rOad
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "mobile") ? (
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\u26a0\ufe0f \u062f\u0631 \u0627\u062a\u0635\u0627\u0644 \u00ab\u062c\u0627\u062c\u06cc\u06af\u0627\u00bb \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0648\u0627\u062c\u0647\u06cc\u0645"
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0628\u0631\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u06a9\u0627\u0631 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647."
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\ud83d\udea8\u0644\u0637\u0641\u0627 \u062d\u0648\u0627\u0633\u062a \u0628\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0627\u0634\u0647"
-                    }
-                  </span>
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\u26a0\ufe0f \u062f\u0631 \u0627\u062a\u0635\u0627\u0644 \u00ab\u062c\u0627\u062c\u06cc\u06af\u0627\u00bb \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0648\u0627\u062c\u0647\u06cc\u0645"
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0628\u0631\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u06a9\u0627\u0631 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647."
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\ud83d\udea8\u0644\u0637\u0641\u0627 \u062d\u0648\u0627\u0633\u062a \u0628\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0627\u0634\u0647"
-                    }
-                  </span>
-                </React.Fragment>
-              )}
-            </div>
-          </AntdModal>
-          <div className={classNames(projectcss.all, sty.freeBox___7Ce9F)} />
         </div>
       </div>
     </React.Fragment>
@@ -2161,8 +1964,7 @@ const PlasmicDescendants = {
     "left",
     "profile",
     "calendar2",
-    "sideEffect",
-    "notifyModal"
+    "sideEffect"
   ],
   apiRequest: ["apiRequest"],
   modalSidebar: ["modalSidebar"],
@@ -2201,8 +2003,7 @@ const PlasmicDescendants = {
   left: ["left"],
   profile: ["profile"],
   calendar2: ["calendar2"],
-  sideEffect: ["sideEffect"],
-  notifyModal: ["notifyModal"]
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2226,7 +2027,6 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
-  notifyModal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2306,7 +2106,6 @@ export const PlasmicPanelCalendar = Object.assign(
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
-    notifyModal: makeNodeComponent("notifyModal"),
 
     // Metadata about props expected for PlasmicPanelCalendar
     internalVariantProps: PlasmicPanelCalendar__VariantProps,

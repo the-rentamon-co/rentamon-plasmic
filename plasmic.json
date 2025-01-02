@@ -716,20 +716,6 @@
           "path": "/cross-listing"
         },
         {
-          "id": "PKdB_gw5IUMc",
-          "name": "Homepage2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicHomepage2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/homepage.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicHomepage2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/homepage"
-        },
-        {
           "id": "E5zyD1YnD0UJ",
           "name": "Button2",
           "type": "managed",
@@ -756,6 +742,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/reservations"
+        },
+        {
+          "id": "N1STB8Bv46WD",
+          "name": "Transactions",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTransactions.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/transactions.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTransactions.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/transactions"
         }
       ],
       "icons": [
@@ -1600,6 +1600,16 @@
           "id": "a-gzTnq5WYV9",
           "name": "pricing-img.svg",
           "filePath": "../public/plasmic/website_starter/images/pricingImgSvg.svg"
+        },
+        {
+          "id": "HC_E_fqYK5jn",
+          "name": "image 38",
+          "filePath": "../public/plasmic/website_starter/images/image38.svg"
+        },
+        {
+          "id": "34bmFwBdD3Sz",
+          "name": "image 39",
+          "filePath": "../public/plasmic/website_starter/images/image39.svg"
         }
       ],
       "indirect": false,
