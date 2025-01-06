@@ -621,34 +621,6 @@
           "plumeType": "text-input"
         },
         {
-          "id": "FDBji6QDqVJ5",
-          "name": "CalendarTest",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicCalendarTest.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/calendar-test.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicCalendarTest.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/calendar-test"
-        },
-        {
-          "id": "ljf1ITNaB8Ae",
-          "name": "ActivationBackup",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicActivationBackup.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/activation-2.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicActivationBackup.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/activation-2"
-        },
-        {
           "id": "MWmH78o8OGcS",
           "name": "Testimonial",
           "type": "managed",

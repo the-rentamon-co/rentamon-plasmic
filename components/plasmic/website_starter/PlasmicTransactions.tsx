@@ -87,6 +87,7 @@ export type PlasmicTransactions__OverridesType = {
   tableHeader?: Flex__<"div">;
   item?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  returnButton?: Flex__<"div">;
 };
 
 export interface DefaultTransactionsProps {}
@@ -623,6 +624,22 @@ function PlasmicTransactions__RenderFunc(props: {
             }}
             url={"https://gateway.rentamon.com/webhook/transactions"}
           />
+
+          <div
+            data-plasmic-name={"returnButton"}
+            data-plasmic-override={overrides.returnButton}
+            className={classNames(projectcss.all, sty.returnButton, "fix")}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__gpLd3
+              )}
+            >
+              {"\u0628\u0627\u0632\u06af\u0634\u062a "}
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -630,11 +647,12 @@ function PlasmicTransactions__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "tableHeader", "item", "apiRequest"],
+  root: ["root", "header", "tableHeader", "item", "apiRequest", "returnButton"],
   header: ["header", "tableHeader", "item"],
   tableHeader: ["tableHeader"],
   item: ["item"],
-  apiRequest: ["apiRequest"]
+  apiRequest: ["apiRequest"],
+  returnButton: ["returnButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -645,6 +663,7 @@ type NodeDefaultElementType = {
   tableHeader: "div";
   item: "div";
   apiRequest: typeof ApiRequest;
+  returnButton: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -711,6 +730,7 @@ export const PlasmicTransactions = Object.assign(
     tableHeader: makeNodeComponent("tableHeader"),
     item: makeNodeComponent("item"),
     apiRequest: makeNodeComponent("apiRequest"),
+    returnButton: makeNodeComponent("returnButton"),
 
     // Metadata about props expected for PlasmicTransactions
     internalVariantProps: PlasmicTransactions__VariantProps,
