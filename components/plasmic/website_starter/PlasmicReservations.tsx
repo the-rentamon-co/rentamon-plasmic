@@ -1156,14 +1156,16 @@ function PlasmicReservations__RenderFunc(props: {
             data-plasmic-override={overrides.returnButton}
             className={classNames(projectcss.all, sty.returnButton, "fix")}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__maw5U
-              )}
-            >
-              {"\u0628\u0627\u0632\u06af\u0634\u062a "}
+            <div className={classNames(projectcss.all, sty.freeBox__zwnkN)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__maw5U
+                )}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a "}
+              </div>
             </div>
           </div>
           <Button className={classNames("__wab_instance", sty.button__x5Anb)}>
