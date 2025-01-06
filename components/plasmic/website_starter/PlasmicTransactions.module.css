@@ -695,6 +695,7 @@
   .freeBox__i6Ki {
     background: var(--token-8nedppYkGVaH);
     height: 40px;
+    max-width: 98%;
     border-radius: 30px;
     padding: 0px;
   }
