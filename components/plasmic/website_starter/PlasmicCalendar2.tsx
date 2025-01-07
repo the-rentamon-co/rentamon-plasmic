@@ -523,49 +523,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           className={classNames("__wab_instance", sty.fragmentDatePicker)}
           customDayCell={true}
           dayCell={(dateProps: any) => (
-            <div
-              className={classNames(projectcss.all, sty.freeBox__s6CrH)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateFragmentDatePickerValue"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["fragmentDatePicker", "value"]
-                        },
-                        operation: 0,
-                        value: console.log(dateProps)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateFragmentDatePickerValue"] != null &&
-                  typeof $steps["updateFragmentDatePickerValue"] === "object" &&
-                  typeof $steps["updateFragmentDatePickerValue"].then ===
-                    "function"
-                ) {
-                  $steps["updateFragmentDatePickerValue"] = await $steps[
-                    "updateFragmentDatePickerValue"
-                  ];
-                }
-              }}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__s6CrH)}>
               <DayCell
                 data-plasmic-name={"dayCell"}
                 data-plasmic-override={overrides.dayCell}
