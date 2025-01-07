@@ -759,6 +759,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 1200px) {
+  .freeBox__zlZzK {
+    padding: 0px;
+  }
+}
 .img__o0UC {
   object-fit: cover;
   max-width: 100%;

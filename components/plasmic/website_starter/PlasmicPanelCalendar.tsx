@@ -107,6 +107,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
   modal?: Flex__<typeof AntdModal>;
+  favicon?: Flex__<typeof Embed>;
 };
 
 export interface DefaultPanelCalendarProps {}
@@ -1297,6 +1298,14 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               }
             </div>
           </AntdModal>
+          <Embed
+            data-plasmic-name={"favicon"}
+            data-plasmic-override={overrides.favicon}
+            className={classNames("__wab_instance", sty.favicon)}
+            code={
+              '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon.com/wp-content/uploads/2023/08/R-Logo-7059df.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "192x192"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1323,7 +1332,8 @@ const PlasmicDescendants = {
     "profile",
     "calendar2",
     "sideEffect",
-    "modal"
+    "modal",
+    "favicon"
   ],
   apiRequest: ["apiRequest"],
   main: ["main"],
@@ -1373,7 +1383,8 @@ const PlasmicDescendants = {
   profile: ["profile"],
   calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
-  modal: ["modal"]
+  modal: ["modal"],
+  favicon: ["favicon"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1398,6 +1409,7 @@ type NodeDefaultElementType = {
   calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
   modal: typeof AntdModal;
+  favicon: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1478,6 +1490,7 @@ export const PlasmicPanelCalendar = Object.assign(
     calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
     modal: makeNodeComponent("modal"),
+    favicon: makeNodeComponent("favicon"),
 
     // Metadata about props expected for PlasmicPanelCalendar
     internalVariantProps: PlasmicPanelCalendar__VariantProps,

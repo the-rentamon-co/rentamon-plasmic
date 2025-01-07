@@ -91,7 +91,7 @@ export type PlasmicTransactions__OverridesType = {
   tableHeader?: Flex__<"div">;
   item?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
-  embedHtml?: Flex__<typeof Embed>;
+  favicon?: Flex__<typeof Embed>;
   returnButton?: Flex__<"div">;
 };
 
@@ -706,9 +706,9 @@ function PlasmicTransactions__RenderFunc(props: {
           />
 
           <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
+            data-plasmic-name={"favicon"}
+            data-plasmic-override={overrides.favicon}
+            className={classNames("__wab_instance", sty.favicon)}
             code={
               '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon.com/wp-content/uploads/2023/08/R-Logo-7059df.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "192x192"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
             }
@@ -773,7 +773,7 @@ const PlasmicDescendants = {
     "tableHeader",
     "item",
     "apiRequest",
-    "embedHtml",
+    "favicon",
     "returnButton"
   ],
   header: ["header", "sideBar2", "profile", "tableHeader", "item"],
@@ -782,7 +782,7 @@ const PlasmicDescendants = {
   tableHeader: ["tableHeader"],
   item: ["item"],
   apiRequest: ["apiRequest"],
-  embedHtml: ["embedHtml"],
+  favicon: ["favicon"],
   returnButton: ["returnButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -796,7 +796,7 @@ type NodeDefaultElementType = {
   tableHeader: "div";
   item: "div";
   apiRequest: typeof ApiRequest;
-  embedHtml: typeof Embed;
+  favicon: typeof Embed;
   returnButton: "div";
 };
 
@@ -866,7 +866,7 @@ export const PlasmicTransactions = Object.assign(
     tableHeader: makeNodeComponent("tableHeader"),
     item: makeNodeComponent("item"),
     apiRequest: makeNodeComponent("apiRequest"),
-    embedHtml: makeNodeComponent("embedHtml"),
+    favicon: makeNodeComponent("favicon"),
     returnButton: makeNodeComponent("returnButton"),
 
     // Metadata about props expected for PlasmicTransactions
