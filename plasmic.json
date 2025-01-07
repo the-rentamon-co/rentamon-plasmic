@@ -728,6 +728,32 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/transactions"
+        },
+        {
+          "id": "cg2Jkuz_fEiq",
+          "name": "SideBar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSideBar.tsx",
+          "importSpec": {
+            "modulePath": "SideBar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSideBar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "03ZPQfFyBXgI",
+          "name": "SideBar2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSideBar2.tsx",
+          "importSpec": {
+            "modulePath": "SideBar2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSideBar2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
