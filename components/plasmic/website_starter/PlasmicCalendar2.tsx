@@ -528,6 +528,60 @@ function PlasmicCalendar2__RenderFunc(props: {
             <div
               className={classNames(projectcss.all, sty.freeBox__s6CrH)}
               id={"test"}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            const divElement = document.getElementById("test");
+                            let timeoutId;
+                            let isClicked = false;
+                            divElement.addEventListener("click", function () {
+                              isClicked = true;
+                            });
+                            divElement.addEventListener(
+                              "mouseover",
+                              function () {
+                                if (isClicked) {
+                                  timeoutId = setTimeout(function () {
+                                    if (isClicked) {
+                                      console.log(
+                                        "Mouse was over the div for 3 seconds after click."
+                                      );
+                                    }
+                                  }, 3000);
+                                }
+                              }
+                            );
+                            return divElement.addEventListener(
+                              "mouseout",
+                              function () {
+                                if (timeoutId) {
+                                  clearTimeout(timeoutId);
+                                  timeoutId = null;
+                                }
+                                isClicked = false;
+                              }
+                            );
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
             >
               <DayCell
                 data-plasmic-name={"dayCell"}

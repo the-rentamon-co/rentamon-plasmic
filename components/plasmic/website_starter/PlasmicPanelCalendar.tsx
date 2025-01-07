@@ -670,10 +670,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       isOpen={false}
                       userData={(() => {
                         try {
-                          return (() => {
-                            console.log($state.profile.data.user_info);
-                            return $state.profile.data;
-                          })();
+                          return $state.profile.data;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
