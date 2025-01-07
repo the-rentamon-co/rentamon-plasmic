@@ -62,6 +62,16 @@ import {
 import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import Wallet from "../../Wallet"; // plasmic-import: bHX7IYOtGqc7/component
 import PropertyName from "../../PropertyName"; // plasmic-import: 35iXAFb28kzU/component
+import FragmentLongPress from "../../FragmentLongPress"; // plasmic-import: F6FdGjFt2-9F/component
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
+import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
+import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
+import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -86,6 +96,12 @@ export type PlasmicHomepage__OverridesType = {
   httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   wallet?: Flex__<typeof Wallet>;
   propertyName?: Flex__<typeof PropertyName>;
+  fragmentLongPress?: Flex__<typeof FragmentLongPress>;
+  modal?: Flex__<typeof AntdModal>;
+  form?: Flex__<typeof FormWrapper>;
+  input?: Flex__<typeof AntdInput>;
+  textArea?: Flex__<typeof AntdTextArea>;
+  button?: Flex__<typeof AntdButton>;
 };
 
 export interface DefaultHomepageProps {}
@@ -135,6 +151,30 @@ function PlasmicHomepage__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "form.value",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "form",
+        onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
+      },
+      {
+        path: "form.isSubmitting",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+
+        refName: "form",
+        onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -250,6 +290,171 @@ function PlasmicHomepage__RenderFunc(props: {
               />
             </div>
           </div>
+          <FragmentLongPress
+            data-plasmic-name={"fragmentLongPress"}
+            data-plasmic-override={overrides.fragmentLongPress}
+            className={classNames("__wab_instance", sty.fragmentLongPress)}
+            onLongPress={async () => {
+              const $steps = {};
+
+              $steps["updateModalOpen"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["modal", "open"]
+                      },
+                      operation: 0,
+                      value: true
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalOpen"] != null &&
+                typeof $steps["updateModalOpen"] === "object" &&
+                typeof $steps["updateModalOpen"].then === "function"
+              ) {
+                $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+              }
+            }}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__bReIo
+              )}
+            >
+              {"Enter some text"}
+            </div>
+          </FragmentLongPress>
+          <AntdModal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["modal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["modal", "open"])}
+            title={"Modal title"}
+            trigger={null}
+          >
+            {(() => {
+              const child$Props = {
+                className: classNames("__wab_instance", sty.form),
+                extendedOnValuesChange: async (...eventArgs: any) => {
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "value",
+                    ["form", "value"],
+                    FormWrapper_Helpers
+                  ).apply(null, eventArgs);
+                },
+                formItems: undefined,
+                labelCol: { span: 8, horizontalOnly: true },
+                layout: "vertical",
+                mode: undefined,
+                onIsSubmittingChange: async (...eventArgs: any) => {
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "isSubmitting",
+                    ["form", "isSubmitting"],
+                    FormWrapper_Helpers
+                  ).apply(null, eventArgs);
+                },
+                ref: ref => {
+                  $refs["form"] = ref;
+                },
+                wrapperCol: { span: 16, horizontalOnly: true }
+              };
+              initializeCodeComponentStates(
+                $state,
+                [
+                  {
+                    name: "value",
+                    plasmicStateName: "form.value"
+                  },
+                  {
+                    name: "isSubmitting",
+                    plasmicStateName: "form.isSubmitting"
+                  }
+                ],
+                [],
+                FormWrapper_Helpers ?? {},
+                child$Props
+              );
+
+              return (
+                <FormWrapper
+                  data-plasmic-name={"form"}
+                  data-plasmic-override={overrides.form}
+                  {...child$Props}
+                >
+                  <FormItemWrapper
+                    className={classNames(
+                      "__wab_instance",
+                      sty.formField__jvJQj
+                    )}
+                    label={"Name"}
+                    name={"name"}
+                  >
+                    <AntdInput
+                      className={classNames("__wab_instance", sty.input)}
+                    />
+                  </FormItemWrapper>
+                  <FormItemWrapper
+                    className={classNames(
+                      "__wab_instance",
+                      sty.formField__p6HW4
+                    )}
+                    label={"Message"}
+                    name={"message"}
+                  >
+                    <AntdTextArea
+                      className={classNames("__wab_instance", sty.textArea)}
+                    />
+                  </FormItemWrapper>
+                  <AntdButton
+                    className={classNames("__wab_instance", sty.button)}
+                    submitsForm={true}
+                    type={"primary"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__kafOi
+                      )}
+                    >
+                      {"Submit"}
+                    </div>
+                  </AntdButton>
+                </FormWrapper>
+              );
+            })()}
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -257,10 +462,27 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "httpRestApiFetcher", "wallet", "propertyName"],
+  root: [
+    "root",
+    "httpRestApiFetcher",
+    "wallet",
+    "propertyName",
+    "fragmentLongPress",
+    "modal",
+    "form",
+    "input",
+    "textArea",
+    "button"
+  ],
   httpRestApiFetcher: ["httpRestApiFetcher", "wallet"],
   wallet: ["wallet"],
-  propertyName: ["propertyName"]
+  propertyName: ["propertyName"],
+  fragmentLongPress: ["fragmentLongPress"],
+  modal: ["modal", "form", "input", "textArea", "button"],
+  form: ["form", "input", "textArea", "button"],
+  input: ["input"],
+  textArea: ["textArea"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -270,6 +492,12 @@ type NodeDefaultElementType = {
   httpRestApiFetcher: typeof DataFetcher;
   wallet: typeof Wallet;
   propertyName: typeof PropertyName;
+  fragmentLongPress: typeof FragmentLongPress;
+  modal: typeof AntdModal;
+  form: typeof FormWrapper;
+  input: typeof AntdInput;
+  textArea: typeof AntdTextArea;
+  button: typeof AntdButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -335,6 +563,12 @@ export const PlasmicHomepage = Object.assign(
     httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     wallet: makeNodeComponent("wallet"),
     propertyName: makeNodeComponent("propertyName"),
+    fragmentLongPress: makeNodeComponent("fragmentLongPress"),
+    modal: makeNodeComponent("modal"),
+    form: makeNodeComponent("form"),
+    input: makeNodeComponent("input"),
+    textArea: makeNodeComponent("textArea"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

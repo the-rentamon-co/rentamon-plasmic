@@ -580,7 +580,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             >
               <div
                 className={classNames(projectcss.all, sty.freeBox__s6CrH)}
-                id={"test"}
+                id={``}
               >
                 <DayCell
                   data-plasmic-name={"dayCell"}
