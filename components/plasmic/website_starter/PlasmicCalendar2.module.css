@@ -42,9 +42,6 @@
   object-fit: cover;
   position: relative;
 }
-.fragmentLongPress:global(.__wab_instance) {
-  max-width: 100%;
-}
 .freeBox__s6CrH {
   display: flex;
   flex-direction: column;
@@ -88,6 +85,10 @@
     max-width: 40px;
     flex-shrink: 0;
   }
+}
+.fragmentLongPress:global(.__wab_instance) {
+  max-width: 100%;
+  display: none;
 }
 .freeBox___3AobZ {
   display: flex;

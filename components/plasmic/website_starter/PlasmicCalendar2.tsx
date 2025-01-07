@@ -61,8 +61,8 @@ import {
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
-import FragmentLongPress from "../../FragmentLongPress"; // plasmic-import: F6FdGjFt2-9F/component
 import DayCell from "../../DayCell"; // plasmic-import: cU6Nt4MA6DXT/component
+import FragmentLongPress from "../../FragmentLongPress"; // plasmic-import: F6FdGjFt2-9F/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
@@ -109,8 +109,8 @@ export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
-  fragmentLongPress?: Flex__<typeof FragmentLongPress>;
   dayCell?: Flex__<typeof DayCell>;
+  fragmentLongPress?: Flex__<typeof FragmentLongPress>;
   modalDiscount?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput>;
@@ -533,51 +533,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           className={classNames("__wab_instance", sty.fragmentDatePicker)}
           customDayCell={true}
           dayCell={(dateProps: any) => (
-            <FragmentLongPress
-              data-plasmic-name={"fragmentLongPress"}
-              data-plasmic-override={overrides.fragmentLongPress}
-              className={classNames("__wab_instance", sty.fragmentLongPress)}
-              onLongPress={async () => {
-                const $steps = {};
-
-                $steps["updateBlockOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["block", "open"]
-                        },
-                        operation: 0,
-                        value: (() => {
-                          console.log(dateProps);
-                          return true;
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateBlockOpen"] != null &&
-                  typeof $steps["updateBlockOpen"] === "object" &&
-                  typeof $steps["updateBlockOpen"].then === "function"
-                ) {
-                  $steps["updateBlockOpen"] = await $steps["updateBlockOpen"];
-                }
-              }}
-            >
+            <React.Fragment>
               <div
                 className={classNames(projectcss.all, sty.freeBox__s6CrH)}
                 id={``}
@@ -753,7 +709,53 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()}
                 />
               </div>
-            </FragmentLongPress>
+              <FragmentLongPress
+                data-plasmic-name={"fragmentLongPress"}
+                data-plasmic-override={overrides.fragmentLongPress}
+                children={null}
+                className={classNames("__wab_instance", sty.fragmentLongPress)}
+                onLongPress={async () => {
+                  const $steps = {};
+
+                  $steps["updateBlockOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["block", "open"]
+                          },
+                          operation: 0,
+                          value: (() => {
+                            console.log(dateProps);
+                            return true;
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateBlockOpen"] != null &&
+                    typeof $steps["updateBlockOpen"] === "object" &&
+                    typeof $steps["updateBlockOpen"].then === "function"
+                  ) {
+                    $steps["updateBlockOpen"] = await $steps["updateBlockOpen"];
+                  }
+                }}
+              />
+            </React.Fragment>
           )}
           locale={"fa"}
           mode={"multiple"}
@@ -4737,8 +4739,8 @@ const PlasmicDescendants = {
     "root",
     "apiRequest",
     "fragmentDatePicker",
-    "fragmentLongPress",
     "dayCell",
+    "fragmentLongPress",
     "modalDiscount",
     "main",
     "textInput2",
@@ -4761,9 +4763,9 @@ const PlasmicDescendants = {
     "embedHtml"
   ],
   apiRequest: ["apiRequest"],
-  fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
-  fragmentLongPress: ["fragmentLongPress", "dayCell"],
+  fragmentDatePicker: ["fragmentDatePicker", "dayCell", "fragmentLongPress"],
   dayCell: ["dayCell"],
+  fragmentLongPress: ["fragmentLongPress"],
   modalDiscount: ["modalDiscount", "main", "textInput2"],
   main: ["main", "textInput2"],
   textInput2: ["textInput2"],
@@ -4799,8 +4801,8 @@ type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
   fragmentDatePicker: typeof DatePicker;
-  fragmentLongPress: typeof FragmentLongPress;
   dayCell: typeof DayCell;
+  fragmentLongPress: typeof FragmentLongPress;
   modalDiscount: typeof AntdModal;
   main: "div";
   textInput2: typeof TextInput;
@@ -4885,8 +4887,8 @@ export const PlasmicCalendar2 = Object.assign(
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
-    fragmentLongPress: makeNodeComponent("fragmentLongPress"),
     dayCell: makeNodeComponent("dayCell"),
+    fragmentLongPress: makeNodeComponent("fragmentLongPress"),
     modalDiscount: makeNodeComponent("modalDiscount"),
     main: makeNodeComponent("main"),
     textInput2: makeNodeComponent("textInput2"),
