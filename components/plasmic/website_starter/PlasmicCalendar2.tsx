@@ -67,6 +67,7 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -127,6 +128,7 @@ export type PlasmicCalendar2__OverridesType = {
   reserve?: Flex__<"div">;
   block2?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultCalendar2Props {
@@ -523,7 +525,10 @@ function PlasmicCalendar2__RenderFunc(props: {
           className={classNames("__wab_instance", sty.fragmentDatePicker)}
           customDayCell={true}
           dayCell={(dateProps: any) => (
-            <div className={classNames(projectcss.all, sty.freeBox__s6CrH)}>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__s6CrH)}
+              id={"test"}
+            >
               <DayCell
                 data-plasmic-name={"dayCell"}
                 data-plasmic-override={overrides.dayCell}
@@ -4658,6 +4663,15 @@ function PlasmicCalendar2__RenderFunc(props: {
           }
         }}
       />
+
+      <Embed
+        data-plasmic-name={"embedHtml"}
+        data-plasmic-override={overrides.embedHtml}
+        className={classNames("__wab_instance", sty.embedHtml)}
+        code={
+          '<script>\r\nconst element = document.getElementById("test");\r\nlet timer;\r\nconsole.log("test"element)\r\n\r\n// \u0634\u0631\u0648\u0639 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0631\u0648\u06cc \u0627\u0644\u0645\u0646\u062a\r\nconst startPress = () => {\r\n  timer = setTimeout(() => {\r\n    console.log("\u0641\u0627\u0646\u06a9\u0634\u0646 \u0628\u0631\u0627\u06cc \u0627\u0644\u0645\u0627\u0646 test \u0627\u062c\u0631\u0627 \u0634\u062f!");\r\n    // \u0627\u06cc\u0646\u062c\u0627 \r\n  }, 1000); // \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0644\u06cc\u200c\u062b\u0627\u0646\u06cc\u0647 \u0645\u0639\u0627\u062f\u0644 \u06f1 \u062b\u0627\u0646\u06cc\u0647\r\n};\r\n\r\n// \u067e\u0627\u06cc\u0627\u0646 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0631\u0648\u06cc \u0627\u0644\u0645\u0646\u062a\r\nconst endPress = () => {\r\n  clearTimeout(timer); // \u0645\u062a\u0648\u0642\u0641 \u06a9\u0631\u062f\u0646 \u062a\u0627\u06cc\u0645\u0631 \u062f\u0631 \u0635\u0648\u0631\u062a \u0631\u0647\u0627 \u06a9\u0631\u062f\u0646 \u06cc\u0627 \u0644\u063a\u0648\r\n};\r\n\r\n// \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u062f\u0633\u06a9\u062a\u0627\u067e\r\nelement.addEventListener("mousedown", startPress);\r\nelement.addEventListener("mouseup", endPress);\r\nelement.addEventListener("mouseleave", endPress);\r\n\r\n// \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644\r\nelement.addEventListener("touchstart", startPress);\r\nelement.addEventListener("touchend", endPress);\r\nelement.addEventListener("touchcancel", endPress);\r\n\r\n\r\n</script>'
+        }
+      />
     </div>
   ) as React.ReactElement | null;
 }
@@ -4686,7 +4700,8 @@ const PlasmicDescendants = {
     "block",
     "reserve",
     "block2",
-    "sideEffect"
+    "sideEffect",
+    "embedHtml"
   ],
   apiRequest: ["apiRequest"],
   fragmentDatePicker: ["fragmentDatePicker", "dayCell"],
@@ -4716,7 +4731,8 @@ const PlasmicDescendants = {
   block: ["block", "reserve", "block2"],
   reserve: ["reserve"],
   block2: ["block2"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -4745,6 +4761,7 @@ type NodeDefaultElementType = {
   reserve: "div";
   block2: "div";
   sideEffect: typeof SideEffect;
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -4829,6 +4846,7 @@ export const PlasmicCalendar2 = Object.assign(
     reserve: makeNodeComponent("reserve"),
     block2: makeNodeComponent("block2"),
     sideEffect: makeNodeComponent("sideEffect"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicCalendar2
     internalVariantProps: PlasmicCalendar2__VariantProps,
