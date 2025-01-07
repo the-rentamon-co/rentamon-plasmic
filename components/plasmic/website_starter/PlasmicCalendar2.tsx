@@ -523,172 +523,218 @@ function PlasmicCalendar2__RenderFunc(props: {
           className={classNames("__wab_instance", sty.fragmentDatePicker)}
           customDayCell={true}
           dayCell={(dateProps: any) => (
-            <DayCell
-              data-plasmic-name={"dayCell"}
-              data-plasmic-override={overrides.dayCell}
-              className={classNames("__wab_instance", sty.dayCell)}
-              dayNumber={(() => {
-                try {
-                  return (() => {
-                    function convertEnglishNumbersToPersian(str) {
-                      const englishNumbers = [
-                        "0",
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "5",
-                        "6",
-                        "7",
-                        "8",
-                        "9"
-                      ];
+            <div
+              className={classNames(projectcss.all, sty.freeBox__s6CrH)}
+              onClick={async event => {
+                const $steps = {};
 
-                      const persianNumbers = [
-                        "۰",
-                        "۱",
-                        "۲",
-                        "۳",
-                        "۴",
-                        "۵",
-                        "۶",
-                        "۷",
-                        "۸",
-                        "۹"
-                      ];
+                $steps["updateFragmentDatePickerValue"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["fragmentDatePicker", "value"]
+                        },
+                        operation: 0,
+                        value: console.log(dateProps)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
 
-                      return str
-                        .toString()
-                        .replace(
-                          /[0-9]/g,
-                          char =>
-                            persianNumbers[englishNumbers.indexOf(char)] || char
-                        );
-                    }
-                    const englishNumber = dateProps.date.day;
-                    const persianNumber =
-                      convertEnglishNumbersToPersian(englishNumber);
-                    return persianNumber;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateFragmentDatePickerValue"] != null &&
+                  typeof $steps["updateFragmentDatePickerValue"] === "object" &&
+                  typeof $steps["updateFragmentDatePickerValue"].then ===
+                    "function"
+                ) {
+                  $steps["updateFragmentDatePickerValue"] = await $steps[
+                    "updateFragmentDatePickerValue"
+                  ];
                 }
-              })()}
-              dayStatus={(() => {
-                try {
-                  return (() => {
-                    const currentDate = new Date();
-                    const yesterdayDate = new Date(
-                      currentDate.getTime() - 24 * 60 * 60 * 1000
-                    );
-                    const yesterdayTimestamp = Math.floor(
-                      yesterdayDate.getTime() / 1000
-                    );
-                    const minTimestamp = yesterdayTimestamp;
-                    const maxTimestamp = 1739945463;
-                    function getDayClass(dateProps, calendarData) {
-                      const dayIndex = dateProps.date.day - 1;
-                      const calendarItem = calendarData[dayIndex] || {};
-                      if (
-                        dateProps.unix < minTimestamp ||
-                        dateProps.unix > maxTimestamp
-                      ) {
-                        return "disabled";
+              }}
+            >
+              <DayCell
+                data-plasmic-name={"dayCell"}
+                data-plasmic-override={overrides.dayCell}
+                className={classNames("__wab_instance", sty.dayCell)}
+                dayNumber={(() => {
+                  try {
+                    return (() => {
+                      function convertEnglishNumbersToPersian(str) {
+                        const englishNumbers = [
+                          "0",
+                          "1",
+                          "2",
+                          "3",
+                          "4",
+                          "5",
+                          "6",
+                          "7",
+                          "8",
+                          "9"
+                        ];
+
+                        const persianNumbers = [
+                          "۰",
+                          "۱",
+                          "۲",
+                          "۳",
+                          "۴",
+                          "۵",
+                          "۶",
+                          "۷",
+                          "۸",
+                          "۹"
+                        ];
+
+                        return str
+                          .toString()
+                          .replace(
+                            /[0-9]/g,
+                            char =>
+                              persianNumbers[englishNumbers.indexOf(char)] ||
+                              char
+                          );
                       }
-                      if (
-                        $state.fragmentDatePicker.values.includes(
-                          dateProps.unix
-                        )
-                      )
-                        return "selected";
-                      if (calendarItem.status === "reserved") return "reserved";
-                      if (calendarItem.status === "blocked") return "blocked";
-                      if (
-                        calendarItem.discount_percentage &&
-                        calendarItem.discount_percentage > 0
-                      )
-                        return "discount";
-                      return calendarItem.status || "";
+                      const englishNumber = dateProps.date.day;
+                      const persianNumber =
+                        convertEnglishNumbersToPersian(englishNumber);
+                      return persianNumber;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
                     }
-                    return getDayClass(dateProps, $state.apiRequest.data);
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return [];
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-              holidays={(() => {
-                try {
-                  return (() => {
-                    return $state.apiRequest.data[dateProps.date.day - 1]
-                      .isholiday;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
+                })()}
+                dayStatus={(() => {
+                  try {
+                    return (() => {
+                      const currentDate = new Date();
+                      const yesterdayDate = new Date(
+                        currentDate.getTime() - 24 * 60 * 60 * 1000
+                      );
+                      const yesterdayTimestamp = Math.floor(
+                        yesterdayDate.getTime() / 1000
+                      );
+                      const minTimestamp = yesterdayTimestamp;
+                      const maxTimestamp = 1739945463;
+                      function getDayClass(dateProps, calendarData) {
+                        const dayIndex = dateProps.date.day - 1;
+                        const calendarItem = calendarData[dayIndex] || {};
+                        if (
+                          dateProps.unix < minTimestamp ||
+                          dateProps.unix > maxTimestamp
+                        ) {
+                          return "disabled";
+                        }
+                        if (
+                          $state.fragmentDatePicker.values.includes(
+                            dateProps.unix
+                          )
+                        )
+                          return "selected";
+                        if (calendarItem.status === "reserved")
+                          return "reserved";
+                        if (calendarItem.status === "blocked") return "blocked";
+                        if (
+                          calendarItem.discount_percentage &&
+                          calendarItem.discount_percentage > 0
+                        )
+                          return "discount";
+                        return calendarItem.status || "";
+                      }
+                      return getDayClass(dateProps, $state.apiRequest.data);
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-              platform={(() => {
-                try {
-                  return (() => {
-                    const dayIndex = dateProps.date.day - 1;
-                    return $state.apiRequest.data[dayIndex].website;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
+                })()}
+                holidays={(() => {
+                  try {
+                    return (() => {
+                      return $state.apiRequest.data[dateProps.date.day - 1]
+                        .isholiday;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-              price={(() => {
-                try {
-                  return $state.apiRequest.data[dateProps.date.day - 1].price;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
+                })()}
+                platform={(() => {
+                  try {
+                    return (() => {
+                      const dayIndex = dateProps.date.day - 1;
+                      return $state.apiRequest.data[dayIndex].website;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-              selected={(() => {
-                try {
-                  return $state.fragmentDatePicker.values.includes(
-                    dateProps.unix
-                  );
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return [];
+                })()}
+                price={(() => {
+                  try {
+                    return $state.apiRequest.data[dateProps.date.day - 1].price;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            />
+                })()}
+                selected={(() => {
+                  try {
+                    return $state.fragmentDatePicker.values.includes(
+                      dateProps.unix
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </div>
           )}
           locale={"fa"}
           mode={"multiple"}
