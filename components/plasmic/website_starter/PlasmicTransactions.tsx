@@ -59,8 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -85,9 +85,9 @@ export const PlasmicTransactions__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTransactions__OverridesType = {
   root?: Flex__<"div">;
+  profile?: Flex__<typeof ApiRequest>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
-  profile?: Flex__<typeof ApiRequest>;
   tableHeader?: Flex__<"div">;
   item?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
@@ -226,6 +226,38 @@ function PlasmicTransactions__RenderFunc(props: {
             sty.root
           )}
         >
+          <ApiRequest
+            data-plasmic-name={"profile"}
+            data-plasmic-override={overrides.profile}
+            children={null}
+            className={classNames("__wab_instance", sty.profile)}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile", "loading"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["profile"] = ref;
+            }}
+            url={"https://api.rentamon.com/api/user_info?property_id=1"}
+          />
+
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
@@ -252,48 +284,19 @@ function PlasmicTransactions__RenderFunc(props: {
                 })()}
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gX6Ao
-                )}
-              >
-                {
-                  "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
-                }
+              <div className={classNames(projectcss.all, sty.freeBox__pfauu)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gX6Ao
+                  )}
+                >
+                  {
+                    "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
+                  }
+                </div>
               </div>
-              <ApiRequest
-                data-plasmic-name={"profile"}
-                data-plasmic-override={overrides.profile}
-                children={null}
-                className={classNames("__wab_instance", sty.profile)}
-                errorDisplay={null}
-                loadingDisplay={null}
-                method={"GET"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, ["profile", "error"]).apply(
-                    null,
-                    eventArgs
-                  );
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "profile",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, ["profile", "data"]).apply(
-                    null,
-                    eventArgs
-                  );
-                }}
-                ref={ref => {
-                  $refs["profile"] = ref;
-                }}
-                url={"https://api.rentamon.com/api/user_info?property_id=1"}
-              />
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__prOxi)}>
               <div
@@ -767,18 +770,18 @@ function PlasmicTransactions__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "profile",
     "header",
     "sideBar2",
-    "profile",
     "tableHeader",
     "item",
     "apiRequest",
     "favicon",
     "returnButton"
   ],
-  header: ["header", "sideBar2", "profile", "tableHeader", "item"],
-  sideBar2: ["sideBar2"],
   profile: ["profile"],
+  header: ["header", "sideBar2", "tableHeader", "item"],
+  sideBar2: ["sideBar2"],
   tableHeader: ["tableHeader"],
   item: ["item"],
   apiRequest: ["apiRequest"],
@@ -790,9 +793,9 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  profile: typeof ApiRequest;
   header: "div";
   sideBar2: typeof SideBar2;
-  profile: typeof ApiRequest;
   tableHeader: "div";
   item: "div";
   apiRequest: typeof ApiRequest;
@@ -860,9 +863,9 @@ export const PlasmicTransactions = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    profile: makeNodeComponent("profile"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
-    profile: makeNodeComponent("profile"),
     tableHeader: makeNodeComponent("tableHeader"),
     item: makeNodeComponent("item"),
     apiRequest: makeNodeComponent("apiRequest"),
