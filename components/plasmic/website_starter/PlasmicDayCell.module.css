@@ -427,7 +427,7 @@
 .textdayStatus_selected__ltKp2MbNkx {
   color: #ffffff;
 }
-.freeBox__gqxDg {
+.p {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -443,8 +443,11 @@
   border-radius: 100%;
 }
 @media (max-width: 500px) {
-  .freeBox__gqxDg {
+  .p {
     left: -1px;
     top: 3px;
   }
+}
+.pdayStatus_disabled {
+  background: var(--token-8nedppYkGVaH);
 }

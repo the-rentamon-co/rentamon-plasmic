@@ -106,6 +106,7 @@ export type PlasmicDayCell__OverridesType = {
   root?: Flex__<"div">;
   cell?: Flex__<"div">;
   holidays2?: Flex__<"div">;
+  p?: Flex__<"p">;
 };
 
 export interface DefaultDayCellProps {
@@ -213,6 +214,9 @@ function PlasmicDayCell__RenderFunc(props: {
         plasmic_antd_5_hostless_css.plasmic_tokens,
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root,
+        hasVariant($state, "dayStatus", "disabled")
+          ? "disablebutton"
+          : undefined,
         {
           [sty.rootdayStatus_blocked]: hasVariant(
             $state,
@@ -279,6 +283,11 @@ function PlasmicDayCell__RenderFunc(props: {
       >
         <div
           className={classNames(projectcss.all, sty.freeBox__aE9Ge, {
+            [sty.freeBoxdayStatus_disabled__aE9GeOkz0Z]: hasVariant(
+              $state,
+              "dayStatus",
+              "disabled"
+            ),
             [sty.freeBoxdayStatus_reserved__aE9Ge6WcTl]: hasVariant(
               $state,
               "dayStatus",
@@ -436,6 +445,11 @@ function PlasmicDayCell__RenderFunc(props: {
         </div>
         <div
           className={classNames(projectcss.all, sty.freeBox__gKj3, {
+            [sty.freeBoxdayStatus_disabled__gKj3Okz0Z]: hasVariant(
+              $state,
+              "dayStatus",
+              "disabled"
+            ),
             [sty.freeBoxdayStatus_reserved__gKj36WcTl]: hasVariant(
               $state,
               "dayStatus",
@@ -607,16 +621,38 @@ function PlasmicDayCell__RenderFunc(props: {
           throw e;
         }
       })() ? (
-        <div className={classNames(projectcss.all, sty.freeBox__gqxDg)} />
+        <p
+          data-plasmic-name={"p"}
+          data-plasmic-override={overrides.p}
+          className={classNames(
+            projectcss.all,
+            projectcss.p,
+            sty.p,
+            hasVariant($state, "dayStatus", "disabled") ? "2" : undefined,
+            {
+              [sty.pdayStatus_disabled]: hasVariant(
+                $state,
+                "dayStatus",
+                "disabled"
+              ),
+              [sty.pdayStatus_reserved]: hasVariant(
+                $state,
+                "dayStatus",
+                "reserved"
+              )
+            }
+          )}
+        />
       ) : null}
     </Stack__>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "cell", "holidays2"],
+  root: ["root", "cell", "holidays2", "p"],
   cell: ["cell", "holidays2"],
-  holidays2: ["holidays2"]
+  holidays2: ["holidays2"],
+  p: ["p"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -625,6 +661,7 @@ type NodeDefaultElementType = {
   root: "div";
   cell: "div";
   holidays2: "div";
+  p: "p";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -689,6 +726,7 @@ export const PlasmicDayCell = Object.assign(
     // Helper components rendering sub-elements
     cell: makeNodeComponent("cell"),
     holidays2: makeNodeComponent("holidays2"),
+    p: makeNodeComponent("p"),
 
     // Metadata about props expected for PlasmicDayCell
     internalVariantProps: PlasmicDayCell__VariantProps,

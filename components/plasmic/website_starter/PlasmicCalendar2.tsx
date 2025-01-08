@@ -631,6 +631,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               data-plasmic-name={"fragmentLongPress"}
               data-plasmic-override={overrides.fragmentLongPress}
               className={classNames("__wab_instance", sty.fragmentLongPress)}
+              duration={1000}
               onLongPress={async () => {
                 const $steps = {};
 
