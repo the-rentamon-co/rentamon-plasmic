@@ -60,14 +60,15 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
-import DayCell from "../../DayCell"; // plasmic-import: cU6Nt4MA6DXT/component
 import FragmentLongPress from "../../FragmentLongPress"; // plasmic-import: F6FdGjFt2-9F/component
+import DayCell from "../../DayCell"; // plasmic-import: cU6Nt4MA6DXT/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -108,9 +109,10 @@ export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  sideEffect?: Flex__<typeof SideEffect>;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
-  dayCell?: Flex__<typeof DayCell>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
+  dayCell?: Flex__<typeof DayCell>;
   modalDiscount?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput>;
@@ -129,7 +131,9 @@ export type PlasmicCalendar2__OverridesType = {
   block?: Flex__<typeof AntdModal>;
   reserve?: Flex__<"div">;
   block2?: Flex__<"div">;
-  sideEffect?: Flex__<typeof SideEffect>;
+  noteModal?: Flex__<typeof AntdModal>;
+  writeNoteModal?: Flex__<typeof AntdModal>;
+  textarea?: Flex__<typeof Textarea>;
   embedHtml?: Flex__<typeof Embed>;
 };
 
@@ -403,10 +407,28 @@ function PlasmicCalendar2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "10"
       },
       {
-        path: "timer",
+        path: "noteModal.open",
         type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "dateProp",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "writeNoteModal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "textarea.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -468,14 +490,31 @@ function PlasmicCalendar2__RenderFunc(props: {
           (async data => {
             const $steps = {};
 
-            $steps["updateFragmentDatePickerValue"] = true
+            $steps["updateStateVariable"] = true
               ? (() => {
                   const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["fragmentDatePicker", "value"]
-                    },
-                    operation: 0
+                    operation: 0,
+                    value: (() => {
+                      if (
+                        $state.apiRequest?.data?.[0]?.timestampsArray &&
+                        $state.apiRequest?.data?.[1]?.calendar
+                      ) {
+                        let notedDates =
+                          $state.apiRequest.data[0].timestampsArray;
+                        let calendar = $state.apiRequest.data[1].calendar;
+                        calendar.forEach(day => {
+                          if (notedDates.includes(day.date)) {
+                            day.isnoted = true;
+                          }
+                        });
+                        $state.apiRequest.data[1].calendar = calendar;
+                        return console.log($state.apiRequest.data[1].calendar);
+                      } else {
+                        return console.error(
+                          "داده‌ها به درستی دریافت نشده‌اند یا یکی از مقادیر null است."
+                        );
+                      }
+                    })()
                   };
                   return (({ variable, value, startIndex, deleteCount }) => {
                     if (!variable) {
@@ -489,12 +528,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                 })()
               : undefined;
             if (
-              $steps["updateFragmentDatePickerValue"] != null &&
-              typeof $steps["updateFragmentDatePickerValue"] === "object" &&
-              typeof $steps["updateFragmentDatePickerValue"].then === "function"
+              $steps["updateStateVariable"] != null &&
+              typeof $steps["updateStateVariable"] === "object" &&
+              typeof $steps["updateStateVariable"].then === "function"
             ) {
-              $steps["updateFragmentDatePickerValue"] = await $steps[
-                "updateFragmentDatePickerValue"
+              $steps["updateStateVariable"] = await $steps[
+                "updateStateVariable"
               ];
             }
           }).apply(null, eventArgs);
@@ -526,6 +565,59 @@ function PlasmicCalendar2__RenderFunc(props: {
         })()}
       />
 
+      <SideEffect
+        data-plasmic-name={"sideEffect"}
+        data-plasmic-override={overrides.sideEffect}
+        className={classNames("__wab_instance", sty.sideEffect)}
+        deps={(() => {
+          try {
+            return [$props.propertyId];
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
+        onMount={async () => {
+          const $steps = {};
+
+          $steps["updateFragmentDatePickerValue"] = true
+            ? (() => {
+                const actionArgs = {
+                  variable: {
+                    objRoot: $state,
+                    variablePath: ["fragmentDatePicker", "value"]
+                  },
+                  operation: 0,
+                  value: ($state.fragmentDatePicker.values = [])
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateFragmentDatePickerValue"] != null &&
+            typeof $steps["updateFragmentDatePickerValue"] === "object" &&
+            typeof $steps["updateFragmentDatePickerValue"].then === "function"
+          ) {
+            $steps["updateFragmentDatePickerValue"] = await $steps[
+              "updateFragmentDatePickerValue"
+            ];
+          }
+        }}
+      />
+
       <div className={classNames(projectcss.all, sty.freeBox__ppyHd)}>
         <DatePicker
           data-plasmic-name={"fragmentDatePicker"}
@@ -533,7 +625,92 @@ function PlasmicCalendar2__RenderFunc(props: {
           className={classNames("__wab_instance", sty.fragmentDatePicker)}
           customDayCell={true}
           dayCell={(dateProps: any) => (
-            <React.Fragment>
+            <FragmentLongPress
+              data-plasmic-name={"fragmentLongPress"}
+              data-plasmic-override={overrides.fragmentLongPress}
+              className={classNames("__wab_instance", sty.fragmentLongPress)}
+              onLongPress={async () => {
+                const $steps = {};
+
+                $steps["openReadModal"] =
+                  $state.apiRequest.data[1].calendar[dateProps.date.day - 1]
+                    .isnoted == true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["noteModal", "open"]
+                          },
+                          operation: 0,
+                          value: (() => {
+                            $state.dateProp = dateProps;
+                            return true;
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["openReadModal"] != null &&
+                  typeof $steps["openReadModal"] === "object" &&
+                  typeof $steps["openReadModal"].then === "function"
+                ) {
+                  $steps["openReadModal"] = await $steps["openReadModal"];
+                }
+
+                $steps["openWriteModal"] =
+                  $state.apiRequest.data[1].calendar[dateProps.date.day - 1]
+                    .isnoted == false
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["writeNoteModal", "open"]
+                          },
+                          operation: 0,
+                          value: (() => {
+                            $state.dateProp = dateProps;
+                            return true;
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["openWriteModal"] != null &&
+                  typeof $steps["openWriteModal"] === "object" &&
+                  typeof $steps["openWriteModal"].then === "function"
+                ) {
+                  $steps["openWriteModal"] = await $steps["openWriteModal"];
+                }
+              }}
+            >
               <div
                 className={classNames(projectcss.all, sty.freeBox__s6CrH)}
                 id={``}
@@ -634,7 +811,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                             return "discount";
                           return calendarItem.status || "";
                         }
-                        return getDayClass(dateProps, $state.apiRequest.data);
+                        return getDayClass(
+                          dateProps,
+                          $state.apiRequest.data[1].calendar
+                        );
                       })();
                     } catch (e) {
                       if (
@@ -649,8 +829,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                   holidays={(() => {
                     try {
                       return (() => {
-                        return $state.apiRequest.data[dateProps.date.day - 1]
-                          .isholiday;
+                        return $state.apiRequest.data[1].calendar[
+                          dateProps.date.day - 1
+                        ].isholiday;
                       })();
                     } catch (e) {
                       if (
@@ -662,11 +843,27 @@ function PlasmicCalendar2__RenderFunc(props: {
                       throw e;
                     }
                   })()}
+                  note={(() => {
+                    try {
+                      return $state.apiRequest.data[1].calendar[
+                        dateProps.date.day - 1
+                      ].isnoted;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()}
                   platform={(() => {
                     try {
                       return (() => {
                         const dayIndex = dateProps.date.day - 1;
-                        return $state.apiRequest.data[dayIndex].website;
+                        return $state.apiRequest.data[1].calendar[dayIndex]
+                          .website;
                       })();
                     } catch (e) {
                       if (
@@ -680,8 +877,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()}
                   price={(() => {
                     try {
-                      return $state.apiRequest.data[dateProps.date.day - 1]
-                        .price;
+                      return $state.apiRequest.data[1].calendar[
+                        dateProps.date.day - 1
+                      ].price;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -709,53 +907,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()}
                 />
               </div>
-              <FragmentLongPress
-                data-plasmic-name={"fragmentLongPress"}
-                data-plasmic-override={overrides.fragmentLongPress}
-                children={null}
-                className={classNames("__wab_instance", sty.fragmentLongPress)}
-                onLongPress={async () => {
-                  const $steps = {};
-
-                  $steps["updateBlockOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["block", "open"]
-                          },
-                          operation: 0,
-                          value: (() => {
-                            console.log(dateProps);
-                            return true;
-                          })()
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateBlockOpen"] != null &&
-                    typeof $steps["updateBlockOpen"] === "object" &&
-                    typeof $steps["updateBlockOpen"].then === "function"
-                  ) {
-                    $steps["updateBlockOpen"] = await $steps["updateBlockOpen"];
-                  }
-                }}
-              />
-            </React.Fragment>
+            </FragmentLongPress>
           )}
           locale={"fa"}
           mode={"multiple"}
@@ -4668,60 +4820,230 @@ function PlasmicCalendar2__RenderFunc(props: {
             }
           </div>
         </AntdModal>
-      </div>
-      <SideEffect
-        data-plasmic-name={"sideEffect"}
-        data-plasmic-override={overrides.sideEffect}
-        className={classNames("__wab_instance", sty.sideEffect)}
-        deps={(() => {
-          try {
-            return [$props.propertyId];
-          } catch (e) {
-            if (
-              e instanceof TypeError ||
-              e?.plasmicType === "PlasmicUndefinedDataError"
-            ) {
-              return undefined;
-            }
-            throw e;
-          }
-        })()}
-        onMount={async () => {
-          const $steps = {};
-
-          $steps["updateFragmentDatePickerValue"] = true
-            ? (() => {
-                const actionArgs = {
-                  variable: {
-                    objRoot: $state,
-                    variablePath: ["fragmentDatePicker", "value"]
-                  },
-                  operation: 0,
-                  value: ($state.fragmentDatePicker.values = [])
-                };
-                return (({ variable, value, startIndex, deleteCount }) => {
-                  if (!variable) {
-                    return;
+        <AntdModal
+          data-plasmic-name={"noteModal"}
+          data-plasmic-override={overrides.noteModal}
+          className={classNames("__wab_instance", sty.noteModal)}
+          defaultStylesClassName={classNames(
+            projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens
+          )}
+          hideFooter={true}
+          modalScopeClassName={sty["noteModal__modal"]}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["noteModal", "open"]).apply(
+              null,
+              eventArgs
+            );
+          }}
+          open={generateStateValueProp($state, ["noteModal", "open"])}
+          title={null}
+          trigger={null}
+          width={"320"}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__x4Qp1)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__gq2L1
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return (() => {
+                      const notesAndTimestamps =
+                        $state.apiRequest.data[2].notesAndTimestamps;
+                      const selectedTimestamp = $state.dateProp.unix;
+                      function timestampToDateString(timestamp) {
+                        if (!timestamp || isNaN(parseInt(timestamp, 10))) {
+                          console.error("Invalid timestamp:", timestamp);
+                          return null;
+                        }
+                        const date = new Date(parseInt(timestamp, 10) * 1000);
+                        if (isNaN(date.getTime())) {
+                          console.error("Invalid date object:", date);
+                          return null;
+                        }
+                        return date.toISOString().split("T")[0];
+                      }
+                      const selectedDate =
+                        timestampToDateString(selectedTimestamp);
+                      if (!selectedDate) {
+                        console.error(
+                          "Selected timestamp is invalid:",
+                          selectedTimestamp
+                        );
+                        return [];
+                      }
+                      const filteredNotes = notesAndTimestamps.filter(
+                        noteItem => {
+                          const noteDate = timestampToDateString(
+                            noteItem.timestamps
+                          );
+                          return noteDate === selectedDate;
+                        }
+                      );
+                      return filteredNotes[0].noteText;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u06cc \u062b\u0628\u062a \u0646\u0634\u062f\u0647 \u0627\u0633\u062a";
+                    }
+                    throw e;
                   }
-                  const { objRoot, variablePath } = variable;
+                })()}
+              </React.Fragment>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__kpmHd)} />
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox___7WlXr)}>
+            <Button
+              className={classNames("__wab_instance", sty.button__nuSt2)}
+              onClick={async event => {
+                const $steps = {};
 
-                  $stateSet(objRoot, variablePath, value);
-                  return value;
-                })?.apply(null, [actionArgs]);
-              })()
-            : undefined;
-          if (
-            $steps["updateFragmentDatePickerValue"] != null &&
-            typeof $steps["updateFragmentDatePickerValue"] === "object" &&
-            typeof $steps["updateFragmentDatePickerValue"].then === "function"
-          ) {
-            $steps["updateFragmentDatePickerValue"] = await $steps[
-              "updateFragmentDatePickerValue"
-            ];
-          }
-        }}
-      />
+                $steps["updateNoteModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["noteModal", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
 
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateNoteModalOpen"] != null &&
+                  typeof $steps["updateNoteModalOpen"] === "object" &&
+                  typeof $steps["updateNoteModalOpen"].then === "function"
+                ) {
+                  $steps["updateNoteModalOpen"] = await $steps[
+                    "updateNoteModalOpen"
+                  ];
+                }
+              }}
+            >
+              {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+            </Button>
+          </div>
+        </AntdModal>
+        <AntdModal
+          data-plasmic-name={"writeNoteModal"}
+          data-plasmic-override={overrides.writeNoteModal}
+          className={classNames("__wab_instance", sty.writeNoteModal)}
+          defaultStylesClassName={classNames(
+            projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens
+          )}
+          hideFooter={true}
+          modalScopeClassName={sty["writeNoteModal__modal"]}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["writeNoteModal", "open"]).apply(
+              null,
+              eventArgs
+            );
+          }}
+          open={generateStateValueProp($state, ["writeNoteModal", "open"])}
+          title={null}
+          trigger={null}
+          width={"320"}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__f7Oe4)}>
+            <Textarea
+              data-plasmic-name={"textarea"}
+              data-plasmic-override={overrides.textarea}
+              className={classNames("__wab_instance", sty.textarea)}
+              onChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["textarea", "value"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              value={generateStateValueProp($state, ["textarea", "value"])}
+            />
+
+            <Button
+              className={classNames("__wab_instance", sty.button__amMj2)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateNoteModalOpen"] =
+                  $state.textarea.value != ""
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://gateway.rentamon.com/webhook/sendNote?prop_id=1",
+                            undefined,
+                            (() => {
+                              try {
+                                return {
+                                  value: $state.textarea.value,
+                                  date: $state.dateProp.unix,
+                                  prop_id: $props.propertyId
+                                };
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                if (
+                  $steps["updateNoteModalOpen"] != null &&
+                  typeof $steps["updateNoteModalOpen"] === "object" &&
+                  typeof $steps["updateNoteModalOpen"].then === "function"
+                ) {
+                  $steps["updateNoteModalOpen"] = await $steps[
+                    "updateNoteModalOpen"
+                  ];
+                }
+              }}
+            >
+              {"\u062b\u0628\u062a \u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+            </Button>
+          </div>
+        </AntdModal>
+      </div>
       <Embed
         data-plasmic-name={"embedHtml"}
         data-plasmic-override={overrides.embedHtml}
@@ -4738,9 +5060,10 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
+    "sideEffect",
     "fragmentDatePicker",
-    "dayCell",
     "fragmentLongPress",
+    "dayCell",
     "modalDiscount",
     "main",
     "textInput2",
@@ -4759,13 +5082,16 @@ const PlasmicDescendants = {
     "block",
     "reserve",
     "block2",
-    "sideEffect",
+    "noteModal",
+    "writeNoteModal",
+    "textarea",
     "embedHtml"
   ],
   apiRequest: ["apiRequest"],
-  fragmentDatePicker: ["fragmentDatePicker", "dayCell", "fragmentLongPress"],
+  sideEffect: ["sideEffect"],
+  fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
+  fragmentLongPress: ["fragmentLongPress", "dayCell"],
   dayCell: ["dayCell"],
-  fragmentLongPress: ["fragmentLongPress"],
   modalDiscount: ["modalDiscount", "main", "textInput2"],
   main: ["main", "textInput2"],
   textInput2: ["textInput2"],
@@ -4791,7 +5117,9 @@ const PlasmicDescendants = {
   block: ["block", "reserve", "block2"],
   reserve: ["reserve"],
   block2: ["block2"],
-  sideEffect: ["sideEffect"],
+  noteModal: ["noteModal"],
+  writeNoteModal: ["writeNoteModal", "textarea"],
+  textarea: ["textarea"],
   embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -4800,9 +5128,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
+  sideEffect: typeof SideEffect;
   fragmentDatePicker: typeof DatePicker;
-  dayCell: typeof DayCell;
   fragmentLongPress: typeof FragmentLongPress;
+  dayCell: typeof DayCell;
   modalDiscount: typeof AntdModal;
   main: "div";
   textInput2: typeof TextInput;
@@ -4821,7 +5150,9 @@ type NodeDefaultElementType = {
   block: typeof AntdModal;
   reserve: "div";
   block2: "div";
-  sideEffect: typeof SideEffect;
+  noteModal: typeof AntdModal;
+  writeNoteModal: typeof AntdModal;
+  textarea: typeof Textarea;
   embedHtml: typeof Embed;
 };
 
@@ -4886,9 +5217,10 @@ export const PlasmicCalendar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
+    sideEffect: makeNodeComponent("sideEffect"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
-    dayCell: makeNodeComponent("dayCell"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),
+    dayCell: makeNodeComponent("dayCell"),
     modalDiscount: makeNodeComponent("modalDiscount"),
     main: makeNodeComponent("main"),
     textInput2: makeNodeComponent("textInput2"),
@@ -4907,7 +5239,9 @@ export const PlasmicCalendar2 = Object.assign(
     block: makeNodeComponent("block"),
     reserve: makeNodeComponent("reserve"),
     block2: makeNodeComponent("block2"),
-    sideEffect: makeNodeComponent("sideEffect"),
+    noteModal: makeNodeComponent("noteModal"),
+    writeNoteModal: makeNodeComponent("writeNoteModal"),
+    textarea: makeNodeComponent("textarea"),
     embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicCalendar2

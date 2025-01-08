@@ -91,16 +91,19 @@ export type PlasmicDayCell__ArgsType = {
   platform?: string;
   price?: string;
   holidays?: string;
+  note?: boolean;
 };
 type ArgPropType = keyof PlasmicDayCell__ArgsType;
 export const PlasmicDayCell__ArgProps = new Array<ArgPropType>(
   "dayNumber",
   "platform",
   "price",
-  "holidays"
+  "holidays",
+  "note"
 );
 
 export type PlasmicDayCell__OverridesType = {
+  root?: Flex__<"div">;
   cell?: Flex__<"div">;
   holidays2?: Flex__<"div">;
 };
@@ -110,6 +113,7 @@ export interface DefaultDayCellProps {
   platform?: string;
   price?: string;
   holidays?: string;
+  note?: boolean;
   selected?: SingleBooleanChoiceArg<"selected">;
   dayStatus?: SingleChoiceArg<
     "reserved" | "discount" | "disabled" | "blocked" | "selected"
@@ -138,7 +142,8 @@ function PlasmicDayCell__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          holidays: "false"
+          holidays: "false",
+          note: false
         },
         Object.fromEntries(
           Object.entries(props.args).filter(([_, v]) => v !== undefined)
@@ -192,13 +197,11 @@ function PlasmicDayCell__RenderFunc(props: {
   });
 
   return (
-    <Stack__
-      as={"div"}
-      data-plasmic-name={"cell"}
-      data-plasmic-override={overrides.cell}
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.root_reset,
@@ -207,9 +210,43 @@ function PlasmicDayCell__RenderFunc(props: {
         projectcss.plasmic_tokens,
         plasmic_antd_5_hostless_css.plasmic_tokens,
         plasmic_plasmic_rich_components_css.plasmic_tokens,
-        sty.cell,
-        ``,
+        sty.root,
         {
+          [sty.rootdayStatus_blocked]: hasVariant(
+            $state,
+            "dayStatus",
+            "blocked"
+          ),
+          [sty.rootdayStatus_disabled]: hasVariant(
+            $state,
+            "dayStatus",
+            "disabled"
+          ),
+          [sty.rootdayStatus_discount]: hasVariant(
+            $state,
+            "dayStatus",
+            "discount"
+          ),
+          [sty.rootdayStatus_reserved]: hasVariant(
+            $state,
+            "dayStatus",
+            "reserved"
+          ),
+          [sty.rootdayStatus_selected]: hasVariant(
+            $state,
+            "dayStatus",
+            "selected"
+          ),
+          [sty.rootselected]: hasVariant($state, "selected", "selected")
+        }
+      )}
+    >
+      <Stack__
+        as={"div"}
+        data-plasmic-name={"cell"}
+        data-plasmic-override={overrides.cell}
+        hasGap={true}
+        className={classNames(projectcss.all, sty.cell, ``, {
           [sty.celldayStatus_blocked]: hasVariant(
             $state,
             "dayStatus",
@@ -236,330 +273,346 @@ function PlasmicDayCell__RenderFunc(props: {
             "selected"
           ),
           [sty.cellselected]: hasVariant($state, "selected", "selected")
+        })}
+      >
+        <div
+          className={classNames(projectcss.all, sty.freeBox__aE9Ge, {
+            [sty.freeBoxdayStatus_reserved__aE9Ge6WcTl]: hasVariant(
+              $state,
+              "dayStatus",
+              "reserved"
+            ),
+            [sty.freeBoxselected__aE9Ge2Pr1U]: hasVariant(
+              $state,
+              "selected",
+              "selected"
+            )
+          })}
+        >
+          {(() => {
+            try {
+              return (() => {
+                if ($props.holidays === "true") {
+                  return false;
+                } else {
+                  return true;
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__sLeDq,
+                {
+                  [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabled"
+                  ),
+                  [sty.textdayStatus_discount__sLeDq2ON9H]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "discount"
+                  ),
+                  [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reserved"
+                  ),
+                  [sty.textdayStatus_selected__sLeDqmbNkx]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "selected"
+                  ),
+                  [sty.textselected__sLeDq2Pr1U]: hasVariant(
+                    $state,
+                    "selected",
+                    "selected"
+                  )
+                }
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.dayNumber;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+          ) : null}
+          {(() => {
+            try {
+              return (() => {
+                if ($props.holidays == "true") {
+                  return true;
+                } else {
+                  return false;
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div
+              data-plasmic-name={"holidays2"}
+              data-plasmic-override={overrides.holidays2}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.holidays2,
+                {
+                  [sty.holidays2dayStatus_disabled]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabled"
+                  ),
+                  [sty.holidays2dayStatus_discount]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "discount"
+                  ),
+                  [sty.holidays2dayStatus_reserved]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reserved"
+                  ),
+                  [sty.holidays2dayStatus_selected]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "selected"
+                  ),
+                  [sty.holidays2selected]: hasVariant(
+                    $state,
+                    "selected",
+                    "selected"
+                  )
+                }
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.dayNumber;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+          ) : null}
+        </div>
+        <div
+          className={classNames(projectcss.all, sty.freeBox__gKj3, {
+            [sty.freeBoxdayStatus_reserved__gKj36WcTl]: hasVariant(
+              $state,
+              "dayStatus",
+              "reserved"
+            ),
+            [sty.freeBoxselected__gKj32Pr1U]: hasVariant(
+              $state,
+              "selected",
+              "selected"
+            )
+          })}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__kqTC,
+              {
+                [sty.textdayStatus_disabled__kqTCokz0Z]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabled"
+                ),
+                [sty.textdayStatus_discount__kqTC2ON9H]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "discount"
+                ),
+                [sty.textdayStatus_reserved__kqTC6WcTl]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                ),
+                [sty.textselected__kqTC2Pr1U]: hasVariant(
+                  $state,
+                  "selected",
+                  "selected"
+                )
+              }
+            )}
+          >
+            {hasVariant(globalVariants, "screen", "smallMobile") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.platform;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "\u0631\u0632\u0648\u0631 ";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            ) : hasVariant(globalVariants, "screen", "mobile") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.platform;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "\u0631\u0632\u0648\u0631 ";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.platform;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "\u0631\u0632\u0648\u0631 ";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            )}
+          </div>
+        </div>
+        <div
+          className={classNames(projectcss.all, sty.freeBox__cD9Fr, {
+            [sty.freeBoxselected__cD9Fr2Pr1U]: hasVariant(
+              $state,
+              "selected",
+              "selected"
+            )
+          })}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__ltKp2,
+              {
+                [sty.textdayStatus_blocked__ltKp277F30]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "blocked"
+                ),
+                [sty.textdayStatus_disabled__ltKp2Okz0Z]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabled"
+                ),
+                [sty.textdayStatus_discount__ltKp22ON9H]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "discount"
+                ),
+                [sty.textdayStatus_reserved__ltKp26WcTl]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                ),
+                [sty.textdayStatus_selected__ltKp2MbNkx]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "selected"
+                ),
+                [sty.textselected__ltKp22Pr1U]: hasVariant(
+                  $state,
+                  "selected",
+                  "selected"
+                )
+              }
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.price;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
+        </div>
+      </Stack__>
+      {(() => {
+        try {
+          return $props.note;
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return true;
+          }
+          throw e;
         }
-      )}
-    >
-      <div
-        className={classNames(projectcss.all, sty.freeBox__aE9Ge, {
-          [sty.freeBoxdayStatus_reserved__aE9Ge6WcTl]: hasVariant(
-            $state,
-            "dayStatus",
-            "reserved"
-          ),
-          [sty.freeBoxselected__aE9Ge2Pr1U]: hasVariant(
-            $state,
-            "selected",
-            "selected"
-          )
-        })}
-      >
-        {(() => {
-          try {
-            return (() => {
-              if ($props.holidays === "true") {
-                return false;
-              } else {
-                return true;
-              }
-            })();
-          } catch (e) {
-            if (
-              e instanceof TypeError ||
-              e?.plasmicType === "PlasmicUndefinedDataError"
-            ) {
-              return true;
-            }
-            throw e;
-          }
-        })() ? (
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__sLeDq,
-              {
-                [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
-                  $state,
-                  "dayStatus",
-                  "disabled"
-                ),
-                [sty.textdayStatus_discount__sLeDq2ON9H]: hasVariant(
-                  $state,
-                  "dayStatus",
-                  "discount"
-                ),
-                [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
-                  $state,
-                  "dayStatus",
-                  "reserved"
-                ),
-                [sty.textdayStatus_selected__sLeDqmbNkx]: hasVariant(
-                  $state,
-                  "dayStatus",
-                  "selected"
-                ),
-                [sty.textselected__sLeDq2Pr1U]: hasVariant(
-                  $state,
-                  "selected",
-                  "selected"
-                )
-              }
-            )}
-          >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.dayNumber;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          </div>
-        ) : null}
-        {(() => {
-          try {
-            return (() => {
-              if ($props.holidays == "true") {
-                return true;
-              } else {
-                return false;
-              }
-            })();
-          } catch (e) {
-            if (
-              e instanceof TypeError ||
-              e?.plasmicType === "PlasmicUndefinedDataError"
-            ) {
-              return true;
-            }
-            throw e;
-          }
-        })() ? (
-          <div
-            data-plasmic-name={"holidays2"}
-            data-plasmic-override={overrides.holidays2}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.holidays2,
-              {
-                [sty.holidays2dayStatus_disabled]: hasVariant(
-                  $state,
-                  "dayStatus",
-                  "disabled"
-                ),
-                [sty.holidays2dayStatus_discount]: hasVariant(
-                  $state,
-                  "dayStatus",
-                  "discount"
-                ),
-                [sty.holidays2dayStatus_reserved]: hasVariant(
-                  $state,
-                  "dayStatus",
-                  "reserved"
-                ),
-                [sty.holidays2dayStatus_selected]: hasVariant(
-                  $state,
-                  "dayStatus",
-                  "selected"
-                ),
-                [sty.holidays2selected]: hasVariant(
-                  $state,
-                  "selected",
-                  "selected"
-                )
-              }
-            )}
-          >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.dayNumber;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          </div>
-        ) : null}
-      </div>
-      <div
-        className={classNames(projectcss.all, sty.freeBox__gKj3, {
-          [sty.freeBoxdayStatus_reserved__gKj36WcTl]: hasVariant(
-            $state,
-            "dayStatus",
-            "reserved"
-          ),
-          [sty.freeBoxselected__gKj32Pr1U]: hasVariant(
-            $state,
-            "selected",
-            "selected"
-          )
-        })}
-      >
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__kqTC,
-            {
-              [sty.textdayStatus_disabled__kqTCokz0Z]: hasVariant(
-                $state,
-                "dayStatus",
-                "disabled"
-              ),
-              [sty.textdayStatus_discount__kqTC2ON9H]: hasVariant(
-                $state,
-                "dayStatus",
-                "discount"
-              ),
-              [sty.textdayStatus_reserved__kqTC6WcTl]: hasVariant(
-                $state,
-                "dayStatus",
-                "reserved"
-              ),
-              [sty.textselected__kqTC2Pr1U]: hasVariant(
-                $state,
-                "selected",
-                "selected"
-              )
-            }
-          )}
-        >
-          {hasVariant(globalVariants, "screen", "smallMobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.platform;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "\u0631\u0632\u0648\u0631 ";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          ) : hasVariant(globalVariants, "screen", "mobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.platform;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "\u0631\u0632\u0648\u0631 ";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.platform;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "\u0631\u0632\u0648\u0631 ";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          )}
-        </div>
-      </div>
-      <div
-        className={classNames(projectcss.all, sty.freeBox__cD9Fr, {
-          [sty.freeBoxselected__cD9Fr2Pr1U]: hasVariant(
-            $state,
-            "selected",
-            "selected"
-          )
-        })}
-      >
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__ltKp2,
-            {
-              [sty.textdayStatus_blocked__ltKp277F30]: hasVariant(
-                $state,
-                "dayStatus",
-                "blocked"
-              ),
-              [sty.textdayStatus_disabled__ltKp2Okz0Z]: hasVariant(
-                $state,
-                "dayStatus",
-                "disabled"
-              ),
-              [sty.textdayStatus_discount__ltKp22ON9H]: hasVariant(
-                $state,
-                "dayStatus",
-                "discount"
-              ),
-              [sty.textdayStatus_reserved__ltKp26WcTl]: hasVariant(
-                $state,
-                "dayStatus",
-                "reserved"
-              ),
-              [sty.textdayStatus_selected__ltKp2MbNkx]: hasVariant(
-                $state,
-                "dayStatus",
-                "selected"
-              ),
-              [sty.textselected__ltKp22Pr1U]: hasVariant(
-                $state,
-                "selected",
-                "selected"
-              )
-            }
-          )}
-        >
-          <React.Fragment>
-            {(() => {
-              try {
-                return $props.price;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return "";
-                }
-                throw e;
-              }
-            })()}
-          </React.Fragment>
-        </div>
-      </div>
-    </Stack__>
+      })() ? (
+        <div className={classNames(projectcss.all, sty.freeBox__gqxDg)} />
+      ) : null}
+    </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
+  root: ["root", "cell", "holidays2"],
   cell: ["cell", "holidays2"],
   holidays2: ["holidays2"]
 } as const;
@@ -567,6 +620,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
+  root: "div";
   cell: "div";
   holidays2: "div";
 };
@@ -618,7 +672,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "cell") {
+  if (nodeName === "root") {
     func.displayName = "PlasmicDayCell";
   } else {
     func.displayName = `PlasmicDayCell.${nodeName}`;
@@ -628,9 +682,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicDayCell = Object.assign(
   // Top-level PlasmicDayCell renders the root element
-  makeNodeComponent("cell"),
+  makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    cell: makeNodeComponent("cell"),
     holidays2: makeNodeComponent("holidays2"),
 
     // Metadata about props expected for PlasmicDayCell
