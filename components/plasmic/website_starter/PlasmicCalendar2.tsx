@@ -3945,8 +3945,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 return date.toISOString().split("T")[0];
                               }
                             );
-                            const updatedCalendar = $state.apiRequest.data.map(
-                              day => {
+                            const updatedCalendar =
+                              $state.apiRequest.data[1].calendar.map(day => {
                                 if (changedDaysDates.includes(day.date)) {
                                   console.log("محدودش در روز مشخص نبود");
                                   if (day.status === "reserved") {
@@ -4060,9 +4060,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   };
                                 }
                                 return day;
-                              }
-                            );
-                            $state.apiRequest.data = updatedCalendar;
+                              });
+                            $state.apiRequest.data[1].calendar =
+                              updatedCalendar;
                             console.log(
                               "Calendar updated with changes:",
                               updatedCalendar
