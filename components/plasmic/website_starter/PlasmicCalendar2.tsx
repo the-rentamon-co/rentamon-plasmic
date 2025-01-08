@@ -5037,6 +5037,41 @@ function PlasmicCalendar2__RenderFunc(props: {
                     "updateNoteModalOpen"
                   ];
                 }
+
+                $steps["updateWriteNoteModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["writeNoteModal", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateWriteNoteModalOpen"] != null &&
+                  typeof $steps["updateWriteNoteModalOpen"] === "object" &&
+                  typeof $steps["updateWriteNoteModalOpen"].then === "function"
+                ) {
+                  $steps["updateWriteNoteModalOpen"] = await $steps[
+                    "updateWriteNoteModalOpen"
+                  ];
+                }
               }}
             >
               {"\u062b\u0628\u062a \u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
