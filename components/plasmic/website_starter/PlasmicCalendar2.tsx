@@ -509,12 +509,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                             day.isnoted = true;
                           }
                         });
-                        $state.apiRequest.data[1].calendar = calendar;
-                        return console.log($state.apiRequest.data[1].calendar);
+                        return ($state.apiRequest.data[1].calendar = calendar);
                       } else {
-                        return console.error(
-                          "داده‌ها به درستی دریافت نشده‌اند یا یکی از مقادیر null است."
-                        );
+                        return console.log("null");
                       }
                     })()
                   };
@@ -4804,12 +4801,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const selectedTimestamp = $state.dateProp.unix;
                         function timestampToDateString(timestamp) {
                           if (!timestamp || isNaN(parseInt(timestamp, 10))) {
-                            console.error("Invalid timestamp:", timestamp);
                             return null;
                           }
                           const date = new Date(parseInt(timestamp, 10) * 1000);
                           if (isNaN(date.getTime())) {
-                            console.error("Invalid date object:", date);
                             return null;
                           }
                           return date.toISOString().split("T")[0];
