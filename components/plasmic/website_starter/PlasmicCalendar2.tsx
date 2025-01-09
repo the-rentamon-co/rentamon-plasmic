@@ -4946,7 +4946,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["updateNoteModalOpen"] =
+                $steps["sendData"] =
                   $state.textarea.value != ""
                     ? (() => {
                         const actionArgs = {
@@ -4980,23 +4980,24 @@ function PlasmicCalendar2__RenderFunc(props: {
                       })()
                     : undefined;
                 if (
-                  $steps["updateNoteModalOpen"] != null &&
-                  typeof $steps["updateNoteModalOpen"] === "object" &&
-                  typeof $steps["updateNoteModalOpen"].then === "function"
+                  $steps["sendData"] != null &&
+                  typeof $steps["sendData"] === "object" &&
+                  typeof $steps["sendData"].then === "function"
                 ) {
-                  $steps["updateNoteModalOpen"] = await $steps[
-                    "updateNoteModalOpen"
-                  ];
+                  $steps["sendData"] = await $steps["sendData"];
                 }
 
-                $steps["updateStateVariable"] =
+                $steps["updateFront"] =
                   $state.textarea.value != ""
                     ? (() => {
                         const actionArgs = {
                           operation: 0,
-                          value: ($state.apiRequest.data[1].calendar[
-                            $state.dateProp.date.day
-                          ].isnoted = true)
+                          value: (() => {
+                            $state.apiRequest.data[1].calendar[
+                              $state.dateProp.date.day
+                            ].isnoted = true;
+                            return ($state.textarea = "");
+                          })()
                         };
                         return (({
                           variable,
@@ -5015,16 +5016,14 @@ function PlasmicCalendar2__RenderFunc(props: {
                       })()
                     : undefined;
                 if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
+                  $steps["updateFront"] != null &&
+                  typeof $steps["updateFront"] === "object" &&
+                  typeof $steps["updateFront"].then === "function"
                 ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
+                  $steps["updateFront"] = await $steps["updateFront"];
                 }
 
-                $steps["updateWriteNoteModalOpen"] =
+                $steps["closeWriteNoteModal"] =
                   $state.textarea.value != ""
                     ? (() => {
                         const actionArgs = {
@@ -5051,12 +5050,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                       })()
                     : undefined;
                 if (
-                  $steps["updateWriteNoteModalOpen"] != null &&
-                  typeof $steps["updateWriteNoteModalOpen"] === "object" &&
-                  typeof $steps["updateWriteNoteModalOpen"].then === "function"
+                  $steps["closeWriteNoteModal"] != null &&
+                  typeof $steps["closeWriteNoteModal"] === "object" &&
+                  typeof $steps["closeWriteNoteModal"].then === "function"
                 ) {
-                  $steps["updateWriteNoteModalOpen"] = await $steps[
-                    "updateWriteNoteModalOpen"
+                  $steps["closeWriteNoteModal"] = await $steps[
+                    "closeWriteNoteModal"
                   ];
                 }
               }}

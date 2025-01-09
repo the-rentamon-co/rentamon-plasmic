@@ -444,8 +444,8 @@
 }
 @media (max-width: 500px) {
   .p {
-    left: -1px;
-    top: 3px;
+    left: 0px;
+    top: 2px;
   }
 }
 .pdayStatus_disabled {

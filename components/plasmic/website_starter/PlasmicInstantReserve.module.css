@@ -608,6 +608,7 @@
   color: var(--token-_E0aXewqUuUe);
   text-align: center;
   font-size: 15px;
+  user-select: none;
 }
 @media (max-width: 500px) {
   .text__uDvHu {

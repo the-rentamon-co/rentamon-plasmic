@@ -1608,6 +1608,21 @@
           "id": "34bmFwBdD3Sz",
           "name": "image 39",
           "filePath": "../public/plasmic/website_starter/images/image39.svg"
+        },
+        {
+          "id": "Zl9n4RibOjiv",
+          "name": "image 40",
+          "filePath": "../public/plasmic/website_starter/images/image40.svg"
+        },
+        {
+          "id": "Y4u4pdMe96M6",
+          "name": "image 41",
+          "filePath": "../public/plasmic/website_starter/images/image41.svg"
+        },
+        {
+          "id": "vcBIDSx7VG_d",
+          "name": "image 42",
+          "filePath": "../public/plasmic/website_starter/images/image42.svg"
         }
       ],
       "indirect": false,
