@@ -4992,12 +4992,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ? (() => {
                         const actionArgs = {
                           operation: 0,
-                          value: (() => {
-                            $state.apiRequest.data[1].calendar[
-                              $state.dateProp.date.day
-                            ].isnoted = true;
-                            return ($state.textarea = "");
-                          })()
+                          value: ($state.apiRequest.data[1].calendar[
+                            $state.dateProp.date.day
+                          ].isnoted = true)
                         };
                         return (({
                           variable,
@@ -5056,6 +5053,41 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ) {
                   $steps["closeWriteNoteModal"] = await $steps[
                     "closeWriteNoteModal"
+                  ];
+                }
+
+                $steps["updateTextareaValue"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["textarea", "value"]
+                        },
+                        operation: 1
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, undefined);
+                        return undefined;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateTextareaValue"] != null &&
+                  typeof $steps["updateTextareaValue"] === "object" &&
+                  typeof $steps["updateTextareaValue"].then === "function"
+                ) {
+                  $steps["updateTextareaValue"] = await $steps[
+                    "updateTextareaValue"
                   ];
                 }
               }}
