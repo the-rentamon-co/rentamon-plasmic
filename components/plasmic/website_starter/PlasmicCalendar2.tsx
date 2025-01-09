@@ -3931,6 +3931,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                             const allFalse = Object.values(
                               $state.platformRequestStatus.data
                             ).every(item => item.final_status === false);
+                            console.log("request data" + $state.requestdata);
+                            console.log("all false" + allFalse);
                             if (allFalse) {
                               console.log(
                                 "همه پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
