@@ -3928,17 +3928,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.modal.open = false;
                             $state.modalDiscount.open = false;
                             $state.modalChangePrice.open = false;
-                            const allFalse = Object.values(
-                              $state.platformRequestStatus.data
-                            ).every(item => item.final_status === false);
                             console.log("request data" + $state.requestdata);
                             console.log("all false" + allFalse);
-                            if (allFalse) {
-                              console.log(
-                                "همه پلتفرم‌ها شکست خورده‌اند. تغییری اعمال نمی‌شود."
-                              );
-                              return;
-                            }
                             const changedDaysTimestamps = (
                               $state.requestdata.days || []
                             ).flat();
