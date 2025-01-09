@@ -3929,7 +3929,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.modalDiscount.open = false;
                             $state.modalChangePrice.open = false;
                             console.log("request data" + $state.requestdata);
-                            console.log("all false" + allFalse);
                             const changedDaysTimestamps = (
                               $state.requestdata.days || []
                             ).flat();
@@ -3941,6 +3940,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             );
                             const updatedCalendar =
                               $state.apiRequest.data[1].calendar.map(day => {
+                                console.log("here");
                                 if (changedDaysDates.includes(day.date)) {
                                   console.log("محدودش در روز مشخص نبود");
                                   if (day.status === "reserved") {
@@ -4577,6 +4577,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                             request_for: "block"
                           };
                           $state.requestdata = data;
+                          console.log($state.requestdata);
+                          console.log(data);
                           data.days = data.days
                             .map(timestampArray =>
                               timestampArray
