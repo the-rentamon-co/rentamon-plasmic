@@ -4993,7 +4993,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           operation: 0,
                           value: ($state.apiRequest.data[1].calendar[
-                            $state.dateProp.date.day
+                            $state.dateProp.date.day - 1
                           ].isnoted = true)
                         };
                         return (({
