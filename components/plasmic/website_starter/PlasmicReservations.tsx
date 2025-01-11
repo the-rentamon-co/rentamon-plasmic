@@ -191,7 +191,8 @@ function PlasmicReservations__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? true : false
       },
       {
         path: "modalData",
@@ -422,12 +423,21 @@ function PlasmicReservations__RenderFunc(props: {
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
                       loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image20.svg",
-                        fullWidth: 46,
-                        fullHeight: 45,
-                        aspectRatio: 1.022222
-                      }}
+                      src={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/image19.svg",
+                              fullWidth: 45,
+                              fullHeight: 46,
+                              aspectRatio: 0.978261
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/image19.svg",
+                              fullWidth: 45,
+                              fullHeight: 46,
+                              aspectRatio: 0.978261
+                            }
+                      }
                     />
                   ) : null}
                   {(() => {
@@ -488,12 +498,21 @@ function PlasmicReservations__RenderFunc(props: {
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
                       loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image20.svg",
-                        fullWidth: 46,
-                        fullHeight: 45,
-                        aspectRatio: 1.022222
-                      }}
+                      src={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/image21.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/image21.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }
+                      }
                     />
                   ) : null}
                   {(() => {
@@ -521,12 +540,21 @@ function PlasmicReservations__RenderFunc(props: {
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
                       loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image20.svg",
-                        fullWidth: 46,
-                        fullHeight: 45,
-                        aspectRatio: 1.022222
-                      }}
+                      src={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/image15.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/image15.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }
+                      }
                     />
                   ) : null}
                   {(() => {
@@ -554,12 +582,21 @@ function PlasmicReservations__RenderFunc(props: {
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
                       loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image20.svg",
-                        fullWidth: 46,
-                        fullHeight: 45,
-                        aspectRatio: 1.022222
-                      }}
+                      src={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/image18.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/image18.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }
+                      }
                     />
                   ) : null}
                   {(() => {
@@ -587,12 +624,21 @@ function PlasmicReservations__RenderFunc(props: {
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
                       loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image20.svg",
-                        fullWidth: 46,
-                        fullHeight: 45,
-                        aspectRatio: 1.022222
-                      }}
+                      src={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/image13.svg",
+                              fullWidth: 46,
+                              fullHeight: 46,
+                              aspectRatio: 1
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/image13.svg",
+                              fullWidth: 46,
+                              fullHeight: 46,
+                              aspectRatio: 1
+                            }
+                      }
                     />
                   ) : null}
                   <div
@@ -652,10 +698,7 @@ function PlasmicReservations__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $state.modalData[0].GuestName.concat(
-                              " ",
-                              $state.modalData[0].GuestLastName
-                            );
+                            return $state.modalData[0].GuestName;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -675,7 +718,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text___7AhQ6
                       )}
                     >
-                      {"4 \u0646\u0641\u0631"}
+                      {"\u06cc\u0627\u0641\u062a \u0646\u0634\u062f"}
                     </div>
                     <div
                       className={classNames(
@@ -684,7 +727,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text__zpJea
                       )}
                     >
-                      {"2 \u0634\u0628"}
+                      {"\u06cc\u0627\u0641\u062a \u0646\u0634\u062f"}
                     </div>
                   </div>
                   <div
@@ -701,7 +744,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.userPhone
                       )}
                     >
-                      {"09911584793"}
+                      {"\u06cc\u0627\u0641\u062a \u0646\u0634\u062f"}
                     </div>
                   </div>
                 </Stack__>
@@ -800,7 +843,21 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text__jGiIb
                       )}
                     >
-                      {"1403/4/5"}
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData[0].lavedate;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "1403/4/5";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                   </div>
                   <div
@@ -824,9 +881,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text__ityMc
                       )}
                     >
-                      {
-                        " \u06f1/\u06f9\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                      }
+                      {"\u06cc\u0627\u0641\u062a \u0646\u0634\u062f"}
                     </div>
                   </div>
                 </Stack__>
@@ -916,16 +971,19 @@ function PlasmicReservations__RenderFunc(props: {
                                   platfromName:
                                     $state.reserveData.data[currentIndex]
                                       .platfromName,
-                                  GuestLastName:
-                                    $state.reserveData.data[currentIndex]
-                                      .GuestLastName,
                                   enterDate:
                                     $state.reserveData.data[
                                       currentIndex
                                     ].enterDate.split(" ")[0],
+                                  lavedate:
+                                    $state.reserveData.data[currentIndex]
+                                      .laveDate,
+                                  platfromName:
+                                    $state.reserveData.data[currentIndex]
+                                      .houseName,
                                   propertyName:
                                     $state.reserveData.data[currentIndex]
-                                      .houseName
+                                      .property_name
                                 }
                               ])
                             };
@@ -1049,13 +1107,8 @@ function PlasmicReservations__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.reserveData.data[
-                                currentIndex
-                              ].GuestName.concat(
-                                " ",
-                                $state.reserveData.data[currentIndex]
-                                  .GuestLastName
-                              );
+                              return $state.reserveData.data[currentIndex]
+                                .GuestName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1144,7 +1197,7 @@ function PlasmicReservations__RenderFunc(props: {
                           {(() => {
                             try {
                               return $state.reserveData.data[currentIndex]
-                                .platfromName;
+                                .houseName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
