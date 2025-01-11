@@ -128,6 +128,7 @@ export type PlasmicCalendar2__OverridesType = {
   ok?: Flex__<typeof PlasmicImg__>;
   fail?: Flex__<typeof PlasmicImg__>;
   loading?: Flex__<typeof PlasmicImg__>;
+  ok2?: Flex__<typeof PlasmicImg__>;
   block?: Flex__<typeof AntdModal>;
   reserve?: Flex__<"div">;
   block2?: Flex__<"div">;
@@ -3880,6 +3881,78 @@ function PlasmicCalendar2__RenderFunc(props: {
                   </div>
                 );
               })}
+              {(() => {
+                try {
+                  return !Object.keys($state.userPlatform.data.status).length;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__l5DBh)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__sH55H
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return "ثبت شد";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u062c\u0627\u062c\u06cc\u06af\u0627";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox___7NYGc)}
+                  >
+                    <PlasmicImg__
+                      data-plasmic-name={"ok2"}
+                      data-plasmic-override={overrides.ok2}
+                      alt={""}
+                      className={classNames(sty.ok2)}
+                      displayHeight={"34px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "lazy"
+                          : "eager"
+                      }
+                      src={{
+                        src: "/plasmic/website_starter/images/image27.svg",
+                        fullWidth: 26,
+                        fullHeight: 26,
+                        aspectRatio: 1
+                      }}
+                    />
+                  </Stack__>
+                </Stack__>
+              ) : null}
               <Button
                 className={classNames("__wab_instance", sty.button__sWmv0)}
                 isDisabled={(() => {
@@ -5131,6 +5204,7 @@ const PlasmicDescendants = {
     "ok",
     "fail",
     "loading",
+    "ok2",
     "block",
     "reserve",
     "block2",
@@ -5159,13 +5233,15 @@ const PlasmicDescendants = {
     "loading2",
     "ok",
     "fail",
-    "loading"
+    "loading",
+    "ok2"
   ],
-  userPlatform: ["userPlatform", "loading2", "ok", "fail", "loading"],
+  userPlatform: ["userPlatform", "loading2", "ok", "fail", "loading", "ok2"],
   loading2: ["loading2"],
   ok: ["ok"],
   fail: ["fail"],
   loading: ["loading"],
+  ok2: ["ok2"],
   block: ["block", "reserve", "block2"],
   reserve: ["reserve"],
   block2: ["block2"],
@@ -5199,6 +5275,7 @@ type NodeDefaultElementType = {
   ok: typeof PlasmicImg__;
   fail: typeof PlasmicImg__;
   loading: typeof PlasmicImg__;
+  ok2: typeof PlasmicImg__;
   block: typeof AntdModal;
   reserve: "div";
   block2: "div";
@@ -5288,6 +5365,7 @@ export const PlasmicCalendar2 = Object.assign(
     ok: makeNodeComponent("ok"),
     fail: makeNodeComponent("fail"),
     loading: makeNodeComponent("loading"),
+    ok2: makeNodeComponent("ok2"),
     block: makeNodeComponent("block"),
     reserve: makeNodeComponent("reserve"),
     block2: makeNodeComponent("block2"),
