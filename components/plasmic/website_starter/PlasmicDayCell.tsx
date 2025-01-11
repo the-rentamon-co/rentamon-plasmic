@@ -608,19 +608,35 @@ function PlasmicDayCell__RenderFunc(props: {
           </div>
         </div>
       </Stack__>
-      {(() => {
-        try {
-          return $props.note;
-        } catch (e) {
-          if (
-            e instanceof TypeError ||
-            e?.plasmicType === "PlasmicUndefinedDataError"
-          ) {
-            return true;
-          }
-          throw e;
-        }
-      })() ? (
+      {(
+        hasVariant($state, "dayStatus", "disabled")
+          ? (() => {
+              try {
+                return $props.note;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })()
+          : (() => {
+              try {
+                return $props.note;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })()
+      ) ? (
         <p
           data-plasmic-name={"p"}
           data-plasmic-override={overrides.p}

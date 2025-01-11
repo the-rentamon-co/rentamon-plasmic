@@ -5135,7 +5135,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                           objRoot: $state,
                           variablePath: ["textarea", "value"]
                         },
-                        operation: 1
+                        operation: 0,
+                        value: ($state.textarea.value = "")
                       };
                       return (({
                         variable,
@@ -5148,8 +5149,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                         }
                         const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, undefined);
-                        return undefined;
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
                       })?.apply(null, [actionArgs]);
                     })()
                   : undefined;

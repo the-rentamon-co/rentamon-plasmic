@@ -450,4 +450,5 @@
 }
 .pdayStatus_disabled {
   background: var(--token-8nedppYkGVaH);
+  display: flex;
 }
