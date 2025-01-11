@@ -4982,9 +4982,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ? (() => {
                         const actionArgs = {
                           operation: 0,
-                          value: ($state.apiRequest.data[1].calendar[
-                            $state.dateProp.date.day - 1
-                          ].isnoted = true)
+                          value: (() => {
+                            let data = {
+                              noteText: $state.textarea.value,
+                              timestamps: $state.dateProp.unix
+                            };
+                            $state.apiRequest.data[1].calendar[
+                              $state.dateProp.date.day - 1
+                            ].isnoted = true;
+                            return $state.apiRequest.data[2].notesAndTimestamps.push(
+                              data
+                            );
+                          })()
                         };
                         return (({
                           variable,
