@@ -59,8 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -90,8 +90,8 @@ export const PlasmicReservations__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicReservations__OverridesType = {
   root?: Flex__<"div">;
-  profile?: Flex__<typeof ApiRequest>;
   sideBar2?: Flex__<typeof SideBar2>;
+  profile?: Flex__<typeof ApiRequest>;
   container?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
@@ -192,7 +192,7 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? true : false
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "modalData",
@@ -265,37 +265,6 @@ function PlasmicReservations__RenderFunc(props: {
             sty.root
           )}
         >
-          <ApiRequest
-            data-plasmic-name={"profile"}
-            data-plasmic-override={overrides.profile}
-            className={classNames("__wab_instance", sty.profile)}
-            errorDisplay={null}
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile", "loading"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            ref={ref => {
-              $refs["profile"] = ref;
-            }}
-            url={"https://api.rentamon.com/api/user_info?property_id=1"}
-          />
-
           <div className={classNames(projectcss.all, sty.freeBox__nZsBh)}>
             <SideBar2
               data-plasmic-name={"sideBar2"}
@@ -330,6 +299,36 @@ function PlasmicReservations__RenderFunc(props: {
                 }
               </div>
             </div>
+            <ApiRequest
+              data-plasmic-name={"profile"}
+              data-plasmic-override={overrides.profile}
+              className={classNames("__wab_instance", sty.profile)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "error"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "loading"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["profile"] = ref;
+              }}
+              url={"https://api.rentamon.com/api/user_info?property_id=1"}
+            />
           </div>
           <Stack__
             as={"div"}
@@ -1063,13 +1062,8 @@ function PlasmicReservations__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.reserveData.data[
-                                currentIndex
-                              ].GuestName.concat(
-                                " ",
-                                $state.reserveData.data[currentIndex]
-                                  .GuestLastName
-                              );
+                              return $state.reserveData.data[currentIndex]
+                                .GuestName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1085,13 +1079,8 @@ function PlasmicReservations__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.reserveData.data[
-                                currentIndex
-                              ].GuestName.concat(
-                                " ",
-                                $state.reserveData.data[currentIndex]
-                                  .GuestLastName
-                              );
+                              return $state.reserveData.data[currentIndex]
+                                .GuestName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1163,7 +1152,7 @@ function PlasmicReservations__RenderFunc(props: {
                           {(() => {
                             try {
                               return $state.reserveData.data[currentIndex]
-                                .platfromName;
+                                .houseName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1180,7 +1169,7 @@ function PlasmicReservations__RenderFunc(props: {
                           {(() => {
                             try {
                               return $state.reserveData.data[currentIndex]
-                                .platfromName;
+                                .houseName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1323,8 +1312,8 @@ function PlasmicReservations__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "profile",
     "sideBar2",
+    "profile",
     "container",
     "modal",
     "main",
@@ -1353,8 +1342,8 @@ const PlasmicDescendants = {
     "returnButton",
     "favicon"
   ],
-  profile: ["profile"],
   sideBar2: ["sideBar2"],
+  profile: ["profile"],
   container: [
     "container",
     "modal",
@@ -1451,8 +1440,8 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  profile: typeof ApiRequest;
   sideBar2: typeof SideBar2;
+  profile: typeof ApiRequest;
   container: "div";
   modal: typeof AntdModal;
   main: "div";
@@ -1542,8 +1531,8 @@ export const PlasmicReservations = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    profile: makeNodeComponent("profile"),
     sideBar2: makeNodeComponent("sideBar2"),
+    profile: makeNodeComponent("profile"),
     container: makeNodeComponent("container"),
     modal: makeNodeComponent("modal"),
     main: makeNodeComponent("main"),
