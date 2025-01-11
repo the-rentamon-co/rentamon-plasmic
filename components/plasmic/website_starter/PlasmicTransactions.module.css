@@ -164,7 +164,7 @@
 }
 .freeBox__fk6Iq {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   position: relative;
   width: 15%;
   height: auto;
@@ -172,8 +172,8 @@
   padding: 0px;
 }
 .freeBox__fk6Iq > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
   align-items: center;
   margin-left: calc(0px - 10px);
   width: calc(100% + 10px);
@@ -252,6 +252,7 @@
   max-width: 100%;
   font-size: 20px;
   font-weight: 600;
+  text-align: right;
 }
 @media (max-width: 500px) {
   .text__dqFdj {
