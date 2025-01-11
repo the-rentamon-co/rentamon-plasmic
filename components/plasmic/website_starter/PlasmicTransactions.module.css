@@ -193,14 +193,14 @@
     width: 30%;
     height: auto;
     max-width: 100%;
-    flex-direction: row;
+    flex-direction: row-reverse;
     padding: 0px;
   }
 }
 @media (max-width: 500px) {
   .freeBox__fk6Iq > :global(.__wab_flex-container) {
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     align-items: center;
     margin-left: calc(0px - 10px);
     width: calc(100% + 10px);
