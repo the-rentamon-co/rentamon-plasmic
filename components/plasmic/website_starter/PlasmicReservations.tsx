@@ -1174,21 +1174,9 @@ function PlasmicReservations__RenderFunc(props: {
                       sty.text__eqa1B
                     )}
                   >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $state.reserveData.error.message;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "Error fetching data";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
+                    {
+                      "\u062e\u0637 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
+                    }
                   </div>
                 }
                 loadingDisplay={

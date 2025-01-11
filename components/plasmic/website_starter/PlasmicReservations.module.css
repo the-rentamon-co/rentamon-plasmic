@@ -66,9 +66,15 @@
 @media (max-width: 1200px) {
   .sideBar2:global(.__wab_instance):global(.__wab_instance) {
     width: 70px;
-    height: 28px;
+    height: auto;
     z-index: 100;
     flex-shrink: 0;
+  }
+}
+@media (max-width: 500px) {
+  .sideBar2:global(.__wab_instance):global(.__wab_instance) {
+    z-index: 1000000;
+    height: auto;
   }
 }
 .freeBox__bMTr4 {
@@ -644,6 +650,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  text-align: center;
   min-width: 0;
 }
 .returnButton {
