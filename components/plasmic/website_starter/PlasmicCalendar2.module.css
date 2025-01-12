@@ -1783,16 +1783,19 @@
   object-fit: cover;
   background: #ffffff;
   width: 100%;
-  height: 100%;
-  margin-top: 2px;
+  height: 50px;
+  margin-top: 6px;
   font-size: 17px;
+  user-select: none;
   min-width: 0;
-  min-height: 0;
+  flex-shrink: 0;
   border-radius: 30px;
   border: 2px solid var(--token-8nedppYkGVaH);
 }
 .text___1G8Jz {
   color: var(--token-8nedppYkGVaH);
+  font-size: 17px;
+  user-select: none;
 }
 .writeNoteModal:global(.__wab_instance) {
   max-width: 100%;
