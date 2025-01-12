@@ -1731,6 +1731,7 @@
   line-height: 2;
   color: #444444;
   min-width: 0;
+  padding: 8px;
 }
 .freeBox__kpmHd {
   display: flex;
