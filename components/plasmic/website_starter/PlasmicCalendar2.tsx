@@ -417,7 +417,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
             ? false
-            : true
+            : false
       },
       {
         path: "dateProp",
