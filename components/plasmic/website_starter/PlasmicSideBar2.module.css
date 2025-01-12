@@ -196,6 +196,7 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -259,7 +260,7 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  color: var(--token-VC1CUzrVcfix);
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -322,6 +323,7 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -386,14 +388,82 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  color: var(--token-hrGkLn5-w5KL);
+  color: #444444;
   font-size: 15px;
   font-weight: 600;
-  cursor: not-allowed;
+  cursor: pointer;
   min-width: 0;
 }
 @media (max-width: 500px) {
   .text___4ITo {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    min-width: 0;
+  }
+}
+.freeBox__hcaX9 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: 2px;
+  cursor: pointer;
+  margin-bottom: 2px;
+  min-width: 0;
+  padding: 14px 8px;
+}
+.freeBox__hcaX9 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 10px);
+  width: calc(100% + 10px);
+}
+.freeBox__hcaX9 > :global(.__wab_flex-container) > *,
+.freeBox__hcaX9 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__hcaX9 > :global(.__wab_flex-container) > picture > img,
+.freeBox__hcaX9
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 10px;
+}
+.svg__mGaY9 {
+  object-fit: cover;
+  max-width: 100%;
+  color: #acacac;
+  height: 20px;
+}
+@media (max-width: 500px) {
+  .svg__mGaY9 {
+    width: 20px;
+    height: 100%;
+    max-width: 100%;
+    color: #acacac;
+    flex-shrink: 0;
+    min-height: 0;
+  }
+}
+.text__zNoJi {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: #444444;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__zNoJi {
     width: 100%;
     height: auto;
     max-width: 100%;

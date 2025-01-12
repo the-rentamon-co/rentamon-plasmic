@@ -956,6 +956,11 @@
           "id": "6tvk0yroHFRk",
           "name": "LinkedinSvgIcon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__LinkedinSvg.tsx"
+        },
+        {
+          "id": "re7g4HwqLfNb",
+          "name": "Icon26Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon26.tsx"
         }
       ],
       "images": [
