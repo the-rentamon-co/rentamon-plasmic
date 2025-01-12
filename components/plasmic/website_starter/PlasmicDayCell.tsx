@@ -214,9 +214,7 @@ function PlasmicDayCell__RenderFunc(props: {
         plasmic_antd_5_hostless_css.plasmic_tokens,
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root,
-        hasVariant($state, "dayStatus", "disabled")
-          ? "disablebutton"
-          : undefined,
+        hasVariant($state, "dayStatus", "disabled") ? "disablebutton" : ``,
         {
           [sty.rootdayStatus_blocked]: hasVariant(
             $state,
@@ -252,7 +250,7 @@ function PlasmicDayCell__RenderFunc(props: {
         data-plasmic-name={"cell"}
         data-plasmic-override={overrides.cell}
         hasGap={true}
-        className={classNames(projectcss.all, sty.cell, ``, {
+        className={classNames(projectcss.all, sty.cell, "noteEffect", {
           [sty.celldayStatus_blocked]: hasVariant(
             $state,
             "dayStatus",
