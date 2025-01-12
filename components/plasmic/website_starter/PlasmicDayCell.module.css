@@ -199,6 +199,7 @@
   left: auto;
   top: auto;
   z-index: 1;
+  user-select: none;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -234,6 +235,7 @@
   height: auto;
   width: 100%;
   margin-top: 2px;
+  user-select: none;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -347,6 +349,7 @@
   text-align: center;
   color: var(--token-7MRjbe724hDb);
   font-weight: 400;
+  user-select: none;
   min-width: 0;
   display: none;
 }
@@ -401,6 +404,7 @@
   left: 0px;
   top: 10px;
   z-index: 1;
+  user-select: none;
   min-width: 0;
 }
 @media (max-width: 500px) {
