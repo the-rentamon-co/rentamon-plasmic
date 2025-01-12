@@ -32,6 +32,10 @@
     grid-column: 4;
   }
 }
+.sideEffect:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .profile:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -757,8 +761,4 @@
   .text__gpLd3 {
     font-size: 17px;
   }
-}
-.sideEffect:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
 }

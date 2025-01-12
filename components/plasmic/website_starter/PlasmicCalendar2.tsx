@@ -4971,6 +4971,46 @@ function PlasmicCalendar2__RenderFunc(props: {
             </Button>
             <AntdButton
               className={classNames("__wab_instance", sty.button__w04Qy)}
+              danger={false}
+              loading={false}
+              onClick={async () => {
+                const $steps = {};
+
+                $steps["updateNoteModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["noteModal", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateNoteModalOpen"] != null &&
+                  typeof $steps["updateNoteModalOpen"] === "object" &&
+                  typeof $steps["updateNoteModalOpen"].then === "function"
+                ) {
+                  $steps["updateNoteModalOpen"] = await $steps[
+                    "updateNoteModalOpen"
+                  ];
+                }
+              }}
               size={"medium"}
               type={"primary"}
             >
