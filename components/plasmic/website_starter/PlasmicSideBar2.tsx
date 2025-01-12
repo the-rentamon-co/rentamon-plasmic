@@ -533,7 +533,7 @@ function PlasmicSideBar2__RenderFunc(props: {
               ];
             }
 
-            $steps["goToPanelCalendar"] = false
+            $steps["goToPanelCalendar"] = true
               ? (() => {
                   const actionArgs = { destination: `/panel` };
                   return (({ destination }) => {
