@@ -832,7 +832,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text___7AhQ6
                       )}
                     >
-                      {"\u06cc\u0627\u0641\u062a \u0646\u0634\u062f"}
+                      {"-"}
                     </div>
                     <div
                       className={classNames(
@@ -841,7 +841,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text__zpJea
                       )}
                     >
-                      {"\u06cc\u0627\u0641\u062a \u0646\u0634\u062f"}
+                      {"-"}
                     </div>
                   </div>
                   <div
@@ -858,7 +858,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.userPhone
                       )}
                     >
-                      {"\u06cc\u0627\u0641\u062a \u0646\u0634\u062f"}
+                      {"-"}
                     </div>
                   </div>
                 </Stack__>
@@ -995,7 +995,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text__ityMc
                       )}
                     >
-                      {"\u06cc\u0627\u0641\u062a \u0646\u0634\u062f"}
+                      {"-"}
                     </div>
                   </div>
                 </Stack__>
