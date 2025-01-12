@@ -711,6 +711,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                   $steps["openWriteModal"] = await $steps["openWriteModal"];
                 }
               }}
+              onStart={async () => {
+                const $steps = {};
+              }}
             >
               <DayCell
                 data-plasmic-name={"dayCell"}

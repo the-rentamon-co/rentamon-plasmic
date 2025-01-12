@@ -126,7 +126,12 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 2em 8px 8px;
+  padding: 2em 8px 9em;
+}
+@media (max-width: 500px) {
+  .freeBox__prOxi {
+    padding-bottom: 10em;
+  }
 }
 @media (max-width: 350px) {
   .freeBox__prOxi {
