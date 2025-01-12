@@ -837,7 +837,7 @@
 .img__o0UC {
   object-fit: cover;
   max-width: 100%;
-  height: 49px;
+  height: 30px;
   flex-shrink: 0;
 }
 .img__o0UC > picture > img {
@@ -845,7 +845,7 @@
 }
 @media (max-width: 1200px) {
   .img__o0UC {
-    height: 41px;
+    height: 30px;
     flex-shrink: 0;
   }
 }

@@ -292,8 +292,8 @@ function PlasmicSideBar2__RenderFunc(props: {
                 : hasVariant(globalVariants, "screen", "mobile")
                 ? "27px"
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? "41px"
-                : "49px"
+                ? "30px"
+                : "30px"
             }
             displayMaxHeight={"none"}
             displayMaxWidth={"100%"}
@@ -310,7 +310,13 @@ function PlasmicSideBar2__RenderFunc(props: {
           />
         </div>
       }
-      width={hasVariant(globalVariants, "screen", "mobile") ? "75%" : "50%"}
+      width={
+        hasVariant(globalVariants, "screen", "mobile")
+          ? "75%"
+          : hasVariant(globalVariants, "screen", "tablet")
+          ? "50%"
+          : "30%"
+      }
       wrapClassName={classNames({ [sty["pcls_CJNwevy9HtLv"]]: true })}
     >
       <div className={classNames(projectcss.all, sty.freeBox__zNdeq, "vh")}>

@@ -782,7 +782,9 @@ function PlasmicTransactions__RenderFunc(props: {
                   sty.text___05ZQ
                 )}
               >
-                {"Error fetching data"}
+                {
+                  "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
+                }
               </div>
             }
             loadingDisplay={

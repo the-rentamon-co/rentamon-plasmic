@@ -1342,7 +1342,13 @@ function PlasmicReservations__RenderFunc(props: {
                     data-plasmic-override={overrides.img}
                     alt={""}
                     className={classNames(sty.img)}
-                    displayHeight={"160px"}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "34px"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "55px"
+                        : "76px"
+                    }
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
