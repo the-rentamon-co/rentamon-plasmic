@@ -68,6 +68,7 @@ import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -412,7 +413,11 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : false
       },
       {
         path: "dateProp",
@@ -629,7 +634,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               data-plasmic-name={"fragmentLongPress"}
               data-plasmic-override={overrides.fragmentLongPress}
               className={classNames("__wab_instance", sty.fragmentLongPress)}
-              duration={1000}
+              duration={800}
               onLongPress={async () => {
                 const $steps = {};
 
@@ -4960,9 +4965,25 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ];
                 }
               }}
+              shape={"rounded"}
             >
               {"\u0628\u0627\u0632\u06af\u0634\u062a"}
             </Button>
+            <AntdButton
+              className={classNames("__wab_instance", sty.button__w04Qy)}
+              size={"medium"}
+              type={"primary"}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___1G8Jz
+                )}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+              </div>
+            </AntdButton>
           </div>
         </AntdModal>
         <AntdModal
