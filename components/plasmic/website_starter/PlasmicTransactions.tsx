@@ -95,6 +95,7 @@ export type PlasmicTransactions__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   favicon?: Flex__<typeof Embed>;
   returnButton?: Flex__<"div">;
+  clarity?: Flex__<typeof Embed>;
 };
 
 export interface DefaultTransactionsProps {}
@@ -878,6 +879,14 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <Embed
+            data-plasmic-name={"clarity"}
+            data-plasmic-override={overrides.clarity}
+            className={classNames("__wab_instance", sty.clarity)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -895,7 +904,8 @@ const PlasmicDescendants = {
     "item",
     "apiRequest",
     "favicon",
-    "returnButton"
+    "returnButton",
+    "clarity"
   ],
   sideEffect: ["sideEffect"],
   profile: ["profile"],
@@ -905,7 +915,8 @@ const PlasmicDescendants = {
   item: ["item"],
   apiRequest: ["apiRequest"],
   favicon: ["favicon"],
-  returnButton: ["returnButton"]
+  returnButton: ["returnButton"],
+  clarity: ["clarity"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -921,6 +932,7 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   favicon: typeof Embed;
   returnButton: "div";
+  clarity: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -992,6 +1004,7 @@ export const PlasmicTransactions = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     favicon: makeNodeComponent("favicon"),
     returnButton: makeNodeComponent("returnButton"),
+    clarity: makeNodeComponent("clarity"),
 
     // Metadata about props expected for PlasmicTransactions
     internalVariantProps: PlasmicTransactions__VariantProps,

@@ -121,6 +121,7 @@ export type PlasmicReservations__OverridesType = {
   img?: Flex__<typeof PlasmicImg__>;
   returnButton?: Flex__<"div">;
   favicon?: Flex__<typeof Embed>;
+  clarity?: Flex__<typeof Embed>;
 };
 
 export interface DefaultReservationsProps {}
@@ -1451,6 +1452,15 @@ function PlasmicReservations__RenderFunc(props: {
               '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon.com/wp-content/uploads/2023/08/R-Logo-7059df.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "192x192"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
             }
           />
+
+          <Embed
+            data-plasmic-name={"clarity"}
+            data-plasmic-override={overrides.clarity}
+            className={classNames("__wab_instance", sty.clarity)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1489,7 +1499,8 @@ const PlasmicDescendants = {
     "reserveData",
     "img",
     "returnButton",
-    "favicon"
+    "favicon",
+    "clarity"
   ],
   sideEffect: ["sideEffect"],
   sideBar2: ["sideBar2"],
@@ -1583,7 +1594,8 @@ const PlasmicDescendants = {
   reserveData: ["reserveData", "img"],
   img: ["img"],
   returnButton: ["returnButton"],
-  favicon: ["favicon"]
+  favicon: ["favicon"],
+  clarity: ["clarity"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1620,6 +1632,7 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   returnButton: "div";
   favicon: typeof Embed;
+  clarity: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1712,6 +1725,7 @@ export const PlasmicReservations = Object.assign(
     img: makeNodeComponent("img"),
     returnButton: makeNodeComponent("returnButton"),
     favicon: makeNodeComponent("favicon"),
+    clarity: makeNodeComponent("clarity"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,
