@@ -608,12 +608,16 @@ function PlasmicCalendar2__RenderFunc(props: {
         }}
         url={(() => {
           try {
-            return (
-              // let initialMonth = new Date().toLocaleDateString("fa").split("/")[1];
-              // `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=1403-${ $state.fragmentDatePicker?.month ?? initialMonth }-01&end_date=1403-${ $state.fragmentDatePicker?.month ?? initialMonth }-30&property_id=${ $props.propertyId }`
-
-              "https://gateway.rentamon.com/webhook/test"
-            );
+            return (() => {
+              let initialMonth = new Date()
+                .toLocaleDateString("fa")
+                .split("/")[1];
+              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=1403-${
+                $state.fragmentDatePicker?.month ?? initialMonth
+              }-01&end_date=1403-${
+                $state.fragmentDatePicker?.month ?? initialMonth
+              }-30&property_id=${$props.propertyId}`;
+            })();
           } catch (e) {
             if (
               e instanceof TypeError ||
