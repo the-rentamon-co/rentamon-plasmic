@@ -1202,13 +1202,13 @@
   min-width: 0;
   padding: 8px;
 }
-.img {
+.img__rzHqA {
   object-fit: cover;
   max-width: 100%;
   width: 45px;
   flex-shrink: 0;
 }
-.img > picture > img {
+.img__rzHqA > picture > img {
   object-fit: cover;
 }
 .text__psStq {
@@ -1733,6 +1733,21 @@
   min-width: 0;
   padding: 8px;
 }
+.img__uyXHi {
+  object-fit: cover;
+  max-width: 100%;
+  width: 30px;
+  position: absolute;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.img__uyXHi > picture > img {
+  object-fit: cover;
+}
 .freeBox__kpmHd {
   display: flex;
   flex-direction: column;
@@ -1831,6 +1846,45 @@
   height: 1em;
 }
 .svg__cRzi {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.updateNoteModal:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.freeBox__dmMyI {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 5px;
+}
+.textarea2:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  height: 213px;
+  font-size: 16px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+.button__nLk2Q:global(.__wab_instance) {
+  max-width: 100%;
+}
+.svg__tGjyY {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__bknrt {
   position: relative;
   object-fit: cover;
   width: auto;

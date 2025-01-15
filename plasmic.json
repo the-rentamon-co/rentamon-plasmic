@@ -1628,6 +1628,11 @@
           "id": "vcBIDSx7VG_d",
           "name": "image 42",
           "filePath": "../public/plasmic/website_starter/images/image42.svg"
+        },
+        {
+          "id": "r2gJUIVZ7Rc0",
+          "name": "image 43",
+          "filePath": "../public/plasmic/website_starter/images/image43.svg"
         }
       ],
       "indirect": false,

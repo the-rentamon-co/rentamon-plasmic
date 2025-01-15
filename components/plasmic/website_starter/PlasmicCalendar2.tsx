@@ -122,7 +122,6 @@ export type PlasmicCalendar2__OverridesType = {
   main2?: Flex__<"div">;
   textInput?: Flex__<typeof TextInput>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
-  img?: Flex__<typeof PlasmicImg__>;
   fetchModal?: Flex__<typeof AntdModal>;
   userPlatform?: Flex__<typeof ApiRequest>;
   loading2?: Flex__<typeof PlasmicImg__>;
@@ -136,6 +135,8 @@ export type PlasmicCalendar2__OverridesType = {
   noteModal?: Flex__<typeof AntdModal>;
   writeNoteModal?: Flex__<typeof AntdModal>;
   textarea?: Flex__<typeof Textarea>;
+  updateNoteModal?: Flex__<typeof AntdModal>;
+  textarea2?: Flex__<typeof Textarea>;
   embedHtml?: Flex__<typeof Embed>;
 };
 
@@ -437,6 +438,65 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "targetNoteItem",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "updateNoteModal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
+      },
+      {
+        path: "textarea2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const notesAndTimestamps =
+                  $state.apiRequest.data[2].notesAndTimestamps;
+                const selectedTimestamp = $state.dateProp.unix;
+                function timestampToDateString(timestamp) {
+                  if (!timestamp || isNaN(parseInt(timestamp, 10))) {
+                    return null;
+                  }
+                  const date = new Date(parseInt(timestamp, 10) * 1000);
+                  if (isNaN(date.getTime())) {
+                    return null;
+                  }
+                  return date.toISOString().split("T")[0];
+                }
+                const selectedDate = timestampToDateString(selectedTimestamp);
+                if (!selectedDate) {
+                  console.error(
+                    "Selected timestamp is invalid:",
+                    selectedTimestamp
+                  );
+                  return [];
+                }
+                const filteredNotes = notesAndTimestamps.filter(noteItem => {
+                  const noteDate = timestampToDateString(noteItem.timestamps);
+                  return noteDate === selectedDate;
+                });
+                return filteredNotes[0].noteText;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -548,16 +608,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         }}
         url={(() => {
           try {
-            return (() => {
-              let initialMonth = new Date()
-                .toLocaleDateString("fa")
-                .split("/")[1];
-              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=1403-${
-                $state.fragmentDatePicker?.month ?? initialMonth
-              }-01&end_date=1403-${
-                $state.fragmentDatePicker?.month ?? initialMonth
-              }-30&property_id=${$props.propertyId}`;
-            })();
+            return (
+              // let initialMonth = new Date().toLocaleDateString("fa").split("/")[1];
+              // `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=1403-${ $state.fragmentDatePicker?.month ?? initialMonth }-01&end_date=1403-${ $state.fragmentDatePicker?.month ?? initialMonth }-30&property_id=${ $props.propertyId }`
+
+              "https://gateway.rentamon.com/webhook/test"
+            );
           } catch (e) {
             if (
               e instanceof TypeError ||
@@ -637,6 +693,42 @@ function PlasmicCalendar2__RenderFunc(props: {
               duration={800}
               onLongPress={async () => {
                 const $steps = {};
+
+                $steps["updateEditModalText"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["targetNoteItem"]
+                        },
+                        operation: 0,
+                        value: ($state.targetNoteItem = {})
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateEditModalText"] != null &&
+                  typeof $steps["updateEditModalText"] === "object" &&
+                  typeof $steps["updateEditModalText"].then === "function"
+                ) {
+                  $steps["updateEditModalText"] = await $steps[
+                    "updateEditModalText"
+                  ];
+                }
 
                 $steps["openReadModal"] =
                   $state.apiRequest.data[1].calendar[dateProps.date.day - 1]
@@ -3455,10 +3547,8 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             })() ? (
               <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img__rzHqA)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -4921,6 +5011,137 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()}
                 </React.Fragment>
               </div>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__uyXHi)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"30px"}
+                loading={"lazy"}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateNoteModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["noteModal", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateNoteModalOpen"] != null &&
+                    typeof $steps["updateNoteModalOpen"] === "object" &&
+                    typeof $steps["updateNoteModalOpen"].then === "function"
+                  ) {
+                    $steps["updateNoteModalOpen"] = await $steps[
+                      "updateNoteModalOpen"
+                    ];
+                  }
+
+                  $steps["updateUpdateNoteModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["updateNoteModal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateUpdateNoteModalOpen"] != null &&
+                    typeof $steps["updateUpdateNoteModalOpen"] === "object" &&
+                    typeof $steps["updateUpdateNoteModalOpen"].then ===
+                      "function"
+                  ) {
+                    $steps["updateUpdateNoteModalOpen"] = await $steps[
+                      "updateUpdateNoteModalOpen"
+                    ];
+                  }
+
+                  $steps["updateEditModalText"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["targetNoteItem"]
+                          },
+                          value: (() => {
+                            $state.targetNoteItem.isUpdate = true;
+                            return console.log($state.targetNoteItem);
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateEditModalText"] != null &&
+                    typeof $steps["updateEditModalText"] === "object" &&
+                    typeof $steps["updateEditModalText"].then === "function"
+                  ) {
+                    $steps["updateEditModalText"] = await $steps[
+                      "updateEditModalText"
+                    ];
+                  }
+                }}
+                src={{
+                  src: "/plasmic/website_starter/images/image43.svg",
+                  fullWidth: 39,
+                  fullHeight: 39,
+                  aspectRatio: 1
+                }}
+              />
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__kpmHd)} />
           </div>
@@ -5233,6 +5454,303 @@ function PlasmicCalendar2__RenderFunc(props: {
             </Button>
           </div>
         </AntdModal>
+        <AntdModal
+          data-plasmic-name={"updateNoteModal"}
+          data-plasmic-override={overrides.updateNoteModal}
+          className={classNames("__wab_instance", sty.updateNoteModal)}
+          defaultStylesClassName={classNames(
+            projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens
+          )}
+          hideFooter={true}
+          modalScopeClassName={sty["updateNoteModal__modal"]}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, [
+              "updateNoteModal",
+              "open"
+            ]).apply(null, eventArgs);
+          }}
+          open={generateStateValueProp($state, ["updateNoteModal", "open"])}
+          title={null}
+          trigger={null}
+          width={"320"}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__dmMyI)}>
+            {(() => {
+              const child$Props = {
+                className: classNames("__wab_instance", sty.textarea2),
+                onChange: async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "textarea2",
+                    "value"
+                  ]).apply(null, eventArgs);
+                },
+                placeholder:
+                  "\u0627\u06cc\u0646\u062c\u0627 \u0628\u0646\u0648\u06cc\u0633...",
+                value: generateStateValueProp($state, ["textarea2", "value"])
+              };
+              initializeCodeComponentStates(
+                $state,
+                [
+                  {
+                    name: "value",
+                    plasmicStateName: "textarea2.value"
+                  }
+                ],
+                [],
+                undefined ?? {},
+                child$Props
+              );
+              initializePlasmicStates(
+                $state,
+                [
+                  {
+                    name: "textarea2.value",
+                    initFunc: ({ $props, $state, $queries }) =>
+                      (() => {
+                        try {
+                          return (() => {
+                            const notesAndTimestamps =
+                              $state.apiRequest.data[2].notesAndTimestamps;
+                            const selectedTimestamp = $state.dateProp.unix;
+                            function timestampToDateString(timestamp) {
+                              if (
+                                !timestamp ||
+                                isNaN(parseInt(timestamp, 10))
+                              ) {
+                                return null;
+                              }
+                              const date = new Date(
+                                parseInt(timestamp, 10) * 1000
+                              );
+                              if (isNaN(date.getTime())) {
+                                return null;
+                              }
+                              return date.toISOString().split("T")[0];
+                            }
+                            const selectedDate =
+                              timestampToDateString(selectedTimestamp);
+                            if (!selectedDate) {
+                              console.error(
+                                "Selected timestamp is invalid:",
+                                selectedTimestamp
+                              );
+                              return [];
+                            }
+                            const filteredNotes = notesAndTimestamps.filter(
+                              noteItem => {
+                                const noteDate = timestampToDateString(
+                                  noteItem.timestamps
+                                );
+                                return noteDate === selectedDate;
+                              }
+                            );
+                            return filteredNotes[0].noteText;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                  }
+                ],
+                []
+              );
+              return (
+                <Textarea
+                  data-plasmic-name={"textarea2"}
+                  data-plasmic-override={overrides.textarea2}
+                  {...child$Props}
+                />
+              );
+            })()}
+            <Button
+              className={classNames("__wab_instance", sty.button__nLk2Q)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateFront"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: (() => {
+                          let data = {
+                            noteText: $state.textarea2.value,
+                            timestamps: $state.dateProp.unix
+                          };
+                          let targetDate = new Date(data.timestamps * 1000);
+                          let targetItem =
+                            $state.apiRequest.data[2].notesAndTimestamps.find(
+                              item => {
+                                let itemDate = new Date(item.timestamps * 1000);
+                                return (
+                                  itemDate.getFullYear() ===
+                                    targetDate.getFullYear() &&
+                                  itemDate.getMonth() ===
+                                    targetDate.getMonth() &&
+                                  itemDate.getDate() === targetDate.getDate()
+                                );
+                              }
+                            );
+                          $state.targetNoteItem = targetItem;
+                          if (targetItem) {
+                            targetItem.noteText = data.noteText;
+                            return console.log("Note updated successfully.");
+                          } else {
+                            return console.log("No matching date found.");
+                          }
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateFront"] != null &&
+                  typeof $steps["updateFront"] === "object" &&
+                  typeof $steps["updateFront"].then === "function"
+                ) {
+                  $steps["updateFront"] = await $steps["updateFront"];
+                }
+
+                $steps["sendData"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://gateway.rentamon.com/webhook/updateNote",
+                          undefined,
+                          (() => {
+                            try {
+                              return {
+                                value: $state.textarea2.value,
+                                date: $state.dateProp.unix,
+                                prop_id: $props.propertyId,
+                                id: $state.targetNoteItem.id
+                              };
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["sendData"] != null &&
+                  typeof $steps["sendData"] === "object" &&
+                  typeof $steps["sendData"].then === "function"
+                ) {
+                  $steps["sendData"] = await $steps["sendData"];
+                }
+
+                $steps["closeWriteNoteModal"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["updateNoteModal", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["closeWriteNoteModal"] != null &&
+                  typeof $steps["closeWriteNoteModal"] === "object" &&
+                  typeof $steps["closeWriteNoteModal"].then === "function"
+                ) {
+                  $steps["closeWriteNoteModal"] = await $steps[
+                    "closeWriteNoteModal"
+                  ];
+                }
+
+                $steps["updateTextareaValue"] = false
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["textarea2", "value"]
+                        },
+                        operation: 0,
+                        value: ($state.textarea2.value = "")
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateTextareaValue"] != null &&
+                  typeof $steps["updateTextareaValue"] === "object" &&
+                  typeof $steps["updateTextareaValue"].then === "function"
+                ) {
+                  $steps["updateTextareaValue"] = await $steps[
+                    "updateTextareaValue"
+                  ];
+                }
+              }}
+            >
+              {"\u062b\u0628\u062a \u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+            </Button>
+          </div>
+        </AntdModal>
       </div>
       <Embed
         data-plasmic-name={"embedHtml"}
@@ -5262,7 +5780,6 @@ const PlasmicDescendants = {
     "main2",
     "textInput",
     "numberInput2",
-    "img",
     "fetchModal",
     "userPlatform",
     "loading2",
@@ -5276,6 +5793,8 @@ const PlasmicDescendants = {
     "noteModal",
     "writeNoteModal",
     "textarea",
+    "updateNoteModal",
+    "textarea2",
     "embedHtml"
   ],
   apiRequest: ["apiRequest"],
@@ -5291,7 +5810,6 @@ const PlasmicDescendants = {
   main2: ["main2", "textInput", "numberInput2"],
   textInput: ["textInput"],
   numberInput2: ["numberInput2"],
-  img: ["img"],
   fetchModal: [
     "fetchModal",
     "userPlatform",
@@ -5313,6 +5831,8 @@ const PlasmicDescendants = {
   noteModal: ["noteModal"],
   writeNoteModal: ["writeNoteModal", "textarea"],
   textarea: ["textarea"],
+  updateNoteModal: ["updateNoteModal", "textarea2"],
+  textarea2: ["textarea2"],
   embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -5333,7 +5853,6 @@ type NodeDefaultElementType = {
   main2: "div";
   textInput: typeof TextInput;
   numberInput2: typeof AntdInputNumber;
-  img: typeof PlasmicImg__;
   fetchModal: typeof AntdModal;
   userPlatform: typeof ApiRequest;
   loading2: typeof PlasmicImg__;
@@ -5347,6 +5866,8 @@ type NodeDefaultElementType = {
   noteModal: typeof AntdModal;
   writeNoteModal: typeof AntdModal;
   textarea: typeof Textarea;
+  updateNoteModal: typeof AntdModal;
+  textarea2: typeof Textarea;
   embedHtml: typeof Embed;
 };
 
@@ -5423,7 +5944,6 @@ export const PlasmicCalendar2 = Object.assign(
     main2: makeNodeComponent("main2"),
     textInput: makeNodeComponent("textInput"),
     numberInput2: makeNodeComponent("numberInput2"),
-    img: makeNodeComponent("img"),
     fetchModal: makeNodeComponent("fetchModal"),
     userPlatform: makeNodeComponent("userPlatform"),
     loading2: makeNodeComponent("loading2"),
@@ -5437,6 +5957,8 @@ export const PlasmicCalendar2 = Object.assign(
     noteModal: makeNodeComponent("noteModal"),
     writeNoteModal: makeNodeComponent("writeNoteModal"),
     textarea: makeNodeComponent("textarea"),
+    updateNoteModal: makeNodeComponent("updateNoteModal"),
+    textarea2: makeNodeComponent("textarea2"),
     embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicCalendar2
