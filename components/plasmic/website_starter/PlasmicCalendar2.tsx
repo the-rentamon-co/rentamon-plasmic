@@ -885,7 +885,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         yesterdayDate.getTime() / 1000
                       );
                       const minTimestamp = yesterdayTimestamp;
-                      const maxTimestamp = 1739945463;
+                      const maxTimestamp = 1745240258;
                       function getDayClass(dateProps, calendarData) {
                         const dayIndex = dateProps.date.day - 1;
                         const calendarItem = calendarData[dayIndex] || {};
@@ -5609,7 +5609,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           if (targetItem) {
                             if ($state.textarea2.value !== "") {
                               targetItem.noteText = data.noteText;
-                              console.log("Note updated successfully.");
+                              return console.log("Note updated successfully.");
                             } else {
                               let index =
                                 $state.apiRequest.data[2].notesAndTimestamps.findIndex(
@@ -5624,30 +5624,33 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 $state.apiRequest.data[2].notesAndTimestamps =
                                   updatedNotes;
                                 console.log("Note deleted successfully.");
+                                let calendarItem =
+                                  $state.apiRequest.data[1].calendar.find(
+                                    item => {
+                                      let itemDate = new Date(item.date);
+                                      return (
+                                        itemDate.getFullYear() ===
+                                          targetDate.getFullYear() &&
+                                        itemDate.getMonth() ===
+                                          targetDate.getMonth() &&
+                                        itemDate.getDate() ===
+                                          targetDate.getDate()
+                                      );
+                                    }
+                                  );
+                                if (calendarItem) {
+                                  calendarItem.isnoted = false;
+                                  return console.log(
+                                    "isNoted set to false for the specified date."
+                                  );
+                                } else {
+                                  return console.log(
+                                    "No matching date found in the calendar."
+                                  );
+                                }
                               } else {
-                                console.log("Item not found.");
+                                return console.log("Item not found.");
                               }
-                            }
-                            let calendarItem =
-                              $state.apiRequest.data[1].calendar.find(item => {
-                                let itemDate = new Date(item.date);
-                                return (
-                                  itemDate.getFullYear() ===
-                                    targetDate.getFullYear() &&
-                                  itemDate.getMonth() ===
-                                    targetDate.getMonth() &&
-                                  itemDate.getDate() === targetDate.getDate()
-                                );
-                              });
-                            if (calendarItem) {
-                              calendarItem.isnoted = false;
-                              return console.log(
-                                "isNoted set to false for the specified date."
-                              );
-                            } else {
-                              return console.log(
-                                "No matching date found in the calendar."
-                              );
                             }
                           } else {
                             return console.log(
