@@ -5642,7 +5642,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 }
 
                 $steps["updateFrontForDelete"] =
-                  $state.textarea2 == ""
+                  $state.textarea2.value == ""
                     ? (() => {
                         const actionArgs = {
                           operation: 0,
