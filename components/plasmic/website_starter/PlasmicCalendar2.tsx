@@ -5582,60 +5582,128 @@ function PlasmicCalendar2__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["updateFront"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          let data = {
-                            noteText: $state.textarea2.value,
-                            timestamps: $state.dateProp.unix
-                          };
-                          let targetDate = new Date(data.timestamps * 1000);
-                          let targetItem =
-                            $state.apiRequest.data[2].notesAndTimestamps.find(
-                              item => {
-                                let itemDate = new Date(item.timestamps * 1000);
-                                return (
-                                  itemDate.getFullYear() ===
-                                    targetDate.getFullYear() &&
-                                  itemDate.getMonth() ===
-                                    targetDate.getMonth() &&
-                                  itemDate.getDate() === targetDate.getDate()
-                                );
-                              }
-                            );
-                          $state.targetNoteItem = targetItem;
-                          if (targetItem) {
-                            targetItem.noteText = data.noteText;
-                            return console.log("Note updated successfully.");
-                          } else {
-                            return console.log("No matching date found.");
+                $steps["updateFront"] =
+                  $state.textarea2.value != ""
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: (() => {
+                            let data = {
+                              noteText: $state.textarea2.value,
+                              timestamps: $state.dateProp.unix
+                            };
+                            let targetDate = new Date(data.timestamps * 1000);
+                            let targetItem =
+                              $state.apiRequest.data[2].notesAndTimestamps.find(
+                                item => {
+                                  let itemDate = new Date(
+                                    item.timestamps * 1000
+                                  );
+                                  return (
+                                    itemDate.getFullYear() ===
+                                      targetDate.getFullYear() &&
+                                    itemDate.getMonth() ===
+                                      targetDate.getMonth() &&
+                                    itemDate.getDate() === targetDate.getDate()
+                                  );
+                                }
+                              );
+                            $state.targetNoteItem = targetItem;
+                            if (targetItem) {
+                              targetItem.noteText = data.noteText;
+                              return console.log("Note updated successfully.");
+                            } else {
+                              return console.log("No matching date found.");
+                            }
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
                           }
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+                          const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
                 if (
                   $steps["updateFront"] != null &&
                   typeof $steps["updateFront"] === "object" &&
                   typeof $steps["updateFront"].then === "function"
                 ) {
                   $steps["updateFront"] = await $steps["updateFront"];
+                }
+
+                $steps["updateFrontForDelete"] =
+                  $state.textarea2 == ""
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: (() => {
+                            let data = {
+                              noteText: $state.textarea2.value,
+                              timestamps: $state.dateProp.unix
+                            };
+                            let targetDate = new Date(data.timestamps * 1000);
+                            let targetIndex =
+                              $state.apiRequest.data[2].notesAndTimestamps.findIndex(
+                                item => {
+                                  let itemDate = new Date(
+                                    item.timestamps * 1000
+                                  );
+                                  return (
+                                    itemDate.getFullYear() ===
+                                      targetDate.getFullYear() &&
+                                    itemDate.getMonth() ===
+                                      targetDate.getMonth() &&
+                                    itemDate.getDate() === targetDate.getDate()
+                                  );
+                                }
+                              );
+                            if (targetIndex !== -1) {
+                              $state.apiRequest.data[2].notesAndTimestamps.splice(
+                                targetIndex,
+                                1
+                              );
+                              return console.log("Note deleted successfully.");
+                            } else {
+                              return console.log(
+                                "No matching date found to delete."
+                              );
+                            }
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["updateFrontForDelete"] != null &&
+                  typeof $steps["updateFrontForDelete"] === "object" &&
+                  typeof $steps["updateFrontForDelete"].then === "function"
+                ) {
+                  $steps["updateFrontForDelete"] = await $steps[
+                    "updateFrontForDelete"
+                  ];
                 }
 
                 $steps["sendData"] = true
