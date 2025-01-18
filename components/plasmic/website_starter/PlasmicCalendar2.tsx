@@ -633,6 +633,13 @@ function PlasmicCalendar2__RenderFunc(props: {
         url={(() => {
           try {
             return (() => {
+              const secondSpan = document.querySelector(
+                ".rmdp-header-values span:nth-child(3)"
+              );
+              if (secondSpan) {
+                $state.year = secondSpan.textContent;
+                console.log($state.year);
+              }
               let initialMonth = new Date().toLocaleDateString("fa").split("/");
               return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${
                 $state.year
@@ -1058,7 +1065,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             (async month => {
               const $steps = {};
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
