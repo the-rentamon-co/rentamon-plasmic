@@ -497,6 +497,30 @@ function PlasmicCalendar2__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "year",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                let initialMonth = new Date()
+                  .toLocaleDateString("fa")
+                  .split("/")[0];
+                return initialMonth;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -609,13 +633,13 @@ function PlasmicCalendar2__RenderFunc(props: {
         url={(() => {
           try {
             return (() => {
-              let initialMonth = new Date()
-                .toLocaleDateString("fa")
-                .split("/")[1];
-              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=1403-${
-                $state.fragmentDatePicker?.month ?? initialMonth
-              }-01&end_date=1403-${
-                $state.fragmentDatePicker?.month ?? initialMonth
+              let initialMonth = new Date().toLocaleDateString("fa").split("/");
+              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${
+                $state.year
+              }-${
+                $state.fragmentDatePicker?.month ?? initialMonth[1]
+              }-01&end_date=${$state.year}-${
+                $state.fragmentDatePicker?.month ?? initialMonth[1]
               }-30&property_id=${$props.propertyId}`;
             })();
           } catch (e) {
@@ -1030,6 +1054,38 @@ function PlasmicCalendar2__RenderFunc(props: {
               "fragmentDatePicker",
               "month"
             ]).apply(null, eventArgs);
+
+            (async month => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          const secondSpan = document.querySelector(
+                            ".rmdp-header-values span:nth-child(3)"
+                          );
+                          if (secondSpan) {
+                            $state.year = secondSpan.textContent;
+                            return console.log($state.year);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }).apply(null, eventArgs);
           }}
           onYearChange={async (...eventArgs: any) => {
             generateStateOnChangeProp($state, [
