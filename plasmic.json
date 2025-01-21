@@ -754,6 +754,19 @@
           "cssFilePath": "plasmic/website_starter/PlasmicSideBar2.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "dDeToLEgGJS_",
+          "name": "RecordList",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRecordList.tsx",
+          "importSpec": {
+            "modulePath": "RecordList.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRecordList.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
