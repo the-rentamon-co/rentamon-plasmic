@@ -2138,9 +2138,7 @@ function PlasmicReservations__RenderFunc(props: {
                 ref={ref => {
                   $refs["reserveData"] = ref;
                 }}
-                url={
-                  "https://gateway.rentamon.com/webhook/2beea5b6-eb8c-47d6-9746-fe093e22ea39"
-                }
+                url={"https://gateway.rentamon.com/webhook/getReserve"}
               />
             </Stack__>
           </Stack__>
