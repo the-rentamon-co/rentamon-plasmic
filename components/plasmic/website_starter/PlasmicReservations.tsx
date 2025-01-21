@@ -108,6 +108,7 @@ export type PlasmicReservations__OverridesType = {
   _16?: Flex__<"div">;
   _13?: Flex__<"div">;
   _14?: Flex__<"div">;
+  _113?: Flex__<"div">;
   _15?: Flex__<"div">;
   shab?: Flex__<typeof PlasmicImg__>;
   jabama?: Flex__<typeof PlasmicImg__>;
@@ -1102,19 +1103,48 @@ function PlasmicReservations__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"_15"}
-                    data-plasmic-override={overrides._15}
-                    className={classNames(projectcss.all, sty._15)}
+                    data-plasmic-name={"_113"}
+                    data-plasmic-override={overrides._113}
+                    className={classNames(projectcss.all, sty._113)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text___6Zpvl
+                        sty.text__fktp5
                       )}
                     >
                       {"\u0645\u0628\u0644\u063a \u06a9\u0644:"}
                     </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___7Blk6
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData[0].amount + " تومان";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "-";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"_15"}
+                    data-plasmic-override={overrides._15}
+                    className={classNames(projectcss.all, sty._15)}
+                  >
                     <div
                       className={classNames(
                         projectcss.all,
@@ -1125,7 +1155,24 @@ function PlasmicReservations__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $state.modalData[0].amount + " تومان";
+                            return (() => {
+                              const platformName =
+                                $state.modalData[0].platfromName;
+                              const platformsWithCommission = [
+                                "هومسا",
+                                "مهمانشو",
+                                "میزبون"
+                              ];
+
+                              let message;
+                              if (
+                                platformsWithCommission.includes(platformName)
+                              ) {
+                                return (message = "پس از کسر کمیسیون");
+                              } else {
+                                return (message = "  پیش از کسر کمیسیون");
+                              }
+                            })();
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -2239,6 +2286,7 @@ const PlasmicDescendants = {
     "_16",
     "_13",
     "_14",
+    "_113",
     "_15",
     "shab",
     "jabama",
@@ -2291,6 +2339,7 @@ const PlasmicDescendants = {
     "_16",
     "_13",
     "_14",
+    "_113",
     "_15",
     "shab",
     "jabama",
@@ -2336,6 +2385,7 @@ const PlasmicDescendants = {
     "_16",
     "_13",
     "_14",
+    "_113",
     "_15",
     "shab",
     "jabama",
@@ -2357,6 +2407,7 @@ const PlasmicDescendants = {
     "_16",
     "_13",
     "_14",
+    "_113",
     "_15"
   ],
   _1: ["_1", "_11", "_12", "userPhone", "status", "falseStatus"],
@@ -2365,10 +2416,11 @@ const PlasmicDescendants = {
   userPhone: ["userPhone"],
   status: ["status"],
   falseStatus: ["falseStatus"],
-  _2: ["_2", "_16", "_13", "_14", "_15"],
+  _2: ["_2", "_16", "_13", "_14", "_113", "_15"],
   _16: ["_16"],
   _13: ["_13"],
   _14: ["_14"],
+  _113: ["_113"],
   _15: ["_15"],
   shab: ["shab"],
   jabama: ["jabama"],
@@ -2457,6 +2509,7 @@ type NodeDefaultElementType = {
   _16: "div";
   _13: "div";
   _14: "div";
+  _113: "div";
   _15: "div";
   shab: typeof PlasmicImg__;
   jabama: typeof PlasmicImg__;
@@ -2569,6 +2622,7 @@ export const PlasmicReservations = Object.assign(
     _16: makeNodeComponent("_16"),
     _13: makeNodeComponent("_13"),
     _14: makeNodeComponent("_14"),
+    _113: makeNodeComponent("_113"),
     _15: makeNodeComponent("_15"),
     shab: makeNodeComponent("shab"),
     jabama: makeNodeComponent("jabama"),
