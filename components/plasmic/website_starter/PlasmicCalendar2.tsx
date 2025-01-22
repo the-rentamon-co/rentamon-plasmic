@@ -407,7 +407,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "textInput2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "10"
+        initFunc: ({ $props, $state, $queries, $ctx }) => "0"
       },
       {
         path: "noteModal.open",
@@ -1566,7 +1566,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                           const actionArgs = {
                             operation: 0,
                             value: (() => {
-                              if (Number($state.textInput2.value) < 60) {
+                              if (Number($state.textInput2.value) === 0) {
+                                return ($state.textInput2.value = 10);
+                              } else if (Number($state.textInput2.value) < 60) {
                                 return ($state.textInput2.value =
                                   (Number($state.textInput2.value) || 0) + 5);
                               }
@@ -1630,7 +1632,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         return;
                       }
                     }}
-                    placeholder={"\u0645\u062b\u0644\u0627 \u06f2\u06f5"}
+                    placeholder={"0"}
                     type={"number"}
                     value={
                       generateStateValueProp($state, ["textInput2", "value"]) ??
@@ -1652,6 +1654,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                               if (Number($state.textInput2.value) > 10) {
                                 return ($state.textInput2.value =
                                   (Number($state.textInput2.value) || 0) - 5);
+                              } else {
+                                return ($state.textInput2.value = 0);
                               }
                             })()
                           };
