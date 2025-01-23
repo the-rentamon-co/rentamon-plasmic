@@ -641,13 +641,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 console.log($state.year);
               }
               let initialMonth = new Date().toLocaleDateString("fa").split("/");
-              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${
-                $state.year
-              }-${
-                $state.fragmentDatePicker?.month ?? initialMonth[1]
-              }-01&end_date=${$state.year}-${
-                $state.fragmentDatePicker?.month ?? initialMonth[1]
-              }-30&property_id=${$props.propertyId}`;
+              let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
+              let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
             })();
           } catch (e) {
             if (
