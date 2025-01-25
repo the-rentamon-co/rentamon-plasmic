@@ -840,6 +840,7 @@
   min-width: 0;
 }
 .mizbon {
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -849,7 +850,6 @@
   align-items: center;
   cursor: pointer;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 @media (max-width: 350px) {
