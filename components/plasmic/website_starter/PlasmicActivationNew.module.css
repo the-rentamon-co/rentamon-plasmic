@@ -436,7 +436,6 @@
   }
 }
 .jajiga {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -446,6 +445,7 @@
   align-items: center;
   cursor: pointer;
   min-width: 0;
+  display: none;
   padding: 0px;
 }
 @media (max-width: 350px) {
