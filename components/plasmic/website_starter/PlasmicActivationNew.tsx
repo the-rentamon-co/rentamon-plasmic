@@ -2638,9 +2638,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image10.svg",
-                              fullWidth: 19,
-                              fullHeight: 19,
+                              src: "/plasmic/website_starter/images/image8.svg",
+                              fullWidth: 30,
+                              fullHeight: 30,
                               aspectRatio: 1
                             }}
                           />
