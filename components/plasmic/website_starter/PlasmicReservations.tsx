@@ -2035,89 +2035,131 @@ function PlasmicReservations__RenderFunc(props: {
                       }
                     }}
                   >
-                    <RecordList
-                      data-plasmic-name={"recordList"}
-                      data-plasmic-override={overrides.recordList}
-                      cancelledBookings={(() => {
-                        try {
-                          return (
-                            $state.reserveData.data[currentIndex].status ==
-                            "Cancelled"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return [];
-                          }
-                          throw e;
+                    {(() => {
+                      try {
+                        return true;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
                         }
-                      })()}
-                      className={classNames("__wab_instance", sty.recordList)}
-                      confirmedBookings={(() => {
-                        try {
-                          return (
-                            $state.reserveData.data[currentIndex].status ==
-                            "Confirmed"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return [];
+                        throw e;
+                      }
+                    })() ? (
+                      <RecordList
+                        data-plasmic-name={"recordList"}
+                        data-plasmic-override={overrides.recordList}
+                        cancelledBookings={(() => {
+                          try {
+                            return (
+                              $state.reserveData.data[currentIndex].status ==
+                              "Cancelled"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                      currentIndex={currentIndex}
-                      data={(() => {
-                        try {
-                          return $state.reserveData.data[currentIndex];
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
+                        })()}
+                        className={classNames("__wab_instance", sty.recordList)}
+                        confirmedBookings={(() => {
+                          try {
+                            return (
+                              $state.reserveData.data[currentIndex].status ==
+                              "Confirmed"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                      pastBookingsBox={(() => {
-                        try {
-                          return (
-                            $state.reserveData.data[currentIndex].status ==
-                            "Past"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return [];
+                        })()}
+                        currentIndex={currentIndex}
+                        data={(() => {
+                          try {
+                            return $state.reserveData.data[currentIndex];
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                      pendingBookings={(() => {
-                        try {
-                          return (
-                            $state.reserveData.data[currentIndex].status ==
-                            "Pending"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return [];
+                        })()}
+                        pastBookingsBox={(() => {
+                          try {
+                            return (
+                              $state.reserveData.data[currentIndex].status ==
+                              "Past"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
                           }
-                          throw e;
+                        })()}
+                        pendingBookings={(() => {
+                          try {
+                            return (
+                              $state.reserveData.data[currentIndex].status ==
+                              "Pending"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return (
+                          !$state.reserveData.data[0] ||
+                          Object.keys($state.reserveData.data[0]).length === 0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
                         }
-                      })()}
-                    />
+                        throw e;
+                      }
+                    })() ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__csVa2
+                        )}
+                      >
+                        {
+                          "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f"
+                        }
+                      </div>
+                    ) : null}
                   </div>
                 );
               })}
