@@ -4174,100 +4174,111 @@ function PlasmicCalendar2__RenderFunc(props: {
                             );
                             const updatedCalendar =
                               $state.apiRequest.data[1].calendar.map(day => {
-                                if (!changedDaysDates.includes(day.date)) {
-                                  return day;
-                                }
-                                if (
-                                  day.status === "reserved" &&
-                                  day.website !== "رزرو"
-                                ) {
-                                  return day;
-                                }
-                                if (
-                                  day.status === "reserved" &&
-                                  day.website === "رزرو" &&
-                                  ($state.requestdata.request_for != null ||
-                                    $state.requestdata.price != null ||
-                                    $state.requestdata.discount != null)
-                                ) {
-                                  return day;
-                                }
-                                const updates = {};
-                                if (
-                                  $state.requestdata.request_for === "block"
-                                ) {
-                                  updates.status = "blocked";
-                                } else if (
-                                  $state.requestdata.request_for === "reserve"
-                                ) {
-                                  updates.status = "reserved";
-                                  updates.website = "رزرو";
-                                } else if (
-                                  $state.requestdata.request_for ===
-                                    "unblock" ||
-                                  !$state.requestdata.request_for
-                                ) {
-                                  updates.status = "unblocked";
-                                  updates.website = null;
-                                }
-                                if ($state.requestdata.price !== undefined) {
-                                  let numericPrice = Number(
-                                    $state.requestdata.price
-                                  )
-                                    ? Number($state.requestdata.price)
-                                    : convertToEnglishNumber(
-                                        $state.requestdata.price
-                                      );
-                                  let finalDiscount = 0;
-                                  if (
-                                    $state.requestdata.discount !== undefined
-                                  ) {
-                                    finalDiscount = Number(
-                                      $state.requestdata.discount
-                                    );
-                                  } else if (day.discount_percentage) {
-                                    finalDiscount = Number(
-                                      day.discount_percentage
-                                    );
-                                  }
-                                  updates.discount_percentage = finalDiscount;
-                                  const discountedPrice =
-                                    numericPrice * (1 - finalDiscount / 100);
-                                  const finalPrice = Math.round(
-                                    discountedPrice / 1000
-                                  );
-                                  updates.price =
-                                    formatPriceToPersian(finalPrice);
-                                } else {
-                                  if (
-                                    $state.requestdata.discount !== undefined
-                                  ) {
-                                    const newDiscount = Number(
-                                      $state.requestdata.discount
-                                    );
-                                    updates.discount_percentage = newDiscount;
-                                    const currentDayPrice = day.price
-                                      ? convertToEnglishNumber(
-                                          day.price.toString()
-                                        )
-                                      : 0;
-                                    const discountedPrice =
-                                      currentDayPrice * (1 - newDiscount / 100);
-                                    const finalPrice = Math.round(
-                                      discountedPrice / 1000
-                                    );
-                                    if (finalPrice <= 0) {
-                                      updates.price = null;
+                                if (changedDaysDates.includes(day.date)) {
+                                  if (day.status === "reserved") {
+                                    if (day.website !== "رزرو") {
+                                      return day;
                                     } else {
+                                      if (
+                                        $state.requestdata.request_for !=
+                                          null ||
+                                        $state.requestdata.price != null ||
+                                        $state.requestdata.discount != null
+                                      ) {
+                                        return day;
+                                      }
+                                    }
+                                  }
+                                  const updates = {};
+                                  if (
+                                    $state.requestdata.request_for === "block"
+                                  ) {
+                                    updates.status = "blocked";
+                                  } else if (
+                                    $state.requestdata.request_for === "reserve"
+                                  ) {
+                                    updates.status = "reserved";
+                                    updates.website = "رزرو";
+                                  } else if (
+                                    $state.requestdata.request_for ===
+                                      "unblock" ||
+                                    !$state.requestdata.request_for
+                                  ) {
+                                    updates.status = "unblocked";
+                                    updates.website = null;
+                                  }
+                                  if ($state.requestdata.price !== undefined) {
+                                    let numericPrice = Number(
+                                      $state.requestdata.price
+                                    )
+                                      ? Number($state.requestdata.price)
+                                      : convertToEnglishNumber(
+                                          $state.requestdata.price
+                                        );
+                                    let appliedDiscount = 0;
+                                    if (
+                                      $state.requestdata.discount !== undefined
+                                    ) {
+                                      appliedDiscount = Number(
+                                        $state.requestdata.discount
+                                      );
+                                    } else if (day.discount_percentage) {
+                                      appliedDiscount = Number(
+                                        day.discount_percentage
+                                      );
+                                    }
+                                    updates.discount_percentage =
+                                      appliedDiscount;
+                                    if (appliedDiscount > 0) {
+                                      const discountedPrice = Math.round(
+                                        numericPrice *
+                                          (1 - appliedDiscount / 100)
+                                      );
+                                      const finalPrice = Math.round(
+                                        discountedPrice / 1000
+                                      );
+                                      updates.price =
+                                        formatPriceToPersian(finalPrice);
+                                    } else {
+                                      const finalPrice = Math.round(
+                                        numericPrice / 1000
+                                      );
                                       updates.price =
                                         formatPriceToPersian(finalPrice);
                                     }
+                                  } else {
+                                    if (
+                                      $state.requestdata.discount !== undefined
+                                    ) {
+                                      updates.discount_percentage =
+                                        $state.requestdata.discount;
+                                      const currentDayPrice = day.price
+                                        ? convertToEnglishNumber(
+                                            day.price.toString()
+                                          )
+                                        : 0;
+                                      const discountedPrice = Math.round(
+                                        currentDayPrice *
+                                          (1 -
+                                            Number(
+                                              $state.requestdata.discount
+                                            ) /
+                                              100)
+                                      );
+                                      if (discountedPrice === 0) {
+                                        updates.price = null;
+                                      } else {
+                                        updates.price =
+                                          formatPriceToPersian(discountedPrice);
+                                      }
+                                    }
                                   }
+                                  return {
+                                    ...day,
+                                    ...updates
+                                  };
                                 }
-                                return {
-                                  ...day,
-                                  ...updates
-                                };
+                                return day;
                               });
                             $state.apiRequest.data[1].calendar =
                               updatedCalendar;
