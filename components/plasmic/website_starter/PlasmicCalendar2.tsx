@@ -4163,7 +4163,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.modal.open = false;
                             $state.modalDiscount.open = false;
                             $state.modalChangePrice.open = false;
-                            console.log("request data" + $state.requestdata);
                             const changedDaysTimestamps = (
                               $state.requestdata.days || []
                             ).flat();
@@ -4175,16 +4174,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                             );
                             const updatedCalendar =
                               $state.apiRequest.data[1].calendar.map(day => {
-                                console.log("here");
                                 if (changedDaysDates.includes(day.date)) {
-                                  console.log("محدودش در روز مشخص نبود");
                                   if (day.status === "reserved") {
                                     if (day.website !== "رزرو") {
-                                      console.log(
-                                        "کلا اپدیت نشود",
-                                        day.status,
-                                        day.website
-                                      );
                                       return day;
                                     } else {
                                       if (
@@ -4193,19 +4185,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                                         $state.requestdata.price != null ||
                                         $state.requestdata.discount != null
                                       ) {
-                                        console.log(
-                                          "درخواست برابر نبود با مقدار اصلی",
-                                          day.status,
-                                          day.website
-                                        );
                                         return day;
                                       }
                                     }
                                   }
-                                  console.log(
-                                    "پی لود ریکوئست",
-                                    $state.requestdata
-                                  );
                                   const updates = {};
                                   if (
                                     $state.requestdata.request_for === "block"
@@ -4232,18 +4215,24 @@ function PlasmicCalendar2__RenderFunc(props: {
                                       : convertToEnglishNumber(
                                           $state.requestdata.price
                                         );
+                                    let appliedDiscount = 0;
                                     if (
                                       $state.requestdata.discount !== undefined
                                     ) {
-                                      updates.discount_percentage =
-                                        $state.requestdata.discount;
+                                      appliedDiscount = Number(
+                                        $state.requestdata.discount
+                                      );
+                                    } else if (day.discount_percentage) {
+                                      appliedDiscount = Number(
+                                        day.discount_percentage
+                                      );
+                                    }
+                                    updates.discount_percentage =
+                                      appliedDiscount;
+                                    if (appliedDiscount > 0) {
                                       const discountedPrice = Math.round(
                                         numericPrice *
-                                          (1 -
-                                            Number(
-                                              $state.requestdata.discount
-                                            ) /
-                                              100)
+                                          (1 - appliedDiscount / 100)
                                       );
                                       updates.price =
                                         formatPriceToPersian(discountedPrice);
@@ -4273,11 +4262,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                             ) /
                                               100)
                                       );
-                                      if (discountedPrice == 0) {
-                                        console.log("here in null condition");
+                                      if (discountedPrice === 0) {
                                         updates.price = null;
                                       } else {
-                                        console.log("here in else");
                                         updates.price =
                                           formatPriceToPersian(discountedPrice);
                                       }

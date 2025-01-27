@@ -105,6 +105,7 @@ export type PlasmicInstantReserve__OverridesType = {
   fragmentSwitch4?: Flex__<typeof Switch>;
   desc?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  returnButton?: Flex__<"div">;
 };
 
 export interface DefaultInstantReserveProps {}
@@ -2028,6 +2029,51 @@ function PlasmicInstantReserve__RenderFunc(props: {
               }
             }}
           />
+
+          <div
+            data-plasmic-name={"returnButton"}
+            data-plasmic-override={overrides.returnButton}
+            className={classNames(projectcss.all, sty.returnButton, "fix")}
+          >
+            <div
+              className={classNames(projectcss.all, sty.freeBox___0QIg)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return window.history.back();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__e1Gx7
+                )}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a "}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -2056,7 +2102,8 @@ const PlasmicDescendants = {
     "homsaContainer",
     "fragmentSwitch4",
     "desc",
-    "sideEffect"
+    "sideEffect",
+    "returnButton"
   ],
   topContainer: ["topContainer"],
   mainSection: [
@@ -2112,7 +2159,8 @@ const PlasmicDescendants = {
   homsaContainer: ["homsaContainer", "fragmentSwitch4"],
   fragmentSwitch4: ["fragmentSwitch4"],
   desc: ["desc"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  returnButton: ["returnButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2139,6 +2187,7 @@ type NodeDefaultElementType = {
   fragmentSwitch4: typeof Switch;
   desc: "div";
   sideEffect: typeof SideEffect;
+  returnButton: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2221,6 +2270,7 @@ export const PlasmicInstantReserve = Object.assign(
     fragmentSwitch4: makeNodeComponent("fragmentSwitch4"),
     desc: makeNodeComponent("desc"),
     sideEffect: makeNodeComponent("sideEffect"),
+    returnButton: makeNodeComponent("returnButton"),
 
     // Metadata about props expected for PlasmicInstantReserve
     internalVariantProps: PlasmicInstantReserve__VariantProps,
