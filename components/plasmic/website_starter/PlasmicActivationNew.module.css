@@ -444,7 +444,7 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
   min-width: 0;
   padding: 0px;
 }
@@ -848,7 +848,7 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
   min-width: 0;
   padding: 8px;
 }
@@ -914,6 +914,11 @@
 }
 .false5 > picture > img {
   object-fit: cover;
+}
+@media (max-width: 500px) {
+  .false5 {
+    display: block !important;
+  }
 }
 .add5 {
   object-fit: cover;

@@ -969,7 +969,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateStateVariable"] = true
+                        $steps["updateStateVariable"] = false
                           ? (() => {
                               const actionArgs = {
                                 operation: 0,
@@ -2525,7 +2525,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                       if (
                                         !(
                                           "mizboon" in
-                                          $state.apiRequest2.data.status
+                                          $state.platformstatus.status
                                         )
                                       ) {
                                         return "disable";
@@ -2589,7 +2589,16 @@ function PlasmicActivationNew__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "mobile")
                             ? (() => {
                                 try {
-                                  return $state.apiRequest2.data.status.mizboon;
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.mizboon !==
+                                      true
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -2645,27 +2654,55 @@ function PlasmicActivationNew__RenderFunc(props: {
                             }}
                           />
                         ) : null}
-                        {(() => {
-                          try {
-                            return (() => {
-                              if (
-                                $state.platformstatus.status.mizboon !== false
-                              ) {
-                                return false;
-                              } else {
-                                return true;
-                              }
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })() ? (
+                        {(
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.mizboon !==
+                                      false
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.mizboon !==
+                                      false
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
                           <PlasmicImg__
                             data-plasmic-name={"false5"}
                             data-plasmic-override={overrides.false5}
@@ -2679,9 +2716,9 @@ function PlasmicActivationNew__RenderFunc(props: {
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image11.svg",
-                              fullWidth: 19,
-                              fullHeight: 19,
+                              src: "/plasmic/website_starter/images/image29.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
                               aspectRatio: 1
                             }}
                           />
@@ -2740,7 +2777,7 @@ function PlasmicActivationNew__RenderFunc(props: {
                                     if (
                                       !(
                                         "mizboon" in
-                                        $state.apiRequest2.data.status
+                                        $state.platformstatus.status
                                       )
                                     ) {
                                       return "disable";
