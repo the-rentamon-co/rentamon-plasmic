@@ -743,10 +743,6 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                         data-plasmic-name={"numberInput"}
                         data-plasmic-override={overrides.numberInput}
                         addonBefore={null}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.numberInput
-                        )}
                         onChange={async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
                             "numberInput",
@@ -863,7 +859,6 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                     data-plasmic-name={"numberJajiga"}
                     data-plasmic-override={overrides.numberJajiga}
                     bordered={true}
-                    className={classNames("__wab_instance", sty.numberJajiga)}
                     controls={false}
                     disabled={false}
                     onChange={async (...eventArgs: any) => {
@@ -971,7 +966,6 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                   <AntdInputNumber
                     data-plasmic-name={"otpJajiga"}
                     data-plasmic-override={overrides.otpJajiga}
-                    className={classNames("__wab_instance", sty.otpJajiga)}
                     onChange={async (...eventArgs: any) => {
                       generateStateOnChangeProp($state, [
                         "otpJajiga",

@@ -4211,10 +4211,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames(
-                            "__wab_instance",
-                            sty.jabamaPhoneInput
-                          ),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -4493,10 +4489,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames(
-                            "__wab_instance",
-                            sty.jabamaOtpInput
-                          ),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -4878,10 +4870,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames(
-                            "__wab_instance",
-                            sty.jajigaPhoneInput
-                          ),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -5160,7 +5148,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input6),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -5540,7 +5527,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           autoFocus: true,
-                          className: classNames("__wab_instance", sty.input9),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -5891,7 +5877,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input10),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -6269,7 +6254,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input11),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -6601,7 +6585,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input12),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -7007,10 +6990,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input13
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -7311,10 +7290,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input14
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -7862,10 +7837,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input15
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -7932,10 +7903,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input16
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -8249,7 +8216,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                   >
                     {(() => {
                       const child$Props = {
-                        className: classNames("__wab_instance", sty.input17),
                         onChange: async (...eventArgs: any) => {
                           generateStateOnChangePropForCodeComponents(
                             $state,
@@ -8502,10 +8468,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                         >
                           {(() => {
                             const child$Props = {
-                              className: classNames(
-                                "__wab_instance",
-                                sty.input18
-                              ),
                               onChange: async (...eventArgs: any) => {
                                 generateStateOnChangePropForCodeComponents(
                                   $state,
@@ -8786,10 +8748,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input19
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -8855,10 +8813,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input20
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -8924,10 +8878,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input21
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -9010,10 +8960,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input22
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -9096,10 +9042,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input23
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -9182,10 +9124,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input24
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,
@@ -9251,10 +9189,6 @@ function PlasmicActivationNew__RenderFunc(props: {
                       >
                         {(() => {
                           const child$Props = {
-                            className: classNames(
-                              "__wab_instance",
-                              sty.input27
-                            ),
                             onChange: async (...eventArgs: any) => {
                               generateStateOnChangePropForCodeComponents(
                                 $state,

@@ -297,7 +297,6 @@ function PlasmicDiscount__RenderFunc(props: {
             <AntdInputNumber
               data-plasmic-name={"numberInput3"}
               data-plasmic-override={overrides.numberInput3}
-              className={classNames("__wab_instance", sty.numberInput3)}
               controls={false}
               max={50}
               min={200000}

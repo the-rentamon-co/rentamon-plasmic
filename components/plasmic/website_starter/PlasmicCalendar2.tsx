@@ -3128,7 +3128,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 <AntdInputNumber
                   data-plasmic-name={"numberInput2"}
                   data-plasmic-override={overrides.numberInput2}
-                  className={classNames("__wab_instance", sty.numberInput2)}
                   controls={false}
                   onChange={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
@@ -3856,11 +3855,19 @@ function PlasmicCalendar2__RenderFunc(props: {
                               ) {
                                 return false;
                               }
+                              if (
+                                currentIndex == 4 &&
+                                $state.userPlatform.data.status.shab == false
+                              ) {
+                                return false;
+                              }
                               const platforms =
                                 $state.platformRequestStatus.data;
                               if (platforms[currentItem]) {
                                 if (
-                                  platforms[currentItem].final_status === true
+                                  platforms[currentItem].final_status ===
+                                    true &&
+                                  platforms[currentItem].status_code === 200
                                 ) {
                                   return true;
                                 } else {
@@ -3908,6 +3915,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                           try {
                             return (() => {
                               if (
+                                currentIndex == 4 &&
+                                $state.userPlatform.data.status.shab == false
+                              ) {
+                                return true;
+                              }
+                              if (
                                 !$state.platformRequestStatus ||
                                 !$state.platformRequestStatus.data ||
                                 Object.keys($state.platformRequestStatus.data)
@@ -3915,11 +3928,15 @@ function PlasmicCalendar2__RenderFunc(props: {
                               ) {
                                 return false;
                               }
+                              $state.platformRequestStatus.data.shab
+                                .status_code;
                               const platforms =
                                 $state.platformRequestStatus.data;
                               if (platforms[currentItem]) {
                                 if (
-                                  platforms[currentItem].final_status === false
+                                  platforms[currentItem].final_status ===
+                                    false ||
+                                  platforms[currentItem].status_code !== 200
                                 ) {
                                   return true;
                                 } else {

@@ -1030,7 +1030,6 @@ function PlasmicCalendar22__RenderFunc(props: {
                   <AntdInputNumber
                     data-plasmic-name={"numberInput4"}
                     data-plasmic-override={overrides.numberInput4}
-                    className={classNames("__wab_instance", sty.numberInput4)}
                     controls={false}
                     onChange={async (...eventArgs: any) => {
                       generateStateOnChangeProp($state, [
@@ -1414,7 +1413,6 @@ function PlasmicCalendar22__RenderFunc(props: {
                 <AntdInputNumber
                   data-plasmic-name={"numberInput3"}
                   data-plasmic-override={overrides.numberInput3}
-                  className={classNames("__wab_instance", sty.numberInput3)}
                   controls={false}
                   onChange={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
@@ -2352,7 +2350,6 @@ function PlasmicCalendar22__RenderFunc(props: {
               <AntdInputNumber
                 data-plasmic-name={"numberInput2"}
                 data-plasmic-override={overrides.numberInput2}
-                className={classNames("__wab_instance", sty.numberInput2)}
                 controls={false}
                 onChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [

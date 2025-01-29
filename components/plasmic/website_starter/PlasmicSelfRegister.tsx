@@ -767,7 +767,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -821,7 +820,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input2),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1049,7 +1047,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input3),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1113,7 +1110,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input4),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1397,7 +1393,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input6),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1456,7 +1451,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input7),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1515,7 +1509,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input9),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1577,7 +1570,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input10),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1636,7 +1628,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input11),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1695,7 +1686,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                     >
                       {(() => {
                         const child$Props = {
-                          className: classNames("__wab_instance", sty.input8),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1755,7 +1745,6 @@ function PlasmicSelfRegister__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
-                          className: classNames("__wab_instance", sty.input5),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
