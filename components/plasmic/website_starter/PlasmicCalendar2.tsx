@@ -3769,7 +3769,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                         );
                         return (
                           item &&
-                          (item.website === "" || item.website === "رزرو")
+                          (item.website === "" ||
+                            item.website === "رزرو" ||
+                            item.website == null)
                         );
                       });
                       return result;
@@ -3820,7 +3822,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                           entry => entry.date === date
                         );
                         return (
-                          item && item.website !== "" && item.website !== "رزرو"
+                          item &&
+                          item.website !== "" &&
+                          item.website !== "رزرو" &&
+                          item.website != null
                         );
                       });
                       return result;
@@ -4592,7 +4597,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.requestdata = [];
                             $state.fragmentDatePicker.values = [];
                             $state.textInput.value = 0;
-                            return ($state.textInput2.value = 10);
+                            return ($state.textInput2.value = 0);
                           })()
                         };
                         return (({
