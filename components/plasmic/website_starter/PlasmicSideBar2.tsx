@@ -823,9 +823,7 @@ function PlasmicSideBar2__RenderFunc(props: {
               sty.text__zNoJi
             )}
           >
-            {
-              "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627"
-            }
+            {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
           </div>
         </Stack__>
         <div className={classNames(projectcss.all, sty.freeBox__sWbL)} />
