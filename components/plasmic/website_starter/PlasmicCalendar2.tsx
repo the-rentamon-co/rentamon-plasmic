@@ -137,6 +137,7 @@ export type PlasmicCalendar2__OverridesType = {
   textarea?: Flex__<typeof Textarea>;
   updateNoteModal?: Flex__<typeof AntdModal>;
   textarea2?: Flex__<typeof Textarea>;
+  checkForChange?: Flex__<typeof AntdModal>;
   embedHtml?: Flex__<typeof Embed>;
 };
 
@@ -521,6 +522,12 @@ function PlasmicCalendar2__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "checkForChange.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -3697,13 +3704,9 @@ function PlasmicCalendar2__RenderFunc(props: {
           onClick={async event => {
             const $steps = {};
 
-            $steps["updateModalOpen"] = true
+            $steps["updateStateVariable"] = true
               ? (() => {
                   const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["modal", "open"]
-                    },
                     operation: 0,
                     value: (() => {
                       const startOfToday = new Date();
@@ -3715,11 +3718,61 @@ function PlasmicCalendar2__RenderFunc(props: {
                         $state.fragmentDatePicker.values.filter(timestamp => {
                           return timestamp >= startOfTodayTimestamp;
                         });
-                      if ($state.fragmentDatePicker.values == 0) {
-                        return false;
-                      } else {
-                        return true;
-                      }
+                      return console.log($state.fragmentDatePicker.values);
+                    })()
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateStateVariable"] != null &&
+              typeof $steps["updateStateVariable"] === "object" &&
+              typeof $steps["updateStateVariable"].then === "function"
+            ) {
+              $steps["updateStateVariable"] = await $steps[
+                "updateStateVariable"
+              ];
+            }
+
+            $steps["updateModalOpen"] = (() => {
+              if ($state.fragmentDatePicker.values == 0) {
+                return false;
+              } else {
+                return true;
+              }
+            })()
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modal", "open"]
+                    },
+                    operation: 0,
+                    value: (() => {
+                      const timestamps = $state.fragmentDatePicker.values;
+                      const dates = timestamps.map(timestamp => {
+                        const date = new Date(timestamp * 1000);
+                        return date.toISOString().split("T")[0];
+                      });
+                      const calendar = $state.apiRequest.data[1].calendar;
+                      const result = dates.every(date => {
+                        const item = calendar.find(
+                          entry => entry.date === date
+                        );
+                        return (
+                          item &&
+                          (item.website === "" || item.website === "رزرو")
+                        );
+                      });
+                      return result;
                     })()
                   };
                   return (({ variable, value, startIndex, deleteCount }) => {
@@ -3739,6 +3792,59 @@ function PlasmicCalendar2__RenderFunc(props: {
               typeof $steps["updateModalOpen"].then === "function"
             ) {
               $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+            }
+
+            $steps["updateCheckForChangeOpen"] = (() => {
+              if ($state.fragmentDatePicker.values == 0) {
+                return false;
+              } else {
+                return true;
+              }
+            })()
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["checkForChange", "open"]
+                    },
+                    operation: 0,
+                    value: (() => {
+                      const timestamps = $state.fragmentDatePicker.values;
+                      const dates = timestamps.map(timestamp => {
+                        const date = new Date(timestamp * 1000);
+                        return date.toISOString().split("T")[0];
+                      });
+                      const calendar = $state.apiRequest.data[1].calendar;
+                      const result = dates.some(date => {
+                        const item = calendar.find(
+                          entry => entry.date === date
+                        );
+                        return (
+                          item && item.website !== "" && item.website !== "رزرو"
+                        );
+                      });
+                      return result;
+                    })()
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateCheckForChangeOpen"] != null &&
+              typeof $steps["updateCheckForChangeOpen"] === "object" &&
+              typeof $steps["updateCheckForChangeOpen"].then === "function"
+            ) {
+              $steps["updateCheckForChangeOpen"] = await $steps[
+                "updateCheckForChangeOpen"
+              ];
             }
 
             $steps["invokeGlobalAction"] = (() => {
@@ -6049,6 +6155,181 @@ function PlasmicCalendar2__RenderFunc(props: {
             </Button>
           </div>
         </AntdModal>
+        <AntdModal
+          data-plasmic-name={"checkForChange"}
+          data-plasmic-override={overrides.checkForChange}
+          className={classNames("__wab_instance", sty.checkForChange)}
+          defaultStylesClassName={classNames(
+            projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens
+          )}
+          hideFooter={true}
+          modalScopeClassName={sty["checkForChange__modal"]}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["checkForChange", "open"]).apply(
+              null,
+              eventArgs
+            );
+          }}
+          open={generateStateValueProp($state, ["checkForChange", "open"])}
+          title={null}
+          trigger={null}
+          width={"320"}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__vjt7Z
+            )}
+          >
+            {
+              "\u0631\u0648\u0632\u06cc \u06a9\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0631\u062f\u06cc \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0631\u0632\u0631\u0648 \u0634\u062f\u0647 \u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u062e\u0648\u0627\u06cc \u062a\u0648\u06cc \u0628\u0642\u06cc\u0647 \u0633\u0627\u06cc\u062a \u0647\u0627 \u0627\u06cc\u0646 \u0631\u0648\u0632 \u062e\u0627\u0644\u06cc \u0628\u0634\u0647\u061f "
+            }
+          </div>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__uWbV)}
+          >
+            <Button
+              className={classNames("__wab_instance", sty.button__yfhtr)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateCheckForChangeOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["checkForChange", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateCheckForChangeOpen"] != null &&
+                  typeof $steps["updateCheckForChangeOpen"] === "object" &&
+                  typeof $steps["updateCheckForChangeOpen"].then === "function"
+                ) {
+                  $steps["updateCheckForChangeOpen"] = await $steps[
+                    "updateCheckForChangeOpen"
+                  ];
+                }
+
+                $steps["updateModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["modal", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateModalOpen"] != null &&
+                  typeof $steps["updateModalOpen"] === "object" &&
+                  typeof $steps["updateModalOpen"].then === "function"
+                ) {
+                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                }
+              }}
+            >
+              {"\u0628\u0644\u0647"}
+            </Button>
+            <AntdButton
+              className={classNames("__wab_instance", sty.button__gqnsq)}
+              danger={false}
+              loading={false}
+              onClick={async () => {
+                const $steps = {};
+
+                $steps["updateCheckForChangeOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["checkForChange", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateCheckForChangeOpen"] != null &&
+                  typeof $steps["updateCheckForChangeOpen"] === "object" &&
+                  typeof $steps["updateCheckForChangeOpen"].then === "function"
+                ) {
+                  $steps["updateCheckForChangeOpen"] = await $steps[
+                    "updateCheckForChangeOpen"
+                  ];
+                }
+              }}
+              size={"medium"}
+              type={"primary"}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___0Jh8U
+                )}
+              >
+                {"\u0646\u0647"}
+              </div>
+            </AntdButton>
+          </Stack__>
+        </AntdModal>
       </div>
       <Embed
         data-plasmic-name={"embedHtml"}
@@ -6093,6 +6374,7 @@ const PlasmicDescendants = {
     "textarea",
     "updateNoteModal",
     "textarea2",
+    "checkForChange",
     "embedHtml"
   ],
   apiRequest: ["apiRequest"],
@@ -6131,6 +6413,7 @@ const PlasmicDescendants = {
   textarea: ["textarea"],
   updateNoteModal: ["updateNoteModal", "textarea2"],
   textarea2: ["textarea2"],
+  checkForChange: ["checkForChange"],
   embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -6166,6 +6449,7 @@ type NodeDefaultElementType = {
   textarea: typeof Textarea;
   updateNoteModal: typeof AntdModal;
   textarea2: typeof Textarea;
+  checkForChange: typeof AntdModal;
   embedHtml: typeof Embed;
 };
 
@@ -6257,6 +6541,7 @@ export const PlasmicCalendar2 = Object.assign(
     textarea: makeNodeComponent("textarea"),
     updateNoteModal: makeNodeComponent("updateNoteModal"),
     textarea2: makeNodeComponent("textarea2"),
+    checkForChange: makeNodeComponent("checkForChange"),
     embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicCalendar2
