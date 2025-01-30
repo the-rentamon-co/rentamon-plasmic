@@ -486,6 +486,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -547,6 +548,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input2),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -609,6 +611,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input3),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -672,6 +675,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input4),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -734,6 +738,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input5),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -792,6 +797,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input6),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1094,6 +1100,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input7),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1156,6 +1163,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input8),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1218,6 +1226,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input9),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1280,6 +1289,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input10),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1342,6 +1352,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input11),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1635,6 +1646,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input13),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1696,6 +1708,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input14),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1757,6 +1770,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input15),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1817,6 +1831,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input16),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1879,6 +1894,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input17),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,
@@ -1936,6 +1952,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                       {(() => {
                         const child$Props = {
                           bordered: true,
+                          className: classNames("__wab_instance", sty.input18),
                           onChange: async (...eventArgs: any) => {
                             generateStateOnChangePropForCodeComponents(
                               $state,

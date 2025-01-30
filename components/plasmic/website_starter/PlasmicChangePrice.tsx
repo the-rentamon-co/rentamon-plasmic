@@ -231,6 +231,7 @@ function PlasmicChangePrice__RenderFunc(props: {
             <AntdInputNumber
               data-plasmic-name={"numberInput2"}
               data-plasmic-override={overrides.numberInput2}
+              className={classNames("__wab_instance", sty.numberInput2)}
               controls={false}
               max={50}
               min={200000}
