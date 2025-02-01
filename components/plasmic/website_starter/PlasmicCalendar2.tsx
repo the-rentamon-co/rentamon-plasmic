@@ -4530,12 +4530,17 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     const discountedPrice = Math.round(
                                       numericPrice * (1 - appliedDiscount / 100)
                                     );
-                                    updates.price =
-                                      formatPriceToPersian(discountedPrice);
-                                  } else {
-                                    updates.price = formatPriceToPersian(
-                                      Math.round(numericPrice)
+                                    const finalPrice = Math.round(
+                                      discountedPrice / 1000
                                     );
+                                    updates.price =
+                                      formatPriceToPersian(finalPrice);
+                                  } else {
+                                    const finalPrice = Math.round(
+                                      numericPrice / 1000
+                                    );
+                                    updates.price =
+                                      formatPriceToPersian(finalPrice);
                                   }
                                 } else if (
                                   $state.requestdata.discount !== undefined
