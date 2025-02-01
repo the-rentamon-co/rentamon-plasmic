@@ -60,7 +60,19 @@
   padding-top: 10px;
   font-size: 17px;
   padding-right: 20px;
+  line-height: 2;
   min-width: 0;
+}
+@media (max-width: 1200px) {
+  .text__magOe {
+    line-height: 1.8;
+    font-size: 15px;
+  }
+}
+@media (max-width: 350px) {
+  .text__magOe {
+    font-size: 15px;
+  }
 }
 .freeBox___6Bp8 {
   display: flex;
@@ -81,6 +93,11 @@
     flex-direction: column-reverse;
   }
 }
+@media (max-width: 350px) {
+  .freeBox___6Bp8 {
+    padding-left: 0px;
+  }
+}
 .featuresDesc {
   display: flex;
   flex-direction: column;
@@ -93,6 +110,13 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 350px) {
+  .featuresDesc {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 22px;
+  }
+}
 .text__qxJc4 {
   position: relative;
   width: 100%;
@@ -101,12 +125,61 @@
   padding-top: 10px;
   font-size: 15px;
   line-height: 2;
+  padding-right: 0px;
+  font-weight: 600;
   min-width: 0;
+}
+@media (max-width: 1200px) {
+  .text__qxJc4 {
+    padding-top: 42px;
+  }
 }
 @media (max-width: 1200px) {
   .h2__te1GS {
     font-size: 18px;
     font-weight: 600;
+  }
+}
+.text__bukbM {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-top: 10px;
+  font-size: 15px;
+  line-height: 2;
+  padding-right: 0px;
+  min-width: 0;
+}
+.ul__mAvZ4 {
+  display: flex;
+  flex-direction: column;
+}
+.ul__usfFn {
+  display: flex;
+  flex-direction: column;
+}
+.li__s4Kmk {
+  padding-right: 0px;
+  margin-right: 20px;
+}
+.li__ug6W3 {
+  margin-right: 20px;
+  padding-right: 0px;
+}
+.li__jWExO {
+  margin-right: 20px;
+  padding-right: 0px;
+}
+.li__rF3O {
+  margin-right: 20px;
+  padding-right: 0px;
+}
+@media (max-width: 1200px) {
+  .h2__mutof {
+    font-size: 18px;
+    font-weight: 600;
+    display: none;
   }
 }
 .text__rGmV {
@@ -117,11 +190,24 @@
   font-size: 15px;
   padding-top: 0px;
   margin-top: 8px;
+  line-height: 1.8;
   min-width: 0;
 }
-.ul {
+.ul__n9Eap {
   display: flex;
   flex-direction: column;
+}
+.li__rjQw9 {
+  margin-right: 20px;
+}
+.li__pXFP {
+  margin-right: 20px;
+}
+.li___6Fkim {
+  margin-right: 20px;
+}
+.li___7RWy {
+  margin-right: 20px;
 }
 .appDemo {
   display: flex;
@@ -134,20 +220,38 @@
   max-width: 100%;
   padding: 30px 8px 8px;
 }
+@media (max-width: 1200px) {
+  .appDemo {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 50%;
+    margin-top: 31px;
+  }
+}
+@media (max-width: 500px) {
+  .appDemo {
+    width: 90%;
+  }
+}
 @media (max-width: 350px) {
   .appDemo {
     padding-top: 20px;
+    width: 100%;
   }
 }
-.img {
-  object-fit: cover;
+.htmlVideo:global(.__wab_instance) {
+  width: 640px;
+  height: auto;
   max-width: 100%;
-  width: 274px;
+  object-fit: cover;
   flex-shrink: 0;
   border-radius: 30px;
+  border-width: 2px;
 }
-.img > picture > img {
-  object-fit: cover;
+@media (max-width: 1200px) {
+  .htmlVideo:global(.__wab_instance) {
+    border-width: 2px;
+  }
 }
 ._2ndPart {
   display: flex;
@@ -166,7 +270,9 @@
 @media (max-width: 350px) {
   ._2ndPart {
     padding-right: 0px;
-    padding-left: 0px;
+    padding-left: 1px;
+    padding-bottom: 0px;
+    margin-bottom: 44px;
   }
 }
 .freeBox__d5NN5 {
@@ -240,6 +346,8 @@
 @media (max-width: 350px) {
   .freeBox__mrSjQ {
     padding-right: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
   }
 }
 .item1 {
@@ -1028,6 +1136,7 @@
   font-size: 15px;
   width: 300px;
   white-space: pre-wrap;
+  line-height: 2;
 }
 @media (max-width: 1200px) {
   .text__l04Yb {
@@ -1196,6 +1305,7 @@
   padding-top: 0px;
   font-size: 15px;
   white-space: pre-wrap;
+  line-height: 2;
 }
 .freeBox__oz7Gr {
   display: flex;
@@ -1450,12 +1560,13 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 0px 8px 8px;
 }
 @media (max-width: 350px) {
   .freeBox__l4QNu {
     padding-right: 0px;
     padding-left: 0px;
+    padding-bottom: 2px;
   }
 }
 .freeBox__lcRx1 {
@@ -1467,7 +1578,17 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  padding: 8px;
+  margin-top: 22px;
+  border-radius: 30px;
+  padding: 10px 8px 8px;
+  border-width: 1px;
+}
+@media (max-width: 350px) {
+  .freeBox__lcRx1 {
+    margin-right: 2px;
+    width: 102.8%;
+    margin-left: 2px;
+  }
 }
 .text__zafWk {
   position: relative;
@@ -1476,6 +1597,8 @@
   max-width: 100%;
   font-size: 17px;
   font-weight: 600;
+  padding-top: 10px;
+  padding-right: 6px;
   min-width: 0;
 }
 .text___9D0Sr {
@@ -1485,6 +1608,7 @@
   max-width: 100%;
   padding-top: 12px;
   font-size: 15px;
+  padding-right: 6px;
   min-width: 0;
 }
 .freeBox__s5Lew {

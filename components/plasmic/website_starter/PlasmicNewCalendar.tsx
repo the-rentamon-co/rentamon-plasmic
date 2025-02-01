@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 
@@ -85,10 +86,8 @@ export const PlasmicNewCalendar__ArgProps = new Array<ArgPropType>();
 export type PlasmicNewCalendar__OverridesType = {
   root?: Flex__<"div">;
   featuresDesc?: Flex__<"div">;
-  ul?: Flex__<"ul">;
-  li?: Flex__<"li">;
   appDemo?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
+  htmlVideo?: Flex__<typeof Video>;
   _2ndPart?: Flex__<"div">;
   featuresDesc2?: Flex__<"div">;
   item1?: Flex__<"div">;
@@ -295,7 +294,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
             )}
           >
             {
-              "\u0627\u06cc\u0646 \u062a\u0642\u0648\u06cc\u0645 \u062e\u06cc\u0644\u06cc \u0628\u0647\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644 \u0647\u0633\u062a\u060c \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f."
+              "\u06f1\u06f4 \u0645\u0627\u0647 \u0628\u0639\u062f \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f (\u062a\u0642\u0648\u06cc\u0645 \u06f2) \u0622\u0645\u0627\u062f\u0647 \u0634\u062f\u0647. \u062a\u0642\u0648\u06cc\u0645 \u06f2 \u062f\u0627\u0631\u0627\u06cc \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc\u06cc \u0627\u0633\u062a \u06a9\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0639\u0632\u06cc\u0632 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc \u0648 \u0637\u0631\u0627\u062d\u06cc \u0634\u062f\u0647. \u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u062a\u0642\u0648\u06cc\u0645 \u06f2 \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0686\u0646\u062f\u0628\u0631\u0627\u0628\u0631\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0628\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f\u062a\u0648\u0646 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647."
             }
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___6Bp8)}>
@@ -323,6 +322,36 @@ function PlasmicNewCalendar__RenderFunc(props: {
                           sty.h2__te1GS
                         )}
                       >
+                        {hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646:"
+                          : "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2:"}
+                      </h2>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                ) : (
+                  "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646:"
+                )}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__bukbM
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "tablet") ? (
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h2
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h2,
+                          projectcss.__wab_text,
+                          sty.h2__mutof
+                        )}
+                      >
                         {
                           "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2:"
                         }
@@ -331,7 +360,185 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
                 ) : (
-                  "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a:\n\u06f1. \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r\n\u06f2. \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r\n\u06f3. \u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r\n\u06f4. \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r\n\u06f5. \u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n\u06f6. \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n    \u06f1.\u06f6. \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n    \u06f2.\u06f6. \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\n    \u06f3.\u06f6.  \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \r\n\u06f7. \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)\n\u06f8. \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627"
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__mAvZ4
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__so4J4
+                          )}
+                        >
+                          {
+                            "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 (\u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644)"
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__usfFn
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__npesn
+                          )}
+                        >
+                          {
+                            "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__l0Dz
+                          )}
+                        >
+                          {
+                            "\u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u0648\u0636\u0639\u06cc\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__fOgMl
+                          )}
+                        >
+                          {
+                            "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___8AppR
+                          )}
+                        >
+                          {
+                            "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\n"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__tBp6I
+                          )}
+                        >
+                          {
+                            "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__s4Kmk
+                          )}
+                        >
+                          {
+                            "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__ug6W3
+                          )}
+                        >
+                          {
+                            "\u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\n"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___1SNd3
+                          )}
+                        >
+                          {
+                            "\u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646\n"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__jWExO
+                          )}
+                        >
+                          {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__rF3O
+                          )}
+                        >
+                          {
+                            "\u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__uoNej
+                          )}
+                        >
+                          {
+                            "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a\n (\u0647\u0648\u0634\u0645\u0646\u062f)"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__pcKg1
+                          )}
+                        >
+                          {
+                            "\u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627"
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
                 )}
               </div>
               {(
@@ -344,40 +551,174 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     sty.text__rGmV
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <ul
-                          data-plasmic-name={"ul"}
-                          data-plasmic-override={overrides.ul}
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <ul
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul__n9Eap
+                        )}
+                      >
+                        <li
                           className={classNames(
                             projectcss.all,
-                            projectcss.ul,
-                            sty.ul
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__wakaK
                           )}
                         >
-                          <li
-                            data-plasmic-name={"li"}
-                            data-plasmic-override={overrides.li}
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li
-                            )}
-                          >
-                            {
-                              "\u06f1. \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r\n\u06f2. \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r\n\u06f3. \u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r\n\u06f4. \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r\n\u06f5. \u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n\u06f6. \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n    \u06f1.\u06f6. \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n    \u06f2.\u06f6. \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\n    \u06f3.\u06f6.  \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \r\n\u06f7. \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)\n\u06f8. \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627"
-                            }
-                          </li>
-                        </ul>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  ) : (
-                    "\u06f1. \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r\n\u06f2. \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r\n\u06f3. \u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r\n\u06f4. \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r\n\u06f5. \u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n\u06f6. \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n    \u06f1.\u06f6. \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n    \u06f2.\u06f6. \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\n    \u06f3.\u06f6.  \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \r\n\u06f7. \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)\n\u06f8. \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627"
-                  )}
+                          {
+                            "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 (\u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644)"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__zDXl5
+                          )}
+                        >
+                          {
+                            "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__tDcWe
+                          )}
+                        >
+                          {
+                            "\r\u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u0648\u0636\u0639\u06cc\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__is2Mo
+                          )}
+                        >
+                          {
+                            "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___5DN0I
+                          )}
+                        >
+                          {
+                            "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__bhN80
+                          )}
+                        >
+                          {
+                            "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__rjQw9
+                          )}
+                        >
+                          {
+                            "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__pXFP
+                          )}
+                        >
+                          {
+                            "\u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___2Ymit
+                          )}
+                        >
+                          {
+                            "\u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___6Fkim
+                          )}
+                        >
+                          {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li___7RWy
+                          )}
+                        >
+                          {
+                            "\u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__pjnKo
+                          )}
+                        >
+                          {
+                            "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__bpLuw
+                          )}
+                        >
+                          {
+                            "\u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\n"
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
                 </div>
               ) : null}
             </div>
@@ -386,24 +727,17 @@ function PlasmicNewCalendar__RenderFunc(props: {
               data-plasmic-override={overrides.appDemo}
               className={classNames(projectcss.all, sty.appDemo)}
             >
-              <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"274px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image44.png",
-                  fullWidth: 386,
-                  fullHeight: 735,
-                  aspectRatio: undefined
-                }}
+              <Video
+                data-plasmic-name={"htmlVideo"}
+                data-plasmic-override={overrides.htmlVideo}
+                autoPlay={true}
+                className={classNames("__wab_instance", sty.htmlVideo)}
+                controls={true}
+                loop={true}
+                muted={true}
+                src={
+                  "https://rentamon-files.storage.iran.liara.space/gif/calendar-2-demo.mp4"
+                }
               />
             </div>
           </div>
@@ -1081,10 +1415,8 @@ const PlasmicDescendants = {
   root: [
     "root",
     "featuresDesc",
-    "ul",
-    "li",
     "appDemo",
-    "img",
+    "htmlVideo",
     "_2ndPart",
     "featuresDesc2",
     "item1",
@@ -1108,11 +1440,9 @@ const PlasmicDescendants = {
     "toman",
     "commission"
   ],
-  featuresDesc: ["featuresDesc", "ul", "li"],
-  ul: ["ul", "li"],
-  li: ["li"],
-  appDemo: ["appDemo", "img"],
-  img: ["img"],
+  featuresDesc: ["featuresDesc"],
+  appDemo: ["appDemo", "htmlVideo"],
+  htmlVideo: ["htmlVideo"],
   _2ndPart: [
     "_2ndPart",
     "featuresDesc2",
@@ -1165,10 +1495,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   featuresDesc: "div";
-  ul: "ul";
-  li: "li";
   appDemo: "div";
-  img: typeof PlasmicImg__;
+  htmlVideo: typeof Video;
   _2ndPart: "div";
   featuresDesc2: "div";
   item1: "div";
@@ -1254,10 +1582,8 @@ export const PlasmicNewCalendar = Object.assign(
   {
     // Helper components rendering sub-elements
     featuresDesc: makeNodeComponent("featuresDesc"),
-    ul: makeNodeComponent("ul"),
-    li: makeNodeComponent("li"),
     appDemo: makeNodeComponent("appDemo"),
-    img: makeNodeComponent("img"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
     _2ndPart: makeNodeComponent("_2ndPart"),
     featuresDesc2: makeNodeComponent("featuresDesc2"),
     item1: makeNodeComponent("item1"),
