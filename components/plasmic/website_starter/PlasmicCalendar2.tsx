@@ -4572,6 +4572,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                                             ) /
                                               100)
                                       );
+                                      if (discountedPrice === 0) {
+                                        updates.price = null;
+                                      } else {
+                                        updates.price =
+                                          formatPriceToPersian(discountedPrice);
+                                      }
                                     }
                                   }
                                   return {
