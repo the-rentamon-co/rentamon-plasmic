@@ -802,31 +802,6 @@ function PlasmicTransactions__RenderFunc(props: {
                     );
                   })
                 : null}
-              {(() => {
-                try {
-                  return $state.apiRequest.data[0].staus == "false";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___6V8Xa
-                  )}
-                >
-                  {
-                    "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f"
-                  }
-                </div>
-              ) : null}
             </div>
           </div>
           <ApiRequest
@@ -847,17 +822,20 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
             }
             loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__nqKbX
-                )}
-              >
-                {
-                  "\u062f\u0631 \u062d\u0627\u0644  \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__eb7Hm)}
+                displayHeight={"76px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={
+                  "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
                 }
-              </div>
+              />
             }
             method={"GET"}
             onError={async (...eventArgs: any) => {
@@ -882,8 +860,33 @@ function PlasmicTransactions__RenderFunc(props: {
               $refs["apiRequest"] = ref;
             }}
             url={"https://gateway.rentamon.com/webhook/transactions"}
-          />
-
+          >
+            {(() => {
+              try {
+                return $state.apiRequest.data[0].staus == "false";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___6V8Xa
+                )}
+              >
+                {
+                  "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f"
+                }
+              </div>
+            ) : null}
+          </ApiRequest>
           <Embed
             data-plasmic-name={"favicon"}
             data-plasmic-override={overrides.favicon}
