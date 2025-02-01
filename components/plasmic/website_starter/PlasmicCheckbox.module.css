@@ -48,6 +48,10 @@
   color: var(--token-WSyX3-IK-ikH);
   width: 30px;
   height: 30px;
+  align-self: auto;
+  left: auto;
+  top: auto;
+  z-index: 1;
   flex-shrink: 0;
 }
 .svgisChecked {

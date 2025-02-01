@@ -767,6 +767,72 @@
           "cssFilePath": "plasmic/website_starter/PlasmicRecordList.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "OUfaFiJLkcrx",
+          "name": "NewCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewCalendar.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/new-calendar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-calendar"
+        },
+        {
+          "id": "eerOzN6iqdPm",
+          "name": "Label",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicLabel.tsx",
+          "importSpec": {
+            "modulePath": "Label.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicLabel.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "8avNO_gru5NW",
+          "name": "Checkbox2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCheckbox2.tsx",
+          "importSpec": {
+            "modulePath": "Checkbox2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCheckbox2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "ptXaKwJQedSt",
+          "name": "Description",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDescription.tsx",
+          "importSpec": {
+            "modulePath": "Description.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDescription.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Vs0xTpAY08mF",
+          "name": "CheckboxGroup",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCheckboxGroup.tsx",
+          "importSpec": {
+            "modulePath": "CheckboxGroup.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCheckboxGroup.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -974,6 +1040,16 @@
           "id": "re7g4HwqLfNb",
           "name": "Icon26Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon26.tsx"
+        },
+        {
+          "id": "Ixkso2MYpyx6",
+          "name": "CheckIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Check.tsx"
+        },
+        {
+          "id": "fof0wSy5wIIh",
+          "name": "MinusIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Minus.tsx"
         }
       ],
       "images": [
@@ -1646,6 +1722,11 @@
           "id": "r2gJUIVZ7Rc0",
           "name": "image 43",
           "filePath": "../public/plasmic/website_starter/images/image43.svg"
+        },
+        {
+          "id": "Sg0Gc1HKoRMu",
+          "name": "image 44",
+          "filePath": "../public/plasmic/website_starter/images/image44.png"
         }
       ],
       "indirect": false,
@@ -2659,8 +2740,7 @@
           "componentImportPath": "@plasmicpkgs/react-aria/skinny/registerDialog"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "tGFFjizqpBh1JPEqzUQxjY",
