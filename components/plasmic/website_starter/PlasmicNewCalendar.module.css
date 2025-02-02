@@ -190,7 +190,7 @@
 }
 @media (max-width: 350px) {
   .text__qok2R {
-    line-height: 1.8;
+    line-height: 2.2;
     user-select: none;
     white-space: pre-wrap;
     padding-left: 0px;
@@ -388,6 +388,7 @@
   max-width: 100%;
   padding-top: 12px;
   font-size: 15px;
+  line-height: 1.8;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -398,6 +399,7 @@
 @media (max-width: 350px) {
   .text__qwkSf {
     text-align: center;
+    line-height: 2;
   }
 }
 .freeBox__mrSjQ {
