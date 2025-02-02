@@ -399,11 +399,13 @@
 @media (max-width: 500px) {
   .text__aXzp {
     text-align: center;
+    line-height: 2;
   }
 }
 @media (max-width: 350px) {
   .text__aXzp {
     text-align: center;
+    line-height: 2;
   }
 }
 .text__qwkSf {
@@ -2548,11 +2550,13 @@
 @media (max-width: 1200px) {
   .text__zafWk {
     color: var(--token-8nedppYkGVaH);
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 500px) {
   .text__zafWk {
     line-height: 2;
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 350px) {
