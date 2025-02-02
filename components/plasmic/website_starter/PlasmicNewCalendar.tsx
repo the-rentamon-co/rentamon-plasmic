@@ -60,8 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import { SliderWrapper } from "@plasmicpkgs/react-slick";
-import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -91,7 +89,6 @@ export type PlasmicNewCalendar__OverridesType = {
   featuresDesc?: Flex__<"div">;
   appDemo?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
-  sliderCarousel?: Flex__<typeof SliderWrapper>;
   _2ndPart?: Flex__<"div">;
   featuresDesc2?: Flex__<"div">;
   item1?: Flex__<"div">;
@@ -210,15 +207,6 @@ function PlasmicNewCalendar__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "sliderCarousel.currentSlide",
-        type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
-
-        refName: "sliderCarousel",
-        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -487,156 +475,6 @@ function PlasmicNewCalendar__RenderFunc(props: {
                 </React.Fragment>
               )}
             </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__gW1Sr)}>
-            {(() => {
-              const child$Props = {
-                arrows: false,
-                autoplay: true,
-                autoplaySpeed: 0,
-                beforeChange: async (...eventArgs: any) => {
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "currentSlide",
-                    ["sliderCarousel", "currentSlide"],
-                    SliderWrapper_Helpers
-                  ).apply(null, eventArgs);
-                },
-                centerMode: true,
-                className: classNames("__wab_instance", sty.sliderCarousel),
-                cssEase: "linear",
-                initialSlide: generateStateValueProp($state, [
-                  "sliderCarousel",
-                  "currentSlide"
-                ]),
-                ref: ref => {
-                  $refs["sliderCarousel"] = ref;
-                },
-                sliderScopeClassName: sty["sliderCarousel__slider"],
-                speed: 5000
-              };
-              initializeCodeComponentStates(
-                $state,
-                [
-                  {
-                    name: "currentSlide",
-                    plasmicStateName: "sliderCarousel.currentSlide"
-                  }
-                ],
-                [],
-                SliderWrapper_Helpers ?? {},
-                child$Props
-              );
-
-              return (
-                <SliderWrapper
-                  data-plasmic-name={"sliderCarousel"}
-                  data-plasmic-override={overrides.sliderCarousel}
-                  {...child$Props}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__p04AK)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__wl8MA)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      src={{
-                        src: "/plasmic/website_starter/images/g1Jpg.jpg",
-                        fullWidth: 323,
-                        fullHeight: 700,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__hc7Kg)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__ibtls)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      src={{
-                        src: "/plasmic/website_starter/images/g2Jpg.jpg",
-                        fullWidth: 319,
-                        fullHeight: 700,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__gJnA)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__dALcH)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      src={{
-                        src: "/plasmic/website_starter/images/g3Jpg.jpg",
-                        fullWidth: 322,
-                        fullHeight: 700,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__tKhS)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__hbnka)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      src={{
-                        src: "/plasmic/website_starter/images/g4Jpg.jpg",
-                        fullWidth: 320,
-                        fullHeight: 700,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__eJkgg)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__dElXe)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      src={{
-                        src: "/plasmic/website_starter/images/g5Jpg.jpg",
-                        fullWidth: 321,
-                        fullHeight: 700,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                </SliderWrapper>
-              );
-            })()}
           </div>
           <div
             data-plasmic-name={"_2ndPart"}
@@ -1440,7 +1278,6 @@ const PlasmicDescendants = {
     "featuresDesc",
     "appDemo",
     "htmlVideo",
-    "sliderCarousel",
     "_2ndPart",
     "featuresDesc2",
     "item1",
@@ -1472,7 +1309,6 @@ const PlasmicDescendants = {
   featuresDesc: ["featuresDesc"],
   appDemo: ["appDemo", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
-  sliderCarousel: ["sliderCarousel"],
   _2ndPart: [
     "_2ndPart",
     "featuresDesc2",
@@ -1532,7 +1368,6 @@ type NodeDefaultElementType = {
   featuresDesc: "div";
   appDemo: "div";
   htmlVideo: typeof Video;
-  sliderCarousel: typeof SliderWrapper;
   _2ndPart: "div";
   featuresDesc2: "div";
   item1: "div";
@@ -1625,7 +1460,6 @@ export const PlasmicNewCalendar = Object.assign(
     featuresDesc: makeNodeComponent("featuresDesc"),
     appDemo: makeNodeComponent("appDemo"),
     htmlVideo: makeNodeComponent("htmlVideo"),
-    sliderCarousel: makeNodeComponent("sliderCarousel"),
     _2ndPart: makeNodeComponent("_2ndPart"),
     featuresDesc2: makeNodeComponent("featuresDesc2"),
     item1: makeNodeComponent("item1"),
