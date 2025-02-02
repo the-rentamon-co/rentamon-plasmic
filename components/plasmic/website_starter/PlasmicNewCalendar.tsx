@@ -276,14 +276,14 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0645\u0639\u0631\u0641\u06cc \u062a\u0642\u0648\u06cc\u0645 \u06f2"
+                      ? "\u0645\u0639\u0631\u0641\u06cc \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 (\u067e\u0644\u0627\u0633)"
                       : "\u062a\u0642\u0648\u06cc\u0645 \u06f2"}
                   </h2>
                 }
                 <React.Fragment>{""}</React.Fragment>
               </React.Fragment>
             ) : (
-              "\u0645\u0639\u0631\u0641\u06cc \u062a\u0642\u0648\u06cc\u0645 \u06f2"
+              "\u0645\u0639\u0631\u0641\u06cc \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 (\u067e\u0644\u0627\u0633)"
             )}
           </div>
           <div
@@ -293,9 +293,11 @@ function PlasmicNewCalendar__RenderFunc(props: {
               sty.text__magOe
             )}
           >
-            {
-              "\u06f1\u06f4 \u0645\u0627\u0647 \u0628\u0639\u062f \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f (\u062a\u0642\u0648\u06cc\u0645 \u06f2) \u0622\u0645\u0627\u062f\u0647 \u0634\u062f\u0647. \u062a\u0642\u0648\u06cc\u0645 \u06f2 \u062f\u0627\u0631\u0627\u06cc \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc\u06cc \u0627\u0633\u062a \u06a9\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0639\u0632\u06cc\u0632 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc \u0648 \u0637\u0631\u0627\u062d\u06cc \u0634\u062f\u0647. \u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u062a\u0642\u0648\u06cc\u0645 \u06f2 \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0686\u0646\u062f\u0628\u0631\u0627\u0628\u0631\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0628\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f\u062a\u0648\u0646 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647."
-            }
+            {hasVariant(globalVariants, "screen", "mobile")
+              ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0628\u0639\u062f \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 (\u067e\u0644\u0627\u0633) \u0628\u0627 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0639\u0632\u06cc\u0632 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc \u0648 \u0637\u0631\u0627\u062d\u06cc \u0634\u062f\u0647 \u0622\u0645\u0627\u062f\u0647\u200c\u0627\u0633\u062a."
+              : hasVariant(globalVariants, "screen", "tablet")
+              ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0628\u0639\u062f \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 (\u067e\u0644\u0627\u0633) \u0628\u0627 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0639\u0632\u06cc\u0632 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc \u0648 \u0637\u0631\u0627\u062d\u06cc \u0634\u062f\u0647 \u0622\u0645\u0627\u062f\u0647\u200c\u0627\u0633\u062a."
+              : "\u06f1\u06f4 \u0645\u0627\u0647 \u0628\u0639\u062f \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 (\u067e\u0644\u0627\u0633) \u0628\u0627 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0639\u0632\u06cc\u0632 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc \u0648 \u0637\u0631\u0627\u062d\u06cc \u0634\u062f\u0647 \u0622\u0645\u0627\u062f\u0647\u200c\u0627\u0633\u062a."}
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___6Bp8)}>
             <div
@@ -310,7 +312,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                   sty.text__qxJc4
                 )}
               >
-                {hasVariant(globalVariants, "screen", "tablet") ? (
+                {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
@@ -322,25 +324,16 @@ function PlasmicNewCalendar__RenderFunc(props: {
                           sty.h2__te1GS
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646:"
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633:"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633:"
                           : "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2:"}
                       </h2>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
-                ) : (
-                  "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646:"
-                )}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__bukbM
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "tablet") ? (
+                ) : hasVariant(globalVariants, "screen", "tablet") ? (
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
@@ -349,378 +342,33 @@ function PlasmicNewCalendar__RenderFunc(props: {
                           projectcss.all,
                           projectcss.h2,
                           projectcss.__wab_text,
-                          sty.h2__mutof
+                          sty.h2__te1GS
                         )}
                       >
-                        {
-                          "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2:"
-                        }
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633:"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633:"
+                          : "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2:"}
                       </h2>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
                 ) : (
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <ul
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.ul,
-                          sty.ul__mAvZ4
-                        )}
-                      >
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__so4J4
-                          )}
-                        >
-                          {
-                            "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 (\u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644)"
-                          }
-                        </li>
-                      </ul>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <ul
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.ul,
-                          sty.ul__usfFn
-                        )}
-                      >
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__npesn
-                          )}
-                        >
-                          {
-                            "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__l0Dz
-                          )}
-                        >
-                          {
-                            "\u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u0648\u0636\u0639\u06cc\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__fOgMl
-                          )}
-                        >
-                          {
-                            "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li___8AppR
-                          )}
-                        >
-                          {
-                            "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\n"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__tBp6I
-                          )}
-                        >
-                          {
-                            "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__s4Kmk
-                          )}
-                        >
-                          {
-                            "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__ug6W3
-                          )}
-                        >
-                          {
-                            "\u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\n"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li___1SNd3
-                          )}
-                        >
-                          {
-                            "\u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646\n"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__jWExO
-                          )}
-                        >
-                          {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__rF3O
-                          )}
-                        >
-                          {
-                            "\u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__uoNej
-                          )}
-                        >
-                          {
-                            "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a\n (\u0647\u0648\u0634\u0645\u0646\u062f)"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__pcKg1
-                          )}
-                        >
-                          {
-                            "\u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627"
-                          }
-                        </li>
-                      </ul>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
+                  "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633:"
                 )}
               </div>
-              {(
-                hasVariant(globalVariants, "screen", "tablet") ? true : false
-              ) ? (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rGmV
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <ul
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.ul,
-                          sty.ul__n9Eap
-                        )}
-                      >
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__wakaK
-                          )}
-                        >
-                          {
-                            "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 (\u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644)"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__zDXl5
-                          )}
-                        >
-                          {
-                            "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__tDcWe
-                          )}
-                        >
-                          {
-                            "\r\u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u0648\u0636\u0639\u06cc\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__is2Mo
-                          )}
-                        >
-                          {
-                            "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li___5DN0I
-                          )}
-                        >
-                          {
-                            "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__bhN80
-                          )}
-                        >
-                          {
-                            "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__rjQw9
-                          )}
-                        >
-                          {
-                            "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__pXFP
-                          )}
-                        >
-                          {
-                            "\u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li___2Ymit
-                          )}
-                        >
-                          {
-                            "\u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li___6Fkim
-                          )}
-                        >
-                          {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li___7RWy
-                          )}
-                        >
-                          {
-                            "\u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__pjnKo
-                          )}
-                        >
-                          {
-                            "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__bpLuw
-                          )}
-                        >
-                          {
-                            "\u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\n"
-                          }
-                        </li>
-                      </ul>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              ) : null}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qok2R
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u2705 \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 (\u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644)\n\n\u2611\ufe0f \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r\n\n\u2611\ufe0f \u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u0648\u0636\u0639\u06cc\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n\n\u2611\ufe0f \u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\n\n\u2705 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\n\n\u2705 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646\n    - \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n    - \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\n\u2705 \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)\n\n\u2705 \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\n"
+                  : "\u2705 \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 (\u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644)\n\u2611\ufe0f \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r\n\u2611\ufe0f \u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627\u06cc \u0648\u0636\u0639\u06cc\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n\u2611\ufe0f \u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\n\u2705 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\n\u2705 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646\n    - \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n    - \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\u2705 \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)\n\u2705 \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\n"}
+              </div>
             </div>
             <div
               data-plasmic-name={"appDemo"}
@@ -742,6 +390,83 @@ function PlasmicNewCalendar__RenderFunc(props: {
             </div>
           </div>
           <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__kzNvy
+            )}
+          >
+            {hasVariant(globalVariants, "screen", "smallMobile") ? (
+              <React.Fragment>
+                <React.Fragment>
+                  {"\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 "}
+                </React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
+                </span>
+                <React.Fragment>
+                  {
+                    " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0628\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647.\r"
+                  }
+                </React.Fragment>
+              </React.Fragment>
+            ) : hasVariant(globalVariants, "screen", "mobile") ? (
+              <React.Fragment>
+                <React.Fragment>
+                  {"\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 "}
+                </React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633 "}
+                </span>
+                <React.Fragment>
+                  {
+                    "\u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0628\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647.\r"
+                  }
+                </React.Fragment>
+              </React.Fragment>
+            ) : hasVariant(globalVariants, "screen", "tablet") ? (
+              <React.Fragment>
+                <React.Fragment>
+                  {"\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 "}
+                </React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633 "}
+                </span>
+                <React.Fragment>
+                  {
+                    "\u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0628\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647.\r"
+                  }
+                </React.Fragment>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <React.Fragment>
+                  {"\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 "}
+                </React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
+                </span>
+                <React.Fragment>
+                  {
+                    " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0628\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647.\r"
+                  }
+                </React.Fragment>
+              </React.Fragment>
+            )}
+          </div>
+          <div
             data-plasmic-name={"_2ndPart"}
             data-plasmic-override={overrides._2ndPart}
             className={classNames(projectcss.all, sty._2ndPart)}
@@ -760,7 +485,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062a\u0639\u0631\u0641\u0647 \u062a\u0642\u0648\u06cc\u0645 \u06f2"
+                    "\u062a\u0639\u0631\u0641\u0647 \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"
                   }
                 </div>
                 <div
@@ -771,7 +496,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0648 \u0628\u0639\u0636\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0633\u062a\u0646\u062f."
+                    "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0648 \u0628\u0639\u0636\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f (\u062f\u0631\u0635\u062f\u06cc \u0627\u0632 \u062f\u0631\u0622\u0645\u062f) \u0647\u0633\u062a\u0646\u062f."
                   }
                 </div>
               </div>
@@ -805,9 +530,11 @@ function PlasmicNewCalendar__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"item12"}
                 data-plasmic-override={overrides.item12}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.item12)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__d4RK4)}>
@@ -867,10 +594,12 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
                 </Stack__>
-              </div>
-              <div
+              </Stack__>
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"item13"}
                 data-plasmic-override={overrides.item13}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.item13)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__ga6Ky)}>
@@ -930,10 +659,12 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
                 </Stack__>
-              </div>
-              <div
+              </Stack__>
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"item14"}
                 data-plasmic-override={overrides.item14}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.item14)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__hb5W9)}>
@@ -993,10 +724,12 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
                 </Stack__>
-              </div>
-              <div
+              </Stack__>
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"item15"}
                 data-plasmic-override={overrides.item15}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.item15)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__sHxXz)}>
@@ -1056,10 +789,12 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
                 </Stack__>
-              </div>
-              <div
+              </Stack__>
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"item16"}
                 data-plasmic-override={overrides.item16}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.item16)}
               >
                 <div
@@ -1099,9 +834,13 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         sty.text__l04Yb
                       )}
                     >
-                      {
-                        "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n\u0648 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
-                      }
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
+                        : "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"}
                     </div>
                   </Checkbox>
                 </div>
@@ -1118,14 +857,20 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "%\u06f1.\u06f5"
-                      : "\u06f1.\u06f5 %"}
+                      ? "\u06f1.\u06f5\u066a"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u06f1.\u06f5\u066a"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u06f1.\u06f5\u066a"
+                      : "\u06f1.\u06f5\u066a"}
                   </div>
                 </Stack__>
-              </div>
-              <div
+              </Stack__>
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"item17"}
                 data-plasmic-override={overrides.item17}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.item17)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__o8Fw2)}>
@@ -1163,9 +908,32 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         sty.text__zQ0Fo
                       )}
                     >
-                      {
+                      {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n- \u0645\u0634\u0627\u0647\u062f\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u062a\u0627\u06cc\u06cc\u062f \u0648 \u06cc\u0627 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646\r"
+                      ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          <React.Fragment>
+                            {
+                              "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
+                            }
+                          </React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"\r"}
+                          </span>
+                          <React.Fragment>
+                            {
+                              "\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n    - \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646\r"
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      ) : (
                         "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n    - \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646\r"
-                      }
+                      )}
                     </div>
                   </Checkbox>
                 </div>
@@ -1181,13 +949,21 @@ function PlasmicNewCalendar__RenderFunc(props: {
                       sty.text__j0EcZ
                     )}
                   >
-                    {"\u06f1 %"}
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u066a \u06f1"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u066a \u06f1"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u066a \u06f1"
+                      : "\u066a \u06f1"}
                   </div>
                 </Stack__>
-              </div>
-              <div
+              </Stack__>
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"item18"}
                 data-plasmic-override={overrides.item18}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.item18)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__qaVch)}>
@@ -1244,11 +1020,15 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "%\u06f0.\u06f5"
-                      : "\u06f0.\u06f5 %"}
+                      ? "\u06f0.\u06f0\u06f5\u066a"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u06f0.\u06f0\u06f5\u066a"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u06f0.\u06f0\u06f5\u066a"
+                      : "\u06f0.\u06f0\u06f5\u066a"}
                   </div>
                 </Stack__>
-              </div>
+              </Stack__>
               <div className={classNames(projectcss.all, sty.freeBox__l4QNu)}>
                 <div className={classNames(projectcss.all, sty.freeBox__lcRx1)}>
                   <div
@@ -1258,9 +1038,9 @@ function PlasmicNewCalendar__RenderFunc(props: {
                       sty.text__zafWk
                     )}
                   >
-                    {
-                      "\u0645\u062d\u0627\u0633\u0628\u0647 \u0627\u0631\u0632\u0634 \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f"
-                    }
+                    {hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u062a\u0623\u062b\u06cc\u0631 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      : "\u0645\u062d\u0627\u0633\u0628\u0647 \u0627\u0631\u0632\u0634 \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
                   </div>
                   <div
                     className={classNames(
@@ -1269,9 +1049,9 @@ function PlasmicNewCalendar__RenderFunc(props: {
                       sty.text___9D0Sr
                     )}
                   >
-                    {
-                      "\u0628\u0631\u0627\u06cc \u0645\u062d\u0627\u0633\u0628\u0647 \u0627\u0631\u0632\u0634\u06cc \u06a9\u0647 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0641\u0648\u0642 \u0627\u06cc\u062c\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u06af\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u0645\u062f \u0646\u0638\u0631\u062a \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646."
-                    }
+                    {hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."
+                      : "\u0628\u0631\u0627\u06cc \u0645\u062d\u0627\u0633\u0628\u0647 \u0627\u0631\u0632\u0634\u06cc \u06a9\u0647 \u0648\u06cc\u0698\u06cc\u200c\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u06cc\u062c\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647 (\u0648 \u06a9\u0627\u0631\u0645\u0632\u062f) \u06af\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u0645\u062f \u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646."}
                   </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__s5Lew)}
@@ -1279,6 +1059,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     <AntdInputNumber
                       data-plasmic-name={"numberInput"}
                       data-plasmic-override={overrides.numberInput}
+                      allowClear={true}
                       className={classNames("__wab_instance", sty.numberInput)}
                       onChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
@@ -1287,7 +1068,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         ]).apply(null, eventArgs);
                       }}
                       placeholder={
-                        "\u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                        "\u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648\u0627\u0631\u062f \u06a9\u0646"
                       }
                       type={"number"}
                       value={generateStateValueProp($state, [
@@ -1308,9 +1089,9 @@ function PlasmicNewCalendar__RenderFunc(props: {
                           sty.valueText
                         )}
                       >
-                        {
-                          "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f (\u062a\u0648\u0645\u0627\u0646):"
-                        }
+                        {hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u062f\u0631 \u0645\u0627\u0647:"
+                          : "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u062f\u0631 \u0645\u0627\u0647:"}
                       </div>
                       <div
                         data-plasmic-name={"value"}
@@ -1324,17 +1105,20 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return new Intl.NumberFormat().format(
-                                ($state.checkbox5.isChecked
-                                  ? $state.numberInput.value * 1.5
-                                  : 0) +
-                                  ($state.checkbox6.isChecked
-                                    ? $state.numberInput.value * 1.15
-                                    : 0) +
-                                  ($state.checkbox7.isChecked
-                                    ? $state.numberInput.value * 1
-                                    : 0)
-                              );
+                              return $state.numberInput.value
+                                ? `${new Intl.NumberFormat().format(
+                                    ($state.checkbox5.isChecked
+                                      ? $state.numberInput.value * 1.5
+                                      : 0) +
+                                      ($state.checkbox6.isChecked
+                                        ? $state.numberInput.value * 1.15
+                                        : 0) +
+                                      ($state.checkbox7.isChecked
+                                        ? $state.numberInput.value * 1
+                                        : 0) +
+                                      $state.numberInput.value
+                                  )} تومان`
+                                : null;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1360,9 +1144,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                           sty.toman
                         )}
                       >
-                        {
-                          "\u06a9\u0627\u0631\u0645\u0632\u062f (\u062a\u0648\u0645\u0627\u0646):"
-                        }
+                        {"\u06a9\u0627\u0631\u0645\u0632\u062f:"}
                       </div>
                       <div
                         data-plasmic-name={"commission"}
@@ -1376,17 +1158,19 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return new Intl.NumberFormat().format(
-                                ($state.checkbox5.isChecked
-                                  ? $state.numberInput.value * 0.015
-                                  : 0) +
-                                  ($state.checkbox6.isChecked
-                                    ? $state.numberInput.value * 0.01
-                                    : 0) +
-                                  ($state.checkbox7.isChecked
-                                    ? $state.numberInput.value * 0.005
-                                    : 0)
-                              );
+                              return $state.numberInput.value
+                                ? `${new Intl.NumberFormat().format(
+                                    ($state.checkbox5.isChecked
+                                      ? $state.numberInput.value * 0.015
+                                      : 0) +
+                                      ($state.checkbox6.isChecked
+                                        ? $state.numberInput.value * 0.01
+                                        : 0) +
+                                      ($state.checkbox7.isChecked
+                                        ? $state.numberInput.value * 0.005
+                                        : 0)
+                                  )} تومان`
+                                : null;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
