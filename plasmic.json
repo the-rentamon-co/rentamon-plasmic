@@ -833,6 +833,19 @@
           "cssFilePath": "plasmic/website_starter/PlasmicCheckboxGroup.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "gWac1FMbIJat",
+          "name": "NavbarRentamonComponent",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNavbarRentamonComponent.tsx",
+          "importSpec": {
+            "modulePath": "NavbarRentamonComponent.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNavbarRentamonComponent.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
