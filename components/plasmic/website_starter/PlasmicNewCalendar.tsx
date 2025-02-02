@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
@@ -85,6 +86,7 @@ export const PlasmicNewCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewCalendar__OverridesType = {
   root?: Flex__<"div">;
+  navigationBar?: Flex__<typeof NavigationBar>;
   featuresDesc?: Flex__<"div">;
   appDemo?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
@@ -256,6 +258,220 @@ function PlasmicNewCalendar__RenderFunc(props: {
             sty.root
           )}
         >
+          <div className={classNames(projectcss.all, sty.freeBox__rYhih)}>
+            <NavigationBar
+              data-plasmic-name={"navigationBar"}
+              data-plasmic-override={overrides.navigationBar}
+              brand={
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__lU2Yd
+                  )}
+                  component={Link}
+                  href={"#"}
+                  platform={"nextjs"}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__ajWoG)}
+                    displayHeight={"36px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"none"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    src={{
+                      src: "/plasmic/website_starter/images/rentamonFaLowPng.png",
+                      fullWidth: 200,
+                      fullHeight: 99,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </PlasmicLink__>
+              }
+              className={classNames("__wab_instance", sty.navigationBar)}
+              closeButton={
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__xsTo7)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"none"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  src={"https://static1.plasmic.app/close.svg"}
+                />
+              }
+              itemsGap={8}
+              menuItems={
+                <React.Fragment>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ddQ2)}
+                  >
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        sty.link__usZpF
+                      )}
+                      component={Link}
+                      href={"/"}
+                      platform={"nextjs"}
+                    >
+                      {"\u0648\u0631\u0648\u062f"}
+                    </PlasmicLink__>
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        sty.link__geOzq
+                      )}
+                      component={Link}
+                      href={"/"}
+                      platform={"nextjs"}
+                    >
+                      {"\u062b\u0628\u062a\u200c\u0646\u0627\u0645"}
+                    </PlasmicLink__>
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        sty.link__yUnZ3
+                      )}
+                      component={Link}
+                      href={"/"}
+                      platform={"nextjs"}
+                    >
+                      {
+                        "\u062f\u0627\u0646\u0644\u0648\u062f \u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646"
+                      }
+                    </PlasmicLink__>
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        sty.link__fDIce
+                      )}
+                      component={Link}
+                      href={"/"}
+                      platform={"nextjs"}
+                    >
+                      {"\u062a\u0639\u0631\u0641\u0647"}
+                    </PlasmicLink__>
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        sty.link__wmb6C
+                      )}
+                      component={Link}
+                      href={"/"}
+                      platform={"nextjs"}
+                    >
+                      {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
+                    </PlasmicLink__>
+                  </div>
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__d4Ife
+                    )}
+                    component={Link}
+                    href={"/"}
+                    platform={"nextjs"}
+                  >
+                    {"\u0648\u0631\u0648\u062f"}
+                  </PlasmicLink__>
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link___0Ok1
+                    )}
+                    component={Link}
+                    href={"/"}
+                    platform={"nextjs"}
+                  >
+                    {"\u062b\u0628\u062a\u200c\u0646\u0627\u0645"}
+                  </PlasmicLink__>
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__zrBUh
+                    )}
+                    component={Link}
+                    href={"/"}
+                    platform={"nextjs"}
+                  >
+                    {
+                      "\u062f\u0627\u0646\u0644\u0648\u062f \u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646"
+                    }
+                  </PlasmicLink__>
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link___5QzGr
+                    )}
+                    component={Link}
+                    href={"/"}
+                    platform={"nextjs"}
+                  >
+                    {"\u062a\u0639\u0631\u0641\u0647"}
+                  </PlasmicLink__>
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__oKuyQ
+                    )}
+                    component={Link}
+                    href={"/"}
+                    platform={"nextjs"}
+                  >
+                    {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
+                  </PlasmicLink__>
+                </React.Fragment>
+              }
+              openButton={
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__nosAs)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "26px"
+                      : "none"
+                  }
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "100%"
+                      : "auto"
+                  }
+                  src={"https://static1.plasmic.app/menu.svg"}
+                />
+              }
+              responsiveBreakpoint={768}
+            />
+          </div>
           <div
             className={classNames(
               projectcss.all,
@@ -1181,6 +1397,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "navigationBar",
     "featuresDesc",
     "appDemo",
     "htmlVideo",
@@ -1207,6 +1424,7 @@ const PlasmicDescendants = {
     "toman",
     "commission"
   ],
+  navigationBar: ["navigationBar"],
   featuresDesc: ["featuresDesc"],
   appDemo: ["appDemo", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
@@ -1261,6 +1479,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  navigationBar: typeof NavigationBar;
   featuresDesc: "div";
   appDemo: "div";
   htmlVideo: typeof Video;
@@ -1348,6 +1567,7 @@ export const PlasmicNewCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    navigationBar: makeNodeComponent("navigationBar"),
     featuresDesc: makeNodeComponent("featuresDesc"),
     appDemo: makeNodeComponent("appDemo"),
     htmlVideo: makeNodeComponent("htmlVideo"),
