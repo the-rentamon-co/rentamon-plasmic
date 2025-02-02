@@ -215,7 +215,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
         path: "sliderCarousel.currentSlide",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 1,
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
 
         refName: "sliderCarousel",
         onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
@@ -491,12 +491,8 @@ function PlasmicNewCalendar__RenderFunc(props: {
           <div className={classNames(projectcss.all, sty.freeBox__gW1Sr)}>
             {(() => {
               const child$Props = {
-                adaptiveHeight: true,
-                arrowColor: true ? "#9B9B9B" : undefined,
-                arrows: hasVariant(globalVariants, "screen", "smallMobile")
-                  ? false
-                  : false,
-                autoplay: false,
+                arrows: false,
+                autoplay: true,
                 autoplaySpeed: 0,
                 beforeChange: async (...eventArgs: any) => {
                   generateStateOnChangePropForCodeComponents(
@@ -513,15 +509,11 @@ function PlasmicNewCalendar__RenderFunc(props: {
                   "sliderCarousel",
                   "currentSlide"
                 ]),
-                lazyLoad: "progressive",
                 ref: ref => {
                   $refs["sliderCarousel"] = ref;
                 },
                 sliderScopeClassName: sty["sliderCarousel__slider"],
-                speed: 10000,
-                swipeToSlide: true,
-                variableWidth: false,
-                vertical: false
+                speed: 5000
               };
               initializeCodeComponentStates(
                 $state,
@@ -542,16 +534,14 @@ function PlasmicNewCalendar__RenderFunc(props: {
                   data-plasmic-override={overrides.sliderCarousel}
                   {...child$Props}
                 >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__hBe0)}
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__p04AK)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__dw4Ah)}
+                      className={classNames(sty.img__wl8MA)}
                       displayHeight={"auto"}
-                      displayMaxHeight={"600px"}
+                      displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
@@ -563,15 +553,13 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         aspectRatio: undefined
                       }}
                     />
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__qDmSs)}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__hc7Kg)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__sfxbm)}
+                      className={classNames(sty.img__ibtls)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -585,17 +573,15 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         aspectRatio: undefined
                       }}
                     />
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__ucIlP)}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__gJnA)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img___0Xz5T)}
+                      className={classNames(sty.img__dALcH)}
                       displayHeight={"auto"}
-                      displayMaxHeight={"600px"}
+                      displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
@@ -607,17 +593,15 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         aspectRatio: undefined
                       }}
                     />
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__oKb6R)}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__tKhS)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__lr8Vl)}
+                      className={classNames(sty.img__hbnka)}
                       displayHeight={"auto"}
-                      displayMaxHeight={"600px"}
+                      displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
@@ -629,17 +613,15 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         aspectRatio: undefined
                       }}
                     />
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__u55R)}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__eJkgg)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__sf6Ck)}
+                      className={classNames(sty.img__dElXe)}
                       displayHeight={"auto"}
-                      displayMaxHeight={"600px"}
+                      displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
@@ -651,7 +633,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         aspectRatio: undefined
                       }}
                     />
-                  </Stack__>
+                  </div>
                 </SliderWrapper>
               );
             })()}
