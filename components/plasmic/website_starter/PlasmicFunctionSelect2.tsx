@@ -62,6 +62,8 @@ import {
 import { AntdMenu } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 
+import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -128,6 +130,10 @@ function PlasmicFunctionSelect2__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const $globalActions = useGlobalActions?.();
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsaSuSwU8JUYf()
+  });
 
   return (
     <AntdMenu

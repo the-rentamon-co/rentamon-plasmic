@@ -61,8 +61,11 @@ import {
 
 import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
+import { SliderWrapper } from "@plasmicpkgs/react-slick";
+import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -90,6 +93,7 @@ export type PlasmicNewCalendar__OverridesType = {
   featuresDesc?: Flex__<"div">;
   appDemo?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
+  sliderCarousel?: Flex__<typeof SliderWrapper>;
   _2ndPart?: Flex__<"div">;
   featuresDesc2?: Flex__<"div">;
   item1?: Flex__<"div">;
@@ -112,6 +116,11 @@ export type PlasmicNewCalendar__OverridesType = {
   value?: Flex__<"div">;
   toman?: Flex__<"div">;
   commission?: Flex__<"div">;
+  cta?: Flex__<"div">;
+  html?: Flex__<"div">;
+  clarity2?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
+  favIcon?: Flex__<typeof Embed>;
 };
 
 export interface DefaultNewCalendarProps {}
@@ -203,6 +212,15 @@ function PlasmicNewCalendar__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "sliderCarousel.currentSlide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1,
+
+        refName: "sliderCarousel",
+        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -607,82 +625,252 @@ function PlasmicNewCalendar__RenderFunc(props: {
               />
             </div>
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__kzNvy
-            )}
-          >
-            {hasVariant(globalVariants, "screen", "smallMobile") ? (
-              <React.Fragment>
+          <div className={classNames(projectcss.all, sty.freeBox__bdCe6)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__kzNvy
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile") ? (
                 <React.Fragment>
-                  {"\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "}
+                  <React.Fragment>
+                    {"\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "}
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647.\r"
+                    }
+                  </React.Fragment>
                 </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
-                </span>
+              ) : hasVariant(globalVariants, "screen", "mobile") ? (
                 <React.Fragment>
+                  <React.Fragment>
+                    {"\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "}
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647.\r"
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              ) : hasVariant(globalVariants, "screen", "tablet") ? (
+                <React.Fragment>
+                  <React.Fragment>
+                    {"\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "}
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647.\r"
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <React.Fragment>
+                    {"\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "}
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647.\r"
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              )}
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__gW1Sr)}>
+            {(() => {
+              const child$Props = {
+                adaptiveHeight: true,
+                arrowColor: true ? "#9B9B9B" : undefined,
+                arrows: hasVariant(globalVariants, "screen", "smallMobile")
+                  ? false
+                  : false,
+                autoplay: false,
+                autoplaySpeed: 0,
+                beforeChange: async (...eventArgs: any) => {
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "currentSlide",
+                    ["sliderCarousel", "currentSlide"],
+                    SliderWrapper_Helpers
+                  ).apply(null, eventArgs);
+                },
+                centerMode: true,
+                className: classNames("__wab_instance", sty.sliderCarousel),
+                cssEase: "linear",
+                initialSlide: generateStateValueProp($state, [
+                  "sliderCarousel",
+                  "currentSlide"
+                ]),
+                lazyLoad: "progressive",
+                ref: ref => {
+                  $refs["sliderCarousel"] = ref;
+                },
+                sliderScopeClassName: sty["sliderCarousel__slider"],
+                speed: 10000,
+                swipeToSlide: true,
+                variableWidth: false,
+                vertical: false
+              };
+              initializeCodeComponentStates(
+                $state,
+                [
                   {
-                    " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647.\r"
+                    name: "currentSlide",
+                    plasmicStateName: "sliderCarousel.currentSlide"
                   }
-                </React.Fragment>
-              </React.Fragment>
-            ) : hasVariant(globalVariants, "screen", "mobile") ? (
-              <React.Fragment>
-                <React.Fragment>
-                  {"\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "}
-                </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
+                ],
+                [],
+                SliderWrapper_Helpers ?? {},
+                child$Props
+              );
+
+              return (
+                <SliderWrapper
+                  data-plasmic-name={"sliderCarousel"}
+                  data-plasmic-override={overrides.sliderCarousel}
+                  {...child$Props}
                 >
-                  {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
-                </span>
-                <React.Fragment>
-                  {
-                    " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647.\r"
-                  }
-                </React.Fragment>
-              </React.Fragment>
-            ) : hasVariant(globalVariants, "screen", "tablet") ? (
-              <React.Fragment>
-                <React.Fragment>
-                  {"\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "}
-                </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
-                </span>
-                <React.Fragment>
-                  {
-                    " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647.\r"
-                  }
-                </React.Fragment>
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                <React.Fragment>
-                  {"\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "}
-                </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {"\u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"}
-                </span>
-                <React.Fragment>
-                  {
-                    " \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u0644\u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0647\u0645 \u0646\u0633\u0628\u062a \u0628\u0647 \u0642\u0628\u0644 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647.\r"
-                  }
-                </React.Fragment>
-              </React.Fragment>
-            )}
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__hBe0)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__dw4Ah)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"600px"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      src={{
+                        src: "/plasmic/website_starter/images/g1Jpg.jpg",
+                        fullWidth: 323,
+                        fullHeight: 700,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__qDmSs)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__sfxbm)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      src={{
+                        src: "/plasmic/website_starter/images/g2Jpg.jpg",
+                        fullWidth: 319,
+                        fullHeight: 700,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__ucIlP)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___0Xz5T)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"600px"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      src={{
+                        src: "/plasmic/website_starter/images/g3Jpg.jpg",
+                        fullWidth: 322,
+                        fullHeight: 700,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__oKb6R)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__lr8Vl)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"600px"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      src={{
+                        src: "/plasmic/website_starter/images/g4Jpg.jpg",
+                        fullWidth: 320,
+                        fullHeight: 700,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__u55R)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__sf6Ck)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"600px"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      src={{
+                        src: "/plasmic/website_starter/images/g5Jpg.jpg",
+                        fullWidth: 321,
+                        fullHeight: 700,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Stack__>
+                </SliderWrapper>
+              );
+            })()}
           </div>
           <div
             data-plasmic-name={"_2ndPart"}
@@ -1388,6 +1576,64 @@ function PlasmicNewCalendar__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <div
+            data-plasmic-name={"cta"}
+            data-plasmic-override={overrides.cta}
+            className={classNames(projectcss.all, sty.cta)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ohpgX
+              )}
+            >
+              {
+                "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u062f\u0633\u062a\u0631\u0633\u06cc \u067e\u06cc\u0634 \u0627\u0632 \u0645\u0648\u0639\u062f \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645 \u067e\u0644\u0627\u0633"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__d9PgV
+              )}
+            >
+              {"\u062b\u0628\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a"}
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"clarity2"}
+              data-plasmic-override={overrides.clarity2}
+              className={classNames("__wab_instance", sty.clarity2)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"favIcon"}
+              data-plasmic-override={overrides.favIcon}
+              className={classNames("__wab_instance", sty.favIcon)}
+              code={
+                "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
+              }
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1401,6 +1647,7 @@ const PlasmicDescendants = {
     "featuresDesc",
     "appDemo",
     "htmlVideo",
+    "sliderCarousel",
     "_2ndPart",
     "featuresDesc2",
     "item1",
@@ -1422,12 +1669,18 @@ const PlasmicDescendants = {
     "valueText",
     "value",
     "toman",
-    "commission"
+    "commission",
+    "cta",
+    "html",
+    "clarity2",
+    "goftino",
+    "favIcon"
   ],
   navigationBar: ["navigationBar"],
   featuresDesc: ["featuresDesc"],
   appDemo: ["appDemo", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
+  sliderCarousel: ["sliderCarousel"],
   _2ndPart: [
     "_2ndPart",
     "featuresDesc2",
@@ -1472,7 +1725,12 @@ const PlasmicDescendants = {
   valueText: ["valueText"],
   value: ["value"],
   toman: ["toman"],
-  commission: ["commission"]
+  commission: ["commission"],
+  cta: ["cta"],
+  html: ["html", "clarity2", "goftino", "favIcon"],
+  clarity2: ["clarity2"],
+  goftino: ["goftino"],
+  favIcon: ["favIcon"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1483,6 +1741,7 @@ type NodeDefaultElementType = {
   featuresDesc: "div";
   appDemo: "div";
   htmlVideo: typeof Video;
+  sliderCarousel: typeof SliderWrapper;
   _2ndPart: "div";
   featuresDesc2: "div";
   item1: "div";
@@ -1505,6 +1764,11 @@ type NodeDefaultElementType = {
   value: "div";
   toman: "div";
   commission: "div";
+  cta: "div";
+  html: "div";
+  clarity2: typeof Embed;
+  goftino: typeof Embed;
+  favIcon: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1571,6 +1835,7 @@ export const PlasmicNewCalendar = Object.assign(
     featuresDesc: makeNodeComponent("featuresDesc"),
     appDemo: makeNodeComponent("appDemo"),
     htmlVideo: makeNodeComponent("htmlVideo"),
+    sliderCarousel: makeNodeComponent("sliderCarousel"),
     _2ndPart: makeNodeComponent("_2ndPart"),
     featuresDesc2: makeNodeComponent("featuresDesc2"),
     item1: makeNodeComponent("item1"),
@@ -1593,6 +1858,11 @@ export const PlasmicNewCalendar = Object.assign(
     value: makeNodeComponent("value"),
     toman: makeNodeComponent("toman"),
     commission: makeNodeComponent("commission"),
+    cta: makeNodeComponent("cta"),
+    html: makeNodeComponent("html"),
+    clarity2: makeNodeComponent("clarity2"),
+    goftino: makeNodeComponent("goftino"),
+    favIcon: makeNodeComponent("favIcon"),
 
     // Metadata about props expected for PlasmicNewCalendar
     internalVariantProps: PlasmicNewCalendar__VariantProps,

@@ -1732,6 +1732,31 @@
           "id": "aEbKBLNensuI",
           "name": "rentamon-fa-low.png",
           "filePath": "../public/plasmic/website_starter/images/rentamonFaLowPng.png"
+        },
+        {
+          "id": "IqEGYQHuQB4y",
+          "name": "g1.jpg",
+          "filePath": "../public/plasmic/website_starter/images/g1Jpg.jpg"
+        },
+        {
+          "id": "LqwTuAQj9nSH",
+          "name": "g2.jpg",
+          "filePath": "../public/plasmic/website_starter/images/g2Jpg.jpg"
+        },
+        {
+          "id": "ZepQM4QERSh4",
+          "name": "g3.jpg",
+          "filePath": "../public/plasmic/website_starter/images/g3Jpg.jpg"
+        },
+        {
+          "id": "Pgvtprm3MyYj",
+          "name": "g4.jpg",
+          "filePath": "../public/plasmic/website_starter/images/g4Jpg.jpg"
+        },
+        {
+          "id": "WwVjsxoes_0S",
+          "name": "g5.jpg",
+          "filePath": "../public/plasmic/website_starter/images/g5Jpg.jpg"
         }
       ],
       "indirect": false,
@@ -2811,7 +2836,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {
