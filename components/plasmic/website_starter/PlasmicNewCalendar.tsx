@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
@@ -86,6 +87,7 @@ export const PlasmicNewCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewCalendar__OverridesType = {
   root?: Flex__<"div">;
+  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
   featuresDesc?: Flex__<"div">;
   appDemo?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
@@ -262,6 +264,15 @@ function PlasmicNewCalendar__RenderFunc(props: {
             sty.root
           )}
         >
+          <NavbarRentamonComponent
+            data-plasmic-name={"navbarRentamonComponent"}
+            data-plasmic-override={overrides.navbarRentamonComponent}
+            className={classNames(
+              "__wab_instance",
+              sty.navbarRentamonComponent
+            )}
+          />
+
           <div
             className={classNames(
               projectcss.all,
@@ -1327,6 +1338,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "navbarRentamonComponent",
     "featuresDesc",
     "appDemo",
     "htmlVideo",
@@ -1358,6 +1370,7 @@ const PlasmicDescendants = {
     "goftino",
     "favIcon"
   ],
+  navbarRentamonComponent: ["navbarRentamonComponent"],
   featuresDesc: ["featuresDesc"],
   appDemo: ["appDemo", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
@@ -1417,6 +1430,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  navbarRentamonComponent: typeof NavbarRentamonComponent;
   featuresDesc: "div";
   appDemo: "div";
   htmlVideo: typeof Video;
@@ -1509,6 +1523,7 @@ export const PlasmicNewCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
     featuresDesc: makeNodeComponent("featuresDesc"),
     appDemo: makeNodeComponent("appDemo"),
     htmlVideo: makeNodeComponent("htmlVideo"),

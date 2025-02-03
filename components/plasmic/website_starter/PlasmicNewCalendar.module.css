@@ -36,6 +36,9 @@
     grid-column: 4;
   }
 }
+.navbarRentamonComponent:global(.__wab_instance) {
+  max-width: 100%;
+}
 .text__jpQ7P {
   position: relative;
   width: 100%;
