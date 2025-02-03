@@ -150,9 +150,14 @@
 }
 @media (max-width: 500px) {
   .link__qiqR {
-    width: 110px;
-    text-align: center;
+    width: 100%;
+    text-align: right;
     cursor: pointer;
+    background: none;
+    color: #444444;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    min-width: 0;
     margin: 10px 0px 0px;
   }
 }
@@ -163,19 +168,21 @@
 }
 .link__w3OVd {
   position: relative;
-  width: 110px;
+  width: 100%;
   height: auto;
   max-width: 100%;
   font-size: 17px;
   font-weight: 600;
-  color: var(--token-8nedppYkGVaH);
+  color: #444444;
   background: none;
-  text-align: center;
+  text-align: right;
   cursor: pointer;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  min-width: 0;
   border-radius: 30px;
-  padding: 3px 24px 2px;
-  margin: 16px 0px 0px;
-  border: 2px solid #8165d6;
+  padding: 4px 30px;
+  margin: 10px 0px 0px;
 }
 @media (max-width: 350px) {
   .link__w3OVd {
@@ -184,15 +191,21 @@
 }
 .link__cwZwa {
   position: relative;
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
-  padding-left: 12px;
   font-size: 17px;
   font-weight: 600;
-  margin-top: 16px;
   color: #444444;
   cursor: pointer;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  text-align: right;
+  background: none;
+  min-width: 0;
+  border-radius: 30px;
+  padding: 4px 30px;
+  margin: 10px 0px 0px;
 }
 @media (max-width: 350px) {
   .link__cwZwa {
@@ -201,15 +214,21 @@
 }
 .link__kh6Yr {
   position: relative;
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
-  padding-left: 12px;
   font-size: 17px;
   font-weight: 600;
   color: #444444;
   cursor: pointer;
-  margin: 16px 0px 0px;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  text-align: right;
+  background: none;
+  min-width: 0;
+  border-radius: 30px;
+  padding: 4px 30px;
+  margin: 10px 0px 0px;
 }
 @media (max-width: 350px) {
   .link__kh6Yr {
@@ -218,15 +237,21 @@
 }
 .link__vseFw {
   position: relative;
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
-  padding-left: 12px;
   font-size: 17px;
   font-weight: 600;
   color: #444444;
   cursor: pointer;
-  margin: 16px 0px 0px;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  text-align: right;
+  background: none;
+  min-width: 0;
+  border-radius: 30px;
+  padding: 4px 30px;
+  margin: 10px 0px 0px;
 }
 @media (max-width: 350px) {
   .link__vseFw {

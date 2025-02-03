@@ -12,7 +12,7 @@
       56deg,
       #f0ebffa3 0%,
       #ffffff 41%,
-      #f2f2ff 66%,
+      #f2f2ffb5 66%,
       #ffffffc8 79%,
       #dfd4ff47 100%
     )
@@ -336,7 +336,7 @@
     padding-top: 12px;
     padding-right: 0px;
     padding-left: 0px;
-    text-align: right;
+    text-align: center;
     line-height: 1.8;
     font-size: 15px;
   }
@@ -345,7 +345,7 @@
   .text__kzNvy {
     font-size: 15px;
     padding-right: 0px;
-    text-align: right;
+    text-align: center;
   }
 }
 ._2ndPart {
@@ -440,17 +440,21 @@
   max-width: 100%;
   font-size: 22px;
   font-weight: 600;
+  text-align: center;
 }
 @media (max-width: 500px) {
   .text__aXzp {
-    text-align: center;
+    text-align: right;
     line-height: 2;
+    font-size: 20px;
   }
 }
 @media (max-width: 350px) {
   .text__aXzp {
-    text-align: center;
-    line-height: 2;
+    text-align: right;
+    line-height: 1.8;
+    padding-right: 8px;
+    font-size: 19px;
   }
 }
 .text__qwkSf {
@@ -461,17 +465,19 @@
   padding-top: 12px;
   font-size: 15px;
   line-height: 1.8;
+  text-align: center;
   min-width: 0;
 }
 @media (max-width: 500px) {
   .text__qwkSf {
-    text-align: center;
+    text-align: right;
   }
 }
 @media (max-width: 350px) {
   .text__qwkSf {
-    text-align: center;
-    line-height: 2;
+    text-align: right;
+    line-height: 1.8;
+    padding-right: 8px;
   }
 }
 .freeBox__mrSjQ {
@@ -2568,7 +2574,7 @@
   align-items: center;
   margin-top: 22px;
   border-radius: 30px;
-  padding: 10px 8px 8px;
+  padding: 20px 8px 21px;
   border: 2px solid #b09de880;
 }
 @media (max-width: 350px) {
@@ -2636,7 +2642,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  padding: 20px 20px 8px 8px;
+  padding: 30px 20px 8px 8px;
 }
 @media (max-width: 1200px) {
   .freeBox__s5Lew {
