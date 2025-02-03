@@ -107,7 +107,7 @@
 }
 @media (max-width: 1200px) {
   .h2__eo4A0 {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
   }
 }
@@ -115,6 +115,12 @@
   .h2__eo4A0 {
     line-height: 2;
     padding-top: 0px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 350px) {
+  .h2__eo4A0 {
+    font-size: 18px;
   }
 }
 .text__magOe {
@@ -131,7 +137,7 @@
 @media (max-width: 1200px) {
   .text__magOe {
     line-height: 1.9;
-    font-size: 16px;
+    font-size: 17px;
     padding-top: 30px;
   }
 }
@@ -229,19 +235,21 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
-  padding-top: 10px;
+  padding-top: 20px;
   line-height: 2.2;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__qok2R {
     line-height: 2.2;
+    padding-top: 20px;
   }
 }
 @media (max-width: 500px) {
   .text__qok2R {
     line-height: 2.2;
     font-size: 16px;
+    padding-top: 20px;
   }
 }
 @media (max-width: 350px) {
@@ -250,6 +258,7 @@
     user-select: none;
     white-space: pre-wrap;
     padding-left: 0px;
+    padding-top: 20px;
   }
 }
 .appDemo {
@@ -1322,6 +1331,11 @@
   padding-top: 0px;
   font-size: 17px;
   white-space: pre-wrap;
+}
+@media (max-width: 1200px) {
+  .text___08Ctb {
+    padding-right: 0px;
+  }
 }
 @media (max-width: 500px) {
   .text___08Ctb {
@@ -2606,11 +2620,13 @@
   .text__zafWk {
     line-height: 2;
     padding-bottom: 0px;
+    padding-right: 12px;
   }
 }
 @media (max-width: 350px) {
   .text__zafWk {
     line-height: 2;
+    padding-right: 0px;
   }
 }
 .text___9D0Sr {
@@ -2626,11 +2642,13 @@
 @media (max-width: 500px) {
   .text___9D0Sr {
     line-height: 2;
+    padding-right: 12px;
   }
 }
 @media (max-width: 350px) {
   .text___9D0Sr {
     padding-top: 20px;
+    padding-right: 0px;
   }
 }
 .freeBox__s5Lew {
