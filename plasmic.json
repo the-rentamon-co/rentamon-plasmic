@@ -846,6 +846,266 @@
           "cssFilePath": "plasmic/website_starter/PlasmicNavbarRentamonComponent.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "5VoVqiGmU3In",
+          "name": "Button3",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicButton3.tsx",
+          "importSpec": {
+            "modulePath": "Button3.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicButton3.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "TOLQeHhsRZlr",
+          "name": "MenuItem",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicMenuItem.tsx",
+          "importSpec": {
+            "modulePath": "MenuItem.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicMenuItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "AefvCccwOoWn",
+          "name": "MenuSection",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicMenuSection.tsx",
+          "importSpec": {
+            "modulePath": "MenuSection.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicMenuSection.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "6Na784QZOm1d",
+          "name": "MenuPopover",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicMenuPopover.tsx",
+          "importSpec": {
+            "modulePath": "MenuPopover.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicMenuPopover.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "XtpyO4AsuXgN",
+          "name": "Combobox",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCombobox.tsx",
+          "importSpec": {
+            "modulePath": "Combobox.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCombobox.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "0rNrCKA9ar5s",
+          "name": "Radio",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRadio.tsx",
+          "importSpec": {
+            "modulePath": "Radio.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRadio.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "qRg-o0zAfIbP",
+          "name": "RadioGroup",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRadioGroup.tsx",
+          "importSpec": {
+            "modulePath": "RadioGroup.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRadioGroup.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "rBgPhSTTtzLT",
+          "name": "Select2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelect2.tsx",
+          "importSpec": {
+            "modulePath": "Select2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSelect2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "XDOKoC2AhwWH",
+          "name": "Switch",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSwitch.tsx",
+          "importSpec": {
+            "modulePath": "Switch.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSwitch.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "MGm7xuldRCuA",
+          "name": "TextInput2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTextInput2.tsx",
+          "importSpec": {
+            "modulePath": "TextInput2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTextInput2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "BKay7WngMlXQ",
+          "name": "TextAreaInput",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTextAreaInput.tsx",
+          "importSpec": {
+            "modulePath": "TextAreaInput.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTextAreaInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "RayFurEZTrhA",
+          "name": "TextField",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTextField.tsx",
+          "importSpec": {
+            "modulePath": "TextField.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTextField.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "wE-pttKNjW8W",
+          "name": "SliderThumb",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSliderThumb.tsx",
+          "importSpec": {
+            "modulePath": "SliderThumb.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSliderThumb.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "KRfVkLwG0lvM",
+          "name": "Slider",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSlider.tsx",
+          "importSpec": {
+            "modulePath": "Slider.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSlider.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "aJ__NJr-bNI0",
+          "name": "RangeSlider",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRangeSlider.tsx",
+          "importSpec": {
+            "modulePath": "RangeSlider.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRangeSlider.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "seS3S1gMwM5R",
+          "name": "Modal",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicModal.tsx",
+          "importSpec": {
+            "modulePath": "Modal.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicModal.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "HuPO2VxnKkx5",
+          "name": "OverlayArrow",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicOverlayArrow.tsx",
+          "importSpec": {
+            "modulePath": "OverlayArrow.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicOverlayArrow.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "EEc42h-qyFt-",
+          "name": "Popover",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPopover.tsx",
+          "importSpec": {
+            "modulePath": "Popover.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPopover.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "gJB_QTm_9xy1",
+          "name": "Drawer",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDrawer.tsx",
+          "importSpec": {
+            "modulePath": "Drawer.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDrawer.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Iba5c9I87Qil",
+          "name": "Tooltip2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTooltip2.tsx",
+          "importSpec": {
+            "modulePath": "Tooltip2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTooltip2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -1063,6 +1323,21 @@
           "id": "fof0wSy5wIIh",
           "name": "MinusIcon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Minus.tsx"
+        },
+        {
+          "id": "ElHWritzoqrj",
+          "name": "CircleIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Circle.tsx"
+        },
+        {
+          "id": "BTVUACcl_W-Y",
+          "name": "ChevronDownIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__ChevronDown.tsx"
+        },
+        {
+          "id": "uNPQpcgc4CYF",
+          "name": "TriangleFilledIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__TriangleFilled.tsx"
         }
       ],
       "images": [
