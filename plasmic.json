@@ -1106,6 +1106,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicTooltip2.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "jY8OTH2bu3a2",
+          "name": "PaymentPage",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPaymentPage.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/payment-page.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPaymentPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/payment-page"
         }
       ],
       "icons": [

@@ -1175,7 +1175,11 @@ function PlasmicCalendar2__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox__yeclM)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__qPx3C)} />
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__qPx3C)}
+            />
 
             <div
               className={classNames(
@@ -1184,7 +1188,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 sty.text__ynzkJ
               )}
             >
-              {"\u063a\u06cc\u0631\u0641\u0639\u0627\u0644"}
+              {"\u0628\u0633\u062a\u0647"}
             </div>
           </Stack__>
           <Stack__
