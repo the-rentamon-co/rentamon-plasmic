@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -89,6 +90,7 @@ export const PlasmicPricing__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPricing__OverridesType = {
   root?: Flex__<"div">;
+  modal?: Flex__<typeof AntdModal>;
   accordion?: Flex__<typeof AntdAccordion>;
 };
 
@@ -132,6 +134,8 @@ function PlasmicPricing__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -144,6 +148,18 @@ function PlasmicPricing__RenderFunc(props: {
           "activePanelId",
           AntdAccordion_Helpers
         )
+      },
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "tokenResponse",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       }
     ],
     [$props, $ctx, $refs]
@@ -528,11 +544,9 @@ function PlasmicPricing__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["goToPaymentPage"] = true
+                $steps["goToPaymentPage"] = false
                   ? (() => {
-                      const actionArgs = {
-                        destination: `/payment-page/${"100"}`
-                      };
+                      const actionArgs = {};
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -553,6 +567,115 @@ function PlasmicPricing__RenderFunc(props: {
                   typeof $steps["goToPaymentPage"].then === "function"
                 ) {
                   $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
+                }
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
+                          undefined,
+                          (() => {
+                            try {
+                              return { amount: "100000" };
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
+                }
+
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: (() => {
+                          $state.tokenResponse.payInfo =
+                            $steps.invokeGlobalAction.data.payinfo;
+                          $state.tokenResponse.amount = "100000";
+                          return console.log($state.tokenResponse);
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
+
+                $steps["updateModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["modal", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateModalOpen"] != null &&
+                  typeof $steps["updateModalOpen"] === "object" &&
+                  typeof $steps["updateModalOpen"].then === "function"
+                ) {
+                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
                 }
               }}
             >
@@ -575,9 +698,7 @@ function PlasmicPricing__RenderFunc(props: {
 
                 $steps["goToPaymentPage"] = true
                   ? (() => {
-                      const actionArgs = {
-                        destination: `/payment-page/${"200"}`
-                      };
+                      const actionArgs = {};
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -620,9 +741,7 @@ function PlasmicPricing__RenderFunc(props: {
 
                 $steps["goToPaymentPage"] = true
                   ? (() => {
-                      const actionArgs = {
-                        destination: `/payment-page/${"500"}`
-                      };
+                      const actionArgs = {};
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -665,9 +784,7 @@ function PlasmicPricing__RenderFunc(props: {
 
                 $steps["goToPaymentPage"] = true
                   ? (() => {
-                      const actionArgs = {
-                        destination: `/payment-page/${"1000"}`
-                      };
+                      const actionArgs = {};
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -758,6 +875,73 @@ function PlasmicPricing__RenderFunc(props: {
                 </span>
               </React.Fragment>
             </div>
+            <AntdModal
+              data-plasmic-name={"modal"}
+              data-plasmic-override={overrides.modal}
+              className={classNames("__wab_instance", sty.modal)}
+              defaultStylesClassName={classNames(
+                projectcss.root_reset,
+                projectcss.plasmic_default_styles,
+                projectcss.plasmic_mixins,
+                projectcss.plasmic_tokens,
+                plasmic_antd_5_hostless_css.plasmic_tokens,
+                plasmic_plasmic_rich_components_css.plasmic_tokens
+              )}
+              hideFooter={true}
+              modalScopeClassName={sty["modal__modal"]}
+              onOpenChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              open={generateStateValueProp($state, ["modal", "open"])}
+              title={"Modal title"}
+              trigger={null}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___76Sx6
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.tokenResponse.amount;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+              <Button
+                className={classNames("__wab_instance", sty.button___1BZoE)}
+                link={(() => {
+                  try {
+                    return (
+                      "https://payment.zarinpal.com/pg/StartPay/" +
+                      $state.tokenResponse.payInfo
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </AntdModal>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___5JMc)}>
             <div
@@ -994,7 +1178,8 @@ function PlasmicPricing__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "accordion"],
+  root: ["root", "modal", "accordion"],
+  modal: ["modal"],
   accordion: ["accordion"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1002,6 +1187,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  modal: typeof AntdModal;
   accordion: typeof AntdAccordion;
 };
 
@@ -1065,6 +1251,7 @@ export const PlasmicPricing = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    modal: makeNodeComponent("modal"),
     accordion: makeNodeComponent("accordion"),
 
     // Metadata about props expected for PlasmicPricing

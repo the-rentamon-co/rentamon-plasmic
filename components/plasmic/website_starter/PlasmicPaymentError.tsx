@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -87,8 +86,6 @@ export type PlasmicPaymentError__OverridesType = {
   paymentError?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   successful?: Flex__<typeof PlasmicImg__>;
-  columns?: Flex__<"div">;
-  linkbtn2?: Flex__<typeof AntdButton>;
 };
 
 export interface DefaultPaymentErrorProps {}
@@ -214,9 +211,13 @@ function PlasmicPaymentError__RenderFunc(props: {
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={
-                  hasVariant(globalVariants, "screen", "mobile")
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "100px"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "120px"
+                    : hasVariant(globalVariants, "screen", "tablet")
                     ? "140px"
-                    : "240px"
+                    : "180px"
                 }
                 loading={"lazy"}
                 src={{
@@ -227,449 +228,112 @@ function PlasmicPaymentError__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__t2ZKr)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ay8Au
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!"
-                  : "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!"}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ay8Au
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!"
+                : "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ndTc
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!"
+                : "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."}
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___2Eyun)}>
+              <div className={classNames(projectcss.all, sty.freeBox__bjfW)}>
+                <div className={classNames(projectcss.all, sty.freeBox___5Hh7)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eZjXq
+                    )}
+                  >
+                    {"\u06a9\u062f \u067e\u06cc\u06af\u06cc\u0631\u06cc:"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__l0She)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xWeEq
+                    )}
+                  >
+                    {"\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3"}
+                  </div>
+                </div>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__c9SjP
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "mobile") ? (
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return ">> " + $ctx.fetchedData.list[0].tagline;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                ) : (
-                  "\u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647\n\n\n\u062f\u0631\u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u06a9\u0646\u0627\u0631\u062a\u0647\n\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7"
-                )}
-              </div>
-              <div
-                data-plasmic-name={"columns"}
-                data-plasmic-override={overrides.columns}
-                className={classNames(projectcss.all, sty.columns)}
-              >
-                <div className={classNames(projectcss.all, sty.column__dhKo)}>
+              <div className={classNames(projectcss.all, sty.freeBox__wx7F)}>
+                <div className={classNames(projectcss.all, sty.freeBox__baw0W)}>
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__hcVrF
+                      sty.text__dUoOs
                     )}
                   >
-                    {"\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"}
+                    {
+                      "\u062f\u0631\u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u06a9\u0646\u0627\u0631\u062a\u0647\r\n\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u06f0\u06f2\u06f1  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
+                    }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.column__rsfYv)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__tbVgA
-                    )}
-                  >
-                    {"\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__qjoa)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__flAnv
-                    )}
-                  >
-                    {"\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__o3DxZ)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zSZi
-                    )}
-                  >
-                    {"\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__yvRcN)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vq1Zc
-                    )}
-                  >
-                    {"\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__xjcOq)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__qOEwH
-                    )}
-                  >
-                    {"\u0646\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645"}
-                  </div>
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.column__m1ZQm)}
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__wFeO0)}>
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__puqxF
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile") ? (
-                      "\u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647\n\n\n\u062f\u0631\u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u06a9\u0646\u0627\u0631\u062a\u0647\n\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u06f9 \u0627\u0644\u06cc \u06f1\u06f7"
-                    ) : (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $ctx.fetchedData.list[0].description;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u062a\u0646 \u0645\u0639\u0631\u0641\u06cc \u0634\u0631\u06a9\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0644\u06cc \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0628\u062e\u0634 \u0628\u0647 \u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0646\u0648\u0634\u062a\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u06a9\u0627\u0631\u0628\u0631 \u0628\u062a\u0648\u0627\u0646 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0648 \u0627\u0647\u062f\u0627\u0641 \u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u0622\u06af\u0627\u0647 \u0634\u0648\u062f. ";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    )}
-                  </div>
-                ) : null}
               </div>
             </div>
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__f4DUi)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eevK
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile") ? (
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (
-                            " پشتیبانی: ⭐️ " +
-                            $ctx.fetchedData.list[0].supportScore
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (
-                            "امتیاز پشتیبانی: ⭐️ " +
-                            $ctx.fetchedData.list[0].supportScore
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u0627\u0645\u062a\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u2b50\ufe0f\u06f4";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  )}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nMMrA
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile") ? (
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (
-                            " کارمزد: % " +
-                            $ctx.fetchedData.list[0].commissionRate
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (
-                            "نرخ کمیسیون: % " +
-                            $ctx.fetchedData.list[0].commissionRate
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646: X%";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  )}
-                </div>
-                <AntdButton
-                  data-plasmic-name={"linkbtn2"}
-                  data-plasmic-override={overrides.linkbtn2}
-                  className={classNames("__wab_instance", sty.linkbtn2)}
-                  onClick={async () => {
-                    const $steps = {};
+            <div className={classNames(projectcss.all, sty.freeBox__sYeDd)} />
 
-                    $steps["goToPage"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            destination: (() => {
-                              try {
-                                return (
-                                  "https://" + $ctx.fetchedData.list[0].url
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                          };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToPage"] != null &&
-                      typeof $steps["goToPage"] === "object" &&
-                      typeof $steps["goToPage"].then === "function"
-                    ) {
-                      $steps["goToPage"] = await $steps["goToPage"];
-                    }
-                  }}
-                  submitsForm={false}
-                  type={"primary"}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ywKfT
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (
-                            "برای ثبت اقامتگاه در " +
-                            $ctx.fetchedData.list[0].name +
-                            " اینجا بزنید"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0627\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                </AntdButton>
-              </div>
-            ) : null}
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__skhKr)}>
-            <div
-              className={classNames(projectcss.all, sty.freeBox___33Keo)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpsRentamonComPricing"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://rentamon.com/pricing"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpsRentamonComPricing"] != null &&
-                  typeof $steps["goToHttpsRentamonComPricing"] === "object" &&
-                  typeof $steps["goToHttpsRentamonComPricing"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpsRentamonComPricing"] = await $steps[
-                    "goToHttpsRentamonComPricing"
-                  ];
-                }
-              }}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__g0V9)}>
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__fKr7Q
+                  sty.text__jJvbf
                 )}
               >
                 <React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FCFCFC" }}
+                    style={{ color: "var(--token-8nedppYkGVaH)" }}
                   >
                     {
-                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0639\u0631\u0641\u0647\u200c\u0647\u0627"
+                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0635\u0641\u062d\u0647\u200c\u06cc \u067e\u0631\u062f\u0627\u062e\u062a"
+                    }
+                  </span>
+                </React.Fragment>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__vNWwS)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__jcrmr
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-8nedppYkGVaH)" }}
+                  >
+                    {
+                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0635\u0641\u062d\u0647\u200c\u06cc \u067e\u0631\u062f\u0627\u062e\u062a"
                     }
                   </span>
                 </React.Fragment>
               </div>
             </div>
           </div>
-          <div
-            className={classNames(projectcss.all, sty.freeBox__caLZh)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["goToHttpsRentamonComPanels"] = true
-                ? (() => {
-                    const actionArgs = {
-                      destination: "https://rentamon.com/panels"
-                    };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToHttpsRentamonComPanels"] != null &&
-                typeof $steps["goToHttpsRentamonComPanels"] === "object" &&
-                typeof $steps["goToHttpsRentamonComPanels"].then === "function"
-              ) {
-                $steps["goToHttpsRentamonComPanels"] = await $steps[
-                  "goToHttpsRentamonComPanels"
-                ];
-              }
-            }}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___5CKam
-              )}
-            >
-              <React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ color: "var(--token-8nedppYkGVaH)" }}
-                >
-                  {
-                    "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"
-                  }
-                </span>
-              </React.Fragment>
-            </div>
-          </div>
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox___2OF8O)} />
-          ) : null}
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__eCkSh)} />
-          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -677,17 +341,9 @@ function PlasmicPaymentError__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  paymentError: [
-    "paymentError",
-    "embedHtml",
-    "successful",
-    "columns",
-    "linkbtn2"
-  ],
+  paymentError: ["paymentError", "embedHtml", "successful"],
   embedHtml: ["embedHtml"],
-  successful: ["successful"],
-  columns: ["columns"],
-  linkbtn2: ["linkbtn2"]
+  successful: ["successful"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -696,8 +352,6 @@ type NodeDefaultElementType = {
   paymentError: "div";
   embedHtml: typeof Embed;
   successful: typeof PlasmicImg__;
-  columns: "div";
-  linkbtn2: typeof AntdButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -762,8 +416,6 @@ export const PlasmicPaymentError = Object.assign(
     // Helper components rendering sub-elements
     embedHtml: makeNodeComponent("embedHtml"),
     successful: makeNodeComponent("successful"),
-    columns: makeNodeComponent("columns"),
-    linkbtn2: makeNodeComponent("linkbtn2"),
 
     // Metadata about props expected for PlasmicPaymentError
     internalVariantProps: PlasmicPaymentError__VariantProps,

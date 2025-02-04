@@ -373,12 +373,6 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
               </div>
             </div>
           </div>
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__zoeQd)} />
-          ) : null}
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__sJiz8)} />
-          ) : null}
         </div>
       </div>
     </React.Fragment>

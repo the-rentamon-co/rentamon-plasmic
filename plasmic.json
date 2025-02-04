@@ -309,20 +309,6 @@
           "componentType": "component"
         },
         {
-          "id": "6cULBLqXJZWY",
-          "name": "AlirezaTest",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicAlirezaTest.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page-3.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicAlirezaTest.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-3"
-        },
-        {
           "id": "sqOPHlPEQq33",
           "name": "ChangePrice",
           "type": "managed",
@@ -374,20 +360,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/platforms"
-        },
-        {
-          "id": "r-EriZGoAYEH",
-          "name": "Testing",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicTesting.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/testing.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicTesting.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/testing"
         },
         {
           "id": "H631TCEpl2Nh",
@@ -564,34 +536,6 @@
           "cssFilePath": "plasmic/website_starter/PlasmicAlert.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "Gq0MFDDWDv-U",
-          "name": "Activation",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicActivation.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/active.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicActivation.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/active"
-        },
-        {
-          "id": "zXAOwfcgu5NZ",
-          "name": "ActivationNew",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicActivationNew.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/activation/[type].tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicActivationNew.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/activation"
         },
         {
           "id": "4kdcaD2KbS-w",
@@ -1108,20 +1052,6 @@
           "componentType": "component"
         },
         {
-          "id": "jY8OTH2bu3a2",
-          "name": "PaymentPage",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicPaymentPage.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/payment-page/[amount].tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicPaymentPage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/payment-page"
-        },
-        {
           "id": "4KhpZ-of93My",
           "name": "Pricing",
           "type": "managed",
@@ -1134,6 +1064,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/pricing"
+        },
+        {
+          "id": "zXAOwfcgu5NZ",
+          "name": "Activation",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicActivation.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/activation/[type].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicActivation.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/activation/[type]"
         }
       ],
       "icons": [

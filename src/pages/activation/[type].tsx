@@ -4,26 +4,27 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicActivationNew } from "../../../components/plasmic/website_starter/PlasmicActivationNew";
+import { PlasmicActivation } from "../../../components/plasmic/website_starter/PlasmicActivation";
 import { useRouter } from "next/router";
 
-function ActivationNew() {
-  // Use PlasmicActivationNew to render this component as it was
+function Activation() {
+  // Use PlasmicActivation to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicActivationNew are:
+  // Props you can pass into PlasmicActivation are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicActivationNew is wrapped by your project's global
+  // By default, PlasmicActivation is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+
   return (
     <GlobalContextsProvider>
       <PageParamsProvider__
@@ -31,10 +32,10 @@ function ActivationNew() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicActivationNew />
+        <PlasmicActivation />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default ActivationNew;
+export default Activation;

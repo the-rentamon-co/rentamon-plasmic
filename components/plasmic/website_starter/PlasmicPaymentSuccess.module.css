@@ -156,6 +156,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__brmxc {
+    padding-right: 0px;
+  }
+}
 .text__cI0YB {
   position: relative;
   width: 100%;
@@ -175,6 +180,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__dUcoS {
+    padding-left: 0px;
+  }
 }
 .text___0S5Du {
   position: relative;
@@ -215,6 +225,18 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .freeBox___9Ooes {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    padding: 8px 0px 8px 8px;
+  }
+}
 .text__uEXrS {
   position: relative;
   width: 100%;
@@ -234,6 +256,18 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__gvbk7 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    padding: 8px 8px 8px 0px;
+  }
 }
 .text__rNEjt {
   position: relative;
@@ -274,6 +308,18 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__wYkWt {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    padding: 8px 0px 8px 8px;
+  }
+}
 .text__wJqw0 {
   position: relative;
   width: 100%;
@@ -293,6 +339,18 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__mqBLm {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    padding: 8px 8px 8px 0px;
+  }
 }
 .text___31Pn1 {
   position: relative;
@@ -336,39 +394,5 @@
 @media (max-width: 500px) {
   .text__hG9Gz {
     font-size: 15px;
-  }
-}
-.freeBox__zoeQd {
-  flex-direction: row;
-  position: relative;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  max-width: 50%;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 500px) {
-  .freeBox__zoeQd {
-    display: none;
-  }
-}
-.freeBox__sJiz8 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 500px) {
-  .freeBox__sJiz8 {
-    max-width: 50%;
-    display: none;
   }
 }
