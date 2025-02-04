@@ -908,7 +908,7 @@ function PlasmicPricing__RenderFunc(props: {
                         value: (() => {
                           $state.tokenResponse.payInfo =
                             $steps.invokeGlobalAction.data.payinfo;
-                          $state.tokenResponse.amount = "۱۰۰\u066C۰۰۰";
+                          $state.tokenResponse.amount = "۲۰۰\u066C۰۰۰";
                           return console.log($state.tokenResponse);
                         })()
                       };
@@ -1162,7 +1162,7 @@ function PlasmicPricing__RenderFunc(props: {
                         value: (() => {
                           $state.tokenResponse.payInfo =
                             $steps.invokeGlobalAction.data.payinfo;
-                          $state.tokenResponse.amount = "۱۰۰\u066C۰۰۰";
+                          $state.tokenResponse.amount = "۵۰۰\u066C۰۰۰";
                           return console.log($state.tokenResponse);
                         })()
                       };
@@ -1416,7 +1416,7 @@ function PlasmicPricing__RenderFunc(props: {
                         value: (() => {
                           $state.tokenResponse.payInfo =
                             $steps.invokeGlobalAction.data.payinfo;
-                          $state.tokenResponse.amount = "۱۰۰\u066C۰۰۰";
+                          $state.tokenResponse.amount = "۱\u066C۰۰۰\u066C۰۰۰ ";
                           return console.log($state.tokenResponse);
                         })()
                       };
