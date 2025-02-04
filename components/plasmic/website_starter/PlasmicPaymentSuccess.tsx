@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -86,6 +86,8 @@ export type PlasmicPaymentSuccess__OverridesType = {
   paymentSuccess?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   successful?: Flex__<typeof PlasmicImg__>;
+  apiRequest?: Flex__<typeof ApiRequest>;
+  img?: Flex__<typeof PlasmicImg__>;
 };
 
 export interface DefaultPaymentSuccessProps {}
@@ -147,6 +149,30 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -235,88 +261,247 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                 ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f"
                 : "\u067e\u0631\u062f\u0627\u062e\u062a \u0634\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f"}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__qv6Bb)}>
-              <div className={classNames(projectcss.all, sty.freeBox___0IaJ7)}>
-                <div className={classNames(projectcss.all, sty.freeBox__brmxc)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__cI0YB
-                    )}
-                  >
-                    {"\u06a9\u062f \u067e\u06cc\u06af\u06cc\u0631\u06cc:"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__dUcoS)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___0S5Du
-                    )}
-                  >
-                    {"\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3"}
-                  </div>
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__bgDin)}>
+            <ApiRequest
+              data-plasmic-name={"apiRequest"}
+              data-plasmic-override={overrides.apiRequest}
+              body={(() => {
+                try {
+                  return $ctx.query.pid;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+              className={classNames("__wab_instance", sty.apiRequest)}
+              errorDisplay={
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___9Ooes)}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__uI8WI
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
+              }
+              loadingDisplay={
+                <PlasmicImg__
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={"76px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                  }
+                />
+              }
+              method={"POST"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["apiRequest"] = ref;
+              }}
+              url={
+                "https://gateway.rentamon.com/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5"
+              }
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__qv6Bb)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___0IaJ7)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__uEXrS
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__brmxc)}
                   >
-                    {
-                      "\u0634\u0645\u0627\u0631\u0647 \u0641\u0627\u06a9\u062a\u0648\u0631:"
-                    }
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__cI0YB
+                      )}
+                    >
+                      {"\u06a9\u062f \u067e\u06cc\u06af\u06cc\u0631\u06cc:"}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__dUcoS)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___0S5Du
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              function convertToPersianNumber(number) {
+                                const englishToPersianMap = {
+                                  "0": "۰",
+                                  "1": "۱",
+                                  "2": "۲",
+                                  "3": "۳",
+                                  "4": "۴",
+                                  "5": "۵",
+                                  "6": "۶",
+                                  "7": "۷",
+                                  "8": "۸",
+                                  "9": "۹"
+                                };
+                                return number
+                                  .toString()
+                                  .split("")
+                                  .map(
+                                    digit => englishToPersianMap[digit] || digit
+                                  )
+                                  .join("");
+                              }
+                              const englishNumber =
+                                $state.apiRequest.data.track_id;
+                              const persianNumber =
+                                convertToPersianNumber(englishNumber);
+                              return persianNumber;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__gvbk7)}>
+                <div className={classNames(projectcss.all, sty.freeBox__qCEol)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rNEjt
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__wYkWt)}
                   >
-                    {
-                      "\u06f4\u06f2\u06f5\u06f6\u06f5\u06f2\u06f1\u06f2\u06f4\u06f3\u06f2"
-                    }
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wJqw0
+                      )}
+                    >
+                      {"\u0645\u0628\u0644\u063a:"}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mqBLm)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___31Pn1
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const amount = $state.apiRequest.data.amount / 10;
+                              const formattedAmount = parseInt(
+                                amount,
+                                10
+                              ).toLocaleString("fa-IR");
+                              return formattedAmount + "  تومان";
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u06f5\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__bgDin)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___9Ooes)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uEXrS
+                      )}
+                    >
+                      {"\u062a\u0627\u0631\u06cc\u062e"}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__gvbk7)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__rNEjt
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              return new Date().toLocaleDateString(
+                                "fa-IR-u-nu"
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u06f4\u06f2\u06f5\u06f6\u06f5\u06f2\u06f1\u06f2\u06f4\u06f3\u06f2";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__qCEol)}>
-                <div className={classNames(projectcss.all, sty.freeBox__wYkWt)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wJqw0
-                    )}
-                  >
-                    {"\u0645\u0628\u0644\u063a:"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__mqBLm)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___31Pn1
-                    )}
-                  >
-                    {
-                      "\u06f5\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                    }
-                  </div>
-                </div>
-              </div>
-            </div>
+            </ApiRequest>
             <div
               className={classNames(projectcss.all, sty.freeBox__su0Hi)}
               onClick={async event => {
@@ -380,9 +565,17 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  paymentSuccess: ["paymentSuccess", "embedHtml", "successful"],
+  paymentSuccess: [
+    "paymentSuccess",
+    "embedHtml",
+    "successful",
+    "apiRequest",
+    "img"
+  ],
   embedHtml: ["embedHtml"],
-  successful: ["successful"]
+  successful: ["successful"],
+  apiRequest: ["apiRequest", "img"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -391,6 +584,8 @@ type NodeDefaultElementType = {
   paymentSuccess: "div";
   embedHtml: typeof Embed;
   successful: typeof PlasmicImg__;
+  apiRequest: typeof ApiRequest;
+  img: typeof PlasmicImg__;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -455,6 +650,8 @@ export const PlasmicPaymentSuccess = Object.assign(
     // Helper components rendering sub-elements
     embedHtml: makeNodeComponent("embedHtml"),
     successful: makeNodeComponent("successful"),
+    apiRequest: makeNodeComponent("apiRequest"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicPaymentSuccess
     internalVariantProps: PlasmicPaymentSuccess__VariantProps,

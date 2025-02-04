@@ -2919,6 +2919,7 @@
   padding-top: 12px;
   font-size: 15px;
   padding-right: 20px;
+  line-height: 1.8;
   min-width: 0;
 }
 @media (max-width: 500px) {

@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -86,6 +87,8 @@ export type PlasmicPaymentError__OverridesType = {
   paymentError?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   successful?: Flex__<typeof PlasmicImg__>;
+  apiRequest?: Flex__<typeof ApiRequest>;
+  img?: Flex__<typeof PlasmicImg__>;
   text?: Flex__<"div">;
 };
 
@@ -148,6 +151,30 @@ function PlasmicPaymentError__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -254,30 +281,91 @@ function PlasmicPaymentError__RenderFunc(props: {
                 : "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."}
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___2Eyun)}>
-              <div className={classNames(projectcss.all, sty.freeBox__bjfW)}>
-                <div className={classNames(projectcss.all, sty.freeBox___5Hh7)}>
+              <ApiRequest
+                data-plasmic-name={"apiRequest"}
+                data-plasmic-override={overrides.apiRequest}
+                className={classNames("__wab_instance", sty.apiRequest)}
+                errorDisplay={
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__eZjXq
+                      sty.text___7Um4Y
                     )}
                   >
-                    {"\u06a9\u062f \u067e\u06cc\u06af\u06cc\u0631\u06cc:"}
+                    {"Error fetching data"}
                   </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__l0She)}>
+                }
+                loadingDisplay={
+                  <PlasmicImg__
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
+                    alt={""}
+                    className={classNames(sty.img)}
+                    displayHeight={"76px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    }
+                  />
+                }
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequest"] = ref;
+                }}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__bjfW)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xWeEq
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox___5Hh7)}
                   >
-                    {"\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3"}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__eZjXq
+                      )}
+                    >
+                      {"\u06a9\u062f \u067e\u06cc\u06af\u06cc\u0631\u06cc:"}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__l0She)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__xWeEq
+                      )}
+                    >
+                      {"\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3"}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ApiRequest>
               <div className={classNames(projectcss.all, sty.freeBox__wx7F)}>
                 <div className={classNames(projectcss.all, sty.freeBox__baw0W)}>
                   <div
@@ -348,9 +436,18 @@ function PlasmicPaymentError__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  paymentError: ["paymentError", "embedHtml", "successful", "text"],
+  paymentError: [
+    "paymentError",
+    "embedHtml",
+    "successful",
+    "apiRequest",
+    "img",
+    "text"
+  ],
   embedHtml: ["embedHtml"],
   successful: ["successful"],
+  apiRequest: ["apiRequest", "img"],
+  img: ["img"],
   text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -360,6 +457,8 @@ type NodeDefaultElementType = {
   paymentError: "div";
   embedHtml: typeof Embed;
   successful: typeof PlasmicImg__;
+  apiRequest: typeof ApiRequest;
+  img: typeof PlasmicImg__;
   text: "div";
 };
 
@@ -425,6 +524,8 @@ export const PlasmicPaymentError = Object.assign(
     // Helper components rendering sub-elements
     embedHtml: makeNodeComponent("embedHtml"),
     successful: makeNodeComponent("successful"),
+    apiRequest: makeNodeComponent("apiRequest"),
+    img: makeNodeComponent("img"),
     text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicPaymentError
