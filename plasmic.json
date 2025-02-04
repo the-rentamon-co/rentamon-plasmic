@@ -1120,6 +1120,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/payment-page"
+        },
+        {
+          "id": "4KhpZ-of93My",
+          "name": "Pricing",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPricing.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/pricing.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPricing.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/pricing"
         }
       ],
       "icons": [
