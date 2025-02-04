@@ -725,7 +725,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       }}
                       url={(() => {
                         try {
-                          return `https://api.rentamon.com/api/website_statuses/?property_id=${$state.propId}`;
+                          return `https://api-v2.rentamon.com/api/website_statuses/?property_id=${$state.propId}`;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||

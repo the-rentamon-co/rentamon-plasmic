@@ -2138,7 +2138,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 )
                                 .flat();
                               return fetch(
-                                "https://api.rentamon.com/api/setdiscount",
+                                "https://api-v2.rentamon.com/api/setdiscount",
                                 {
                                   method: "POST",
                                   headers: {
@@ -2557,7 +2557,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 .filter(day => day >= todayInPersian)
                             )
                             .flat();
-                          fetch("https://api.rentamon.com/api/setunblock", {
+                          fetch("https://api-v2.rentamon.com/api/setunblock", {
                             method: "POST",
                             headers: {
                               "Content-Type": "application/json",
@@ -3639,15 +3639,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   )
                                 )
                                 .flat();
-                              fetch("https://api.rentamon.com/api/setprice", {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json",
-                                  Accept: "*/*"
-                                },
-                                credentials: "include",
-                                body: JSON.stringify(data)
-                              })
+                              fetch(
+                                "https://api-v2.rentamon.com/api/setprice",
+                                {
+                                  method: "POST",
+                                  headers: {
+                                    "Content-Type": "application/json",
+                                    Accept: "*/*"
+                                  },
+                                  credentials: "include",
+                                  body: JSON.stringify(data)
+                                }
+                              )
                                 .then(response => {
                                   if (!response.ok) {
                                     throw new Error(
@@ -4050,7 +4053,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             }}
             url={(() => {
               try {
-                return `https://api.rentamon.com/api/website_statuses/?property_id=${$props.propertyId}`;
+                return `https://api-v2.rentamon.com/api/website_statuses/?property_id=${$props.propertyId}`;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -4908,7 +4911,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             .flat();
                           $state.requestdata = data;
                           return fetch(
-                            "https://api.rentamon.com/api/setblock",
+                            "https://api-v2.rentamon.com/api/setblock",
                             {
                               method: "POST",
                               headers: {
@@ -5126,7 +5129,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             )
                             .flat();
                           return fetch(
-                            "https://api.rentamon.com/api/setblock",
+                            "https://api-v2.rentamon.com/api/setblock",
                             {
                               method: "POST",
                               headers: {
