@@ -4506,7 +4506,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     "unblock" ||
                                   !$state.requestdata.request_for
                                 ) {
-                                  console.log("on the unblock condition");
                                   updates.status = "unblocked";
                                   updates.website = null;
                                 }
@@ -4544,7 +4543,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     const finalPrice = Math.round(
                                       numericPrice / 1000
                                     );
-                                    console.log("day", day);
                                     updates.price =
                                       formatPriceToPersian(finalPrice);
                                     updates.status = day.status;
