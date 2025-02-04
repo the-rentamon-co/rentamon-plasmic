@@ -86,6 +86,7 @@ export type PlasmicPaymentError__OverridesType = {
   paymentError?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   successful?: Flex__<typeof PlasmicImg__>;
+  text?: Flex__<"div">;
 };
 
 export interface DefaultPaymentErrorProps {}
@@ -221,9 +222,9 @@ function PlasmicPaymentError__RenderFunc(props: {
                 }
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/website_starter/images/group536Png.png",
-                  fullWidth: 264,
-                  fullHeight: 264,
+                  src: "/plasmic/website_starter/images/sadFacePng.png",
+                  fullWidth: 250,
+                  fullHeight: 250,
                   aspectRatio: undefined
                 }}
               />
@@ -246,8 +247,10 @@ function PlasmicPaymentError__RenderFunc(props: {
                 sty.text__ndTc
               )}
             >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!"
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
                 : "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."}
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___2Eyun)}>
@@ -285,52 +288,56 @@ function PlasmicPaymentError__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u062f\u0631\u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u06a9\u0646\u0627\u0631\u062a\u0647\r\n\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u06f0\u06f2\u06f1  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
+                      "\u062f\u0631\u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632\u060c \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u06cc\u0646\u062c\u0627\u0633\u062a\n\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u06f0\u06f2\u06f1  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
                     }
                   </div>
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__sYeDd)} />
-
-            <div className={classNames(projectcss.all, sty.freeBox__g0V9)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jJvbf
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "var(--token-8nedppYkGVaH)" }}
-                  >
-                    {
-                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0635\u0641\u062d\u0647\u200c\u06cc \u067e\u0631\u062f\u0627\u062e\u062a"
-                    }
-                  </span>
-                </React.Fragment>
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(projectcss.all, sty.text)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__vNWwS)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jcrmr
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "var(--token-8R7jjC_-F9FF)" }}
+                    >
+                      {
+                        "\u067e\u0631\u062f\u0627\u062e\u062a \u0645\u062c\u062f\u062f"
+                      }
+                    </span>
+                  </React.Fragment>
+                </div>
               </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__vNWwS)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jcrmr
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "var(--token-8nedppYkGVaH)" }}
-                  >
-                    {
-                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0635\u0641\u062d\u0647\u200c\u06cc \u067e\u0631\u062f\u0627\u062e\u062a"
-                    }
-                  </span>
-                </React.Fragment>
+              <div className={classNames(projectcss.all, sty.freeBox__qzt5K)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__sej8
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#8165D6" }}
+                    >
+                      {
+                        "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0639\u0631\u0641\u0647\u200c\u0647\u0627"
+                      }
+                    </span>
+                  </React.Fragment>
+                </div>
               </div>
             </div>
           </div>
@@ -341,9 +348,10 @@ function PlasmicPaymentError__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  paymentError: ["paymentError", "embedHtml", "successful"],
+  paymentError: ["paymentError", "embedHtml", "successful", "text"],
   embedHtml: ["embedHtml"],
-  successful: ["successful"]
+  successful: ["successful"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -352,6 +360,7 @@ type NodeDefaultElementType = {
   paymentError: "div";
   embedHtml: typeof Embed;
   successful: typeof PlasmicImg__;
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -416,6 +425,7 @@ export const PlasmicPaymentError = Object.assign(
     // Helper components rendering sub-elements
     embedHtml: makeNodeComponent("embedHtml"),
     successful: makeNodeComponent("successful"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicPaymentError
     internalVariantProps: PlasmicPaymentError__VariantProps,

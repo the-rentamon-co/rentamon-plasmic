@@ -2017,6 +2017,16 @@
           "id": "WwVjsxoes_0S",
           "name": "g5.jpg",
           "filePath": "../public/plasmic/website_starter/images/g5Jpg.jpg"
+        },
+        {
+          "id": "7RWcQaKTsr8H",
+          "name": "image 45",
+          "filePath": "../public/plasmic/website_starter/images/image45.png"
+        },
+        {
+          "id": "i4t82pJ36gve",
+          "name": "Sad-face.png",
+          "filePath": "../public/plasmic/website_starter/images/sadFacePng.png"
         }
       ],
       "indirect": false,

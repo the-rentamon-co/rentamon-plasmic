@@ -578,7 +578,7 @@ function PlasmicPricing__RenderFunc(props: {
                           undefined,
                           (() => {
                             try {
-                              return { amount: "100000" };
+                              return { amount: "1000000" };
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -614,7 +614,7 @@ function PlasmicPricing__RenderFunc(props: {
                         value: (() => {
                           $state.tokenResponse.payInfo =
                             $steps.invokeGlobalAction.data.payinfo;
-                          $state.tokenResponse.amount = "100000";
+                          $state.tokenResponse.amount = "۱۰۰\u066C۰۰۰";
                           return console.log($state.tokenResponse);
                         })()
                       };
@@ -896,31 +896,45 @@ function PlasmicPricing__RenderFunc(props: {
                 );
               }}
               open={generateStateValueProp($state, ["modal", "open"])}
-              title={"Modal title"}
+              title={
+                "\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a"
+              }
               trigger={null}
+              width={"320px"}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___76Sx6
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $state.tokenResponse.amount;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
+              <div className={classNames(projectcss.all, sty.freeBox__xmTXs)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___76Sx6
+                  )}
+                >
+                  {"\u0645\u0628\u0644\u063a :"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vBdC
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.tokenResponse.amount + " تومان";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
+                    })()}
+                  </React.Fragment>
+                </div>
               </div>
               <Button
                 className={classNames("__wab_instance", sty.button___1BZoE)}
@@ -940,7 +954,9 @@ function PlasmicPricing__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-              />
+              >
+                {"\u067e\u0631\u062f\u0627\u062e\u062a"}
+              </Button>
             </AntdModal>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___5JMc)}>
