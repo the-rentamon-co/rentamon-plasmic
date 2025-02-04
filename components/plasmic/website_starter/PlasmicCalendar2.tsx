@@ -4573,6 +4573,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   }
                                   if (newDiscount === 0) {
                                     updates.discount_percentage = 0;
+                                    updates.status = day.status;
                                     updates.price = formatPriceToPersian(
                                       Math.round(basePrice)
                                     );
@@ -4583,6 +4584,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     );
                                     updates.price =
                                       formatPriceToPersian(discountedPrice);
+                                    updates.status = day.status;
                                   }
                                 }
                                 return {
