@@ -61,6 +61,7 @@ import {
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -71,6 +72,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPaymentError.module.css"; // plasmic-import: jfPuTUqbVaoo/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -89,7 +93,7 @@ export type PlasmicPaymentError__OverridesType = {
   successful?: Flex__<typeof PlasmicImg__>;
   apiRequest?: Flex__<typeof ApiRequest>;
   img?: Flex__<typeof PlasmicImg__>;
-  text?: Flex__<"div">;
+  button?: Flex__<"div">;
 };
 
 export interface DefaultPaymentErrorProps {}
@@ -284,6 +288,19 @@ function PlasmicPaymentError__RenderFunc(props: {
               <ApiRequest
                 data-plasmic-name={"apiRequest"}
                 data-plasmic-override={overrides.apiRequest}
+                body={(() => {
+                  try {
+                    return $ctx.query.pid;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 className={classNames("__wab_instance", sty.apiRequest)}
                 errorDisplay={
                   <div
@@ -314,7 +331,7 @@ function PlasmicPaymentError__RenderFunc(props: {
                     }
                   />
                 }
-                method={"GET"}
+                method={"POST"}
                 onError={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
                     "apiRequest",
@@ -336,6 +353,9 @@ function PlasmicPaymentError__RenderFunc(props: {
                 ref={ref => {
                   $refs["apiRequest"] = ref;
                 }}
+                url={
+                  "https://gateway.rentamon.com/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5"
+                }
               >
                 <div className={classNames(projectcss.all, sty.freeBox__bjfW)}>
                   <div
@@ -361,7 +381,48 @@ function PlasmicPaymentError__RenderFunc(props: {
                         sty.text__xWeEq
                       )}
                     >
-                      {"\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3"}
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              function convertToPersianNumber(number) {
+                                const englishToPersianMap = {
+                                  "0": "۰",
+                                  "1": "۱",
+                                  "2": "۲",
+                                  "3": "۳",
+                                  "4": "۴",
+                                  "5": "۵",
+                                  "6": "۶",
+                                  "7": "۷",
+                                  "8": "۸",
+                                  "9": "۹"
+                                };
+                                return number
+                                  .toString()
+                                  .split("")
+                                  .map(
+                                    digit => englishToPersianMap[digit] || digit
+                                  )
+                                  .join("");
+                              }
+                              const englishNumber =
+                                $state.apiRequest.data.track_id;
+                              const persianNumber =
+                                convertToPersianNumber(englishNumber);
+                              return persianNumber;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                   </div>
                 </div>
@@ -383,50 +444,18 @@ function PlasmicPaymentError__RenderFunc(props: {
               </div>
             </div>
             <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(projectcss.all, sty.text)}
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames(projectcss.all, sty.button)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__vNWwS)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jcrmr
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "var(--token-8R7jjC_-F9FF)" }}
-                    >
-                      {
-                        "\u067e\u0631\u062f\u0627\u062e\u062a \u0645\u062c\u062f\u062f"
-                      }
-                    </span>
-                  </React.Fragment>
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__qzt5K)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__sej8
-                  )}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ color: "#8165D6" }}
-                    >
-                      {
-                        "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0639\u0631\u0641\u0647\u200c\u0647\u0627"
-                      }
-                    </span>
-                  </React.Fragment>
-                </div>
-              </div>
+              <Button
+                className={classNames("__wab_instance", sty.button___3IJnw)}
+                link={`/pricing`}
+              >
+                {
+                  "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0639\u0631\u0641\u0647 \u0647\u0627"
+                }
+              </Button>
             </div>
           </div>
         </div>
@@ -442,13 +471,13 @@ const PlasmicDescendants = {
     "successful",
     "apiRequest",
     "img",
-    "text"
+    "button"
   ],
   embedHtml: ["embedHtml"],
   successful: ["successful"],
   apiRequest: ["apiRequest", "img"],
   img: ["img"],
-  text: ["text"]
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -459,7 +488,7 @@ type NodeDefaultElementType = {
   successful: typeof PlasmicImg__;
   apiRequest: typeof ApiRequest;
   img: typeof PlasmicImg__;
-  text: "div";
+  button: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -526,7 +555,7 @@ export const PlasmicPaymentError = Object.assign(
     successful: makeNodeComponent("successful"),
     apiRequest: makeNodeComponent("apiRequest"),
     img: makeNodeComponent("img"),
-    text: makeNodeComponent("text"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicPaymentError
     internalVariantProps: PlasmicPaymentError__VariantProps,
