@@ -212,8 +212,8 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                 displayMinWidth={"0"}
                 displayWidth={
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? "180px"
-                    : "240px"
+                    ? "150px"
+                    : "200px"
                 }
                 loading={"lazy"}
                 src={{
@@ -256,7 +256,63 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                       sty.text___0S5Du
                     )}
                   >
-                    {"Enter some text"}
+                    {"\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3"}
+                  </div>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__bgDin)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___9Ooes)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__uEXrS
+                    )}
+                  >
+                    {
+                      "\u0634\u0645\u0627\u0631\u0647 \u0641\u0627\u06a9\u062a\u0648\u0631:"
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__gvbk7)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rNEjt
+                    )}
+                  >
+                    {
+                      "\u06f4\u06f2\u06f5\u06f6\u06f5\u06f2\u06f1\u06f2\u06f4\u06f3\u06f2"
+                    }
+                  </div>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__qCEol)}>
+                <div className={classNames(projectcss.all, sty.freeBox__wYkWt)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wJqw0
+                    )}
+                  >
+                    {"\u0645\u0628\u0644\u063a:"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__mqBLm)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___31Pn1
+                    )}
+                  >
+                    {
+                      "\u06f5\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                    }
                   </div>
                 </div>
               </div>
@@ -310,7 +366,7 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                     style={{ color: "var(--token-8nedppYkGVaH)" }}
                   >
                     {
-                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      "\u062a\u06a9\u0645\u06cc\u0644 \u0645\u0631\u0627\u062d\u0644 \u062e\u0631\u06cc\u062f"
                     }
                   </span>
                 </React.Fragment>

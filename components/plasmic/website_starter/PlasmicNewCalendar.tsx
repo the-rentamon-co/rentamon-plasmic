@@ -1153,12 +1153,12 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f0.\u06f0\u06f5\u066a"
+                      ? "\u06f0.\u06f5\u066a"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06f0.\u06f0\u06f5\u066a"
+                      ? "\u06f0.\u06f5\u066a"
                       : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u06f0.\u06f0\u06f5\u066a"
-                      : "\u06f0.\u06f0\u06f5\u066a"}
+                      ? "\u06f0.\u06f5\u066a"
+                      : "\u06f0.\u06f5\u066a"}
                   </div>
                 </Stack__>
               </Stack__>

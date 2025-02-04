@@ -132,8 +132,6 @@ function PlasmicPricing__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const $globalActions = useGlobalActions?.();
-
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -527,32 +525,34 @@ function PlasmicPricing__RenderFunc(props: {
             </div>
             <Button
               className={classNames("__wab_instance", sty.button__zdlIj)}
-              link={`/payment-page`}
               onClick={async event => {
                 const $steps = {};
 
-                $steps["invokeGlobalAction"] = true
+                $steps["goToPaymentPage"] = true
                   ? (() => {
                       const actionArgs = {
-                        args: [
-                          undefined,
-                          "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5"
-                        ]
+                        destination: `/payment-page/${"100"}`
                       };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
+                  $steps["goToPaymentPage"] != null &&
+                  typeof $steps["goToPaymentPage"] === "object" &&
+                  typeof $steps["goToPaymentPage"].then === "function"
                 ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                  $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
                 }
               }}
             >
@@ -573,28 +573,31 @@ function PlasmicPricing__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["invokeGlobalAction"] = true
+                $steps["goToPaymentPage"] = true
                   ? (() => {
                       const actionArgs = {
-                        args: [
-                          undefined,
-                          "https://dev.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5"
-                        ]
+                        destination: `/payment-page/${"200"}`
                       };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
+                  $steps["goToPaymentPage"] != null &&
+                  typeof $steps["goToPaymentPage"] === "object" &&
+                  typeof $steps["goToPaymentPage"].then === "function"
                 ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                  $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
                 }
               }}
             >
@@ -615,28 +618,31 @@ function PlasmicPricing__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["invokeGlobalAction"] = true
+                $steps["goToPaymentPage"] = true
                   ? (() => {
                       const actionArgs = {
-                        args: [
-                          undefined,
-                          "https://dev.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5"
-                        ]
+                        destination: `/payment-page/${"500"}`
                       };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
+                  $steps["goToPaymentPage"] != null &&
+                  typeof $steps["goToPaymentPage"] === "object" &&
+                  typeof $steps["goToPaymentPage"].then === "function"
                 ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                  $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
                 }
               }}
             >
@@ -657,28 +663,31 @@ function PlasmicPricing__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["invokeGlobalAction"] = true
+                $steps["goToPaymentPage"] = true
                   ? (() => {
                       const actionArgs = {
-                        args: [
-                          undefined,
-                          "https://dev.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5"
-                        ]
+                        destination: `/payment-page/${"1000"}`
                       };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
+                  $steps["goToPaymentPage"] != null &&
+                  typeof $steps["goToPaymentPage"] === "object" &&
+                  typeof $steps["goToPaymentPage"].then === "function"
                 ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                  $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
                 }
               }}
             >

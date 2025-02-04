@@ -1114,7 +1114,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicPaymentPage.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/payment-page.tsx"
+            "modulePath": "../src/pages/payment-page/[amount].tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicPaymentPage.module.css",
           "scheme": "blackbox",
