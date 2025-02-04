@@ -527,7 +527,7 @@ function PlasmicPricing__RenderFunc(props: {
             </div>
             <Button
               className={classNames("__wab_instance", sty.button__zdlIj)}
-              link={""}
+              link={`/payment-page`}
               onClick={async event => {
                 const $steps = {};
 
