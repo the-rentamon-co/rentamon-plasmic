@@ -90,7 +90,9 @@ export const PlasmicPricing__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPricing__OverridesType = {
   root?: Flex__<"div">;
+  services?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
+  qA?: Flex__<"div">;
   accordion?: Flex__<typeof AntdAccordion>;
 };
 
@@ -153,7 +155,7 @@ function PlasmicPricing__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "tokenResponse",
@@ -211,322 +213,336 @@ function PlasmicPricing__RenderFunc(props: {
           <div className={classNames(projectcss.all, sty.freeBox__mims1)}>
             <div className={classNames(projectcss.all, sty.freeBox__aBc11)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__n46Kb
-                )}
+                data-plasmic-name={"services"}
+                data-plasmic-override={overrides.services}
+                className={classNames(projectcss.all, sty.services)}
               >
-                {
-                  "\u062a\u0639\u0631\u0641\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r"
-                }
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__f7F0T)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__xlLsX
+                    sty.text__n46Kb
                   )}
                 >
-                  {"\u0627\u0645\u06a9\u0627\u0646\u0627\u062a"}
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r"
+                    : "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r"}
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__f7F0T)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xlLsX
+                    )}
+                  >
+                    {"\u0627\u0645\u06a9\u0627\u0646\u0627\u062a"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bWyb4
+                    )}
+                  >
+                    {"\u0646\u0633\u062e\u0647 \u067e\u0627\u06cc\u0647"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yyruu
+                    )}
+                  >
+                    {"\u062d\u0631\u0641\u0647\u200c\u0627\u06cc"}
+                  </div>
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bWyb4
-                  )}
-                >
-                  {"\u0646\u0633\u062e\u0647 \u067e\u0627\u06cc\u0647"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yyruu
-                  )}
-                >
-                  {"\u062d\u0631\u0641\u0647\u200c\u0627\u06cc"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__ms7Uo)} />
+                  className={classNames(projectcss.all, sty.freeBox__ms7Uo)}
+                />
 
-              <div className={classNames(projectcss.all, sty.freeBox___7Y3Ew)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__omlmP
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox___7Y3Ew)}
                 >
-                  {
-                    "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                  }
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__omlmP
+                    )}
+                  >
+                    {
+                      "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__h72Jf
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wwjN1
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__wwgr0)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__polq6
+                    )}
+                  >
+                    {
+                      "\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646\r\n\r"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___67Ppq
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xsWsf
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__h72Jf
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox___7Tdig)}
                 >
-                  {"\u2705"}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kHrHq
+                    )}
+                  >
+                    {
+                      "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\r"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___1Swqw
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___9REjO
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wwjN1
-                  )}
-                >
-                  {"\u2705"}
+                <div className={classNames(projectcss.all, sty.freeBox__rka5G)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__m5Uw0
+                    )}
+                  >
+                    {
+                      "\u0627\u06cc\u062c\u0627\u062f \u062a\u062e\u0641\u06cc\u0641"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kwVi8
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___1BSk6
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
                 </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__wwgr0)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__polq6
-                  )}
-                >
-                  {
-                    "\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646\r\n\r"
-                  }
+                <div className={classNames(projectcss.all, sty.freeBox__hfXhZ)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wOity
+                    )}
+                  >
+                    {
+                      " \u2b50\ufe0f\u0631\u0635\u062f \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\r"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__cqpqX
+                    )}
+                  >
+                    {"\u274c\r"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__iqv
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___67Ppq
-                  )}
-                >
-                  {"\u2705"}
+                <div className={classNames(projectcss.all, sty.freeBox__kfh9K)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dCy6
+                    )}
+                  >
+                    {
+                      "\u2b50\ufe0f \u067e\u0631\u062f\u0627\u0632\u0634 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__o0Vs2
+                    )}
+                  >
+                    {"\u274c\r"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__pdb1G
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xsWsf
-                  )}
-                >
-                  {"\u2705"}
+                <div className={classNames(projectcss.all, sty.freeBox__luauY)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mqFjN
+                    )}
+                  >
+                    {
+                      "\u2b50\ufe0f \u067e\u0631\u062f\u0627\u0632\u0634 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0644\u063a\u0648\u0647\u0627"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__u0QxV
+                    )}
+                  >
+                    {"\u274c\r"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__hslwP
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
                 </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox___7Tdig)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kHrHq
-                  )}
-                >
-                  {"\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\r"}
+                <div className={classNames(projectcss.all, sty.freeBox__zIHc)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zb3RC
+                    )}
+                  >
+                    {
+                      "\u2b50\ufe0f \u067e\u06cc\u0627\u0645\u06a9 \u0627\u0639\u0644\u0627\u0645 \u0648\u0636\u0639\u06cc\u062a"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ln48
+                    )}
+                  >
+                    {"\u274c\r"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wlTru
+                    )}
+                  >
+                    {"\u2705"}
+                  </div>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___1Swqw
-                  )}
-                >
-                  {"\u2705"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___9REjO
-                  )}
-                >
-                  {"\u2705"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__rka5G)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__m5Uw0
-                  )}
-                >
-                  {
-                    "\u0627\u06cc\u062c\u0627\u062f \u062a\u062e\u0641\u06cc\u0641"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kwVi8
-                  )}
-                >
-                  {"\u2705"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___1BSk6
-                  )}
-                >
-                  {"\u2705"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__hfXhZ)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wOity
-                  )}
-                >
-                  {
-                    " \u2b50\ufe0f\u0631\u0635\u062f \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\r"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cqpqX
-                  )}
-                >
-                  {"\u274c\r"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__iqv
-                  )}
-                >
-                  {"\u2705"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__kfh9K)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dCy6
-                  )}
-                >
-                  {
-                    "\u2b50\ufe0f \u067e\u0631\u062f\u0627\u0632\u0634 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__o0Vs2
-                  )}
-                >
-                  {"\u274c\r"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pdb1G
-                  )}
-                >
-                  {"\u2705"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__luauY)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mqFjN
-                  )}
-                >
-                  {
-                    "\u2b50\ufe0f \u067e\u0631\u062f\u0627\u0632\u0634 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0644\u063a\u0648\u0647\u0627"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__u0QxV
-                  )}
-                >
-                  {"\u274c\r"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hslwP
-                  )}
-                >
-                  {"\u2705"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__zIHc)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__zb3RC
-                  )}
-                >
-                  {
-                    "\u2b50\ufe0f \u067e\u06cc\u0627\u0645\u06a9 \u0627\u0639\u0644\u0627\u0645 \u0648\u0636\u0639\u06cc\u062a"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ln48
-                  )}
-                >
-                  {"\u274c\r"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wlTru
-                  )}
-                >
-                  {"\u2705"}
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__fiIgx)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fbZbo
-                  )}
-                >
-                  {"\u062a\u0639\u0631\u0641\u0647"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___2Tp9U
-                  )}
-                >
-                  {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__oiFot
-                  )}
-                >
-                  {
-                    "\r\u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u06f1\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                  }
+                <div className={classNames(projectcss.all, sty.freeBox__fiIgx)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fbZbo
+                    )}
+                  >
+                    {"\u062a\u0639\u0631\u0641\u0647"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___2Tp9U
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__oiFot
+                    )}
+                  >
+                    {
+                      "\r\u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u06f1\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                    }
+                  </div>
                 </div>
               </div>
             </div>
@@ -618,7 +634,7 @@ function PlasmicPricing__RenderFunc(props: {
                           undefined,
                           (() => {
                             try {
-                              return { amount: "100000" };
+                              return { amount: "1000000" };
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1579,24 +1595,9 @@ function PlasmicPricing__RenderFunc(props: {
                 sty.text__k6Bxn
               )}
             >
-              <React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ color: "var(--token-nCyS8fyroW2i)" }}
-                >
-                  {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc "}
-                </span>
-                <React.Fragment>{""}</React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ color: "var(--token-8nedppYkGVaH)" }}
-                >
-                  {
-                    "\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r"
-                  }
-                </span>
-                <React.Fragment>{"\n\r"}</React.Fragment>
-              </React.Fragment>
+              {
+                "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u00a0\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\u00a0\n\r"
+              }
             </div>
             <div
               className={classNames(
@@ -1638,10 +1639,26 @@ function PlasmicPricing__RenderFunc(props: {
               }}
               open={generateStateValueProp($state, ["modal", "open"])}
               title={
-                "\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a"
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___4Sit5
+                  )}
+                >
+                  {
+                    "\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9"
+                  }
+                </div>
               }
               trigger={null}
-              width={"320px"}
+              width={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "320"
+                  : hasVariant(globalVariants, "screen", "mobile")
+                  ? "400"
+                  : undefined
+              }
             >
               <div className={classNames(projectcss.all, sty.freeBox__xmTXs)}>
                 <div
@@ -1651,7 +1668,7 @@ function PlasmicPricing__RenderFunc(props: {
                     sty.text___76Sx6
                   )}
                 >
-                  {"\u0645\u0628\u0644\u063a :"}
+                  {"\u0645\u0628\u0644\u063a:"}
                 </div>
                 <div
                   className={classNames(
@@ -1696,231 +1713,245 @@ function PlasmicPricing__RenderFunc(props: {
                   }
                 })()}
               >
-                {"\u067e\u0631\u062f\u0627\u062e\u062a"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___6GRa
+                  )}
+                >
+                  {"\u067e\u0631\u062f\u0627\u062e\u062a"}
+                </div>
               </Button>
             </AntdModal>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox___5JMc)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___7W0I
-              )}
-            >
-              {
-                "\u0633\u0648\u0627\u0644\u0627\u062a \u067e\u0631 \u062a\u06a9\u0631\u0627\u0631\r\n\r"
-              }
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__fg00V)}>
-              {(() => {
-                const child$Props = {
-                  activeKey: generateStateValueProp($state, [
-                    "accordion",
-                    "activePanelId"
-                  ]),
-                  bordered: true,
-                  className: classNames("__wab_instance", sty.accordion),
-                  ghost: true,
-                  items: (
-                    <React.Fragment>
-                      <AntdAccordionItem
-                        className={classNames(
-                          "__wab_instance",
-                          sty.accordionItem__zWdS5
-                        )}
-                        id={1}
-                        label2={
+          <div
+            data-plasmic-name={"qA"}
+            data-plasmic-override={overrides.qA}
+            className={classNames(projectcss.all, sty.qA)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___7IoCw)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___7W0I
+                )}
+              >
+                {
+                  "\u0633\u0648\u0627\u0644\u0627\u062a \u067e\u0631 \u062a\u06a9\u0631\u0627\u0631\r\n\r"
+                }
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__fg00V)}>
+                {(() => {
+                  const child$Props = {
+                    activeKey: generateStateValueProp($state, [
+                      "accordion",
+                      "activePanelId"
+                    ]),
+                    bordered: true,
+                    className: classNames("__wab_instance", sty.accordion),
+                    ghost: true,
+                    items: (
+                      <React.Fragment>
+                        <AntdAccordionItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.accordionItem__zWdS5
+                          )}
+                          id={1}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__uJ6V0
+                              )}
+                            >
+                              {
+                                "\u0627\u06cc\u0646 \u0645\u0628\u0644\u063a \u0628\u0627\u0628\u062a \u0686\u06cc\u0647\u061f\r"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__uJ6V0
+                              sty.text__zutQs
                             )}
                           >
                             {
-                              "\u0627\u06cc\u0646 \u0645\u0628\u0644\u063a \u0628\u0627\u0628\u062a \u0686\u06cc\u0647\u061f\r"
+                              "\u0645\u0628\u0644\u063a \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646\u060c \u0641\u0642\u0637 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0648\u0641\u0642 \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647. \r\n\r"
                             }
                           </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__zutQs
+                            "__wab_instance",
+                            sty.accordionItem__z5Hda
                           )}
-                        >
-                          {
-                            "\u0645\u0628\u0644\u063a \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646\u060c \u0641\u0642\u0637 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0648\u0641\u0642 \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647. \r\n\r"
+                          id={2}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__rfbRv
+                              )}
+                            >
+                              {
+                                "\u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \u0686\u0637\u0648\u0631 \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647\u061f\r"
+                              }
+                            </div>
                           }
-                        </div>
-                      </AntdAccordionItem>
-                      <AntdAccordionItem
-                        className={classNames(
-                          "__wab_instance",
-                          sty.accordionItem__z5Hda
-                        )}
-                        id={2}
-                        label2={
+                          showArrow={true}
+                        >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__rfbRv
+                              sty.text__udsS1
                             )}
                           >
                             {
-                              "\u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \u0686\u0637\u0648\u0631 \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647\u061f\r"
+                              "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u06a9\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u0627\u0645\u0627 \u062f\u0631 \u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u00ab\u0631\u0632\u0631\u0648 \u0646\u0647\u0627\u06cc\u06cc\u00bb \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0627\u0632 \u0627\u0639\u062a\u0628\u0627\u0631 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645 \u0645\u06cc\u0634\u0647. \u0645\u062b\u0644\u0627 \u062f\u0631\u0635\u0648\u0631\u062a \u0631\u0632\u0631\u0648 \u0634\u062f\u0646 \u06f6 \u0648 \u06f7 \u0645\u0631\u062f\u0627\u062f\u060c \u06f3\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647.\r\n\r"
                             }
                           </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__udsS1
+                            "__wab_instance",
+                            sty.accordionItem___2YXrc
                           )}
-                        >
-                          {
-                            "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u06a9\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u0627\u0645\u0627 \u062f\u0631 \u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u00ab\u0631\u0632\u0631\u0648 \u0646\u0647\u0627\u06cc\u06cc\u00bb \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0627\u0632 \u0627\u0639\u062a\u0628\u0627\u0631 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645 \u0645\u06cc\u0634\u0647. \u0645\u062b\u0644\u0627 \u062f\u0631\u0635\u0648\u0631\u062a \u0631\u0632\u0631\u0648 \u0634\u062f\u0646 \u06f6 \u0648 \u06f7 \u0645\u0631\u062f\u0627\u062f\u060c \u06f3\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647.\r\n\r"
+                          id={"3"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__aiCrP
+                              )}
+                            >
+                              {
+                                "\u0627\u0645\u06a9\u0627\u0646 \u0644\u063a\u0648 \u0639\u0636\u0648\u06cc\u062a \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0647\u0633\u062a\u061f\r"
+                              }
+                            </div>
                           }
-                        </div>
-                      </AntdAccordionItem>
-                      <AntdAccordionItem
-                        className={classNames(
-                          "__wab_instance",
-                          sty.accordionItem___2YXrc
-                        )}
-                        id={"3"}
-                        label2={
+                          showArrow={true}
+                        >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__aiCrP
+                              sty.text__uGte1
                             )}
                           >
                             {
-                              "\u0627\u0645\u06a9\u0627\u0646 \u0644\u063a\u0648 \u0639\u0636\u0648\u06cc\u062a \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0647\u0633\u062a\u061f\r"
+                              "\u0628\u0644\u0647. \u0645\u0627 \u062a\u0645\u0627\u0645 \u062a\u0644\u0627\u0634\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u062a\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0631\u0627\u0636\u06cc \u0628\u0627\u0634\u06cc. \u0648\u0644\u06cc \u0647\u0631 \u0632\u0645\u0627\u0646 \u0648 \u0628\u0647 \u0647\u0631 \u062f\u0644\u06cc\u0644 \u062a\u0645\u0627\u06cc\u0644\u06cc \u0628\u0647 \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u062f\u0627\u0634\u062a\u06cc\u060c \u0639\u0636\u0648\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f\u0647 \u0648 \u0627\u0639\u062a\u0628\u0627\u0631 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
                             }
                           </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__uGte1
+                            "__wab_instance",
+                            sty.accordionItem__qSxM
                           )}
-                        >
-                          {
-                            "\u0628\u0644\u0647. \u0645\u0627 \u062a\u0645\u0627\u0645 \u062a\u0644\u0627\u0634\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u062a\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0631\u0627\u0636\u06cc \u0628\u0627\u0634\u06cc. \u0648\u0644\u06cc \u0647\u0631 \u0632\u0645\u0627\u0646 \u0648 \u0628\u0647 \u0647\u0631 \u062f\u0644\u06cc\u0644 \u062a\u0645\u0627\u06cc\u0644\u06cc \u0628\u0647 \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u062f\u0627\u0634\u062a\u06cc\u060c \u0639\u0636\u0648\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f\u0647 \u0648 \u0627\u0639\u062a\u0628\u0627\u0631 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
+                          id={"4"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__rpfQf
+                              )}
+                            >
+                              {
+                                "\u06a9\u06cc\u0641 \u067e\u0648\u0644\u0645 \u0631\u0648 \u0686\u0637\u0648\u0631 \u0634\u0627\u0631\u0698 \u06a9\u0646\u0645\u061f\r"
+                              }
+                            </div>
                           }
-                        </div>
-                      </AntdAccordionItem>
-                      <AntdAccordionItem
-                        className={classNames(
-                          "__wab_instance",
-                          sty.accordionItem__qSxM
-                        )}
-                        id={"4"}
-                        label2={
+                          showArrow={true}
+                        >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__rpfQf
+                              sty.text__dYYhE
                             )}
                           >
                             {
-                              "\u06a9\u06cc\u0641 \u067e\u0648\u0644\u0645 \u0631\u0648 \u0686\u0637\u0648\u0631 \u0634\u0627\u0631\u0698 \u06a9\u0646\u0645\u061f\r"
+                              "\u0628\u0627\u0644\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u00ab\u0634\u0627\u0631\u0698\u00bb \u0628\u0632\u0646 \u0648 \u0628\u0639\u062f \u0627\u0632 \u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0628\u0644\u063a\u060c \u062a\u0648\u06cc \u062f\u0631\u06af\u0627\u0647 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627\u0646\u06a9 \u0648\u062c\u0647 \u0631\u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u06a9\u0646. \u0628\u0639\u062f \u0645\u0628\u0644\u063a \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u0634\u0647.\r\n\r"
                             }
                           </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__dYYhE
+                            "__wab_instance",
+                            sty.accordionItem__phYwf
                           )}
-                        >
-                          {
-                            "\u0628\u0627\u0644\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u00ab\u0634\u0627\u0631\u0698\u00bb \u0628\u0632\u0646 \u0648 \u0628\u0639\u062f \u0627\u0632 \u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0628\u0644\u063a\u060c \u062a\u0648\u06cc \u062f\u0631\u06af\u0627\u0647 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627\u0646\u06a9 \u0648\u062c\u0647 \u0631\u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u06a9\u0646. \u0628\u0639\u062f \u0645\u0628\u0644\u063a \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u0634\u0647.\r\n\r"
+                          id={"5"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__q1SQ7
+                              )}
+                            >
+                              {
+                                "\u062f\u0631\u0635\u0648\u0631\u062a \u062e\u0627\u0644\u06cc \u0634\u062f\u0646 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0686\u06cc \u0645\u06cc\u0634\u0647\u061f\r"
+                              }
+                            </div>
                           }
-                        </div>
-                      </AntdAccordionItem>
-                      <AntdAccordionItem
-                        className={classNames(
-                          "__wab_instance",
-                          sty.accordionItem__phYwf
-                        )}
-                        id={"5"}
-                        label2={
+                          showArrow={true}
+                        >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__q1SQ7
+                              sty.text__eFps
                             )}
                           >
                             {
-                              "\u062f\u0631\u0635\u0648\u0631\u062a \u062e\u0627\u0644\u06cc \u0634\u062f\u0646 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0686\u06cc \u0645\u06cc\u0634\u0647\u061f\r"
+                              "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0628\u0634\u0647\u060c \u0633\u06cc\u0633\u062a\u0645 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u0634\u0647. \u0627\u0645\u0627 \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u00bb \u0631\u0627\u06cc\u06af\u0627\u0646\u0647 \u0648 \u062f\u0631\u0635\u0648\u0631\u062a \u062e\u0627\u0644\u06cc \u0634\u062f\u0646 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u060c \u0647\u0645\u0686\u0646\u0627\u0646 \u0642\u0627\u0628\u0644 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0633\u062a.\r\n\r"
                             }
                           </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__eFps
-                          )}
-                        >
-                          {
-                            "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0628\u0634\u0647\u060c \u0633\u06cc\u0633\u062a\u0645 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u0634\u0647. \u0627\u0645\u0627 \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u00bb \u0631\u0627\u06cc\u06af\u0627\u0646\u0647 \u0648 \u062f\u0631\u0635\u0648\u0631\u062a \u062e\u0627\u0644\u06cc \u0634\u062f\u0646 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u060c \u0647\u0645\u0686\u0646\u0627\u0646 \u0642\u0627\u0628\u0644 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0633\u062a.\r\n\r"
-                          }
-                        </div>
-                      </AntdAccordionItem>
-                    </React.Fragment>
-                  ),
-                  onChange: async (...eventArgs: any) => {
-                    generateStateOnChangePropForCodeComponents(
-                      $state,
-                      "activePanelId",
-                      ["accordion", "activePanelId"],
-                      AntdAccordion_Helpers
-                    ).apply(null, eventArgs);
-                  }
-                };
-                initializeCodeComponentStates(
-                  $state,
-                  [
-                    {
-                      name: "activePanelId",
-                      plasmicStateName: "accordion.activePanelId"
+                        </AntdAccordionItem>
+                      </React.Fragment>
+                    ),
+                    onChange: async (...eventArgs: any) => {
+                      generateStateOnChangePropForCodeComponents(
+                        $state,
+                        "activePanelId",
+                        ["accordion", "activePanelId"],
+                        AntdAccordion_Helpers
+                      ).apply(null, eventArgs);
                     }
-                  ],
-                  [],
-                  AntdAccordion_Helpers ?? {},
-                  child$Props
-                );
+                  };
+                  initializeCodeComponentStates(
+                    $state,
+                    [
+                      {
+                        name: "activePanelId",
+                        plasmicStateName: "accordion.activePanelId"
+                      }
+                    ],
+                    [],
+                    AntdAccordion_Helpers ?? {},
+                    child$Props
+                  );
 
-                return (
-                  <AntdAccordion
-                    data-plasmic-name={"accordion"}
-                    data-plasmic-override={overrides.accordion}
-                    {...child$Props}
-                  />
-                );
-              })()}
+                  return (
+                    <AntdAccordion
+                      data-plasmic-name={"accordion"}
+                      data-plasmic-override={overrides.accordion}
+                      {...child$Props}
+                    />
+                  );
+                })()}
+              </div>
             </div>
             <Button className={classNames("__wab_instance", sty.button__kgdHp)}>
               {
@@ -1935,8 +1966,10 @@ function PlasmicPricing__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "modal", "accordion"],
+  root: ["root", "services", "modal", "qA", "accordion"],
+  services: ["services"],
   modal: ["modal"],
+  qA: ["qA", "accordion"],
   accordion: ["accordion"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1944,7 +1977,9 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  services: "div";
   modal: typeof AntdModal;
+  qA: "div";
   accordion: typeof AntdAccordion;
 };
 
@@ -2008,7 +2043,9 @@ export const PlasmicPricing = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    services: makeNodeComponent("services"),
     modal: makeNodeComponent("modal"),
+    qA: makeNodeComponent("qA"),
     accordion: makeNodeComponent("accordion"),
 
     // Metadata about props expected for PlasmicPricing

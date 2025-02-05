@@ -428,18 +428,16 @@ function PlasmicPaymentError__RenderFunc(props: {
                 </div>
               </ApiRequest>
               <div className={classNames(projectcss.all, sty.freeBox__wx7F)}>
-                <div className={classNames(projectcss.all, sty.freeBox__baw0W)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dUoOs
-                    )}
-                  >
-                    {
-                      "\u062f\u0631\u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632\u060c \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u06cc\u0646\u062c\u0627\u0633\u062a\n\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u06f0\u06f2\u06f1  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
-                    }
-                  </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dUoOs
+                  )}
+                >
+                  {
+                    "\u062f\u0631\u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632\u060c \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u06cc\u0646\u062c\u0627\u0633\u062a\n\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u06f0\u06f2\u06f1  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
+                  }
                 </div>
               </div>
             </div>
