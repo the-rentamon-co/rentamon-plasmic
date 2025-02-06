@@ -1195,7 +1195,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                         ]).apply(null, eventArgs);
                       }}
                       placeholder={
-                        "\u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                        "\u0646\u0631\u062e \u06cc\u06a9 \u0634\u0628 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
                       }
                       type={"number"}
                       value={generateStateValueProp($state, [
