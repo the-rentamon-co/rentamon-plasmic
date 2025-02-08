@@ -469,7 +469,7 @@ function PlasmicReservations__RenderFunc(props: {
               ref={ref => {
                 $refs["profile"] = ref;
               }}
-              url={"https://api.rentamon.com/api/user_info?property_id=1"}
+              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
             />
           </div>
           <Stack__

@@ -3535,7 +3535,7 @@ function PlasmicActivation__RenderFunc(props: {
                     $refs["apiRequest2"] = ref;
                   }}
                   url={
-                    "https://api.rentamon.com/api/website_statuses/?property_id=1"
+                    "https://api-v2.rentamon.com/api/website_statuses/?property_id=1"
                   }
                 />
               </div>

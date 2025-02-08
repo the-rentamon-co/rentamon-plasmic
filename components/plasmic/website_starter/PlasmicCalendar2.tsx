@@ -1398,7 +1398,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           )
                           .flat();
                         return fetch(
-                          "https://api.rentamon.com/api/setdiscount",
+                          "https://api-v2.rentamon.com/api/setdiscount",
                           {
                             method: "POST",
                             headers: {
