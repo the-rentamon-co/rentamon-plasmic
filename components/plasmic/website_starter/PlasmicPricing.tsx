@@ -59,11 +59,14 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
+import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -90,10 +93,39 @@ export const PlasmicPricing__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPricing__OverridesType = {
   root?: Flex__<"div">;
+  _2ndPart?: Flex__<"div">;
+  featuresDesc2?: Flex__<"div">;
+  item1?: Flex__<"div">;
+  item12?: Flex__<"div">;
+  checkbox8?: Flex__<typeof Checkbox>;
+  item13?: Flex__<"div">;
+  checkbox2?: Flex__<typeof Checkbox>;
+  item14?: Flex__<"div">;
+  checkbox3?: Flex__<typeof Checkbox>;
+  item15?: Flex__<"div">;
+  checkbox4?: Flex__<typeof Checkbox>;
+  item19?: Flex__<"div">;
+  checkbox9?: Flex__<typeof Checkbox>;
+  item16?: Flex__<"div">;
+  checkbox5?: Flex__<typeof Checkbox>;
+  item17?: Flex__<"div">;
+  checkbox6?: Flex__<typeof Checkbox>;
+  item18?: Flex__<"div">;
+  checkbox7?: Flex__<typeof Checkbox>;
   services?: Flex__<"div">;
+  calc?: Flex__<"div">;
+  numberInput?: Flex__<typeof AntdInputNumber>;
+  valueText?: Flex__<"div">;
+  value?: Flex__<"div">;
+  toman?: Flex__<"div">;
+  commission?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
   qA?: Flex__<"div">;
   accordion?: Flex__<typeof AntdAccordion>;
+  html?: Flex__<"div">;
+  clarity2?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
+  favIcon?: Flex__<typeof Embed>;
 };
 
 export interface DefaultPricingProps {}
@@ -168,6 +200,60 @@ function PlasmicPricing__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "checkbox8.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+      },
+      {
+        path: "checkbox2.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+      },
+      {
+        path: "checkbox3.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+      },
+      {
+        path: "checkbox4.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+      },
+      {
+        path: "checkbox9.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+      },
+      {
+        path: "checkbox5.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "checkbox6.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "checkbox7.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "numberInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -210,6 +296,565 @@ function PlasmicPricing__RenderFunc(props: {
             sty.root
           )}
         >
+          <div
+            data-plasmic-name={"_2ndPart"}
+            data-plasmic-override={overrides._2ndPart}
+            className={classNames(projectcss.all, sty._2ndPart)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__vzZul)}>
+              <div
+                data-plasmic-name={"featuresDesc2"}
+                data-plasmic-override={overrides.featuresDesc2}
+                className={classNames(projectcss.all, sty.featuresDesc2)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qdhY
+                  )}
+                >
+                  {
+                    "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aXfsu
+                  )}
+                >
+                  {
+                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0646\u062c\u0627\u0645 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u062f\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u062a\u0627 \u0634\u0645\u0627 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0641\u06a9\u0631 \u0648 \u06af\u0633\u062a\u0631\u0634 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc."
+                  }
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__cymqY)}>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item1"}
+                data-plasmic-override={overrides.item1}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item1)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__lyGYi)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ugVeN
+                    )}
+                  >
+                    {"\u0639\u0646\u0648\u0627\u0646"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__igZQw)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wl24
+                    )}
+                  >
+                    {"\u06a9\u0627\u0631\u0645\u0632\u062f"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item12"}
+                data-plasmic-override={overrides.item12}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item12)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__hhnFu)}>
+                  <Checkbox
+                    data-plasmic-name={"checkbox8"}
+                    data-plasmic-override={overrides.checkbox8}
+                    className={classNames("__wab_instance", sty.checkbox8)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox8",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox8",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ib7W4
+                      )}
+                    >
+                      {
+                        "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__rEEcs)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__d8EzU
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item13"}
+                data-plasmic-override={overrides.item13}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item13)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__mt55G)}>
+                  <Checkbox
+                    data-plasmic-name={"checkbox2"}
+                    data-plasmic-override={overrides.checkbox2}
+                    className={classNames("__wab_instance", sty.checkbox2)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox2",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox2",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___9RMt
+                      )}
+                    >
+                      {
+                        "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__agWjF)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mGsa5
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item14"}
+                data-plasmic-override={overrides.item14}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item14)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox___39Xj)}>
+                  <Checkbox
+                    data-plasmic-name={"checkbox3"}
+                    data-plasmic-override={overrides.checkbox3}
+                    className={classNames("__wab_instance", sty.checkbox3)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox3",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox3",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__m11Mp
+                      )}
+                    >
+                      {
+                        "\u062a\u063a\u06cc\u06cc\u0631 \u0638\u0631\u0641\u06cc\u062a \u06cc\u06a9\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__eu95W)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rqTdd
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item15"}
+                data-plasmic-override={overrides.item15}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item15)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__qgWSf)}>
+                  <Checkbox
+                    data-plasmic-name={"checkbox4"}
+                    data-plasmic-override={overrides.checkbox4}
+                    className={classNames("__wab_instance", sty.checkbox4)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox4",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox4",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___2C51K
+                      )}
+                    >
+                      {
+                        "\u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\r"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__dCXC)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yGyZ1
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item19"}
+                data-plasmic-override={overrides.item19}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item19)}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___8LYkq)}
+                >
+                  <Checkbox
+                    data-plasmic-name={"checkbox9"}
+                    data-plasmic-override={overrides.checkbox9}
+                    className={classNames("__wab_instance", sty.checkbox9)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox9",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox9",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__v2Dw6
+                      )}
+                    >
+                      {
+                        "\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__goJq1)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___35GZu
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item16"}
+                data-plasmic-override={overrides.item16}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item16)}
+              >
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__gGntv)}
+                >
+                  <Checkbox
+                    data-plasmic-name={"checkbox5"}
+                    data-plasmic-override={overrides.checkbox5}
+                    className={classNames("__wab_instance", sty.checkbox5)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox5",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox5",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___6C64K
+                      )}
+                    >
+                      {
+                        "- \u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n- \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
+                      }
+                    </div>
+                  </Checkbox>
+                </Stack__>
+                <div className={classNames(projectcss.all, sty.freeBox__vg0Dz)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__afQxa
+                    )}
+                  >
+                    {"\u06f1.\u06f5\u066a"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item17"}
+                data-plasmic-override={overrides.item17}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item17)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__cnbU8)}>
+                  <Checkbox
+                    data-plasmic-name={"checkbox6"}
+                    data-plasmic-override={overrides.checkbox6}
+                    className={classNames("__wab_instance", sty.checkbox6)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox6",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox6",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sDnda
+                      )}
+                    >
+                      {
+                        "\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n - \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__gTkLc)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__oenC6
+                    )}
+                  >
+                    {"\u066a \u06f1"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item18"}
+                data-plasmic-override={overrides.item18}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item18)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__h3Xc)}>
+                  <Checkbox
+                    data-plasmic-name={"checkbox7"}
+                    data-plasmic-override={overrides.checkbox7}
+                    className={classNames("__wab_instance", sty.checkbox7)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox7",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox7",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__kKci3
+                      )}
+                    >
+                      {
+                        "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__rwNDr)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__m6EMr
+                    )}
+                  >
+                    {"\u06f0.\u06f5\u066a"}
+                  </div>
+                </div>
+              </Stack__>
+            </div>
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__mims1)}>
             <div className={classNames(projectcss.all, sty.freeBox__aBc11)}>
               <div
@@ -546,6 +1191,168 @@ function PlasmicPricing__RenderFunc(props: {
                 </div>
               </div>
             </div>
+            <div
+              data-plasmic-name={"calc"}
+              data-plasmic-override={overrides.calc}
+              className={classNames(projectcss.all, sty.calc)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__yLfyJ)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wAuYg
+                  )}
+                >
+                  {
+                    "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tbSin
+                  )}
+                >
+                  {
+                    "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f (\u0646\u0633\u0628\u062a \u0628\u0647 \u0631\u0648\u0634 \u0633\u0646\u062a\u06cc) \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."
+                  }
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__jkFhU)}>
+                  <AntdInputNumber
+                    data-plasmic-name={"numberInput"}
+                    data-plasmic-override={overrides.numberInput}
+                    allowClear={true}
+                    className={classNames("__wab_instance", sty.numberInput)}
+                    onChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "numberInput",
+                        "value"
+                      ]).apply(null, eventArgs);
+                    }}
+                    placeholder={
+                      "\u0646\u0631\u062e \u06cc\u06a9 \u0634\u0628 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                    }
+                    type={"number"}
+                    value={generateStateValueProp($state, [
+                      "numberInput",
+                      "value"
+                    ])}
+                  />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___0Ck7F)}
+                  >
+                    <div
+                      data-plasmic-name={"valueText"}
+                      data-plasmic-override={overrides.valueText}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.valueText
+                      )}
+                    >
+                      {
+                        "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"
+                      }
+                    </div>
+                    <div
+                      data-plasmic-name={"value"}
+                      data-plasmic-override={overrides.value}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.value
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.numberInput.value
+                              ? `${new Intl.NumberFormat().format(
+                                  ($state.checkbox5.isChecked
+                                    ? $state.numberInput.value * 1.5
+                                    : 0) +
+                                    ($state.checkbox6.isChecked
+                                      ? $state.numberInput.value * 1.15
+                                      : 0) +
+                                    ($state.checkbox7.isChecked
+                                      ? $state.numberInput.value * 1
+                                      : 0) +
+                                    $state.numberInput.value
+                                )} تومان`
+                              : null;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\\u0627\\u0631\\u0632\\u0634:";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__iUPtD)}
+                  >
+                    <div
+                      data-plasmic-name={"toman"}
+                      data-plasmic-override={overrides.toman}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.toman
+                      )}
+                    >
+                      {
+                        "\u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0631 \u0631\u0632\u0631\u0648:"
+                      }
+                    </div>
+                    <div
+                      data-plasmic-name={"commission"}
+                      data-plasmic-override={overrides.commission}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.commission
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.numberInput.value
+                              ? `${new Intl.NumberFormat().format(
+                                  ($state.checkbox5.isChecked
+                                    ? $state.numberInput.value * 0.015
+                                    : 0) +
+                                    ($state.checkbox6.isChecked
+                                      ? $state.numberInput.value * 0.01
+                                      : 0) +
+                                    ($state.checkbox7.isChecked
+                                      ? $state.numberInput.value * 0.005
+                                      : 0)
+                                )} تومان`
+                              : null;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\\u06a9\\u0627\\u0631\\u0645\\u0632\\u062f \\u0631\\u0646\\u062a\\u0627\\u0645\\u0648\\u0646:";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___72GBj)}>
             <div className={classNames(projectcss.all, sty.freeBox__kninp)}>
@@ -557,7 +1364,7 @@ function PlasmicPricing__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0631\u0648 \u0634\u0627\u0631\u0698 \u06a9\u0646\u060c \u062a\u0627 \u062f\u0631 \u06a9\u0646\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u060c \u0633\u06cc\u0633\u062a\u0645 \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u2b50\ufe0f \u0647\u0645 \u0641\u0639\u0627\u0644 \u0628\u0634\u0647 \r\n\r"
+                  "\u0628\u0627 \u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0648 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u062e\u06cc\u0627\u0644\u062a\u0648 \u0631\u0627\u062d\u062a \u06a9\u0646 \ud83d\udc47"
                 }
               </div>
             </div>
@@ -1599,24 +2406,6 @@ function PlasmicPricing__RenderFunc(props: {
                 "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u00a0\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\u00a0\n\r"
               }
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__amnQz
-              )}
-            >
-              <React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ color: "var(--token-8nedppYkGVaH)" }}
-                >
-                  {
-                    "\u0645\u0648\u0642\u0639 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u00ab\u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647\u00bb \u062f\u0631\u06cc\u0627\u0641\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc\r"
-                  }
-                </span>
-              </React.Fragment>
-            </div>
             <AntdModal
               data-plasmic-name={"modal"}
               data-plasmic-override={overrides.modal}
@@ -1783,7 +2572,40 @@ function PlasmicPricing__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0645\u0628\u0644\u063a \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646\u060c \u0641\u0642\u0637 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0648\u0641\u0642 \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647. \r\n\r"
+                              "\u0641\u0642\u0637 \u062f\u0631 \u0627\u0632\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u00ab\u0631\u0632\u0631\u0648 \u0645\u0648\u0641\u0642\u00bb \u0637\u0628\u0642 \u062c\u062f\u0648\u0644 \u0628\u0627\u0644\u0627 \u0627\u0632 \u0627\u0648\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647.\r"
+                            }
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.accordionItem__mpjha
+                          )}
+                          id={"5"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__ecBQ
+                              )}
+                            >
+                              {
+                                "\u0627\u06af\u0647 \u0631\u0632\u0631\u0648 \u0644\u063a\u0648 \u0628\u0634\u0647\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u0627\u0634 \u0686\u06cc \u0645\u06cc\u200c\u0634\u0647\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__xoVPm
+                            )}
+                          >
+                            {
+                              "\u062f\u0631\u0635\u0648\u0631\u062a \u0644\u063a\u0648 \u0631\u0632\u0631\u0648\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0648\u0646 \u0628\u0647\u200c\u062d\u0633\u0627\u0628\u062a \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
                             }
                           </div>
                         </AntdAccordionItem>
@@ -1816,7 +2638,7 @@ function PlasmicPricing__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u06a9\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u0627\u0645\u0627 \u062f\u0631 \u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u00ab\u0631\u0632\u0631\u0648 \u0646\u0647\u0627\u06cc\u06cc\u00bb \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0627\u0632 \u0627\u0639\u062a\u0628\u0627\u0631 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645 \u0645\u06cc\u0634\u0647. \u0645\u062b\u0644\u0627 \u062f\u0631\u0635\u0648\u0631\u062a \u0631\u0632\u0631\u0648 \u0634\u062f\u0646 \u06f6 \u0648 \u06f7 \u0645\u0631\u062f\u0627\u062f\u060c \u06f3\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647.\r\n\r"
+                              "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u0627\u0645\u0627 \u0645\u0648\u0627\u0631\u062f\u06cc \u06a9\u0647 \u06a9\u0627\u0631\u0645\u0632\u062f \u062f\u0627\u0631\u0646\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062f\u0631\u0635\u062f\u06cc \u0627\u0632 \u0645\u0628\u0644\u063a \u0647\u0631 \u0631\u0632\u0631\u0648 \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0646.\n\n\u0645\u062b\u0627\u0644: \u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645\u00bb \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u0647\u060c \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u06cc \u0628\u06af\u06cc\u0631\u06cc\u060c \u0645\u06cc\u0632\u0627\u0646 \u06f1.\u06f5\u066a \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647:\n\u06f3,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 = \u06f1.\u06f5\u066a \u00d7 \u06f2,\u06f0\u06f0\u06f0,\u06f0\u06f0\u06f0\n\r\n\r"
                             }
                           </div>
                         </AntdAccordionItem>
@@ -1882,7 +2704,7 @@ function PlasmicPricing__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0628\u0627\u0644\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u00ab\u0634\u0627\u0631\u0698\u00bb \u0628\u0632\u0646 \u0648 \u0628\u0639\u062f \u0627\u0632 \u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0628\u0644\u063a\u060c \u062a\u0648\u06cc \u062f\u0631\u06af\u0627\u0647 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627\u0646\u06a9 \u0648\u062c\u0647 \u0631\u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u06a9\u0646. \u0628\u0639\u062f \u0645\u0628\u0644\u063a \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u0634\u0647.\r\n\r"
+                              "\u06a9\u0627\u0641\u06cc\u0647 \u0631\u0648\u06cc \u06cc\u06a9\u06cc \u0627\u0632 \u0628\u0633\u062a\u0647\u200c\u0647\u0627\u06cc \u0628\u0627\u0644\u0627 \u0628\u0632\u0646\u06cc \u0648 \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9 \u067e\u0631\u062f\u0627\u062e\u062a \u06a9\u0646\u06cc. \u0628\u0627 \u06cc\u06a9 \u0641\u0627\u0635\u0644\u0647\u200c\u06cc \u0632\u0645\u0627\u0646\u06cc \u06a9\u0648\u062a\u0627\u0647\u060c \u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647.\r\n\r"
                             }
                           </div>
                         </AntdAccordionItem>
@@ -1915,7 +2737,7 @@ function PlasmicPricing__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0628\u0634\u0647\u060c \u0633\u06cc\u0633\u062a\u0645 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u0634\u0647. \u0627\u0645\u0627 \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u00bb \u0631\u0627\u06cc\u06af\u0627\u0646\u0647 \u0648 \u062f\u0631\u0635\u0648\u0631\u062a \u062e\u0627\u0644\u06cc \u0634\u062f\u0646 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u060c \u0647\u0645\u0686\u0646\u0627\u0646 \u0642\u0627\u0628\u0644 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0633\u062a.\r\n\r"
+                              "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0628\u0634\u0647\u060c \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0633\u062a\u0646\u062f \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u0634\u0646. \u0627\u0645\u0627 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0627\u06cc\u06af\u0627\u0646 \u0647\u0645\u0686\u0646\u0627\u0646 \u0642\u0627\u0628\u0644 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0647\u0633\u062a\u0646\u062f.\r"
                             }
                           </div>
                         </AntdAccordionItem>
@@ -1958,6 +2780,38 @@ function PlasmicPricing__RenderFunc(props: {
                 "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"
               }
             </Button>
+            <div
+              data-plasmic-name={"html"}
+              data-plasmic-override={overrides.html}
+              className={classNames(projectcss.all, sty.html)}
+            >
+              <Embed
+                data-plasmic-name={"clarity2"}
+                data-plasmic-override={overrides.clarity2}
+                className={classNames("__wab_instance", sty.clarity2)}
+                code={
+                  '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+                }
+              />
+
+              <Embed
+                data-plasmic-name={"goftino"}
+                data-plasmic-override={overrides.goftino}
+                className={classNames("__wab_instance", sty.goftino)}
+                code={
+                  '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+                }
+              />
+
+              <Embed
+                data-plasmic-name={"favIcon"}
+                data-plasmic-override={overrides.favIcon}
+                className={classNames("__wab_instance", sty.favIcon)}
+                code={
+                  "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
+                }
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -1966,21 +2820,134 @@ function PlasmicPricing__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "services", "modal", "qA", "accordion"],
+  root: [
+    "root",
+    "_2ndPart",
+    "featuresDesc2",
+    "item1",
+    "item12",
+    "checkbox8",
+    "item13",
+    "checkbox2",
+    "item14",
+    "checkbox3",
+    "item15",
+    "checkbox4",
+    "item19",
+    "checkbox9",
+    "item16",
+    "checkbox5",
+    "item17",
+    "checkbox6",
+    "item18",
+    "checkbox7",
+    "services",
+    "calc",
+    "numberInput",
+    "valueText",
+    "value",
+    "toman",
+    "commission",
+    "modal",
+    "qA",
+    "accordion",
+    "html",
+    "clarity2",
+    "goftino",
+    "favIcon"
+  ],
+  _2ndPart: [
+    "_2ndPart",
+    "featuresDesc2",
+    "item1",
+    "item12",
+    "checkbox8",
+    "item13",
+    "checkbox2",
+    "item14",
+    "checkbox3",
+    "item15",
+    "checkbox4",
+    "item19",
+    "checkbox9",
+    "item16",
+    "checkbox5",
+    "item17",
+    "checkbox6",
+    "item18",
+    "checkbox7"
+  ],
+  featuresDesc2: ["featuresDesc2"],
+  item1: ["item1"],
+  item12: ["item12", "checkbox8"],
+  checkbox8: ["checkbox8"],
+  item13: ["item13", "checkbox2"],
+  checkbox2: ["checkbox2"],
+  item14: ["item14", "checkbox3"],
+  checkbox3: ["checkbox3"],
+  item15: ["item15", "checkbox4"],
+  checkbox4: ["checkbox4"],
+  item19: ["item19", "checkbox9"],
+  checkbox9: ["checkbox9"],
+  item16: ["item16", "checkbox5"],
+  checkbox5: ["checkbox5"],
+  item17: ["item17", "checkbox6"],
+  checkbox6: ["checkbox6"],
+  item18: ["item18", "checkbox7"],
+  checkbox7: ["checkbox7"],
   services: ["services"],
+  calc: ["calc", "numberInput", "valueText", "value", "toman", "commission"],
+  numberInput: ["numberInput"],
+  valueText: ["valueText"],
+  value: ["value"],
+  toman: ["toman"],
+  commission: ["commission"],
   modal: ["modal"],
-  qA: ["qA", "accordion"],
-  accordion: ["accordion"]
+  qA: ["qA", "accordion", "html", "clarity2", "goftino", "favIcon"],
+  accordion: ["accordion"],
+  html: ["html", "clarity2", "goftino", "favIcon"],
+  clarity2: ["clarity2"],
+  goftino: ["goftino"],
+  favIcon: ["favIcon"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  _2ndPart: "div";
+  featuresDesc2: "div";
+  item1: "div";
+  item12: "div";
+  checkbox8: typeof Checkbox;
+  item13: "div";
+  checkbox2: typeof Checkbox;
+  item14: "div";
+  checkbox3: typeof Checkbox;
+  item15: "div";
+  checkbox4: typeof Checkbox;
+  item19: "div";
+  checkbox9: typeof Checkbox;
+  item16: "div";
+  checkbox5: typeof Checkbox;
+  item17: "div";
+  checkbox6: typeof Checkbox;
+  item18: "div";
+  checkbox7: typeof Checkbox;
   services: "div";
+  calc: "div";
+  numberInput: typeof AntdInputNumber;
+  valueText: "div";
+  value: "div";
+  toman: "div";
+  commission: "div";
   modal: typeof AntdModal;
   qA: "div";
   accordion: typeof AntdAccordion;
+  html: "div";
+  clarity2: typeof Embed;
+  goftino: typeof Embed;
+  favIcon: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2043,10 +3010,39 @@ export const PlasmicPricing = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    _2ndPart: makeNodeComponent("_2ndPart"),
+    featuresDesc2: makeNodeComponent("featuresDesc2"),
+    item1: makeNodeComponent("item1"),
+    item12: makeNodeComponent("item12"),
+    checkbox8: makeNodeComponent("checkbox8"),
+    item13: makeNodeComponent("item13"),
+    checkbox2: makeNodeComponent("checkbox2"),
+    item14: makeNodeComponent("item14"),
+    checkbox3: makeNodeComponent("checkbox3"),
+    item15: makeNodeComponent("item15"),
+    checkbox4: makeNodeComponent("checkbox4"),
+    item19: makeNodeComponent("item19"),
+    checkbox9: makeNodeComponent("checkbox9"),
+    item16: makeNodeComponent("item16"),
+    checkbox5: makeNodeComponent("checkbox5"),
+    item17: makeNodeComponent("item17"),
+    checkbox6: makeNodeComponent("checkbox6"),
+    item18: makeNodeComponent("item18"),
+    checkbox7: makeNodeComponent("checkbox7"),
     services: makeNodeComponent("services"),
+    calc: makeNodeComponent("calc"),
+    numberInput: makeNodeComponent("numberInput"),
+    valueText: makeNodeComponent("valueText"),
+    value: makeNodeComponent("value"),
+    toman: makeNodeComponent("toman"),
+    commission: makeNodeComponent("commission"),
     modal: makeNodeComponent("modal"),
     qA: makeNodeComponent("qA"),
     accordion: makeNodeComponent("accordion"),
+    html: makeNodeComponent("html"),
+    clarity2: makeNodeComponent("clarity2"),
+    goftino: makeNodeComponent("goftino"),
+    favIcon: makeNodeComponent("favIcon"),
 
     // Metadata about props expected for PlasmicPricing
     internalVariantProps: PlasmicPricing__VariantProps,
