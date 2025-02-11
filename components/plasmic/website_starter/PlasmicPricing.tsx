@@ -93,8 +93,8 @@ export const PlasmicPricing__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPricing__OverridesType = {
   root?: Flex__<"div">;
-  _2ndPart?: Flex__<"div">;
   featuresDesc2?: Flex__<"div">;
+  _1stPart?: Flex__<"div">;
   item1?: Flex__<"div">;
   item12?: Flex__<"div">;
   checkbox8?: Flex__<typeof Checkbox>;
@@ -121,7 +121,12 @@ export type PlasmicPricing__OverridesType = {
   commission?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
   qA?: Flex__<"div">;
-  accordion?: Flex__<typeof AntdAccordion>;
+  accordionMain?: Flex__<typeof AntdAccordion>;
+  _2?: Flex__<typeof AntdAccordionItem>;
+  _1?: Flex__<"div">;
+  _4?: Flex__<typeof AntdAccordionItem>;
+  _5?: Flex__<typeof AntdAccordionItem>;
+  _6?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -173,7 +178,7 @@ function PlasmicPricing__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "accordion.activePanelId",
+        path: "accordionMain.activePanelId",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -296,41 +301,41 @@ function PlasmicPricing__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
-            data-plasmic-name={"_2ndPart"}
-            data-plasmic-override={overrides._2ndPart}
-            className={classNames(projectcss.all, sty._2ndPart)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__vzZul)}>
+          <div className={classNames(projectcss.all, sty.freeBox__vzZul)}>
+            <div
+              data-plasmic-name={"featuresDesc2"}
+              data-plasmic-override={overrides.featuresDesc2}
+              className={classNames(projectcss.all, sty.featuresDesc2)}
+            >
               <div
-                data-plasmic-name={"featuresDesc2"}
-                data-plasmic-override={overrides.featuresDesc2}
-                className={classNames(projectcss.all, sty.featuresDesc2)}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qdhY
+                )}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qdhY
-                  )}
-                >
-                  {
-                    "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aXfsu
-                  )}
-                >
-                  {
-                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0646\u062c\u0627\u0645 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u062f\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u062a\u0627 \u0634\u0645\u0627 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0641\u06a9\u0631 \u0648 \u06af\u0633\u062a\u0631\u0634 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc."
-                  }
-                </div>
+                {
+                  "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__aXfsu
+                )}
+              >
+                {
+                  "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0646\u062c\u0627\u0645 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u062f\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u062a\u0627 \u0634\u0645\u0627 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0641\u06a9\u0631 \u0648 \u06af\u0633\u062a\u0631\u0634 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc."
+                }
               </div>
             </div>
+          </div>
+          <div
+            data-plasmic-name={"_1stPart"}
+            data-plasmic-override={overrides._1stPart}
+            className={classNames(projectcss.all, sty._1stPart)}
+          >
             <div className={classNames(projectcss.all, sty.freeBox__cymqY)}>
               <Stack__
                 as={"div"}
@@ -1205,7 +1210,7 @@ function PlasmicPricing__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                    "\u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
                 </div>
                 <div
@@ -1216,7 +1221,7 @@ function PlasmicPricing__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f (\u0646\u0633\u0628\u062a \u0628\u0647 \u0631\u0648\u0634 \u0633\u0646\u062a\u06cc) \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."
+                    "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646\u060c \u062a\u0627 \u06cc\u06a9 \u062a\u062e\u0645\u06cc\u0646 \u0627\u0632 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647 \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc. \u0627\u06cc\u0646 \u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06af\u0631\u060c \u0645\u06cc\u0632\u0627\u0646 \u0627\u062b\u0631\u06af\u0630\u0627\u0631\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f (\u0646\u0633\u0628\u062a \u0628\u0647 \u0631\u0648\u0634 \u0633\u0646\u062a\u06cc) \u0631\u0648 \u0646\u0634\u0648\u0646 \u0645\u06cc\u200c\u062f\u0647."
                   }
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__jkFhU)}>
@@ -1232,7 +1237,7 @@ function PlasmicPricing__RenderFunc(props: {
                       ]).apply(null, eventArgs);
                     }}
                     placeholder={
-                      "\u0646\u0631\u062e \u06cc\u06a9 \u0634\u0628 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                      "\u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647 \u06cc\u06a9 \u0634\u0628 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
                     }
                     type={"number"}
                     value={generateStateValueProp($state, [
@@ -1253,9 +1258,11 @@ function PlasmicPricing__RenderFunc(props: {
                         sty.valueText
                       )}
                     >
-                      {
-                        "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"
-                      }
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"
+                        : "\u062a\u062e\u0645\u06cc\u0646 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"}
                     </div>
                     <div
                       data-plasmic-name={"value"}
@@ -1308,9 +1315,11 @@ function PlasmicPricing__RenderFunc(props: {
                         sty.toman
                       )}
                     >
-                      {
-                        "\u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0631 \u0631\u0632\u0631\u0648:"
-                      }
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"
+                        : "\u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"}
                     </div>
                     <div
                       data-plasmic-name={"commission"}
@@ -2535,26 +2544,27 @@ function PlasmicPricing__RenderFunc(props: {
                 {(() => {
                   const child$Props = {
                     activeKey: generateStateValueProp($state, [
-                      "accordion",
+                      "accordionMain",
                       "activePanelId"
                     ]),
                     bordered: true,
-                    className: classNames("__wab_instance", sty.accordion),
+                    className: classNames("__wab_instance", sty.accordionMain),
                     ghost: true,
                     items: (
                       <React.Fragment>
                         <AntdAccordionItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.accordionItem__zWdS5
-                          )}
-                          id={1}
+                          data-plasmic-name={"_2"}
+                          data-plasmic-override={overrides._2}
+                          className={classNames("__wab_instance", sty._2)}
+                          id={"11"}
                           label2={
                             <div
+                              data-plasmic-name={"_1"}
+                              data-plasmic-override={overrides._1}
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__uJ6V0
+                                sty._1
                               )}
                             >
                               {
@@ -2577,44 +2587,10 @@ function PlasmicPricing__RenderFunc(props: {
                           </div>
                         </AntdAccordionItem>
                         <AntdAccordionItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.accordionItem__mpjha
-                          )}
-                          id={"5"}
-                          label2={
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__ecBQ
-                              )}
-                            >
-                              {
-                                "\u0627\u06af\u0647 \u0631\u0632\u0631\u0648 \u0644\u063a\u0648 \u0628\u0634\u0647\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u0627\u0634 \u0686\u06cc \u0645\u06cc\u200c\u0634\u0647\u061f"
-                              }
-                            </div>
-                          }
-                          showArrow={true}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__xoVPm
-                            )}
-                          >
-                            {
-                              "\u062f\u0631\u0635\u0648\u0631\u062a \u0644\u063a\u0648 \u0631\u0632\u0631\u0648\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0648\u0646 \u0628\u0647\u200c\u062d\u0633\u0627\u0628\u062a \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
-                            }
-                          </div>
-                        </AntdAccordionItem>
-                        <AntdAccordionItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.accordionItem__z5Hda
-                          )}
-                          id={2}
+                          data-plasmic-name={"_4"}
+                          data-plasmic-override={overrides._4}
+                          className={classNames("__wab_instance", sty._4)}
+                          id={"22"}
                           label2={
                             <div
                               className={classNames(
@@ -2643,11 +2619,10 @@ function PlasmicPricing__RenderFunc(props: {
                           </div>
                         </AntdAccordionItem>
                         <AntdAccordionItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.accordionItem___2YXrc
-                          )}
-                          id={"3"}
+                          data-plasmic-name={"_5"}
+                          data-plasmic-override={overrides._5}
+                          className={classNames("__wab_instance", sty._5)}
+                          id={"33"}
                           label2={
                             <div
                               className={classNames(
@@ -2676,11 +2651,10 @@ function PlasmicPricing__RenderFunc(props: {
                           </div>
                         </AntdAccordionItem>
                         <AntdAccordionItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.accordionItem__qSxM
-                          )}
-                          id={"4"}
+                          data-plasmic-name={"_6"}
+                          data-plasmic-override={overrides._6}
+                          className={classNames("__wab_instance", sty._6)}
+                          id={"44"}
                           label2={
                             <div
                               className={classNames(
@@ -2711,15 +2685,15 @@ function PlasmicPricing__RenderFunc(props: {
                         <AntdAccordionItem
                           className={classNames(
                             "__wab_instance",
-                            sty.accordionItem__phYwf
+                            sty.accordionItem__xiPR
                           )}
-                          id={"5"}
+                          id={"55"}
                           label2={
                             <div
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__q1SQ7
+                                sty.text__jw7R
                               )}
                             >
                               {
@@ -2733,11 +2707,44 @@ function PlasmicPricing__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__eFps
+                              sty.text__sso5
                             )}
                           >
                             {
-                              "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0628\u0634\u0647\u060c \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0633\u062a\u0646\u062f \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u0634\u0646. \u0627\u0645\u0627 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0627\u06cc\u06af\u0627\u0646 \u0647\u0645\u0686\u0646\u0627\u0646 \u0642\u0627\u0628\u0644 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0647\u0633\u062a\u0646\u062f.\r"
+                              "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f1\u06f5 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0628\u0634\u0647\u060c \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0633\u062a\u0646\u062f \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u0634\u0646. \u0627\u0645\u0627 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0627\u06cc\u06af\u0627\u0646 \u0647\u0645\u0686\u0646\u0627\u0646 \u0642\u0627\u0628\u0644 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0647\u0633\u062a\u0646\u062f.\r\n"
+                            }
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.accordionItem__rC7K
+                          )}
+                          id={"66"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__ggn5
+                              )}
+                            >
+                              {
+                                "\u0627\u06af\u0647 \u0631\u0632\u0631\u0648 \u0644\u063a\u0648 \u0628\u0634\u0647\u060c \u06a9\u0627\u0631\u0645\u0632\u062f\u06cc \u06a9\u0647 \u062f\u0627\u062f\u0645 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__bBnnz
+                            )}
+                          >
+                            {
+                              "\u0628\u0644\u0647. \u062f\u0631\u0635\u0648\u0631\u062a \u0644\u063a\u0648 \u0634\u062f\u0646 \u0631\u0632\u0631\u0648\u060c \u06a9\u0627\u0631\u0645\u0632\u062f \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
                             }
                           </div>
                         </AntdAccordionItem>
@@ -2747,7 +2754,7 @@ function PlasmicPricing__RenderFunc(props: {
                       generateStateOnChangePropForCodeComponents(
                         $state,
                         "activePanelId",
-                        ["accordion", "activePanelId"],
+                        ["accordionMain", "activePanelId"],
                         AntdAccordion_Helpers
                       ).apply(null, eventArgs);
                     }
@@ -2757,7 +2764,7 @@ function PlasmicPricing__RenderFunc(props: {
                     [
                       {
                         name: "activePanelId",
-                        plasmicStateName: "accordion.activePanelId"
+                        plasmicStateName: "accordionMain.activePanelId"
                       }
                     ],
                     [],
@@ -2767,8 +2774,8 @@ function PlasmicPricing__RenderFunc(props: {
 
                   return (
                     <AntdAccordion
-                      data-plasmic-name={"accordion"}
-                      data-plasmic-override={overrides.accordion}
+                      data-plasmic-name={"accordionMain"}
+                      data-plasmic-override={overrides.accordionMain}
                       {...child$Props}
                     />
                   );
@@ -2822,8 +2829,8 @@ function PlasmicPricing__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "_2ndPart",
     "featuresDesc2",
+    "_1stPart",
     "item1",
     "item12",
     "checkbox8",
@@ -2850,15 +2857,20 @@ const PlasmicDescendants = {
     "commission",
     "modal",
     "qA",
-    "accordion",
+    "accordionMain",
+    "_2",
+    "_1",
+    "_4",
+    "_5",
+    "_6",
     "html",
     "clarity2",
     "goftino",
     "favIcon"
   ],
-  _2ndPart: [
-    "_2ndPart",
-    "featuresDesc2",
+  featuresDesc2: ["featuresDesc2"],
+  _1stPart: [
+    "_1stPart",
     "item1",
     "item12",
     "checkbox8",
@@ -2877,7 +2889,6 @@ const PlasmicDescendants = {
     "item18",
     "checkbox7"
   ],
-  featuresDesc2: ["featuresDesc2"],
   item1: ["item1"],
   item12: ["item12", "checkbox8"],
   checkbox8: ["checkbox8"],
@@ -2903,8 +2914,25 @@ const PlasmicDescendants = {
   toman: ["toman"],
   commission: ["commission"],
   modal: ["modal"],
-  qA: ["qA", "accordion", "html", "clarity2", "goftino", "favIcon"],
-  accordion: ["accordion"],
+  qA: [
+    "qA",
+    "accordionMain",
+    "_2",
+    "_1",
+    "_4",
+    "_5",
+    "_6",
+    "html",
+    "clarity2",
+    "goftino",
+    "favIcon"
+  ],
+  accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6"],
+  _2: ["_2", "_1"],
+  _1: ["_1"],
+  _4: ["_4"],
+  _5: ["_5"],
+  _6: ["_6"],
   html: ["html", "clarity2", "goftino", "favIcon"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -2915,8 +2943,8 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  _2ndPart: "div";
   featuresDesc2: "div";
+  _1stPart: "div";
   item1: "div";
   item12: "div";
   checkbox8: typeof Checkbox;
@@ -2943,7 +2971,12 @@ type NodeDefaultElementType = {
   commission: "div";
   modal: typeof AntdModal;
   qA: "div";
-  accordion: typeof AntdAccordion;
+  accordionMain: typeof AntdAccordion;
+  _2: typeof AntdAccordionItem;
+  _1: "div";
+  _4: typeof AntdAccordionItem;
+  _5: typeof AntdAccordionItem;
+  _6: typeof AntdAccordionItem;
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -3010,8 +3043,8 @@ export const PlasmicPricing = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    _2ndPart: makeNodeComponent("_2ndPart"),
     featuresDesc2: makeNodeComponent("featuresDesc2"),
+    _1stPart: makeNodeComponent("_1stPart"),
     item1: makeNodeComponent("item1"),
     item12: makeNodeComponent("item12"),
     checkbox8: makeNodeComponent("checkbox8"),
@@ -3038,7 +3071,12 @@ export const PlasmicPricing = Object.assign(
     commission: makeNodeComponent("commission"),
     modal: makeNodeComponent("modal"),
     qA: makeNodeComponent("qA"),
-    accordion: makeNodeComponent("accordion"),
+    accordionMain: makeNodeComponent("accordionMain"),
+    _2: makeNodeComponent("_2"),
+    _1: makeNodeComponent("_1"),
+    _4: makeNodeComponent("_4"),
+    _5: makeNodeComponent("_5"),
+    _6: makeNodeComponent("_6"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
