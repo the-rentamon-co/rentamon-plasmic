@@ -2041,6 +2041,16 @@
           "id": "i4t82pJ36gve",
           "name": "Sad-face.png",
           "filePath": "../public/plasmic/website_starter/images/sadFacePng.png"
+        },
+        {
+          "id": "cou0yHu5Oyyh",
+          "name": "flywheel.png",
+          "filePath": "../public/plasmic/website_starter/images/flywheelPng.png"
+        },
+        {
+          "id": "TDjyO4Aks4Ae",
+          "name": "flywheel2.png",
+          "filePath": "../public/plasmic/website_starter/images/flywheel2Png.png"
         }
       ],
       "indirect": false,

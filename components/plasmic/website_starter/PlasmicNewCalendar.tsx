@@ -61,8 +61,6 @@ import {
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
-import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -93,30 +91,8 @@ export type PlasmicNewCalendar__OverridesType = {
   featuresDesc3?: Flex__<"div">;
   appDemo?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
-  _2ndPart?: Flex__<"div">;
-  featuresDesc2?: Flex__<"div">;
-  item1?: Flex__<"div">;
-  item12?: Flex__<"div">;
-  checkbox8?: Flex__<typeof Checkbox>;
-  item13?: Flex__<"div">;
-  checkbox2?: Flex__<typeof Checkbox>;
-  item14?: Flex__<"div">;
-  checkbox3?: Flex__<typeof Checkbox>;
-  item15?: Flex__<"div">;
-  checkbox4?: Flex__<typeof Checkbox>;
-  item19?: Flex__<"div">;
-  checkbox9?: Flex__<typeof Checkbox>;
-  item16?: Flex__<"div">;
-  checkbox5?: Flex__<typeof Checkbox>;
-  item17?: Flex__<"div">;
-  checkbox6?: Flex__<typeof Checkbox>;
-  item18?: Flex__<"div">;
-  checkbox7?: Flex__<typeof Checkbox>;
-  numberInput?: Flex__<typeof AntdInputNumber>;
-  valueText?: Flex__<"div">;
-  value?: Flex__<"div">;
-  toman?: Flex__<"div">;
-  commission?: Flex__<"div">;
+  why?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   cta?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
@@ -164,72 +140,6 @@ function PlasmicNewCalendar__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-
-  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
-    () => [
-      {
-        path: "checkbox2.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
-        path: "checkbox3.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
-        path: "checkbox4.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
-        path: "checkbox5.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "checkbox6.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "checkbox7.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "checkbox8.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
-        path: "numberInput.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "checkbox9.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      }
-    ],
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
@@ -653,7 +563,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                     ? "\u2705 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n\u2705\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \n\u2705 \u0642\u0627\u0628\u0644\u06cc\u062a \u062a\u0627\u06cc\u06cc\u062f \u0648 \u06cc\u0627 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n\u2705 \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\n\u2705 \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647 (\u0647\u0648\u0634\u0645\u0646\u062f)\n\u2705 \u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
                     : hasVariant(globalVariants, "screen", "tablet")
                     ? "\u2705 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n\u2705\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \n\u2705 \u0642\u0627\u0628\u0644\u06cc\u062a \u062a\u0627\u06cc\u06cc\u062f \u0648 \u06cc\u0627 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n\u2705 \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\n\u2705 \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647 (\u0647\u0648\u0634\u0645\u0646\u062f)\n\u2705 \u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
-                    : "\u2705 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n\u2705\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \n\u2705 \u0642\u0627\u0628\u0644\u06cc\u062a \u062a\u0627\u06cc\u06cc\u062f \u0648 \u06cc\u0627 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n\u2705 \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\n\u2705 \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647 (\u0647\u0648\u0634\u0645\u0646\u062f)\n\u2705 \u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"}
+                    : "\u2705 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n\u2705\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \n\u2705 \u0642\u0627\u0628\u0644\u06cc\u062a \u062a\u0627\u06cc\u06cc\u062f \u0648 \u06cc\u0627 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n\u2705 \u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\n\u2705 \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647 (\u0647\u0648\u0634\u0645\u0646\u062f)\n\u2705 \u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631\n\u2705 \u0627\u0641\u0632\u0627\u06cc\u0634 \u067e\u0627\u06cc\u062f\u0627\u0631\u06cc \u0627\u062a\u0635\u0627\u0644\u0627\u062a \u0628\u0647 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627"}
                 </div>
               </div>
             </div>
@@ -676,7 +586,11 @@ function PlasmicNewCalendar__RenderFunc(props: {
               />
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__bdCe6)}>
+          <div
+            data-plasmic-name={"why"}
+            data-plasmic-override={overrides.why}
+            className={classNames(projectcss.all, sty.why)}
+          >
             <div
               className={classNames(
                 projectcss.all,
@@ -685,789 +599,55 @@ function PlasmicNewCalendar__RenderFunc(props: {
               )}
             >
               {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u0627\u0644\u0627 \u0631\u0648 \u0628\u0631 \u0627\u0633\u0627\u0633 \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u0633\u0627\u062e\u062a\u06cc\u0645. \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0628\u062f\u06cc\u062f\u060c \u062a\u0627 \u0628\u0647\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644 \u062a\u0648\u0642\u0639 \u0634\u0645\u0627 \u0631\u0648 \u0628\u0631\u0622\u0648\u0631\u062f\u0647 \u06a9\u0646\u06cc\u0645."
+                ? "\u0647\u062f\u0641 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0632 \u0627\u0646\u062c\u0627\u0645 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0642\u0627\u0628\u0644 \u062a\u0648\u062c\u0647\u060c \u062e\u0648\u062f\u06a9\u0627\u0631\u0633\u0627\u0632\u06cc \u0628\u06cc\u0634\u062a\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062d\u0630\u0641 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0627\u0633\u062a. \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0633\u0631 \u0631\u0633\u06cc\u062f\u060c \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u060c \u0630\u062e\u06cc\u0631\u0647 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646\u060c \u0646\u0635\u0628 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0648... \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0637\u0648\u0644 \u0631\u0648\u0632 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062a\u0645\u0631\u06a9\u0632 \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647."
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u0627\u0644\u0627 \u0631\u0648 \u0628\u0631 \u0627\u0633\u0627\u0633 \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u0633\u0627\u062e\u062a\u06cc\u0645. \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0628\u062f\u06cc\u062f\u060c \u062a\u0627 \u0628\u0647\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644 \u062a\u0648\u0642\u0639 \u0634\u0645\u0627 \u0631\u0648 \u0628\u0631\u0622\u0648\u0631\u062f\u0647 \u06a9\u0646\u06cc\u0645."
+                ? "\u0647\u062f\u0641 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0632 \u0627\u0646\u062c\u0627\u0645 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0642\u0627\u0628\u0644 \u062a\u0648\u062c\u0647\u060c \u062e\u0648\u062f\u06a9\u0627\u0631\u0633\u0627\u0632\u06cc \u0628\u06cc\u0634\u062a\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062d\u0630\u0641 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0627\u0633\u062a. \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0633\u0631 \u0631\u0633\u06cc\u062f\u060c \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u060c \u0630\u062e\u06cc\u0631\u0647 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646\u060c \u0646\u0635\u0628 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0648... \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0637\u0648\u0644 \u0631\u0648\u0632 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062a\u0645\u0631\u06a9\u0632 \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647."
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u0627\u0644\u0627 \u0631\u0648 \u0628\u0631 \u0627\u0633\u0627\u0633 \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u0633\u0627\u062e\u062a\u06cc\u0645. \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0628\u062f\u06cc\u062f\u060c \u062a\u0627 \u0628\u0647\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644 \u062a\u0648\u0642\u0639 \u0634\u0645\u0627 \u0631\u0648 \u0628\u0631\u0622\u0648\u0631\u062f\u0647 \u06a9\u0646\u06cc\u0645."
-                : "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u0627\u0644\u0627 \u0631\u0648 \u0628\u0631 \u0627\u0633\u0627\u0633 \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u0633\u0627\u062e\u062a\u06cc\u0645. \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0628\u062f\u06cc\u062f\u060c \u062a\u0627 \u0628\u0647\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644 \u062a\u0648\u0642\u0639 \u0634\u0645\u0627 \u0631\u0648 \u0628\u0631\u0622\u0648\u0631\u062f\u0647 \u06a9\u0646\u06cc\u0645."}
+                ? "\u0647\u062f\u0641 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0632 \u0627\u0646\u062c\u0627\u0645 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0642\u0627\u0628\u0644 \u062a\u0648\u062c\u0647\u060c \u062e\u0648\u062f\u06a9\u0627\u0631\u0633\u0627\u0632\u06cc \u0628\u06cc\u0634\u062a\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062d\u0630\u0641 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0627\u0633\u062a. \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0633\u0631 \u0631\u0633\u06cc\u062f\u060c \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u060c \u0630\u062e\u06cc\u0631\u0647 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646\u060c \u0646\u0635\u0628 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0648... \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0637\u0648\u0644 \u0631\u0648\u0632 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062a\u0645\u0631\u06a9\u0632 \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647."
+                : "\u0647\u062f\u0641 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0632 \u0627\u0646\u062c\u0627\u0645 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0642\u0627\u0628\u0644 \u062a\u0648\u062c\u0647\u060c \u062e\u0648\u062f\u06a9\u0627\u0631\u0633\u0627\u0632\u06cc \u0628\u06cc\u0634\u062a\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062d\u0630\u0641 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0627\u0633\u062a. \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0633\u0631 \u0631\u0633\u06cc\u062f\u060c \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u060c \u0630\u062e\u06cc\u0631\u0647 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646\u060c \u0646\u0635\u0628 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0648... \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0637\u0648\u0644 \u0631\u0648\u0632 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062a\u0645\u0631\u06a9\u0632 \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647.\r"}
             </div>
-          </div>
-          <div
-            data-plasmic-name={"_2ndPart"}
-            data-plasmic-override={overrides._2ndPart}
-            className={classNames(projectcss.all, sty._2ndPart)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__d5NN5)}>
-              <div
-                data-plasmic-name={"featuresDesc2"}
-                data-plasmic-override={overrides.featuresDesc2}
-                className={classNames(projectcss.all, sty.featuresDesc2)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aXzp
-                  )}
-                >
-                  {
-                    "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qwkSf
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0631\u0627\u06cc\u06af\u0627\u0646 \u0648 \u0628\u0639\u0636\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f (\u0627\u0632 \u0631\u0632\u0631\u0648) \u0647\u0633\u062a\u0646\u062f."
-                    : "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0631\u0627\u06cc\u06af\u0627\u0646 \u0648 \u0628\u0639\u0636\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f (\u0627\u0632 \u0631\u0632\u0631\u0648) \u0647\u0633\u062a\u0646\u062f."}
-                </div>
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__mrSjQ)}>
-              <div
-                data-plasmic-name={"item1"}
-                data-plasmic-override={overrides.item1}
-                className={classNames(projectcss.all, sty.item1)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__wqGeL)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ppyo5
-                    )}
-                  >
-                    {"\u0639\u0646\u0648\u0627\u0646"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__orBOb)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__cu8Ib
-                    )}
-                  >
-                    {"\u06a9\u0627\u0631\u0645\u0632\u062f"}
-                  </div>
-                </div>
-              </div>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item12"}
-                data-plasmic-override={overrides.item12}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item12)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__d4RK4)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox8"}
-                    data-plasmic-override={overrides.checkbox8}
-                    className={classNames("__wab_instance", sty.checkbox8)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox8",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox8",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
+            <PlasmicImg__
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
+              alt={""}
+              className={classNames(sty.img)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "100%"
+                  : hasVariant(globalVariants, "screen", "mobile")
+                  ? "90%"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                  ? "60%"
+                  : "40%"
+              }
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/flywheel2Png.png",
+                fullWidth: 700,
+                fullHeight: 634,
+                aspectRatio: undefined
+              }}
+            />
 
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__fi2FS
-                      )}
-                    >
-                      {
-                        "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___0DmuG)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__erPwg
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item13"}
-                data-plasmic-override={overrides.item13}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item13)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__ga6Ky)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox2"}
-                    data-plasmic-override={overrides.checkbox2}
-                    className={classNames("__wab_instance", sty.checkbox2)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox2",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox2",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__kfDm
-                      )}
-                    >
-                      {
-                        "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__mjUyk)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pVUtN
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item14"}
-                data-plasmic-override={overrides.item14}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item14)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__hb5W9)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox3"}
-                    data-plasmic-override={overrides.checkbox3}
-                    className={classNames("__wab_instance", sty.checkbox3)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox3",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox3",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___08Ctb
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0638\u0631\u0641\u06cc\u062a \u06cc\u06a9\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0638\u0631\u0641\u06cc\u062a \u06cc\u06a9\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
-                        : "\u062a\u063a\u06cc\u06cc\u0631 \u0638\u0631\u0641\u06cc\u062a \u06cc\u06a9\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"}
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__waw9T)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__cQp0
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item15"}
-                data-plasmic-override={overrides.item15}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item15)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__sHxXz)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox4"}
-                    data-plasmic-override={overrides.checkbox4}
-                    className={classNames("__wab_instance", sty.checkbox4)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox4",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox4",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__b7VaB
-                      )}
-                    >
-                      {
-                        "\u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\r"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__kYv3)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rjwCz
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item19"}
-                data-plasmic-override={overrides.item19}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item19)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__oqj5D)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox9"}
-                    data-plasmic-override={overrides.checkbox9}
-                    className={classNames("__wab_instance", sty.checkbox9)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox9",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox9",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__qhJZu
-                      )}
-                    >
-                      {
-                        "\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__lLmB)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ocDAl
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item16"}
-                data-plasmic-override={overrides.item16}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item16)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___25Mgl)}
-                >
-                  <Checkbox
-                    data-plasmic-name={"checkbox5"}
-                    data-plasmic-override={overrides.checkbox5}
-                    className={classNames("__wab_instance", sty.checkbox5)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox5",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox5",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__l04Yb
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
-                        : "- \u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n- \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"}
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__lrEbO)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__d6JYl
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f1.\u06f5\u066a"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06f1.\u06f5\u066a"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u06f1.\u06f5\u066a"
-                      : "\u06f1.\u06f5\u066a"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item17"}
-                data-plasmic-override={overrides.item17}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item17)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__o8Fw2)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox6"}
-                    data-plasmic-override={overrides.checkbox6}
-                    className={classNames("__wab_instance", sty.checkbox6)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox6",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox6",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__zQ0Fo
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n- \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n- \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\r\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n    - \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n    - \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"
-                        : "\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n - \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"}
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__oz7Gr)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__j0EcZ
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u066a \u06f1"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u066a \u06f1"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u066a \u06f1"
-                      : "\u066a \u06f1"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item18"}
-                data-plasmic-override={overrides.item18}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item18)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__qaVch)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox7"}
-                    data-plasmic-override={overrides.checkbox7}
-                    className={classNames("__wab_instance", sty.checkbox7)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox7",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox7",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__eTyr
-                      )}
-                    >
-                      {
-                        "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___8ENuw)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xddY2
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f0.\u06f5\u066a"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06f0.\u06f5\u066a"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u06f0.\u06f5\u066a"
-                      : "\u06f0.\u06f5\u066a"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <div className={classNames(projectcss.all, sty.freeBox__l4QNu)}>
-                <div className={classNames(projectcss.all, sty.freeBox__lcRx1)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zafWk
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___9D0Sr
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f (\u0646\u0633\u0628\u062a \u0628\u0647 \u0631\u0648\u0634 \u0633\u0646\u062a\u06cc) \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."
-                      : "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f (\u0646\u0633\u0628\u062a \u0628\u0647 \u0631\u0648\u0634 \u0633\u0646\u062a\u06cc) \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."}
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__s5Lew)}
-                  >
-                    <AntdInputNumber
-                      data-plasmic-name={"numberInput"}
-                      data-plasmic-override={overrides.numberInput}
-                      allowClear={true}
-                      className={classNames("__wab_instance", sty.numberInput)}
-                      onChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "numberInput",
-                          "value"
-                        ]).apply(null, eventArgs);
-                      }}
-                      placeholder={
-                        "\u0646\u0631\u062e \u06cc\u06a9 \u0634\u0628 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
-                      }
-                      type={"number"}
-                      value={generateStateValueProp($state, [
-                        "numberInput",
-                        "value"
-                      ])}
-                    />
-
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__x6ZO)}
-                    >
-                      <div
-                        data-plasmic-name={"valueText"}
-                        data-plasmic-override={overrides.valueText}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.valueText
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u062f\u0631 \u0645\u0627\u0647:"
-                          : "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u062f\u0631 \u0645\u0627\u0647:"}
-                      </div>
-                      <div
-                        data-plasmic-name={"value"}
-                        data-plasmic-override={overrides.value}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.value
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return $state.numberInput.value
-                                ? `${new Intl.NumberFormat().format(
-                                    ($state.checkbox5.isChecked
-                                      ? $state.numberInput.value * 1.5
-                                      : 0) +
-                                      ($state.checkbox6.isChecked
-                                        ? $state.numberInput.value * 1.15
-                                        : 0) +
-                                      ($state.checkbox7.isChecked
-                                        ? $state.numberInput.value * 1
-                                        : 0) +
-                                      $state.numberInput.value
-                                  )} تومان`
-                                : null;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u0627\u0631\u0632\u0634:";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__p1NYt)}
-                    >
-                      <div
-                        data-plasmic-name={"toman"}
-                        data-plasmic-override={overrides.toman}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.toman
-                        )}
-                      >
-                        {
-                          "\u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0631 \u0631\u0632\u0631\u0648:"
-                        }
-                      </div>
-                      <div
-                        data-plasmic-name={"commission"}
-                        data-plasmic-override={overrides.commission}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.commission
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return $state.numberInput.value
-                                ? `${new Intl.NumberFormat().format(
-                                    ($state.checkbox5.isChecked
-                                      ? $state.numberInput.value * 0.015
-                                      : 0) +
-                                      ($state.checkbox6.isChecked
-                                        ? $state.numberInput.value * 0.01
-                                        : 0) +
-                                      ($state.checkbox7.isChecked
-                                        ? $state.numberInput.value * 0.005
-                                        : 0)
-                                  )} تومان`
-                                : null;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646:";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__bwkMg
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 (\u062d\u062a\u06cc \u06a9\u0645\u200c\u062a\u062c\u0631\u0628\u0647) \u06a9\u0627\u0645\u0644\u0627 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0631\u0641\u062a\u0627\u0631 \u06a9\u0646\u0646 \u0648 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u06cc\u200c\u0646\u0638\u06cc\u0631\u06cc \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062e\u0644\u0642 \u06a9\u0646\u0646. \u062a\u062c\u0631\u0628\u0647\u200c \u0628\u0647\u062a\u0631 \u062f\u0631 \u0633\u0641\u0631\u060c \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u062a\u0639\u062f\u0627\u062f \u0633\u0641\u0631\u0647\u0627 \u0648 \u0631\u0634\u062f \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc."
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 (\u062d\u062a\u06cc \u06a9\u0645\u200c\u062a\u062c\u0631\u0628\u0647) \u06a9\u0627\u0645\u0644\u0627 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0631\u0641\u062a\u0627\u0631 \u06a9\u0646\u0646 \u0648 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u06cc\u200c\u0646\u0638\u06cc\u0631\u06cc \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062e\u0644\u0642 \u06a9\u0646\u0646. \u062a\u062c\u0631\u0628\u0647\u200c \u0628\u0647\u062a\u0631 \u062f\u0631 \u0633\u0641\u0631\u060c \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u062a\u0639\u062f\u0627\u062f \u0633\u0641\u0631\u0647\u0627 \u0648 \u0631\u0634\u062f \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc."
+                : hasVariant(globalVariants, "screen", "tablet")
+                ? "\r\n\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 (\u062d\u062a\u06cc \u06a9\u0645\u200c\u062a\u062c\u0631\u0628\u0647) \u06a9\u0627\u0645\u0644\u0627 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0631\u0641\u062a\u0627\u0631 \u06a9\u0646\u0646 \u0648 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u06cc\u200c\u0646\u0638\u06cc\u0631\u06cc \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062e\u0644\u0642 \u06a9\u0646\u0646. \u062a\u062c\u0631\u0628\u0647\u200c \u0628\u0647\u062a\u0631 \u062f\u0631 \u0633\u0641\u0631\u060c \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u062a\u0639\u062f\u0627\u062f \u0633\u0641\u0631\u0647\u0627 \u0648 \u0631\u0634\u062f \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc."
+                : "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 (\u062d\u062a\u06cc \u06a9\u0645\u200c\u062a\u062c\u0631\u0628\u0647) \u06a9\u0627\u0645\u0644\u0627 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0631\u0641\u062a\u0627\u0631 \u06a9\u0646\u0646 \u0648 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u06cc\u200c\u0646\u0638\u06cc\u0631\u06cc \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062e\u0644\u0642 \u06a9\u0646\u0646. \u062a\u062c\u0631\u0628\u0647\u200c \u0628\u0647\u062a\u0631 \u062f\u0631 \u0633\u0641\u0631\u060c \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u062a\u0639\u062f\u0627\u062f \u0633\u0641\u0631\u0647\u0627 \u0648 \u0631\u0634\u062f \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc."}
             </div>
           </div>
           <div
@@ -1674,30 +854,8 @@ const PlasmicDescendants = {
     "featuresDesc3",
     "appDemo",
     "htmlVideo",
-    "_2ndPart",
-    "featuresDesc2",
-    "item1",
-    "item12",
-    "checkbox8",
-    "item13",
-    "checkbox2",
-    "item14",
-    "checkbox3",
-    "item15",
-    "checkbox4",
-    "item19",
-    "checkbox9",
-    "item16",
-    "checkbox5",
-    "item17",
-    "checkbox6",
-    "item18",
-    "checkbox7",
-    "numberInput",
-    "valueText",
-    "value",
-    "toman",
-    "commission",
+    "why",
+    "img",
     "cta",
     "html",
     "clarity2",
@@ -1711,55 +869,8 @@ const PlasmicDescendants = {
   featuresDesc3: ["featuresDesc3"],
   appDemo: ["appDemo", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
-  _2ndPart: [
-    "_2ndPart",
-    "featuresDesc2",
-    "item1",
-    "item12",
-    "checkbox8",
-    "item13",
-    "checkbox2",
-    "item14",
-    "checkbox3",
-    "item15",
-    "checkbox4",
-    "item19",
-    "checkbox9",
-    "item16",
-    "checkbox5",
-    "item17",
-    "checkbox6",
-    "item18",
-    "checkbox7",
-    "numberInput",
-    "valueText",
-    "value",
-    "toman",
-    "commission"
-  ],
-  featuresDesc2: ["featuresDesc2"],
-  item1: ["item1"],
-  item12: ["item12", "checkbox8"],
-  checkbox8: ["checkbox8"],
-  item13: ["item13", "checkbox2"],
-  checkbox2: ["checkbox2"],
-  item14: ["item14", "checkbox3"],
-  checkbox3: ["checkbox3"],
-  item15: ["item15", "checkbox4"],
-  checkbox4: ["checkbox4"],
-  item19: ["item19", "checkbox9"],
-  checkbox9: ["checkbox9"],
-  item16: ["item16", "checkbox5"],
-  checkbox5: ["checkbox5"],
-  item17: ["item17", "checkbox6"],
-  checkbox6: ["checkbox6"],
-  item18: ["item18", "checkbox7"],
-  checkbox7: ["checkbox7"],
-  numberInput: ["numberInput"],
-  valueText: ["valueText"],
-  value: ["value"],
-  toman: ["toman"],
-  commission: ["commission"],
+  why: ["why", "img"],
+  img: ["img"],
   cta: ["cta", "html", "clarity2", "goftino", "favIcon"],
   html: ["html", "clarity2", "goftino", "favIcon"],
   clarity2: ["clarity2"],
@@ -1778,30 +889,8 @@ type NodeDefaultElementType = {
   featuresDesc3: "div";
   appDemo: "div";
   htmlVideo: typeof Video;
-  _2ndPart: "div";
-  featuresDesc2: "div";
-  item1: "div";
-  item12: "div";
-  checkbox8: typeof Checkbox;
-  item13: "div";
-  checkbox2: typeof Checkbox;
-  item14: "div";
-  checkbox3: typeof Checkbox;
-  item15: "div";
-  checkbox4: typeof Checkbox;
-  item19: "div";
-  checkbox9: typeof Checkbox;
-  item16: "div";
-  checkbox5: typeof Checkbox;
-  item17: "div";
-  checkbox6: typeof Checkbox;
-  item18: "div";
-  checkbox7: typeof Checkbox;
-  numberInput: typeof AntdInputNumber;
-  valueText: "div";
-  value: "div";
-  toman: "div";
-  commission: "div";
+  why: "div";
+  img: typeof PlasmicImg__;
   cta: "div";
   html: "div";
   clarity2: typeof Embed;
@@ -1876,30 +965,8 @@ export const PlasmicNewCalendar = Object.assign(
     featuresDesc3: makeNodeComponent("featuresDesc3"),
     appDemo: makeNodeComponent("appDemo"),
     htmlVideo: makeNodeComponent("htmlVideo"),
-    _2ndPart: makeNodeComponent("_2ndPart"),
-    featuresDesc2: makeNodeComponent("featuresDesc2"),
-    item1: makeNodeComponent("item1"),
-    item12: makeNodeComponent("item12"),
-    checkbox8: makeNodeComponent("checkbox8"),
-    item13: makeNodeComponent("item13"),
-    checkbox2: makeNodeComponent("checkbox2"),
-    item14: makeNodeComponent("item14"),
-    checkbox3: makeNodeComponent("checkbox3"),
-    item15: makeNodeComponent("item15"),
-    checkbox4: makeNodeComponent("checkbox4"),
-    item19: makeNodeComponent("item19"),
-    checkbox9: makeNodeComponent("checkbox9"),
-    item16: makeNodeComponent("item16"),
-    checkbox5: makeNodeComponent("checkbox5"),
-    item17: makeNodeComponent("item17"),
-    checkbox6: makeNodeComponent("checkbox6"),
-    item18: makeNodeComponent("item18"),
-    checkbox7: makeNodeComponent("checkbox7"),
-    numberInput: makeNodeComponent("numberInput"),
-    valueText: makeNodeComponent("valueText"),
-    value: makeNodeComponent("value"),
-    toman: makeNodeComponent("toman"),
-    commission: makeNodeComponent("commission"),
+    why: makeNodeComponent("why"),
+    img: makeNodeComponent("img"),
     cta: makeNodeComponent("cta"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),

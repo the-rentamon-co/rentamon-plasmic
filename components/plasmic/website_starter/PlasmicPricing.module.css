@@ -268,7 +268,7 @@
 }
 @media (max-width: 350px) {
   .freeBox__lyGYi {
-    padding-right: 20px;
+    padding-right: 9px;
   }
 }
 .text__ugVeN {
@@ -506,7 +506,7 @@
   max-width: 100%;
   font-size: 17px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -521,7 +521,28 @@
 }
 @media (max-width: 500px) {
   .text__d8EzU {
-    font-size: 14px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__d8EzU {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    min-width: 0;
   }
 }
 .item13 {
@@ -718,7 +739,7 @@
   max-width: 100%;
   font-size: 17px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -737,8 +758,29 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .text__mGsa5 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 16px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -946,7 +988,7 @@
   max-width: 100%;
   font-size: 17px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -965,8 +1007,29 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .text__rqTdd {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 16px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1174,7 +1237,7 @@
   max-width: 100%;
   font-size: 17px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -1193,8 +1256,8 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1206,6 +1269,11 @@
     text-decoration-line: none;
     text-overflow: clip;
     min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .text__yGyZ1 {
+    font-size: 16px;
   }
 }
 .item19 {
@@ -1402,7 +1470,7 @@
   max-width: 100%;
   font-size: 17px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -1421,8 +1489,29 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .text___35GZu {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 16px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1700,7 +1789,7 @@
   padding-right: 0px;
   text-align: center;
   padding-top: 0px;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -1719,8 +1808,29 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .text__afQxa {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 16px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1934,7 +2044,7 @@
   max-width: 100%;
   font-size: 17px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -1953,8 +2063,29 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .text__oenC6 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 16px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -2159,7 +2290,7 @@
   max-width: 100%;
   font-size: 17px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -2178,8 +2309,29 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .text__m6EMr {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 16px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
