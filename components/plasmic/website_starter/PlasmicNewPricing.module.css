@@ -183,7 +183,7 @@
 }
 @media (max-width: 1200px) {
   .cta3 {
-    padding-top: 32px;
+    padding-top: 18px;
   }
 }
 @media (max-width: 500px) {
@@ -729,7 +729,7 @@
   text-align: center;
   color: var(--token-8nedppYkGVaH);
   min-width: 0;
-  padding: 20px 70px 44px;
+  padding: 20px 70px 11px;
 }
 @media (max-width: 1200px) {
   .text__krQg8 {
@@ -742,12 +742,10 @@
 }
 @media (max-width: 500px) {
   .text__krQg8 {
-    padding-top: 20px;
-    padding-right: 0px;
-    padding-left: 0px;
     text-align: center;
     line-height: 1.8;
     font-size: 15px;
+    padding: 20px 0px 32px;
   }
 }
 @media (max-width: 350px) {
@@ -755,6 +753,7 @@
     font-size: 15px;
     padding-right: 0px;
     text-align: center;
+    padding-bottom: 24px;
   }
 }
 .cta2 {

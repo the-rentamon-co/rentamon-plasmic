@@ -1324,6 +1324,21 @@
           "id": "uNPQpcgc4CYF",
           "name": "TriangleFilledIcon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__TriangleFilled.tsx"
+        },
+        {
+          "id": "gu8zLFt9i7YK",
+          "name": "Icon27Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon27.tsx"
+        },
+        {
+          "id": "-TR7sx_chsOJ",
+          "name": "Icon28Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon28.tsx"
+        },
+        {
+          "id": "ofYsCYLxszGw",
+          "name": "Icon29Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon29.tsx"
         }
       ],
       "images": [
