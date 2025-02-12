@@ -2748,6 +2748,39 @@ function PlasmicPricing__RenderFunc(props: {
                             }
                           </div>
                         </AntdAccordionItem>
+                        <AntdAccordionItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.accordionItem__fLl6C
+                          )}
+                          id={"77"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__myDg
+                              )}
+                            >
+                              {
+                                "\u0627\u06cc\u0646 \u062a\u0639\u0631\u0641\u0647 \u0628\u0631\u0627\u06cc \u0633\u0627\u0644 \u062c\u062f\u06cc\u062f \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__j0Wwh
+                            )}
+                          >
+                            {
+                              "\u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u0647\u06cc\u0686 \u062a\u0635\u0645\u06cc\u0645 \u0648 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0627\u06cc \u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u062a\u0639\u0631\u0641\u0647\u200c\u0647\u0627 \u062f\u0631 \u0633\u0627\u0644 \u062c\u062f\u06cc\u062f (\u06f1\u06f4\u06f0\u06f4) \u0646\u062f\u0627\u0631\u06cc\u0645."
+                            }
+                          </div>
+                        </AntdAccordionItem>
                       </React.Fragment>
                     ),
                     onChange: async (...eventArgs: any) => {

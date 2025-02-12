@@ -60,9 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
-import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
-import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -91,31 +88,6 @@ export type PlasmicNewPricing__OverridesType = {
   featuresDesc?: Flex__<"div">;
   featuresDesc3?: Flex__<"div">;
   appDemo?: Flex__<"div">;
-  htmlVideo?: Flex__<typeof Video>;
-  _2ndPart?: Flex__<"div">;
-  featuresDesc2?: Flex__<"div">;
-  item1?: Flex__<"div">;
-  item12?: Flex__<"div">;
-  checkbox8?: Flex__<typeof Checkbox>;
-  item13?: Flex__<"div">;
-  checkbox2?: Flex__<typeof Checkbox>;
-  item14?: Flex__<"div">;
-  checkbox3?: Flex__<typeof Checkbox>;
-  item15?: Flex__<"div">;
-  checkbox4?: Flex__<typeof Checkbox>;
-  item19?: Flex__<"div">;
-  checkbox9?: Flex__<typeof Checkbox>;
-  item16?: Flex__<"div">;
-  checkbox5?: Flex__<typeof Checkbox>;
-  item17?: Flex__<"div">;
-  checkbox6?: Flex__<typeof Checkbox>;
-  item18?: Flex__<"div">;
-  checkbox7?: Flex__<typeof Checkbox>;
-  numberInput?: Flex__<typeof AntdInputNumber>;
-  valueText?: Flex__<"div">;
-  value?: Flex__<"div">;
-  toman?: Flex__<"div">;
-  commission?: Flex__<"div">;
   cta2?: Flex__<"div">;
 };
 
@@ -158,72 +130,6 @@ function PlasmicNewPricing__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-
-  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
-    () => [
-      {
-        path: "checkbox2.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
-        path: "checkbox3.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
-        path: "checkbox4.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
-        path: "checkbox5.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "checkbox6.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "checkbox7.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "checkbox8.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
-        path: "numberInput.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "checkbox9.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      }
-    ],
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
@@ -290,7 +196,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                 sty.text__foms
               )}
             >
-              {hasVariant(globalVariants, "screen", "tablet") ? (
+              {hasVariant(globalVariants, "screen", "smallMobile") ? (
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
@@ -302,15 +208,65 @@ function PlasmicNewPricing__RenderFunc(props: {
                         sty.h2___7PwVm
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u061b \u06af\u0627\u0645\u06cc \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                        : "\u062a\u0642\u0648\u06cc\u0645 \u06f2"}
+                    </h2>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2___7PwVm
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                        : "\u062a\u0642\u0648\u06cc\u0645 \u06f2"}
+                    </h2>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              ) : hasVariant(globalVariants, "screen", "tablet") ? (
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2___7PwVm
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
                         : "\u062a\u0642\u0648\u06cc\u0645 \u06f2"}
                     </h2>
                   }
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               ) : (
-                "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u061b \u06af\u0627\u0645\u06cc \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
+                "\u062a\u063a\u06cc\u06cc\u0631 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc\u061b \u0628\u0647 \u0633\u0648\u06cc \u0639\u062f\u0627\u0644\u062a \u0648 \u0631\u0634\u062f \u067e\u0627\u06cc\u062f\u0627\u0631\r"
               )}
             </div>
             <div
@@ -320,13 +276,183 @@ function PlasmicNewPricing__RenderFunc(props: {
                 sty.text___5PTkx
               )}
             >
-              {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\u062a\u0648 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0646\u0628\u0627\u0644 \u0627\u06cc\u0646 \u0628\u0648\u062f\u06cc\u0645 \u06a9\u0647 \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0645\u0648\u0646 \u0631\u0634\u062f \u06a9\u0646\u0647\u060c \u0628\u0644\u06a9\u0647 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u0627\u0646\u0645\u0648\u0646 \u0628\u0633\u0627\u0632\u06cc\u0645. \u0627\u0632 \u0631\u0648\u0632 \u0627\u0648\u0644 \u0633\u0639\u06cc \u06a9\u0631\u062f\u06cc\u0645 \u0628\u0627 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0646.\n\n\u06cc\u06a9\u06cc \u0627\u0632 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u0645\u0647\u0645 \u0627\u06cc\u0646 \u0645\u0633\u06cc\u0631\u060c \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647. \u062a\u0627 \u0627\u0644\u0627\u0646 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0631\u0648\u06cc\u0633\u0645\u0648\u0646 \u06f1\u06f5,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u0628\u0648\u062f. \u0627\u0645\u0627 \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0634\u062a\u06cc\u0645 \u0648 \u0641\u06cc\u062f\u0628\u06a9\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0632 \u0634\u0645\u0627 \u06af\u0631\u0641\u062a\u06cc\u0645\u060c \u0628\u0647 \u0627\u06cc\u0646 \u0646\u062a\u06cc\u062c\u0647 \u0631\u0633\u06cc\u062f\u06cc\u0645 \u06a9\u0647 \u0627\u06cc\u0646 \u0645\u062f\u0644 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u0646\u06cc\u0633\u062a. \u0642\u06cc\u0645\u062a \u0648\u06cc\u0644\u0627\u0647\u0627 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647\u060c \u0648 \u0627\u06cc\u0646 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc\u0627 \u0627\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f \u0628\u0627\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc\u0627 \u062a\u0642\u0631\u06cc\u0628\u0627\u064b \u0647\u06cc\u0686\u06cc.\n\r"
-                : hasVariant(globalVariants, "screen", "mobile")
-                ? "\u062a\u0648 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0646\u0628\u0627\u0644 \u0627\u06cc\u0646 \u0628\u0648\u062f\u06cc\u0645 \u06a9\u0647 \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0645\u0648\u0646 \u0631\u0634\u062f \u06a9\u0646\u0647\u060c \u0628\u0644\u06a9\u0647 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u0627\u0646\u0645\u0648\u0646 \u0628\u0633\u0627\u0632\u06cc\u0645. \u0627\u0632 \u0631\u0648\u0632 \u0627\u0648\u0644 \u0633\u0639\u06cc \u06a9\u0631\u062f\u06cc\u0645 \u0628\u0627 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0646.\n\n\u06cc\u06a9\u06cc \u0627\u0632 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u0645\u0647\u0645 \u0627\u06cc\u0646 \u0645\u0633\u06cc\u0631\u060c \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647. \u062a\u0627 \u0627\u0644\u0627\u0646 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0631\u0648\u06cc\u0633\u0645\u0648\u0646 \u06f1\u06f5,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u0628\u0648\u062f. \u0627\u0645\u0627 \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0634\u062a\u06cc\u0645 \u0648 \u0641\u06cc\u062f\u0628\u06a9\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0632 \u0634\u0645\u0627 \u06af\u0631\u0641\u062a\u06cc\u0645\u060c \u0628\u0647 \u0627\u06cc\u0646 \u0646\u062a\u06cc\u062c\u0647 \u0631\u0633\u06cc\u062f\u06cc\u0645 \u06a9\u0647 \u0627\u06cc\u0646 \u0645\u062f\u0644 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u0646\u06cc\u0633\u062a. \u0642\u06cc\u0645\u062a \u0648\u06cc\u0644\u0627\u0647\u0627 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647\u060c \u0648 \u0627\u06cc\u0646 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc\u0627 \u0627\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f \u0628\u0627\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc\u0627 \u062a\u0642\u0631\u06cc\u0628\u0627\u064b \u0647\u06cc\u0686\u06cc."
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u062a\u0648 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0646\u0628\u0627\u0644 \u0627\u06cc\u0646 \u0628\u0648\u062f\u06cc\u0645 \u06a9\u0647 \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0645\u0648\u0646 \u0631\u0634\u062f \u06a9\u0646\u0647\u060c \u0628\u0644\u06a9\u0647 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u0627\u0646\u0645\u0648\u0646 \u0628\u0633\u0627\u0632\u06cc\u0645. \u0627\u0632 \u0631\u0648\u0632 \u0627\u0648\u0644 \u0633\u0639\u06cc \u06a9\u0631\u062f\u06cc\u0645 \u0628\u0627 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0646.\n\n\u06cc\u06a9\u06cc \u0627\u0632 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u0645\u0647\u0645 \u0627\u06cc\u0646 \u0645\u0633\u06cc\u0631\u060c \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647. \u062a\u0627 \u0627\u0644\u0627\u0646 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0631\u0648\u06cc\u0633\u0645\u0648\u0646 \u06f1\u06f5,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u0628\u0648\u062f. \u0627\u0645\u0627 \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0634\u062a\u06cc\u0645 \u0648 \u0641\u06cc\u062f\u0628\u06a9\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0632 \u0634\u0645\u0627 \u06af\u0631\u0641\u062a\u06cc\u0645\u060c \u0628\u0647 \u0627\u06cc\u0646 \u0646\u062a\u06cc\u062c\u0647 \u0631\u0633\u06cc\u062f\u06cc\u0645 \u06a9\u0647 \u0627\u06cc\u0646 \u0645\u062f\u0644 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u0646\u06cc\u0633\u062a. \u0642\u06cc\u0645\u062a \u0648\u06cc\u0644\u0627\u0647\u0627 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647\u060c \u0648 \u0627\u06cc\u0646 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc\u0627 \u0627\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f \u0628\u0627\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc\u0627 \u062a\u0642\u0631\u06cc\u0628\u0627\u064b \u0647\u06cc\u0686\u06cc.\n\r"
-                : "\u062a\u0648 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0646\u0628\u0627\u0644 \u0627\u06cc\u0646 \u0628\u0648\u062f\u06cc\u0645 \u06a9\u0647 \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0645\u0648\u0646 \u0631\u0634\u062f \u06a9\u0646\u0647\u060c \u0628\u0644\u06a9\u0647 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u0627\u0646\u0645\u0648\u0646 \u0628\u0633\u0627\u0632\u06cc\u0645. \u0627\u0632 \u0631\u0648\u0632 \u0627\u0648\u0644 \u0633\u0639\u06cc \u06a9\u0631\u062f\u06cc\u0645 \u0628\u0627 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0646.\n\n\u06cc\u06a9\u06cc \u0627\u0632 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u0645\u0647\u0645 \u0627\u06cc\u0646 \u0645\u0633\u06cc\u0631\u060c \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647. \u062a\u0627 \u0627\u0644\u0627\u0646 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0631\u0648\u06cc\u0633\u0645\u0648\u0646 \u06f1\u06f5,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u0628\u0648\u062f. \u0627\u0645\u0627 \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0634\u062a\u06cc\u0645 \u0648 \u0641\u06cc\u062f\u0628\u06a9\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0632 \u0634\u0645\u0627 \u06af\u0631\u0641\u062a\u06cc\u0645\u060c \u0628\u0647 \u0627\u06cc\u0646 \u0646\u062a\u06cc\u062c\u0647 \u0631\u0633\u06cc\u062f\u06cc\u0645 \u06a9\u0647 \u0627\u06cc\u0646 \u0645\u062f\u0644 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u0646\u06cc\u0633\u062a. \u0642\u06cc\u0645\u062a \u0648\u06cc\u0644\u0627\u0647\u0627 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647\u060c \u0648 \u0627\u06cc\u0646 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc\u0627 \u0627\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f \u0628\u0627\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc\u0627 \u062a\u0642\u0631\u06cc\u0628\u0627\u064b \u0647\u06cc\u0686\u06cc.\n\r"}
+              {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u0647\u062f\u0641 \u0627\u0635\u0644\u06cc \u0645\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc\u200c\u0647\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u0628\u0627 \u0633\u0627\u062f\u0647 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u06a9\u0631\u062f\u0646 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0647\u200c\u062f\u0633\u062a \u0628\u06cc\u0627\u0631\u0646. \u0628\u0631\u0627\u06cc \u0647\u0645\u06cc\u0646 \u0647\u0631 \u0631\u0648\u0632 \u062f\u0631\u062d\u0627\u0644 "
+                    }
+                  </React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__kOgeF
+                      )}
+                      component={Link}
+                      href={"https://app.rentamon.com/new-calendar"}
+                      platform={"nextjs"}
+                    >
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u062a\u0648\u0644\u06cc\u062f \u0648 \u0639\u0631\u0636\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631"
+                        : "\u062a\u0648\u0644\u06cc\u062f \u0648 \u0639\u0631\u0636\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>
+                    {
+                      " \u0647\u0633\u062a\u06cc\u0645.\n\n\u062a\u0627 \u0627\u0644\u0627\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u060c \u0648 \u062a\u0639\u0631\u0641\u0647\u200c\u06cc \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627 \u06f1\u06f5,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u0628\u0648\u062f. "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "\u0627\u0645\u0627 \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0634\u062a\u06cc\u0645 \u0648 \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0632 \u0634\u0645\u0627 \u06af\u0631\u0641\u062a\u06cc\u0645\u060c \u0628\u0647 \u0627\u06cc\u0646 \u0646\u062a\u06cc\u062c\u0647 \u0631\u0633\u06cc\u062f\u06cc\u0645 \u06a9\u0647 \u0627\u06cc\u0646 \u0645\u062f\u0644 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u0648 \u0645\u0646\u0637\u0642\u06cc \u0646\u06cc\u0633\u062a"
+                    }
+                  </span>
+                  <React.Fragment>
+                    {
+                      ". \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627\u0647\u0627 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647\u060c \u0648 \u0627\u06cc\u0646 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc \u0627\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f \u0628\u0627\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc \u0646\u0627\u0686\u06cc\u0632."
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u0647\u062f\u0641 \u0627\u0635\u0644\u06cc \u0645\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc\u200c\u0647\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u0628\u0627 \u0633\u0627\u062f\u0647 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u06a9\u0631\u062f\u0646 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0647\u200c\u062f\u0633\u062a \u0628\u06cc\u0627\u0631\u0646. \u0628\u0631\u0627\u06cc \u0647\u0645\u06cc\u0646 \u0647\u0631 \u0631\u0648\u0632 \u062f\u0631\u062d\u0627\u0644 "
+                    }
+                  </React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__phSxo
+                      )}
+                      component={Link}
+                      href={"https://app.rentamon.com/new-calendar"}
+                      platform={"nextjs"}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u062a\u0648\u0644\u06cc\u062f \u0648 \u0639\u0631\u0636\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631"
+                        : "\u062a\u0648\u0644\u06cc\u062f \u0648 \u0639\u0631\u0636\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>
+                    {
+                      " \u0647\u0633\u062a\u06cc\u0645.\n\n\u062a\u0627 \u0627\u0644\u0627\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u060c \u0648 \u062a\u0639\u0631\u0641\u0647\u200c\u06cc \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627 \u06f1\u06f5,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u0628\u0648\u062f. "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "\u0627\u0645\u0627 \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0634\u062a\u06cc\u0645 \u0648 \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0632 \u0634\u0645\u0627 \u06af\u0631\u0641\u062a\u06cc\u0645\u060c \u0628\u0647 \u0627\u06cc\u0646 \u0646\u062a\u06cc\u062c\u0647 \u0631\u0633\u06cc\u062f\u06cc\u0645 \u06a9\u0647 \u0627\u06cc\u0646 \u0645\u062f\u0644 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u0648 \u0645\u0646\u0637\u0642\u06cc \u0646\u06cc\u0633\u062a."
+                    }
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627\u0647\u0627 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647\u060c \u0648 \u0627\u06cc\u0646 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc \u0627\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f \u0628\u0627\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc \u0646\u0627\u0686\u06cc\u0632."
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              ) : hasVariant(globalVariants, "screen", "tablet") ? (
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u0647\u062f\u0641 \u0627\u0635\u0644\u06cc \u0645\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc\u200c\u0647\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u0628\u0627 \u0633\u0627\u062f\u0647 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u06a9\u0631\u062f\u0646 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0647\u200c\u062f\u0633\u062a \u0628\u06cc\u0627\u0631\u0646. \u0628\u0631\u0627\u06cc \u0647\u0645\u06cc\u0646 \u0647\u0631 \u0631\u0648\u0632 \u062f\u0631\u062d\u0627\u0644 "
+                    }
+                  </React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__xJcYf
+                      )}
+                      component={Link}
+                      href={"https://app.rentamon.com/new-calendar"}
+                      platform={"nextjs"}
+                    >
+                      {hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u062a\u0648\u0644\u06cc\u062f \u0648 \u0639\u0631\u0636\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631"
+                        : "\u062a\u0648\u0644\u06cc\u062f \u0648 \u0639\u0631\u0636\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>
+                    {
+                      " \u0647\u0633\u062a\u06cc\u0645.\n\n\u062a\u0627 \u0627\u0644\u0627\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u060c \u0648 \u062a\u0639\u0631\u0641\u0647\u200c\u06cc \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627 \u06f1\u06f5,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u0628\u0648\u062f. "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "\u0627\u0645\u0627 \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0634\u062a\u06cc\u0645 \u0648 \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0632 \u0634\u0645\u0627 \u06af\u0631\u0641\u062a\u06cc\u0645\u060c \u0628\u0647 \u0627\u06cc\u0646 \u0646\u062a\u06cc\u062c\u0647 \u0631\u0633\u06cc\u062f\u06cc\u0645 \u06a9\u0647 \u0627\u06cc\u0646 \u0645\u062f\u0644 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u0648 \u0645\u0646\u0637\u0642\u06cc \u0646\u06cc\u0633\u062a."
+                    }
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627\u0647\u0627 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647\u060c \u0648 \u0627\u06cc\u0646 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc \u0627\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f \u0628\u0627\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc \u0646\u0627\u0686\u06cc\u0632.\n\r"
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u0647\u062f\u0641 \u0627\u0635\u0644\u06cc \u0645\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc\u200c\u0647\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u0628\u0627 \u0633\u0627\u062f\u0647 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u06a9\u0631\u062f\u0646 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0647\u200c\u062f\u0633\u062a \u0628\u06cc\u0627\u0631\u0646. \u0628\u0631\u0627\u06cc \u0647\u0645\u06cc\u0646 \u0647\u0631 \u0631\u0648\u0632 \u062f\u0631\u062d\u0627\u0644 "
+                    }
+                  </React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__hnYuw
+                      )}
+                      component={Link}
+                      href={"/new-calendar"}
+                      platform={"nextjs"}
+                    >
+                      {
+                        "\u062a\u0648\u0644\u06cc\u062f \u0648 \u0639\u0631\u0636\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631"
+                      }
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>
+                    {
+                      " \u0647\u0633\u062a\u06cc\u0645.\n\n\u062a\u0627 \u0627\u0644\u0627\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u060c \u0648 \u062a\u0639\u0631\u0641\u0647\u200c\u06cc \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627 \u06f1\u06f5,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u0628\u0648\u062f. "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "\u0627\u0645\u0627 \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0627\u0634\u062a\u06cc\u0645 \u0648 \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0632 \u0634\u0645\u0627 \u06af\u0631\u0641\u062a\u06cc\u0645\u060c \u0628\u0647 \u0627\u06cc\u0646 \u0646\u062a\u06cc\u062c\u0647 \u0631\u0633\u06cc\u062f\u06cc\u0645 \u06a9\u0647 \u0627\u06cc\u0646 \u0645\u062f\u0644 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0646\u0635\u0641\u0627\u0646\u0647 \u0648 \u0645\u0646\u0637\u0642\u06cc \u0646\u06cc\u0633\u062a."
+                    }
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627\u0647\u0627 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647\u060c \u0648 \u0627\u06cc\u0646 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc \u0627\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f \u0628\u0627\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0628\u0639\u0636\u06cc \u0646\u0627\u0686\u06cc\u0632.\n\r"
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              )}
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__jUOkR)}>
@@ -356,11 +482,11 @@ function PlasmicNewPricing__RenderFunc(props: {
                           )}
                         >
                           {hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2:"}
                         </h2>
                       }
@@ -379,11 +505,11 @@ function PlasmicNewPricing__RenderFunc(props: {
                           )}
                         >
                           {hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2:"}
                         </h2>
                       }
@@ -402,18 +528,18 @@ function PlasmicNewPricing__RenderFunc(props: {
                           )}
                         >
                           {hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                            ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                             : "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06f2:"}
                         </h2>
                       }
                       <React.Fragment>{""}</React.Fragment>
                     </React.Fragment>
                   ) : (
-                    "\u0645\u062f\u0644 \u062c\u062f\u06cc\u062f: \u06a9\u0627\u0631\u0645\u0632\u062f"
+                    "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0648\u0631"
                   )}
                 </div>
                 <div
@@ -424,12 +550,12 @@ function PlasmicNewPricing__RenderFunc(props: {
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639 \u0645\u0646\u0635\u0641\u0627\u0646\u0647\u200c\u062a\u0631 \u0628\u0634\u0647 \u0648 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0645\u0627 \u0628\u0627 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u0647\u0645\u0627\u0647\u0646\u06af\u200c\u062a\u0631\u060c \u062a\u0635\u0645\u06cc\u0645 \u06af\u0631\u0641\u062a\u06cc\u0645 \u0631\u0648\u0634 \u06a9\u0627\u0631\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc\u0645. \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0647\u0633\u062a. \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u06a9\u0647 \u067e\u0631\u062f\u0627\u062e\u062a \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0633\u0631\u0648\u06cc\u0633\u060c \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0647\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627\u0634\u0647 \u0648 \u0641\u0634\u0627\u0631 \u0646\u0627\u0639\u0627\u062f\u0644\u0627\u0646\u0647\u200c\u0627\u06cc \u0631\u0648\u06cc \u0627\u0648\u0646\u0627\u06cc\u06cc \u06a9\u0647 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0627\u0631\u0632\u0648\u0646\u200c\u062a\u0631\u0647\u060c \u0646\u06cc\u0627\u062f.\r"
+                    ? "\u0628\u0631\u0627\u06cc \u0645\u0646\u0635\u0641\u0627\u0646\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0648 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0648\u0634\u06cc \u0645\u0637\u0627\u0628\u0642 \u0628\u0627 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u060c \u062a\u0635\u0645\u06cc\u0645 \u06af\u0631\u0641\u062a\u06cc\u0645 \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u06a9\u0627\u0631\u0645\u0632\u062f\u06cc \u0628\u0627\u0634\u0647. (\u0645\u0639\u0627\u062f\u0644 \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648).\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0647\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627\u0634\u0647 \u0648 \u0641\u0634\u0627\u0631 \u0646\u0627\u0639\u0627\u062f\u0644\u0627\u0646\u0647\u200c\u0627\u06cc \u0631\u0648\u06cc \u0627\u0648\u0646\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0627\u0631\u0632\u0648\u0646\u200c\u062a\u0631\u0647\u060c \u0646\u06cc\u0627\u062f.\r"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639 \u0645\u0646\u0635\u0641\u0627\u0646\u0647\u200c\u062a\u0631 \u0628\u0634\u0647 \u0648 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0645\u0627 \u0628\u0627 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u0647\u0645\u0627\u0647\u0646\u06af\u200c\u062a\u0631\u060c \u062a\u0635\u0645\u06cc\u0645 \u06af\u0631\u0641\u062a\u06cc\u0645 \u0631\u0648\u0634 \u06a9\u0627\u0631\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc\u0645. \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0647\u0633\u062a. \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u06a9\u0647 \u067e\u0631\u062f\u0627\u062e\u062a \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0633\u0631\u0648\u06cc\u0633\u060c \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0647\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627\u0634\u0647 \u0648 \u0641\u0634\u0627\u0631 \u0646\u0627\u0639\u0627\u062f\u0644\u0627\u0646\u0647\u200c\u0627\u06cc \u0631\u0648\u06cc \u0627\u0648\u0646\u0627\u06cc\u06cc \u06a9\u0647 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0627\u0631\u0632\u0648\u0646\u200c\u062a\u0631\u0647\u060c \u0646\u06cc\u0627\u062f.\r"
+                    ? "\u0628\u0631\u0627\u06cc \u0645\u0646\u0635\u0641\u0627\u0646\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0648 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0648\u0634\u06cc \u0645\u0637\u0627\u0628\u0642 \u0628\u0627 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u060c \u062a\u0635\u0645\u06cc\u0645 \u06af\u0631\u0641\u062a\u06cc\u0645 \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u06a9\u0627\u0631\u0645\u0632\u062f\u06cc \u0628\u0627\u0634\u0647. (\u0645\u0639\u0627\u062f\u0644 \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648).\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0647\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627\u0634\u0647 \u0648 \u0641\u0634\u0627\u0631 \u0646\u0627\u0639\u0627\u062f\u0644\u0627\u0646\u0647\u200c\u0627\u06cc \u0631\u0648\u06cc \u0627\u0648\u0646\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0627\u0631\u0632\u0648\u0646\u200c\u062a\u0631\u0647\u060c \u0646\u06cc\u0627\u062f.\r"
                     : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639 \u0645\u0646\u0635\u0641\u0627\u0646\u0647\u200c\u062a\u0631 \u0628\u0634\u0647 \u0648 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0645\u0627 \u0628\u0627 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u0647\u0645\u0627\u0647\u0646\u06af\u200c\u062a\u0631\u060c \u062a\u0635\u0645\u06cc\u0645 \u06af\u0631\u0641\u062a\u06cc\u0645 \u0631\u0648\u0634 \u06a9\u0627\u0631\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc\u0645. \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0647\u0633\u062a. \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u06a9\u0647 \u067e\u0631\u062f\u0627\u062e\u062a \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0633\u0631\u0648\u06cc\u0633\u060c \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0647\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627\u0634\u0647 \u0648 \u0641\u0634\u0627\u0631 \u0646\u0627\u0639\u0627\u062f\u0644\u0627\u0646\u0647\u200c\u0627\u06cc \u0631\u0648\u06cc \u0627\u0648\u0646\u0627\u06cc\u06cc \u06a9\u0647 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0627\u0631\u0632\u0648\u0646\u200c\u062a\u0631\u0647\u060c \u0646\u06cc\u0627\u062f.\r"
-                    : "\u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639 \u0645\u0646\u0635\u0641\u0627\u0646\u0647\u200c\u062a\u0631 \u0628\u0634\u0647 \u0648 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0645\u0627 \u0628\u0627 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u0647\u0645\u0627\u0647\u0646\u06af\u200c\u062a\u0631\u060c \u062a\u0635\u0645\u06cc\u0645 \u06af\u0631\u0641\u062a\u06cc\u0645 \u0631\u0648\u0634 \u06a9\u0627\u0631\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc\u0645. \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0647\u0633\u062a. \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u06a9\u0647 \u067e\u0631\u062f\u0627\u062e\u062a \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0633\u0631\u0648\u06cc\u0633\u060c \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0647\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627\u0634\u0647 \u0648 \u0641\u0634\u0627\u0631 \u0646\u0627\u0639\u0627\u062f\u0644\u0627\u0646\u0647\u200c\u0627\u06cc \u0631\u0648\u06cc \u0627\u0648\u0646\u0627\u06cc\u06cc \u06a9\u0647 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0627\u0631\u0632\u0648\u0646\u200c\u062a\u0631\u0647\u060c \u0646\u06cc\u0627\u062f.\r"}
+                    ? "\u0628\u0631\u0627\u06cc \u0645\u0646\u0635\u0641\u0627\u0646\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0648 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0648\u0634\u06cc \u0645\u0637\u0627\u0628\u0642 \u0628\u0627 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u060c \u062a\u0635\u0645\u06cc\u0645 \u06af\u0631\u0641\u062a\u06cc\u0645 \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u06a9\u0627\u0631\u0645\u0632\u062f\u06cc \u0628\u0627\u0634\u0647. (\u0645\u0639\u0627\u062f\u0644 \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648).\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0647\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627\u0634\u0647 \u0648 \u0641\u0634\u0627\u0631 \u0646\u0627\u0639\u0627\u062f\u0644\u0627\u0646\u0647\u200c\u0627\u06cc \u0631\u0648\u06cc \u0627\u0648\u0646\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0627\u0631\u0632\u0648\u0646\u200c\u062a\u0631\u0647\u060c \u0646\u06cc\u0627\u062f.\r"
+                    : "\u0628\u0631\u0627\u06cc \u0645\u0646\u0635\u0641\u0627\u0646\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u0648 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0648\u0634\u06cc \u0645\u0637\u0627\u0628\u0642 \u0628\u0627 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u060c \u062a\u0635\u0645\u06cc\u0645 \u06af\u0631\u0641\u062a\u06cc\u0645 \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u06a9\u0627\u0631\u0645\u0632\u062f\u06cc \u0628\u0627\u0634\u0647. (\u0645\u0639\u0627\u062f\u0644 \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648).\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0647\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627\u0634\u0647 \u0648 \u0641\u0634\u0627\u0631 \u0646\u0627\u0639\u0627\u062f\u0644\u0627\u0646\u0647\u200c\u0627\u06cc \u0631\u0648\u06cc \u0627\u0648\u0646\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0627\u0631\u0632\u0648\u0646\u200c\u062a\u0631\u0647\u060c \u0646\u06cc\u0627\u062f.\r"}
                 </div>
               </div>
               <div
@@ -469,7 +595,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -482,7 +608,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -495,7 +621,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -531,7 +657,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -544,7 +670,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -557,7 +683,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -593,7 +719,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -606,7 +732,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -619,7 +745,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                                 style={{ color: "#8165D6" }}
                               >
                                 {
-                                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f:"
+                                  "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                                 }
                               </span>
                             </React.Fragment>
@@ -631,7 +757,7 @@ function PlasmicNewPricing__RenderFunc(props: {
                       <React.Fragment>{""}</React.Fragment>
                     </React.Fragment>
                   ) : (
-                    "\u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
+                    "\u0627\u0635\u0644\u0627 \u0686\u0631\u0627 \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645\u061f\r"
                   )}
                 </div>
                 <div
@@ -642,12 +768,12 @@ function PlasmicNewPricing__RenderFunc(props: {
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u0634\u0631\u06a9\u062a \u06a9\u0627\u0645\u0644\u0627 \u062e\u0635\u0648\u0635\u06cc \u0627\u0633\u062a ... \u06cc\u0647 \u0633\u0631\u0648\u06cc\u0633 \u06a9\u0627\u0645\u0644\u0627\u064b \u062e\u0648\u062f\u06a9\u0627\u0631\u0647 \u06a9\u0647 \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0642\u0648\u06cc\u0645\u0634\u0648\u0646 \u0631\u0648 \u062a\u0648 \u0686\u0646\u062f\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0647\u0645\u0627\u0647\u0646\u06af \u06a9\u0646\u0646\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0647\u0631\u0647 \u0628\u0628\u0631\u0646 \u0648 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0645\u0644\u06a9\u0634\u0648\u0646 \u0631\u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06a9\u0646\u0646. \u0627\u0631\u0627\u0626\u0647\u200c\u06cc \u0647\u0645\u0686\u06cc\u0646 \u0633\u0631\u0648\u06cc\u0633\u06cc \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u062e\u0648\u062f\u0634 \u0631\u0648 \u062f\u0627\u0631\u0647\u061b \u0627\u0632 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc.\n\n\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u062a\u0644\u0627\u0634 \u06a9\u0631\u062f\u06cc\u0645 \u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u062d\u062f\u06cc \u0628\u0627\u0634\u0647 \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647\u200c\u0635\u0631\u0641\u0647 \u0628\u0645\u0648\u0646\u0647. \u0648\u0644\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062a\u0648\u0646\u06cc\u0645 \u0645\u0633\u06cc\u0631\u0645\u0648\u0646 \u0631\u0648 \u0627\u062f\u0627\u0645\u0647 \u0628\u062f\u06cc\u0645 \u0648 \u0633\u0631\u0648\u06cc\u0633 \u0631\u0648 \u0628\u0647\u062a\u0631 \u06a9\u0646\u06cc\u0645\u060c \u0646\u06cc\u0627\u0632 \u0628\u0647 \u06cc\u0647 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u067e\u0627\u06cc\u062f\u0627\u0631 \u062f\u0627\u0631\u06cc\u0645.\r"
+                    ? "\u0633\u0627\u062e\u062a \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0627\u06cc \u0645\u062b\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0647 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0648 \u0631\u0648\u0632\u0628\u0647\u200c\u0631\u0648\u0632 \u062f\u0631\u062d\u0627\u0644 \u0627\u0631\u0627\u0626\u0647 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u0647\u0633\u062a\u060c \u0647\u0632\u06cc\u0646\u0647 \u062f\u0627\u0631\u0647\u061b \u0627\u0632 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc. \u062e\u0628 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u0634\u0631\u06a9\u062a \u06a9\u0627\u0645\u0644\u0627 \u062e\u0635\u0648\u0635\u06cc\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u062e\u062f\u0645\u0627\u062a\u200c\u062f\u0647\u06cc\u060c \u0628\u0627\u06cc\u062f \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u0634 \u0631\u0648 \u062a\u0627\u0645\u06cc\u0646 \u06a9\u0646\u0647.\n\r"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u0634\u0631\u06a9\u062a \u06a9\u0627\u0645\u0644\u0627 \u062e\u0635\u0648\u0635\u06cc \u0627\u0633\u062a ... \u06cc\u0647 \u0633\u0631\u0648\u06cc\u0633 \u06a9\u0627\u0645\u0644\u0627\u064b \u062e\u0648\u062f\u06a9\u0627\u0631\u0647 \u06a9\u0647 \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0642\u0648\u06cc\u0645\u0634\u0648\u0646 \u0631\u0648 \u062a\u0648 \u0686\u0646\u062f\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0647\u0645\u0627\u0647\u0646\u06af \u06a9\u0646\u0646\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0647\u0631\u0647 \u0628\u0628\u0631\u0646 \u0648 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0645\u0644\u06a9\u0634\u0648\u0646 \u0631\u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06a9\u0646\u0646. \u0627\u0631\u0627\u0626\u0647\u200c\u06cc \u0647\u0645\u0686\u06cc\u0646 \u0633\u0631\u0648\u06cc\u0633\u06cc \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u062e\u0648\u062f\u0634 \u0631\u0648 \u062f\u0627\u0631\u0647\u061b \u0627\u0632 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc.\n\n\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u062a\u0644\u0627\u0634 \u06a9\u0631\u062f\u06cc\u0645 \u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u062d\u062f\u06cc \u0628\u0627\u0634\u0647 \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647\u200c\u0635\u0631\u0641\u0647 \u0628\u0645\u0648\u0646\u0647. \u0648\u0644\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062a\u0648\u0646\u06cc\u0645 \u0645\u0633\u06cc\u0631\u0645\u0648\u0646 \u0631\u0648 \u0627\u062f\u0627\u0645\u0647 \u0628\u062f\u06cc\u0645 \u0648 \u0633\u0631\u0648\u06cc\u0633 \u0631\u0648 \u0628\u0647\u062a\u0631 \u06a9\u0646\u06cc\u0645\u060c \u0646\u06cc\u0627\u0632 \u0628\u0647 \u06cc\u0647 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u067e\u0627\u06cc\u062f\u0627\u0631 \u062f\u0627\u0631\u06cc\u0645.\r"
+                    ? "\u0633\u0627\u062e\u062a \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0627\u06cc \u0645\u062b\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0647 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0648 \u0631\u0648\u0632\u0628\u0647\u200c\u0631\u0648\u0632 \u062f\u0631\u062d\u0627\u0644 \u0627\u0631\u0627\u0626\u0647 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u0647\u0633\u062a\u060c \u0647\u0632\u06cc\u0646\u0647 \u062f\u0627\u0631\u0647\u061b \u0627\u0632 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc. \u062e\u0628 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u0634\u0631\u06a9\u062a \u06a9\u0627\u0645\u0644\u0627 \u062e\u0635\u0648\u0635\u06cc\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u062e\u062f\u0645\u0627\u062a\u200c\u062f\u0647\u06cc\u060c \u0628\u0627\u06cc\u062f \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u0634 \u0631\u0648 \u062a\u0627\u0645\u06cc\u0646 \u06a9\u0646\u0647.\n\r"
                     : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u0634\u0631\u06a9\u062a \u06a9\u0627\u0645\u0644\u0627 \u062e\u0635\u0648\u0635\u06cc \u0627\u0633\u062a ... \u06cc\u0647 \u0633\u0631\u0648\u06cc\u0633 \u06a9\u0627\u0645\u0644\u0627\u064b \u062e\u0648\u062f\u06a9\u0627\u0631\u0647 \u06a9\u0647 \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0642\u0648\u06cc\u0645\u0634\u0648\u0646 \u0631\u0648 \u062a\u0648 \u0686\u0646\u062f\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0647\u0645\u0627\u0647\u0646\u06af \u06a9\u0646\u0646\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0647\u0631\u0647 \u0628\u0628\u0631\u0646 \u0648 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0645\u0644\u06a9\u0634\u0648\u0646 \u0631\u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06a9\u0646\u0646. \u0627\u0631\u0627\u0626\u0647\u200c\u06cc \u0647\u0645\u0686\u06cc\u0646 \u0633\u0631\u0648\u06cc\u0633\u06cc \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u062e\u0648\u062f\u0634 \u0631\u0648 \u062f\u0627\u0631\u0647\u061b \u0627\u0632 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc.\n\n\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u062a\u0644\u0627\u0634 \u06a9\u0631\u062f\u06cc\u0645 \u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u062d\u062f\u06cc \u0628\u0627\u0634\u0647 \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647\u200c\u0635\u0631\u0641\u0647 \u0628\u0645\u0648\u0646\u0647. \u0648\u0644\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062a\u0648\u0646\u06cc\u0645 \u0645\u0633\u06cc\u0631\u0645\u0648\u0646 \u0631\u0648 \u0627\u062f\u0627\u0645\u0647 \u0628\u062f\u06cc\u0645 \u0648 \u0633\u0631\u0648\u06cc\u0633 \u0631\u0648 \u0628\u0647\u062a\u0631 \u06a9\u0646\u06cc\u0645\u060c \u0646\u06cc\u0627\u0632 \u0628\u0647 \u06cc\u0647 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u067e\u0627\u06cc\u062f\u0627\u0631 \u062f\u0627\u0631\u06cc\u0645.\r"
-                    : "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u0634\u0631\u06a9\u062a \u06a9\u0627\u0645\u0644\u0627 \u062e\u0635\u0648\u0635\u06cc \u0627\u0633\u062a ... \u06cc\u0647 \u0633\u0631\u0648\u06cc\u0633 \u06a9\u0627\u0645\u0644\u0627\u064b \u062e\u0648\u062f\u06a9\u0627\u0631\u0647 \u06a9\u0647 \u0628\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0642\u0648\u06cc\u0645\u0634\u0648\u0646 \u0631\u0648 \u062a\u0648 \u0686\u0646\u062f\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0647\u0645\u0627\u0647\u0646\u06af \u06a9\u0646\u0646\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0647\u0631\u0647 \u0628\u0628\u0631\u0646 \u0648 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0645\u0644\u06a9\u0634\u0648\u0646 \u0631\u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06a9\u0646\u0646. \u0627\u0631\u0627\u0626\u0647\u200c\u06cc \u0647\u0645\u0686\u06cc\u0646 \u0633\u0631\u0648\u06cc\u0633\u06cc \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u062e\u0648\u062f\u0634 \u0631\u0648 \u062f\u0627\u0631\u0647\u061b \u0627\u0632 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc.\n\r\n\n\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u062a\u0644\u0627\u0634 \u06a9\u0631\u062f\u06cc\u0645 \u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u062d\u062f\u06cc \u0628\u0627\u0634\u0647 \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647\u200c\u0635\u0631\u0641\u0647 \u0628\u0645\u0648\u0646\u0647. \u0648\u0644\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062a\u0648\u0646\u06cc\u0645 \u0645\u0633\u06cc\u0631\u0645\u0648\u0646 \u0631\u0648 \u0627\u062f\u0627\u0645\u0647 \u0628\u062f\u06cc\u0645 \u0648 \u0633\u0631\u0648\u06cc\u0633 \u0631\u0648 \u0628\u0647\u062a\u0631 \u06a9\u0646\u06cc\u0645\u060c \u0646\u06cc\u0627\u0632 \u0628\u0647 \u06cc\u0647 \u0645\u062f\u0644 \u0645\u0627\u0644\u06cc \u067e\u0627\u06cc\u062f\u0627\u0631 \u062f\u0627\u0631\u06cc\u0645.\r"}
+                    ? "\u0633\u0627\u062e\u062a \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0627\u06cc \u0645\u062b\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0647 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0648 \u0631\u0648\u0632\u0628\u0647\u200c\u0631\u0648\u0632 \u062f\u0631\u062d\u0627\u0644 \u0627\u0631\u0627\u0626\u0647 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u0647\u0633\u062a\u060c \u0647\u0632\u06cc\u0646\u0647 \u062f\u0627\u0631\u0647\u061b \u0627\u0632 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc. \u062e\u0628 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u0634\u0631\u06a9\u062a \u06a9\u0627\u0645\u0644\u0627 \u062e\u0635\u0648\u0635\u06cc\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u062e\u062f\u0645\u0627\u062a\u200c\u062f\u0647\u06cc\u060c \u0628\u0627\u06cc\u062f \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u0634 \u0631\u0648 \u062a\u0627\u0645\u06cc\u0646 \u06a9\u0646\u0647.\n\r"
+                    : "\u0633\u0627\u062e\u062a \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0627\u06cc \u0645\u062b\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0647 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0648 \u0631\u0648\u0632\u0628\u0647\u200c\u0631\u0648\u0632 \u062f\u0631\u062d\u0627\u0644 \u0627\u0631\u0627\u0626\u0647 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u0647\u0633\u062a\u060c \u0647\u0632\u06cc\u0646\u0647 \u062f\u0627\u0631\u0647\u061b \u0627\u0632 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc. \u062e\u0628 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u0634\u0631\u06a9\u062a \u06a9\u0627\u0645\u0644\u0627 \u062e\u0635\u0648\u0635\u06cc\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u062e\u062f\u0645\u0627\u062a\u200c\u062f\u0647\u06cc\u060c \u0628\u0627\u06cc\u062f \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u0634 \u0631\u0648 \u062a\u0627\u0645\u06cc\u0646 \u06a9\u0646\u0647.\n\r"}
                 </div>
               </div>
             </div>
@@ -656,818 +782,110 @@ function PlasmicNewPricing__RenderFunc(props: {
               data-plasmic-override={overrides.appDemo}
               className={classNames(projectcss.all, sty.appDemo)}
             >
-              <Video
-                data-plasmic-name={"htmlVideo"}
-                data-plasmic-override={overrides.htmlVideo}
-                autoPlay={true}
-                className={classNames("__wab_instance", sty.htmlVideo)}
-                controls={true}
-                loop={true}
-                muted={true}
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___9ZzNd)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "238px"
+                    : "auto"
+                }
+                displayMaxHeight={"none"}
+                displayMaxWidth={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "362px"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "700px"
+                    : "100%"
+                }
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "100%"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "700px"
+                    : "auto"
+                }
+                loading={"lazy"}
                 src={
-                  "https://rentamon-files.storage.iran.liara.space/gif/calendar-2-demo.mp4"
+                  hasVariant(globalVariants, "screen", "tablet")
+                    ? {
+                        src: "/plasmic/website_starter/images/peopleofrentamonJpg.jpg",
+                        fullWidth: 700,
+                        fullHeight: 432,
+                        aspectRatio: undefined
+                      }
+                    : {
+                        src: "/plasmic/website_starter/images/peopleJpg.jpg",
+                        fullWidth: 616,
+                        fullHeight: 947,
+                        aspectRatio: undefined
+                      }
                 }
               />
+
+              {(
+                hasVariant(globalVariants, "screen", "tablet") ? true : false
+              ) ? (
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__t5M0W)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/peopleJpg.jpg",
+                    fullWidth: 616,
+                    fullHeight: 947,
+                    aspectRatio: undefined
+                  }}
+                />
+              ) : null}
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___5XCkH)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__uIbAn)}
+              displayHeight={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "100px"
+                  : "auto"
+              }
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/_1731928122363Jpg2.jpg",
+                fullWidth: 1256,
+                fullHeight: 349,
+                aspectRatio: undefined
+              }}
+            />
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__gcEw)}>
             <div
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__cds50
+                sty.text__krQg8
               )}
             >
               {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\u062a\u0648 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u06cc\u0646 \u0628\u0627\u0648\u0631 \u062f\u0627\u0631\u06cc\u0645 \u06a9\u0647 \u0647\u0631 \u062a\u063a\u06cc\u06cc\u0631\u06cc \u0628\u0627\u06cc\u062f \u0628\u0647 \u0646\u0641\u0639 \u06a9\u0644 \u0627\u06a9\u0648\u0633\u06cc\u0633\u062a\u0645 \u062a\u0645\u0648\u0645 \u0628\u0634\u0647. \u0627\u06cc\u0646 \u0645\u062f\u0644 \u062c\u062f\u06cc\u062f \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0639\u062f\u0627\u0644\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06cc\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u06cc\u062c\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0628\u0644\u06a9\u0647 \u0628\u0647 \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0631\u0648\u06cc \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0633\u0631\u0648\u06cc\u0633 \u0633\u0631\u0645\u0627\u06cc\u0647\u200c\u06af\u0630\u0627\u0631\u06cc \u06a9\u0646\u06cc\u0645 \u0648 \u062f\u0631 \u0646\u0647\u0627\u06cc\u062a\u060c \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0628\u0633\u0627\u0632\u06cc\u0645."
+                ? "\u062a\u0644\u0627\u0634 \u0645\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0631\u0648 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u06cc\u0645. \u062f\u0631 \u06a9\u0646\u0627\u0631 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0633\u0647\u0645 \u06a9\u0648\u0686\u06a9\u06cc \u0627\u0632 \u0627\u06cc\u0646 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u0645. \u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u062f\u0631 \u0627\u0632\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f\u060c \u0634\u0627\u0631\u0698\u06cc \u06a9\u0647 \u0628\u0631\u0627\u06cc \u062e\u062f\u0645\u0627\u062a \u067e\u0631\u062f\u0627\u062e\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0646\u0627\u0686\u06cc\u0632 \u0628\u0647\u200c\u062d\u0633\u0627\u0628 \u0628\u06cc\u0627\u062f."
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "\u062a\u0648 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u06cc\u0646 \u0628\u0627\u0648\u0631 \u062f\u0627\u0631\u06cc\u0645 \u06a9\u0647 \u0647\u0631 \u062a\u063a\u06cc\u06cc\u0631\u06cc \u0628\u0627\u06cc\u062f \u0628\u0647 \u0646\u0641\u0639 \u06a9\u0644 \u0627\u06a9\u0648\u0633\u06cc\u0633\u062a\u0645 \u062a\u0645\u0648\u0645 \u0628\u0634\u0647. \u0627\u06cc\u0646 \u0645\u062f\u0644 \u062c\u062f\u06cc\u062f \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0639\u062f\u0627\u0644\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06cc\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u06cc\u062c\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0628\u0644\u06a9\u0647 \u0628\u0647 \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0631\u0648\u06cc \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0633\u0631\u0648\u06cc\u0633 \u0633\u0631\u0645\u0627\u06cc\u0647\u200c\u06af\u0630\u0627\u0631\u06cc \u06a9\u0646\u06cc\u0645 \u0648 \u062f\u0631 \u0646\u0647\u0627\u06cc\u062a\u060c \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0628\u0633\u0627\u0632\u06cc\u0645."
+                ? "\u062a\u0644\u0627\u0634 \u0645\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0631\u0648 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u06cc\u0645. \u062f\u0631 \u06a9\u0646\u0627\u0631 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0633\u0647\u0645 \u06a9\u0648\u0686\u06a9\u06cc \u0627\u0632 \u0627\u06cc\u0646 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u0645. \u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u062f\u0631 \u0627\u0632\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f\u060c \u0634\u0627\u0631\u0698\u06cc \u06a9\u0647 \u0628\u0631\u0627\u06cc \u062e\u062f\u0645\u0627\u062a \u067e\u0631\u062f\u0627\u062e\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0646\u0627\u0686\u06cc\u0632 \u0628\u0647\u200c\u062d\u0633\u0627\u0628 \u0628\u06cc\u0627\u062f."
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u062a\u0648 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u06cc\u0646 \u0628\u0627\u0648\u0631 \u062f\u0627\u0631\u06cc\u0645 \u06a9\u0647 \u0647\u0631 \u062a\u063a\u06cc\u06cc\u0631\u06cc \u0628\u0627\u06cc\u062f \u0628\u0647 \u0646\u0641\u0639 \u06a9\u0644 \u0627\u06a9\u0648\u0633\u06cc\u0633\u062a\u0645 \u062a\u0645\u0648\u0645 \u0628\u0634\u0647. \u0627\u06cc\u0646 \u0645\u062f\u0644 \u062c\u062f\u06cc\u062f \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0639\u062f\u0627\u0644\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06cc\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u06cc\u062c\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0628\u0644\u06a9\u0647 \u0628\u0647 \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0631\u0648\u06cc \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0633\u0631\u0648\u06cc\u0633 \u0633\u0631\u0645\u0627\u06cc\u0647\u200c\u06af\u0630\u0627\u0631\u06cc \u06a9\u0646\u06cc\u0645 \u0648 \u062f\u0631 \u0646\u0647\u0627\u06cc\u062a\u060c \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0628\u0633\u0627\u0632\u06cc\u0645."
-                : "\u062a\u0648 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u06cc\u0646 \u0628\u0627\u0648\u0631 \u062f\u0627\u0631\u06cc\u0645 \u06a9\u0647 \u0647\u0631 \u062a\u063a\u06cc\u06cc\u0631\u06cc \u0628\u0627\u06cc\u062f \u0628\u0647 \u0646\u0641\u0639 \u06a9\u0644 \u0627\u06a9\u0648\u0633\u06cc\u0633\u062a\u0645 \u062a\u0645\u0648\u0645 \u0628\u0634\u0647. \u0627\u06cc\u0646 \u0645\u062f\u0644 \u062c\u062f\u06cc\u062f \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0639\u062f\u0627\u0644\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06cc\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u06cc\u062c\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0628\u0644\u06a9\u0647 \u0628\u0647 \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0631\u0648\u06cc \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0633\u0631\u0648\u06cc\u0633 \u0633\u0631\u0645\u0627\u06cc\u0647\u200c\u06af\u0630\u0627\u0631\u06cc \u06a9\u0646\u06cc\u0645 \u0648 \u062f\u0631 \u0646\u0647\u0627\u06cc\u062a\u060c \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0628\u0633\u0627\u0632\u06cc\u0645."}
-            </div>
-          </div>
-          <div
-            data-plasmic-name={"_2ndPart"}
-            data-plasmic-override={overrides._2ndPart}
-            className={classNames(projectcss.all, sty._2ndPart)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__z0XIn)}>
-              <div
-                data-plasmic-name={"featuresDesc2"}
-                data-plasmic-override={overrides.featuresDesc2}
-                className={classNames(projectcss.all, sty.featuresDesc2)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___8JAzj
-                  )}
-                >
-                  {
-                    "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__uEHe6
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0631\u0627\u06cc\u06af\u0627\u0646 \u0648 \u0628\u0639\u0636\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f (\u0627\u0632 \u0631\u0632\u0631\u0648) \u0647\u0633\u062a\u0646\u062f."
-                    : "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0631\u0627\u06cc\u06af\u0627\u0646 \u0648 \u0628\u0639\u0636\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f (\u0627\u0632 \u0631\u0632\u0631\u0648) \u0647\u0633\u062a\u0646\u062f."}
-                </div>
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__xbp3J)}>
-              <div
-                data-plasmic-name={"item1"}
-                data-plasmic-override={overrides.item1}
-                className={classNames(projectcss.all, sty.item1)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__drvnE)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___0UBKf
-                    )}
-                  >
-                    {"\u0639\u0646\u0648\u0627\u0646"}
-                  </div>
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___8By1F)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___762Fq
-                    )}
-                  >
-                    {"\u06a9\u0627\u0631\u0645\u0632\u062f"}
-                  </div>
-                </div>
-              </div>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item12"}
-                data-plasmic-override={overrides.item12}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item12)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___261Ss)}
-                >
-                  <Checkbox
-                    data-plasmic-name={"checkbox8"}
-                    data-plasmic-override={overrides.checkbox8}
-                    className={classNames("__wab_instance", sty.checkbox8)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox8",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox8",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__iiyHq
-                      )}
-                    >
-                      {
-                        "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___0FWds)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m81CO
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item13"}
-                data-plasmic-override={overrides.item13}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item13)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__dshus)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox2"}
-                    data-plasmic-override={overrides.checkbox2}
-                    className={classNames("__wab_instance", sty.checkbox2)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox2",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox2",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__pZc5T
-                      )}
-                    >
-                      {
-                        "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u0650 \u06cc\u06a9\u062c\u0627 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__r7LA9)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__oAf8X
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item14"}
-                data-plasmic-override={overrides.item14}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item14)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__eamP7)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox3"}
-                    data-plasmic-override={overrides.checkbox3}
-                    className={classNames("__wab_instance", sty.checkbox3)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox3",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox3",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__eeBaK
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0638\u0631\u0641\u06cc\u062a \u06cc\u06a9\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0638\u0631\u0641\u06cc\u062a \u06cc\u06a9\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"
-                        : "\u062a\u063a\u06cc\u06cc\u0631 \u0638\u0631\u0641\u06cc\u062a \u06cc\u06a9\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\r"}
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__ajrC)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___6Z8Ei
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item15"}
-                data-plasmic-override={overrides.item15}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item15)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___9BaM0)}
-                >
-                  <Checkbox
-                    data-plasmic-name={"checkbox4"}
-                    data-plasmic-override={overrides.checkbox4}
-                    className={classNames("__wab_instance", sty.checkbox4)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox4",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox4",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__o4Ufi
-                      )}
-                    >
-                      {
-                        "\u062e\u0648\u0627\u0646\u062f\u0646 \u06cc\u06a9\u062c\u0627 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627\r"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__mAgrn)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hkj9E
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item19"}
-                data-plasmic-override={overrides.item19}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item19)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__hTygO)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox9"}
-                    data-plasmic-override={overrides.checkbox9}
-                    className={classNames("__wab_instance", sty.checkbox9)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox9",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox9",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__mZzyI
-                      )}
-                    >
-                      {
-                        "\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__bXr2W)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jgLb1
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item16"}
-                data-plasmic-override={overrides.item16}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item16)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___5Ed5J)}
-                >
-                  <Checkbox
-                    data-plasmic-name={"checkbox5"}
-                    data-plasmic-override={overrides.checkbox5}
-                    className={classNames("__wab_instance", sty.checkbox5)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox5",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox5",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__pXwqj
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n+ \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"
-                        : "- \u00ab\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0639\u062f \u0627\u0632 \u00ab\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f\u0646 \u062f\u0631 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r\n- \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\r"}
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__qZoQ)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__elG2
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f1.\u06f5\u066a"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06f1.\u06f5\u066a"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u06f1.\u06f5\u066a"
-                      : "\u06f1.\u06f5\u066a"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item17"}
-                data-plasmic-override={overrides.item17}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item17)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__pAiny)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox6"}
-                    data-plasmic-override={overrides.checkbox6}
-                    className={classNames("__wab_instance", sty.checkbox6)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox6",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox6",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__kxYYy
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n- \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n- \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\r\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n    - \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n    - \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n    - \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"
-                        : "\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u0645\u0634\u0627\u0647\u062f\u0647\u060c\u200c \u062a\u0627\u06cc\u06cc\u062f \u0648 \u0631\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\n - \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\n\r"}
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__pf90D)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__lKMvX
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u066a \u06f1"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u066a \u06f1"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u066a \u06f1"
-                      : "\u066a \u06f1"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item18"}
-                data-plasmic-override={overrides.item18}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item18)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__nogfT)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox7"}
-                    data-plasmic-override={overrides.checkbox7}
-                    className={classNames("__wab_instance", sty.checkbox7)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox7",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox7",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___5Vi6M
-                      )}
-                    >
-                      {
-                        "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)"
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__z5Wkt)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___1DJq
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f0.\u06f5\u066a"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06f0.\u06f5\u066a"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u06f0.\u06f5\u066a"
-                      : "\u06f0.\u06f5\u066a"}
-                  </div>
-                </Stack__>
-              </Stack__>
-              <div className={classNames(projectcss.all, sty.freeBox__mConA)}>
-                <div className={classNames(projectcss.all, sty.freeBox__yJmh3)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bNf0E
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : "\u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06cc \u062a\u0623\u062b\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__knusK
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f (\u0646\u0633\u0628\u062a \u0628\u0647 \u0631\u0648\u0634 \u0633\u0646\u062a\u06cc) \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."
-                      : "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f (\u0646\u0633\u0628\u062a \u0628\u0647 \u0631\u0648\u0634 \u0633\u0646\u062a\u06cc) \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."}
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ieqSh)}
-                  >
-                    <AntdInputNumber
-                      data-plasmic-name={"numberInput"}
-                      data-plasmic-override={overrides.numberInput}
-                      allowClear={true}
-                      className={classNames("__wab_instance", sty.numberInput)}
-                      onChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "numberInput",
-                          "value"
-                        ]).apply(null, eventArgs);
-                      }}
-                      placeholder={
-                        "\u0646\u0631\u062e \u06cc\u06a9 \u0634\u0628 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
-                      }
-                      type={"number"}
-                      value={generateStateValueProp($state, [
-                        "numberInput",
-                        "value"
-                      ])}
-                    />
-
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__lDyhU)}
-                    >
-                      <div
-                        data-plasmic-name={"valueText"}
-                        data-plasmic-override={overrides.valueText}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.valueText
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u062f\u0631 \u0645\u0627\u0647:"
-                          : "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u062f\u0631 \u0645\u0627\u0647:"}
-                      </div>
-                      <div
-                        data-plasmic-name={"value"}
-                        data-plasmic-override={overrides.value}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.value
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return $state.numberInput.value
-                                ? `${new Intl.NumberFormat().format(
-                                    ($state.checkbox5.isChecked
-                                      ? $state.numberInput.value * 1.5
-                                      : 0) +
-                                      ($state.checkbox6.isChecked
-                                        ? $state.numberInput.value * 1.15
-                                        : 0) +
-                                      ($state.checkbox7.isChecked
-                                        ? $state.numberInput.value * 1
-                                        : 0) +
-                                      $state.numberInput.value
-                                  )} تومان`
-                                : null;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u0627\u0631\u0632\u0634:";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__wyFrH)}
-                    >
-                      <div
-                        data-plasmic-name={"toman"}
-                        data-plasmic-override={overrides.toman}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.toman
-                        )}
-                      >
-                        {
-                          "\u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0631 \u0631\u0632\u0631\u0648:"
-                        }
-                      </div>
-                      <div
-                        data-plasmic-name={"commission"}
-                        data-plasmic-override={overrides.commission}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.commission
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return $state.numberInput.value
-                                ? `${new Intl.NumberFormat().format(
-                                    ($state.checkbox5.isChecked
-                                      ? $state.numberInput.value * 0.015
-                                      : 0) +
-                                      ($state.checkbox6.isChecked
-                                        ? $state.numberInput.value * 0.01
-                                        : 0) +
-                                      ($state.checkbox7.isChecked
-                                        ? $state.numberInput.value * 0.005
-                                        : 0)
-                                  )} تومان`
-                                : null;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646:";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                ? "\u062a\u0644\u0627\u0634 \u0645\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0631\u0648 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u06cc\u0645. \u062f\u0631 \u06a9\u0646\u0627\u0631 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0633\u0647\u0645 \u06a9\u0648\u0686\u06a9\u06cc \u0627\u0632 \u0627\u06cc\u0646 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u0645. \u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u062f\u0631 \u0627\u0632\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f\u060c \u0634\u0627\u0631\u0698\u06cc \u06a9\u0647 \u0628\u0631\u0627\u06cc \u062e\u062f\u0645\u0627\u062a \u067e\u0631\u062f\u0627\u062e\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0646\u0627\u0686\u06cc\u0632 \u0628\u0647\u200c\u062d\u0633\u0627\u0628 \u0628\u06cc\u0627\u062f."
+                : "\u062a\u0644\u0627\u0634 \u0645\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0631\u0648 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u06cc\u0645. \u062f\u0631 \u06a9\u0646\u0627\u0631 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0633\u0647\u0645 \u06a9\u0648\u0686\u06a9\u06cc \u0627\u0632 \u0627\u06cc\u0646 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u0645. \u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u062f\u0631 \u0627\u0632\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f\u060c \u0634\u0627\u0631\u0698\u06cc \u06a9\u0647 \u0628\u0631\u0627\u06cc \u062e\u062f\u0645\u0627\u062a \u067e\u0631\u062f\u0627\u062e\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0646\u0627\u0686\u06cc\u0632 \u0628\u0647\u200c\u062d\u0633\u0627\u0628 \u0628\u06cc\u0627\u062f."}
             </div>
           </div>
           <div
@@ -1529,88 +947,13 @@ const PlasmicDescendants = {
     "featuresDesc",
     "featuresDesc3",
     "appDemo",
-    "htmlVideo",
-    "_2ndPart",
-    "featuresDesc2",
-    "item1",
-    "item12",
-    "checkbox8",
-    "item13",
-    "checkbox2",
-    "item14",
-    "checkbox3",
-    "item15",
-    "checkbox4",
-    "item19",
-    "checkbox9",
-    "item16",
-    "checkbox5",
-    "item17",
-    "checkbox6",
-    "item18",
-    "checkbox7",
-    "numberInput",
-    "valueText",
-    "value",
-    "toman",
-    "commission",
     "cta2"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   intro: ["intro"],
   featuresDesc: ["featuresDesc"],
   featuresDesc3: ["featuresDesc3"],
-  appDemo: ["appDemo", "htmlVideo"],
-  htmlVideo: ["htmlVideo"],
-  _2ndPart: [
-    "_2ndPart",
-    "featuresDesc2",
-    "item1",
-    "item12",
-    "checkbox8",
-    "item13",
-    "checkbox2",
-    "item14",
-    "checkbox3",
-    "item15",
-    "checkbox4",
-    "item19",
-    "checkbox9",
-    "item16",
-    "checkbox5",
-    "item17",
-    "checkbox6",
-    "item18",
-    "checkbox7",
-    "numberInput",
-    "valueText",
-    "value",
-    "toman",
-    "commission"
-  ],
-  featuresDesc2: ["featuresDesc2"],
-  item1: ["item1"],
-  item12: ["item12", "checkbox8"],
-  checkbox8: ["checkbox8"],
-  item13: ["item13", "checkbox2"],
-  checkbox2: ["checkbox2"],
-  item14: ["item14", "checkbox3"],
-  checkbox3: ["checkbox3"],
-  item15: ["item15", "checkbox4"],
-  checkbox4: ["checkbox4"],
-  item19: ["item19", "checkbox9"],
-  checkbox9: ["checkbox9"],
-  item16: ["item16", "checkbox5"],
-  checkbox5: ["checkbox5"],
-  item17: ["item17", "checkbox6"],
-  checkbox6: ["checkbox6"],
-  item18: ["item18", "checkbox7"],
-  checkbox7: ["checkbox7"],
-  numberInput: ["numberInput"],
-  valueText: ["valueText"],
-  value: ["value"],
-  toman: ["toman"],
-  commission: ["commission"],
+  appDemo: ["appDemo"],
   cta2: ["cta2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1623,31 +966,6 @@ type NodeDefaultElementType = {
   featuresDesc: "div";
   featuresDesc3: "div";
   appDemo: "div";
-  htmlVideo: typeof Video;
-  _2ndPart: "div";
-  featuresDesc2: "div";
-  item1: "div";
-  item12: "div";
-  checkbox8: typeof Checkbox;
-  item13: "div";
-  checkbox2: typeof Checkbox;
-  item14: "div";
-  checkbox3: typeof Checkbox;
-  item15: "div";
-  checkbox4: typeof Checkbox;
-  item19: "div";
-  checkbox9: typeof Checkbox;
-  item16: "div";
-  checkbox5: typeof Checkbox;
-  item17: "div";
-  checkbox6: typeof Checkbox;
-  item18: "div";
-  checkbox7: typeof Checkbox;
-  numberInput: typeof AntdInputNumber;
-  valueText: "div";
-  value: "div";
-  toman: "div";
-  commission: "div";
   cta2: "div";
 };
 
@@ -1716,31 +1034,6 @@ export const PlasmicNewPricing = Object.assign(
     featuresDesc: makeNodeComponent("featuresDesc"),
     featuresDesc3: makeNodeComponent("featuresDesc3"),
     appDemo: makeNodeComponent("appDemo"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
-    _2ndPart: makeNodeComponent("_2ndPart"),
-    featuresDesc2: makeNodeComponent("featuresDesc2"),
-    item1: makeNodeComponent("item1"),
-    item12: makeNodeComponent("item12"),
-    checkbox8: makeNodeComponent("checkbox8"),
-    item13: makeNodeComponent("item13"),
-    checkbox2: makeNodeComponent("checkbox2"),
-    item14: makeNodeComponent("item14"),
-    checkbox3: makeNodeComponent("checkbox3"),
-    item15: makeNodeComponent("item15"),
-    checkbox4: makeNodeComponent("checkbox4"),
-    item19: makeNodeComponent("item19"),
-    checkbox9: makeNodeComponent("checkbox9"),
-    item16: makeNodeComponent("item16"),
-    checkbox5: makeNodeComponent("checkbox5"),
-    item17: makeNodeComponent("item17"),
-    checkbox6: makeNodeComponent("checkbox6"),
-    item18: makeNodeComponent("item18"),
-    checkbox7: makeNodeComponent("checkbox7"),
-    numberInput: makeNodeComponent("numberInput"),
-    valueText: makeNodeComponent("valueText"),
-    value: makeNodeComponent("value"),
-    toman: makeNodeComponent("toman"),
-    commission: makeNodeComponent("commission"),
     cta2: makeNodeComponent("cta2"),
 
     // Metadata about props expected for PlasmicNewPricing
