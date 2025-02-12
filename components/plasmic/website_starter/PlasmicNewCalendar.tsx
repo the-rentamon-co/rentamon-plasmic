@@ -93,12 +93,12 @@ export type PlasmicNewCalendar__OverridesType = {
   htmlVideo?: Flex__<typeof Video>;
   why?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
+  releaseTime?: Flex__<"div">;
   cta?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
   favIcon?: Flex__<typeof Embed>;
-  cta2?: Flex__<"div">;
 };
 
 export interface DefaultNewCalendarProps {}
@@ -219,7 +219,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f"
+                        ? "\u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc"
                         : "\u062a\u0642\u0648\u06cc\u0645 \u06f2"}
                     </h2>
                   }
@@ -237,11 +237,11 @@ function PlasmicNewCalendar__RenderFunc(props: {
               )}
             >
               {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0628\u0639\u062f \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0628\u0627 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0639\u0632\u06cc\u0632 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc \u0648 \u0637\u0631\u0627\u062d\u06cc \u0634\u062f\u0647\u060c \u0622\u0645\u0627\u062f\u0647\u200c\u0627\u0633\u062a."
+                ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u06af\u0630\u0631\u0647. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u062f\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0632\u06cc\u0627\u062f\u06cc \u0627\u0632 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc\u0645\u060c \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0686\u0631\u0627\u063a \u0631\u0627\u0647 \u0645\u0627 \u0628\u0648\u062f\u0647. \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc \u0648 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc\u200c\u0647\u0627\u06cc \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u06a9\u0644\u06cc \u0628\u0647\u0628\u0648\u062f\u060c \u0628\u0647 \u0647\u0645\u0631\u0627\u0647 \u0686\u0646\u062f\u062a\u0627 \u0648\u06cc\u0698\u06af\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u062c\u062f\u06cc\u062f \u0622\u0645\u0627\u062f\u0647 \u0639\u0631\u0636\u0647 \u0627\u0633\u062a."
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0628\u0639\u062f \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0628\u0627 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0639\u0632\u06cc\u0632 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc \u0648 \u0637\u0631\u0627\u062d\u06cc \u0634\u062f\u0647\u060c \u0622\u0645\u0627\u062f\u0647\u200c\u0627\u0633\u062a."
+                ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u06af\u0630\u0631\u0647. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u062f\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0632\u06cc\u0627\u062f\u06cc \u0627\u0632 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc\u0645\u060c \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0686\u0631\u0627\u063a \u0631\u0627\u0647 \u0645\u0627 \u0628\u0648\u062f\u0647. \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc \u0648 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc\u200c\u0647\u0627\u06cc \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u06a9\u0644\u06cc \u0628\u0647\u0628\u0648\u062f\u060c \u0628\u0647 \u0647\u0645\u0631\u0627\u0647 \u0686\u0646\u062f\u062a\u0627 \u0648\u06cc\u0698\u06af\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u062c\u062f\u06cc\u062f \u0622\u0645\u0627\u062f\u0647 \u0639\u0631\u0636\u0647 \u0627\u0633\u062a."
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0628\u0639\u062f \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0628\u0627 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0648 \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0639\u0632\u06cc\u0632 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc \u0648 \u0637\u0631\u0627\u062d\u06cc \u0634\u062f\u0647\u060c \u0622\u0645\u0627\u062f\u0647\u200c\u0627\u0633\u062a."
+                ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u06af\u0630\u0631\u0647. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u062f\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0632\u06cc\u0627\u062f\u06cc \u0627\u0632 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc\u0645\u060c \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0686\u0631\u0627\u063a \u0631\u0627\u0647 \u0645\u0627 \u0628\u0648\u062f\u0647. \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc \u0648 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc\u200c\u0647\u0627\u06cc \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u06a9\u0644\u06cc \u0628\u0647\u0628\u0648\u062f\u060c \u0628\u0647 \u0647\u0645\u0631\u0627\u0647 \u0686\u0646\u062f\u062a\u0627 \u0648\u06cc\u0698\u06af\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u062c\u062f\u06cc\u062f \u0622\u0645\u0627\u062f\u0647 \u0639\u0631\u0636\u0647 \u0627\u0633\u062a."
                 : "\u06f1\u06f4 \u0645\u0627\u0647 \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u06af\u0630\u0631\u0647. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u062f\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0632\u06cc\u0627\u062f\u06cc \u0627\u0632 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc\u0645\u060c \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0686\u0631\u0627\u063a \u0631\u0627\u0647 \u0645\u0627 \u0628\u0648\u062f\u0647. \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc \u0648 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc\u200c\u0647\u0627\u06cc \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u06a9\u0644\u06cc \u0628\u0647\u0628\u0648\u062f\u060c \u0628\u0647 \u0647\u0645\u0631\u0627\u0647 \u0686\u0646\u062f\u062a\u0627 \u0648\u06cc\u0698\u06af\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u062c\u062f\u06cc\u062f \u0622\u0645\u0627\u062f\u0647 \u0639\u0631\u0636\u0647 \u0627\u0633\u062a."}
             </div>
           </div>
@@ -651,9 +651,9 @@ function PlasmicNewCalendar__RenderFunc(props: {
             </div>
           </div>
           <div
-            data-plasmic-name={"cta"}
-            data-plasmic-override={overrides.cta}
-            className={classNames(projectcss.all, sty.cta)}
+            data-plasmic-name={"releaseTime"}
+            data-plasmic-override={overrides.releaseTime}
+            className={classNames(projectcss.all, sty.releaseTime)}
           >
             <div
               className={classNames(
@@ -750,55 +750,12 @@ function PlasmicNewCalendar__RenderFunc(props: {
                 ? "\u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0647\u0645\u0631\u0627\u0647 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u062f\u0631 \u0647\u0641\u062a\u0647\u200c\u06cc \u0622\u062e\u0631 \u0628\u0647\u0645\u0646 \u0645\u0627\u0647 \u06f1\u06f4\u06f0\u06f3 \u0639\u0631\u0636\u0647 \u0645\u06cc\u200c\u0634\u0647."
                 : "\u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0647\u0645\u0631\u0627\u0647 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u062f\u0631 \u0647\u0641\u062a\u0647\u200c\u06cc \u0622\u062e\u0631 \u0628\u0647\u0645\u0646 \u0645\u0627\u0647 \u06f1\u06f4\u06f0\u06f3 \u0639\u0631\u0636\u0647 \u0645\u06cc\u200c\u0634\u0647."}
             </div>
-            <div
-              data-plasmic-name={"html"}
-              data-plasmic-override={overrides.html}
-              className={classNames(projectcss.all, sty.html)}
-            >
-              <Embed
-                data-plasmic-name={"clarity2"}
-                data-plasmic-override={overrides.clarity2}
-                className={classNames("__wab_instance", sty.clarity2)}
-                code={
-                  '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-                }
-              />
-
-              <Embed
-                data-plasmic-name={"goftino"}
-                data-plasmic-override={overrides.goftino}
-                className={classNames("__wab_instance", sty.goftino)}
-                code={
-                  '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-                }
-              />
-
-              <Embed
-                data-plasmic-name={"favIcon"}
-                data-plasmic-override={overrides.favIcon}
-                className={classNames("__wab_instance", sty.favIcon)}
-                code={
-                  "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
-                }
-              />
-            </div>
           </div>
           <div
-            data-plasmic-name={"cta2"}
-            data-plasmic-override={overrides.cta2}
-            className={classNames(projectcss.all, sty.cta2)}
+            data-plasmic-name={"cta"}
+            data-plasmic-override={overrides.cta}
+            className={classNames(projectcss.all, sty.cta)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__yvgqV
-              )}
-            >
-              {
-                "\u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u062c\u0632\u0621 \u0627\u0648\u0644\u06cc\u0646 \u06a9\u0627\u0631\u0628\u0631\u0627\u0646 \u062a\u0642\u0648\u06cc\u0645 \u062c\u062f\u06cc\u062f \u0628\u0627\u0634\u06cc\u061f"
-              }
-            </div>
             <div
               className={classNames(
                 projectcss.all,
@@ -808,36 +765,72 @@ function PlasmicNewCalendar__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["runCode"] = true
+                $steps["goToPricing"] = true
                   ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            return window.open(
-                              "https://goftino.com/c/WgsGXv",
-                              "_blank"
-                            );
-                          })();
+                      const actionArgs = { destination: `/pricing` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
                         }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
                       })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
+                  $steps["goToPricing"] != null &&
+                  typeof $steps["goToPricing"] === "object" &&
+                  typeof $steps["goToPricing"].then === "function"
                 ) {
-                  $steps["runCode"] = await $steps["runCode"];
+                  $steps["goToPricing"] = await $steps["goToPricing"];
                 }
               }}
             >
-              {hasVariant(globalVariants, "screen", "tablet")
-                ? "\u062f\u0631\u062e\u0648\u0627\u0633\u062a"
-                : "\u062f\u0631\u062e\u0648\u0627\u0633\u062a"}
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u062a\u0639\u0631\u0641\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "\u062a\u0639\u0631\u0641\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
+                : hasVariant(globalVariants, "screen", "tablet")
+                ? "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0639\u0631\u0641\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
+                : "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0639\u0631\u0641\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"}
             </div>
+          </div>
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"clarity2"}
+              data-plasmic-override={overrides.clarity2}
+              className={classNames("__wab_instance", sty.clarity2)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"favIcon"}
+              data-plasmic-override={overrides.favIcon}
+              className={classNames("__wab_instance", sty.favIcon)}
+              code={
+                "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
+              }
+            />
           </div>
         </div>
       </div>
@@ -856,12 +849,12 @@ const PlasmicDescendants = {
     "htmlVideo",
     "why",
     "img",
+    "releaseTime",
     "cta",
     "html",
     "clarity2",
     "goftino",
-    "favIcon",
-    "cta2"
+    "favIcon"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   intro: ["intro"],
@@ -871,12 +864,12 @@ const PlasmicDescendants = {
   htmlVideo: ["htmlVideo"],
   why: ["why", "img"],
   img: ["img"],
-  cta: ["cta", "html", "clarity2", "goftino", "favIcon"],
+  releaseTime: ["releaseTime"],
+  cta: ["cta"],
   html: ["html", "clarity2", "goftino", "favIcon"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
-  favIcon: ["favIcon"],
-  cta2: ["cta2"]
+  favIcon: ["favIcon"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -891,12 +884,12 @@ type NodeDefaultElementType = {
   htmlVideo: typeof Video;
   why: "div";
   img: typeof PlasmicImg__;
+  releaseTime: "div";
   cta: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
   favIcon: typeof Embed;
-  cta2: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -967,12 +960,12 @@ export const PlasmicNewCalendar = Object.assign(
     htmlVideo: makeNodeComponent("htmlVideo"),
     why: makeNodeComponent("why"),
     img: makeNodeComponent("img"),
+    releaseTime: makeNodeComponent("releaseTime"),
     cta: makeNodeComponent("cta"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
     favIcon: makeNodeComponent("favIcon"),
-    cta2: makeNodeComponent("cta2"),
 
     // Metadata about props expected for PlasmicNewCalendar
     internalVariantProps: PlasmicNewCalendar__VariantProps,

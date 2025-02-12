@@ -112,6 +112,7 @@ export type PlasmicPricing__OverridesType = {
   checkbox6?: Flex__<typeof Checkbox>;
   item18?: Flex__<"div">;
   checkbox7?: Flex__<typeof Checkbox>;
+  item110?: Flex__<"div">;
   services?: Flex__<"div">;
   calc?: Flex__<"div">;
   numberInput?: Flex__<typeof AntdInputNumber>;
@@ -127,6 +128,7 @@ export type PlasmicPricing__OverridesType = {
   _4?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
+  ctaReferral?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -856,6 +858,50 @@ function PlasmicPricing__RenderFunc(props: {
                   >
                     {"\u06f0.\u06f5\u066a"}
                   </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item110"}
+                data-plasmic-override={overrides.item110}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item110)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__phAjf
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return window.open("/new-calendar", "_blank");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {
+                    "\u24d8 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u062f\u0631\u0645\u0648\u0631\u062f \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                  }
                 </div>
               </Stack__>
             </div>
@@ -2815,43 +2861,83 @@ function PlasmicPricing__RenderFunc(props: {
                 })()}
               </div>
             </div>
-            <Button className={classNames("__wab_instance", sty.button__kgdHp)}>
-              {
-                "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"
-              }
-            </Button>
             <div
-              data-plasmic-name={"html"}
-              data-plasmic-override={overrides.html}
-              className={classNames(projectcss.all, sty.html)}
+              data-plasmic-name={"ctaReferral"}
+              data-plasmic-override={overrides.ctaReferral}
+              className={classNames(projectcss.all, sty.ctaReferral)}
             >
-              <Embed
-                data-plasmic-name={"clarity2"}
-                data-plasmic-override={overrides.clarity2}
-                className={classNames("__wab_instance", sty.clarity2)}
-                code={
-                  '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-                }
-              />
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__phhx
+                )}
+                onClick={async event => {
+                  const $steps = {};
 
-              <Embed
-                data-plasmic-name={"goftino"}
-                data-plasmic-override={overrides.goftino}
-                className={classNames("__wab_instance", sty.goftino)}
-                code={
-                  '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return window.open(
+                                "https://rentamon.com/referral/",
+                                "_blank"
+                              );
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              >
+                {
+                  "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"
                 }
-              />
-
-              <Embed
-                data-plasmic-name={"favIcon"}
-                data-plasmic-override={overrides.favIcon}
-                className={classNames("__wab_instance", sty.favIcon)}
-                code={
-                  "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
-                }
-              />
+              </div>
             </div>
+          </div>
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"clarity2"}
+              data-plasmic-override={overrides.clarity2}
+              className={classNames("__wab_instance", sty.clarity2)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"favIcon"}
+              data-plasmic-override={overrides.favIcon}
+              className={classNames("__wab_instance", sty.favIcon)}
+              code={
+                "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
+              }
+            />
           </div>
         </div>
       </div>
@@ -2881,6 +2967,7 @@ const PlasmicDescendants = {
     "checkbox6",
     "item18",
     "checkbox7",
+    "item110",
     "services",
     "calc",
     "numberInput",
@@ -2896,6 +2983,7 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "_6",
+    "ctaReferral",
     "html",
     "clarity2",
     "goftino",
@@ -2920,7 +3008,8 @@ const PlasmicDescendants = {
     "item17",
     "checkbox6",
     "item18",
-    "checkbox7"
+    "checkbox7",
+    "item110"
   ],
   item1: ["item1"],
   item12: ["item12", "checkbox8"],
@@ -2939,6 +3028,7 @@ const PlasmicDescendants = {
   checkbox6: ["checkbox6"],
   item18: ["item18", "checkbox7"],
   checkbox7: ["checkbox7"],
+  item110: ["item110"],
   services: ["services"],
   calc: ["calc", "numberInput", "valueText", "value", "toman", "commission"],
   numberInput: ["numberInput"],
@@ -2947,25 +3037,14 @@ const PlasmicDescendants = {
   toman: ["toman"],
   commission: ["commission"],
   modal: ["modal"],
-  qA: [
-    "qA",
-    "accordionMain",
-    "_2",
-    "_1",
-    "_4",
-    "_5",
-    "_6",
-    "html",
-    "clarity2",
-    "goftino",
-    "favIcon"
-  ],
+  qA: ["qA", "accordionMain", "_2", "_1", "_4", "_5", "_6", "ctaReferral"],
   accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6"],
   _2: ["_2", "_1"],
   _1: ["_1"],
   _4: ["_4"],
   _5: ["_5"],
   _6: ["_6"],
+  ctaReferral: ["ctaReferral"],
   html: ["html", "clarity2", "goftino", "favIcon"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -2995,6 +3074,7 @@ type NodeDefaultElementType = {
   checkbox6: typeof Checkbox;
   item18: "div";
   checkbox7: typeof Checkbox;
+  item110: "div";
   services: "div";
   calc: "div";
   numberInput: typeof AntdInputNumber;
@@ -3010,6 +3090,7 @@ type NodeDefaultElementType = {
   _4: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
+  ctaReferral: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -3095,6 +3176,7 @@ export const PlasmicPricing = Object.assign(
     checkbox6: makeNodeComponent("checkbox6"),
     item18: makeNodeComponent("item18"),
     checkbox7: makeNodeComponent("checkbox7"),
+    item110: makeNodeComponent("item110"),
     services: makeNodeComponent("services"),
     calc: makeNodeComponent("calc"),
     numberInput: makeNodeComponent("numberInput"),
@@ -3110,6 +3192,7 @@ export const PlasmicPricing = Object.assign(
     _4: makeNodeComponent("_4"),
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
+    ctaReferral: makeNodeComponent("ctaReferral"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
