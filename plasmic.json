@@ -1092,6 +1092,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-pricing"
+        },
+        {
+          "id": "DSdlo5kdtbOe",
+          "name": "RentamonFooter",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRentamonFooter.tsx",
+          "importSpec": {
+            "modulePath": "RentamonFooter.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRentamonFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -2101,6 +2114,31 @@
           "id": "35IH6zLQrQyM",
           "name": "1731928122363.jpg 2",
           "filePath": "../public/plasmic/website_starter/images/_1731928122363Jpg2.jpg"
+        },
+        {
+          "id": "fedX7XfWc3qn",
+          "name": "image 49",
+          "filePath": "../public/plasmic/website_starter/images/image49.png"
+        },
+        {
+          "id": "MICwhtpiJxGd",
+          "name": "image 50",
+          "filePath": "../public/plasmic/website_starter/images/image50.png"
+        },
+        {
+          "id": "VmH6nsyJsRn5",
+          "name": "image 51",
+          "filePath": "../public/plasmic/website_starter/images/image51.png"
+        },
+        {
+          "id": "vquHp2Tg20FS",
+          "name": "image 52",
+          "filePath": "../public/plasmic/website_starter/images/image52.png"
+        },
+        {
+          "id": "L3As-1UqMFEx",
+          "name": "image 53",
+          "filePath": "../public/plasmic/website_starter/images/image53.png"
         }
       ],
       "indirect": false,

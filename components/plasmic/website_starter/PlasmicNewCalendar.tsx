@@ -62,6 +62,7 @@ import {
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -71,10 +72,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNewCalendar.module.css"; // plasmic-import: OUfaFiJLkcrx/css
-
-import Icon27Icon from "./icons/PlasmicIcon__Icon27"; // plasmic-import: gu8zLFt9i7YK/icon
-import Icon28Icon from "./icons/PlasmicIcon__Icon28"; // plasmic-import: -TR7sx_chsOJ/icon
-import Icon29Icon from "./icons/PlasmicIcon__Icon29"; // plasmic-import: ofYsCYLxszGw/icon
 
 createPlasmicElementProxy;
 
@@ -96,14 +93,14 @@ export type PlasmicNewCalendar__OverridesType = {
   appDemo?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
   why?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   releaseTime?: Flex__<"div">;
   cta?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
   favIcon?: Flex__<typeof Embed>;
-  footer?: Flex__<"div">;
-  columns?: Flex__<"div">;
+  rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
 export interface DefaultNewCalendarProps {}
@@ -612,8 +609,10 @@ function PlasmicNewCalendar__RenderFunc(props: {
                 : "\u0647\u062f\u0641 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0632 \u0627\u0646\u062c\u0627\u0645 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0642\u0627\u0628\u0644 \u062a\u0648\u062c\u0647\u060c \u062e\u0648\u062f\u06a9\u0627\u0631\u0633\u0627\u0632\u06cc \u0628\u06cc\u0634\u062a\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062d\u0630\u0641 \u0641\u0639\u0627\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0627\u0633\u062a. \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0633\u0631 \u0631\u0633\u06cc\u062f\u060c \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u060c \u0630\u062e\u06cc\u0631\u0647 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646\u060c \u0646\u0635\u0628 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0648... \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0637\u0648\u0644 \u0631\u0648\u0632 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u0631 \u06a9\u0627\u0631\u0647\u0627 \u0648 \u062a\u0645\u0631\u06a9\u0632 \u0631\u0648\u06cc \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647.\r"}
             </div>
             <PlasmicImg__
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
               alt={""}
-              className={classNames(sty.img__lEebX)}
+              className={classNames(sty.img)}
               displayHeight={"auto"}
               displayMaxHeight={"none"}
               displayMaxWidth={
@@ -755,277 +754,11 @@ function PlasmicNewCalendar__RenderFunc(props: {
               />
             </div>
           </div>
-          <div
-            data-plasmic-name={"footer"}
-            data-plasmic-override={overrides.footer}
-            className={classNames(projectcss.all, sty.footer)}
-          >
-            <Stack__
-              as={"div"}
-              data-plasmic-name={"columns"}
-              data-plasmic-override={overrides.columns}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.columns)}
-            >
-              <div className={classNames(projectcss.all, sty.column__pnqsm)}>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___8Iwz2)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__jdTgf)}
-                    displayHeight={"40px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"none"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"40px"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image3.svg",
-                      fullWidth: 150,
-                      fullHeight: 150,
-                      aspectRatio: 1
-                    }}
-                  />
-
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__mPnCm)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__tzifL
-                      )}
-                    >
-                      {"Connect with us"}
-                    </div>
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___7Y4Uw
-                      )}
-                    >
-                      <Icon27Icon
-                        className={classNames(projectcss.all, sty.svg__gfjMo)}
-                        role={"img"}
-                      />
-
-                      <Icon28Icon
-                        className={classNames(projectcss.all, sty.svg__sWax9)}
-                        role={"img"}
-                      />
-
-                      <Icon29Icon
-                        className={classNames(projectcss.all, sty.svg__iDCnz)}
-                        role={"img"}
-                      />
-                    </Stack__>
-                  </Stack__>
-                </Stack__>
-              </div>
-              <div className={classNames(projectcss.all, sty.column__squRp)}>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__olFfH)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___9NCr
-                    )}
-                  >
-                    {"Product"}
-                  </div>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__qeOnM
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Pricing"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__bnf2J
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Log in"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__kgrkG
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Integrations"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__dn91G
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Insights"}
-                  </PlasmicLink__>
-                </Stack__>
-              </div>
-              <div className={classNames(projectcss.all, sty.column__mq942)}>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___9RI4K)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__isVfi
-                    )}
-                  >
-                    {"Support"}
-                  </div>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__qXiD
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Documentation"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__v833V
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"FAQs"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__sazb
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Status"}
-                  </PlasmicLink__>
-                </Stack__>
-              </div>
-              <div className={classNames(projectcss.all, sty.column__qlTvq)}>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__whsI7)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__j9UfH
-                    )}
-                  >
-                    {"Company"}
-                  </div>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__umLpi
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"About"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__uiAe9
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Contact us"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__qDKmb
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Careers"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__fXp1C
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"Media"}
-                  </PlasmicLink__>
-                </Stack__>
-              </div>
-            </Stack__>
-          </div>
+          <RentamonFooter
+            data-plasmic-name={"rentamonFooter"}
+            data-plasmic-override={overrides.rentamonFooter}
+            className={classNames("__wab_instance", sty.rentamonFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1042,14 +775,14 @@ const PlasmicDescendants = {
     "appDemo",
     "htmlVideo",
     "why",
+    "img",
     "releaseTime",
     "cta",
     "html",
     "clarity2",
     "goftino",
     "favIcon",
-    "footer",
-    "columns"
+    "rentamonFooter"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   intro: ["intro"],
@@ -1057,15 +790,15 @@ const PlasmicDescendants = {
   featuresDesc3: ["featuresDesc3"],
   appDemo: ["appDemo", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
-  why: ["why"],
+  why: ["why", "img"],
+  img: ["img"],
   releaseTime: ["releaseTime"],
   cta: ["cta", "html", "clarity2", "goftino", "favIcon"],
   html: ["html", "clarity2", "goftino", "favIcon"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
   favIcon: ["favIcon"],
-  footer: ["footer", "columns"],
-  columns: ["columns"]
+  rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1079,14 +812,14 @@ type NodeDefaultElementType = {
   appDemo: "div";
   htmlVideo: typeof Video;
   why: "div";
+  img: typeof PlasmicImg__;
   releaseTime: "div";
   cta: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
   favIcon: typeof Embed;
-  footer: "div";
-  columns: "div";
+  rentamonFooter: typeof RentamonFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1156,14 +889,14 @@ export const PlasmicNewCalendar = Object.assign(
     appDemo: makeNodeComponent("appDemo"),
     htmlVideo: makeNodeComponent("htmlVideo"),
     why: makeNodeComponent("why"),
+    img: makeNodeComponent("img"),
     releaseTime: makeNodeComponent("releaseTime"),
     cta: makeNodeComponent("cta"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
     favIcon: makeNodeComponent("favIcon"),
-    footer: makeNodeComponent("footer"),
-    columns: makeNodeComponent("columns"),
+    rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicNewCalendar
     internalVariantProps: PlasmicNewCalendar__VariantProps,

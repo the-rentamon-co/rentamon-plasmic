@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -90,6 +91,7 @@ export type PlasmicNewPricing__OverridesType = {
   featuresDesc3?: Flex__<"div">;
   appDemo?: Flex__<"div">;
   cta2?: Flex__<"div">;
+  rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
 export interface DefaultNewPricingProps {}
@@ -980,6 +982,11 @@ function PlasmicNewPricing__RenderFunc(props: {
               }
             </div>
           </div>
+          <RentamonFooter
+            data-plasmic-name={"rentamonFooter"}
+            data-plasmic-override={overrides.rentamonFooter}
+            className={classNames("__wab_instance", sty.rentamonFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -995,7 +1002,8 @@ const PlasmicDescendants = {
     "featuresDesc",
     "featuresDesc3",
     "appDemo",
-    "cta2"
+    "cta2",
+    "rentamonFooter"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   intro: ["intro", "cta3"],
@@ -1003,7 +1011,8 @@ const PlasmicDescendants = {
   featuresDesc: ["featuresDesc"],
   featuresDesc3: ["featuresDesc3"],
   appDemo: ["appDemo"],
-  cta2: ["cta2"]
+  cta2: ["cta2"],
+  rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1017,6 +1026,7 @@ type NodeDefaultElementType = {
   featuresDesc3: "div";
   appDemo: "div";
   cta2: "div";
+  rentamonFooter: typeof RentamonFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1086,6 +1096,7 @@ export const PlasmicNewPricing = Object.assign(
     featuresDesc3: makeNodeComponent("featuresDesc3"),
     appDemo: makeNodeComponent("appDemo"),
     cta2: makeNodeComponent("cta2"),
+    rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicNewPricing
     internalVariantProps: PlasmicNewPricing__VariantProps,

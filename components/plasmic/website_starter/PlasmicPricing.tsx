@@ -68,6 +68,7 @@ import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -135,6 +136,7 @@ export type PlasmicPricing__OverridesType = {
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
   favIcon?: Flex__<typeof Embed>;
+  rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
 export interface DefaultPricingProps {}
@@ -2950,6 +2952,11 @@ function PlasmicPricing__RenderFunc(props: {
               />
             </div>
           </div>
+          <RentamonFooter
+            data-plasmic-name={"rentamonFooter"}
+            data-plasmic-override={overrides.rentamonFooter}
+            className={classNames("__wab_instance", sty.rentamonFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2999,7 +3006,8 @@ const PlasmicDescendants = {
     "html",
     "clarity2",
     "goftino",
-    "favIcon"
+    "favIcon",
+    "rentamonFooter"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   featuresDesc2: ["featuresDesc2"],
@@ -3074,7 +3082,8 @@ const PlasmicDescendants = {
   html: ["html", "clarity2", "goftino", "favIcon"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
-  favIcon: ["favIcon"]
+  favIcon: ["favIcon"],
+  rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -3122,6 +3131,7 @@ type NodeDefaultElementType = {
   clarity2: typeof Embed;
   goftino: typeof Embed;
   favIcon: typeof Embed;
+  rentamonFooter: typeof RentamonFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -3225,6 +3235,7 @@ export const PlasmicPricing = Object.assign(
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
     favIcon: makeNodeComponent("favIcon"),
+    rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicPricing
     internalVariantProps: PlasmicPricing__VariantProps,
