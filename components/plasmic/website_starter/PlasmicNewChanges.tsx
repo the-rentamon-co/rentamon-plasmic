@@ -303,12 +303,12 @@ function PlasmicNewChanges__RenderFunc(props: {
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"auto"}
+                displayWidth={"100%"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/website_starter/images/_1731928122363Jpg3.jpg",
-                  fullWidth: 1256,
-                  fullHeight: 349,
+                  src: "/plasmic/website_starter/images/_1731928122363Jpg4.jpg",
+                  fullWidth: 1000,
+                  fullHeight: 278,
                   aspectRatio: undefined
                 }}
               />

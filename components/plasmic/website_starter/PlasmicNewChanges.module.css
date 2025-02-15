@@ -184,14 +184,14 @@
 @media (max-width: 1200px) {
   .freeBox___5XCkH {
     padding-top: 0px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 @media (max-width: 500px) {
   .freeBox___5XCkH {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 }
 @media (max-width: 350px) {
@@ -208,6 +208,8 @@
   margin-top: 40px;
   transform: translateX(0px) translateY(0px) translateZ(0px);
   backdrop-filter: blur(0px);
+  width: 100%;
+  min-width: 0;
   -webkit-backdrop-filter: blur(0px);
   border-radius: 30px;
 }

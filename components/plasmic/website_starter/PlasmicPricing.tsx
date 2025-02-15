@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
@@ -67,7 +68,6 @@ import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -95,6 +95,7 @@ export const PlasmicPricing__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPricing__OverridesType = {
   root?: Flex__<"div">;
+  favIcon?: Flex__<typeof Embed>;
   navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
   featuresDesc2?: Flex__<"div">;
   _1stPart?: Flex__<"div">;
@@ -136,7 +137,6 @@ export type PlasmicPricing__OverridesType = {
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
-  favIcon?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -308,6 +308,15 @@ function PlasmicPricing__RenderFunc(props: {
             sty.root
           )}
         >
+          <Embed
+            data-plasmic-name={"favIcon"}
+            data-plasmic-override={overrides.favIcon}
+            className={classNames("__wab_instance", sty.favIcon)}
+            code={
+              "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
+            }
+          />
+
           <NavbarRentamonComponent
             data-plasmic-name={"navbarRentamonComponent"}
             data-plasmic-override={overrides.navbarRentamonComponent}
@@ -4015,15 +4024,6 @@ function PlasmicPricing__RenderFunc(props: {
                   '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
                 }
               />
-
-              <Embed
-                data-plasmic-name={"favIcon"}
-                data-plasmic-override={overrides.favIcon}
-                className={classNames("__wab_instance", sty.favIcon)}
-                code={
-                  "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
-                }
-              />
             </div>
           </div>
           <RentamonFooter
@@ -4040,6 +4040,7 @@ function PlasmicPricing__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "favIcon",
     "navbarRentamonComponent",
     "featuresDesc2",
     "_1stPart",
@@ -4081,9 +4082,9 @@ const PlasmicDescendants = {
     "html",
     "clarity2",
     "goftino",
-    "favIcon",
     "rentamonFooter"
   ],
+  favIcon: ["favIcon"],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   featuresDesc2: ["featuresDesc2"],
   _1stPart: [
@@ -4146,8 +4147,7 @@ const PlasmicDescendants = {
     "ctaReferral",
     "html",
     "clarity2",
-    "goftino",
-    "favIcon"
+    "goftino"
   ],
   accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6"],
   _2: ["_2", "_1"],
@@ -4156,10 +4156,9 @@ const PlasmicDescendants = {
   _5: ["_5"],
   _6: ["_6"],
   ctaReferral: ["ctaReferral"],
-  html: ["html", "clarity2", "goftino", "favIcon"],
+  html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
-  favIcon: ["favIcon"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -4167,6 +4166,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  favIcon: typeof Embed;
   navbarRentamonComponent: typeof NavbarRentamonComponent;
   featuresDesc2: "div";
   _1stPart: "div";
@@ -4208,7 +4208,6 @@ type NodeDefaultElementType = {
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
-  favIcon: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -4272,6 +4271,7 @@ export const PlasmicPricing = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    favIcon: makeNodeComponent("favIcon"),
     navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
     featuresDesc2: makeNodeComponent("featuresDesc2"),
     _1stPart: makeNodeComponent("_1stPart"),
@@ -4313,7 +4313,6 @@ export const PlasmicPricing = Object.assign(
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
-    favIcon: makeNodeComponent("favIcon"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicPricing
