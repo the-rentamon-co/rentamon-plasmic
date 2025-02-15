@@ -2581,7 +2581,7 @@ function PlasmicPricing__RenderFunc(props: {
                           undefined,
                           (() => {
                             try {
-                              return { amount: "1000000" };
+                              return { amount: "100000" };
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -3623,35 +3623,37 @@ function PlasmicPricing__RenderFunc(props: {
                   </React.Fragment>
                 </div>
               </div>
-              <Button
-                className={classNames("__wab_instance", sty.button___1BZoE)}
-                link={(() => {
-                  try {
-                    return (
-                      "https://payment.zarinpal.com/pg/StartPay/" +
-                      $state.tokenResponse.payInfo
-                    );
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
+              <div className={classNames(projectcss.all, sty.freeBox__eBywM)}>
+                <Button
+                  className={classNames("__wab_instance", sty.button___1BZoE)}
+                  link={(() => {
+                    try {
+                      return (
+                        "https://payment.zarinpal.com/pg/StartPay/" +
+                        $state.tokenResponse.payInfo
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___6GRa
-                  )}
+                  })()}
                 >
-                  {"\u067e\u0631\u062f\u0627\u062e\u062a"}
-                </div>
-              </Button>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6GRa
+                    )}
+                  >
+                    {"\u067e\u0631\u062f\u0627\u062e\u062a"}
+                  </div>
+                </Button>
+              </div>
             </AntdModal>
           </div>
           <div

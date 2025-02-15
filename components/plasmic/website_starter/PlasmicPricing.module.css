@@ -3980,12 +3980,24 @@
   color: #444444;
   min-width: 0;
 }
-.button___1BZoE:global(.__wab_instance) {
+.freeBox__eBywM {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
   max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
   margin-top: 39px;
   margin-bottom: 30px;
+  min-width: 0;
 }
-.svg__jQRz4 {
+.button___1BZoE:global(.__wab_instance) {
+  max-width: 100%;
+  width: 70%;
+}
+.svg___3XaIp {
   position: relative;
   object-fit: cover;
   width: auto;
@@ -3995,7 +4007,7 @@
   font-size: 20px;
   font-weight: 600;
 }
-.svg___0IGm6 {
+.svg__dJhA9 {
   position: relative;
   object-fit: cover;
   width: auto;
