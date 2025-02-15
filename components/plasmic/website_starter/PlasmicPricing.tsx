@@ -2410,15 +2410,15 @@ function PlasmicPricing__RenderFunc(props: {
                             return $state.numberInput.value
                               ? `${new Intl.NumberFormat().format(
                                   ($state.checkbox5.isChecked
-                                    ? $state.numberInput.value * 1.5
+                                    ? $state.numberInput.value * 1.55
                                     : 0) +
                                     ($state.checkbox6.isChecked
-                                      ? $state.numberInput.value * 1.15
+                                      ? $state.numberInput.value * 1.155
                                       : 0) +
                                     ($state.checkbox7.isChecked
-                                      ? $state.numberInput.value * 1
+                                      ? $state.numberInput.value * 1.1
                                       : 0) +
-                                    $state.numberInput.value
+                                    $state.numberInput.value * 1.1
                                 )} تومان`
                               : null;
                           } catch (e) {

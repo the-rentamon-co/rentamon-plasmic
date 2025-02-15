@@ -165,9 +165,19 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                 data-plasmic-name={"embedHtml"}
                 data-plasmic-override={overrides.embedHtml}
                 className={classNames("__wab_instance", sty.embedHtml)}
-                code={
-                  "<div>\r\n<a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=519096&Code=fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=519096&Code=fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16' alt='' style='cursor:pointer' code='fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'></a>\r\n\r\n</div>"
-                }
+                code={(() => {
+                  try {
+                    return undefined;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "<div>\r\n<a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=519096&Code=fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'><img referrerpolicy='origin' src='https://rentamon.com/wp-content/uploads/2023/08/ENAMADpng.parspng.com_.png' alt='' style='cursor:pointer' code='fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'></a>\r\n\r\n</div>";
+                    }
+                    throw e;
+                  }
+                })()}
               />
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__zeOcA)}>

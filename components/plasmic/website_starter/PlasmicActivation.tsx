@@ -715,7 +715,7 @@ function PlasmicActivation__RenderFunc(props: {
                         customFunction: async () => {
                           return (() => {
                             return (window.location.href =
-                              "https://rentamon.com/panels/?prop_id=1");
+                              "https://app.rentamon.com/panel/");
                           })();
                         }
                       };
@@ -4454,7 +4454,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     customFunction: async () => {
                                       return (() => {
                                         return (window.location.href =
-                                          "https://rentamon.com/panels/?prop_id=1");
+                                          "https://app.rentamon.com/panel/");
                                       })();
                                     }
                                   };
@@ -5121,7 +5121,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     customFunction: async () => {
                                       return (() => {
                                         return (window.location.href =
-                                          "https://rentamon.com/panels/?prop_id=1");
+                                          "https://app.rentamon.com/panel/");
                                       })();
                                     }
                                   };
@@ -5852,7 +5852,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     customFunction: async () => {
                                       return (() => {
                                         return (window.location.href =
-                                          "https://rentamon.com/panels/?prop_id=1");
+                                          "https://app.rentamon.com/panel/");
                                       })();
                                     }
                                   };
@@ -6556,7 +6556,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     customFunction: async () => {
                                       return (() => {
                                         return (window.location.href =
-                                          "https://rentamon.com/panels/?prop_id=1");
+                                          "https://app.rentamon.com/panel/");
                                       })();
                                     }
                                   };
@@ -7720,7 +7720,7 @@ function PlasmicActivation__RenderFunc(props: {
                                       customFunction: async () => {
                                         return (() => {
                                           return (window.location.href =
-                                            "https://rentamon.com/panels/?prop_id=1");
+                                            "https://app.rentamon.com/panel/");
                                         })();
                                       }
                                     };
@@ -8215,7 +8215,7 @@ function PlasmicActivation__RenderFunc(props: {
                                       customFunction: async () => {
                                         return (() => {
                                           return (window.location.href =
-                                            "https://rentamon.com/panels/?prop_id=1");
+                                            "https://app.rentamon.com/panel/");
                                         })();
                                       }
                                     };
