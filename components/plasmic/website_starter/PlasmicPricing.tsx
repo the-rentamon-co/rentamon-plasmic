@@ -116,6 +116,7 @@ export type PlasmicPricing__OverridesType = {
   item18?: Flex__<"div">;
   checkbox7?: Flex__<typeof Checkbox>;
   item110?: Flex__<"div">;
+  item111?: Flex__<"div">;
   services?: Flex__<"div">;
   calc?: Flex__<"div">;
   numberInput?: Flex__<typeof AntdInputNumber>;
@@ -912,8 +913,1079 @@ function PlasmicPricing__RenderFunc(props: {
                     }
                   }}
                 >
+                  {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <ul
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.ul,
+                            sty.ul__zcaZ
+                          )}
+                        >
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__xTups
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <ul
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.ul,
+                                      sty.ul__h2X6
+                                    )}
+                                  >
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__i3DkL
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__x5QaD
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                  </ul>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <ul
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.ul,
+                                      sty.ul__h2X6
+                                    )}
+                                  >
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__i3DkL
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__x5QaD
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                  </ul>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            )}
+                          </li>
+                        </ul>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <ul
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.ul,
+                            sty.ul__zcaZ
+                          )}
+                        >
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__xTups
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <ul
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.ul,
+                                      sty.ul__h2X6
+                                    )}
+                                  >
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__i3DkL
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__x5QaD
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                  </ul>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <ul
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.ul,
+                                      sty.ul__h2X6
+                                    )}
+                                  >
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__i3DkL
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__x5QaD
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                  </ul>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            )}
+                          </li>
+                        </ul>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <ul
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.ul,
+                            sty.ul__zcaZ
+                          )}
+                        >
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__xTups
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <ul
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.ul,
+                                      sty.ul__h2X6
+                                    )}
+                                  >
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__i3DkL
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__x5QaD
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                  </ul>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                <React.Fragment>{""}</React.Fragment>
+                                {
+                                  <ul
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.ul,
+                                      sty.ul__h2X6
+                                    )}
+                                  >
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__i3DkL
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {
+                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                            }
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f5"}
+                                          </span>
+                                          <React.Fragment>
+                                            {" \u0627\u0644\u06cc "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                    <li
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.li,
+                                        projectcss.__wab_text,
+                                        sty.li__x5QaD
+                                      )}
+                                    >
+                                      {hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      ) ? (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <React.Fragment>
+                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
+                                          </React.Fragment>
+                                          <span
+                                            className={
+                                              "plasmic_default__all plasmic_default__span"
+                                            }
+                                            style={{
+                                              textDecorationLine: "underline"
+                                            }}
+                                          >
+                                            {"\u06f1\u06f0"}
+                                          </span>
+                                          <React.Fragment>
+                                            {
+                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
+                                            }
+                                          </React.Fragment>
+                                        </React.Fragment>
+                                      )}
+                                    </li>
+                                  </ul>
+                                }
+                                <React.Fragment>{""}</React.Fragment>
+                              </React.Fragment>
+                            )}
+                          </li>
+                        </ul>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  )}
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item111"}
+                data-plasmic-override={overrides.item111}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item111)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zSu
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return window.open("/new-calendar", "_blank");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
                   {
-                    "\u24d8 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u062f\u0631\u0645\u0648\u0631\u062f \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    "\u24d8 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u062f\u0631\u0645\u0648\u0631\u062f \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627"
                   }
                 </div>
               </Stack__>
@@ -2596,7 +3668,7 @@ function PlasmicPricing__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0633\u0648\u0627\u0644\u0627\u062a \u067e\u0631 \u062a\u06a9\u0631\u0627\u0631\r\n\r"
+                  "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644:\r\n\r"
                 }
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__fg00V)}>
@@ -2987,6 +4059,7 @@ const PlasmicDescendants = {
     "item18",
     "checkbox7",
     "item110",
+    "item111",
     "services",
     "calc",
     "numberInput",
@@ -3030,7 +4103,8 @@ const PlasmicDescendants = {
     "checkbox6",
     "item18",
     "checkbox7",
-    "item110"
+    "item110",
+    "item111"
   ],
   item1: ["item1"],
   item12: ["item12", "checkbox8"],
@@ -3050,6 +4124,7 @@ const PlasmicDescendants = {
   item18: ["item18", "checkbox7"],
   checkbox7: ["checkbox7"],
   item110: ["item110"],
+  item111: ["item111"],
   services: ["services"],
   calc: ["calc", "numberInput", "valueText", "value", "toman", "commission"],
   numberInput: ["numberInput"],
@@ -3111,6 +4186,7 @@ type NodeDefaultElementType = {
   item18: "div";
   checkbox7: typeof Checkbox;
   item110: "div";
+  item111: "div";
   services: "div";
   calc: "div";
   numberInput: typeof AntdInputNumber;
@@ -3215,6 +4291,7 @@ export const PlasmicPricing = Object.assign(
     item18: makeNodeComponent("item18"),
     checkbox7: makeNodeComponent("checkbox7"),
     item110: makeNodeComponent("item110"),
+    item111: makeNodeComponent("item111"),
     services: makeNodeComponent("services"),
     calc: makeNodeComponent("calc"),
     numberInput: makeNodeComponent("numberInput"),

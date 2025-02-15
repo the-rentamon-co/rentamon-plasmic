@@ -71,6 +71,7 @@ import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -110,6 +111,7 @@ export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  form2?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
@@ -139,6 +141,20 @@ export type PlasmicCalendar2__OverridesType = {
   textarea2?: Flex__<typeof Textarea>;
   checkForChange?: Flex__<typeof AntdModal>;
   embedHtml?: Flex__<typeof Embed>;
+  addingGuestInfo?: Flex__<typeof AntdModal>;
+  form?: Flex__<"div">;
+  p1?: Flex__<"div">;
+  guestName?: Flex__<typeof TextInput>;
+  p2?: Flex__<"div">;
+  phoneNumber?: Flex__<typeof TextInput>;
+  p3?: Flex__<"div">;
+  amount?: Flex__<typeof AntdInputNumber>;
+  p4?: Flex__<"div">;
+  referrer?: Flex__<"div">;
+  guestReferrer?: Flex__<typeof Select>;
+  count2?: Flex__<"div">;
+  guestCount?: Flex__<typeof AntdInputNumber>;
+  p5?: Flex__<"div">;
 };
 
 export interface DefaultCalendar2Props {
@@ -528,6 +544,47 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "addingGuestInfo.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
+      },
+      {
+        path: "guestName.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "phoneNumber.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "guestReferrer.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "guestCount.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "amount.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -662,6 +719,12 @@ function PlasmicCalendar2__RenderFunc(props: {
             throw e;
           }
         })()}
+      />
+
+      <div
+        data-plasmic-name={"form2"}
+        data-plasmic-override={overrides.form2}
+        className={classNames(projectcss.all, sty.form2)}
       />
 
       <SideEffect
@@ -6350,6 +6413,365 @@ function PlasmicCalendar2__RenderFunc(props: {
           '<script>\r\nconst element = document.getElementById("test");\r\nlet timer;\r\nconsole.log("test"element)\r\n\r\n// \u0634\u0631\u0648\u0639 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0631\u0648\u06cc \u0627\u0644\u0645\u0646\u062a\r\nconst startPress = () => {\r\n  timer = setTimeout(() => {\r\n    console.log("\u0641\u0627\u0646\u06a9\u0634\u0646 \u0628\u0631\u0627\u06cc \u0627\u0644\u0645\u0627\u0646 test \u0627\u062c\u0631\u0627 \u0634\u062f!");\r\n    // \u0627\u06cc\u0646\u062c\u0627 \r\n  }, 1000); // \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0644\u06cc\u200c\u062b\u0627\u0646\u06cc\u0647 \u0645\u0639\u0627\u062f\u0644 \u06f1 \u062b\u0627\u0646\u06cc\u0647\r\n};\r\n\r\n// \u067e\u0627\u06cc\u0627\u0646 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0631\u0648\u06cc \u0627\u0644\u0645\u0646\u062a\r\nconst endPress = () => {\r\n  clearTimeout(timer); // \u0645\u062a\u0648\u0642\u0641 \u06a9\u0631\u062f\u0646 \u062a\u0627\u06cc\u0645\u0631 \u062f\u0631 \u0635\u0648\u0631\u062a \u0631\u0647\u0627 \u06a9\u0631\u062f\u0646 \u06cc\u0627 \u0644\u063a\u0648\r\n};\r\n\r\n// \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u062f\u0633\u06a9\u062a\u0627\u067e\r\nelement.addEventListener("mousedown", startPress);\r\nelement.addEventListener("mouseup", endPress);\r\nelement.addEventListener("mouseleave", endPress);\r\n\r\n// \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644\r\nelement.addEventListener("touchstart", startPress);\r\nelement.addEventListener("touchend", endPress);\r\nelement.addEventListener("touchcancel", endPress);\r\n\r\n\r\n</script>'
         }
       />
+
+      <AntdModal
+        data-plasmic-name={"addingGuestInfo"}
+        data-plasmic-override={overrides.addingGuestInfo}
+        className={classNames("__wab_instance", sty.addingGuestInfo)}
+        defaultStylesClassName={classNames(
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          plasmic_antd_5_hostless_css.plasmic_tokens,
+          plasmic_plasmic_rich_components_css.plasmic_tokens
+        )}
+        hideFooter={true}
+        modalScopeClassName={sty["addingGuestInfo__modal"]}
+        onOpenChange={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["addingGuestInfo", "open"]).apply(
+            null,
+            eventArgs
+          );
+        }}
+        open={generateStateValueProp($state, ["addingGuestInfo", "open"])}
+        title={
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__acyke
+            )}
+          >
+            {
+              "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0645\u0647\u0645\u0627\u0646"
+            }
+          </div>
+        }
+        trigger={null}
+        width={
+          hasVariant(globalVariants, "screen", "tablet") ? "400" : undefined
+        }
+      >
+        <div
+          data-plasmic-name={"form"}
+          data-plasmic-override={overrides.form}
+          className={classNames(projectcss.all, sty.form)}
+        >
+          <div
+            data-plasmic-name={"p1"}
+            data-plasmic-override={overrides.p1}
+            className={classNames(projectcss.all, sty.p1)}
+          >
+            <TextInput
+              data-plasmic-name={"guestName"}
+              data-plasmic-override={overrides.guestName}
+              className={classNames("__wab_instance", sty.guestName)}
+              onChange={async (...eventArgs: any) => {
+                ((...eventArgs) => {
+                  generateStateOnChangeProp($state, ["guestName", "value"])(
+                    (e => e.target?.value).apply(null, eventArgs)
+                  );
+                }).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              placeholder={"\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
+              value={
+                generateStateValueProp($state, ["guestName", "value"]) ?? ""
+              }
+            />
+          </div>
+          <div
+            data-plasmic-name={"p2"}
+            data-plasmic-override={overrides.p2}
+            className={classNames(projectcss.all, sty.p2)}
+          >
+            <TextInput
+              data-plasmic-name={"phoneNumber"}
+              data-plasmic-override={overrides.phoneNumber}
+              className={classNames("__wab_instance", sty.phoneNumber)}
+              onChange={async (...eventArgs: any) => {
+                ((...eventArgs) => {
+                  generateStateOnChangeProp($state, ["phoneNumber", "value"])(
+                    (e => e.target?.value).apply(null, eventArgs)
+                  );
+                }).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              placeholder={"\u0645\u0648\u0628\u0627\u06cc\u0644"}
+              value={
+                generateStateValueProp($state, ["phoneNumber", "value"]) ?? ""
+              }
+            />
+          </div>
+          <div
+            data-plasmic-name={"p3"}
+            data-plasmic-override={overrides.p3}
+            className={classNames(projectcss.all, sty.p3)}
+          >
+            <AntdInputNumber
+              data-plasmic-name={"amount"}
+              data-plasmic-override={overrides.amount}
+              className={classNames("__wab_instance", sty.amount)}
+              onChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["amount", "value"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              placeholder={
+                "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+              }
+              type={"number"}
+              value={generateStateValueProp($state, ["amount", "value"])}
+            />
+          </div>
+          <div
+            data-plasmic-name={"p4"}
+            data-plasmic-override={overrides.p4}
+            className={classNames(projectcss.all, sty.p4)}
+          >
+            <div
+              data-plasmic-name={"referrer"}
+              data-plasmic-override={overrides.referrer}
+              className={classNames(projectcss.all, sty.referrer)}
+            >
+              <Select
+                data-plasmic-name={"guestReferrer"}
+                data-plasmic-override={overrides.guestReferrer}
+                className={classNames("__wab_instance", sty.guestReferrer)}
+                onChange={async (...eventArgs: any) => {
+                  ((...eventArgs) => {
+                    generateStateOnChangeProp($state, [
+                      "guestReferrer",
+                      "value"
+                    ])(eventArgs[0]);
+                  }).apply(null, eventArgs);
+
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
+                    return;
+                  }
+                }}
+                options={(() => {
+                  const __composite = [
+                    { value: null, label: null },
+                    { value: null, label: null },
+                    { value: null, label: null },
+                    { value: null, label: null },
+                    { label: null, value: null },
+                    { value: null, label: null }
+                  ];
+                  __composite["0"]["value"] = "divar";
+                  __composite["0"]["label"] = "\u062f\u06cc\u0648\u0627\u0631";
+                  __composite["1"]["value"] = "Broker ";
+                  __composite["1"]["label"] = "\u0648\u0627\u0633\u0637\u0647";
+                  __composite["2"]["value"] = "Colleague";
+                  __composite["2"]["label"] = "\u0647\u0645\u06a9\u0627\u0631";
+                  __composite["3"]["value"] = " Returning Guest";
+                  __composite["3"]["label"] =
+                    "\u0645\u0633\u0627\u0641\u0631 \u0642\u0628\u0644\u06cc";
+                  __composite["4"]["label"] =
+                    "\u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645";
+                  __composite["4"]["value"] =
+                    "\u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645";
+                  __composite["5"]["value"] = "\u0633\u0627\u06cc\u0631";
+                  __composite["5"]["label"] = "\u0633\u0627\u06cc\u0631";
+                  return __composite;
+                })()}
+                placeholder={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__lq6I1
+                    )}
+                  >
+                    {"\u0645\u0639\u0631\u0641 \u0645\u0647\u0645\u0627\u0646"}
+                  </div>
+                }
+                value={generateStateValueProp($state, [
+                  "guestReferrer",
+                  "value"
+                ])}
+              />
+            </div>
+            <div
+              data-plasmic-name={"count2"}
+              data-plasmic-override={overrides.count2}
+              className={classNames(projectcss.all, sty.count2)}
+            >
+              <AntdInputNumber
+                data-plasmic-name={"guestCount"}
+                data-plasmic-override={overrides.guestCount}
+                className={classNames("__wab_instance", sty.guestCount)}
+                onChange={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "guestCount",
+                    "value"
+                  ]).apply(null, eventArgs);
+                }}
+                placeholder={"\u0646\u0641\u0631\u0627\u062a"}
+                type={"number"}
+                value={generateStateValueProp($state, ["guestCount", "value"])}
+              />
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"p5"}
+            data-plasmic-override={overrides.p5}
+            className={classNames(projectcss.all, sty.p5)}
+          >
+            <Button
+              className={classNames("__wab_instance", sty.button__lhJj9)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://gateway.rentamon.com/webhook/add_contact",
+                          undefined,
+                          (() => {
+                            try {
+                              return (() => {
+                                function gregorianToJalali(gy, gm, gd) {
+                                  let g_d_m = [
+                                    0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
+                                    30, 31
+                                  ];
+
+                                  let jy = gy <= 1600 ? 0 : 979;
+                                  gy -= gy <= 1600 ? 621 : 1600;
+                                  let gy2 = gm > 2 ? gy + 1 : gy;
+                                  let days =
+                                    365 * gy +
+                                    Math.floor((gy2 + 3) / 4) -
+                                    Math.floor((gy2 + 99) / 100) +
+                                    Math.floor((gy2 + 399) / 400);
+                                  for (let i = 0; i < gm; i++) {
+                                    days += g_d_m[i];
+                                  }
+                                  days += gd - 1;
+                                  let j_days = days - 79;
+                                  let j_np = Math.floor(j_days / 12053);
+                                  j_days %= 12053;
+                                  jy +=
+                                    33 * j_np + 4 * Math.floor(j_days / 1461);
+                                  j_days %= 1461;
+                                  if (j_days >= 366) {
+                                    jy += Math.floor((j_days - 1) / 365);
+                                    j_days = (j_days - 1) % 365;
+                                  }
+                                  let jm, jd;
+                                  if (j_days < 186) {
+                                    jm = 1 + Math.floor(j_days / 31);
+                                    jd = 1 + (j_days % 31);
+                                  } else {
+                                    jm = 7 + Math.floor((j_days - 186) / 30);
+                                    jd = 1 + ((j_days - 186) % 30);
+                                  }
+                                  return {
+                                    jy,
+                                    jm,
+                                    jd
+                                  };
+                                }
+                                function convertTimestampToJalali(timestamp) {
+                                  let date = new Date(timestamp * 1000);
+                                  let gy = date.getUTCFullYear();
+                                  let gm = date.getUTCMonth() + 1;
+                                  let gd = date.getUTCDate();
+                                  let { jy, jm, jd } = gregorianToJalali(
+                                    gy,
+                                    gm,
+                                    gd
+                                  );
+                                  return `${jy}-${String(jm).padStart(
+                                    2,
+                                    "0"
+                                  )}-${String(jd).padStart(2, "0")}`;
+                                }
+                                let timestamps =
+                                  $state.fragmentDatePicker.values;
+                                let jalaliDates = timestamps.map(ts =>
+                                  convertTimestampToJalali(ts)
+                                );
+                                let a = {
+                                  guest_name: $state.guestName.value,
+                                  phone_number: $state.phoneNumber.value,
+                                  amount: $state.amount.value,
+                                  referrer: $state.guestReferrer.value,
+                                  guest_count: $state.guestCount.value,
+                                  property_id: $props.propertyId,
+                                  check_in: jalaliDates[0],
+                                  check_out: jalaliDates[jalaliDates.length - 1]
+                                };
+                                return a;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__iQ5SN
+                )}
+              >
+                {
+                  "\u062b\u0628\u062a \u062f\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
+                }
+              </div>
+            </Button>
+          </div>
+        </div>
+      </AntdModal>
     </div>
   ) as React.ReactElement | null;
 }
@@ -6358,6 +6780,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
+    "form2",
     "sideEffect",
     "fragmentDatePicker",
     "fragmentLongPress",
@@ -6386,9 +6809,24 @@ const PlasmicDescendants = {
     "updateNoteModal",
     "textarea2",
     "checkForChange",
-    "embedHtml"
+    "embedHtml",
+    "addingGuestInfo",
+    "form",
+    "p1",
+    "guestName",
+    "p2",
+    "phoneNumber",
+    "p3",
+    "amount",
+    "p4",
+    "referrer",
+    "guestReferrer",
+    "count2",
+    "guestCount",
+    "p5"
   ],
   apiRequest: ["apiRequest"],
+  form2: ["form2"],
   sideEffect: ["sideEffect"],
   fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
   fragmentLongPress: ["fragmentLongPress", "dayCell"],
@@ -6425,7 +6863,50 @@ const PlasmicDescendants = {
   updateNoteModal: ["updateNoteModal", "textarea2"],
   textarea2: ["textarea2"],
   checkForChange: ["checkForChange"],
-  embedHtml: ["embedHtml"]
+  embedHtml: ["embedHtml"],
+  addingGuestInfo: [
+    "addingGuestInfo",
+    "form",
+    "p1",
+    "guestName",
+    "p2",
+    "phoneNumber",
+    "p3",
+    "amount",
+    "p4",
+    "referrer",
+    "guestReferrer",
+    "count2",
+    "guestCount",
+    "p5"
+  ],
+  form: [
+    "form",
+    "p1",
+    "guestName",
+    "p2",
+    "phoneNumber",
+    "p3",
+    "amount",
+    "p4",
+    "referrer",
+    "guestReferrer",
+    "count2",
+    "guestCount",
+    "p5"
+  ],
+  p1: ["p1", "guestName"],
+  guestName: ["guestName"],
+  p2: ["p2", "phoneNumber"],
+  phoneNumber: ["phoneNumber"],
+  p3: ["p3", "amount"],
+  amount: ["amount"],
+  p4: ["p4", "referrer", "guestReferrer", "count2", "guestCount"],
+  referrer: ["referrer", "guestReferrer"],
+  guestReferrer: ["guestReferrer"],
+  count2: ["count2", "guestCount"],
+  guestCount: ["guestCount"],
+  p5: ["p5"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -6433,6 +6914,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
+  form2: "div";
   sideEffect: typeof SideEffect;
   fragmentDatePicker: typeof DatePicker;
   fragmentLongPress: typeof FragmentLongPress;
@@ -6462,6 +6944,20 @@ type NodeDefaultElementType = {
   textarea2: typeof Textarea;
   checkForChange: typeof AntdModal;
   embedHtml: typeof Embed;
+  addingGuestInfo: typeof AntdModal;
+  form: "div";
+  p1: "div";
+  guestName: typeof TextInput;
+  p2: "div";
+  phoneNumber: typeof TextInput;
+  p3: "div";
+  amount: typeof AntdInputNumber;
+  p4: "div";
+  referrer: "div";
+  guestReferrer: typeof Select;
+  count2: "div";
+  guestCount: typeof AntdInputNumber;
+  p5: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -6525,6 +7021,7 @@ export const PlasmicCalendar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
+    form2: makeNodeComponent("form2"),
     sideEffect: makeNodeComponent("sideEffect"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),
@@ -6554,6 +7051,20 @@ export const PlasmicCalendar2 = Object.assign(
     textarea2: makeNodeComponent("textarea2"),
     checkForChange: makeNodeComponent("checkForChange"),
     embedHtml: makeNodeComponent("embedHtml"),
+    addingGuestInfo: makeNodeComponent("addingGuestInfo"),
+    form: makeNodeComponent("form"),
+    p1: makeNodeComponent("p1"),
+    guestName: makeNodeComponent("guestName"),
+    p2: makeNodeComponent("p2"),
+    phoneNumber: makeNodeComponent("phoneNumber"),
+    p3: makeNodeComponent("p3"),
+    amount: makeNodeComponent("amount"),
+    p4: makeNodeComponent("p4"),
+    referrer: makeNodeComponent("referrer"),
+    guestReferrer: makeNodeComponent("guestReferrer"),
+    count2: makeNodeComponent("count2"),
+    guestCount: makeNodeComponent("guestCount"),
+    p5: makeNodeComponent("p5"),
 
     // Metadata about props expected for PlasmicCalendar2
     internalVariantProps: PlasmicCalendar2__VariantProps,

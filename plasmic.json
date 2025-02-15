@@ -1105,6 +1105,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicRentamonFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "cQPw0-BlyPGu",
+          "name": "Contacts",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicContacts.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/contacts.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicContacts.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/contacts"
         }
       ],
       "icons": [
@@ -2139,6 +2153,11 @@
           "id": "L3As-1UqMFEx",
           "name": "image 53",
           "filePath": "../public/plasmic/website_starter/images/image53.png"
+        },
+        {
+          "id": "xoEkpOi0JwdP",
+          "name": "شاپرک.png",
+          "filePath": "../public/plasmic/website_starter/images/شاپرکPng.png"
         }
       ],
       "indirect": false,

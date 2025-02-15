@@ -263,7 +263,7 @@ function PlasmicReservations__RenderFunc(props: {
         path: "finalModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "selectedAction",
@@ -2888,6 +2888,121 @@ function PlasmicReservations__RenderFunc(props: {
                 <Button
                   className={classNames("__wab_instance", sty.button__rlPuY)}
                   color={"red"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["invokeGlobalAction"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "POST",
+                              "https://gateway.rentamon.com/webhook-test/cancel_reserve",
+                              (() => {
+                                try {
+                                  return {
+                                    reserve_id: $state.modalData[0].reserve_id,
+                                    website: $state.modalData[0].platfromName,
+                                    id: $state.modalData[0].id
+                                  };
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            ]
+                          };
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                    if (
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
+                    ) {
+                      $steps["invokeGlobalAction"] = await $steps[
+                        "invokeGlobalAction"
+                      ];
+                    }
+
+                    $steps["updateStateVariable"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            value: ($state.reserveData.data =
+                              $state.reserveData.data.filter(
+                                item => item.Id !== $state.modalData[0].id
+                              ))
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateStateVariable"] != null &&
+                      typeof $steps["updateStateVariable"] === "object" &&
+                      typeof $steps["updateStateVariable"].then === "function"
+                    ) {
+                      $steps["updateStateVariable"] = await $steps[
+                        "updateStateVariable"
+                      ];
+                    }
+
+                    $steps["updateFinalModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["finalModal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateFinalModalOpen"] != null &&
+                      typeof $steps["updateFinalModalOpen"] === "object" &&
+                      typeof $steps["updateFinalModalOpen"].then === "function"
+                    ) {
+                      $steps["updateFinalModalOpen"] = await $steps[
+                        "updateFinalModalOpen"
+                      ];
+                    }
+                  }}
                 >
                   <Stack__
                     as={"div"}

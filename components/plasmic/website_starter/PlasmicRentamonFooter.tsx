@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -82,6 +84,7 @@ export const PlasmicRentamonFooter__ArgProps = new Array<ArgPropType>();
 export type PlasmicRentamonFooter__OverridesType = {
   footer?: Flex__<"div">;
   mid?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   _1st?: Flex__<"div">;
   top?: Flex__<"div">;
   but?: Flex__<"div">;
@@ -161,7 +164,13 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__jJcc)}
-                displayHeight={"auto"}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "105px"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "124px"
+                    : "auto"
+                }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
@@ -203,6 +212,15 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   aspectRatio: undefined
                 }}
               />
+
+              <Embed
+                data-plasmic-name={"embedHtml"}
+                data-plasmic-override={overrides.embedHtml}
+                className={classNames("__wab_instance", sty.embedHtml)}
+                code={
+                  "<div>\r\n<a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=519096&Code=fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=519096&Code=fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16' alt='' style='cursor:pointer' code='fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'></a>\r\n\r\n</div>"
+                }
+              />
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__zeOcA)}>
               <div
@@ -212,9 +230,11 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   sty.text__musna
                 )}
               >
-                {
-                  "\u062f\u0627\u0631\u0627\u06cc \u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"
-                }
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                  ? "\u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"
+                  : "\u062f\u0627\u0631\u0627\u06cc \u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"}
               </div>
             </div>
           </div>
@@ -223,7 +243,13 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__fgjwb)}
-                displayHeight={"147px"}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "95px"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "112px"
+                    : "121px"
+                }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
@@ -252,10 +278,45 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__rneVq)}>
-            <div className={classNames(projectcss.all, sty.freeBox__jg7Dj)} />
-
-            <div className={classNames(projectcss.all, sty.freeBox__nlJwg)} />
+          <div className={classNames(projectcss.all, sty.freeBox__wrGuV)}>
+            <div className={classNames(projectcss.all, sty.freeBox__nzeHy)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__kSPbT)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "67px"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "91px"
+                    : "100px"
+                }
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/شاپرکPng.png",
+                  fullWidth: 200,
+                  fullHeight: 115,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__s2BqG)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___45Xuh
+                )}
+              >
+                {
+                  "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0645\u0646 \u0628\u0627\u0646\u06a9\u06cc (\u0634\u0627\u067e\u0631\u06a9)"
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -623,8 +684,9 @@ function PlasmicRentamonFooter__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  footer: ["footer", "mid", "_1st", "top", "but"],
-  mid: ["mid"],
+  footer: ["footer", "mid", "embedHtml", "_1st", "top", "but"],
+  mid: ["mid", "embedHtml"],
+  embedHtml: ["embedHtml"],
   _1st: ["_1st"],
   top: ["top"],
   but: ["but"]
@@ -635,6 +697,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   footer: "div";
   mid: "div";
+  embedHtml: typeof Embed;
   _1st: "div";
   top: "div";
   but: "div";
@@ -701,6 +764,7 @@ export const PlasmicRentamonFooter = Object.assign(
   {
     // Helper components rendering sub-elements
     mid: makeNodeComponent("mid"),
+    embedHtml: makeNodeComponent("embedHtml"),
     _1st: makeNodeComponent("_1st"),
     top: makeNodeComponent("top"),
     but: makeNodeComponent("but"),
