@@ -86,13 +86,15 @@ export type PlasmicContacts__OverridesType = {
   freeBox?: Flex__<"div">;
   title?: Flex__<"div">;
   pageTitle?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
+  img?: Flex__<typeof PlasmicImg__>;
+  text?: Flex__<"div">;
   frame?: Flex__<"div">;
   contactsRow?: Flex__<"div">;
   names?: Flex__<"div">;
   guestName?: Flex__<"div">;
   phones?: Flex__<"div">;
-  guestPhone?: Flex__<"div">;
-  apiRequest?: Flex__<typeof ApiRequest>;
+  guestPhone?: Flex__<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultContactsProps {}
@@ -224,6 +226,72 @@ function PlasmicContacts__RenderFunc(props: {
                 {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
               </div>
             </div>
+          </div>
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "34px"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "55px"
+                    : "76px"
+                }
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={
+                  "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                }
+              />
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
+            }}
+            url={"https://gateway.rentamon.com/webhook/get_guest"}
+          >
             <div
               data-plasmic-name={"frame"}
               data-plasmic-override={overrides.frame}
@@ -277,44 +345,43 @@ function PlasmicContacts__RenderFunc(props: {
                       data-plasmic-override={overrides.phones}
                       className={classNames(projectcss.all, sty.phones)}
                     >
-                      <div
+                      <PlasmicLink__
                         data-plasmic-name={"guestPhone"}
                         data-plasmic-override={overrides.guestPhone}
                         className={classNames(
                           projectcss.all,
+                          projectcss.a,
                           projectcss.__wab_text,
                           sty.guestPhone
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      const handleClick = number => {
-                                        // Code to send the number to the phone caller section
-                                        console.log(number);
-                                      };
-
-                                      return handleClick(currentItem);
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
+                        component={Link}
+                        href={(() => {
+                          try {
+                            return $state.apiRequest.data[currentIndex].phone;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
                           }
-                        }}
+                        })()}
+                        platform={"nextjs"}
+                        tell={(() => {
+                          try {
+                            return $state.apiRequest.data[currentIndex].phone;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
                       >
                         <React.Fragment>
                           {(() => {
@@ -337,63 +404,13 @@ function PlasmicContacts__RenderFunc(props: {
                             }
                           })()}
                         </React.Fragment>
-                      </div>
+                      </PlasmicLink__>
                     </div>
                   </div>
                 );
               })}
             </div>
-          </div>
-          <ApiRequest
-            data-plasmic-name={"apiRequest"}
-            data-plasmic-override={overrides.apiRequest}
-            className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jmExN
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___18Aeb
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequest",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            ref={ref => {
-              $refs["apiRequest"] = ref;
-            }}
-            url={"https://gateway.rentamon.com/webhook/get_guest"}
-          />
+          </ApiRequest>
         </div>
       </div>
     </React.Fragment>
@@ -406,18 +423,9 @@ const PlasmicDescendants = {
     "freeBox",
     "title",
     "pageTitle",
-    "frame",
-    "contactsRow",
-    "names",
-    "guestName",
-    "phones",
-    "guestPhone",
-    "apiRequest"
-  ],
-  freeBox: [
-    "freeBox",
-    "title",
-    "pageTitle",
+    "apiRequest",
+    "img",
+    "text",
     "frame",
     "contactsRow",
     "names",
@@ -425,15 +433,28 @@ const PlasmicDescendants = {
     "phones",
     "guestPhone"
   ],
+  freeBox: ["freeBox", "title", "pageTitle"],
   title: ["title", "pageTitle"],
   pageTitle: ["pageTitle"],
+  apiRequest: [
+    "apiRequest",
+    "img",
+    "text",
+    "frame",
+    "contactsRow",
+    "names",
+    "guestName",
+    "phones",
+    "guestPhone"
+  ],
+  img: ["img"],
+  text: ["text"],
   frame: ["frame", "contactsRow", "names", "guestName", "phones", "guestPhone"],
   contactsRow: ["contactsRow", "names", "guestName", "phones", "guestPhone"],
   names: ["names", "guestName"],
   guestName: ["guestName"],
   phones: ["phones", "guestPhone"],
-  guestPhone: ["guestPhone"],
-  apiRequest: ["apiRequest"]
+  guestPhone: ["guestPhone"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -443,13 +464,15 @@ type NodeDefaultElementType = {
   freeBox: "div";
   title: "div";
   pageTitle: "div";
+  apiRequest: typeof ApiRequest;
+  img: typeof PlasmicImg__;
+  text: "div";
   frame: "div";
   contactsRow: "div";
   names: "div";
   guestName: "div";
   phones: "div";
-  guestPhone: "div";
-  apiRequest: typeof ApiRequest;
+  guestPhone: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -515,13 +538,15 @@ export const PlasmicContacts = Object.assign(
     freeBox: makeNodeComponent("freeBox"),
     title: makeNodeComponent("title"),
     pageTitle: makeNodeComponent("pageTitle"),
+    apiRequest: makeNodeComponent("apiRequest"),
+    img: makeNodeComponent("img"),
+    text: makeNodeComponent("text"),
     frame: makeNodeComponent("frame"),
     contactsRow: makeNodeComponent("contactsRow"),
     names: makeNodeComponent("names"),
     guestName: makeNodeComponent("guestName"),
     phones: makeNodeComponent("phones"),
     guestPhone: makeNodeComponent("guestPhone"),
-    apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for PlasmicContacts
     internalVariantProps: PlasmicContacts__VariantProps,
