@@ -1080,20 +1080,6 @@
           "path": "/activation/[type]"
         },
         {
-          "id": "WQWXz0cyryQV",
-          "name": "NewPricing",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPricing.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-pricing.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPricing.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-pricing"
-        },
-        {
           "id": "DSdlo5kdtbOe",
           "name": "RentamonFooter",
           "type": "managed",
@@ -1119,6 +1105,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/contacts"
+        },
+        {
+          "id": "WQWXz0cyryQV",
+          "name": "NewChanges",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewChanges.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/new-changes.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewChanges.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-changes"
         }
       ],
       "icons": [
@@ -2158,6 +2158,21 @@
           "id": "xoEkpOi0JwdP",
           "name": "شاپرک.png",
           "filePath": "../public/plasmic/website_starter/images/شاپرکPng.png"
+        },
+        {
+          "id": "GDH9ge7BoQB6",
+          "name": "1731928122363.jpg 3",
+          "filePath": "../public/plasmic/website_starter/images/_1731928122363Jpg3.jpg"
+        },
+        {
+          "id": "h7_AhtRgveWa",
+          "name": "image 54",
+          "filePath": "../public/plasmic/website_starter/images/image54.svg"
+        },
+        {
+          "id": "HR-YUfGv1ZJS",
+          "name": "image 55",
+          "filePath": "../public/plasmic/website_starter/images/image55.svg"
         }
       ],
       "indirect": false,
