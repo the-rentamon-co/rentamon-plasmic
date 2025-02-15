@@ -460,7 +460,7 @@ function PlasmicSideBar2__RenderFunc(props: {
                   const actionArgs = {
                     customFunction: async () => {
                       return (window.location.href =
-                        "https://rentamon.com/pricing/");
+                        "https://app.rentamon.com/pricing");
                     }
                   };
                   return (({ customFunction }) => {

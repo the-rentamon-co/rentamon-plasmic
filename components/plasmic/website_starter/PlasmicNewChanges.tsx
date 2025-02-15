@@ -61,6 +61,7 @@ import {
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -91,6 +92,7 @@ export type PlasmicNewChanges__OverridesType = {
   appDemo?: Flex__<"div">;
   cta2?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultNewChangesProps {}
@@ -621,7 +623,7 @@ function PlasmicNewChanges__RenderFunc(props: {
                         customFunction: async () => {
                           return (() => {
                             return window.open(
-                              "https://app.rentamon.com/pricing",
+                              "https://app.rentamon.com/new-calendar",
                               "_blank"
                             );
                           })();
@@ -651,6 +653,15 @@ function PlasmicNewChanges__RenderFunc(props: {
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <Embed
+            data-plasmic-name={"embedHtml"}
+            data-plasmic-override={overrides.embedHtml}
+            className={classNames("__wab_instance", sty.embedHtml)}
+            code={
+              '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon.com/wp-content/uploads/2023/08/R-Logo-7059df.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "192x192"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -666,7 +677,8 @@ const PlasmicDescendants = {
     "featuresDesc",
     "appDemo",
     "cta2",
-    "rentamonFooter"
+    "rentamonFooter",
+    "embedHtml"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   intro: ["intro"],
@@ -674,7 +686,8 @@ const PlasmicDescendants = {
   featuresDesc: ["featuresDesc"],
   appDemo: ["appDemo"],
   cta2: ["cta2"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -688,6 +701,7 @@ type NodeDefaultElementType = {
   appDemo: "div";
   cta2: "div";
   rentamonFooter: typeof RentamonFooter;
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -757,6 +771,7 @@ export const PlasmicNewChanges = Object.assign(
     appDemo: makeNodeComponent("appDemo"),
     cta2: makeNodeComponent("cta2"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicNewChanges
     internalVariantProps: PlasmicNewChanges__VariantProps,
@@ -764,7 +779,7 @@ export const PlasmicNewChanges = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "تغییر مدل تعرفه",
+      title: "رونمایی از برنامه‌ی جدید رنتامون",
       description: "",
       ogImageSrc: "",
       canonical: ""
