@@ -2581,7 +2581,7 @@ function PlasmicPricing__RenderFunc(props: {
                           undefined,
                           (() => {
                             try {
-                              return { amount: "100000" };
+                              return { amount: "1000000" };
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||

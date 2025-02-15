@@ -1548,7 +1548,7 @@
 .img__f9C3 {
   object-fit: cover;
   max-width: 100%;
-  width: 94px;
+  width: 65px;
 }
 .img__f9C3 > picture > img {
   object-fit: cover;
@@ -1561,6 +1561,7 @@
   font-size: 18px;
   padding-top: 1em;
   padding-bottom: 1em;
+  text-align: center;
   min-width: 0;
 }
 .freeBox__a79U {

@@ -3314,6 +3314,7 @@ function PlasmicReservations__RenderFunc(props: {
             open={generateStateValueProp($state, ["block", "open"])}
             title={null}
             trigger={null}
+            width={"320"}
             wrapClassName={classNames({ [sty["pcls_fMThDldkXanq"]]: true })}
           >
             <div className={classNames(projectcss.all, sty.freeBox__pkuAa)}>
@@ -3325,7 +3326,7 @@ function PlasmicReservations__RenderFunc(props: {
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"94px"}
+                displayWidth={"65px"}
                 loading={"lazy"}
                 src={{
                   src: "/plasmic/website_starter/images/image55.svg",
