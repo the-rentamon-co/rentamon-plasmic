@@ -3326,7 +3326,7 @@ function PlasmicReservations__RenderFunc(props: {
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"65px"}
+                displayWidth={"34px"}
                 loading={"lazy"}
                 src={{
                   src: "/plasmic/website_starter/images/image55.svg",

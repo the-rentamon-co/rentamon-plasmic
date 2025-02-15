@@ -161,58 +161,6 @@ function PlasmicRentamonFooter__RenderFunc(props: {
         >
           <div className={classNames(projectcss.all, sty.freeBox__bKwGn)}>
             <div className={classNames(projectcss.all, sty.freeBox___8NVqX)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__jJcc)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? "105px"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "124px"
-                    : "auto"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return window.open(
-                                "https://trustseal.enamad.ir/?id=519096&Code=fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16",
-                                "_blank"
-                              );
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-                src={{
-                  src: "/plasmic/website_starter/images/image50.png",
-                  fullWidth: 125,
-                  fullHeight: 136,
-                  aspectRatio: undefined
-                }}
-              />
-
               <Embed
                 data-plasmic-name={"embedHtml"}
                 data-plasmic-override={overrides.embedHtml}

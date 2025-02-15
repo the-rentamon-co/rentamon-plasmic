@@ -98,25 +98,6 @@
   min-width: 0;
   padding: 0px 8px 8px;
 }
-.img__jJcc {
-  object-fit: cover;
-  max-width: 100%;
-}
-.img__jJcc > picture > img {
-  object-fit: cover;
-}
-@media (max-width: 1200px) {
-  .img__jJcc {
-    height: 124px;
-    flex-shrink: 0;
-  }
-}
-@media (max-width: 500px) {
-  .img__jJcc {
-    height: 105px;
-    flex-shrink: 0;
-  }
-}
 .embedHtml:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
