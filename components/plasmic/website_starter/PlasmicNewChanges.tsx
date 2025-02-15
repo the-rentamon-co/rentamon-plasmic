@@ -92,7 +92,9 @@ export type PlasmicNewChanges__OverridesType = {
   appDemo?: Flex__<"div">;
   cta2?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
-  embedHtml?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
+  favIcon?: Flex__<typeof Embed>;
+  clarity?: Flex__<typeof Embed>;
 };
 
 export interface DefaultNewChangesProps {}
@@ -286,7 +288,7 @@ function PlasmicNewChanges__RenderFunc(props: {
                 ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u06af\u0630\u0631\u0647. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u062f\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0632\u06cc\u0627\u062f\u06cc \u0627\u0632 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc\u0645\u060c \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0686\u0631\u0627\u063a \u0631\u0627\u0647 \u0645\u0627 \u0628\u0648\u062f\u0647. \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc \u0648 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc\u200c\u0647\u0627\u06cc \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u06a9\u0627\u0645\u0644\u0627 \u062c\u062f\u06cc\u062f \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u06a9\u0644\u06cc \u0628\u0647\u0628\u0648\u062f \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u0641\u0648\u0642\u200c\u0627\u0644\u0639\u0627\u062f\u0647 \u0622\u0645\u0627\u062f\u0647 \u0639\u0631\u0636\u0647 \u0627\u0633\u062a.\r\n\r"
                 : hasVariant(globalVariants, "screen", "tablet")
                 ? "\u06f1\u06f4 \u0645\u0627\u0647 \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u06af\u0630\u0631\u0647. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u062f\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0632\u06cc\u0627\u062f\u06cc \u0627\u0632 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc\u0645\u060c \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0686\u0631\u0627\u063a \u0631\u0627\u0647 \u0645\u0627 \u0628\u0648\u062f\u0647. \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc \u0648 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc\u200c\u0647\u0627\u06cc \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u06a9\u0627\u0645\u0644\u0627 \u062c\u062f\u06cc\u062f \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u06a9\u0644\u06cc \u0628\u0647\u0628\u0648\u062f \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u0641\u0648\u0642\u200c\u0627\u0644\u0639\u0627\u062f\u0647 \u0622\u0645\u0627\u062f\u0647 \u0639\u0631\u0636\u0647 \u0627\u0633\u062a.\r\n\r"
-                : "\u06f1\u06f4 \u0645\u0627\u0647 \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u06af\u0630\u0631\u0647. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u062f\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0632\u06cc\u0627\u062f\u06cc \u0627\u0632 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc\u0645\u060c \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0686\u0631\u0627\u063a \u0631\u0627\u0647 \u0645\u0627 \u0628\u0648\u062f\u0647. \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc \u0648 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc\u200c\u0647\u0627\u06cc \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u06a9\u0627\u0645\u0644\u0627 \u062c\u062f\u06cc\u062f \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u06a9\u0644\u06cc \u0628\u0647\u0628\u0648\u062f \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u0641\u0648\u0642\u200c\u0627\u0644\u0639\u0627\u062f\u0647 \u0622\u0645\u0627\u062f\u0647 \u0639\u0631\u0636\u0647 \u0627\u0633\u062a.\r\n\r"}
+                : "\u06f1\u06f4 \u0645\u0627\u0647 \u0627\u0632 \u0639\u0631\u0636\u0647\u200c\u06cc \u0627\u0648\u0644\u06cc\u0646 \u0646\u0633\u062e\u0647\u200c\u06cc \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u06af\u0630\u0631\u0647. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u062f\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0632\u06cc\u0627\u062f\u06cc \u0627\u0632 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0639\u0632\u06cc\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc\u0645 \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0686\u0631\u0627\u063a \u0631\u0627\u0647 \u0645\u0627 \u0628\u0648\u062f\u0647. \u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0631\u0633\u06cc \u0648 \u0646\u06cc\u0627\u0632\u0633\u0646\u062c\u06cc\u200c\u0647\u0627\u06cc \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647\u060c \u062d\u0627\u0644\u0627 \u0646\u0633\u062e\u0647\u200c\u06cc \u06a9\u0627\u0645\u0644\u0627 \u062c\u062f\u06cc\u062f \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u06a9\u0644\u06cc \u0628\u0647\u0628\u0648\u062f \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u0641\u0648\u0642\u200c\u0627\u0644\u0639\u0627\u062f\u0647 \u0622\u0645\u0627\u062f\u0647 \u0639\u0631\u0636\u0647 \u0627\u0633\u062a.\r\n\r"}
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___5XCkH)}>
               <PlasmicImg__
@@ -644,7 +646,7 @@ function PlasmicNewChanges__RenderFunc(props: {
               }}
             >
               {
-                "\u062c\u0632\u0626\u06cc\u0627\u062a \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
+                "\u062c\u0632\u06cc\u06cc\u0627\u062a \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
               }
             </div>
           </div>
@@ -655,12 +657,28 @@ function PlasmicNewChanges__RenderFunc(props: {
           />
 
           <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
+            data-plasmic-name={"goftino"}
+            data-plasmic-override={overrides.goftino}
+            className={classNames("__wab_instance", sty.goftino)}
+            code={
+              '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+            }
+          />
+
+          <Embed
+            data-plasmic-name={"favIcon"}
+            data-plasmic-override={overrides.favIcon}
+            className={classNames("__wab_instance", sty.favIcon)}
             code={
               '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon.com/wp-content/uploads/2023/08/R-Logo-7059df.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "192x192"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
             }
+          />
+
+          <Embed
+            data-plasmic-name={"clarity"}
+            data-plasmic-override={overrides.clarity}
+            className={classNames("__wab_instance", sty.clarity)}
+            code={"<div>Paste your embed code via the right sidebar</div>"}
           />
         </div>
       </div>
@@ -678,7 +696,9 @@ const PlasmicDescendants = {
     "appDemo",
     "cta2",
     "rentamonFooter",
-    "embedHtml"
+    "goftino",
+    "favIcon",
+    "clarity"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   intro: ["intro"],
@@ -687,7 +707,9 @@ const PlasmicDescendants = {
   appDemo: ["appDemo"],
   cta2: ["cta2"],
   rentamonFooter: ["rentamonFooter"],
-  embedHtml: ["embedHtml"]
+  goftino: ["goftino"],
+  favIcon: ["favIcon"],
+  clarity: ["clarity"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -701,7 +723,9 @@ type NodeDefaultElementType = {
   appDemo: "div";
   cta2: "div";
   rentamonFooter: typeof RentamonFooter;
-  embedHtml: typeof Embed;
+  goftino: typeof Embed;
+  favIcon: typeof Embed;
+  clarity: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -771,7 +795,9 @@ export const PlasmicNewChanges = Object.assign(
     appDemo: makeNodeComponent("appDemo"),
     cta2: makeNodeComponent("cta2"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
-    embedHtml: makeNodeComponent("embedHtml"),
+    goftino: makeNodeComponent("goftino"),
+    favIcon: makeNodeComponent("favIcon"),
+    clarity: makeNodeComponent("clarity"),
 
     // Metadata about props expected for PlasmicNewChanges
     internalVariantProps: PlasmicNewChanges__VariantProps,

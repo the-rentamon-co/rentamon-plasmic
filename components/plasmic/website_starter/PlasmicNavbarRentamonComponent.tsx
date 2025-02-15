@@ -315,7 +315,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                 sty.link__ryWoj
               )}
               component={Link}
-              href={"https://rentamon.com/panels/"}
+              href={`/panel`}
               platform={"nextjs"}
             >
               {"\u0648\u0631\u0648\u062f"}
@@ -358,7 +358,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                 sty.link__jRxEo
               )}
               component={Link}
-              href={"#"}
+              href={`/pricing`}
               platform={"nextjs"}
             >
               {"\u062a\u0639\u0631\u0641\u0647"}
