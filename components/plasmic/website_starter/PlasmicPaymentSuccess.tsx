@@ -551,7 +551,7 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                     style={{ color: "var(--token-8nedppYkGVaH)" }}
                   >
                     {
-                      "\u062a\u06a9\u0645\u06cc\u0644 \u0645\u0631\u0627\u062d\u0644 \u062e\u0631\u06cc\u062f"
+                      "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
                     }
                   </span>
                 </React.Fragment>

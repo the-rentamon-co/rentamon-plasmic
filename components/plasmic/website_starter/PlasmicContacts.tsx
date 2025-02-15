@@ -369,7 +369,7 @@ function PlasmicContacts__RenderFunc(props: {
                         component={Link}
                         href={(() => {
                           try {
-                            return `tel:+${$state.apiRequest.data[currentIndex].phone}`;
+                            return `tel:${$state.apiRequest.data[currentIndex].phone}`;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||

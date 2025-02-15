@@ -410,6 +410,7 @@
   color: var(--token-jgohepLVeKvh);
   text-align: center;
   font-size: 15px;
+  height: auto;
 }
 @media (max-width: 500px) {
   .text__hG9Gz {
