@@ -297,9 +297,21 @@ function PlasmicContacts__RenderFunc(props: {
               data-plasmic-override={overrides.frame}
               className={classNames(projectcss.all, sty.frame)}
             >
-              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))([
-                2, 3, 4
-              ]).map((__plasmic_item_0, __plasmic_idx_0) => {
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return $state.apiRequest.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
                 const currentItem = __plasmic_item_0;
                 const currentIndex = __plasmic_idx_0;
                 return (
@@ -357,7 +369,7 @@ function PlasmicContacts__RenderFunc(props: {
                         component={Link}
                         href={(() => {
                           try {
-                            return $state.apiRequest.data[currentIndex].phone;
+                            return `tel:+${$state.apiRequest.data[currentIndex].phone}`;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -369,19 +381,6 @@ function PlasmicContacts__RenderFunc(props: {
                           }
                         })()}
                         platform={"nextjs"}
-                        tell={(() => {
-                          try {
-                            return $state.apiRequest.data[currentIndex].phone;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
                       >
                         <React.Fragment>
                           {(() => {
