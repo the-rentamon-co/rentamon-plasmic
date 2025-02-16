@@ -767,7 +767,7 @@ export const PlasmicNewChanges = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "رونمایی از برنامه‌ی جدید رنتامون",
+      title: "رونمایی از نسخه‌ی پیشرفته رنتامون",
       description: "",
       ogImageSrc: "",
       canonical: ""

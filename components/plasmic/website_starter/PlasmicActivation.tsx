@@ -969,7 +969,7 @@ function PlasmicActivation__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateStateVariable"] = false
+                        $steps["updateStateVariable"] = true
                           ? (() => {
                               const actionArgs = {
                                 operation: 0,
@@ -5022,7 +5022,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/jajiga-send-otp",
+                                        "https://gateway.rentamon.com/webhook/Auth_jajiga_Send",
                                         undefined,
                                         (() => {
                                           try {
@@ -5300,7 +5300,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/jajiga-verify-otp",
+                                        "https://gateway.rentamon.com/webhook/Auth_jajiga_verify",
                                         undefined,
                                         (() => {
                                           try {
