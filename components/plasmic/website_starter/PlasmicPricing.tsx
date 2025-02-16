@@ -313,7 +313,7 @@ function PlasmicPricing__RenderFunc(props: {
             data-plasmic-override={overrides.favIcon}
             className={classNames("__wab_instance", sty.favIcon)}
             code={
-              "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
+              "<script>\r\n(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
             }
           />
 
