@@ -6,7 +6,14 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  background: #203647;
+  background: linear-gradient(
+    52deg,
+    #203647 0%,
+    #376385 16%,
+    #0e1419 46%,
+    #3b6381 83%,
+    #203647 100%
+  );
   position: relative;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
@@ -587,6 +594,7 @@
 @media (max-width: 1200px) {
   .text__cednT {
     font-size: 16px;
+    font-weight: 500;
   }
 }
 @media (max-width: 500px) {

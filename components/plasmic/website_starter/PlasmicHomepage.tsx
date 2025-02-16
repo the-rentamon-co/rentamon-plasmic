@@ -59,6 +59,15 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
+import Testimonial from "../../Testimonial"; // plasmic-import: MWmH78o8OGcS/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -67,6 +76,10 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JDKbvzOHcQCj/css
+
+import Icon30Icon from "./icons/PlasmicIcon__Icon30"; // plasmic-import: nCtlWXhktf9o/icon
+import Icon31Icon from "./icons/PlasmicIcon__Icon31"; // plasmic-import: MlRJZHlsCx5e/icon
+import Icon32Icon from "./icons/PlasmicIcon__Icon32"; // plasmic-import: 4opHO6eHDQXf/icon
 
 createPlasmicElementProxy;
 
@@ -80,7 +93,73 @@ type ArgPropType = keyof PlasmicHomepage__ArgsType;
 export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
-  root?: Flex__<"div">;
+  home?: Flex__<"div">;
+  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  mainContents?: Flex__<"div">;
+  introCalendar?: Flex__<"div">;
+  introCalendarTitle?: Flex__<"div">;
+  introCalendarCaption?: Flex__<"div">;
+  introCalendar4?: Flex__<"div">;
+  introCalendarRight?: Flex__<"div">;
+  introCalendarRight2?: Flex__<"div">;
+  introCalendarRight3?: Flex__<"div">;
+  introCalendarRight4?: Flex__<"div">;
+  introCalendarLeft?: Flex__<"div">;
+  introAutoSync?: Flex__<"div">;
+  introAutoSyncTitle?: Flex__<"div">;
+  introAutoSyncCaption?: Flex__<"div">;
+  introAutoSyncDesc?: Flex__<"div">;
+  introAutoSyncBenefits?: Flex__<"div">;
+  introAutoSyncGif?: Flex__<"div">;
+  _3Benefits?: Flex__<"div">;
+  _3Benefits1st?: Flex__<"div">;
+  icon?: Flex__<"div">;
+  title?: Flex__<"div">;
+  caption?: Flex__<"div">;
+  _3Benefits2nd?: Flex__<"div">;
+  icon2?: Flex__<"div">;
+  title2?: Flex__<"div">;
+  caption2?: Flex__<"div">;
+  _3Benefits3rd?: Flex__<"div">;
+  icon3?: Flex__<"div">;
+  title3?: Flex__<"div">;
+  caption3?: Flex__<"div">;
+  image?: Flex__<"div">;
+  introAutoSyncTitle2?: Flex__<"div">;
+  introAutoSyncCaption2?: Flex__<"div">;
+  introAutoSyncDesc2?: Flex__<"div">;
+  introAutoSyncGif2?: Flex__<"div">;
+  screenshots?: Flex__<"div">;
+  introCalendarRight5?: Flex__<"div">;
+  introCalendarRight7?: Flex__<"div">;
+  introCalendarRight8?: Flex__<"div">;
+  introCalendarLeft2?: Flex__<"div">;
+  testimonials?: Flex__<"div">;
+  introAutoSyncTitle3?: Flex__<"div">;
+  testimonial?: Flex__<typeof Testimonial>;
+  records?: Flex__<"div">;
+  _1st?: Flex__<"div">;
+  numberTop?: Flex__<"div">;
+  titleDown?: Flex__<"div">;
+  _1st2?: Flex__<"div">;
+  numberTop2?: Flex__<"div">;
+  titleDown2?: Flex__<"div">;
+  _3rd?: Flex__<"div">;
+  numberTop3?: Flex__<"div">;
+  titleDown3?: Flex__<"div">;
+  addingVillaIntoPltforms?: Flex__<"div">;
+  qA?: Flex__<"div">;
+  accordionMain?: Flex__<typeof AntdAccordion>;
+  _2?: Flex__<typeof AntdAccordionItem>;
+  _1?: Flex__<"div">;
+  _4?: Flex__<typeof AntdAccordionItem>;
+  _5?: Flex__<typeof AntdAccordionItem>;
+  _6?: Flex__<typeof AntdAccordionItem>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
+  html?: Flex__<"div">;
+  clarity2?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
+  rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
 export interface DefaultHomepageProps {}
@@ -130,6 +209,17 @@ function PlasmicHomepage__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "accordionMain.activePanelId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec(
+          "activePanelId",
+          AntdAccordion_Helpers
+        )
       }
     ],
     [$props, $ctx, $refs]
@@ -147,7 +237,20 @@ function PlasmicHomepage__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicHomepage.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicHomepage.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -157,8 +260,8 @@ function PlasmicHomepage__RenderFunc(props: {
 
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
+          data-plasmic-name={"home"}
+          data-plasmic-override={overrides.home}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
@@ -169,22 +272,1504 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
             plasmic_plasmic_rich_components_css.plasmic_tokens,
-            sty.root
+            sty.home
           )}
-        />
+        >
+          <NavbarRentamonComponent
+            data-plasmic-name={"navbarRentamonComponent"}
+            data-plasmic-override={overrides.navbarRentamonComponent}
+            className={classNames(
+              "__wab_instance",
+              sty.navbarRentamonComponent
+            )}
+          />
+
+          <div
+            data-plasmic-name={"mainContents"}
+            data-plasmic-override={overrides.mainContents}
+            className={classNames(projectcss.all, sty.mainContents)}
+          >
+            <div
+              data-plasmic-name={"introCalendar"}
+              data-plasmic-override={overrides.introCalendar}
+              className={classNames(projectcss.all, sty.introCalendar)}
+            >
+              <div
+                data-plasmic-name={"introCalendarTitle"}
+                data-plasmic-override={overrides.introCalendarTitle}
+                className={classNames(projectcss.all, sty.introCalendarTitle)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__s3R23
+                  )}
+                >
+                  {
+                    "\u062a\u0642\u0648\u06cc\u0645 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648... \u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0627\u0632 \u00ab\u06cc\u06a9\u200c\u062c\u0627\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u0647\r"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"introCalendarCaption"}
+                data-plasmic-override={overrides.introCalendarCaption}
+                className={classNames(projectcss.all, sty.introCalendarCaption)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__x1QZw
+                  )}
+                >
+                  {
+                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a \u0648 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0631\u0648 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647!\r\n\r"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"introCalendar4"}
+                data-plasmic-override={overrides.introCalendar4}
+                className={classNames(projectcss.all, sty.introCalendar4)}
+              >
+                <div
+                  data-plasmic-name={"introCalendarRight"}
+                  data-plasmic-override={overrides.introCalendarRight}
+                  className={classNames(projectcss.all, sty.introCalendarRight)}
+                >
+                  <div
+                    data-plasmic-name={"introCalendarRight2"}
+                    data-plasmic-override={overrides.introCalendarRight2}
+                    className={classNames(
+                      projectcss.all,
+                      sty.introCalendarRight2
+                    )}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__kit66
+                      )}
+                    >
+                      {
+                        "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r"
+                      }
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"introCalendarRight3"}
+                    data-plasmic-override={overrides.introCalendarRight3}
+                    className={classNames(
+                      projectcss.all,
+                      sty.introCalendarRight3
+                    )}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__y1MaM
+                      )}
+                    >
+                      {
+                        "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\r\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
+                      }
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"introCalendarRight4"}
+                    data-plasmic-override={overrides.introCalendarRight4}
+                    className={classNames(
+                      projectcss.all,
+                      sty.introCalendarRight4
+                    )}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__lwviT
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return window.open(
+                                      "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
+                                      "_blank"
+                                    );
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }}
+                    >
+                      {
+                        "\u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                      }
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"introCalendarLeft"}
+                  data-plasmic-override={overrides.introCalendarLeft}
+                  className={classNames(projectcss.all, sty.introCalendarLeft)}
+                >
+                  <Video
+                    autoPlay={true}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.htmlVideo___9OH96
+                    )}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    src={
+                      "https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"introAutoSync"}
+              data-plasmic-override={overrides.introAutoSync}
+              className={classNames(projectcss.all, sty.introAutoSync)}
+            >
+              <div
+                data-plasmic-name={"introAutoSyncTitle"}
+                data-plasmic-override={overrides.introAutoSyncTitle}
+                className={classNames(projectcss.all, sty.introAutoSyncTitle)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__izNyD
+                  )}
+                >
+                  {
+                    "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"introAutoSyncCaption"}
+                data-plasmic-override={overrides.introAutoSyncCaption}
+                className={classNames(projectcss.all, sty.introAutoSyncCaption)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bNchH
+                  )}
+                >
+                  {
+                    "\u200f\u200f\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647.\r\n\r"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"introAutoSyncDesc"}
+                data-plasmic-override={overrides.introAutoSyncDesc}
+                className={classNames(projectcss.all, sty.introAutoSyncDesc)}
+              >
+                <div
+                  data-plasmic-name={"introAutoSyncBenefits"}
+                  data-plasmic-override={overrides.introAutoSyncBenefits}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introAutoSyncBenefits
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__csa9P
+                    )}
+                  >
+                    {
+                      "\u0645\u0632\u06cc\u062a \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627:\r\n\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\r\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\r\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                    }
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"introAutoSyncGif"}
+                  data-plasmic-override={overrides.introAutoSyncGif}
+                  className={classNames(projectcss.all, sty.introAutoSyncGif)}
+                >
+                  <Video
+                    autoPlay={true}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.htmlVideo__uaglf
+                    )}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    src={
+                      "https://rentamon-files.storage.iran.liara.space/auto-sync.mp4"
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"_3Benefits"}
+              data-plasmic-override={overrides._3Benefits}
+              className={classNames(projectcss.all, sty._3Benefits)}
+            >
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"_3Benefits1st"}
+                data-plasmic-override={overrides._3Benefits1st}
+                hasGap={true}
+                className={classNames(projectcss.all, sty._3Benefits1st)}
+              >
+                <div
+                  data-plasmic-name={"icon"}
+                  data-plasmic-override={overrides.icon}
+                  className={classNames(projectcss.all, sty.icon)}
+                >
+                  <Icon30Icon
+                    className={classNames(projectcss.all, sty.svg__mh4Sc)}
+                    role={"img"}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"title"}
+                  data-plasmic-override={overrides.title}
+                  className={classNames(projectcss.all, sty.title)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mhPKa
+                    )}
+                  >
+                    {
+                      "\u062e\u062f\u0627\u062d\u0627\u0641\u0638\u06cc \u0628\u0627 \u062e\u0637\u0627 \u0648 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648"
+                    }
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"caption"}
+                  data-plasmic-override={overrides.caption}
+                  className={classNames(projectcss.all, sty.caption)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__iq9O
+                    )}
+                  >
+                    {
+                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u062a\u0647"
+                    }
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"_3Benefits2nd"}
+                data-plasmic-override={overrides._3Benefits2nd}
+                hasGap={true}
+                className={classNames(projectcss.all, sty._3Benefits2nd)}
+              >
+                <div
+                  data-plasmic-name={"icon2"}
+                  data-plasmic-override={overrides.icon2}
+                  className={classNames(projectcss.all, sty.icon2)}
+                >
+                  <Icon31Icon
+                    className={classNames(projectcss.all, sty.svg__g7Eyq)}
+                    role={"img"}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"title2"}
+                  data-plasmic-override={overrides.title2}
+                  className={classNames(projectcss.all, sty.title2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fMa1T
+                    )}
+                  >
+                    {
+                      "\u0627\u0641\u0632\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a"
+                    }
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"caption2"}
+                  data-plasmic-override={overrides.caption2}
+                  className={classNames(projectcss.all, sty.caption2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__up4Yp
+                    )}
+                  >
+                    {
+                      "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632\u0647"
+                    }
+                  </div>
+                </div>
+              </Stack__>
+              <div
+                data-plasmic-name={"_3Benefits3rd"}
+                data-plasmic-override={overrides._3Benefits3rd}
+                className={classNames(projectcss.all, sty._3Benefits3rd)}
+              >
+                <div
+                  data-plasmic-name={"icon3"}
+                  data-plasmic-override={overrides.icon3}
+                  className={classNames(projectcss.all, sty.icon3)}
+                >
+                  <Icon32Icon
+                    className={classNames(projectcss.all, sty.svg___8TmEs)}
+                    role={"img"}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"title3"}
+                  data-plasmic-override={overrides.title3}
+                  className={classNames(projectcss.all, sty.title3)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gVyb
+                    )}
+                  >
+                    {
+                      "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u062a\u0645\u0631\u06a9\u0632"
+                    }
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"caption3"}
+                  data-plasmic-override={overrides.caption3}
+                  className={classNames(projectcss.all, sty.caption3)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___1ThH4
+                    )}
+                  >
+                    {
+                      "\u0627\u0632 \u0686\u0646\u062f\u062a\u0627 \u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646 \u0648 \u0633\u0631 \u0631\u0633\u06cc\u062f \u062e\u0644\u0627\u0635 \u0634\u0648"
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"image"}
+              data-plasmic-override={overrides.image}
+              className={classNames(projectcss.all, sty.image)}
+            >
+              <div
+                data-plasmic-name={"introAutoSyncTitle2"}
+                data-plasmic-override={overrides.introAutoSyncTitle2}
+                className={classNames(projectcss.all, sty.introAutoSyncTitle2)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aLhzu
+                  )}
+                >
+                  {
+                    "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r\n\r"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"introAutoSyncCaption2"}
+                data-plasmic-override={overrides.introAutoSyncCaption2}
+                className={classNames(
+                  projectcss.all,
+                  sty.introAutoSyncCaption2
+                )}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wDeO2
+                  )}
+                >
+                  {
+                    "\u0628\u0647\u200c\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628\u060c \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648\u060c \u0647\u0648\u0645\u0633\u0627 \u0648 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0631\u0648 \u0628\u0633\u067e\u0627\u0631 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0648 \u062e\u0648\u062f\u062a \u0628\u0631\u0648 \u0633\u0631\u0627\u063a \u0628\u0642\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0647\u0627 :\u200c)\r\n\r"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"introAutoSyncDesc2"}
+                data-plasmic-override={overrides.introAutoSyncDesc2}
+                className={classNames(projectcss.all, sty.introAutoSyncDesc2)}
+              >
+                <div
+                  data-plasmic-name={"introAutoSyncGif2"}
+                  data-plasmic-override={overrides.introAutoSyncGif2}
+                  className={classNames(projectcss.all, sty.introAutoSyncGif2)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__k2Bq6)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/handsOnAppPng2.png",
+                      fullWidth: 456,
+                      fullHeight: 600,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            <Stack__
+              as={"div"}
+              data-plasmic-name={"screenshots"}
+              data-plasmic-override={overrides.screenshots}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.screenshots)}
+            >
+              <div
+                data-plasmic-name={"introCalendarRight5"}
+                data-plasmic-override={overrides.introCalendarRight5}
+                className={classNames(projectcss.all, sty.introCalendarRight5)}
+              >
+                <div
+                  data-plasmic-name={"introCalendarRight7"}
+                  data-plasmic-override={overrides.introCalendarRight7}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introCalendarRight7
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__lLqoZ
+                    )}
+                  >
+                    {
+                      "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u060c \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc\u060c \u062a\u062e\u0641\u06cc\u0641 \u0648 \u06cc\u0627 \u0631\u0632\u0631\u0648 \u062a\u0642\u0648\u06cc\u0645\u060c \u062a\u0648\u06cc \u06f7 \u062a\u0627 \u0633\u0627\u06cc\u062a \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u0647\r\n\r"
+                    }
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"introCalendarRight8"}
+                  data-plasmic-override={overrides.introCalendarRight8}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introCalendarRight8
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__vepAb
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return window.open(
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
+                                    "_blank"
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
+                  >
+                    {
+                      "\u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                    }
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"introCalendarLeft2"}
+                data-plasmic-override={overrides.introCalendarLeft2}
+                className={classNames(projectcss.all, sty.introCalendarLeft2)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img___2Rq9Y)}
+                  displayHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : "auto"
+                  }
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : "auto"
+                  }
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/_1Png.png",
+                    fullWidth: 344,
+                    fullHeight: 700,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+            </Stack__>
+            <div
+              data-plasmic-name={"testimonials"}
+              data-plasmic-override={overrides.testimonials}
+              className={classNames(projectcss.all, sty.testimonials)}
+            >
+              <div
+                data-plasmic-name={"introAutoSyncTitle3"}
+                data-plasmic-override={overrides.introAutoSyncTitle3}
+                className={classNames(projectcss.all, sty.introAutoSyncTitle3)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zdLdH
+                  )}
+                >
+                  {
+                    "\u0646\u0638\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u062f\u0631\u0645\u0648\u0631\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r"
+                  }
+                </div>
+              </div>
+              <Testimonial
+                data-plasmic-name={"testimonial"}
+                data-plasmic-override={overrides.testimonial}
+                className={classNames("__wab_instance", sty.testimonial)}
+              />
+            </div>
+            <div
+              data-plasmic-name={"records"}
+              data-plasmic-override={overrides.records}
+              className={classNames(projectcss.all, sty.records)}
+            >
+              <div
+                data-plasmic-name={"_1st"}
+                data-plasmic-override={overrides._1st}
+                className={classNames(projectcss.all, sty._1st)}
+              >
+                <div
+                  data-plasmic-name={"numberTop"}
+                  data-plasmic-override={overrides.numberTop}
+                  className={classNames(projectcss.all, sty.numberTop)}
+                >
+                  <Embed
+                    className={classNames(
+                      "__wab_instance",
+                      sty.embedHtml___5Kec2
+                    )}
+                    code={
+                      '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631</title>\r\n  <style>\r\n    #counter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 600;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="counter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 5000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const maxValue = 910;\r\n    const startTime = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function updateCounter() {\r\n      const now = performance.now();\r\n      const elapsed = now - startTime;\r\n      let progress = elapsed / duration;\r\n      if (progress > 1) progress = 1;\r\n\r\n      const currentValue = Math.round(progress * maxValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'counter\').innerHTML = \r\n        \'<span>+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progress < 1) {\r\n        requestAnimationFrame(updateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(updateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                    }
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"titleDown"}
+                  data-plasmic-override={overrides.titleDown}
+                  className={classNames(projectcss.all, sty.titleDown)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__voblz
+                    )}
+                  >
+                    {
+                      "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634"
+                    }
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"_1st2"}
+                data-plasmic-override={overrides._1st2}
+                className={classNames(projectcss.all, sty._1St2)}
+              >
+                <div
+                  data-plasmic-name={"numberTop2"}
+                  data-plasmic-override={overrides.numberTop2}
+                  className={classNames(projectcss.all, sty.numberTop2)}
+                >
+                  <Embed
+                    className={classNames(
+                      "__wab_instance",
+                      sty.embedHtml__uNkz9
+                    )}
+                    code={
+                      '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u067e\u0648\u06cc\u0627</title>\r\n  <style>\r\n    #dynamicCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 600;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="dynamicCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const animationDuration = 7000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const finalValue = 10000;\r\n    const startTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function animateCounter() {\r\n      const currentTimestamp = performance.now();\r\n      const elapsedTime = currentTimestamp - startTimestamp;\r\n      let progressRatio = elapsedTime / animationDuration;\r\n      if (progressRatio > 1) progressRatio = 1;\r\n\r\n      const currentValue = Math.round(progressRatio * finalValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'dynamicCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progressRatio < 1) {\r\n        requestAnimationFrame(animateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(animateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                    }
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"titleDown2"}
+                  data-plasmic-override={overrides.titleDown2}
+                  className={classNames(projectcss.all, sty.titleDown2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fwN8J
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631"
+                      : "\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631"}
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"_3rd"}
+                data-plasmic-override={overrides._3rd}
+                className={classNames(projectcss.all, sty._3rd)}
+              >
+                <div
+                  data-plasmic-name={"numberTop3"}
+                  data-plasmic-override={overrides.numberTop3}
+                  className={classNames(projectcss.all, sty.numberTop3)}
+                >
+                  <Embed
+                    className={classNames(
+                      "__wab_instance",
+                      sty.embedHtml__jtw0K
+                    )}
+                    code={
+                      '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631 \u0639\u062f\u062f\u06cc</title>\r\n  <style>\r\n    #numberCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 600;\r\n      \r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="numberCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const transitionTime = 10000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const targetValue = 72000;\r\n    const initialTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatWithCommas(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function runCounter() {\r\n      const currentTime = performance.now();\r\n      const elapsedMillis = currentTime - initialTimestamp;\r\n      let progressRate = elapsedMillis / transitionTime;\r\n      if (progressRate > 1) progressRate = 1;\r\n\r\n      const displayedValue = Math.round(progressRate * targetValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'numberCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatWithCommas(displayedValue);\r\n\r\n      if (progressRate < 1) {\r\n        requestAnimationFrame(runCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(runCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                    }
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"titleDown3"}
+                  data-plasmic-override={overrides.titleDown3}
+                  className={classNames(projectcss.all, sty.titleDown3)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__o7Grz
+                    )}
+                  >
+                    {
+                      "\u0628\u0647 \u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645"
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"addingVillaIntoPltforms"}
+              data-plasmic-override={overrides.addingVillaIntoPltforms}
+              className={classNames(
+                projectcss.all,
+                sty.addingVillaIntoPltforms
+              )}
+            />
+          </div>
+          <div
+            data-plasmic-name={"qA"}
+            data-plasmic-override={overrides.qA}
+            className={classNames(projectcss.all, sty.qA)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__bkGrz)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___1KfXk
+                )}
+              >
+                {
+                  "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644:\r\n\r"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___3QJyk)}>
+              {(() => {
+                const child$Props = {
+                  activeKey: generateStateValueProp($state, [
+                    "accordionMain",
+                    "activePanelId"
+                  ]),
+                  bordered: true,
+                  className: classNames("__wab_instance", sty.accordionMain),
+                  ghost: true,
+                  items: (
+                    <React.Fragment>
+                      <AntdAccordionItem
+                        data-plasmic-name={"_2"}
+                        data-plasmic-override={overrides._2}
+                        className={classNames("__wab_instance", sty._2)}
+                        id={"11"}
+                        label2={
+                          <div
+                            data-plasmic-name={"_1"}
+                            data-plasmic-override={overrides._1}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty._1
+                            )}
+                          >
+                            {
+                              "\u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u00bb \u0686\u0642\u062f\u0631\u0647\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__p6Ecz
+                          )}
+                        >
+                          {
+                            "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u0627\u06cc\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a\u06cc \u0645\u062b\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u06cc\u06a9\u062c\u0627 \u0642\u06cc\u0645\u062a\u060c \u062a\u062e\u0641\u06cc\u0641\u060c \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u0631\u0648 \u062f\u0631 \u0627\u062e\u062a\u06cc\u0627\u0631\u062a \u0645\u06cc\u200c\u0630\u0627\u0631\u0647."
+                          }
+                        </div>
+                      </AntdAccordionItem>
+                      <AntdAccordionItem
+                        data-plasmic-name={"_4"}
+                        data-plasmic-override={overrides._4}
+                        className={classNames("__wab_instance", sty._4)}
+                        id={"22"}
+                        label2={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___6Ebj5
+                            )}
+                          >
+                            {
+                              "\u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0686\u0642\u062f\u0631\u0647\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__mEvXl
+                          )}
+                        >
+                          {
+                            "\u06a9\u0627\u0631\u0645\u0632\u062f \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0647\u0633\u062a. \u0645\u062b\u0644\u0627 \u0627\u06af\u0647 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u0647 \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u06cc \u0628\u06af\u06cc\u0631\u06cc\u060c \u06f1.\u06f5\u066a \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u0627\u0632 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647:\n\u06f3\u06f0,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 = \u06f1.\u06f5\u066a \u00d7 \u06f2,\u06f0\u06f0\u06f0,\u06f0\u06f0\u06f0\n\r\n\r"
+                          }
+                        </div>
+                      </AntdAccordionItem>
+                      <AntdAccordionItem
+                        data-plasmic-name={"_5"}
+                        data-plasmic-override={overrides._5}
+                        className={classNames("__wab_instance", sty._5)}
+                        id={"33"}
+                        label2={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__eFh21
+                            )}
+                          >
+                            {
+                              "\u0627\u0645\u06a9\u0627\u0646 \u0644\u063a\u0648 \u0639\u0636\u0648\u06cc\u062a \u062f\u0631 \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0647\u0633\u062a\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ro7TB
+                          )}
+                        >
+                          {
+                            "\u0645\u0627 \u062a\u0645\u0627\u0645 \u062a\u0644\u0627\u0634\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u062a\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0631\u0627\u0636\u06cc \u0628\u0627\u0634\u06cc. \u0648\u0644\u06cc \u0647\u0631 \u0632\u0645\u0627\u0646 \u0648 \u0628\u0647 \u0647\u0631 \u062f\u0644\u06cc\u0644 \u062a\u0645\u0627\u06cc\u0644\u06cc \u0628\u0647 \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u062f\u0627\u0634\u062a\u06cc\u060c \u0639\u0636\u0648\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f\u0647 \u0648 \u06a9\u0644 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647.\n"
+                          }
+                        </div>
+                      </AntdAccordionItem>
+                      <AntdAccordionItem
+                        data-plasmic-name={"_6"}
+                        data-plasmic-override={overrides._6}
+                        className={classNames("__wab_instance", sty._6)}
+                        id={"44"}
+                        label2={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__fSdcf
+                            )}
+                          >
+                            {
+                              "\u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0627\u06cc\u062f \u062d\u062a\u0645\u0627 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u062b\u0628\u062a \u0628\u0627\u0634\u0647\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__nfZuX
+                          )}
+                        >
+                          {
+                            "\u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc. \u0627\u0645\u0627 \u0647\u0631 \u0686\u0642\u062f\u0631  \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u06cc\u060c\u200c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u062a \u0645\u0641\u06cc\u062f\u062a\u0631 \u0645\u06cc\u200c\u0634\u0647."
+                          }
+                        </div>
+                      </AntdAccordionItem>
+                      <AntdAccordionItem
+                        className={classNames(
+                          "__wab_instance",
+                          sty.accordionItem__dmgPx
+                        )}
+                        id={"55"}
+                        label2={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__gwBvJ
+                            )}
+                          >
+                            {
+                              "\u0686\u0646\u062f\u062a\u0627 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u062b\u0628\u062a \u06a9\u0646\u0645\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zYHs
+                          )}
+                        >
+                          {
+                            "\u0647\u0631 \u0686\u0646\u062f\u062a\u0627 \u06a9\u0647 \u0628\u062e\u0648\u0627\u06cc! \u0645\u062d\u062f\u0648\u062f\u06cc\u062a\u06cc \u0646\u06cc\u0633\u062a. \u0641\u0642\u0637 \u06a9\u0627\u0641\u06cc\u0647  \u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u060c \u0645\u0631\u0627\u062d\u0644 \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u067e\u06cc\u0634 \u0628\u0628\u0631\u06cc."
+                          }
+                        </div>
+                      </AntdAccordionItem>
+                      <AntdAccordionItem
+                        className={classNames(
+                          "__wab_instance",
+                          sty.accordionItem___7IInG
+                        )}
+                        id={"66"}
+                        label2={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__oEav4
+                            )}
+                          >
+                            {
+                              "\u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u0627\u0632 \u062e\u0648\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u0645\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___8GSmG
+                          )}
+                        >
+                          {
+                            "\u0628\u0644\u0647\u060c \u0647\u0631 \u0632\u0645\u0627\u0646 \u0628\u062e\u0648\u0627\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648\u0627\u0631\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0634\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u062f\u0633\u062a\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc. \u0648\u0644\u06cc \u0645\u0627 \u062a\u0648\u0635\u06cc\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0647\u0645\u06cc\u0634\u0647 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0631\u0648 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u06cc \u062a\u0627 \u0648\u0636\u0639\u06cc\u062a \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u06cc\u06a9\u0633\u0627\u0646 \u0628\u0627\u0634\u0647. \u0627\u06cc\u0646\u062c\u0648\u0631\u06cc \u0628\u0627\u0632\u062f\u06cc\u062f\u06a9\u0646\u0646\u062f\u06af\u0627\u0646 \u0622\u06af\u0647\u06cc \u0634\u0645\u0627\u060c \u0645\u063a\u0627\u06cc\u0631\u062a\u06cc \u0646\u0645\u06cc\u200c\u0628\u06cc\u0646\u0646 \u0648 \u0628\u0647 \u0634\u0645\u0627 \u0627\u0639\u062a\u0645\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0646."
+                          }
+                        </div>
+                      </AntdAccordionItem>
+                      <AntdAccordionItem
+                        className={classNames(
+                          "__wab_instance",
+                          sty.accordionItem__izzDc
+                        )}
+                        id={"77"}
+                        label2={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___1PE
+                            )}
+                          >
+                            {
+                              "\u0686\u0637\u0648\u0631 \u0627\u0639\u062a\u0628\u0627\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\u0645\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__x8UL
+                          )}
+                        >
+                          {
+                            "\u0628\u0647 \u0645\u062d\u0636 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u00ab\u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0627\u0639\u062a\u0628\u0627\u0631\u00bb \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647. \u067e\u0633 \u0628\u0627 \u062e\u06cc\u0627\u0644 \u0631\u0627\u062d\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646."
+                          }
+                        </div>
+                      </AntdAccordionItem>
+                      <AntdAccordionItem
+                        className={classNames(
+                          "__wab_instance",
+                          sty.accordionItem__cpiYa
+                        )}
+                        id={"88"}
+                        label2={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__ncps
+                            )}
+                          >
+                            {
+                              "\u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627 (\u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631) \u0686\u06cc\u0647\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___4RpVt
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>
+                              {
+                                "\u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0647\u0645\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0647\u0645\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0645\u062b\u0644\u0627 \u0627\u06af\u0647 \u0627\u0632 \u062c\u0627\u0628\u0627\u0645\u0627 \u0631\u0632\u0631\u0648 \u0628\u06af\u06cc\u0631\u06cc\u060c \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647! "
+                              }
+                            </React.Fragment>
+                            {
+                              <PlasmicLink__
+                                data-plasmic-name={"link"}
+                                data-plasmic-override={overrides.link}
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.a,
+                                  projectcss.__wab_text,
+                                  projectcss.plasmic_default__inline,
+                                  sty.link
+                                )}
+                                component={Link}
+                                href={
+                                  "https://rentamon.com/%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d9%88%db%8c%d9%84%d8%a7/"
+                                }
+                                platform={"nextjs"}
+                              >
+                                {
+                                  "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
+                                }
+                              </PlasmicLink__>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
+                          </React.Fragment>
+                        </div>
+                      </AntdAccordionItem>
+                    </React.Fragment>
+                  ),
+                  onChange: async (...eventArgs: any) => {
+                    generateStateOnChangePropForCodeComponents(
+                      $state,
+                      "activePanelId",
+                      ["accordionMain", "activePanelId"],
+                      AntdAccordion_Helpers
+                    ).apply(null, eventArgs);
+                  }
+                };
+                initializeCodeComponentStates(
+                  $state,
+                  [
+                    {
+                      name: "activePanelId",
+                      plasmicStateName: "accordionMain.activePanelId"
+                    }
+                  ],
+                  [],
+                  AntdAccordion_Helpers ?? {},
+                  child$Props
+                );
+
+                return (
+                  <AntdAccordion
+                    data-plasmic-name={"accordionMain"}
+                    data-plasmic-override={overrides.accordionMain}
+                    {...child$Props}
+                  />
+                );
+              })()}
+            </div>
+            <div
+              data-plasmic-name={"html"}
+              data-plasmic-override={overrides.html}
+              className={classNames(projectcss.all, sty.html)}
+            >
+              <Embed
+                data-plasmic-name={"clarity2"}
+                data-plasmic-override={overrides.clarity2}
+                className={classNames("__wab_instance", sty.clarity2)}
+                code={
+                  '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+                }
+              />
+
+              <Embed
+                data-plasmic-name={"goftino"}
+                data-plasmic-override={overrides.goftino}
+                className={classNames("__wab_instance", sty.goftino)}
+                code={
+                  '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+                }
+              />
+            </div>
+          </div>
+          <RentamonFooter
+            data-plasmic-name={"rentamonFooter"}
+            data-plasmic-override={overrides.rentamonFooter}
+            className={classNames("__wab_instance", sty.rentamonFooter)}
+          />
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  home: [
+    "home",
+    "navbarRentamonComponent",
+    "mainContents",
+    "introCalendar",
+    "introCalendarTitle",
+    "introCalendarCaption",
+    "introCalendar4",
+    "introCalendarRight",
+    "introCalendarRight2",
+    "introCalendarRight3",
+    "introCalendarRight4",
+    "introCalendarLeft",
+    "introAutoSync",
+    "introAutoSyncTitle",
+    "introAutoSyncCaption",
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif",
+    "_3Benefits",
+    "_3Benefits1st",
+    "icon",
+    "title",
+    "caption",
+    "_3Benefits2nd",
+    "icon2",
+    "title2",
+    "caption2",
+    "_3Benefits3rd",
+    "icon3",
+    "title3",
+    "caption3",
+    "image",
+    "introAutoSyncTitle2",
+    "introAutoSyncCaption2",
+    "introAutoSyncDesc2",
+    "introAutoSyncGif2",
+    "screenshots",
+    "introCalendarRight5",
+    "introCalendarRight7",
+    "introCalendarRight8",
+    "introCalendarLeft2",
+    "testimonials",
+    "introAutoSyncTitle3",
+    "testimonial",
+    "records",
+    "_1st",
+    "numberTop",
+    "titleDown",
+    "_1st2",
+    "numberTop2",
+    "titleDown2",
+    "_3rd",
+    "numberTop3",
+    "titleDown3",
+    "addingVillaIntoPltforms",
+    "qA",
+    "accordionMain",
+    "_2",
+    "_1",
+    "_4",
+    "_5",
+    "_6",
+    "link",
+    "html",
+    "clarity2",
+    "goftino",
+    "rentamonFooter"
+  ],
+  navbarRentamonComponent: ["navbarRentamonComponent"],
+  mainContents: [
+    "mainContents",
+    "introCalendar",
+    "introCalendarTitle",
+    "introCalendarCaption",
+    "introCalendar4",
+    "introCalendarRight",
+    "introCalendarRight2",
+    "introCalendarRight3",
+    "introCalendarRight4",
+    "introCalendarLeft",
+    "introAutoSync",
+    "introAutoSyncTitle",
+    "introAutoSyncCaption",
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif",
+    "_3Benefits",
+    "_3Benefits1st",
+    "icon",
+    "title",
+    "caption",
+    "_3Benefits2nd",
+    "icon2",
+    "title2",
+    "caption2",
+    "_3Benefits3rd",
+    "icon3",
+    "title3",
+    "caption3",
+    "image",
+    "introAutoSyncTitle2",
+    "introAutoSyncCaption2",
+    "introAutoSyncDesc2",
+    "introAutoSyncGif2",
+    "screenshots",
+    "introCalendarRight5",
+    "introCalendarRight7",
+    "introCalendarRight8",
+    "introCalendarLeft2",
+    "testimonials",
+    "introAutoSyncTitle3",
+    "testimonial",
+    "records",
+    "_1st",
+    "numberTop",
+    "titleDown",
+    "_1st2",
+    "numberTop2",
+    "titleDown2",
+    "_3rd",
+    "numberTop3",
+    "titleDown3",
+    "addingVillaIntoPltforms"
+  ],
+  introCalendar: [
+    "introCalendar",
+    "introCalendarTitle",
+    "introCalendarCaption",
+    "introCalendar4",
+    "introCalendarRight",
+    "introCalendarRight2",
+    "introCalendarRight3",
+    "introCalendarRight4",
+    "introCalendarLeft"
+  ],
+  introCalendarTitle: ["introCalendarTitle"],
+  introCalendarCaption: ["introCalendarCaption"],
+  introCalendar4: [
+    "introCalendar4",
+    "introCalendarRight",
+    "introCalendarRight2",
+    "introCalendarRight3",
+    "introCalendarRight4",
+    "introCalendarLeft"
+  ],
+  introCalendarRight: [
+    "introCalendarRight",
+    "introCalendarRight2",
+    "introCalendarRight3",
+    "introCalendarRight4"
+  ],
+  introCalendarRight2: ["introCalendarRight2"],
+  introCalendarRight3: ["introCalendarRight3"],
+  introCalendarRight4: ["introCalendarRight4"],
+  introCalendarLeft: ["introCalendarLeft"],
+  introAutoSync: [
+    "introAutoSync",
+    "introAutoSyncTitle",
+    "introAutoSyncCaption",
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif"
+  ],
+  introAutoSyncTitle: ["introAutoSyncTitle"],
+  introAutoSyncCaption: ["introAutoSyncCaption"],
+  introAutoSyncDesc: [
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif"
+  ],
+  introAutoSyncBenefits: ["introAutoSyncBenefits"],
+  introAutoSyncGif: ["introAutoSyncGif"],
+  _3Benefits: [
+    "_3Benefits",
+    "_3Benefits1st",
+    "icon",
+    "title",
+    "caption",
+    "_3Benefits2nd",
+    "icon2",
+    "title2",
+    "caption2",
+    "_3Benefits3rd",
+    "icon3",
+    "title3",
+    "caption3"
+  ],
+  _3Benefits1st: ["_3Benefits1st", "icon", "title", "caption"],
+  icon: ["icon"],
+  title: ["title"],
+  caption: ["caption"],
+  _3Benefits2nd: ["_3Benefits2nd", "icon2", "title2", "caption2"],
+  icon2: ["icon2"],
+  title2: ["title2"],
+  caption2: ["caption2"],
+  _3Benefits3rd: ["_3Benefits3rd", "icon3", "title3", "caption3"],
+  icon3: ["icon3"],
+  title3: ["title3"],
+  caption3: ["caption3"],
+  image: [
+    "image",
+    "introAutoSyncTitle2",
+    "introAutoSyncCaption2",
+    "introAutoSyncDesc2",
+    "introAutoSyncGif2"
+  ],
+  introAutoSyncTitle2: ["introAutoSyncTitle2"],
+  introAutoSyncCaption2: ["introAutoSyncCaption2"],
+  introAutoSyncDesc2: ["introAutoSyncDesc2", "introAutoSyncGif2"],
+  introAutoSyncGif2: ["introAutoSyncGif2"],
+  screenshots: [
+    "screenshots",
+    "introCalendarRight5",
+    "introCalendarRight7",
+    "introCalendarRight8",
+    "introCalendarLeft2"
+  ],
+  introCalendarRight5: [
+    "introCalendarRight5",
+    "introCalendarRight7",
+    "introCalendarRight8"
+  ],
+  introCalendarRight7: ["introCalendarRight7"],
+  introCalendarRight8: ["introCalendarRight8"],
+  introCalendarLeft2: ["introCalendarLeft2"],
+  testimonials: ["testimonials", "introAutoSyncTitle3", "testimonial"],
+  introAutoSyncTitle3: ["introAutoSyncTitle3"],
+  testimonial: ["testimonial"],
+  records: [
+    "records",
+    "_1st",
+    "numberTop",
+    "titleDown",
+    "_1st2",
+    "numberTop2",
+    "titleDown2",
+    "_3rd",
+    "numberTop3",
+    "titleDown3"
+  ],
+  _1st: ["_1st", "numberTop", "titleDown"],
+  numberTop: ["numberTop"],
+  titleDown: ["titleDown"],
+  _1st2: ["_1st2", "numberTop2", "titleDown2"],
+  numberTop2: ["numberTop2"],
+  titleDown2: ["titleDown2"],
+  _3rd: ["_3rd", "numberTop3", "titleDown3"],
+  numberTop3: ["numberTop3"],
+  titleDown3: ["titleDown3"],
+  addingVillaIntoPltforms: ["addingVillaIntoPltforms"],
+  qA: [
+    "qA",
+    "accordionMain",
+    "_2",
+    "_1",
+    "_4",
+    "_5",
+    "_6",
+    "link",
+    "html",
+    "clarity2",
+    "goftino"
+  ],
+  accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6", "link"],
+  _2: ["_2", "_1"],
+  _1: ["_1"],
+  _4: ["_4"],
+  _5: ["_5"],
+  _6: ["_6"],
+  link: ["link"],
+  html: ["html", "clarity2", "goftino"],
+  clarity2: ["clarity2"],
+  goftino: ["goftino"],
+  rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  home: "div";
+  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  mainContents: "div";
+  introCalendar: "div";
+  introCalendarTitle: "div";
+  introCalendarCaption: "div";
+  introCalendar4: "div";
+  introCalendarRight: "div";
+  introCalendarRight2: "div";
+  introCalendarRight3: "div";
+  introCalendarRight4: "div";
+  introCalendarLeft: "div";
+  introAutoSync: "div";
+  introAutoSyncTitle: "div";
+  introAutoSyncCaption: "div";
+  introAutoSyncDesc: "div";
+  introAutoSyncBenefits: "div";
+  introAutoSyncGif: "div";
+  _3Benefits: "div";
+  _3Benefits1st: "div";
+  icon: "div";
+  title: "div";
+  caption: "div";
+  _3Benefits2nd: "div";
+  icon2: "div";
+  title2: "div";
+  caption2: "div";
+  _3Benefits3rd: "div";
+  icon3: "div";
+  title3: "div";
+  caption3: "div";
+  image: "div";
+  introAutoSyncTitle2: "div";
+  introAutoSyncCaption2: "div";
+  introAutoSyncDesc2: "div";
+  introAutoSyncGif2: "div";
+  screenshots: "div";
+  introCalendarRight5: "div";
+  introCalendarRight7: "div";
+  introCalendarRight8: "div";
+  introCalendarLeft2: "div";
+  testimonials: "div";
+  introAutoSyncTitle3: "div";
+  testimonial: typeof Testimonial;
+  records: "div";
+  _1st: "div";
+  numberTop: "div";
+  titleDown: "div";
+  _1st2: "div";
+  numberTop2: "div";
+  titleDown2: "div";
+  _3rd: "div";
+  numberTop3: "div";
+  titleDown3: "div";
+  addingVillaIntoPltforms: "div";
+  qA: "div";
+  accordionMain: typeof AntdAccordion;
+  _2: typeof AntdAccordionItem;
+  _1: "div";
+  _4: typeof AntdAccordionItem;
+  _5: typeof AntdAccordionItem;
+  _6: typeof AntdAccordionItem;
+  link: "a";
+  html: "div";
+  clarity2: typeof Embed;
+  goftino: typeof Embed;
+  rentamonFooter: typeof RentamonFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -234,7 +1819,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "home") {
     func.displayName = "PlasmicHomepage";
   } else {
     func.displayName = `PlasmicHomepage.${nodeName}`;
@@ -244,9 +1829,75 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicHomepage = Object.assign(
   // Top-level PlasmicHomepage renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("home"),
   {
     // Helper components rendering sub-elements
+    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    mainContents: makeNodeComponent("mainContents"),
+    introCalendar: makeNodeComponent("introCalendar"),
+    introCalendarTitle: makeNodeComponent("introCalendarTitle"),
+    introCalendarCaption: makeNodeComponent("introCalendarCaption"),
+    introCalendar4: makeNodeComponent("introCalendar4"),
+    introCalendarRight: makeNodeComponent("introCalendarRight"),
+    introCalendarRight2: makeNodeComponent("introCalendarRight2"),
+    introCalendarRight3: makeNodeComponent("introCalendarRight3"),
+    introCalendarRight4: makeNodeComponent("introCalendarRight4"),
+    introCalendarLeft: makeNodeComponent("introCalendarLeft"),
+    introAutoSync: makeNodeComponent("introAutoSync"),
+    introAutoSyncTitle: makeNodeComponent("introAutoSyncTitle"),
+    introAutoSyncCaption: makeNodeComponent("introAutoSyncCaption"),
+    introAutoSyncDesc: makeNodeComponent("introAutoSyncDesc"),
+    introAutoSyncBenefits: makeNodeComponent("introAutoSyncBenefits"),
+    introAutoSyncGif: makeNodeComponent("introAutoSyncGif"),
+    _3Benefits: makeNodeComponent("_3Benefits"),
+    _3Benefits1st: makeNodeComponent("_3Benefits1st"),
+    icon: makeNodeComponent("icon"),
+    title: makeNodeComponent("title"),
+    caption: makeNodeComponent("caption"),
+    _3Benefits2nd: makeNodeComponent("_3Benefits2nd"),
+    icon2: makeNodeComponent("icon2"),
+    title2: makeNodeComponent("title2"),
+    caption2: makeNodeComponent("caption2"),
+    _3Benefits3rd: makeNodeComponent("_3Benefits3rd"),
+    icon3: makeNodeComponent("icon3"),
+    title3: makeNodeComponent("title3"),
+    caption3: makeNodeComponent("caption3"),
+    image: makeNodeComponent("image"),
+    introAutoSyncTitle2: makeNodeComponent("introAutoSyncTitle2"),
+    introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
+    introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),
+    introAutoSyncGif2: makeNodeComponent("introAutoSyncGif2"),
+    screenshots: makeNodeComponent("screenshots"),
+    introCalendarRight5: makeNodeComponent("introCalendarRight5"),
+    introCalendarRight7: makeNodeComponent("introCalendarRight7"),
+    introCalendarRight8: makeNodeComponent("introCalendarRight8"),
+    introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
+    testimonials: makeNodeComponent("testimonials"),
+    introAutoSyncTitle3: makeNodeComponent("introAutoSyncTitle3"),
+    testimonial: makeNodeComponent("testimonial"),
+    records: makeNodeComponent("records"),
+    _1st: makeNodeComponent("_1st"),
+    numberTop: makeNodeComponent("numberTop"),
+    titleDown: makeNodeComponent("titleDown"),
+    _1st2: makeNodeComponent("_1st2"),
+    numberTop2: makeNodeComponent("numberTop2"),
+    titleDown2: makeNodeComponent("titleDown2"),
+    _3rd: makeNodeComponent("_3rd"),
+    numberTop3: makeNodeComponent("numberTop3"),
+    titleDown3: makeNodeComponent("titleDown3"),
+    addingVillaIntoPltforms: makeNodeComponent("addingVillaIntoPltforms"),
+    qA: makeNodeComponent("qA"),
+    accordionMain: makeNodeComponent("accordionMain"),
+    _2: makeNodeComponent("_2"),
+    _1: makeNodeComponent("_1"),
+    _4: makeNodeComponent("_4"),
+    _5: makeNodeComponent("_5"),
+    _6: makeNodeComponent("_6"),
+    link: makeNodeComponent("link"),
+    html: makeNodeComponent("html"),
+    clarity2: makeNodeComponent("clarity2"),
+    goftino: makeNodeComponent("goftino"),
+    rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
@@ -254,7 +1905,7 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "رنتامون، مدیریت یکپارچه اقامتگاه",
       description: "",
       ogImageSrc: "",
       canonical: ""
