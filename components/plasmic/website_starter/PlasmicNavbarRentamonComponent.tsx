@@ -371,7 +371,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                 sty.link___01Gak
               )}
               component={Link}
-              href={`/درباره-ما`}
+              href={`/about-us`}
               platform={"nextjs"}
             >
               {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}

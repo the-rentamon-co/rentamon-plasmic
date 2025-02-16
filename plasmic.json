@@ -1127,7 +1127,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicAboutUs.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/درباره-ما.tsx"
+            "modulePath": "../src/pages/about-us.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicAboutUs.module.css",
           "scheme": "blackbox",
@@ -1141,7 +1141,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicTermsOfUse.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/قوانین-رنتامون.tsx"
+            "modulePath": "../src/pages/terms-of-use.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicTermsOfUse.module.css",
           "scheme": "blackbox",
