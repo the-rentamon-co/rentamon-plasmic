@@ -2485,7 +2485,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                         variablePath: ["fetchModal", "open"]
                       },
                       operation: 0,
-                      value: true
+                      value: (() => {
+                        const timestamps = $state.fragmentDatePicker.values;
+                        const dates = timestamps.map(timestamp => {
+                          const date = new Date(timestamp * 1000);
+                          return date.toISOString().split("T")[0];
+                        });
+                        const calendar = $state.apiRequest.data[1].calendar;
+                        const result = dates.every(date => {
+                          const item = calendar.find(
+                            entry => entry.date === date
+                          );
+                          return (
+                            item &&
+                            (item.website === "" ||
+                              item.website === "رزرو" ||
+                              item.website == null)
+                          );
+                        });
+                        return result;
+                      })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
                       if (!variable) {
@@ -2535,7 +2554,72 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode"] = true
+              $steps["checkForChange"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["checkForChange", "open"]
+                      },
+                      operation: 0,
+                      value: (() => {
+                        const timestamps = $state.fragmentDatePicker.values;
+                        const dates = timestamps.map(timestamp => {
+                          const date = new Date(timestamp * 1000);
+                          return date.toISOString().split("T")[0];
+                        });
+                        const calendar = $state.apiRequest.data[1].calendar;
+                        const result = dates.some(date => {
+                          const item = calendar.find(
+                            entry => entry.date === date
+                          );
+                          return (
+                            item &&
+                            item.website !== "" &&
+                            item.website !== "رزرو" &&
+                            item.website != null
+                          );
+                        });
+                        return result;
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkForChange"] != null &&
+                typeof $steps["checkForChange"] === "object" &&
+                typeof $steps["checkForChange"].then === "function"
+              ) {
+                $steps["checkForChange"] = await $steps["checkForChange"];
+              }
+
+              $steps["runCode"] = (() => {
+                const timestamps = $state.fragmentDatePicker.values;
+                const dates = timestamps.map(timestamp => {
+                  const date = new Date(timestamp * 1000);
+                  return date.toISOString().split("T")[0];
+                });
+                const calendar = $state.apiRequest.data[1].calendar;
+                const result = dates.every(date => {
+                  const item = calendar.find(entry => entry.date === date);
+                  return (
+                    item &&
+                    (item.website === "" ||
+                      item.website === "رزرو" ||
+                      item.website == null)
+                  );
+                });
+                return result;
+              })()
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -3826,26 +3910,20 @@ function PlasmicCalendar2__RenderFunc(props: {
                       variablePath: ["modal", "open"]
                     },
                     operation: 0,
-                    value: (() => {
-                      const timestamps = $state.fragmentDatePicker.values;
-                      const dates = timestamps.map(timestamp => {
-                        const date = new Date(timestamp * 1000);
-                        return date.toISOString().split("T")[0];
-                      });
-                      const calendar = $state.apiRequest.data[1].calendar;
-                      const result = dates.every(date => {
-                        const item = calendar.find(
-                          entry => entry.date === date
-                        );
-                        return (
-                          item &&
-                          (item.website === "" ||
-                            item.website === "رزرو" ||
-                            item.website == null)
-                        );
-                      });
-                      return result;
-                    })()
+                    value:
+                      // const timestamps = $state.fragmentDatePicker.values;
+                      // const dates = timestamps.map(timestamp => {
+                      //   const date = new Date(timestamp * 1000);
+                      //   return date.toISOString().split("T")[0];
+                      // });
+                      // const calendar = $state.apiRequest.data[1].calendar;
+                      // const result = dates.every(date => {
+                      //   const item = calendar.find(entry => entry.date === date);
+                      //   return item && (item.website === "" || item.website === "رزرو" || item.website == null);
+                      // });
+                      // return result
+
+                      true
                   };
                   return (({ variable, value, startIndex, deleteCount }) => {
                     if (!variable) {
@@ -3866,13 +3944,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               $steps["updateModalOpen"] = await $steps["updateModalOpen"];
             }
 
-            $steps["updateCheckForChangeOpen"] = (() => {
-              if ($state.fragmentDatePicker.values == 0) {
-                return false;
-              } else {
-                return true;
-              }
-            })()
+            $steps["updateCheckForChangeOpen"] = false
               ? (() => {
                   const actionArgs = {
                     variable: {
@@ -6310,12 +6382,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ];
                 }
 
-                $steps["updateModalOpen"] = true
+                $steps["updateFetchModalOpen"] = true
                   ? (() => {
                       const actionArgs = {
                         variable: {
                           objRoot: $state,
-                          variablePath: ["modal", "open"]
+                          variablePath: ["fetchModal", "open"]
                         },
                         operation: 0,
                         value: true
@@ -6337,11 +6409,150 @@ function PlasmicCalendar2__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
+                  $steps["updateFetchModalOpen"] != null &&
+                  typeof $steps["updateFetchModalOpen"] === "object" &&
+                  typeof $steps["updateFetchModalOpen"].then === "function"
                 ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                  $steps["updateFetchModalOpen"] = await $steps[
+                    "updateFetchModalOpen"
+                  ];
+                }
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            function convertPersianNumbersToEnglish(str) {
+                              const persianNumbers = [
+                                "۰",
+                                "۱",
+                                "۲",
+                                "۳",
+                                "۴",
+                                "۵",
+                                "۶",
+                                "۷",
+                                "۸",
+                                "۹"
+                              ];
+
+                              const englishNumbers = [
+                                "0",
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9"
+                              ];
+
+                              return str.replace(
+                                /[۰-۹]/g,
+                                char =>
+                                  englishNumbers[
+                                    persianNumbers.indexOf(char)
+                                  ] || char
+                              );
+                            }
+                            function padZero(num) {
+                              return num.length === 1 ? `0${num}` : num;
+                            }
+                            function convertTimestampToPersianDateWithEnglishNumbers(
+                              timestamp
+                            ) {
+                              const date = new Date(timestamp * 1000);
+                              const [year, month, day] = date
+                                .toLocaleDateString("fa")
+                                .split("/");
+                              const formattedDate = `${convertPersianNumbersToEnglish(
+                                year
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(month)
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(day)
+                              )}`;
+                              return formattedDate;
+                            }
+                            function getTodayInPersian() {
+                              const today = new Date();
+                              const [year, month, day] = today
+                                .toLocaleDateString("fa")
+                                .split("/");
+                              const formattedDate = `${convertPersianNumbersToEnglish(
+                                year
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(month)
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(day)
+                              )}`;
+                              return formattedDate;
+                            }
+                            const todayInPersian = getTodayInPersian();
+                            const data = {
+                              days: [$state.fragmentDatePicker.values],
+                              property_id: $props.propertyId
+                            };
+                            $state.requestdata = data;
+                            data.days = data.days
+                              .map(timestampArray =>
+                                timestampArray
+                                  .map(timestamp =>
+                                    convertTimestampToPersianDateWithEnglishNumbers(
+                                      timestamp
+                                    )
+                                  )
+                                  .filter(day => day >= todayInPersian)
+                              )
+                              .flat();
+                            fetch(
+                              "https://api-v2.rentamon.com/api/setunblock",
+                              {
+                                method: "POST",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                  Accept: "*/*"
+                                },
+                                credentials: "include",
+                                body: JSON.stringify(data)
+                              }
+                            )
+                              .then(response => {
+                                if (!response.ok) {
+                                  throw new Error(
+                                    `HTTP error! status: ${response.status}`
+                                  );
+                                }
+                                return response.json();
+                              })
+                              .then(result => {
+                                $state.platformRequestStatus = result;
+                                console.log("Response saved to state:", result);
+                              })
+                              .catch(error => {
+                                console.error("Error:", error);
+                                $state.platformRequestStatus = {
+                                  error: error.message
+                                };
+                              });
+                            return console.log(data);
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
                 }
               }}
             >
