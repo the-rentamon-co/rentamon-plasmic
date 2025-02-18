@@ -61,6 +61,8 @@ import {
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
+import { SliderWrapper } from "@plasmicpkgs/react-slick";
+import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
 import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -134,6 +136,7 @@ export type PlasmicHomepage__OverridesType = {
   introCalendarRight7?: Flex__<"div">;
   introCalendarRight8?: Flex__<"div">;
   introCalendarLeft2?: Flex__<"div">;
+  sliderCarousel?: Flex__<typeof SliderWrapper>;
   testimonials?: Flex__<"div">;
   titlePart?: Flex__<"div">;
   commentsScrolling?: Flex__<"div">;
@@ -221,6 +224,15 @@ function PlasmicHomepage__RenderFunc(props: {
           "activePanelId",
           AntdAccordion_Helpers
         )
+      },
+      {
+        path: "sliderCarousel.currentSlide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1,
+
+        refName: "sliderCarousel",
+        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -863,31 +875,151 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-override={overrides.introCalendarLeft2}
                 className={classNames(projectcss.all, sty.introCalendarLeft2)}
               >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img___2Rq9Y)}
-                  displayHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "100%"
-                      : "auto"
-                  }
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"80%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "100%"
-                      : "auto"
-                  }
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/_1Png.png",
-                    fullWidth: 344,
-                    fullHeight: 700,
-                    aspectRatio: undefined
-                  }}
-                />
+                {(() => {
+                  const child$Props = {
+                    arrows: false,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    beforeChange: async (...eventArgs: any) => {
+                      generateStateOnChangePropForCodeComponents(
+                        $state,
+                        "currentSlide",
+                        ["sliderCarousel", "currentSlide"],
+                        SliderWrapper_Helpers
+                      ).apply(null, eventArgs);
+                    },
+                    centerMode: true,
+                    className: classNames("__wab_instance", sty.sliderCarousel),
+                    cssEase: "linear",
+                    fade: true,
+                    initialSlide: generateStateValueProp($state, [
+                      "sliderCarousel",
+                      "currentSlide"
+                    ]),
+                    ref: ref => {
+                      $refs["sliderCarousel"] = ref;
+                    },
+                    sliderScopeClassName: sty["sliderCarousel__slider"],
+                    speed: 1000
+                  };
+                  initializeCodeComponentStates(
+                    $state,
+                    [
+                      {
+                        name: "currentSlide",
+                        plasmicStateName: "sliderCarousel.currentSlide"
+                      }
+                    ],
+                    [],
+                    SliderWrapper_Helpers ?? {},
+                    child$Props
+                  );
+
+                  return (
+                    <SliderWrapper
+                      data-plasmic-name={"sliderCarousel"}
+                      data-plasmic-override={overrides.sliderCarousel}
+                      {...child$Props}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__dhMb
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__ub7U8)}
+                          displayHeight={"100%"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"240px"}
+                          src={{
+                            src: "/plasmic/website_starter/images/_1Png.png",
+                            fullWidth: 344,
+                            fullHeight: 700,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___3NreR
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__tWbvV)}
+                          displayHeight={"100%"}
+                          displayMaxHeight={"500px"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"240px"}
+                          src={{
+                            src: "/plasmic/website_starter/images/_2Png.png",
+                            fullWidth: 344,
+                            fullHeight: 700,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__xAkke
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__gHndD)}
+                          displayHeight={"100%"}
+                          displayMaxHeight={"500px"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"240px"}
+                          src={{
+                            src: "/plasmic/website_starter/images/_3Png.png",
+                            fullWidth: 344,
+                            fullHeight: 700,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__uw1Ux
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__vl2Gn)}
+                          displayHeight={"100%"}
+                          displayMaxHeight={"500px"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? "280px"
+                              : "240px"
+                          }
+                          src={{
+                            src: "/plasmic/website_starter/images/_4Png.png",
+                            fullWidth: 344,
+                            fullHeight: 700,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      </div>
+                    </SliderWrapper>
+                  );
+                })()}
               </div>
             </Stack__>
             <div
@@ -1492,6 +1624,7 @@ const PlasmicDescendants = {
     "introCalendarRight7",
     "introCalendarRight8",
     "introCalendarLeft2",
+    "sliderCarousel",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -1561,6 +1694,7 @@ const PlasmicDescendants = {
     "introCalendarRight7",
     "introCalendarRight8",
     "introCalendarLeft2",
+    "sliderCarousel",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -1668,7 +1802,8 @@ const PlasmicDescendants = {
     "introCalendarRight5",
     "introCalendarRight7",
     "introCalendarRight8",
-    "introCalendarLeft2"
+    "introCalendarLeft2",
+    "sliderCarousel"
   ],
   introCalendarRight5: [
     "introCalendarRight5",
@@ -1677,7 +1812,8 @@ const PlasmicDescendants = {
   ],
   introCalendarRight7: ["introCalendarRight7"],
   introCalendarRight8: ["introCalendarRight8"],
-  introCalendarLeft2: ["introCalendarLeft2"],
+  introCalendarLeft2: ["introCalendarLeft2", "sliderCarousel"],
+  sliderCarousel: ["sliderCarousel"],
   testimonials: [
     "testimonials",
     "titlePart",
@@ -1779,6 +1915,7 @@ type NodeDefaultElementType = {
   introCalendarRight7: "div";
   introCalendarRight8: "div";
   introCalendarLeft2: "div";
+  sliderCarousel: typeof SliderWrapper;
   testimonials: "div";
   titlePart: "div";
   commentsScrolling: "div";
@@ -1908,6 +2045,7 @@ export const PlasmicHomepage = Object.assign(
     introCalendarRight7: makeNodeComponent("introCalendarRight7"),
     introCalendarRight8: makeNodeComponent("introCalendarRight8"),
     introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
+    sliderCarousel: makeNodeComponent("sliderCarousel"),
     testimonials: makeNodeComponent("testimonials"),
     titlePart: makeNodeComponent("titlePart"),
     commentsScrolling: makeNodeComponent("commentsScrolling"),

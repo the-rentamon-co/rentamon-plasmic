@@ -244,7 +244,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                 component={Link}
                 href={
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? "https://rentamon.com/panels/"
+                    ? `/panel`
                     : "/"
                 }
                 platform={"nextjs"}
@@ -274,7 +274,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                   sty.link__cwZwa
                 )}
                 component={Link}
-                href={"https://rentamon.com/download/"}
+                href={`/download`}
                 platform={"nextjs"}
               >
                 {
@@ -289,7 +289,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                   sty.link__kh6Yr
                 )}
                 component={Link}
-                href={"#"}
+                href={`/pricing`}
                 platform={"nextjs"}
               >
                 {"\u062a\u0639\u0631\u0641\u0647"}
@@ -302,9 +302,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                   sty.link__vseFw
                 )}
                 component={Link}
-                href={
-                  "https://rentamon.com/\u062f\u0631\u0628\u0627\u0631\u0647-\u0645\u0627"
-                }
+                href={`/about-us`}
                 platform={"nextjs"}
               >
                 {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}

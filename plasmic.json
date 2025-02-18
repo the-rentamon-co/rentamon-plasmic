@@ -713,20 +713,6 @@
           "componentType": "component"
         },
         {
-          "id": "OUfaFiJLkcrx",
-          "name": "NewCalendar",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewCalendar.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/features.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewCalendar.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-calendar"
-        },
-        {
           "id": "eerOzN6iqdPm",
           "name": "Label",
           "type": "managed",
@@ -1202,6 +1188,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicTestimonialsScrolling.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "OUfaFiJLkcrx",
+          "name": "Features",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicFeatures.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/features.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicFeatures.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/features"
         }
       ],
       "icons": [
@@ -2436,6 +2436,16 @@
           "id": "mkssix_U5rya",
           "name": "image 71",
           "filePath": "../public/plasmic/website_starter/images/image71.svg"
+        },
+        {
+          "id": "WY8yiBdxZPf0",
+          "name": "3.png",
+          "filePath": "../public/plasmic/website_starter/images/_3Png.png"
+        },
+        {
+          "id": "AKMkNGwGs1tZ",
+          "name": "4.png",
+          "filePath": "../public/plasmic/website_starter/images/_4Png.png"
         }
       ],
       "indirect": false,

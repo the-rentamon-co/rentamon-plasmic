@@ -581,29 +581,29 @@ function PlasmicNewChanges__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["runCode"] = true
+                $steps["goToFeatures"] = true
                   ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            return window.open(
-                              "https://app.rentamon.com/new-calendar",
-                              "_blank"
-                            );
-                          })();
+                      const actionArgs = { destination: `/features` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
                         }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
                       })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
+                  $steps["goToFeatures"] != null &&
+                  typeof $steps["goToFeatures"] === "object" &&
+                  typeof $steps["goToFeatures"].then === "function"
                 ) {
-                  $steps["runCode"] = await $steps["runCode"];
+                  $steps["goToFeatures"] = await $steps["goToFeatures"];
                 }
               }}
             >
