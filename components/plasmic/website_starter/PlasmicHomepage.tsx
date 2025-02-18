@@ -890,7 +890,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           displayMaxHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "none"
-                              : "none"
+                              : "500px"
                           }
                           displayMaxWidth={
                             hasVariant(globalVariants, "screen", "smallMobile")
@@ -1012,7 +1012,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "300px"
                               : hasVariant(globalVariants, "screen", "mobile")
-                              ? "280px"
+                              ? "240px"
                               : "240px"
                           }
                           src={{

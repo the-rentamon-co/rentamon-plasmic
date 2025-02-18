@@ -60,6 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Switch from "../../Switch"; // plasmic-import: XDOKoC2AhwWH/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 
@@ -85,10 +87,18 @@ export const PlasmicSetting__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSetting__OverridesType = {
   setting?: Flex__<"div">;
-  main?: Flex__<"div">;
-  title?: Flex__<"div">;
+  header?: Flex__<"div">;
+  right?: Flex__<"div">;
+  right1?: Flex__<"div">;
+  right3?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   title2?: Flex__<"div">;
+  right2?: Flex__<"div">;
+  select2?: Flex__<typeof Select>;
+  left?: Flex__<"div">;
+  profile?: Flex__<typeof ApiRequest>;
+  main?: Flex__<"div">;
+  title?: Flex__<"div">;
   intro?: Flex__<"div">;
   caption?: Flex__<"div">;
   optionsButtons?: Flex__<"div">;
@@ -129,6 +139,7 @@ export type PlasmicSetting__OverridesType = {
   buttons4?: Flex__<"div">;
   active4?: Flex__<"div">;
   deactive4?: Flex__<"div">;
+  apiRequestSetting?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultSettingProps {}
@@ -185,7 +196,24 @@ function PlasmicSetting__RenderFunc(props: {
         path: "switch1.isSelected",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (
+                $state.apiRequestSetting.data.find(
+                  item => item.is_active && item.feature_name === "auto_sync"
+                ) !== undefined
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "switch3.isSelected",
@@ -197,7 +225,8 @@ function PlasmicSetting__RenderFunc(props: {
         path: "modalActivateAutosync.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
       },
       {
         path: "modalDEactivateAutosync.open",
@@ -222,7 +251,84 @@ function PlasmicSetting__RenderFunc(props: {
         path: "switch2.isSelected",
         type: "private",
         variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (
+                $state.apiRequestSetting.data.find(
+                  item => item.is_active && item.feature_name === "reservations"
+                ) !== undefined
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "loading",
+        type: "private",
+        variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "select2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "profile.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
+      },
+      {
+        path: "profile.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
+      },
+      {
+        path: "profile.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
+      },
+      {
+        path: "apiRequestSetting.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestSetting"
+      },
+      {
+        path: "apiRequestSetting.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestSetting"
+      },
+      {
+        path: "apiRequestSetting.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestSetting"
       }
     ],
     [$props, $ctx, $refs]
@@ -279,39 +385,207 @@ function PlasmicSetting__RenderFunc(props: {
           )}
         >
           <div
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames(projectcss.all, sty.header)}
+          >
+            <div
+              data-plasmic-name={"right"}
+              data-plasmic-override={overrides.right}
+              className={classNames(projectcss.all, sty.right)}
+            >
+              <div
+                data-plasmic-name={"right1"}
+                data-plasmic-override={overrides.right1}
+                className={classNames(projectcss.all, sty.right1)}
+              >
+                <div
+                  data-plasmic-name={"right3"}
+                  data-plasmic-override={overrides.right3}
+                  className={classNames(projectcss.all, sty.right3)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__wXkGr)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"33px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image37.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
+                    }}
+                  />
+
+                  <SideBar2
+                    data-plasmic-name={"sideBar2"}
+                    data-plasmic-override={overrides.sideBar2}
+                    className={classNames("__wab_instance", sty.sideBar2)}
+                    isOpen={false}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"title2"}
+                  data-plasmic-override={overrides.title2}
+                  className={classNames(projectcss.all, sty.title2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___25OK7
+                    )}
+                  >
+                    {
+                      "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                    }
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"right2"}
+                data-plasmic-override={overrides.right2}
+                className={classNames(projectcss.all, sty.right2)}
+              >
+                <Select
+                  data-plasmic-name={"select2"}
+                  data-plasmic-override={overrides.select2}
+                  className={classNames("__wab_instance", sty.select2)}
+                  onChange={async (...eventArgs: any) => {
+                    ((...eventArgs) => {
+                      generateStateOnChangeProp($state, ["select2", "value"])(
+                        eventArgs[0]
+                      );
+                    }).apply(null, eventArgs);
+
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
+                  }}
+                  options={[
+                    { value: "option1", label: "Option 1" },
+                    { value: "option2", label: "Option 2" }
+                  ]}
+                  placeholder={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__unIdK
+                      )}
+                    >
+                      {
+                        "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
+                      }
+                    </div>
+                  }
+                  value={generateStateValueProp($state, ["select2", "value"])}
+                />
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"left"}
+              data-plasmic-override={overrides.left}
+              className={classNames(projectcss.all, sty.left)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__twNuG)}
+                displayHeight={"150px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"100%"}
+                loading={"lazy"}
+                src={(() => {
+                  try {
+                    return $state.profile.data.user_info.profile_pic_link;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </div>
+            <ApiRequest
+              data-plasmic-name={"profile"}
+              data-plasmic-override={overrides.profile}
+              className={classNames("__wab_instance", sty.profile)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "error"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "loading"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["profile"] = ref;
+              }}
+              url={(() => {
+                try {
+                  return `https://api-v2.rentamon.com/api/user_info?property_id=1`;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__xYJez
+                )}
+              >
+                {"Enter some text"}
+              </div>
+            </ApiRequest>
+          </div>
+          <div
             data-plasmic-name={"main"}
             data-plasmic-override={overrides.main}
             className={classNames(projectcss.all, sty.main)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__pAdR)}>
-              <div
-                data-plasmic-name={"title"}
-                data-plasmic-override={overrides.title}
-                className={classNames(projectcss.all, sty.title)}
-              >
-                <SideBar2
-                  data-plasmic-name={"sideBar2"}
-                  data-plasmic-override={overrides.sideBar2}
-                  className={classNames("__wab_instance", sty.sideBar2)}
-                  isOpen={false}
-                />
-              </div>
-              <div
-                data-plasmic-name={"title2"}
-                data-plasmic-override={overrides.title2}
-                className={classNames(projectcss.all, sty.title2)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___25OK7
-                  )}
-                >
-                  {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
-                </div>
-              </div>
-            </div>
+            <div
+              data-plasmic-name={"title"}
+              data-plasmic-override={overrides.title}
+              className={classNames(projectcss.all, sty.title)}
+            />
+
             <div
               data-plasmic-name={"intro"}
               data-plasmic-override={overrides.intro}
@@ -931,6 +1205,45 @@ function PlasmicSetting__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
+                        $steps["updateLoading"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["loading"]
+                                },
+                                operation: 4
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, !oldValue);
+                                return !oldValue;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateLoading"] != null &&
+                          typeof $steps["updateLoading"] === "object" &&
+                          typeof $steps["updateLoading"].then === "function"
+                        ) {
+                          $steps["updateLoading"] = await $steps[
+                            "updateLoading"
+                          ];
+                        }
+
                         $steps["invokeGlobalAction"] = true
                           ? (() => {
                               const actionArgs = {
@@ -1049,10 +1362,63 @@ function PlasmicSetting__RenderFunc(props: {
                             "updateSwitch1IsSelected"
                           ];
                         }
+
+                        $steps["updateLoading2"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["loading"]
+                                },
+                                operation: 4
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, !oldValue);
+                                return !oldValue;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateLoading2"] != null &&
+                          typeof $steps["updateLoading2"] === "object" &&
+                          typeof $steps["updateLoading2"].then === "function"
+                        ) {
+                          $steps["updateLoading2"] = await $steps[
+                            "updateLoading2"
+                          ];
+                        }
                       }}
                     >
                       {"\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc"}
                     </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__ow2Yq)}
+                      displayHeight={"76px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={
+                        "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                      }
+                    />
                   </div>
                   <div
                     data-plasmic-name={"deactive"}
@@ -2069,6 +2435,70 @@ function PlasmicSetting__RenderFunc(props: {
                 </div>
               </AntdModal>
             </div>
+            <ApiRequest
+              data-plasmic-name={"apiRequestSetting"}
+              data-plasmic-override={overrides.apiRequestSetting}
+              className={classNames("__wab_instance", sty.apiRequestSetting)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hAza
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return undefined;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "Error fetching data";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              }
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nhbZ3
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequestSetting",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequestSetting",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequestSetting",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              ref={ref => {
+                $refs["apiRequestSetting"] = ref;
+              }}
+              url={"https://gateway.rentamon.com/webhook/fetch-setting-from-db"}
+            />
           </div>
         </div>
       </div>
@@ -2079,10 +2509,18 @@ function PlasmicSetting__RenderFunc(props: {
 const PlasmicDescendants = {
   setting: [
     "setting",
-    "main",
-    "title",
+    "header",
+    "right",
+    "right1",
+    "right3",
     "sideBar2",
     "title2",
+    "right2",
+    "select2",
+    "left",
+    "profile",
+    "main",
+    "title",
     "intro",
     "caption",
     "optionsButtons",
@@ -2122,13 +2560,41 @@ const PlasmicDescendants = {
     "modalDEactivateReservations",
     "buttons4",
     "active4",
-    "deactive4"
+    "deactive4",
+    "apiRequestSetting"
   ],
+  header: [
+    "header",
+    "right",
+    "right1",
+    "right3",
+    "sideBar2",
+    "title2",
+    "right2",
+    "select2",
+    "left",
+    "profile"
+  ],
+  right: [
+    "right",
+    "right1",
+    "right3",
+    "sideBar2",
+    "title2",
+    "right2",
+    "select2"
+  ],
+  right1: ["right1", "right3", "sideBar2", "title2"],
+  right3: ["right3", "sideBar2"],
+  sideBar2: ["sideBar2"],
+  title2: ["title2"],
+  right2: ["right2", "select2"],
+  select2: ["select2"],
+  left: ["left"],
+  profile: ["profile"],
   main: [
     "main",
     "title",
-    "sideBar2",
-    "title2",
     "intro",
     "caption",
     "optionsButtons",
@@ -2168,11 +2634,10 @@ const PlasmicDescendants = {
     "modalDEactivateReservations",
     "buttons4",
     "active4",
-    "deactive4"
+    "deactive4",
+    "apiRequestSetting"
   ],
-  title: ["title", "sideBar2"],
-  sideBar2: ["sideBar2"],
-  title2: ["title2"],
+  title: ["title"],
   intro: ["intro", "caption"],
   caption: ["caption"],
   optionsButtons: [
@@ -2271,17 +2736,26 @@ const PlasmicDescendants = {
   ],
   buttons4: ["buttons4", "active4", "deactive4"],
   active4: ["active4"],
-  deactive4: ["deactive4"]
+  deactive4: ["deactive4"],
+  apiRequestSetting: ["apiRequestSetting"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   setting: "div";
-  main: "div";
-  title: "div";
+  header: "div";
+  right: "div";
+  right1: "div";
+  right3: "div";
   sideBar2: typeof SideBar2;
   title2: "div";
+  right2: "div";
+  select2: typeof Select;
+  left: "div";
+  profile: typeof ApiRequest;
+  main: "div";
+  title: "div";
   intro: "div";
   caption: "div";
   optionsButtons: "div";
@@ -2322,6 +2796,7 @@ type NodeDefaultElementType = {
   buttons4: "div";
   active4: "div";
   deactive4: "div";
+  apiRequestSetting: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2384,10 +2859,18 @@ export const PlasmicSetting = Object.assign(
   makeNodeComponent("setting"),
   {
     // Helper components rendering sub-elements
-    main: makeNodeComponent("main"),
-    title: makeNodeComponent("title"),
+    header: makeNodeComponent("header"),
+    right: makeNodeComponent("right"),
+    right1: makeNodeComponent("right1"),
+    right3: makeNodeComponent("right3"),
     sideBar2: makeNodeComponent("sideBar2"),
     title2: makeNodeComponent("title2"),
+    right2: makeNodeComponent("right2"),
+    select2: makeNodeComponent("select2"),
+    left: makeNodeComponent("left"),
+    profile: makeNodeComponent("profile"),
+    main: makeNodeComponent("main"),
+    title: makeNodeComponent("title"),
     intro: makeNodeComponent("intro"),
     caption: makeNodeComponent("caption"),
     optionsButtons: makeNodeComponent("optionsButtons"),
@@ -2430,6 +2913,7 @@ export const PlasmicSetting = Object.assign(
     buttons4: makeNodeComponent("buttons4"),
     active4: makeNodeComponent("active4"),
     deactive4: makeNodeComponent("deactive4"),
+    apiRequestSetting: makeNodeComponent("apiRequestSetting"),
 
     // Metadata about props expected for PlasmicSetting
     internalVariantProps: PlasmicSetting__VariantProps,

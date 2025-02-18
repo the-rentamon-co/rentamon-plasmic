@@ -2124,156 +2124,247 @@ function PlasmicReservations__RenderFunc(props: {
                     />
                   </Stack__>
                 </Button>
-                <AntdButton
-                  className={classNames("__wab_instance", sty.button__am3Oc)}
-                  danger={false}
-                  loading={false}
-                  onClick={async () => {
-                    const $steps = {};
-
-                    $steps["updateSelectedAction"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["selectedAction"]
-                            },
-                            operation: 0,
-                            value: "cancele"
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
+                {(() => {
+                  try {
+                    return $state.modalData[0].platfromName !== "هومسا";
+                  } catch (e) {
                     if (
-                      $steps["updateSelectedAction"] != null &&
-                      typeof $steps["updateSelectedAction"] === "object" &&
-                      typeof $steps["updateSelectedAction"].then === "function"
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      $steps["updateSelectedAction"] = await $steps[
-                        "updateSelectedAction"
-                      ];
+                      return true;
                     }
+                    throw e;
+                  }
+                })() ? (
+                  <AntdButton
+                    className={classNames("__wab_instance", sty.button__am3Oc)}
+                    danger={false}
+                    loading={false}
+                    onClick={async () => {
+                      const $steps = {};
 
-                    $steps["updateConfirmedOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["confirmed", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
+                      $steps["updateSelectedAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["selectedAction"]
+                              },
+                              operation: 0,
+                              value: "cancele"
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
 
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateConfirmedOpen"] != null &&
-                      typeof $steps["updateConfirmedOpen"] === "object" &&
-                      typeof $steps["updateConfirmedOpen"].then === "function"
-                    ) {
-                      $steps["updateConfirmedOpen"] = await $steps[
-                        "updateConfirmedOpen"
-                      ];
-                    }
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateSelectedAction"] != null &&
+                        typeof $steps["updateSelectedAction"] === "object" &&
+                        typeof $steps["updateSelectedAction"].then ===
+                          "function"
+                      ) {
+                        $steps["updateSelectedAction"] = await $steps[
+                          "updateSelectedAction"
+                        ];
+                      }
 
-                    $steps["updateAcceptModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["finalModal", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
+                      $steps["updateConfirmedOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["confirmed", "open"]
+                              },
+                              operation: 0
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
 
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateAcceptModalOpen"] != null &&
-                      typeof $steps["updateAcceptModalOpen"] === "object" &&
-                      typeof $steps["updateAcceptModalOpen"].then === "function"
-                    ) {
-                      $steps["updateAcceptModalOpen"] = await $steps[
-                        "updateAcceptModalOpen"
-                      ];
-                    }
-                  }}
-                  size={"medium"}
-                  type={"primary"}
-                >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__zzp7)}
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateConfirmedOpen"] != null &&
+                        typeof $steps["updateConfirmedOpen"] === "object" &&
+                        typeof $steps["updateConfirmedOpen"].then === "function"
+                      ) {
+                        $steps["updateConfirmedOpen"] = await $steps[
+                          "updateConfirmedOpen"
+                        ];
+                      }
+
+                      $steps["updateAcceptModalOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["finalModal", "open"]
+                              },
+                              operation: 0,
+                              value: true
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateAcceptModalOpen"] != null &&
+                        typeof $steps["updateAcceptModalOpen"] === "object" &&
+                        typeof $steps["updateAcceptModalOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateAcceptModalOpen"] = await $steps[
+                          "updateAcceptModalOpen"
+                        ];
+                      }
+                    }}
+                    size={"medium"}
+                    type={"primary"}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__eGsx1
-                      )}
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__zzp7)}
                     >
-                      {"\u0631\u062f"}
-                    </div>
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__h39QQ)}
-                      displayHeight={"19px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image46.svg",
-                        fullWidth: 17,
-                        fullHeight: 16,
-                        aspectRatio: 1.0625
-                      }}
-                    />
-                  </Stack__>
-                </AntdButton>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__eGsx1
+                        )}
+                      >
+                        {"\u0631\u062f"}
+                      </div>
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__h39QQ)}
+                        displayHeight={"19px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image46.svg",
+                          fullWidth: 17,
+                          fullHeight: 16,
+                          aspectRatio: 1.0625
+                        }}
+                      />
+                    </Stack__>
+                  </AntdButton>
+                ) : null}
+                {(() => {
+                  try {
+                    return $state.modalData[0].platfromName === "هومسا";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <AntdButton
+                    className={classNames("__wab_instance", sty.button___5KCXe)}
+                    danger={false}
+                    loading={false}
+                    onClick={async () => {
+                      const $steps = {};
+
+                      $steps["updateConfirmedOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["confirmed", "open"]
+                              },
+                              operation: 0
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateConfirmedOpen"] != null &&
+                        typeof $steps["updateConfirmedOpen"] === "object" &&
+                        typeof $steps["updateConfirmedOpen"].then === "function"
+                      ) {
+                        $steps["updateConfirmedOpen"] = await $steps[
+                          "updateConfirmedOpen"
+                        ];
+                      }
+                    }}
+                    size={"medium"}
+                    type={"primary"}
+                  >
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__kgKnF)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yMg1I
+                        )}
+                      >
+                        {"\u0641\u0639\u0644\u0627 \u0646\u0647"}
+                      </div>
+                    </Stack__>
+                  </AntdButton>
+                ) : null}
               </Stack__>
             </AntdModal>
             <Stack__
