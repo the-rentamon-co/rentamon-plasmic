@@ -203,7 +203,7 @@ function PlasmicSetting__RenderFunc(props: {
         path: "modalDEactivateAutosync.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "modalActivateReservations.open",
@@ -942,7 +942,7 @@ function PlasmicSetting__RenderFunc(props: {
                                     try {
                                       return {
                                         feature_name: "auto_sync",
-                                        auto_sync: true
+                                        is_active: true
                                       };
                                     } catch (e) {
                                       if (
@@ -1239,6 +1239,130 @@ function PlasmicSetting__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.text__swGq5
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/auto-sync-activate",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return {
+                                        feature_name: "reservations",
+                                        is_active: true
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+
+                        $steps["updateSwitch2IsSelected"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["switch2", "isSelected"]
+                                },
+                                operation: 0,
+                                value: ($state.switch2.isSelected = true)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateSwitch2IsSelected"] != null &&
+                          typeof $steps["updateSwitch2IsSelected"] ===
+                            "object" &&
+                          typeof $steps["updateSwitch2IsSelected"].then ===
+                            "function"
+                        ) {
+                          $steps["updateSwitch2IsSelected"] = await $steps[
+                            "updateSwitch2IsSelected"
+                          ];
+                        }
+
+                        $steps["updateModalActivateReservationsOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: [
+                                    "modalActivateReservations",
+                                    "open"
+                                  ]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateModalActivateReservationsOpen"] !=
+                            null &&
+                          typeof $steps[
+                            "updateModalActivateReservationsOpen"
+                          ] === "object" &&
+                          typeof $steps["updateModalActivateReservationsOpen"]
+                            .then === "function"
+                        ) {
+                          $steps["updateModalActivateReservationsOpen"] =
+                            await $steps["updateModalActivateReservationsOpen"];
+                        }
+                      }}
                     >
                       {"\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc"}
                     </div>
@@ -1423,7 +1547,25 @@ function PlasmicSetting__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://gateway.rentamon.com/webhook/auto-sync-activate"
+                                  "https://gateway.rentamon.com/webhook/auto-sync-activate",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return {
+                                        feature_name: "auto_sync",
+                                        is_active: false
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
                                 ]
                               };
                               return $globalActions[
@@ -1439,6 +1581,83 @@ function PlasmicSetting__RenderFunc(props: {
                         ) {
                           $steps["invokeGlobalAction"] = await $steps[
                             "invokeGlobalAction"
+                          ];
+                        }
+
+                        $steps["updateModalDEactivateAutosyncOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: [
+                                    "modalDEactivateAutosync",
+                                    "open"
+                                  ]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateModalDEactivateAutosyncOpen"] != null &&
+                          typeof $steps["updateModalDEactivateAutosyncOpen"] ===
+                            "object" &&
+                          typeof $steps["updateModalDEactivateAutosyncOpen"]
+                            .then === "function"
+                        ) {
+                          $steps["updateModalDEactivateAutosyncOpen"] =
+                            await $steps["updateModalDEactivateAutosyncOpen"];
+                        }
+
+                        $steps["updateSwitch1IsSelected"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["switch1", "isSelected"]
+                                },
+                                operation: 0,
+                                value: ($state.switch1.isSelected = false)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateSwitch1IsSelected"] != null &&
+                          typeof $steps["updateSwitch1IsSelected"] ===
+                            "object" &&
+                          typeof $steps["updateSwitch1IsSelected"].then ===
+                            "function"
+                        ) {
+                          $steps["updateSwitch1IsSelected"] = await $steps[
+                            "updateSwitch1IsSelected"
                           ];
                         }
                       }}
@@ -1618,6 +1837,132 @@ function PlasmicSetting__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.text__wMEjm
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/auto-sync-activate",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return {
+                                        feature_name: "reservations",
+                                        is_active: false
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+
+                        $steps["updateModalDEactivateReservationsOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: [
+                                    "modalDEactivateReservations",
+                                    "open"
+                                  ]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateModalDEactivateReservationsOpen"] !=
+                            null &&
+                          typeof $steps[
+                            "updateModalDEactivateReservationsOpen"
+                          ] === "object" &&
+                          typeof $steps["updateModalDEactivateReservationsOpen"]
+                            .then === "function"
+                        ) {
+                          $steps["updateModalDEactivateReservationsOpen"] =
+                            await $steps[
+                              "updateModalDEactivateReservationsOpen"
+                            ];
+                        }
+
+                        $steps["updateSwitch2IsSelected"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["switch2", "isSelected"]
+                                },
+                                operation: 0,
+                                value: ($state.switch2.isSelected = false)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateSwitch2IsSelected"] != null &&
+                          typeof $steps["updateSwitch2IsSelected"] ===
+                            "object" &&
+                          typeof $steps["updateSwitch2IsSelected"].then ===
+                            "function"
+                        ) {
+                          $steps["updateSwitch2IsSelected"] = await $steps[
+                            "updateSwitch2IsSelected"
+                          ];
+                        }
+                      }}
                     >
                       {"\u063a\u06cc\u0631\u0641\u0639\u0627\u0644"}
                     </div>
