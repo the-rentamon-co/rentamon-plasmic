@@ -203,7 +203,7 @@ function PlasmicSetting__RenderFunc(props: {
         path: "modalDEactivateAutosync.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "modalActivateReservations.open",
@@ -856,6 +856,9 @@ function PlasmicSetting__RenderFunc(props: {
                 )}
                 hideFooter={true}
                 maskClosable={false}
+                modalContentClassName={classNames({
+                  [sty["pcls_Gd1exZqbaJW4"]]: true
+                })}
                 modalScopeClassName={sty["modalActivateAutosync__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
@@ -881,6 +884,7 @@ function PlasmicSetting__RenderFunc(props: {
                   </div>
                 }
                 trigger={null}
+                wrapClassName={classNames({ [sty["pcls_gtKIMoah3QK_"]]: true })}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__vBeht)}>
                   <div
@@ -937,6 +941,7 @@ function PlasmicSetting__RenderFunc(props: {
                                   (() => {
                                     try {
                                       return {
+                                        feature_name: "auto_sync",
                                         auto_sync: true
                                       };
                                     } catch (e) {
@@ -965,6 +970,83 @@ function PlasmicSetting__RenderFunc(props: {
                         ) {
                           $steps["invokeGlobalAction"] = await $steps[
                             "invokeGlobalAction"
+                          ];
+                        }
+
+                        $steps["updateModalActivateAutosyncOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: [
+                                    "modalActivateAutosync",
+                                    "open"
+                                  ]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateModalActivateAutosyncOpen"] != null &&
+                          typeof $steps["updateModalActivateAutosyncOpen"] ===
+                            "object" &&
+                          typeof $steps["updateModalActivateAutosyncOpen"]
+                            .then === "function"
+                        ) {
+                          $steps["updateModalActivateAutosyncOpen"] =
+                            await $steps["updateModalActivateAutosyncOpen"];
+                        }
+
+                        $steps["updateSwitch1IsSelected"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["switch1", "isSelected"]
+                                },
+                                operation: 0,
+                                value: ($state.switch1.isSelected = true)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateSwitch1IsSelected"] != null &&
+                          typeof $steps["updateSwitch1IsSelected"] ===
+                            "object" &&
+                          typeof $steps["updateSwitch1IsSelected"].then ===
+                            "function"
+                        ) {
+                          $steps["updateSwitch1IsSelected"] = await $steps[
+                            "updateSwitch1IsSelected"
                           ];
                         }
                       }}
@@ -1034,9 +1116,7 @@ function PlasmicSetting__RenderFunc(props: {
                                     "open"
                                   ]
                                 },
-                                operation: 0,
-                                value:
-                                  $state.modalActivateAutosync.open == false
+                                operation: 0
                               };
                               return (({
                                 variable,
@@ -1335,6 +1415,33 @@ function PlasmicSetting__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.text___9LPT
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/auto-sync-activate"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
                     >
                       {"\u063a\u06cc\u0631\u0641\u0639\u0627\u0644"}
                     </div>

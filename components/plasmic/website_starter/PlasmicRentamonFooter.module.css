@@ -10,7 +10,7 @@
     52deg,
     #203647 0%,
     #376385 16%,
-    #0e1419 46%,
+    #1a2d3e 46%,
     #3b6381 83%,
     #203647 100%
   );
@@ -111,6 +111,13 @@
   filter: none;
   cursor: pointer;
 }
+@media (max-width: 1200px) {
+  .embedHtml:global(.__wab_instance) {
+    margin-bottom: 0px;
+    height: 131px;
+    flex-shrink: 0;
+  }
+}
 .freeBox__zeOcA {
   display: flex;
   flex-direction: column;
@@ -197,6 +204,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__kl8Ks {
+    padding-top: 16px;
+  }
 }
 .img__fgjwb {
   object-fit: cover;
@@ -335,6 +347,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 1200px) {
+  .freeBox__s2BqG {
+    padding-top: 5px;
+  }
 }
 .text___45Xuh {
   position: relative;

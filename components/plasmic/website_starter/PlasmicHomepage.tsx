@@ -134,7 +134,6 @@ export type PlasmicHomepage__OverridesType = {
   screenshots?: Flex__<"div">;
   introCalendarRight5?: Flex__<"div">;
   introCalendarRight7?: Flex__<"div">;
-  introCalendarRight8?: Flex__<"div">;
   introCalendarLeft2?: Flex__<"div">;
   sliderCarousel?: Flex__<typeof SliderWrapper>;
   testimonials?: Flex__<"div">;
@@ -152,6 +151,7 @@ export type PlasmicHomepage__OverridesType = {
   numberTop3?: Flex__<"div">;
   titleDown3?: Flex__<"div">;
   addingVillaIntoPltforms?: Flex__<"div">;
+  reg?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
   _2?: Flex__<typeof AntdAccordionItem>;
@@ -816,57 +816,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__lLqoZ
                     )}
                   >
-                    {
-                      "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u060c \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc\u060c \u062a\u062e\u0641\u06cc\u0641 \u0648 \u06cc\u0627 \u0631\u0632\u0631\u0648 \u062a\u0642\u0648\u06cc\u0645\u060c \u062a\u0648\u06cc \u06f7 \u062a\u0627 \u0633\u0627\u06cc\u062a \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u0647\r\n\r"
-                    }
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"introCalendarRight8"}
-                  data-plasmic-override={overrides.introCalendarRight8}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introCalendarRight8
-                  )}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vepAb
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  return window.open(
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
-                                    "_blank"
-                                  );
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-                    }}
-                  >
-                    {
-                      "\u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                    }
+                    {hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u0627\u0646  \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u062f\u0631 \u06cc\u06a9\u062c\u0627"
+                      : "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u0627\u0646  \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u062f\u0631 \u06cc\u06a9\u062c\u0627"}
                   </div>
                 </div>
               </div>
@@ -930,12 +882,28 @@ function PlasmicHomepage__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__ub7U8)}
-                          displayHeight={"100%"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
+                          displayMaxHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "none"
+                              : "none"
+                          }
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
-                          displayWidth={"240px"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "300px"
+                              : "240px"
+                          }
                           src={{
                             src: "/plasmic/website_starter/images/_1Png.png",
                             fullWidth: 344,
@@ -953,12 +921,28 @@ function PlasmicHomepage__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__tWbvV)}
-                          displayHeight={"100%"}
-                          displayMaxHeight={"500px"}
-                          displayMaxWidth={"100%"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
+                          displayMaxHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "none"
+                              : "500px"
+                          }
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
-                          displayWidth={"240px"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "300px"
+                              : "240px"
+                          }
                           src={{
                             src: "/plasmic/website_starter/images/_2Png.png",
                             fullWidth: 344,
@@ -976,12 +960,28 @@ function PlasmicHomepage__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__gHndD)}
-                          displayHeight={"100%"}
-                          displayMaxHeight={"500px"}
-                          displayMaxWidth={"100%"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
+                          displayMaxHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "none"
+                              : "500px"
+                          }
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
-                          displayWidth={"240px"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "300px"
+                              : "240px"
+                          }
                           src={{
                             src: "/plasmic/website_starter/images/_3Png.png",
                             fullWidth: 344,
@@ -1000,12 +1000,18 @@ function PlasmicHomepage__RenderFunc(props: {
                           alt={""}
                           className={classNames(sty.img__vl2Gn)}
                           displayHeight={"100%"}
-                          displayMaxHeight={"500px"}
+                          displayMaxHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "none"
+                              : "500px"
+                          }
                           displayMaxWidth={"100%"}
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={
-                            hasVariant(globalVariants, "screen", "mobile")
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "300px"
+                              : hasVariant(globalVariants, "screen", "mobile")
                               ? "280px"
                               : "240px"
                           }
@@ -1192,7 +1198,53 @@ function PlasmicHomepage__RenderFunc(props: {
                 projectcss.all,
                 sty.addingVillaIntoPltforms
               )}
-            />
+            >
+              <div
+                data-plasmic-name={"reg"}
+                data-plasmic-override={overrides.reg}
+                className={classNames(projectcss.all, sty.reg)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vepAb
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return window.open(
+                                  "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
+                                  "_blank"
+                                );
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {
+                    "\u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                  }
+                </div>
+              </div>
+            </div>
           </div>
           <div
             data-plasmic-name={"qA"}
@@ -1622,7 +1674,6 @@ const PlasmicDescendants = {
     "screenshots",
     "introCalendarRight5",
     "introCalendarRight7",
-    "introCalendarRight8",
     "introCalendarLeft2",
     "sliderCarousel",
     "testimonials",
@@ -1640,6 +1691,7 @@ const PlasmicDescendants = {
     "numberTop3",
     "titleDown3",
     "addingVillaIntoPltforms",
+    "reg",
     "qA",
     "accordionMain",
     "_2",
@@ -1692,7 +1744,6 @@ const PlasmicDescendants = {
     "screenshots",
     "introCalendarRight5",
     "introCalendarRight7",
-    "introCalendarRight8",
     "introCalendarLeft2",
     "sliderCarousel",
     "testimonials",
@@ -1709,7 +1760,8 @@ const PlasmicDescendants = {
     "_3rd",
     "numberTop3",
     "titleDown3",
-    "addingVillaIntoPltforms"
+    "addingVillaIntoPltforms",
+    "reg"
   ],
   introCalendar: [
     "introCalendar",
@@ -1801,17 +1853,11 @@ const PlasmicDescendants = {
     "screenshots",
     "introCalendarRight5",
     "introCalendarRight7",
-    "introCalendarRight8",
     "introCalendarLeft2",
     "sliderCarousel"
   ],
-  introCalendarRight5: [
-    "introCalendarRight5",
-    "introCalendarRight7",
-    "introCalendarRight8"
-  ],
+  introCalendarRight5: ["introCalendarRight5", "introCalendarRight7"],
   introCalendarRight7: ["introCalendarRight7"],
-  introCalendarRight8: ["introCalendarRight8"],
   introCalendarLeft2: ["introCalendarLeft2", "sliderCarousel"],
   sliderCarousel: ["sliderCarousel"],
   testimonials: [
@@ -1844,7 +1890,8 @@ const PlasmicDescendants = {
   _3rd: ["_3rd", "numberTop3", "titleDown3"],
   numberTop3: ["numberTop3"],
   titleDown3: ["titleDown3"],
-  addingVillaIntoPltforms: ["addingVillaIntoPltforms"],
+  addingVillaIntoPltforms: ["addingVillaIntoPltforms", "reg"],
+  reg: ["reg"],
   qA: [
     "qA",
     "accordionMain",
@@ -1913,7 +1960,6 @@ type NodeDefaultElementType = {
   screenshots: "div";
   introCalendarRight5: "div";
   introCalendarRight7: "div";
-  introCalendarRight8: "div";
   introCalendarLeft2: "div";
   sliderCarousel: typeof SliderWrapper;
   testimonials: "div";
@@ -1931,6 +1977,7 @@ type NodeDefaultElementType = {
   numberTop3: "div";
   titleDown3: "div";
   addingVillaIntoPltforms: "div";
+  reg: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
   _2: typeof AntdAccordionItem;
@@ -2043,7 +2090,6 @@ export const PlasmicHomepage = Object.assign(
     screenshots: makeNodeComponent("screenshots"),
     introCalendarRight5: makeNodeComponent("introCalendarRight5"),
     introCalendarRight7: makeNodeComponent("introCalendarRight7"),
-    introCalendarRight8: makeNodeComponent("introCalendarRight8"),
     introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     sliderCarousel: makeNodeComponent("sliderCarousel"),
     testimonials: makeNodeComponent("testimonials"),
@@ -2061,6 +2107,7 @@ export const PlasmicHomepage = Object.assign(
     numberTop3: makeNodeComponent("numberTop3"),
     titleDown3: makeNodeComponent("titleDown3"),
     addingVillaIntoPltforms: makeNodeComponent("addingVillaIntoPltforms"),
+    reg: makeNodeComponent("reg"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
     _2: makeNodeComponent("_2"),
