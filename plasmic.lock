@@ -1994,11 +1994,6 @@
           "checksum": "10acabe9179aede62b67aeaf3ff84025"
         },
         {
-          "assetId": "7SNMkB8UMukVgcWJYokeAQ",
-          "type": "projectCss",
-          "checksum": "154b402962afb909b513e0e71b8842a0"
-        },
-        {
           "type": "renderModule",
           "assetId": "4_Sank-PwTYC",
           "checksum": "ffb0703e23262cb6d2a91a2f8a92158c"
@@ -2142,6 +2137,11 @@
           "type": "image",
           "assetId": "mkssix_U5rya",
           "checksum": "3af9be24bd242397d6d897c1c97f06c9"
+        },
+        {
+          "assetId": "7SNMkB8UMukVgcWJYokeAQ",
+          "type": "projectCss",
+          "checksum": "154b402962afb909b513e0e71b8842a0"
         }
       ],
       "codegenVersion": "0.0.1"
