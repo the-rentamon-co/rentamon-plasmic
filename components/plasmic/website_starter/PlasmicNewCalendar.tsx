@@ -1011,7 +1011,7 @@ export const PlasmicNewCalendar = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "تقویم جدید رنتامون",
+      title: "امکانات نسخه‌ی پیشرفته رنتامون",
       description: "",
       ogImageSrc: "",
       canonical: ""

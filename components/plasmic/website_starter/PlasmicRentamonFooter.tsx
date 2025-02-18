@@ -478,11 +478,11 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link__dOCjC
                   )}
                   component={Link}
-                  href={"https://rentamon.com/demo/features"}
+                  href={"/features"}
                   platform={"nextjs"}
                 >
                   {
-                    "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a"
+                    "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
                   }
                 </PlasmicLink__>
               }
@@ -535,9 +535,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link__cqnzq
                   )}
                   component={Link}
-                  href={
-                    "https://rentamon.com/\u062f\u0631\u0628\u0627\u0631\u0647-\u0645\u0627"
-                  }
+                  href={`/about-us`}
                   platform={"nextjs"}
                 >
                   {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
@@ -554,7 +552,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link__ddjit
                   )}
                   component={Link}
-                  href={"https://rentamon.com/integrations/"}
+                  href={`/integrations`}
                   platform={"nextjs"}
                 >
                   {

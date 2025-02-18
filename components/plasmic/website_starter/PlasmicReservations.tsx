@@ -137,8 +137,9 @@ export type PlasmicReservations__OverridesType = {
   mizbon2?: Flex__<typeof PlasmicImg__>;
   homsa2?: Flex__<typeof PlasmicImg__>;
   otaghak2?: Flex__<typeof PlasmicImg__>;
+  reserveMainStack2?: Flex__<"div">;
+  reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
-  recordList?: Flex__<typeof RecordList>;
   reserveData?: Flex__<typeof ApiRequest>;
   returnButton?: Flex__<"div">;
   favicon?: Flex__<typeof Embed>;
@@ -277,6 +278,30 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => true
+      },
+      {
+        path: "reserveData2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "reserveData2"
+      },
+      {
+        path: "reserveData2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "reserveData2"
+      },
+      {
+        path: "reserveData2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "reserveData2"
       }
     ],
     [$props, $ctx, $refs]
@@ -2253,6 +2278,377 @@ function PlasmicReservations__RenderFunc(props: {
             </AntdModal>
             <Stack__
               as={"div"}
+              data-plasmic-name={"reserveMainStack2"}
+              data-plasmic-override={overrides.reserveMainStack2}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.reserveMainStack2)}
+            >
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return $state.reserveData2.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__roKyl)}
+                    key={currentIndex}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: ($state.modalData = [
+                                {
+                                  GuestName:
+                                    $state.reserveData2.data[currentIndex]
+                                      .GuestName,
+                                  platfromName:
+                                    $state.reserveData2.data[currentIndex]
+                                      .platformName,
+                                  enterDate:
+                                    $state.reserveData2.data[currentIndex]
+                                      .checkIn,
+                                  laveDate:
+                                    $state.reserveData2.data[currentIndex]
+                                      .checkOut,
+                                  propertyName:
+                                    $state.reserveData2.data[currentIndex]
+                                      .property_name,
+                                  status:
+                                    $state.reserveData2.data[currentIndex]
+                                      .status,
+                                  phone_number:
+                                    $state.reserveData2.data[currentIndex]
+                                      .phone_number,
+                                  amount:
+                                    $state.reserveData2.data[currentIndex]
+                                      .amount,
+                                  night:
+                                    $state.reserveData2.data[currentIndex]
+                                      .night,
+                                  guests_count:
+                                    $state.reserveData2.data[currentIndex]
+                                      .guests_count,
+                                  reserve_id:
+                                    $state.reserveData2.data[currentIndex]
+                                      .reserve_id,
+                                  id: $state.reserveData2.data[currentIndex].id
+                                }
+                              ])
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+
+                      $steps["updateModalOpen"] =
+                        $state.reserveData2.data[currentIndex].status !=
+                        "Pending"
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["modal", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["updateModalOpen"] != null &&
+                        typeof $steps["updateModalOpen"] === "object" &&
+                        typeof $steps["updateModalOpen"].then === "function"
+                      ) {
+                        $steps["updateModalOpen"] = await $steps[
+                          "updateModalOpen"
+                        ];
+                      }
+
+                      $steps["updateModalOpen2"] =
+                        $state.reserveData2.data[currentIndex].status ==
+                        "Pending"
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["confirmed", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["updateModalOpen2"] != null &&
+                        typeof $steps["updateModalOpen2"] === "object" &&
+                        typeof $steps["updateModalOpen2"].then === "function"
+                      ) {
+                        $steps["updateModalOpen2"] = await $steps[
+                          "updateModalOpen2"
+                        ];
+                      }
+                    }}
+                  >
+                    {(() => {
+                      try {
+                        return true;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <RecordList
+                        cancelledBookings={(() => {
+                          try {
+                            return (
+                              $state.reserveData2.data[currentIndex].status ==
+                              "Cancelled"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.recordList__j2Fns
+                        )}
+                        confirmedBookings={(() => {
+                          try {
+                            return (
+                              $state.reserveData2.data[currentIndex].status ==
+                              "Confirmed"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                        currentIndex={currentIndex}
+                        data={(() => {
+                          try {
+                            return $state.reserveData2.data[currentIndex];
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        pastBookingsBox={(() => {
+                          try {
+                            return (
+                              $state.reserveData2.data[currentIndex].status ==
+                              "Past"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                        pendingBookings={(() => {
+                          try {
+                            return (
+                              $state.reserveData2.data[currentIndex].status ==
+                              "Pending"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return (
+                          !$state.reserveData2.data[0] ||
+                          Object.keys($state.reserveData2.data[0]).length === 0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__zy9VR
+                        )}
+                      >
+                        {
+                          "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f"
+                        }
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
+              <ApiRequest
+                data-plasmic-name={"reserveData2"}
+                data-plasmic-override={overrides.reserveData2}
+                children={null}
+                className={classNames("__wab_instance", sty.reserveData2)}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dpsMf
+                    )}
+                  >
+                    {
+                      "\u062e\u0637 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
+                    }
+                  </div>
+                }
+                loadingDisplay={
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__xKqU)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "34px"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "55px"
+                        : "76px"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    }
+                  />
+                }
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "reserveData2",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "reserveData2",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "reserveData2",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["reserveData2"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/get_pending_reserve"}
+              />
+            </Stack__>
+            <Stack__
+              as={"div"}
               data-plasmic-name={"reserveMainStack"}
               data-plasmic-override={overrides.reserveMainStack}
               hasGap={true}
@@ -2441,8 +2837,6 @@ function PlasmicReservations__RenderFunc(props: {
                       }
                     })() ? (
                       <RecordList
-                        data-plasmic-name={"recordList"}
-                        data-plasmic-override={overrides.recordList}
                         cancelledBookings={(() => {
                           try {
                             return (
@@ -2459,7 +2853,10 @@ function PlasmicReservations__RenderFunc(props: {
                             throw e;
                           }
                         })()}
-                        className={classNames("__wab_instance", sty.recordList)}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.recordList__lPd
+                        )}
                         confirmedBookings={(() => {
                           try {
                             return (
@@ -3453,8 +3850,9 @@ const PlasmicDescendants = {
     "mizbon2",
     "homsa2",
     "otaghak2",
+    "reserveMainStack2",
+    "reserveData2",
     "reserveMainStack",
-    "recordList",
     "reserveData",
     "returnButton",
     "favicon",
@@ -3508,8 +3906,9 @@ const PlasmicDescendants = {
     "mizbon2",
     "homsa2",
     "otaghak2",
+    "reserveMainStack2",
+    "reserveData2",
     "reserveMainStack",
-    "recordList",
     "reserveData"
   ],
   modal: [
@@ -3620,8 +4019,9 @@ const PlasmicDescendants = {
   mizbon2: ["mizbon2"],
   homsa2: ["homsa2"],
   otaghak2: ["otaghak2"],
-  reserveMainStack: ["reserveMainStack", "recordList", "reserveData"],
-  recordList: ["recordList"],
+  reserveMainStack2: ["reserveMainStack2", "reserveData2"],
+  reserveData2: ["reserveData2"],
+  reserveMainStack: ["reserveMainStack", "reserveData"],
   reserveData: ["reserveData"],
   returnButton: ["returnButton"],
   favicon: ["favicon"],
@@ -3679,8 +4079,9 @@ type NodeDefaultElementType = {
   mizbon2: typeof PlasmicImg__;
   homsa2: typeof PlasmicImg__;
   otaghak2: typeof PlasmicImg__;
+  reserveMainStack2: "div";
+  reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
-  recordList: typeof RecordList;
   reserveData: typeof ApiRequest;
   returnButton: "div";
   favicon: typeof Embed;
@@ -3794,8 +4195,9 @@ export const PlasmicReservations = Object.assign(
     mizbon2: makeNodeComponent("mizbon2"),
     homsa2: makeNodeComponent("homsa2"),
     otaghak2: makeNodeComponent("otaghak2"),
+    reserveMainStack2: makeNodeComponent("reserveMainStack2"),
+    reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
-    recordList: makeNodeComponent("recordList"),
     reserveData: makeNodeComponent("reserveData"),
     returnButton: makeNodeComponent("returnButton"),
     favicon: makeNodeComponent("favicon"),

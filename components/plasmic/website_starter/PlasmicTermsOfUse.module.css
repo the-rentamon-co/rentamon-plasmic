@@ -165,6 +165,11 @@
     font-size: 16px;
   }
 }
+@media (max-width: 350px) {
+  .text__rvVUk {
+    font-size: 15px;
+  }
+}
 .text__isa1H {
   text-align: right;
   font-size: 16px;
@@ -191,7 +196,7 @@
 }
 @media (max-width: 1200px) {
   .introduction2 {
-    padding-right: 14px;
+    padding-right: 31px;
     padding-left: 14px;
     max-width: 96%;
   }
@@ -200,6 +205,12 @@
   .introduction2 {
     max-width: 100%;
     padding-top: 16px;
+    padding-right: 37px;
+  }
+}
+@media (max-width: 350px) {
+  .introduction2 {
+    padding-right: 23px;
   }
 }
 .text__un56I {
@@ -213,9 +224,19 @@
     font-size: 16px;
   }
 }
+@media (max-width: 350px) {
+  .text__un56I {
+    font-size: 15px;
+  }
+}
 .ul__hG4Nf {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 350px) {
+  .li__eRDu {
+    padding-top: 0px;
+  }
 }
 .ul__eCqGt {
   display: flex;

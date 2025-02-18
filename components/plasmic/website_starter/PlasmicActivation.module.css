@@ -3805,12 +3805,15 @@
   color: var(--token-8nedppYkGVaH);
   font-size: 18px;
   padding-right: 50px;
+  text-align: center;
+  margin-bottom: 12px;
+  border-bottom-width: 2px;
+  border-bottom-style: dashed;
+  padding-bottom: 30px;
   min-width: 0;
 }
-.testimonial:global(.__wab_instance) {
+.testimonialsScrolling:global(.__wab_instance) {
   max-width: 100%;
-  width: 100%;
-  min-width: 0;
 }
 .freeBox___69Q1V {
   flex-direction: column;

@@ -493,7 +493,7 @@
     {
       "name": "Size-16",
       "type": "spacing",
-      "value": "1rem",
+      "value": "30px",
       "category": "spacing",
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
@@ -533,7 +533,7 @@
     {
       "name": "Size-32",
       "type": "spacing",
-      "value": "2rem",
+      "value": "3em",
       "category": "spacing",
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
@@ -2688,6 +2688,26 @@
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
         "id": "3oVzJYkuc1ES"
+      }
+    },
+    {
+      "name": "Unnamed Style Token 12",
+      "type": "color",
+      "value": "#8165D6",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "uKpIaVO1zd7X"
+      }
+    },
+    {
+      "name": "Unnamed Style Token 13",
+      "type": "color",
+      "value": "#EBFAFF",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "Nn5X0cNTOhdA"
       }
     },
     {

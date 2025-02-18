@@ -61,7 +61,7 @@ import {
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import Testimonial from "../../Testimonial"; // plasmic-import: MWmH78o8OGcS/component
+import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -77,9 +77,9 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JDKbvzOHcQCj/css
 
-import Icon30Icon from "./icons/PlasmicIcon__Icon30"; // plasmic-import: nCtlWXhktf9o/icon
-import Icon31Icon from "./icons/PlasmicIcon__Icon31"; // plasmic-import: MlRJZHlsCx5e/icon
-import Icon32Icon from "./icons/PlasmicIcon__Icon32"; // plasmic-import: 4opHO6eHDQXf/icon
+import Icon36Icon from "./icons/PlasmicIcon__Icon36"; // plasmic-import: yp-BEibF8Gyh/icon
+import Icon35Icon from "./icons/PlasmicIcon__Icon35"; // plasmic-import: OcX2ER-sALSD/icon
+import Icon33Icon from "./icons/PlasmicIcon__Icon33"; // plasmic-import: 7SATgDgNnB07/icon
 
 createPlasmicElementProxy;
 
@@ -135,8 +135,9 @@ export type PlasmicHomepage__OverridesType = {
   introCalendarRight8?: Flex__<"div">;
   introCalendarLeft2?: Flex__<"div">;
   testimonials?: Flex__<"div">;
-  introAutoSyncTitle3?: Flex__<"div">;
-  testimonial?: Flex__<typeof Testimonial>;
+  titlePart?: Flex__<"div">;
+  commentsScrolling?: Flex__<"div">;
+  testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
   records?: Flex__<"div">;
   _1st?: Flex__<"div">;
   numberTop?: Flex__<"div">;
@@ -508,7 +509,18 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0645\u0632\u06cc\u062a \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627:\r\n\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\r\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\r\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                      "\u0645\u0632\u06cc\u062a \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627:"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__jfko
+                    )}
+                  >
+                    {
+                      "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\r\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\r\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
                     }
                   </div>
                 </div>
@@ -550,8 +562,8 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.icon}
                   className={classNames(projectcss.all, sty.icon)}
                 >
-                  <Icon30Icon
-                    className={classNames(projectcss.all, sty.svg__mh4Sc)}
+                  <Icon36Icon
+                    className={classNames(projectcss.all, sty.svg__tadou)}
                     role={"img"}
                   />
                 </div>
@@ -602,8 +614,8 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.icon2}
                   className={classNames(projectcss.all, sty.icon2)}
                 >
-                  <Icon31Icon
-                    className={classNames(projectcss.all, sty.svg__g7Eyq)}
+                  <Icon35Icon
+                    className={classNames(projectcss.all, sty.svg__cHyl8)}
                     role={"img"}
                   />
                 </div>
@@ -652,8 +664,8 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.icon3}
                   className={classNames(projectcss.all, sty.icon3)}
                 >
-                  <Icon32Icon
-                    className={classNames(projectcss.all, sty.svg___8TmEs)}
+                  <Icon33Icon
+                    className={classNames(projectcss.all, sty.svg__qgKwo)}
                     role={"img"}
                   />
                 </div>
@@ -748,7 +760,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__k2Bq6)}
-                    displayHeight={"auto"}
+                    displayHeight={"522px"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
@@ -860,7 +872,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       : "auto"
                   }
                   displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
+                  displayMaxWidth={"80%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={
@@ -884,9 +896,9 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.testimonials)}
             >
               <div
-                data-plasmic-name={"introAutoSyncTitle3"}
-                data-plasmic-override={overrides.introAutoSyncTitle3}
-                className={classNames(projectcss.all, sty.introAutoSyncTitle3)}
+                data-plasmic-name={"titlePart"}
+                data-plasmic-override={overrides.titlePart}
+                className={classNames(projectcss.all, sty.titlePart)}
               >
                 <div
                   className={classNames(
@@ -900,11 +912,20 @@ function PlasmicHomepage__RenderFunc(props: {
                   }
                 </div>
               </div>
-              <Testimonial
-                data-plasmic-name={"testimonial"}
-                data-plasmic-override={overrides.testimonial}
-                className={classNames("__wab_instance", sty.testimonial)}
-              />
+              <div
+                data-plasmic-name={"commentsScrolling"}
+                data-plasmic-override={overrides.commentsScrolling}
+                className={classNames(projectcss.all, sty.commentsScrolling)}
+              >
+                <TestimonialsScrolling
+                  data-plasmic-name={"testimonialsScrolling"}
+                  data-plasmic-override={overrides.testimonialsScrolling}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.testimonialsScrolling
+                  )}
+                />
+              </div>
             </div>
             <div
               data-plasmic-name={"records"}
@@ -927,7 +948,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.embedHtml___5Kec2
                     )}
                     code={
-                      '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631</title>\r\n  <style>\r\n    #counter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 600;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="counter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 5000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const maxValue = 910;\r\n    const startTime = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function updateCounter() {\r\n      const now = performance.now();\r\n      const elapsed = now - startTime;\r\n      let progress = elapsed / duration;\r\n      if (progress > 1) progress = 1;\r\n\r\n      const currentValue = Math.round(progress * maxValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'counter\').innerHTML = \r\n        \'<span>+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progress < 1) {\r\n        requestAnimationFrame(updateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(updateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631</title>\r\n  <style>\r\n    #counter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="counter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 15000; \r\n    const maxValue = 910;\r\n    const startTime = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function updateCounter() {\r\n      const now = performance.now();\r\n      const elapsed = now - startTime;\r\n      let progress = elapsed / duration;\r\n      if (progress > 1) progress = 1;\r\n\r\n      const currentValue = Math.round(progress * maxValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'counter\').innerHTML = \r\n        \'<span>+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progress < 1) {\r\n        requestAnimationFrame(updateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(updateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                        : '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631</title>\r\n  <style>\r\n    #counter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="counter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 5000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const maxValue = 910;\r\n    const startTime = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function updateCounter() {\r\n      const now = performance.now();\r\n      const elapsed = now - startTime;\r\n      let progress = elapsed / duration;\r\n      if (progress > 1) progress = 1;\r\n\r\n      const currentValue = Math.round(progress * maxValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'counter\').innerHTML = \r\n        \'<span>+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progress < 1) {\r\n        requestAnimationFrame(updateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(updateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
                     }
                   />
                 </div>
@@ -965,7 +988,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.embedHtml__uNkz9
                     )}
                     code={
-                      '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u067e\u0648\u06cc\u0627</title>\r\n  <style>\r\n    #dynamicCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 600;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="dynamicCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const animationDuration = 7000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const finalValue = 10000;\r\n    const startTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function animateCounter() {\r\n      const currentTimestamp = performance.now();\r\n      const elapsedTime = currentTimestamp - startTimestamp;\r\n      let progressRatio = elapsedTime / animationDuration;\r\n      if (progressRatio > 1) progressRatio = 1;\r\n\r\n      const currentValue = Math.round(progressRatio * finalValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'dynamicCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progressRatio < 1) {\r\n        requestAnimationFrame(animateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(animateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u067e\u0648\u06cc\u0627</title>\r\n  <style>\r\n    #dynamicCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="dynamicCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 16000; \r\n    const finalValue = 10000;\r\n    const startTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function animateCounter() {\r\n      const currentTimestamp = performance.now();\r\n      const elapsedTime = currentTimestamp - startTimestamp;\r\n      let progressRatio = elapsedTime / animationDuration;\r\n      if (progressRatio > 1) progressRatio = 1;\r\n\r\n      const currentValue = Math.round(progressRatio * finalValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'dynamicCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progressRatio < 1) {\r\n        requestAnimationFrame(animateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(animateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                        : '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u067e\u0648\u06cc\u0627</title>\r\n  <style>\r\n    #dynamicCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="dynamicCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const animationDuration = 7000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const finalValue = 10000;\r\n    const startTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function animateCounter() {\r\n      const currentTimestamp = performance.now();\r\n      const elapsedTime = currentTimestamp - startTimestamp;\r\n      let progressRatio = elapsedTime / animationDuration;\r\n      if (progressRatio > 1) progressRatio = 1;\r\n\r\n      const currentValue = Math.round(progressRatio * finalValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'dynamicCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progressRatio < 1) {\r\n        requestAnimationFrame(animateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(animateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
                     }
                   />
                 </div>
@@ -1003,7 +1028,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.embedHtml__jtw0K
                     )}
                     code={
-                      '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631 \u0639\u062f\u062f\u06cc</title>\r\n  <style>\r\n    #numberCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 600;\r\n      \r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="numberCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const transitionTime = 10000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const targetValue = 72000;\r\n    const initialTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatWithCommas(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function runCounter() {\r\n      const currentTime = performance.now();\r\n      const elapsedMillis = currentTime - initialTimestamp;\r\n      let progressRate = elapsedMillis / transitionTime;\r\n      if (progressRate > 1) progressRate = 1;\r\n\r\n      const displayedValue = Math.round(progressRate * targetValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'numberCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatWithCommas(displayedValue);\r\n\r\n      if (progressRate < 1) {\r\n        requestAnimationFrame(runCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(runCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631 \u0639\u062f\u062f\u06cc</title>\r\n  <style>\r\n    #numberCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n      \r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="numberCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 17000; \r\n    const targetValue = 72000;\r\n    const initialTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatWithCommas(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function runCounter() {\r\n      const currentTime = performance.now();\r\n      const elapsedMillis = currentTime - initialTimestamp;\r\n      let progressRate = elapsedMillis / transitionTime;\r\n      if (progressRate > 1) progressRate = 1;\r\n\r\n      const displayedValue = Math.round(progressRate * targetValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'numberCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatWithCommas(displayedValue);\r\n\r\n      if (progressRate < 1) {\r\n        requestAnimationFrame(runCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(runCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
+                        : '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631 \u0639\u062f\u062f\u06cc</title>\r\n  <style>\r\n    #numberCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n      \r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="numberCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const transitionTime = 10000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const targetValue = 72000;\r\n    const initialTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatWithCommas(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function runCounter() {\r\n      const currentTime = performance.now();\r\n      const elapsedMillis = currentTime - initialTimestamp;\r\n      let progressRate = elapsedMillis / transitionTime;\r\n      if (progressRate > 1) progressRate = 1;\r\n\r\n      const displayedValue = Math.round(progressRate * targetValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'numberCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatWithCommas(displayedValue);\r\n\r\n      if (progressRate < 1) {\r\n        requestAnimationFrame(runCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(runCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
                     }
                   />
                 </div>
@@ -1466,8 +1493,9 @@ const PlasmicDescendants = {
     "introCalendarRight8",
     "introCalendarLeft2",
     "testimonials",
-    "introAutoSyncTitle3",
-    "testimonial",
+    "titlePart",
+    "commentsScrolling",
+    "testimonialsScrolling",
     "records",
     "_1st",
     "numberTop",
@@ -1534,8 +1562,9 @@ const PlasmicDescendants = {
     "introCalendarRight8",
     "introCalendarLeft2",
     "testimonials",
-    "introAutoSyncTitle3",
-    "testimonial",
+    "titlePart",
+    "commentsScrolling",
+    "testimonialsScrolling",
     "records",
     "_1st",
     "numberTop",
@@ -1649,9 +1678,15 @@ const PlasmicDescendants = {
   introCalendarRight7: ["introCalendarRight7"],
   introCalendarRight8: ["introCalendarRight8"],
   introCalendarLeft2: ["introCalendarLeft2"],
-  testimonials: ["testimonials", "introAutoSyncTitle3", "testimonial"],
-  introAutoSyncTitle3: ["introAutoSyncTitle3"],
-  testimonial: ["testimonial"],
+  testimonials: [
+    "testimonials",
+    "titlePart",
+    "commentsScrolling",
+    "testimonialsScrolling"
+  ],
+  titlePart: ["titlePart"],
+  commentsScrolling: ["commentsScrolling", "testimonialsScrolling"],
+  testimonialsScrolling: ["testimonialsScrolling"],
   records: [
     "records",
     "_1st",
@@ -1745,8 +1780,9 @@ type NodeDefaultElementType = {
   introCalendarRight8: "div";
   introCalendarLeft2: "div";
   testimonials: "div";
-  introAutoSyncTitle3: "div";
-  testimonial: typeof Testimonial;
+  titlePart: "div";
+  commentsScrolling: "div";
+  testimonialsScrolling: typeof TestimonialsScrolling;
   records: "div";
   _1st: "div";
   numberTop: "div";
@@ -1873,8 +1909,9 @@ export const PlasmicHomepage = Object.assign(
     introCalendarRight8: makeNodeComponent("introCalendarRight8"),
     introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     testimonials: makeNodeComponent("testimonials"),
-    introAutoSyncTitle3: makeNodeComponent("introAutoSyncTitle3"),
-    testimonial: makeNodeComponent("testimonial"),
+    titlePart: makeNodeComponent("titlePart"),
+    commentsScrolling: makeNodeComponent("commentsScrolling"),
+    testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
     records: makeNodeComponent("records"),
     _1st: makeNodeComponent("_1st"),
     numberTop: makeNodeComponent("numberTop"),

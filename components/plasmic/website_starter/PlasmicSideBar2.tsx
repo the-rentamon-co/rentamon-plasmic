@@ -311,10 +311,12 @@ function PlasmicSideBar2__RenderFunc(props: {
         </div>
       }
       width={
-        hasVariant(globalVariants, "screen", "mobile")
-          ? "75%"
+        hasVariant(globalVariants, "screen", "smallMobile")
+          ? "96%"
+          : hasVariant(globalVariants, "screen", "mobile")
+          ? "90%"
           : hasVariant(globalVariants, "screen", "tablet")
-          ? "50%"
+          ? "60%"
           : "30%"
       }
       wrapClassName={classNames({ [sty["pcls_CJNwevy9HtLv"]]: true })}

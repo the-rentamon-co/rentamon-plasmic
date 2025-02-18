@@ -336,21 +336,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 sty.text__qkgw
               )}
             >
-              <React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {
-                    "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"
-                  }
-                </span>
-                <React.Fragment>
-                  {
-                    "\u26a1\ufe0f(\u062a\u0627 \u06f3\u06f0 \u0628\u0647\u0645\u0646)"
-                  }
-                </React.Fragment>
-              </React.Fragment>
+              {
+                "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u26a1\ufe0f(\u062a\u0627 \u06f3\u06f0 \u0628\u0647\u0645\u0646)"
+              }
             </div>
           </section>
           <section

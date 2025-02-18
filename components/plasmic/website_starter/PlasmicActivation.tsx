@@ -70,7 +70,7 @@ import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
-import Testimonial from "../../Testimonial"; // plasmic-import: MWmH78o8OGcS/component
+import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -227,7 +227,7 @@ export type PlasmicActivation__OverridesType = {
   _5?: Flex__<"div">;
   _6?: Flex__<"div">;
   quotes?: Flex__<"div">;
-  testimonial?: Flex__<typeof Testimonial>;
+  testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
 };
 
 export interface DefaultActivationProps {}
@@ -10619,10 +10619,13 @@ function PlasmicActivation__RenderFunc(props: {
                     "\u0646\u0638\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u0645\u0648\u0631\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc\u0647\u061f"
                   }
                 </div>
-                <Testimonial
-                  data-plasmic-name={"testimonial"}
-                  data-plasmic-override={overrides.testimonial}
-                  className={classNames("__wab_instance", sty.testimonial)}
+                <TestimonialsScrolling
+                  data-plasmic-name={"testimonialsScrolling"}
+                  data-plasmic-override={overrides.testimonialsScrolling}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.testimonialsScrolling
+                  )}
                 />
               </div>
             </div>
@@ -10785,7 +10788,7 @@ const PlasmicDescendants = {
     "_5",
     "_6",
     "quotes",
-    "testimonial"
+    "testimonialsScrolling"
   ],
   html: ["html", "clarity", "goftino", "favIcon"],
   clarity: ["clarity"],
@@ -11107,8 +11110,8 @@ const PlasmicDescendants = {
   _4: ["_4"],
   _5: ["_5"],
   _6: ["_6"],
-  quotes: ["quotes", "testimonial"],
-  testimonial: ["testimonial"]
+  quotes: ["quotes", "testimonialsScrolling"],
+  testimonialsScrolling: ["testimonialsScrolling"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -11239,7 +11242,7 @@ type NodeDefaultElementType = {
   _5: "div";
   _6: "div";
   quotes: "div";
-  testimonial: typeof Testimonial;
+  testimonialsScrolling: typeof TestimonialsScrolling;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -11426,7 +11429,7 @@ export const PlasmicActivation = Object.assign(
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
     quotes: makeNodeComponent("quotes"),
-    testimonial: makeNodeComponent("testimonial"),
+    testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,
