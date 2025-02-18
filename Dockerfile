@@ -9,9 +9,6 @@ COPY package.json ./
 RUN npm config set fetch-retry-mintimeout 100000 && npm config set fetch-retry-maxtimeout 600000 
 RUN npm install @plasmicpkgs/plasmic-nav --legacy-peer-deps
 
-RUN npm install @plasmicpkgs/react-aria/skinny/registerText--legacy-peer-deps
-RUN npm install @plasmicpkgs/react-aria/skinny/registerSwitch --legacy-peer-deps
-
 RUN npm install --force && npm cache clean --force
 
 COPY . .
