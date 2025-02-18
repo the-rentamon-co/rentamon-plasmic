@@ -200,8 +200,9 @@ function PlasmicSetting__RenderFunc(props: {
           (() => {
             try {
               return (
-                $state.apiRequestSetting.data.find(
-                  item => item.is_active && item.feature_name === "auto_sync"
+                $state.apiRequestSetting.data["true"].find(
+                  item =>
+                    item.feature_name === "auto_sync" && item.is_active === true
                 ) !== undefined
               );
             } catch (e) {
@@ -209,7 +210,7 @@ function PlasmicSetting__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return false;
+                return undefined;
               }
               throw e;
             }
@@ -255,8 +256,10 @@ function PlasmicSetting__RenderFunc(props: {
           (() => {
             try {
               return (
-                $state.apiRequestSetting.data.find(
-                  item => item.is_active && item.feature_name === "reservations"
+                $state.apiRequestSetting.data["true"].find(
+                  item =>
+                    item.feature_name === "reservations" &&
+                    item.is_active === true
                 ) !== undefined
               );
             } catch (e) {
@@ -471,10 +474,21 @@ function PlasmicSetting__RenderFunc(props: {
                       return;
                     }
                   }}
-                  options={[
-                    { value: "option1", label: "Option 1" },
-                    { value: "option2", label: "Option 2" }
-                  ]}
+                  options={(() => {
+                    try {
+                      return $state.profile.data.properties.map(
+                        property => property.property_name
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [{}];
+                      }
+                      throw e;
+                    }
+                  })()}
                   placeholder={
                     <div
                       className={classNames(
