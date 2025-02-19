@@ -111,7 +111,6 @@ export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
-  form2?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
@@ -721,12 +720,6 @@ function PlasmicCalendar2__RenderFunc(props: {
         })()}
       />
 
-      <div
-        data-plasmic-name={"form2"}
-        data-plasmic-override={overrides.form2}
-        className={classNames(projectcss.all, sty.form2)}
-      />
-
       <SideEffect
         data-plasmic-name={"sideEffect"}
         data-plasmic-override={overrides.sideEffect}
@@ -982,7 +975,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         yesterdayDate.getTime() / 1000
                       );
                       const minTimestamp = yesterdayTimestamp;
-                      const maxTimestamp = 1745240258;
+                      const maxTimestamp = 1747831038;
                       function getDayClass(dateProps, calendarData) {
                         const dayIndex = dateProps.date.day - 1;
                         const calendarItem = calendarData[dayIndex] || {};
@@ -7053,7 +7046,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
-    "form2",
     "sideEffect",
     "fragmentDatePicker",
     "fragmentLongPress",
@@ -7099,7 +7091,6 @@ const PlasmicDescendants = {
     "p5"
   ],
   apiRequest: ["apiRequest"],
-  form2: ["form2"],
   sideEffect: ["sideEffect"],
   fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
   fragmentLongPress: ["fragmentLongPress", "dayCell"],
@@ -7187,7 +7178,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
-  form2: "div";
   sideEffect: typeof SideEffect;
   fragmentDatePicker: typeof DatePicker;
   fragmentLongPress: typeof FragmentLongPress;
@@ -7294,7 +7284,6 @@ export const PlasmicCalendar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
-    form2: makeNodeComponent("form2"),
     sideEffect: makeNodeComponent("sideEffect"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),

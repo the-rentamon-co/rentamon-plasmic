@@ -270,6 +270,16 @@
   object-fit: cover;
   border-radius: 40px;
 }
+@media (max-width: 1200px) {
+  .htmlVideo___9OH96:global(.__wab_instance) {
+    border-radius: 30px;
+  }
+}
+@media (max-width: 350px) {
+  .htmlVideo___9OH96:global(.__wab_instance) {
+    border-radius: 20px;
+  }
+}
 .introAutoSync {
   display: flex;
   flex-direction: column;

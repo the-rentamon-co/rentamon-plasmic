@@ -2843,17 +2843,7 @@ function PlasmicSetting__RenderFunc(props: {
                   </React.Fragment>
                 </div>
               }
-              loadingDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nhbZ3
-                  )}
-                >
-                  {"Loading..."}
-                </div>
-              }
+              loadingDisplay={null}
               method={"GET"}
               onError={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, [

@@ -337,7 +337,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
               )}
             >
               {
-                "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u26a1\ufe0f(\u062a\u0627 \u06f3\u06f0 \u0628\u0647\u0645\u0646)"
+                "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u26a1\ufe0f(\u062a\u0627 \u06f3\u06f0 \u0627\u0633\u0641\u0646\u062f)"
               }
             </div>
           </section>
