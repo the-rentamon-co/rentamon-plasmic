@@ -61,10 +61,8 @@ import {
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import { SliderWrapper } from "@plasmicpkgs/react-slick";
-import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
-import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -131,11 +129,12 @@ export type PlasmicHomepage__OverridesType = {
   introAutoSyncCaption2?: Flex__<"div">;
   introAutoSyncDesc2?: Flex__<"div">;
   introAutoSyncGif2?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   screenshots?: Flex__<"div">;
   screenshotsRight?: Flex__<"div">;
   screenshotsCaption?: Flex__<"div">;
   screenshotsLeft?: Flex__<"div">;
-  sliderCarousel?: Flex__<typeof SliderWrapper>;
+  carousel?: Flex__<typeof Embed>;
   testimonials?: Flex__<"div">;
   titlePart?: Flex__<"div">;
   commentsScrolling?: Flex__<"div">;
@@ -224,15 +223,6 @@ function PlasmicHomepage__RenderFunc(props: {
           "activePanelId",
           AntdAccordion_Helpers
         )
-      },
-      {
-        path: "sliderCarousel.currentSlide",
-        type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 1,
-
-        refName: "sliderCarousel",
-        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -770,8 +760,10 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.introAutoSyncGif2)}
                 >
                   <PlasmicImg__
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img__k2Bq6)}
+                    className={classNames(sty.img)}
                     displayHeight={"522px"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -824,211 +816,14 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-override={overrides.screenshotsLeft}
                 className={classNames(projectcss.all, sty.screenshotsLeft)}
               >
-                {(() => {
-                  const child$Props = {
-                    arrows: false,
-                    autoplay: true,
-                    autoplaySpeed: 3000,
-                    beforeChange: async (...eventArgs: any) => {
-                      generateStateOnChangePropForCodeComponents(
-                        $state,
-                        "currentSlide",
-                        ["sliderCarousel", "currentSlide"],
-                        SliderWrapper_Helpers
-                      ).apply(null, eventArgs);
-                    },
-                    centerMode: true,
-                    className: classNames("__wab_instance", sty.sliderCarousel),
-                    cssEase: "linear",
-                    fade: true,
-                    initialSlide: generateStateValueProp($state, [
-                      "sliderCarousel",
-                      "currentSlide"
-                    ]),
-                    ref: ref => {
-                      $refs["sliderCarousel"] = ref;
-                    },
-                    sliderScopeClassName: sty["sliderCarousel__slider"],
-                    speed: 1000
-                  };
-                  initializeCodeComponentStates(
-                    $state,
-                    [
-                      {
-                        name: "currentSlide",
-                        plasmicStateName: "sliderCarousel.currentSlide"
-                      }
-                    ],
-                    [],
-                    SliderWrapper_Helpers ?? {},
-                    child$Props
-                  );
-
-                  return (
-                    <SliderWrapper
-                      data-plasmic-name={"sliderCarousel"}
-                      data-plasmic-override={overrides.sliderCarousel}
-                      {...child$Props}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__dhMb
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__ub7U8)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMaxHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "none"
-                              : "500px"
-                          }
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "300px"
-                              : "240px"
-                          }
-                          src={{
-                            src: "/plasmic/website_starter/images/_1Png.png",
-                            fullWidth: 344,
-                            fullHeight: 700,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__rnAep
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__lWeQ)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMaxHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "none"
-                              : "500px"
-                          }
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "300px"
-                              : "240px"
-                          }
-                          src={{
-                            src: "/plasmic/website_starter/images/_2Png.png",
-                            fullWidth: 344,
-                            fullHeight: 700,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__zwNdX
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__oQgs)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMaxHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "none"
-                              : "500px"
-                          }
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "300px"
-                              : "240px"
-                          }
-                          src={{
-                            src: "/plasmic/website_starter/images/_3Png.png",
-                            fullWidth: 344,
-                            fullHeight: 700,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__wgl3P
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img___3XtJv)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMaxHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "none"
-                              : "500px"
-                          }
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "300px"
-                              : "240px"
-                          }
-                          src={{
-                            src: "/plasmic/website_starter/images/_4Png.png",
-                            fullWidth: 344,
-                            fullHeight: 700,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      </div>
-                    </SliderWrapper>
-                  );
-                })()}
+                <Embed
+                  data-plasmic-name={"carousel"}
+                  data-plasmic-override={overrides.carousel}
+                  className={classNames("__wab_instance", sty.carousel)}
+                  code={
+                    '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n    <meta charset="UTF-8">\r\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\r\n    <title>Simple Image Slider</title>\r\n    <style>\r\n        .slider-container {\r\n            position: relative;\r\n            width: 100%;\r\n            max-width: 800px;\r\n            height: 400px;\r\n            overflow: hidden;\r\n        }\r\n        .slider-container img {\r\n            position: absolute;\r\n            width: 100%;\r\n            height: 100%;\r\n            object-fit: contain;\r\n            opacity: 0;\r\n            transition: opacity 0.5s ease-in-out;\r\n        }\r\n        .slider-container img.active {\r\n            opacity: 1;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div class="slider-container">\r\n        <img src="https://rentamon-files.storage.iran.liara.space/img/1.png" class="active" alt="Slide 1">\r\n        <img src="https://rentamon-files.storage.iran.liara.space/img/2.png" alt="Slide 2">\r\n        <img src="https://rentamon-files.storage.iran.liara.space/img/3.png" alt="Slide 3">\r\n        <img src="https://rentamon-files.storage.iran.liara.space/img/4.png" alt="Slide 4">\r\n    </div>\r\n\r\n    <script>\r\n        document.addEventListener("DOMContentLoaded", function () {\r\n            const images = document.querySelectorAll(".slider-container img");\r\n            let currentIndex = 0;\r\n            \r\n            function changeSlide() {\r\n                images[currentIndex].classList.remove("active");\r\n                currentIndex = (currentIndex + 1) % images.length;\r\n                images[currentIndex].classList.add("active");\r\n            }\r\n            \r\n            setInterval(changeSlide, 4000);\r\n        });\r\n    </script>\r\n</body>\r\n</html>\r\n'
+                  }
+                />
               </div>
             </Stack__>
             <div
@@ -1674,11 +1469,12 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
+    "img",
     "screenshots",
     "screenshotsRight",
     "screenshotsCaption",
     "screenshotsLeft",
-    "sliderCarousel",
+    "carousel",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -1744,11 +1540,12 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
+    "img",
     "screenshots",
     "screenshotsRight",
     "screenshotsCaption",
     "screenshotsLeft",
-    "sliderCarousel",
+    "carousel",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -1846,23 +1643,25 @@ const PlasmicDescendants = {
     "introAutoSyncTitle2",
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
-    "introAutoSyncGif2"
+    "introAutoSyncGif2",
+    "img"
   ],
   introAutoSyncTitle2: ["introAutoSyncTitle2"],
   introAutoSyncCaption2: ["introAutoSyncCaption2"],
-  introAutoSyncDesc2: ["introAutoSyncDesc2", "introAutoSyncGif2"],
-  introAutoSyncGif2: ["introAutoSyncGif2"],
+  introAutoSyncDesc2: ["introAutoSyncDesc2", "introAutoSyncGif2", "img"],
+  introAutoSyncGif2: ["introAutoSyncGif2", "img"],
+  img: ["img"],
   screenshots: [
     "screenshots",
     "screenshotsRight",
     "screenshotsCaption",
     "screenshotsLeft",
-    "sliderCarousel"
+    "carousel"
   ],
   screenshotsRight: ["screenshotsRight", "screenshotsCaption"],
   screenshotsCaption: ["screenshotsCaption"],
-  screenshotsLeft: ["screenshotsLeft", "sliderCarousel"],
-  sliderCarousel: ["sliderCarousel"],
+  screenshotsLeft: ["screenshotsLeft", "carousel"],
+  carousel: ["carousel"],
   testimonials: [
     "testimonials",
     "titlePart",
@@ -1960,11 +1759,12 @@ type NodeDefaultElementType = {
   introAutoSyncCaption2: "div";
   introAutoSyncDesc2: "div";
   introAutoSyncGif2: "div";
+  img: typeof PlasmicImg__;
   screenshots: "div";
   screenshotsRight: "div";
   screenshotsCaption: "div";
   screenshotsLeft: "div";
-  sliderCarousel: typeof SliderWrapper;
+  carousel: typeof Embed;
   testimonials: "div";
   titlePart: "div";
   commentsScrolling: "div";
@@ -2090,11 +1890,12 @@ export const PlasmicHomepage = Object.assign(
     introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
     introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),
     introAutoSyncGif2: makeNodeComponent("introAutoSyncGif2"),
+    img: makeNodeComponent("img"),
     screenshots: makeNodeComponent("screenshots"),
     screenshotsRight: makeNodeComponent("screenshotsRight"),
     screenshotsCaption: makeNodeComponent("screenshotsCaption"),
     screenshotsLeft: makeNodeComponent("screenshotsLeft"),
-    sliderCarousel: makeNodeComponent("sliderCarousel"),
+    carousel: makeNodeComponent("carousel"),
     testimonials: makeNodeComponent("testimonials"),
     titlePart: makeNodeComponent("titlePart"),
     commentsScrolling: makeNodeComponent("commentsScrolling"),
