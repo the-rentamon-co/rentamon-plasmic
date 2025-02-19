@@ -1169,7 +1169,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicSetting.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/setting.tsx"
+            "modulePath": "../src/pages/settings.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicSetting.module.css",
           "scheme": "blackbox",
