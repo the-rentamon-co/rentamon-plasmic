@@ -130,7 +130,7 @@ export type PlasmicSetting__OverridesType = {
   modalActivateReservations?: Flex__<typeof AntdModal>;
   buttons3?: Flex__<"div">;
   active3?: Flex__<"div">;
-  deactive3?: Flex__<"div">;
+  cancel?: Flex__<"div">;
   modalDEactivateAutosync?: Flex__<typeof AntdModal>;
   buttons2?: Flex__<"div">;
   deactive5?: Flex__<"div">;
@@ -1903,17 +1903,14 @@ function PlasmicSetting__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.text__swGq5
                       )}
-                      onClick={async event => {
-                        const $steps = {};
-                      }}
                     >
                       {"\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc"}
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"deactive3"}
-                    data-plasmic-override={overrides.deactive3}
-                    className={classNames(projectcss.all, sty.deactive3)}
+                    data-plasmic-name={"cancel"}
+                    data-plasmic-override={overrides.cancel}
+                    className={classNames(projectcss.all, sty.cancel)}
                   >
                     <div
                       className={classNames(
@@ -2305,9 +2302,6 @@ function PlasmicSetting__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.text___9LPT
                       )}
-                      onClick={async event => {
-                        const $steps = {};
-                      }}
                     >
                       {"\u063a\u06cc\u0631\u0641\u0639\u0627\u0644"}
                     </div>
@@ -2937,7 +2931,7 @@ const PlasmicDescendants = {
     "modalActivateReservations",
     "buttons3",
     "active3",
-    "deactive3",
+    "cancel",
     "modalDEactivateAutosync",
     "buttons2",
     "deactive5",
@@ -3011,7 +3005,7 @@ const PlasmicDescendants = {
     "modalActivateReservations",
     "buttons3",
     "active3",
-    "deactive3",
+    "cancel",
     "modalDEactivateAutosync",
     "buttons2",
     "deactive5",
@@ -3055,7 +3049,7 @@ const PlasmicDescendants = {
     "modalActivateReservations",
     "buttons3",
     "active3",
-    "deactive3",
+    "cancel",
     "modalDEactivateAutosync",
     "buttons2",
     "deactive5",
@@ -3099,11 +3093,11 @@ const PlasmicDescendants = {
     "modalActivateReservations",
     "buttons3",
     "active3",
-    "deactive3"
+    "cancel"
   ],
-  buttons3: ["buttons3", "active3", "deactive3"],
+  buttons3: ["buttons3", "active3", "cancel"],
   active3: ["active3"],
-  deactive3: ["deactive3"],
+  cancel: ["cancel"],
   modalDEactivateAutosync: [
     "modalDEactivateAutosync",
     "buttons2",
@@ -3172,7 +3166,7 @@ type NodeDefaultElementType = {
   modalActivateReservations: typeof AntdModal;
   buttons3: "div";
   active3: "div";
-  deactive3: "div";
+  cancel: "div";
   modalDEactivateAutosync: typeof AntdModal;
   buttons2: "div";
   deactive5: "div";
@@ -3287,7 +3281,7 @@ export const PlasmicSetting = Object.assign(
     modalActivateReservations: makeNodeComponent("modalActivateReservations"),
     buttons3: makeNodeComponent("buttons3"),
     active3: makeNodeComponent("active3"),
-    deactive3: makeNodeComponent("deactive3"),
+    cancel: makeNodeComponent("cancel"),
     modalDEactivateAutosync: makeNodeComponent("modalDEactivateAutosync"),
     buttons2: makeNodeComponent("buttons2"),
     deactive5: makeNodeComponent("deactive5"),

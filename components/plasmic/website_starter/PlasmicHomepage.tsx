@@ -132,9 +132,9 @@ export type PlasmicHomepage__OverridesType = {
   introAutoSyncDesc2?: Flex__<"div">;
   introAutoSyncGif2?: Flex__<"div">;
   screenshots?: Flex__<"div">;
-  introCalendarRight5?: Flex__<"div">;
-  introCalendarRight7?: Flex__<"div">;
-  introCalendarLeft2?: Flex__<"div">;
+  screenshotsRight?: Flex__<"div">;
+  screenshotsCaption?: Flex__<"div">;
+  screenshotsLeft?: Flex__<"div">;
   sliderCarousel?: Flex__<typeof SliderWrapper>;
   testimonials?: Flex__<"div">;
   titlePart?: Flex__<"div">;
@@ -797,17 +797,14 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.screenshots)}
             >
               <div
-                data-plasmic-name={"introCalendarRight5"}
-                data-plasmic-override={overrides.introCalendarRight5}
-                className={classNames(projectcss.all, sty.introCalendarRight5)}
+                data-plasmic-name={"screenshotsRight"}
+                data-plasmic-override={overrides.screenshotsRight}
+                className={classNames(projectcss.all, sty.screenshotsRight)}
               >
                 <div
-                  data-plasmic-name={"introCalendarRight7"}
-                  data-plasmic-override={overrides.introCalendarRight7}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introCalendarRight7
-                  )}
+                  data-plasmic-name={"screenshotsCaption"}
+                  data-plasmic-override={overrides.screenshotsCaption}
+                  className={classNames(projectcss.all, sty.screenshotsCaption)}
                 >
                   <div
                     className={classNames(
@@ -823,9 +820,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 </div>
               </div>
               <div
-                data-plasmic-name={"introCalendarLeft2"}
-                data-plasmic-override={overrides.introCalendarLeft2}
-                className={classNames(projectcss.all, sty.introCalendarLeft2)}
+                data-plasmic-name={"screenshotsLeft"}
+                data-plasmic-override={overrides.screenshotsLeft}
+                className={classNames(projectcss.all, sty.screenshotsLeft)}
               >
                 {(() => {
                   const child$Props = {
@@ -915,12 +912,12 @@ function PlasmicHomepage__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox___3NreR
+                          sty.freeBox__rnAep
                         )}
                       >
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__tWbvV)}
+                          className={classNames(sty.img__lWeQ)}
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "100%"
@@ -954,12 +951,12 @@ function PlasmicHomepage__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__xAkke
+                          sty.freeBox__zwNdX
                         )}
                       >
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__gHndD)}
+                          className={classNames(sty.img__oQgs)}
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "100%"
@@ -993,26 +990,32 @@ function PlasmicHomepage__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__uw1Ux
+                          sty.freeBox__wgl3P
                         )}
                       >
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__vl2Gn)}
-                          displayHeight={"100%"}
+                          className={classNames(sty.img___3XtJv)}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMaxHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "none"
                               : "500px"
                           }
-                          displayMaxWidth={"100%"}
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "300px"
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? "240px"
                               : "240px"
                           }
                           src={{
@@ -1672,9 +1675,9 @@ const PlasmicDescendants = {
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
     "screenshots",
-    "introCalendarRight5",
-    "introCalendarRight7",
-    "introCalendarLeft2",
+    "screenshotsRight",
+    "screenshotsCaption",
+    "screenshotsLeft",
     "sliderCarousel",
     "testimonials",
     "titlePart",
@@ -1742,9 +1745,9 @@ const PlasmicDescendants = {
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
     "screenshots",
-    "introCalendarRight5",
-    "introCalendarRight7",
-    "introCalendarLeft2",
+    "screenshotsRight",
+    "screenshotsCaption",
+    "screenshotsLeft",
     "sliderCarousel",
     "testimonials",
     "titlePart",
@@ -1851,14 +1854,14 @@ const PlasmicDescendants = {
   introAutoSyncGif2: ["introAutoSyncGif2"],
   screenshots: [
     "screenshots",
-    "introCalendarRight5",
-    "introCalendarRight7",
-    "introCalendarLeft2",
+    "screenshotsRight",
+    "screenshotsCaption",
+    "screenshotsLeft",
     "sliderCarousel"
   ],
-  introCalendarRight5: ["introCalendarRight5", "introCalendarRight7"],
-  introCalendarRight7: ["introCalendarRight7"],
-  introCalendarLeft2: ["introCalendarLeft2", "sliderCarousel"],
+  screenshotsRight: ["screenshotsRight", "screenshotsCaption"],
+  screenshotsCaption: ["screenshotsCaption"],
+  screenshotsLeft: ["screenshotsLeft", "sliderCarousel"],
   sliderCarousel: ["sliderCarousel"],
   testimonials: [
     "testimonials",
@@ -1958,9 +1961,9 @@ type NodeDefaultElementType = {
   introAutoSyncDesc2: "div";
   introAutoSyncGif2: "div";
   screenshots: "div";
-  introCalendarRight5: "div";
-  introCalendarRight7: "div";
-  introCalendarLeft2: "div";
+  screenshotsRight: "div";
+  screenshotsCaption: "div";
+  screenshotsLeft: "div";
   sliderCarousel: typeof SliderWrapper;
   testimonials: "div";
   titlePart: "div";
@@ -2088,9 +2091,9 @@ export const PlasmicHomepage = Object.assign(
     introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),
     introAutoSyncGif2: makeNodeComponent("introAutoSyncGif2"),
     screenshots: makeNodeComponent("screenshots"),
-    introCalendarRight5: makeNodeComponent("introCalendarRight5"),
-    introCalendarRight7: makeNodeComponent("introCalendarRight7"),
-    introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
+    screenshotsRight: makeNodeComponent("screenshotsRight"),
+    screenshotsCaption: makeNodeComponent("screenshotsCaption"),
+    screenshotsLeft: makeNodeComponent("screenshotsLeft"),
     sliderCarousel: makeNodeComponent("sliderCarousel"),
     testimonials: makeNodeComponent("testimonials"),
     titlePart: makeNodeComponent("titlePart"),

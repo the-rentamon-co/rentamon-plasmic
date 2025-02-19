@@ -1355,6 +1355,7 @@
   max-width: 60%;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
   min-width: 0;
   padding: 8px 0px 8px 18px;
 }
@@ -1419,7 +1420,7 @@
     max-width: 50%;
   }
 }
-.deactive3 {
+.cancel {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -1431,12 +1432,12 @@
   padding: 8px;
 }
 @media (max-width: 500px) {
-  .deactive3 {
+  .cancel {
     padding-left: 0px;
   }
 }
 @media (max-width: 350px) {
-  .deactive3 {
+  .cancel {
     padding-right: 0px;
     padding-left: 0px;
   }
@@ -1541,6 +1542,7 @@
   max-width: 60%;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
   min-width: 0;
   padding: 8px 0px 8px 18px;
 }
