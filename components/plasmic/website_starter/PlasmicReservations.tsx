@@ -2126,7 +2126,10 @@ function PlasmicReservations__RenderFunc(props: {
                 </Button>
                 {(() => {
                   try {
-                    return $state.modalData[0].platfromName !== "هومسا";
+                    return (
+                      $state.modalData[0].platfromName !== "هومسا" &&
+                      $state.modalData[0].platfromName !== "مهمانشو"
+                    );
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -2292,7 +2295,10 @@ function PlasmicReservations__RenderFunc(props: {
                 ) : null}
                 {(() => {
                   try {
-                    return $state.modalData[0].platfromName === "هومسا";
+                    return (
+                      $state.modalData[0].platfromName === "هومسا" ||
+                      $state.modalData[0].platfromName === "مهمانشو"
+                    );
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
