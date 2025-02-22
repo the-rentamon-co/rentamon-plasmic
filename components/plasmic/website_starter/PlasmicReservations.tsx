@@ -3580,9 +3580,9 @@ function PlasmicReservations__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             operation: 0,
-                            value: ($state.reserveData.data =
-                              $state.reserveData.data.filter(
-                                item => item.Id !== $state.modalData[0].id
+                            value: ($state.reserveData2.data =
+                              $state.reserveData2.data.filter(
+                                item => item.id != $state.modalData[0].id
                               ))
                           };
                           return (({
