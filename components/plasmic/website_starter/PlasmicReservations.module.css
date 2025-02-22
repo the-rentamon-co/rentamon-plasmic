@@ -1209,32 +1209,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.img__xKqU {
-  object-fit: cover;
-  max-width: 100%;
-  height: 76px;
-}
-.img__xKqU > picture > img {
-  object-fit: cover;
-}
-@media (max-width: 500px) {
-  .img__xKqU {
-    height: 55px;
-  }
-}
-@media (max-width: 350px) {
-  .img__xKqU {
-    height: 34px;
-  }
-}
-.text__dpsMf {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  min-width: 0;
-}
 .reserveMainStack {
   display: flex;
   flex-direction: column;

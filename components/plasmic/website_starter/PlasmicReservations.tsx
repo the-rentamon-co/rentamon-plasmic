@@ -2684,41 +2684,8 @@ function PlasmicReservations__RenderFunc(props: {
                 data-plasmic-override={overrides.reserveData2}
                 children={null}
                 className={classNames("__wab_instance", sty.reserveData2)}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dpsMf
-                    )}
-                  >
-                    {
-                      "\u062e\u0637 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
-                    }
-                  </div>
-                }
-                loadingDisplay={
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__xKqU)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "34px"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "55px"
-                        : "76px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={
-                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
-                  />
-                }
+                errorDisplay={null}
+                loadingDisplay={null}
                 method={"GET"}
                 onError={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
