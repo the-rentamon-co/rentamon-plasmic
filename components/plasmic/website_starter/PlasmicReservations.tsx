@@ -277,7 +277,7 @@ function PlasmicReservations__RenderFunc(props: {
         path: "block.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "reserveData2.data",
@@ -3518,7 +3518,10 @@ function PlasmicReservations__RenderFunc(props: {
               ) : null}
               {(() => {
                 try {
-                  return $state.selectedAction == "accept";
+                  return (
+                    $state.selectedAction == "accept" &&
+                    $state.modalData[0].platfromName == "مهمانشو"
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -3531,6 +3534,198 @@ function PlasmicReservations__RenderFunc(props: {
               })() ? (
                 <Button
                   className={classNames("__wab_instance", sty.button__oVsZ)}
+                  color={"green"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return window.open(
+                                "https://www.mihmansho.com/account/home/requests"
+                              );
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+
+                    $steps["invokeGlobalAction"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "POST",
+                              "https://gateway.rentamon.com/webhook/accept",
+                              (() => {
+                                try {
+                                  return {
+                                    reserve_id: $state.modalData[0].reserve_id,
+                                    website: $state.modalData[0].platfromName,
+                                    id: $state.modalData[0].id
+                                  };
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })(),
+                              undefined
+                            ]
+                          };
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                    if (
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
+                    ) {
+                      $steps["invokeGlobalAction"] = await $steps[
+                        "invokeGlobalAction"
+                      ];
+                    }
+
+                    $steps["updateStateVariable"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            value: ($state.reserveData.data =
+                              $state.reserveData.data.filter(
+                                item => item.Id !== $state.modalData[0].id
+                              ))
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateStateVariable"] != null &&
+                      typeof $steps["updateStateVariable"] === "object" &&
+                      typeof $steps["updateStateVariable"].then === "function"
+                    ) {
+                      $steps["updateStateVariable"] = await $steps[
+                        "updateStateVariable"
+                      ];
+                    }
+
+                    $steps["updateFinalModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["finalModal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateFinalModalOpen"] != null &&
+                      typeof $steps["updateFinalModalOpen"] === "object" &&
+                      typeof $steps["updateFinalModalOpen"].then === "function"
+                    ) {
+                      $steps["updateFinalModalOpen"] = await $steps[
+                        "updateFinalModalOpen"
+                      ];
+                    }
+                  }}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__onQgL)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__gjpqi
+                      )}
+                    >
+                      {"\u062a\u0627\u06cc\u06cc\u062f"}
+                    </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__crffN)}
+                      displayHeight={"14px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image47.svg",
+                        fullWidth: 20,
+                        fullHeight: 16,
+                        aspectRatio: 1.25
+                      }}
+                    />
+                  </Stack__>
+                </Button>
+              ) : null}
+              {(() => {
+                try {
+                  return (
+                    $state.selectedAction == "accept" &&
+                    $state.modalData[0].platfromName != "مهمانشو"
+                  );
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <Button
+                  className={classNames("__wab_instance", sty.button__lAp9Z)}
                   color={"green"}
                   onClick={async event => {
                     const $steps = {};
@@ -3651,20 +3846,20 @@ function PlasmicReservations__RenderFunc(props: {
                   <Stack__
                     as={"div"}
                     hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__onQgL)}
+                    className={classNames(projectcss.all, sty.freeBox__bqdUl)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__gjpqi
+                        sty.text__oCeS
                       )}
                     >
                       {"\u062a\u0627\u06cc\u06cc\u062f"}
                     </div>
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__crffN)}
+                      className={classNames(sty.img__fVfF)}
                       displayHeight={"14px"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
