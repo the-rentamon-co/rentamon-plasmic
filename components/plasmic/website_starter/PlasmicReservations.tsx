@@ -277,7 +277,7 @@ function PlasmicReservations__RenderFunc(props: {
         path: "block.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "reserveData2.data",
