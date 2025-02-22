@@ -294,7 +294,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
