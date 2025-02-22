@@ -150,6 +150,8 @@ function PlasmicPanelCalendar__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -1346,13 +1348,14 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               $steps["runCode2"] = true
                 ? (() => {
                     const actionArgs = {
-                      customFunction: async () => {
-                        return undefined;
-                      }
+                      args: [
+                        "GET",
+                        "https://gateway.rentamon.com/webhook/check_reserve"
+                      ]
                     };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
                   })()
                 : undefined;
               if (
