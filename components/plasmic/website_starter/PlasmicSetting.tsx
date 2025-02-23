@@ -199,12 +199,16 @@ function PlasmicSetting__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return (
-                $state.apiRequestSetting.data["true"].find(
-                  item =>
-                    item.feature_name === "auto_sync" && item.is_active === true
-                ) !== undefined
-              );
+              return (() => {
+                const data = $state.apiRequestSetting.data.true;
+                const reservationItems = data.filter(
+                  item => item.feature_name === "auto_sync"
+                );
+                const allReservationsTrue = reservationItems.every(
+                  item => item.is_active === true
+                );
+                return allReservationsTrue;
+              })();
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -265,13 +269,16 @@ function PlasmicSetting__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return (
-                $state.apiRequestSetting.data["true"].find(
-                  item =>
-                    item.feature_name === "reservations" &&
-                    item.is_active === true
-                ) !== undefined
-              );
+              return (() => {
+                const data = $state.apiRequestSetting.data.true;
+                const reservationItems = data.filter(
+                  item => item.feature_name === "reservations"
+                );
+                const allReservationsTrue = reservationItems.every(
+                  item => item.is_active === true
+                );
+                return allReservationsTrue;
+              })();
             } catch (e) {
               if (
                 e instanceof TypeError ||
