@@ -162,8 +162,8 @@
 }
 @media (max-width: 500px) {
   ._1stPart {
-    padding-right: 4px;
-    padding-left: 4px;
+    padding-right: 0px;
+    padding-left: 6px;
     width: 100%;
     margin-top: 20px;
     grid-column-start: 1 !important;
@@ -505,7 +505,7 @@
 @media (max-width: 350px) {
   .text__ib7W4 {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
 }
 .freeBox__rEEcs {
@@ -562,7 +562,7 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     font-style: normal;
     color: #203647;
@@ -734,7 +734,7 @@
 @media (max-width: 350px) {
   .text___9RMt {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
 }
 .freeBox__agWjF {
@@ -817,7 +817,7 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     font-style: normal;
     color: #203647;
@@ -989,7 +989,7 @@
 @media (max-width: 350px) {
   .text__m11Mp {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
 }
 .freeBox__eu95W {
@@ -1072,7 +1072,7 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     font-style: normal;
     color: #203647;
@@ -1244,7 +1244,7 @@
 @media (max-width: 350px) {
   .text___2C51K {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
 }
 .freeBox__dCXC {
@@ -1323,7 +1323,23 @@
 }
 @media (max-width: 350px) {
   .text__yGyZ1 {
-    font-size: 16px;
+    font-size: 14px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-weight: 400;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    min-width: 0;
   }
 }
 .item19 {
@@ -1483,7 +1499,7 @@
 @media (max-width: 350px) {
   .text__v2Dw6 {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
 }
 .freeBox__goJq1 {
@@ -1566,7 +1582,7 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     font-style: normal;
     color: #203647;

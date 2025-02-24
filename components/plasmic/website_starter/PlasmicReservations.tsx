@@ -277,7 +277,23 @@ function PlasmicReservations__RenderFunc(props: {
         path: "block.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (
+                $state.reserveData.loading != true &&
+                $state.reserveData.data.status == "access denied"
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "reserveData2.data",
@@ -2889,7 +2905,9 @@ function PlasmicReservations__RenderFunc(props: {
                   >
                     {(() => {
                       try {
-                        return true;
+                        return (
+                          $state.reserveData.data.status != "access denied"
+                        );
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -3943,119 +3961,138 @@ function PlasmicReservations__RenderFunc(props: {
               </AntdButton>
             </Stack__>
           </AntdModal>
-          <AntdModal
-            data-plasmic-name={"block"}
-            data-plasmic-override={overrides.block}
-            className={classNames("__wab_instance", sty.block)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            maskClosable={false}
-            modalContentClassName={classNames({
-              [sty["pcls_R3NqMmrOrcFc"]]: true
-            })}
-            modalScopeClassName={sty["block__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["block", "open"]).apply(
-                null,
-                eventArgs
+          {(() => {
+            try {
+              return (
+                $state.reserveData.loading != true &&
+                $state.reserveData.data.status == "access denied"
               );
-            }}
-            open={generateStateValueProp($state, ["block", "open"])}
-            title={null}
-            trigger={null}
-            width={"320"}
-            wrapClassName={classNames({ [sty["pcls_fMThDldkXanq"]]: true })}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__pkuAa)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__f9C3)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"34px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image55.svg",
-                  fullWidth: 49,
-                  fullHeight: 61,
-                  aspectRatio: 0.803279
-                }}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tl9OZ
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>{"\u0628\u062e\u0634 "}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 "}
-                  </span>
-                  <React.Fragment>
-                    {
-                      "\u062f\u0631\u062d\u0627\u0644 \u062a\u0648\u0633\u0639\u0647 \u0647\u0633\u062a \u0648 \u0628\u0632\u0648\u062f\u06cc \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0642\u0631\u0627\u0631 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
-                    }
-                  </React.Fragment>
-                </React.Fragment>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__a79U)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button___7MxbH)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                return window.history.back();
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <AntdModal
+              data-plasmic-name={"block"}
+              data-plasmic-override={overrides.block}
+              className={classNames("__wab_instance", sty.block)}
+              defaultStylesClassName={classNames(
+                projectcss.root_reset,
+                projectcss.plasmic_default_styles,
+                projectcss.plasmic_mixins,
+                projectcss.plasmic_tokens,
+                plasmic_antd_5_hostless_css.plasmic_tokens,
+                plasmic_plasmic_rich_components_css.plasmic_tokens
+              )}
+              hideFooter={true}
+              maskClosable={false}
+              modalContentClassName={classNames({
+                [sty["pcls_R3NqMmrOrcFc"]]: true
+              })}
+              modalScopeClassName={sty["block__modal"]}
+              onOpenChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["block", "open"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              open={generateStateValueProp($state, ["block", "open"])}
+              title={null}
+              trigger={null}
+              width={"320"}
+              wrapClassName={classNames({ [sty["pcls_fMThDldkXanq"]]: true })}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__pkuAa)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__f9C3)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"34px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image55.svg",
+                    fullWidth: 49,
+                    fullHeight: 61,
+                    aspectRatio: 0.803279
                   }}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tl9OZ
+                  )}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__etj6U
-                    )}
+                  <React.Fragment>
+                    <React.Fragment>{"\u0628\u062e\u0634 "}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 "
+                      }
+                    </span>
+                    <React.Fragment>
+                      {
+                        "\u062f\u0631\u062d\u0627\u0644 \u062a\u0648\u0633\u0639\u0647 \u0647\u0633\u062a \u0648 \u0628\u0632\u0648\u062f\u06cc \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0642\u0631\u0627\u0631 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__a79U)}>
+                  <Button
+                    className={classNames("__wab_instance", sty.button___7MxbH)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return window.history.back();
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
                   >
-                    {"\u0628\u0627\u0634\u0647"}
-                  </div>
-                </Button>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__etj6U
+                      )}
+                    >
+                      {"\u0628\u0627\u0634\u0647"}
+                    </div>
+                  </Button>
+                </div>
               </div>
-            </div>
-          </AntdModal>
+            </AntdModal>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
