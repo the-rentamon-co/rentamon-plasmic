@@ -1818,10 +1818,8 @@ function PlasmicSetting__RenderFunc(props: {
                                 variablePath: ["switch2", "isSelected"]
                               },
                               operation: 0,
-                              value:
-                                ($state.switch2.isSelected =
-                                  $state.switch1.isSelected =
-                                    $steps.invokeGlobalAction.data.status)
+                              value: ($state.switch2.isSelected =
+                                $steps.invokeGlobalAction.data.status)
                             };
                             return (({
                               variable,
