@@ -2500,6 +2500,21 @@
           "id": "DEPUDLe6oKbM",
           "name": "image 77",
           "filePath": "../public/plasmic/website_starter/images/image77.svg"
+        },
+        {
+          "id": "--OLm4K2DFK1",
+          "name": "abolhassani.jpg",
+          "filePath": "../public/plasmic/website_starter/images/abolhassaniJpg.jpg"
+        },
+        {
+          "id": "BzRFFSw8RkxJ",
+          "name": "parsa.jpg 2",
+          "filePath": "../public/plasmic/website_starter/images/parsaJpg2.jpg"
+        },
+        {
+          "id": "R95rYM_2hv3h",
+          "name": "small-300x288.jpg 2",
+          "filePath": "../public/plasmic/website_starter/images/small300X288Jpg2.jpg"
         }
       ],
       "indirect": false,

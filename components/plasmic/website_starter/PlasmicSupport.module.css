@@ -73,7 +73,7 @@
   align-items: center;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 8px 0px;
+  padding: 8px 0px 0px;
 }
 @media (max-width: 1200px) {
   .mainContents {
@@ -117,6 +117,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px 20px 8px 8px;
+}
+@media (max-width: 500px) {
+  .introTitle {
+    padding-right: 10px;
+  }
 }
 @media (max-width: 350px) {
   .introTitle {
@@ -166,7 +171,13 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 0px;
+}
+@media (max-width: 1200px) {
+  .introCalendarLeft {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
 }
 @media (max-width: 500px) {
   .introCalendarLeft {
@@ -1847,7 +1858,7 @@
   width: 100%;
   height: auto;
   max-width: 80%;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   min-width: 0;
   padding: 8px;
@@ -1855,12 +1866,15 @@
 @media (max-width: 1200px) {
   .content {
     max-width: 100%;
+    justify-content: space-between;
   }
 }
 @media (max-width: 500px) {
   .content {
     display: flex;
     flex-direction: column;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -1873,7 +1887,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 40%;
+  width: 50%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
@@ -1882,7 +1896,7 @@
 }
 @media (max-width: 1200px) {
   .addressText {
-    width: 44%;
+    width: 50%;
   }
 }
 @media (max-width: 500px) {
@@ -1893,13 +1907,13 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 8px 4px 8px 8px;
+    padding: 8px;
   }
 }
 @media (max-width: 350px) {
   .addressText {
     width: 100%;
-    padding-right: 4px;
+    padding-right: 8px;
   }
 }
 .text___3Ye7H {
@@ -1924,7 +1938,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 70%;
+  width: 50%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
@@ -1934,7 +1948,7 @@
 }
 @media (max-width: 1200px) {
   .map {
-    width: 56%;
+    width: 50%;
     height: 239px;
     align-items: center;
     justify-content: center;
@@ -1954,7 +1968,7 @@
     height: 240px;
     flex-shrink: 0;
     border-radius: 30px;
-    padding: 8px;
+    padding: 8px 0px;
   }
 }
 @media (max-width: 350px) {
@@ -1996,11 +2010,7 @@
     border-radius: 20px;
   }
 }
-.rentamonFooter:global(.__wab_instance) {
-  max-width: 100%;
-}
 .html {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -2010,6 +2020,7 @@
   align-items: center;
   opacity: 0;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .clarity2:global(.__wab_instance) {
@@ -2019,4 +2030,7 @@
 .goftino:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+}
+.rentamonFooter:global(.__wab_instance) {
+  max-width: 100%;
 }

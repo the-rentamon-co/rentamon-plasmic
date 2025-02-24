@@ -127,10 +127,10 @@ export type PlasmicSupport__OverridesType = {
   addressText?: Flex__<"div">;
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
+  rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
 export interface DefaultSupportProps {}
@@ -314,7 +314,7 @@ function PlasmicSupport__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0645\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0647\u0633\u062a\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0639\u0632\u06cc\u0632 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u062a\u062c\u0631\u0628\u0647\u200c\u0627\u06cc \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u062f\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc \u0648 \u0628\u0647\u200c\u0631\u0627\u062d\u062a\u06cc \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062a\u0639\u0627\u0645\u0644 \u06a9\u0646\u06cc. \u0647\u0631 \u062c\u0627 \u0645\u0634\u06a9\u0644 \u0648 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u06cc \u062f\u0627\u0634\u062a\u06cc\u060c \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u067e\u06cc\u0627\u0645 \u0628\u062f\u06cc :)"
+                  "\u0645\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0647\u0633\u062a\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0639\u0632\u06cc\u0632 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u062a\u062c\u0631\u0628\u0647\u200c\u0627\u06cc \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u062f\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc \u0648 \u0628\u0647\u200c\u0631\u0627\u062d\u062a\u06cc \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062a\u0639\u0627\u0645\u0644 \u06a9\u0646\u06cc. \u0645\u0648\u0642\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0647\u0631 \u062c\u0627 \u0645\u0634\u06a9\u0644 \u0648 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u06cc \u062f\u0627\u0634\u062a\u06cc\u060c \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u067e\u06cc\u0627\u0645 \u0628\u062f\u06cc :)"
                 }
               </div>
             </div>
@@ -1191,12 +1191,6 @@ function PlasmicSupport__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
-          />
-
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
@@ -1220,6 +1214,11 @@ function PlasmicSupport__RenderFunc(props: {
               }
             />
           </div>
+          <RentamonFooter
+            data-plasmic-name={"rentamonFooter"}
+            data-plasmic-override={overrides.rentamonFooter}
+            className={classNames("__wab_instance", sty.rentamonFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1268,10 +1267,10 @@ const PlasmicDescendants = {
     "addressText",
     "map",
     "embedHtml",
-    "rentamonFooter",
     "html",
     "clarity2",
-    "goftino"
+    "goftino",
+    "rentamonFooter"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   mainContents: [
@@ -1404,10 +1403,10 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
-  rentamonFooter: ["rentamonFooter"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
-  goftino: ["goftino"]
+  goftino: ["goftino"],
+  rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1453,10 +1452,10 @@ type NodeDefaultElementType = {
   addressText: "div";
   map: "div";
   embedHtml: typeof Embed;
-  rentamonFooter: typeof RentamonFooter;
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
+  rentamonFooter: typeof RentamonFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1558,10 +1557,10 @@ export const PlasmicSupport = Object.assign(
     addressText: makeNodeComponent("addressText"),
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
+    rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicSupport
     internalVariantProps: PlasmicSupport__VariantProps,
