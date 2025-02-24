@@ -72,6 +72,9 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSupport.module.css"; // plasmic-import: _jWDmDgs08t7/css
 
+import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: k9GL3C4d3WqP/icon
+import Icon37Icon from "./icons/PlasmicIcon__Icon37"; // plasmic-import: SsrYC78ajQoz/icon
+
 createPlasmicElementProxy;
 
 export type PlasmicSupport__VariantMembers = {};
@@ -99,6 +102,9 @@ export type PlasmicSupport__OverridesType = {
   icon6?: Flex__<"div">;
   title6?: Flex__<"div">;
   caption6?: Flex__<"div">;
+  contact10?: Flex__<"div">;
+  icon10?: Flex__<"div">;
+  title10?: Flex__<"div">;
   contact7?: Flex__<"div">;
   icon7?: Flex__<"div">;
   title7?: Flex__<"div">;
@@ -111,16 +117,20 @@ export type PlasmicSupport__OverridesType = {
   icon9?: Flex__<"div">;
   title9?: Flex__<"div">;
   caption9?: Flex__<"div">;
-  contact10?: Flex__<"div">;
-  icon10?: Flex__<"div">;
-  title10?: Flex__<"div">;
-  caption10?: Flex__<"div">;
+  contact11?: Flex__<"div">;
+  icon11?: Flex__<"div">;
+  title11?: Flex__<"div">;
+  caption11?: Flex__<"div">;
+  sectionTitle2?: Flex__<"div">;
   address?: Flex__<"div">;
   content?: Flex__<"div">;
   addressText?: Flex__<"div">;
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  html?: Flex__<"div">;
+  clarity2?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
 };
 
 export interface DefaultSupportProps {}
@@ -304,18 +314,7 @@ function PlasmicSupport__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0645\u0647\u0645\u062a\u0631\u06cc\u0646 \u0647\u062f\u0641 \u0645\u0627 \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u0627\u0632 ... \u0627\u0633\u062a."
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__veVqz
-                )}
-              >
-                {
-                  "\u0627\u06cc\u0646\u062c\u0627 \u0645\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647..."
+                  "\u0645\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0647\u0633\u062a\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0639\u0632\u06cc\u0632 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u062a\u062c\u0631\u0628\u0647\u200c\u0627\u06cc \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u062f\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc \u0648 \u0628\u0647\u200c\u0631\u0627\u062d\u062a\u06cc \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062a\u0639\u0627\u0645\u0644 \u06a9\u0646\u06cc. \u0647\u0631 \u062c\u0627 \u0645\u0634\u06a9\u0644 \u0648 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u06cc \u062f\u0627\u0634\u062a\u06cc\u060c \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u067e\u06cc\u0627\u0645 \u0628\u062f\u06cc :)"
                 }
               </div>
             </div>
@@ -356,6 +355,31 @@ function PlasmicSupport__RenderFunc(props: {
                       data-plasmic-override={overrides.contact6}
                       hasGap={true}
                       className={classNames(projectcss.all, sty.contact6)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return window.open(`tel:02191096227`);
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }}
                     >
                       <div
                         data-plasmic-name={"icon6"}
@@ -447,34 +471,6 @@ function PlasmicSupport__RenderFunc(props: {
                             projectcss.__wab_text,
                             sty.text__r5HTk
                           )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["runCode"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return (() => {
-                                        return window.open(
-                                          "https://www.linkedin.com/in/nazaninboojar/",
-                                          "_blank"
-                                        );
-                                      })();
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
-                            ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-                          }}
                         >
                           {
                             "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
@@ -484,7 +480,113 @@ function PlasmicSupport__RenderFunc(props: {
                     </Stack__>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__ugo5R)}
+                    className={classNames(projectcss.all, sty.freeBox___2Eyto)}
+                  >
+                    <Stack__
+                      as={"div"}
+                      data-plasmic-name={"contact10"}
+                      data-plasmic-override={overrides.contact10}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.contact10)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return window.open(
+                                      "https://goftino.com/c/WgsGXv",
+                                      "_blank"
+                                    );
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }}
+                    >
+                      <div
+                        data-plasmic-name={"icon10"}
+                        data-plasmic-override={overrides.icon10}
+                        className={classNames(projectcss.all, sty.icon10)}
+                      >
+                        <Icon38Icon
+                          className={classNames(projectcss.all, sty.svg__jXyAh)}
+                          role={"img"}
+                        />
+                      </div>
+                      <div
+                        data-plasmic-name={"title10"}
+                        data-plasmic-override={overrides.title10}
+                        className={classNames(projectcss.all, sty.title10)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___5Uugk
+                          )}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["updatePropertyId"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["propertyId"]
+                                    },
+                                    operation: 0
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updatePropertyId"] != null &&
+                              typeof $steps["updatePropertyId"] === "object" &&
+                              typeof $steps["updatePropertyId"].then ===
+                                "function"
+                            ) {
+                              $steps["updatePropertyId"] = await $steps[
+                                "updatePropertyId"
+                              ];
+                            }
+                          }}
+                        >
+                          {
+                            "\u06af\u0641\u062a\u06af\u0648\u06cc \u0622\u0646\u0644\u0627\u06cc\u0646 (\u0686\u062a)"
+                          }
+                        </div>
+                      </div>
+                    </Stack__>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zZfjf)}
                   >
                     <Stack__
                       as={"div"}
@@ -492,6 +594,34 @@ function PlasmicSupport__RenderFunc(props: {
                       data-plasmic-override={overrides.contact7}
                       hasGap={true}
                       className={classNames(projectcss.all, sty.contact7)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return window.open(
+                                      `https://wa.me/989038778606`,
+                                      "_blank"
+                                    );
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }}
                     >
                       <div
                         data-plasmic-name={"icon7"}
@@ -500,10 +630,10 @@ function PlasmicSupport__RenderFunc(props: {
                       >
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img___6Faw)}
+                          className={classNames(sty.img__yOfmf)}
                           displayHeight={"auto"}
                           displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
+                          displayMaxWidth={"30%"}
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={"auto"}
@@ -525,7 +655,7 @@ function PlasmicSupport__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text___7PBta
+                            sty.text__yenud
                           )}
                           onClick={async event => {
                             const $steps = {};
@@ -567,9 +697,7 @@ function PlasmicSupport__RenderFunc(props: {
                             }
                           }}
                         >
-                          {
-                            "\u062a\u0645\u0627\u0633 \u062a\u0644\u0641\u0646\u06cc"
-                          }
+                          {"\u0648\u0627\u062a\u0633\u0627\u067e"}
                         </div>
                       </div>
                       <div
@@ -581,46 +709,18 @@ function PlasmicSupport__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__hDpHw
+                            sty.text___5Nm2
                           )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["runCode"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return (() => {
-                                        return window.open(
-                                          "https://www.linkedin.com/in/nazaninboojar/",
-                                          "_blank"
-                                        );
-                                      })();
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
-                            ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-                          }}
                         >
                           {
-                            "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+                            "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
                           }
                         </div>
                       </div>
                     </Stack__>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__kMZpl)}
+                    className={classNames(projectcss.all, sty.freeBox__a5Scl)}
                   >
                     <Stack__
                       as={"div"}
@@ -628,6 +728,34 @@ function PlasmicSupport__RenderFunc(props: {
                       data-plasmic-override={overrides.contact8}
                       hasGap={true}
                       className={classNames(projectcss.all, sty.contact8)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return window.open(
+                                      "https://t.me/+989038778606",
+                                      "_blank"
+                                    );
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }}
                     >
                       <div
                         data-plasmic-name={"icon8"}
@@ -636,7 +764,7 @@ function PlasmicSupport__RenderFunc(props: {
                       >
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__pKImf)}
+                          className={classNames(sty.img__kJqsc)}
                           displayHeight={"auto"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"30%"}
@@ -645,9 +773,9 @@ function PlasmicSupport__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image74.svg",
-                            fullWidth: 24,
-                            fullHeight: 24,
+                            src: "/plasmic/website_starter/images/image76.svg",
+                            fullWidth: 256,
+                            fullHeight: 256,
                             aspectRatio: 1
                           }}
                         />
@@ -661,7 +789,7 @@ function PlasmicSupport__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__jmDrv
+                            sty.text__rv0Au
                           )}
                           onClick={async event => {
                             const $steps = {};
@@ -703,9 +831,7 @@ function PlasmicSupport__RenderFunc(props: {
                             }
                           }}
                         >
-                          {
-                            "\u062a\u0645\u0627\u0633 \u062a\u0644\u0641\u0646\u06cc"
-                          }
+                          {"\u062a\u0644\u06af\u0631\u0627\u0645"}
                         </div>
                       </div>
                       <div
@@ -717,46 +843,18 @@ function PlasmicSupport__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text___0GHqv
+                            sty.text___2Sg7Z
                           )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["runCode"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return (() => {
-                                        return window.open(
-                                          "https://www.linkedin.com/in/nazaninboojar/",
-                                          "_blank"
-                                        );
-                                      })();
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
-                            ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-                          }}
                         >
                           {
-                            "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+                            "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
                           }
                         </div>
                       </div>
                     </Stack__>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__hCcmX)}
+                    className={classNames(projectcss.all, sty.freeBox__rcAYr)}
                   >
                     <Stack__
                       as={"div"}
@@ -764,28 +862,46 @@ function PlasmicSupport__RenderFunc(props: {
                       data-plasmic-override={overrides.contact9}
                       hasGap={true}
                       className={classNames(projectcss.all, sty.contact9)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return window.open(
+                                      "https://eitaa.org/rentamon_support",
+                                      "_blank"
+                                    );
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }}
                     >
                       <div
                         data-plasmic-name={"icon9"}
                         data-plasmic-override={overrides.icon9}
                         className={classNames(projectcss.all, sty.icon9)}
                       >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__rgJxf)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"30%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image74.svg",
-                            fullWidth: 24,
-                            fullHeight: 24,
-                            aspectRatio: 1
-                          }}
+                        <Icon37Icon
+                          className={classNames(
+                            projectcss.all,
+                            sty.svg___3Cmu0
+                          )}
+                          role={"img"}
                         />
                       </div>
                       <div
@@ -797,7 +913,7 @@ function PlasmicSupport__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__rcEh3
+                            sty.text___3Ygg3
                           )}
                           onClick={async event => {
                             const $steps = {};
@@ -839,9 +955,7 @@ function PlasmicSupport__RenderFunc(props: {
                             }
                           }}
                         >
-                          {
-                            "\u062a\u0645\u0627\u0633 \u062a\u0644\u0641\u0646\u06cc"
-                          }
+                          {"\u0627\u06cc\u062a\u0627"}
                         </div>
                       </div>
                       <div
@@ -853,62 +967,62 @@ function PlasmicSupport__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__mS6Q
+                            sty.text__pgFiv
                           )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["runCode"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return (() => {
-                                        return window.open(
-                                          "https://www.linkedin.com/in/nazaninboojar/",
-                                          "_blank"
-                                        );
-                                      })();
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
-                            ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-                          }}
                         >
                           {
-                            "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+                            "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
                           }
                         </div>
                       </div>
                     </Stack__>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__ylcf0)}
+                    className={classNames(projectcss.all, sty.freeBox__cdAo)}
                   >
                     <Stack__
                       as={"div"}
-                      data-plasmic-name={"contact10"}
-                      data-plasmic-override={overrides.contact10}
+                      data-plasmic-name={"contact11"}
+                      data-plasmic-override={overrides.contact11}
                       hasGap={true}
-                      className={classNames(projectcss.all, sty.contact10)}
+                      className={classNames(projectcss.all, sty.contact11)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return window.open(
+                                      "mailto:info@rentamon.com",
+                                      "_blank"
+                                    );
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }}
                     >
                       <div
-                        data-plasmic-name={"icon10"}
-                        data-plasmic-override={overrides.icon10}
-                        className={classNames(projectcss.all, sty.icon10)}
+                        data-plasmic-name={"icon11"}
+                        data-plasmic-override={overrides.icon11}
+                        className={classNames(projectcss.all, sty.icon11)}
                       >
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__vDfvF)}
+                          className={classNames(sty.img__ladkQ)}
                           displayHeight={"auto"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"30%"}
@@ -917,23 +1031,23 @@ function PlasmicSupport__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image74.svg",
-                            fullWidth: 24,
-                            fullHeight: 24,
+                            src: "/plasmic/website_starter/images/image77.svg",
+                            fullWidth: 512,
+                            fullHeight: 512,
                             aspectRatio: 1
                           }}
                         />
                       </div>
                       <div
-                        data-plasmic-name={"title10"}
-                        data-plasmic-override={overrides.title10}
-                        className={classNames(projectcss.all, sty.title10)}
+                        data-plasmic-name={"title11"}
+                        data-plasmic-override={overrides.title11}
+                        className={classNames(projectcss.all, sty.title11)}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text___6X11Q
+                            sty.text__or6Za
                           )}
                           onClick={async event => {
                             const $steps = {};
@@ -975,58 +1089,47 @@ function PlasmicSupport__RenderFunc(props: {
                             }
                           }}
                         >
-                          {
-                            "\u062a\u0645\u0627\u0633 \u062a\u0644\u0641\u0646\u06cc"
-                          }
+                          {"\u0627\u06cc\u0645\u06cc\u0644"}
                         </div>
                       </div>
                       <div
-                        data-plasmic-name={"caption10"}
-                        data-plasmic-override={overrides.caption10}
-                        className={classNames(projectcss.all, sty.caption10)}
+                        data-plasmic-name={"caption11"}
+                        data-plasmic-override={overrides.caption11}
+                        className={classNames(projectcss.all, sty.caption11)}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__zPTr4
+                            sty.text__xV4R2
                           )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["runCode"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return (() => {
-                                        return window.open(
-                                          "https://www.linkedin.com/in/nazaninboojar/",
-                                          "_blank"
-                                        );
-                                      })();
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
-                            ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-                          }}
                         >
-                          {
-                            "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
-                          }
+                          {hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "info[at]rentamon.com"
+                            : "info [at] rentamon.com"}
                         </div>
                       </div>
                     </Stack__>
                   </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"sectionTitle2"}
+                data-plasmic-override={overrides.sectionTitle2}
+                className={classNames(projectcss.all, sty.sectionTitle2)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jqKIv
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
+                    : "\u0633\u0627\u0639\u0627\u062a \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc: \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"}
                 </div>
               </div>
             </div>
@@ -1093,6 +1196,30 @@ function PlasmicSupport__RenderFunc(props: {
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"clarity2"}
+              data-plasmic-override={overrides.clarity2}
+              className={classNames("__wab_instance", sty.clarity2)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1116,6 +1243,9 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
+    "contact10",
+    "icon10",
+    "title10",
     "contact7",
     "icon7",
     "title7",
@@ -1128,16 +1258,20 @@ const PlasmicDescendants = {
     "icon9",
     "title9",
     "caption9",
-    "contact10",
-    "icon10",
-    "title10",
-    "caption10",
+    "contact11",
+    "icon11",
+    "title11",
+    "caption11",
+    "sectionTitle2",
     "address",
     "content",
     "addressText",
     "map",
     "embedHtml",
-    "rentamonFooter"
+    "rentamonFooter",
+    "html",
+    "clarity2",
+    "goftino"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   mainContents: [
@@ -1154,6 +1288,9 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
+    "contact10",
+    "icon10",
+    "title10",
     "contact7",
     "icon7",
     "title7",
@@ -1166,10 +1303,11 @@ const PlasmicDescendants = {
     "icon9",
     "title9",
     "caption9",
-    "contact10",
-    "icon10",
-    "title10",
-    "caption10",
+    "contact11",
+    "icon11",
+    "title11",
+    "caption11",
+    "sectionTitle2",
     "address",
     "content",
     "addressText",
@@ -1189,6 +1327,9 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
+    "contact10",
+    "icon10",
+    "title10",
     "contact7",
     "icon7",
     "title7",
@@ -1201,10 +1342,11 @@ const PlasmicDescendants = {
     "icon9",
     "title9",
     "caption9",
-    "contact10",
-    "icon10",
-    "title10",
-    "caption10"
+    "contact11",
+    "icon11",
+    "title11",
+    "caption11",
+    "sectionTitle2"
   ],
   sectionTitle: ["sectionTitle"],
   ways: [
@@ -1213,6 +1355,9 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
+    "contact10",
+    "icon10",
+    "title10",
     "contact7",
     "icon7",
     "title7",
@@ -1225,15 +1370,18 @@ const PlasmicDescendants = {
     "icon9",
     "title9",
     "caption9",
-    "contact10",
-    "icon10",
-    "title10",
-    "caption10"
+    "contact11",
+    "icon11",
+    "title11",
+    "caption11"
   ],
   contact6: ["contact6", "icon6", "title6", "caption6"],
   icon6: ["icon6"],
   title6: ["title6"],
   caption6: ["caption6"],
+  contact10: ["contact10", "icon10", "title10"],
+  icon10: ["icon10"],
+  title10: ["title10"],
   contact7: ["contact7", "icon7", "title7", "caption7"],
   icon7: ["icon7"],
   title7: ["title7"],
@@ -1246,16 +1394,20 @@ const PlasmicDescendants = {
   icon9: ["icon9"],
   title9: ["title9"],
   caption9: ["caption9"],
-  contact10: ["contact10", "icon10", "title10", "caption10"],
-  icon10: ["icon10"],
-  title10: ["title10"],
-  caption10: ["caption10"],
+  contact11: ["contact11", "icon11", "title11", "caption11"],
+  icon11: ["icon11"],
+  title11: ["title11"],
+  caption11: ["caption11"],
+  sectionTitle2: ["sectionTitle2"],
   address: ["address", "content", "addressText", "map", "embedHtml"],
   content: ["content", "addressText", "map", "embedHtml"],
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  html: ["html", "clarity2", "goftino"],
+  clarity2: ["clarity2"],
+  goftino: ["goftino"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1276,6 +1428,9 @@ type NodeDefaultElementType = {
   icon6: "div";
   title6: "div";
   caption6: "div";
+  contact10: "div";
+  icon10: "div";
+  title10: "div";
   contact7: "div";
   icon7: "div";
   title7: "div";
@@ -1288,16 +1443,20 @@ type NodeDefaultElementType = {
   icon9: "div";
   title9: "div";
   caption9: "div";
-  contact10: "div";
-  icon10: "div";
-  title10: "div";
-  caption10: "div";
+  contact11: "div";
+  icon11: "div";
+  title11: "div";
+  caption11: "div";
+  sectionTitle2: "div";
   address: "div";
   content: "div";
   addressText: "div";
   map: "div";
   embedHtml: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
+  html: "div";
+  clarity2: typeof Embed;
+  goftino: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1374,6 +1533,9 @@ export const PlasmicSupport = Object.assign(
     icon6: makeNodeComponent("icon6"),
     title6: makeNodeComponent("title6"),
     caption6: makeNodeComponent("caption6"),
+    contact10: makeNodeComponent("contact10"),
+    icon10: makeNodeComponent("icon10"),
+    title10: makeNodeComponent("title10"),
     contact7: makeNodeComponent("contact7"),
     icon7: makeNodeComponent("icon7"),
     title7: makeNodeComponent("title7"),
@@ -1386,16 +1548,20 @@ export const PlasmicSupport = Object.assign(
     icon9: makeNodeComponent("icon9"),
     title9: makeNodeComponent("title9"),
     caption9: makeNodeComponent("caption9"),
-    contact10: makeNodeComponent("contact10"),
-    icon10: makeNodeComponent("icon10"),
-    title10: makeNodeComponent("title10"),
-    caption10: makeNodeComponent("caption10"),
+    contact11: makeNodeComponent("contact11"),
+    icon11: makeNodeComponent("icon11"),
+    title11: makeNodeComponent("title11"),
+    caption11: makeNodeComponent("caption11"),
+    sectionTitle2: makeNodeComponent("sectionTitle2"),
     address: makeNodeComponent("address"),
     content: makeNodeComponent("content"),
     addressText: makeNodeComponent("addressText"),
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    html: makeNodeComponent("html"),
+    clarity2: makeNodeComponent("clarity2"),
+    goftino: makeNodeComponent("goftino"),
 
     // Metadata about props expected for PlasmicSupport
     internalVariantProps: PlasmicSupport__VariantProps,

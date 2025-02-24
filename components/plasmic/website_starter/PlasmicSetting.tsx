@@ -64,6 +64,7 @@ import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Switch from "../../Switch"; // plasmic-import: XDOKoC2AhwWH/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -86,7 +87,7 @@ type ArgPropType = keyof PlasmicSetting__ArgsType;
 export const PlasmicSetting__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSetting__OverridesType = {
-  setting?: Flex__<"div">;
+  settings?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
   right1?: Flex__<"div">;
@@ -99,8 +100,11 @@ export type PlasmicSetting__OverridesType = {
   main?: Flex__<"div">;
   title?: Flex__<"div">;
   intro?: Flex__<"div">;
-  sidebar2?: Flex__<"div">;
-  caption?: Flex__<"div">;
+  _1st?: Flex__<"div">;
+  rightSide?: Flex__<"div">;
+  up?: Flex__<"div">;
+  leftSide?: Flex__<"div">;
+  _2nd?: Flex__<"div">;
   optionsButtons?: Flex__<"div">;
   options?: Flex__<"div">;
   opt1?: Flex__<"div">;
@@ -141,6 +145,9 @@ export type PlasmicSetting__OverridesType = {
   deactive4?: Flex__<"div">;
   apiRequestSetting?: Flex__<typeof ApiRequest>;
   returnButton?: Flex__<"div">;
+  html?: Flex__<"div">;
+  clarity2?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
 };
 
 export interface DefaultSettingProps {}
@@ -390,8 +397,8 @@ function PlasmicSetting__RenderFunc(props: {
 
       <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"setting"}
-          data-plasmic-override={overrides.setting}
+          data-plasmic-name={"settings"}
+          data-plasmic-override={overrides.settings}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
@@ -402,7 +409,7 @@ function PlasmicSetting__RenderFunc(props: {
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
             plasmic_plasmic_rich_components_css.plasmic_tokens,
-            sty.setting
+            sty.settings
           )}
         >
           <div
@@ -639,54 +646,74 @@ function PlasmicSetting__RenderFunc(props: {
             >
               <div className={classNames(projectcss.all, sty.freeBox__xsjRy)}>
                 <div
-                  data-plasmic-name={"sidebar2"}
-                  data-plasmic-override={overrides.sidebar2}
-                  className={classNames(projectcss.all, sty.sidebar2)}
+                  data-plasmic-name={"_1st"}
+                  data-plasmic-override={overrides._1st}
+                  className={classNames(projectcss.all, sty._1st)}
                 >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__p1N7)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"33px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image37.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
+                  <div
+                    data-plasmic-name={"rightSide"}
+                    data-plasmic-override={overrides.rightSide}
+                    className={classNames(projectcss.all, sty.rightSide)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__p1N7)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"33px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image37.svg",
+                        fullWidth: 21,
+                        fullHeight: 24,
+                        aspectRatio: 0.875
+                      }}
+                    />
 
-                  <SideBar2
-                    className={classNames("__wab_instance", sty.sideBar2__cfUF)}
-                    isOpen={false}
+                    <SideBar2
+                      className={classNames(
+                        "__wab_instance",
+                        sty.sideBar2__cfUF
+                      )}
+                      isOpen={false}
+                    />
+                  </div>
+                  <div
+                    data-plasmic-name={"up"}
+                    data-plasmic-override={overrides.up}
+                    className={classNames(projectcss.all, sty.up)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dwYa
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                        : "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"leftSide"}
+                    data-plasmic-override={overrides.leftSide}
+                    className={classNames(projectcss.all, sty.leftSide)}
                   />
                 </div>
                 <div
-                  data-plasmic-name={"caption"}
-                  data-plasmic-override={overrides.caption}
-                  className={classNames(projectcss.all, sty.caption)}
+                  data-plasmic-name={"_2nd"}
+                  data-plasmic-override={overrides._2nd}
+                  className={classNames(projectcss.all, sty._2nd)}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__dwYa
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__l6H3I
+                      sty.text__wxCeh
                     )}
                   >
                     {
@@ -3099,10 +3126,69 @@ function PlasmicSetting__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.text__gY7S2
                 )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["variable"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateVariable"] != null &&
+                    typeof $steps["updateVariable"] === "object" &&
+                    typeof $steps["updateVariable"].then === "function"
+                  ) {
+                    $steps["updateVariable"] = await $steps["updateVariable"];
+                  }
+                }}
               >
                 {"\u0628\u0627\u0632\u06af\u0634\u062a "}
               </div>
             </div>
+          </div>
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"clarity2"}
+              data-plasmic-override={overrides.clarity2}
+              className={classNames("__wab_instance", sty.clarity2)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
           </div>
         </div>
       </div>
@@ -3111,8 +3197,8 @@ function PlasmicSetting__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  setting: [
-    "setting",
+  settings: [
+    "settings",
     "header",
     "right",
     "right1",
@@ -3125,8 +3211,11 @@ const PlasmicDescendants = {
     "main",
     "title",
     "intro",
-    "sidebar2",
-    "caption",
+    "_1st",
+    "rightSide",
+    "up",
+    "leftSide",
+    "_2nd",
     "optionsButtons",
     "options",
     "opt1",
@@ -3166,7 +3255,10 @@ const PlasmicDescendants = {
     "active4",
     "deactive4",
     "apiRequestSetting",
-    "returnButton"
+    "returnButton",
+    "html",
+    "clarity2",
+    "goftino"
   ],
   header: [
     "header",
@@ -3191,8 +3283,11 @@ const PlasmicDescendants = {
     "main",
     "title",
     "intro",
-    "sidebar2",
-    "caption",
+    "_1st",
+    "rightSide",
+    "up",
+    "leftSide",
+    "_2nd",
     "optionsButtons",
     "options",
     "opt1",
@@ -3234,9 +3329,12 @@ const PlasmicDescendants = {
     "apiRequestSetting"
   ],
   title: ["title"],
-  intro: ["intro", "sidebar2", "caption"],
-  sidebar2: ["sidebar2"],
-  caption: ["caption"],
+  intro: ["intro", "_1st", "rightSide", "up", "leftSide", "_2nd"],
+  _1st: ["_1st", "rightSide", "up", "leftSide"],
+  rightSide: ["rightSide"],
+  up: ["up"],
+  leftSide: ["leftSide"],
+  _2nd: ["_2nd"],
   optionsButtons: [
     "optionsButtons",
     "options",
@@ -3335,13 +3433,16 @@ const PlasmicDescendants = {
   active4: ["active4"],
   deactive4: ["deactive4"],
   apiRequestSetting: ["apiRequestSetting"],
-  returnButton: ["returnButton"]
+  returnButton: ["returnButton"],
+  html: ["html", "clarity2", "goftino"],
+  clarity2: ["clarity2"],
+  goftino: ["goftino"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  setting: "div";
+  settings: "div";
   header: "div";
   right: "div";
   right1: "div";
@@ -3354,8 +3455,11 @@ type NodeDefaultElementType = {
   main: "div";
   title: "div";
   intro: "div";
-  sidebar2: "div";
-  caption: "div";
+  _1st: "div";
+  rightSide: "div";
+  up: "div";
+  leftSide: "div";
+  _2nd: "div";
   optionsButtons: "div";
   options: "div";
   opt1: "div";
@@ -3396,6 +3500,9 @@ type NodeDefaultElementType = {
   deactive4: "div";
   apiRequestSetting: typeof ApiRequest;
   returnButton: "div";
+  html: "div";
+  clarity2: typeof Embed;
+  goftino: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -3445,7 +3552,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "setting") {
+  if (nodeName === "settings") {
     func.displayName = "PlasmicSetting";
   } else {
     func.displayName = `PlasmicSetting.${nodeName}`;
@@ -3455,7 +3562,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicSetting = Object.assign(
   // Top-level PlasmicSetting renders the root element
-  makeNodeComponent("setting"),
+  makeNodeComponent("settings"),
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
@@ -3470,8 +3577,11 @@ export const PlasmicSetting = Object.assign(
     main: makeNodeComponent("main"),
     title: makeNodeComponent("title"),
     intro: makeNodeComponent("intro"),
-    sidebar2: makeNodeComponent("sidebar2"),
-    caption: makeNodeComponent("caption"),
+    _1st: makeNodeComponent("_1st"),
+    rightSide: makeNodeComponent("rightSide"),
+    up: makeNodeComponent("up"),
+    leftSide: makeNodeComponent("leftSide"),
+    _2nd: makeNodeComponent("_2nd"),
     optionsButtons: makeNodeComponent("optionsButtons"),
     options: makeNodeComponent("options"),
     opt1: makeNodeComponent("opt1"),
@@ -3514,6 +3624,9 @@ export const PlasmicSetting = Object.assign(
     deactive4: makeNodeComponent("deactive4"),
     apiRequestSetting: makeNodeComponent("apiRequestSetting"),
     returnButton: makeNodeComponent("returnButton"),
+    html: makeNodeComponent("html"),
+    clarity2: makeNodeComponent("clarity2"),
+    goftino: makeNodeComponent("goftino"),
 
     // Metadata about props expected for PlasmicSetting
     internalVariantProps: PlasmicSetting__VariantProps,

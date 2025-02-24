@@ -159,6 +159,9 @@ export type PlasmicAboutUs__OverridesType = {
   addressText?: Flex__<"div">;
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
+  html?: Flex__<"div">;
+  clarity2?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -2163,6 +2166,29 @@ function PlasmicAboutUs__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"clarity2"}
+              data-plasmic-override={overrides.clarity2}
+              className={classNames("__wab_instance", sty.clarity2)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+          </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
             data-plasmic-override={overrides.rentamonFooter}
@@ -2251,6 +2277,9 @@ const PlasmicDescendants = {
     "addressText",
     "map",
     "embedHtml",
+    "html",
+    "clarity2",
+    "goftino",
     "rentamonFooter"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
@@ -2566,6 +2595,9 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
+  html: ["html", "clarity2", "goftino"],
+  clarity2: ["clarity2"],
+  goftino: ["goftino"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -2647,6 +2679,9 @@ type NodeDefaultElementType = {
   addressText: "div";
   map: "div";
   embedHtml: typeof Embed;
+  html: "div";
+  clarity2: typeof Embed;
+  goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -2784,6 +2819,9 @@ export const PlasmicAboutUs = Object.assign(
     addressText: makeNodeComponent("addressText"),
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
+    html: makeNodeComponent("html"),
+    clarity2: makeNodeComponent("clarity2"),
+    goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicAboutUs
