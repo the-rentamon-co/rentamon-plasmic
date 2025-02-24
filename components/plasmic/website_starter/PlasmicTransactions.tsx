@@ -466,21 +466,6 @@ function PlasmicTransactions__RenderFunc(props: {
                     {"\u062a\u0627\u0631\u06cc\u062e"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__zgxP2)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___8OAjM
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0634\u0628"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0634\u0628"
-                      : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628"}
-                  </div>
-                </div>
                 <div className={classNames(projectcss.all, sty.freeBox__tnAne)}>
                   <div
                     className={classNames(
@@ -727,38 +712,6 @@ function PlasmicTransactions__RenderFunc(props: {
                                       "PlasmicUndefinedDataError"
                                   ) {
                                     return "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f9/\u06f2\u06f5";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__msCkg
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__kzc8T
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return $state.apiRequest.data[currentIndex]
-                                    .night;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "-";
                                   }
                                   throw e;
                                 }
