@@ -1202,6 +1202,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/features"
+        },
+        {
+          "id": "_jWDmDgs08t7",
+          "name": "Support",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSupport.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/support.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSupport.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/support"
         }
       ],
       "icons": [

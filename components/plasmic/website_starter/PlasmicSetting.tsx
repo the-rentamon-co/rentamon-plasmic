@@ -2336,6 +2336,31 @@ function PlasmicSetting__RenderFunc(props: {
                         ];
                       }
 
+                      $steps["invokeGlobalAction2"] =
+                        $steps.invokeGlobalAction.data.status == true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["invokeGlobalAction2"] != null &&
+                        typeof $steps["invokeGlobalAction2"] === "object" &&
+                        typeof $steps["invokeGlobalAction2"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction2"] = await $steps[
+                          "invokeGlobalAction2"
+                        ];
+                      }
+
                       $steps["updateLoading2"] = true
                         ? (() => {
                             const actionArgs = {
@@ -2736,6 +2761,31 @@ function PlasmicSetting__RenderFunc(props: {
                       ) {
                         $steps["updateSwitch2IsSelected"] = await $steps[
                           "updateSwitch2IsSelected"
+                        ];
+                      }
+
+                      $steps["invokeGlobalAction2"] =
+                        $steps.invokeGlobalAction.data.status == true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["invokeGlobalAction2"] != null &&
+                        typeof $steps["invokeGlobalAction2"] === "object" &&
+                        typeof $steps["invokeGlobalAction2"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction2"] = await $steps[
+                          "invokeGlobalAction2"
                         ];
                       }
 
