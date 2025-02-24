@@ -91,7 +91,6 @@ export type PlasmicSetting__OverridesType = {
   right?: Flex__<"div">;
   right1?: Flex__<"div">;
   sidebar?: Flex__<"div">;
-  sideBar2?: Flex__<typeof SideBar2>;
   title2?: Flex__<"div">;
   right2?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
@@ -100,6 +99,7 @@ export type PlasmicSetting__OverridesType = {
   main?: Flex__<"div">;
   title?: Flex__<"div">;
   intro?: Flex__<"div">;
+  sidebar2?: Flex__<"div">;
   caption?: Flex__<"div">;
   optionsButtons?: Flex__<"div">;
   options?: Flex__<"div">;
@@ -140,6 +140,7 @@ export type PlasmicSetting__OverridesType = {
   active4?: Flex__<"div">;
   deactive4?: Flex__<"div">;
   apiRequestSetting?: Flex__<typeof ApiRequest>;
+  returnButton?: Flex__<"div">;
 };
 
 export interface DefaultSettingProps {}
@@ -443,9 +444,10 @@ function PlasmicSetting__RenderFunc(props: {
                   />
 
                   <SideBar2
-                    data-plasmic-name={"sideBar2"}
-                    data-plasmic-override={overrides.sideBar2}
-                    className={classNames("__wab_instance", sty.sideBar2)}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.sideBar2__irgv3
+                    )}
                     isOpen={false}
                   />
                 </div>
@@ -635,32 +637,62 @@ function PlasmicSetting__RenderFunc(props: {
               data-plasmic-override={overrides.intro}
               className={classNames(projectcss.all, sty.intro)}
             >
-              <div
-                data-plasmic-name={"caption"}
-                data-plasmic-override={overrides.caption}
-                className={classNames(projectcss.all, sty.caption)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__xsjRy)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dwYa
-                  )}
+                  data-plasmic-name={"sidebar2"}
+                  data-plasmic-override={overrides.sidebar2}
+                  className={classNames(projectcss.all, sty.sidebar2)}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                    : "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__p1N7)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"33px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image37.svg",
+                      fullWidth: 21,
+                      fullHeight: 24,
+                      aspectRatio: 0.875
+                    }}
+                  />
+
+                  <SideBar2
+                    className={classNames("__wab_instance", sty.sideBar2__cfUF)}
+                    isOpen={false}
+                  />
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__l6H3I
-                  )}
+                  data-plasmic-name={"caption"}
+                  data-plasmic-override={overrides.caption}
+                  className={classNames(projectcss.all, sty.caption)}
                 >
-                  {
-                    "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0648 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0641\u0639\u0627\u0644 \u06a9\u0646 \u062a\u0627 \u062f\u0631 \u0648\u0642\u062a\u062a \u0635\u0631\u0641\u0647\u200c\u062c\u0648\u06cc\u06cc \u06a9\u0646\u06cc :)"
-                  }
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dwYa
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      : "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__l6H3I
+                    )}
+                  >
+                    {
+                      "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0648 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0641\u0639\u0627\u0644 \u06a9\u0646 \u062a\u0627 \u062f\u0631 \u0648\u0642\u062a\u062a \u0635\u0631\u0641\u0647\u200c\u062c\u0648\u06cc\u06cc \u06a9\u0646\u06cc :)"
+                    }
+                  </div>
                 </div>
               </div>
             </div>
@@ -3028,6 +3060,50 @@ function PlasmicSetting__RenderFunc(props: {
               url={"https://gateway.rentamon.com/webhook/fetch-setting-from-db"}
             />
           </div>
+          <div
+            data-plasmic-name={"returnButton"}
+            data-plasmic-override={overrides.returnButton}
+            className={classNames(projectcss.all, sty.returnButton, "fix")}
+          >
+            <div
+              className={classNames(projectcss.all, sty.freeBox__lXyXj)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return window.history.back();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gY7S2
+                )}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a "}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -3041,7 +3117,6 @@ const PlasmicDescendants = {
     "right",
     "right1",
     "sidebar",
-    "sideBar2",
     "title2",
     "right2",
     "select2",
@@ -3050,6 +3125,7 @@ const PlasmicDescendants = {
     "main",
     "title",
     "intro",
+    "sidebar2",
     "caption",
     "optionsButtons",
     "options",
@@ -3089,32 +3165,23 @@ const PlasmicDescendants = {
     "buttons4",
     "active4",
     "deactive4",
-    "apiRequestSetting"
+    "apiRequestSetting",
+    "returnButton"
   ],
   header: [
     "header",
     "right",
     "right1",
     "sidebar",
-    "sideBar2",
     "title2",
     "right2",
     "select2",
     "left",
     "profile"
   ],
-  right: [
-    "right",
-    "right1",
-    "sidebar",
-    "sideBar2",
-    "title2",
-    "right2",
-    "select2"
-  ],
-  right1: ["right1", "sidebar", "sideBar2", "title2"],
-  sidebar: ["sidebar", "sideBar2"],
-  sideBar2: ["sideBar2"],
+  right: ["right", "right1", "sidebar", "title2", "right2", "select2"],
+  right1: ["right1", "sidebar", "title2"],
+  sidebar: ["sidebar"],
   title2: ["title2"],
   right2: ["right2", "select2"],
   select2: ["select2"],
@@ -3124,6 +3191,7 @@ const PlasmicDescendants = {
     "main",
     "title",
     "intro",
+    "sidebar2",
     "caption",
     "optionsButtons",
     "options",
@@ -3166,7 +3234,8 @@ const PlasmicDescendants = {
     "apiRequestSetting"
   ],
   title: ["title"],
-  intro: ["intro", "caption"],
+  intro: ["intro", "sidebar2", "caption"],
+  sidebar2: ["sidebar2"],
   caption: ["caption"],
   optionsButtons: [
     "optionsButtons",
@@ -3265,7 +3334,8 @@ const PlasmicDescendants = {
   buttons4: ["buttons4", "active4", "deactive4"],
   active4: ["active4"],
   deactive4: ["deactive4"],
-  apiRequestSetting: ["apiRequestSetting"]
+  apiRequestSetting: ["apiRequestSetting"],
+  returnButton: ["returnButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -3276,7 +3346,6 @@ type NodeDefaultElementType = {
   right: "div";
   right1: "div";
   sidebar: "div";
-  sideBar2: typeof SideBar2;
   title2: "div";
   right2: "div";
   select2: typeof Select;
@@ -3285,6 +3354,7 @@ type NodeDefaultElementType = {
   main: "div";
   title: "div";
   intro: "div";
+  sidebar2: "div";
   caption: "div";
   optionsButtons: "div";
   options: "div";
@@ -3325,6 +3395,7 @@ type NodeDefaultElementType = {
   active4: "div";
   deactive4: "div";
   apiRequestSetting: typeof ApiRequest;
+  returnButton: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -3391,7 +3462,6 @@ export const PlasmicSetting = Object.assign(
     right: makeNodeComponent("right"),
     right1: makeNodeComponent("right1"),
     sidebar: makeNodeComponent("sidebar"),
-    sideBar2: makeNodeComponent("sideBar2"),
     title2: makeNodeComponent("title2"),
     right2: makeNodeComponent("right2"),
     select2: makeNodeComponent("select2"),
@@ -3400,6 +3470,7 @@ export const PlasmicSetting = Object.assign(
     main: makeNodeComponent("main"),
     title: makeNodeComponent("title"),
     intro: makeNodeComponent("intro"),
+    sidebar2: makeNodeComponent("sidebar2"),
     caption: makeNodeComponent("caption"),
     optionsButtons: makeNodeComponent("optionsButtons"),
     options: makeNodeComponent("options"),
@@ -3442,6 +3513,7 @@ export const PlasmicSetting = Object.assign(
     active4: makeNodeComponent("active4"),
     deactive4: makeNodeComponent("deactive4"),
     apiRequestSetting: makeNodeComponent("apiRequestSetting"),
+    returnButton: makeNodeComponent("returnButton"),
 
     // Metadata about props expected for PlasmicSetting
     internalVariantProps: PlasmicSetting__VariantProps,

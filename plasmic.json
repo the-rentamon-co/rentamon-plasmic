@@ -2465,6 +2465,21 @@
           "id": "AzJUfZgw4IbK",
           "name": "image 72",
           "filePath": "../public/plasmic/website_starter/images/image72.svg"
+        },
+        {
+          "id": "m_l0JaxuKlqK",
+          "name": "image 73",
+          "filePath": "../public/plasmic/website_starter/images/image73.svg"
+        },
+        {
+          "id": "68exHl-0p0Tg",
+          "name": "image 74",
+          "filePath": "../public/plasmic/website_starter/images/image74.svg"
+        },
+        {
+          "id": "hsVo_SDq6xYa",
+          "name": "image 75",
+          "filePath": "../public/plasmic/website_starter/images/image75.svg"
         }
       ],
       "indirect": false,

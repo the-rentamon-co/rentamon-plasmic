@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -83,18 +84,17 @@ export const PlasmicContacts__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicContacts__OverridesType = {
   contacts?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
-  title?: Flex__<"div">;
-  pageTitle?: Flex__<"div">;
+  sideBar2?: Flex__<typeof SideBar2>;
+  profile?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
   img?: Flex__<typeof PlasmicImg__>;
-  text?: Flex__<"div">;
   frame?: Flex__<"div">;
   contactsRow?: Flex__<"div">;
   names?: Flex__<"div">;
   guestName?: Flex__<"div">;
   phones?: Flex__<"div">;
   guestPhone?: Flex__<"a"> & Partial<LinkProps>;
+  returnButton?: Flex__<"div">;
 };
 
 export interface DefaultContactsProps {}
@@ -162,6 +162,30 @@ function PlasmicContacts__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "profile.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
+      },
+      {
+        path: "profile.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
+      },
+      {
+        path: "profile.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
       }
     ],
     [$props, $ctx, $refs]
@@ -204,46 +228,74 @@ function PlasmicContacts__RenderFunc(props: {
             sty.contacts
           )}
         >
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
-            <div
-              data-plasmic-name={"title"}
-              data-plasmic-override={overrides.title}
-              className={classNames(projectcss.all, sty.title)}
-            >
+          <div className={classNames(projectcss.all, sty.freeBox__tdKik)}>
+            <SideBar2
+              data-plasmic-name={"sideBar2"}
+              data-plasmic-override={overrides.sideBar2}
+              className={classNames("__wab_instance", sty.sideBar2)}
+              isOpen={false}
+              userData={(() => {
+                try {
+                  return $state.profile.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            />
+
+            <div className={classNames(projectcss.all, sty.freeBox__ogaDu)}>
               <div
-                data-plasmic-name={"pageTitle"}
-                data-plasmic-override={overrides.pageTitle}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.pageTitle
+                  sty.text__hQvko
                 )}
               >
                 {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
               </div>
             </div>
+            <ApiRequest
+              data-plasmic-name={"profile"}
+              data-plasmic-override={overrides.profile}
+              className={classNames("__wab_instance", sty.profile)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "error"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "loading"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["profile"] = ref;
+              }}
+              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+            />
           </div>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
             className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={
-              <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
+            errorDisplay={null}
             loadingDisplay={
               <PlasmicImg__
                 data-plasmic-name={"img"}
@@ -410,6 +462,50 @@ function PlasmicContacts__RenderFunc(props: {
               })}
             </div>
           </ApiRequest>
+          <div
+            data-plasmic-name={"returnButton"}
+            data-plasmic-override={overrides.returnButton}
+            className={classNames(projectcss.all, sty.returnButton, "fix")}
+          >
+            <div
+              className={classNames(projectcss.all, sty.freeBox__w39Ju)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return window.history.back();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__neAgp
+                )}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a "}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -419,26 +515,23 @@ function PlasmicContacts__RenderFunc(props: {
 const PlasmicDescendants = {
   contacts: [
     "contacts",
-    "freeBox",
-    "title",
-    "pageTitle",
+    "sideBar2",
+    "profile",
     "apiRequest",
     "img",
-    "text",
     "frame",
     "contactsRow",
     "names",
     "guestName",
     "phones",
-    "guestPhone"
+    "guestPhone",
+    "returnButton"
   ],
-  freeBox: ["freeBox", "title", "pageTitle"],
-  title: ["title", "pageTitle"],
-  pageTitle: ["pageTitle"],
+  sideBar2: ["sideBar2"],
+  profile: ["profile"],
   apiRequest: [
     "apiRequest",
     "img",
-    "text",
     "frame",
     "contactsRow",
     "names",
@@ -447,31 +540,30 @@ const PlasmicDescendants = {
     "guestPhone"
   ],
   img: ["img"],
-  text: ["text"],
   frame: ["frame", "contactsRow", "names", "guestName", "phones", "guestPhone"],
   contactsRow: ["contactsRow", "names", "guestName", "phones", "guestPhone"],
   names: ["names", "guestName"],
   guestName: ["guestName"],
   phones: ["phones", "guestPhone"],
-  guestPhone: ["guestPhone"]
+  guestPhone: ["guestPhone"],
+  returnButton: ["returnButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   contacts: "div";
-  freeBox: "div";
-  title: "div";
-  pageTitle: "div";
+  sideBar2: typeof SideBar2;
+  profile: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
   img: typeof PlasmicImg__;
-  text: "div";
   frame: "div";
   contactsRow: "div";
   names: "div";
   guestName: "div";
   phones: "div";
   guestPhone: "a";
+  returnButton: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -534,18 +626,17 @@ export const PlasmicContacts = Object.assign(
   makeNodeComponent("contacts"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
-    title: makeNodeComponent("title"),
-    pageTitle: makeNodeComponent("pageTitle"),
+    sideBar2: makeNodeComponent("sideBar2"),
+    profile: makeNodeComponent("profile"),
     apiRequest: makeNodeComponent("apiRequest"),
     img: makeNodeComponent("img"),
-    text: makeNodeComponent("text"),
     frame: makeNodeComponent("frame"),
     contactsRow: makeNodeComponent("contactsRow"),
     names: makeNodeComponent("names"),
     guestName: makeNodeComponent("guestName"),
     phones: makeNodeComponent("phones"),
     guestPhone: makeNodeComponent("guestPhone"),
+    returnButton: makeNodeComponent("returnButton"),
 
     // Metadata about props expected for PlasmicContacts
     internalVariantProps: PlasmicContacts__VariantProps,
