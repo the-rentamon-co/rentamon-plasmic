@@ -2568,7 +2568,9 @@ function PlasmicReservations__RenderFunc(props: {
                   >
                     {(() => {
                       try {
-                        return true;
+                        return (
+                          $state.reserveData.data.status != "access denied"
+                        );
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
