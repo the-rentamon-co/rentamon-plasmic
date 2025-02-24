@@ -72,8 +72,9 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSupport.module.css"; // plasmic-import: _jWDmDgs08t7/css
 
-import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: k9GL3C4d3WqP/icon
+import Icon39Icon from "./icons/PlasmicIcon__Icon39"; // plasmic-import: inxaF87iP7F9/icon
 import Icon37Icon from "./icons/PlasmicIcon__Icon37"; // plasmic-import: SsrYC78ajQoz/icon
+import Icon40Icon from "./icons/PlasmicIcon__Icon40"; // plasmic-import: 9Cw4HWV6MTy2/icon
 
 createPlasmicElementProxy;
 
@@ -95,7 +96,7 @@ export type PlasmicSupport__OverridesType = {
   teamImage?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
   introduction?: Flex__<"div">;
-  team?: Flex__<"div">;
+  accessWays?: Flex__<"div">;
   sectionTitle?: Flex__<"div">;
   ways?: Flex__<"div">;
   contact6?: Flex__<"div">;
@@ -120,7 +121,6 @@ export type PlasmicSupport__OverridesType = {
   contact11?: Flex__<"div">;
   icon11?: Flex__<"div">;
   title11?: Flex__<"div">;
-  caption11?: Flex__<"div">;
   sectionTitle2?: Flex__<"div">;
   address?: Flex__<"div">;
   content?: Flex__<"div">;
@@ -319,817 +319,822 @@ function PlasmicSupport__RenderFunc(props: {
               </div>
             </div>
             <div
-              data-plasmic-name={"team"}
-              data-plasmic-override={overrides.team}
-              className={classNames(projectcss.all, sty.team)}
+              data-plasmic-name={"accessWays"}
+              data-plasmic-override={overrides.accessWays}
+              className={classNames(projectcss.all, sty.accessWays)}
             >
-              <div
-                data-plasmic-name={"sectionTitle"}
-                data-plasmic-override={overrides.sectionTitle}
-                className={classNames(projectcss.all, sty.sectionTitle)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__yjk5I)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nIXpV
-                  )}
-                >
-                  {
-                    "\u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                  }
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__tt6Mw)}>
-                <div
-                  data-plasmic-name={"ways"}
-                  data-plasmic-override={overrides.ways}
-                  className={classNames(projectcss.all, sty.ways)}
+                  data-plasmic-name={"sectionTitle"}
+                  data-plasmic-override={overrides.sectionTitle}
+                  className={classNames(projectcss.all, sty.sectionTitle)}
                 >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__ryaQa)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__nIXpV
+                    )}
                   >
-                    <Stack__
-                      as={"div"}
-                      data-plasmic-name={"contact6"}
-                      data-plasmic-override={overrides.contact6}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.contact6)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return window.open(`tel:02191096227`);
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      <div
-                        data-plasmic-name={"icon6"}
-                        data-plasmic-override={overrides.icon6}
-                        className={classNames(projectcss.all, sty.icon6)}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__eWcC)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"30%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image74.svg",
-                            fullWidth: 24,
-                            fullHeight: 24,
-                            aspectRatio: 1
-                          }}
-                        />
-                      </div>
-                      <div
-                        data-plasmic-name={"title6"}
-                        data-plasmic-override={overrides.title6}
-                        className={classNames(projectcss.all, sty.title6)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__mtUqr
-                          )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["updatePropertyId"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["propertyId"]
-                                    },
-                                    operation: 0
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updatePropertyId"] != null &&
-                              typeof $steps["updatePropertyId"] === "object" &&
-                              typeof $steps["updatePropertyId"].then ===
-                                "function"
-                            ) {
-                              $steps["updatePropertyId"] = await $steps[
-                                "updatePropertyId"
-                              ];
-                            }
-                          }}
-                        >
-                          {
-                            "\u062a\u0645\u0627\u0633 \u062a\u0644\u0641\u0646\u06cc"
-                          }
-                        </div>
-                      </div>
-                      <div
-                        data-plasmic-name={"caption6"}
-                        data-plasmic-override={overrides.caption6}
-                        className={classNames(projectcss.all, sty.caption6)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__r5HTk
-                          )}
-                        >
-                          {
-                            "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
-                          }
-                        </div>
-                      </div>
-                    </Stack__>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___2Eyto)}
-                  >
-                    <Stack__
-                      as={"div"}
-                      data-plasmic-name={"contact10"}
-                      data-plasmic-override={overrides.contact10}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.contact10)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return window.open(
-                                      "https://goftino.com/c/WgsGXv",
-                                      "_blank"
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      <div
-                        data-plasmic-name={"icon10"}
-                        data-plasmic-override={overrides.icon10}
-                        className={classNames(projectcss.all, sty.icon10)}
-                      >
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__jXyAh)}
-                          role={"img"}
-                        />
-                      </div>
-                      <div
-                        data-plasmic-name={"title10"}
-                        data-plasmic-override={overrides.title10}
-                        className={classNames(projectcss.all, sty.title10)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___5Uugk
-                          )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["updatePropertyId"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["propertyId"]
-                                    },
-                                    operation: 0
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updatePropertyId"] != null &&
-                              typeof $steps["updatePropertyId"] === "object" &&
-                              typeof $steps["updatePropertyId"].then ===
-                                "function"
-                            ) {
-                              $steps["updatePropertyId"] = await $steps[
-                                "updatePropertyId"
-                              ];
-                            }
-                          }}
-                        >
-                          {
-                            "\u06af\u0641\u062a\u06af\u0648\u06cc \u0622\u0646\u0644\u0627\u06cc\u0646 (\u0686\u062a)"
-                          }
-                        </div>
-                      </div>
-                    </Stack__>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__zZfjf)}
-                  >
-                    <Stack__
-                      as={"div"}
-                      data-plasmic-name={"contact7"}
-                      data-plasmic-override={overrides.contact7}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.contact7)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return window.open(
-                                      `https://wa.me/989038778606`,
-                                      "_blank"
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      <div
-                        data-plasmic-name={"icon7"}
-                        data-plasmic-override={overrides.icon7}
-                        className={classNames(projectcss.all, sty.icon7)}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__yOfmf)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"30%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image75.svg",
-                            fullWidth: 48,
-                            fullHeight: 48,
-                            aspectRatio: 1
-                          }}
-                        />
-                      </div>
-                      <div
-                        data-plasmic-name={"title7"}
-                        data-plasmic-override={overrides.title7}
-                        className={classNames(projectcss.all, sty.title7)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__yenud
-                          )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["updatePropertyId"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["propertyId"]
-                                    },
-                                    operation: 0
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updatePropertyId"] != null &&
-                              typeof $steps["updatePropertyId"] === "object" &&
-                              typeof $steps["updatePropertyId"].then ===
-                                "function"
-                            ) {
-                              $steps["updatePropertyId"] = await $steps[
-                                "updatePropertyId"
-                              ];
-                            }
-                          }}
-                        >
-                          {"\u0648\u0627\u062a\u0633\u0627\u067e"}
-                        </div>
-                      </div>
-                      <div
-                        data-plasmic-name={"caption7"}
-                        data-plasmic-override={overrides.caption7}
-                        className={classNames(projectcss.all, sty.caption7)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___5Nm2
-                          )}
-                        >
-                          {
-                            "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
-                          }
-                        </div>
-                      </div>
-                    </Stack__>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__a5Scl)}
-                  >
-                    <Stack__
-                      as={"div"}
-                      data-plasmic-name={"contact8"}
-                      data-plasmic-override={overrides.contact8}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.contact8)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return window.open(
-                                      "https://t.me/+989038778606",
-                                      "_blank"
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      <div
-                        data-plasmic-name={"icon8"}
-                        data-plasmic-override={overrides.icon8}
-                        className={classNames(projectcss.all, sty.icon8)}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__kJqsc)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"30%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image76.svg",
-                            fullWidth: 256,
-                            fullHeight: 256,
-                            aspectRatio: 1
-                          }}
-                        />
-                      </div>
-                      <div
-                        data-plasmic-name={"title8"}
-                        data-plasmic-override={overrides.title8}
-                        className={classNames(projectcss.all, sty.title8)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__rv0Au
-                          )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["updatePropertyId"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["propertyId"]
-                                    },
-                                    operation: 0
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updatePropertyId"] != null &&
-                              typeof $steps["updatePropertyId"] === "object" &&
-                              typeof $steps["updatePropertyId"].then ===
-                                "function"
-                            ) {
-                              $steps["updatePropertyId"] = await $steps[
-                                "updatePropertyId"
-                              ];
-                            }
-                          }}
-                        >
-                          {"\u062a\u0644\u06af\u0631\u0627\u0645"}
-                        </div>
-                      </div>
-                      <div
-                        data-plasmic-name={"caption8"}
-                        data-plasmic-override={overrides.caption8}
-                        className={classNames(projectcss.all, sty.caption8)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___2Sg7Z
-                          )}
-                        >
-                          {
-                            "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
-                          }
-                        </div>
-                      </div>
-                    </Stack__>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__rcAYr)}
-                  >
-                    <Stack__
-                      as={"div"}
-                      data-plasmic-name={"contact9"}
-                      data-plasmic-override={overrides.contact9}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.contact9)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return window.open(
-                                      "https://eitaa.org/rentamon_support",
-                                      "_blank"
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      <div
-                        data-plasmic-name={"icon9"}
-                        data-plasmic-override={overrides.icon9}
-                        className={classNames(projectcss.all, sty.icon9)}
-                      >
-                        <Icon37Icon
-                          className={classNames(
-                            projectcss.all,
-                            sty.svg___3Cmu0
-                          )}
-                          role={"img"}
-                        />
-                      </div>
-                      <div
-                        data-plasmic-name={"title9"}
-                        data-plasmic-override={overrides.title9}
-                        className={classNames(projectcss.all, sty.title9)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___3Ygg3
-                          )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["updatePropertyId"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["propertyId"]
-                                    },
-                                    operation: 0
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updatePropertyId"] != null &&
-                              typeof $steps["updatePropertyId"] === "object" &&
-                              typeof $steps["updatePropertyId"].then ===
-                                "function"
-                            ) {
-                              $steps["updatePropertyId"] = await $steps[
-                                "updatePropertyId"
-                              ];
-                            }
-                          }}
-                        >
-                          {"\u0627\u06cc\u062a\u0627"}
-                        </div>
-                      </div>
-                      <div
-                        data-plasmic-name={"caption9"}
-                        data-plasmic-override={overrides.caption9}
-                        className={classNames(projectcss.all, sty.caption9)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__pgFiv
-                          )}
-                        >
-                          {
-                            "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
-                          }
-                        </div>
-                      </div>
-                    </Stack__>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__cdAo)}
-                  >
-                    <Stack__
-                      as={"div"}
-                      data-plasmic-name={"contact11"}
-                      data-plasmic-override={overrides.contact11}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.contact11)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return window.open(
-                                      "mailto:info@rentamon.com",
-                                      "_blank"
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      <div
-                        data-plasmic-name={"icon11"}
-                        data-plasmic-override={overrides.icon11}
-                        className={classNames(projectcss.all, sty.icon11)}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__ladkQ)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"30%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image77.svg",
-                            fullWidth: 512,
-                            fullHeight: 512,
-                            aspectRatio: 1
-                          }}
-                        />
-                      </div>
-                      <div
-                        data-plasmic-name={"title11"}
-                        data-plasmic-override={overrides.title11}
-                        className={classNames(projectcss.all, sty.title11)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__or6Za
-                          )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["updatePropertyId"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["propertyId"]
-                                    },
-                                    operation: 0
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updatePropertyId"] != null &&
-                              typeof $steps["updatePropertyId"] === "object" &&
-                              typeof $steps["updatePropertyId"].then ===
-                                "function"
-                            ) {
-                              $steps["updatePropertyId"] = await $steps[
-                                "updatePropertyId"
-                              ];
-                            }
-                          }}
-                        >
-                          {"\u0627\u06cc\u0645\u06cc\u0644"}
-                        </div>
-                      </div>
-                      <div
-                        data-plasmic-name={"caption11"}
-                        data-plasmic-override={overrides.caption11}
-                        className={classNames(projectcss.all, sty.caption11)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__xV4R2
-                          )}
-                        >
-                          {hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "info[at]rentamon.com"
-                            : "info [at] rentamon.com"}
-                        </div>
-                      </div>
-                    </Stack__>
+                    {
+                      "\u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    }
                   </div>
                 </div>
-              </div>
-              <div
-                data-plasmic-name={"sectionTitle2"}
-                data-plasmic-override={overrides.sectionTitle2}
-                className={classNames(projectcss.all, sty.sectionTitle2)}
-              >
+                <div className={classNames(projectcss.all, sty.freeBox__tt6Mw)}>
+                  <div
+                    data-plasmic-name={"ways"}
+                    data-plasmic-override={overrides.ways}
+                    className={classNames(projectcss.all, sty.ways)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__ryaQa)}
+                    >
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"contact6"}
+                        data-plasmic-override={overrides.contact6}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.contact6)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      return window.open(`tel:02191096227`);
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
+                      >
+                        <div
+                          data-plasmic-name={"icon6"}
+                          data-plasmic-override={overrides.icon6}
+                          className={classNames(projectcss.all, sty.icon6)}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__bmxP)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"30%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image79.svg",
+                              fullWidth: 24,
+                              fullHeight: 24,
+                              aspectRatio: 1
+                            }}
+                          />
+                        </div>
+                        <div
+                          data-plasmic-name={"title6"}
+                          data-plasmic-override={overrides.title6}
+                          className={classNames(projectcss.all, sty.title6)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__mtUqr
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["updatePropertyId"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["propertyId"]
+                                      },
+                                      operation: 0
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updatePropertyId"] != null &&
+                                typeof $steps["updatePropertyId"] ===
+                                  "object" &&
+                                typeof $steps["updatePropertyId"].then ===
+                                  "function"
+                              ) {
+                                $steps["updatePropertyId"] = await $steps[
+                                  "updatePropertyId"
+                                ];
+                              }
+                            }}
+                          >
+                            {
+                              "\u062a\u0645\u0627\u0633 \u062a\u0644\u0641\u0646\u06cc"
+                            }
+                          </div>
+                        </div>
+                        <div
+                          data-plasmic-name={"caption6"}
+                          data-plasmic-override={overrides.caption6}
+                          className={classNames(projectcss.all, sty.caption6)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__r5HTk
+                            )}
+                          >
+                            {
+                              "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+                            }
+                          </div>
+                        </div>
+                      </Stack__>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___2Eyto
+                      )}
+                    >
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"contact10"}
+                        data-plasmic-override={overrides.contact10}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.contact10)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      return window.open(
+                                        "https://goftino.com/c/WgsGXv",
+                                        "_blank"
+                                      );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
+                      >
+                        <div
+                          data-plasmic-name={"icon10"}
+                          data-plasmic-override={overrides.icon10}
+                          className={classNames(projectcss.all, sty.icon10)}
+                        >
+                          {(
+                            hasVariant(globalVariants, "screen", "tablet")
+                              ? true
+                              : false
+                          ) ? (
+                            <Icon39Icon
+                              className={classNames(
+                                projectcss.all,
+                                sty.svg__m8Afc
+                              )}
+                              role={"img"}
+                            />
+                          ) : null}
+                        </div>
+                        <div
+                          data-plasmic-name={"title10"}
+                          data-plasmic-override={overrides.title10}
+                          className={classNames(projectcss.all, sty.title10)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___5Uugk
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["updatePropertyId"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["propertyId"]
+                                      },
+                                      operation: 0
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updatePropertyId"] != null &&
+                                typeof $steps["updatePropertyId"] ===
+                                  "object" &&
+                                typeof $steps["updatePropertyId"].then ===
+                                  "function"
+                              ) {
+                                $steps["updatePropertyId"] = await $steps[
+                                  "updatePropertyId"
+                                ];
+                              }
+                            }}
+                          >
+                            {
+                              "\u06af\u0641\u062a\u06af\u0648\u06cc \u0622\u0646\u0644\u0627\u06cc\u0646 (\u0686\u062a)"
+                            }
+                          </div>
+                        </div>
+                      </Stack__>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__zZfjf)}
+                    >
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"contact7"}
+                        data-plasmic-override={overrides.contact7}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.contact7)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      return window.open(
+                                        `https://wa.me/989038778606`,
+                                        "_blank"
+                                      );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
+                      >
+                        <div
+                          data-plasmic-name={"icon7"}
+                          data-plasmic-override={overrides.icon7}
+                          className={classNames(projectcss.all, sty.icon7)}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__yOfmf)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"30%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image75.svg",
+                              fullWidth: 48,
+                              fullHeight: 48,
+                              aspectRatio: 1
+                            }}
+                          />
+                        </div>
+                        <div
+                          data-plasmic-name={"title7"}
+                          data-plasmic-override={overrides.title7}
+                          className={classNames(projectcss.all, sty.title7)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__yenud
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["updatePropertyId"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["propertyId"]
+                                      },
+                                      operation: 0
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updatePropertyId"] != null &&
+                                typeof $steps["updatePropertyId"] ===
+                                  "object" &&
+                                typeof $steps["updatePropertyId"].then ===
+                                  "function"
+                              ) {
+                                $steps["updatePropertyId"] = await $steps[
+                                  "updatePropertyId"
+                                ];
+                              }
+                            }}
+                          >
+                            {"\u0648\u0627\u062a\u0633\u0627\u067e"}
+                          </div>
+                        </div>
+                        <div
+                          data-plasmic-name={"caption7"}
+                          data-plasmic-override={overrides.caption7}
+                          className={classNames(projectcss.all, sty.caption7)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___5Nm2
+                            )}
+                          >
+                            {
+                              "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
+                            }
+                          </div>
+                        </div>
+                      </Stack__>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__a5Scl)}
+                    >
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"contact8"}
+                        data-plasmic-override={overrides.contact8}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.contact8)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      return window.open(
+                                        "https://t.me/+989038778606",
+                                        "_blank"
+                                      );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
+                      >
+                        <div
+                          data-plasmic-name={"icon8"}
+                          data-plasmic-override={overrides.icon8}
+                          className={classNames(projectcss.all, sty.icon8)}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__kJqsc)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"30%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image76.svg",
+                              fullWidth: 256,
+                              fullHeight: 256,
+                              aspectRatio: 1
+                            }}
+                          />
+                        </div>
+                        <div
+                          data-plasmic-name={"title8"}
+                          data-plasmic-override={overrides.title8}
+                          className={classNames(projectcss.all, sty.title8)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__rv0Au
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["updatePropertyId"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["propertyId"]
+                                      },
+                                      operation: 0
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updatePropertyId"] != null &&
+                                typeof $steps["updatePropertyId"] ===
+                                  "object" &&
+                                typeof $steps["updatePropertyId"].then ===
+                                  "function"
+                              ) {
+                                $steps["updatePropertyId"] = await $steps[
+                                  "updatePropertyId"
+                                ];
+                              }
+                            }}
+                          >
+                            {"\u062a\u0644\u06af\u0631\u0627\u0645"}
+                          </div>
+                        </div>
+                        <div
+                          data-plasmic-name={"caption8"}
+                          data-plasmic-override={overrides.caption8}
+                          className={classNames(projectcss.all, sty.caption8)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___2Sg7Z
+                            )}
+                          >
+                            {
+                              "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
+                            }
+                          </div>
+                        </div>
+                      </Stack__>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rcAYr)}
+                    >
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"contact9"}
+                        data-plasmic-override={overrides.contact9}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.contact9)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      return window.open(
+                                        "https://eitaa.org/rentamon_support",
+                                        "_blank"
+                                      );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
+                      >
+                        <div
+                          data-plasmic-name={"icon9"}
+                          data-plasmic-override={overrides.icon9}
+                          className={classNames(projectcss.all, sty.icon9)}
+                        >
+                          <Icon37Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg___3Cmu0
+                            )}
+                            role={"img"}
+                          />
+                        </div>
+                        <div
+                          data-plasmic-name={"title9"}
+                          data-plasmic-override={overrides.title9}
+                          className={classNames(projectcss.all, sty.title9)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___3Ygg3
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["updatePropertyId"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["propertyId"]
+                                      },
+                                      operation: 0
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updatePropertyId"] != null &&
+                                typeof $steps["updatePropertyId"] ===
+                                  "object" &&
+                                typeof $steps["updatePropertyId"].then ===
+                                  "function"
+                              ) {
+                                $steps["updatePropertyId"] = await $steps[
+                                  "updatePropertyId"
+                                ];
+                              }
+                            }}
+                          >
+                            {"\u0627\u06cc\u062a\u0627"}
+                          </div>
+                        </div>
+                        <div
+                          data-plasmic-name={"caption9"}
+                          data-plasmic-override={overrides.caption9}
+                          className={classNames(projectcss.all, sty.caption9)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__pgFiv
+                            )}
+                          >
+                            {
+                              "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
+                            }
+                          </div>
+                        </div>
+                      </Stack__>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__cdAo)}
+                    >
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"contact11"}
+                        data-plasmic-override={overrides.contact11}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.contact11)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      return window.open(
+                                        "mailto:info@rentamon.com",
+                                        "_blank"
+                                      );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
+                      >
+                        <div
+                          data-plasmic-name={"icon11"}
+                          data-plasmic-override={overrides.icon11}
+                          className={classNames(projectcss.all, sty.icon11)}
+                        >
+                          {(
+                            hasVariant(globalVariants, "screen", "tablet")
+                              ? true
+                              : false
+                          ) ? (
+                            <Icon40Icon
+                              className={classNames(
+                                projectcss.all,
+                                sty.svg__eXlOd
+                              )}
+                              role={"img"}
+                            />
+                          ) : null}
+                        </div>
+                        <div
+                          data-plasmic-name={"title11"}
+                          data-plasmic-override={overrides.title11}
+                          className={classNames(projectcss.all, sty.title11)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__or6Za
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["updatePropertyId"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["propertyId"]
+                                      },
+                                      operation: 0
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updatePropertyId"] != null &&
+                                typeof $steps["updatePropertyId"] ===
+                                  "object" &&
+                                typeof $steps["updatePropertyId"].then ===
+                                  "function"
+                              ) {
+                                $steps["updatePropertyId"] = await $steps[
+                                  "updatePropertyId"
+                                ];
+                              }
+                            }}
+                          >
+                            {"\u0627\u06cc\u0645\u06cc\u0644"}
+                          </div>
+                        </div>
+                      </Stack__>
+                    </div>
+                  </div>
+                </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jqKIv
-                  )}
+                  data-plasmic-name={"sectionTitle2"}
+                  data-plasmic-override={overrides.sectionTitle2}
+                  className={classNames(projectcss.all, sty.sectionTitle2)}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
-                    : "\u0633\u0627\u0639\u0627\u062a \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc: \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__jqKIv
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
+                      : "\u0633\u0627\u0639\u0627\u062a \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc: \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"}
+                  </div>
                 </div>
               </div>
             </div>
@@ -1235,7 +1240,7 @@ const PlasmicDescendants = {
     "teamImage",
     "introCalendarLeft",
     "introduction",
-    "team",
+    "accessWays",
     "sectionTitle",
     "ways",
     "contact6",
@@ -1260,7 +1265,6 @@ const PlasmicDescendants = {
     "contact11",
     "icon11",
     "title11",
-    "caption11",
     "sectionTitle2",
     "address",
     "content",
@@ -1280,7 +1284,7 @@ const PlasmicDescendants = {
     "teamImage",
     "introCalendarLeft",
     "introduction",
-    "team",
+    "accessWays",
     "sectionTitle",
     "ways",
     "contact6",
@@ -1305,7 +1309,6 @@ const PlasmicDescendants = {
     "contact11",
     "icon11",
     "title11",
-    "caption11",
     "sectionTitle2",
     "address",
     "content",
@@ -1318,8 +1321,8 @@ const PlasmicDescendants = {
   teamImage: ["teamImage", "introCalendarLeft"],
   introCalendarLeft: ["introCalendarLeft"],
   introduction: ["introduction"],
-  team: [
-    "team",
+  accessWays: [
+    "accessWays",
     "sectionTitle",
     "ways",
     "contact6",
@@ -1344,7 +1347,6 @@ const PlasmicDescendants = {
     "contact11",
     "icon11",
     "title11",
-    "caption11",
     "sectionTitle2"
   ],
   sectionTitle: ["sectionTitle"],
@@ -1371,8 +1373,7 @@ const PlasmicDescendants = {
     "caption9",
     "contact11",
     "icon11",
-    "title11",
-    "caption11"
+    "title11"
   ],
   contact6: ["contact6", "icon6", "title6", "caption6"],
   icon6: ["icon6"],
@@ -1393,10 +1394,9 @@ const PlasmicDescendants = {
   icon9: ["icon9"],
   title9: ["title9"],
   caption9: ["caption9"],
-  contact11: ["contact11", "icon11", "title11", "caption11"],
+  contact11: ["contact11", "icon11", "title11"],
   icon11: ["icon11"],
   title11: ["title11"],
-  caption11: ["caption11"],
   sectionTitle2: ["sectionTitle2"],
   address: ["address", "content", "addressText", "map", "embedHtml"],
   content: ["content", "addressText", "map", "embedHtml"],
@@ -1420,7 +1420,7 @@ type NodeDefaultElementType = {
   teamImage: "div";
   introCalendarLeft: "div";
   introduction: "div";
-  team: "div";
+  accessWays: "div";
   sectionTitle: "div";
   ways: "div";
   contact6: "div";
@@ -1445,7 +1445,6 @@ type NodeDefaultElementType = {
   contact11: "div";
   icon11: "div";
   title11: "div";
-  caption11: "div";
   sectionTitle2: "div";
   address: "div";
   content: "div";
@@ -1525,7 +1524,7 @@ export const PlasmicSupport = Object.assign(
     teamImage: makeNodeComponent("teamImage"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     introduction: makeNodeComponent("introduction"),
-    team: makeNodeComponent("team"),
+    accessWays: makeNodeComponent("accessWays"),
     sectionTitle: makeNodeComponent("sectionTitle"),
     ways: makeNodeComponent("ways"),
     contact6: makeNodeComponent("contact6"),
@@ -1550,7 +1549,6 @@ export const PlasmicSupport = Object.assign(
     contact11: makeNodeComponent("contact11"),
     icon11: makeNodeComponent("icon11"),
     title11: makeNodeComponent("title11"),
-    caption11: makeNodeComponent("caption11"),
     sectionTitle2: makeNodeComponent("sectionTitle2"),
     address: makeNodeComponent("address"),
     content: makeNodeComponent("content"),

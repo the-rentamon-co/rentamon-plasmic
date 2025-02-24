@@ -349,6 +349,7 @@
   .main {
     padding-right: 4px;
     padding-left: 4px;
+    margin-bottom: 100px;
   }
 }
 .title {
@@ -713,11 +714,11 @@
     padding-left: 0px;
   }
 }
-.img__jRUfl {
+.img__xPWw {
   object-fit: cover;
   max-width: 100%;
 }
-.img__jRUfl > picture > img {
+.img__xPWw > picture > img {
   object-fit: cover;
 }
 .p2 {

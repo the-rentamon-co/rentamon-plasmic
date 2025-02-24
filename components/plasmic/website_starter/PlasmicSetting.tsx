@@ -745,7 +745,7 @@ function PlasmicSetting__RenderFunc(props: {
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__jRUfl)}
+                      className={classNames(sty.img__xPWw)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -754,9 +754,9 @@ function PlasmicSetting__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/image69.svg",
-                        fullWidth: 28,
-                        fullHeight: 28,
+                        src: "/plasmic/website_starter/images/image78.svg",
+                        fullWidth: 24,
+                        fullHeight: 24,
                         aspectRatio: 1
                       }}
                     />
