@@ -96,6 +96,7 @@ export type PlasmicReservations__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   sideBar2?: Flex__<typeof SideBar2>;
   profile?: Flex__<typeof ApiRequest>;
+  apiRequest?: Flex__<typeof ApiRequest>;
   container?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
@@ -146,7 +147,6 @@ export type PlasmicReservations__OverridesType = {
   clarity?: Flex__<typeof Embed>;
   finalModal?: Flex__<typeof AntdModal>;
   cancelle?: Flex__<typeof AntdButton>;
-  block?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultReservationsProps {}
@@ -274,28 +274,6 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
-        path: "block.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (
-                $state.reserveData.loading != true &&
-                $state.reserveData.data.status == "access denied"
-              );
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })()
-      },
-      {
         path: "reserveData2.data",
         type: "private",
         variableType: "object",
@@ -318,6 +296,30 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "reserveData2"
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -536,6 +538,116 @@ function PlasmicReservations__RenderFunc(props: {
               url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
             />
           </div>
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__m3Gfd
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            params={{ feature_name: "reservations" }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
+            }}
+            url={"https://gateway.rentamon.com/webhook/user_access"}
+          >
+            {(() => {
+              try {
+                return $state.apiRequest.data.status != "ok";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox___7ZJdP)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___3DmSp)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__vgQvQ)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "28px"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "35px"
+                        : "43px"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image72.svg",
+                      fullWidth: 42,
+                      fullHeight: 42,
+                      aspectRatio: 1
+                    }}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zlYkA
+                    )}
+                  >
+                    {
+                      "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c\u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
+                    }
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__twvae)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__kxibR
+                      )}
+                    >
+                      {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null}
+          </ApiRequest>
           <Stack__
             as={"div"}
             data-plasmic-name={"container"}
@@ -2650,10 +2762,7 @@ function PlasmicReservations__RenderFunc(props: {
                         })()}
                         pendingBookings={(() => {
                           try {
-                            return (
-                              $state.reserveData2.data[currentIndex].status ==
-                              "Pending"
-                            );
+                            return true;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -3963,138 +4072,6 @@ function PlasmicReservations__RenderFunc(props: {
               </AntdButton>
             </Stack__>
           </AntdModal>
-          {(() => {
-            try {
-              return (
-                $state.reserveData.loading != true &&
-                $state.reserveData.data.status == "access denied"
-              );
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <AntdModal
-              data-plasmic-name={"block"}
-              data-plasmic-override={overrides.block}
-              className={classNames("__wab_instance", sty.block)}
-              defaultStylesClassName={classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
-                projectcss.plasmic_tokens,
-                plasmic_antd_5_hostless_css.plasmic_tokens,
-                plasmic_plasmic_rich_components_css.plasmic_tokens
-              )}
-              hideFooter={true}
-              maskClosable={false}
-              modalContentClassName={classNames({
-                [sty["pcls_R3NqMmrOrcFc"]]: true
-              })}
-              modalScopeClassName={sty["block__modal"]}
-              onOpenChange={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["block", "open"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              open={generateStateValueProp($state, ["block", "open"])}
-              title={null}
-              trigger={null}
-              width={"320"}
-              wrapClassName={classNames({ [sty["pcls_fMThDldkXanq"]]: true })}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__pkuAa)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__f9C3)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"34px"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image55.svg",
-                    fullWidth: 49,
-                    fullHeight: 61,
-                    aspectRatio: 0.803279
-                  }}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tl9OZ
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{"\u0628\u062e\u0634 "}</React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 "
-                      }
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\u062f\u0631\u062d\u0627\u0644 \u062a\u0648\u0633\u0639\u0647 \u0647\u0633\u062a \u0648 \u0628\u0632\u0648\u062f\u06cc \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0642\u0631\u0627\u0631 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
-                      }
-                    </React.Fragment>
-                  </React.Fragment>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__a79U)}>
-                  <Button
-                    className={classNames("__wab_instance", sty.button___7MxbH)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  return window.history.back();
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__etj6U
-                      )}
-                    >
-                      {"\u0628\u0627\u0634\u0647"}
-                    </div>
-                  </Button>
-                </div>
-              </div>
-            </AntdModal>
-          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -4107,6 +4084,7 @@ const PlasmicDescendants = {
     "sideEffect",
     "sideBar2",
     "profile",
+    "apiRequest",
     "container",
     "modal",
     "main",
@@ -4156,12 +4134,12 @@ const PlasmicDescendants = {
     "favicon",
     "clarity",
     "finalModal",
-    "cancelle",
-    "block"
+    "cancelle"
   ],
   sideEffect: ["sideEffect"],
   sideBar2: ["sideBar2"],
   profile: ["profile"],
+  apiRequest: ["apiRequest"],
   container: [
     "container",
     "modal",
@@ -4325,8 +4303,7 @@ const PlasmicDescendants = {
   favicon: ["favicon"],
   clarity: ["clarity"],
   finalModal: ["finalModal", "cancelle"],
-  cancelle: ["cancelle"],
-  block: ["block"]
+  cancelle: ["cancelle"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -4336,6 +4313,7 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   sideBar2: typeof SideBar2;
   profile: typeof ApiRequest;
+  apiRequest: typeof ApiRequest;
   container: "div";
   modal: typeof AntdModal;
   main: "div";
@@ -4386,7 +4364,6 @@ type NodeDefaultElementType = {
   clarity: typeof Embed;
   finalModal: typeof AntdModal;
   cancelle: typeof AntdButton;
-  block: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -4452,6 +4429,7 @@ export const PlasmicReservations = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile: makeNodeComponent("profile"),
+    apiRequest: makeNodeComponent("apiRequest"),
     container: makeNodeComponent("container"),
     modal: makeNodeComponent("modal"),
     main: makeNodeComponent("main"),
@@ -4502,7 +4480,6 @@ export const PlasmicReservations = Object.assign(
     clarity: makeNodeComponent("clarity"),
     finalModal: makeNodeComponent("finalModal"),
     cancelle: makeNodeComponent("cancelle"),
-    block: makeNodeComponent("block"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,

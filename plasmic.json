@@ -2446,6 +2446,11 @@
           "id": "AKMkNGwGs1tZ",
           "name": "4.png",
           "filePath": "../public/plasmic/website_starter/images/_4Png.png"
+        },
+        {
+          "id": "AzJUfZgw4IbK",
+          "name": "image 72",
+          "filePath": "../public/plasmic/website_starter/images/image72.svg"
         }
       ],
       "indirect": false,
