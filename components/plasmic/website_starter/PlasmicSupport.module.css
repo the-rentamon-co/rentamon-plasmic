@@ -6,14 +6,13 @@
   align-content: flex-start;
   justify-items: center;
   background: linear-gradient(
-      37deg,
-      #ebfaff 9%,
-      #fcfcfc 29%,
-      #f2fbfe 60%,
-      #fcfcfc 79%,
-      #ebfaff 88%
-    )
-    0% 0% / 100% 100% repeat;
+    50deg,
+    #fcfcfc 0%,
+    #cbcbcb 24%,
+    #fcfcfc 61%,
+    #efefef 78%,
+    #fcfcfc 96%
+  );
   min-width: 0;
   min-height: 0;
   grid-template-columns:
@@ -373,6 +372,8 @@
 @media (max-width: 350px) {
   .ways {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 .freeBox__ryaQa {
@@ -412,38 +413,32 @@
   align-items: center;
 }
 @media (max-width: 1200px) {
-  .contact6 > :global(.__wab_flex-container) {
-    align-items: center;
-    justify-content: flex-start;
-  }
-}
-@media (max-width: 500px) {
   .contact6 {
     width: 100%;
-    height: auto;
-    max-width: 180px;
-    flex-direction: column;
-    min-width: 180px;
-    min-height: 180px;
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+    max-width: none;
     max-height: 180px;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    flex-direction: column;
     border-radius: 30px;
-    padding: 0px 0px 8px;
+    padding: 8px 0px;
     margin: 10px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
   .contact6 > :global(.__wab_flex-container) {
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
   .contact6 > :global(.__wab_flex-container) > *,
   .contact6 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .contact6 > :global(.__wab_flex-container) > picture > img,
@@ -455,20 +450,56 @@
     margin-left: 0px;
   }
 }
+@media (max-width: 500px) {
+  .contact6 {
+    min-width: auto;
+    max-width: none;
+    height: 100%;
+    min-height: auto;
+  }
+}
+@media (max-width: 500px) {
+  .contact6 > :global(.__wab_flex-container) {
+    align-items: center;
+    justify-content: center;
+  }
+}
 @media (max-width: 350px) {
   .contact6 {
-    min-height: 140px;
+    min-height: auto;
     max-height: 140px;
-    padding-right: 0px;
-    padding-left: 0px;
-    max-width: 140px;
-    min-width: 140px;
+    max-width: none;
+    min-width: auto;
+    width: 100%;
+    height: 100%;
+    background: #fcfcfc;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 0px 0px 8px;
+    margin: 10px;
   }
 }
 @media (max-width: 350px) {
   .contact6 > :global(.__wab_flex-container) {
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 350px) {
+  .contact6 > :global(.__wab_flex-container) > *,
+  .contact6 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .contact6 > :global(.__wab_flex-container) > picture > img,
+  .contact6
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 .icon6 {
@@ -601,25 +632,57 @@
   align-items: center;
 }
 @media (max-width: 1200px) {
+  .contact10 {
+    width: 100%;
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+    max-width: none;
+    max-height: 180px;
+    background: #fcfcfc;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 8px 0px;
+    margin: 10px;
+  }
+}
+@media (max-width: 1200px) {
   .contact10 > :global(.__wab_flex-container) {
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 1200px) {
+  .contact10 > :global(.__wab_flex-container) > *,
+  .contact10 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .contact10 > :global(.__wab_flex-container) > picture > img,
+  .contact10
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 @media (max-width: 500px) {
   .contact10 {
     width: 100%;
-    height: auto;
-    max-width: 180px;
+    height: 100%;
+    max-width: none;
     flex-direction: column;
-    min-width: 180px;
-    min-height: 180px;
+    min-width: auto;
+    min-height: auto;
     max-height: 180px;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border-radius: 30px;
-    padding: 0px 0px 8px;
+    padding: 8px 0px;
     margin: 10px;
   }
 }
@@ -646,12 +709,12 @@
 }
 @media (max-width: 350px) {
   .contact10 {
-    min-height: 140px;
+    min-height: auto;
     max-height: 140px;
     width: 100%;
-    height: auto;
-    min-width: 140px;
-    max-width: 140px;
+    height: 100%;
+    min-width: auto;
+    max-width: none;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -774,25 +837,57 @@
   align-items: center;
 }
 @media (max-width: 1200px) {
+  .contact7 {
+    width: 100%;
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+    max-width: none;
+    max-height: 180px;
+    background: #fcfcfc;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 8px 0px;
+    margin: 10px;
+  }
+}
+@media (max-width: 1200px) {
   .contact7 > :global(.__wab_flex-container) {
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 1200px) {
+  .contact7 > :global(.__wab_flex-container) > *,
+  .contact7 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .contact7 > :global(.__wab_flex-container) > picture > img,
+  .contact7
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 @media (max-width: 500px) {
   .contact7 {
     width: 100%;
-    height: auto;
-    max-width: 180px;
+    height: 100%;
+    max-width: none;
     flex-direction: column;
-    min-width: 180px;
-    min-height: 180px;
+    min-width: auto;
+    min-height: auto;
     max-height: 180px;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border-radius: 30px;
-    padding: 0px 0px 8px;
+    padding: 8px 0px;
     margin: 10px;
   }
 }
@@ -819,12 +914,12 @@
 }
 @media (max-width: 350px) {
   .contact7 {
-    min-height: 140px;
+    min-height: auto;
     max-height: 140px;
     width: 100%;
-    height: auto;
-    min-width: 140px;
-    max-width: 140px;
+    height: 100%;
+    min-width: auto;
+    max-width: none;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -992,25 +1087,57 @@
   align-items: center;
 }
 @media (max-width: 1200px) {
+  .contact8 {
+    width: 100%;
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+    max-width: none;
+    max-height: 180px;
+    background: #fcfcfc;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 8px 0px;
+    margin: 10px;
+  }
+}
+@media (max-width: 1200px) {
   .contact8 > :global(.__wab_flex-container) {
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 1200px) {
+  .contact8 > :global(.__wab_flex-container) > *,
+  .contact8 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .contact8 > :global(.__wab_flex-container) > picture > img,
+  .contact8
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 @media (max-width: 500px) {
   .contact8 {
     width: 100%;
-    height: auto;
-    max-width: 180px;
+    height: 100%;
+    max-width: none;
     flex-direction: column;
-    min-width: 180px;
-    min-height: 180px;
+    min-width: auto;
+    min-height: auto;
     max-height: 180px;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border-radius: 30px;
-    padding: 0px 0px 8px;
+    padding: 8px 0px;
     margin: 10px;
   }
 }
@@ -1037,12 +1164,12 @@
 }
 @media (max-width: 350px) {
   .contact8 {
-    min-height: 140px;
+    min-height: auto;
     max-height: 140px;
     width: 100%;
-    height: auto;
-    min-width: 140px;
-    max-width: 140px;
+    height: 100%;
+    min-width: auto;
+    max-width: none;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -1217,25 +1344,27 @@
   align-items: center;
 }
 @media (max-width: 1200px) {
-  .contact9 > :global(.__wab_flex-container) {
-    align-items: center;
-    justify-content: flex-start;
+  .contact9 {
+    min-width: auto;
+    max-width: none;
+    height: 100%;
+    min-height: auto;
   }
 }
 @media (max-width: 500px) {
   .contact9 {
     width: 100%;
-    height: auto;
-    max-width: 180px;
+    height: 100%;
+    max-width: none;
     flex-direction: column;
-    min-width: 180px;
-    min-height: 180px;
+    min-width: auto;
+    min-height: auto;
     max-height: 180px;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border-radius: 30px;
-    padding: 0px 0px 8px;
+    padding: 8px 0px;
     margin: 10px;
   }
 }
@@ -1262,16 +1391,15 @@
 }
 @media (max-width: 350px) {
   .contact9 {
-    min-height: 140px;
     max-height: 140px;
     width: 100%;
-    height: auto;
-    min-width: 140px;
-    max-width: 140px;
+    height: 100%;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     flex-direction: column;
+    min-width: 0;
+    min-height: 0;
     border-radius: 30px;
     padding: 0px 0px 8px;
     margin: 10px;
@@ -1282,6 +1410,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 0;
+    min-height: 0;
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
   }
@@ -1443,25 +1573,57 @@
   align-items: center;
 }
 @media (max-width: 1200px) {
+  .contact11 {
+    width: 100%;
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+    max-width: none;
+    max-height: 180px;
+    background: #fcfcfc;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 8px 0px;
+    margin: 10px;
+  }
+}
+@media (max-width: 1200px) {
   .contact11 > :global(.__wab_flex-container) {
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 1200px) {
+  .contact11 > :global(.__wab_flex-container) > *,
+  .contact11 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .contact11 > :global(.__wab_flex-container) > picture > img,
+  .contact11
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 @media (max-width: 500px) {
   .contact11 {
     width: 100%;
-    height: auto;
-    max-width: 180px;
+    height: 100%;
+    max-width: none;
     flex-direction: column;
-    min-width: 180px;
-    min-height: 180px;
+    min-width: auto;
+    min-height: auto;
     max-height: 180px;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border-radius: 30px;
-    padding: 0px 0px 8px;
+    padding: 8px 0px;
     margin: 10px;
   }
 }
@@ -1488,12 +1650,12 @@
 }
 @media (max-width: 350px) {
   .contact11 {
-    min-height: 140px;
+    min-height: auto;
     max-height: 140px;
     width: 100%;
-    height: auto;
-    min-width: 140px;
-    max-width: 140px;
+    height: 100%;
+    min-width: auto;
+    max-width: none;
     background: #fcfcfc;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -1596,6 +1758,11 @@
   min-width: 0;
   padding: 8px 0px;
 }
+@media (max-width: 500px) {
+  .caption11 {
+    display: none;
+  }
+}
 @media (max-width: 350px) {
   .caption11 {
     display: none;
@@ -1611,6 +1778,11 @@
 @media (max-width: 1200px) {
   .text__xV4R2 {
     text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .text__xV4R2 {
+    display: none;
   }
 }
 @media (max-width: 350px) {
@@ -1664,7 +1836,7 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  background: #fcfcfc;
+  background: #ffffff8c;
   min-width: 0;
   padding: 40px 8px 28px;
 }
