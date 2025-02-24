@@ -162,8 +162,8 @@
 }
 @media (max-width: 500px) {
   ._1stPart {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 4px;
+    padding-left: 4px;
     width: 100%;
     margin-top: 20px;
     grid-column-start: 1 !important;
@@ -499,11 +499,12 @@
 @media (max-width: 500px) {
   .text__ib7W4 {
     line-height: 1.8;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__ib7W4 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
   }
 }
@@ -727,11 +728,12 @@
 @media (max-width: 500px) {
   .text___9RMt {
     line-height: 1.8;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text___9RMt {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
   }
 }
@@ -981,11 +983,12 @@
 @media (max-width: 500px) {
   .text__m11Mp {
     line-height: 1.8;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__m11Mp {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
   }
 }
@@ -1235,11 +1238,12 @@
 @media (max-width: 500px) {
   .text___2C51K {
     line-height: 1.8;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text___2C51K {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
   }
 }
@@ -1473,11 +1477,12 @@
 @media (max-width: 500px) {
   .text__v2Dw6 {
     line-height: 1.8;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__v2Dw6 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
   }
 }
@@ -1788,11 +1793,12 @@
   .text___6C64K {
     line-height: 1.8;
     max-width: 314px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text___6C64K {
-    font-size: 16px;
+    font-size: 15px;
     max-width: 220px;
   }
 }
@@ -2016,7 +2022,7 @@
     justify-content: flex-start;
     align-items: stretch;
     min-width: 0;
-    padding: 8px 4px 8px 8px;
+    padding: 8px 4px 8px 0px;
   }
 }
 .checkbox6:global(.__wab_instance) {
@@ -2047,9 +2053,14 @@
   text-overflow: ellipsis !important;
   overflow: hidden;
 }
+@media (max-width: 500px) {
+  .text__sDnda {
+    font-size: 15px;
+  }
+}
 @media (max-width: 350px) {
   .text__sDnda {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
   }
 }
@@ -2296,12 +2307,13 @@
 @media (max-width: 500px) {
   .text__kKci3 {
     line-height: 1.8;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__kKci3 {
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .freeBox__rwNDr {
@@ -2508,6 +2520,7 @@
 @media (max-width: 500px) {
   .text__phAjf {
     padding-right: 29px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -2686,8 +2699,8 @@
 }
 @media (max-width: 350px) {
   .freeBox__mims1 {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 }
 .freeBox__aBc11 {
