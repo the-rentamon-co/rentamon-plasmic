@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -101,6 +102,7 @@ export const PlasmicSideBar2__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicSideBar2__OverridesType = {
   modalSidebar?: Flex__<typeof AntdModal>;
+  checkUserPendingReserve?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultSideBar2Props {
@@ -169,6 +171,36 @@ function PlasmicSideBar2__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "checkUserPendingReserve.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "checkUserPendingReserve"
+      },
+      {
+        path: "checkUserPendingReserve.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "checkUserPendingReserve"
+      },
+      {
+        path: "checkUserPendingReserve.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "checkUserPendingReserve"
+      },
+      {
+        path: "reserveCount",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -283,33 +315,70 @@ function PlasmicSideBar2__RenderFunc(props: {
         </div>
       }
       trigger={
-        <div className={classNames(projectcss.all, sty.freeBox__zlZzK)}>
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__o0UC)}
-            displayHeight={
-              hasVariant(globalVariants, "screen", "smallMobile")
-                ? "20px"
-                : hasVariant(globalVariants, "screen", "mobile")
-                ? "27px"
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? "30px"
-                : "30px"
-            }
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"auto"}
-            loading={"lazy"}
-            src={{
-              src: "/plasmic/website_starter/images/image37.svg",
-              fullWidth: 21,
-              fullHeight: 24,
-              aspectRatio: 0.875
+        <React.Fragment>
+          <div className={classNames(projectcss.all, sty.freeBox__zlZzK)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__o0UC)}
+              displayHeight={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "20px"
+                  : hasVariant(globalVariants, "screen", "mobile")
+                  ? "27px"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                  ? "30px"
+                  : "30px"
+              }
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image37.svg",
+                fullWidth: 21,
+                fullHeight: 24,
+                aspectRatio: 0.875
+              }}
+            />
+          </div>
+          <ApiRequest
+            data-plasmic-name={"checkUserPendingReserve"}
+            data-plasmic-override={overrides.checkUserPendingReserve}
+            className={classNames(
+              "__wab_instance",
+              sty.checkUserPendingReserve
+            )}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "checkUserPendingReserve",
+                "error"
+              ]).apply(null, eventArgs);
             }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "checkUserPendingReserve",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "checkUserPendingReserve",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["checkUserPendingReserve"] = ref;
+            }}
+            url={
+              "https://gateway.rentamon.com/webhook/check_user_pending_request"
+            }
           />
-        </div>
+        </React.Fragment>
       }
       width={
         hasVariant(globalVariants, "screen", "smallMobile")
@@ -504,6 +573,49 @@ function PlasmicSideBar2__RenderFunc(props: {
           >
             {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
           </div>
+          {(() => {
+            try {
+              return (
+                !$state.checkUserPendingReserve.error.status ==
+                  "new reserve not found" ||
+                $state.checkUserPendingReserve.loading == true
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__nxd2D)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__q7I8M
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.checkUserPendingReserve.data[0].count_id;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "1";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            </div>
+          ) : null}
         </Stack__>
         <div className={classNames(projectcss.all, sty.freeBox__wsY2G)} />
 
@@ -1225,13 +1337,15 @@ function PlasmicSideBar2__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  modalSidebar: ["modalSidebar"]
+  modalSidebar: ["modalSidebar", "checkUserPendingReserve"],
+  checkUserPendingReserve: ["checkUserPendingReserve"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   modalSidebar: typeof AntdModal;
+  checkUserPendingReserve: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1294,6 +1408,7 @@ export const PlasmicSideBar2 = Object.assign(
   makeNodeComponent("modalSidebar"),
   {
     // Helper components rendering sub-elements
+    checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),
 
     // Metadata about props expected for PlasmicSideBar2
     internalVariantProps: PlasmicSideBar2__VariantProps,

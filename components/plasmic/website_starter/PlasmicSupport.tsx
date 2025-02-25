@@ -73,7 +73,7 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgc
 import sty from "./PlasmicSupport.module.css"; // plasmic-import: _jWDmDgs08t7/css
 
 import Icon39Icon from "./icons/PlasmicIcon__Icon39"; // plasmic-import: inxaF87iP7F9/icon
-import Icon37Icon from "./icons/PlasmicIcon__Icon37"; // plasmic-import: SsrYC78ajQoz/icon
+import Icon49Icon from "./icons/PlasmicIcon__Icon49"; // plasmic-import: Sg0oqZa4zTiY/icon
 import Icon40Icon from "./icons/PlasmicIcon__Icon40"; // plasmic-import: 9Cw4HWV6MTy2/icon
 
 createPlasmicElementProxy;
@@ -106,6 +106,7 @@ export type PlasmicSupport__OverridesType = {
   contact10?: Flex__<"div">;
   icon10?: Flex__<"div">;
   title10?: Flex__<"div">;
+  caption10?: Flex__<"div">;
   contact7?: Flex__<"div">;
   icon7?: Flex__<"div">;
   title7?: Flex__<"div">;
@@ -121,6 +122,7 @@ export type PlasmicSupport__OverridesType = {
   contact11?: Flex__<"div">;
   icon11?: Flex__<"div">;
   title11?: Flex__<"div">;
+  caption11?: Flex__<"div">;
   sectionTitle2?: Flex__<"div">;
   address?: Flex__<"div">;
   content?: Flex__<"div">;
@@ -528,19 +530,13 @@ function PlasmicSupport__RenderFunc(props: {
                           data-plasmic-override={overrides.icon10}
                           className={classNames(projectcss.all, sty.icon10)}
                         >
-                          {(
-                            hasVariant(globalVariants, "screen", "tablet")
-                              ? true
-                              : false
-                          ) ? (
-                            <Icon39Icon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__m8Afc
-                              )}
-                              role={"img"}
-                            />
-                          ) : null}
+                          <Icon39Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__m8Afc
+                            )}
+                            role={"img"}
+                          />
                         </div>
                         <div
                           data-plasmic-name={"title10"}
@@ -596,8 +592,23 @@ function PlasmicSupport__RenderFunc(props: {
                             }}
                           >
                             {
-                              "\u06af\u0641\u062a\u06af\u0648\u06cc \u0622\u0646\u0644\u0627\u06cc\u0646 (\u0686\u062a)"
+                              "\u06af\u0641\u062a\u06af\u0648\u06cc \u0622\u0646\u0644\u0627\u06cc\u0646"
                             }
+                          </div>
+                        </div>
+                        <div
+                          data-plasmic-name={"caption10"}
+                          data-plasmic-override={overrides.caption10}
+                          className={classNames(projectcss.all, sty.caption10)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__thdzA
+                            )}
+                          >
+                            {"(\u0686\u062a)"}
                           </div>
                         </div>
                       </Stack__>
@@ -650,7 +661,11 @@ function PlasmicSupport__RenderFunc(props: {
                             className={classNames(sty.img__yOfmf)}
                             displayHeight={"auto"}
                             displayMaxHeight={"none"}
-                            displayMaxWidth={"30%"}
+                            displayMaxWidth={
+                              hasVariant(globalVariants, "screen", "tablet")
+                                ? "28%"
+                                : "30%"
+                            }
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
@@ -786,7 +801,11 @@ function PlasmicSupport__RenderFunc(props: {
                             className={classNames(sty.img__kJqsc)}
                             displayHeight={"auto"}
                             displayMaxHeight={"none"}
-                            displayMaxWidth={"30%"}
+                            displayMaxWidth={
+                              hasVariant(globalVariants, "screen", "tablet")
+                                ? "28%"
+                                : "30%"
+                            }
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
@@ -917,10 +936,10 @@ function PlasmicSupport__RenderFunc(props: {
                           data-plasmic-override={overrides.icon9}
                           className={classNames(projectcss.all, sty.icon9)}
                         >
-                          <Icon37Icon
+                          <Icon49Icon
                             className={classNames(
                               projectcss.all,
-                              sty.svg___3Cmu0
+                              sty.svg__brztz
                             )}
                             role={"img"}
                           />
@@ -1043,23 +1062,19 @@ function PlasmicSupport__RenderFunc(props: {
                           data-plasmic-override={overrides.icon11}
                           className={classNames(projectcss.all, sty.icon11)}
                         >
-                          {(
-                            hasVariant(globalVariants, "screen", "tablet")
-                              ? true
-                              : false
-                          ) ? (
-                            <Icon40Icon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__eXlOd
-                              )}
-                              role={"img"}
-                            />
-                          ) : null}
+                          <Icon40Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__eXlOd
+                            )}
+                            role={"img"}
+                          />
                         </div>
-                        <div
+                        <Stack__
+                          as={"div"}
                           data-plasmic-name={"title11"}
                           data-plasmic-override={overrides.title11}
+                          hasGap={true}
                           className={classNames(projectcss.all, sty.title11)}
                         >
                           <div
@@ -1111,6 +1126,21 @@ function PlasmicSupport__RenderFunc(props: {
                             }}
                           >
                             {"\u0627\u06cc\u0645\u06cc\u0644"}
+                          </div>
+                        </Stack__>
+                        <div
+                          data-plasmic-name={"caption11"}
+                          data-plasmic-override={overrides.caption11}
+                          className={classNames(projectcss.all, sty.caption11)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__rxk2A
+                            )}
+                          >
+                            {"info@rentamon.com"}
                           </div>
                         </div>
                       </Stack__>
@@ -1250,6 +1280,7 @@ const PlasmicDescendants = {
     "contact10",
     "icon10",
     "title10",
+    "caption10",
     "contact7",
     "icon7",
     "title7",
@@ -1265,6 +1296,7 @@ const PlasmicDescendants = {
     "contact11",
     "icon11",
     "title11",
+    "caption11",
     "sectionTitle2",
     "address",
     "content",
@@ -1294,6 +1326,7 @@ const PlasmicDescendants = {
     "contact10",
     "icon10",
     "title10",
+    "caption10",
     "contact7",
     "icon7",
     "title7",
@@ -1309,6 +1342,7 @@ const PlasmicDescendants = {
     "contact11",
     "icon11",
     "title11",
+    "caption11",
     "sectionTitle2",
     "address",
     "content",
@@ -1332,6 +1366,7 @@ const PlasmicDescendants = {
     "contact10",
     "icon10",
     "title10",
+    "caption10",
     "contact7",
     "icon7",
     "title7",
@@ -1347,6 +1382,7 @@ const PlasmicDescendants = {
     "contact11",
     "icon11",
     "title11",
+    "caption11",
     "sectionTitle2"
   ],
   sectionTitle: ["sectionTitle"],
@@ -1359,6 +1395,7 @@ const PlasmicDescendants = {
     "contact10",
     "icon10",
     "title10",
+    "caption10",
     "contact7",
     "icon7",
     "title7",
@@ -1373,15 +1410,17 @@ const PlasmicDescendants = {
     "caption9",
     "contact11",
     "icon11",
-    "title11"
+    "title11",
+    "caption11"
   ],
   contact6: ["contact6", "icon6", "title6", "caption6"],
   icon6: ["icon6"],
   title6: ["title6"],
   caption6: ["caption6"],
-  contact10: ["contact10", "icon10", "title10"],
+  contact10: ["contact10", "icon10", "title10", "caption10"],
   icon10: ["icon10"],
   title10: ["title10"],
+  caption10: ["caption10"],
   contact7: ["contact7", "icon7", "title7", "caption7"],
   icon7: ["icon7"],
   title7: ["title7"],
@@ -1394,9 +1433,10 @@ const PlasmicDescendants = {
   icon9: ["icon9"],
   title9: ["title9"],
   caption9: ["caption9"],
-  contact11: ["contact11", "icon11", "title11"],
+  contact11: ["contact11", "icon11", "title11", "caption11"],
   icon11: ["icon11"],
   title11: ["title11"],
+  caption11: ["caption11"],
   sectionTitle2: ["sectionTitle2"],
   address: ["address", "content", "addressText", "map", "embedHtml"],
   content: ["content", "addressText", "map", "embedHtml"],
@@ -1430,6 +1470,7 @@ type NodeDefaultElementType = {
   contact10: "div";
   icon10: "div";
   title10: "div";
+  caption10: "div";
   contact7: "div";
   icon7: "div";
   title7: "div";
@@ -1445,6 +1486,7 @@ type NodeDefaultElementType = {
   contact11: "div";
   icon11: "div";
   title11: "div";
+  caption11: "div";
   sectionTitle2: "div";
   address: "div";
   content: "div";
@@ -1534,6 +1576,7 @@ export const PlasmicSupport = Object.assign(
     contact10: makeNodeComponent("contact10"),
     icon10: makeNodeComponent("icon10"),
     title10: makeNodeComponent("title10"),
+    caption10: makeNodeComponent("caption10"),
     contact7: makeNodeComponent("contact7"),
     icon7: makeNodeComponent("icon7"),
     title7: makeNodeComponent("title7"),
@@ -1549,6 +1592,7 @@ export const PlasmicSupport = Object.assign(
     contact11: makeNodeComponent("contact11"),
     icon11: makeNodeComponent("icon11"),
     title11: makeNodeComponent("title11"),
+    caption11: makeNodeComponent("caption11"),
     sectionTitle2: makeNodeComponent("sectionTitle2"),
     address: makeNodeComponent("address"),
     content: makeNodeComponent("content"),
