@@ -800,25 +800,29 @@ function PlasmicSideBar2__RenderFunc(props: {
               ];
             }
 
-            $steps["runCode"] = true
+            $steps["goToPricing"] = true
               ? (() => {
-                  const actionArgs = {
-                    customFunction: async () => {
-                      return (window.location.href =
-                        "https://app.rentamon.com/pricing");
+                  const actionArgs = { destination: `/pricing` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
                     }
-                  };
-                  return (({ customFunction }) => {
-                    return customFunction();
                   })?.apply(null, [actionArgs]);
                 })()
               : undefined;
             if (
-              $steps["runCode"] != null &&
-              typeof $steps["runCode"] === "object" &&
-              typeof $steps["runCode"].then === "function"
+              $steps["goToPricing"] != null &&
+              typeof $steps["goToPricing"] === "object" &&
+              typeof $steps["goToPricing"].then === "function"
             ) {
-              $steps["runCode"] = await $steps["runCode"];
+              $steps["goToPricing"] = await $steps["goToPricing"];
             }
           }}
         >
@@ -880,27 +884,29 @@ function PlasmicSideBar2__RenderFunc(props: {
               ];
             }
 
-            $steps["runCode"] = true
+            $steps["goToSetting"] = true
               ? (() => {
-                  const actionArgs = {
-                    customFunction: async () => {
-                      return (() => {
-                        return (window.location.href =
-                          "https://app.rentamon.com/settings");
-                      })();
+                  const actionArgs = { destination: `/settings` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
                     }
-                  };
-                  return (({ customFunction }) => {
-                    return customFunction();
                   })?.apply(null, [actionArgs]);
                 })()
               : undefined;
             if (
-              $steps["runCode"] != null &&
-              typeof $steps["runCode"] === "object" &&
-              typeof $steps["runCode"].then === "function"
+              $steps["goToSetting"] != null &&
+              typeof $steps["goToSetting"] === "object" &&
+              typeof $steps["goToSetting"].then === "function"
             ) {
-              $steps["runCode"] = await $steps["runCode"];
+              $steps["goToSetting"] = await $steps["goToSetting"];
             }
           }}
         >
@@ -929,6 +935,34 @@ function PlasmicSideBar2__RenderFunc(props: {
             sty.freeBox___6SALn,
             "clickable"
           )}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["goToSupport"] = true
+              ? (() => {
+                  const actionArgs = { destination: `/support` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
+                    }
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["goToSupport"] != null &&
+              typeof $steps["goToSupport"] === "object" &&
+              typeof $steps["goToSupport"].then === "function"
+            ) {
+              $steps["goToSupport"] = await $steps["goToSupport"];
+            }
+          }}
         >
           <Icon42Icon
             className={classNames(projectcss.all, sty.svg__hanOi)}
@@ -1014,27 +1048,29 @@ function PlasmicSideBar2__RenderFunc(props: {
               ];
             }
 
-            $steps["runCode"] = true
+            $steps["goToHomepage"] = true
               ? (() => {
-                  const actionArgs = {
-                    customFunction: async () => {
-                      return (() => {
-                        return (window.location.href =
-                          "https://app.rentamon.com/settings");
-                      })();
+                  const actionArgs = { destination: `/` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
                     }
-                  };
-                  return (({ customFunction }) => {
-                    return customFunction();
                   })?.apply(null, [actionArgs]);
                 })()
               : undefined;
             if (
-              $steps["runCode"] != null &&
-              typeof $steps["runCode"] === "object" &&
-              typeof $steps["runCode"].then === "function"
+              $steps["goToHomepage"] != null &&
+              typeof $steps["goToHomepage"] === "object" &&
+              typeof $steps["goToHomepage"].then === "function"
             ) {
-              $steps["runCode"] = await $steps["runCode"];
+              $steps["goToHomepage"] = await $steps["goToHomepage"];
             }
           }}
         >

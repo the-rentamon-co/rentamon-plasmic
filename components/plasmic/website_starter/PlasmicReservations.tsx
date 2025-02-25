@@ -633,6 +633,34 @@ function PlasmicReservations__RenderFunc(props: {
                   </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__twvae)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToSetting"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/settings` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToSetting"] != null &&
+                        typeof $steps["goToSetting"] === "object" &&
+                        typeof $steps["goToSetting"].then === "function"
+                      ) {
+                        $steps["goToSetting"] = await $steps["goToSetting"];
+                      }
+                    }}
                   >
                     <div
                       className={classNames(
