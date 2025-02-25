@@ -1558,6 +1558,11 @@
           "id": "EUsJ3MtRCJEN",
           "name": "Icon48Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon48.tsx"
+        },
+        {
+          "id": "Sg0oqZa4zTiY",
+          "name": "Icon49Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon49.tsx"
         }
       ],
       "images": [
