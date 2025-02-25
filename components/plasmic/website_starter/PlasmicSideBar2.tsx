@@ -350,28 +350,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               "__wab_instance",
               sty.checkUserPendingReserve
             )}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__yPfUk
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__y1Ox2
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
+            errorDisplay={null}
+            loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, [
