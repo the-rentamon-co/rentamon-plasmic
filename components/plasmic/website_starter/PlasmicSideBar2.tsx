@@ -575,7 +575,11 @@ function PlasmicSideBar2__RenderFunc(props: {
           </div>
           {(() => {
             try {
-              return $state.checkUserPendingReserve.loading != true;
+              return (
+                !$state.checkUserPendingReserve.error.status ==
+                  "new reserve not found" ||
+                $state.checkUserPendingReserve.loading == true
+              );
             } catch (e) {
               if (
                 e instanceof TypeError ||
