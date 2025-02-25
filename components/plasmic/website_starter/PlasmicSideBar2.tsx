@@ -74,8 +74,8 @@ import sty from "./PlasmicSideBar2.module.css"; // plasmic-import: 03ZPQfFyBXgI/
 import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4HwqLfNb/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
 import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
-import Icon5Icon from "./icons/PlasmicIcon__Icon5"; // plasmic-import: GlNmRVfZkYuK/icon
 import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: 523_R9Q_1fOL/icon
+import Icon5Icon from "./icons/PlasmicIcon__Icon5"; // plasmic-import: GlNmRVfZkYuK/icon
 import Icon41Icon from "./icons/PlasmicIcon__Icon41"; // plasmic-import: YQpJkAv8e-ZD/icon
 import Icon42Icon from "./icons/PlasmicIcon__Icon42"; // plasmic-import: ityTVuII15EI/icon
 import Icon44Icon from "./icons/PlasmicIcon__Icon44"; // plasmic-import: Oyz_u64i1BAc/icon
@@ -505,7 +505,7 @@ function PlasmicSideBar2__RenderFunc(props: {
             {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__nmPd)} />
+        <div className={classNames(projectcss.all, sty.freeBox__wsY2G)} />
 
         <Stack__
           as={"div"}
@@ -591,7 +591,7 @@ function PlasmicSideBar2__RenderFunc(props: {
             }
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__grIhl)} />
+        <div className={classNames(projectcss.all, sty.freeBox__yzYkW)} />
 
         <Stack__
           as={"div"}
@@ -675,83 +675,7 @@ function PlasmicSideBar2__RenderFunc(props: {
             {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"}
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__zLIfW)} />
-
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__klQF, "clickable")}
-          onClick={async event => {
-            const $steps = {};
-
-            $steps["updateModalSidebarOpen"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["modalSidebar", "open"]
-                    },
-                    operation: 0
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateModalSidebarOpen"] != null &&
-              typeof $steps["updateModalSidebarOpen"] === "object" &&
-              typeof $steps["updateModalSidebarOpen"].then === "function"
-            ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
-            }
-
-            $steps["runCode"] = true
-              ? (() => {
-                  const actionArgs = {
-                    customFunction: async () => {
-                      return (window.location.href =
-                        "https://app.rentamon.com/pricing");
-                    }
-                  };
-                  return (({ customFunction }) => {
-                    return customFunction();
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["runCode"] != null &&
-              typeof $steps["runCode"] === "object" &&
-              typeof $steps["runCode"].then === "function"
-            ) {
-              $steps["runCode"] = await $steps["runCode"];
-            }
-          }}
-        >
-          <Icon5Icon
-            className={classNames(projectcss.all, sty.svg__s3Sds)}
-            role={"img"}
-          />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__hcNg
-            )}
-          >
-            {"\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"}
-          </div>
-        </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__loTsM)} />
+        <div className={classNames(projectcss.all, sty.freeBox__nua5Y)} />
 
         <Stack__
           as={"div"}
@@ -835,6 +759,82 @@ function PlasmicSideBar2__RenderFunc(props: {
             {
               "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
             }
+          </div>
+        </Stack__>
+        <div className={classNames(projectcss.all, sty.freeBox___8Rrt6)} />
+
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__klQF, "clickable")}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["updateModalSidebarOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modalSidebar", "open"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen"] != null &&
+              typeof $steps["updateModalSidebarOpen"] === "object" &&
+              typeof $steps["updateModalSidebarOpen"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen"] = await $steps[
+                "updateModalSidebarOpen"
+              ];
+            }
+
+            $steps["runCode"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (window.location.href =
+                        "https://app.rentamon.com/pricing");
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
+            ) {
+              $steps["runCode"] = await $steps["runCode"];
+            }
+          }}
+        >
+          <Icon5Icon
+            className={classNames(projectcss.all, sty.svg__s3Sds)}
+            role={"img"}
+          />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__hcNg
+            )}
+          >
+            {"\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"}
           </div>
         </Stack__>
         <div className={classNames(projectcss.all, sty.freeBox__sWbL)} />
