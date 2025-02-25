@@ -4341,8 +4341,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                               ) {
                                 return false;
                               }
-                              $state.platformRequestStatus.data.shab
-                                .status_code;
                               const platforms =
                                 $state.platformRequestStatus.data;
                               if (platforms[currentItem]) {
