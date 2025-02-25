@@ -601,7 +601,9 @@ function PlasmicSideBar2__RenderFunc(props: {
                 <React.Fragment>
                   {(() => {
                     try {
-                      return $state.checkUserPendingReserve.data[0].count_id;
+                      return $state.checkUserPendingReserve.data[0].count_id.toLocaleString(
+                        "fa"
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
