@@ -76,8 +76,8 @@ import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7
 import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
 import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: 523_R9Q_1fOL/icon
 import Icon5Icon from "./icons/PlasmicIcon__Icon5"; // plasmic-import: GlNmRVfZkYuK/icon
-import Icon41Icon from "./icons/PlasmicIcon__Icon41"; // plasmic-import: YQpJkAv8e-ZD/icon
-import Icon42Icon from "./icons/PlasmicIcon__Icon42"; // plasmic-import: ityTVuII15EI/icon
+import Icon48Icon from "./icons/PlasmicIcon__Icon48"; // plasmic-import: EUsJ3MtRCJEN/icon
+import Icon47Icon from "./icons/PlasmicIcon__Icon47"; // plasmic-import: 52h8XtG_2_Y1/icon
 import Icon44Icon from "./icons/PlasmicIcon__Icon44"; // plasmic-import: Oyz_u64i1BAc/icon
 import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: PfTCttn7BvdX/icon
 import Icon15Icon from "./icons/PlasmicIcon__Icon15"; // plasmic-import: mmPtFHknd4hG/icon
@@ -910,8 +910,8 @@ function PlasmicSideBar2__RenderFunc(props: {
             }
           }}
         >
-          <Icon41Icon
-            className={classNames(projectcss.all, sty.svg__sA9Eu)}
+          <Icon48Icon
+            className={classNames(projectcss.all, sty.svg__gEzzh)}
             role={"img"}
           />
 
@@ -964,8 +964,8 @@ function PlasmicSideBar2__RenderFunc(props: {
             }
           }}
         >
-          <Icon42Icon
-            className={classNames(projectcss.all, sty.svg__hanOi)}
+          <Icon47Icon
+            className={classNames(projectcss.all, sty.svg__qK4W)}
             role={"img"}
           />
 

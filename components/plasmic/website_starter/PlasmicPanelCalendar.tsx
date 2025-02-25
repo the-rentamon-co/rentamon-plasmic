@@ -1091,9 +1091,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   className={classNames(sty.img__mGbB3)}
                   displayHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "97px"
+                      ? "80px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "100px"
+                      ? "80px"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "130px"
                       : "150px"
                   }
                   displayMaxHeight={"none"}

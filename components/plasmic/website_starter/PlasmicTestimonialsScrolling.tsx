@@ -223,12 +223,12 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
             displayMinHeight={"0"}
             displayMinWidth={"0"}
             displayWidth={"auto"}
-            height={"100px"}
+            height={"50px"}
             loading={"lazy"}
             src={
               "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
             }
-            width={"100px"}
+            width={"50px"}
           />
         }
         method={"GET"}
@@ -264,7 +264,13 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
         <div
           data-plasmic-name={"quotes"}
           data-plasmic-override={overrides.quotes}
-          className={classNames(projectcss.all, sty.quotes, "quotes")}
+          className={classNames(
+            projectcss.all,
+            sty.quotes,
+            hasVariant(globalVariants, "screen", "smallMobile")
+              ? "quotes"
+              : "quotes"
+          )}
         >
           <div className={classNames(projectcss.all, sty.freeBox__ml3GW)}>
             {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
@@ -465,6 +471,8 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                         displayHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "17px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
                             : "25px"
                         }
                         displayMaxHeight={"none"}
@@ -474,6 +482,8 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "12px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "15px"
                             : "17px"
                         }
                         loading={"lazy"}

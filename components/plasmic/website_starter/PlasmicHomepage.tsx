@@ -139,16 +139,7 @@ export type PlasmicHomepage__OverridesType = {
   titlePart?: Flex__<"div">;
   commentsScrolling?: Flex__<"div">;
   testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
-  records?: Flex__<"div">;
-  _1st?: Flex__<"div">;
-  numberTop?: Flex__<"div">;
-  titleDown?: Flex__<"div">;
-  _1st2?: Flex__<"div">;
-  numberTop2?: Flex__<"div">;
-  titleDown2?: Flex__<"div">;
-  _3rd?: Flex__<"div">;
-  numberTop3?: Flex__<"div">;
-  titleDown3?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   addingVillaIntoPltforms?: Flex__<"div">;
   reg?: Flex__<"div">;
   qA?: Flex__<"div">;
@@ -863,131 +854,21 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
               </div>
             </div>
-            <div
-              data-plasmic-name={"records"}
-              data-plasmic-override={overrides.records}
-              className={classNames(projectcss.all, sty.records)}
-            >
-              <div
-                data-plasmic-name={"_1st"}
-                data-plasmic-override={overrides._1st}
-                className={classNames(projectcss.all, sty._1st)}
-              >
-                <div
-                  data-plasmic-name={"numberTop"}
-                  data-plasmic-override={overrides.numberTop}
-                  className={classNames(projectcss.all, sty.numberTop)}
-                >
-                  <Embed
-                    className={classNames(
-                      "__wab_instance",
-                      sty.embedHtml___5Kec2
-                    )}
-                    code={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631</title>\r\n  <style>\r\n    #counter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="counter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 15000; \r\n    const maxValue = 910;\r\n    const startTime = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function updateCounter() {\r\n      const now = performance.now();\r\n      const elapsed = now - startTime;\r\n      let progress = elapsed / duration;\r\n      if (progress > 1) progress = 1;\r\n\r\n      const currentValue = Math.round(progress * maxValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'counter\').innerHTML = \r\n        \'<span>+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progress < 1) {\r\n        requestAnimationFrame(updateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(updateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
-                        : "<!DOCTYPE html>\r\n<html lang=\"fa\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>\u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc</title>\r\n  <style>\r\n    #observerCounter {\r\n      font-size: 22px;\r\n      font-weight: 600;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id=\"observerCounter\"><span style=\"direction: ltr;\">+ </span>\u06f0</div>\r\n\r\n  <script>\r\n    const observer_duration = 5000; // \u06f5 \u062b\u0627\u0646\u06cc\u0647\r\n    const observer_targetValue = 910;\r\n    let observer_hasStarted = false; // \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u0627\u062c\u0631\u0627\u06cc \u062f\u0648\u0628\u0627\u0631\u0647\r\n\r\n    function observer_formatNumber(num) {\r\n      const persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n      return num.toString().replace(/\\d/g, d => persianDigits[d]); // \u062a\u0628\u062f\u06cc\u0644 \u0627\u0631\u0642\u0627\u0645 \u0628\u0647 \u0641\u0627\u0631\u0633\u06cc\r\n    }\r\n\r\n    function observer_startCounter() {\r\n      if (observer_hasStarted) return; // \u0627\u06af\u0631 \u0642\u0628\u0644\u0627\u064b \u0627\u062c\u0631\u0627 \u0634\u062f\u0647\u060c \u062f\u0648\u0628\u0627\u0631\u0647 \u0627\u062c\u0631\u0627 \u0646\u0634\u0648\u062f\r\n      observer_hasStarted = true;\r\n      const observer_startTime = performance.now();\r\n\r\n      function observer_runCounter() {\r\n        const observer_currentTime = performance.now();\r\n        const observer_elapsedTime = observer_currentTime - observer_startTime;\r\n        let observer_progress = observer_elapsedTime / observer_duration;\r\n        if (observer_progress > 1) observer_progress = 1;\r\n\r\n        const observer_currentValue = Math.round(observer_progress * observer_targetValue);\r\n        document.getElementById('observerCounter').innerHTML = \r\n          '<span style=\"direction: ltr;\">+ </span>' + observer_formatNumber(observer_currentValue);\r\n\r\n        if (observer_progress < 1) {\r\n          requestAnimationFrame(observer_runCounter);\r\n        }\r\n      }\r\n\r\n      requestAnimationFrame(observer_runCounter);\r\n    }\r\n\r\n    // \u0627\u062c\u0631\u0627\u06cc \u0634\u0645\u0627\u0631\u0634\u06af\u0631 \u0641\u0642\u0637 \u0632\u0645\u0627\u0646\u06cc \u06a9\u0647 \u062f\u0631 \u062f\u06cc\u062f \u06a9\u0627\u0631\u0628\u0631 \u0642\u0631\u0627\u0631 \u06af\u06cc\u0631\u062f\r\n    let observer_element = document.getElementById(\"observerCounter\");\r\n    let observer_observer = new IntersectionObserver(\r\n      (entries, observer) => {\r\n        if (entries[0].isIntersecting) {\r\n          observer_startCounter();\r\n          observer.unobserve(observer_element); // \u062f\u06cc\u06af\u0631 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0639\u0646\u0635\u0631 \u0646\u06cc\u0633\u062a\r\n        }\r\n      },\r\n      { threshold: 0.5 } // \u0648\u0642\u062a\u06cc \u06f5\u06f0\u066a \u0639\u0646\u0635\u0631 \u062f\u06cc\u062f\u0647 \u0634\u062f\u060c \u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u0641\u0639\u0627\u0644 \u0634\u0648\u062f\r\n    );\r\n\r\n    observer_observer.observe(observer_element);\r\n  </script>\r\n</body>\r\n</html>\r\n"
-                    }
-                  />
-                </div>
-                <div
-                  data-plasmic-name={"titleDown"}
-                  data-plasmic-override={overrides.titleDown}
-                  className={classNames(projectcss.all, sty.titleDown)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__voblz
-                    )}
-                  >
-                    {
-                      "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634"
-                    }
-                  </div>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"_1st2"}
-                data-plasmic-override={overrides._1st2}
-                className={classNames(projectcss.all, sty._1St2)}
-              >
-                <div
-                  data-plasmic-name={"numberTop2"}
-                  data-plasmic-override={overrides.numberTop2}
-                  className={classNames(projectcss.all, sty.numberTop2)}
-                >
-                  <Embed
-                    className={classNames(
-                      "__wab_instance",
-                      sty.embedHtml__uNkz9
-                    )}
-                    code={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u067e\u0648\u06cc\u0627</title>\r\n  <style>\r\n    #dynamicCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="dynamicCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 16000; \r\n    const finalValue = 10000;\r\n    const startTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function animateCounter() {\r\n      const currentTimestamp = performance.now();\r\n      const elapsedTime = currentTimestamp - startTimestamp;\r\n      let progressRatio = elapsedTime / animationDuration;\r\n      if (progressRatio > 1) progressRatio = 1;\r\n\r\n      const currentValue = Math.round(progressRatio * finalValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'dynamicCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatNumber(currentValue);\r\n\r\n      if (progressRatio < 1) {\r\n        requestAnimationFrame(animateCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(animateCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
-                        : "<!DOCTYPE html>\r\n<html lang=\"fa\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>\u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u067e\u0648\u06cc\u0627</title>\r\n  <style>\r\n    #dynamicCounter {\r\n      font-size: 22px;\r\n      font-weight: 600;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id=\"dynamicCounter\" data-target=\"10000\" data-duration=\"7000\">\r\n    <span style=\"direction: ltr;\">+ </span>0\r\n  </div>\r\n\r\n  <script>\r\n    function convertToPersian(num) {\r\n      const persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n      return num.toString().split('').map(digit => persianDigits[parseInt(digit)] || digit).join('');\r\n    }\r\n\r\n    function formatNumber(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function animateCounter(element) {\r\n      if (element.dataset.started) return; // \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u0627\u062c\u0631\u0627\u06cc \u0645\u062c\u062f\u062f\r\n      element.dataset.started = true;\r\n\r\n      const targetValue = parseInt(element.dataset.target);\r\n      const animationDuration = parseInt(element.dataset.duration);\r\n      const startTimestamp = performance.now();\r\n\r\n      function runCounter() {\r\n        const currentTimestamp = performance.now();\r\n        const elapsedTime = currentTimestamp - startTimestamp;\r\n        let progressRatio = elapsedTime / animationDuration;\r\n        if (progressRatio > 1) progressRatio = 1;\r\n\r\n        const currentValue = Math.round(progressRatio * targetValue);\r\n        element.innerHTML = '<span style=\"direction: ltr;\">+ </span>' + convertToPersian(formatNumber(currentValue));\r\n\r\n        if (progressRatio < 1) {\r\n          requestAnimationFrame(runCounter);\r\n        }\r\n      }\r\n\r\n      requestAnimationFrame(runCounter);\r\n    }\r\n\r\n    // \u0627\u062c\u0631\u0627\u06cc \u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u0641\u0642\u0637 \u0632\u0645\u0627\u0646\u06cc \u06a9\u0647 \u062f\u06cc\u062f\u0647 \u0634\u0648\u062f\r\n    let counterElement = document.getElementById(\"dynamicCounter\");\r\n    let observer = new IntersectionObserver(\r\n      (entries, observer) => {\r\n        if (entries[0].isIntersecting) {\r\n          animateCounter(counterElement);\r\n          observer.unobserve(counterElement); // \u062f\u06cc\u06af\u0631 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0639\u0646\u0635\u0631 \u0646\u06cc\u0633\u062a\r\n        }\r\n      },\r\n      { threshold: 0.5 } // \u0648\u0642\u062a\u06cc \u06f5\u06f0\u066a \u0639\u0646\u0635\u0631 \u062f\u06cc\u062f\u0647 \u0634\u062f\u060c \u0627\u062c\u0631\u0627 \u0634\u0648\u062f\r\n    );\r\n\r\n    observer.observe(counterElement);\r\n  </script>\r\n</body>\r\n</html>\r\n"
-                    }
-                  />
-                </div>
-                <div
-                  data-plasmic-name={"titleDown2"}
-                  data-plasmic-override={overrides.titleDown2}
-                  className={classNames(projectcss.all, sty.titleDown2)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fwN8J
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631"
-                      : "\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631"}
-                  </div>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"_3rd"}
-                data-plasmic-override={overrides._3rd}
-                className={classNames(projectcss.all, sty._3rd)}
-              >
-                <div
-                  data-plasmic-name={"numberTop3"}
-                  data-plasmic-override={overrides.numberTop3}
-                  className={classNames(projectcss.all, sty.numberTop3)}
-                >
-                  <Embed
-                    className={classNames(
-                      "__wab_instance",
-                      sty.embedHtml__jtw0K
-                    )}
-                    code={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631 \u0639\u062f\u062f\u06cc</title>\r\n  <style>\r\n    #numberCounter {\r\n      font-size: 22px; /* \u0633\u0627\u06cc\u0632 \u0641\u0648\u0646\u062a \u06f2\u06f0 \u067e\u06cc\u06a9\u0633\u0644 */\r\n      font-weight: 400;\r\n      \r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id="numberCounter">\u200c<span style="direction: ltr;">+ </span>0</div>\r\n\r\n  <script>\r\n    const duration = 17000; \r\n    const targetValue = 72000;\r\n    const initialTimestamp = performance.now();\r\n\r\n    // \u062a\u0627\u0628\u0639\u06cc \u0628\u0631\u0627\u06cc \u0641\u0631\u0645\u062a \u06a9\u0631\u062f\u0646 \u0639\u062f\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    function formatWithCommas(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function runCounter() {\r\n      const currentTime = performance.now();\r\n      const elapsedMillis = currentTime - initialTimestamp;\r\n      let progressRate = elapsedMillis / transitionTime;\r\n      if (progressRate > 1) progressRate = 1;\r\n\r\n      const displayedValue = Math.round(progressRate * targetValue);\r\n      // \u0646\u0645\u0627\u06cc\u0634 \u0639\u062f\u062f \u0628\u0627 \u0639\u0644\u0627\u0645\u062a + \u062f\u0631 \u0633\u0645\u062a \u0686\u067e \u0628\u0647 \u06a9\u0645\u06a9 span \u0628\u0627 direction ltr\r\n      document.getElementById(\'numberCounter\').innerHTML = \r\n        \'<span style="direction: ltr;">+ </span>\' + formatWithCommas(displayedValue);\r\n\r\n      if (progressRate < 1) {\r\n        requestAnimationFrame(runCounter);\r\n      }\r\n    }\r\n\r\n    requestAnimationFrame(runCounter);\r\n  </script>\r\n</body>\r\n</html>\r\n'
-                        : "<!DOCTYPE html>\r\n<html lang=\"fa\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>\u0634\u0645\u0627\u0631\u0634\u06af\u0631 \u0639\u062f\u062f\u06cc</title>\r\n  <style>\r\n    #uniqueNumberCounter {\r\n      font-size: 22px;\r\n      font-weight: 600;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div id=\"uniqueNumberCounter\"><span style=\"direction: ltr;\">+ </span>0</div>\r\n\r\n  <script>\r\n    const uniqueTransitionTime = 10000; // \u06f1\u06f0 \u062b\u0627\u0646\u06cc\u0647\r\n    const uniqueTargetValue = 72000;\r\n    let uniqueAnimationStarted = false; // \u0628\u0631\u0627\u06cc \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u0627\u062c\u0631\u0627\u06cc \u0645\u062c\u062f\u062f\r\n\r\n    function convertToPersian(num) {\r\n      const persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n      return num.toString().split('').map(digit => persianDigits[parseInt(digit)] || digit).join('');\r\n    }\r\n\r\n    function uniqueFormatWithCommas(num) {\r\n      return num.toLocaleString(); // \u062c\u062f\u0627\u06a9\u0646\u0646\u062f\u0647 \u0647\u0632\u0627\u0631\u06af\u0627\u0646\r\n    }\r\n\r\n    function startUniqueCounter() {\r\n      if (uniqueAnimationStarted) return; // \u0627\u06af\u0631 \u0642\u0628\u0644\u0627\u064b \u0627\u062c\u0631\u0627 \u0634\u062f\u0647\u060c \u062f\u0648\u0628\u0627\u0631\u0647 \u0627\u062c\u0631\u0627 \u0646\u0634\u0648\u062f\r\n      uniqueAnimationStarted = true;\r\n      const uniqueInitialTimestamp = performance.now();\r\n\r\n      function runUniqueCounter() {\r\n        const uniqueCurrentTime = performance.now();\r\n        const uniqueElapsedMillis = uniqueCurrentTime - uniqueInitialTimestamp;\r\n        let uniqueProgressRate = uniqueElapsedMillis / uniqueTransitionTime;\r\n        if (uniqueProgressRate > 1) uniqueProgressRate = 1;\r\n\r\n        const uniqueDisplayedValue = Math.round(uniqueProgressRate * uniqueTargetValue);\r\n        document.getElementById('uniqueNumberCounter').innerHTML = \r\n          '<span style=\"direction: ltr;\">+ </span>' + convertToPersian(uniqueFormatWithCommas(uniqueDisplayedValue));\r\n\r\n        if (uniqueProgressRate < 1) {\r\n          requestAnimationFrame(runUniqueCounter);\r\n        }\r\n      }\r\n\r\n      requestAnimationFrame(runUniqueCounter);\r\n    }\r\n\r\n    // \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 Intersection Observer \u0628\u0631\u0627\u06cc \u0627\u062c\u0631\u0627\u06cc \u0634\u0645\u0627\u0631\u0634\u06af\u0631 \u0647\u0646\u06af\u0627\u0645 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0631 \u0635\u0641\u062d\u0647\r\n    let uniqueCounterElement = document.getElementById(\"uniqueNumberCounter\");\r\n    let uniqueObserver = new IntersectionObserver(\r\n      (entries, observer) => {\r\n        entries.forEach((entry) => {\r\n          if (entry.isIntersecting) {\r\n            startUniqueCounter();\r\n            observer.unobserve(uniqueCounterElement); // \u062f\u06cc\u06af\u0631 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0639\u0646\u0635\u0631 \u0646\u06cc\u0633\u062a\r\n          }\r\n        });\r\n      },\r\n      { threshold: 0.5 } // \u0648\u0642\u062a\u06cc \u06f5\u06f0\u066a \u0639\u0646\u0635\u0631 \u062f\u06cc\u062f\u0647 \u0634\u062f\u060c \u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u0641\u0639\u0627\u0644 \u0634\u0648\u062f\r\n    );\r\n\r\n    uniqueObserver.observe(uniqueCounterElement);\r\n  </script>\r\n</body>\r\n</html>\r\n"
-                    }
-                  />
-                </div>
-                <div
-                  data-plasmic-name={"titleDown3"}
-                  data-plasmic-override={overrides.titleDown3}
-                  className={classNames(projectcss.all, sty.titleDown3)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__o7Grz
-                    )}
-                  >
-                    {
-                      "\u0628\u0647 \u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645"
-                    }
-                  </div>
-                </div>
-              </div>
+            <div className={classNames(projectcss.all, sty.freeBox___8VXaH)}>
+              <Embed
+                data-plasmic-name={"embedHtml"}
+                data-plasmic-override={overrides.embedHtml}
+                className={classNames("__wab_instance", sty.embedHtml)}
+                code={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 20px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 20px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 30px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    const persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    let formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    let startTime = null;\r\n    const step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      const progress = (timestamp - startTime) / duration;\r\n      const currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  let hasCounted = false;\r\n\r\n  function onScroll() {\r\n    const counterSection = document.getElementById('counterSection');\r\n    const rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 910, 5000);\r\n      startCounter(document.getElementById('count2'), 0, 10000, 6000);\r\n      startCounter(document.getElementById('count3'), 0, 72000, 7000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 20px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 20px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 30px;\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    const persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    let formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    let startTime = null;\r\n    const step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      const progress = (timestamp - startTime) / duration;\r\n      const currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  let hasCounted = false;\r\n\r\n  function onScroll() {\r\n    const counterSection = document.getElementById('counterSection');\r\n    const rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 910, 5000);\r\n      startCounter(document.getElementById('count2'), 0, 10000, 6000);\r\n      startCounter(document.getElementById('count3'), 0, 72000, 7000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 20px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 20px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 20px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    const persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    let formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    let startTime = null;\r\n    const step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      const progress = (timestamp - startTime) / duration;\r\n      const currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  let hasCounted = false;\r\n\r\n  function onScroll() {\r\n    const counterSection = document.getElementById('counterSection');\r\n    const rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 910, 5000);\r\n      startCounter(document.getElementById('count2'), 0, 10000, 6000);\r\n      startCounter(document.getElementById('count3'), 0, 72000, 7000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                    : "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    const persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    let formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    let startTime = null;\r\n    const step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      const progress = (timestamp - startTime) / duration;\r\n      const currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  let hasCounted = false;\r\n\r\n  function onScroll() {\r\n    const counterSection = document.getElementById('counterSection');\r\n    const rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 910, 5000);\r\n      startCounter(document.getElementById('count2'), 0, 10000, 6000);\r\n      startCounter(document.getElementById('count3'), 0, 72000, 7000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                }
+              />
             </div>
             <div
               data-plasmic-name={"addingVillaIntoPltforms"}
@@ -1479,16 +1360,7 @@ const PlasmicDescendants = {
     "titlePart",
     "commentsScrolling",
     "testimonialsScrolling",
-    "records",
-    "_1st",
-    "numberTop",
-    "titleDown",
-    "_1st2",
-    "numberTop2",
-    "titleDown2",
-    "_3rd",
-    "numberTop3",
-    "titleDown3",
+    "embedHtml",
     "addingVillaIntoPltforms",
     "reg",
     "qA",
@@ -1550,16 +1422,7 @@ const PlasmicDescendants = {
     "titlePart",
     "commentsScrolling",
     "testimonialsScrolling",
-    "records",
-    "_1st",
-    "numberTop",
-    "titleDown",
-    "_1st2",
-    "numberTop2",
-    "titleDown2",
-    "_3rd",
-    "numberTop3",
-    "titleDown3",
+    "embedHtml",
     "addingVillaIntoPltforms",
     "reg"
   ],
@@ -1671,27 +1534,7 @@ const PlasmicDescendants = {
   titlePart: ["titlePart"],
   commentsScrolling: ["commentsScrolling", "testimonialsScrolling"],
   testimonialsScrolling: ["testimonialsScrolling"],
-  records: [
-    "records",
-    "_1st",
-    "numberTop",
-    "titleDown",
-    "_1st2",
-    "numberTop2",
-    "titleDown2",
-    "_3rd",
-    "numberTop3",
-    "titleDown3"
-  ],
-  _1st: ["_1st", "numberTop", "titleDown"],
-  numberTop: ["numberTop"],
-  titleDown: ["titleDown"],
-  _1st2: ["_1st2", "numberTop2", "titleDown2"],
-  numberTop2: ["numberTop2"],
-  titleDown2: ["titleDown2"],
-  _3rd: ["_3rd", "numberTop3", "titleDown3"],
-  numberTop3: ["numberTop3"],
-  titleDown3: ["titleDown3"],
+  embedHtml: ["embedHtml"],
   addingVillaIntoPltforms: ["addingVillaIntoPltforms", "reg"],
   reg: ["reg"],
   qA: [
@@ -1769,16 +1612,7 @@ type NodeDefaultElementType = {
   titlePart: "div";
   commentsScrolling: "div";
   testimonialsScrolling: typeof TestimonialsScrolling;
-  records: "div";
-  _1st: "div";
-  numberTop: "div";
-  titleDown: "div";
-  _1st2: "div";
-  numberTop2: "div";
-  titleDown2: "div";
-  _3rd: "div";
-  numberTop3: "div";
-  titleDown3: "div";
+  embedHtml: typeof Embed;
   addingVillaIntoPltforms: "div";
   reg: "div";
   qA: "div";
@@ -1900,16 +1734,7 @@ export const PlasmicHomepage = Object.assign(
     titlePart: makeNodeComponent("titlePart"),
     commentsScrolling: makeNodeComponent("commentsScrolling"),
     testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
-    records: makeNodeComponent("records"),
-    _1st: makeNodeComponent("_1st"),
-    numberTop: makeNodeComponent("numberTop"),
-    titleDown: makeNodeComponent("titleDown"),
-    _1st2: makeNodeComponent("_1st2"),
-    numberTop2: makeNodeComponent("numberTop2"),
-    titleDown2: makeNodeComponent("titleDown2"),
-    _3rd: makeNodeComponent("_3rd"),
-    numberTop3: makeNodeComponent("numberTop3"),
-    titleDown3: makeNodeComponent("titleDown3"),
+    embedHtml: makeNodeComponent("embedHtml"),
     addingVillaIntoPltforms: makeNodeComponent("addingVillaIntoPltforms"),
     reg: makeNodeComponent("reg"),
     qA: makeNodeComponent("qA"),

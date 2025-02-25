@@ -143,6 +143,9 @@ export type PlasmicSetting__OverridesType = {
   buttons4?: Flex__<"div">;
   active4?: Flex__<"div">;
   deactive4?: Flex__<"div">;
+  opt14?: Flex__<"div">;
+  p24?: Flex__<"div">;
+  p34?: Flex__<"div">;
   apiRequestSetting?: Flex__<typeof ApiRequest>;
   returnButton?: Flex__<"div">;
   html?: Flex__<"div">;
@@ -3032,6 +3035,66 @@ function PlasmicSetting__RenderFunc(props: {
                 </div>
               </AntdModal>
             </div>
+            <div
+              data-plasmic-name={"opt14"}
+              data-plasmic-override={overrides.opt14}
+              className={classNames(projectcss.all, sty.opt14)}
+            >
+              <div
+                data-plasmic-name={"p24"}
+                data-plasmic-override={overrides.p24}
+                className={classNames(projectcss.all, sty.p24)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nIm2M
+                  )}
+                >
+                  {
+                    "\u06a9\u0627\u0631\u0645\u0632\u062f \u0641\u0639\u0644\u06cc \u0634\u0645\u0627"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"p34"}
+                data-plasmic-override={overrides.p34}
+                className={classNames(projectcss.all, sty.p34)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ifHFd
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.switch1.isSelected ||
+                          $state.switch2.isSelected ||
+                          $state.switch3.isSelected
+                          ? `${new Intl.NumberFormat("fa-IR").format(
+                              ($state.switch1.isSelected ? 1.5 : 0) +
+                                ($state.switch2.isSelected ? 1 : 0) +
+                                ($state.switch3.isSelected ? 0.5 : 0)
+                            )} درصد`
+                          : "۰ درصد";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u06a9\u0627\u0631\u0645\u0632\u062f: \u06f1\u066a";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              </div>
+            </div>
             <ApiRequest
               data-plasmic-name={"apiRequestSetting"}
               data-plasmic-override={overrides.apiRequestSetting}
@@ -3254,6 +3317,9 @@ const PlasmicDescendants = {
     "buttons4",
     "active4",
     "deactive4",
+    "opt14",
+    "p24",
+    "p34",
     "apiRequestSetting",
     "returnButton",
     "html",
@@ -3326,6 +3392,9 @@ const PlasmicDescendants = {
     "buttons4",
     "active4",
     "deactive4",
+    "opt14",
+    "p24",
+    "p34",
     "apiRequestSetting"
   ],
   title: ["title"],
@@ -3432,6 +3501,9 @@ const PlasmicDescendants = {
   buttons4: ["buttons4", "active4", "deactive4"],
   active4: ["active4"],
   deactive4: ["deactive4"],
+  opt14: ["opt14", "p24", "p34"],
+  p24: ["p24"],
+  p34: ["p34"],
   apiRequestSetting: ["apiRequestSetting"],
   returnButton: ["returnButton"],
   html: ["html", "clarity2", "goftino"],
@@ -3498,6 +3570,9 @@ type NodeDefaultElementType = {
   buttons4: "div";
   active4: "div";
   deactive4: "div";
+  opt14: "div";
+  p24: "div";
+  p34: "div";
   apiRequestSetting: typeof ApiRequest;
   returnButton: "div";
   html: "div";
@@ -3622,6 +3697,9 @@ export const PlasmicSetting = Object.assign(
     buttons4: makeNodeComponent("buttons4"),
     active4: makeNodeComponent("active4"),
     deactive4: makeNodeComponent("deactive4"),
+    opt14: makeNodeComponent("opt14"),
+    p24: makeNodeComponent("p24"),
+    p34: makeNodeComponent("p34"),
     apiRequestSetting: makeNodeComponent("apiRequestSetting"),
     returnButton: makeNodeComponent("returnButton"),
     html: makeNodeComponent("html"),

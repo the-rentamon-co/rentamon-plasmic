@@ -616,21 +616,11 @@
   > img {
   margin-left: 10px;
 }
-.svg__sA9Eu {
+.svg__gEzzh {
   object-fit: cover;
   max-width: 100%;
   color: #acacac;
-  height: 21px;
-}
-@media (max-width: 500px) {
-  .svg__sA9Eu {
-    width: 20px;
-    height: 100%;
-    max-width: 100%;
-    color: #acacac;
-    flex-shrink: 0;
-    min-height: 0;
-  }
+  height: 24px;
 }
 .text__gyivy {
   position: relative;
@@ -719,21 +709,11 @@
     min-width: 0;
   }
 }
-.svg__hanOi {
+.svg__qK4W {
   object-fit: cover;
   max-width: 100%;
   color: #acacac;
-  height: 19px;
-}
-@media (max-width: 500px) {
-  .svg__hanOi {
-    width: 20px;
-    height: 100%;
-    max-width: 100%;
-    color: #acacac;
-    flex-shrink: 0;
-    min-height: 0;
-  }
+  height: 23px;
 }
 .text__hw3Xm {
   position: relative;

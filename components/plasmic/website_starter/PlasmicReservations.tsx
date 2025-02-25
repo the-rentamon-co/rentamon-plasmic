@@ -97,6 +97,10 @@ export type PlasmicReservations__OverridesType = {
   sideBar2?: Flex__<typeof SideBar2>;
   profile?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
+  alertIcon?: Flex__<"div">;
+  alertText?: Flex__<"div">;
+  alertButton?: Flex__<"div">;
+  button?: Flex__<"div">;
   container?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
@@ -259,7 +263,11 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
       },
       {
         path: "finalModal.open",
@@ -596,80 +604,99 @@ function PlasmicReservations__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.freeBox___3DmSp)}
                 >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__vgQvQ)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "28px"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "35px"
-                        : "43px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image72.svg",
-                      fullWidth: 42,
-                      fullHeight: 42,
-                      aspectRatio: 1
-                    }}
-                  />
-
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zlYkA
-                    )}
+                    data-plasmic-name={"alertIcon"}
+                    data-plasmic-override={overrides.alertIcon}
+                    className={classNames(projectcss.all, sty.alertIcon)}
                   >
-                    {
-                      "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c\u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
-                    }
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__vgQvQ)}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "20px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "35px"
+                          : "43px"
+                      }
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image72.svg",
+                        fullWidth: 42,
+                        fullHeight: 42,
+                        aspectRatio: 1
+                      }}
+                    />
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__twvae)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["goToSetting"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/settings` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToSetting"] != null &&
-                        typeof $steps["goToSetting"] === "object" &&
-                        typeof $steps["goToSetting"].then === "function"
-                      ) {
-                        $steps["goToSetting"] = await $steps["goToSetting"];
-                      }
-                    }}
+                    data-plasmic-name={"alertText"}
+                    data-plasmic-override={overrides.alertText}
+                    className={classNames(projectcss.all, sty.alertText)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__kxibR
+                        sty.text__zlYkA
                       )}
                     >
-                      {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                      {
+                        "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
+                      }
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"alertButton"}
+                    data-plasmic-override={overrides.alertButton}
+                    className={classNames(projectcss.all, sty.alertButton)}
+                  >
+                    <div
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames(projectcss.all, sty.button)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["goToSetting"] = true
+                          ? (() => {
+                              const actionArgs = { destination: `/settings` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToSetting"] != null &&
+                          typeof $steps["goToSetting"] === "object" &&
+                          typeof $steps["goToSetting"].then === "function"
+                        ) {
+                          $steps["goToSetting"] = await $steps["goToSetting"];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kxibR
+                        )}
+                      >
+                        {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2581,9 +2608,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   propertyName:
                                     $state.reserveData2.data[currentIndex]
                                       .property_name,
-                                  status:
-                                    $state.reserveData2.data[currentIndex]
-                                      .status,
+                                  status: "Pending",
                                   phone_number:
                                     $state.reserveData2.data[currentIndex]
                                       .phone_number,
@@ -2629,72 +2654,32 @@ function PlasmicReservations__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateModalOpen"] =
-                        $state.reserveData2.data[currentIndex].status !=
-                        "Pending"
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["modal", "open"]
-                                },
-                                operation: 0,
-                                value: true
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
+                      $steps["updateModalOpen2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["confirmed", "open"]
+                              },
+                              operation: 0,
+                              value: true
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
 
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["updateModalOpen"] != null &&
-                        typeof $steps["updateModalOpen"] === "object" &&
-                        typeof $steps["updateModalOpen"].then === "function"
-                      ) {
-                        $steps["updateModalOpen"] = await $steps[
-                          "updateModalOpen"
-                        ];
-                      }
-
-                      $steps["updateModalOpen2"] =
-                        $state.reserveData2.data[currentIndex].status ==
-                        "Pending"
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["confirmed", "open"]
-                                },
-                                operation: 0,
-                                value: true
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
                       if (
                         $steps["updateModalOpen2"] != null &&
                         typeof $steps["updateModalOpen2"] === "object" &&
@@ -4113,6 +4098,10 @@ const PlasmicDescendants = {
     "sideBar2",
     "profile",
     "apiRequest",
+    "alertIcon",
+    "alertText",
+    "alertButton",
+    "button",
     "container",
     "modal",
     "main",
@@ -4167,7 +4156,11 @@ const PlasmicDescendants = {
   sideEffect: ["sideEffect"],
   sideBar2: ["sideBar2"],
   profile: ["profile"],
-  apiRequest: ["apiRequest"],
+  apiRequest: ["apiRequest", "alertIcon", "alertText", "alertButton", "button"],
+  alertIcon: ["alertIcon"],
+  alertText: ["alertText"],
+  alertButton: ["alertButton", "button"],
+  button: ["button"],
   container: [
     "container",
     "modal",
@@ -4342,6 +4335,10 @@ type NodeDefaultElementType = {
   sideBar2: typeof SideBar2;
   profile: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
+  alertIcon: "div";
+  alertText: "div";
+  alertButton: "div";
+  button: "div";
   container: "div";
   modal: typeof AntdModal;
   main: "div";
@@ -4458,6 +4455,10 @@ export const PlasmicReservations = Object.assign(
     sideBar2: makeNodeComponent("sideBar2"),
     profile: makeNodeComponent("profile"),
     apiRequest: makeNodeComponent("apiRequest"),
+    alertIcon: makeNodeComponent("alertIcon"),
+    alertText: makeNodeComponent("alertText"),
+    alertButton: makeNodeComponent("alertButton"),
+    button: makeNodeComponent("button"),
     container: makeNodeComponent("container"),
     modal: makeNodeComponent("modal"),
     main: makeNodeComponent("main"),

@@ -1538,6 +1538,26 @@
           "id": "Oyz_u64i1BAc",
           "name": "Icon44Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon44.tsx"
+        },
+        {
+          "id": "4Cn4iqi3L6VD",
+          "name": "Icon45Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon45.tsx"
+        },
+        {
+          "id": "Obx-H36hR0gN",
+          "name": "Icon46Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon46.tsx"
+        },
+        {
+          "id": "52h8XtG_2_Y1",
+          "name": "Icon47Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon47.tsx"
+        },
+        {
+          "id": "EUsJ3MtRCJEN",
+          "name": "Icon48Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon48.tsx"
         }
       ],
       "images": [
