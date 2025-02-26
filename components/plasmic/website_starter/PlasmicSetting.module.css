@@ -761,8 +761,9 @@
 }
 @media (max-width: 500px) {
   .text__q9AmZ {
-    font-size: 17px;
+    font-size: 16px;
     width: 100%;
+    font-weight: 500;
     min-width: 0;
   }
 }
@@ -941,7 +942,8 @@
 }
 @media (max-width: 500px) {
   .text__kgxw2 {
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: 500;
   }
 }
 @media (max-width: 350px) {
@@ -1132,7 +1134,8 @@
 }
 @media (max-width: 500px) {
   .text__faHZa {
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: 500;
   }
 }
 @media (max-width: 350px) {
@@ -2137,7 +2140,7 @@
 }
 @media (max-width: 500px) {
   .text__nIm2M {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media (max-width: 350px) {
@@ -2173,6 +2176,11 @@
 .text__ifHFd {
   font-size: 20px;
   font-weight: 600;
+}
+@media (max-width: 500px) {
+  .text__ifHFd {
+    font-size: 18px;
+  }
 }
 @media (max-width: 350px) {
   .text__ifHFd {

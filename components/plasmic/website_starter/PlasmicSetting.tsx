@@ -217,6 +217,9 @@ function PlasmicSetting__RenderFunc(props: {
                 const reservationItems = data.filter(
                   item => item.feature_name === "auto_sync"
                 );
+                if (reservationItems.length === 0) {
+                  return false;
+                }
                 const allReservationsTrue = reservationItems.every(
                   item => item.is_active === true
                 );
@@ -287,6 +290,9 @@ function PlasmicSetting__RenderFunc(props: {
                 const reservationItems = data.filter(
                   item => item.feature_name === "reservations"
                 );
+                if (reservationItems.length === 0) {
+                  return false;
+                }
                 const allReservationsTrue = reservationItems.every(
                   item => item.is_active === true
                 );
