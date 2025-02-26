@@ -92,6 +92,7 @@ export type PlasmicSetting__OverridesType = {
   right?: Flex__<"div">;
   right1?: Flex__<"div">;
   sidebar?: Flex__<"div">;
+  sideBar2?: Flex__<typeof SideBar2>;
   title2?: Flex__<"div">;
   right2?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
@@ -102,6 +103,7 @@ export type PlasmicSetting__OverridesType = {
   intro?: Flex__<"div">;
   _1st?: Flex__<"div">;
   rightSide?: Flex__<"div">;
+  sideBar22?: Flex__<typeof SideBar2>;
   up?: Flex__<"div">;
   leftSide?: Flex__<"div">;
   _2nd?: Flex__<"div">;
@@ -454,10 +456,9 @@ function PlasmicSetting__RenderFunc(props: {
                   />
 
                   <SideBar2
-                    className={classNames(
-                      "__wab_instance",
-                      sty.sideBar2__irgv3
-                    )}
+                    data-plasmic-name={"sideBar2"}
+                    data-plasmic-override={overrides.sideBar2}
+                    className={classNames("__wab_instance", sty.sideBar2)}
                     isOpen={false}
                   />
                 </div>
@@ -677,10 +678,9 @@ function PlasmicSetting__RenderFunc(props: {
                     />
 
                     <SideBar2
-                      className={classNames(
-                        "__wab_instance",
-                        sty.sideBar2__cfUF
-                      )}
+                      data-plasmic-name={"sideBar22"}
+                      data-plasmic-override={overrides.sideBar22}
+                      className={classNames("__wab_instance", sty.sideBar22)}
                       isOpen={false}
                     />
                   </div>
@@ -3266,6 +3266,7 @@ const PlasmicDescendants = {
     "right",
     "right1",
     "sidebar",
+    "sideBar2",
     "title2",
     "right2",
     "select2",
@@ -3276,6 +3277,7 @@ const PlasmicDescendants = {
     "intro",
     "_1st",
     "rightSide",
+    "sideBar22",
     "up",
     "leftSide",
     "_2nd",
@@ -3331,15 +3333,25 @@ const PlasmicDescendants = {
     "right",
     "right1",
     "sidebar",
+    "sideBar2",
     "title2",
     "right2",
     "select2",
     "left",
     "profile"
   ],
-  right: ["right", "right1", "sidebar", "title2", "right2", "select2"],
-  right1: ["right1", "sidebar", "title2"],
-  sidebar: ["sidebar"],
+  right: [
+    "right",
+    "right1",
+    "sidebar",
+    "sideBar2",
+    "title2",
+    "right2",
+    "select2"
+  ],
+  right1: ["right1", "sidebar", "sideBar2", "title2"],
+  sidebar: ["sidebar", "sideBar2"],
+  sideBar2: ["sideBar2"],
   title2: ["title2"],
   right2: ["right2", "select2"],
   select2: ["select2"],
@@ -3351,6 +3363,7 @@ const PlasmicDescendants = {
     "intro",
     "_1st",
     "rightSide",
+    "sideBar22",
     "up",
     "leftSide",
     "_2nd",
@@ -3398,9 +3411,10 @@ const PlasmicDescendants = {
     "apiRequestSetting"
   ],
   title: ["title"],
-  intro: ["intro", "_1st", "rightSide", "up", "leftSide", "_2nd"],
-  _1st: ["_1st", "rightSide", "up", "leftSide"],
-  rightSide: ["rightSide"],
+  intro: ["intro", "_1st", "rightSide", "sideBar22", "up", "leftSide", "_2nd"],
+  _1st: ["_1st", "rightSide", "sideBar22", "up", "leftSide"],
+  rightSide: ["rightSide", "sideBar22"],
+  sideBar22: ["sideBar22"],
   up: ["up"],
   leftSide: ["leftSide"],
   _2nd: ["_2nd"],
@@ -3519,6 +3533,7 @@ type NodeDefaultElementType = {
   right: "div";
   right1: "div";
   sidebar: "div";
+  sideBar2: typeof SideBar2;
   title2: "div";
   right2: "div";
   select2: typeof Select;
@@ -3529,6 +3544,7 @@ type NodeDefaultElementType = {
   intro: "div";
   _1st: "div";
   rightSide: "div";
+  sideBar22: typeof SideBar2;
   up: "div";
   leftSide: "div";
   _2nd: "div";
@@ -3644,6 +3660,7 @@ export const PlasmicSetting = Object.assign(
     right: makeNodeComponent("right"),
     right1: makeNodeComponent("right1"),
     sidebar: makeNodeComponent("sidebar"),
+    sideBar2: makeNodeComponent("sideBar2"),
     title2: makeNodeComponent("title2"),
     right2: makeNodeComponent("right2"),
     select2: makeNodeComponent("select2"),
@@ -3654,6 +3671,7 @@ export const PlasmicSetting = Object.assign(
     intro: makeNodeComponent("intro"),
     _1st: makeNodeComponent("_1st"),
     rightSide: makeNodeComponent("rightSide"),
+    sideBar22: makeNodeComponent("sideBar22"),
     up: makeNodeComponent("up"),
     leftSide: makeNodeComponent("leftSide"),
     _2nd: makeNodeComponent("_2nd"),

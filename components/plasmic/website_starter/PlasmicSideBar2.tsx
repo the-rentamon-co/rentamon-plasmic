@@ -575,9 +575,8 @@ function PlasmicSideBar2__RenderFunc(props: {
           </div>
           {(() => {
             try {
-              return (
-                !$state.checkUserPendingReserve.error.status ==
-                  "new reserve not found" ||
+              return !(
+                $state.checkUserPendingReserve.data == null ||
                 $state.checkUserPendingReserve.loading == true
               );
             } catch (e) {
@@ -601,7 +600,9 @@ function PlasmicSideBar2__RenderFunc(props: {
                 <React.Fragment>
                   {(() => {
                     try {
-                      return $state.checkUserPendingReserve.data[0].count_id;
+                      return $state.checkUserPendingReserve.data[0].count_id.toLocaleString(
+                        "fa"
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||

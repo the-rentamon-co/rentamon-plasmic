@@ -145,7 +145,7 @@
 .img__wXkGr > picture > img {
   object-fit: cover;
 }
-.sideBar2__irgv3:global(.__wab_instance):global(.__wab_instance) {
+.sideBar2:global(.__wab_instance):global(.__wab_instance) {
   z-index: 1;
   right: -15px;
   bottom: 0;
@@ -487,7 +487,7 @@
 .img__p1N7 > picture > img {
   object-fit: cover;
 }
-.sideBar2__cfUF:global(.__wab_instance):global(.__wab_instance) {
+.sideBar22:global(.__wab_instance):global(.__wab_instance) {
   z-index: 1;
   right: -15px;
   bottom: 0;
@@ -496,7 +496,7 @@
   position: fixed;
 }
 @media (max-width: 500px) {
-  .sideBar2__cfUF:global(.__wab_instance):global(.__wab_instance) {
+  .sideBar22:global(.__wab_instance):global(.__wab_instance) {
     position: relative;
     left: auto;
     top: auto;
