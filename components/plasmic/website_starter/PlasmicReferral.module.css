@@ -180,7 +180,7 @@
 @media (max-width: 500px) {
   .teamImage {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding-right: 0px;
     padding-left: 0px;
   }
@@ -526,6 +526,7 @@
   .cta {
     padding-right: 10px;
     padding-left: 10px;
+    padding-top: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -554,8 +555,8 @@
 }
 .ctaText > :global(.__wab_flex-container) {
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -571,8 +572,8 @@
 @media (max-width: 1200px) {
   .ctaText > :global(.__wab_flex-container) {
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     min-width: 0;
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
@@ -629,10 +630,9 @@
   }
 }
 .text___7S8Zm {
-  text-align: right;
+  text-align: center;
   font-size: 18px;
   line-height: 1.8;
-  padding-top: 20px;
   padding-right: 30px;
   padding-left: 30px;
 }
@@ -656,6 +656,7 @@
   .text___7S8Zm {
     font-size: 15px;
     padding-top: 0px;
+    text-align: center;
   }
 }
 .ctaButton {
@@ -668,7 +669,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 38px 0px 8px;
+  padding: 18px 0px 8px;
 }
 @media (max-width: 1200px) {
   .ctaButton {
@@ -684,8 +685,9 @@
 }
 @media (max-width: 350px) {
   .ctaButton {
-    padding-right: 6px;
-    padding-left: 6px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
   }
 }
 .text__vvG7H {

@@ -477,7 +477,9 @@ function PlasmicSideBar2__RenderFunc(props: {
                 try {
                   return (() => {
                     const balance_info = $props.userData.user_info.balance_info;
-                    const reducedBalance = balance_info.balance / 10;
+                    const reducedBalance = Math.floor(
+                      balance_info.balance / 10
+                    );
                     const formattedBalance = new Intl.NumberFormat(
                       "fa-IR"
                     ).format(reducedBalance);

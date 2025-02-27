@@ -1163,20 +1163,6 @@
           "path": "/integrations"
         },
         {
-          "id": "Gu50HL8TWrKF",
-          "name": "Setting",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSetting.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/settings.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicSetting.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/setting"
-        },
-        {
           "id": "lrlVKcMJCRk_",
           "name": "TestimonialsScrolling",
           "type": "managed",
@@ -1230,6 +1216,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/referral"
+        },
+        {
+          "id": "Gu50HL8TWrKF",
+          "name": "Settings",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSettings.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/settings.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSettings.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/settings"
         }
       ],
       "icons": [
