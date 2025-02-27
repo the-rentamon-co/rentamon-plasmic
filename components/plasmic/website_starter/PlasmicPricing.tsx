@@ -127,7 +127,6 @@ export type PlasmicPricing__OverridesType = {
   _4?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
-  ctaReferral?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -2789,51 +2788,6 @@ function PlasmicPricing__RenderFunc(props: {
               </div>
             </div>
             <div
-              data-plasmic-name={"ctaReferral"}
-              data-plasmic-override={overrides.ctaReferral}
-              className={classNames(projectcss.all, sty.ctaReferral)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__phhx
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return window.open(
-                                "https://rentamon.com/referral/",
-                                "_blank"
-                              );
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                {
-                  "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"
-                }
-              </div>
-            </div>
-            <div
               data-plasmic-name={"html"}
               data-plasmic-override={overrides.html}
               className={classNames(projectcss.all, sty.html)}
@@ -2908,7 +2862,6 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "_6",
-    "ctaReferral",
     "html",
     "clarity2",
     "goftino",
@@ -2973,7 +2926,6 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "_6",
-    "ctaReferral",
     "html",
     "clarity2",
     "goftino"
@@ -2984,7 +2936,6 @@ const PlasmicDescendants = {
   _4: ["_4"],
   _5: ["_5"],
   _6: ["_6"],
-  ctaReferral: ["ctaReferral"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -3032,7 +2983,6 @@ type NodeDefaultElementType = {
   _4: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
-  ctaReferral: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -3136,7 +3086,6 @@ export const PlasmicPricing = Object.assign(
     _4: makeNodeComponent("_4"),
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
-    ctaReferral: makeNodeComponent("ctaReferral"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),

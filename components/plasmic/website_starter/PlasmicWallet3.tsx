@@ -1910,29 +1910,29 @@ function PlasmicWallet3__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["runCode"] = true
+                  $steps["goToReferral"] = true
                     ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return window.open(
-                                "https://rentamon.com/referral/",
-                                "_blank"
-                              );
-                            })();
+                        const actionArgs = { destination: `/referral` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
                           }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
                         })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
                   if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
+                    $steps["goToReferral"] != null &&
+                    typeof $steps["goToReferral"] === "object" &&
+                    typeof $steps["goToReferral"].then === "function"
                   ) {
-                    $steps["runCode"] = await $steps["runCode"];
+                    $steps["goToReferral"] = await $steps["goToReferral"];
                   }
                 }}
               >
