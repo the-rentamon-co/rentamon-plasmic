@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
@@ -98,6 +99,10 @@ export type PlasmicReferral__OverridesType = {
   cta?: Flex__<"div">;
   ctaText?: Flex__<"div">;
   ctaButton?: Flex__<"div">;
+  copyText?: Flex__<typeof AntdModal>;
+  freeBox?: Flex__<"div">;
+  referraltext?: Flex__<"div">;
+  ctaButton2?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -144,6 +149,8 @@ function PlasmicReferral__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -151,6 +158,12 @@ function PlasmicReferral__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "copyText.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -413,6 +426,165 @@ function PlasmicReferral__RenderFunc(props: {
                       : "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
                   </div>
                 </div>
+                <AntdModal
+                  data-plasmic-name={"copyText"}
+                  data-plasmic-override={overrides.copyText}
+                  className={classNames("__wab_instance", sty.copyText)}
+                  defaultStylesClassName={classNames(
+                    projectcss.root_reset,
+                    projectcss.plasmic_default_styles,
+                    projectcss.plasmic_mixins,
+                    projectcss.plasmic_tokens,
+                    plasmic_antd_5_hostless_css.plasmic_tokens,
+                    plasmic_plasmic_rich_components_css.plasmic_tokens
+                  )}
+                  hideFooter={true}
+                  modalScopeClassName={sty["copyText__modal"]}
+                  onOpenChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "copyText",
+                      "open"
+                    ]).apply(null, eventArgs);
+                  }}
+                  open={generateStateValueProp($state, ["copyText", "open"])}
+                  title={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__bzTHz
+                      )}
+                    >
+                      {
+                        "\u0627\u06cc\u0646 \u067e\u06cc\u0627\u0645 \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0641\u0631\u0633\u062a \ud83d\udc47"
+                      }
+                    </div>
+                  }
+                  trigger={null}
+                >
+                  <div
+                    data-plasmic-name={"freeBox"}
+                    data-plasmic-override={overrides.freeBox}
+                    className={classNames(projectcss.all, sty.freeBox)}
+                  >
+                    <div
+                      data-plasmic-name={"referraltext"}
+                      data-plasmic-override={overrides.referraltext}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.referraltext
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\r\u0627\u0632 \u0637\u0631\u06cc\u0642 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c\u200c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648... \u06cc\u06a9\u062c\u0627 \u0642\u06cc\u0645\u062a \u0628\u0630\u0627\u0631\u06cc.\n\n\u06f7 \u062a\u0627 \u0627\u0632 \u0645\u0639\u0631\u0648\u0641\u200c\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u062a\u062c\u0645\u06cc\u0639 \u06a9\u0631\u062f\u0647 \u0648 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u062a\u0648\u06cc \u062e\u0648\u062f\u0634 \u062f\u0627\u0631\u0647.\n\n\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646 \ud83d\udc47\r\nrentamon.com"
+                        : "\r\u0627\u0632 \u0637\u0631\u06cc\u0642 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c\u200c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648... \u06cc\u06a9\u062c\u0627 \u0642\u06cc\u0645\u062a \u0628\u0630\u0627\u0631\u06cc.\n\n\u06f7 \u062a\u0627 \u0627\u0632 \u0645\u0639\u0631\u0648\u0641\u200c\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u062a\u062c\u0645\u06cc\u0639 \u06a9\u0631\u062f\u0647 \u0648 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u062a\u0648\u06cc \u062e\u0648\u062f\u0634 \u062f\u0627\u0631\u0647.\n\n\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646 \ud83d\udc47\r\nrentamon.com"}
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"ctaButton2"}
+                    data-plasmic-override={overrides.ctaButton2}
+                    className={classNames(projectcss.all, sty.ctaButton2)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jWl2Q
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return navigator.clipboard.writeText(
+                                    $state.copyText.referraltext
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+
+                        $steps["updateCopyTextOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["copyText", "open"]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateCopyTextOpen"] != null &&
+                          typeof $steps["updateCopyTextOpen"] === "object" &&
+                          typeof $steps["updateCopyTextOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateCopyTextOpen"] = await $steps[
+                            "updateCopyTextOpen"
+                          ];
+                        }
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "\u0645\u062a\u0646 \u062f\u0631 \u062d\u0627\u0641\u0638\u0647 \u06a9\u067e\u06cc \u0634\u062f \u0648 \u0622\u0645\u0627\u062f\u0647 \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 \u062f\u0648\u0633\u062a\u0627\u0646\u0647 :)",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                        : "\u06a9\u067e\u06cc \u0645\u062a\u0646"}
+                    </div>
+                  </div>
+                </AntdModal>
               </div>
             </div>
           </div>
@@ -466,6 +638,10 @@ const PlasmicDescendants = {
     "cta",
     "ctaText",
     "ctaButton",
+    "copyText",
+    "freeBox",
+    "referraltext",
+    "ctaButton2",
     "html",
     "clarity2",
     "goftino",
@@ -484,7 +660,11 @@ const PlasmicDescendants = {
     "introduction2",
     "cta",
     "ctaText",
-    "ctaButton"
+    "ctaButton",
+    "copyText",
+    "freeBox",
+    "referraltext",
+    "ctaButton2"
   ],
   intro1st: [
     "intro1st",
@@ -497,7 +677,11 @@ const PlasmicDescendants = {
     "introduction2",
     "cta",
     "ctaText",
-    "ctaButton"
+    "ctaButton",
+    "copyText",
+    "freeBox",
+    "referraltext",
+    "ctaButton2"
   ],
   introTitle: ["introTitle"],
   teamImage: ["teamImage", "introImage", "introduction"],
@@ -506,9 +690,21 @@ const PlasmicDescendants = {
   smsImage: ["smsImage", "introCalendarLeft2", "introduction2"],
   introCalendarLeft2: ["introCalendarLeft2"],
   introduction2: ["introduction2"],
-  cta: ["cta", "ctaText", "ctaButton"],
+  cta: [
+    "cta",
+    "ctaText",
+    "ctaButton",
+    "copyText",
+    "freeBox",
+    "referraltext",
+    "ctaButton2"
+  ],
   ctaText: ["ctaText"],
   ctaButton: ["ctaButton"],
+  copyText: ["copyText", "freeBox", "referraltext", "ctaButton2"],
+  freeBox: ["freeBox", "referraltext"],
+  referraltext: ["referraltext"],
+  ctaButton2: ["ctaButton2"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -532,6 +728,10 @@ type NodeDefaultElementType = {
   cta: "div";
   ctaText: "div";
   ctaButton: "div";
+  copyText: typeof AntdModal;
+  freeBox: "div";
+  referraltext: "div";
+  ctaButton2: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -611,6 +811,10 @@ export const PlasmicReferral = Object.assign(
     cta: makeNodeComponent("cta"),
     ctaText: makeNodeComponent("ctaText"),
     ctaButton: makeNodeComponent("ctaButton"),
+    copyText: makeNodeComponent("copyText"),
+    freeBox: makeNodeComponent("freeBox"),
+    referraltext: makeNodeComponent("referraltext"),
+    ctaButton2: makeNodeComponent("ctaButton2"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),

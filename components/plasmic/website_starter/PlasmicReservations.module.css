@@ -1545,6 +1545,7 @@
   max-width: 100%;
   text-align: center;
   font-size: 17px;
+  padding-bottom: 0px;
   min-width: 0;
 }
 .reserveData:global(.__wab_instance) {

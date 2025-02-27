@@ -3034,10 +3034,7 @@ function PlasmicReservations__RenderFunc(props: {
                   >
                     {(() => {
                       try {
-                        return (
-                          !$state.reserveData.data ||
-                          $state.reserveData.data.length === 0
-                        );
+                        return $state.reserveData.data[0].Id != null;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -3157,7 +3154,7 @@ function PlasmicReservations__RenderFunc(props: {
                         )}
                       >
                         {
-                          "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f"
+                          "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0646\u06a9\u0631\u062f\u06cc"
                         }
                       </div>
                     ) : null}
