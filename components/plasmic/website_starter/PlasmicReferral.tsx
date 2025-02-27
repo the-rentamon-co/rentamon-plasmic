@@ -237,9 +237,9 @@ function PlasmicReferral__RenderFunc(props: {
                     sty.text__r0SZ
                   )}
                 >
-                  {
-                    "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647\u060c\n\u0648 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\r"
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647\u060c \u0648 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\r"
+                    : "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647\u060c\n\u0648 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\r"}
                 </div>
               </div>
               <div
@@ -257,7 +257,11 @@ function PlasmicReferral__RenderFunc(props: {
                     className={classNames(sty.img___0Yxcz)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "70%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"100%"}
@@ -293,9 +297,11 @@ function PlasmicReferral__RenderFunc(props: {
                 data-plasmic-override={overrides.smsImage}
                 className={classNames(projectcss.all, sty.smsImage)}
               >
-                <div
+                <Stack__
+                  as={"div"}
                   data-plasmic-name={"introCalendarLeft2"}
                   data-plasmic-override={overrides.introCalendarLeft2}
+                  hasGap={true}
                   className={classNames(projectcss.all, sty.introCalendarLeft2)}
                 >
                   <PlasmicImg__
@@ -303,7 +309,11 @@ function PlasmicReferral__RenderFunc(props: {
                     className={classNames(sty.img__uxHdh)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "70%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"100%"}
@@ -315,7 +325,7 @@ function PlasmicReferral__RenderFunc(props: {
                       aspectRatio: undefined
                     }}
                   />
-                </div>
+                </Stack__>
                 <div
                   data-plasmic-name={"introduction2"}
                   data-plasmic-override={overrides.introduction2}
@@ -339,9 +349,11 @@ function PlasmicReferral__RenderFunc(props: {
                 data-plasmic-override={overrides.cta}
                 className={classNames(projectcss.all, sty.cta)}
               >
-                <div
+                <Stack__
+                  as={"div"}
                   data-plasmic-name={"ctaText"}
                   data-plasmic-override={overrides.ctaText}
+                  hasGap={true}
                   className={classNames(projectcss.all, sty.ctaText)}
                 >
                   <div
@@ -355,7 +367,7 @@ function PlasmicReferral__RenderFunc(props: {
                       "\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u06a9\u0627\u0631\u0628\u0631\u06cc \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."
                     }
                   </div>
-                </div>
+                </Stack__>
                 <div
                   data-plasmic-name={"ctaButton"}
                   data-plasmic-override={overrides.ctaButton}
@@ -397,8 +409,8 @@ function PlasmicReferral__RenderFunc(props: {
                     }}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062c\u0632\u06cc\u06cc\u0627\u062a \u0646\u0633\u062e\u0647\u200c\u06cc \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 "
-                      : "\u062c\u0632\u06cc\u06cc\u0627\u062a \u0646\u0633\u062e\u0647\u200c\u06cc \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                      ? "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      : "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
                   </div>
                 </div>
               </div>

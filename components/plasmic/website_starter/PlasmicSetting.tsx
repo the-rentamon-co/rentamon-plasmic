@@ -746,7 +746,9 @@ function PlasmicSetting__RenderFunc(props: {
                         sty.text___6TAnx
                       )}
                     >
-                      {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                      {
+                        "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      }
                     </div>
                   </div>
                   <ApiRequest

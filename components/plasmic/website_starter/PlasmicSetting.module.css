@@ -485,11 +485,19 @@
 @media (max-width: 1200px) {
   .text___6TAnx {
     width: 90%;
+    font-size: 20px;
   }
 }
 @media (max-width: 500px) {
   .text___6TAnx {
     width: 80%;
+  }
+}
+@media (max-width: 350px) {
+  .text___6TAnx {
+    font-size: 17px;
+    width: 100%;
+    min-width: 0;
   }
 }
 .profile3:global(.__wab_instance) {
@@ -602,7 +610,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 60%;
+  max-width: 50%;
   justify-content: flex-end;
   align-items: center;
   min-width: 0;
@@ -793,7 +801,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 60%;
+  max-width: 50%;
   justify-content: flex-start;
   align-items: center;
   margin-top: 0px;
@@ -2453,20 +2461,20 @@
   align-items: center;
   margin-bottom: 181px;
   min-width: 0;
-  padding: 63px 8px 8px;
+  padding: 39px 8px 8px;
 }
 @media (max-width: 500px) {
   ._2Nd2 {
     padding-top: 30px;
     max-width: 90%;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
   }
 }
 @media (max-width: 350px) {
   ._2Nd2 {
     max-width: 96%;
     padding-top: 10px;
-    margin-bottom: 36px;
+    margin-bottom: 70px;
   }
 }
 .text__vl2CS {
