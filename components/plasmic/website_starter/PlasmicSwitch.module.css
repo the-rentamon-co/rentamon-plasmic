@@ -103,6 +103,7 @@
   transition-timing-function: ease-out;
   transform: translateX(0px) translateY(0px) translateZ(0px);
   box-shadow: 0px 0px 3px 0px #00000040;
+  padding-right: 0px;
   flex-shrink: 0;
   -webkit-transition-property: all;
   -webkit-transition-timing-function: ease-out;
