@@ -41,7 +41,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox__nZsBh {
+.header {
   display: flex;
   flex-direction: row;
   position: relative;

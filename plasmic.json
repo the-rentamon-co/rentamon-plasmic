@@ -1216,6 +1216,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/support"
+        },
+        {
+          "id": "SXQexie-iAHy",
+          "name": "Referral",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicReferral.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/referral.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicReferral.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/referral"
         }
       ],
       "icons": [
@@ -2580,6 +2594,16 @@
           "id": "cxfSbcqWV1Kt",
           "name": "image 79",
           "filePath": "../public/plasmic/website_starter/images/image79.svg"
+        },
+        {
+          "id": "fLiNu3KXn8o4",
+          "name": "image 80",
+          "filePath": "../public/plasmic/website_starter/images/image80.png"
+        },
+        {
+          "id": "ZhCj9ak6S2gM",
+          "name": "image 81",
+          "filePath": "../public/plasmic/website_starter/images/image81.png"
         }
       ],
       "indirect": false,

@@ -94,6 +94,7 @@ export const PlasmicReservations__ArgProps = new Array<ArgPropType>();
 export type PlasmicReservations__OverridesType = {
   root?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
@@ -483,7 +484,11 @@ function PlasmicReservations__RenderFunc(props: {
             }}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__nZsBh)}>
+          <div
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames(projectcss.all, sty.header)}
+          >
             <SideBar2
               data-plasmic-name={"sideBar2"}
               data-plasmic-override={overrides.sideBar2}
@@ -4095,6 +4100,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "sideEffect",
+    "header",
     "sideBar2",
     "profile",
     "apiRequest",
@@ -4154,6 +4160,7 @@ const PlasmicDescendants = {
     "cancelle"
   ],
   sideEffect: ["sideEffect"],
+  header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
   profile: ["profile"],
   apiRequest: ["apiRequest", "alertIcon", "alertText", "alertButton", "button"],
@@ -4332,6 +4339,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   sideEffect: typeof SideEffect;
+  header: "div";
   sideBar2: typeof SideBar2;
   profile: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
@@ -4452,6 +4460,7 @@ export const PlasmicReservations = Object.assign(
   {
     // Helper components rendering sub-elements
     sideEffect: makeNodeComponent("sideEffect"),
+    header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile: makeNodeComponent("profile"),
     apiRequest: makeNodeComponent("apiRequest"),

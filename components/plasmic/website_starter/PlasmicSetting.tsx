@@ -101,12 +101,16 @@ export type PlasmicSetting__OverridesType = {
   main?: Flex__<"div">;
   title?: Flex__<"div">;
   intro?: Flex__<"div">;
-  _1st?: Flex__<"div">;
-  rightSide?: Flex__<"div">;
-  sideBar22?: Flex__<typeof SideBar2>;
-  up?: Flex__<"div">;
-  leftSide?: Flex__<"div">;
+  header2?: Flex__<"div">;
+  sideBar23?: Flex__<typeof SideBar2>;
+  profile2?: Flex__<typeof ApiRequest>;
   _2nd?: Flex__<"div">;
+  titleRow?: Flex__<"div">;
+  opt15?: Flex__<"div">;
+  p14?: Flex__<"div">;
+  p25?: Flex__<"div">;
+  p35?: Flex__<"div">;
+  p44?: Flex__<"div">;
   optionsButtons?: Flex__<"div">;
   options?: Flex__<"div">;
   opt1?: Flex__<"div">;
@@ -149,6 +153,7 @@ export type PlasmicSetting__OverridesType = {
   p24?: Flex__<"div">;
   p34?: Flex__<"div">;
   apiRequestSetting?: Flex__<typeof ApiRequest>;
+  _2nd2?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
@@ -368,6 +373,30 @@ function PlasmicSetting__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequestSetting"
+      },
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
       }
     ],
     [$props, $ctx, $refs]
@@ -656,61 +685,63 @@ function PlasmicSetting__RenderFunc(props: {
             >
               <div className={classNames(projectcss.all, sty.freeBox__xsjRy)}>
                 <div
-                  data-plasmic-name={"_1st"}
-                  data-plasmic-override={overrides._1st}
-                  className={classNames(projectcss.all, sty._1st)}
+                  data-plasmic-name={"header2"}
+                  data-plasmic-override={overrides.header2}
+                  className={classNames(projectcss.all, sty.header2)}
                 >
-                  <div
-                    data-plasmic-name={"rightSide"}
-                    data-plasmic-override={overrides.rightSide}
-                    className={classNames(projectcss.all, sty.rightSide)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__p1N7)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"33px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image37.svg",
-                        fullWidth: 21,
-                        fullHeight: 24,
-                        aspectRatio: 0.875
-                      }}
-                    />
+                  <SideBar2
+                    data-plasmic-name={"sideBar23"}
+                    data-plasmic-override={overrides.sideBar23}
+                    className={classNames("__wab_instance", sty.sideBar23)}
+                    isOpen={false}
+                  />
 
-                    <SideBar2
-                      data-plasmic-name={"sideBar22"}
-                      data-plasmic-override={overrides.sideBar22}
-                      className={classNames("__wab_instance", sty.sideBar22)}
-                      isOpen={false}
-                    />
-                  </div>
                   <div
-                    data-plasmic-name={"up"}
-                    data-plasmic-override={overrides.up}
-                    className={classNames(projectcss.all, sty.up)}
+                    className={classNames(projectcss.all, sty.freeBox__ujQ22)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__dwYa
+                        sty.text__wbbhY
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                        : "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                      {
+                        "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      }
                     </div>
                   </div>
-                  <div
-                    data-plasmic-name={"leftSide"}
-                    data-plasmic-override={overrides.leftSide}
-                    className={classNames(projectcss.all, sty.leftSide)}
+                  <ApiRequest
+                    data-plasmic-name={"profile2"}
+                    data-plasmic-override={overrides.profile2}
+                    className={classNames("__wab_instance", sty.profile2)}
+                    errorDisplay={null}
+                    loadingDisplay={null}
+                    method={"GET"}
+                    onError={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "profile2",
+                        "error"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onLoading={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "profile2",
+                        "loading"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onSuccess={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "profile2",
+                        "data"
+                      ]).apply(null, eventArgs);
+                    }}
+                    ref={ref => {
+                      $refs["profile2"] = ref;
+                    }}
+                    url={
+                      "https://api-v2.rentamon.com/api/user_info?property_id=1"
+                    }
                   />
                 </div>
                 <div
@@ -726,10 +757,67 @@ function PlasmicSetting__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0648 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0641\u0639\u0627\u0644 \u06a9\u0646 \u062a\u0627 \u062f\u0631 \u0648\u0642\u062a\u062a \u0635\u0631\u0641\u0647\u200c\u062c\u0648\u06cc\u06cc \u06a9\u0646\u06cc :)"
+                      "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0648 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0628\u0634\u0647. \u0628\u0647 \u0627\u0632\u0627\u06cc \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0641\u0639\u0627\u0644\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."
                     }
                   </div>
                 </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"titleRow"}
+              data-plasmic-override={overrides.titleRow}
+              className={classNames(projectcss.all, sty.titleRow)}
+            >
+              <div
+                data-plasmic-name={"opt15"}
+                data-plasmic-override={overrides.opt15}
+                className={classNames(projectcss.all, sty.opt15)}
+              >
+                <div
+                  data-plasmic-name={"p14"}
+                  data-plasmic-override={overrides.p14}
+                  className={classNames(projectcss.all, sty.p14)}
+                />
+
+                <div
+                  data-plasmic-name={"p25"}
+                  data-plasmic-override={overrides.p25}
+                  className={classNames(projectcss.all, sty.p25)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zleIg
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0639\u0646\u0648\u0627\u0646 \u0648\u06cc\u0698\u06af\u06cc"
+                      : "\u0639\u0646\u0648\u0627\u0646 \u0648\u06cc\u0698\u06af\u06cc"}
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"p35"}
+                  data-plasmic-override={overrides.p35}
+                  className={classNames(projectcss.all, sty.p35)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__vxcPf
+                    )}
+                  >
+                    {
+                      "\u06a9\u0627\u0631\u0645\u0632\u062f (\u062f\u0631\u0635\u062f)"
+                    }
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"p44"}
+                  data-plasmic-override={overrides.p44}
+                  className={classNames(projectcss.all, sty.p44, "ltr")}
+                />
               </div>
             </div>
             <div
@@ -799,9 +887,9 @@ function PlasmicSetting__RenderFunc(props: {
                         sty.text__ijKfr
                       )}
                     >
-                      {
-                        "\u06a9\u0627\u0631\u0645\u0632\u062f: \u06f1.\u06f5\u066a"
-                      }
+                      {hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u06f1/\u06f5"
+                        : "\u06f1/\u06f5"}
                     </div>
                   </div>
                   <div
@@ -994,7 +1082,7 @@ function PlasmicSetting__RenderFunc(props: {
                         sty.text__znzZh
                       )}
                     >
-                      {"\u06a9\u0627\u0631\u0645\u0632\u062f: \u06f1\u066a"}
+                      {"\u06f1"}
                     </div>
                   </div>
                   <div
@@ -1171,7 +1259,7 @@ function PlasmicSetting__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a"
+                        "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0628\u0632\u0648\u062f\u06cc)"
                       }
                     </div>
                   </div>
@@ -1187,9 +1275,9 @@ function PlasmicSetting__RenderFunc(props: {
                         sty.text__qjVuC
                       )}
                     >
-                      {
-                        "\u06a9\u0627\u0631\u0645\u0632\u062f: \u06f1.\u06f5\u066a"
-                      }
+                      {hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u06f0/\u06f5"
+                        : "\u06f0/\u06f5"}
                     </div>
                   </div>
                   <div
@@ -3155,6 +3243,52 @@ function PlasmicSetting__RenderFunc(props: {
               }}
               url={"https://gateway.rentamon.com/webhook/fetch-setting-from-db"}
             />
+
+            <div
+              data-plasmic-name={"_2nd2"}
+              data-plasmic-override={overrides._2nd2}
+              className={classNames(projectcss.all, sty._2Nd2)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vl2CS
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile") ? (
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc\u060c \u06cc\u0639\u0646\u06cc \u0622\u0632\u0627\u062f \u06a9\u0631\u062f\u0646 \u0648\u0642\u062a. \u0627\u0632 \u0642\u062f\u06cc\u0645 \u06af\u0641\u062a\u0646 "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"\u0648\u0642\u062a \u0637\u0644\u0627\u0633\u062a"}
+                    </span>
+                    <React.Fragment>{"!"}</React.Fragment>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc\u060c \u06cc\u0639\u0646\u06cc \u0622\u0632\u0627\u062f \u06a9\u0631\u062f\u0646 \u0648\u0642\u062a. \u0627\u0632 \u0642\u062f\u06cc\u0645 \u06af\u0641\u062a\u0646 "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"\u0648\u0642\u062a \u0637\u0644\u0627\u0633\u062a"}
+                    </span>
+                    <React.Fragment>{"!"}</React.Fragment>
+                  </React.Fragment>
+                )}
+              </div>
+            </div>
           </div>
           <div
             data-plasmic-name={"returnButton"}
@@ -3281,12 +3415,16 @@ const PlasmicDescendants = {
     "main",
     "title",
     "intro",
-    "_1st",
-    "rightSide",
-    "sideBar22",
-    "up",
-    "leftSide",
+    "header2",
+    "sideBar23",
+    "profile2",
     "_2nd",
+    "titleRow",
+    "opt15",
+    "p14",
+    "p25",
+    "p35",
+    "p44",
     "optionsButtons",
     "options",
     "opt1",
@@ -3329,6 +3467,7 @@ const PlasmicDescendants = {
     "p24",
     "p34",
     "apiRequestSetting",
+    "_2nd2",
     "returnButton",
     "html",
     "clarity2",
@@ -3367,12 +3506,16 @@ const PlasmicDescendants = {
     "main",
     "title",
     "intro",
-    "_1st",
-    "rightSide",
-    "sideBar22",
-    "up",
-    "leftSide",
+    "header2",
+    "sideBar23",
+    "profile2",
     "_2nd",
+    "titleRow",
+    "opt15",
+    "p14",
+    "p25",
+    "p35",
+    "p44",
     "optionsButtons",
     "options",
     "opt1",
@@ -3414,16 +3557,21 @@ const PlasmicDescendants = {
     "opt14",
     "p24",
     "p34",
-    "apiRequestSetting"
+    "apiRequestSetting",
+    "_2nd2"
   ],
   title: ["title"],
-  intro: ["intro", "_1st", "rightSide", "sideBar22", "up", "leftSide", "_2nd"],
-  _1st: ["_1st", "rightSide", "sideBar22", "up", "leftSide"],
-  rightSide: ["rightSide", "sideBar22"],
-  sideBar22: ["sideBar22"],
-  up: ["up"],
-  leftSide: ["leftSide"],
+  intro: ["intro", "header2", "sideBar23", "profile2", "_2nd"],
+  header2: ["header2", "sideBar23", "profile2"],
+  sideBar23: ["sideBar23"],
+  profile2: ["profile2"],
   _2nd: ["_2nd"],
+  titleRow: ["titleRow", "opt15", "p14", "p25", "p35", "p44"],
+  opt15: ["opt15", "p14", "p25", "p35", "p44"],
+  p14: ["p14"],
+  p25: ["p25"],
+  p35: ["p35"],
+  p44: ["p44"],
   optionsButtons: [
     "optionsButtons",
     "options",
@@ -3525,6 +3673,7 @@ const PlasmicDescendants = {
   p24: ["p24"],
   p34: ["p34"],
   apiRequestSetting: ["apiRequestSetting"],
+  _2nd2: ["_2nd2"],
   returnButton: ["returnButton"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
@@ -3548,12 +3697,16 @@ type NodeDefaultElementType = {
   main: "div";
   title: "div";
   intro: "div";
-  _1st: "div";
-  rightSide: "div";
-  sideBar22: typeof SideBar2;
-  up: "div";
-  leftSide: "div";
+  header2: "div";
+  sideBar23: typeof SideBar2;
+  profile2: typeof ApiRequest;
   _2nd: "div";
+  titleRow: "div";
+  opt15: "div";
+  p14: "div";
+  p25: "div";
+  p35: "div";
+  p44: "div";
   optionsButtons: "div";
   options: "div";
   opt1: "div";
@@ -3596,6 +3749,7 @@ type NodeDefaultElementType = {
   p24: "div";
   p34: "div";
   apiRequestSetting: typeof ApiRequest;
+  _2nd2: "div";
   returnButton: "div";
   html: "div";
   clarity2: typeof Embed;
@@ -3675,12 +3829,16 @@ export const PlasmicSetting = Object.assign(
     main: makeNodeComponent("main"),
     title: makeNodeComponent("title"),
     intro: makeNodeComponent("intro"),
-    _1st: makeNodeComponent("_1st"),
-    rightSide: makeNodeComponent("rightSide"),
-    sideBar22: makeNodeComponent("sideBar22"),
-    up: makeNodeComponent("up"),
-    leftSide: makeNodeComponent("leftSide"),
+    header2: makeNodeComponent("header2"),
+    sideBar23: makeNodeComponent("sideBar23"),
+    profile2: makeNodeComponent("profile2"),
     _2nd: makeNodeComponent("_2nd"),
+    titleRow: makeNodeComponent("titleRow"),
+    opt15: makeNodeComponent("opt15"),
+    p14: makeNodeComponent("p14"),
+    p25: makeNodeComponent("p25"),
+    p35: makeNodeComponent("p35"),
+    p44: makeNodeComponent("p44"),
     optionsButtons: makeNodeComponent("optionsButtons"),
     options: makeNodeComponent("options"),
     opt1: makeNodeComponent("opt1"),
@@ -3725,6 +3883,7 @@ export const PlasmicSetting = Object.assign(
     p24: makeNodeComponent("p24"),
     p34: makeNodeComponent("p34"),
     apiRequestSetting: makeNodeComponent("apiRequestSetting"),
+    _2nd2: makeNodeComponent("_2nd2"),
     returnButton: makeNodeComponent("returnButton"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
