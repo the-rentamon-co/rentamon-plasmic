@@ -76,8 +76,6 @@ import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4Hw
 import Icon50Icon from "./icons/PlasmicIcon__Icon50"; // plasmic-import: c8twinuxODWl/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
 import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
-import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: 523_R9Q_1fOL/icon
-import Icon5Icon from "./icons/PlasmicIcon__Icon5"; // plasmic-import: GlNmRVfZkYuK/icon
 import Icon48Icon from "./icons/PlasmicIcon__Icon48"; // plasmic-import: EUsJ3MtRCJEN/icon
 import Icon47Icon from "./icons/PlasmicIcon__Icon47"; // plasmic-import: 52h8XtG_2_Y1/icon
 import Icon44Icon from "./icons/PlasmicIcon__Icon44"; // plasmic-import: Oyz_u64i1BAc/icon
@@ -464,59 +462,122 @@ function PlasmicSideBar2__RenderFunc(props: {
           as={"div"}
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__frdDg)}
-        >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__yk8
-            )}
-          >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return (() => {
-                    const balance_info = $props.userData.user_info.balance_info;
-                    const reducedBalance = Math.floor(
-                      balance_info.balance / 10
-                    );
-                    const formattedBalance = new Intl.NumberFormat(
-                      "fa-IR"
-                    ).format(reducedBalance);
-                    return `اعتبار: ${formattedBalance} تومان`;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          </div>
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__vmTg1)}
-            displayHeight={"auto"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"20px"}
-            loading={"lazy"}
-            src={{
-              src: "/plasmic/website_starter/images/image82.svg",
-              fullWidth: 41,
-              fullHeight: 41,
-              aspectRatio: 1
-            }}
-          />
-        </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__lpQn7)} />
+          onClick={async event => {
+            const $steps = {};
 
+            $steps["updateModalSidebarOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modalSidebar", "open"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen"] != null &&
+              typeof $steps["updateModalSidebarOpen"] === "object" &&
+              typeof $steps["updateModalSidebarOpen"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen"] = await $steps[
+                "updateModalSidebarOpen"
+              ];
+            }
+
+            $steps["updateModalSidebarOpen2"] = true
+              ? (() => {
+                  const actionArgs = { destination: `/wallet` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
+                    }
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen2"] != null &&
+              typeof $steps["updateModalSidebarOpen2"] === "object" &&
+              typeof $steps["updateModalSidebarOpen2"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen2"] = await $steps[
+                "updateModalSidebarOpen2"
+              ];
+            }
+          }}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__wOt3K)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__yk8
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return (() => {
+                      const balance_info =
+                        $props.userData.user_info.balance_info;
+                      const reducedBalance = Math.floor(
+                        balance_info.balance / 10
+                      );
+                      const formattedBalance = new Intl.NumberFormat(
+                        "fa-IR"
+                      ).format(reducedBalance);
+                      return `کیف پول: ${formattedBalance} تومان`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__l5Uin)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__kmaPz)}
+              displayHeight={"30px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"30px"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image83.svg",
+                fullWidth: 100,
+                fullHeight: 100,
+                aspectRatio: 1
+              }}
+            />
+          </div>
+        </Stack__>
         <Stack__
           as={"div"}
           hasGap={true}
@@ -937,168 +998,6 @@ function PlasmicSideBar2__RenderFunc(props: {
             )}
           >
             {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"}
-          </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__v6FnF,
-            "clickable"
-          )}
-          onClick={async event => {
-            const $steps = {};
-
-            $steps["updateModalSidebarOpen"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["modalSidebar", "open"]
-                    },
-                    operation: 0
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateModalSidebarOpen"] != null &&
-              typeof $steps["updateModalSidebarOpen"] === "object" &&
-              typeof $steps["updateModalSidebarOpen"].then === "function"
-            ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
-            }
-
-            $steps["goToTransactions"] = true
-              ? (() => {
-                  const actionArgs = { destination: `/transactions` };
-                  return (({ destination }) => {
-                    if (
-                      typeof destination === "string" &&
-                      destination.startsWith("#")
-                    ) {
-                      document
-                        .getElementById(destination.substr(1))
-                        .scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      __nextRouter?.push(destination);
-                    }
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["goToTransactions"] != null &&
-              typeof $steps["goToTransactions"] === "object" &&
-              typeof $steps["goToTransactions"].then === "function"
-            ) {
-              $steps["goToTransactions"] = await $steps["goToTransactions"];
-            }
-          }}
-        >
-          <Icon13Icon
-            className={classNames(projectcss.all, sty.svg__i5X8Z)}
-            role={"img"}
-          />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___4ITo
-            )}
-          >
-            {
-              "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
-            }
-          </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__klQF, "clickable")}
-          onClick={async event => {
-            const $steps = {};
-
-            $steps["updateModalSidebarOpen"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["modalSidebar", "open"]
-                    },
-                    operation: 0
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateModalSidebarOpen"] != null &&
-              typeof $steps["updateModalSidebarOpen"] === "object" &&
-              typeof $steps["updateModalSidebarOpen"].then === "function"
-            ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
-            }
-
-            $steps["goToPricing"] = true
-              ? (() => {
-                  const actionArgs = { destination: `/pricing` };
-                  return (({ destination }) => {
-                    if (
-                      typeof destination === "string" &&
-                      destination.startsWith("#")
-                    ) {
-                      document
-                        .getElementById(destination.substr(1))
-                        .scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      __nextRouter?.push(destination);
-                    }
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["goToPricing"] != null &&
-              typeof $steps["goToPricing"] === "object" &&
-              typeof $steps["goToPricing"].then === "function"
-            ) {
-              $steps["goToPricing"] = await $steps["goToPricing"];
-            }
-          }}
-        >
-          <Icon5Icon
-            className={classNames(projectcss.all, sty.svg__s3Sds)}
-            role={"img"}
-          />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__hcNg
-            )}
-          >
-            {"\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"}
           </div>
         </Stack__>
         <div className={classNames(projectcss.all, sty.freeBox__sWbL)} />

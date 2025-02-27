@@ -163,7 +163,8 @@ function PlasmicReferral__RenderFunc(props: {
         path: "copyText.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? false : true
       }
     ],
     [$props, $ctx, $refs]
@@ -395,29 +396,40 @@ function PlasmicReferral__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["goToFeatures"] = true
+                      $steps["updateCopyTextOpen"] = true
                         ? (() => {
-                            const actionArgs = { destination: `/features` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["copyText", "open"]
+                              },
+                              operation: 0,
+                              value: true
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
                               }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
                       if (
-                        $steps["goToFeatures"] != null &&
-                        typeof $steps["goToFeatures"] === "object" &&
-                        typeof $steps["goToFeatures"].then === "function"
+                        $steps["updateCopyTextOpen"] != null &&
+                        typeof $steps["updateCopyTextOpen"] === "object" &&
+                        typeof $steps["updateCopyTextOpen"].then === "function"
                       ) {
-                        $steps["goToFeatures"] = await $steps["goToFeatures"];
+                        $steps["updateCopyTextOpen"] = await $steps[
+                          "updateCopyTextOpen"
+                        ];
                       }
                     }}
                   >
@@ -580,7 +592,7 @@ function PlasmicReferral__RenderFunc(props: {
                       }}
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                        ? "\u06a9\u067e\u06cc \u0645\u062a\u0646"
                         : "\u06a9\u067e\u06cc \u0645\u062a\u0646"}
                     </div>
                   </div>
