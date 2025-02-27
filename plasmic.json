@@ -1577,6 +1577,11 @@
           "id": "Sg0oqZa4zTiY",
           "name": "Icon49Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon49.tsx"
+        },
+        {
+          "id": "c8twinuxODWl",
+          "name": "Icon50Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon50.tsx"
         }
       ],
       "images": [
@@ -2604,6 +2609,11 @@
           "id": "ZhCj9ak6S2gM",
           "name": "image 81",
           "filePath": "../public/plasmic/website_starter/images/image81.png"
+        },
+        {
+          "id": "mMUPQxgeJhO0",
+          "name": "image 82",
+          "filePath": "../public/plasmic/website_starter/images/image82.svg"
         }
       ],
       "indirect": false,

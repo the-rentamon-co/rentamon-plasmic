@@ -73,6 +73,7 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgc
 import sty from "./PlasmicSideBar2.module.css"; // plasmic-import: 03ZPQfFyBXgI/css
 
 import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4HwqLfNb/icon
+import Icon50Icon from "./icons/PlasmicIcon__Icon50"; // plasmic-import: c8twinuxODWl/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
 import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
 import Icon13Icon from "./icons/PlasmicIcon__Icon13"; // plasmic-import: 523_R9Q_1fOL/icon
@@ -102,6 +103,7 @@ export const PlasmicSideBar2__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicSideBar2__OverridesType = {
   modalSidebar?: Flex__<typeof AntdModal>;
+  profile?: Flex__<"div">;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
 };
 
@@ -392,65 +394,71 @@ function PlasmicSideBar2__RenderFunc(props: {
       wrapClassName={classNames({ [sty["pcls_CJNwevy9HtLv"]]: true })}
     >
       <div className={classNames(projectcss.all, sty.freeBox__zNdeq, "vh")}>
-        <PlasmicImg__
-          alt={""}
-          className={classNames(sty.img__jzKe6)}
-          displayHeight={"auto"}
-          displayMaxHeight={"none"}
-          displayMaxWidth={"100%"}
-          displayMinHeight={"0"}
-          displayMinWidth={"0"}
-          displayWidth={
-            hasVariant(globalVariants, "screen", "mobile") ? "60px" : "100px"
-          }
-          height={"100px"}
-          loading={"lazy"}
-          src={(() => {
-            try {
-              return $props.userData.user_info.profile_image;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return {
-                  src: "/plasmic/website_starter/images/image31.svg",
-                  fullWidth: 96,
-                  fullHeight: 96,
-                  aspectRatio: 1
-                };
-              }
-              throw e;
-            }
-          })()}
-          width={"100px"}
-        />
-
         <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__gj0UI
-          )}
+          data-plasmic-name={"profile"}
+          data-plasmic-override={overrides.profile}
+          className={classNames(projectcss.all, sty.profile)}
         >
-          <React.Fragment>
-            {(() => {
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img__jzKe6)}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={
+              hasVariant(globalVariants, "screen", "mobile") ? "60px" : "auto"
+            }
+            height={"50px"}
+            loading={"lazy"}
+            src={(() => {
               try {
-                return $props.userData.user_info.first_name.concat(
-                  " ",
-                  $props.userData.user_info.last_name
-                );
+                return $props.userData.user_info.profile_image;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
                   e?.plasmicType === "PlasmicUndefinedDataError"
                 ) {
-                  return "";
+                  return {
+                    src: "/plasmic/website_starter/images/image31.svg",
+                    fullWidth: 96,
+                    fullHeight: 96,
+                    aspectRatio: 1
+                  };
                 }
                 throw e;
               }
             })()}
-          </React.Fragment>
+            width={"50px"}
+          />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__gj0UI
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.userData.user_info.first_name.concat(
+                    " ",
+                    $props.userData.user_info.last_name
+                  );
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
         </div>
         <Stack__
           as={"div"}
@@ -487,6 +495,23 @@ function PlasmicSideBar2__RenderFunc(props: {
               })()}
             </React.Fragment>
           </div>
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img__vmTg1)}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"20px"}
+            loading={"lazy"}
+            src={{
+              src: "/plasmic/website_starter/images/image82.svg",
+              fullWidth: 41,
+              fullHeight: 41,
+              aspectRatio: 1
+            }}
+          />
         </Stack__>
         <div className={classNames(projectcss.all, sty.freeBox__lpQn7)} />
 
@@ -618,8 +643,134 @@ function PlasmicSideBar2__RenderFunc(props: {
             </div>
           ) : null}
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__wsY2G)} />
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(
+            projectcss.all,
+            sty.freeBox___8UaoI,
+            "clickable"
+          )}
+          onClick={async event => {
+            const $steps = {};
 
+            $steps["updateModalSidebarOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modalSidebar", "open"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen"] != null &&
+              typeof $steps["updateModalSidebarOpen"] === "object" &&
+              typeof $steps["updateModalSidebarOpen"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen"] = await $steps[
+                "updateModalSidebarOpen"
+              ];
+            }
+
+            $steps["updateModalSidebarOpen2"] = true
+              ? (() => {
+                  const actionArgs = { destination: `/contacts` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
+                    }
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen2"] != null &&
+              typeof $steps["updateModalSidebarOpen2"] === "object" &&
+              typeof $steps["updateModalSidebarOpen2"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen2"] = await $steps[
+                "updateModalSidebarOpen2"
+              ];
+            }
+          }}
+        >
+          <Icon50Icon
+            className={classNames(projectcss.all, sty.svg___7L6AY)}
+            role={"img"}
+          />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__iz91V
+            )}
+          >
+            {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
+          </div>
+          {(() => {
+            try {
+              return !(
+                $state.checkUserPendingReserve.data == null ||
+                $state.checkUserPendingReserve.loading == true
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__s3IY8)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__oypSp
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.checkUserPendingReserve.data[0].count_id.toLocaleString(
+                        "fa"
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "1";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            </div>
+          ) : null}
+        </Stack__>
         <Stack__
           as={"div"}
           hasGap={true}
@@ -704,8 +855,6 @@ function PlasmicSideBar2__RenderFunc(props: {
             }
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__yzYkW)} />
-
         <Stack__
           as={"div"}
           hasGap={true}
@@ -788,8 +937,6 @@ function PlasmicSideBar2__RenderFunc(props: {
             {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"}
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__nua5Y)} />
-
         <Stack__
           as={"div"}
           hasGap={true}
@@ -874,8 +1021,6 @@ function PlasmicSideBar2__RenderFunc(props: {
             }
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox___8Rrt6)} />
-
         <Stack__
           as={"div"}
           hasGap={true}
@@ -1038,8 +1183,6 @@ function PlasmicSideBar2__RenderFunc(props: {
             {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__oeNkT)} />
-
         <Stack__
           as={"div"}
           hasGap={true}
@@ -1118,8 +1261,6 @@ function PlasmicSideBar2__RenderFunc(props: {
             {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__zzdg9)} />
-
         <Stack__
           as={"div"}
           hasGap={true}
@@ -1202,8 +1343,6 @@ function PlasmicSideBar2__RenderFunc(props: {
             {"\u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
           </div>
         </Stack__>
-        <div className={classNames(projectcss.all, sty.freeBox__rqlT)} />
-
         <Stack__
           as={"div"}
           hasGap={true}
@@ -1338,7 +1477,8 @@ function PlasmicSideBar2__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  modalSidebar: ["modalSidebar", "checkUserPendingReserve"],
+  modalSidebar: ["modalSidebar", "profile", "checkUserPendingReserve"],
+  profile: ["profile"],
   checkUserPendingReserve: ["checkUserPendingReserve"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1346,6 +1486,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   modalSidebar: typeof AntdModal;
+  profile: "div";
   checkUserPendingReserve: typeof ApiRequest;
 };
 
@@ -1409,6 +1550,7 @@ export const PlasmicSideBar2 = Object.assign(
   makeNodeComponent("modalSidebar"),
   {
     // Helper components rendering sub-elements
+    profile: makeNodeComponent("profile"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),
 
     // Metadata about props expected for PlasmicSideBar2
