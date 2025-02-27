@@ -59,15 +59,15 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -94,9 +94,11 @@ export const PlasmicWallet3__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicWallet3__OverridesType = {
   wallet?: Flex__<"div">;
+  header?: Flex__<"div">;
+  sideBar2?: Flex__<typeof SideBar2>;
+  profile2?: Flex__<typeof ApiRequest>;
   favIcon?: Flex__<typeof Embed>;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
-  featuresDesc2?: Flex__<"div">;
+  walletDesc?: Flex__<"div">;
   balanceAndCharge?: Flex__<"div">;
   balance?: Flex__<"div">;
   balance2?: Flex__<"div">;
@@ -218,6 +220,30 @@ function PlasmicWallet3__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile"
+      },
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
       }
     ],
     [$props, $ctx, $refs]
@@ -273,6 +299,73 @@ function PlasmicWallet3__RenderFunc(props: {
             sty.wallet
           )}
         >
+          <div
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames(projectcss.all, sty.header)}
+          >
+            <SideBar2
+              data-plasmic-name={"sideBar2"}
+              data-plasmic-override={overrides.sideBar2}
+              className={classNames("__wab_instance", sty.sideBar2)}
+              isOpen={false}
+              userData={(() => {
+                try {
+                  return $state.profile2.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            />
+
+            <div className={classNames(projectcss.all, sty.freeBox__vz8Jg)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__n7WGr
+                )}
+              >
+                {"\u06a9\u06cc\u0641 \u067e\u0648\u0644"}
+              </div>
+            </div>
+            <ApiRequest
+              data-plasmic-name={"profile2"}
+              data-plasmic-override={overrides.profile2}
+              className={classNames("__wab_instance", sty.profile2)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile2", "error"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "profile2",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["profile2"] = ref;
+              }}
+              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+            />
+          </div>
           <Embed
             data-plasmic-name={"favIcon"}
             data-plasmic-override={overrides.favIcon}
@@ -282,41 +375,21 @@ function PlasmicWallet3__RenderFunc(props: {
             }
           />
 
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
-          />
-
-          <div className={classNames(projectcss.all, sty.freeBox__fFbe)}>
+          <div
+            data-plasmic-name={"walletDesc"}
+            data-plasmic-override={overrides.walletDesc}
+            className={classNames(projectcss.all, sty.walletDesc)}
+          >
             <div
-              data-plasmic-name={"featuresDesc2"}
-              data-plasmic-override={overrides.featuresDesc2}
-              className={classNames(projectcss.all, sty.featuresDesc2)}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__dfpnz
+              )}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__yJr5C
-                )}
-              >
-                {"\u06a9\u06cc\u0641 \u067e\u0648\u0644"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__dfpnz
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0647\u0631 \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0647\u060c \u0627\u06cc\u0646\u200c\u062c\u0627\u0633\u062a. "
-                  : "\u0647\u0631 \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0647\u060c \u0627\u06cc\u0646\u200c\u062c\u0627\u0633\u062a. "}
-              </div>
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "\u0647\u0631 \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0647\u060c \u0627\u06cc\u0646\u200c\u062c\u0627\u0633\u062a. "
+                : "\u0647\u0631 \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0647\u060c \u0627\u06cc\u0646\u200c\u062c\u0627\u0633\u062a. "}
             </div>
           </div>
           <div
@@ -350,7 +423,7 @@ function PlasmicWallet3__RenderFunc(props: {
                         const formattedBalance = new Intl.NumberFormat(
                           "fa-IR"
                         ).format(reducedBalance);
-                        return `اعتبار: ${formattedBalance} تومان`;
+                        return `موجودی: ${formattedBalance} تومان`;
                       })();
                     } catch (e) {
                       if (
@@ -2021,9 +2094,11 @@ function PlasmicWallet3__RenderFunc(props: {
 const PlasmicDescendants = {
   wallet: [
     "wallet",
+    "header",
+    "sideBar2",
+    "profile2",
     "favIcon",
-    "navbarRentamonComponent",
-    "featuresDesc2",
+    "walletDesc",
     "balanceAndCharge",
     "balance",
     "balance2",
@@ -2043,9 +2118,11 @@ const PlasmicDescendants = {
     "rentamonFooter",
     "profile"
   ],
+  header: ["header", "sideBar2", "profile2"],
+  sideBar2: ["sideBar2"],
+  profile2: ["profile2"],
   favIcon: ["favIcon"],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
-  featuresDesc2: ["featuresDesc2"],
+  walletDesc: ["walletDesc"],
   balanceAndCharge: ["balanceAndCharge", "balance", "balance2", "report"],
   balance: ["balance", "balance2"],
   balance2: ["balance2"],
@@ -2082,9 +2159,11 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   wallet: "div";
+  header: "div";
+  sideBar2: typeof SideBar2;
+  profile2: typeof ApiRequest;
   favIcon: typeof Embed;
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
-  featuresDesc2: "div";
+  walletDesc: "div";
   balanceAndCharge: "div";
   balance: "div";
   balance2: "div";
@@ -2165,9 +2244,11 @@ export const PlasmicWallet3 = Object.assign(
   makeNodeComponent("wallet"),
   {
     // Helper components rendering sub-elements
+    header: makeNodeComponent("header"),
+    sideBar2: makeNodeComponent("sideBar2"),
+    profile2: makeNodeComponent("profile2"),
     favIcon: makeNodeComponent("favIcon"),
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
-    featuresDesc2: makeNodeComponent("featuresDesc2"),
+    walletDesc: makeNodeComponent("walletDesc"),
     balanceAndCharge: makeNodeComponent("balanceAndCharge"),
     balance: makeNodeComponent("balance"),
     balance2: makeNodeComponent("balance2"),

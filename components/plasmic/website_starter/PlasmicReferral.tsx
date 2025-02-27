@@ -101,7 +101,7 @@ export type PlasmicReferral__OverridesType = {
   ctaButton?: Flex__<"div">;
   copyText?: Flex__<typeof AntdModal>;
   freeBox?: Flex__<"div">;
-  referraltext?: Flex__<"div">;
+  refertxt?: Flex__<"div">;
   ctaButton2?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
@@ -164,7 +164,7 @@ function PlasmicReferral__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : true
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       }
     ],
     [$props, $ctx, $refs]
@@ -480,12 +480,12 @@ function PlasmicReferral__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox)}
                   >
                     <div
-                      data-plasmic-name={"referraltext"}
-                      data-plasmic-override={overrides.referraltext}
+                      data-plasmic-name={"refertxt"}
+                      data-plasmic-override={overrides.refertxt}
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.referraltext
+                        sty.refertxt
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile")
@@ -512,7 +512,7 @@ function PlasmicReferral__RenderFunc(props: {
                               const actionArgs = {
                                 customFunction: async () => {
                                   return navigator.clipboard.writeText(
-                                    $state.copyText.referraltext
+                                    $state.copyText.refertxt
                                   );
                                 }
                               };
@@ -652,7 +652,7 @@ const PlasmicDescendants = {
     "ctaButton",
     "copyText",
     "freeBox",
-    "referraltext",
+    "refertxt",
     "ctaButton2",
     "html",
     "clarity2",
@@ -675,7 +675,7 @@ const PlasmicDescendants = {
     "ctaButton",
     "copyText",
     "freeBox",
-    "referraltext",
+    "refertxt",
     "ctaButton2"
   ],
   intro1st: [
@@ -692,7 +692,7 @@ const PlasmicDescendants = {
     "ctaButton",
     "copyText",
     "freeBox",
-    "referraltext",
+    "refertxt",
     "ctaButton2"
   ],
   introTitle: ["introTitle"],
@@ -708,14 +708,14 @@ const PlasmicDescendants = {
     "ctaButton",
     "copyText",
     "freeBox",
-    "referraltext",
+    "refertxt",
     "ctaButton2"
   ],
   ctaText: ["ctaText"],
   ctaButton: ["ctaButton"],
-  copyText: ["copyText", "freeBox", "referraltext", "ctaButton2"],
-  freeBox: ["freeBox", "referraltext"],
-  referraltext: ["referraltext"],
+  copyText: ["copyText", "freeBox", "refertxt", "ctaButton2"],
+  freeBox: ["freeBox", "refertxt"],
+  refertxt: ["refertxt"],
   ctaButton2: ["ctaButton2"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
@@ -742,7 +742,7 @@ type NodeDefaultElementType = {
   ctaButton: "div";
   copyText: typeof AntdModal;
   freeBox: "div";
-  referraltext: "div";
+  refertxt: "div";
   ctaButton2: "div";
   html: "div";
   clarity2: typeof Embed;
@@ -825,7 +825,7 @@ export const PlasmicReferral = Object.assign(
     ctaButton: makeNodeComponent("ctaButton"),
     copyText: makeNodeComponent("copyText"),
     freeBox: makeNodeComponent("freeBox"),
-    referraltext: makeNodeComponent("referraltext"),
+    refertxt: makeNodeComponent("refertxt"),
     ctaButton2: makeNodeComponent("ctaButton2"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
