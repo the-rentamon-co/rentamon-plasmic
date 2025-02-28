@@ -309,7 +309,9 @@ function PlasmicWallet3__RenderFunc(props: {
               data-plasmic-name={"sideBar2"}
               data-plasmic-override={overrides.sideBar2}
               className={classNames("__wab_instance", sty.sideBar2)}
-              isOpen={false}
+              isOpen={
+                hasVariant(globalVariants, "screen", "mobile") ? false : false
+              }
               userData={(() => {
                 try {
                   return $state.profile2.data;

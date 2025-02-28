@@ -242,7 +242,14 @@ function PlasmicSideBar2__RenderFunc(props: {
       )}
       hideFooter={true}
       maskClosable={true}
-      modalContentClassName={classNames({ [sty["pcls_uK2s887hZzv8"]]: true })}
+      modalContentClassName={classNames({
+        [sty["pcls__sEHiXeXJaaw"]]: hasVariant(
+          globalVariants,
+          "screen",
+          "mobile"
+        ),
+        [sty["pcls_uK2s887hZzv8"]]: true
+      })}
       modalScopeClassName={sty["modalSidebar__modal"]}
       onOpenChange={async (...eventArgs: any) => {
         generateStateOnChangeProp($state, ["modalSidebar", "open"]).apply(
