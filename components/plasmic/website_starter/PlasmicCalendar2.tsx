@@ -720,26 +720,19 @@ function PlasmicCalendar2__RenderFunc(props: {
         }}
         url={(() => {
           try {
-            return (
-              // // انتخاب المنت دوم span
-              // const secondSpan = document.querySelector('.rmdp-header-values span:nth-child(3)');
-
-              // // دسترسی به محتوای متن آن
-              // if (secondSpan) {
-              //   $state.year = secondSpan.textContent;
-              //   console.log($state.year); // محتوای ۱۴۰۴ را نشان می‌دهد
-              // }
-
-              // let initialMonth = new Date().toLocaleDateString("fa").split("/");
-              // let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
-
-              // // تعیین تعداد روزهای ماه بر اساس مقدار mon
-              // let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-
-              // `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
-
-              "https://gateway.rentamon.com/webhook/test"
-            );
+            return (() => {
+              const secondSpan = document.querySelector(
+                ".rmdp-header-values span:nth-child(3)"
+              );
+              if (secondSpan) {
+                $state.year = secondSpan.textContent;
+                console.log($state.year);
+              }
+              let initialMonth = new Date().toLocaleDateString("fa").split("/");
+              let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
+              let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+            })();
           } catch (e) {
             if (
               e instanceof TypeError ||
@@ -7072,28 +7065,8 @@ function PlasmicCalendar2__RenderFunc(props: {
         data-plasmic-name={"getNote"}
         data-plasmic-override={overrides.getNote}
         className={classNames("__wab_instance", sty.getNote)}
-        errorDisplay={
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__yUjc
-            )}
-          >
-            {"Error fetching data"}
-          </div>
-        }
-        loadingDisplay={
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__f487Q
-            )}
-          >
-            {"Loading..."}
-          </div>
-        }
+        errorDisplay={null}
+        loadingDisplay={null}
         method={"GET"}
         onError={async (...eventArgs: any) => {
           generateStateOnChangeProp($state, ["getNote", "error"]).apply(
