@@ -1102,6 +1102,36 @@ function PlasmicSideBar2__RenderFunc(props: {
           onClick={async event => {
             const $steps = {};
 
+            $steps["updateModalSidebarOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modalSidebar", "open"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen"] != null &&
+              typeof $steps["updateModalSidebarOpen"] === "object" &&
+              typeof $steps["updateModalSidebarOpen"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen"] = await $steps[
+                "updateModalSidebarOpen"
+              ];
+            }
+
             $steps["goToSupport"] = true
               ? (() => {
                   const actionArgs = { destination: `/support` };
@@ -1141,29 +1171,6 @@ function PlasmicSideBar2__RenderFunc(props: {
             )}
             onClick={async event => {
               const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          return (window.location.href =
-                            "https://rentamon.com/");
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
             }}
           >
             {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}

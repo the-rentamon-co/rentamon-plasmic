@@ -511,9 +511,16 @@ function PlasmicReferral__RenderFunc(props: {
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
-                                  return navigator.clipboard.writeText(
-                                    $state.copyText.refertxt
-                                  );
+                                  return (() => {
+                                    return navigator.clipboard
+                                      .writeText("Hello World")
+                                      .then(() =>
+                                        console.log("Copied to clipboard!")
+                                      )
+                                      .catch(err =>
+                                        console.error("Failed to copy: ", err)
+                                      );
+                                  })();
                                 }
                               };
                               return (({ customFunction }) => {
