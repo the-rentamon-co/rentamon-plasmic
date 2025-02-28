@@ -512,13 +512,21 @@ function PlasmicReferral__RenderFunc(props: {
                               const actionArgs = {
                                 customFunction: async () => {
                                   return (() => {
+                                    const text = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
+
+۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
+
+اینجا بزن 👇
+rentamon.com`;
                                     return navigator.clipboard
-                                      .writeText("Hello World")
+                                      .writeText(text)
                                       .then(() =>
-                                        console.log("Copied to clipboard!")
+                                        console.log(
+                                          "متن با موفقیت در کلیپ‌بورد کپی شد!"
+                                        )
                                       )
                                       .catch(err =>
-                                        console.error("Failed to copy: ", err)
+                                        console.error("خطا در کپی متن: ", err)
                                       );
                                   })();
                                 }
