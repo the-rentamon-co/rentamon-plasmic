@@ -713,6 +713,91 @@ function PlasmicCalendar2__RenderFunc(props: {
                 "updateStateVariable"
               ];
             }
+
+            $steps["invokeGlobalAction"] = true
+              ? (() => {
+                  const actionArgs = {
+                    args: [
+                      undefined,
+                      (() => {
+                        try {
+                          return `https://gateway.rentamon.com/webhook/get_note?prop_id=${$props.propertyId}`;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                    ]
+                  };
+                  return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                    ...actionArgs.args
+                  ]);
+                })()
+              : undefined;
+            if (
+              $steps["invokeGlobalAction"] != null &&
+              typeof $steps["invokeGlobalAction"] === "object" &&
+              typeof $steps["invokeGlobalAction"].then === "function"
+            ) {
+              $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+            }
+
+            $steps["updateStateVariable2"] = true
+              ? (() => {
+                  const actionArgs = {
+                    operation: 0,
+                    value: (() => {
+                      console.log($steps.invokeGlobalAction.data);
+                      $state.apiRequest.data[0] =
+                        $steps.invokeGlobalAction.data[0];
+                      $state.apiRequest.data[2] =
+                        $steps.invokeGlobalAction.data[1];
+                      if (
+                        $state.apiRequest?.data?.[0]?.timestampsArray &&
+                        $state.apiRequest?.data?.[1]?.calendar
+                      ) {
+                        let notedDates =
+                          $state.apiRequest.data[0].timestampsArray;
+                        let calendar = $state.apiRequest.data[1].calendar;
+                        calendar.forEach(day => {
+                          if (notedDates.includes(day.date)) {
+                            day.isnoted = true;
+                          } else {
+                            day.isnoted = false;
+                          }
+                        });
+                        $state.apiRequest.data[1].calendar = calendar;
+                      } else {
+                        console.log("null");
+                      }
+                      return console.log($state.apiRequest.data);
+                    })()
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateStateVariable2"] != null &&
+              typeof $steps["updateStateVariable2"] === "object" &&
+              typeof $steps["updateStateVariable2"].then === "function"
+            ) {
+              $steps["updateStateVariable2"] = await $steps[
+                "updateStateVariable2"
+              ];
+            }
           }).apply(null, eventArgs);
         }}
         ref={ref => {
@@ -7089,7 +7174,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           (async data => {
             const $steps = {};
 
-            $steps["updateStateVariable"] = true
+            $steps["updateStateVariable"] = false
               ? (() => {
                   const actionArgs = {
                     operation: 0,
@@ -7145,7 +7230,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         }}
         url={(() => {
           try {
-            return `https://gateway.rentamon.com/webhook/get_note?prop_id=${$props.propertyId}`;
+            return (() => {})();
           } catch (e) {
             if (
               e instanceof TypeError ||

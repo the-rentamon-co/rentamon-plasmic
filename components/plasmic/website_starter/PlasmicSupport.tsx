@@ -95,6 +95,8 @@ export type PlasmicSupport__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   introduction?: Flex__<"div">;
+  teamImage?: Flex__<"div">;
+  introCalendarLeft?: Flex__<"div">;
   accessWays?: Flex__<"div">;
   sectionTitle?: Flex__<"div">;
   ways?: Flex__<"div">;
@@ -128,8 +130,6 @@ export type PlasmicSupport__OverridesType = {
   addressText?: Flex__<"div">;
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
-  teamImage?: Flex__<"div">;
-  introCalendarLeft?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -343,6 +343,35 @@ function PlasmicSupport__RenderFunc(props: {
               data-plasmic-override={overrides.introduction}
               className={classNames(projectcss.all, sty.introduction)}
             >
+              <div
+                data-plasmic-name={"teamImage"}
+                data-plasmic-override={overrides.teamImage}
+                className={classNames(projectcss.all, sty.teamImage)}
+              >
+                <div
+                  data-plasmic-name={"introCalendarLeft"}
+                  data-plasmic-override={overrides.introCalendarLeft}
+                  className={classNames(projectcss.all, sty.introCalendarLeft)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__bnyHr)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"100%"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/teamJpg.jpg",
+                      fullWidth: 800,
+                      fullHeight: 222,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+              </div>
               <div
                 className={classNames(
                   projectcss.all,
@@ -1260,35 +1289,6 @@ function PlasmicSupport__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div
-              data-plasmic-name={"teamImage"}
-              data-plasmic-override={overrides.teamImage}
-              className={classNames(projectcss.all, sty.teamImage)}
-            >
-              <div
-                data-plasmic-name={"introCalendarLeft"}
-                data-plasmic-override={overrides.introCalendarLeft}
-                className={classNames(projectcss.all, sty.introCalendarLeft)}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__bnyHr)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"100%"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/teamJpg.jpg",
-                    fullWidth: 800,
-                    fullHeight: 222,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-            </div>
           </div>
           <div
             data-plasmic-name={"html"}
@@ -1332,6 +1332,8 @@ const PlasmicDescendants = {
     "profile2",
     "mainContents",
     "introduction",
+    "teamImage",
+    "introCalendarLeft",
     "accessWays",
     "sectionTitle",
     "ways",
@@ -1365,8 +1367,6 @@ const PlasmicDescendants = {
     "addressText",
     "map",
     "embedHtml",
-    "teamImage",
-    "introCalendarLeft",
     "html",
     "clarity2",
     "goftino",
@@ -1378,6 +1378,8 @@ const PlasmicDescendants = {
   mainContents: [
     "mainContents",
     "introduction",
+    "teamImage",
+    "introCalendarLeft",
     "accessWays",
     "sectionTitle",
     "ways",
@@ -1410,11 +1412,11 @@ const PlasmicDescendants = {
     "content",
     "addressText",
     "map",
-    "embedHtml",
-    "teamImage",
-    "introCalendarLeft"
+    "embedHtml"
   ],
-  introduction: ["introduction"],
+  introduction: ["introduction", "teamImage", "introCalendarLeft"],
+  teamImage: ["teamImage", "introCalendarLeft"],
+  introCalendarLeft: ["introCalendarLeft"],
   accessWays: [
     "accessWays",
     "sectionTitle",
@@ -1503,8 +1505,6 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
-  teamImage: ["teamImage", "introCalendarLeft"],
-  introCalendarLeft: ["introCalendarLeft"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -1520,6 +1520,8 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   mainContents: "div";
   introduction: "div";
+  teamImage: "div";
+  introCalendarLeft: "div";
   accessWays: "div";
   sectionTitle: "div";
   ways: "div";
@@ -1553,8 +1555,6 @@ type NodeDefaultElementType = {
   addressText: "div";
   map: "div";
   embedHtml: typeof Embed;
-  teamImage: "div";
-  introCalendarLeft: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -1626,6 +1626,8 @@ export const PlasmicSupport = Object.assign(
     profile2: makeNodeComponent("profile2"),
     mainContents: makeNodeComponent("mainContents"),
     introduction: makeNodeComponent("introduction"),
+    teamImage: makeNodeComponent("teamImage"),
+    introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     accessWays: makeNodeComponent("accessWays"),
     sectionTitle: makeNodeComponent("sectionTitle"),
     ways: makeNodeComponent("ways"),
@@ -1659,8 +1661,6 @@ export const PlasmicSupport = Object.assign(
     addressText: makeNodeComponent("addressText"),
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
-    teamImage: makeNodeComponent("teamImage"),
-    introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),

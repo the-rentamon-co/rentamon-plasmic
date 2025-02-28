@@ -166,8 +166,8 @@
 }
 @media (max-width: 1200px) {
   .introduction {
-    padding-right: 14px;
-    padding-left: 14px;
+    padding-right: 0px;
+    padding-left: 0px;
     max-width: 96%;
   }
 }
@@ -177,10 +177,91 @@
     padding-top: 0px;
   }
 }
+.teamImage {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 1200px) {
+  .teamImage {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .teamImage {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 350px) {
+  .teamImage {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+}
+.introCalendarLeft {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 0px;
+}
+@media (max-width: 1200px) {
+  .introCalendarLeft {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+@media (max-width: 500px) {
+  .introCalendarLeft {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+.img__bnyHr {
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
+  border-radius: 50px;
+}
+.img__bnyHr > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .img__bnyHr {
+    border-radius: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .img__bnyHr {
+    border-radius: 15px;
+  }
+}
+@media (max-width: 350px) {
+  .img__bnyHr {
+    border-radius: 10px;
+  }
+}
 .text__edH9K {
   text-align: right;
   font-size: 17px;
   line-height: 1.8;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 @media (max-width: 500px) {
   .text__edH9K {
@@ -2199,79 +2280,6 @@
 @media (max-width: 350px) {
   .embedHtml:global(.__wab_instance) {
     border-radius: 20px;
-  }
-}
-.teamImage {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 500px) {
-  .teamImage {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-}
-@media (max-width: 350px) {
-  .teamImage {
-    padding-right: 4px;
-    padding-left: 4px;
-  }
-}
-.introCalendarLeft {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px 0px;
-}
-@media (max-width: 1200px) {
-  .introCalendarLeft {
-    padding-right: 8px;
-    padding-left: 8px;
-  }
-}
-@media (max-width: 500px) {
-  .introCalendarLeft {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-.img__bnyHr {
-  object-fit: cover;
-  max-width: 100%;
-  width: 100%;
-  min-width: 0;
-  border-radius: 50px;
-}
-.img__bnyHr > picture > img {
-  object-fit: cover;
-}
-@media (max-width: 1200px) {
-  .img__bnyHr {
-    border-radius: 30px;
-  }
-}
-@media (max-width: 500px) {
-  .img__bnyHr {
-    border-radius: 15px;
-  }
-}
-@media (max-width: 350px) {
-  .img__bnyHr {
-    border-radius: 10px;
   }
 }
 .html {
