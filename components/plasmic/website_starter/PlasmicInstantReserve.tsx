@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
@@ -87,6 +88,9 @@ export const PlasmicInstantReserve__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicInstantReserve__OverridesType = {
   root?: Flex__<"div">;
+  header?: Flex__<"div">;
+  sideBar2?: Flex__<typeof SideBar2>;
+  profile2?: Flex__<typeof ApiRequest>;
   topContainer?: Flex__<"section">;
   mainSection?: Flex__<"section">;
   properties?: Flex__<typeof ApiRequest>;
@@ -282,6 +286,30 @@ function PlasmicInstantReserve__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
       }
     ],
     [$props, $ctx, $refs]
@@ -324,6 +352,77 @@ function PlasmicInstantReserve__RenderFunc(props: {
             sty.root
           )}
         >
+          <div
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames(projectcss.all, sty.header)}
+          >
+            <SideBar2
+              data-plasmic-name={"sideBar2"}
+              data-plasmic-override={overrides.sideBar2}
+              className={classNames("__wab_instance", sty.sideBar2)}
+              isOpen={
+                hasVariant(globalVariants, "screen", "mobile") ? false : false
+              }
+              userData={(() => {
+                try {
+                  return $state.profile2.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            />
+
+            <div className={classNames(projectcss.all, sty.freeBox__okh64)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__esBa
+                )}
+              >
+                {
+                  "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u26a1\ufe0f"
+                }
+              </div>
+            </div>
+            <ApiRequest
+              data-plasmic-name={"profile2"}
+              data-plasmic-override={overrides.profile2}
+              className={classNames("__wab_instance", sty.profile2)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile2", "error"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "profile2",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["profile2"] = ref;
+              }}
+              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+            />
+          </div>
           <section
             data-plasmic-name={"topContainer"}
             data-plasmic-override={overrides.topContainer}
@@ -336,9 +435,19 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 sty.text__qkgw
               )}
             >
-              {
-                "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u26a1\ufe0f(\u062a\u0627 \u06f3\u06f0 \u0627\u0633\u0641\u0646\u062f)"
-              }
+              <React.Fragment>
+                <React.Fragment>
+                  {
+                    "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb \u062a\u0627 \u062a\u0627\u0631\u06cc\u062e "
+                  }
+                </React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {"\u06f3\u06f0 \u0627\u0633\u0641\u0646\u062f"}
+                </span>
+              </React.Fragment>
             </div>
           </section>
           <section
@@ -2077,6 +2186,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "header",
+    "sideBar2",
+    "profile2",
     "topContainer",
     "mainSection",
     "properties",
@@ -2099,6 +2211,9 @@ const PlasmicDescendants = {
     "sideEffect",
     "returnButton"
   ],
+  header: ["header", "sideBar2", "profile2"],
+  sideBar2: ["sideBar2"],
+  profile2: ["profile2"],
   topContainer: ["topContainer"],
   mainSection: [
     "mainSection",
@@ -2161,6 +2276,9 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  header: "div";
+  sideBar2: typeof SideBar2;
+  profile2: typeof ApiRequest;
   topContainer: "section";
   mainSection: "section";
   properties: typeof ApiRequest;
@@ -2244,6 +2362,9 @@ export const PlasmicInstantReserve = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    header: makeNodeComponent("header"),
+    sideBar2: makeNodeComponent("sideBar2"),
+    profile2: makeNodeComponent("profile2"),
     topContainer: makeNodeComponent("topContainer"),
     mainSection: makeNodeComponent("mainSection"),
     properties: makeNodeComponent("properties"),

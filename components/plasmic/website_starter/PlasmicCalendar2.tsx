@@ -154,6 +154,7 @@ export type PlasmicCalendar2__OverridesType = {
   count2?: Flex__<"div">;
   guestCount?: Flex__<typeof AntdInputNumber>;
   p5?: Flex__<"div">;
+  getNote?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultCalendar2Props {
@@ -584,6 +585,30 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "getNote.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getNote"
+      },
+      {
+        path: "getNote.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getNote"
+      },
+      {
+        path: "getNote.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getNote"
       }
     ],
     [$props, $ctx, $refs]
@@ -695,19 +720,26 @@ function PlasmicCalendar2__RenderFunc(props: {
         }}
         url={(() => {
           try {
-            return (() => {
-              const secondSpan = document.querySelector(
-                ".rmdp-header-values span:nth-child(3)"
-              );
-              if (secondSpan) {
-                $state.year = secondSpan.textContent;
-                console.log($state.year);
-              }
-              let initialMonth = new Date().toLocaleDateString("fa").split("/");
-              let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
-              let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
-            })();
+            return (
+              // // انتخاب المنت دوم span
+              // const secondSpan = document.querySelector('.rmdp-header-values span:nth-child(3)');
+
+              // // دسترسی به محتوای متن آن
+              // if (secondSpan) {
+              //   $state.year = secondSpan.textContent;
+              //   console.log($state.year); // محتوای ۱۴۰۴ را نشان می‌دهد
+              // }
+
+              // let initialMonth = new Date().toLocaleDateString("fa").split("/");
+              // let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
+
+              // // تعیین تعداد روزهای ماه بر اساس مقدار mon
+              // let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+
+              // `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+
+              "https://gateway.rentamon.com/webhook/test"
+            );
           } catch (e) {
             if (
               e instanceof TypeError ||
@@ -7036,6 +7068,122 @@ function PlasmicCalendar2__RenderFunc(props: {
           </div>
         </div>
       </AntdModal>
+      <ApiRequest
+        data-plasmic-name={"getNote"}
+        data-plasmic-override={overrides.getNote}
+        className={classNames("__wab_instance", sty.getNote)}
+        errorDisplay={
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__yUjc
+            )}
+          >
+            {"Error fetching data"}
+          </div>
+        }
+        loadingDisplay={
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__f487Q
+            )}
+          >
+            {"Loading..."}
+          </div>
+        }
+        method={"GET"}
+        onError={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["getNote", "error"]).apply(
+            null,
+            eventArgs
+          );
+        }}
+        onLoading={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["getNote", "loading"]).apply(
+            null,
+            eventArgs
+          );
+        }}
+        onSuccess={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["getNote", "data"]).apply(
+            null,
+            eventArgs
+          );
+
+          (async data => {
+            const $steps = {};
+
+            $steps["updateStateVariable"] = true
+              ? (() => {
+                  const actionArgs = {
+                    operation: 0,
+                    value: (() => {
+                      console.log($state.getNote.data);
+                      $state.apiRequest.data[0] = $state.getNote.data[0];
+                      $state.apiRequest.data[2] = $state.getNote.data[1];
+                      if (
+                        $state.apiRequest?.data?.[0]?.timestampsArray &&
+                        $state.apiRequest?.data?.[1]?.calendar
+                      ) {
+                        let notedDates =
+                          $state.apiRequest.data[0].timestampsArray;
+                        let calendar = $state.apiRequest.data[1].calendar;
+                        calendar.forEach(day => {
+                          if (notedDates.includes(day.date)) {
+                            day.isnoted = true;
+                          } else {
+                            day.isnoted = false;
+                          }
+                        });
+                        $state.apiRequest.data[1].calendar = calendar;
+                      } else {
+                        console.log("null");
+                      }
+                      return console.log($state.apiRequest.data);
+                    })()
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateStateVariable"] != null &&
+              typeof $steps["updateStateVariable"] === "object" &&
+              typeof $steps["updateStateVariable"].then === "function"
+            ) {
+              $steps["updateStateVariable"] = await $steps[
+                "updateStateVariable"
+              ];
+            }
+          }).apply(null, eventArgs);
+        }}
+        ref={ref => {
+          $refs["getNote"] = ref;
+        }}
+        url={(() => {
+          try {
+            return `https://gateway.rentamon.com/webhook/get_note?prop_id=${$props.propertyId}`;
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
+      />
     </div>
   ) as React.ReactElement | null;
 }
@@ -7086,7 +7234,8 @@ const PlasmicDescendants = {
     "guestReferrer",
     "count2",
     "guestCount",
-    "p5"
+    "p5",
+    "getNote"
   ],
   apiRequest: ["apiRequest"],
   sideEffect: ["sideEffect"],
@@ -7168,7 +7317,8 @@ const PlasmicDescendants = {
   guestReferrer: ["guestReferrer"],
   count2: ["count2", "guestCount"],
   guestCount: ["guestCount"],
-  p5: ["p5"]
+  p5: ["p5"],
+  getNote: ["getNote"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -7219,6 +7369,7 @@ type NodeDefaultElementType = {
   count2: "div";
   guestCount: typeof AntdInputNumber;
   p5: "div";
+  getNote: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -7325,6 +7476,7 @@ export const PlasmicCalendar2 = Object.assign(
     count2: makeNodeComponent("count2"),
     guestCount: makeNodeComponent("guestCount"),
     p5: makeNodeComponent("p5"),
+    getNote: makeNodeComponent("getNote"),
 
     // Metadata about props expected for PlasmicCalendar2
     internalVariantProps: PlasmicCalendar2__VariantProps,

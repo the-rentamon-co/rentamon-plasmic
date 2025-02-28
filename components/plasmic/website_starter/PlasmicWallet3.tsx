@@ -445,6 +445,34 @@ function PlasmicWallet3__RenderFunc(props: {
               data-plasmic-name={"report"}
               data-plasmic-override={overrides.report}
               className={classNames(projectcss.all, sty.report)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToTransactions"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/transactions` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToTransactions"] != null &&
+                  typeof $steps["goToTransactions"] === "object" &&
+                  typeof $steps["goToTransactions"].then === "function"
+                ) {
+                  $steps["goToTransactions"] = await $steps["goToTransactions"];
+                }
+              }}
             >
               <div
                 className={classNames(
@@ -452,36 +480,6 @@ function PlasmicWallet3__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.text__hiIkz
                 )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToTransactions"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/transactions` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToTransactions"] != null &&
-                    typeof $steps["goToTransactions"] === "object" &&
-                    typeof $steps["goToTransactions"].then === "function"
-                  ) {
-                    $steps["goToTransactions"] = await $steps[
-                      "goToTransactions"
-                    ];
-                  }
-                }}
               >
                 {
                   "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"

@@ -59,7 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
@@ -89,12 +90,10 @@ export const PlasmicSupport__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSupport__OverridesType = {
   root?: Flex__<"div">;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  header?: Flex__<"div">;
+  sideBar2?: Flex__<typeof SideBar2>;
+  profile2?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
-  intro1st?: Flex__<"div">;
-  introTitle?: Flex__<"div">;
-  teamImage?: Flex__<"div">;
-  introCalendarLeft?: Flex__<"div">;
   introduction?: Flex__<"div">;
   accessWays?: Flex__<"div">;
   sectionTitle?: Flex__<"div">;
@@ -129,6 +128,8 @@ export type PlasmicSupport__OverridesType = {
   addressText?: Flex__<"div">;
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
+  teamImage?: Flex__<"div">;
+  introCalendarLeft?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -182,6 +183,30 @@ function PlasmicSupport__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
       }
     ],
     [$props, $ctx, $refs]
@@ -237,72 +262,82 @@ function PlasmicSupport__RenderFunc(props: {
             sty.root
           )}
         >
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
-          />
+          <div
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames(projectcss.all, sty.header)}
+          >
+            <SideBar2
+              data-plasmic-name={"sideBar2"}
+              data-plasmic-override={overrides.sideBar2}
+              className={classNames("__wab_instance", sty.sideBar2)}
+              isOpen={
+                hasVariant(globalVariants, "screen", "mobile") ? false : false
+              }
+              userData={(() => {
+                try {
+                  return $state.profile2.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            />
 
+            <div className={classNames(projectcss.all, sty.freeBox__maJ5L)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fyrea
+                )}
+              >
+                {
+                  "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627"
+                }
+              </div>
+            </div>
+            <ApiRequest
+              data-plasmic-name={"profile2"}
+              data-plasmic-override={overrides.profile2}
+              className={classNames("__wab_instance", sty.profile2)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile2", "error"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "profile2",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["profile2"] = ref;
+              }}
+              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+            />
+          </div>
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
             className={classNames(projectcss.all, sty.mainContents)}
           >
-            <div
-              data-plasmic-name={"intro1st"}
-              data-plasmic-override={overrides.intro1st}
-              className={classNames(projectcss.all, sty.intro1st)}
-            >
-              <div
-                data-plasmic-name={"introTitle"}
-                data-plasmic-override={overrides.introTitle}
-                className={classNames(projectcss.all, sty.introTitle)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xmGla
-                  )}
-                >
-                  {
-                    "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627"
-                  }
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"teamImage"}
-                data-plasmic-override={overrides.teamImage}
-                className={classNames(projectcss.all, sty.teamImage)}
-              >
-                <div
-                  data-plasmic-name={"introCalendarLeft"}
-                  data-plasmic-override={overrides.introCalendarLeft}
-                  className={classNames(projectcss.all, sty.introCalendarLeft)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__bnyHr)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"100%"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/teamJpg.jpg",
-                      fullWidth: 800,
-                      fullHeight: 222,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
             <div
               data-plasmic-name={"introduction"}
               data-plasmic-override={overrides.introduction}
@@ -1225,6 +1260,35 @@ function PlasmicSupport__RenderFunc(props: {
                 </div>
               </div>
             </div>
+            <div
+              data-plasmic-name={"teamImage"}
+              data-plasmic-override={overrides.teamImage}
+              className={classNames(projectcss.all, sty.teamImage)}
+            >
+              <div
+                data-plasmic-name={"introCalendarLeft"}
+                data-plasmic-override={overrides.introCalendarLeft}
+                className={classNames(projectcss.all, sty.introCalendarLeft)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__bnyHr)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"100%"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/teamJpg.jpg",
+                    fullWidth: 800,
+                    fullHeight: 222,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+            </div>
           </div>
           <div
             data-plasmic-name={"html"}
@@ -1263,12 +1327,10 @@ function PlasmicSupport__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "navbarRentamonComponent",
+    "header",
+    "sideBar2",
+    "profile2",
     "mainContents",
-    "intro1st",
-    "introTitle",
-    "teamImage",
-    "introCalendarLeft",
     "introduction",
     "accessWays",
     "sectionTitle",
@@ -1303,18 +1365,18 @@ const PlasmicDescendants = {
     "addressText",
     "map",
     "embedHtml",
+    "teamImage",
+    "introCalendarLeft",
     "html",
     "clarity2",
     "goftino",
     "rentamonFooter"
   ],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
+  header: ["header", "sideBar2", "profile2"],
+  sideBar2: ["sideBar2"],
+  profile2: ["profile2"],
   mainContents: [
     "mainContents",
-    "intro1st",
-    "introTitle",
-    "teamImage",
-    "introCalendarLeft",
     "introduction",
     "accessWays",
     "sectionTitle",
@@ -1348,12 +1410,10 @@ const PlasmicDescendants = {
     "content",
     "addressText",
     "map",
-    "embedHtml"
+    "embedHtml",
+    "teamImage",
+    "introCalendarLeft"
   ],
-  intro1st: ["intro1st", "introTitle", "teamImage", "introCalendarLeft"],
-  introTitle: ["introTitle"],
-  teamImage: ["teamImage", "introCalendarLeft"],
-  introCalendarLeft: ["introCalendarLeft"],
   introduction: ["introduction"],
   accessWays: [
     "accessWays",
@@ -1443,6 +1503,8 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
+  teamImage: ["teamImage", "introCalendarLeft"],
+  introCalendarLeft: ["introCalendarLeft"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -1453,12 +1515,10 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  header: "div";
+  sideBar2: typeof SideBar2;
+  profile2: typeof ApiRequest;
   mainContents: "div";
-  intro1st: "div";
-  introTitle: "div";
-  teamImage: "div";
-  introCalendarLeft: "div";
   introduction: "div";
   accessWays: "div";
   sectionTitle: "div";
@@ -1493,6 +1553,8 @@ type NodeDefaultElementType = {
   addressText: "div";
   map: "div";
   embedHtml: typeof Embed;
+  teamImage: "div";
+  introCalendarLeft: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -1559,12 +1621,10 @@ export const PlasmicSupport = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    header: makeNodeComponent("header"),
+    sideBar2: makeNodeComponent("sideBar2"),
+    profile2: makeNodeComponent("profile2"),
     mainContents: makeNodeComponent("mainContents"),
-    intro1st: makeNodeComponent("intro1st"),
-    introTitle: makeNodeComponent("introTitle"),
-    teamImage: makeNodeComponent("teamImage"),
-    introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     introduction: makeNodeComponent("introduction"),
     accessWays: makeNodeComponent("accessWays"),
     sectionTitle: makeNodeComponent("sectionTitle"),
@@ -1599,6 +1659,8 @@ export const PlasmicSupport = Object.assign(
     addressText: makeNodeComponent("addressText"),
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
+    teamImage: makeNodeComponent("teamImage"),
+    introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),

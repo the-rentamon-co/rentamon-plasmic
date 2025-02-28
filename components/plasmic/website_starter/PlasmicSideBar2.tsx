@@ -301,7 +301,7 @@ function PlasmicSideBar2__RenderFunc(props: {
             displayMaxWidth={"100%"}
             displayMinHeight={"0"}
             displayMinWidth={"0"}
-            displayWidth={"20px"}
+            displayWidth={"24px"}
             loading={"lazy"}
             src={
               hasVariant(globalVariants, "screen", "mobile")
