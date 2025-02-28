@@ -104,6 +104,7 @@ export type PlasmicWallet3__OverridesType = {
   balance2?: Flex__<"div">;
   report?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
+  pricing?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
   _2?: Flex__<typeof AntdAccordionItem>;
@@ -416,7 +417,7 @@ function PlasmicWallet3__RenderFunc(props: {
                     try {
                       return (() => {
                         const balance_info =
-                          $props.userData.user_info.balance_info;
+                          $state.profile2.data.user_info.balance_info;
                         const reducedBalance = Math.floor(
                           balance_info.balance / 10
                         );
@@ -1678,6 +1679,55 @@ function PlasmicWallet3__RenderFunc(props: {
             </AntdModal>
           </div>
           <div
+            data-plasmic-name={"pricing"}
+            data-plasmic-override={overrides.pricing}
+            className={classNames(projectcss.all, sty.pricing)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__cvTC
+              )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToPricing"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/pricing` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToPricing"] != null &&
+                  typeof $steps["goToPricing"] === "object" &&
+                  typeof $steps["goToPricing"].then === "function"
+                ) {
+                  $steps["goToPricing"] = await $steps["goToPricing"];
+                }
+              }}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u00bb"
+                : hasVariant(globalVariants, "screen", "tablet")
+                ? "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u00bb"
+                : "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0632\u0646 \u0627\u06cc\u0646\u062c\u0627\u00bb"}
+            </div>
+          </div>
+          <div
             data-plasmic-name={"qA"}
             data-plasmic-override={overrides.qA}
             className={classNames(projectcss.all, sty.qA)}
@@ -2104,6 +2154,7 @@ const PlasmicDescendants = {
     "balance2",
     "report",
     "modal",
+    "pricing",
     "qA",
     "accordionMain",
     "_2",
@@ -2128,6 +2179,7 @@ const PlasmicDescendants = {
   balance2: ["balance2"],
   report: ["report"],
   modal: ["modal"],
+  pricing: ["pricing"],
   qA: [
     "qA",
     "accordionMain",
@@ -2169,6 +2221,7 @@ type NodeDefaultElementType = {
   balance2: "div";
   report: "div";
   modal: typeof AntdModal;
+  pricing: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
   _2: typeof AntdAccordionItem;
@@ -2254,6 +2307,7 @@ export const PlasmicWallet3 = Object.assign(
     balance2: makeNodeComponent("balance2"),
     report: makeNodeComponent("report"),
     modal: makeNodeComponent("modal"),
+    pricing: makeNodeComponent("pricing"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
     _2: makeNodeComponent("_2"),

@@ -550,7 +550,7 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
               {(() => {
                 try {
-                  return $state.apiRequest.data[0].staus != "false";
+                  return $state.apiRequest.data[0].Id != null;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
