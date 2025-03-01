@@ -2250,7 +2250,3 @@
   text-align: center;
   font-size: 20px;
 }
-.getNote:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}

@@ -306,9 +306,9 @@ function PlasmicNewChanges__RenderFunc(props: {
                 displayWidth={"100%"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/website_starter/images/_1731928122363Jpg4.jpg",
-                  fullWidth: 1000,
-                  fullHeight: 278,
+                  src: "/plasmic/website_starter/images/teamJpg.jpg",
+                  fullWidth: 800,
+                  fullHeight: 222,
                   aspectRatio: undefined
                 }}
               />
@@ -489,13 +489,13 @@ function PlasmicNewChanges__RenderFunc(props: {
                 className={classNames(sty.img___9ZzNd)}
                 displayHeight={
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? "238px"
+                    ? "100%"
                     : "auto"
                 }
                 displayMaxHeight={"none"}
                 displayMaxWidth={
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? "362px"
+                    ? "none"
                     : hasVariant(globalVariants, "screen", "tablet")
                     ? "700px"
                     : "100%"
