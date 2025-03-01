@@ -218,7 +218,7 @@ function PlasmicSettings__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                const data = $state.apiRequestSetting.data.true;
+                const data = $state.apiRequestSetting.data;
                 const reservationItems = data.filter(
                   item => item.feature_name === "auto_sync"
                 );
@@ -291,7 +291,7 @@ function PlasmicSettings__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                const data = $state.apiRequestSetting.data.true;
+                const data = $state.apiRequestSetting.data;
                 const reservationItems = data.filter(
                   item => item.feature_name === "reservations"
                 );
