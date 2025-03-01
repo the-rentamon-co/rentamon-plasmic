@@ -796,50 +796,6 @@ function PlasmicSideBar2__RenderFunc(props: {
           >
             {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
           </div>
-          {(() => {
-            try {
-              return !(
-                $state.checkUserPendingReserve.data == null ||
-                $state.checkUserPendingReserve.loading == true
-              );
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__s3IY8)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__oypSp
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $state.checkUserPendingReserve.data[0].count_id.toLocaleString(
-                        "fa"
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "1";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            </div>
-          ) : null}
         </Stack__>
         <Stack__
           as={"div"}

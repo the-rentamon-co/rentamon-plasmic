@@ -335,29 +335,6 @@
     min-width: 0;
   }
 }
-.freeBox__s3IY8 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  background: var(--token-pZV_D4O-0Dnd);
-  flex-shrink: 0;
-  border-radius: 50%;
-  padding: 8px;
-}
-.text__oypSp {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  font-size: 9px;
-  text-align: center;
-  color: var(--token-8R7jjC_-F9FF);
-}
 .freeBox___5JuLu {
   display: flex;
   flex-direction: row;
