@@ -104,9 +104,6 @@ export type PlasmicSettings__OverridesType = {
   main?: Flex__<"div">;
   title?: Flex__<"div">;
   intro?: Flex__<"div">;
-  header2?: Flex__<"div">;
-  sideBar23?: Flex__<typeof SideBar2>;
-  profile2?: Flex__<typeof ApiRequest>;
   _2nd?: Flex__<"div">;
   titleRow?: Flex__<"div">;
   opt15?: Flex__<"div">;
@@ -376,30 +373,6 @@ function PlasmicSettings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequestSetting"
-      },
-      {
-        path: "profile2.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
-        path: "profile2.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
-        path: "profile2.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
       },
       {
         path: "profile3.data",
@@ -780,66 +753,6 @@ function PlasmicSettings__RenderFunc(props: {
               className={classNames(projectcss.all, sty.intro)}
             >
               <div className={classNames(projectcss.all, sty.freeBox__xsjRy)}>
-                <div
-                  data-plasmic-name={"header2"}
-                  data-plasmic-override={overrides.header2}
-                  className={classNames(projectcss.all, sty.header2)}
-                >
-                  <SideBar2
-                    data-plasmic-name={"sideBar23"}
-                    data-plasmic-override={overrides.sideBar23}
-                    className={classNames("__wab_instance", sty.sideBar23)}
-                    isOpen={false}
-                  />
-
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ujQ22)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__wbbhY
-                      )}
-                    >
-                      {
-                        "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      }
-                    </div>
-                  </div>
-                  <ApiRequest
-                    data-plasmic-name={"profile2"}
-                    data-plasmic-override={overrides.profile2}
-                    className={classNames("__wab_instance", sty.profile2)}
-                    errorDisplay={null}
-                    loadingDisplay={null}
-                    method={"GET"}
-                    onError={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "profile2",
-                        "error"
-                      ]).apply(null, eventArgs);
-                    }}
-                    onLoading={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "profile2",
-                        "loading"
-                      ]).apply(null, eventArgs);
-                    }}
-                    onSuccess={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "profile2",
-                        "data"
-                      ]).apply(null, eventArgs);
-                    }}
-                    ref={ref => {
-                      $refs["profile2"] = ref;
-                    }}
-                    url={
-                      "https://api-v2.rentamon.com/api/user_info?property_id=1"
-                    }
-                  />
-                </div>
                 <div
                   data-plasmic-name={"_2nd"}
                   data-plasmic-override={overrides._2nd}
@@ -3533,9 +3446,6 @@ const PlasmicDescendants = {
     "main",
     "title",
     "intro",
-    "header2",
-    "sideBar23",
-    "profile2",
     "_2nd",
     "titleRow",
     "opt15",
@@ -3627,9 +3537,6 @@ const PlasmicDescendants = {
     "main",
     "title",
     "intro",
-    "header2",
-    "sideBar23",
-    "profile2",
     "_2nd",
     "titleRow",
     "opt15",
@@ -3682,10 +3589,7 @@ const PlasmicDescendants = {
     "_2nd2"
   ],
   title: ["title"],
-  intro: ["intro", "header2", "sideBar23", "profile2", "_2nd"],
-  header2: ["header2", "sideBar23", "profile2"],
-  sideBar23: ["sideBar23"],
-  profile2: ["profile2"],
+  intro: ["intro", "_2nd"],
   _2nd: ["_2nd"],
   titleRow: ["titleRow", "opt15", "p14", "p25", "p35", "p44"],
   opt15: ["opt15", "p14", "p25", "p35", "p44"],
@@ -3821,9 +3725,6 @@ type NodeDefaultElementType = {
   main: "div";
   title: "div";
   intro: "div";
-  header2: "div";
-  sideBar23: typeof SideBar2;
-  profile2: typeof ApiRequest;
   _2nd: "div";
   titleRow: "div";
   opt15: "div";
@@ -3956,9 +3857,6 @@ export const PlasmicSettings = Object.assign(
     main: makeNodeComponent("main"),
     title: makeNodeComponent("title"),
     intro: makeNodeComponent("intro"),
-    header2: makeNodeComponent("header2"),
-    sideBar23: makeNodeComponent("sideBar23"),
-    profile2: makeNodeComponent("profile2"),
     _2nd: makeNodeComponent("_2nd"),
     titleRow: makeNodeComponent("titleRow"),
     opt15: makeNodeComponent("opt15"),

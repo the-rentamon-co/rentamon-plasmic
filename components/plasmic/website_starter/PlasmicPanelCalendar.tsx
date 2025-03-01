@@ -295,6 +295,15 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "feature",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({
+          reservation: false,
+          auto_sync: false
+        })
       }
     ],
     [$props, $ctx, $refs]
@@ -1221,6 +1230,19 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             data-plasmic-name={"calendar2"}
             data-plasmic-override={overrides.calendar2}
             className={classNames("__wab_instance", sty.calendar2)}
+            featurePermission={(() => {
+              try {
+                return $state.feature;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
             propertyId={(() => {
               try {
                 return $state.propId;
@@ -1366,6 +1388,38 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 typeof $steps["runCode2"].then === "function"
               ) {
                 $steps["runCode2"] = await $steps["runCode2"];
+              }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        if ($steps.runCode2.data.status != "access denied") {
+                          $state.feature.reservation = true;
+                          return console.log($state.feature);
+                        }
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
               }
             }}
           />

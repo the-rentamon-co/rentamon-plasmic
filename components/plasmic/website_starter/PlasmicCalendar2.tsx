@@ -101,11 +101,13 @@ export const PlasmicCalendar2__VariantProps = new Array<VariantPropType>();
 export type PlasmicCalendar2__ArgsType = {
   propertyId?: number;
   daystatuses?: any;
+  featurePermission?: any;
 };
 type ArgPropType = keyof PlasmicCalendar2__ArgsType;
 export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
   "propertyId",
-  "daystatuses"
+  "daystatuses",
+  "featurePermission"
 );
 
 export type PlasmicCalendar2__OverridesType = {
@@ -159,6 +161,7 @@ export type PlasmicCalendar2__OverridesType = {
 export interface DefaultCalendar2Props {
   propertyId?: number;
   daystatuses?: any;
+  featurePermission?: any;
   className?: string;
 }
 
@@ -792,7 +795,6 @@ function PlasmicCalendar2__RenderFunc(props: {
               );
               if (secondSpan) {
                 $state.year = secondSpan.textContent;
-                console.log($state.year);
               }
               let initialMonth = new Date().toLocaleDateString("fa").split("/");
               let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
@@ -4694,33 +4696,41 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["updateFragmentDatePickerValue2"] =
-                    $state.requestdata.request_for == "reserve"
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["addingGuestInfo", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
+                  $steps["updateFragmentDatePickerValue2"] = (() => {
+                    if (
+                      $state.requestdata.request_for == "reserve" &&
+                      $props.featurePermission.reservation == true
+                    ) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  })()
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["addingGuestInfo", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
                   if (
                     $steps["updateFragmentDatePickerValue2"] != null &&
                     typeof $steps["updateFragmentDatePickerValue2"] ===
@@ -4933,9 +4943,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                 <React.Fragment>
                   {(() => {
                     try {
-                      return $state.requestdata.request_for == "reserve"
-                        ? "ثبت اطلاعات مهمان"
-                        : "باشه";
+                      return (() => {
+                        if (
+                          $state.requestdata.request_for == "reserve" &&
+                          $props.featurePermission.reservation == true
+                        ) {
+                          return "ثبت اطلاعات مهمان";
+                        } else {
+                          return "باشه";
+                        }
+                      })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
