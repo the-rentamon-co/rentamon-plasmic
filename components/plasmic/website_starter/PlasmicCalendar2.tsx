@@ -645,7 +645,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           (async data => {
             const $steps = {};
 
-            $steps["updateStateVariable"] = true
+            $steps["updateStateVariable"] = false
               ? (() => {
                   const actionArgs = {
                     operation: 0,
