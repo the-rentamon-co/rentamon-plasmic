@@ -106,6 +106,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
+  userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
   favicon?: Flex__<typeof Embed>;
 };
@@ -304,6 +305,30 @@ function PlasmicPanelCalendar__RenderFunc(props: {
           reservation: false,
           auto_sync: false
         })
+      },
+      {
+        path: "userAvailableFeature.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userAvailableFeature"
+      },
+      {
+        path: "userAvailableFeature.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userAvailableFeature"
+      },
+      {
+        path: "userAvailableFeature.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "userAvailableFeature"
       }
     ],
     [$props, $ctx, $refs]
@@ -1232,7 +1257,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             className={classNames("__wab_instance", sty.calendar2)}
             featurePermission={(() => {
               try {
-                return $state.feature;
+                return $state.userAvailableFeature.data;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -1424,6 +1449,49 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             }}
           />
 
+          <ApiRequest
+            data-plasmic-name={"userAvailableFeature"}
+            data-plasmic-override={overrides.userAvailableFeature}
+            className={classNames("__wab_instance", sty.userAvailableFeature)}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userAvailableFeature",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userAvailableFeature",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userAvailableFeature",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["userAvailableFeature"] = ref;
+            }}
+            url={(() => {
+              try {
+                return `https://gateway.rentamon.com/webhook/get_user_available_feature?prop_id=${$state.propId}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "https://gateway.rentamon.com/webhook/get_user_available_feature";
+                }
+                throw e;
+              }
+            })()}
+          />
+
           <AntdModal
             data-plasmic-name={"modal"}
             data-plasmic-override={overrides.modal}
@@ -1554,6 +1622,7 @@ const PlasmicDescendants = {
     "profile",
     "calendar2",
     "sideEffect",
+    "userAvailableFeature",
     "modal",
     "favicon"
   ],
@@ -1608,6 +1677,7 @@ const PlasmicDescendants = {
   profile: ["profile"],
   calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
+  userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
   favicon: ["favicon"]
 } as const;
@@ -1633,6 +1703,7 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
+  userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
   favicon: typeof Embed;
 };
@@ -1714,6 +1785,7 @@ export const PlasmicPanelCalendar = Object.assign(
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
+    userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
     favicon: makeNodeComponent("favicon"),
 

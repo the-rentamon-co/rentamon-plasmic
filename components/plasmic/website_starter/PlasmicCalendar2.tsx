@@ -72,7 +72,6 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -919,7 +918,8 @@ function PlasmicCalendar2__RenderFunc(props: {
 
                 $steps["openReadModal"] =
                   $state.apiRequest.data[1].calendar[dateProps.date.day - 1]
-                    .isnoted == true
+                    .isnoted == true &&
+                  $props.featurePermission[0].reservations == true
                     ? (() => {
                         const actionArgs = {
                           variable: {
@@ -958,7 +958,8 @@ function PlasmicCalendar2__RenderFunc(props: {
 
                 $steps["openWriteModal"] =
                   $state.apiRequest.data[1].calendar[dateProps.date.day - 1]
-                    .isnoted == false
+                    .isnoted == false &&
+                  $props.featurePermission[0].reservations == true
                     ? (() => {
                         const actionArgs = {
                           variable: {
@@ -4699,7 +4700,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   $steps["updateFragmentDatePickerValue2"] = (() => {
                     if (
                       $state.requestdata.request_for == "reserve" &&
-                      $props.featurePermission.reservation == true
+                      $props.featurePermission[0].reservations == true
                     ) {
                       return true;
                     } else {
@@ -4946,7 +4947,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       return (() => {
                         if (
                           $state.requestdata.request_for == "reserve" &&
-                          $props.featurePermission.reservation == true
+                          $props.featurePermission[0].reservations == true
                         ) {
                           return "ثبت اطلاعات مهمان";
                         } else {

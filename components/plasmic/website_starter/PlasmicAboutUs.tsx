@@ -271,7 +271,21 @@ function PlasmicAboutUs__RenderFunc(props: {
                     sty.text__y8Rfl
                   )}
                 >
-                  {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return undefined;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
               </div>
               <div
