@@ -584,6 +584,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "selectedDay",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
       }
     ],
     [$props, $ctx, $refs]
@@ -4649,6 +4655,84 @@ function PlasmicCalendar2__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
+                  $steps["updateFragmentDatePickerValue3"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["selectedDay"]
+                          },
+                          operation: 0,
+                          value: ($state.selectedDay =
+                            $state.fragmentDatePicker.values)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateFragmentDatePickerValue3"] != null &&
+                    typeof $steps["updateFragmentDatePickerValue3"] ===
+                      "object" &&
+                    typeof $steps["updateFragmentDatePickerValue3"].then ===
+                      "function"
+                  ) {
+                    $steps["updateFragmentDatePickerValue3"] = await $steps[
+                      "updateFragmentDatePickerValue3"
+                    ];
+                  }
+
+                  $steps["updateFragmentDatePickerValue2"] =
+                    $state.requestdata.request_for == "reserve"
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["addingGuestInfo", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateFragmentDatePickerValue2"] != null &&
+                    typeof $steps["updateFragmentDatePickerValue2"] ===
+                      "object" &&
+                    typeof $steps["updateFragmentDatePickerValue2"].then ===
+                      "function"
+                  ) {
+                    $steps["updateFragmentDatePickerValue2"] = await $steps[
+                      "updateFragmentDatePickerValue2"
+                    ];
+                  }
+
                   $steps["updateFragmentDatePickerValue"] = true
                     ? (() => {
                         const actionArgs = {
@@ -4846,7 +4930,23 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
                 }}
               >
-                {"\u0628\u0627\u0634\u0647"}
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.requestdata.request_for == "reserve"
+                        ? "ثبت اطلاعات مهمان"
+                        : "باشه";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0628\u0627\u0634\u0647";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
               </Button>
             </div>
           </ApiRequest>
@@ -6999,8 +7099,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     "0"
                                   )}-${String(jd).padStart(2, "0")}`;
                                 }
-                                let timestamps =
-                                  $state.fragmentDatePicker.values;
+                                let timestamps = $state.selectedDay;
                                 let jalaliDates = timestamps.map(ts =>
                                   convertTimestampToJalali(ts)
                                 );
