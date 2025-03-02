@@ -918,8 +918,7 @@ function PlasmicCalendar2__RenderFunc(props: {
 
                 $steps["openReadModal"] =
                   $state.apiRequest.data[1].calendar[dateProps.date.day - 1]
-                    .isnoted == true &&
-                  $props.featurePermission[0].reservations == true
+                    .isnoted == true
                     ? (() => {
                         const actionArgs = {
                           variable: {
