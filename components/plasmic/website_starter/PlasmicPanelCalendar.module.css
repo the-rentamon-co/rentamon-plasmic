@@ -398,6 +398,11 @@
     padding-bottom: 6px;
   }
 }
+@media (max-width: 350px) {
+  .header {
+    padding-top: 0px;
+  }
+}
 .right {
   display: flex;
   position: relative;
@@ -507,6 +512,7 @@
 @media (max-width: 500px) {
   .right4 {
     padding-left: 0px;
+    padding-top: 8px;
   }
 }
 .apiRequest:global(.__wab_instance) {

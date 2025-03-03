@@ -120,6 +120,7 @@ export type PlasmicPricing__OverridesType = {
   value?: Flex__<"div">;
   toman?: Flex__<"div">;
   commission?: Flex__<"div">;
+  cta1st?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
   _2?: Flex__<typeof AntdAccordionItem>;
@@ -830,6 +831,7 @@ function PlasmicPricing__RenderFunc(props: {
                         "isChecked"
                       ]) ?? false
                     }
+                    isDisabled={true}
                     onChange={async (...eventArgs: any) => {
                       ((...eventArgs) => {
                         generateStateOnChangeProp($state, [
@@ -855,7 +857,7 @@ function PlasmicPricing__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0647\u0648\u0634\u0645\u0646\u062f)"
+                        "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0647\u062a\u0631\u06cc\u0646 \u0642\u06cc\u0645\u062a (\u0628\u0632\u0648\u062f\u06cc)"
                       }
                     </div>
                   </Checkbox>
@@ -2494,6 +2496,55 @@ function PlasmicPricing__RenderFunc(props: {
                 </div>
               </div>
             </div>
+            <div
+              data-plasmic-name={"cta1st"}
+              data-plasmic-override={overrides.cta1st}
+              className={classNames(projectcss.all, sty.cta1st)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___6Zx8G
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return window.open(
+                                "https://goftino.com/c/WgsGXv",
+                                "_blank"
+                              );
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              >
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"
+                  : hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                  ? "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"
+                  : "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"}
+              </div>
+            </div>
           </div>
           <div
             data-plasmic-name={"qA"}
@@ -2855,6 +2906,7 @@ const PlasmicDescendants = {
     "value",
     "toman",
     "commission",
+    "cta1st",
     "qA",
     "accordionMain",
     "_2",
@@ -2918,6 +2970,7 @@ const PlasmicDescendants = {
   value: ["value"],
   toman: ["toman"],
   commission: ["commission"],
+  cta1st: ["cta1st"],
   qA: [
     "qA",
     "accordionMain",
@@ -2976,6 +3029,7 @@ type NodeDefaultElementType = {
   value: "div";
   toman: "div";
   commission: "div";
+  cta1st: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
   _2: typeof AntdAccordionItem;
@@ -3079,6 +3133,7 @@ export const PlasmicPricing = Object.assign(
     value: makeNodeComponent("value"),
     toman: makeNodeComponent("toman"),
     commission: makeNodeComponent("commission"),
+    cta1st: makeNodeComponent("cta1st"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
     _2: makeNodeComponent("_2"),
