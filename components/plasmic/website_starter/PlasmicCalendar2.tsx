@@ -4170,6 +4170,9 @@ function PlasmicCalendar2__RenderFunc(props: {
           )}
           hideFooter={true}
           maskClosable={false}
+          modalContentClassName={classNames({
+            [sty["pcls_Dj2Jgz5UwZvP"]]: true
+          })}
           modalScopeClassName={sty["fetchModal__modal"]}
           onOpenChange={async (...eventArgs: any) => {
             generateStateOnChangeProp($state, ["fetchModal", "open"]).apply(
@@ -4179,7 +4182,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["fetchModal", "open"])}
           title={
-            "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a  : "
+            "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a:"
           }
           trigger={null}
           width={
@@ -6922,6 +6925,39 @@ function PlasmicCalendar2__RenderFunc(props: {
                 generateStateValueProp($state, ["phoneNumber", "value"]) ?? ""
               }
             />
+
+            {(() => {
+              try {
+                return $state.phoneNumber.value == "";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__mlZuc
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#DC2626" }}
+                  >
+                    {
+                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0627\u062c\u0628\u0627\u0631\u06cc\u0633\u062a"
+                    }
+                  </span>
+                </React.Fragment>
+              </div>
+            ) : null}
           </div>
           <div
             data-plasmic-name={"p3"}
@@ -7045,6 +7081,19 @@ function PlasmicCalendar2__RenderFunc(props: {
           >
             <Button
               className={classNames("__wab_instance", sty.button__lhJj9)}
+              isDisabled={(() => {
+                try {
+                  return $state.phoneNumber.value == "";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return [];
+                  }
+                  throw e;
+                }
+              })()}
               onClick={async event => {
                 const $steps = {};
 
@@ -7219,7 +7268,34 @@ function PlasmicCalendar2__RenderFunc(props: {
                     "invokeGlobalAction2"
                   ];
                 }
+
+                $steps["invokeGlobalAction3"] =
+                  $steps.invokeGlobalAction.status == 422
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "error",
+                            "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062f\u0631\u0633\u062a \u0646\u06cc\u0633\u062a",
+                            "top-center"
+                          ]
+                        };
+                        return $globalActions["Fragment.showToast"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                if (
+                  $steps["invokeGlobalAction3"] != null &&
+                  typeof $steps["invokeGlobalAction3"] === "object" &&
+                  typeof $steps["invokeGlobalAction3"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction3"] = await $steps[
+                    "invokeGlobalAction3"
+                  ];
+                }
               }}
+              submitsForm={false}
             >
               <div
                 className={classNames(

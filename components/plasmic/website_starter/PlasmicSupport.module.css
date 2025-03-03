@@ -7,11 +7,11 @@
   justify-items: center;
   background: linear-gradient(
     50deg,
-    #fcfcfc 0%,
-    #cbcbcb 24%,
-    #fcfcfc 61%,
-    #efefef 78%,
-    #fcfcfc 96%
+    #b5d2e7 0%,
+    #cee1f1 24%,
+    #abc9df 47%,
+    #d6ebfa 78%,
+    #c8dfef 96%
   );
   min-width: 0;
   min-height: 0;
@@ -350,6 +350,7 @@
   .freeBox__yjk5I {
     padding-right: 0px;
     padding-bottom: 30px;
+    border-radius: 0px;
   }
 }
 .sectionTitle {
@@ -2199,6 +2200,7 @@
   line-height: 2;
   padding-bottom: 0px;
   font-weight: 500;
+  color: #203647;
 }
 @media (max-width: 1200px) {
   .text___3Ye7H {

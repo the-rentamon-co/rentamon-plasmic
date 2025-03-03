@@ -379,6 +379,11 @@
     grid-column-end: -1 !important;
   }
 }
+@media (max-width: 350px) {
+  .sideBar {
+    padding-top: 4px;
+  }
+}
 .header {
   display: flex;
   flex-direction: row;
@@ -393,9 +398,7 @@
 }
 @media (max-width: 500px) {
   .header {
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 6px;
+    padding: 0px 8px 6px;
   }
 }
 @media (max-width: 350px) {
@@ -635,11 +638,13 @@
     padding-left: 0px;
     max-width: 30%;
     padding-bottom: 0px;
+    padding-top: 0px;
   }
 }
 @media (max-width: 350px) {
   .left {
     max-width: 30%;
+    padding-top: 0px;
   }
 }
 .img__mGbB3 {
