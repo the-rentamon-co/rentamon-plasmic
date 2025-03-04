@@ -701,13 +701,12 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                function setCookie(name, value, days) {
+                                function setCookie(name, value, hours) {
                                   let expires = "";
-                                  if (days) {
+                                  if (hours) {
                                     const date = new Date();
                                     date.setTime(
-                                      date.getTime() +
-                                        days * 24 * 60 * 60 * 1000
+                                      date.getTime() + hours * 60 * 60 * 1000
                                     );
                                     expires = "; expires=" + date.toUTCString();
                                   }
@@ -718,7 +717,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("alertModal", "true", 7);
+                                return setCookie("alertModal", "true", 12);
                               })();
                             }
                           };
