@@ -459,13 +459,13 @@
   ._3Benefits {
     display: flex;
     flex-direction: column;
-    border-radius: 30px;
+    border-radius: 0px;
   }
 }
 @media (max-width: 350px) {
   ._3Benefits {
     padding-top: 22px;
-    border-radius: 30px;
+    border-radius: 0px;
   }
 }
 ._3Benefits1st {

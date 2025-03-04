@@ -357,6 +357,146 @@
   max-width: 100%;
   object-fit: cover;
 }
+.alertModal:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.freeBox___8Wqja {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0px 8px 34px;
+}
+.text__jKd7 {
+  text-align: center;
+  font-size: 17px;
+  padding-top: 0px;
+  font-weight: 600;
+}
+@media (max-width: 500px) {
+  .text__jKd7 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__jKd7 {
+    font-size: 15px;
+  }
+}
+.text__xsnqv {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-top: 14px;
+  text-align: center;
+  font-size: 17px;
+  padding-bottom: 10px;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__xsnqv {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__xsnqv {
+    font-size: 15px;
+  }
+}
+.img__jVvLr {
+  object-fit: cover;
+  max-width: 8%;
+}
+.img__jVvLr > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .img__jVvLr {
+    max-width: 10%;
+  }
+}
+@media (max-width: 350px) {
+  .img__jVvLr {
+    max-width: 12%;
+  }
+}
+.text__j09Yq {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-top: 14px;
+  text-align: center;
+  font-size: 17px;
+  padding-bottom: 10px;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__j09Yq {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__j09Yq {
+    font-size: 15px;
+  }
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+}
+.svg__ehuKm {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text__kjb22 {
+  font-weight: 600;
+  font-size: 17px;
+}
+@media (max-width: 500px) {
+  .text__kjb22 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__kjb22 {
+    font-size: 15px;
+  }
+}
+.svg__fGsHf {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.freeBox__aniAn {
+  display: flex;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 0px;
+}
+.text__iXdzw {
+  position: relative;
+  width: 40px;
+  height: auto;
+  max-width: 100%;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  flex-shrink: 0;
+}
 .sideBar {
   display: flex;
   flex-direction: column;

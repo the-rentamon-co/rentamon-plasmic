@@ -61,11 +61,12 @@ import {
 
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -75,6 +76,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPanelCalendar.module.css"; // plasmic-import: ssh21My6pq8y/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -92,6 +96,8 @@ export type PlasmicPanelCalendar__OverridesType = {
   main?: Flex__<"div">;
   select?: Flex__<typeof Select>;
   clarity?: Flex__<typeof Embed>;
+  alertModal?: Flex__<typeof AntdModal>;
+  button?: Flex__<typeof Button>;
   sideBar?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -329,6 +335,12 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "userAvailableFeature"
+      },
+      {
+        path: "alertModal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -346,7 +358,20 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{PlasmicPanelCalendar.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicPanelCalendar.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicPanelCalendar.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -604,6 +629,186 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             }
           />
 
+          <AntdModal
+            data-plasmic-name={"alertModal"}
+            data-plasmic-override={overrides.alertModal}
+            className={classNames("__wab_instance", sty.alertModal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["alertModal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["alertModal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["alertModal", "open"])}
+            title={
+              <div className={classNames(projectcss.all, sty.freeBox__aniAn)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__iXdzw
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateAlertModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["alertModal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateAlertModalOpen"] != null &&
+                      typeof $steps["updateAlertModalOpen"] === "object" &&
+                      typeof $steps["updateAlertModalOpen"].then === "function"
+                    ) {
+                      $steps["updateAlertModalOpen"] = await $steps[
+                        "updateAlertModalOpen"
+                      ];
+                    }
+                  }}
+                >
+                  {"x"}
+                </div>
+              </div>
+            }
+            trigger={null}
+            width={"400"}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___8Wqja)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__jKd7
+                )}
+              >
+                {
+                  "\u0628\u0647 \u0639\u0644\u062a \u0633\u06cc\u0627\u0633\u062a\u200c\u0647\u0627\u06cc \u0646\u0631\u062e\u200c\u06af\u0630\u0627\u0631\u06cc \u062c\u0627\u0628\u0627\u0645\u0627"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__xsnqv
+                )}
+              >
+                {
+                  "\u0628\u0639\u0636\u06cc \u0642\u06cc\u0645\u062a\u200c\u0647\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627 \u0627\u0639\u0645\u0627\u0644 \u0646\u0645\u06cc\u200c\u0634\u0647\r\n\u0648 \u0645\u0645\u06a9\u0646\u0647 \u062e\u0637\u0627 \u0628\u062f\u0647!"
+                }
+              </div>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__jVvLr)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "12%"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "10%"
+                    : "8%"
+                }
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image28.svg",
+                  fullWidth: 26,
+                  fullHeight: 26,
+                  aspectRatio: 1
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__j09Yq
+                )}
+              >
+                {
+                  "\u0628\u0627\u06cc\u062f \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062c\u0627\u0628\u0627\u0645\u0627 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0628\u062f\u06cc"
+                }
+              </div>
+              <Button
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames("__wab_instance", sty.button)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kjb22
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return window.open(
+                                  "https://host.jabama.com/chat/host/tickets/",
+                                  "_blank"
+                                );
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {
+                    "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062c\u0627\u0628\u0627\u0645\u0627"
+                  }
+                </div>
+              </Button>
+            </div>
+          </AntdModal>
           <div
             data-plasmic-name={"sideBar"}
             data-plasmic-override={overrides.sideBar}
@@ -1608,6 +1813,8 @@ const PlasmicDescendants = {
     "main",
     "select",
     "clarity",
+    "alertModal",
+    "button",
     "sideBar",
     "header",
     "right",
@@ -1629,6 +1836,8 @@ const PlasmicDescendants = {
   main: ["main"],
   select: ["select"],
   clarity: ["clarity"],
+  alertModal: ["alertModal", "button"],
+  button: ["button"],
   sideBar: [
     "sideBar",
     "header",
@@ -1689,6 +1898,8 @@ type NodeDefaultElementType = {
   main: "div";
   select: typeof Select;
   clarity: typeof Embed;
+  alertModal: typeof AntdModal;
+  button: typeof Button;
   sideBar: "div";
   header: "div";
   right: "div";
@@ -1771,6 +1982,8 @@ export const PlasmicPanelCalendar = Object.assign(
     main: makeNodeComponent("main"),
     select: makeNodeComponent("select"),
     clarity: makeNodeComponent("clarity"),
+    alertModal: makeNodeComponent("alertModal"),
+    button: makeNodeComponent("button"),
     sideBar: makeNodeComponent("sideBar"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
@@ -1795,7 +2008,7 @@ export const PlasmicPanelCalendar = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "تقویم یکپارچه اقامتگاه",
       description: "",
       ogImageSrc: "",
       canonical: ""

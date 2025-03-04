@@ -268,7 +268,7 @@
     40deg,
     #d0f3ff 0%,
     #fcfcfc 38%,
-    #ebfaff 59%,
+    #cef3ff 59%,
     #f1fbfe 82%,
     #fcfcfc 97%
   );
@@ -295,17 +295,18 @@
       40deg,
       #d0f3ff 0%,
       #fcfcfc 38%,
-      #ebfaff 59%,
+      #cdedf9 59%,
       #f1fbfe 82%,
       #e2f5fa 97%
     );
+    border-radius: 0px;
   }
 }
 @media (max-width: 350px) {
   .team {
     padding-top: 22px;
     padding-bottom: 0px;
-    border-radius: 30px;
+    border-radius: 0px;
   }
 }
 .sectionTitle {

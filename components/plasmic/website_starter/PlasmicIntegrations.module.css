@@ -1287,8 +1287,8 @@
         #ececec 100%
       ),
       #fcfcfc;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     min-width: 0;
     padding: 34px 8px 30px;
   }
@@ -1317,8 +1317,43 @@
 }
 @media (max-width: 350px) {
   .more {
-    background: #fcfcfc;
-    padding-top: 16px;
+    background: linear-gradient(
+        15.519236097659928deg,
+        #ececec 0%,
+        #ffffff 72%,
+        #ececec 100%
+      ),
+      #fcfcfc;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    flex-direction: column;
+    min-width: 0;
+    padding: 34px 8px 30px;
+  }
+}
+@media (max-width: 350px) {
+  .more > :global(.__wab_flex-container) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 350px) {
+  .more > :global(.__wab_flex-container) > *,
+  .more > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .more > :global(.__wab_flex-container) > picture > img,
+  .more
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 .moreDecs {

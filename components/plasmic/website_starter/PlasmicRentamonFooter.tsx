@@ -501,7 +501,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   platform={"nextjs"}
                 >
                   {
-                    "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                    "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a"
                   }
                 </PlasmicLink__>
               }

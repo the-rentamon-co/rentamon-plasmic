@@ -214,6 +214,7 @@
 @media (max-width: 500px) {
   .link {
     padding-top: 30px;
+    border-radius: 0px;
   }
 }
 .title {
@@ -982,6 +983,11 @@
     border-radius: 30px;
   }
 }
+@media (max-width: 350px) {
+  .img__iDl9H {
+    border-radius: 20px;
+  }
+}
 .screenshots {
   display: flex;
   flex-direction: row;
@@ -1002,6 +1008,12 @@
   align-items: center;
   min-width: 0;
 }
+@media (max-width: 1200px) {
+  .screenshots {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+}
 @media (max-width: 500px) {
   .screenshots {
     display: flex;
@@ -1010,8 +1022,8 @@
     height: auto;
     max-width: 100%;
     background: #81a2bb;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     min-width: 0;
     padding: 40px 8px 30px;
   }
@@ -1044,8 +1056,8 @@
     padding-right: 0px;
     padding-left: 0px;
     padding-top: 24px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
   }
 }
 .introCalendarRight5 {
