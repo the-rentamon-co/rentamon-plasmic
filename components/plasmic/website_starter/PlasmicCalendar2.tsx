@@ -6921,6 +6921,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }}
               placeholder={"\u0645\u0648\u0628\u0627\u06cc\u0644"}
               required={true}
+              type={"number"}
               value={
                 generateStateValueProp($state, ["phoneNumber", "value"]) ?? ""
               }
@@ -7208,41 +7209,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ];
                 }
 
-                $steps["updateAddingGuestInfoOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["addingGuestInfo", "open"]
-                        },
-                        operation: 0
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateAddingGuestInfoOpen"] != null &&
-                  typeof $steps["updateAddingGuestInfoOpen"] === "object" &&
-                  typeof $steps["updateAddingGuestInfoOpen"].then === "function"
-                ) {
-                  $steps["updateAddingGuestInfoOpen"] = await $steps[
-                    "updateAddingGuestInfoOpen"
-                  ];
-                }
-
                 $steps["invokeGlobalAction2"] =
                   $steps.invokeGlobalAction.status == 200
                     ? (() => {
@@ -7292,6 +7258,42 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ) {
                   $steps["invokeGlobalAction3"] = await $steps[
                     "invokeGlobalAction3"
+                  ];
+                }
+
+                $steps["updateAddingGuestInfoOpen"] =
+                  $steps.invokeGlobalAction.status != 422
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["addingGuestInfo", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["updateAddingGuestInfoOpen"] != null &&
+                  typeof $steps["updateAddingGuestInfoOpen"] === "object" &&
+                  typeof $steps["updateAddingGuestInfoOpen"].then === "function"
+                ) {
+                  $steps["updateAddingGuestInfoOpen"] = await $steps[
+                    "updateAddingGuestInfoOpen"
                   ];
                 }
               }}

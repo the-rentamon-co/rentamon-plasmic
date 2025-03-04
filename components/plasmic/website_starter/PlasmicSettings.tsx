@@ -117,6 +117,7 @@ export type PlasmicSettings__OverridesType = {
   p1?: Flex__<"div">;
   p2?: Flex__<"div">;
   p3?: Flex__<"div">;
+  autosynccommisson?: Flex__<"div">;
   p4?: Flex__<"div">;
   switch1?: Flex__<typeof Switch>;
   options2?: Flex__<"div">;
@@ -124,6 +125,7 @@ export type PlasmicSettings__OverridesType = {
   p12?: Flex__<"div">;
   p22?: Flex__<"div">;
   p32?: Flex__<"div">;
+  reservationcommisson?: Flex__<"div">;
   p42?: Flex__<"div">;
   switch2?: Flex__<typeof Switch>;
   options3?: Flex__<"div">;
@@ -894,10 +896,12 @@ function PlasmicSettings__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.p3)}
                   >
                     <div
+                      data-plasmic-name={"autosynccommisson"}
+                      data-plasmic-override={overrides.autosynccommisson}
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__ijKfr
+                        sty.autosynccommisson
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "tablet")
@@ -1089,10 +1093,12 @@ function PlasmicSettings__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.p32)}
                   >
                     <div
+                      data-plasmic-name={"reservationcommisson"}
+                      data-plasmic-override={overrides.reservationcommisson}
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__znzZh
+                        sty.reservationcommisson
                       )}
                     >
                       {"\u06f1"}
@@ -3459,6 +3465,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
+    "autosynccommisson",
     "p4",
     "switch1",
     "options2",
@@ -3466,6 +3473,7 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
+    "reservationcommisson",
     "p42",
     "switch2",
     "options3",
@@ -3550,6 +3558,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
+    "autosynccommisson",
     "p4",
     "switch1",
     "options2",
@@ -3557,6 +3566,7 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
+    "reservationcommisson",
     "p42",
     "switch2",
     "options3",
@@ -3604,6 +3614,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
+    "autosynccommisson",
     "p4",
     "switch1",
     "options2",
@@ -3611,6 +3622,7 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
+    "reservationcommisson",
     "p42",
     "switch2",
     "options3",
@@ -3637,18 +3649,46 @@ const PlasmicDescendants = {
     "active4",
     "deactive4"
   ],
-  options: ["options", "opt1", "p1", "p2", "p3", "p4", "switch1"],
-  opt1: ["opt1", "p1", "p2", "p3", "p4", "switch1"],
+  options: [
+    "options",
+    "opt1",
+    "p1",
+    "p2",
+    "p3",
+    "autosynccommisson",
+    "p4",
+    "switch1"
+  ],
+  opt1: ["opt1", "p1", "p2", "p3", "autosynccommisson", "p4", "switch1"],
   p1: ["p1"],
   p2: ["p2"],
-  p3: ["p3"],
+  p3: ["p3", "autosynccommisson"],
+  autosynccommisson: ["autosynccommisson"],
   p4: ["p4", "switch1"],
   switch1: ["switch1"],
-  options2: ["options2", "opt12", "p12", "p22", "p32", "p42", "switch2"],
-  opt12: ["opt12", "p12", "p22", "p32", "p42", "switch2"],
+  options2: [
+    "options2",
+    "opt12",
+    "p12",
+    "p22",
+    "p32",
+    "reservationcommisson",
+    "p42",
+    "switch2"
+  ],
+  opt12: [
+    "opt12",
+    "p12",
+    "p22",
+    "p32",
+    "reservationcommisson",
+    "p42",
+    "switch2"
+  ],
   p12: ["p12"],
   p22: ["p22"],
-  p32: ["p32"],
+  p32: ["p32", "reservationcommisson"],
+  reservationcommisson: ["reservationcommisson"],
   p42: ["p42", "switch2"],
   switch2: ["switch2"],
   options3: ["options3", "opt13", "p13", "p23", "p33", "p43", "switch3"],
@@ -3738,6 +3778,7 @@ type NodeDefaultElementType = {
   p1: "div";
   p2: "div";
   p3: "div";
+  autosynccommisson: "div";
   p4: "div";
   switch1: typeof Switch;
   options2: "div";
@@ -3745,6 +3786,7 @@ type NodeDefaultElementType = {
   p12: "div";
   p22: "div";
   p32: "div";
+  reservationcommisson: "div";
   p42: "div";
   switch2: typeof Switch;
   options3: "div";
@@ -3870,6 +3912,7 @@ export const PlasmicSettings = Object.assign(
     p1: makeNodeComponent("p1"),
     p2: makeNodeComponent("p2"),
     p3: makeNodeComponent("p3"),
+    autosynccommisson: makeNodeComponent("autosynccommisson"),
     p4: makeNodeComponent("p4"),
     switch1: makeNodeComponent("switch1"),
     options2: makeNodeComponent("options2"),
@@ -3877,6 +3920,7 @@ export const PlasmicSettings = Object.assign(
     p12: makeNodeComponent("p12"),
     p22: makeNodeComponent("p22"),
     p32: makeNodeComponent("p32"),
+    reservationcommisson: makeNodeComponent("reservationcommisson"),
     p42: makeNodeComponent("p42"),
     switch2: makeNodeComponent("switch2"),
     options3: makeNodeComponent("options3"),

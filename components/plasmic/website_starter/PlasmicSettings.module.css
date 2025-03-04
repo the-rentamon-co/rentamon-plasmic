@@ -969,24 +969,24 @@
     max-width: 14%;
   }
 }
-.text__ijKfr {
+.autosynccommisson {
   font-size: 17px;
   font-weight: 500;
 }
 @media (max-width: 1200px) {
-  .text__ijKfr {
+  .autosynccommisson {
     font-size: 18px;
     font-weight: 600;
   }
 }
 @media (max-width: 500px) {
-  .text__ijKfr {
+  .autosynccommisson {
     font-weight: 500;
     font-size: 15px;
   }
 }
 @media (max-width: 350px) {
-  .text__ijKfr {
+  .autosynccommisson {
     font-size: 15px;
   }
 }
@@ -1182,25 +1182,25 @@
     max-width: 14%;
   }
 }
-.text__znzZh {
+.reservationcommisson {
   font-size: 17px;
   font-weight: 500;
   padding-right: 0px;
 }
 @media (max-width: 1200px) {
-  .text__znzZh {
+  .reservationcommisson {
     font-size: 18px;
     font-weight: 600;
   }
 }
 @media (max-width: 500px) {
-  .text__znzZh {
+  .reservationcommisson {
     font-weight: 500;
     font-size: 15px;
   }
 }
 @media (max-width: 350px) {
-  .text__znzZh {
+  .reservationcommisson {
     font-size: 15px;
   }
 }
