@@ -73,8 +73,8 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgc
 import sty from "./PlasmicSideBar2.module.css"; // plasmic-import: 03ZPQfFyBXgI/css
 
 import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4HwqLfNb/icon
-import Icon50Icon from "./icons/PlasmicIcon__Icon50"; // plasmic-import: c8twinuxODWl/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
+import Icon50Icon from "./icons/PlasmicIcon__Icon50"; // plasmic-import: c8twinuxODWl/icon
 import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
 import Icon48Icon from "./icons/PlasmicIcon__Icon48"; // plasmic-import: EUsJ3MtRCJEN/icon
 import Icon47Icon from "./icons/PlasmicIcon__Icon47"; // plasmic-import: 52h8XtG_2_Y1/icon
@@ -102,6 +102,7 @@ export const PlasmicSideBar2__ArgProps = new Array<ArgPropType>(
 export type PlasmicSideBar2__OverridesType = {
   modalSidebar?: Flex__<typeof AntdModal>;
   profile?: Flex__<"div">;
+  walletamount?: Flex__<"div">;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
 };
 
@@ -468,7 +469,25 @@ function PlasmicSideBar2__RenderFunc(props: {
         <Stack__
           as={"div"}
           hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__frdDg)}
+          className={classNames(
+            projectcss.all,
+            sty.freeBox__frdDg,
+            (() => {
+              try {
+                return $props.userData.user_info.balance_info < 50000
+                  ? element
+                  : "";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()
+          )}
           onClick={async event => {
             const $steps = {};
 
@@ -532,10 +551,12 @@ function PlasmicSideBar2__RenderFunc(props: {
         >
           <div className={classNames(projectcss.all, sty.freeBox__wOt3K)}>
             <div
+              data-plasmic-name={"walletamount"}
+              data-plasmic-override={overrides.walletamount}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__yk8
+                sty.walletamount
               )}
             >
               <React.Fragment>
@@ -718,90 +739,6 @@ function PlasmicSideBar2__RenderFunc(props: {
           hasGap={true}
           className={classNames(
             projectcss.all,
-            sty.freeBox___8UaoI,
-            "clickable"
-          )}
-          onClick={async event => {
-            const $steps = {};
-
-            $steps["updateModalSidebarOpen"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["modalSidebar", "open"]
-                    },
-                    operation: 0
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateModalSidebarOpen"] != null &&
-              typeof $steps["updateModalSidebarOpen"] === "object" &&
-              typeof $steps["updateModalSidebarOpen"].then === "function"
-            ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
-            }
-
-            $steps["updateModalSidebarOpen2"] = true
-              ? (() => {
-                  const actionArgs = { destination: `/contacts` };
-                  return (({ destination }) => {
-                    if (
-                      typeof destination === "string" &&
-                      destination.startsWith("#")
-                    ) {
-                      document
-                        .getElementById(destination.substr(1))
-                        .scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      __nextRouter?.push(destination);
-                    }
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateModalSidebarOpen2"] != null &&
-              typeof $steps["updateModalSidebarOpen2"] === "object" &&
-              typeof $steps["updateModalSidebarOpen2"].then === "function"
-            ) {
-              $steps["updateModalSidebarOpen2"] = await $steps[
-                "updateModalSidebarOpen2"
-              ];
-            }
-          }}
-        >
-          <Icon50Icon
-            className={classNames(projectcss.all, sty.svg___7L6AY)}
-            role={"img"}
-          />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__iz91V
-            )}
-          >
-            {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
-          </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(
-            projectcss.all,
             sty.freeBox___5JuLu,
             "clickable"
           )}
@@ -879,6 +816,90 @@ function PlasmicSideBar2__RenderFunc(props: {
             {
               "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
             }
+          </div>
+        </Stack__>
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(
+            projectcss.all,
+            sty.freeBox___8UaoI,
+            "clickable"
+          )}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["updateModalSidebarOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modalSidebar", "open"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen"] != null &&
+              typeof $steps["updateModalSidebarOpen"] === "object" &&
+              typeof $steps["updateModalSidebarOpen"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen"] = await $steps[
+                "updateModalSidebarOpen"
+              ];
+            }
+
+            $steps["updateModalSidebarOpen2"] = true
+              ? (() => {
+                  const actionArgs = { destination: `/contacts` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
+                    }
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen2"] != null &&
+              typeof $steps["updateModalSidebarOpen2"] === "object" &&
+              typeof $steps["updateModalSidebarOpen2"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen2"] = await $steps[
+                "updateModalSidebarOpen2"
+              ];
+            }
+          }}
+        >
+          <Icon50Icon
+            className={classNames(projectcss.all, sty.svg___7L6AY)}
+            role={"img"}
+          />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__iz91V
+            )}
+          >
+            {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
           </div>
         </Stack__>
         <Stack__
@@ -1348,8 +1369,14 @@ function PlasmicSideBar2__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  modalSidebar: ["modalSidebar", "profile", "checkUserPendingReserve"],
+  modalSidebar: [
+    "modalSidebar",
+    "profile",
+    "walletamount",
+    "checkUserPendingReserve"
+  ],
   profile: ["profile"],
+  walletamount: ["walletamount"],
   checkUserPendingReserve: ["checkUserPendingReserve"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1358,6 +1385,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   modalSidebar: typeof AntdModal;
   profile: "div";
+  walletamount: "div";
   checkUserPendingReserve: typeof ApiRequest;
 };
 
@@ -1422,6 +1450,7 @@ export const PlasmicSideBar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     profile: makeNodeComponent("profile"),
+    walletamount: makeNodeComponent("walletamount"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),
 
     // Metadata about props expected for PlasmicSideBar2

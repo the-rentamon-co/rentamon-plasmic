@@ -1341,14 +1341,7 @@
   border-radius: 30px;
 }
 .fetchModal__modal :global(.ant-modal-content) {
-  background: linear-gradient(
-    45deg,
-    #fcfcfc 0%,
-    #f2f2f2 27%,
-    #fcfcfc 50%,
-    #ececec 76%,
-    #fcfcfc 95%
-  );
+  background: none;
   outline: none;
 }
 .userPlatform:global(.__wab_instance) {
@@ -1649,6 +1642,9 @@
   object-fit: cover;
   width: auto;
   height: 1em;
+}
+.text__dfIu4 {
+  background: none;
 }
 .block:global(.__wab_instance) {
   max-width: 100%;

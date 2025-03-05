@@ -4182,7 +4182,17 @@ function PlasmicCalendar2__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["fetchModal", "open"])}
           title={
-            "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a:"
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__dfIu4
+              )}
+            >
+              {
+                "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a:"
+              }
+            </div>
           }
           trigger={null}
           width={
