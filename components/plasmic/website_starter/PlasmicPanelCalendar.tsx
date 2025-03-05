@@ -1723,6 +1723,61 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   "updateStateVariable2"
                 ];
               }
+
+              $steps["checkOldUser"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://api-v2.rentamon.com/api/is_user_old"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkOldUser"] != null &&
+                typeof $steps["checkOldUser"] === "object" &&
+                typeof $steps["checkOldUser"].then === "function"
+              ) {
+                $steps["checkOldUser"] = await $steps["checkOldUser"];
+              }
+
+              $steps["updateStateVariable3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        if ($steps.checkOldUser.data.flag == 3) {
+                          return (window.location.href =
+                            "https://rentamon.com/panels/?prop_id=1");
+                        } else {
+                          return console.log("OK");
+                        }
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable3"] != null &&
+                typeof $steps["updateStateVariable3"] === "object" &&
+                typeof $steps["updateStateVariable3"].then === "function"
+              ) {
+                $steps["updateStateVariable3"] = await $steps[
+                  "updateStateVariable3"
+                ];
+              }
             }}
           />
 

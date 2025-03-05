@@ -474,8 +474,10 @@ function PlasmicSideBar2__RenderFunc(props: {
             sty.freeBox__frdDg,
             (() => {
               try {
-                return $props.userData.user_info.balance_info < 50000
-                  ? element
+                return parseInt(
+                  $props.userData.user_info.balance_info.balance
+                ) < 100000
+                  ? "blinkBorderWallet"
                   : "";
               } catch (e) {
                 if (
