@@ -117,8 +117,7 @@ export type PlasmicSettings__OverridesType = {
   p1?: Flex__<"div">;
   p2?: Flex__<"div">;
   p3?: Flex__<"div">;
-  getAutoSyncCommition?: Flex__<typeof ApiRequest>;
-  autosynccommisson?: Flex__<"div">;
+  apiRequest2?: Flex__<typeof ApiRequest>;
   p4?: Flex__<"div">;
   switch1?: Flex__<typeof Switch>;
   options2?: Flex__<"div">;
@@ -408,30 +407,6 @@ function PlasmicSettings__RenderFunc(props: {
         refName: "profile3"
       },
       {
-        path: "getAutoSyncCommition.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "getAutoSyncCommition"
-      },
-      {
-        path: "getAutoSyncCommition.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "getAutoSyncCommition"
-      },
-      {
-        path: "getAutoSyncCommition.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "getAutoSyncCommition"
-      },
-      {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
@@ -454,6 +429,30 @@ function PlasmicSettings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "apiRequest2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
       }
     ],
     [$props, $ctx, $refs]
@@ -951,109 +950,79 @@ function PlasmicSettings__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.p3)}
                   >
                     <ApiRequest
-                      data-plasmic-name={"getAutoSyncCommition"}
-                      data-plasmic-override={overrides.getAutoSyncCommition}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.getAutoSyncCommition
-                      )}
-                      errorDisplay={null}
+                      data-plasmic-name={"apiRequest2"}
+                      data-plasmic-override={overrides.apiRequest2}
+                      className={classNames("__wab_instance", sty.apiRequest2)}
+                      errorDisplay={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___7NU3G
+                          )}
+                        >
+                          {"Error fetching data"}
+                        </div>
+                      }
                       loadingDisplay={
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__cUDq7
+                            sty.text__xNEm
                           )}
                         >
-                          {
-                            "\u062f\u0631 \u062d\u0627\u0644 \u0645\u062d\u0627\u0633\u0628\u0647"
-                          }
+                          {"Loading..."}
                         </div>
                       }
                       method={"GET"}
                       onError={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "getAutoSyncCommition",
+                          "apiRequest2",
                           "error"
                         ]).apply(null, eventArgs);
                       }}
                       onLoading={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "getAutoSyncCommition",
+                          "apiRequest2",
                           "loading"
                         ]).apply(null, eventArgs);
                       }}
                       onSuccess={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "getAutoSyncCommition",
+                          "apiRequest2",
                           "data"
                         ]).apply(null, eventArgs);
                       }}
                       ref={ref => {
-                        $refs["getAutoSyncCommition"] = ref;
+                        $refs["apiRequest2"] = ref;
                       }}
                       url={
                         "https://gateway.rentamon.com/webhook/get_commition?feature_name=auto_sync"
                       }
                     >
                       <div
-                        data-plasmic-name={"autosynccommisson"}
-                        data-plasmic-override={overrides.autosynccommisson}
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.autosynccommisson
+                          sty.text__uz7N
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet") ? (
-                          "\u06f1/\u06f5"
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (() => {
-                                  function convertToPersianNumber(number) {
-                                    const persianNumbers = [
-                                      "۰",
-                                      "۱",
-                                      "۲",
-                                      "۳",
-                                      "۴",
-                                      "۵",
-                                      "۶",
-                                      "۷",
-                                      "۸",
-                                      "۹"
-                                    ];
-
-                                    return number
-                                      .toString()
-                                      .replace(
-                                        /\d/g,
-                                        digit => persianNumbers[digit]
-                                      );
-                                  }
-                                  const number =
-                                    $state.getAutoSyncCommition.data[0]
-                                      .default_rate;
-                                  const persianNumber = convertToPersianNumber(
-                                    number.toLocaleString()
-                                  );
-                                  return persianNumber;
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u06f1/\u06f5";
-                                }
-                                throw e;
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest2.data[0].default_rate;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
                               }
-                            })()}
-                          </React.Fragment>
-                        )}
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       </div>
                     </ApiRequest>
                   </div>
@@ -3454,10 +3423,7 @@ function PlasmicSettings__RenderFunc(props: {
                           $state.switch2.isSelected ||
                           $state.switch3.isSelected
                           ? `${new Intl.NumberFormat("fa-IR").format(
-                              ($state.switch1.isSelected
-                                ? $state.getAutoSyncCommition.data[0]
-                                    .default_rate
-                                : 0) +
+                              ($state.switch1.isSelected ? 1.5 : 0) +
                                 ($state.switch2.isSelected
                                   ? $state.apiRequest.data[0].default_rate
                                   : 0) +
@@ -3735,8 +3701,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
-    "getAutoSyncCommition",
-    "autosynccommisson",
+    "apiRequest2",
     "p4",
     "switch1",
     "options2",
@@ -3829,8 +3794,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
-    "getAutoSyncCommition",
-    "autosynccommisson",
+    "apiRequest2",
     "p4",
     "switch1",
     "options2",
@@ -3886,8 +3850,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
-    "getAutoSyncCommition",
-    "autosynccommisson",
+    "apiRequest2",
     "p4",
     "switch1",
     "options2",
@@ -3928,26 +3891,15 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
-    "getAutoSyncCommition",
-    "autosynccommisson",
+    "apiRequest2",
     "p4",
     "switch1"
   ],
-  opt1: [
-    "opt1",
-    "p1",
-    "p2",
-    "p3",
-    "getAutoSyncCommition",
-    "autosynccommisson",
-    "p4",
-    "switch1"
-  ],
+  opt1: ["opt1", "p1", "p2", "p3", "apiRequest2", "p4", "switch1"],
   p1: ["p1"],
   p2: ["p2"],
-  p3: ["p3", "getAutoSyncCommition", "autosynccommisson"],
-  getAutoSyncCommition: ["getAutoSyncCommition", "autosynccommisson"],
-  autosynccommisson: ["autosynccommisson"],
+  p3: ["p3", "apiRequest2"],
+  apiRequest2: ["apiRequest2"],
   p4: ["p4", "switch1"],
   switch1: ["switch1"],
   options2: [
@@ -4054,8 +4006,7 @@ type NodeDefaultElementType = {
   p1: "div";
   p2: "div";
   p3: "div";
-  getAutoSyncCommition: typeof ApiRequest;
-  autosynccommisson: "div";
+  apiRequest2: typeof ApiRequest;
   p4: "div";
   switch1: typeof Switch;
   options2: "div";
@@ -4189,8 +4140,7 @@ export const PlasmicSettings = Object.assign(
     p1: makeNodeComponent("p1"),
     p2: makeNodeComponent("p2"),
     p3: makeNodeComponent("p3"),
-    getAutoSyncCommition: makeNodeComponent("getAutoSyncCommition"),
-    autosynccommisson: makeNodeComponent("autosynccommisson"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
     p4: makeNodeComponent("p4"),
     switch1: makeNodeComponent("switch1"),
     options2: makeNodeComponent("options2"),
