@@ -268,7 +268,11 @@ function PlasmicWallet3__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "tablet") ? `` : "1000000"
+          hasVariant(globalVariants, "screen", "mobile")
+            ? "1000000"
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? "1000000"
+            : "1000000"
       }
     ],
     [$props, $ctx, $refs]
@@ -429,40 +433,42 @@ function PlasmicWallet3__RenderFunc(props: {
               data-plasmic-override={overrides.balance}
               className={classNames(projectcss.all, sty.balance)}
             >
-              <div
-                data-plasmic-name={"balance2"}
-                data-plasmic-override={overrides.balance2}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.balance2
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return (() => {
-                        const balance_info =
-                          $state.profile2.data.user_info.balance_info;
-                        const reducedBalance = Math.floor(
-                          balance_info.balance / 10
-                        );
-                        const formattedBalance = new Intl.NumberFormat(
-                          "fa-IR"
-                        ).format(reducedBalance);
-                        return `موجودی: ${formattedBalance} تومان`;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
+              <div className={classNames(projectcss.all, sty.freeBox__lvxu)}>
+                <div
+                  data-plasmic-name={"balance2"}
+                  data-plasmic-override={overrides.balance2}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.balance2
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          const balance_info =
+                            $state.profile2.data.user_info.balance_info;
+                          const reducedBalance = Math.floor(
+                            balance_info.balance / 10
+                          );
+                          const formattedBalance = new Intl.NumberFormat(
+                            "fa-IR"
+                          ).format(reducedBalance);
+                          return `موجودی: ${formattedBalance} تومان`;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
+                    })()}
+                  </React.Fragment>
+                </div>
               </div>
             </div>
             <div
@@ -540,7 +546,17 @@ function PlasmicWallet3__RenderFunc(props: {
               );
             }}
             open={generateStateValueProp($state, ["modal", "open"])}
-            title={
+            title={null}
+            trigger={null}
+            width={
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? "320"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "400"
+                : undefined
+            }
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__ryKkA)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -552,16 +568,7 @@ function PlasmicWallet3__RenderFunc(props: {
                   "\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9"
                 }
               </div>
-            }
-            trigger={null}
-            width={
-              hasVariant(globalVariants, "screen", "smallMobile")
-                ? "320"
-                : hasVariant(globalVariants, "screen", "mobile")
-                ? "400"
-                : undefined
-            }
-          >
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__buUMp)}>
               <div
                 className={classNames(
@@ -605,7 +612,11 @@ function PlasmicWallet3__RenderFunc(props: {
                   <React.Fragment>
                     {(() => {
                       try {
-                        return $state.tokenResponse.amount + " تومان";
+                        return (
+                          new Intl.NumberFormat("fa-IR").format(
+                            $state.tokenResponse.amount
+                          ) + "  تومان"
+                        );
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -1139,7 +1150,7 @@ function PlasmicWallet3__RenderFunc(props: {
                             undefined,
                             (() => {
                               try {
-                                return { amount: $state.input3.value };
+                                return { amount: $state.input3.value * 10 };
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
