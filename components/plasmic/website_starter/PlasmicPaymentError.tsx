@@ -450,9 +450,17 @@ function PlasmicPaymentError__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.button___3IJnw)}
                 link={`/pricing`}
               >
-                {
-                  "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0639\u0631\u0641\u0647 \u0647\u0627"
-                }
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___7ZR1
+                  )}
+                >
+                  {
+                    "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                  }
+                </div>
               </Button>
             </div>
           </div>

@@ -61,6 +61,7 @@ import {
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -70,6 +71,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPaymentSuccess.module.css"; // plasmic-import: P-CxSrGa5GbD/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -88,6 +92,7 @@ export type PlasmicPaymentSuccess__OverridesType = {
   successful?: Flex__<typeof PlasmicImg__>;
   apiRequest?: Flex__<typeof ApiRequest>;
   img?: Flex__<typeof PlasmicImg__>;
+  button?: Flex__<"div">;
 };
 
 export interface DefaultPaymentSuccessProps {}
@@ -239,7 +244,7 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                 displayWidth={
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "150px"
-                    : "200px"
+                    : "140px"
                 }
                 loading={"lazy"}
                 src={{
@@ -250,16 +255,18 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                 }}
               />
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__sWhN5
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f"
-                : "\u067e\u0631\u062f\u0627\u062e\u062a \u0634\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f"}
+            <div className={classNames(projectcss.all, sty.freeBox__iYnGz)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__sWhN5
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f"
+                  : "\u067e\u0631\u062f\u0627\u062e\u062a \u0634\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f"}
+              </div>
             </div>
             <ApiRequest
               data-plasmic-name={"apiRequest"}
@@ -503,59 +510,26 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
               </div>
             </ApiRequest>
             <div
-              className={classNames(projectcss.all, sty.freeBox__su0Hi)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpsRentamonComPanels"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://rentamon.com/panels"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpsRentamonComPanels"] != null &&
-                  typeof $steps["goToHttpsRentamonComPanels"] === "object" &&
-                  typeof $steps["goToHttpsRentamonComPanels"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpsRentamonComPanels"] = await $steps[
-                    "goToHttpsRentamonComPanels"
-                  ];
-                }
-              }}
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames(projectcss.all, sty.button)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hG9Gz
-                )}
+              <Button
+                className={classNames("__wab_instance", sty.button__uOppp)}
+                link={`/pricing`}
               >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "var(--token-8nedppYkGVaH)" }}
-                  >
-                    {
-                      "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                    }
-                  </span>
-                </React.Fragment>
-              </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lkJfi
+                  )}
+                >
+                  {
+                    "\u0646\u0645\u0627\u06cc\u0634 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                  }
+                </div>
+              </Button>
             </div>
           </div>
         </div>
@@ -570,12 +544,14 @@ const PlasmicDescendants = {
     "embedHtml",
     "successful",
     "apiRequest",
-    "img"
+    "img",
+    "button"
   ],
   embedHtml: ["embedHtml"],
   successful: ["successful"],
   apiRequest: ["apiRequest", "img"],
-  img: ["img"]
+  img: ["img"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -586,6 +562,7 @@ type NodeDefaultElementType = {
   successful: typeof PlasmicImg__;
   apiRequest: typeof ApiRequest;
   img: typeof PlasmicImg__;
+  button: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -652,6 +629,7 @@ export const PlasmicPaymentSuccess = Object.assign(
     successful: makeNodeComponent("successful"),
     apiRequest: makeNodeComponent("apiRequest"),
     img: makeNodeComponent("img"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicPaymentSuccess
     internalVariantProps: PlasmicPaymentSuccess__VariantProps,

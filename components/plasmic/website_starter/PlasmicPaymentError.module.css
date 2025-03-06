@@ -267,13 +267,14 @@
 @media (max-width: 500px) {
   .freeBox___5Hh7 {
     max-width: 70%;
-    width: 70%;
+    width: 50%;
   }
 }
 @media (max-width: 350px) {
   .freeBox___5Hh7 {
     padding-right: 0px;
     padding-left: 0px;
+    width: 50%;
   }
 }
 .text__eZjXq {
@@ -425,11 +426,12 @@
   .button {
     display: flex;
     flex-direction: column;
+    padding-bottom: 70px;
   }
 }
 .button___3IJnw:global(.__wab_instance) {
   max-width: 100%;
-  width: 230px;
+  width: 320px;
   flex-shrink: 0;
 }
 .svg___31Idm {
@@ -437,6 +439,11 @@
   object-fit: cover;
   width: auto;
   height: 1em;
+}
+.text___7ZR1 {
+  font-size: 17px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .svg__vl6HK {
   position: relative;

@@ -213,7 +213,7 @@ function PlasmicTransactions__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -617,7 +617,7 @@ function PlasmicTransactions__RenderFunc(props: {
                         onClick={async event => {
                           const $steps = {};
 
-                          $steps["updateStateVariable"] = true
+                          $steps["updateStateVariable"] = false
                             ? (() => {
                                 const actionArgs = {
                                   operation: 0,
@@ -671,8 +671,8 @@ function PlasmicTransactions__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                $state.apiRequest.data[currentIndex]
-                                  .transaction_type != "withdraw"
+                                $state.apiRequest.data[currentIndex].status !=
+                                "decrease"
                               );
                             } catch (e) {
                               if (
@@ -705,8 +705,8 @@ function PlasmicTransactions__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                $state.apiRequest.data[currentIndex]
-                                  .transaction_type != "deposit"
+                                $state.apiRequest.data[currentIndex].status ==
+                                "decrease"
                               );
                             } catch (e) {
                               if (
@@ -747,7 +747,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return $state.apiRequest.data[currentIndex]
-                                    .title;
+                                    .reason;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -779,7 +779,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return $state.apiRequest.data[currentIndex]
-                                    .date_time;
+                                    .date;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -811,7 +811,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return $state.apiRequest.data[currentIndex]
-                                    .amount;
+                                    .price;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
