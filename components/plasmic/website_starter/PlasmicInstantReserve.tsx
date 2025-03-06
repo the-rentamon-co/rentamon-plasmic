@@ -310,6 +310,12 @@ function PlasmicInstantReserve__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile2"
+      },
+      {
+        path: "isOld",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -357,28 +363,41 @@ function PlasmicInstantReserve__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <SideBar2
-              data-plasmic-name={"sideBar2"}
-              data-plasmic-override={overrides.sideBar2}
-              className={classNames("__wab_instance", sty.sideBar2)}
-              isOpen={
-                hasVariant(globalVariants, "screen", "mobile") ? false : false
-              }
-              userData={(() => {
-                try {
-                  return $state.profile2.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
+            {(() => {
+              try {
+                return $state.isOld == false;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
                 }
-              })()}
-            />
-
+                throw e;
+              }
+            })() ? (
+              <SideBar2
+                data-plasmic-name={"sideBar2"}
+                data-plasmic-override={overrides.sideBar2}
+                className={classNames("__wab_instance", sty.sideBar2)}
+                isOpen={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : false
+                }
+                userData={(() => {
+                  try {
+                    return $state.profile2.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            ) : null}
             <div className={classNames(projectcss.all, sty.freeBox__okh64)}>
               <div
                 className={classNames(
@@ -2129,6 +2148,61 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 typeof $steps["runCode"].then === "function"
               ) {
                 $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["checkOldUser"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://api-v2.rentamon.com/api/is_user_old"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkOldUser"] != null &&
+                typeof $steps["checkOldUser"] === "object" &&
+                typeof $steps["checkOldUser"].then === "function"
+              ) {
+                $steps["checkOldUser"] = await $steps["checkOldUser"];
+              }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        if ($steps.checkOldUser.data.flag == 3) {
+                          $state.isOld = true;
+                        } else {
+                          $state.isOld = false;
+                        }
+                        return console.log($state.isOld);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
               }
             }}
           />

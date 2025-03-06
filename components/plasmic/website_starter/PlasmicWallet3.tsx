@@ -62,12 +62,14 @@ import {
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -104,6 +106,21 @@ export type PlasmicWallet3__OverridesType = {
   balance2?: Flex__<"div">;
   report?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
+  title?: Flex__<"div">;
+  charge?: Flex__<"div">;
+  input?: Flex__<"div">;
+  right?: Flex__<"div">;
+  center?: Flex__<"div">;
+  input3?: Flex__<typeof Input>;
+  left?: Flex__<"div">;
+  packages?: Flex__<"div">;
+  p1?: Flex__<"div">;
+  intext?: Flex__<"div">;
+  right2?: Flex__<"div">;
+  left2?: Flex__<"div">;
+  paymentbutton?: Flex__<"div">;
+  button?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   pricing?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
@@ -245,6 +262,13 @@ function PlasmicWallet3__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile2"
+      },
+      {
+        path: "input3.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "tablet") ? `` : "1000000"
       }
     ],
     [$props, $ctx, $refs]
@@ -487,1128 +511,97 @@ function PlasmicWallet3__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__dNxTs)}>
-            <div className={classNames(projectcss.all, sty.freeBox__p3SMt)}>
+          <AntdModal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalContentClassName={classNames({
+              [sty["pcls_CmpF8jkKA5OQ"]]: true,
+              [sty["pcls_X5OuuLluSa_K"]]: hasVariant(
+                globalVariants,
+                "screen",
+                "tablet"
+              )
+            })}
+            modalScopeClassName={sty["modal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["modal", "open"])}
+            title={
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___5HxjS
+                  sty.text__pu3RU
                 )}
               >
                 {
-                  "\u062e\u0631\u06cc\u062f \u0628\u0633\u062a\u0647 \u0648 \u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                  "\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9"
                 }
               </div>
-            </div>
-            <Button
-              className={classNames("__wab_instance", sty.button__yLxRv)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateLoading"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading"] != null &&
-                  typeof $steps["updateLoading"] === "object" &&
-                  typeof $steps["updateLoading"].then === "function"
-                ) {
-                  $steps["updateLoading"] = await $steps["updateLoading"];
-                }
-
-                $steps["goToPaymentPage"] = false
-                  ? (() => {
-                      const actionArgs = {};
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToPaymentPage"] != null &&
-                  typeof $steps["goToPaymentPage"] === "object" &&
-                  typeof $steps["goToPaymentPage"].then === "function"
-                ) {
-                  $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
-                }
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
-                          undefined,
-                          (() => {
-                            try {
-                              return { amount: "1000000" };
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
-                }
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          $state.tokenResponse.payInfo =
-                            $steps.invokeGlobalAction.data.payinfo;
-                          $state.tokenResponse.amount = "۱۰۰\u066C۰۰۰";
-                          return console.log($state.tokenResponse);
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
-                }
-
-                $steps["updateModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
-                ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                }
-
-                $steps["updateLoading2"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading2"] != null &&
-                  typeof $steps["updateLoading2"] === "object" &&
-                  typeof $steps["updateLoading2"].then === "function"
-                ) {
-                  $steps["updateLoading2"] = await $steps["updateLoading2"];
-                }
-              }}
-            >
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__wreVx)}
+            }
+            trigger={null}
+            width={
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? "320"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "400"
+                : undefined
+            }
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__buUMp)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__aFwh
+                )}
               >
-                {(() => {
-                  try {
-                    return $state.loading;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__sbWyj)}
-                    displayHeight={"25px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={
-                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
-                  />
-                ) : null}
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cnBMu
-                  )}
-                >
-                  {
-                    "\u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646"
-                  }
-                </div>
-              </Stack__>
-            </Button>
-            <Button
-              className={classNames("__wab_instance", sty.button__pRlw)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateLoading"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading"] != null &&
-                  typeof $steps["updateLoading"] === "object" &&
-                  typeof $steps["updateLoading"].then === "function"
-                ) {
-                  $steps["updateLoading"] = await $steps["updateLoading"];
-                }
-
-                $steps["goToPaymentPage"] = false
-                  ? (() => {
-                      const actionArgs = {};
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToPaymentPage"] != null &&
-                  typeof $steps["goToPaymentPage"] === "object" &&
-                  typeof $steps["goToPaymentPage"].then === "function"
-                ) {
-                  $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
-                }
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
-                          undefined,
-                          (() => {
-                            try {
-                              return { amount: "2000000" };
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
-                }
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          $state.tokenResponse.payInfo =
-                            $steps.invokeGlobalAction.data.payinfo;
-                          $state.tokenResponse.amount = "۲۰۰\u066C۰۰۰";
-                          return console.log($state.tokenResponse);
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
-                }
-
-                $steps["updateModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
-                ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                }
-
-                $steps["updateLoading2"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading2"] != null &&
-                  typeof $steps["updateLoading2"] === "object" &&
-                  typeof $steps["updateLoading2"].then === "function"
-                ) {
-                  $steps["updateLoading2"] = await $steps["updateLoading2"];
-                }
-              }}
-            >
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__pSwBa)}
+                {hasVariant(globalVariants, "screen", "tablet")
+                  ? "\u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc:  "
+                  : "\u0645\u0628\u0644\u063a:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__tdx4A
+                )}
               >
-                {(() => {
-                  try {
-                    return $state.loading;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__pMhIa)}
-                    displayHeight={"25px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={
-                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
-                  />
-                ) : null}
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__uqs1C
-                  )}
-                >
-                  {
-                    "\u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646"
-                  }
-                </div>
-              </Stack__>
-            </Button>
-            <Button
-              className={classNames("__wab_instance", sty.button__zDpDv)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateLoading"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading"] != null &&
-                  typeof $steps["updateLoading"] === "object" &&
-                  typeof $steps["updateLoading"].then === "function"
-                ) {
-                  $steps["updateLoading"] = await $steps["updateLoading"];
-                }
-
-                $steps["goToPaymentPage"] = false
-                  ? (() => {
-                      const actionArgs = {};
-                      return (({ destination }) => {
+                {hasVariant(globalVariants, "screen", "tablet") ? (
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (
+                          parseInt($state.input3.value).toLocaleString(
+                            "fa-IR"
+                          ) + " تومان"
+                        );
+                      } catch (e) {
                         if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
+                          return "";
                         }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToPaymentPage"] != null &&
-                  typeof $steps["goToPaymentPage"] === "object" &&
-                  typeof $steps["goToPaymentPage"].then === "function"
-                ) {
-                  $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
-                }
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
-                          undefined,
-                          (() => {
-                            try {
-                              return { amount: "5000000" };
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
-                }
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          $state.tokenResponse.payInfo =
-                            $steps.invokeGlobalAction.data.payinfo;
-                          $state.tokenResponse.amount = "۵۰۰\u066C۰۰۰";
-                          return console.log($state.tokenResponse);
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
-                }
-
-                $steps["updateModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
-                ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                }
-
-                $steps["updateLoading2"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading2"] != null &&
-                  typeof $steps["updateLoading2"] === "object" &&
-                  typeof $steps["updateLoading2"].then === "function"
-                ) {
-                  $steps["updateLoading2"] = await $steps["updateLoading2"];
-                }
-              }}
-            >
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__atEw6)}
-              >
-                {(() => {
-                  try {
-                    return $state.loading;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__moCGp)}
-                    displayHeight={"25px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={
-                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
-                  />
-                ) : null}
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qvZ15
-                  )}
-                >
-                  {
-                    "\u06f5\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646"
-                  }
-                </div>
-              </Stack__>
-            </Button>
-            <Button
-              className={classNames("__wab_instance", sty.button__u2NwF)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateLoading"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading"] != null &&
-                  typeof $steps["updateLoading"] === "object" &&
-                  typeof $steps["updateLoading"].then === "function"
-                ) {
-                  $steps["updateLoading"] = await $steps["updateLoading"];
-                }
-
-                $steps["goToPaymentPage"] = false
-                  ? (() => {
-                      const actionArgs = {};
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToPaymentPage"] != null &&
-                  typeof $steps["goToPaymentPage"] === "object" &&
-                  typeof $steps["goToPaymentPage"].then === "function"
-                ) {
-                  $steps["goToPaymentPage"] = await $steps["goToPaymentPage"];
-                }
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
-                          undefined,
-                          (() => {
-                            try {
-                              return { amount: "10000000" };
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
-                }
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          $state.tokenResponse.payInfo =
-                            $steps.invokeGlobalAction.data.payinfo;
-                          $state.tokenResponse.amount = "۱\u066C۰۰۰\u066C۰۰۰ ";
-                          return console.log($state.tokenResponse);
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
-                }
-
-                $steps["updateModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
-                ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                }
-
-                $steps["updateLoading2"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading2"] != null &&
-                  typeof $steps["updateLoading2"] === "object" &&
-                  typeof $steps["updateLoading2"].then === "function"
-                ) {
-                  $steps["updateLoading2"] = await $steps["updateLoading2"];
-                }
-              }}
-            >
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__fxD4G)}
-              >
-                {(() => {
-                  try {
-                    return $state.loading;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__rpcMp)}
-                    displayHeight={"25px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={
-                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
-                  />
-                ) : null}
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___7Fr3F
-                  )}
-                >
-                  {
-                    "\u06f1 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
-                  }
-                </div>
-              </Stack__>
-            </Button>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ajzfg
-              )}
-            >
-              {
-                "\u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."
-              }
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__a8Xv
-              )}
-            >
-              {
-                "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\u00a0\n\r"
-              }
-            </div>
-            <AntdModal
-              data-plasmic-name={"modal"}
-              data-plasmic-override={overrides.modal}
-              className={classNames("__wab_instance", sty.modal)}
-              defaultStylesClassName={classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
-                projectcss.plasmic_tokens,
-                plasmic_antd_5_hostless_css.plasmic_tokens,
-                plasmic_plasmic_rich_components_css.plasmic_tokens
-              )}
-              hideFooter={true}
-              modalContentClassName={classNames({
-                [sty["pcls_CmpF8jkKA5OQ"]]: true,
-                [sty["pcls_X5OuuLluSa_K"]]: hasVariant(
-                  globalVariants,
-                  "screen",
-                  "tablet"
-                )
-              })}
-              modalScopeClassName={sty["modal__modal"]}
-              onOpenChange={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              open={generateStateValueProp($state, ["modal", "open"])}
-              title={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pu3RU
-                  )}
-                >
-                  {
-                    "\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9"
-                  }
-                </div>
-              }
-              trigger={null}
-              width={
-                hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "320"
-                  : hasVariant(globalVariants, "screen", "mobile")
-                  ? "400"
-                  : undefined
-              }
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__buUMp)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aFwh
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc:  "
-                    : "\u0645\u0628\u0644\u063a:"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tdx4A
-                  )}
-                >
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                ) : (
                   <React.Fragment>
                     {(() => {
                       try {
@@ -1624,59 +617,742 @@ function PlasmicWallet3__RenderFunc(props: {
                       }
                     })()}
                   </React.Fragment>
+                )}
+              </div>
+            </div>
+            {(hasVariant(globalVariants, "screen", "tablet") ? true : false) ? (
+              <div className={classNames(projectcss.all, sty.freeBox__ktBJb)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dFi4N
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u062a\u0645\u0627\u0645\u06cc \u06a9\u0627\u0631\u062a\u200c\u0647\u0627\u06cc \u0628\u0627\u0646\u06a9\u06cc \u0639\u0636\u0648 \u0634\u062a\u0627\u0628"
+                    : "\u0645\u0628\u0644\u063a:"}
                 </div>
               </div>
-              {(
-                hasVariant(globalVariants, "screen", "tablet") ? true : false
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__ktBJb)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dFi4N
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u062a\u0645\u0627\u0645\u06cc \u06a9\u0627\u0631\u062a\u200c\u0647\u0627\u06cc \u0628\u0627\u0646\u06a9\u06cc \u0639\u0636\u0648 \u0634\u062a\u0627\u0628"
-                      : "\u0645\u0628\u0644\u063a:"}
-                  </div>
-                </div>
-              ) : null}
-              <div className={classNames(projectcss.all, sty.freeBox__mmdog)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button__yXzkG)}
-                  link={(() => {
-                    try {
-                      return (
-                        "https://payment.zarinpal.com/pg/StartPay/" +
-                        $state.tokenResponse.payInfo
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
+            ) : null}
+            <div className={classNames(projectcss.all, sty.freeBox__mmdog)}>
+              <Button
+                className={classNames("__wab_instance", sty.button__yXzkG)}
+                link={(() => {
+                  try {
+                    return (
+                      "https://payment.zarinpal.com/pg/StartPay/" +
+                      $state.tokenResponse.payInfo
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
                     }
-                  })()}
+                    throw e;
+                  }
+                })()}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xtbcc
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0622\u0646\u0644\u0627\u06cc\u0646"
+                    : "\u067e\u0631\u062f\u0627\u062e\u062a"}
+                </div>
+              </Button>
+            </div>
+          </AntdModal>
+          <div className={classNames(projectcss.all, sty.freeBox__fx5B)}>
+            <div
+              data-plasmic-name={"title"}
+              data-plasmic-override={overrides.title}
+              className={classNames(projectcss.all, sty.title)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__zx3Qm
+                )}
+              >
+                {
+                  "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                }
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"charge"}
+              data-plasmic-override={overrides.charge}
+              className={classNames(projectcss.all, sty.charge)}
+            >
+              <div
+                data-plasmic-name={"input"}
+                data-plasmic-override={overrides.input}
+                className={classNames(projectcss.all, sty.input)}
+              >
+                <div
+                  data-plasmic-name={"right"}
+                  data-plasmic-override={overrides.right}
+                  className={classNames(projectcss.all, sty.right)}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__xtbcc
+                      sty.text__iBnd9
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0622\u0646\u0644\u0627\u06cc\u0646"
-                      : "\u067e\u0631\u062f\u0627\u062e\u062a"}
+                    {"\u0645\u0628\u0644\u063a"}
                   </div>
-                </Button>
+                </div>
+                <div
+                  data-plasmic-name={"center"}
+                  data-plasmic-override={overrides.center}
+                  className={classNames(projectcss.all, sty.center)}
+                >
+                  <Input
+                    data-plasmic-name={"input3"}
+                    data-plasmic-override={overrides.input3}
+                    className={classNames("__wab_instance", sty.input3)}
+                    onChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "input3",
+                        "value"
+                      ]).apply(null, eventArgs);
+                    }}
+                    placeholder={"\u06f1/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"}
+                    type={"number"}
+                    value={generateStateValueProp($state, ["input3", "value"])}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"left"}
+                  data-plasmic-override={overrides.left}
+                  className={classNames(projectcss.all, sty.left)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__z2MAw
+                    )}
+                  >
+                    {"\u062a\u0648\u0645\u0627\u0646"}
+                  </div>
+                </div>
               </div>
-            </AntdModal>
+              <div
+                data-plasmic-name={"packages"}
+                data-plasmic-override={overrides.packages}
+                className={classNames(projectcss.all, sty.packages)}
+              >
+                <div
+                  data-plasmic-name={"p1"}
+                  data-plasmic-override={overrides.p1}
+                  className={classNames(projectcss.all, sty.p1)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__m3UhN
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateInput3Value"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["input3", "value"]
+                              },
+                              operation: 0,
+                              value: 2000000
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateInput3Value"] != null &&
+                        typeof $steps["updateInput3Value"] === "object" &&
+                        typeof $steps["updateInput3Value"].then === "function"
+                      ) {
+                        $steps["updateInput3Value"] = await $steps[
+                          "updateInput3Value"
+                        ];
+                      }
+                    }}
+                  >
+                    {
+                      "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mLjd
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateInput3Value"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["input3", "value"]
+                              },
+                              operation: 0,
+                              value: 3000000
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateInput3Value"] != null &&
+                        typeof $steps["updateInput3Value"] === "object" &&
+                        typeof $steps["updateInput3Value"].then === "function"
+                      ) {
+                        $steps["updateInput3Value"] = await $steps[
+                          "updateInput3Value"
+                        ];
+                      }
+                    }}
+                  >
+                    {
+                      "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yqQfD
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateInput3Value"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["input3", "value"]
+                              },
+                              operation: 0,
+                              value: 5000000
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateInput3Value"] != null &&
+                        typeof $steps["updateInput3Value"] === "object" &&
+                        typeof $steps["updateInput3Value"].then === "function"
+                      ) {
+                        $steps["updateInput3Value"] = await $steps[
+                          "updateInput3Value"
+                        ];
+                      }
+                    }}
+                  >
+                    {
+                      "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
+                    }
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"intext"}
+                data-plasmic-override={overrides.intext}
+                className={classNames(projectcss.all, sty.intext)}
+              >
+                <div
+                  data-plasmic-name={"right2"}
+                  data-plasmic-override={overrides.right2}
+                  className={classNames(projectcss.all, sty.right2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kqo4A
+                    )}
+                  >
+                    {"\u0628\u0647 \u062d\u0631\u0648\u0641:"}
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"left2"}
+                  data-plasmic-override={overrides.left2}
+                  className={classNames(projectcss.all, sty.left2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rTdNh
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            function numberToPersian(num) {
+                              const units = [
+                                "",
+                                "یک",
+                                "دو",
+                                "سه",
+                                "چهار",
+                                "پنج",
+                                "شش",
+                                "هفت",
+                                "هشت",
+                                "نه"
+                              ];
+
+                              const tens = [
+                                "",
+                                "ده",
+                                "بیست",
+                                "سی",
+                                "چهل",
+                                "پنجاه",
+                                "شصت",
+                                "هفتاد",
+                                "هشتاد",
+                                "نود"
+                              ];
+
+                              const teens = [
+                                "ده",
+                                "یازده",
+                                "دوازده",
+                                "سیزده",
+                                "چهارده",
+                                "پانزده",
+                                "شانزده",
+                                "هفده",
+                                "هجده",
+                                "نوزده"
+                              ];
+
+                              const hundreds = [
+                                "",
+                                "صد",
+                                "دویست",
+                                "سیصد",
+                                "چهارصد",
+                                "پانصد",
+                                "ششصد",
+                                "هفتصد",
+                                "هشتصد",
+                                "نهصد"
+                              ];
+
+                              const groupNames = [
+                                "",
+                                "هزار",
+                                "میلیون",
+                                "میلیارد"
+                              ];
+
+                              if (num == null || num === "" || num === 0)
+                                return "صفر";
+                              const splitNumber = n => {
+                                const str = n.toString();
+                                const len = str.length;
+                                if (len <= 3) return [n];
+                                const groups = [];
+                                let i = len;
+                                while (i > 0) {
+                                  groups.unshift(
+                                    Number(str.substring(Math.max(0, i - 3), i))
+                                  );
+                                  i -= 3;
+                                }
+                                return groups;
+                              };
+                              const convertGroup = n => {
+                                if (n === 0) return "";
+                                const h = Math.floor(n / 100);
+                                const t = Math.floor((n % 100) / 10);
+                                const u = n % 10;
+                                const hundred = hundreds[h];
+                                let tenUnit = "";
+                                if (t === 1) {
+                                  tenUnit = teens[u];
+                                } else {
+                                  tenUnit =
+                                    tens[t] + (u > 0 ? " و " + units[u] : "");
+                                }
+                                return [hundred, tenUnit]
+                                  .filter(Boolean)
+                                  .join(" و ")
+                                  .trim();
+                              };
+                              const groups = splitNumber(num);
+                              const result = groups
+                                .map((g, i) => {
+                                  const groupText = convertGroup(g);
+                                  if (groupText) {
+                                    return (
+                                      groupText +
+                                      (groupNames[groups.length - i - 1]
+                                        ? " " +
+                                          groupNames[groups.length - i - 1]
+                                        : "")
+                                    );
+                                  }
+                                  return "";
+                                })
+                                .filter(Boolean)
+                                .join(" و ");
+                              const finalResult = result.startsWith("و ")
+                                ? result.slice(2)
+                                : result;
+                              return finalResult.trim() + " تومان";
+                            }
+                            const input = $state.input3?.value || "";
+                            const output =
+                              input === ""
+                                ? "صفر"
+                                : numberToPersian(Number(input));
+                            return output;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "...\u062a\u0648\u0645\u0627\u0646";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"paymentbutton"}
+              data-plasmic-override={overrides.paymentbutton}
+              className={classNames(projectcss.all, sty.paymentbutton)}
+            >
+              <div
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames(projectcss.all, sty.button)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateLoading"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["loading"]
+                          },
+                          operation: 4
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          const oldValue = $stateGet(objRoot, variablePath);
+                          $stateSet(objRoot, variablePath, !oldValue);
+                          return !oldValue;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateLoading"] != null &&
+                    typeof $steps["updateLoading"] === "object" &&
+                    typeof $steps["updateLoading"].then === "function"
+                  ) {
+                    $steps["updateLoading"] = await $steps["updateLoading"];
+                  }
+
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
+                            undefined,
+                            (() => {
+                              try {
+                                return { amount: $state.input3.value };
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+
+                  $steps["updateAccordionMainActivePanelId"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["accordionMain", "activePanelId"]
+                          },
+                          operation: 0,
+                          value: (() => {
+                            $state.tokenResponse.payInfo =
+                              $steps.invokeGlobalAction.data.payinfo;
+                            $state.tokenResponse.amount = $state.input3.value;
+                            return console.log($state.tokenResponse);
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAccordionMainActivePanelId"] != null &&
+                    typeof $steps["updateAccordionMainActivePanelId"] ===
+                      "object" &&
+                    typeof $steps["updateAccordionMainActivePanelId"].then ===
+                      "function"
+                  ) {
+                    $steps["updateAccordionMainActivePanelId"] = await $steps[
+                      "updateAccordionMainActivePanelId"
+                    ];
+                  }
+
+                  $steps["updateAccordionMainActivePanelId2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAccordionMainActivePanelId2"] != null &&
+                    typeof $steps["updateAccordionMainActivePanelId2"] ===
+                      "object" &&
+                    typeof $steps["updateAccordionMainActivePanelId2"].then ===
+                      "function"
+                  ) {
+                    $steps["updateAccordionMainActivePanelId2"] = await $steps[
+                      "updateAccordionMainActivePanelId2"
+                    ];
+                  }
+
+                  $steps["updateAccordionMainActivePanelId3"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["loading"]
+                          },
+                          operation: 4
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          const oldValue = $stateGet(objRoot, variablePath);
+                          $stateSet(objRoot, variablePath, !oldValue);
+                          return !oldValue;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAccordionMainActivePanelId3"] != null &&
+                    typeof $steps["updateAccordionMainActivePanelId3"] ===
+                      "object" &&
+                    typeof $steps["updateAccordionMainActivePanelId3"].then ===
+                      "function"
+                  ) {
+                    $steps["updateAccordionMainActivePanelId3"] = await $steps[
+                      "updateAccordionMainActivePanelId3"
+                    ];
+                  }
+                }}
+              >
+                {(() => {
+                  try {
+                    return $state.loading;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <PlasmicImg__
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
+                    alt={""}
+                    className={classNames(sty.img)}
+                    displayHeight={"34px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    }
+                  />
+                ) : null}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tdffw
+                  )}
+                >
+                  {"\u067e\u0631\u062f\u0627\u062e\u062a"}
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__uAXxy)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__tAt2Q
+                )}
+              >
+                {
+                  "\u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__nR86T
+                )}
+              >
+                {
+                  "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\u00a0\n\r"
+                }
+              </div>
+            </div>
           </div>
           <div
             data-plasmic-name={"pricing"}
@@ -1882,7 +1558,7 @@ function PlasmicWallet3__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u06a9\u0627\u0641\u06cc\u0647 \u0631\u0648\u06cc \u06cc\u06a9\u06cc \u0627\u0632 \u0628\u0633\u062a\u0647\u200c\u0647\u0627\u06cc \u0628\u0627\u0644\u0627 \u0628\u0632\u0646\u06cc \u0648 \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9 \u067e\u0631\u062f\u0627\u062e\u062a \u06a9\u0646\u06cc. \u0628\u0627 \u06cc\u06a9 \u0641\u0627\u0635\u0644\u0647\u200c\u06cc \u0632\u0645\u0627\u0646\u06cc \u06a9\u0648\u062a\u0627\u0647\u060c \u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647.\r\n\r\n"
+                              "\u06a9\u0627\u0641\u06cc\u0647 \u06cc\u06a9 \u0645\u0628\u0644\u063a \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u0648 \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9 \u067e\u0631\u062f\u0627\u062e\u062a \u06a9\u0646\u06cc. \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647.\n"
                             }
                           </div>
                         </AntdAccordionItem>
@@ -2154,6 +1830,21 @@ const PlasmicDescendants = {
     "balance2",
     "report",
     "modal",
+    "title",
+    "charge",
+    "input",
+    "right",
+    "center",
+    "input3",
+    "left",
+    "packages",
+    "p1",
+    "intext",
+    "right2",
+    "left2",
+    "paymentbutton",
+    "button",
+    "img",
     "pricing",
     "qA",
     "accordionMain",
@@ -2179,6 +1870,33 @@ const PlasmicDescendants = {
   balance2: ["balance2"],
   report: ["report"],
   modal: ["modal"],
+  title: ["title"],
+  charge: [
+    "charge",
+    "input",
+    "right",
+    "center",
+    "input3",
+    "left",
+    "packages",
+    "p1",
+    "intext",
+    "right2",
+    "left2"
+  ],
+  input: ["input", "right", "center", "input3", "left"],
+  right: ["right"],
+  center: ["center", "input3"],
+  input3: ["input3"],
+  left: ["left"],
+  packages: ["packages", "p1"],
+  p1: ["p1"],
+  intext: ["intext", "right2", "left2"],
+  right2: ["right2"],
+  left2: ["left2"],
+  paymentbutton: ["paymentbutton", "button", "img"],
+  button: ["button", "img"],
+  img: ["img"],
   pricing: ["pricing"],
   qA: [
     "qA",
@@ -2221,6 +1939,21 @@ type NodeDefaultElementType = {
   balance2: "div";
   report: "div";
   modal: typeof AntdModal;
+  title: "div";
+  charge: "div";
+  input: "div";
+  right: "div";
+  center: "div";
+  input3: typeof Input;
+  left: "div";
+  packages: "div";
+  p1: "div";
+  intext: "div";
+  right2: "div";
+  left2: "div";
+  paymentbutton: "div";
+  button: "div";
+  img: typeof PlasmicImg__;
   pricing: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
@@ -2307,6 +2040,21 @@ export const PlasmicWallet3 = Object.assign(
     balance2: makeNodeComponent("balance2"),
     report: makeNodeComponent("report"),
     modal: makeNodeComponent("modal"),
+    title: makeNodeComponent("title"),
+    charge: makeNodeComponent("charge"),
+    input: makeNodeComponent("input"),
+    right: makeNodeComponent("right"),
+    center: makeNodeComponent("center"),
+    input3: makeNodeComponent("input3"),
+    left: makeNodeComponent("left"),
+    packages: makeNodeComponent("packages"),
+    p1: makeNodeComponent("p1"),
+    intext: makeNodeComponent("intext"),
+    right2: makeNodeComponent("right2"),
+    left2: makeNodeComponent("left2"),
+    paymentbutton: makeNodeComponent("paymentbutton"),
+    button: makeNodeComponent("button"),
+    img: makeNodeComponent("img"),
     pricing: makeNodeComponent("pricing"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
