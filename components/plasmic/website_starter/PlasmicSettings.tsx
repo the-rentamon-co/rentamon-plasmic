@@ -1302,7 +1302,35 @@ function PlasmicSettings__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.apiRequest.data[0].default_rate;
+                              return (() => {
+                                function convertToPersianNumber(number) {
+                                  const persianNumbers = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
+
+                                  return number
+                                    .toString()
+                                    .replace(
+                                      /\d/g,
+                                      digit => persianNumbers[digit]
+                                    );
+                                }
+                                const number =
+                                  $state.apiRequest.data[0].default_rate;
+                                const persianNumber = convertToPersianNumber(
+                                  number.toLocaleString()
+                                );
+                                return persianNumber;
+                              })();
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -3430,7 +3458,9 @@ function PlasmicSettings__RenderFunc(props: {
                                 ? $state.getAutoSyncCommition.data[0]
                                     .default_rate
                                 : 0) +
-                                ($state.switch2.isSelected ? 1 : 0) +
+                                ($state.switch2.isSelected
+                                  ? $state.apiRequest.data[0].default_rate
+                                  : 0) +
                                 ($state.switch3.isSelected ? 0.5 : 0)
                             )} درصد`
                           : "۰ درصد";
