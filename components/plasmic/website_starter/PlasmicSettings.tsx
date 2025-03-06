@@ -1011,7 +1011,35 @@ function PlasmicSettings__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.apiRequest2.data[0].default_rate;
+                              return (() => {
+                                function convertToPersianNumber(number) {
+                                  const persianNumbers = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
+
+                                  return number
+                                    .toString()
+                                    .replace(
+                                      /\d/g,
+                                      digit => persianNumbers[digit]
+                                    );
+                                }
+                                const number =
+                                  $state.apiRequest2.data[0].default_rate;
+                                const persianNumber = convertToPersianNumber(
+                                  number.toLocaleString()
+                                );
+                                return persianNumber;
+                              })();
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -3423,7 +3451,9 @@ function PlasmicSettings__RenderFunc(props: {
                           $state.switch2.isSelected ||
                           $state.switch3.isSelected
                           ? `${new Intl.NumberFormat("fa-IR").format(
-                              ($state.switch1.isSelected ? 1.5 : 0) +
+                              ($state.switch1.isSelected
+                                ? $state.apiRequest2.data[0].default_rate
+                                : 0) +
                                 ($state.switch2.isSelected
                                   ? $state.apiRequest.data[0].default_rate
                                   : 0) +
