@@ -978,6 +978,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-size: 11px;
   min-width: 0;
 }
 .text___7NU3G {
@@ -1197,6 +1198,8 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  padding-bottom: 0px;
+  font-size: 11px;
   min-width: 0;
 }
 .text__yFkt6 {

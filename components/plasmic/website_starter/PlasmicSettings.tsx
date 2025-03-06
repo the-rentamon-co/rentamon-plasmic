@@ -972,7 +972,9 @@ function PlasmicSettings__RenderFunc(props: {
                             sty.text__xNEm
                           )}
                         >
-                          {"Loading..."}
+                          {
+                            "\u062f\u0631 \u062d\u0627\u0644 \u0645\u062d\u0627\u0633\u0628\u0647"
+                          }
                         </div>
                       }
                       method={"GET"}
@@ -1260,7 +1262,9 @@ function PlasmicSettings__RenderFunc(props: {
                             sty.text__p8D9
                           )}
                         >
-                          {"Loading..."}
+                          {
+                            "\u062f\u0631\u062d\u0627\u0644 \u0645\u062d\u0627\u0633\u0628\u0647 "
+                          }
                         </div>
                       }
                       method={"GET"}
@@ -3447,19 +3451,25 @@ function PlasmicSettings__RenderFunc(props: {
                   <React.Fragment>
                     {(() => {
                       try {
-                        return $state.switch1.isSelected ||
-                          $state.switch2.isSelected ||
-                          $state.switch3.isSelected
-                          ? `${new Intl.NumberFormat("fa-IR").format(
-                              ($state.switch1.isSelected
-                                ? $state.apiRequest2.data[0].default_rate
-                                : 0) +
-                                ($state.switch2.isSelected
-                                  ? $state.apiRequest.data[0].default_rate
-                                  : 0) +
-                                ($state.switch3.isSelected ? 0.5 : 0)
-                            )} درصد`
-                          : "۰ درصد";
+                        return (() => {
+                          let sum = 0;
+                          if ($state.switch1.isSelected === true) {
+                            sum += parseFloat(
+                              $state.apiRequest2.data[0].default_rate
+                            );
+                          }
+                          if ($state.switch2.isSelected === true) {
+                            sum += parseFloat(
+                              $state.apiRequest.data[0].default_rate
+                            );
+                          }
+                          if ($state.switch3.isSelected === true) {
+                            sum += 0.5;
+                          }
+                          return `${new Intl.NumberFormat("fa-IR").format(
+                            sum
+                          )} %`;
+                        })();
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
