@@ -117,6 +117,7 @@ export type PlasmicSettings__OverridesType = {
   p1?: Flex__<"div">;
   p2?: Flex__<"div">;
   p3?: Flex__<"div">;
+  getAutoSyncCommition?: Flex__<typeof ApiRequest>;
   autosynccommisson?: Flex__<"div">;
   p4?: Flex__<"div">;
   switch1?: Flex__<typeof Switch>;
@@ -125,7 +126,8 @@ export type PlasmicSettings__OverridesType = {
   p12?: Flex__<"div">;
   p22?: Flex__<"div">;
   p32?: Flex__<"div">;
-  reservationcommisson?: Flex__<"div">;
+  getReservation?: Flex__<typeof ApiRequest>;
+  autosynccommisson2?: Flex__<"div">;
   p42?: Flex__<"div">;
   switch2?: Flex__<typeof Switch>;
   options3?: Flex__<"div">;
@@ -405,6 +407,54 @@ function PlasmicSettings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile3"
+      },
+      {
+        path: "getAutoSyncCommition.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getAutoSyncCommition"
+      },
+      {
+        path: "getAutoSyncCommition.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getAutoSyncCommition"
+      },
+      {
+        path: "getAutoSyncCommition.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getAutoSyncCommition"
+      },
+      {
+        path: "getReservation.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getReservation"
+      },
+      {
+        path: "getReservation.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getReservation"
+      },
+      {
+        path: "getReservation.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getReservation"
       }
     ],
     [$props, $ctx, $refs]
@@ -901,19 +951,112 @@ function PlasmicSettings__RenderFunc(props: {
                     data-plasmic-override={overrides.p3}
                     className={classNames(projectcss.all, sty.p3)}
                   >
-                    <div
-                      data-plasmic-name={"autosynccommisson"}
-                      data-plasmic-override={overrides.autosynccommisson}
+                    <ApiRequest
+                      data-plasmic-name={"getAutoSyncCommition"}
+                      data-plasmic-override={overrides.getAutoSyncCommition}
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.autosynccommisson
+                        "__wab_instance",
+                        sty.getAutoSyncCommition
                       )}
+                      errorDisplay={null}
+                      loadingDisplay={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__cUDq7
+                          )}
+                        >
+                          {
+                            "\u062f\u0631 \u062d\u0627\u0644 \u0645\u062d\u0627\u0633\u0628\u0647"
+                          }
+                        </div>
+                      }
+                      method={"GET"}
+                      onError={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getAutoSyncCommition",
+                          "error"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onLoading={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getAutoSyncCommition",
+                          "loading"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onSuccess={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getAutoSyncCommition",
+                          "data"
+                        ]).apply(null, eventArgs);
+                      }}
+                      ref={ref => {
+                        $refs["getAutoSyncCommition"] = ref;
+                      }}
+                      url={
+                        "https://gateway.rentamon.com/webhook/get_commition?feature_name=auto_sync"
+                      }
                     >
-                      {hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u06f1/\u06f5"
-                        : "\u06f1/\u06f5"}
-                    </div>
+                      <div
+                        data-plasmic-name={"autosynccommisson"}
+                        data-plasmic-override={overrides.autosynccommisson}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.autosynccommisson
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "tablet") ? (
+                          "\u06f1/\u06f5"
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  function convertToPersianNumber(number) {
+                                    const persianNumbers = [
+                                      "۰",
+                                      "۱",
+                                      "۲",
+                                      "۳",
+                                      "۴",
+                                      "۵",
+                                      "۶",
+                                      "۷",
+                                      "۸",
+                                      "۹"
+                                    ];
+
+                                    return number
+                                      .toString()
+                                      .replace(
+                                        /\d/g,
+                                        digit => persianNumbers[digit]
+                                      );
+                                  }
+                                  const number =
+                                    $state.getAutoSyncCommition.data[0]
+                                      .default_rate;
+                                  const persianNumber = convertToPersianNumber(
+                                    number.toLocaleString()
+                                  );
+                                  return persianNumber;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u06f1/\u06f5";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
+                      </div>
+                    </ApiRequest>
                   </div>
                   <div
                     data-plasmic-name={"p4"}
@@ -1098,17 +1241,111 @@ function PlasmicSettings__RenderFunc(props: {
                     data-plasmic-override={overrides.p32}
                     className={classNames(projectcss.all, sty.p32)}
                   >
-                    <div
-                      data-plasmic-name={"reservationcommisson"}
-                      data-plasmic-override={overrides.reservationcommisson}
+                    <ApiRequest
+                      data-plasmic-name={"getReservation"}
+                      data-plasmic-override={overrides.getReservation}
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.reservationcommisson
+                        "__wab_instance",
+                        sty.getReservation
                       )}
+                      errorDisplay={null}
+                      loadingDisplay={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__bPRzr
+                          )}
+                        >
+                          {
+                            "\u062f\u0631 \u062d\u0627\u0644 \u0645\u062d\u0627\u0633\u0628\u0647"
+                          }
+                        </div>
+                      }
+                      method={"GET"}
+                      onError={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getReservation",
+                          "error"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onLoading={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getReservation",
+                          "loading"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onSuccess={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getReservation",
+                          "data"
+                        ]).apply(null, eventArgs);
+                      }}
+                      ref={ref => {
+                        $refs["getReservation"] = ref;
+                      }}
+                      url={
+                        "https://gateway.rentamon.com/webhook/get_commition?feature_name=reservations"
+                      }
                     >
-                      {"\u06f1"}
-                    </div>
+                      <div
+                        data-plasmic-name={"autosynccommisson2"}
+                        data-plasmic-override={overrides.autosynccommisson2}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.autosynccommisson2
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "tablet") ? (
+                          "\u06f1/\u06f5"
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  function convertToPersianNumber(number) {
+                                    const persianNumbers = [
+                                      "۰",
+                                      "۱",
+                                      "۲",
+                                      "۳",
+                                      "۴",
+                                      "۵",
+                                      "۶",
+                                      "۷",
+                                      "۸",
+                                      "۹"
+                                    ];
+
+                                    return number
+                                      .toString()
+                                      .replace(
+                                        /\d/g,
+                                        digit => persianNumbers[digit]
+                                      );
+                                  }
+                                  const number =
+                                    $state.getReservation.data[0].default_rate;
+                                  const persianNumber = convertToPersianNumber(
+                                    number.toLocaleString()
+                                  );
+                                  return persianNumber;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u06f1/\u06f5";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
+                      </div>
+                    </ApiRequest>
                   </div>
                   <div
                     data-plasmic-name={"p42"}
@@ -3219,8 +3456,13 @@ function PlasmicSettings__RenderFunc(props: {
                           $state.switch2.isSelected ||
                           $state.switch3.isSelected
                           ? `${new Intl.NumberFormat("fa-IR").format(
-                              ($state.switch1.isSelected ? 1.5 : 0) +
-                                ($state.switch2.isSelected ? 1 : 0) +
+                              ($state.switch1.isSelected
+                                ? $state.getAutoSyncCommition.data[0]
+                                    .default_rate
+                                : 0) +
+                                ($state.switch2.isSelected
+                                  ? $state.getReservation.data[0].default_rate
+                                  : 0) +
                                 ($state.switch3.isSelected ? 0.5 : 0)
                             )} درصد`
                           : "۰ درصد";
@@ -3495,6 +3737,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
+    "getAutoSyncCommition",
     "autosynccommisson",
     "p4",
     "switch1",
@@ -3503,7 +3746,8 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "reservationcommisson",
+    "getReservation",
+    "autosynccommisson2",
     "p42",
     "switch2",
     "options3",
@@ -3588,6 +3832,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
+    "getAutoSyncCommition",
     "autosynccommisson",
     "p4",
     "switch1",
@@ -3596,7 +3841,8 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "reservationcommisson",
+    "getReservation",
+    "autosynccommisson2",
     "p42",
     "switch2",
     "options3",
@@ -3644,6 +3890,7 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
+    "getAutoSyncCommition",
     "autosynccommisson",
     "p4",
     "switch1",
@@ -3652,7 +3899,8 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "reservationcommisson",
+    "getReservation",
+    "autosynccommisson2",
     "p42",
     "switch2",
     "options3",
@@ -3685,14 +3933,25 @@ const PlasmicDescendants = {
     "p1",
     "p2",
     "p3",
+    "getAutoSyncCommition",
     "autosynccommisson",
     "p4",
     "switch1"
   ],
-  opt1: ["opt1", "p1", "p2", "p3", "autosynccommisson", "p4", "switch1"],
+  opt1: [
+    "opt1",
+    "p1",
+    "p2",
+    "p3",
+    "getAutoSyncCommition",
+    "autosynccommisson",
+    "p4",
+    "switch1"
+  ],
   p1: ["p1"],
   p2: ["p2"],
-  p3: ["p3", "autosynccommisson"],
+  p3: ["p3", "getAutoSyncCommition", "autosynccommisson"],
+  getAutoSyncCommition: ["getAutoSyncCommition", "autosynccommisson"],
   autosynccommisson: ["autosynccommisson"],
   p4: ["p4", "switch1"],
   switch1: ["switch1"],
@@ -3702,7 +3961,8 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "reservationcommisson",
+    "getReservation",
+    "autosynccommisson2",
     "p42",
     "switch2"
   ],
@@ -3711,14 +3971,16 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "reservationcommisson",
+    "getReservation",
+    "autosynccommisson2",
     "p42",
     "switch2"
   ],
   p12: ["p12"],
   p22: ["p22"],
-  p32: ["p32", "reservationcommisson"],
-  reservationcommisson: ["reservationcommisson"],
+  p32: ["p32", "getReservation", "autosynccommisson2"],
+  getReservation: ["getReservation", "autosynccommisson2"],
+  autosynccommisson2: ["autosynccommisson2"],
   p42: ["p42", "switch2"],
   switch2: ["switch2"],
   options3: ["options3", "opt13", "p13", "p23", "p33", "p43", "switch3"],
@@ -3808,6 +4070,7 @@ type NodeDefaultElementType = {
   p1: "div";
   p2: "div";
   p3: "div";
+  getAutoSyncCommition: typeof ApiRequest;
   autosynccommisson: "div";
   p4: "div";
   switch1: typeof Switch;
@@ -3816,7 +4079,8 @@ type NodeDefaultElementType = {
   p12: "div";
   p22: "div";
   p32: "div";
-  reservationcommisson: "div";
+  getReservation: typeof ApiRequest;
+  autosynccommisson2: "div";
   p42: "div";
   switch2: typeof Switch;
   options3: "div";
@@ -3942,6 +4206,7 @@ export const PlasmicSettings = Object.assign(
     p1: makeNodeComponent("p1"),
     p2: makeNodeComponent("p2"),
     p3: makeNodeComponent("p3"),
+    getAutoSyncCommition: makeNodeComponent("getAutoSyncCommition"),
     autosynccommisson: makeNodeComponent("autosynccommisson"),
     p4: makeNodeComponent("p4"),
     switch1: makeNodeComponent("switch1"),
@@ -3950,7 +4215,8 @@ export const PlasmicSettings = Object.assign(
     p12: makeNodeComponent("p12"),
     p22: makeNodeComponent("p22"),
     p32: makeNodeComponent("p32"),
-    reservationcommisson: makeNodeComponent("reservationcommisson"),
+    getReservation: makeNodeComponent("getReservation"),
+    autosynccommisson2: makeNodeComponent("autosynccommisson2"),
     p42: makeNodeComponent("p42"),
     switch2: makeNodeComponent("switch2"),
     options3: makeNodeComponent("options3"),

@@ -768,7 +768,11 @@ function PlasmicHomepage__RenderFunc(props: {
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
-                    displayWidth={"auto"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "auto"
+                    }
                     loading={"lazy"}
                     src={{
                       src: "/plasmic/website_starter/images/handsOnAppPng2.png",

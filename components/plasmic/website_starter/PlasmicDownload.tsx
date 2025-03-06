@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -111,6 +112,8 @@ export type PlasmicDownload__OverridesType = {
   introAutoSyncCaption2?: Flex__<"div">;
   introAutoSyncDesc2?: Flex__<"div">;
   introAutoSyncGif2?: Flex__<"div">;
+  title2?: Flex__<"div">;
+  htmlVideo?: Flex__<typeof Video>;
   screenshots?: Flex__<"div">;
   introCalendarRight5?: Flex__<"div">;
   introCalendarRight7?: Flex__<"div">;
@@ -705,6 +708,34 @@ function PlasmicDownload__RenderFunc(props: {
                 </div>
               </div>
             </div>
+            <div
+              data-plasmic-name={"title2"}
+              data-plasmic-override={overrides.title2}
+              className={classNames(projectcss.all, sty.title2)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__l4DLx
+                )}
+              >
+                {
+                  "\u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u00ab\u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0686\u0647 \u0645\u0632\u0627\u06cc\u0627\u06cc\u06cc \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u062f\u0627\u0631\u0647\u061f\r"
+                }
+              </div>
+            </div>
+            <Video
+              data-plasmic-name={"htmlVideo"}
+              data-plasmic-override={overrides.htmlVideo}
+              className={classNames("__wab_instance", sty.htmlVideo)}
+              controls={true}
+              loop={true}
+              src={
+                "https://rentamon-files.storage.iran.liara.space/video/pro.mp4"
+              }
+            />
+
             <Stack__
               as={"div"}
               data-plasmic-name={"screenshots"}
@@ -792,6 +823,8 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
+    "title2",
+    "htmlVideo",
     "screenshots",
     "introCalendarRight5",
     "introCalendarRight7",
@@ -825,6 +858,8 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
+    "title2",
+    "htmlVideo",
     "screenshots",
     "introCalendarRight5",
     "introCalendarRight7"
@@ -906,6 +941,8 @@ const PlasmicDescendants = {
   introAutoSyncCaption2: ["introAutoSyncCaption2"],
   introAutoSyncDesc2: ["introAutoSyncDesc2", "introAutoSyncGif2"],
   introAutoSyncGif2: ["introAutoSyncGif2"],
+  title2: ["title2"],
+  htmlVideo: ["htmlVideo"],
   screenshots: ["screenshots", "introCalendarRight5", "introCalendarRight7"],
   introCalendarRight5: ["introCalendarRight5", "introCalendarRight7"],
   introCalendarRight7: ["introCalendarRight7"],
@@ -943,6 +980,8 @@ type NodeDefaultElementType = {
   introAutoSyncCaption2: "div";
   introAutoSyncDesc2: "div";
   introAutoSyncGif2: "div";
+  title2: "div";
+  htmlVideo: typeof Video;
   screenshots: "div";
   introCalendarRight5: "div";
   introCalendarRight7: "div";
@@ -1036,6 +1075,8 @@ export const PlasmicDownload = Object.assign(
     introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
     introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),
     introAutoSyncGif2: makeNodeComponent("introAutoSyncGif2"),
+    title2: makeNodeComponent("title2"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
     screenshots: makeNodeComponent("screenshots"),
     introCalendarRight5: makeNodeComponent("introCalendarRight5"),
     introCalendarRight7: makeNodeComponent("introCalendarRight7"),

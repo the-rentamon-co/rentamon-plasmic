@@ -63,6 +63,8 @@ import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -72,6 +74,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTransactions.module.css"; // plasmic-import: N1STB8Bv46WD/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -95,7 +100,11 @@ export type PlasmicTransactions__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   favicon?: Flex__<typeof Embed>;
   returnButton?: Flex__<"div">;
+  withdraw?: Flex__<typeof AntdModal>;
+  deposit?: Flex__<typeof AntdModal>;
+  button?: Flex__<typeof Button>;
   clarity?: Flex__<typeof Embed>;
+  modal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultTransactionsProps {}
@@ -187,6 +196,24 @@ function PlasmicTransactions__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile"
+      },
+      {
+        path: "withdraw.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "deposit.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -550,7 +577,10 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
               {(() => {
                 try {
-                  return $state.apiRequest.data[0].reason != null;
+                  return (
+                    // $state.apiRequest.data[0].reason !=null
+                    true
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -584,6 +614,51 @@ function PlasmicTransactions__RenderFunc(props: {
                         data-plasmic-override={overrides.item}
                         className={classNames(projectcss.all, sty.item)}
                         key={currentIndex}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["updateStateVariable"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  operation: 0,
+                                  value: (() => {
+                                    if (
+                                      $state.apiRequest.data[currentIndex]
+                                        .transaction_type == "withdraw"
+                                    ) {
+                                      return ($state.withdraw.open = true);
+                                    } else {
+                                      return ($state.deposit.open = true);
+                                    }
+                                  })()
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateStateVariable"] != null &&
+                            typeof $steps["updateStateVariable"] === "object" &&
+                            typeof $steps["updateStateVariable"].then ===
+                              "function"
+                          ) {
+                            $steps["updateStateVariable"] = await $steps[
+                              "updateStateVariable"
+                            ];
+                          }
+                        }}
                       >
                         <Stack__
                           as={"div"}
@@ -596,8 +671,8 @@ function PlasmicTransactions__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                $state.apiRequest.data[currentIndex].status !=
-                                "decrease"
+                                $state.apiRequest.data[currentIndex]
+                                  .transaction_type != "withdraw"
                               );
                             } catch (e) {
                               if (
@@ -630,8 +705,8 @@ function PlasmicTransactions__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                $state.apiRequest.data[currentIndex].status ==
-                                "decrease"
+                                $state.apiRequest.data[currentIndex]
+                                  .transaction_type != "deposit"
                               );
                             } catch (e) {
                               if (
@@ -672,7 +747,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return $state.apiRequest.data[currentIndex]
-                                    .reason;
+                                    .title;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -704,7 +779,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return $state.apiRequest.data[currentIndex]
-                                    .date;
+                                    .date_time;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -736,7 +811,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return $state.apiRequest.data[currentIndex]
-                                    .price;
+                                    .amount;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -854,6 +929,19 @@ function PlasmicTransactions__RenderFunc(props: {
             data-plasmic-override={overrides.returnButton}
             className={classNames(projectcss.all, sty.returnButton, "fix")}
           >
+            <div className={classNames(projectcss.all, sty.freeBox__du7Qu)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__woCao
+                )}
+              >
+                {
+                  "\u0645\u0648\u062c\u0648\u062f\u06cc: \u06f5\u06f5\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                }
+              </div>
+            </div>
             <div
               className={classNames(projectcss.all, sty.freeBox__i6Ki)}
               onClick={async event => {
@@ -893,6 +981,428 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <AntdModal
+            data-plasmic-name={"withdraw"}
+            data-plasmic-override={overrides.withdraw}
+            className={classNames("__wab_instance", sty.withdraw)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["withdraw__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["withdraw", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["withdraw", "open"])}
+            title={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__uuoV
+                )}
+              >
+                {"\u0628\u0631\u062f\u0627\u0634\u062a"}
+              </div>
+            }
+            trigger={null}
+            width={``}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__tfDx8)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__hVyIc
+                )}
+              >
+                {"\u062a\u0627\u0631\u06cc\u062e:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__frq2E
+                )}
+              >
+                {
+                  "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2  -  \u06f1\u06f2:\u06f3\u06f3"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__yqD1W)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__i0Rh5
+                )}
+              >
+                {"\u0628\u0631\u062f\u0627\u0634\u062a:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qZiGr
+                )}
+              >
+                {
+                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___2AQcG)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gNbx
+                )}
+              >
+                {"\u0645\u0648\u062c\u0648\u062f\u06cc:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__jWhdr
+                )}
+              >
+                {
+                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__mtph)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fvYtm
+                )}
+              >
+                {"\u0645\u0648\u062c\u0648\u062f\u06cc:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___1VHhx
+                )}
+              >
+                {
+                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__fN5N3)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__jejNk)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__e0thR)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xIgzj
+                    )}
+                  >
+                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647:"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xfyuQ
+                    )}
+                  >
+                    {
+                      "\u0644\u06cc\u06af\u0648\u0631\u06cc\u0627 \u0633\u0627\u062d\u0644\u06cc"
+                    }
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___6Ttq6)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__pVwub
+                    )}
+                  >
+                    {"\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648:"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__m5E7S
+                    )}
+                  >
+                    {"\u06f9/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__zVbvm)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__iTwrt
+                    )}
+                  >
+                    {
+                      "\u06a9\u0627\u0631\u0645\u0632\u062f\u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646:"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wawXb
+                    )}
+                  >
+                    {"\u06f2.\u06f5 \u066a"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__nqyF)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__m0Gmh
+                    )}
+                  >
+                    {
+                      "- \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ty3Iq
+                    )}
+                  >
+                    {"\u06f1.\u06f5 \u066a"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__mVjGv)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mzNeA
+                    )}
+                  >
+                    {
+                      "- \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 "
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yL5Bl
+                    )}
+                  >
+                    {"\u06f1 \u066a"}
+                  </div>
+                </div>
+              </Stack__>
+            </div>
+          </AntdModal>
+          <AntdModal
+            data-plasmic-name={"deposit"}
+            data-plasmic-override={overrides.deposit}
+            className={classNames("__wab_instance", sty.deposit)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["deposit__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["deposit", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["deposit", "open"])}
+            title={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__zctZd
+                )}
+              >
+                {"\u0648\u0627\u0631\u06cc\u0632"}
+              </div>
+            }
+            trigger={null}
+            width={``}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__w4W8G)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___3BRyM
+                )}
+              >
+                {"\u062a\u0627\u0631\u06cc\u062e:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dlXrR
+                )}
+              >
+                {
+                  "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2  -  \u06f1\u06f2:\u06f3\u06f3"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__pqnZc)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__beO5F
+                )}
+              >
+                {"\u0648\u0627\u0631\u06cc\u0632:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fj6Tl
+                )}
+              >
+                {
+                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__me8Qa)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__doo8C
+                )}
+              >
+                {"\u0639\u0646\u0648\u0627\u0646:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__lVNwL
+                )}
+              >
+                {
+                  "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__qohQ3)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__cXIR
+                )}
+              >
+                {"\u0645\u0648\u062c\u0648\u062f\u06cc:"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fFdyC
+                )}
+              >
+                {
+                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
+                }
+              </div>
+            </div>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__t01L4)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___5ZlpU)}
+                displayHeight={"14px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image84.svg",
+                  fullWidth: 16,
+                  fullHeight: 15,
+                  aspectRatio: 1.066667
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__riJhy
+                )}
+              >
+                {
+                  "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                }
+              </div>
+            </Stack__>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__ySiur)}
+            >
+              <Button
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames("__wab_instance", sty.button)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kXffx
+                  )}
+                >
+                  {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+                </div>
+              </Button>
+            </Stack__>
+          </AntdModal>
           <Embed
             data-plasmic-name={"clarity"}
             data-plasmic-override={overrides.clarity}
@@ -901,6 +1411,69 @@ function PlasmicTransactions__RenderFunc(props: {
               '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
             }
           />
+
+          <AntdModal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            maskClosable={false}
+            modalScopeClassName={sty["modal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["modal", "open"])}
+            title={null}
+            trigger={null}
+            width={"300"}
+          >
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__pj3Ha)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__qIeb3)}
+                displayHeight={"63px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image55.svg",
+                  fullWidth: 49,
+                  fullHeight: 61,
+                  aspectRatio: 0.803279
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___2UxSl
+                )}
+              >
+                {
+                  "\u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 \u062f\u0631\u062d\u0627\u0644 \u062a\u0648\u0633\u0639\u0647 \u0647\u0633\u062a \u0648 \u0628\u0632\u0648\u062f\u06cc \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0642\u0631\u0627\u0631 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
+                }
+              </div>
+            </Stack__>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -919,7 +1492,11 @@ const PlasmicDescendants = {
     "apiRequest",
     "favicon",
     "returnButton",
-    "clarity"
+    "withdraw",
+    "deposit",
+    "button",
+    "clarity",
+    "modal"
   ],
   sideEffect: ["sideEffect"],
   profile: ["profile"],
@@ -930,7 +1507,11 @@ const PlasmicDescendants = {
   apiRequest: ["apiRequest"],
   favicon: ["favicon"],
   returnButton: ["returnButton"],
-  clarity: ["clarity"]
+  withdraw: ["withdraw"],
+  deposit: ["deposit", "button"],
+  button: ["button"],
+  clarity: ["clarity"],
+  modal: ["modal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -946,7 +1527,11 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   favicon: typeof Embed;
   returnButton: "div";
+  withdraw: typeof AntdModal;
+  deposit: typeof AntdModal;
+  button: typeof Button;
   clarity: typeof Embed;
+  modal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1018,7 +1603,11 @@ export const PlasmicTransactions = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     favicon: makeNodeComponent("favicon"),
     returnButton: makeNodeComponent("returnButton"),
+    withdraw: makeNodeComponent("withdraw"),
+    deposit: makeNodeComponent("deposit"),
+    button: makeNodeComponent("button"),
     clarity: makeNodeComponent("clarity"),
+    modal: makeNodeComponent("modal"),
 
     // Metadata about props expected for PlasmicTransactions
     internalVariantProps: PlasmicTransactions__VariantProps,

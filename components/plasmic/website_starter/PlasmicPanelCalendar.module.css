@@ -632,7 +632,7 @@
 }
 .sideBar2:global(.__wab_instance):global(.__wab_instance) {
   z-index: 1;
-  right: -15px;
+  right: -1px;
   bottom: 0;
   left: auto;
   top: -6px;
