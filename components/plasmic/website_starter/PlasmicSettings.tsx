@@ -1302,33 +1302,45 @@ function PlasmicSettings__RenderFunc(props: {
                         ) : (
                           <React.Fragment>
                             {(() => {
-                              function convertToPersianNumber(number) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
+                              try {
+                                return (() => {
+                                  function convertToPersianNumber(number) {
+                                    const persianNumbers = [
+                                      "۰",
+                                      "۱",
+                                      "۲",
+                                      "۳",
+                                      "۴",
+                                      "۵",
+                                      "۶",
+                                      "۷",
+                                      "۸",
+                                      "۹"
+                                    ];
 
-                                return number
-                                  .toString()
-                                  .replace(
-                                    /\d/g,
-                                    digit => persianNumbers[digit]
+                                    return number
+                                      .toString()
+                                      .replace(
+                                        /\d/g,
+                                        digit => persianNumbers[digit]
+                                      );
+                                  }
+                                  const number =
+                                    $state.getReservation.data[0].default_rate;
+                                  const persianNumber = convertToPersianNumber(
+                                    number.toLocaleString()
                                   );
+                                  return persianNumber;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u06f1/\u06f5";
+                                }
+                                throw e;
                               }
-                              const number =
-                                $state.getReservation.data[0].default_rate;
-                              const persianNumber = convertToPersianNumber(
-                                number.toLocaleString()
-                              );
-                              return persianNumber;
                             })()}
                           </React.Fragment>
                         )}
