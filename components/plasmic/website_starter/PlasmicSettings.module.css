@@ -1195,39 +1195,29 @@
     max-width: 14%;
   }
 }
-.getReservation:global(.__wab_instance) {
+.apiRequest:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.text__bPRzr {
+.text__p8D9 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
-  padding-bottom: 0px;
-  font-size: 11px;
   min-width: 0;
 }
-.autosynccommisson2 {
-  font-size: 17px;
-  font-weight: 500;
+.text__yFkt6 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
 }
-@media (max-width: 1200px) {
-  .autosynccommisson2 {
-    font-size: 18px;
-    font-weight: 600;
-  }
-}
-@media (max-width: 500px) {
-  .autosynccommisson2 {
-    font-weight: 500;
-    font-size: 15px;
-  }
-}
-@media (max-width: 350px) {
-  .autosynccommisson2 {
-    font-size: 15px;
-  }
+.text__fbF23 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
 }
 .p42 {
   display: flex;

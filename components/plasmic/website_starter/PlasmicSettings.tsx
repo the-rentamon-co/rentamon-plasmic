@@ -126,8 +126,7 @@ export type PlasmicSettings__OverridesType = {
   p12?: Flex__<"div">;
   p22?: Flex__<"div">;
   p32?: Flex__<"div">;
-  getReservation?: Flex__<typeof ApiRequest>;
-  autosynccommisson2?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
   p42?: Flex__<"div">;
   switch2?: Flex__<typeof Switch>;
   options3?: Flex__<"div">;
@@ -433,28 +432,28 @@ function PlasmicSettings__RenderFunc(props: {
         refName: "getAutoSyncCommition"
       },
       {
-        path: "getReservation.data",
+        path: "apiRequest.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "getReservation"
+        refName: "apiRequest"
       },
       {
-        path: "getReservation.error",
+        path: "apiRequest.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "getReservation"
+        refName: "apiRequest"
       },
       {
-        path: "getReservation.loading",
+        path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "getReservation"
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -1242,108 +1241,79 @@ function PlasmicSettings__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.p32)}
                   >
                     <ApiRequest
-                      data-plasmic-name={"getReservation"}
-                      data-plasmic-override={overrides.getReservation}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.getReservation
-                      )}
-                      errorDisplay={null}
+                      data-plasmic-name={"apiRequest"}
+                      data-plasmic-override={overrides.apiRequest}
+                      className={classNames("__wab_instance", sty.apiRequest)}
+                      errorDisplay={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__yFkt6
+                          )}
+                        >
+                          {"Error fetching data"}
+                        </div>
+                      }
                       loadingDisplay={
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__bPRzr
+                            sty.text__p8D9
                           )}
                         >
-                          {
-                            "\u062f\u0631 \u062d\u0627\u0644 \u0645\u062d\u0627\u0633\u0628\u0647"
-                          }
+                          {"Loading..."}
                         </div>
                       }
                       method={"GET"}
                       onError={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "getReservation",
+                          "apiRequest",
                           "error"
                         ]).apply(null, eventArgs);
                       }}
                       onLoading={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "getReservation",
+                          "apiRequest",
                           "loading"
                         ]).apply(null, eventArgs);
                       }}
                       onSuccess={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "getReservation",
+                          "apiRequest",
                           "data"
                         ]).apply(null, eventArgs);
                       }}
                       ref={ref => {
-                        $refs["getReservation"] = ref;
+                        $refs["apiRequest"] = ref;
                       }}
                       url={
                         "https://gateway.rentamon.com/webhook/get_commition?feature_name=reservations"
                       }
                     >
                       <div
-                        data-plasmic-name={"autosynccommisson2"}
-                        data-plasmic-override={overrides.autosynccommisson2}
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.autosynccommisson2
+                          sty.text__fbF23
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet") ? (
-                          "\u06f1/\u06f5"
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (() => {
-                                  function convertToPersianNumber(number) {
-                                    const persianNumbers = [
-                                      "۰",
-                                      "۱",
-                                      "۲",
-                                      "۳",
-                                      "۴",
-                                      "۵",
-                                      "۶",
-                                      "۷",
-                                      "۸",
-                                      "۹"
-                                    ];
-
-                                    return number
-                                      .toString()
-                                      .replace(
-                                        /\d/g,
-                                        digit => persianNumbers[digit]
-                                      );
-                                  }
-                                  const number =
-                                    $state.getReservation.data[0].default_rate;
-                                  const persianNumber = convertToPersianNumber(
-                                    number.toLocaleString()
-                                  );
-                                  return persianNumber;
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u06f1/\u06f5";
-                                }
-                                throw e;
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[0].default_rate;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
                               }
-                            })()}
-                          </React.Fragment>
-                        )}
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       </div>
                     </ApiRequest>
                   </div>
@@ -3460,9 +3430,7 @@ function PlasmicSettings__RenderFunc(props: {
                                 ? $state.getAutoSyncCommition.data[0]
                                     .default_rate
                                 : 0) +
-                                ($state.switch2.isSelected
-                                  ? $state.getReservation.data[0].default_rate
-                                  : 0) +
+                                ($state.switch2.isSelected ? 1 : 0) +
                                 ($state.switch3.isSelected ? 0.5 : 0)
                             )} درصد`
                           : "۰ درصد";
@@ -3746,8 +3714,7 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "getReservation",
-    "autosynccommisson2",
+    "apiRequest",
     "p42",
     "switch2",
     "options3",
@@ -3841,8 +3808,7 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "getReservation",
-    "autosynccommisson2",
+    "apiRequest",
     "p42",
     "switch2",
     "options3",
@@ -3899,8 +3865,7 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "getReservation",
-    "autosynccommisson2",
+    "apiRequest",
     "p42",
     "switch2",
     "options3",
@@ -3961,26 +3926,15 @@ const PlasmicDescendants = {
     "p12",
     "p22",
     "p32",
-    "getReservation",
-    "autosynccommisson2",
+    "apiRequest",
     "p42",
     "switch2"
   ],
-  opt12: [
-    "opt12",
-    "p12",
-    "p22",
-    "p32",
-    "getReservation",
-    "autosynccommisson2",
-    "p42",
-    "switch2"
-  ],
+  opt12: ["opt12", "p12", "p22", "p32", "apiRequest", "p42", "switch2"],
   p12: ["p12"],
   p22: ["p22"],
-  p32: ["p32", "getReservation", "autosynccommisson2"],
-  getReservation: ["getReservation", "autosynccommisson2"],
-  autosynccommisson2: ["autosynccommisson2"],
+  p32: ["p32", "apiRequest"],
+  apiRequest: ["apiRequest"],
   p42: ["p42", "switch2"],
   switch2: ["switch2"],
   options3: ["options3", "opt13", "p13", "p23", "p33", "p43", "switch3"],
@@ -4079,8 +4033,7 @@ type NodeDefaultElementType = {
   p12: "div";
   p22: "div";
   p32: "div";
-  getReservation: typeof ApiRequest;
-  autosynccommisson2: "div";
+  apiRequest: typeof ApiRequest;
   p42: "div";
   switch2: typeof Switch;
   options3: "div";
@@ -4215,8 +4168,7 @@ export const PlasmicSettings = Object.assign(
     p12: makeNodeComponent("p12"),
     p22: makeNodeComponent("p22"),
     p32: makeNodeComponent("p32"),
-    getReservation: makeNodeComponent("getReservation"),
-    autosynccommisson2: makeNodeComponent("autosynccommisson2"),
+    apiRequest: makeNodeComponent("apiRequest"),
     p42: makeNodeComponent("p42"),
     switch2: makeNodeComponent("switch2"),
     options3: makeNodeComponent("options3"),
