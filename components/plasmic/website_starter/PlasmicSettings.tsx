@@ -1036,8 +1036,7 @@ function PlasmicSettings__RenderFunc(props: {
                                       );
                                   }
                                   const number =
-                                    $state.getAutoSyncCommition.data[0]
-                                      .default_rate;
+                                    $state.getReservation.data[0].default_rate;
                                   const persianNumber = convertToPersianNumber(
                                     number.toLocaleString()
                                   );
