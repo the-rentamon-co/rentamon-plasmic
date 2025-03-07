@@ -2629,6 +2629,9 @@ function PlasmicReservations__RenderFunc(props: {
                                   reserve_id:
                                     $state.reserveData2.data[currentIndex]
                                       .reserve_id,
+                                  room_id:
+                                    $state.reserveData2.data[currentIndex]
+                                      .room_id,
                                   id: $state.reserveData2.data[currentIndex].id
                                 }
                               ])
@@ -3859,7 +3862,8 @@ function PlasmicReservations__RenderFunc(props: {
                                   return {
                                     reserve_id: $state.modalData[0].reserve_id,
                                     website: $state.modalData[0].platfromName,
-                                    id: $state.modalData[0].id
+                                    id: $state.modalData[0].id,
+                                    room_id: $state.modalData[0].room_id
                                   };
                                 } catch (e) {
                                   if (

@@ -653,50 +653,6 @@ function PlasmicCalendar2__RenderFunc(props: {
           (async data => {
             const $steps = {};
 
-            $steps["updateStateVariable"] = false
-              ? (() => {
-                  const actionArgs = {
-                    operation: 0,
-                    value: (() => {
-                      if (
-                        $state.apiRequest?.data?.[0]?.timestampsArray &&
-                        $state.apiRequest?.data?.[1]?.calendar
-                      ) {
-                        let notedDates =
-                          $state.apiRequest.data[0].timestampsArray;
-                        let calendar = $state.apiRequest.data[1].calendar;
-                        calendar.forEach(day => {
-                          if (notedDates.includes(day.date)) {
-                            day.isnoted = true;
-                          }
-                        });
-                        return ($state.apiRequest.data[1].calendar = calendar);
-                      } else {
-                        return console.log("null");
-                      }
-                    })()
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateStateVariable"] != null &&
-              typeof $steps["updateStateVariable"] === "object" &&
-              typeof $steps["updateStateVariable"].then === "function"
-            ) {
-              $steps["updateStateVariable"] = await $steps[
-                "updateStateVariable"
-              ];
-            }
-
             $steps["invokeGlobalAction"] = true
               ? (() => {
                   const actionArgs = {
@@ -735,7 +691,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   const actionArgs = {
                     operation: 0,
                     value: (() => {
-                      console.log($steps.invokeGlobalAction.data);
                       $state.apiRequest.data[0] =
                         $steps.invokeGlobalAction.data[0];
                       $state.apiRequest.data[2] =
@@ -758,7 +713,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       } else {
                         console.log("null");
                       }
-                      return console.log($state.apiRequest.data);
+                      return console.log("note", $state.apiRequest.data);
                     })()
                   };
                   return (({ variable, value, startIndex, deleteCount }) => {
