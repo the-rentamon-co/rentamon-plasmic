@@ -1826,7 +1826,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                  "\u0641\u0639\u0627\u0644 \u0634\u062f",
                                   "top-center"
                                 ]
                               };
@@ -2359,7 +2359,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                  "\u0641\u0639\u0627\u0644 \u0634\u062f",
                                   "top-center"
                                 ]
                               };
@@ -2772,7 +2772,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                  "\u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
                                   "top-center"
                                 ]
                               };
@@ -3211,7 +3211,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                  "\u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
                                   "top-center"
                                 ]
                               };

@@ -270,11 +270,7 @@ function PlasmicWallet3__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile")
-            ? "1000000"
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? "1000000"
-            : "1000000"
+          hasVariant(globalVariants, "screen", "mobile") ? "1000000" : "1000000"
       }
     ],
     [$props, $ctx, $refs]
@@ -745,10 +741,48 @@ function PlasmicWallet3__RenderFunc(props: {
 
                       (async value => {
                         const $steps = {};
+
+                        $steps["updateStateVariable"] = true
+                          ? (() => {
+                              const actionArgs = { operation: 0 };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateStateVariable"] != null &&
+                          typeof $steps["updateStateVariable"] === "object" &&
+                          typeof $steps["updateStateVariable"].then ===
+                            "function"
+                        ) {
+                          $steps["updateStateVariable"] = await $steps[
+                            "updateStateVariable"
+                          ];
+                        }
                       }).apply(null, eventArgs);
                     }}
-                    placeholder={``}
-                    type={"number"}
+                    placeholder={
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? "1/000/000"
+                        : ``
+                    }
+                    type={
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? "number"
+                        : "number"
+                    }
                     value={generateStateValueProp($state, ["input3", "value"])}
                   />
                 </div>
