@@ -742,8 +742,12 @@ function PlasmicWallet3__RenderFunc(props: {
                         "input3",
                         "value"
                       ]).apply(null, eventArgs);
+
+                      (async value => {
+                        const $steps = {};
+                      }).apply(null, eventArgs);
                     }}
-                    placeholder={"\u06f1/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"}
+                    placeholder={``}
                     type={"number"}
                     value={generateStateValueProp($state, ["input3", "value"])}
                   />

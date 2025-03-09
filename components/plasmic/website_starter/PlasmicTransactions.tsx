@@ -446,7 +446,11 @@ function PlasmicTransactions__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__prOxi)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__prOxi)}
+            >
               <div
                 data-plasmic-name={"tableHeader"}
                 data-plasmic-override={overrides.tableHeader}
@@ -971,7 +975,7 @@ function PlasmicTransactions__RenderFunc(props: {
                     );
                   })
                 : null}
-            </div>
+            </Stack__>
           </div>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
