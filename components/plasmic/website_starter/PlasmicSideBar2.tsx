@@ -325,31 +325,78 @@ function PlasmicSideBar2__RenderFunc(props: {
       trigger={
         <React.Fragment>
           <div className={classNames(projectcss.all, sty.freeBox__zlZzK)}>
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__o0UC)}
-              displayHeight={
-                hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "20px"
-                  : hasVariant(globalVariants, "screen", "mobile")
-                  ? "27px"
-                  : hasVariant(globalVariants, "screen", "tablet")
-                  ? "30px"
-                  : "30px"
-              }
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"auto"}
-              loading={"lazy"}
-              src={{
-                src: "/plasmic/website_starter/images/image37.svg",
-                fullWidth: 21,
-                fullHeight: 24,
-                aspectRatio: 0.875
-              }}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__coc4X)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__o0UC)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "20px"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "27px"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "30px"
+                    : "30px"
+                }
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image37.svg",
+                  fullWidth: 21,
+                  fullHeight: 24,
+                  aspectRatio: 0.875
+                }}
+              />
+
+              {(() => {
+                try {
+                  return !(
+                    $state.checkUserPendingReserve.data == null ||
+                    $state.checkUserPendingReserve.loading == true
+                  );
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div className={classNames(projectcss.all, sty.freeBox__khNTy)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__w4Uya
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.checkUserPendingReserve.data[0].count_id.toLocaleString(
+                            "fa"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "1";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              ) : null}
+            </div>
           </div>
           <ApiRequest
             data-plasmic-name={"checkUserPendingReserve"}

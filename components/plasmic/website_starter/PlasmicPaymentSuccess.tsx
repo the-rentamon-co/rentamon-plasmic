@@ -516,7 +516,7 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
             >
               <Button
                 className={classNames("__wab_instance", sty.button__uOppp)}
-                link={`/pricing`}
+                link={`/wallet`}
               >
                 <div
                   className={classNames(

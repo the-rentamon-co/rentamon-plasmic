@@ -197,7 +197,9 @@ function PlasmicWallet3__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile")
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
@@ -536,6 +538,11 @@ function PlasmicWallet3__RenderFunc(props: {
                 globalVariants,
                 "screen",
                 "tablet"
+              ),
+              [sty["pcls_yYJR4AYa_Nr0"]]: hasVariant(
+                globalVariants,
+                "screen",
+                "mobile"
               )
             })}
             modalScopeClassName={sty["modal__modal"]}
@@ -565,7 +572,7 @@ function PlasmicWallet3__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9"
+                  "\u062a\u0627\u06cc\u06cc\u062f \u0645\u0628\u0644\u063a \u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9"
                 }
               </div>
             </div>
@@ -631,21 +638,19 @@ function PlasmicWallet3__RenderFunc(props: {
                 )}
               </div>
             </div>
-            {(hasVariant(globalVariants, "screen", "tablet") ? true : false) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__ktBJb)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dFi4N
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u062a\u0645\u0627\u0645\u06cc \u06a9\u0627\u0631\u062a\u200c\u0647\u0627\u06cc \u0628\u0627\u0646\u06a9\u06cc \u0639\u0636\u0648 \u0634\u062a\u0627\u0628"
-                    : "\u0645\u0628\u0644\u063a:"}
-                </div>
+            <div className={classNames(projectcss.all, sty.freeBox__ktBJb)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dFi4N
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "tablet")
+                  ? "\u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u062a\u0645\u0627\u0645\u06cc \u06a9\u0627\u0631\u062a\u200c\u0647\u0627\u06cc \u0628\u0627\u0646\u06a9\u06cc \u0639\u0636\u0648 \u0634\u062a\u0627\u0628"
+                  : "\u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u062a\u0645\u0627\u0645\u06cc \u06a9\u0627\u0631\u062a\u200c\u0647\u0627\u06cc \u0639\u0636\u0648 \u0634\u062a\u0627\u0628\r"}
               </div>
-            ) : null}
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__mmdog)}>
               <Button
                 className={classNames("__wab_instance", sty.button__yXzkG)}
@@ -675,7 +680,7 @@ function PlasmicWallet3__RenderFunc(props: {
                 >
                   {hasVariant(globalVariants, "screen", "tablet")
                     ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0622\u0646\u0644\u0627\u06cc\u0646"
-                    : "\u067e\u0631\u062f\u0627\u062e\u062a"}
+                    : "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u06cc"}
                 </div>
               </Button>
             </div>
@@ -1107,32 +1112,33 @@ function PlasmicWallet3__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["updateLoading"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["loading"]
-                          },
-                          operation: 4
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                  $steps["updateLoading"] =
+                    $state.input3.value >= 100000
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["loading"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
 
-                          const oldValue = $stateGet(objRoot, variablePath);
-                          $stateSet(objRoot, variablePath, !oldValue);
-                          return !oldValue;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                   if (
                     $steps["updateLoading"] != null &&
                     typeof $steps["updateLoading"] === "object" &&
@@ -1141,34 +1147,36 @@ function PlasmicWallet3__RenderFunc(props: {
                     $steps["updateLoading"] = await $steps["updateLoading"];
                   }
 
-                  $steps["invokeGlobalAction"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            "POST",
-                            "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
-                            undefined,
-                            (() => {
-                              try {
-                                return { amount: $state.input3.value * 10 };
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
+                  $steps["invokeGlobalAction"] =
+                    $state.input3.value >= 100000
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "POST",
+                              "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
+                              undefined,
+                              (() => {
+                                try {
+                                  return { amount: $state.input3.value * 10 };
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()
-                          ]
-                        };
-                        return $globalActions["Fragment.apiRequest"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
+                              })()
+                            ]
+                          };
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
                   if (
                     $steps["invokeGlobalAction"] != null &&
                     typeof $steps["invokeGlobalAction"] === "object" &&
@@ -1179,37 +1187,38 @@ function PlasmicWallet3__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["updateAccordionMainActivePanelId"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["accordionMain", "activePanelId"]
-                          },
-                          operation: 0,
-                          value: (() => {
-                            $state.tokenResponse.payInfo =
-                              $steps.invokeGlobalAction.data.payinfo;
-                            $state.tokenResponse.amount = $state.input3.value;
-                            return console.log($state.tokenResponse);
-                          })()
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                  $steps["updateAccordionMainActivePanelId"] =
+                    $state.input3.value >= 100000
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["accordionMain", "activePanelId"]
+                            },
+                            operation: 0,
+                            value: (() => {
+                              $state.tokenResponse.payInfo =
+                                $steps.invokeGlobalAction.data.payinfo;
+                              $state.tokenResponse.amount = $state.input3.value;
+                              return console.log($state.tokenResponse);
+                            })()
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
 
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                   if (
                     $steps["updateAccordionMainActivePanelId"] != null &&
                     typeof $steps["updateAccordionMainActivePanelId"] ===
@@ -1222,32 +1231,33 @@ function PlasmicWallet3__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["updateAccordionMainActivePanelId2"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modal", "open"]
-                          },
-                          operation: 0,
-                          value: true
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                  $steps["updateAccordionMainActivePanelId2"] =
+                    $state.input3.value >= 100000
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modal", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
 
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                   if (
                     $steps["updateAccordionMainActivePanelId2"] != null &&
                     typeof $steps["updateAccordionMainActivePanelId2"] ===
@@ -1260,32 +1270,33 @@ function PlasmicWallet3__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["updateAccordionMainActivePanelId3"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["loading"]
-                          },
-                          operation: 4
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                  $steps["updateAccordionMainActivePanelId3"] =
+                    $state.input3.value >= 100000
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["loading"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
 
-                          const oldValue = $stateGet(objRoot, variablePath);
-                          $stateSet(objRoot, variablePath, !oldValue);
-                          return !oldValue;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                   if (
                     $steps["updateAccordionMainActivePanelId3"] != null &&
                     typeof $steps["updateAccordionMainActivePanelId3"] ===
@@ -1295,6 +1306,34 @@ function PlasmicWallet3__RenderFunc(props: {
                   ) {
                     $steps["updateAccordionMainActivePanelId3"] = await $steps[
                       "updateAccordionMainActivePanelId3"
+                    ];
+                  }
+
+                  $steps["updateAccordionMainActivePanelId4"] =
+                    $state.input3.value < 100000
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "error",
+                              "\u062d\u062f\u0627\u0642\u0644 \u0645\u0628\u0644\u063a \u0634\u0627\u0631\u0698 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0645\u06cc\u200c\u0628\u0627\u0634\u062f.",
+                              "top-center"
+                            ]
+                          };
+                          return $globalActions["Fragment.showToast"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateAccordionMainActivePanelId4"] != null &&
+                    typeof $steps["updateAccordionMainActivePanelId4"] ===
+                      "object" &&
+                    typeof $steps["updateAccordionMainActivePanelId4"].then ===
+                      "function"
+                  ) {
+                    $steps["updateAccordionMainActivePanelId4"] = await $steps[
+                      "updateAccordionMainActivePanelId4"
                     ];
                   }
                 }}

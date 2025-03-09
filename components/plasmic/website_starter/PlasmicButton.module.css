@@ -5,7 +5,7 @@
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
-  background: linear-gradient(28deg, #8165d6 0%, #9880e4 100%) 0% 0% / 100% 100%
+  background: linear-gradient(58deg, #8165d6 0%, #9880e4 100%) 0% 0% / 100% 100%
     repeat;
   margin-top: 14px;
   max-width: 164px;
@@ -33,7 +33,23 @@
 }
 @media (max-width: 1200px) {
   .root {
-    background: #8165d6;
+    background: linear-gradient(
+        69deg,
+        var(--token-8nedppYkGVaH) 0%,
+        #967aea 100%
+      )
+      0% 0% / 100% 100% repeat;
+  }
+}
+@media (max-width: 500px) {
+  .root {
+    background: linear-gradient(
+          71.77680563572221deg,
+          var(--token-8nedppYkGVaH) 0%,
+          #997fe7 100%
+        )
+        0% 0% / 100% 100% repeat,
+      #8165d6;
   }
 }
 .rootshowStartIcon {

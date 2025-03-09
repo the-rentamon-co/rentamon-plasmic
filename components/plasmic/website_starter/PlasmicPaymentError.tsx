@@ -448,7 +448,7 @@ function PlasmicPaymentError__RenderFunc(props: {
             >
               <Button
                 className={classNames("__wab_instance", sty.button___3IJnw)}
-                link={`/pricing`}
+                link={`/wallet`}
               >
                 <div
                   className={classNames(

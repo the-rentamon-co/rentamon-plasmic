@@ -709,11 +709,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                             day.isnoted = false;
                           }
                         });
-                        $state.apiRequest.data[1].calendar = calendar;
+                        return ($state.apiRequest.data[1].calendar = calendar);
                       } else {
-                        console.log("null");
+                        return console.log("null");
                       }
-                      return console.log("note", $state.apiRequest.data);
                     })()
                   };
                   return (({ variable, value, startIndex, deleteCount }) => {

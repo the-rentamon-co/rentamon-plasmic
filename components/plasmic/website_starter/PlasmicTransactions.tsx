@@ -102,7 +102,6 @@ export type PlasmicTransactions__OverridesType = {
   returnButton?: Flex__<"div">;
   withdraw?: Flex__<typeof AntdModal>;
   deposit?: Flex__<typeof AntdModal>;
-  button?: Flex__<typeof Button>;
   clarity?: Flex__<typeof Embed>;
   modal?: Flex__<typeof AntdModal>;
 };
@@ -214,6 +213,12 @@ function PlasmicTransactions__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "modalData",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       }
     ],
     [$props, $ctx, $refs]
@@ -617,7 +622,81 @@ function PlasmicTransactions__RenderFunc(props: {
                         onClick={async event => {
                           const $steps = {};
 
-                          $steps["updateStateVariable"] = false
+                          $steps["updateStateVariable2"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  operation: 0,
+                                  value: (() => {
+                                    if (
+                                      $state.apiRequest.data[currentIndex]
+                                        .transaction_type == "withdraw"
+                                    ) {
+                                      return ($state.modalData = {
+                                        date: $state.apiRequest.data[
+                                          currentIndex
+                                        ].transaction_created_at,
+                                        total_commition:
+                                          $state.apiRequest.data[
+                                            currentIndex
+                                          ].totalCommission.toLocaleString(
+                                            "fa"
+                                          ),
+                                        property_name:
+                                          $state.apiRequest.data[currentIndex]
+                                            .property_name,
+                                        reserved_amount:
+                                          $state.apiRequest.data[
+                                            currentIndex
+                                          ].total_amount.toLocaleString("fa"),
+                                        feature:
+                                          $state.apiRequest.data[currentIndex]
+                                            .features
+                                      });
+                                    } else {
+                                      return ($state.modalData = {
+                                        date: $state.apiRequest.data[
+                                          currentIndex
+                                        ].transaction_created_at,
+                                        reserved_amount:
+                                          $state.apiRequest.data[
+                                            currentIndex
+                                          ].total_amount.toLocaleString("fa"),
+                                        transaction_cause:
+                                          $state.apiRequest.data[currentIndex]
+                                            .transaction_cause
+                                      });
+                                    }
+                                  })()
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateStateVariable2"] != null &&
+                            typeof $steps["updateStateVariable2"] ===
+                              "object" &&
+                            typeof $steps["updateStateVariable2"].then ===
+                              "function"
+                          ) {
+                            $steps["updateStateVariable2"] = await $steps[
+                              "updateStateVariable2"
+                            ];
+                          }
+
+                          $steps["updateStateVariable"] = true
                             ? (() => {
                                 const actionArgs = {
                                   operation: 0,
@@ -671,8 +750,8 @@ function PlasmicTransactions__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                $state.apiRequest.data[currentIndex].status !=
-                                "decrease"
+                                $state.apiRequest.data[currentIndex]
+                                  .transaction_type == "deposit"
                               );
                             } catch (e) {
                               if (
@@ -705,8 +784,8 @@ function PlasmicTransactions__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                $state.apiRequest.data[currentIndex].status ==
-                                "decrease"
+                                $state.apiRequest.data[currentIndex]
+                                  .transaction_type == "withdraw"
                               );
                             } catch (e) {
                               if (
@@ -747,7 +826,10 @@ function PlasmicTransactions__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return $state.apiRequest.data[currentIndex]
-                                    .reason;
+                                    .transaction_type == "withdraw"
+                                    ? "برداشت"
+                                    : $state.apiRequest.data[currentIndex]
+                                        .transaction_cause;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -778,8 +860,40 @@ function PlasmicTransactions__RenderFunc(props: {
                             <React.Fragment>
                               {(() => {
                                 try {
-                                  return $state.apiRequest.data[currentIndex]
-                                    .date;
+                                  return (() => {
+                                    function formatLondonTimeToTehranPersian(
+                                      dateString
+                                    ) {
+                                      const date = new Date(dateString);
+                                      const datePart = date.toLocaleDateString(
+                                        "fa-IR",
+                                        {
+                                          timeZone: "Asia/Tehran",
+                                          year: "numeric",
+                                          month: "2-digit",
+                                          day: "2-digit"
+                                        }
+                                      );
+                                      const timePart = date.toLocaleTimeString(
+                                        "fa-IR",
+                                        {
+                                          timeZone: "Asia/Tehran",
+                                          hour12: false,
+                                          hour: "2-digit",
+                                          minute: "2-digit"
+                                        }
+                                      );
+                                      return `${timePart} - ${datePart}`;
+                                    }
+                                    const inputTime =
+                                      $state.apiRequest.data[currentIndex]
+                                        .transaction_created_at;
+                                    const outputTime =
+                                      formatLondonTimeToTehranPersian(
+                                        inputTime
+                                      );
+                                    return outputTime;
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -810,8 +924,35 @@ function PlasmicTransactions__RenderFunc(props: {
                             <React.Fragment>
                               {(() => {
                                 try {
-                                  return $state.apiRequest.data[currentIndex]
-                                    .price;
+                                  return (() => {
+                                    const currentItem =
+                                      $state.apiRequest.data[currentIndex];
+                                    if (
+                                      currentItem.transaction_type == "withdraw"
+                                    ) {
+                                      const sumOfCommissions =
+                                        currentItem.features.reduce(
+                                          (total, feature) => {
+                                            const commission =
+                                              Number(
+                                                feature.commission_amount
+                                              ) || 0;
+                                            return total + commission;
+                                          },
+                                          0
+                                        );
+                                      currentItem.totalCommission = Math.floor(
+                                        sumOfCommissions / 10
+                                      );
+                                      return currentItem.totalCommission.toLocaleString(
+                                        "fa"
+                                      );
+                                    } else {
+                                      return Math.floor(
+                                        currentItem.total_amount
+                                      ).toLocaleString("fa");
+                                    }
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -887,7 +1028,7 @@ function PlasmicTransactions__RenderFunc(props: {
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={"https://gateway.rentamon.com/webhook/transactions"}
+            url={"https://gateway.rentamon.com/webhook/get_transactions"}
           >
             {(() => {
               try {
@@ -1033,9 +1174,42 @@ function PlasmicTransactions__RenderFunc(props: {
                   sty.text__frq2E
                 )}
               >
-                {
-                  "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2  -  \u06f1\u06f2:\u06f3\u06f3"
-                }
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return (() => {
+                        function formatLondonTimeToTehranPersian(dateString) {
+                          const date = new Date(dateString);
+                          const datePart = date.toLocaleDateString("fa-IR", {
+                            timeZone: "Asia/Tehran",
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit"
+                          });
+                          const timePart = date.toLocaleTimeString("fa-IR", {
+                            timeZone: "Asia/Tehran",
+                            hour12: false,
+                            hour: "2-digit",
+                            minute: "2-digit"
+                          });
+                          return `${timePart} - ${datePart}`;
+                        }
+                        const inputTime = $state.modalData.date;
+                        const outputTime =
+                          formatLondonTimeToTehranPersian(inputTime);
+                        return outputTime;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2  -  \u06f1\u06f2:\u06f3\u06f3";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__yqD1W)}>
@@ -1055,53 +1229,21 @@ function PlasmicTransactions__RenderFunc(props: {
                   sty.text__qZiGr
                 )}
               >
-                {
-                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                }
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox___2AQcG)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gNbx
-                )}
-              >
-                {"\u0645\u0648\u062c\u0648\u062f\u06cc:"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jWhdr
-                )}
-              >
-                {
-                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                }
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__mtph)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__fvYtm
-                )}
-              >
-                {"\u0645\u0648\u062c\u0648\u062f\u06cc:"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___1VHhx
-                )}
-              >
-                {
-                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                }
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.modalData.total_commition + " تومان";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__fN5N3)}>
@@ -1127,9 +1269,21 @@ function PlasmicTransactions__RenderFunc(props: {
                       sty.text__xfyuQ
                     )}
                   >
-                    {
-                      "\u0644\u06cc\u06af\u0648\u0631\u06cc\u0627 \u0633\u0627\u062d\u0644\u06cc"
-                    }
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.modalData.property_name;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u0644\u06cc\u06af\u0648\u0631\u06cc\u0627 \u0633\u0627\u062d\u0644\u06cc";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
                   </div>
                 </div>
                 <div
@@ -1151,7 +1305,21 @@ function PlasmicTransactions__RenderFunc(props: {
                       sty.text__m5E7S
                     )}
                   >
-                    {"\u06f9/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"}
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.modalData.reserved_amount + " تومان";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u06f9/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__zVbvm)}>
@@ -1173,54 +1341,160 @@ function PlasmicTransactions__RenderFunc(props: {
                       sty.text__wawXb
                     )}
                   >
-                    {"\u06f2.\u06f5 \u066a"}
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            const currentItem = $state.modalData.feature;
+                            const sumOfCommissions = currentItem.reduce(
+                              (total, feature) => {
+                                const commission =
+                                  Number(feature.commission_rate) || 0;
+                                return total + commission;
+                              },
+                              0
+                            );
+                            currentItem.totalCommission = sumOfCommissions;
+                            return (
+                              "%" +
+                              currentItem.totalCommission.toLocaleString("fa")
+                            );
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u06f2.\u06f5 \u066a";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__nqyF)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m0Gmh
-                    )}
-                  >
-                    {
-                      "- \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631"
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $state.modalData.feature;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
                     }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ty3Iq
-                    )}
-                  >
-                    {"\u06f1.\u06f5 \u066a"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__mVjGv)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mzNeA
-                    )}
-                  >
-                    {
-                      "- \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 "
-                    }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yL5Bl
-                    )}
-                  >
-                    {"\u06f1 \u066a"}
-                  </div>
-                </div>
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__mVjGv)}
+                      key={currentIndex}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__mzNeA
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return currentItem.feature_name == "auto_sync"
+                                ? "بروز رسانی خودکار"
+                                : "رزروهای من";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "- \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yL5Bl
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                "%" +
+                                currentItem.commission_rate.toLocaleString("fa")
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06f1 \u066a";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  );
+                })}
               </Stack__>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__nqsCd)}>
+              <Button
+                className={classNames("__wab_instance", sty.button__clK7)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateWithdrawOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["withdraw", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateWithdrawOpen"] != null &&
+                    typeof $steps["updateWithdrawOpen"] === "object" &&
+                    typeof $steps["updateWithdrawOpen"].then === "function"
+                  ) {
+                    $steps["updateWithdrawOpen"] = await $steps[
+                      "updateWithdrawOpen"
+                    ];
+                  }
+                }}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+              </Button>
             </div>
           </AntdModal>
           <AntdModal
@@ -1275,9 +1549,42 @@ function PlasmicTransactions__RenderFunc(props: {
                   sty.text__dlXrR
                 )}
               >
-                {
-                  "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2  -  \u06f1\u06f2:\u06f3\u06f3"
-                }
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return (() => {
+                        function formatLondonTimeToTehranPersian(dateString) {
+                          const date = new Date(dateString);
+                          const datePart = date.toLocaleDateString("fa-IR", {
+                            timeZone: "Asia/Tehran",
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit"
+                          });
+                          const timePart = date.toLocaleTimeString("fa-IR", {
+                            timeZone: "Asia/Tehran",
+                            hour12: false,
+                            hour: "2-digit",
+                            minute: "2-digit"
+                          });
+                          return `${timePart} - ${datePart}`;
+                        }
+                        const inputTime = $state.modalData.date;
+                        const outputTime =
+                          formatLondonTimeToTehranPersian(inputTime);
+                        return outputTime;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2  -  \u06f1\u06f2:\u06f3\u06f3";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__pqnZc)}>
@@ -1297,9 +1604,21 @@ function PlasmicTransactions__RenderFunc(props: {
                   sty.text__fj6Tl
                 )}
               >
-                {
-                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                }
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.modalData.reserved_amount + " تومان";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__me8Qa)}>
@@ -1319,31 +1638,21 @@ function PlasmicTransactions__RenderFunc(props: {
                   sty.text__lVNwL
                 )}
               >
-                {
-                  "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
-                }
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__qohQ3)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__cXIR
-                )}
-              >
-                {"\u0645\u0648\u062c\u0648\u062f\u06cc:"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__fFdyC
-                )}
-              >
-                {
-                  " \u06f2\u06f2\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                }
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.modalData.transaction_cause;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
               </div>
             </div>
             <Stack__
@@ -1387,9 +1696,45 @@ function PlasmicTransactions__RenderFunc(props: {
               className={classNames(projectcss.all, sty.freeBox__ySiur)}
             >
               <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button)}
+                className={classNames("__wab_instance", sty.button__axw4)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateWithdrawOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["withdraw", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateWithdrawOpen"] != null &&
+                    typeof $steps["updateWithdrawOpen"] === "object" &&
+                    typeof $steps["updateWithdrawOpen"].then === "function"
+                  ) {
+                    $steps["updateWithdrawOpen"] = await $steps[
+                      "updateWithdrawOpen"
+                    ];
+                  }
+                }}
               >
                 <div
                   className={classNames(
@@ -1494,7 +1839,6 @@ const PlasmicDescendants = {
     "returnButton",
     "withdraw",
     "deposit",
-    "button",
     "clarity",
     "modal"
   ],
@@ -1508,8 +1852,7 @@ const PlasmicDescendants = {
   favicon: ["favicon"],
   returnButton: ["returnButton"],
   withdraw: ["withdraw"],
-  deposit: ["deposit", "button"],
-  button: ["button"],
+  deposit: ["deposit"],
   clarity: ["clarity"],
   modal: ["modal"]
 } as const;
@@ -1529,7 +1872,6 @@ type NodeDefaultElementType = {
   returnButton: "div";
   withdraw: typeof AntdModal;
   deposit: typeof AntdModal;
-  button: typeof Button;
   clarity: typeof Embed;
   modal: typeof AntdModal;
 };
@@ -1605,7 +1947,6 @@ export const PlasmicTransactions = Object.assign(
     returnButton: makeNodeComponent("returnButton"),
     withdraw: makeNodeComponent("withdraw"),
     deposit: makeNodeComponent("deposit"),
-    button: makeNodeComponent("button"),
     clarity: makeNodeComponent("clarity"),
     modal: makeNodeComponent("modal"),
 
