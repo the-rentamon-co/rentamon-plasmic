@@ -106,6 +106,7 @@ export type PlasmicChannelManager__OverridesType = {
   button?: Flex__<typeof Button>;
   item?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  returnButton?: Flex__<"div">;
 };
 
 export interface DefaultChannelManagerProps {}
@@ -2326,6 +2327,51 @@ function PlasmicChannelManager__RenderFunc(props: {
               }
             }}
           />
+
+          <div
+            data-plasmic-name={"returnButton"}
+            data-plasmic-override={overrides.returnButton}
+            className={classNames(projectcss.all, sty.returnButton, "fix")}
+          >
+            <div
+              className={classNames(projectcss.all, sty.freeBox___9ZxWb)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return window.history.back();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ayiQa
+                )}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a "}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -2350,7 +2396,8 @@ const PlasmicDescendants = {
     "homsa",
     "button",
     "item",
-    "sideEffect"
+    "sideEffect",
+    "returnButton"
   ],
   header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
@@ -2401,7 +2448,8 @@ const PlasmicDescendants = {
   homsa: ["homsa"],
   button: ["button"],
   item: ["item"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  returnButton: ["returnButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2424,6 +2472,7 @@ type NodeDefaultElementType = {
   button: typeof Button;
   item: "div";
   sideEffect: typeof SideEffect;
+  returnButton: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2502,6 +2551,7 @@ export const PlasmicChannelManager = Object.assign(
     button: makeNodeComponent("button"),
     item: makeNodeComponent("item"),
     sideEffect: makeNodeComponent("sideEffect"),
+    returnButton: makeNodeComponent("returnButton"),
 
     // Metadata about props expected for PlasmicChannelManager
     internalVariantProps: PlasmicChannelManager__VariantProps,

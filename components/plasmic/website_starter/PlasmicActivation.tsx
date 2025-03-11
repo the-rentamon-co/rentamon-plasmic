@@ -754,38 +754,6 @@ function PlasmicActivation__RenderFunc(props: {
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={"100%"}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToHttpsRentamonCom"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          destination: "https://rentamon.com/"
-                        };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToHttpsRentamonCom"] != null &&
-                    typeof $steps["goToHttpsRentamonCom"] === "object" &&
-                    typeof $steps["goToHttpsRentamonCom"].then === "function"
-                  ) {
-                    $steps["goToHttpsRentamonCom"] = await $steps[
-                      "goToHttpsRentamonCom"
-                    ];
-                  }
-                }}
                 src={{
                   src: "/plasmic/website_starter/images/rentamonFaPng.png",
                   fullWidth: 684,
