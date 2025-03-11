@@ -516,7 +516,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link__ssB3J
                   )}
                   component={Link}
-                  href={`/قوانین-رنتامون`}
+                  href={`/terms-of-use`}
                   platform={"nextjs"}
                 >
                   {
@@ -535,7 +535,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link__cqnzq
                   )}
                   component={Link}
-                  href={`/درباره-ما`}
+                  href={`/about-us`}
                   platform={"nextjs"}
                 >
                   {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}

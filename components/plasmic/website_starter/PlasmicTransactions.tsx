@@ -1548,7 +1548,7 @@ function PlasmicTransactions__RenderFunc(props: {
 
                   $steps["goToTermsOfUse"] = true
                     ? (() => {
-                        const actionArgs = { destination: `/قوانین-رنتامون` };
+                        const actionArgs = { destination: `/terms-of-use` };
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&
@@ -1815,7 +1815,7 @@ function PlasmicTransactions__RenderFunc(props: {
 
                   $steps["goToTermsOfUse"] = true
                     ? (() => {
-                        const actionArgs = { destination: `/قوانین-رنتامون` };
+                        const actionArgs = { destination: `/terms-of-use` };
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&

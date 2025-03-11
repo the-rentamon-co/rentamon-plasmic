@@ -788,6 +788,149 @@ function PlasmicSideBar2__RenderFunc(props: {
           hasGap={true}
           className={classNames(
             projectcss.all,
+            sty.freeBox__otMgi,
+            "clickable"
+          )}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["updateModalSidebarOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modalSidebar", "open"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen"] != null &&
+              typeof $steps["updateModalSidebarOpen"] === "object" &&
+              typeof $steps["updateModalSidebarOpen"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen"] = await $steps[
+                "updateModalSidebarOpen"
+              ];
+            }
+
+            $steps["updateModalSidebarOpen2"] = true
+              ? (() => {
+                  const actionArgs = { destination: `/channel-manager` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
+                    }
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen2"] != null &&
+              typeof $steps["updateModalSidebarOpen2"] === "object" &&
+              typeof $steps["updateModalSidebarOpen2"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen2"] = await $steps[
+                "updateModalSidebarOpen2"
+              ];
+            }
+          }}
+        >
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img__spHrb)}
+            displayHeight={"29px"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"30px"}
+            loading={"lazy"}
+            src={{
+              src: "/plasmic/website_starter/images/image78.svg",
+              fullWidth: 24,
+              fullHeight: 24,
+              aspectRatio: 1
+            }}
+          />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__biTo0
+            )}
+          >
+            {
+              "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627 (\u0622\u0632\u0645\u0627\u06cc\u0634\u06cc)"
+            }
+          </div>
+          {(() => {
+            try {
+              return !(
+                $state.checkUserPendingReserve.data == null ||
+                $state.checkUserPendingReserve.loading == true
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__tmmCp)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dmw3U
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.checkUserPendingReserve.data[0].count_id.toLocaleString(
+                        "fa"
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "1";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            </div>
+          ) : null}
+        </Stack__>
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(
+            projectcss.all,
             sty.freeBox___5JuLu,
             "clickable"
           )}

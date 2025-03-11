@@ -307,7 +307,22 @@
   font-weight: 600;
   min-width: 0;
 }
-.freeBox__enMwu {
+@media (max-width: 1200px) {
+  .text__nuB4 {
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .text__nuB4 {
+    text-align: right;
+  }
+}
+@media (max-width: 350px) {
+  .text__nuB4 {
+    font-size: 15px;
+  }
+}
+.freeBox__adLW {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -318,6 +333,22 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+.freeBox__enMwu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 80%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox__enMwu {
+    max-width: 100%;
+  }
 }
 .shab {
   display: flex;
