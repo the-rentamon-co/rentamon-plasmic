@@ -749,33 +749,10 @@ function PlasmicCalendar2__RenderFunc(props: {
               if (secondSpan) {
                 $state.year = secondSpan.textContent;
               }
-              function convertPersianToNumber(persianNumber) {
-                const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
-                const englishDigits = "0123456789";
-                return Number(
-                  persianNumber
-                    .split("")
-                    .map(ch => {
-                      const index = persianDigits.indexOf(ch);
-                      return index > -1 ? englishDigits[index] : ch;
-                    })
-                    .join("")
-                );
-              }
-              let initialMonth = new Date()
-                .toLocaleDateString("fa-IR-u-nu-latn")
-                .split("/");
+              let initialMonth = new Date().toLocaleDateString("fa").split("/");
               let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
-              let startmon = Number(mon) - 1;
-              let numericYear = convertPersianToNumber($state.year);
-              let startyear = numericYear;
-              if (startmon === 0) {
-                startmon = 12;
-                startyear = numericYear - 1;
-              }
-              console.log(startyear);
               let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${startyear}-${startmon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
             })();
           } catch (e) {
             if (
