@@ -749,8 +749,15 @@ function PlasmicCalendar2__RenderFunc(props: {
               if (secondSpan) {
                 $state.year = secondSpan.textContent;
               }
-              let initialMonth = new Date().toLocaleDateString("fa").split("/");
+              let initialMonth = new Date()
+                .toLocaleDateString("fa-IR-u-nu-latn")
+                .split("/");
               let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
+              mon = Number(mon) + 1;
+              if (mon == 13) {
+                mon = 1;
+              }
+              console.log(mon);
               let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
               return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
             })();
