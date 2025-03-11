@@ -746,13 +746,32 @@ function PlasmicCalendar2__RenderFunc(props: {
               const secondSpan = document.querySelector(
                 ".rmdp-header-values span:nth-child(3)"
               );
-              if (secondSpan) {
-                $state.year = secondSpan.textContent;
+              function persianToEnglishDigits(str) {
+                if (!str) return "";
+                return str.replace(/[۰-۹]/g, function (ch) {
+                  return String.fromCharCode(ch.charCodeAt(0) - 1728);
+                });
               }
-              let initialMonth = new Date().toLocaleDateString("fa").split("/");
-              let mon = $state.fragmentDatePicker?.month ?? initialMonth[1];
+              if (secondSpan) {
+                const yearFa = secondSpan.textContent;
+                const yearEn = persianToEnglishDigits(yearFa);
+                $state.year = parseInt(yearEn, 10);
+              }
+              let initialDateFa = new Date()
+                .toLocaleDateString("fa")
+                .split("/");
+              let monFa = $state.fragmentDatePicker?.month ?? initialDateFa[1];
+              let monEn = persianToEnglishDigits(monFa);
+              let mon = parseInt(monEn, 10);
               let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+              let nextMonth = mon + 1;
+              let nextMonthYear = $state.year;
+              if (nextMonth > 12) {
+                nextMonth = 1;
+                nextMonthYear = $state.year + 1;
+              }
+              let nextDaysInMonth = nextMonth >= 1 && nextMonth <= 6 ? 31 : 30;
+              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${nextMonthYear}-${nextMonth}-${nextDaysInMonth}&property_id=${$props.propertyId}`;
             })();
           } catch (e) {
             if (

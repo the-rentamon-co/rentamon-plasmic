@@ -208,7 +208,7 @@ function PlasmicChannelManager__RenderFunc(props: {
         path: "statusModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -394,303 +394,357 @@ function PlasmicChannelManager__RenderFunc(props: {
                     ]).apply(null, eventArgs);
                   }}
                   open={generateStateValueProp($state, ["statusModal", "open"])}
-                  title={
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.freeBox__cbV40)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__ustMk
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (() => {
-                                return (
-                                  "دریافت رزرو از " +
-                                  ($state.modalData.source === "jabama"
-                                    ? "جاباما"
-                                    : $state.modalData.source === "otaghak"
-                                    ? "اتاقک"
-                                    : $state.modalData.source === "mihmansho"
-                                    ? "میهمان‌شو"
-                                    : $state.modalData.source === "homsa"
-                                    ? "هومسا"
-                                    : $state.modalData.source === "jajiga"
-                                    ? "جاجیگا"
-                                    : $state.modalData.source === "shab"
-                                    ? "شب"
-                                    : $state.modalData.source === "mizboon"
-                                    ? "میزبون"
-                                    : $state.modalData.source)
-                                );
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 ";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                      {(() => {
-                        try {
-                          return $state.modalData.source == "jabama";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img___9YjAm)}
-                          displayHeight={"41px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/jabamaWebp.webp",
-                            fullWidth: 512,
-                            fullHeight: 512,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return $state.modalData.source == "jajiga";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img___453Jd)}
-                          displayHeight={"41px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/jajigaWebp.webp",
-                            fullWidth: 192,
-                            fullHeight: 192,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return $state.modalData.source == "shab";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img___1Oc8X)}
-                          displayHeight={"41px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image20.svg",
-                            fullWidth: 46,
-                            fullHeight: 45,
-                            aspectRatio: 1.022222
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return $state.modalData.source == "otaghak";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__m2YEe)}
-                          displayHeight={"41px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image13.svg",
-                            fullWidth: 46,
-                            fullHeight: 46,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return $state.modalData.source == "mizboon";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__uwhGf)}
-                          displayHeight={"41px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/mizboonPng.png",
-                            fullWidth: 140,
-                            fullHeight: 140,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return $state.modalData.source == "mihmansho";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__i8A3N)}
-                          displayHeight={"41px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/mihmanshoPng.png",
-                            fullWidth: 140,
-                            fullHeight: 140,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return $state.modalData.source == "homsa";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__eb4ZM)}
-                          displayHeight={"41px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image18.svg",
-                            fullWidth: 46,
-                            fullHeight: 45,
-                            aspectRatio: 1.022222
-                          }}
-                        />
-                      ) : null}
-                    </Stack__>
-                  }
+                  title={null}
                   trigger={null}
                 >
                   <div
                     className={classNames(projectcss.all, sty.freeBox___5NVyJ)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__xEoLb)}
+                      className={classNames(projectcss.all, sty.freeBox__m3Fs2)}
                     >
+                      <Stack__
+                        as={"div"}
+                        hasGap={true}
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__dTzEi
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__du2HZ
+                          )}
+                        >
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "smallMobile"
+                          ) ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (() => {
+                                    return (
+                                      "رزرو از " +
+                                      ($state.modalData.source === "jabama"
+                                        ? "جاباما"
+                                        : $state.modalData.source === "otaghak"
+                                        ? "اتاقک"
+                                        : $state.modalData.source ===
+                                          "mihmansho"
+                                        ? "میهمان‌شو"
+                                        : $state.modalData.source === "homsa"
+                                        ? "هومسا"
+                                        : $state.modalData.source === "jajiga"
+                                        ? "جاجیگا"
+                                        : $state.modalData.source === "shab"
+                                        ? "شب"
+                                        : $state.modalData.source === "mizboon"
+                                        ? "میزبون"
+                                        : $state.modalData.source)
+                                    );
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 ";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (() => {
+                                    return (
+                                      "دریافت رزرو از " +
+                                      ($state.modalData.source === "jabama"
+                                        ? "جاباما"
+                                        : $state.modalData.source === "otaghak"
+                                        ? "اتاقک"
+                                        : $state.modalData.source ===
+                                          "mihmansho"
+                                        ? "میهمان‌شو"
+                                        : $state.modalData.source === "homsa"
+                                        ? "هومسا"
+                                        : $state.modalData.source === "jajiga"
+                                        ? "جاجیگا"
+                                        : $state.modalData.source === "shab"
+                                        ? "شب"
+                                        : $state.modalData.source === "mizboon"
+                                        ? "میزبون"
+                                        : $state.modalData.source)
+                                    );
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 ";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
+                        </div>
+                        {(() => {
+                          try {
+                            return $state.modalData.source == "jabama";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__c6ZEc)}
+                            displayHeight={"41px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/jabamaWebp.webp",
+                              fullWidth: 512,
+                              fullHeight: 512,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return $state.modalData.source == "jajiga";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__nmqQa)}
+                            displayHeight={"41px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/jajigaWebp.webp",
+                              fullWidth: 192,
+                              fullHeight: 192,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return $state.modalData.source == "shab";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__ci8A0)}
+                            displayHeight={"41px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image20.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return $state.modalData.source == "otaghak";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__loOs8)}
+                            displayHeight={"41px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image13.svg",
+                              fullWidth: 46,
+                              fullHeight: 46,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return $state.modalData.source == "mizboon";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__wkOwz)}
+                            displayHeight={"41px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/mizboonPng.png",
+                              fullWidth: 140,
+                              fullHeight: 140,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return $state.modalData.source == "mihmansho";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__kbmkk)}
+                            displayHeight={"41px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/mihmanshoPng.png",
+                              fullWidth: 140,
+                              fullHeight: 140,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return $state.modalData.source == "homsa";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img___4MGs4)}
+                            displayHeight={"41px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image18.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }}
+                          />
+                        ) : null}
+                      </Stack__>
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__hmxr8
+                          sty.freeBox__xEoLb
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return $state.modalData.property_name;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "";
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__hmxr8
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $state.modalData.property_name;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
+                            })()}
+                          </React.Fragment>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -809,7 +863,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u062a\u0627\u0631\u06cc\u062e:\r"
+                        "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u0628\u0633\u062a\u0646 \u0627\u06cc\u0646 \u062a\u0627\u0631\u06cc\u062e:\r"
                       }
                     </div>
                   </div>
@@ -876,7 +930,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__pdBmB)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -907,7 +969,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__oDFd)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -981,7 +1051,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img___7EPt3)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -1012,9 +1090,25 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__inTpV)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
                               displayWidth={"auto"}
@@ -1086,9 +1180,25 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__zpIC)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
                               displayWidth={"auto"}
@@ -1117,7 +1227,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__hTmLp)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -1191,9 +1309,25 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img___23JHo)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
                               displayWidth={"auto"}
@@ -1222,7 +1356,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__f53Tl)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -1239,33 +1381,63 @@ function PlasmicChannelManager__RenderFunc(props: {
                           ) : null}
                         </div>
                       ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            const source = "mizboon";
-                            const statusObj = $state.modalData.status;
-                            function checkSourceKeyInStatus(
-                              sourceValue,
-                              status
-                            ) {
-                              return status.hasOwnProperty(sourceValue);
-                            }
-                            const result = checkSourceKeyInStatus(
-                              source,
-                              statusObj
-                            );
-                            return result;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
+                      {(
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? (() => {
+                              try {
+                                return (() => {
+                                  const source = "mizboon";
+                                  const statusObj = $state.modalData.status;
+                                  function checkSourceKeyInStatus(
+                                    sourceValue,
+                                    status
+                                  ) {
+                                    return status.hasOwnProperty(sourceValue);
+                                  }
+                                  const result = checkSourceKeyInStatus(
+                                    source,
+                                    statusObj
+                                  );
+                                  return result;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return (() => {
+                                  const source = "mizboon";
+                                  const statusObj = $state.modalData.status;
+                                  function checkSourceKeyInStatus(
+                                    sourceValue,
+                                    status
+                                  ) {
+                                    return status.hasOwnProperty(sourceValue);
+                                  }
+                                  const result = checkSourceKeyInStatus(
+                                    source,
+                                    statusObj
+                                  );
+                                  return result;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                      ) ? (
                         <div
                           data-plasmic-name={"mizboon"}
                           data-plasmic-override={overrides.mizboon}
@@ -1296,7 +1468,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img___2NuaP)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -1327,7 +1507,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__iWbSq)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -1401,9 +1589,25 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img___1L2SP)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
                               displayWidth={"auto"}
@@ -1432,7 +1636,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__jhXkZ)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -1506,9 +1718,25 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__xlWfM)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
                               displayWidth={"auto"}
@@ -1537,7 +1765,15 @@ function PlasmicChannelManager__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__xKtqf)}
-                              displayHeight={"27px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "24px"
+                                  : "27px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
