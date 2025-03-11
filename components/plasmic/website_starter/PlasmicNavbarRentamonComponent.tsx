@@ -302,7 +302,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                   sty.link__vseFw
                 )}
                 component={Link}
-                href={`/about-us`}
+                href={`/درباره-ما`}
                 platform={"nextjs"}
               >
                 {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
@@ -372,7 +372,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                 sty.link___01Gak
               )}
               component={Link}
-              href={`/about-us`}
+              href={`/درباره-ما`}
               platform={"nextjs"}
             >
               {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}

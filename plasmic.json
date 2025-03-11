@@ -1113,7 +1113,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicAboutUs.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/about-us.tsx"
+            "modulePath": "../src/pages/درباره-ما.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicAboutUs.module.css",
           "scheme": "blackbox",
@@ -1127,7 +1127,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicTermsOfUse.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/terms-of-use.tsx"
+            "modulePath": "../src/pages/قوانین-رنتامون.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicTermsOfUse.module.css",
           "scheme": "blackbox",
@@ -1244,6 +1244,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/wallet"
+        },
+        {
+          "id": "TARn4RyKgOfz",
+          "name": "ChannelManager",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicChannelManager.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/channel-manager.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicChannelManager.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/channel-manager"
         }
       ],
       "icons": [
@@ -2638,6 +2652,26 @@
           "id": "qpsjrYCnYQCu",
           "name": "image 84",
           "filePath": "../public/plasmic/website_starter/images/image84.svg"
+        },
+        {
+          "id": "87Z5kM962lQ_",
+          "name": "image 85",
+          "filePath": "../public/plasmic/website_starter/images/image85.svg"
+        },
+        {
+          "id": "TEJyYiK7pGUj",
+          "name": "image 86",
+          "filePath": "../public/plasmic/website_starter/images/image86.svg"
+        },
+        {
+          "id": "snRLhud7BYQE",
+          "name": "image 87",
+          "filePath": "../public/plasmic/website_starter/images/image87.svg"
+        },
+        {
+          "id": "fKzA-qBLgA0i",
+          "name": "image 88",
+          "filePath": "../public/plasmic/website_starter/images/image88.svg"
         }
       ],
       "indirect": false,

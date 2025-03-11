@@ -200,13 +200,15 @@ function PlasmicTransactions__RenderFunc(props: {
         path: "withdraw.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
       },
       {
         path: "deposit.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
       },
       {
         path: "modal.open",
@@ -1159,7 +1161,7 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
             }
             trigger={null}
-            width={``}
+            width={"450"}
           >
             <div className={classNames(projectcss.all, sty.freeBox__tfDx8)}>
               <div
@@ -1328,53 +1330,61 @@ function PlasmicTransactions__RenderFunc(props: {
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__zVbvm)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__iTwrt
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox___744G)}
                   >
-                    {
-                      "\u06a9\u0627\u0631\u0645\u0632\u062f\u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646:"
-                    }
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__iTwrt
+                      )}
+                    >
+                      {
+                        "\u06a9\u0627\u0631\u0645\u0632\u062f\u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646:"
+                      }
+                    </div>
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wawXb
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox___6A576)}
                   >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (() => {
-                            const currentItem = $state.modalData.feature;
-                            const sumOfCommissions = currentItem.reduce(
-                              (total, feature) => {
-                                const commission =
-                                  Number(feature.commission_rate) || 0;
-                                return total + commission;
-                              },
-                              0
-                            );
-                            currentItem.totalCommission = sumOfCommissions;
-                            return (
-                              "%" +
-                              currentItem.totalCommission.toLocaleString("fa")
-                            );
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u06f2.\u06f5 \u066a";
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wawXb
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const currentItem = $state.modalData.feature;
+                              const sumOfCommissions = currentItem.reduce(
+                                (total, feature) => {
+                                  const commission =
+                                    Number(feature.commission_rate) || 0;
+                                  return total + commission;
+                                },
+                                0
+                              );
+                              currentItem.totalCommission = sumOfCommissions;
+                              return (
+                                "%" +
+                                currentItem.totalCommission.toLocaleString("fa")
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u06f2.\u06f5 \u066a";
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
                 {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
@@ -1455,6 +1465,107 @@ function PlasmicTransactions__RenderFunc(props: {
                 })}
               </Stack__>
             </div>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__dve9A)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToقوانینرنتامون"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        destination:
+                          "/\u0642\u0648\u0627\u0646\u06cc\u0646-\u0631\u0646\u062a\u0627\u0645\u0648\u0646\n"
+                      };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToقوانینرنتامون"] != null &&
+                  typeof $steps["goToقوانینرنتامون"] === "object" &&
+                  typeof $steps["goToقوانینرنتامون"].then === "function"
+                ) {
+                  $steps["goToقوانینرنتامون"] = await $steps[
+                    "goToقوانینرنتامون"
+                  ];
+                }
+              }}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___7GKEv)}
+                displayHeight={"14px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image84.svg",
+                  fullWidth: 16,
+                  fullHeight: 15,
+                  aspectRatio: 1.066667
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fjPbP
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToقوانینرنتامون"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination:
+                            "/\u0642\u0648\u0627\u0646\u06cc\u0646-\u0631\u0646\u062a\u0627\u0645\u0648\u0646\n"
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToقوانینرنتامون"] != null &&
+                    typeof $steps["goToقوانینرنتامون"] === "object" &&
+                    typeof $steps["goToقوانینرنتامون"].then === "function"
+                  ) {
+                    $steps["goToقوانینرنتامون"] = await $steps[
+                      "goToقوانینرنتامون"
+                    ];
+                  }
+                }}
+              >
+                {
+                  "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                }
+              </div>
+            </Stack__>
             <div className={classNames(projectcss.all, sty.freeBox__nqsCd)}>
               <Button
                 className={classNames("__wab_instance", sty.button__clK7)}
@@ -1534,7 +1645,7 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
             }
             trigger={null}
-            width={``}
+            width={"450"}
           >
             <div className={classNames(projectcss.all, sty.freeBox__w4W8G)}>
               <div
@@ -1688,6 +1799,39 @@ function PlasmicTransactions__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.text__riJhy
                 )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToقوانینرنتامون"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination:
+                            "/\u0642\u0648\u0627\u0646\u06cc\u0646-\u0631\u0646\u062a\u0627\u0645\u0648\u0646\n"
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToقوانینرنتامون"] != null &&
+                    typeof $steps["goToقوانینرنتامون"] === "object" &&
+                    typeof $steps["goToقوانینرنتامون"].then === "function"
+                  ) {
+                    $steps["goToقوانینرنتامون"] = await $steps[
+                      "goToقوانینرنتامون"
+                    ];
+                  }
+                }}
               >
                 {
                   "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
