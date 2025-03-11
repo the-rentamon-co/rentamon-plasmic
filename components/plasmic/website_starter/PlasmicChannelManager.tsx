@@ -62,6 +62,7 @@ import {
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -71,6 +72,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicChannelManager.module.css"; // plasmic-import: TARn4RyKgOfz/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -98,6 +102,7 @@ export type PlasmicChannelManager__OverridesType = {
   mizboon?: Flex__<"div">;
   mihmansho?: Flex__<"div">;
   homsa?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
   item?: Flex__<"div">;
 };
 
@@ -397,9 +402,40 @@ function PlasmicChannelManager__RenderFunc(props: {
                           sty.text__ustMk
                         )}
                       >
-                        {
-                          "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 "
-                        }
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                return (
+                                  "دریافت رزرو از " +
+                                  ($state.modalData.source === "jabama"
+                                    ? "جاباما"
+                                    : $state.modalData.source === "otaghak"
+                                    ? "اتاقک"
+                                    : $state.modalData.source === "mihmansho"
+                                    ? "میهمان‌شو"
+                                    : $state.modalData.source === "homsa"
+                                    ? "هومسا"
+                                    : $state.modalData.source === "jajiga"
+                                    ? "جاجیگا"
+                                    : $state.modalData.source === "shab"
+                                    ? "شب"
+                                    : $state.modalData.source === "mizboon"
+                                    ? "میزبون"
+                                    : $state.modalData.source)
+                                );
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       </div>
                       {(() => {
                         try {
@@ -1490,6 +1526,64 @@ function PlasmicChannelManager__RenderFunc(props: {
                       </div>
                     ) : null}
                   </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___1IJ9K)}
+                  >
+                    <Button
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateStatusModalOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["statusModal", "open"]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateStatusModalOpen"] != null &&
+                          typeof $steps["updateStatusModalOpen"] === "object" &&
+                          typeof $steps["updateStatusModalOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateStatusModalOpen"] = await $steps[
+                            "updateStatusModalOpen"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__d7OzV
+                        )}
+                      >
+                        {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+                      </div>
+                    </Button>
+                  </div>
                 </AntdModal>
                 <Stack__
                   as={"div"}
@@ -1876,6 +1970,7 @@ const PlasmicDescendants = {
     "mizboon",
     "mihmansho",
     "homsa",
+    "button",
     "item"
   ],
   header: ["header", "sideBar2", "profile"],
@@ -1892,6 +1987,7 @@ const PlasmicDescendants = {
     "mizboon",
     "mihmansho",
     "homsa",
+    "button",
     "item"
   ],
   tableHeader: [
@@ -1903,7 +1999,8 @@ const PlasmicDescendants = {
     "otaaghak",
     "mizboon",
     "mihmansho",
-    "homsa"
+    "homsa",
+    "button"
   ],
   statusModal: [
     "statusModal",
@@ -1913,7 +2010,8 @@ const PlasmicDescendants = {
     "otaaghak",
     "mizboon",
     "mihmansho",
-    "homsa"
+    "homsa",
+    "button"
   ],
   shab: ["shab"],
   jajiga: ["jajiga"],
@@ -1922,6 +2020,7 @@ const PlasmicDescendants = {
   mizboon: ["mizboon"],
   mihmansho: ["mihmansho"],
   homsa: ["homsa"],
+  button: ["button"],
   item: ["item"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1942,6 +2041,7 @@ type NodeDefaultElementType = {
   mizboon: "div";
   mihmansho: "div";
   homsa: "div";
+  button: typeof Button;
   item: "div";
 };
 
@@ -2018,6 +2118,7 @@ export const PlasmicChannelManager = Object.assign(
     mizboon: makeNodeComponent("mizboon"),
     mihmansho: makeNodeComponent("mihmansho"),
     homsa: makeNodeComponent("homsa"),
+    button: makeNodeComponent("button"),
     item: makeNodeComponent("item"),
 
     // Metadata about props expected for PlasmicChannelManager
