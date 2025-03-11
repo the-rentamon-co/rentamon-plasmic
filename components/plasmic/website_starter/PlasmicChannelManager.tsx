@@ -466,7 +466,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                                 try {
                                   return (() => {
                                     return (
-                                      "دریافت رزرو از " +
+                                      "رزرو از " +
                                       ($state.modalData.source === "jabama"
                                         ? "جاباما"
                                         : $state.modalData.source === "otaghak"

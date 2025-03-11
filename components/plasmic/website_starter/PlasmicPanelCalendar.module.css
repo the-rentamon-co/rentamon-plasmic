@@ -673,10 +673,15 @@
   min-width: 0;
   padding: 16px 8px 0px;
 }
+@media (max-width: 1200px) {
+  .right4 {
+    padding-top: 0px;
+  }
+}
 @media (max-width: 500px) {
   .right4 {
     padding-left: 0px;
-    padding-top: 6px;
+    padding-top: 0px;
     padding-bottom: 0px;
   }
 }

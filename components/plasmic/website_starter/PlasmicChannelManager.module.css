@@ -503,7 +503,7 @@
 }
 @media (max-width: 500px) {
   .freeBox__bYbS4 {
-    padding-right: 0px;
+    padding: 6px 0px;
   }
 }
 @media (max-width: 350px) {
