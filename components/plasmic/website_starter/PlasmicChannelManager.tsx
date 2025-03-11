@@ -219,7 +219,20 @@ function PlasmicChannelManager__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{PlasmicChannelManager.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicChannelManager.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicChannelManager.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -2013,7 +2026,7 @@ export const PlasmicChannelManager = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "بروز رسانی خودکار رزروها",
       description: "",
       ogImageSrc: "",
       canonical: ""

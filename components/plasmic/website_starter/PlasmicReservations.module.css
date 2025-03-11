@@ -100,18 +100,25 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 600;
   text-align: center;
 }
 @media (max-width: 1200px) {
   .text__ia94Z {
     width: 90%;
+    font-size: 20px;
   }
 }
 @media (max-width: 500px) {
   .text__ia94Z {
     width: 80%;
+    font-size: 19px;
+  }
+}
+@media (max-width: 350px) {
+  .text__ia94Z {
+    font-size: 17px;
   }
 }
 .profile:global(.__wab_instance) {

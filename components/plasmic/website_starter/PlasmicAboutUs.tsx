@@ -89,6 +89,7 @@ export type PlasmicAboutUs__OverridesType = {
   mainContents?: Flex__<"div">;
   intro1st?: Flex__<"div">;
   introTitle?: Flex__<"div">;
+  دربارهما?: Flex__<"div">;
   teamImage?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
   introduction?: Flex__<"div">;
@@ -265,27 +266,17 @@ function PlasmicAboutUs__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.introTitle)}
               >
                 <div
+                  data-plasmic-name={
+                    "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
+                  }
+                  data-plasmic-override={overrides.دربارهما}
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__y8Rfl
+                    sty.دربارهما
                   )}
                 >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return undefined;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
+                  {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
                 </div>
               </div>
               <div
@@ -1661,6 +1652,7 @@ const PlasmicDescendants = {
     "mainContents",
     "intro1st",
     "introTitle",
+    "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "teamImage",
     "introCalendarLeft",
     "introduction",
@@ -1714,6 +1706,7 @@ const PlasmicDescendants = {
     "mainContents",
     "intro1st",
     "introTitle",
+    "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "teamImage",
     "introCalendarLeft",
     "introduction",
@@ -1758,8 +1751,18 @@ const PlasmicDescendants = {
     "map",
     "embedHtml"
   ],
-  intro1st: ["intro1st", "introTitle", "teamImage", "introCalendarLeft"],
-  introTitle: ["introTitle"],
+  intro1st: [
+    "intro1st",
+    "introTitle",
+    "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
+    "teamImage",
+    "introCalendarLeft"
+  ],
+  introTitle: [
+    "introTitle",
+    "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
+  ],
+  دربارهما: ["\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"],
   teamImage: ["teamImage", "introCalendarLeft"],
   introCalendarLeft: ["introCalendarLeft"],
   introduction: ["introduction"],
@@ -1851,6 +1854,7 @@ type NodeDefaultElementType = {
   mainContents: "div";
   intro1st: "div";
   introTitle: "div";
+  دربارهما: "div";
   teamImage: "div";
   introCalendarLeft: "div";
   introduction: "div";
@@ -1964,6 +1968,9 @@ export const PlasmicAboutUs = Object.assign(
     mainContents: makeNodeComponent("mainContents"),
     intro1st: makeNodeComponent("intro1st"),
     introTitle: makeNodeComponent("introTitle"),
+    دربارهما: makeNodeComponent(
+      "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
+    ),
     teamImage: makeNodeComponent("teamImage"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     introduction: makeNodeComponent("introduction"),

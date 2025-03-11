@@ -100,7 +100,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 20px 8px 8px;
+  padding: 12px 8px 8px;
 }
 @media (max-width: 1200px) {
   .intro1st {
@@ -125,7 +125,7 @@
     padding-right: 10px;
   }
 }
-.text__y8Rfl {
+.دربارهما {
   position: relative;
   width: 100%;
   height: auto;
@@ -133,6 +133,21 @@
   font-size: 22px;
   font-weight: 600;
   min-width: 0;
+}
+@media (max-width: 1200px) {
+  .دربارهما {
+    font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .دربارهما {
+    font-size: 19px;
+  }
+}
+@media (max-width: 350px) {
+  .دربارهما {
+    font-size: 17px;
+  }
 }
 .teamImage {
   display: flex;
@@ -144,7 +159,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px 0px;
+  padding: 0px 0px 8px;
 }
 @media (max-width: 1200px) {
   .teamImage {

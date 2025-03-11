@@ -238,7 +238,20 @@ function PlasmicTransactions__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{PlasmicTransactions.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicTransactions.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicTransactions.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -1340,7 +1353,7 @@ function PlasmicTransactions__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u06a9\u0627\u0631\u0645\u0632\u062f\u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646:"
+                        "\u062c\u0645\u0639 \u06a9\u0627\u0631\u0645\u0632\u062f:"
                       }
                     </div>
                   </div>
@@ -1419,9 +1432,12 @@ function PlasmicTransactions__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return currentItem.feature_name == "auto_sync"
-                                ? "بروز رسانی خودکار"
-                                : "رزروهای من";
+                              return (
+                                " - " +
+                                (currentItem.feature_name == "auto_sync"
+                                  ? "بروز رسانی خودکار"
+                                  : "رزروهای من")
+                              );
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -2094,7 +2110,7 @@ export const PlasmicTransactions = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "گزارشات مصرف کیف پول",
       description: "",
       ogImageSrc: "",
       canonical: ""
