@@ -208,7 +208,7 @@ function PlasmicChannelManager__RenderFunc(props: {
         path: "statusModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -383,6 +383,9 @@ function PlasmicChannelManager__RenderFunc(props: {
                     plasmic_plasmic_rich_components_css.plasmic_tokens
                   )}
                   hideFooter={true}
+                  modalContentClassName={classNames({
+                    [sty["pcls_1dA0fRTU7ky-"]]: true
+                  })}
                   modalScopeClassName={sty["statusModal__modal"]}
                   onOpenChange={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [

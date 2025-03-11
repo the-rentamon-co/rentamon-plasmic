@@ -670,7 +670,7 @@
   max-width: 100%;
   background: #fcfcfc;
   min-width: 0;
-  padding: 8px;
+  padding: 0px 8px;
 }
 .freeBox__cbV40 > :global(.__wab_flex-container) {
   flex-direction: row;

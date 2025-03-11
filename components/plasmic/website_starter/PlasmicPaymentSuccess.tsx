@@ -62,6 +62,7 @@ import {
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -88,11 +89,11 @@ export const PlasmicPaymentSuccess__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPaymentSuccess__OverridesType = {
   paymentSuccess?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
   successful?: Flex__<typeof PlasmicImg__>;
   apiRequest?: Flex__<typeof ApiRequest>;
   img?: Flex__<typeof PlasmicImg__>;
   button?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultPaymentSuccessProps {}
@@ -221,9 +222,7 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
           )}
         >
           <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
+            className={classNames("__wab_instance", sty.embedHtml__zW5Xt)}
             code={
               "<script>\r\n        String.prototype.EntoFa = function() {\r\n            return this.replace(/\\d/g, d => '\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9'[d]);\r\n        }\r\n        function convertNumbersInPage() {\r\n            const elements = document.querySelectorAll('body *:not(script):not(style)');\r\n            elements.forEach(element => {\r\n                element.childNodes.forEach(node => {\r\n                    if (node.nodeType === Node.TEXT_NODE) {\r\n                        node.nodeValue = node.nodeValue.EntoFa();\r\n                    }\r\n                });\r\n            });\r\n        }\r\n    setTimeout(convertNumbersInPage, 1000);\r\n    </script>"
             }
@@ -509,6 +508,26 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                 </div>
               </div>
             </ApiRequest>
+            <div className={classNames(projectcss.all, sty.freeBox__hs26M)}>
+              <Embed
+                className={classNames("__wab_instance", sty.embedHtml__akLvd)}
+                code={
+                  ' <div id="counter" style="font-size: 24px; font-weight: bold;"></div>\r\n\r\n  <script>\r\n    let count = 1;\r\n    const counterElement = document.getElementById(\'counter\');\r\n    counterElement.textContent = count;\r\n    \r\n    const interval = setInterval(() => {\r\n      count++;\r\n      counterElement.textContent = count;\r\n      if (count === 10) {\r\n        clearInterval(interval);\r\n      }\r\n    }, 1000); // \u0647\u0631 \u06f1 \u062b\u0627\u0646\u06cc\u0647 \u06cc\u06a9 \u0639\u062f\u062f\r\n  </script>'
+                }
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__u3DNb
+                )}
+              >
+                {
+                  "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0635\u0641\u062d\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                }
+              </div>
+            </div>
             <div
               data-plasmic-name={"button"}
               data-plasmic-override={overrides.button}
@@ -532,6 +551,39 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
               </Button>
             </div>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          return setTimeout(() => {
+                            window.location.href =
+                              "https://app.rentamon.com/wallet/";
+                          }, 10000);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -541,28 +593,28 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
 const PlasmicDescendants = {
   paymentSuccess: [
     "paymentSuccess",
-    "embedHtml",
     "successful",
     "apiRequest",
     "img",
-    "button"
+    "button",
+    "sideEffect"
   ],
-  embedHtml: ["embedHtml"],
   successful: ["successful"],
   apiRequest: ["apiRequest", "img"],
   img: ["img"],
-  button: ["button"]
+  button: ["button"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   paymentSuccess: "div";
-  embedHtml: typeof Embed;
   successful: typeof PlasmicImg__;
   apiRequest: typeof ApiRequest;
   img: typeof PlasmicImg__;
   button: "div";
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -625,11 +677,11 @@ export const PlasmicPaymentSuccess = Object.assign(
   makeNodeComponent("paymentSuccess"),
   {
     // Helper components rendering sub-elements
-    embedHtml: makeNodeComponent("embedHtml"),
     successful: makeNodeComponent("successful"),
     apiRequest: makeNodeComponent("apiRequest"),
     img: makeNodeComponent("img"),
     button: makeNodeComponent("button"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicPaymentSuccess
     internalVariantProps: PlasmicPaymentSuccess__VariantProps,
