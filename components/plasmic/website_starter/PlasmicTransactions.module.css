@@ -1338,6 +1338,7 @@
   color: #8165d6;
   font-size: 15px;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 .freeBox__ySiur {
   display: flex;

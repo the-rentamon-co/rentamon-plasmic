@@ -194,6 +194,8 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  text-align: center;
+  font-size: 16px;
   min-width: 0;
 }
 .freeBox__qOxct {
@@ -224,6 +226,19 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  text-align: center;
+  font-family: "Estedad";
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  color: #203647;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
   min-width: 0;
 }
 .freeBox__bYbS4 {
@@ -635,7 +650,7 @@
   display: flex;
   flex-direction: row-reverse;
   position: relative;
-  width: 30%;
+  width: 25%;
   height: auto;
   max-width: 100%;
   padding: 0px;
@@ -657,20 +672,11 @@
   > img {
   margin-left: 10px;
 }
-.img__l86Pb {
-  object-fit: cover;
-  max-width: 100%;
-  height: 15px;
-  opacity: 0;
-}
-.img__l86Pb > picture > img {
-  object-fit: cover;
-}
 .text___3UBqc {
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   text-align: center;
   font-family: "Estedad";
@@ -689,7 +695,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 15%;
+  width: 30%;
   height: auto;
   max-width: 100%;
   justify-content: center;
@@ -697,15 +703,15 @@
   padding: 0px;
 }
 .text__caISk {
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
-  text-align: right;
+  text-align: center;
   text-transform: none;
   line-height: 1.5;
   letter-spacing: normal;
@@ -713,38 +719,9 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
+  min-width: 0;
 }
 .freeBox__pFS8 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 15%;
-  height: auto;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-}
-.text__f3HgU {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  font-size: 20px;
-  font-weight: 600;
-  padding-right: 0px;
-  font-family: "Estedad";
-  font-style: normal;
-  color: #203647;
-  text-align: right;
-  text-transform: none;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre-wrap;
-  user-select: text;
-  text-decoration-line: none;
-  text-overflow: clip;
-}
-.freeBox__nu0J {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -755,17 +732,17 @@
   align-items: center;
   padding: 0px;
 }
-.text___06Pll {
-  width: auto;
+.text__f3HgU {
+  width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   padding-right: 0px;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
-  text-align: right;
+  text-align: center;
   text-transform: none;
   line-height: 1.5;
   letter-spacing: normal;
@@ -773,6 +750,38 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
+  min-width: 0;
+}
+.freeBox__nu0J {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 15%;
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.text___06Pll {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 17px;
+  font-weight: 600;
+  padding-right: 0px;
+  font-family: "Estedad";
+  font-style: normal;
+  color: #203647;
+  text-align: center;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+  min-width: 0;
 }
 .item {
   display: flex;
@@ -794,7 +803,7 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  width: 30%;
+  width: 25%;
   height: auto;
   max-width: 100%;
   padding: 0px;
@@ -821,7 +830,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 15px;
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -832,7 +841,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 15%;
+  width: 30%;
   height: auto;
   max-width: 100%;
   justify-content: center;
@@ -844,7 +853,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 13px;
   white-space: pre;
   text-overflow: ellipsis;
   text-align: center;
@@ -854,7 +863,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 15%;
+  width: 30%;
   height: auto;
   max-width: 100%;
   justify-content: center;
@@ -867,7 +876,7 @@
   height: auto;
   max-width: 100%;
   margin-top: 0px;
-  font-size: 17px;
+  font-size: 13px;
   white-space: pre;
   text-overflow: ellipsis;
   text-align: center;
@@ -877,7 +886,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 30%;
+  width: 15%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
@@ -888,7 +897,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 15px;
   white-space: pre;
   text-overflow: ellipsis;
   text-align: center;

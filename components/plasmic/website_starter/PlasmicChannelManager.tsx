@@ -661,7 +661,23 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.modalData.check_in;
+                              return (() => {
+                                function convertToPersianDigits(str) {
+                                  return String(str).replace(
+                                    /\d/g,
+                                    digit => "۰۱۲۳۴۵۶۷۸۹"[digit]
+                                  );
+                                }
+                                function formatDateToPersian(dateString) {
+                                  const [year, month, day] =
+                                    dateString.split("-");
+                                  const withSlashes = `${year}/${month}/${day}`;
+                                  return convertToPersianDigits(withSlashes);
+                                }
+                                const dateString = $state.modalData.check_in;
+                                const result = formatDateToPersian(dateString);
+                                return result;
+                              })();
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -697,7 +713,23 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.modalData.check_out;
+                              return (() => {
+                                function convertToPersianDigits(str) {
+                                  return String(str).replace(
+                                    /\d/g,
+                                    digit => "۰۱۲۳۴۵۶۷۸۹"[digit]
+                                  );
+                                }
+                                function formatDateToPersian(dateString) {
+                                  const [year, month, day] =
+                                    dateString.split("-");
+                                  const withSlashes = `${year}/${month}/${day}`;
+                                  return convertToPersianDigits(withSlashes);
+                                }
+                                const dateString = $state.modalData.check_out;
+                                const result = formatDateToPersian(dateString);
+                                return result;
+                              })();
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1451,24 +1483,6 @@ function PlasmicChannelManager__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox___0DlVa)}
                 >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__l86Pb)}
-                    displayHeight={"15px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image38.svg",
-                      fullWidth: 14,
-                      fullHeight: 12,
-                      aspectRatio: 1.166667
-                    }}
-                  />
-
                   <div
                     className={classNames(
                       projectcss.all,

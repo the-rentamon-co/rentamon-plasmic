@@ -1530,12 +1530,9 @@ function PlasmicTransactions__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["goToقوانینرنتامون"] = true
+                  $steps["goToTermsOfUse"] = true
                     ? (() => {
-                        const actionArgs = {
-                          destination:
-                            "/\u0642\u0648\u0627\u0646\u06cc\u0646-\u0631\u0646\u062a\u0627\u0645\u0648\u0646\n"
-                        };
+                        const actionArgs = { destination: `/قوانین-رنتامون` };
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&
@@ -1551,13 +1548,11 @@ function PlasmicTransactions__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["goToقوانینرنتامون"] != null &&
-                    typeof $steps["goToقوانینرنتامون"] === "object" &&
-                    typeof $steps["goToقوانینرنتامون"].then === "function"
+                    $steps["goToTermsOfUse"] != null &&
+                    typeof $steps["goToTermsOfUse"] === "object" &&
+                    typeof $steps["goToTermsOfUse"].then === "function"
                   ) {
-                    $steps["goToقوانینرنتامون"] = await $steps[
-                      "goToقوانینرنتامون"
-                    ];
+                    $steps["goToTermsOfUse"] = await $steps["goToTermsOfUse"];
                   }
                 }}
               >
@@ -1802,12 +1797,9 @@ function PlasmicTransactions__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["goToقوانینرنتامون"] = true
+                  $steps["goToTermsOfUse"] = true
                     ? (() => {
-                        const actionArgs = {
-                          destination:
-                            "/\u0642\u0648\u0627\u0646\u06cc\u0646-\u0631\u0646\u062a\u0627\u0645\u0648\u0646\n"
-                        };
+                        const actionArgs = { destination: `/قوانین-رنتامون` };
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&
@@ -1823,13 +1815,11 @@ function PlasmicTransactions__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["goToقوانینرنتامون"] != null &&
-                    typeof $steps["goToقوانینرنتامون"] === "object" &&
-                    typeof $steps["goToقوانینرنتامون"].then === "function"
+                    $steps["goToTermsOfUse"] != null &&
+                    typeof $steps["goToTermsOfUse"] === "object" &&
+                    typeof $steps["goToTermsOfUse"].then === "function"
                   ) {
-                    $steps["goToقوانینرنتامون"] = await $steps[
-                      "goToقوانینرنتامون"
-                    ];
+                    $steps["goToTermsOfUse"] = await $steps["goToTermsOfUse"];
                   }
                 }}
               >
