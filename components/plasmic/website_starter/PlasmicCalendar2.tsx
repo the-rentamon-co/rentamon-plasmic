@@ -1705,7 +1705,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             value: (() => {
                               if (Number($state.textInput2.value) === 0) {
                                 return ($state.textInput2.value = 10);
-                              } else if (Number($state.textInput2.value) < 60) {
+                              } else if (Number($state.textInput2.value) < 70) {
                                 return ($state.textInput2.value =
                                   (Number($state.textInput2.value) || 0) + 5);
                               }
@@ -1901,11 +1901,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               {(() => {
                 try {
                   return (() => {
-                    if (
-                      $state.textInput2.value == "55" ||
-                      $state.textInput2.value == "60" ||
-                      $state.textInput2.value == "65"
-                    ) {
+                    if ($state.textInput2.value >= "70") {
                       return true;
                     } else {
                       return false;
@@ -1933,7 +1929,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0628\u0627\u0644\u0627\u06cc \u06f5\u06f0\u066a \u0628\u0631\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0646\u06cc\u0633\u062a"
+                        "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0628\u0627\u0644\u0627\u06cc \u06f7\u06f0\u066a \u0628\u0631\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0646\u06cc\u0633\u062a"
                       }
                     </div>
                   </div>
@@ -1941,7 +1937,16 @@ function PlasmicCalendar2__RenderFunc(props: {
               ) : null}
               {(() => {
                 try {
-                  return $state.textInput2.value >= 70;
+                  return (() => {
+                    if (
+                      $state.textInput2.value % 10 != 0 &&
+                      $state.textInput2.value != 0
+                    ) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -1952,24 +1957,39 @@ function PlasmicCalendar2__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.columns__eBn3R)}>
+                <div className={classNames(projectcss.all, sty.columns__bqtPa)}>
                   <div
-                    className={classNames(projectcss.all, sty.column__ac2Ep)}
+                    className={classNames(projectcss.all, sty.column__plaEf)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__dpTi5
+                        sty.text__si9IA
                       )}
                     >
                       {
-                        "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0628\u0627\u0644\u0627\u06cc \u06f7\u06f0\u066a \u0628\u0631\u0627\u06cc \u0634\u0628 \u0646\u06cc\u0633\u062a"
+                        "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u0636\u0631\u0628 5 \u0631\u0627 \u0646\u0645\u06cc\u062f\u0647\u062f"
                       }
                     </div>
                   </div>
                 </div>
               ) : null}
+              <div className={classNames(projectcss.all, sty.columns__eBn3R)}>
+                <div className={classNames(projectcss.all, sty.column__ac2Ep)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dpTi5
+                    )}
+                  >
+                    {
+                      "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0628\u0627\u0644\u0627\u06cc \u06f7\u06f0\u066a \u0628\u0631\u0627\u06cc \u0634\u0628 \u0646\u06cc\u0633\u062a"
+                    }
+                  </div>
+                </div>
+              </div>
               {(() => {
                 try {
                   return $state.textInput2.value == 0;

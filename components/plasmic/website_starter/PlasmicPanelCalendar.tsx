@@ -1376,7 +1376,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       ? "80px"
                       : hasVariant(globalVariants, "screen", "tablet")
                       ? "130px"
-                      : "150px"
+                      : "100%"
                   }
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}

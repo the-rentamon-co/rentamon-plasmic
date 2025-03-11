@@ -495,7 +495,7 @@ function PlasmicActivation__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return 0;
+                return 1;
               }
               throw e;
             }
@@ -4387,6 +4387,33 @@ function PlasmicActivation__RenderFunc(props: {
                               typeof $steps["jabamaSend"].then === "function"
                             ) {
                               $steps["jabamaSend"] = await $steps["jabamaSend"];
+                            }
+
+                            $steps["invokeGlobalAction"] =
+                              $steps.jabamaSend.status == 400
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0628\u0627 \u0627\u06cc\u0646 \u0634\u0645\u0627\u0631\u0647 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627 \u062d\u0633\u0627\u0628 \u0646\u062f\u0627\u0631\u06cc",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] = await $steps[
+                                "invokeGlobalAction"
+                              ];
                             }
                           }}
                           submitsForm={true}
