@@ -275,6 +275,19 @@ function PlasmicChannelManager__RenderFunc(props: {
               data-plasmic-override={overrides.sideBar2}
               className={classNames("__wab_instance", sty.sideBar2)}
               isOpen={false}
+              userData={(() => {
+                try {
+                  return $state.profile.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             />
 
             <div className={classNames(projectcss.all, sty.freeBox__mfzC7)}>

@@ -1045,9 +1045,17 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__bVtw7)}
-                          displayHeight={"34px"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "30px"
+                              : "34px"
+                          }
                           displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={"auto"}
@@ -1123,7 +1131,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__tnqU9)}
-                          displayHeight={"34px"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "30px"
+                              : "34px"
+                          }
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
                           displayMinHeight={"0"}
@@ -1190,9 +1202,17 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__cdshO)}
-                          displayHeight={"34px"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "30px"
+                              : "34px"
+                          }
                           displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={"auto"}

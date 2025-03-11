@@ -227,7 +227,11 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : true
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
       },
       {
         path: "modalData",
@@ -1068,94 +1072,47 @@ function PlasmicReservations__RenderFunc(props: {
                     <div
                       className={classNames(
                         projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__ueQv
+                        sty.freeBox___6Xr5I
                       )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.modalData[0].GuestName;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___7AhQ6
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.modalData[0].guests_count + " نفر";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "-";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__zpJea
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.modalData[0].night + " شب";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "-";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"_12"}
-                    data-plasmic-override={overrides._12}
-                    className={classNames(projectcss.all, sty._12)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__hd3Qx)}
                     >
                       <div
-                        data-plasmic-name={"userPhone"}
-                        data-plasmic-override={overrides.userPhone}
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.userPhone
+                          sty.text__ueQv
                         )}
                       >
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.modalData[0].phone_number;
+                              return $state.modalData[0].GuestName;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__pfOJy)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___7AhQ6
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.modalData[0].guests_count + " نفر";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1168,59 +1125,140 @@ function PlasmicReservations__RenderFunc(props: {
                           })()}
                         </React.Fragment>
                       </div>
-                      {(() => {
-                        try {
-                          return (
-                            $state.modalData[0].status == "Confirmed" ||
-                            $state.modalData[0].status == "Past"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___8Rc6W
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__zpJea
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.modalData[0].night + " شب";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "-";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"_12"}
+                    data-plasmic-override={overrides._12}
+                    className={classNames(projectcss.all, sty._12)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__hd3Qx)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__zmBvF
+                        )}
+                      >
                         <div
-                          data-plasmic-name={"status"}
-                          data-plasmic-override={overrides.status}
+                          data-plasmic-name={"userPhone"}
+                          data-plasmic-override={overrides.userPhone}
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.status
+                            sty.userPhone
                           )}
                         >
-                          {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $state.modalData[0].phone_number;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "-";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
                         </div>
-                      ) : null}
-                      {(() => {
-                        try {
-                          return $state.modalData[0].status == "Cancelled";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___70Qp
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return (
+                              $state.modalData[0].status == "Confirmed" ||
+                              $state.modalData[0].status == "Past"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })() ? (
-                        <div
-                          data-plasmic-name={"falseStatus"}
-                          data-plasmic-override={overrides.falseStatus}
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.falseStatus
-                          )}
-                        >
-                          {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
-                        </div>
-                      ) : null}
+                        })() ? (
+                          <div
+                            data-plasmic-name={"status"}
+                            data-plasmic-override={overrides.status}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.status
+                            )}
+                          >
+                            {
+                              "\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"
+                            }
+                          </div>
+                        ) : null}
+                        {(() => {
+                          try {
+                            return $state.modalData[0].status == "Cancelled";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <div
+                            data-plasmic-name={"falseStatus"}
+                            data-plasmic-override={overrides.falseStatus}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.falseStatus
+                            )}
+                          >
+                            {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                 </Stack__>

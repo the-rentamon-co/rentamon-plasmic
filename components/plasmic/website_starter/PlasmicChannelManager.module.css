@@ -488,6 +488,11 @@
 @media (max-width: 500px) {
   .text__zyaZv {
     text-align: left;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 15px;
+    min-width: 0;
   }
 }
 .freeBox__bYbS4 {

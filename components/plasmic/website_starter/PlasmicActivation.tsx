@@ -9667,27 +9667,31 @@ function PlasmicActivation__RenderFunc(props: {
                     $steps["update1"] = await $steps["update1"];
                   }
 
-                  $steps["runCode"] = true
+                  $steps["goToPanelCalendar"] = true
                     ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://rentamon.com/panels/?prop_id=1");
-                            })();
+                        const actionArgs = { destination: `/panel` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
                           }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
                         })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
                   if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
+                    $steps["goToPanelCalendar"] != null &&
+                    typeof $steps["goToPanelCalendar"] === "object" &&
+                    typeof $steps["goToPanelCalendar"].then === "function"
                   ) {
-                    $steps["runCode"] = await $steps["runCode"];
+                    $steps["goToPanelCalendar"] = await $steps[
+                      "goToPanelCalendar"
+                    ];
                   }
                 }}
                 submitsForm={true}

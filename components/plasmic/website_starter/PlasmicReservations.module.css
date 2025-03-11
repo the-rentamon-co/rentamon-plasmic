@@ -459,23 +459,55 @@
   min-width: 0;
   padding: 4px;
 }
-.text__ueQv {
+.freeBox___6Xr5I {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  width: 50%;
+  height: auto;
+  max-width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px;
+}
+.text__ueQv {
   width: auto;
   height: auto;
   max-width: 100%;
   font-size: 15px;
 }
-.text___7AhQ6 {
+.freeBox__pfOJy {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 25%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0px;
+}
+.text___7AhQ6 {
   width: auto;
   height: auto;
   max-width: 100%;
   font-size: 15px;
   padding-top: 0px;
 }
-.text__zpJea {
+.freeBox___8Rc6W {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 25%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0px;
+}
+.text__zpJea {
   width: auto;
   height: auto;
   max-width: 100%;
@@ -500,16 +532,40 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   min-width: 0;
+}
+.freeBox__zmBvF {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 0px;
 }
 .userPhone {
   width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: 50%;
   font-size: 15px;
   min-width: 0;
+}
+.freeBox___70Qp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 0px;
 }
 .status {
   width: 100%;
@@ -602,7 +658,7 @@
   height: auto;
   max-width: 100%;
   font-size: 15px;
-  text-align: center;
+  text-align: left;
   min-width: 0;
 }
 ._14 {
@@ -631,7 +687,7 @@
   height: auto;
   max-width: 100%;
   font-size: 15px;
-  text-align: center;
+  text-align: left;
   min-width: 0;
 }
 ._113 {
@@ -662,7 +718,7 @@
   max-width: 100%;
   font-size: 15px;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
   min-width: 0;
 }
 ._15 {

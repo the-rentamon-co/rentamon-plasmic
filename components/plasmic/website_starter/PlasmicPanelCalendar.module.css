@@ -713,6 +713,14 @@
 .img__bVtw7 > picture > img {
   object-fit: cover;
 }
+@media (max-width: 350px) {
+  .img__bVtw7 {
+    height: 30px;
+    max-width: 100%;
+    margin-top: 0px;
+    cursor: pointer;
+  }
+}
 .img__tnqU9 {
   object-fit: cover;
   max-width: 100%;
@@ -736,6 +744,7 @@
 @media (max-width: 350px) {
   .img__tnqU9 {
     margin-top: 0px;
+    height: 30px;
   }
 }
 .img__cdshO {
@@ -751,6 +760,9 @@
 @media (max-width: 350px) {
   .img__cdshO {
     margin-top: 0px;
+    height: 30px;
+    max-width: 100%;
+    cursor: pointer;
   }
 }
 .right2 {
