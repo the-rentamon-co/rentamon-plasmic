@@ -1704,12 +1704,12 @@ function PlasmicTransactions__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["updateWithdrawOpen"] = true
+                  $steps["updateDepositOpen"] = true
                     ? (() => {
                         const actionArgs = {
                           variable: {
                             objRoot: $state,
-                            variablePath: ["withdraw", "open"]
+                            variablePath: ["deposit", "open"]
                           },
                           operation: 0
                         };
@@ -1730,12 +1730,12 @@ function PlasmicTransactions__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["updateWithdrawOpen"] != null &&
-                    typeof $steps["updateWithdrawOpen"] === "object" &&
-                    typeof $steps["updateWithdrawOpen"].then === "function"
+                    $steps["updateDepositOpen"] != null &&
+                    typeof $steps["updateDepositOpen"] === "object" &&
+                    typeof $steps["updateDepositOpen"].then === "function"
                   ) {
-                    $steps["updateWithdrawOpen"] = await $steps[
-                      "updateWithdrawOpen"
+                    $steps["updateDepositOpen"] = await $steps[
+                      "updateDepositOpen"
                     ];
                   }
                 }}
