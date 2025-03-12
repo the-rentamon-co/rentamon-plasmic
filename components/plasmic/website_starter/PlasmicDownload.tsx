@@ -93,6 +93,7 @@ export type PlasmicDownload__OverridesType = {
   introCalendarRight2?: Flex__<"div">;
   introCalendarRight3?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
+  htmlVideo?: Flex__<typeof Video>;
   link?: Flex__<"div">;
   title?: Flex__<"div">;
   downloadLinks?: Flex__<"div">;
@@ -112,8 +113,6 @@ export type PlasmicDownload__OverridesType = {
   introAutoSyncCaption2?: Flex__<"div">;
   introAutoSyncDesc2?: Flex__<"div">;
   introAutoSyncGif2?: Flex__<"div">;
-  title2?: Flex__<"div">;
-  htmlVideo?: Flex__<typeof Video>;
   screenshots?: Flex__<"div">;
   introCalendarRight5?: Flex__<"div">;
   introCalendarRight7?: Flex__<"div">;
@@ -297,22 +296,15 @@ function PlasmicDownload__RenderFunc(props: {
                   data-plasmic-override={overrides.introCalendarLeft}
                   className={classNames(projectcss.all, sty.introCalendarLeft)}
                 >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__vtv4N)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/handsOnAppPng2.png",
-                      fullWidth: 456,
-                      fullHeight: 600,
-                      aspectRatio: undefined
-                    }}
+                  <Video
+                    data-plasmic-name={"htmlVideo"}
+                    data-plasmic-override={overrides.htmlVideo}
+                    className={classNames("__wab_instance", sty.htmlVideo)}
+                    controls={true}
+                    loop={true}
+                    src={
+                      "https://rentamon-files.storage.iran.liara.space/video/pro.mp4"
+                    }
                   />
                 </div>
               </div>
@@ -708,34 +700,6 @@ function PlasmicDownload__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div
-              data-plasmic-name={"title2"}
-              data-plasmic-override={overrides.title2}
-              className={classNames(projectcss.all, sty.title2)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__l4DLx
-                )}
-              >
-                {
-                  "\u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u00ab\u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0686\u0647 \u0645\u0632\u0627\u06cc\u0627\u06cc\u06cc \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u062f\u0627\u0631\u0647\u061f\r"
-                }
-              </div>
-            </div>
-            <Video
-              data-plasmic-name={"htmlVideo"}
-              data-plasmic-override={overrides.htmlVideo}
-              className={classNames("__wab_instance", sty.htmlVideo)}
-              controls={true}
-              loop={true}
-              src={
-                "https://rentamon-files.storage.iran.liara.space/video/pro.mp4"
-              }
-            />
-
             <Stack__
               as={"div"}
               data-plasmic-name={"screenshots"}
@@ -804,6 +768,7 @@ const PlasmicDescendants = {
     "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarLeft",
+    "htmlVideo",
     "link",
     "title",
     "downloadLinks",
@@ -823,8 +788,6 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
-    "title2",
-    "htmlVideo",
     "screenshots",
     "introCalendarRight5",
     "introCalendarRight7",
@@ -839,6 +802,7 @@ const PlasmicDescendants = {
     "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarLeft",
+    "htmlVideo",
     "link",
     "title",
     "downloadLinks",
@@ -858,8 +822,6 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
-    "title2",
-    "htmlVideo",
     "screenshots",
     "introCalendarRight5",
     "introCalendarRight7"
@@ -870,14 +832,16 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight2",
     "introCalendarRight3",
-    "introCalendarLeft"
+    "introCalendarLeft",
+    "htmlVideo"
   ],
   introCalendar4: [
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight2",
     "introCalendarRight3",
-    "introCalendarLeft"
+    "introCalendarLeft",
+    "htmlVideo"
   ],
   introCalendarRight: [
     "introCalendarRight",
@@ -886,7 +850,8 @@ const PlasmicDescendants = {
   ],
   introCalendarRight2: ["introCalendarRight2"],
   introCalendarRight3: ["introCalendarRight3"],
-  introCalendarLeft: ["introCalendarLeft"],
+  introCalendarLeft: ["introCalendarLeft", "htmlVideo"],
+  htmlVideo: ["htmlVideo"],
   link: [
     "link",
     "title",
@@ -941,8 +906,6 @@ const PlasmicDescendants = {
   introAutoSyncCaption2: ["introAutoSyncCaption2"],
   introAutoSyncDesc2: ["introAutoSyncDesc2", "introAutoSyncGif2"],
   introAutoSyncGif2: ["introAutoSyncGif2"],
-  title2: ["title2"],
-  htmlVideo: ["htmlVideo"],
   screenshots: ["screenshots", "introCalendarRight5", "introCalendarRight7"],
   introCalendarRight5: ["introCalendarRight5", "introCalendarRight7"],
   introCalendarRight7: ["introCalendarRight7"],
@@ -961,6 +924,7 @@ type NodeDefaultElementType = {
   introCalendarRight2: "div";
   introCalendarRight3: "div";
   introCalendarLeft: "div";
+  htmlVideo: typeof Video;
   link: "div";
   title: "div";
   downloadLinks: "div";
@@ -980,8 +944,6 @@ type NodeDefaultElementType = {
   introAutoSyncCaption2: "div";
   introAutoSyncDesc2: "div";
   introAutoSyncGif2: "div";
-  title2: "div";
-  htmlVideo: typeof Video;
   screenshots: "div";
   introCalendarRight5: "div";
   introCalendarRight7: "div";
@@ -1056,6 +1018,7 @@ export const PlasmicDownload = Object.assign(
     introCalendarRight2: makeNodeComponent("introCalendarRight2"),
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
     link: makeNodeComponent("link"),
     title: makeNodeComponent("title"),
     downloadLinks: makeNodeComponent("downloadLinks"),
@@ -1075,8 +1038,6 @@ export const PlasmicDownload = Object.assign(
     introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
     introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),
     introAutoSyncGif2: makeNodeComponent("introAutoSyncGif2"),
-    title2: makeNodeComponent("title2"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
     screenshots: makeNodeComponent("screenshots"),
     introCalendarRight5: makeNodeComponent("introCalendarRight5"),
     introCalendarRight7: makeNodeComponent("introCalendarRight7"),
