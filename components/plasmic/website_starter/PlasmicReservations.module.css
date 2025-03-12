@@ -471,10 +471,11 @@
   padding: 0px;
 }
 .text__ueQv {
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
   font-size: 15px;
+  min-width: 0;
 }
 .freeBox__pfOJy {
   display: flex;
@@ -489,11 +490,12 @@
   padding: 0px;
 }
 .text___7AhQ6 {
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
   font-size: 15px;
   padding-top: 0px;
+  min-width: 0;
 }
 .freeBox___8Rc6W {
   display: flex;
@@ -508,10 +510,11 @@
   padding: 0px;
 }
 .text__zpJea {
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
   font-size: 15px;
+  min-width: 0;
 }
 ._12 {
   display: flex;
@@ -551,8 +554,9 @@
 .userPhone {
   width: 100%;
   height: auto;
-  max-width: 50%;
+  max-width: 100%;
   font-size: 15px;
+  text-align: right;
   min-width: 0;
 }
 .freeBox___70Qp {
@@ -572,7 +576,7 @@
   height: auto;
   max-width: 100%;
   font-size: 15px;
-  text-align: center;
+  text-align: right;
   color: #2eb773;
   min-width: 0;
 }
@@ -631,6 +635,16 @@
   font-size: 15px;
   text-align: center;
   min-width: 0;
+}
+@media (max-width: 1200px) {
+  .text__gBs01 {
+    font-weight: 600;
+  }
+}
+@media (max-width: 350px) {
+  .text__gBs01 {
+    font-weight: 600;
+  }
 }
 ._13 {
   display: flex;
@@ -1449,7 +1463,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 0em 0px 3em;
+  padding: 0em 0px 1.5em;
 }
 .reserveMainStack2 > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -1481,8 +1495,8 @@
 }
 @media (max-width: 350px) {
   .reserveMainStack2 {
-    padding-bottom: 10em;
     margin-bottom: 0px;
+    padding: 0em 0px 1em;
   }
 }
 .freeBox__roKyl {
