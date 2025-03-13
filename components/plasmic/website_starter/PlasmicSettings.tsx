@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
-import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Switch from "../../Switch"; // plasmic-import: XDOKoC2AhwWH/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
@@ -88,19 +87,9 @@ export const PlasmicSettings__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSettings__OverridesType = {
   settings?: Flex__<"div">;
-  header?: Flex__<"div">;
-  right?: Flex__<"div">;
-  right1?: Flex__<"div">;
-  sidebar?: Flex__<"div">;
-  sideBar2?: Flex__<typeof SideBar2>;
-  title2?: Flex__<"div">;
-  right2?: Flex__<"div">;
-  select2?: Flex__<typeof Select>;
-  left?: Flex__<"div">;
-  profile?: Flex__<typeof ApiRequest>;
   header3?: Flex__<"div">;
-  sideBar22?: Flex__<typeof SideBar2>;
-  profile3?: Flex__<typeof ApiRequest>;
+  sideBar2?: Flex__<typeof SideBar2>;
+  profile?: Flex__<typeof ApiRequest>;
   main?: Flex__<"div">;
   title?: Flex__<"div">;
   intro?: Flex__<"div">;
@@ -329,36 +318,6 @@ function PlasmicSettings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
-        path: "select2.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "profile.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
-      },
-      {
-        path: "profile.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
-      },
-      {
-        path: "profile.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
-      },
-      {
         path: "apiRequestSetting.data",
         type: "private",
         variableType: "object",
@@ -383,28 +342,28 @@ function PlasmicSettings__RenderFunc(props: {
         refName: "apiRequestSetting"
       },
       {
-        path: "profile3.data",
+        path: "profile.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "profile3"
+        refName: "profile"
       },
       {
-        path: "profile3.error",
+        path: "profile.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "profile3"
+        refName: "profile"
       },
       {
-        path: "profile3.loading",
+        path: "profile.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "profile3"
+        refName: "profile"
       },
       {
         path: "apiRequest.data",
@@ -509,166 +468,42 @@ function PlasmicSettings__RenderFunc(props: {
           )}
         >
           <div
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            data-plasmic-name={"header3"}
+            data-plasmic-override={overrides.header3}
+            className={classNames(projectcss.all, sty.header3)}
           >
-            <div
-              data-plasmic-name={"right"}
-              data-plasmic-override={overrides.right}
-              className={classNames(projectcss.all, sty.right)}
-            >
-              <div
-                data-plasmic-name={"right1"}
-                data-plasmic-override={overrides.right1}
-                className={classNames(projectcss.all, sty.right1)}
-              >
-                <div
-                  data-plasmic-name={"sidebar"}
-                  data-plasmic-override={overrides.sidebar}
-                  className={classNames(projectcss.all, sty.sidebar)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__wXkGr)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"33px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image37.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
-
-                  <SideBar2
-                    data-plasmic-name={"sideBar2"}
-                    data-plasmic-override={overrides.sideBar2}
-                    className={classNames("__wab_instance", sty.sideBar2)}
-                    isOpen={false}
-                  />
-                </div>
-                <div
-                  data-plasmic-name={"title2"}
-                  data-plasmic-override={overrides.title2}
-                  className={classNames(projectcss.all, sty.title2)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___25OK7
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
-                  </div>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"right2"}
-                data-plasmic-override={overrides.right2}
-                className={classNames(projectcss.all, sty.right2)}
-              >
-                <Select
-                  data-plasmic-name={"select2"}
-                  data-plasmic-override={overrides.select2}
-                  className={classNames("__wab_instance", sty.select2)}
-                  onChange={async (...eventArgs: any) => {
-                    ((...eventArgs) => {
-                      generateStateOnChangeProp($state, ["select2", "value"])(
-                        eventArgs[0]
-                      );
-                    }).apply(null, eventArgs);
-
-                    if (
-                      eventArgs.length > 1 &&
-                      eventArgs[1] &&
-                      eventArgs[1]._plasmic_state_init_
-                    ) {
-                      return;
-                    }
-                  }}
-                  options={(() => {
-                    try {
-                      return $state.profile.data.properties.map(
-                        property => property.property_name
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return [{}];
-                      }
-                      throw e;
-                    }
-                  })()}
-                  placeholder={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__unIdK
-                      )}
-                    >
-                      {
-                        "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
-                      }
-                    </div>
+            <SideBar2
+              data-plasmic-name={"sideBar2"}
+              data-plasmic-override={overrides.sideBar2}
+              className={classNames("__wab_instance", sty.sideBar2)}
+              isOpen={false}
+              userData={(() => {
+                try {
+                  return $state.profile.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
                   }
-                  value={generateStateValueProp($state, ["select2", "value"])}
-                />
+                  throw e;
+                }
+              })()}
+            />
+
+            <div className={classNames(projectcss.all, sty.freeBox__uNqwy)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___6TAnx
+                )}
+              >
+                {
+                  "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                }
               </div>
-            </div>
-            <div
-              data-plasmic-name={"left"}
-              data-plasmic-override={overrides.left}
-              className={classNames(projectcss.all, sty.left)}
-            >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__twNuG)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? "100%"
-                    : "150px"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? "100%"
-                    : "100%"
-                }
-                loading={"lazy"}
-                src={(() => {
-                  try {
-                    return $state.profile.data.user_info.profile_pic_link;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-                width={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? ``
-                    : undefined
-                }
-              />
             </div>
             <ApiRequest
               data-plasmic-name={"profile"}
@@ -697,97 +532,6 @@ function PlasmicSettings__RenderFunc(props: {
               }}
               ref={ref => {
                 $refs["profile"] = ref;
-              }}
-              url={(() => {
-                try {
-                  return `https://api-v2.rentamon.com/api/user_info?property_id=1`;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xYJez
-                )}
-              >
-                {"Enter some text"}
-              </div>
-            </ApiRequest>
-          </div>
-          <div
-            data-plasmic-name={"header3"}
-            data-plasmic-override={overrides.header3}
-            className={classNames(projectcss.all, sty.header3)}
-          >
-            <SideBar2
-              data-plasmic-name={"sideBar22"}
-              data-plasmic-override={overrides.sideBar22}
-              className={classNames("__wab_instance", sty.sideBar22)}
-              isOpen={false}
-              userData={(() => {
-                try {
-                  return $state.profile3.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            />
-
-            <div className={classNames(projectcss.all, sty.freeBox__uNqwy)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___6TAnx
-                )}
-              >
-                {
-                  "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                }
-              </div>
-            </div>
-            <ApiRequest
-              data-plasmic-name={"profile3"}
-              data-plasmic-override={overrides.profile3}
-              className={classNames("__wab_instance", sty.profile3)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile3", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "profile3",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile3", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile3"] = ref;
               }}
               url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
             />
@@ -3712,19 +3456,9 @@ function PlasmicSettings__RenderFunc(props: {
 const PlasmicDescendants = {
   settings: [
     "settings",
-    "header",
-    "right",
-    "right1",
-    "sidebar",
-    "sideBar2",
-    "title2",
-    "right2",
-    "select2",
-    "left",
-    "profile",
     "header3",
-    "sideBar22",
-    "profile3",
+    "sideBar2",
+    "profile",
     "main",
     "title",
     "intro",
@@ -3785,38 +3519,9 @@ const PlasmicDescendants = {
     "clarity2",
     "goftino"
   ],
-  header: [
-    "header",
-    "right",
-    "right1",
-    "sidebar",
-    "sideBar2",
-    "title2",
-    "right2",
-    "select2",
-    "left",
-    "profile"
-  ],
-  right: [
-    "right",
-    "right1",
-    "sidebar",
-    "sideBar2",
-    "title2",
-    "right2",
-    "select2"
-  ],
-  right1: ["right1", "sidebar", "sideBar2", "title2"],
-  sidebar: ["sidebar", "sideBar2"],
+  header3: ["header3", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
-  title2: ["title2"],
-  right2: ["right2", "select2"],
-  select2: ["select2"],
-  left: ["left"],
   profile: ["profile"],
-  header3: ["header3", "sideBar22", "profile3"],
-  sideBar22: ["sideBar22"],
-  profile3: ["profile3"],
   main: [
     "main",
     "title",
@@ -4017,19 +3722,9 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   settings: "div";
-  header: "div";
-  right: "div";
-  right1: "div";
-  sidebar: "div";
-  sideBar2: typeof SideBar2;
-  title2: "div";
-  right2: "div";
-  select2: typeof Select;
-  left: "div";
-  profile: typeof ApiRequest;
   header3: "div";
-  sideBar22: typeof SideBar2;
-  profile3: typeof ApiRequest;
+  sideBar2: typeof SideBar2;
+  profile: typeof ApiRequest;
   main: "div";
   title: "div";
   intro: "div";
@@ -4151,19 +3846,9 @@ export const PlasmicSettings = Object.assign(
   makeNodeComponent("settings"),
   {
     // Helper components rendering sub-elements
-    header: makeNodeComponent("header"),
-    right: makeNodeComponent("right"),
-    right1: makeNodeComponent("right1"),
-    sidebar: makeNodeComponent("sidebar"),
-    sideBar2: makeNodeComponent("sideBar2"),
-    title2: makeNodeComponent("title2"),
-    right2: makeNodeComponent("right2"),
-    select2: makeNodeComponent("select2"),
-    left: makeNodeComponent("left"),
-    profile: makeNodeComponent("profile"),
     header3: makeNodeComponent("header3"),
-    sideBar22: makeNodeComponent("sideBar22"),
-    profile3: makeNodeComponent("profile3"),
+    sideBar2: makeNodeComponent("sideBar2"),
+    profile: makeNodeComponent("profile"),
     main: makeNodeComponent("main"),
     title: makeNodeComponent("title"),
     intro: makeNodeComponent("intro"),
