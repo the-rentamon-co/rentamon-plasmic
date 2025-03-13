@@ -5395,9 +5395,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   const actionArgs = {
                                     operation: 0,
                                     value: (() => {
-                                      if (
-                                        $steps.jajigaVerify.data.status === true
-                                      ) {
+                                      if ($steps.jajigaVerify.status == 200) {
                                         $state.platformstatus.status.jajiga =
                                           true;
                                       } else {
@@ -5432,6 +5430,33 @@ function PlasmicActivation__RenderFunc(props: {
                             ) {
                               $steps["platformStatus"] = await $steps[
                                 "platformStatus"
+                              ];
+                            }
+
+                            $steps["invokeGlobalAction"] =
+                              $steps.jajigaVerify.status != 200
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] = await $steps[
+                                "invokeGlobalAction"
                               ];
                             }
                           }}
