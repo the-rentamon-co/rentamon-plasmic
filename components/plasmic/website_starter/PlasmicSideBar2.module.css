@@ -16,6 +16,7 @@
       #ececece6 100%
     )
     0% 0% / 100% 100% repeat;
+  overflow: auto;
   outline: none;
 }
 @media (max-width: 500px) {
@@ -336,29 +337,6 @@
     font-weight: 500;
     min-width: 0;
   }
-}
-.freeBox__tmmCp {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  background: var(--token-pZV_D4O-0Dnd);
-  flex-shrink: 0;
-  border-radius: 50%;
-  padding: 8px;
-}
-.text__dmw3U {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  font-size: 9px;
-  text-align: center;
-  color: var(--token-8R7jjC_-F9FF);
 }
 .freeBox___5JuLu {
   display: flex;
@@ -901,6 +879,10 @@
   max-width: 100%;
   font-size: 13px;
   font-weight: 500;
+}
+.favicon:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }
 .freeBox__bKks3 {
   display: flex;

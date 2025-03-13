@@ -2412,16 +2412,18 @@ function PlasmicPricing__RenderFunc(props: {
                           try {
                             return $state.numberInput.value
                               ? `${new Intl.NumberFormat().format(
-                                  ($state.checkbox5.isChecked
-                                    ? $state.numberInput.value * 1.55
-                                    : 0) +
-                                    ($state.checkbox6.isChecked
-                                      ? $state.numberInput.value * 1.155
+                                  Math.round(
+                                    ($state.checkbox5.isChecked
+                                      ? $state.numberInput.value * 1.55
                                       : 0) +
-                                    ($state.checkbox7.isChecked
-                                      ? $state.numberInput.value * 1.1
-                                      : 0) +
-                                    $state.numberInput.value * 1.1
+                                      ($state.checkbox6.isChecked
+                                        ? $state.numberInput.value * 1.155
+                                        : 0) +
+                                      ($state.checkbox7.isChecked
+                                        ? $state.numberInput.value * 1.1
+                                        : 0) +
+                                      $state.numberInput.value * 1.1
+                                  )
                                 )} تومان`
                               : null;
                           } catch (e) {
@@ -2469,15 +2471,17 @@ function PlasmicPricing__RenderFunc(props: {
                           try {
                             return $state.numberInput.value
                               ? `${new Intl.NumberFormat().format(
-                                  ($state.checkbox5.isChecked
-                                    ? $state.numberInput.value * 0.015
-                                    : 0) +
-                                    ($state.checkbox6.isChecked
-                                      ? $state.numberInput.value * 0.01
+                                  Math.round(
+                                    ($state.checkbox5.isChecked
+                                      ? $state.numberInput.value * 0.015
                                       : 0) +
-                                    ($state.checkbox7.isChecked
-                                      ? $state.numberInput.value * 0.005
-                                      : 0)
+                                      ($state.checkbox6.isChecked
+                                        ? $state.numberInput.value * 0.01
+                                        : 0) +
+                                      ($state.checkbox7.isChecked
+                                        ? $state.numberInput.value * 0.005
+                                        : 0)
+                                  )
                                 )} تومان`
                               : null;
                           } catch (e) {
