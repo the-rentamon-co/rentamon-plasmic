@@ -7315,7 +7315,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 return {
                                   ...day,
                                   price: formatPriceToPersian(
-                                    $state.amount.value
+                                    $state.amount.value / 1000
                                   )
                                 };
                               }
