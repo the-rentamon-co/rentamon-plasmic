@@ -7161,7 +7161,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   guest_count: $state.guestCount.value,
                                   property_id: $props.propertyId,
                                   check_in: jalaliDates[0],
-                                  check_out: jalaliDates[jalaliDates.length - 1]
+                                  check_out:
+                                    jalaliDates[jalaliDates.length - 1],
+                                  all_days: $state.selectedDay
                                 };
                                 return a;
                               })();

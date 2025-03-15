@@ -717,7 +717,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("alertModal", "true", 12);
+                                return setCookie("alertModal", "true", 168);
                               })();
                             }
                           };
