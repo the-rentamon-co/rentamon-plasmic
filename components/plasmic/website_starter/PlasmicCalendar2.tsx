@@ -7163,7 +7163,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   check_in: jalaliDates[0],
                                   check_out:
                                     jalaliDates[jalaliDates.length - 1],
-                                  all_days: $state.selectedDay
+                                  all_days: jalaliDates
                                 };
                                 return a;
                               })();
