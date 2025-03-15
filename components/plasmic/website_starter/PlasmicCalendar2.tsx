@@ -7282,6 +7282,74 @@ function PlasmicCalendar2__RenderFunc(props: {
                     "updateAddingGuestInfoOpen"
                   ];
                 }
+
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: (() => {
+                          function convertToEnglishNumber(persianStr = "") {
+                            let str = persianStr.replace(/٬/g, "");
+                            const faDigits = /[۰-۹]/g;
+                            const faMap = "۰۱۲۳۴۵۶۷۸۹";
+                            str = str.replace(faDigits, char =>
+                              faMap.indexOf(char)
+                            );
+                            return Number(str);
+                          }
+                          function formatPriceToPersian(num = 0) {
+                            const formatter = new Intl.NumberFormat("fa-IR");
+                            return formatter.format(num);
+                          }
+                          const changedDaysTimestamps =
+                            $state.selectedDay || [];
+                          const changedDaysDates = changedDaysTimestamps.map(
+                            timestamp => {
+                              const date = new Date(timestamp * 1000);
+                              return date.toISOString().split("T")[0];
+                            }
+                          );
+                          const updatedCalendar =
+                            $state.apiRequest.data[1].calendar.map(day => {
+                              if (changedDaysDates.includes(day.date)) {
+                                return {
+                                  ...day,
+                                  price: formatPriceToPersian(
+                                    $state.amount.value
+                                  )
+                                };
+                              }
+                              return day;
+                            });
+                          return ($state.apiRequest.data[1].calendar =
+                            updatedCalendar);
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
               }}
               submitsForm={false}
             >
