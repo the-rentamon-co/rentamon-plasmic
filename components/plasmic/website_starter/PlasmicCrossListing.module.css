@@ -1,0 +1,505 @@
+.crossListingPage {
+  display: grid;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-content: flex-start;
+  justify-items: center;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+}
+.crossListingPage > * {
+  grid-column: 4;
+}
+.text__oeD5Q {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  max-width: 100%;
+  font-size: 20px;
+  color: var(--token-VC1CUzrVcfix);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-width: 0;
+}
+.form:global(.__wab_instance) {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  object-fit: cover;
+  margin-bottom: 24px;
+  min-width: 0;
+  padding: 8px;
+}
+.step1Host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.text__xoRtl {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
+  font-weight: 700;
+  min-width: 0;
+}
+.nameField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text___1B0X9 {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.lastNameField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text___3Rgwa {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input2:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.nationalCodeField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__hlrbw {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input3:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dateofBirthField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__lh5Yk {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input4:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.postalCodeField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text___0WQyn {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input5:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.phone2Field:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__akXt6 {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input6:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.step1Buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.button__whmiL:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  background: var(--token-8nedppYkGVaH);
+  height: 40px;
+  width: 100%;
+  margin-right: 5px;
+  margin-left: 5px;
+  min-width: 0;
+  border-radius: 30px;
+}
+.text__lEk8J {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+  align-self: center;
+  min-width: 0;
+}
+.step2Documentation {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.text__c7GQ9 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-bottom: 30px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
+  font-weight: 700;
+  padding-top: 30px;
+  min-width: 0;
+}
+.text__sFIT {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-bottom: 30px;
+  font-size: 18px;
+  color: var(--token-VC1CUzrVcfix);
+  font-weight: 400;
+  padding-top: 30px;
+  min-width: 0;
+}
+.profilePicField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+  display: none;
+}
+.text__bmKs0 {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input7:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.nationalCardPicField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+  display: none;
+}
+.text__dY4KB {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input8:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.sanadPicField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+  display: none;
+}
+.text__pyLg4 {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input9:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.rentalPicField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+  display: none;
+}
+.text__rNfQe {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input10:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.representationPicField:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+  display: none;
+}
+.text__beUy {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input11:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text___0W6GS {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-bottom: 30px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
+  font-weight: 700;
+  padding-top: 30px;
+  min-width: 0;
+}
+.step2Buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.button__j08O:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  background: var(--token-8nedppYkGVaH);
+  height: 40px;
+  width: 100%;
+  margin-right: 5px;
+  margin-left: 5px;
+  min-width: 0;
+  border-radius: 30px;
+}
+.text___4KfFx {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+  align-self: center;
+  min-width: 0;
+}
+.button__eblE:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  background: none;
+  height: 40px;
+  width: 100%;
+  min-width: 0;
+  border-radius: 30px;
+  border: 2px solid var(--token-8nedppYkGVaH);
+}
+.text__tVuDh {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+  align-self: center;
+  color: var(--token-8nedppYkGVaH);
+  min-width: 0;
+}
+.step3PropertyInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.text__hmWpx {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-bottom: 30px;
+  font-size: 18px;
+  color: var(--token-8nedppYkGVaH);
+  font-weight: 700;
+  padding-top: 30px;
+  min-width: 0;
+}
+.nameField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__kKCI {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input13:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.lastNameField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__hMvr9 {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input14:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.nationalCodeField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__xIJsr {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input15:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dateofBirthField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text___00Hm {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input16:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.postalCodeField3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text___2SPZy {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input17:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.phone2Field3:global(.__wab_instance) {
+  width: 100%;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.text__eSbJo {
+  font-size: 16px;
+  color: var(--token-VC1CUzrVcfix);
+}
+.input18:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.step1Buttons3 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.button__ryGlp:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  background: var(--token-8nedppYkGVaH);
+  height: 40px;
+  width: 100%;
+  margin-right: 5px;
+  margin-left: 5px;
+  min-width: 0;
+  border-radius: 30px;
+}
+.text__vlUPz {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+  align-self: center;
+  min-width: 0;
+}
+.button__elLWc:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  background: none;
+  height: 40px;
+  width: 100%;
+  min-width: 0;
+  border-radius: 30px;
+  border: 2px solid var(--token-8nedppYkGVaH);
+}
+.text__bIs9I {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+  align-self: center;
+  color: var(--token-8nedppYkGVaH);
+  min-width: 0;
+}
