@@ -2198,7 +2198,26 @@ function PlasmicChannelManager__RenderFunc(props: {
                   <div
                     data-plasmic-name={"item"}
                     data-plasmic-override={overrides.item}
-                    className={classNames(projectcss.all, sty.item, ``)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.item,
+                      (() => {
+                        try {
+                          return $state.apiRequest.data[currentIndex]
+                            .request_for == "cancelled"
+                            ? "cancelled"
+                            : "";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                    )}
                     key={currentIndex}
                     onClick={async event => {
                       const $steps = {};

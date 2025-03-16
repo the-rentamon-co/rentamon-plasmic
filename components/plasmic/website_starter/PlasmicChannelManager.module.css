@@ -356,6 +356,10 @@
   .freeBox__m3Fs2 {
     padding-right: 0px;
     padding-left: 0px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 0;
   }
 }
 .freeBox__xEoLb {
@@ -373,12 +377,14 @@
 }
 @media (max-width: 500px) {
   .freeBox__xEoLb {
-    max-width: 44%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .freeBox__xEoLb {
-    max-width: 44%;
     padding-right: 0px;
   }
 }
