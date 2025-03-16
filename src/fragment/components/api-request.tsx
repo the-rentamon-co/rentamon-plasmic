@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 "use client";
 
 import { CodeComponentMeta, useSelector } from "@plasmicapp/host";
@@ -133,6 +134,7 @@ export const apiRequestMeta: CodeComponentMeta<ApiRequestType> = {
   displayName: "Fragment/ApiRequest",
   importPath: "@/fragment/components/api-request",
   figmaMappings: [{ figmaComponentName: "ApiRequest" }],
+  section: "Fragment",
   props: {
     method: {
       type: "choice",

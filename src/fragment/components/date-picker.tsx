@@ -124,6 +124,7 @@ export const datePickerMeta: CodeComponentMeta<DatePickerProps> = {
   name: "DatePicker",
   displayName: "Fragment/DatePicker",
   importPath: "@/fragment/components/date-picker",
+  section: "Fragment",
   props: {
     value: { type: "number", hidden: (ps) => ps.mode === "multiple" },
     values: {
