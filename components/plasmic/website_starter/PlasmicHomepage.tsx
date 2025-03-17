@@ -101,7 +101,6 @@ export type PlasmicHomepage__OverridesType = {
   introCalendarCaption?: Flex__<"div">;
   introCalendar4?: Flex__<"div">;
   introCalendarRight?: Flex__<"div">;
-  introCalendarRight2?: Flex__<"div">;
   introCalendarRight3?: Flex__<"div">;
   introCalendarRight4?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
@@ -333,26 +332,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.introCalendarRight)}
                 >
                   <div
-                    data-plasmic-name={"introCalendarRight2"}
-                    data-plasmic-override={overrides.introCalendarRight2}
-                    className={classNames(
-                      projectcss.all,
-                      sty.introCalendarRight2
-                    )}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__kit66
-                      )}
-                    >
-                      {
-                        "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r"
-                      }
-                    </div>
-                  </div>
-                  <div
                     data-plasmic-name={"introCalendarRight3"}
                     data-plasmic-override={overrides.introCalendarRight3}
                     className={classNames(
@@ -373,7 +352,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         ? "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
                         : hasVariant(globalVariants, "screen", "tablet")
                         ? "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
-                        : "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"}
+                        : "\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u060c \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\r\n\u2705 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r"}
                     </div>
                   </div>
                   <div
@@ -1331,7 +1310,6 @@ const PlasmicDescendants = {
     "introCalendarCaption",
     "introCalendar4",
     "introCalendarRight",
-    "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarLeft",
@@ -1393,7 +1371,6 @@ const PlasmicDescendants = {
     "introCalendarCaption",
     "introCalendar4",
     "introCalendarRight",
-    "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarLeft",
@@ -1434,7 +1411,6 @@ const PlasmicDescendants = {
     "introCalendarCaption",
     "introCalendar4",
     "introCalendarRight",
-    "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarLeft"
@@ -1444,18 +1420,15 @@ const PlasmicDescendants = {
   introCalendar4: [
     "introCalendar4",
     "introCalendarRight",
-    "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarLeft"
   ],
   introCalendarRight: [
     "introCalendarRight",
-    "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarRight4"
   ],
-  introCalendarRight2: ["introCalendarRight2"],
   introCalendarRight3: ["introCalendarRight3"],
   introCalendarRight4: ["introCalendarRight4"],
   introCalendarLeft: ["introCalendarLeft"],
@@ -1576,7 +1549,6 @@ type NodeDefaultElementType = {
   introCalendarCaption: "div";
   introCalendar4: "div";
   introCalendarRight: "div";
-  introCalendarRight2: "div";
   introCalendarRight3: "div";
   introCalendarRight4: "div";
   introCalendarLeft: "div";
@@ -1698,7 +1670,6 @@ export const PlasmicHomepage = Object.assign(
     introCalendarCaption: makeNodeComponent("introCalendarCaption"),
     introCalendar4: makeNodeComponent("introCalendar4"),
     introCalendarRight: makeNodeComponent("introCalendarRight"),
-    introCalendarRight2: makeNodeComponent("introCalendarRight2"),
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     introCalendarRight4: makeNodeComponent("introCalendarRight4"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),

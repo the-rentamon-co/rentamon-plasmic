@@ -950,6 +950,13 @@
   font-size: 17px;
   line-height: 1.8;
 }
+.text__vohiy {
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 600;
+  padding-top: 14px;
+}
 .introAutoSyncDesc2 {
   display: flex;
   flex-direction: row;
@@ -1118,6 +1125,7 @@
   line-height: 1.8;
   font-weight: 600;
   color: #fcfcfc;
+  padding-top: 0px;
 }
 @media (max-width: 500px) {
   .text__yo4O8 {
