@@ -950,6 +950,26 @@ function PlasmicChannelManager__RenderFunc(props: {
                                     "اسفند"
                                   ];
 
+                                  function toPersianDigits(input) {
+                                    const persianDigits = [
+                                      "۰",
+                                      "۱",
+                                      "۲",
+                                      "۳",
+                                      "۴",
+                                      "۵",
+                                      "۶",
+                                      "۷",
+                                      "۸",
+                                      "۹"
+                                    ];
+
+                                    return input
+                                      .toString()
+                                      .replace(/\d/g, function (digit) {
+                                        return persianDigits[digit];
+                                      });
+                                  }
                                   function convertDateToJalaliString(
                                     dateString
                                   ) {
@@ -963,7 +983,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                                       gDay
                                     );
                                     const monthName = persianMonths[jm - 1];
-                                    return jd + " " + monthName;
+                                    const persianDay = toPersianDigits(jd);
+                                    return `${persianDay} ${monthName}`;
                                   }
                                   const exampleDate =
                                     $state.modalData.created_at;

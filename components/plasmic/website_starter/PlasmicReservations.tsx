@@ -110,6 +110,7 @@ export type PlasmicReservations__OverridesType = {
   _12?: Flex__<"div">;
   userPhone?: Flex__<"div">;
   status?: Flex__<"div">;
+  status3?: Flex__<"div">;
   falseStatus?: Flex__<"div">;
   _2?: Flex__<"div">;
   _16?: Flex__<"div">;
@@ -1197,7 +1198,9 @@ function PlasmicReservations__RenderFunc(props: {
                           </React.Fragment>
                         </div>
                       </div>
-                      <div
+                      <Stack__
+                        as={"div"}
+                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.freeBox___70Qp
@@ -1233,6 +1236,122 @@ function PlasmicReservations__RenderFunc(props: {
                             }
                           </div>
                         ) : null}
+                        <div
+                          data-plasmic-name={"status3"}
+                          data-plasmic-override={overrides.status3}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.status3
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              function toJalali(gYear, gMonth, gDay) {
+                                const gDaysInMonth = [
+                                  31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                                ];
+
+                                const jDaysInMonth = [
+                                  31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                                ];
+
+                                let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                                let gm = gMonth - 1;
+                                let gd = gDay - 1;
+                                let gDayNo =
+                                  365 * gy +
+                                  Math.floor((gy + 3) / 4) -
+                                  Math.floor((gy + 99) / 100) +
+                                  Math.floor((gy + 399) / 400);
+                                for (let i = 0; i < gm; i++) {
+                                  gDayNo += gDaysInMonth[i];
+                                }
+                                gDayNo += gd;
+                                let jYear = gYear >= 1600 ? 979 : 0;
+                                let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                                let jNp = Math.floor(jDayNo / 12053);
+                                jDayNo %= 12053;
+                                jYear +=
+                                  33 * jNp + 4 * Math.floor(jDayNo / 1461);
+                                jDayNo %= 1461;
+                                if (jDayNo >= 366) {
+                                  jYear += Math.floor((jDayNo - 1) / 365);
+                                  jDayNo = (jDayNo - 1) % 365;
+                                }
+                                let jMonth;
+                                for (
+                                  jMonth = 0;
+                                  jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                                  jMonth++
+                                ) {
+                                  jDayNo -= jDaysInMonth[jMonth];
+                                }
+                                let jDay = jDayNo + 1;
+                                jYear += gYear >= 1600 ? 1600 : 621;
+                                return {
+                                  jy: jYear,
+                                  jm: jMonth + 1,
+                                  jd: jDay
+                                };
+                              }
+                              const persianMonths = [
+                                "فروردین",
+                                "اردیبهشت",
+                                "خرداد",
+                                "تیر",
+                                "مرداد",
+                                "شهریور",
+                                "مهر",
+                                "آبان",
+                                "آذر",
+                                "دی",
+                                "بهمن",
+                                "اسفند"
+                              ];
+
+                              function toPersianDigits(input) {
+                                const persianDigits = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                return input
+                                  .toString()
+                                  .replace(/\d/g, function (digit) {
+                                    return persianDigits[digit];
+                                  });
+                              }
+                              function convertDateToJalaliString(dateString) {
+                                const date = new Date(dateString);
+                                const gYear = date.getFullYear();
+                                const gMonth = date.getMonth() + 1;
+                                const gDay = date.getDate();
+                                const { jy, jm, jd } = toJalali(
+                                  gYear,
+                                  gMonth,
+                                  gDay
+                                );
+                                const monthName = persianMonths[jm - 1];
+                                const persianDay = toPersianDigits(jd);
+                                return `${persianDay} ${monthName}`;
+                              }
+                              const exampleDate =
+                                $state.modalData[0].created_at;
+                              const jalaliResult =
+                                convertDateToJalaliString(exampleDate);
+                              return jalaliResult;
+                            })()}
+                          </React.Fragment>
+                        </div>
                         {(() => {
                           try {
                             return $state.modalData[0].status == "Cancelled";
@@ -1258,7 +1377,7 @@ function PlasmicReservations__RenderFunc(props: {
                             {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
                           </div>
                         ) : null}
-                      </div>
+                      </Stack__>
                     </div>
                   </div>
                 </Stack__>
@@ -2966,7 +3085,10 @@ function PlasmicReservations__RenderFunc(props: {
                                   reserve_id:
                                     $state.reserveData.data[currentIndex]
                                       .reserve_id,
-                                  id: $state.reserveData.data[currentIndex].Id
+                                  id: $state.reserveData.data[currentIndex].Id,
+                                  created_at:
+                                    $state.reserveData.data[currentIndex]
+                                      .created_at
                                 }
                               ])
                             };
@@ -4156,6 +4278,7 @@ const PlasmicDescendants = {
     "_12",
     "userPhone",
     "status",
+    "status3",
     "falseStatus",
     "_2",
     "_16",
@@ -4217,6 +4340,7 @@ const PlasmicDescendants = {
     "_12",
     "userPhone",
     "status",
+    "status3",
     "falseStatus",
     "_2",
     "_16",
@@ -4263,6 +4387,7 @@ const PlasmicDescendants = {
     "_12",
     "userPhone",
     "status",
+    "status3",
     "falseStatus",
     "_2",
     "_16",
@@ -4285,6 +4410,7 @@ const PlasmicDescendants = {
     "_12",
     "userPhone",
     "status",
+    "status3",
     "falseStatus",
     "_2",
     "_16",
@@ -4293,11 +4419,12 @@ const PlasmicDescendants = {
     "_113",
     "_15"
   ],
-  _1: ["_1", "_11", "_12", "userPhone", "status", "falseStatus"],
+  _1: ["_1", "_11", "_12", "userPhone", "status", "status3", "falseStatus"],
   _11: ["_11"],
-  _12: ["_12", "userPhone", "status", "falseStatus"],
+  _12: ["_12", "userPhone", "status", "status3", "falseStatus"],
   userPhone: ["userPhone"],
   status: ["status"],
+  status3: ["status3"],
   falseStatus: ["falseStatus"],
   _2: ["_2", "_16", "_13", "_14", "_113", "_15"],
   _16: ["_16"],
@@ -4395,6 +4522,7 @@ type NodeDefaultElementType = {
   _12: "div";
   userPhone: "div";
   status: "div";
+  status3: "div";
   falseStatus: "div";
   _2: "div";
   _16: "div";
@@ -4516,6 +4644,7 @@ export const PlasmicReservations = Object.assign(
     _12: makeNodeComponent("_12"),
     userPhone: makeNodeComponent("userPhone"),
     status: makeNodeComponent("status"),
+    status3: makeNodeComponent("status3"),
     falseStatus: makeNodeComponent("falseStatus"),
     _2: makeNodeComponent("_2"),
     _16: makeNodeComponent("_16"),

@@ -648,7 +648,7 @@ function PlasmicTransactions__RenderFunc(props: {
                                   value: (() => {
                                     if (
                                       $state.apiRequest.data[currentIndex]
-                                        .transaction_type == "withdraw"
+                                        .is_reserved == true
                                     ) {
                                       return ($state.modalData = {
                                         date: $state.apiRequest.data[
@@ -669,7 +669,10 @@ function PlasmicTransactions__RenderFunc(props: {
                                           ].total_amount.toLocaleString("fa"),
                                         feature:
                                           $state.apiRequest.data[currentIndex]
-                                            .features
+                                            .features,
+                                        is_reserved:
+                                          $state.apiRequest.data[currentIndex]
+                                            .is_reserved
                                       });
                                     } else {
                                       return ($state.modalData = {
@@ -682,7 +685,10 @@ function PlasmicTransactions__RenderFunc(props: {
                                           ].total_amount.toLocaleString("fa"),
                                         transaction_cause:
                                           $state.apiRequest.data[currentIndex]
-                                            .transaction_cause
+                                            .transaction_cause,
+                                        is_reserved:
+                                          $state.apiRequest.data[currentIndex]
+                                            .is_reserved
                                       });
                                     }
                                   })()
@@ -946,9 +952,7 @@ function PlasmicTransactions__RenderFunc(props: {
                                   return (() => {
                                     const currentItem =
                                       $state.apiRequest.data[currentIndex];
-                                    if (
-                                      currentItem.transaction_type == "withdraw"
-                                    ) {
+                                    if (currentItem.is_reserved == true) {
                                       const sumOfCommissions =
                                         currentItem.features.reduce(
                                           (total, feature) => {
@@ -1251,7 +1255,13 @@ function PlasmicTransactions__RenderFunc(props: {
                 <React.Fragment>
                   {(() => {
                     try {
-                      return $state.modalData.total_commition + " تومان";
+                      return (() => {
+                        if ($state.modalData.is_reserved == true) {
+                          return $state.modalData.total_commition + " تومان";
+                        } else {
+                          return $state.modalData.reserved_amount;
+                        }
+                      })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -1265,133 +1275,54 @@ function PlasmicTransactions__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__fN5N3)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__jejNk)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__e0thR)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xIgzj
-                    )}
-                  >
-                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647:"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xfyuQ
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $state.modalData.property_name;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u0644\u06cc\u06af\u0648\u0631\u06cc\u0627 \u0633\u0627\u062d\u0644\u06cc";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___6Ttq6)}
+            {(() => {
+              try {
+                return $state.modalData.is_reserved == true;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox__fN5N3)}>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__jejNk)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pVwub
-                    )}
-                  >
-                    {"\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648:"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m5E7S
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $state.modalData.reserved_amount + " تومان";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "\u06f9/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__zVbvm)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___744G)}
+                    className={classNames(projectcss.all, sty.freeBox__e0thR)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__iTwrt
+                        sty.text__xIgzj
                       )}
                     >
-                      {
-                        "\u062c\u0645\u0639 \u06a9\u0627\u0631\u0645\u0632\u062f:"
-                      }
+                      {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647:"}
                     </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___6A576)}
-                  >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__wawXb
+                        sty.text__xfyuQ
                       )}
                     >
                       <React.Fragment>
                         {(() => {
                           try {
-                            return (() => {
-                              const currentItem = $state.modalData.feature;
-                              const sumOfCommissions = currentItem.reduce(
-                                (total, feature) => {
-                                  const commission =
-                                    Number(feature.commission_rate) || 0;
-                                  return total + commission;
-                                },
-                                0
-                              );
-                              currentItem.totalCommission = sumOfCommissions;
-                              return (
-                                "%" +
-                                currentItem.totalCommission.toLocaleString("fa")
-                              );
-                            })();
+                            return $state.modalData.property_name;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u06f2.\u06f5 \u066a";
+                              return "\u0644\u06cc\u06af\u0648\u0631\u06cc\u0627 \u0633\u0627\u062d\u0644\u06cc";
                             }
                             throw e;
                           }
@@ -1399,77 +1330,100 @@ function PlasmicTransactions__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
-                </div>
-                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                  (() => {
-                    try {
-                      return $state.modalData.feature;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return [];
-                      }
-                      throw e;
-                    }
-                  })()
-                ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                  const currentItem = __plasmic_item_0;
-                  const currentIndex = __plasmic_idx_0;
-                  return (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___6Ttq6)}
+                  >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__mVjGv)}
-                      key={currentIndex}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__pVwub
+                      )}
+                    >
+                      {"\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648:"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__m5E7S
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData.reserved_amount + " تومان";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u06f9/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zVbvm)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox___744G)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__mzNeA
+                          sty.text__iTwrt
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (
-                                " - " +
-                                (currentItem.feature_name == "auto_sync"
-                                  ? "بروز رسانی خودکار"
-                                  : "رزروهای من")
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "- \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 ";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
+                        {
+                          "\u062c\u0645\u0639 \u06a9\u0627\u0631\u0645\u0632\u062f:"
+                        }
                       </div>
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___6A576
+                      )}
+                    >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__yL5Bl
+                          sty.text__wawXb
                         )}
                       >
                         <React.Fragment>
                           {(() => {
                             try {
-                              return (
-                                "%" +
-                                currentItem.commission_rate.toLocaleString("fa")
-                              );
+                              return (() => {
+                                const currentItem = $state.modalData.feature;
+                                const sumOfCommissions = currentItem.reduce(
+                                  (total, feature) => {
+                                    const commission =
+                                      Number(feature.commission_rate) || 0;
+                                    return total + commission;
+                                  },
+                                  0
+                                );
+                                currentItem.totalCommission = sumOfCommissions;
+                                return (
+                                  "%" +
+                                  currentItem.totalCommission.toLocaleString(
+                                    "fa"
+                                  )
+                                );
+                              })();
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return "\u06f1 \u066a";
+                                return "\u06f2.\u06f5 \u066a";
                               }
                               throw e;
                             }
@@ -1477,10 +1431,94 @@ function PlasmicTransactions__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                  );
-                })}
-              </Stack__>
-            </div>
+                  </div>
+                  {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                    (() => {
+                      try {
+                        return $state.modalData.feature;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()
+                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                    const currentItem = __plasmic_item_0;
+                    const currentIndex = __plasmic_idx_0;
+                    return (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__mVjGv
+                        )}
+                        key={currentIndex}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__mzNeA
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  " - " +
+                                  (currentItem.feature_name == "auto_sync"
+                                    ? "بروز رسانی خودکار"
+                                    : "رزروهای من")
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "- \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 ";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__yL5Bl
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (
+                                  "%" +
+                                  currentItem.commission_rate.toLocaleString(
+                                    "fa"
+                                  )
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u06f1 \u066a";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </Stack__>
+              </div>
+            ) : null}
             <Stack__
               as={"div"}
               hasGap={true}
