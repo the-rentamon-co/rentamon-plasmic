@@ -373,7 +373,6 @@
   border-bottom-width: 1px;
   border-bottom-style: dotted;
   min-width: 0;
-  padding: 8px 8px 8px 0px;
 }
 @media (max-width: 500px) {
   .freeBox__xEoLb {

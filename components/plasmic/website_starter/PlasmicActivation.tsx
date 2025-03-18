@@ -6484,13 +6484,14 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/otaghak-send-otp",
+                                        "https://api-v2.rentamon.com/api/sendotp",
                                         undefined,
                                         (() => {
                                           try {
                                             return {
                                               phone:
-                                                $state.form.value.otaghakphone
+                                                $state.form.value.otaghakphone,
+                                              website: "otaghak"
                                             };
                                           } catch (e) {
                                             if (
@@ -6815,14 +6816,15 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/otaghak-verify-otp",
+                                        "https://api-v2.rentamon.com/api/verifyotp",
                                         undefined,
                                         (() => {
                                           try {
                                             return {
                                               phone:
                                                 $state.form.value.otaghakphone,
-                                              otp: $state.form.value.otaghakOTP
+                                              otp: $state.form.value.otaghakOTP,
+                                              website: "otaghak"
                                             };
                                           } catch (e) {
                                             if (

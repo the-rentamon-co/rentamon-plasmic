@@ -557,6 +557,7 @@
   max-width: 100%;
   font-size: 15px;
   text-align: right;
+  color: #203647;
   min-width: 0;
 }
 .freeBox___70Qp {
@@ -601,7 +602,7 @@
   max-width: 100%;
   font-size: 15px;
   text-align: right;
-  color: var(--token-n891C0rZfC8n);
+  color: #203647;
   min-width: 0;
 }
 .falseStatus {
