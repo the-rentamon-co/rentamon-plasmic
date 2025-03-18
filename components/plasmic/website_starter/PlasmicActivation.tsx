@@ -6913,41 +6913,32 @@ function PlasmicActivation__RenderFunc(props: {
                               ];
                             }
 
-                            $steps["platformStatus"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    operation: 0,
-                                    value: (() => {
-                                      if (
-                                        $steps.otaghakVerify.data.status ===
-                                        true
-                                      ) {
-                                        $state.platformstatus.status.otaghak =
-                                          true;
-                                      } else {
-                                        $state.platformstatus.status.otaghak =
-                                          false;
+                            $steps["platformStatus"] =
+                              $steps.otaghakVerify.status == 200
+                                ? (() => {
+                                    const actionArgs = {
+                                      operation: 0,
+                                      value:
+                                        ($state.platformstatus.status.otaghak =
+                                          true)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
                                       }
-                                      console.log($steps.otaghakVerify);
-                                      return console.log($state.platformstatus);
-                                    })()
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
+                                      const { objRoot, variablePath } =
+                                        variable;
 
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                             if (
                               $steps["platformStatus"] != null &&
                               typeof $steps["platformStatus"] === "object" &&

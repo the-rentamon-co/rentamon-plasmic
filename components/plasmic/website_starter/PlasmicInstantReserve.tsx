@@ -522,7 +522,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
               ref={ref => {
                 $refs["properties"] = ref;
               }}
-              url={"https://dev.rentamon.com/webhook/property-status"}
+              url={"https://gateway.rentamon.com/webhook/property-status"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}
@@ -642,7 +642,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                         "checked"
                       ])}
                       className={classNames("__wab_instance", sty.shabSwitch)}
-                      disabled={false}
+                      disabled={true}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
                           "shabSwitch",
