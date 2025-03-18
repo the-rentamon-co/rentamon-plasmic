@@ -92,6 +92,11 @@ export type PlasmicInstantReserve__OverridesType = {
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
   topContainer?: Flex__<"section">;
+  topContainer2?: Flex__<"section">;
+  alertIcon?: Flex__<"div">;
+  alertText?: Flex__<"div">;
+  alertButton?: Flex__<"div">;
+  button?: Flex__<"div">;
   mainSection?: Flex__<"section">;
   properties?: Flex__<typeof ApiRequest>;
   selectProperty?: Flex__<typeof Select>;
@@ -165,13 +170,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return $state.properties.data
-                .find(
-                  property =>
-                    property.property_name === $state.selectProperty.value
-                )
-                .website_ids.find(website => website.website_id === 4)
-                .is_instant;
+              return (
+                // $state.properties.data.find(property => property.property_name === $state.selectProperty.value).website_ids.find(website => website.website_id === 4).is_instant
+
+                false
+              );
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -467,6 +470,109 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   {"\u06f3\u06f1 \u0641\u0631\u0648\u0631\u062f\u06cc\u0646"}
                 </span>
               </React.Fragment>
+            </div>
+          </section>
+          <section
+            data-plasmic-name={"topContainer2"}
+            data-plasmic-override={overrides.topContainer2}
+            className={classNames(projectcss.all, sty.topContainer2)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__pbFP)}>
+              <div
+                data-plasmic-name={"alertIcon"}
+                data-plasmic-override={overrides.alertIcon}
+                className={classNames(projectcss.all, sty.alertIcon)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__mAxyx)}
+                  displayHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "20px"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "35px"
+                      : "43px"
+                  }
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image72.svg",
+                    fullWidth: 42,
+                    fullHeight: 42,
+                    aspectRatio: 1
+                  }}
+                />
+              </div>
+              <div
+                data-plasmic-name={"alertText"}
+                data-plasmic-override={overrides.alertText}
+                className={classNames(projectcss.all, sty.alertText)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rnDcz
+                  )}
+                >
+                  {
+                    "\u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0634\u0628 \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"alertButton"}
+                data-plasmic-override={overrides.alertButton}
+                className={classNames(projectcss.all, sty.alertButton)}
+              >
+                <div
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames(projectcss.all, sty.button)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToSetting"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/support` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToSetting"] != null &&
+                      typeof $steps["goToSetting"] === "object" &&
+                      typeof $steps["goToSetting"].then === "function"
+                    ) {
+                      $steps["goToSetting"] = await $steps["goToSetting"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mg9Jn
+                    )}
+                  >
+                    {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           <section
@@ -2264,6 +2370,11 @@ const PlasmicDescendants = {
     "sideBar2",
     "profile2",
     "topContainer",
+    "topContainer2",
+    "alertIcon",
+    "alertText",
+    "alertButton",
+    "button",
     "mainSection",
     "properties",
     "selectProperty",
@@ -2289,6 +2400,17 @@ const PlasmicDescendants = {
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
   topContainer: ["topContainer"],
+  topContainer2: [
+    "topContainer2",
+    "alertIcon",
+    "alertText",
+    "alertButton",
+    "button"
+  ],
+  alertIcon: ["alertIcon"],
+  alertText: ["alertText"],
+  alertButton: ["alertButton", "button"],
+  button: ["button"],
   mainSection: [
     "mainSection",
     "properties",
@@ -2354,6 +2476,11 @@ type NodeDefaultElementType = {
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
   topContainer: "section";
+  topContainer2: "section";
+  alertIcon: "div";
+  alertText: "div";
+  alertButton: "div";
+  button: "div";
   mainSection: "section";
   properties: typeof ApiRequest;
   selectProperty: typeof Select;
@@ -2388,15 +2515,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicInstantReserve__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicInstantReserve__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    /* Specify args directly as props*/ Omit<
-      PlasmicInstantReserve__ArgsType,
-      ReservedPropsType
-    > &
-    /* Specify overrides for each element directly as props*/ Omit<
+    // Specify args directly as props
+    Omit<PlasmicInstantReserve__ArgsType, ReservedPropsType> &
+    // Specify overrides for each element directly as props
+    Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    /* Specify props for the root element*/ Omit<
+    // Specify props for the root element
+    Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
@@ -2440,6 +2567,11 @@ export const PlasmicInstantReserve = Object.assign(
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
     topContainer: makeNodeComponent("topContainer"),
+    topContainer2: makeNodeComponent("topContainer2"),
+    alertIcon: makeNodeComponent("alertIcon"),
+    alertText: makeNodeComponent("alertText"),
+    alertButton: makeNodeComponent("alertButton"),
+    button: makeNodeComponent("button"),
     mainSection: makeNodeComponent("mainSection"),
     properties: makeNodeComponent("properties"),
     selectProperty: makeNodeComponent("selectProperty"),
