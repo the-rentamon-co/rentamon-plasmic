@@ -98,7 +98,6 @@ export type PlasmicPanelCalendar__OverridesType = {
   clarity?: Flex__<typeof Embed>;
   alertModal?: Flex__<typeof AntdModal>;
   button?: Flex__<typeof Button>;
-  otaghakModal?: Flex__<typeof AntdModal>;
   sideBar?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -339,12 +338,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
       },
       {
         path: "alertModal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
-      },
-      {
-        path: "otaghakModal.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -855,155 +848,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   }
                 </div>
               </Button>
-            </div>
-          </AntdModal>
-          <AntdModal
-            data-plasmic-name={"otaghakModal"}
-            data-plasmic-override={overrides.otaghakModal}
-            className={classNames("__wab_instance", sty.otaghakModal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            modalScopeClassName={sty["otaghakModal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["otaghakModal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["otaghakModal", "open"])}
-            title={
-              <div className={classNames(projectcss.all, sty.freeBox__khSto)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qORb
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateAlertModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["otaghakModal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateAlertModalOpen"] != null &&
-                      typeof $steps["updateAlertModalOpen"] === "object" &&
-                      typeof $steps["updateAlertModalOpen"].then === "function"
-                    ) {
-                      $steps["updateAlertModalOpen"] = await $steps[
-                        "updateAlertModalOpen"
-                      ];
-                    }
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
-                                  }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/";
-                                }
-                                return setCookie("otaghakMpdal", "true", 24);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-                  }}
-                >
-                  {"x"}
-                </div>
-              </div>
-            }
-            trigger={null}
-            width={"400"}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__g9Nik)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__qUgz7
-                )}
-              >
-                {
-                  "\u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9 \u0627\u0639\u0644\u0627\u0645 \u06a9\u0631\u062f\u0647:"
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__kr2T2
-                )}
-              >
-                {
-                  "\u00ab\u0628\u0647\u200c\u062f\u0644\u06cc\u0644 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0641\u0646\u06cc\u060c \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0644\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a\u00bb."
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pdNkl
-                )}
-              >
-                {
-                  "\u067e\u0633 \u0641\u0639\u0644\u0627 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0645\u06cc\u200c\u0634\u0647."
-                }
-              </div>
             </div>
           </AntdModal>
           <div
@@ -1954,35 +1798,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   "updateStateVariable3"
                 ];
               }
-
-              $steps["otaghakModal"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if (!document.cookie.includes("otaghakMpdal")) {
-                          return ($state.otaghakModal.open = true);
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["otaghakModal"] != null &&
-                typeof $steps["otaghakModal"] === "object" &&
-                typeof $steps["otaghakModal"].then === "function"
-              ) {
-                $steps["otaghakModal"] = await $steps["otaghakModal"];
-              }
             }}
           />
 
@@ -2147,7 +1962,6 @@ const PlasmicDescendants = {
     "clarity",
     "alertModal",
     "button",
-    "otaghakModal",
     "sideBar",
     "header",
     "right",
@@ -2171,7 +1985,6 @@ const PlasmicDescendants = {
   clarity: ["clarity"],
   alertModal: ["alertModal", "button"],
   button: ["button"],
-  otaghakModal: ["otaghakModal"],
   sideBar: [
     "sideBar",
     "header",
@@ -2234,7 +2047,6 @@ type NodeDefaultElementType = {
   clarity: typeof Embed;
   alertModal: typeof AntdModal;
   button: typeof Button;
-  otaghakModal: typeof AntdModal;
   sideBar: "div";
   header: "div";
   right: "div";
@@ -2319,7 +2131,6 @@ export const PlasmicPanelCalendar = Object.assign(
     clarity: makeNodeComponent("clarity"),
     alertModal: makeNodeComponent("alertModal"),
     button: makeNodeComponent("button"),
-    otaghakModal: makeNodeComponent("otaghakModal"),
     sideBar: makeNodeComponent("sideBar"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
