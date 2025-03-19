@@ -97,6 +97,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   select?: Flex__<typeof Select>;
   clarity?: Flex__<typeof Embed>;
   alertModal?: Flex__<typeof AntdModal>;
+  button?: Flex__<typeof Button>;
   otaghakModal?: Flex__<typeof AntdModal>;
   sideBar?: Flex__<"div">;
   header?: Flex__<"div">;
@@ -807,7 +808,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 }
               </div>
               <Button
-                className={classNames("__wab_instance", sty.button__i25Fa)}
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames("__wab_instance", sty.button)}
                 onClick={async event => {
                   const $steps = {};
                 }}
@@ -942,7 +945,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("otaghakMpdal", "true", 168);
+                                return setCookie("otaghakMpdal", "true", 24);
                               })();
                             }
                           };
@@ -1001,50 +1004,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   "\u067e\u0633 \u0641\u0639\u0644\u0627 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0645\u06cc\u200c\u0634\u0647."
                 }
               </div>
-              <Button
-                className={classNames("__wab_instance", sty.button__wWumJ)}
-                onClick={async event => {
-                  const $steps = {};
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__e30Rm
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return window.open(
-                                "https://host.jabama.com/chat/host/tickets/",
-                                "_blank"
-                              );
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-                  }}
-                >
-                  {
-                    "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062c\u0627\u0628\u0627\u0645\u0627"
-                  }
-                </div>
-              </Button>
             </div>
           </AntdModal>
           <div
@@ -2002,7 +1961,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       operation: 0,
                       value: (() => {
                         if (!document.cookie.includes("otaghakMpdal")) {
-                          return ($state.alertModal.open = true);
+                          return ($state.otaghakModal.open = true);
                         }
                       })()
                     };
@@ -2187,6 +2146,7 @@ const PlasmicDescendants = {
     "select",
     "clarity",
     "alertModal",
+    "button",
     "otaghakModal",
     "sideBar",
     "header",
@@ -2209,7 +2169,8 @@ const PlasmicDescendants = {
   main: ["main"],
   select: ["select"],
   clarity: ["clarity"],
-  alertModal: ["alertModal"],
+  alertModal: ["alertModal", "button"],
+  button: ["button"],
   otaghakModal: ["otaghakModal"],
   sideBar: [
     "sideBar",
@@ -2272,6 +2233,7 @@ type NodeDefaultElementType = {
   select: typeof Select;
   clarity: typeof Embed;
   alertModal: typeof AntdModal;
+  button: typeof Button;
   otaghakModal: typeof AntdModal;
   sideBar: "div";
   header: "div";
@@ -2356,6 +2318,7 @@ export const PlasmicPanelCalendar = Object.assign(
     select: makeNodeComponent("select"),
     clarity: makeNodeComponent("clarity"),
     alertModal: makeNodeComponent("alertModal"),
+    button: makeNodeComponent("button"),
     otaghakModal: makeNodeComponent("otaghakModal"),
     sideBar: makeNodeComponent("sideBar"),
     header: makeNodeComponent("header"),
