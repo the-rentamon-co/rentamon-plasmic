@@ -90,10 +90,7 @@ export type PlasmicSideBar2__VariantsArgs = {};
 type VariantPropType = keyof PlasmicSideBar2__VariantsArgs;
 export const PlasmicSideBar2__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicSideBar2__ArgsType = {
-  isOpen?: boolean;
-  userData?: any;
-};
+export type PlasmicSideBar2__ArgsType = { isOpen?: boolean; userData?: any };
 type ArgPropType = keyof PlasmicSideBar2__ArgsType;
 export const PlasmicSideBar2__ArgProps = new Array<ArgPropType>(
   "isOpen",
@@ -1562,15 +1559,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicSideBar2__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicSideBar2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    /* Specify args directly as props*/ Omit<
-      PlasmicSideBar2__ArgsType,
-      ReservedPropsType
-    > &
-    /* Specify overrides for each element directly as props*/ Omit<
+    // Specify args directly as props
+    Omit<PlasmicSideBar2__ArgsType, ReservedPropsType> &
+    // Specify overrides for each element directly as props
+    Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    /* Specify props for the root element*/ Omit<
+    // Specify props for the root element
+    Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

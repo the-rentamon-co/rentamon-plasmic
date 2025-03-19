@@ -90,10 +90,7 @@ export const PlasmicRecordList__VariantProps = new Array<VariantPropType>(
   "pendingBookings"
 );
 
-export type PlasmicRecordList__ArgsType = {
-  currentIndex?: any;
-  data?: any;
-};
+export type PlasmicRecordList__ArgsType = { currentIndex?: any; data?: any };
 type ArgPropType = keyof PlasmicRecordList__ArgsType;
 export const PlasmicRecordList__ArgProps = new Array<ArgPropType>(
   "currentIndex",
@@ -437,15 +434,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicRecordList__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicRecordList__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    /* Specify args directly as props*/ Omit<
-      PlasmicRecordList__ArgsType,
-      ReservedPropsType
-    > &
-    /* Specify overrides for each element directly as props*/ Omit<
+    // Specify args directly as props
+    Omit<PlasmicRecordList__ArgsType, ReservedPropsType> &
+    // Specify overrides for each element directly as props
+    Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    /* Specify props for the root element*/ Omit<
+    // Specify props for the root element
+    Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
