@@ -204,9 +204,9 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                 }
               }}
               src={{
-                src: "/plasmic/website_starter/images/rentamonFaLowPng.png",
-                fullWidth: 200,
-                fullHeight: 99,
+                src: "/plasmic/website_starter/images/newroozPng.png",
+                fullWidth: 548,
+                fullHeight: 235,
                 aspectRatio: undefined
               }}
             />

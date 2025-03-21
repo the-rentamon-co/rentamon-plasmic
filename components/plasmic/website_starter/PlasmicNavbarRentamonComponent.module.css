@@ -84,6 +84,16 @@
 .img__iP1Vn > picture > img {
   object-fit: contain;
 }
+@media (max-width: 500px) {
+  .img__iP1Vn {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .img__iP1Vn {
+    margin-left: 0px;
+  }
+}
 .img__xdJvU {
   object-fit: cover;
 }

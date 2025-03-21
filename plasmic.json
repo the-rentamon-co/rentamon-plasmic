@@ -2672,6 +2672,11 @@
           "id": "fKzA-qBLgA0i",
           "name": "image 88",
           "filePath": "../public/plasmic/website_starter/images/image88.svg"
+        },
+        {
+          "id": "OgAJz5tt7fz9",
+          "name": "newrooz.png",
+          "filePath": "../public/plasmic/website_starter/images/newroozPng.png"
         }
       ],
       "indirect": false,
@@ -3685,7 +3690,8 @@
           "componentImportPath": "@plasmicpkgs/react-aria/skinny/registerDialog"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "tGFFjizqpBh1JPEqzUQxjY",
