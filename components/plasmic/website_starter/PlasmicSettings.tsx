@@ -63,6 +63,7 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Switch from "../../Switch"; // plasmic-import: XDOKoC2AhwWH/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -146,6 +147,7 @@ export type PlasmicSettings__OverridesType = {
   apiRequestSetting?: Flex__<typeof ApiRequest>;
   _2nd2?: Flex__<"div">;
   returnButton?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -3424,6 +3426,119 @@ function PlasmicSettings__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          console.log("side effect started");
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            console.log("side effect in the cudition");
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
+
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
@@ -3515,6 +3630,7 @@ const PlasmicDescendants = {
     "apiRequestSetting",
     "_2nd2",
     "returnButton",
+    "sideEffect",
     "html",
     "clarity2",
     "goftino"
@@ -3713,6 +3829,7 @@ const PlasmicDescendants = {
   apiRequestSetting: ["apiRequestSetting"],
   _2nd2: ["_2nd2"],
   returnButton: ["returnButton"],
+  sideEffect: ["sideEffect"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"]
@@ -3781,6 +3898,7 @@ type NodeDefaultElementType = {
   apiRequestSetting: typeof ApiRequest;
   _2nd2: "div";
   returnButton: "div";
+  sideEffect: typeof SideEffect;
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -3907,6 +4025,7 @@ export const PlasmicSettings = Object.assign(
     apiRequestSetting: makeNodeComponent("apiRequestSetting"),
     _2nd2: makeNodeComponent("_2nd2"),
     returnButton: makeNodeComponent("returnButton"),
+    sideEffect: makeNodeComponent("sideEffect"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
