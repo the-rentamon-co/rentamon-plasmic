@@ -752,12 +752,17 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ".rmdp-header-values span:nth-child(3)"
               );
               if (secondSpan) {
-                $state.year = toEnglishDigits(secondSpan.textContent);
+                $state.year = secondSpan.textContent;
               }
               let initialMonth = new Date().toLocaleDateString("fa").split("/");
               let monStr = $state.fragmentDatePicker?.month ?? initialMonth[1];
-              monStr = toEnglishDigits(monStr);
+              console.log("when selected", monStr);
+              if (/[\u06F0-\u06F9]/.test(monStr)) {
+                monStr = toEnglishDigits(monStr);
+              }
+              console.log("when convert", monStr);
               let mon = parseInt(monStr, 10);
+              console.log("mon", mon);
               let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
               console.log(daysInMonth, mon, initialMonth);
               return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
