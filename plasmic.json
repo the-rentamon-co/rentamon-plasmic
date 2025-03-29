@@ -1258,6 +1258,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/channel-manager"
+        },
+        {
+          "id": "QWS-QYNSlvjx",
+          "name": "قوانیناجارهروزانه",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicقوانیناجارهروزانه.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/rental-rules.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicقوانیناجارهروزانه.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/rental-rules"
         }
       ],
       "icons": [
@@ -3780,6 +3794,6 @@
   "nextjsConfig": {
     "pagesDir": "../src/pages"
   },
-  "cliVersion": "0.1.336",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.336/dist/plasmic.schema.json"
+  "cliVersion": "0.1.337",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.337/dist/plasmic.schema.json"
 }

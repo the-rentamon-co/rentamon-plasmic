@@ -1,6 +1,6 @@
-// @ts-nocheck
 /* eslint-disable */
 /* tslint:disable */
+// @ts-nocheck
 /* prettier-ignore-start */
 
 /** @jsxRuntime classic */
@@ -756,15 +756,11 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
               let initialMonth = new Date().toLocaleDateString("fa").split("/");
               let monStr = $state.fragmentDatePicker?.month ?? initialMonth[1];
-              console.log("when selected", monStr);
               if (/[\u06F0-\u06F9]/.test(monStr)) {
                 monStr = toEnglishDigits(monStr);
               }
-              console.log("when convert", monStr);
               let mon = parseInt(monStr, 10);
-              console.log("mon", mon);
               let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              console.log(daysInMonth, mon, initialMonth);
               return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
             })();
           } catch (e) {
@@ -4785,6 +4781,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 return `${year}-${month}-${day}`;
                               }
                             );
+                            const allowedWebsites = [
+                              "رزرو",
+                              "دیوار",
+                              "واسطه",
+                              "همکار",
+                              "مسافر قبلی",
+                              "اینستاگرام",
+                              "سایر"
+                            ];
+
                             const updatedCalendar =
                               $state.apiRequest.data[1].calendar.map(day => {
                                 if (!changedDaysDates.includes(day.date)) {
@@ -4792,16 +4798,14 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 }
                                 if (
                                   day.status === "reserved" &&
-                                  day.website !== "رزرو"
+                                  allowedWebsites.includes(day.website)
                                 ) {
                                   return day;
                                 }
                                 if (
                                   day.status === "reserved" &&
-                                  day.website === "رزرو" &&
-                                  ($state.requestdata.request_for != null ||
-                                    $state.requestdata.price != null ||
-                                    $state.requestdata.discount != null)
+                                  day.website !== null &&
+                                  !allowedWebsites.includes(day.website)
                                 ) {
                                   return day;
                                 }

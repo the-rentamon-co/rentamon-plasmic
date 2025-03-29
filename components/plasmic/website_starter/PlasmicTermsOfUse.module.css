@@ -242,11 +242,27 @@
   display: flex;
   flex-direction: column;
 }
-.ul__kukGc {
+.text__wT5Ns {
+  text-align: right;
+  font-size: 17px;
+  line-height: 1.8;
+  font-style: normal;
+}
+@media (max-width: 500px) {
+  .text__wT5Ns {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__wT5Ns {
+    font-size: 15px;
+  }
+}
+.ul___95RfE {
   display: flex;
   flex-direction: column;
 }
-.ul__uF1Fr {
+.ul__jWoRr {
   display: flex;
   flex-direction: column;
 }
