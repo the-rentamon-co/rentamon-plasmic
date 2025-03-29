@@ -91,7 +91,6 @@ export type Plasmicقوانیناجارهروزانه__OverridesType = {
   introApi?: Flex__<"div">;
   introApiTitle?: Flex__<"div">;
   introApiCaption?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
   platforms?: Flex__<"div">;
   platformsTitle?: Flex__<"div">;
   benefits?: Flex__<"div">;
@@ -291,11 +290,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   }
                 </div>
               </div>
-              <div
-                data-plasmic-name={"freeBox"}
-                data-plasmic-override={overrides.freeBox}
-                className={classNames(projectcss.all, sty.freeBox)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__tjQpk)}>
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__och2S)}
@@ -630,6 +625,27 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                     "\u067e\u0633 \u062e\u0648\u0628\u0647 \u0642\u0628\u0644 \u0627\u0632 \u0634\u0631\u0648\u0639 \u0627\u062c\u0627\u0631\u0647\u060c \u0628\u0647 \u0647\u0645\u0633\u0627\u06cc\u0647\u200c\u0647\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u06cc\u060c \u0634\u0631\u0627\u06cc\u0637 \u0631\u0648 \u0628\u0631\u0627\u0634\u0648\u0646 \u062a\u0648\u0636\u06cc\u062d \u0628\u062f\u06cc \u0648 \u0627\u0632 \u0645\u0647\u0645\u0648\u0646\u0627\u062a \u0628\u062e\u0648\u0627\u06cc \u0628\u0647 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0633\u0627\u062e\u062a\u0645\u0648\u0646 \u0627\u062d\u062a\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u0646.\n\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0631\u062e\u06cc \u0645\u062c\u062a\u0645\u0639\u200c\u0647\u0627\u06cc \u0645\u0633\u06a9\u0648\u0646\u06cc \u062a\u0648 \u0627\u0633\u0627\u0633\u0646\u0627\u0645\u0647\u200c\u0634\u0648\u0646 \u0630\u06a9\u0631 \u06a9\u0631\u062f\u0646 \u06a9\u0647 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0645\u0645\u0646\u0648\u0639\u0647. \u06cc\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0647\u06cc\u0626\u062a\u200c\u0645\u062f\u06cc\u0631\u0647 \u0628\u0627\u0647\u0627\u0634 \u0645\u062e\u0627\u0644\u0641 \u0628\u0627\u0634\u0647.\r \u0642\u0628\u0644 \u0627\u0632 \u0634\u0631\u0648\u0639 \u0641\u0639\u0627\u0644\u06cc\u062a\u060c \u062d\u062a\u0645\u0627\u064b \u0628\u0627 \u0645\u062f\u06cc\u0631 \u0633\u0627\u062e\u062a\u0645\u0648\u0646 \u06cc\u0627 \u0647\u06cc\u0626\u062a\u200c\u0645\u062f\u06cc\u0631\u0647 \u0647\u0645\u0627\u0647\u0646\u06af \u06a9\u0646. \u06af\u0627\u0647\u06cc \u0628\u0627 \u06cc\u0647 \u06af\u0641\u062a\u200c\u0648\u06af\u0648\u06cc \u0633\u0627\u062f\u0647 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0631\u0636\u0627\u06cc\u062a\u0634\u0648\u0646 \u0631\u0648 \u0628\u06af\u06cc\u0631\u06cc \u0648 \u062c\u0644\u0648\u062a\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u0646\u062e\u0648\u0631\u06cc.\r\n"
                   }
                 </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___9YAxy)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___1GTk0)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/bedroomJpg.jpg",
+                      fullWidth: 800,
+                      fullHeight: 533,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
               </div>
               <div
                 data-plasmic-name={"benefits3"}
@@ -821,7 +837,6 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
-    "freeBox",
     "platforms",
     "platformsTitle",
     "benefits",
@@ -849,7 +864,6 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
-    "freeBox",
     "platforms",
     "platformsTitle",
     "benefits",
@@ -874,13 +888,11 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
-    "freeBox",
     "platforms",
     "platformsTitle"
   ],
   introApiTitle: ["introApiTitle"],
   introApiCaption: ["introApiCaption"],
-  freeBox: ["freeBox"],
   platforms: ["platforms", "platformsTitle"],
   platformsTitle: ["platformsTitle"],
   benefits: ["benefits", "benefitsTitle", "benefitsCaption"],
@@ -932,7 +944,6 @@ type NodeDefaultElementType = {
   introApi: "div";
   introApiTitle: "div";
   introApiCaption: "div";
-  freeBox: "div";
   platforms: "div";
   platformsTitle: "div";
   benefits: "div";
@@ -1021,7 +1032,6 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
     introApi: makeNodeComponent("introApi"),
     introApiTitle: makeNodeComponent("introApiTitle"),
     introApiCaption: makeNodeComponent("introApiCaption"),
-    freeBox: makeNodeComponent("freeBox"),
     platforms: makeNodeComponent("platforms"),
     platformsTitle: makeNodeComponent("platformsTitle"),
     benefits: makeNodeComponent("benefits"),

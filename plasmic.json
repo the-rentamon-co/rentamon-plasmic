@@ -2701,6 +2701,11 @@
           "id": "c8hKpmEGfnIQ",
           "name": "rental-rule-livingroom.jpg",
           "filePath": "../public/plasmic/website_starter/images/rentalRuleLivingroomJpg.jpg"
+        },
+        {
+          "id": "qoL0V5ElACez",
+          "name": "bedroom.jpg",
+          "filePath": "../public/plasmic/website_starter/images/bedroomJpg.jpg"
         }
       ],
       "indirect": false,

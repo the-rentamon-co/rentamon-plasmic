@@ -243,7 +243,7 @@
     font-size: 16px;
   }
 }
-.freeBox {
+.freeBox__tjQpk {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -904,6 +904,26 @@
     padding-left: 3px;
     font-size: 16px;
   }
+}
+.freeBox___9YAxy {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 20px 8px 8px;
+}
+.img___1GTk0 {
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 30px;
+}
+.img___1GTk0 > picture > img {
+  object-fit: cover;
 }
 .benefits3 {
   display: flex;
