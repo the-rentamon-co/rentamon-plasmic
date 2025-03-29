@@ -767,7 +767,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"
-                      : "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u0633\u0627\u06cc\u062a apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"}
+                      : "\u0627\u06af\u0647 \u0642\u0635\u062f \u0648\u0631\u0648\u062f \u0628\u0647 \u0627\u06cc\u0646 \u0628\u0627\u0632\u0627\u0631 \u0648 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0631\u06cc\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647\u062a \u0642\u062f\u0631\u062a \u0645\u06cc\u200c\u062f\u0647"}
                   </div>
                 </div>
                 <div
@@ -784,34 +784,34 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["runCode"] = true
+                      $steps["goToHomepage"] = true
                         ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  return window.open(
-                                    "https://rentamon.apidog.io/",
-                                    "_blank"
-                                  );
-                                })();
+                            const actionArgs = { destination: `/` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
                               }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
                       if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
+                        $steps["goToHomepage"] != null &&
+                        typeof $steps["goToHomepage"] === "object" &&
+                        typeof $steps["goToHomepage"].then === "function"
                       ) {
-                        $steps["runCode"] = await $steps["runCode"];
+                        $steps["goToHomepage"] = await $steps["goToHomepage"];
                       }
                     }}
                   >
                     {
-                      "\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u06cc\u062f"
+                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc\u0647\u061f"
                     }
                   </div>
                 </div>

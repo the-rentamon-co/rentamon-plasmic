@@ -1091,7 +1091,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 20px;
 }
 @media (max-width: 1200px) {
   .benefitsTitle5 {
@@ -1234,7 +1234,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 24px 8px 8px;
 }
 @media (max-width: 1200px) {
   .requestDemo {
@@ -1256,9 +1256,9 @@
   text-align: center;
   background: #8165d6;
   color: #fcfcfc;
-  padding-bottom: 12px;
+  padding-bottom: 18px;
   font-size: 17px;
-  padding-top: 12px;
+  padding-top: 18px;
   font-weight: 600;
   cursor: pointer;
   min-width: 0;

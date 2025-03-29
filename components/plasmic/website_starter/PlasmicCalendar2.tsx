@@ -1031,7 +1031,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         yesterdayDate.getTime() / 1000
                       );
                       const minTimestamp = yesterdayTimestamp;
-                      const maxTimestamp = 1747831038;
+                      const maxTimestamp = 1747920950;
                       function getDayClass(dateProps, calendarData) {
                         const dayIndex = dateProps.date.day - 1;
                         const calendarItem = calendarData[dayIndex] || {};
