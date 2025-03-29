@@ -91,6 +91,7 @@ export type Plasmicقوانیناجارهروزانه__OverridesType = {
   introApi?: Flex__<"div">;
   introApiTitle?: Flex__<"div">;
   introApiCaption?: Flex__<"div">;
+  freeBox?: Flex__<"div">;
   platforms?: Flex__<"div">;
   platformsTitle?: Flex__<"div">;
   benefits?: Flex__<"div">;
@@ -100,7 +101,6 @@ export type Plasmicقوانیناجارهروزانه__OverridesType = {
   more?: Flex__<"div">;
   moreDecs?: Flex__<"div">;
   screenshot?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   benefits2?: Flex__<"div">;
   benefitsTitle2?: Flex__<"div">;
   benefitsCaption2?: Flex__<"div">;
@@ -292,6 +292,29 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                 </div>
               </div>
               <div
+                data-plasmic-name={"freeBox"}
+                data-plasmic-override={overrides.freeBox}
+                className={classNames(projectcss.all, sty.freeBox)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__och2S)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/rentalRuleJpg.jpg",
+                    fullWidth: 700,
+                    fullHeight: 485,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+              <div
                 data-plasmic-name={"platforms"}
                 data-plasmic-override={overrides.platforms}
                 className={classNames(projectcss.all, sty.platforms)}
@@ -469,10 +492,8 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.screenshot)}
                 >
                   <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img)}
+                    className={classNames(sty.img__v3BXo)}
                     displayHeight={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
@@ -491,9 +512,9 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_2Png.png",
-                      fullWidth: 344,
-                      fullHeight: 700,
+                      src: "/plasmic/website_starter/images/rentalRuleLivingroomJpg.jpg",
+                      fullWidth: 700,
+                      fullHeight: 994,
                       aspectRatio: undefined
                     }}
                   />
@@ -800,6 +821,7 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
+    "freeBox",
     "platforms",
     "platformsTitle",
     "benefits",
@@ -809,7 +831,6 @@ const PlasmicDescendants = {
     "more",
     "moreDecs",
     "screenshot",
-    "img",
     "benefits2",
     "benefitsTitle2",
     "benefitsCaption2",
@@ -828,6 +849,7 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
+    "freeBox",
     "platforms",
     "platformsTitle",
     "benefits",
@@ -837,7 +859,6 @@ const PlasmicDescendants = {
     "more",
     "moreDecs",
     "screenshot",
-    "img",
     "benefits2",
     "benefitsTitle2",
     "benefitsCaption2",
@@ -853,11 +874,13 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
+    "freeBox",
     "platforms",
     "platformsTitle"
   ],
   introApiTitle: ["introApiTitle"],
   introApiCaption: ["introApiCaption"],
+  freeBox: ["freeBox"],
   platforms: ["platforms", "platformsTitle"],
   platformsTitle: ["platformsTitle"],
   benefits: ["benefits", "benefitsTitle", "benefitsCaption"],
@@ -868,7 +891,6 @@ const PlasmicDescendants = {
     "more",
     "moreDecs",
     "screenshot",
-    "img",
     "benefits2",
     "benefitsTitle2",
     "benefitsCaption2",
@@ -880,10 +902,9 @@ const PlasmicDescendants = {
     "apidog",
     "requestDemo"
   ],
-  more: ["more", "moreDecs", "screenshot", "img"],
+  more: ["more", "moreDecs", "screenshot"],
   moreDecs: ["moreDecs"],
-  screenshot: ["screenshot", "img"],
-  img: ["img"],
+  screenshot: ["screenshot"],
   benefits2: ["benefits2", "benefitsTitle2", "benefitsCaption2"],
   benefitsTitle2: ["benefitsTitle2"],
   benefitsCaption2: ["benefitsCaption2"],
@@ -911,6 +932,7 @@ type NodeDefaultElementType = {
   introApi: "div";
   introApiTitle: "div";
   introApiCaption: "div";
+  freeBox: "div";
   platforms: "div";
   platformsTitle: "div";
   benefits: "div";
@@ -920,7 +942,6 @@ type NodeDefaultElementType = {
   more: "div";
   moreDecs: "div";
   screenshot: "div";
-  img: typeof PlasmicImg__;
   benefits2: "div";
   benefitsTitle2: "div";
   benefitsCaption2: "div";
@@ -1000,6 +1021,7 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
     introApi: makeNodeComponent("introApi"),
     introApiTitle: makeNodeComponent("introApiTitle"),
     introApiCaption: makeNodeComponent("introApiCaption"),
+    freeBox: makeNodeComponent("freeBox"),
     platforms: makeNodeComponent("platforms"),
     platformsTitle: makeNodeComponent("platformsTitle"),
     benefits: makeNodeComponent("benefits"),
@@ -1009,7 +1031,6 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
     more: makeNodeComponent("more"),
     moreDecs: makeNodeComponent("moreDecs"),
     screenshot: makeNodeComponent("screenshot"),
-    img: makeNodeComponent("img"),
     benefits2: makeNodeComponent("benefits2"),
     benefitsTitle2: makeNodeComponent("benefitsTitle2"),
     benefitsCaption2: makeNodeComponent("benefitsCaption2"),

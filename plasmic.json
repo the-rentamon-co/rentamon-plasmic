@@ -2691,6 +2691,16 @@
           "id": "OgAJz5tt7fz9",
           "name": "newrooz.png",
           "filePath": "../public/plasmic/website_starter/images/newroozPng.png"
+        },
+        {
+          "id": "B2Ilww7k8zy-",
+          "name": "rental-rule.jpg",
+          "filePath": "../public/plasmic/website_starter/images/rentalRuleJpg.jpg"
+        },
+        {
+          "id": "c8hKpmEGfnIQ",
+          "name": "rental-rule-livingroom.jpg",
+          "filePath": "../public/plasmic/website_starter/images/rentalRuleLivingroomJpg.jpg"
         }
       ],
       "indirect": false,

@@ -4796,6 +4796,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 if (!changedDaysDates.includes(day.date)) {
                                   return day;
                                 }
+                                console.log("allowedWebsites", allowedWebsites);
+                                console.log("day.website", day.website);
+                                console.log(
+                                  " allowedWebsites.includes(day.website)",
+                                  allowedWebsites.includes(day.website)
+                                );
                                 if (
                                   day.status === "reserved" &&
                                   allowedWebsites.includes(day.website)
