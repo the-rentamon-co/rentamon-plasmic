@@ -1766,7 +1766,10 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         if (!document.cookie.includes("alertModal")) {
                           $state.alertModal.open = true;
                         }
-                        return console.log(dataSourcesCtx.user);
+                        return console.log(
+                          "dataSourcesCtx.user",
+                          dataSourcesCtx.user
+                        );
                       })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
