@@ -1106,11 +1106,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 })()}
                 platform={(() => {
                   try {
-                    return (() => {
-                      const dayIndex = dateProps.date.day - 1;
-                      return $state.apiRequest.data[1].calendar[dayIndex]
-                        .website;
-                    })();
+                    return $state.apiRequest.data[1].calendar[
+                      dateProps.date.day - 1
+                    ].website;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
