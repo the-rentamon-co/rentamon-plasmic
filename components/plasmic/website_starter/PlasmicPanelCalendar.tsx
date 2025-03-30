@@ -1764,12 +1764,8 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       operation: 0,
                       value: (() => {
                         if (!document.cookie.includes("alertModal")) {
-                          $state.alertModal.open = true;
+                          return ($state.alertModal.open = true);
                         }
-                        return console.log(
-                          "dataSourcesCtx.user",
-                          dataSourcesCtx.user
-                        );
                       })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
@@ -1846,6 +1842,29 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 $steps["updateStateVariable3"] = await $steps[
                   "updateStateVariable3"
                 ];
+              }
+
+              $steps["runCode3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return console.log(
+                          "dataSourcesCtx.user",
+                          dataSourcesCtx.user
+                        );
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode3"] != null &&
+                typeof $steps["runCode3"] === "object" &&
+                typeof $steps["runCode3"].then === "function"
+              ) {
+                $steps["runCode3"] = await $steps["runCode3"];
               }
             }}
           />
