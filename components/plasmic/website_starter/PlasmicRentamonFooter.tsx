@@ -513,18 +513,18 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     projectcss.a,
                     projectcss.__wab_text,
                     projectcss.plasmic_default__inline,
-                    sty.link__ssB3J
+                    sty.link__xvVyt
                   )}
                   component={Link}
-                  href={`/terms-of-use`}
+                  href={"app.rentamon.com/rental-rules"}
                   platform={"nextjs"}
                 >
                   {
-                    "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
+                    "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a\r"
                   }
                 </PlasmicLink__>
               }
-              <React.Fragment>{"\r\n"}</React.Fragment>
+              <React.Fragment>{"\n"}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
@@ -557,6 +557,25 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                 >
                   {
                     "\u0635\u0627\u062d\u0628 \u067e\u0644\u062a\u0641\u0631\u0645 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0647\u0633\u062a\u06cc\u061f"
+                  }
+                </PlasmicLink__>
+              }
+              <React.Fragment>{"\n"}</React.Fragment>
+              {
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    projectcss.plasmic_default__inline,
+                    sty.link___2L0X0
+                  )}
+                  component={Link}
+                  href={"https://app.rentamon.com/terms-of-use/"}
+                  platform={"nextjs"}
+                >
+                  {
+                    "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
                   }
                 </PlasmicLink__>
               }

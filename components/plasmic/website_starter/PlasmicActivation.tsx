@@ -4005,9 +4005,7 @@ function PlasmicActivation__RenderFunc(props: {
                               sty.link
                             )}
                             component={Link}
-                            href={
-                              "https://rentamon.com/%d9%82%d9%88%d8%a7%d9%86%db%8c%d9%86-%d8%b1%d9%86%d8%aa%d8%a7%d9%85%d9%88%d9%86/"
-                            }
+                            href={`/terms-of-use`}
                             platform={"nextjs"}
                             target={"_blank"}
                           >

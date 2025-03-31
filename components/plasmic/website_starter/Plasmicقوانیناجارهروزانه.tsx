@@ -100,6 +100,7 @@ export type Plasmicقوانیناجارهروزانه__OverridesType = {
   more?: Flex__<"div">;
   certificates?: Flex__<"div">;
   iamges?: Flex__<"div">;
+  relatedContents?: Flex__<"div">;
   neighbours?: Flex__<"div">;
   benefitsTitle2?: Flex__<"div">;
   benefitsCaption2?: Flex__<"div">;
@@ -606,6 +607,8 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                     displayHeight={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "500px"
                         : hasVariant(globalVariants, "screen", "tablet")
                         ? "410px"
                         : "auto"
@@ -629,6 +632,73 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   />
                 </div>
               </Stack__>
+              <div
+                data-plasmic-name={"relatedContents"}
+                data-plasmic-override={overrides.relatedContents}
+                className={classNames(projectcss.all, sty.relatedContents)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__diAx6
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
+                      }
+                    </span>
+                    <React.Fragment>{"\n - "}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__zsL5V
+                        )}
+                        component={Link}
+                        href={
+                          "https://rentamon.com/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%DA%A9%D9%88%D8%AA%D8%A7%D9%87-%D9%85%D8%AF%D8%AA/"
+                        }
+                        platform={"nextjs"}
+                      >
+                        {
+                          "\u062a\u0627 \u06f2/\u06f5 \u0628\u0631\u0627\u0628\u0631 \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631 \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
+                        }
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{"\n - "}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__gnPTa
+                        )}
+                        component={Link}
+                        href={
+                          "https://rentamon.com/%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7/"
+                        }
+                        platform={"nextjs"}
+                      >
+                        {
+                          "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                        }
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
               <div
                 data-plasmic-name={"neighbours"}
                 data-plasmic-override={overrides.neighbours}
@@ -972,6 +1042,7 @@ const PlasmicDescendants = {
     "more",
     "certificates",
     "iamges",
+    "relatedContents",
     "neighbours",
     "benefitsTitle2",
     "benefitsCaption2",
@@ -999,6 +1070,7 @@ const PlasmicDescendants = {
     "more",
     "certificates",
     "iamges",
+    "relatedContents",
     "neighbours",
     "benefitsTitle2",
     "benefitsCaption2",
@@ -1023,6 +1095,7 @@ const PlasmicDescendants = {
     "more",
     "certificates",
     "iamges",
+    "relatedContents",
     "neighbours",
     "benefitsTitle2",
     "benefitsCaption2",
@@ -1037,6 +1110,7 @@ const PlasmicDescendants = {
   more: ["more", "certificates", "iamges"],
   certificates: ["certificates"],
   iamges: ["iamges"],
+  relatedContents: ["relatedContents"],
   neighbours: ["neighbours", "benefitsTitle2", "benefitsCaption2"],
   benefitsTitle2: ["benefitsTitle2"],
   benefitsCaption2: ["benefitsCaption2"],
@@ -1073,6 +1147,7 @@ type NodeDefaultElementType = {
   more: "div";
   certificates: "div";
   iamges: "div";
+  relatedContents: "div";
   neighbours: "div";
   benefitsTitle2: "div";
   benefitsCaption2: "div";
@@ -1161,6 +1236,7 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
     more: makeNodeComponent("more"),
     certificates: makeNodeComponent("certificates"),
     iamges: makeNodeComponent("iamges"),
+    relatedContents: makeNodeComponent("relatedContents"),
     neighbours: makeNodeComponent("neighbours"),
     benefitsTitle2: makeNodeComponent("benefitsTitle2"),
     benefitsCaption2: makeNodeComponent("benefitsCaption2"),
