@@ -5001,7 +5001,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.requestdata = [];
                             $state.fragmentDatePicker.values = [];
                             $state.textInput.value = 0;
-                            return ($state.textInput2.value = 0);
+                            $state.textInput2.value = 0;
+                            return ($state.textInput4.value = 0);
                           })()
                         };
                         return (({
