@@ -4,8 +4,8 @@ const PRECACHE_URLS = [
   '/index.html',
   '/manifest.json',
   '/favicon.ico',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  'https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png',
+  'https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png'
 ];
 
 self.addEventListener('install', event => {
