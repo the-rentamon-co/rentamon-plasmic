@@ -441,14 +441,14 @@
 @media (max-width: 1200px) {
   .text__lWiIg {
     padding-right: 0px;
-    padding-left: 20px;
+    padding-left: 6px;
     line-height: 1.8;
   }
 }
 @media (max-width: 500px) {
   .text__lWiIg {
     padding-right: 0px;
-    padding-left: 10px;
+    padding-left: 0px;
     font-size: 16px;
   }
 }
@@ -480,12 +480,13 @@
 @media (max-width: 1200px) {
   .outlines {
     padding-right: 48px;
-    padding-left: 24px;
+    padding-left: 9px;
   }
 }
 @media (max-width: 500px) {
   .outlines {
     padding-right: 30px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -517,6 +518,11 @@
 .ul__tutu {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 350px) {
+  .ul__tutu {
+    padding-left: 0px;
+  }
 }
 @media (max-width: 350px) {
   .li__lfiOb {
@@ -552,8 +558,8 @@
 @media (max-width: 500px) {
   .text___6EzdW {
     font-size: 16px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 4px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 350px) {

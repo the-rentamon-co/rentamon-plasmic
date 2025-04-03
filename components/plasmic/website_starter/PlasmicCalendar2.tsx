@@ -605,7 +605,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "textInput4.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $ctx }) => "0"
       }
     ],
     [$props, $ctx, $refs]
@@ -7101,6 +7101,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                   }}
                   placeholder={" \u06f0"}
+                  type={"number"}
                   value={
                     generateStateValueProp($state, ["textInput4", "value"]) ??
                     ""
