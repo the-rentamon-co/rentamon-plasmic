@@ -51,12 +51,12 @@ function HomePage() {
         params={router?.query}
         query={router?.query}
       >
-        <PlasmicHomePage>
+        <PlasmicHomepage>
           {/* محتوای slot برای نمایش وضعیت PWA */}
           <div className="pwa-status" style={{ display: 'none' }}>
             {pwaStatus}
           </div>
-        </PlasmicHomePage>
+        </PlasmicHomepage>
       </PageParamsProvider__>
     </GlobalContextsProvider>
     </>
