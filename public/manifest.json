@@ -6,7 +6,7 @@
   "description": "مدیریت اقامتگاه",
   "display": "standalone",
   "display_override": ["window-controls-overlay"],
-  "start_url": "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/",
+  "start_url": "/",
   "theme_color": "#7444BC",
   "background_color": "#7444BC",
   "orientation": "portrait-primary",
