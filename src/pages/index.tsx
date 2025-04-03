@@ -37,12 +37,12 @@ function HomePage() {
         <meta name="theme-color" content="#7444BC" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png" />
         <meta property="og:title" content="رنتامون" />
         <meta property="og:description" content="برنامه مدیریت اقامتگاه" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://app.rentamon.com/" />
-        <meta property="og:image" content="/icons/icon-512x512.png" />
+        <meta property="og:image" content="https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png" />
       </Head>
 
       <GlobalContextsProvider>
