@@ -69,7 +69,7 @@
       "description": "مشاهده اطلاعات درباره برنامه",
       "url": "/about",
       "icons": [
-        { "src": "assets/icons/192x192.png", "sizes": "192x192" }
+        { "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png", "sizes": "192x192" }
       ]
     }
   ],
@@ -80,13 +80,13 @@
       "description": "ویجت نمونه برای برنامه رنتامون",
       "icons": [
         {
-          "src": "https://site-assets.plasmic.app/1efb20da13dc901df2ae2f3b7a43de6e.ico",
+          "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png",
           "sizes": "48x48"
         }
       ],
       "screenshots": [
         {
-          "src": "/splash/Frame.png",
+          "src": "https://rentamon-files.storage.iran.liara.space/icon/splashscreen.svg",
           "sizes": "500x500",
           "label": "تصویر ویجت"
         }
