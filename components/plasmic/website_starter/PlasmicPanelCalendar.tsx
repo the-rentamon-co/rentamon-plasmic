@@ -1609,10 +1609,8 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           const isPlasmicStudio =
                             Object.values($ctx.Fragment.previewApiConfig)
                               .length > 0;
-                          console.log("side effect started");
                           async function refreshToken() {
                             if (isPlasmicStudio) return;
-                            console.log("side effect in the cudition");
                             try {
                               const response = await fetch(
                                 "https://sso.rentamon.com/auth/refresh",

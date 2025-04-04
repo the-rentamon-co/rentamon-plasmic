@@ -606,6 +606,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "0"
+      },
+      {
+        path: "selectedItem",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       }
     ],
     [$props, $ctx, $refs]
@@ -1182,6 +1188,49 @@ function PlasmicCalendar2__RenderFunc(props: {
               "fragmentDatePicker",
               "values"
             ]).apply(null, eventArgs);
+
+            (async date => {
+              const $steps = {};
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        const timestamps = $state.fragmentDatePicker.values;
+                        const targetDates = timestamps.map(ts => {
+                          const d = new Date(ts * 1000);
+                          return d.toISOString().split("T")[0];
+                        });
+                        const calendar = $state.apiRequest.data[1].calendar;
+                        const filteredItems = calendar.filter(item => {
+                          return targetDates.includes(item.date);
+                        });
+                        $state.selectedItem = filteredItems;
+                        return console.log($state.selectedItem);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
+            }).apply(null, eventArgs);
           }}
           onMonthChange={async (...eventArgs: any) => {
             generateStateOnChangeProp($state, [
@@ -3109,22 +3158,30 @@ function PlasmicCalendar2__RenderFunc(props: {
               const $steps = {};
 
               $steps["updateModalDiscountOpen"] = (() => {
-                const timestamps = $state.fragmentDatePicker.values;
-                const dates = timestamps.map(timestamp => {
-                  const date = new Date(timestamp * 1000);
-                  return date.toISOString().split("T")[0];
-                });
-                const calendar = $state.apiRequest.data[1].calendar;
-                const prices = dates.map(date => {
-                  const item = calendar.find(entry => entry.date === date);
-                  return item?.price ?? null;
-                });
-                if (prices.some(price => price === null)) {
+                function checkAllItemsHaveSameOriginalPrice(items) {
+                  if (!items || items.length === 0) return false;
+                  let firstItem = items[0];
+                  let firstOriginalPrice =
+                    firstItem.discount_percentage &&
+                    firstItem.discount_percentage > 0
+                      ? firstItem.price /
+                        (1 - firstItem.discount_percentage / 100)
+                      : firstItem.price;
+                  for (let i = 1; i < items.length; i++) {
+                    let item = items[i];
+                    let originalPrice =
+                      item.discount_percentage && item.discount_percentage > 0
+                        ? item.price / (1 - item.discount_percentage / 100)
+                        : item.price;
+                    if (originalPrice !== firstOriginalPrice) {
+                      return false;
+                    }
+                  }
                   return true;
                 }
-                const firstPrice = prices[0];
-                const result = prices.every(price => price === firstPrice);
-                return !result;
+                const items = $state.selectedItem;
+                const result = !checkAllItemsHaveSameOriginalPrice(items);
+                return result;
               })()
                 ? (() => {
                     const actionArgs = {
@@ -3165,25 +3222,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                       },
                       operation: 0,
                       value: (() => {
-                        const timestamps = $state.fragmentDatePicker.values;
-                        const dates = timestamps.map(timestamp => {
-                          const date = new Date(timestamp * 1000);
-                          return date.toISOString().split("T")[0];
-                        });
-                        const calendar = $state.apiRequest.data[1].calendar;
-                        const prices = dates.map(date => {
-                          const item = calendar.find(
-                            entry => entry.date === date
-                          );
-                          return item?.price ?? null;
-                        });
-                        if (prices.some(price => price === null)) {
-                          return false;
+                        function checkAllItemsHaveSameOriginalPrice(items) {
+                          if (!items || items.length === 0) return false;
+                          let firstItem = items[0];
+                          let firstOriginalPrice =
+                            firstItem.discount_percentage &&
+                            firstItem.discount_percentage > 0
+                              ? firstItem.price /
+                                (1 - firstItem.discount_percentage / 100)
+                              : firstItem.price;
+                          for (let i = 1; i < items.length; i++) {
+                            let item = items[i];
+                            let originalPrice =
+                              item.discount_percentage &&
+                              item.discount_percentage > 0
+                                ? item.price /
+                                  (1 - item.discount_percentage / 100)
+                                : item.price;
+                            if (originalPrice !== firstOriginalPrice) {
+                              return false;
+                            }
+                          }
+                          return true;
                         }
-                        const firstPrice = prices[0];
-                        const result = prices.every(
-                          price => price === firstPrice
-                        );
+                        const items = $state.selectedItem;
+                        const result =
+                          checkAllItemsHaveSameOriginalPrice(items);
                         return result;
                       })()
                     };
@@ -7177,7 +7241,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                   {(() => {
                     try {
                       return (() => {
-                        function convertPersianToEnglish(str) {
+                        function groupDigits(str) {
+                          return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+                        function convertEnglishDigitsToPersian(str) {
+                          const persianDigits = [
+                            "۰",
+                            "۱",
+                            "۲",
+                            "۳",
+                            "۴",
+                            "۵",
+                            "۶",
+                            "۷",
+                            "۸",
+                            "۹"
+                          ];
+
+                          return str.replace(/\d/g, d => persianDigits[d]);
+                        }
+                        function formatNumberToPersian(number) {
+                          let flooredNumber = Math.floor(number);
+                          let numStr = flooredNumber.toString();
+                          let groupedStr = groupDigits(numStr);
+                          return convertEnglishDigitsToPersian(groupedStr);
+                        }
+                        function convertPersianToInt(str) {
                           const persianNumbers = [
                             "۰",
                             "۱",
@@ -7197,30 +7286,19 @@ function PlasmicCalendar2__RenderFunc(props: {
                               i
                             );
                           }
-                          return str;
+                          str = str.replace(/[^0-9]/g, "");
+                          return parseInt(str, 10);
                         }
-                        const timestamps = $state.fragmentDatePicker.values;
-                        const dates = timestamps.map(timestamp => {
-                          const date = new Date(timestamp * 1000);
-                          return date.toISOString().split("T")[0];
-                        });
-                        const calendar = $state.apiRequest.data[1].calendar;
-                        const prices = dates.map(date => {
-                          const item = calendar.find(
-                            entry => entry.date === date
-                          );
-                          return item ? item.price : null;
-                        });
-                        if (prices.includes(null)) {
-                          return -1;
-                        }
-                        let priceStr = convertPersianToEnglish(
-                          prices[0].toString()
-                        );
-                        priceStr = priceStr.replace(/[^\d]/g, "");
-                        const priceInt = parseInt(priceStr, 10) * 1000;
-                        const formattedPrice = priceInt.toLocaleString("fa-IR");
-                        return formattedPrice;
+                        let discountedPrice =
+                          convertPersianToInt($state.selectedItem[0].price) *
+                          1000;
+                        let discountPercentage =
+                          $state.selectedItem[0].discount_percentage;
+                        let originalPrice =
+                          discountedPrice / (1 - discountPercentage / 100);
+                        let formattedOriginalPrice =
+                          formatNumberToPersian(originalPrice);
+                        return formattedOriginalPrice;
                       })();
                     } catch (e) {
                       if (
@@ -7297,7 +7375,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                   {(() => {
                     try {
                       return (() => {
-                        function convertPersianToEnglish(str) {
+                        function groupDigits(str) {
+                          return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+                        function convertEnglishDigitsToPersian(str) {
+                          const persianDigits = [
+                            "۰",
+                            "۱",
+                            "۲",
+                            "۳",
+                            "۴",
+                            "۵",
+                            "۶",
+                            "۷",
+                            "۸",
+                            "۹"
+                          ];
+
+                          return str.replace(/\d/g, d => persianDigits[d]);
+                        }
+                        function formatNumberToPersian(number) {
+                          let flooredNumber = Math.floor(number);
+                          let numStr = flooredNumber.toString();
+                          let groupedStr = groupDigits(numStr);
+                          return convertEnglishDigitsToPersian(groupedStr);
+                        }
+                        function convertPersianToInt(str) {
                           const persianNumbers = [
                             "۰",
                             "۱",
@@ -7317,33 +7420,22 @@ function PlasmicCalendar2__RenderFunc(props: {
                               i
                             );
                           }
-                          return str;
+                          str = str.replace(/[^0-9]/g, "");
+                          return parseInt(str, 10);
                         }
-                        const timestamps = $state.fragmentDatePicker.values;
-                        const dates = timestamps.map(timestamp => {
-                          const date = new Date(timestamp * 1000);
-                          return date.toISOString().split("T")[0];
-                        });
-                        const calendar = $state.apiRequest.data[1].calendar;
-                        const prices = dates.map(date => {
-                          const item = calendar.find(
-                            entry => entry.date === date
-                          );
-                          return item ? item.price : null;
-                        });
-                        if (prices.includes(null)) {
-                          return -1;
-                        }
-                        let priceStr = convertPersianToEnglish(
-                          prices[0].toString()
-                        );
-                        priceStr = priceStr.replace(/[^\d]/g, "");
-                        const priceInt = parseInt(priceStr, 10) * 1000;
-                        const discountedPrice =
-                          priceInt - (priceInt * $state.textInput4.value) / 100;
-                        const formattedPrice =
-                          discountedPrice.toLocaleString("fa-IR");
-                        return formattedPrice;
+                        let discountedPrice =
+                          convertPersianToInt($state.selectedItem[0].price) *
+                          1000;
+                        let discountPercentage =
+                          $state.selectedItem[0].discount_percentage;
+                        let discount = $state.textInput4.value;
+                        let originalPrice =
+                          discountedPrice / (1 - discountPercentage / 100);
+                        const final_price =
+                          originalPrice - (originalPrice * discount) / 100;
+                        let formattedOriginalPrice =
+                          formatNumberToPersian(final_price);
+                        return formattedOriginalPrice;
                       })();
                     } catch (e) {
                       if (
