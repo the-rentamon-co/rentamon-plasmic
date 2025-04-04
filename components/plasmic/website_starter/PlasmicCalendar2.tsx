@@ -2616,24 +2616,21 @@ function PlasmicCalendar2__RenderFunc(props: {
                       },
                       operation: 0,
                       value: (() => {
-                        const timestamps = $state.fragmentDatePicker.values;
-                        const dates = timestamps.map(timestamp => {
-                          const date = new Date(timestamp * 1000);
-                          return date.toISOString().split("T")[0];
-                        });
-                        const calendar = $state.apiRequest.data[1].calendar;
-                        const result = dates.every(date => {
-                          const item = calendar.find(
-                            entry => entry.date === date
-                          );
-                          return (
-                            item &&
-                            (item.website === "" ||
-                              item.website === "رزرو" ||
-                              item.website == null)
-                          );
-                        });
-                        return result;
+                        const calendar = $state.selectedItem;
+                        const platforms = [
+                          "شب",
+                          "مهمانشو",
+                          "اتاقک",
+                          "جاباما",
+                          "جاجیگا",
+                          "هومسا",
+                          "میزبون"
+                        ];
+
+                        const result = calendar.some(item =>
+                          platforms.includes(item.website)
+                        );
+                        return !result;
                       })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
@@ -2693,23 +2690,20 @@ function PlasmicCalendar2__RenderFunc(props: {
                       },
                       operation: 0,
                       value: (() => {
-                        const timestamps = $state.fragmentDatePicker.values;
-                        const dates = timestamps.map(timestamp => {
-                          const date = new Date(timestamp * 1000);
-                          return date.toISOString().split("T")[0];
-                        });
-                        const calendar = $state.apiRequest.data[1].calendar;
-                        const result = dates.some(date => {
-                          const item = calendar.find(
-                            entry => entry.date === date
-                          );
-                          return (
-                            item &&
-                            item.website !== "" &&
-                            item.website !== "رزرو" &&
-                            item.website != null
-                          );
-                        });
+                        const calendar = $state.selectedItem;
+                        const platforms = [
+                          "شب",
+                          "مهمانشو",
+                          "اتاقک",
+                          "جاباما",
+                          "جاجیگا",
+                          "هومسا",
+                          "میزبون"
+                        ];
+
+                        const result = calendar.some(item =>
+                          platforms.includes(item.website)
+                        );
                         return result;
                       })()
                     };
@@ -2733,22 +2727,21 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
 
               $steps["runCode"] = (() => {
-                const timestamps = $state.fragmentDatePicker.values;
-                const dates = timestamps.map(timestamp => {
-                  const date = new Date(timestamp * 1000);
-                  return date.toISOString().split("T")[0];
-                });
-                const calendar = $state.apiRequest.data[1].calendar;
-                const result = dates.every(date => {
-                  const item = calendar.find(entry => entry.date === date);
-                  return (
-                    item &&
-                    (item.website === "" ||
-                      item.website === "رزرو" ||
-                      item.website == null)
-                  );
-                });
-                return result;
+                const calendar = $state.selectedItem;
+                const platforms = [
+                  "شب",
+                  "مهمانشو",
+                  "اتاقک",
+                  "جاباما",
+                  "جاجیگا",
+                  "هومسا",
+                  "میزبون"
+                ];
+
+                const result = calendar.some(item =>
+                  platforms.includes(item.website)
+                );
+                return !result;
               })()
                 ? (() => {
                     const actionArgs = {
