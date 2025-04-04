@@ -762,27 +762,39 @@ function PlasmicCalendar2__RenderFunc(props: {
         }}
         url={(() => {
           try {
-            return (() => {
-              function toEnglishDigits(str) {
-                return str.replace(/[۰-۹]/g, function (char) {
-                  return String.fromCharCode(char.charCodeAt(0) - 1728);
-                });
-              }
-              const secondSpan = document.querySelector(
-                ".rmdp-header-values span:nth-child(3)"
-              );
-              if (secondSpan) {
-                $state.year = secondSpan.textContent;
-              }
-              let initialMonth = new Date().toLocaleDateString("fa").split("/");
-              let monStr = $state.fragmentDatePicker?.month ?? initialMonth[1];
-              if (/[\u06F0-\u06F9]/.test(monStr)) {
-                monStr = toEnglishDigits(monStr);
-              }
-              let mon = parseInt(monStr, 10);
-              let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
-            })();
+            return (
+              // function toEnglishDigits(str) {
+              //   return str.replace(/[۰-۹]/g, function (char) {
+              //     return String.fromCharCode(char.charCodeAt(0) - 1728);
+              //   });
+              // }
+
+              // // انتخاب المنت دوم span
+              // const secondSpan = document.querySelector('.rmdp-header-values span:nth-child(3)');
+
+              // // دسترسی به محتوای متن آن
+              // if (secondSpan) {
+              //   $state.year = secondSpan.textContent;
+              //   // console.log($state.year); // محتوای ۱۴۰۴ را نشان می‌دهد
+              // }
+
+              // let initialMonth = new Date().toLocaleDateString("fa").split("/");
+              // let monStr = $state.fragmentDatePicker?.month ?? initialMonth[1];
+
+              // // اگر رشته شامل اعداد فارسی بود، آن را تبدیل کن
+              // if (/[\u06F0-\u06F9]/.test(monStr)) {
+              //   monStr = toEnglishDigits(monStr);
+              // }
+
+              // let mon = parseInt(monStr, 10);
+
+              // // تعیین تعداد روزهای ماه
+              // let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+
+              // `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+
+              "https://gateway.rentamon.com/webhook/test"
+            );
           } catch (e) {
             if (
               e instanceof TypeError ||
@@ -1203,10 +1215,27 @@ function PlasmicCalendar2__RenderFunc(props: {
                           return d.toISOString().split("T")[0];
                         });
                         const calendar = $state.apiRequest.data[1].calendar;
-                        const filteredItems = calendar.filter(item => {
-                          return targetDates.includes(item.date);
+                        let currentSelected = $state.selectedItem;
+                        if (!Array.isArray(currentSelected)) {
+                          currentSelected = [];
+                        }
+                        const stillValidItems = currentSelected.filter(item =>
+                          targetDates.includes(item.date)
+                        );
+                        const newItems = calendar.filter(item => {
+                          return (
+                            targetDates.includes(item.date) &&
+                            !stillValidItems.some(
+                              existing => existing.date === item.date
+                            )
+                          );
                         });
-                        $state.selectedItem = filteredItems;
+                        const updatedSelected = [
+                          ...stillValidItems,
+                          ...newItems
+                        ];
+
+                        $state.selectedItem = updatedSelected;
                         return console.log($state.selectedItem);
                       })()
                     };
@@ -1250,8 +1279,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             ".rmdp-header-values span:nth-child(3)"
                           );
                           if (secondSpan) {
-                            $state.year = secondSpan.textContent;
-                            return console.log($state.year);
+                            return ($state.year = secondSpan.textContent);
                           }
                         })();
                       }
