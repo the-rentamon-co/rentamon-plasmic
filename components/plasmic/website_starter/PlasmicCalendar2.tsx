@@ -4238,7 +4238,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               ? (() => {
                   const actionArgs = {
                     operation: 0,
-                    value: ($state.textInput4.value = "")
+                    value: ($state.textInput4.value = "0")
                   };
                   return (({ variable, value, startIndex, deleteCount }) => {
                     if (!variable) {
