@@ -1223,8 +1223,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           ...newItems
                         ];
 
-                        $state.selectedItem = updatedSelected;
-                        return console.log($state.selectedItem);
+                        return ($state.selectedItem = updatedSelected);
                       })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
@@ -3166,32 +3165,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["updateModalDiscountOpen"] = (() => {
-                function checkAllItemsHaveSameOriginalPrice(items) {
-                  if (!items || items.length === 0) return false;
-                  let firstItem = items[0];
-                  let firstOriginalPrice =
-                    firstItem.discount_percentage &&
-                    firstItem.discount_percentage > 0
-                      ? firstItem.price /
-                        (1 - firstItem.discount_percentage / 100)
-                      : firstItem.price;
-                  for (let i = 1; i < items.length; i++) {
-                    let item = items[i];
-                    let originalPrice =
-                      item.discount_percentage && item.discount_percentage > 0
-                        ? item.price / (1 - item.discount_percentage / 100)
-                        : item.price;
-                    if (originalPrice !== firstOriginalPrice) {
-                      return false;
-                    }
-                  }
-                  return true;
-                }
-                const items = $state.selectedItem;
-                const result = !checkAllItemsHaveSameOriginalPrice(items);
-                return result;
-              })()
+              $steps["updateModalDiscountOpen"] = false
                 ? (() => {
                     const actionArgs = {
                       variable: {
@@ -3230,35 +3204,62 @@ function PlasmicCalendar2__RenderFunc(props: {
                         variablePath: ["newDiscountModal", "open"]
                       },
                       operation: 0,
-                      value: (() => {
-                        function checkAllItemsHaveSameOriginalPrice(items) {
-                          if (!items || items.length === 0) return false;
-                          let firstItem = items[0];
-                          let firstOriginalPrice =
-                            firstItem.discount_percentage &&
-                            firstItem.discount_percentage > 0
-                              ? firstItem.price /
-                                (1 - firstItem.discount_percentage / 100)
-                              : firstItem.price;
-                          for (let i = 1; i < items.length; i++) {
-                            let item = items[i];
-                            let originalPrice =
-                              item.discount_percentage &&
-                              item.discount_percentage > 0
-                                ? item.price /
-                                  (1 - item.discount_percentage / 100)
-                                : item.price;
-                            if (originalPrice !== firstOriginalPrice) {
-                              return false;
-                            }
-                          }
-                          return true;
-                        }
-                        const items = $state.selectedItem;
-                        const result =
-                          checkAllItemsHaveSameOriginalPrice(items);
-                        return result;
-                      })()
+                      value:
+                        // const timestamps = $state.fragmentDatePicker.values;
+                        // const dates = timestamps.map(timestamp => {
+                        //   const date = new Date(timestamp * 1000);
+                        //   return date.toISOString().split("T")[0];
+                        // });
+
+                        // const calendar = $state.apiRequest.data[1].calendar;
+
+                        // const prices = dates.map(date => {
+                        //   const item = calendar.find(entry => entry.date === date);
+                        //   return item?.price ?? null;
+                        // });
+
+                        // // اگر حتی یکی از priceها null باشه، false برگردون
+                        // if (prices.some(price => price === null)) {
+                        //   return false;
+                        // }
+
+                        // // بررسی اینکه آیا همه price‌ها برابرن
+                        // const firstPrice = prices[0];
+                        // const result = prices.every(price => price === firstPrice);
+                        // return result;
+
+                        // function checkAllItemsHaveSameOriginalPrice(items) {
+                        //   if (!items || items.length === 0) return false; // اگر لیست خالی بود، false برمی‌گردانیم یا هر تصمیم دلخواه
+
+                        //   // محاسبه قیمت اصلی اولین آیتم
+                        //   let firstItem = items[0];
+                        //   let firstOriginalPrice = firstItem.discount_percentage && firstItem.discount_percentage > 0
+                        //     ? firstItem.price / (1 - firstItem.discount_percentage / 100)
+                        //     : firstItem.price;
+
+                        //   // بررسی بقیه آیتم‌ها
+                        //   for (let i = 1; i < items.length; i++) {
+                        //     let item = items[i];
+                        //     let originalPrice = item.discount_percentage && item.discount_percentage > 0
+                        //       ? item.price / (1 - item.discount_percentage / 100)
+                        //       : item.price;
+
+                        //     // اگر قیمت اصلی آیتم فعلی با قیمت اصلی آیتم اول یکی نباشد
+                        //     if (originalPrice !== firstOriginalPrice) {
+                        //       return false;
+                        //     }
+                        //   }
+
+                        //   // اگر همه یکی بودند
+                        //   return true;
+                        // }
+
+                        // // مثال استفاده
+                        // const items = $state.selectedItem
+
+                        // const result = checkAllItemsHaveSameOriginalPrice(items);
+
+                        true
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
                       if (!variable) {
@@ -4133,20 +4134,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       variablePath: ["modal", "open"]
                     },
                     operation: 0,
-                    value:
-                      // const timestamps = $state.fragmentDatePicker.values;
-                      // const dates = timestamps.map(timestamp => {
-                      //   const date = new Date(timestamp * 1000);
-                      //   return date.toISOString().split("T")[0];
-                      // });
-                      // const calendar = $state.apiRequest.data[1].calendar;
-                      // const result = dates.every(date => {
-                      //   const item = calendar.find(entry => entry.date === date);
-                      //   return item && (item.website === "" || item.website === "رزرو" || item.website == null);
-                      // });
-                      // return result
-
-                      true
+                    value: true
                   };
                   return (({ variable, value, startIndex, deleteCount }) => {
                     if (!variable) {
@@ -4244,6 +4232,33 @@ function PlasmicCalendar2__RenderFunc(props: {
               typeof $steps["invokeGlobalAction"].then === "function"
             ) {
               $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+            }
+
+            $steps["updateStateVariable2"] = true
+              ? (() => {
+                  const actionArgs = {
+                    operation: 0,
+                    value: ($state.textInput4.value = "")
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateStateVariable2"] != null &&
+              typeof $steps["updateStateVariable2"] === "object" &&
+              typeof $steps["updateStateVariable2"].then === "function"
+            ) {
+              $steps["updateStateVariable2"] = await $steps[
+                "updateStateVariable2"
+              ];
             }
           }}
         >
@@ -7094,7 +7109,27 @@ function PlasmicCalendar2__RenderFunc(props: {
           <div className={classNames(projectcss.all, sty.freeBox__cfNym)}>
             <div className={classNames(projectcss.all, sty.freeBox__uiAgu)}>
               <div
-                className={classNames(projectcss.all, sty.freeBox__agwrs)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__agwrs,
+                  (() => {
+                    try {
+                      return $state.selectedItem.some(
+                        item => item.price === 0 || item.price === null
+                      ) == true
+                        ? "fake-disabled"
+                        : "";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -7103,6 +7138,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           operation: 0,
                           value: (() => {
+                            if (
+                              $state.selectedItem.some(
+                                item => item.price === 0 || item.price === null
+                              )
+                            ) {
+                              return false;
+                            }
                             if (Number($state.textInput4.value) === 0) {
                               return ($state.textInput4.value = 10);
                             } else if (Number($state.textInput4.value) < 70) {
@@ -7182,7 +7224,27 @@ function PlasmicCalendar2__RenderFunc(props: {
                 />
               </Stack__>
               <div
-                className={classNames(projectcss.all, sty.freeBox___0AJik)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox___0AJik,
+                  (() => {
+                    try {
+                      return $state.selectedItem.some(
+                        item => item.price === 0 || item.price === null
+                      ) == true
+                        ? "fake-disabled"
+                        : "";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "undefined";
+                      }
+                      throw e;
+                    }
+                  })()
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -7191,6 +7253,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           operation: 0,
                           value: (() => {
+                            if (
+                              $state.selectedItem.some(
+                                item => item.price === 0 || item.price === null
+                              )
+                            ) {
+                              return false;
+                            }
                             if (Number($state.textInput4.value) === 0) {
                             } else if (Number($state.textInput4.value) === 10) {
                               return ($state.textInput4.value = 0);
@@ -7238,227 +7307,268 @@ function PlasmicCalendar2__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___9NCgp)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__yybZx
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return (() => {
-                        function groupDigits(str) {
-                          return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                        function convertEnglishDigitsToPersian(str) {
-                          const persianDigits = [
-                            "۰",
-                            "۱",
-                            "۲",
-                            "۳",
-                            "۴",
-                            "۵",
-                            "۶",
-                            "۷",
-                            "۸",
-                            "۹"
-                          ];
-
-                          return str.replace(/\d/g, d => persianDigits[d]);
-                        }
-                        function formatNumberToPersian(number) {
-                          let flooredNumber = Math.floor(number);
-                          let numStr = flooredNumber.toString();
-                          let groupedStr = groupDigits(numStr);
-                          return convertEnglishDigitsToPersian(groupedStr);
-                        }
-                        function convertPersianToInt(str) {
-                          const persianNumbers = [
-                            "۰",
-                            "۱",
-                            "۲",
-                            "۳",
-                            "۴",
-                            "۵",
-                            "۶",
-                            "۷",
-                            "۸",
-                            "۹"
-                          ];
-
-                          for (let i = 0; i < 10; i++) {
-                            str = str.replace(
-                              new RegExp(persianNumbers[i], "g"),
-                              i
-                            );
-                          }
-                          str = str.replace(/[^0-9]/g, "");
-                          return parseInt(str, 10);
-                        }
-                        let discountedPrice =
-                          convertPersianToInt($state.selectedItem[0].price) *
-                          1000;
-                        let discountPercentage =
-                          $state.selectedItem[0].discount_percentage;
-                        let originalPrice =
-                          discountedPrice / (1 - discountPercentage / 100);
-                        let formattedOriginalPrice =
-                          formatNumberToPersian(originalPrice);
-                        return formattedOriginalPrice;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
+            {(() => {
+              try {
+                return (() => {
+                  function checkAllItemsHaveSameOriginalPrice(items) {
+                    if (!items || items.length === 0) return false;
+                    let firstItem = items[0];
+                    let firstOriginalPrice =
+                      firstItem.discount_percentage &&
+                      firstItem.discount_percentage > 0
+                        ? firstItem.price /
+                          (1 - firstItem.discount_percentage / 100)
+                        : firstItem.price;
+                    for (let i = 1; i < items.length; i++) {
+                      let item = items[i];
+                      let originalPrice =
+                        item.discount_percentage && item.discount_percentage > 0
+                          ? item.price / (1 - item.discount_percentage / 100)
+                          : item.price;
+                      if (originalPrice !== firstOriginalPrice) {
+                        return false;
                       }
-                      throw e;
                     }
-                  })()}
-                </React.Fragment>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__hRb7V)}>
-                <div className={classNames(projectcss.all, sty.freeBox__fYOx)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___8YBTl
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (
-                            "%" + $state.textInput4.value.toLocaleString("fa")
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "15\u066a ";
+                    return true;
+                  }
+                  const items = $state.selectedItem;
+                  const result = checkAllItemsHaveSameOriginalPrice(items);
+                  return result;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox___9NCgp)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yybZx
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          function groupDigits(str) {
+                            return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                           }
-                          throw e;
+                          function convertEnglishDigitsToPersian(str) {
+                            const persianDigits = [
+                              "۰",
+                              "۱",
+                              "۲",
+                              "۳",
+                              "۴",
+                              "۵",
+                              "۶",
+                              "۷",
+                              "۸",
+                              "۹"
+                            ];
+
+                            return str.replace(/\d/g, d => persianDigits[d]);
+                          }
+                          function formatNumberToPersian(number) {
+                            let flooredNumber = Math.floor(number);
+                            let numStr = flooredNumber.toString();
+                            let groupedStr = groupDigits(numStr);
+                            return convertEnglishDigitsToPersian(groupedStr);
+                          }
+                          function convertPersianToInt(str) {
+                            const persianNumbers = [
+                              "۰",
+                              "۱",
+                              "۲",
+                              "۳",
+                              "۴",
+                              "۵",
+                              "۶",
+                              "۷",
+                              "۸",
+                              "۹"
+                            ];
+
+                            for (let i = 0; i < 10; i++) {
+                              str = str.replace(
+                                new RegExp(persianNumbers[i], "g"),
+                                i
+                              );
+                            }
+                            str = str.replace(/[^0-9]/g, "");
+                            return parseInt(str, 10);
+                          }
+                          let discountedPrice =
+                            convertPersianToInt($state.selectedItem[0].price) *
+                            1000;
+                          let discountPercentage =
+                            $state.selectedItem[0].discount_percentage;
+                          let originalPrice =
+                            discountedPrice / (1 - discountPercentage / 100);
+                          let formattedOriginalPrice =
+                            formatNumberToPersian(originalPrice);
+                          return formattedOriginalPrice;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
                         }
-                      })()}
-                    </React.Fragment>
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__hRb7V)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__fYOx)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___8YBTl
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (
+                              "%" + $state.textInput4.value.toLocaleString("fa")
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "15\u066a ";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aLghR
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return "=";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aLghR
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return "=";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gV3O5
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return (() => {
-                        function groupDigits(str) {
-                          return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        }
-                        function convertEnglishDigitsToPersian(str) {
-                          const persianDigits = [
-                            "۰",
-                            "۱",
-                            "۲",
-                            "۳",
-                            "۴",
-                            "۵",
-                            "۶",
-                            "۷",
-                            "۸",
-                            "۹"
-                          ];
-
-                          return str.replace(/\d/g, d => persianDigits[d]);
-                        }
-                        function formatNumberToPersian(number) {
-                          let flooredNumber = Math.floor(number);
-                          let numStr = flooredNumber.toString();
-                          let groupedStr = groupDigits(numStr);
-                          return convertEnglishDigitsToPersian(groupedStr);
-                        }
-                        function convertPersianToInt(str) {
-                          const persianNumbers = [
-                            "۰",
-                            "۱",
-                            "۲",
-                            "۳",
-                            "۴",
-                            "۵",
-                            "۶",
-                            "۷",
-                            "۸",
-                            "۹"
-                          ];
-
-                          for (let i = 0; i < 10; i++) {
-                            str = str.replace(
-                              new RegExp(persianNumbers[i], "g"),
-                              i
-                            );
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gV3O5
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          function groupDigits(str) {
+                            return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                           }
-                          str = str.replace(/[^0-9]/g, "");
-                          return parseInt(str, 10);
+                          function convertEnglishDigitsToPersian(str) {
+                            const persianDigits = [
+                              "۰",
+                              "۱",
+                              "۲",
+                              "۳",
+                              "۴",
+                              "۵",
+                              "۶",
+                              "۷",
+                              "۸",
+                              "۹"
+                            ];
+
+                            return str.replace(/\d/g, d => persianDigits[d]);
+                          }
+                          function formatNumberToPersian(number) {
+                            let flooredNumber = Math.floor(number);
+                            let numStr = flooredNumber.toString();
+                            let groupedStr = groupDigits(numStr);
+                            return convertEnglishDigitsToPersian(groupedStr);
+                          }
+                          function convertPersianToInt(str) {
+                            const persianNumbers = [
+                              "۰",
+                              "۱",
+                              "۲",
+                              "۳",
+                              "۴",
+                              "۵",
+                              "۶",
+                              "۷",
+                              "۸",
+                              "۹"
+                            ];
+
+                            for (let i = 0; i < 10; i++) {
+                              str = str.replace(
+                                new RegExp(persianNumbers[i], "g"),
+                                i
+                              );
+                            }
+                            str = str.replace(/[^0-9]/g, "");
+                            return parseInt(str, 10);
+                          }
+                          let discountedPrice =
+                            convertPersianToInt($state.selectedItem[0].price) *
+                            1000;
+                          let discountPercentage =
+                            $state.selectedItem[0].discount_percentage;
+                          let discount = $state.textInput4.value;
+                          let originalPrice =
+                            discountedPrice / (1 - discountPercentage / 100);
+                          const final_price =
+                            originalPrice - (originalPrice * discount) / 100;
+                          let formattedOriginalPrice =
+                            formatNumberToPersian(final_price);
+                          return formattedOriginalPrice;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
                         }
-                        let discountedPrice =
-                          convertPersianToInt($state.selectedItem[0].price) *
-                          1000;
-                        let discountPercentage =
-                          $state.selectedItem[0].discount_percentage;
-                        let discount = $state.textInput4.value;
-                        let originalPrice =
-                          discountedPrice / (1 - discountPercentage / 100);
-                        const final_price =
-                          originalPrice - (originalPrice * discount) / 100;
-                        let formattedOriginalPrice =
-                          formatNumberToPersian(final_price);
-                        return formattedOriginalPrice;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
+                    })()}
+                  </React.Fragment>
+                </div>
               </div>
-            </div>
+            ) : null}
             <div className={classNames(projectcss.all, sty.freeBox__qhmb9)}>
               {(() => {
                 try {
