@@ -516,7 +516,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link__xvVyt
                   )}
                   component={Link}
-                  href={"app.rentamon.com/rental-rules"}
+                  href={`/rental-rules`}
                   platform={"nextjs"}
                 >
                   {
