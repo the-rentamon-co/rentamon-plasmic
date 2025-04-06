@@ -1272,6 +1272,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/rental-rules"
+        },
+        {
+          "id": "37MTGM1evdNF",
+          "name": "ApiTermsOfUse",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicApiTermsOfUse.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/api-terms-of-use.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicApiTermsOfUse.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/api-terms-of-use"
         }
       ],
       "icons": [

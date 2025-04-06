@@ -111,7 +111,6 @@ export type PlasmicPanelCalendar__OverridesType = {
   left?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
-  nowrouz?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
@@ -1550,50 +1549,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             })()}
           />
 
-          <div
-            data-plasmic-name={"nowrouz"}
-            data-plasmic-override={overrides.nowrouz}
-            className={classNames(projectcss.all, sty.nowrouz)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__yIbja)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xdoOs
-                )}
-              >
-                {
-                  "\u0633\u0627\u0644 \u0646\u0648 \u0645\u0628\u0627\u0631\u06a9"
-                }
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__aQhL5)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__svl91)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "60%"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "48%"
-                    : "20%"
-                }
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/newroozPng.png",
-                  fullWidth: 548,
-                  fullHeight: 235,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
-          </div>
           <SideEffect
             data-plasmic-name={"sideEffect"}
             data-plasmic-override={overrides.sideEffect}
@@ -2041,7 +1996,6 @@ const PlasmicDescendants = {
     "left",
     "profile",
     "calendar2",
-    "nowrouz",
     "sideEffect",
     "userAvailableFeature",
     "modal",
@@ -2099,7 +2053,6 @@ const PlasmicDescendants = {
   left: ["left"],
   profile: ["profile"],
   calendar2: ["calendar2"],
-  nowrouz: ["nowrouz"],
   sideEffect: ["sideEffect"],
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
@@ -2128,7 +2081,6 @@ type NodeDefaultElementType = {
   left: "div";
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
-  nowrouz: "div";
   sideEffect: typeof SideEffect;
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
@@ -2213,7 +2165,6 @@ export const PlasmicPanelCalendar = Object.assign(
     left: makeNodeComponent("left"),
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
-    nowrouz: makeNodeComponent("nowrouz"),
     sideEffect: makeNodeComponent("sideEffect"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
