@@ -4325,10 +4325,19 @@ function PlasmicActivation__RenderFunc(props: {
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone:
-                                                $state.form.value.jabamaphone
-                                            };
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
+                                              }
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.form.value.jabamaphone
+                                                )
+                                              };
+                                            })();
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -4633,11 +4642,20 @@ function PlasmicActivation__RenderFunc(props: {
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone:
-                                                $state.form.value.jabamaphone,
-                                              otp: $state.form.value.jabamaOTP
-                                            };
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
+                                              }
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.form.value.jabamaphone
+                                                ),
+                                                otp: $state.form.value.jabamaOTP
+                                              };
+                                            })();
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
