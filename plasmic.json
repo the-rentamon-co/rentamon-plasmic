@@ -1286,6 +1286,33 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/api-terms-of-use"
+        },
+        {
+          "id": "wDX6CsUVKNmL",
+          "name": "LitePanel",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicLitePanel.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/panel-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicLitePanel.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/panel-2"
+        },
+        {
+          "id": "NKEuaTqYxvdh",
+          "name": "SideLite",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSideLite.tsx",
+          "importSpec": {
+            "modulePath": "SideLite.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSideLite.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
