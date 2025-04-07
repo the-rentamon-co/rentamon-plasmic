@@ -217,6 +217,11 @@
   padding: 4px 30px;
   margin: 10px 0px 0px;
 }
+@media (max-width: 500px) {
+  .link__cwZwa {
+    display: none;
+  }
+}
 @media (max-width: 350px) {
   .link__cwZwa {
     cursor: pointer;
@@ -329,6 +334,7 @@
   font-size: 17px;
   font-weight: 600;
   color: #444444;
+  display: none;
   padding: 4px 10px 4px 30px;
   margin: 10px 20px 10px 0px;
 }
@@ -350,8 +356,8 @@
   font-size: 17px;
   font-weight: 600;
   color: #444444;
-  padding: 4px 0px 4px 30px;
-  margin: 10px 20px 10px 0px;
+  padding: 4px 29px 4px 30px;
+  margin: 10px 0px;
 }
 @media (max-width: 1200px) {
   .link__jRxEo {
