@@ -99,7 +99,6 @@ export type PlasmicLitePanel__OverridesType = {
   right3?: Flex__<"div">;
   sideLite?: Flex__<typeof SideLite>;
   right4?: Flex__<"div">;
-  apiRequest?: Flex__<typeof ApiRequest>;
   right2?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
   left?: Flex__<"div">;
@@ -231,30 +230,6 @@ function PlasmicLitePanel__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 1
-      },
-      {
-        path: "apiRequest.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
       },
       {
         path: "select2.value",
@@ -694,259 +669,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     data-plasmic-name={"right4"}
                     data-plasmic-override={overrides.right4}
                     className={classNames(projectcss.all, sty.right4)}
-                  >
-                    <ApiRequest
-                      data-plasmic-name={"apiRequest"}
-                      data-plasmic-override={overrides.apiRequest}
-                      className={classNames("__wab_instance", sty.apiRequest)}
-                      errorDisplay={null}
-                      loadingDisplay={
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__ue6Pg)}
-                          displayHeight={"34px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["goToActivationNew"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: `/activation/${"3"}`
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["goToActivationNew"] != null &&
-                              typeof $steps["goToActivationNew"] === "object" &&
-                              typeof $steps["goToActivationNew"].then ===
-                                "function"
-                            ) {
-                              $steps["goToActivationNew"] = await $steps[
-                                "goToActivationNew"
-                              ];
-                            }
-                          }}
-                          src={{
-                            src: "/plasmic/website_starter/images/image42.svg",
-                            fullWidth: 86,
-                            fullHeight: 35,
-                            aspectRatio: 2.457143
-                          }}
-                        />
-                      }
-                      method={"GET"}
-                      onError={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "apiRequest",
-                          "error"
-                        ]).apply(null, eventArgs);
-                      }}
-                      onLoading={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "apiRequest",
-                          "loading"
-                        ]).apply(null, eventArgs);
-                      }}
-                      onSuccess={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "apiRequest",
-                          "data"
-                        ]).apply(null, eventArgs);
-                      }}
-                      ref={ref => {
-                        $refs["apiRequest"] = ref;
-                      }}
-                      url={(() => {
-                        try {
-                          return `https://api-v2.rentamon.com/api/website_statuses/?property_id=${$state.propId}`;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()}
-                    >
-                      {(() => {
-                        try {
-                          return (() => {
-                            if ($state.apiRequest.data == null) {
-                              return false;
-                            } else {
-                              const statuses = $state.apiRequest.data.status;
-                              const anyFalse = Object.values(statuses).some(
-                                value => value === false
-                              );
-                              return anyFalse ? true : false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__d15El)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "30px"
-                              : "34px"
-                          }
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["goToActivationNew"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: `/activation/${"3"}`
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["goToActivationNew"] != null &&
-                              typeof $steps["goToActivationNew"] === "object" &&
-                              typeof $steps["goToActivationNew"].then ===
-                                "function"
-                            ) {
-                              $steps["goToActivationNew"] = await $steps[
-                                "goToActivationNew"
-                              ];
-                            }
-                          }}
-                          src={{
-                            src: "/plasmic/website_starter/images/image25.svg",
-                            fullWidth: 86,
-                            fullHeight: 35,
-                            aspectRatio: 2.457143
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (
-                            Object.keys($state.apiRequest.data.status)
-                              .length === 0
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__eaeD)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "30px"
-                              : "34px"
-                          }
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["goToActivationNew"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: `/activation/${"3"}`
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["goToActivationNew"] != null &&
-                              typeof $steps["goToActivationNew"] === "object" &&
-                              typeof $steps["goToActivationNew"].then ===
-                                "function"
-                            ) {
-                              $steps["goToActivationNew"] = await $steps[
-                                "goToActivationNew"
-                              ];
-                            }
-                          }}
-                          src={{
-                            src: "/plasmic/website_starter/images/image42.svg",
-                            fullWidth: 86,
-                            fullHeight: 35,
-                            aspectRatio: 2.457143
-                          }}
-                        />
-                      ) : null}
-                    </ApiRequest>
-                  </div>
+                  />
                 </div>
                 <div
                   data-plasmic-name={"right2"}
@@ -1591,7 +1314,6 @@ const PlasmicDescendants = {
     "right3",
     "sideLite",
     "right4",
-    "apiRequest",
     "right2",
     "select2",
     "left",
@@ -1613,7 +1335,6 @@ const PlasmicDescendants = {
     "right3",
     "sideLite",
     "right4",
-    "apiRequest",
     "right2",
     "select2",
     "left",
@@ -1626,7 +1347,6 @@ const PlasmicDescendants = {
     "right3",
     "sideLite",
     "right4",
-    "apiRequest",
     "right2",
     "select2",
     "left",
@@ -1638,15 +1358,13 @@ const PlasmicDescendants = {
     "right3",
     "sideLite",
     "right4",
-    "apiRequest",
     "right2",
     "select2"
   ],
-  right1: ["right1", "right3", "sideLite", "right4", "apiRequest"],
+  right1: ["right1", "right3", "sideLite", "right4"],
   right3: ["right3", "sideLite"],
   sideLite: ["sideLite"],
-  right4: ["right4", "apiRequest"],
-  apiRequest: ["apiRequest"],
+  right4: ["right4"],
   right2: ["right2", "select2"],
   select2: ["select2"],
   left: ["left"],
@@ -1672,7 +1390,6 @@ type NodeDefaultElementType = {
   right3: "div";
   sideLite: typeof SideLite;
   right4: "div";
-  apiRequest: typeof ApiRequest;
   right2: "div";
   select2: typeof Select;
   left: "div";
@@ -1754,7 +1471,6 @@ export const PlasmicLitePanel = Object.assign(
     right3: makeNodeComponent("right3"),
     sideLite: makeNodeComponent("sideLite"),
     right4: makeNodeComponent("right4"),
-    apiRequest: makeNodeComponent("apiRequest"),
     right2: makeNodeComponent("right2"),
     select2: makeNodeComponent("select2"),
     left: makeNodeComponent("left"),
