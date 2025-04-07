@@ -3911,11 +3911,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 "\u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc\ud83d\udc4b"
                               }
                             </span>
-                            <React.Fragment>
-                              {
-                                "\n\u0628\u0631\u0627\u06cc \u0631\u0627\u0647\u200c\u0627\u0646\u062f\u0627\u0632\u06cc \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u060c \u0644\u0627\u0632\u0645\u0647 \u0627\u0648\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0648\u0635\u0644\u0634  \u06a9\u0646\u06cc."
-                              }
-                            </React.Fragment>
+                            <React.Fragment>{"\n"}</React.Fragment>
                           </React.Fragment>
                         </div>
                       </div>
@@ -4076,6 +4072,33 @@ function PlasmicActivation__RenderFunc(props: {
                           ) {
                             $steps["updateStateVariable"] = await $steps[
                               "updateStateVariable"
+                            ];
+                          }
+
+                          $steps["goToLitePanel"] = false
+                            ? (() => {
+                                const actionArgs = { destination: `/calendar` };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToLitePanel"] != null &&
+                            typeof $steps["goToLitePanel"] === "object" &&
+                            typeof $steps["goToLitePanel"].then === "function"
+                          ) {
+                            $steps["goToLitePanel"] = await $steps[
+                              "goToLitePanel"
                             ];
                           }
                         }}
