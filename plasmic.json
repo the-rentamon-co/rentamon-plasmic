@@ -1294,7 +1294,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicLitePanel.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/panel-lite.tsx"
+            "modulePath": "../src/pages/calendar.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicLitePanel.module.css",
           "scheme": "blackbox",

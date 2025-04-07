@@ -1097,8 +1097,9 @@ function PlasmicLitePanel__RenderFunc(props: {
                         if ($steps.checkOldUser.data.flag == 3) {
                           return (window.location.href =
                             "https://rentamon.com/panels/?prop_id=1");
-                        } else {
-                          return console.log("OK");
+                        } else if ($steps.checkOldUser.data.flag == 1) {
+                          return (window.location.href =
+                            "https://app.rentamon.com/panel/");
                         }
                       })()
                     };
