@@ -4041,8 +4041,7 @@ function PlasmicActivation__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["updateStateVariable"] = $state
-                            .policiesCheckbox.isChecked
+                          $steps["updateStateVariable"] = false
                             ? (() => {
                                 const actionArgs = {
                                   operation: 0,
@@ -4075,7 +4074,8 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["goToLitePanel"] = false
+                          $steps["goToLitePanel"] = $state.policiesCheckbox
+                            .isChecked
                             ? (() => {
                                 const actionArgs = { destination: `/calendar` };
                                 return (({ destination }) => {
