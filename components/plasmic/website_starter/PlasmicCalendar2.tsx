@@ -7114,11 +7114,21 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.freeBox__agwrs,
                   (() => {
                     try {
-                      return $state.selectedItem.some(
-                        item => item.price === 0 || item.price === null
-                      ) == true
-                        ? "fake-disabled"
-                        : "";
+                      return (() => {
+                        const timestamps = $state.fragmentDatePicker.values;
+                        const dates = timestamps.map(timestamp => {
+                          const date = new Date(timestamp * 1000);
+                          return date.toISOString().split("T")[0];
+                        });
+                        const calendar = $state.apiRequest.data[1].calendar;
+                        const result = dates.some(date => {
+                          const item = calendar.find(
+                            entry => entry.date === date
+                          );
+                          return item && item.price === null;
+                        });
+                        return result ? "fake-disabled" : "";
+                      })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -7138,19 +7148,27 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           operation: 0,
                           value: (() => {
-                            if (
-                              $state.selectedItem.some(
-                                item => item.price === 0 || item.price === null
-                              )
-                            ) {
-                              return false;
+                            const timestamps = $state.fragmentDatePicker.values;
+                            const dates = timestamps.map(timestamp => {
+                              const date = new Date(timestamp * 1000);
+                              return date.toISOString().split("T")[0];
+                            });
+                            const calendar = $state.apiRequest.data[1].calendar;
+                            const result = dates.some(date => {
+                              const item = calendar.find(
+                                entry => entry.date === date
+                              );
+                              return item && item.price === null;
+                            });
+                            if (!result) {
+                              if (Number($state.textInput4.value) === 0) {
+                                $state.textInput4.value = 10;
+                              } else if (Number($state.textInput4.value) < 70) {
+                                $state.textInput4.value =
+                                  (Number($state.textInput4.value) || 0) + 5;
+                              }
                             }
-                            if (Number($state.textInput4.value) === 0) {
-                              return ($state.textInput4.value = 10);
-                            } else if (Number($state.textInput4.value) < 70) {
-                              return ($state.textInput4.value =
-                                (Number($state.textInput4.value) || 0) + 5);
-                            }
+                            return result;
                           })()
                         };
                         return (({
@@ -7229,11 +7247,21 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.freeBox___0AJik,
                   (() => {
                     try {
-                      return $state.selectedItem.some(
-                        item => item.price === 0 || item.price === null
-                      ) == true
-                        ? "fake-disabled"
-                        : "";
+                      return (() => {
+                        const timestamps = $state.fragmentDatePicker.values;
+                        const dates = timestamps.map(timestamp => {
+                          const date = new Date(timestamp * 1000);
+                          return date.toISOString().split("T")[0];
+                        });
+                        const calendar = $state.apiRequest.data[1].calendar;
+                        const result = dates.some(date => {
+                          const item = calendar.find(
+                            entry => entry.date === date
+                          );
+                          return item && item.price === null;
+                        });
+                        return result ? "fake-disabled" : "";
+                      })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -7253,20 +7281,30 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           operation: 0,
                           value: (() => {
-                            if (
-                              $state.selectedItem.some(
-                                item => item.price === 0 || item.price === null
-                              )
-                            ) {
-                              return false;
+                            const timestamps = $state.fragmentDatePicker.values;
+                            const dates = timestamps.map(timestamp => {
+                              const date = new Date(timestamp * 1000);
+                              return date.toISOString().split("T")[0];
+                            });
+                            const calendar = $state.apiRequest.data[1].calendar;
+                            const result = dates.some(date => {
+                              const item = calendar.find(
+                                entry => entry.date === date
+                              );
+                              return item && item.price === null;
+                            });
+                            if (!result) {
+                              if (Number($state.textInput4.value) === 0) {
+                              } else if (
+                                Number($state.textInput4.value) === 10
+                              ) {
+                                $state.textInput4.value = 0;
+                              } else {
+                                $state.textInput4.value =
+                                  Number($state.textInput4.value) - 5;
+                              }
                             }
-                            if (Number($state.textInput4.value) === 0) {
-                            } else if (Number($state.textInput4.value) === 10) {
-                              return ($state.textInput4.value = 0);
-                            } else {
-                              return ($state.textInput4.value =
-                                Number($state.textInput4.value) - 5);
-                            }
+                            return result;
                           })()
                         };
                         return (({
