@@ -49,18 +49,13 @@ function AboutUs() {
         <meta property="og:image" content="https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png" />
       </Head>
 
-      <GlobalContextsProvider>
+     <GlobalContextsProvider>
       <PageParamsProvider__
-        route={router?.pathname}
-        params={router?.query}
-        query={router?.query}
+        route={useRouter()?.pathname}
+        params={useRouter()?.query}
+        query={useRouter()?.query}
       >
-        <PlasmicAboutUs>
-          {/* محتوای slot برای نمایش وضعیت PWA */}
-          <div className="pwa-status" style={{ display: 'none' }}>
-            {pwaStatus}
-          </div>
-        </PlasmicAboutUs>
+        <PlasmicAboutUs />
       </PageParamsProvider__>
     </GlobalContextsProvider>
     </>
