@@ -112,7 +112,6 @@ export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
-  sideEffect?: Flex__<typeof SideEffect>;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
   dayCell?: Flex__<typeof DayCell>;
@@ -796,9 +795,7 @@ function PlasmicCalendar2__RenderFunc(props: {
       />
 
       <SideEffect
-        data-plasmic-name={"sideEffect"}
-        data-plasmic-override={overrides.sideEffect}
-        className={classNames("__wab_instance", sty.sideEffect)}
+        className={classNames("__wab_instance", sty.sideEffect__t8Jii)}
         deps={(() => {
           try {
             return [$props.propertyId];
@@ -844,6 +841,51 @@ function PlasmicCalendar2__RenderFunc(props: {
             $steps["updateFragmentDatePickerValue"] = await $steps[
               "updateFragmentDatePickerValue"
             ];
+          }
+        }}
+      />
+
+      <SideEffect
+        className={classNames("__wab_instance", sty.sideEffect__zWwrV)}
+        deps={(() => {
+          try {
+            return [$state.platformRequestStatus];
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
+        onMount={async () => {
+          const $steps = {};
+
+          $steps["updateStateVariable"] = true
+            ? (() => {
+                const actionArgs = {
+                  operation: 0,
+                  value: console.log($state.platformRequestStatus)
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateStateVariable"] != null &&
+            typeof $steps["updateStateVariable"] === "object" &&
+            typeof $steps["updateStateVariable"].then === "function"
+          ) {
+            $steps["updateStateVariable"] = await $steps["updateStateVariable"];
           }
         }}
       />
@@ -8620,7 +8662,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
-    "sideEffect",
     "fragmentDatePicker",
     "fragmentLongPress",
     "dayCell",
@@ -8667,7 +8708,6 @@ const PlasmicDescendants = {
     "p5"
   ],
   apiRequest: ["apiRequest"],
-  sideEffect: ["sideEffect"],
   fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
   fragmentLongPress: ["fragmentLongPress", "dayCell"],
   dayCell: ["dayCell"],
@@ -8756,7 +8796,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
-  sideEffect: typeof SideEffect;
   fragmentDatePicker: typeof DatePicker;
   fragmentLongPress: typeof FragmentLongPress;
   dayCell: typeof DayCell;
@@ -8864,7 +8903,6 @@ export const PlasmicCalendar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
-    sideEffect: makeNodeComponent("sideEffect"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),
     dayCell: makeNodeComponent("dayCell"),
