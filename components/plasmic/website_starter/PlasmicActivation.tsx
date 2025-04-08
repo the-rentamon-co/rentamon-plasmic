@@ -146,7 +146,6 @@ export type PlasmicActivation__OverridesType = {
   false7?: Flex__<typeof PlasmicImg__>;
   apiRequest2?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
-  apiRequest?: Flex__<typeof ApiRequest>;
   form?: Flex__<typeof FormWrapper>;
   platforms?: Flex__<typeof FormItemWrapper>;
   policiesCheckbox?: Flex__<typeof Checkbox>;
@@ -291,30 +290,6 @@ function PlasmicActivation__RenderFunc(props: {
 
         refName: "form",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
-      },
-      {
-        path: "apiRequest.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
       },
       {
         path: "input6.value",
@@ -3688,80 +3663,6 @@ function PlasmicActivation__RenderFunc(props: {
               </AntdModal>
             </div>
           ) : null}
-          <ApiRequest
-            data-plasmic-name={"apiRequest"}
-            data-plasmic-override={overrides.apiRequest}
-            children={null}
-            className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__osfWm
-                )}
-              >
-                {
-                  "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a  \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0634\u0645\u0627"
-                }
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__umnyc
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return "...در حال پردازش";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "Loading...";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            }
-            method={"POST"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequest",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            ref={ref => {
-              $refs["apiRequest"] = ref;
-            }}
-            url={` ${(() => {
-              if ($ctx.params.type == "1") {
-                return "https://gateway.rentamon.com/webhook/user-registration?param=1";
-              } else {
-                return "";
-              }
-            })()}`}
-          />
-
           <div
             className={classNames(
               projectcss.all,
@@ -3843,19 +3744,6 @@ function PlasmicActivation__RenderFunc(props: {
                       data-plasmic-name={"platforms"}
                       data-plasmic-override={overrides.platforms}
                       className={classNames("__wab_instance", sty.platforms)}
-                      initialValue={(() => {
-                        try {
-                          return $state.apiRequest.data[0].phone;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()}
                       label={
                         <div
                           className={classNames(
@@ -3989,6 +3877,54 @@ function PlasmicActivation__RenderFunc(props: {
                             ) {
                               return;
                             }
+
+                            (async isChecked => {
+                              const $steps = {};
+
+                              $steps["invokeGlobalAction"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              if ($ctx.params.type == "1") {
+                                                return "https://gateway.rentamon.com/webhook/user-registration?param=1";
+                                              } else {
+                                                return "";
+                                              }
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["invokeGlobalAction"] != null &&
+                                typeof $steps["invokeGlobalAction"] ===
+                                  "object" &&
+                                typeof $steps["invokeGlobalAction"].then ===
+                                  "function"
+                              ) {
+                                $steps["invokeGlobalAction"] = await $steps[
+                                  "invokeGlobalAction"
+                                ];
+                              }
+                            }).apply(null, eventArgs);
                           }}
                         >
                           <PlasmicLink__
@@ -7060,19 +6996,6 @@ function PlasmicActivation__RenderFunc(props: {
                           "__wab_instance",
                           sty.mihmanshoSend
                         )}
-                        initialValue={(() => {
-                          try {
-                            return $state.apiRequest.data[0].phone;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
                         label={
                           <div
                             className={classNames(
@@ -7915,19 +7838,6 @@ function PlasmicActivation__RenderFunc(props: {
                           "__wab_instance",
                           sty.formField___3FYu8
                         )}
-                        initialValue={(() => {
-                          try {
-                            return $state.apiRequest.data[0].phone;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
                         label={
                           <div
                             className={classNames(
@@ -8416,19 +8326,6 @@ function PlasmicActivation__RenderFunc(props: {
                       "__wab_instance",
                       sty.formField__gR1Fp
                     )}
-                    initialValue={(() => {
-                      try {
-                        return $state.apiRequest.data[0].phone;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
                     label={
                       <div
                         className={classNames(
@@ -9181,26 +9078,9 @@ function PlasmicActivation__RenderFunc(props: {
                               sty.text__xu2Et
                             )}
                           >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    "کد " +
-                                    $state.apiRequest.data[0].property_name +
-                                    " در میهمان‌شو چیه\u061F"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646:";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
+                            {
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646:"
+                            }
                           </div>
                         }
                         name={"mihmanshcode"}
@@ -9267,26 +9147,9 @@ function PlasmicActivation__RenderFunc(props: {
                               sty.text__df668
                             )}
                           >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    "کد " +
-                                    $state.apiRequest.data[0].property_name +
-                                    " در هومسا چیه\u061F"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646:";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
+                            {
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646:"
+                            }
                           </div>
                         }
                         name={"homsacode"}
@@ -9353,26 +9216,9 @@ function PlasmicActivation__RenderFunc(props: {
                               sty.text__kae8I
                             )}
                           >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    "کد " +
-                                    $state.apiRequest.data[0].property_name +
-                                    " در میزبون چیه\u061F"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646:";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
+                            {
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646:"
+                            }
                           </div>
                         }
                         name={"mizbooncode"}
@@ -10871,7 +10717,6 @@ const PlasmicDescendants = {
     "false7",
     "apiRequest2",
     "modal",
-    "apiRequest",
     "form",
     "platforms",
     "policiesCheckbox",
@@ -11074,7 +10919,6 @@ const PlasmicDescendants = {
   false7: ["false7"],
   apiRequest2: ["apiRequest2"],
   modal: ["modal"],
-  apiRequest: ["apiRequest"],
   form: [
     "form",
     "platforms",
@@ -11325,7 +11169,6 @@ type NodeDefaultElementType = {
   false7: typeof PlasmicImg__;
   apiRequest2: typeof ApiRequest;
   modal: typeof AntdModal;
-  apiRequest: typeof ApiRequest;
   form: typeof FormWrapper;
   platforms: typeof FormItemWrapper;
   policiesCheckbox: typeof Checkbox;
@@ -11512,7 +11355,6 @@ export const PlasmicActivation = Object.assign(
     false7: makeNodeComponent("false7"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     modal: makeNodeComponent("modal"),
-    apiRequest: makeNodeComponent("apiRequest"),
     form: makeNodeComponent("form"),
     platforms: makeNodeComponent("platforms"),
     policiesCheckbox: makeNodeComponent("policiesCheckbox"),
