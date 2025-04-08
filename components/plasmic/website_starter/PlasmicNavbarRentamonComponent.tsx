@@ -316,7 +316,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                 sty.link__ryWoj
               )}
               component={Link}
-              href={`/panel`}
+              href={`/calendar`}
               platform={"nextjs"}
             >
               {"\u0648\u0631\u0648\u062f"}
