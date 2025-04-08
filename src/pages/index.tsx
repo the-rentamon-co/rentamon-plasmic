@@ -11,7 +11,7 @@ function Homepage() {
   // Use PlasmicHomepage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
+  // can also install whatwever React hooks you need here to manage state or
   // fetch data.
   //
   // Props you can pass into PlasmicHomepage are:
