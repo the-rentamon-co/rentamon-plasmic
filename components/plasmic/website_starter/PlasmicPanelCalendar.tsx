@@ -1520,6 +1520,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
           <Calendar2
             data-plasmic-name={"calendar2"}
             data-plasmic-override={overrides.calendar2}
+            calendarType={"pro"}
             className={classNames("__wab_instance", sty.calendar2)}
             featurePermission={(() => {
               try {

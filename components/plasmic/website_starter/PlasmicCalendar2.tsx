@@ -101,12 +101,14 @@ export type PlasmicCalendar2__ArgsType = {
   propertyId?: number;
   daystatuses?: any;
   featurePermission?: any;
+  calendarType?: string;
 };
 type ArgPropType = keyof PlasmicCalendar2__ArgsType;
 export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
   "propertyId",
   "daystatuses",
-  "featurePermission"
+  "featurePermission",
+  "calendarType"
 );
 
 export type PlasmicCalendar2__OverridesType = {
@@ -162,6 +164,7 @@ export interface DefaultCalendar2Props {
   propertyId?: number;
   daystatuses?: any;
   featurePermission?: any;
+  calendarType?: string;
   className?: string;
 }
 
@@ -611,6 +614,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "updateStyle",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -849,7 +858,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         className={classNames("__wab_instance", sty.sideEffect__zWwrV)}
         deps={(() => {
           try {
-            return [$state.platformRequestStatus];
+            return [$state.updateStyle];
           } catch (e) {
             if (
               e instanceof TypeError ||
@@ -863,29 +872,203 @@ function PlasmicCalendar2__RenderFunc(props: {
         onMount={async () => {
           const $steps = {};
 
-          $steps["updateStateVariable"] = true
-            ? (() => {
-                const actionArgs = {
-                  operation: 0,
-                  value: console.log($state.platformRequestStatus)
-                };
-                return (({ variable, value, startIndex, deleteCount }) => {
-                  if (!variable) {
-                    return;
-                  }
-                  const { objRoot, variablePath } = variable;
+          $steps["updateStateVariable"] =
+            $props.calendarType == "lite"
+              ? (() => {
+                  const actionArgs = {
+                    operation: 0,
+                    value: (() => {
+                      function convertToEnglishNumber(persianStr = "") {
+                        let str = persianStr.replace(/٬/g, "");
+                        const faDigits = /[۰-۹]/g;
+                        const faMap = "۰۱۲۳۴۵۶۷۸۹";
+                        str = str.replace(faDigits, char =>
+                          faMap.indexOf(char)
+                        );
+                        return Number(str);
+                      }
+                      function formatPriceToPersian(num = 0) {
+                        const formatter = new Intl.NumberFormat("fa-IR");
+                        return formatter.format(num);
+                      }
+                      $state.fetchModal.open = false;
+                      $state.block.open = false;
+                      $state.modal.open = false;
+                      $state.modalDiscount.open = false;
+                      $state.modalChangePrice.open = false;
+                      const changedDaysTimestamps = (
+                        $state.requestdata.days || []
+                      ).flat();
+                      const changedDaysDates = changedDaysTimestamps.map(
+                        timestamp => {
+                          const date = new Date(timestamp * 1000);
+                          const year = date.getFullYear();
+                          const month = ("0" + (date.getMonth() + 1)).slice(-2);
+                          const day = ("0" + date.getDate()).slice(-2);
+                          return `${year}-${month}-${day}`;
+                        }
+                      );
+                      const allowedWebsites = [
+                        "رزرو",
+                        "دیوار",
+                        "واسطه",
+                        "همکار",
+                        "مسافر قبلی",
+                        "اینستاگرام",
+                        "سایر"
+                      ];
 
-                  $stateSet(objRoot, variablePath, value);
-                  return value;
-                })?.apply(null, [actionArgs]);
-              })()
-            : undefined;
+                      const updatedCalendar =
+                        $state.apiRequest.data[1].calendar.map(day => {
+                          if (!changedDaysDates.includes(day.date)) {
+                            return day;
+                          }
+                          if (
+                            day.status === "reserved" &&
+                            day.website !== null &&
+                            !allowedWebsites.includes(day.website)
+                          ) {
+                            return day;
+                          }
+                          const updates = {};
+                          if ($state.requestdata.request_for === "block") {
+                            updates.status = "blocked";
+                          } else if (
+                            $state.requestdata.request_for === "reserve"
+                          ) {
+                            updates.status = "reserved";
+                            updates.website = "رزرو";
+                          } else if (
+                            $state.requestdata.request_for === "unblock" ||
+                            !$state.requestdata.request_for
+                          ) {
+                            updates.status = "unblocked";
+                            updates.website = null;
+                          }
+                          if ($state.requestdata.price !== undefined) {
+                            let numericPrice = Number($state.requestdata.price)
+                              ? Number($state.requestdata.price)
+                              : convertToEnglishNumber(
+                                  $state.requestdata.price
+                                );
+                            let appliedDiscount = 0;
+                            if ($state.requestdata.discount !== undefined) {
+                              appliedDiscount = Number(
+                                $state.requestdata.discount
+                              );
+                            } else if (day.discount_percentage) {
+                              appliedDiscount = Number(day.discount_percentage);
+                            }
+                            updates.discount_percentage = appliedDiscount;
+                            if (appliedDiscount > 0) {
+                              const discountedPrice = Math.round(
+                                numericPrice * (1 - appliedDiscount / 100)
+                              );
+                              const finalPrice = Math.round(
+                                discountedPrice / 1000
+                              );
+                              updates.price = formatPriceToPersian(finalPrice);
+                            } else {
+                              const finalPrice = Math.round(
+                                numericPrice / 1000
+                              );
+                              updates.price = formatPriceToPersian(finalPrice);
+                              updates.status = day.status;
+                            }
+                          } else if (
+                            $state.requestdata.discount !== undefined
+                          ) {
+                            const newDiscount = Number(
+                              $state.requestdata.discount
+                            );
+                            const currentDayPrice = day.price
+                              ? convertToEnglishNumber(day.price.toString())
+                              : 0;
+                            const oldDiscount =
+                              Number(day.discount_percentage) || 0;
+                            let basePrice = currentDayPrice;
+                            if (oldDiscount > 0) {
+                              const factor = 1 - oldDiscount / 100;
+                              if (factor !== 0) {
+                                basePrice = Math.round(
+                                  currentDayPrice / factor
+                                );
+                              }
+                            }
+                            if (newDiscount === 0) {
+                              updates.discount_percentage = 0;
+                              updates.status = day.status;
+                              updates.price = formatPriceToPersian(
+                                Math.round(basePrice)
+                              );
+                            } else {
+                              updates.discount_percentage = newDiscount;
+                              const discountedPrice = Math.round(
+                                basePrice * (1 - newDiscount / 100)
+                              );
+                              updates.price =
+                                formatPriceToPersian(discountedPrice);
+                              updates.status = day.status;
+                            }
+                          }
+                          return {
+                            ...day,
+                            ...updates
+                          };
+                        });
+                      $state.apiRequest.data[1].calendar = updatedCalendar;
+                      console.log(
+                        "Calendar updated with changes:",
+                        updatedCalendar
+                      );
+                      $state.platformRequestStatus = [];
+                      $state.requestdata = [];
+                      $state.fragmentDatePicker.values = [];
+                      $state.textInput.value = 0;
+                      $state.textInput2.value = 0;
+                      return ($state.textInput4.value = 0);
+                    })()
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
           if (
             $steps["updateStateVariable"] != null &&
             typeof $steps["updateStateVariable"] === "object" &&
             typeof $steps["updateStateVariable"].then === "function"
           ) {
             $steps["updateStateVariable"] = await $steps["updateStateVariable"];
+          }
+
+          $steps["invokeGlobalAction"] =
+            $props.calendarType == "lite"
+              ? (() => {
+                  const actionArgs = {
+                    args: [
+                      undefined,
+                      "\u062b\u0628\u062a \u0634\u062f",
+                      "top-center"
+                    ]
+                  };
+                  return $globalActions["Fragment.showToast"]?.apply(null, [
+                    ...actionArgs.args
+                  ]);
+                })()
+              : undefined;
+          if (
+            $steps["invokeGlobalAction"] != null &&
+            typeof $steps["invokeGlobalAction"] === "object" &&
+            typeof $steps["invokeGlobalAction"].then === "function"
+          ) {
+            $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
           }
         }}
       />
@@ -5343,27 +5526,33 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["updateFetchModalOpen"] = true
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["fetchModal", "open"]
-                      },
-                      operation: 0,
-                      value: true
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
+              $steps["updateFetchModalOpen"] =
+                $props.calendarType == "pro"
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["fetchModal", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
 
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["updateFetchModalOpen"] != null &&
                 typeof $steps["updateFetchModalOpen"] === "object" &&
@@ -5506,6 +5695,39 @@ function PlasmicCalendar2__RenderFunc(props: {
                 typeof $steps["reserveRequest"].then === "function"
               ) {
                 $steps["reserveRequest"] = await $steps["reserveRequest"];
+              }
+
+              $steps["updateStateVariable2"] =
+                $props.calendarType == "lite"
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: ($state.updateStyle = $state.updateStyle + 1)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+              if (
+                $steps["updateStateVariable2"] != null &&
+                typeof $steps["updateStateVariable2"] === "object" &&
+                typeof $steps["updateStateVariable2"].then === "function"
+              ) {
+                $steps["updateStateVariable2"] = await $steps[
+                  "updateStateVariable2"
+                ];
               }
             }}
           >
