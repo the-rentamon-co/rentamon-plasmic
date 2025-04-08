@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicWallet3 } from "../../components/plasmic/website_starter/PlasmicWallet3";
+import { Plasmicکیفپول } from "../../components/plasmic/website_starter/Plasmic\u06A9\u06CC\u0641\u067E\u0648\u0644";
 import { useRouter } from "next/router";
 
-function Wallet3() {
-  // Use PlasmicWallet3 to render this component as it was
+function کیفپول() {
+  // Use Plasmicکیفپول to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicWallet3 are:
+  // Props you can pass into Plasmicکیفپول are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicWallet3 is wrapped by your project's global
+  // By default, Plasmicکیفپول is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -32,10 +32,10 @@ function Wallet3() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicWallet3 />
+        <Plasmicکیفپول />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default Wallet3;
+export default کیفپول;

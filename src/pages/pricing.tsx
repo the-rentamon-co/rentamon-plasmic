@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicPricing } from "../../components/plasmic/website_starter/PlasmicPricing";
+import { Plasmicتعرفهخدمات } from "../../components/plasmic/website_starter/Plasmic\u062A\u0639\u0631\u0641\u0647\u062E\u062F\u0645\u0627\u062A";
 import { useRouter } from "next/router";
 
-function Pricing() {
-  // Use PlasmicPricing to render this component as it was
+function تعرفهخدمات() {
+  // Use Plasmicتعرفهخدمات to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicPricing are:
+  // Props you can pass into Plasmicتعرفهخدمات are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicPricing is wrapped by your project's global
+  // By default, Plasmicتعرفهخدمات is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -32,10 +32,10 @@ function Pricing() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicPricing />
+        <Plasmicتعرفهخدمات />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default Pricing;
+export default تعرفهخدمات;

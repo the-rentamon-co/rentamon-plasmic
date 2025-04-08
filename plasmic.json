@@ -1038,20 +1038,6 @@
           "componentType": "component"
         },
         {
-          "id": "4KhpZ-of93My",
-          "name": "Pricing",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicPricing.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/pricing.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicPricing.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/pricing"
-        },
-        {
           "id": "zXAOwfcgu5NZ",
           "name": "Activation",
           "type": "managed",
@@ -1133,20 +1119,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/قوانین-رنتامون"
-        },
-        {
-          "id": "4_Sank-PwTYC",
-          "name": "Download",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicDownload.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/download.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicDownload.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/download"
         },
         {
           "id": "7qT9iMfa9pib",
@@ -1232,20 +1204,6 @@
           "path": "/settings"
         },
         {
-          "id": "nz5EAC1dRXp3",
-          "name": "Wallet3",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicWallet3.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/wallet.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicWallet3.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/wallet"
-        },
-        {
           "id": "TARn4RyKgOfz",
           "name": "ChannelManager",
           "type": "managed",
@@ -1313,6 +1271,48 @@
           "cssFilePath": "plasmic/website_starter/PlasmicSideLite.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "4KhpZ-of93My",
+          "name": "تعرفهخدمات",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicتعرفهخدمات.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/pricing.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicتعرفهخدمات.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/pricing"
+        },
+        {
+          "id": "4_Sank-PwTYC",
+          "name": "دانلوداپلیکیشن",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشن.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/download.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشن.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/download"
+        },
+        {
+          "id": "nz5EAC1dRXp3",
+          "name": "کیفپول",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicکیفپول.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/wallet.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicکیفپول.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/wallet"
         }
       ],
       "icons": [
