@@ -244,7 +244,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                 component={Link}
                 href={
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? `/panel`
+                    ? `/calendar`
                     : "/"
                 }
                 platform={"nextjs"}
