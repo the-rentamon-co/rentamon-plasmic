@@ -733,4 +733,5 @@
 .favicon:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+  font-size: 13px;
 }
