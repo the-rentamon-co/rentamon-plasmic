@@ -870,7 +870,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       sty.text__m6EMr
                     )}
                   >
-                    {"\u06f0.\u06f5\u066a"}
+                    {" "}
                   </div>
                 </div>
               </Stack__>

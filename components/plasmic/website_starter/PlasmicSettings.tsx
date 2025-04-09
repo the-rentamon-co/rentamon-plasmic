@@ -1284,7 +1284,7 @@ function PlasmicSettings__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "tablet")
                         ? "\u06f0/\u06f5"
-                        : "\u06f0/\u06f5"}
+                        : " "}
                     </div>
                   </div>
                   <div

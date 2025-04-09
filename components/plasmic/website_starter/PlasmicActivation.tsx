@@ -3347,7 +3347,7 @@ function PlasmicActivation__RenderFunc(props: {
                           data-plasmic-name={"false7"}
                           data-plasmic-override={overrides.false7}
                           alt={""}
-                          className={classNames(sty.false7)}
+                          className={classNames(sty.false7, "element")}
                           displayHeight={"18px"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
@@ -3356,9 +3356,9 @@ function PlasmicActivation__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image11.svg",
-                            fullWidth: 19,
-                            fullHeight: 19,
+                            src: "/plasmic/website_starter/images/image29.svg",
+                            fullWidth: 27,
+                            fullHeight: 27,
                             aspectRatio: 1
                           }}
                         />
@@ -5023,10 +5023,19 @@ function PlasmicActivation__RenderFunc(props: {
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone:
-                                                $state.form.value.jajigaphone
-                                            };
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
+                                              }
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.form.value.jajigaphone
+                                                )
+                                              };
+                                            })();
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -5301,11 +5310,20 @@ function PlasmicActivation__RenderFunc(props: {
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone:
-                                                $state.form.value.jajigaphone,
-                                              otp: $state.form.value.jajigaOTP
-                                            };
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
+                                              }
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.form.value.jajigaphone
+                                                ),
+                                                otp: $state.form.value.jajigaOTP
+                                              };
+                                            })();
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -5704,9 +5722,19 @@ function PlasmicActivation__RenderFunc(props: {
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone: $state.form.value.shabphone
-                                            };
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
+                                              }
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.form.value.shabphone
+                                                )
+                                              };
+                                            })();
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -6057,11 +6085,20 @@ function PlasmicActivation__RenderFunc(props: {
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone:
-                                                $state.form.value.shabphone,
-                                              otp: $state.form.value.shabOTP
-                                            };
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
+                                              }
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.form.value.shabphone
+                                                ),
+                                                otp: $state.form.value.shabOTP
+                                              };
+                                            })();
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -6463,11 +6500,20 @@ function PlasmicActivation__RenderFunc(props: {
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone:
-                                                $state.form.value.otaghakphone,
-                                              website: "otaghak"
-                                            };
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
+                                              }
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.form.value.otaghakphone
+                                                ),
+                                                website: "otaghak"
+                                              };
+                                            })();
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -6795,12 +6841,22 @@ function PlasmicActivation__RenderFunc(props: {
                                         undefined,
                                         (() => {
                                           try {
-                                            return {
-                                              phone:
-                                                $state.form.value.otaghakphone,
-                                              otp: $state.form.value.otaghakOTP,
-                                              website: "otaghak"
-                                            };
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
+                                              }
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.form.value.otaghakphone
+                                                ),
+                                                otp: $state.form.value
+                                                  .otaghakOTP,
+                                                website: "otaghak"
+                                              };
+                                            })();
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
