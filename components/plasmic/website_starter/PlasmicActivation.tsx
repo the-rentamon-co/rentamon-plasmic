@@ -470,7 +470,7 @@ function PlasmicActivation__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return 1;
+                return 2;
               }
               throw e;
             }
