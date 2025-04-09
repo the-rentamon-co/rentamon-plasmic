@@ -1026,7 +1026,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                       $state.fragmentDatePicker.values = [];
                       $state.textInput.value = 0;
                       $state.textInput2.value = 0;
-                      return ($state.textInput4.value = 0);
+                      $state.textInput4.value = 0;
+                      return ($state.selectedItem = []);
                     })()
                   };
                   return (({ variable, value, startIndex, deleteCount }) => {
@@ -1448,7 +1449,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                           ...newItems
                         ];
 
-                        return ($state.selectedItem = updatedSelected);
+                        $state.selectedItem = updatedSelected;
+                        return console.log($state.selectedItem);
                       })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
@@ -5427,7 +5429,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                             $state.fragmentDatePicker.values = [];
                             $state.textInput.value = 0;
                             $state.textInput2.value = 0;
-                            return ($state.textInput4.value = 0);
+                            $state.textInput4.value = 0;
+                            return ($state.selectedItem = []);
                           })()
                         };
                         return (({
