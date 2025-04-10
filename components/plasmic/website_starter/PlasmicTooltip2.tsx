@@ -187,26 +187,6 @@ function PlasmicTooltip2__RenderFunc(props: {
     screen: useScreenVariantsaSuSwU8JUYf()
   });
 
-  const [$ccVariants, setDollarCcVariants] = React.useState<
-    Record<string, boolean>
-  >({
-    placementTop: false,
-    placementBottom: false,
-    placementLeft: false,
-    placementRight: false
-  });
-  const updateVariant = React.useCallback(
-    (changes: Record<string, boolean>) => {
-      setDollarCcVariants(prev => {
-        if (!Object.keys(changes).some(k => prev[k] !== changes[k])) {
-          return prev;
-        }
-        return { ...prev, ...changes };
-      });
-    },
-    []
-  );
-
   return (
     <BaseTooltip
       data-plasmic-name={"ariaTooltip"}
@@ -235,7 +215,6 @@ function PlasmicTooltip2__RenderFunc(props: {
         );
       }}
       placement={args.placement}
-      plasmicUpdateVariant={updateVariant}
       resetClassName={classNames(
         projectcss.root_reset,
         projectcss.plasmic_default_styles,

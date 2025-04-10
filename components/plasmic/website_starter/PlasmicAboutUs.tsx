@@ -61,6 +61,7 @@ import {
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -133,6 +134,7 @@ export type PlasmicAboutUs__OverridesType = {
   addressText?: Flex__<"div">;
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
+  iframe?: Flex__<typeof Iframe>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -1610,6 +1612,17 @@ function PlasmicAboutUs__RenderFunc(props: {
                 </div>
               </div>
             </div>
+            <div className={classNames(projectcss.all, sty.freeBox___0PNkS)}>
+              <Iframe
+                data-plasmic-name={"iframe"}
+                data-plasmic-override={overrides.iframe}
+                className={classNames("__wab_instance", sty.iframe)}
+                preview={false}
+                src={
+                  "https://int-n8n.app.n8n.cloud/webhook/ff74627b-70fe-4b67-9122-2e379aafc1db/chat"
+                }
+              />
+            </div>
           </div>
           <div
             data-plasmic-name={"html"}
@@ -1696,6 +1709,7 @@ const PlasmicDescendants = {
     "addressText",
     "map",
     "embedHtml",
+    "iframe",
     "html",
     "clarity2",
     "goftino",
@@ -1749,7 +1763,8 @@ const PlasmicDescendants = {
     "content",
     "addressText",
     "map",
-    "embedHtml"
+    "embedHtml",
+    "iframe"
   ],
   intro1st: [
     "intro1st",
@@ -1840,6 +1855,7 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
+  iframe: ["iframe"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -1898,6 +1914,7 @@ type NodeDefaultElementType = {
   addressText: "div";
   map: "div";
   embedHtml: typeof Embed;
+  iframe: typeof Iframe;
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -2014,6 +2031,7 @@ export const PlasmicAboutUs = Object.assign(
     addressText: makeNodeComponent("addressText"),
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
+    iframe: makeNodeComponent("iframe"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
