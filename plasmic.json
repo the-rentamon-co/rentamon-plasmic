@@ -1313,6 +1313,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/wallet"
+        },
+        {
+          "id": "juphYAqvVhVp",
+          "name": "دستیارهوشمصنوعیرنتامون",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicدستیارهوشمصنوعیرنتامون.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/ai-assistant.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicدستیارهوشمصنوعیرنتامون.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/ai-assistant"
         }
       ],
       "icons": [
@@ -2747,6 +2761,11 @@
           "id": "qoL0V5ElACez",
           "name": "bedroom.jpg",
           "filePath": "../public/plasmic/website_starter/images/bedroomJpg.jpg"
+        },
+        {
+          "id": "wQuEdAYsAQAo",
+          "name": "photo_2025-03-12_22-01-17.jpg",
+          "filePath": "../public/plasmic/website_starter/images/photo20250312220117Jpg.jpg"
         }
       ],
       "indirect": false,
@@ -3760,7 +3779,8 @@
           "componentImportPath": "@plasmicpkgs/react-aria/skinny/registerDialog"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "tGFFjizqpBh1JPEqzUQxjY",

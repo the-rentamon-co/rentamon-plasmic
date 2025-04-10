@@ -2450,25 +2450,6 @@
     border-radius: 20px;
   }
 }
-.freeBox___0PNkS {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-.iframe:global(.__wab_instance) {
-  width: 800px;
-  height: 150px;
-  max-width: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
 .html {
   display: flex;
   flex-direction: column;
