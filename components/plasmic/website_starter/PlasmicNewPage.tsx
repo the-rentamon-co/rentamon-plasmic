@@ -61,7 +61,6 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import Switch from "../../Switch"; // plasmic-import: XDOKoC2AhwWH/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -107,23 +106,17 @@ export type PlasmicNewPage__OverridesType = {
   p2?: Flex__<"div">;
   p3?: Flex__<"div">;
   apiRequest2?: Flex__<typeof ApiRequest>;
-  p4?: Flex__<"div">;
-  switch1?: Flex__<typeof Switch>;
   options2?: Flex__<"div">;
   opt12?: Flex__<"div">;
   p12?: Flex__<"div">;
   p22?: Flex__<"div">;
   p32?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
-  p42?: Flex__<"div">;
-  switch2?: Flex__<typeof Switch>;
   options3?: Flex__<"div">;
   opt13?: Flex__<"div">;
   p13?: Flex__<"div">;
   p23?: Flex__<"div">;
   p33?: Flex__<"div">;
-  p43?: Flex__<"div">;
-  switch3?: Flex__<typeof Switch>;
   modalActivateAutosync?: Flex__<typeof AntdModal>;
   buttons?: Flex__<"div">;
   active?: Flex__<"div">;
@@ -243,12 +236,6 @@ function PlasmicNewPage__RenderFunc(props: {
         refName: "apiRequest2"
       },
       {
-        path: "switch1.isSelected",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
@@ -271,18 +258,6 @@ function PlasmicNewPage__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
-      },
-      {
-        path: "switch2.isSelected",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "switch3.isSelected",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "modalActivateAutosync.open",
@@ -652,47 +627,6 @@ function PlasmicNewPage__RenderFunc(props: {
                       </div>
                     </ApiRequest>
                   </div>
-                  <div
-                    data-plasmic-name={"p4"}
-                    data-plasmic-override={overrides.p4}
-                    className={classNames(projectcss.all, sty.p4, "ltr")}
-                  >
-                    <Switch
-                      data-plasmic-name={"switch1"}
-                      data-plasmic-override={overrides.switch1}
-                      className={classNames("__wab_instance", sty.switch1)}
-                      isSelected={generateStateValueProp($state, [
-                        "switch1",
-                        "isSelected"
-                      ])}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__mrsMj
-                          )}
-                        >
-                          {"Label"}
-                        </div>
-                      }
-                      onChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "switch1",
-                          "isSelected"
-                        ]).apply(null, eventArgs);
-
-                        if (
-                          eventArgs.length > 1 &&
-                          eventArgs[1] &&
-                          eventArgs[1]._plasmic_state_init_
-                        ) {
-                          return;
-                        }
-                      }}
-                      showLabel={false}
-                    />
-                  </div>
                 </div>
               </div>
               <div
@@ -815,47 +749,6 @@ function PlasmicNewPage__RenderFunc(props: {
                       </div>
                     </ApiRequest>
                   </div>
-                  <div
-                    data-plasmic-name={"p42"}
-                    data-plasmic-override={overrides.p42}
-                    className={classNames(projectcss.all, sty.p42, "ltr")}
-                  >
-                    <Switch
-                      data-plasmic-name={"switch2"}
-                      data-plasmic-override={overrides.switch2}
-                      className={classNames("__wab_instance", sty.switch2)}
-                      isSelected={generateStateValueProp($state, [
-                        "switch2",
-                        "isSelected"
-                      ])}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___1TPaU
-                          )}
-                        >
-                          {"Label"}
-                        </div>
-                      }
-                      onChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "switch2",
-                          "isSelected"
-                        ]).apply(null, eventArgs);
-
-                        if (
-                          eventArgs.length > 1 &&
-                          eventArgs[1] &&
-                          eventArgs[1]._plasmic_state_init_
-                        ) {
-                          return;
-                        }
-                      }}
-                      showLabel={false}
-                    />
-                  </div>
                 </div>
               </div>
               <div
@@ -922,48 +815,6 @@ function PlasmicNewPage__RenderFunc(props: {
                     >
                       {" "}
                     </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"p43"}
-                    data-plasmic-override={overrides.p43}
-                    className={classNames(projectcss.all, sty.p43, "ltr")}
-                  >
-                    <Switch
-                      data-plasmic-name={"switch3"}
-                      data-plasmic-override={overrides.switch3}
-                      className={classNames("__wab_instance", sty.switch3)}
-                      isSelected={generateStateValueProp($state, [
-                        "switch3",
-                        "isSelected"
-                      ])}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___3W6M5
-                          )}
-                        >
-                          {"Label"}
-                        </div>
-                      }
-                      onChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "switch3",
-                          "isSelected"
-                        ]).apply(null, eventArgs);
-
-                        if (
-                          eventArgs.length > 1 &&
-                          eventArgs[1] &&
-                          eventArgs[1]._plasmic_state_init_
-                        ) {
-                          return;
-                        }
-                      }}
-                      readOnly={true}
-                      showLabel={false}
-                    />
                   </div>
                 </div>
               </div>
@@ -1647,23 +1498,17 @@ const PlasmicDescendants = {
     "p2",
     "p3",
     "apiRequest2",
-    "p4",
-    "switch1",
     "options2",
     "opt12",
     "p12",
     "p22",
     "p32",
     "apiRequest",
-    "p42",
-    "switch2",
     "options3",
     "opt13",
     "p13",
     "p23",
     "p33",
-    "p43",
-    "switch3",
     "modalActivateAutosync",
     "buttons",
     "active",
@@ -1711,23 +1556,17 @@ const PlasmicDescendants = {
     "p2",
     "p3",
     "apiRequest2",
-    "p4",
-    "switch1",
     "options2",
     "opt12",
     "p12",
     "p22",
     "p32",
     "apiRequest",
-    "p42",
-    "switch2",
     "options3",
     "opt13",
     "p13",
     "p23",
     "p33",
-    "p43",
-    "switch3",
     "modalActivateAutosync",
     "buttons",
     "active",
@@ -1766,23 +1605,17 @@ const PlasmicDescendants = {
     "p2",
     "p3",
     "apiRequest2",
-    "p4",
-    "switch1",
     "options2",
     "opt12",
     "p12",
     "p22",
     "p32",
     "apiRequest",
-    "p42",
-    "switch2",
     "options3",
     "opt13",
     "p13",
     "p23",
     "p33",
-    "p43",
-    "switch3",
     "modalActivateAutosync",
     "buttons",
     "active",
@@ -1800,47 +1633,23 @@ const PlasmicDescendants = {
     "active4",
     "deactive4"
   ],
-  options: [
-    "options",
-    "opt1",
-    "p1",
-    "p2",
-    "p3",
-    "apiRequest2",
-    "p4",
-    "switch1"
-  ],
-  opt1: ["opt1", "p1", "p2", "p3", "apiRequest2", "p4", "switch1"],
+  options: ["options", "opt1", "p1", "p2", "p3", "apiRequest2"],
+  opt1: ["opt1", "p1", "p2", "p3", "apiRequest2"],
   p1: ["p1"],
   p2: ["p2"],
   p3: ["p3", "apiRequest2"],
   apiRequest2: ["apiRequest2"],
-  p4: ["p4", "switch1"],
-  switch1: ["switch1"],
-  options2: [
-    "options2",
-    "opt12",
-    "p12",
-    "p22",
-    "p32",
-    "apiRequest",
-    "p42",
-    "switch2"
-  ],
-  opt12: ["opt12", "p12", "p22", "p32", "apiRequest", "p42", "switch2"],
+  options2: ["options2", "opt12", "p12", "p22", "p32", "apiRequest"],
+  opt12: ["opt12", "p12", "p22", "p32", "apiRequest"],
   p12: ["p12"],
   p22: ["p22"],
   p32: ["p32", "apiRequest"],
   apiRequest: ["apiRequest"],
-  p42: ["p42", "switch2"],
-  switch2: ["switch2"],
-  options3: ["options3", "opt13", "p13", "p23", "p33", "p43", "switch3"],
-  opt13: ["opt13", "p13", "p23", "p33", "p43", "switch3"],
+  options3: ["options3", "opt13", "p13", "p23", "p33"],
+  opt13: ["opt13", "p13", "p23", "p33"],
   p13: ["p13"],
   p23: ["p23"],
   p33: ["p33"],
-  p43: ["p43", "switch3"],
-  switch3: ["switch3"],
   modalActivateAutosync: [
     "modalActivateAutosync",
     "buttons",
@@ -1912,23 +1721,17 @@ type NodeDefaultElementType = {
   p2: "div";
   p3: "div";
   apiRequest2: typeof ApiRequest;
-  p4: "div";
-  switch1: typeof Switch;
   options2: "div";
   opt12: "div";
   p12: "div";
   p22: "div";
   p32: "div";
   apiRequest: typeof ApiRequest;
-  p42: "div";
-  switch2: typeof Switch;
   options3: "div";
   opt13: "div";
   p13: "div";
   p23: "div";
   p33: "div";
-  p43: "div";
-  switch3: typeof Switch;
   modalActivateAutosync: typeof AntdModal;
   buttons: "div";
   active: "div";
@@ -2036,23 +1839,17 @@ export const PlasmicNewPage = Object.assign(
     p2: makeNodeComponent("p2"),
     p3: makeNodeComponent("p3"),
     apiRequest2: makeNodeComponent("apiRequest2"),
-    p4: makeNodeComponent("p4"),
-    switch1: makeNodeComponent("switch1"),
     options2: makeNodeComponent("options2"),
     opt12: makeNodeComponent("opt12"),
     p12: makeNodeComponent("p12"),
     p22: makeNodeComponent("p22"),
     p32: makeNodeComponent("p32"),
     apiRequest: makeNodeComponent("apiRequest"),
-    p42: makeNodeComponent("p42"),
-    switch2: makeNodeComponent("switch2"),
     options3: makeNodeComponent("options3"),
     opt13: makeNodeComponent("opt13"),
     p13: makeNodeComponent("p13"),
     p23: makeNodeComponent("p23"),
     p33: makeNodeComponent("p33"),
-    p43: makeNodeComponent("p43"),
-    switch3: makeNodeComponent("switch3"),
     modalActivateAutosync: makeNodeComponent("modalActivateAutosync"),
     buttons: makeNodeComponent("buttons"),
     active: makeNodeComponent("active"),

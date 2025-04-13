@@ -426,40 +426,6 @@
   text-overflow: clip !important;
   min-width: 0;
 }
-.p4 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 10%;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 20px;
-  min-width: 0;
-  padding: 0px;
-}
-.switch1:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  min-width: 40px;
-  min-height: 40px;
-  flex-grow: 1;
-}
-.text__mrsMj {
-  font-size: 20px;
-  text-align: center;
-  font-family: "Estedad";
-  font-weight: 400;
-  font-style: normal;
-  color: #203647;
-  text-transform: none;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre-wrap;
-  user-select: text;
-  text-decoration-line: none !important;
-  text-overflow: clip !important;
-}
 .options2 {
   display: flex;
   flex-direction: column;
@@ -610,40 +576,6 @@
   text-overflow: clip !important;
   min-width: 0;
 }
-.p42 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 10%;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 20px;
-  min-width: 0;
-  padding: 0px;
-}
-.switch2:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  min-width: 40px;
-  min-height: 40px;
-  flex-grow: 1;
-}
-.text___1TPaU {
-  font-size: 20px;
-  text-align: center;
-  font-family: "Estedad";
-  font-weight: 400;
-  font-style: normal;
-  color: #203647;
-  text-transform: none;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre-wrap;
-  user-select: text;
-  text-decoration-line: none !important;
-  text-overflow: clip !important;
-}
 .options3 {
   display: flex;
   flex-direction: column;
@@ -743,40 +675,6 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
-}
-.p43 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 10%;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 20px;
-  min-width: 0;
-  padding: 0px;
-}
-.switch3:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  min-width: 40px;
-  min-height: 40px;
-  flex-grow: 1;
-}
-.text___3W6M5 {
-  font-size: 20px;
-  text-align: center;
-  font-family: "Estedad";
-  font-weight: 400;
-  font-style: normal;
-  color: #203647;
-  text-transform: none;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre-wrap;
-  user-select: text;
-  text-decoration-line: none !important;
-  text-overflow: clip !important;
 }
 .modalActivateAutosync:global(.__wab_instance) {
   max-width: 100%;
