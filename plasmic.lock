@@ -2440,13 +2440,13 @@
         },
         {
           "type": "renderModule",
-          "assetId": "j0ZpqOulriV6",
-          "checksum": "29b72d62d681fe8f62a1309165f576d4"
+          "assetId": "q2ytjN9XEjsp",
+          "checksum": "4c3333464ad6d4e9b6f06243a4d81f2e"
         },
         {
           "type": "cssRules",
-          "assetId": "j0ZpqOulriV6",
-          "checksum": "29b72d62d681fe8f62a1309165f576d4"
+          "assetId": "q2ytjN9XEjsp",
+          "checksum": "4c3333464ad6d4e9b6f06243a4d81f2e"
         }
       ],
       "codegenVersion": "0.0.1"

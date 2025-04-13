@@ -1329,18 +1329,18 @@
           "path": "/ai-assistant"
         },
         {
-          "id": "j0ZpqOulriV6",
-          "name": "Settings2",
+          "id": "q2ytjN9XEjsp",
+          "name": "NewPage",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSettings2.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/settings-2.tsx"
+            "modulePath": "../src/pages/feature-setting.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicSettings2.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicNewPage.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/settings-2"
+          "path": "/feature-setting"
         }
       ],
       "icons": [
