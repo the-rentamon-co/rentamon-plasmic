@@ -524,7 +524,7 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0635\u0641\u062d\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                  "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0635\u0641\u062d\u0647 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
                 }
               </div>
             </div>
@@ -565,7 +565,7 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                         return (() => {
                           return setTimeout(() => {
                             window.location.href =
-                              "https://app.rentamon.com/wallet/";
+                              "https://app.rentamon.com/settings/";
                           }, 10000);
                         })();
                       }
