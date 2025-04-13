@@ -61,7 +61,6 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -107,8 +106,6 @@ export type PlasmicNewPage__OverridesType = {
   p2?: Flex__<"div">;
   p3?: Flex__<"div">;
   apiRequest2?: Flex__<typeof ApiRequest>;
-  p4?: Flex__<"div">;
-  _switch?: Flex__<typeof Switch>;
   options2?: Flex__<"div">;
   opt12?: Flex__<"div">;
   p12?: Flex__<"div">;
@@ -309,12 +306,6 @@ function PlasmicNewPage__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequestSetting"
-      },
-      {
-        path: "_switch.checked",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -635,71 +626,6 @@ function PlasmicNewPage__RenderFunc(props: {
                         {""}
                       </div>
                     </ApiRequest>
-                  </div>
-                  <div
-                    data-plasmic-name={"p4"}
-                    data-plasmic-override={overrides.p4}
-                    className={classNames(projectcss.all, sty.p4, "ltr")}
-                  >
-                    <Switch
-                      data-plasmic-name={"_switch"}
-                      data-plasmic-override={overrides._switch}
-                      checked={generateStateValueProp($state, [
-                        "_switch",
-                        "checked"
-                      ])}
-                      className={classNames("__wab_instance", sty._switch)}
-                      onCheckedChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "_switch",
-                          "checked"
-                        ]).apply(null, eventArgs);
-
-                        (async checked => {
-                          const $steps = {};
-
-                          $steps["updateModalActivateAutosyncOpen"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: [
-                                      "modalActivateAutosync",
-                                      "open"
-                                    ]
-                                  },
-                                  operation: 0,
-                                  value: console.log("check")
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateModalActivateAutosyncOpen"] != null &&
-                            typeof $steps["updateModalActivateAutosyncOpen"] ===
-                              "object" &&
-                            typeof $steps["updateModalActivateAutosyncOpen"]
-                              .then === "function"
-                          ) {
-                            $steps["updateModalActivateAutosyncOpen"] =
-                              await $steps["updateModalActivateAutosyncOpen"];
-                          }
-                        }).apply(null, eventArgs);
-                      }}
-                    />
                   </div>
                 </div>
               </div>
@@ -1572,8 +1498,6 @@ const PlasmicDescendants = {
     "p2",
     "p3",
     "apiRequest2",
-    "p4",
-    "_switch",
     "options2",
     "opt12",
     "p12",
@@ -1632,8 +1556,6 @@ const PlasmicDescendants = {
     "p2",
     "p3",
     "apiRequest2",
-    "p4",
-    "_switch",
     "options2",
     "opt12",
     "p12",
@@ -1683,8 +1605,6 @@ const PlasmicDescendants = {
     "p2",
     "p3",
     "apiRequest2",
-    "p4",
-    "_switch",
     "options2",
     "opt12",
     "p12",
@@ -1713,23 +1633,12 @@ const PlasmicDescendants = {
     "active4",
     "deactive4"
   ],
-  options: [
-    "options",
-    "opt1",
-    "p1",
-    "p2",
-    "p3",
-    "apiRequest2",
-    "p4",
-    "_switch"
-  ],
-  opt1: ["opt1", "p1", "p2", "p3", "apiRequest2", "p4", "_switch"],
+  options: ["options", "opt1", "p1", "p2", "p3", "apiRequest2"],
+  opt1: ["opt1", "p1", "p2", "p3", "apiRequest2"],
   p1: ["p1"],
   p2: ["p2"],
   p3: ["p3", "apiRequest2"],
   apiRequest2: ["apiRequest2"],
-  p4: ["p4", "_switch"],
-  _switch: ["_switch"],
   options2: ["options2", "opt12", "p12", "p22", "p32", "apiRequest"],
   opt12: ["opt12", "p12", "p22", "p32", "apiRequest"],
   p12: ["p12"],
@@ -1812,8 +1721,6 @@ type NodeDefaultElementType = {
   p2: "div";
   p3: "div";
   apiRequest2: typeof ApiRequest;
-  p4: "div";
-  _switch: typeof Switch;
   options2: "div";
   opt12: "div";
   p12: "div";
@@ -1932,8 +1839,6 @@ export const PlasmicNewPage = Object.assign(
     p2: makeNodeComponent("p2"),
     p3: makeNodeComponent("p3"),
     apiRequest2: makeNodeComponent("apiRequest2"),
-    p4: makeNodeComponent("p4"),
-    _switch: makeNodeComponent("_switch"),
     options2: makeNodeComponent("options2"),
     opt12: makeNodeComponent("opt12"),
     p12: makeNodeComponent("p12"),
