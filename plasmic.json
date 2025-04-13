@@ -1327,6 +1327,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/ai-assistant"
+        },
+        {
+          "id": "j0ZpqOulriV6",
+          "name": "Settings2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSettings2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/settings-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSettings2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/settings-2"
         }
       ],
       "icons": [
