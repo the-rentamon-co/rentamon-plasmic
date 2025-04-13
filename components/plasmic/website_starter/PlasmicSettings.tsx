@@ -63,7 +63,6 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Switch from "../../Switch"; // plasmic-import: XDOKoC2AhwWH/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
-import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
@@ -75,9 +74,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSettings.module.css"; // plasmic-import: Gu50HL8TWrKF/css
-
-import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -149,7 +145,6 @@ export type PlasmicSettings__OverridesType = {
   p34?: Flex__<"div">;
   apiRequestSetting?: Flex__<typeof ApiRequest>;
   _2nd2?: Flex__<"div">;
-  button?: Flex__<typeof Button>;
   returnButton?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   html?: Flex__<"div">;
@@ -3340,12 +3335,6 @@ function PlasmicSettings__RenderFunc(props: {
                   </React.Fragment>
                 )}
               </div>
-              <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button)}
-                link={`/reservations`}
-              />
             </div>
           </div>
           <div
@@ -3630,7 +3619,6 @@ const PlasmicDescendants = {
     "p34",
     "apiRequestSetting",
     "_2nd2",
-    "button",
     "returnButton",
     "sideEffect",
     "html",
@@ -3694,8 +3682,7 @@ const PlasmicDescendants = {
     "p24",
     "p34",
     "apiRequestSetting",
-    "_2nd2",
-    "button"
+    "_2nd2"
   ],
   intro: ["intro", "_2nd"],
   _2nd: ["_2nd"],
@@ -3828,8 +3815,7 @@ const PlasmicDescendants = {
   p24: ["p24"],
   p34: ["p34"],
   apiRequestSetting: ["apiRequestSetting"],
-  _2nd2: ["_2nd2", "button"],
-  button: ["button"],
+  _2nd2: ["_2nd2"],
   returnButton: ["returnButton"],
   sideEffect: ["sideEffect"],
   html: ["html", "clarity2", "goftino"],
@@ -3898,7 +3884,6 @@ type NodeDefaultElementType = {
   p34: "div";
   apiRequestSetting: typeof ApiRequest;
   _2nd2: "div";
-  button: typeof Button;
   returnButton: "div";
   sideEffect: typeof SideEffect;
   html: "div";
@@ -4025,7 +4010,6 @@ export const PlasmicSettings = Object.assign(
     p34: makeNodeComponent("p34"),
     apiRequestSetting: makeNodeComponent("apiRequestSetting"),
     _2nd2: makeNodeComponent("_2nd2"),
-    button: makeNodeComponent("button"),
     returnButton: makeNodeComponent("returnButton"),
     sideEffect: makeNodeComponent("sideEffect"),
     html: makeNodeComponent("html"),
