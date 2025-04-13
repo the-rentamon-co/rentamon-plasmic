@@ -88,11 +88,10 @@ export const PlasmicSettings__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSettings__OverridesType = {
   settings?: Flex__<"div">;
-  header3?: Flex__<"div">;
+  header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile?: Flex__<typeof ApiRequest>;
   main?: Flex__<"div">;
-  title?: Flex__<"div">;
   intro?: Flex__<"div">;
   _2nd?: Flex__<"div">;
   titleRow?: Flex__<"div">;
@@ -344,30 +343,6 @@ function PlasmicSettings__RenderFunc(props: {
         refName: "apiRequestSetting"
       },
       {
-        path: "profile.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
-      },
-      {
-        path: "profile.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
-      },
-      {
-        path: "profile.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
-      },
-      {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
@@ -414,6 +389,30 @@ function PlasmicSettings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest2"
+      },
+      {
+        path: "profile.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
+      },
+      {
+        path: "profile.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
+      },
+      {
+        path: "profile.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile"
       }
     ],
     [$props, $ctx, $refs]
@@ -470,9 +469,9 @@ function PlasmicSettings__RenderFunc(props: {
           )}
         >
           <div
-            data-plasmic-name={"header3"}
-            data-plasmic-override={overrides.header3}
-            className={classNames(projectcss.all, sty.header3)}
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames(projectcss.all, sty.header)}
           >
             <SideBar2
               data-plasmic-name={"sideBar2"}
@@ -494,17 +493,15 @@ function PlasmicSettings__RenderFunc(props: {
               })()}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__uNqwy)}>
+            <div className={classNames(projectcss.all, sty.freeBox__vSsa5)}>
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___6TAnx
+                  sty.text__i01Xj
                 )}
               >
-                {
-                  "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                }
+                {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
               </div>
             </div>
             <ApiRequest
@@ -543,12 +540,6 @@ function PlasmicSettings__RenderFunc(props: {
             data-plasmic-override={overrides.main}
             className={classNames(projectcss.all, sty.main)}
           >
-            <div
-              data-plasmic-name={"title"}
-              data-plasmic-override={overrides.title}
-              className={classNames(projectcss.all, sty.title)}
-            />
-
             <div
               data-plasmic-name={"intro"}
               data-plasmic-override={overrides.intro}
@@ -3571,11 +3562,10 @@ function PlasmicSettings__RenderFunc(props: {
 const PlasmicDescendants = {
   settings: [
     "settings",
-    "header3",
+    "header",
     "sideBar2",
     "profile",
     "main",
-    "title",
     "intro",
     "_2nd",
     "titleRow",
@@ -3635,12 +3625,11 @@ const PlasmicDescendants = {
     "clarity2",
     "goftino"
   ],
-  header3: ["header3", "sideBar2", "profile"],
+  header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
   profile: ["profile"],
   main: [
     "main",
-    "title",
     "intro",
     "_2nd",
     "titleRow",
@@ -3695,7 +3684,6 @@ const PlasmicDescendants = {
     "apiRequestSetting",
     "_2nd2"
   ],
-  title: ["title"],
   intro: ["intro", "_2nd"],
   _2nd: ["_2nd"],
   titleRow: ["titleRow", "opt15", "p14", "p25", "p35", "p44"],
@@ -3839,11 +3827,10 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   settings: "div";
-  header3: "div";
+  header: "div";
   sideBar2: typeof SideBar2;
   profile: typeof ApiRequest;
   main: "div";
-  title: "div";
   intro: "div";
   _2nd: "div";
   titleRow: "div";
@@ -3964,11 +3951,10 @@ export const PlasmicSettings = Object.assign(
   makeNodeComponent("settings"),
   {
     // Helper components rendering sub-elements
-    header3: makeNodeComponent("header3"),
+    header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile: makeNodeComponent("profile"),
     main: makeNodeComponent("main"),
-    title: makeNodeComponent("title"),
     intro: makeNodeComponent("intro"),
     _2nd: makeNodeComponent("_2nd"),
     titleRow: makeNodeComponent("titleRow"),
