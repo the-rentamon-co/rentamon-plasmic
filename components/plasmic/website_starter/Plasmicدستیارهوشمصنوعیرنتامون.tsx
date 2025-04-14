@@ -294,6 +294,32 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                   className={classNames("__wab_instance", sty.ai)}
                   onLoad={async event => {
                     const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return document
+                                  .querySelectorAll(".chat-header")
+                                  .forEach(el => {
+                                    el.style.display = "none";
+                                  });
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
                   }}
                   preview={true}
                   src={
