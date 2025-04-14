@@ -709,8 +709,9 @@ function PlasmicReservations__RenderFunc(props: {
                 (() => {
                   try {
                     return (() => {
+                      console.log($state.userType);
                       if (
-                        $state.userType !== "2" &&
+                        $state.userType != "2" &&
                         $state.apiRequest.data.status !== "ok"
                       ) {
                         return "display_block";
