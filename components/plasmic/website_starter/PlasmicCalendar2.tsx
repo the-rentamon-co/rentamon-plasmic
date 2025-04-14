@@ -1166,8 +1166,7 @@ function PlasmicCalendar2__RenderFunc(props: {
 
                 $steps["openWriteModal"] =
                   $state.apiRequest.data[1].calendar[dateProps.date.day - 1]
-                    .isnoted == false &&
-                  $props.featurePermission[0].reservations == true
+                    .isnoted == false
                     ? (() => {
                         const actionArgs = {
                           variable: {
@@ -5209,10 +5208,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
 
                   $steps["updateFragmentDatePickerValue2"] = (() => {
-                    if (
-                      $state.requestdata.request_for == "reserve" &&
-                      $props.featurePermission[0].reservations == true
-                    ) {
+                    if ($state.requestdata.request_for == "reserve") {
                       return true;
                     } else {
                       return false;
@@ -5466,14 +5462,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   {(() => {
                     try {
                       return (() => {
-                        if (
-                          $state.requestdata.request_for == "reserve" &&
-                          $props.featurePermission[0].reservations == true
-                        ) {
-                          return "ثبت اطلاعات مهمان";
-                        } else {
-                          return "باشه";
-                        }
+                        return "ثبت اطلاعات مهمان";
                       })();
                     } catch (e) {
                       if (
