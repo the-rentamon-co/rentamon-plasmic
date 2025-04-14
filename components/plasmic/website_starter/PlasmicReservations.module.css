@@ -145,7 +145,6 @@
   min-width: 0;
 }
 .freeBox___7ZJdP {
-  display: flex;
   flex-direction: row;
   position: relative;
   width: 100%;
@@ -155,6 +154,7 @@
   align-items: center;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
+  display: none;
   padding: 2em 8px 1em;
 }
 @media (max-width: 500px) {
