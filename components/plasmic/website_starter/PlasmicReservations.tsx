@@ -522,10 +522,8 @@ function PlasmicReservations__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
-                      value: (() => {
-                        $state.userType = $steps.invokeGlobalAction.data.flag;
-                        return console.log($state.userType);
-                      })()
+                      value: ($state.userType =
+                        $steps.invokeGlobalAction.data.flag)
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
                       if (!variable) {
@@ -606,6 +604,19 @@ function PlasmicReservations__RenderFunc(props: {
                 data-plasmic-override={overrides.sideLite}
                 className={classNames("__wab_instance", sty.sideLite)}
                 isOpen={false}
+                userData={(() => {
+                  try {
+                    return $state.profile.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             ) : null}
             <div className={classNames(projectcss.all, sty.freeBox__bMTr4)}>
@@ -707,7 +718,25 @@ function PlasmicReservations__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox___7ZJdP)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox___7ZJdP,
+                  (() => {
+                    try {
+                      return "display_off";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                )}
+              >
                 <div
                   className={classNames(projectcss.all, sty.freeBox___3DmSp)}
                 >
