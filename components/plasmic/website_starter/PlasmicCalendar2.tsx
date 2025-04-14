@@ -5528,7 +5528,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                   {(() => {
                     try {
                       return (() => {
-                        return "ثبت اطلاعات مهمان";
+                        if ($state.requestdata.request_for == "reserve") {
+                          return "ثبت اطلاعات مهمان";
+                        } else {
+                          return "باشه";
+                        }
                       })();
                     } catch (e) {
                       if (
