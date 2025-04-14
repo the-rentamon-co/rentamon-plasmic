@@ -724,7 +724,9 @@ function PlasmicReservations__RenderFunc(props: {
                   sty.freeBox___7ZJdP,
                   (() => {
                     try {
-                      return "display_off";
+                      return $state.apiRequest.data.status != "ok"
+                        ? "display_off"
+                        : "";
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
