@@ -872,7 +872,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         onMount={async () => {
           const $steps = {};
 
-          $steps["updateSelectedDay"] = false
+          $steps["updateSelectedDay"] = true
             ? (() => {
                 const actionArgs = {
                   variable: {
@@ -901,7 +901,13 @@ function PlasmicCalendar2__RenderFunc(props: {
             $steps["updateSelectedDay"] = await $steps["updateSelectedDay"];
           }
 
-          $steps["updateAddingGuestInfoOpen"] = false
+          $steps["updateAddingGuestInfoOpen"] = (() => {
+            if ($state.requestdata.request_for == "reserve") {
+              return true;
+            } else {
+              return false;
+            }
+          })()
             ? (() => {
                 const actionArgs = {
                   variable: {
