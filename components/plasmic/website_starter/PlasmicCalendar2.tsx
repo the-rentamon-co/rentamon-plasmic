@@ -1071,6 +1071,36 @@ function PlasmicCalendar2__RenderFunc(props: {
           ) {
             $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
           }
+
+          $steps["updateFragmentDatePickerValue"] = true
+            ? (() => {
+                const actionArgs = {
+                  variable: {
+                    objRoot: $state,
+                    variablePath: ["fragmentDatePicker", "value"]
+                  },
+                  operation: 0
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateFragmentDatePickerValue"] != null &&
+            typeof $steps["updateFragmentDatePickerValue"] === "object" &&
+            typeof $steps["updateFragmentDatePickerValue"].then === "function"
+          ) {
+            $steps["updateFragmentDatePickerValue"] = await $steps[
+              "updateFragmentDatePickerValue"
+            ];
+          }
         }}
       />
 
