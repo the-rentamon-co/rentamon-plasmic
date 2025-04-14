@@ -73,8 +73,9 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSideLite.module.css"; // plasmic-import: NKEuaTqYxvdh/css
 
-import Icon44Icon from "./icons/PlasmicIcon__Icon44"; // plasmic-import: Oyz_u64i1BAc/icon
+import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4HwqLfNb/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
+import Icon44Icon from "./icons/PlasmicIcon__Icon44"; // plasmic-import: Oyz_u64i1BAc/icon
 import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: k9GL3C4d3WqP/icon
 import Icon47Icon from "./icons/PlasmicIcon__Icon47"; // plasmic-import: 52h8XtG_2_Y1/icon
 import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: PfTCttn7BvdX/icon
@@ -547,9 +548,9 @@ function PlasmicSideLite__RenderFunc(props: {
               ];
             }
 
-            $steps["goToHomepage"] = true
+            $steps["goToReservations"] = true
               ? (() => {
-                  const actionArgs = { destination: `/` };
+                  const actionArgs = { destination: `/reservations` };
                   return (({ destination }) => {
                     if (
                       typeof destination === "string" &&
@@ -565,15 +566,15 @@ function PlasmicSideLite__RenderFunc(props: {
                 })()
               : undefined;
             if (
-              $steps["goToHomepage"] != null &&
-              typeof $steps["goToHomepage"] === "object" &&
-              typeof $steps["goToHomepage"].then === "function"
+              $steps["goToReservations"] != null &&
+              typeof $steps["goToReservations"] === "object" &&
+              typeof $steps["goToReservations"].then === "function"
             ) {
-              $steps["goToHomepage"] = await $steps["goToHomepage"];
+              $steps["goToReservations"] = await $steps["goToReservations"];
             }
           }}
         >
-          <Icon44Icon
+          <Icon26Icon
             className={classNames(projectcss.all, sty.svg__oIo1I)}
             role={"img"}
           />
@@ -585,7 +586,7 @@ function PlasmicSideLite__RenderFunc(props: {
               sty.text__cynG0
             )}
           >
-            {"\u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
+            {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"}
           </div>
         </Stack__>
         <Stack__
@@ -670,6 +671,88 @@ function PlasmicSideLite__RenderFunc(props: {
             {
               "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
             }
+          </div>
+        </Stack__>
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(
+            projectcss.all,
+            sty.freeBox__ykX5Y,
+            "clickable"
+          )}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["updateModalSidebarOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modalSidebar", "open"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen"] != null &&
+              typeof $steps["updateModalSidebarOpen"] === "object" &&
+              typeof $steps["updateModalSidebarOpen"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen"] = await $steps[
+                "updateModalSidebarOpen"
+              ];
+            }
+
+            $steps["goToHomepage"] = true
+              ? (() => {
+                  const actionArgs = { destination: `/` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
+                    }
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["goToHomepage"] != null &&
+              typeof $steps["goToHomepage"] === "object" &&
+              typeof $steps["goToHomepage"].then === "function"
+            ) {
+              $steps["goToHomepage"] = await $steps["goToHomepage"];
+            }
+          }}
+        >
+          <Icon44Icon
+            className={classNames(projectcss.all, sty.svg___1OpI)}
+            role={"img"}
+          />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text___3Wt4T
+            )}
+          >
+            {"\u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
           </div>
         </Stack__>
         <Stack__

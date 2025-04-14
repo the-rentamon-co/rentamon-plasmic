@@ -105,6 +105,10 @@ export type Plasmicتعرفهخدمات__OverridesType = {
   checkbox4?: Flex__<typeof Checkbox>;
   item19?: Flex__<"div">;
   checkbox9?: Flex__<typeof Checkbox>;
+  item112?: Flex__<"div">;
+  checkbox10?: Flex__<typeof Checkbox>;
+  item113?: Flex__<"div">;
+  checkbox11?: Flex__<typeof Checkbox>;
   item16?: Flex__<"div">;
   checkbox5?: Flex__<typeof Checkbox>;
   item17?: Flex__<"div">;
@@ -252,6 +256,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "checkbox10.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+      },
+      {
+        path: "checkbox11.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
       }
     ],
     [$props, $ctx, $refs]
@@ -668,7 +684,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u062c\u0627"
+                        "\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u062c\u0627"
                       }
                     </div>
                   </Checkbox>
@@ -679,6 +695,130 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       projectcss.all,
                       projectcss.__wab_text,
                       sty.text___35GZu
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item112"}
+                data-plasmic-override={overrides.item112}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item112)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__dNuO)}>
+                  <Checkbox
+                    data-plasmic-name={"checkbox10"}
+                    data-plasmic-override={overrides.checkbox10}
+                    className={classNames("__wab_instance", sty.checkbox10)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox10",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox10",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__lObgb
+                      )}
+                    >
+                      {
+                        "\u062b\u0628\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__booyR)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bFc
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item113"}
+                data-plasmic-override={overrides.item113}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item113)}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___12Lyw)}
+                >
+                  <Checkbox
+                    data-plasmic-name={"checkbox11"}
+                    data-plasmic-override={overrides.checkbox11}
+                    className={classNames("__wab_instance", sty.checkbox11)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox11",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox11",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__axLn8
+                      )}
+                    >
+                      {
+                        "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__m2K7F)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__q7L9F
                     )}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
@@ -732,10 +872,10 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u2022 \u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
+                        ? "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u2022 \u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
-                        : "- \u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"}
+                        ? "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
+                        : "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"}
                     </div>
                   </Checkbox>
                 </Stack__>
@@ -794,10 +934,10 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u2022 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n\u2022  \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n\u2022  \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\r\n\u2022  \u062b\u0628\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\n\u2022 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645"
+                        ? "\u2022 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n\u2022  \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n\u2022  \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\r"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u2022 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n\u2022 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n\u2022 \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\r\n\u2022 \u062b\u0628\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\n\u2022 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645"
-                        : "- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\r\n- \u062b\u0628\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)\n- \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645"}
+                        ? "\u2022 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n\u2022 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n\u2022 \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\r"
+                        : "- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
                     </div>
                   </Checkbox>
                 </div>
@@ -2895,6 +3035,10 @@ const PlasmicDescendants = {
     "checkbox4",
     "item19",
     "checkbox9",
+    "item112",
+    "checkbox10",
+    "item113",
+    "checkbox11",
     "item16",
     "checkbox5",
     "item17",
@@ -2939,6 +3083,10 @@ const PlasmicDescendants = {
     "checkbox4",
     "item19",
     "checkbox9",
+    "item112",
+    "checkbox10",
+    "item113",
+    "checkbox11",
     "item16",
     "checkbox5",
     "item17",
@@ -2959,6 +3107,10 @@ const PlasmicDescendants = {
   checkbox4: ["checkbox4"],
   item19: ["item19", "checkbox9"],
   checkbox9: ["checkbox9"],
+  item112: ["item112", "checkbox10"],
+  checkbox10: ["checkbox10"],
+  item113: ["item113", "checkbox11"],
+  checkbox11: ["checkbox11"],
   item16: ["item16", "checkbox5"],
   checkbox5: ["checkbox5"],
   item17: ["item17", "checkbox6"],
@@ -3018,6 +3170,10 @@ type NodeDefaultElementType = {
   checkbox4: typeof Checkbox;
   item19: "div";
   checkbox9: typeof Checkbox;
+  item112: "div";
+  checkbox10: typeof Checkbox;
+  item113: "div";
+  checkbox11: typeof Checkbox;
   item16: "div";
   checkbox5: typeof Checkbox;
   item17: "div";
@@ -3123,6 +3279,10 @@ export const Plasmicتعرفهخدمات = Object.assign(
     checkbox4: makeNodeComponent("checkbox4"),
     item19: makeNodeComponent("item19"),
     checkbox9: makeNodeComponent("checkbox9"),
+    item112: makeNodeComponent("item112"),
+    checkbox10: makeNodeComponent("checkbox10"),
+    item113: makeNodeComponent("item113"),
+    checkbox11: makeNodeComponent("checkbox11"),
     item16: makeNodeComponent("item16"),
     checkbox5: makeNodeComponent("checkbox5"),
     item17: makeNodeComponent("item17"),

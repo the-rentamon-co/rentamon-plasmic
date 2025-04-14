@@ -61,6 +61,7 @@ import {
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import SideLite from "../../SideLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
@@ -96,6 +97,7 @@ export type PlasmicReservations__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
+  sideLite?: Flex__<typeof SideLite>;
   profile?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
   alertIcon?: Flex__<"div">;
@@ -334,6 +336,12 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "userType",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -486,6 +494,59 @@ function PlasmicReservations__RenderFunc(props: {
               ) {
                 $steps["runCode"] = await $steps["runCode"];
               }
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://api-v2.rentamon.com/api/is_user_old"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        $state.userType = $steps.invokeGlobalAction.data.flag;
+                        return console.log($state.userType);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
             }}
           />
 
@@ -494,26 +555,59 @@ function PlasmicReservations__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <SideBar2
-              data-plasmic-name={"sideBar2"}
-              data-plasmic-override={overrides.sideBar2}
-              className={classNames("__wab_instance", sty.sideBar2)}
-              isOpen={false}
-              userData={(() => {
-                try {
-                  return $state.profile.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
+            {(() => {
+              try {
+                return $state.userType != "2";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
                 }
-              })()}
-            />
-
+                throw e;
+              }
+            })() ? (
+              <SideBar2
+                data-plasmic-name={"sideBar2"}
+                data-plasmic-override={overrides.sideBar2}
+                className={classNames("__wab_instance", sty.sideBar2)}
+                isOpen={false}
+                userData={(() => {
+                  try {
+                    return $state.profile.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            ) : null}
+            {(() => {
+              try {
+                return $state.userType == "2";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <SideLite
+                data-plasmic-name={"sideLite"}
+                data-plasmic-override={overrides.sideLite}
+                className={classNames("__wab_instance", sty.sideLite)}
+                isOpen={false}
+              />
+            ) : null}
             <div className={classNames(projectcss.all, sty.freeBox__bMTr4)}>
               <div
                 className={classNames(
@@ -599,7 +693,10 @@ function PlasmicReservations__RenderFunc(props: {
           >
             {(() => {
               try {
-                return $state.apiRequest.data.status != "ok";
+                return (
+                  $state.apiRequest.data.status != "ok" &&
+                  $state.userType != "2"
+                );
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -4283,6 +4380,7 @@ const PlasmicDescendants = {
     "sideEffect",
     "header",
     "sideBar2",
+    "sideLite",
     "profile",
     "apiRequest",
     "alertIcon",
@@ -4342,8 +4440,9 @@ const PlasmicDescendants = {
     "cancelle"
   ],
   sideEffect: ["sideEffect"],
-  header: ["header", "sideBar2", "profile"],
+  header: ["header", "sideBar2", "sideLite", "profile"],
   sideBar2: ["sideBar2"],
+  sideLite: ["sideLite"],
   profile: ["profile"],
   apiRequest: ["apiRequest", "alertIcon", "alertText", "alertButton", "button"],
   alertIcon: ["alertIcon"],
@@ -4527,6 +4626,7 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   header: "div";
   sideBar2: typeof SideBar2;
+  sideLite: typeof SideLite;
   profile: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
   alertIcon: "div";
@@ -4649,6 +4749,7 @@ export const PlasmicReservations = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
+    sideLite: makeNodeComponent("sideLite"),
     profile: makeNodeComponent("profile"),
     apiRequest: makeNodeComponent("apiRequest"),
     alertIcon: makeNodeComponent("alertIcon"),
