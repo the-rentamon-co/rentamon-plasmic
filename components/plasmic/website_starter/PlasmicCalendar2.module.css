@@ -2754,6 +2754,11 @@
   align-items: center;
   padding: 8px 0px 8px 8px;
 }
+.source:global(.__wab_instance) {
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
+}
 .guestReferrer:global(.__wab_instance) {
   max-width: 100%;
   width: 100%;
