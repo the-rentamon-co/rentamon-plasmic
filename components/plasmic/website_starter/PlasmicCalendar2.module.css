@@ -2611,32 +2611,35 @@
 .addingGuestInfo:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  width: 462px;
-  position: absolute;
-  left: 460px;
-  top: 80px;
+  position: relative;
+  left: auto;
+  top: auto;
+  align-self: center;
+  z-index: 100000;
+  right: auto;
+  bottom: auto;
 }
 @media (max-width: 1200px) {
   .addingGuestInfo:global(.__wab_instance) {
     align-self: auto;
-    position: absolute;
-    left: 217px;
-    top: 80px;
+    position: relative;
+    left: auto;
+    top: auto;
     z-index: 1;
   }
 }
 @media (max-width: 500px) {
   .addingGuestInfo:global(.__wab_instance) {
-    position: absolute;
-    left: 15px;
-    top: 80px;
+    position: relative;
+    left: auto;
+    top: auto;
   }
 }
 @media (max-width: 350px) {
   .addingGuestInfo:global(.__wab_instance) {
-    position: absolute;
-    left: 0px;
-    top: 85px;
+    position: relative;
+    left: auto;
+    top: auto;
   }
 }
 .form {
@@ -2748,7 +2751,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   margin-top: 4px;
   min-width: 0;
