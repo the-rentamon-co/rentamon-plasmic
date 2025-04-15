@@ -94,11 +94,10 @@ export type Plasmicدستیارهوشمصنوعیرنتامون__OverridesType =
   دربارهما?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
-  text?: Flex__<"div">;
   ai?: Flex__<typeof Iframe>;
+  introCalendarLeft2?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
-  goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -272,17 +271,15 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                 />
 
                 <div
-                  data-plasmic-name={"text"}
-                  data-plasmic-override={overrides.text}
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text
+                    sty.text__j0An
                   )}
                 >
-                  {
-                    "\u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634\u0645\u0646\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0628\u0627 \u0627\u067e \u06a9\u0627\u0631 \u06a9\u0646\u06cc\u060c \u0642\u06cc\u0645\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0642\u06cc\u0642\u200c\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u060c \u0646\u06a9\u0627\u062a \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u0628\u0631\u0627\u06cc \u0628\u0647\u0628\u0648\u062f \u0648\u06cc\u0644\u0627 \u06cc\u0627\u062f \u0628\u06af\u06cc\u0631\u06cc \u0648 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062e\u0644\u0642 \u06a9\u0646\u06cc. \n\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0647 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc\u200c\u062a\u0631\u06cc \u0628\u0627\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0628\u062a\u0648\u0646\u06cc \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u06af\u0633\u062a\u0631\u0634 \u0628\u062f\u06cc. \u270c\ufe0f"
-                  }
+                  {hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0628\u0627 \u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646 \u06a9\u0627\u0631 \u06a9\u0646\u06cc\u060c \u0642\u06cc\u0645\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0642\u06cc\u0642\u200c\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u060c \u0646\u06a9\u0627\u062a \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u0628\u0631\u0627\u06cc \u0628\u0647\u0628\u0648\u062f \u0648\u06cc\u0644\u0627 \u06cc\u0627\u062f \u0628\u06af\u06cc\u0631\u06cc \u0648 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062e\u0644\u0642 \u06a9\u0646\u06cc. \n\n\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0627 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u0645\u0648\u0641\u0642\u200c\u062a\u0631\u06cc \u0628\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f\u060c \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u062d\u0633\u0627\u0628\u06cc \u0631\u0634\u062f \u0628\u062f\u06cc. \u270c\ufe0f"
+                    : "\u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0628\u0627 \u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646 \u06a9\u0627\u0631 \u06a9\u0646\u06cc\u060c \u0642\u06cc\u0645\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0642\u06cc\u0642\u200c\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u060c \u0646\u06a9\u0627\u062a \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u0628\u0631\u0627\u06cc \u0628\u0647\u0628\u0648\u062f \u0648\u06cc\u0644\u0627 \u06cc\u0627\u062f \u0628\u06af\u06cc\u0631\u06cc \u0648 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062e\u0644\u0642 \u06a9\u0646\u06cc. \n\n\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0627 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u0645\u0648\u0641\u0642\u200c\u062a\u0631\u06cc \u0628\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f\u060c \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u062d\u0633\u0627\u0628\u06cc \u0631\u0634\u062f \u0628\u062f\u06cc. \u270c\ufe0f"}
                 </div>
               </div>
             </div>
@@ -320,6 +317,32 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
             </div>
           </div>
           <div
+            data-plasmic-name={"introCalendarLeft2"}
+            data-plasmic-override={overrides.introCalendarLeft2}
+            className={classNames(projectcss.all, sty.introCalendarLeft2)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___8PpNb
+              )}
+            >
+              {"\u0645\u062b\u0644\u0627 \u0628\u067e\u0631\u0633:"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__xt10Q
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "- \u0645\u0647\u0645\u0627\u0646 \u0646\u0638\u0631 \u06af\u0630\u0627\u0634\u062a\u0647 \u00ab\u0633\u0631\u0648\u06cc\u0633 \u0628\u0647\u062f\u0627\u0634\u062a\u06cc \u0634\u0633\u062a\u0647 \u0648 \u0636\u062f\u0639\u0641\u0648\u0646\u06cc \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\u00bb \u062d\u0627\u0644\u0627 \u0645\u0646 \u0686\u0637\u0648\u0631 \u067e\u0627\u0633\u062e \u0628\u062f\u0645\u061f\n- \u062a\u0627\u0632\u0647 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u0645. \u0686\u0637\u0648\u0631 \u0645\u0633\u0627\u0641\u0631\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0686\u0637\u0648\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632 \u06f5 \u0633\u062a\u0627\u0631\u0647 \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0647 \u062e\u062f\u0645\u0627\u062a\u06cc \u062f\u0627\u0631\u0647\u061f\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0642\u062f\u0631\u0647\u061f"
+                : "- \u0645\u0647\u0645\u0627\u0646 \u0646\u0638\u0631 \u06af\u0630\u0627\u0634\u062a\u0647 \u00ab\u0633\u0631\u0648\u06cc\u0633 \u0628\u0647\u062f\u0627\u0634\u062a\u06cc \u0634\u0633\u062a\u0647 \u0648 \u0636\u062f\u0639\u0641\u0648\u0646\u06cc \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\u00bb \u062d\u0627\u0644\u0627 \u0645\u0646 \u0686\u0637\u0648\u0631 \u067e\u0627\u0633\u062e \u0628\u062f\u0645\u061f\n- \u062a\u0627\u0632\u0647 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u0645. \u0686\u0637\u0648\u0631 \u0645\u0633\u0627\u0641\u0631\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0686\u0637\u0648\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632 \u06f5 \u0633\u062a\u0627\u0631\u0647 \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0647 \u062e\u062f\u0645\u0627\u062a\u06cc \u062f\u0627\u0631\u0647\u061f\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0642\u062f\u0631\u0647\u061f"}
+            </div>
+          </div>
+          <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
             className={classNames(projectcss.all, sty.html)}
@@ -330,15 +353,6 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
               className={classNames("__wab_instance", sty.clarity2)}
               code={
                 '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-              }
-            />
-
-            <Embed
-              data-plasmic-name={"goftino"}
-              data-plasmic-override={overrides.goftino}
-              className={classNames("__wab_instance", sty.goftino)}
-              code={
-                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
               }
             />
           </div>
@@ -363,11 +377,10 @@ const PlasmicDescendants = {
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "introCalendarLeft",
     "img",
-    "text",
     "ai",
+    "introCalendarLeft2",
     "html",
     "clarity2",
-    "goftino",
     "rentamonFooter"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
@@ -378,7 +391,6 @@ const PlasmicDescendants = {
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "introCalendarLeft",
     "img",
-    "text",
     "ai"
   ],
   intro1st: [
@@ -386,21 +398,19 @@ const PlasmicDescendants = {
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "introCalendarLeft",
-    "img",
-    "text"
+    "img"
   ],
   introTitle: [
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
   ],
   دربارهما: ["\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"],
-  introCalendarLeft: ["introCalendarLeft", "img", "text"],
+  introCalendarLeft: ["introCalendarLeft", "img"],
   img: ["img"],
-  text: ["text"],
   ai: ["ai"],
-  html: ["html", "clarity2", "goftino"],
+  introCalendarLeft2: ["introCalendarLeft2"],
+  html: ["html", "clarity2"],
   clarity2: ["clarity2"],
-  goftino: ["goftino"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -415,11 +425,10 @@ type NodeDefaultElementType = {
   دربارهما: "div";
   introCalendarLeft: "div";
   img: typeof PlasmicImg__;
-  text: "div";
   ai: typeof Iframe;
+  introCalendarLeft2: "div";
   html: "div";
   clarity2: typeof Embed;
-  goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -493,11 +502,10 @@ export const Plasmicدستیارهوشمصنوعیرنتامون = Object.assign
     ),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     img: makeNodeComponent("img"),
-    text: makeNodeComponent("text"),
     ai: makeNodeComponent("ai"),
+    introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
-    goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for Plasmicدستیارهوشمصنوعیرنتامون
