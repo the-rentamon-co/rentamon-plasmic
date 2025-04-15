@@ -96,10 +96,10 @@ export type PlasmicReferral__OverridesType = {
   embedHtml?: Flex__<typeof Embed>;
   smsImage?: Flex__<"div">;
   introCalendarLeft2?: Flex__<"div">;
-  introduction2?: Flex__<"div">;
   cta?: Flex__<"div">;
   ctaText?: Flex__<"div">;
   ctaButton?: Flex__<"div">;
+  rules?: Flex__<"div">;
   copyText?: Flex__<typeof AntdModal>;
   refertxt?: Flex__<"div">;
   ctaButton2?: Flex__<"div">;
@@ -311,26 +311,53 @@ function PlasmicReferral__RenderFunc(props: {
                       sty.text__uRlUn
                     )}
                   >
-                    <React.Fragment>
+                    {hasVariant(globalVariants, "screen", "smallMobile") ? (
                       <React.Fragment>
-                        {
-                          "\u0627\u06af\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0645\u0639\u0631\u0641\u06cc \u06a9\u0646\u06cc\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u0645\u0628\u0644\u063a "
-                        }
+                        <React.Fragment>
+                          {
+                            "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u0645\u0628\u0644\u063a "
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {
+                            "\u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646"
+                          }
+                        </span>
+                        <React.Fragment>
+                          {
+                            " \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646. \u06cc\u0639\u0646\u06cc \u0628\u0627 \u062f\u0639\u0648\u062a \u0645\u062b\u0644\u0627 \u06f1\u06f0 \u0646\u0641\u0631\u060c \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc!"
+                          }
+                        </React.Fragment>
                       </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646"
-                        }
-                      </span>
+                    ) : (
                       <React.Fragment>
-                        {
-                          " \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u062f\u0631\u06cc\u0627\u0641\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc. \u06cc\u0639\u0646\u06cc \u0645\u062b\u0644\u0627 \u0628\u0627 \u062f\u0639\u0648\u062a \u06f1\u06f0 \u0646\u0641\u0631\u060c \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc!"
-                        }
+                        <React.Fragment>
+                          {
+                            "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u0645\u0628\u0644\u063a "
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {
+                            "\u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646"
+                          }
+                        </span>
+                        <React.Fragment>
+                          {
+                            " \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646. \u06cc\u0639\u0646\u06cc \u0628\u0627 \u062f\u0639\u0648\u062a \u0645\u062b\u0644\u0627 \u06f1\u06f0 \u0646\u0641\u0631\u060c \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc!"
+                          }
+                        </React.Fragment>
                       </React.Fragment>
-                    </React.Fragment>
+                    )}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__ciToe)}>
@@ -391,23 +418,6 @@ function PlasmicReferral__RenderFunc(props: {
                     }}
                   />
                 </Stack__>
-                <div
-                  data-plasmic-name={"introduction2"}
-                  data-plasmic-override={overrides.introduction2}
-                  className={classNames(projectcss.all, sty.introduction2)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fzwa0
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."
-                      : "\r\n\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."}
-                  </div>
-                </div>
               </div>
               <div
                 data-plasmic-name={"cta"}
@@ -491,6 +501,23 @@ function PlasmicReferral__RenderFunc(props: {
                       : "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
                   </div>
                 </div>
+                <div
+                  data-plasmic-name={"rules"}
+                  data-plasmic-override={overrides.rules}
+                  className={classNames(projectcss.all, sty.rules)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fzwa0
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\r\n\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647.\n\u2714\ufe0f \u06a9\u0627\u0641\u06cc\u0647 \u062f\u0648\u0633\u062a \u0634\u0645\u0627 \u0645\u0648\u0642\u0639 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u060c \u0646\u0627\u0645 \u06cc\u0627 \u0634\u0645\u0627\u0631\u0647\u200c\u06cc \u0634\u0645\u0627 \u0631\u0648 \u0628\u0647 \u0645\u0627 \u0628\u062f\u0647.\n"
+                      : "\r\n\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647.\n\u2714\ufe0f \u06a9\u0627\u0641\u06cc\u0647 \u062f\u0648\u0633\u062a \u0634\u0645\u0627 \u0645\u0648\u0642\u0639 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u060c \u0646\u0627\u0645 \u06cc\u0627 \u0634\u0645\u0627\u0631\u0647\u200c\u06cc \u0634\u0645\u0627 \u0631\u0648 \u0628\u0647 \u0645\u0627 \u0628\u062f\u0647."}
+                  </div>
+                </div>
                 <AntdModal
                   data-plasmic-name={"copyText"}
                   data-plasmic-override={overrides.copyText}
@@ -557,6 +584,61 @@ function PlasmicReferral__RenderFunc(props: {
                       )}
                       onClick={async event => {
                         const $steps = {};
+
+                        $steps["runCode2"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return function share() {
+                                    const shareText = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
+
+۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
+
+اینجا بزن 👇
+rentamon.com`;
+
+                                    if (navigator.share) {
+                                      navigator
+                                        .share({
+                                          title: "رنتامون",
+                                          text: shareText,
+                                          url: "https://rentamon.com"
+                                        })
+                                        .then(() =>
+                                          console.log("Shared successfully")
+                                        )
+                                        .catch(error =>
+                                          console.error("Error sharing:", error)
+                                        );
+                                    } else {
+                                      navigator.clipboard
+                                        .writeText(shareText)
+                                        .then(() => {
+                                          alert(
+                                            "متن در حافظه کپی شد و آماده ارسال به دیگرانه"
+                                          );
+                                        })
+                                        .catch(() => {
+                                          alert(
+                                            "کپی کردن متن با خطا مواجه شد. لطفاً دستی کپی کن."
+                                          );
+                                        });
+                                    }
+                                  };
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode2"] != null &&
+                          typeof $steps["runCode2"] === "object" &&
+                          typeof $steps["runCode2"].then === "function"
+                        ) {
+                          $steps["runCode2"] = await $steps["runCode2"];
+                        }
 
                         $steps["runCode"] = true
                           ? (() => {
@@ -655,61 +737,6 @@ rentamon.com`;
                             "invokeGlobalAction"
                           ];
                         }
-
-                        $steps["runCode2"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return function share() {
-                                    const shareText = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
-
-۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
-
-اینجا بزن 👇
-rentamon.com`;
-
-                                    if (navigator.share) {
-                                      navigator
-                                        .share({
-                                          title: "رنتامون",
-                                          text: shareText,
-                                          url: "https://rentamon.com"
-                                        })
-                                        .then(() =>
-                                          console.log("Shared successfully")
-                                        )
-                                        .catch(error =>
-                                          console.error("Error sharing:", error)
-                                        );
-                                    } else {
-                                      navigator.clipboard
-                                        .writeText(shareText)
-                                        .then(() => {
-                                          alert(
-                                            "متن در حافظه کپی شد و آماده ارسال به دیگرانه"
-                                          );
-                                        })
-                                        .catch(() => {
-                                          alert(
-                                            "کپی کردن متن با خطا مواجه شد. لطفاً دستی کپی کن."
-                                          );
-                                        });
-                                    }
-                                  };
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode2"] != null &&
-                          typeof $steps["runCode2"] === "object" &&
-                          typeof $steps["runCode2"].then === "function"
-                        ) {
-                          $steps["runCode2"] = await $steps["runCode2"];
-                        }
                       }}
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
@@ -768,10 +795,10 @@ const PlasmicDescendants = {
     "embedHtml",
     "smsImage",
     "introCalendarLeft2",
-    "introduction2",
     "cta",
     "ctaText",
     "ctaButton",
+    "rules",
     "copyText",
     "refertxt",
     "ctaButton2",
@@ -791,10 +818,10 @@ const PlasmicDescendants = {
     "embedHtml",
     "smsImage",
     "introCalendarLeft2",
-    "introduction2",
     "cta",
     "ctaText",
     "ctaButton",
+    "rules",
     "copyText",
     "refertxt",
     "ctaButton2"
@@ -808,10 +835,10 @@ const PlasmicDescendants = {
     "embedHtml",
     "smsImage",
     "introCalendarLeft2",
-    "introduction2",
     "cta",
     "ctaText",
     "ctaButton",
+    "rules",
     "copyText",
     "refertxt",
     "ctaButton2"
@@ -821,12 +848,20 @@ const PlasmicDescendants = {
   introImage: ["introImage"],
   introduction: ["introduction"],
   embedHtml: ["embedHtml"],
-  smsImage: ["smsImage", "introCalendarLeft2", "introduction2"],
+  smsImage: ["smsImage", "introCalendarLeft2"],
   introCalendarLeft2: ["introCalendarLeft2"],
-  introduction2: ["introduction2"],
-  cta: ["cta", "ctaText", "ctaButton", "copyText", "refertxt", "ctaButton2"],
+  cta: [
+    "cta",
+    "ctaText",
+    "ctaButton",
+    "rules",
+    "copyText",
+    "refertxt",
+    "ctaButton2"
+  ],
   ctaText: ["ctaText"],
   ctaButton: ["ctaButton"],
+  rules: ["rules"],
   copyText: ["copyText", "refertxt", "ctaButton2"],
   refertxt: ["refertxt"],
   ctaButton2: ["ctaButton2"],
@@ -850,10 +885,10 @@ type NodeDefaultElementType = {
   embedHtml: typeof Embed;
   smsImage: "div";
   introCalendarLeft2: "div";
-  introduction2: "div";
   cta: "div";
   ctaText: "div";
   ctaButton: "div";
+  rules: "div";
   copyText: typeof AntdModal;
   refertxt: "div";
   ctaButton2: "div";
@@ -933,10 +968,10 @@ export const PlasmicReferral = Object.assign(
     embedHtml: makeNodeComponent("embedHtml"),
     smsImage: makeNodeComponent("smsImage"),
     introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
-    introduction2: makeNodeComponent("introduction2"),
     cta: makeNodeComponent("cta"),
     ctaText: makeNodeComponent("ctaText"),
     ctaButton: makeNodeComponent("ctaButton"),
+    rules: makeNodeComponent("rules"),
     copyText: makeNodeComponent("copyText"),
     refertxt: makeNodeComponent("refertxt"),
     ctaButton2: makeNodeComponent("ctaButton2"),
