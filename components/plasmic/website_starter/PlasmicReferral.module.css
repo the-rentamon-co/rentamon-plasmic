@@ -279,10 +279,28 @@
   font-size: 18px;
   line-height: 1.8;
   padding-right: 0px;
+  font-weight: 600;
 }
 @media (max-width: 500px) {
   .text__uXKee {
     font-size: 16px;
+  }
+}
+.text__uRlUn {
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.8;
+  padding-right: 0px;
+  padding-top: 14px;
+}
+@media (max-width: 500px) {
+  .text__uRlUn {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__uRlUn {
+    font-size: 15px;
   }
 }
 .smsImage {
@@ -485,7 +503,7 @@
   text-align: right;
   font-size: 18px;
   line-height: 1.8;
-  padding-top: 20px;
+  padding-top: 13px;
   padding-right: 30px;
   padding-left: 30px;
 }
@@ -507,7 +525,7 @@
 @media (max-width: 350px) {
   .text__fzwa0 {
     font-size: 15px;
-    padding-top: 0px;
+    padding-top: 6px;
   }
 }
 .cta {
@@ -611,7 +629,7 @@
   .ctaText > :global(.__wab_flex-container) {
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     min-width: 0;
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
@@ -688,7 +706,7 @@
   .ctaButton {
     padding-right: 0px;
     padding-left: 0px;
-    padding-top: 0px;
+    padding-top: 10px;
   }
 }
 .text__vvG7H {
