@@ -96,6 +96,7 @@ export type Plasmicدستیارهوشمصنوعیرنتامون__OverridesType =
   img?: Flex__<typeof PlasmicImg__>;
   text?: Flex__<"div">;
   ai?: Flex__<typeof Iframe>;
+  embedHtml?: Flex__<typeof Embed>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -288,42 +289,42 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__mtZ2O)}>
               <div className={classNames(projectcss.all, sty.freeBox__fuF1X)}>
-                <Iframe
-                  data-plasmic-name={"ai"}
-                  data-plasmic-override={overrides.ai}
-                  className={classNames("__wab_instance", sty.ai)}
-                  onLoad={async event => {
-                    const $steps = {};
+                {false ? (
+                  <Iframe
+                    data-plasmic-name={"ai"}
+                    data-plasmic-override={overrides.ai}
+                    className={classNames("__wab_instance", sty.ai)}
+                    onLoad={async event => {
+                      const $steps = {};
 
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                return document
-                                  .querySelectorAll(".chat-header")
-                                  .forEach(el => {
-                                    el.style.display = "none";
-                                  });
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {};
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
+                    preview={true}
+                    src={
+                      "https://n8n-ger.darkube.app/webhook/e26291be-d10e-43cd-b6e8-f0f49ad6cf55/chat"
                     }
-                  }}
-                  preview={true}
-                  src={
-                    "https://n8n-ger.darkube.app/webhook/e26291be-d10e-43cd-b6e8-f0f49ad6cf55/chat"
+                  />
+                ) : null}
+                <Embed
+                  data-plasmic-name={"embedHtml"}
+                  data-plasmic-override={overrides.embedHtml}
+                  className={classNames("__wab_instance", sty.embedHtml)}
+                  code={
+                    "<!-- \u0622\u06cc\u0641\u0631\u06cc\u0645 \u0634\u0645\u0627 -->\r\n<iframe id=\"myIframe\" \r\n        src=\"https://n8n-ger.darkube.app/webhook/e26291be-d10e-43cd-b6e8-f0f49ad6cf55/chat\" \r\n        style=\"width: 100%; height: 600px; border: none;\">\r\n</iframe>\r\n\r\n<script>\r\n  // \u0635\u0628\u0631 \u06a9\u0646\u06cc\u062f \u062a\u0627 \u0622\u06cc\u0641\u0631\u06cc\u0645 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0627\u0645\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0634\u0648\u062f\r\n  document.getElementById('myIframe').addEventListener('load', function() {\r\n    // \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u0633\u0646\u062f \u062f\u0627\u062e\u0644\u06cc \u0622\u06cc\u0641\u0631\u06cc\u0645 (\u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u0622\u0646)\r\n    var iframeDoc = this.contentDocument || this.contentWindow.document;\r\n    \r\n    // \u0627\u0646\u062a\u062e\u0627\u0628 \u062a\u0645\u0627\u0645\u06cc \u0627\u0644\u0645\u0627\u0646\u200c\u0647\u0627\u06cc\u06cc \u0628\u0627 \u06a9\u0644\u0627\u0633 chat-header\r\n    var headers = iframeDoc.querySelectorAll('.chat-header');\r\n    \r\n    // \u0645\u062e\u0641\u06cc \u06a9\u0631\u062f\u0646 \u0647\u0631 \u06cc\u06a9 \u0627\u0632 \u0627\u0644\u0645\u0627\u0646\u200c\u0647\u0627\r\n    headers.forEach(function(header) {\r\n      header.style.display = 'none';\r\n    });\r\n  });\r\n</script>\r\n"
                   }
                 />
               </div>
@@ -375,6 +376,7 @@ const PlasmicDescendants = {
     "img",
     "text",
     "ai",
+    "embedHtml",
     "html",
     "clarity2",
     "goftino",
@@ -389,7 +391,8 @@ const PlasmicDescendants = {
     "introCalendarLeft",
     "img",
     "text",
-    "ai"
+    "ai",
+    "embedHtml"
   ],
   intro1st: [
     "intro1st",
@@ -408,6 +411,7 @@ const PlasmicDescendants = {
   img: ["img"],
   text: ["text"],
   ai: ["ai"],
+  embedHtml: ["embedHtml"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -427,6 +431,7 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   text: "div";
   ai: typeof Iframe;
+  embedHtml: typeof Embed;
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -505,6 +510,7 @@ export const Plasmicدستیارهوشمصنوعیرنتامون = Object.assign
     img: makeNodeComponent("img"),
     text: makeNodeComponent("text"),
     ai: makeNodeComponent("ai"),
+    embedHtml: makeNodeComponent("embedHtml"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),

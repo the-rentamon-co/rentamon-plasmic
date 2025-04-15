@@ -4362,39 +4362,6 @@
   font-weight: 400;
   min-width: 0;
 }
-._6:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  font-size: 16px;
-  font-weight: 500;
-}
-.text__rpfQf {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 16px;
-  min-width: 0;
-}
-@media (max-width: 500px) {
-  .text__rpfQf {
-    font-size: 16px;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    font-weight: 500;
-    min-width: 0;
-  }
-}
-.text__dYYhE {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 16px;
-  font-weight: 400;
-  min-width: 0;
-}
 .accordionItem__xiPR:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -4450,37 +4417,6 @@
   }
 }
 .text__bBnnz {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 16px;
-  font-weight: 400;
-  min-width: 0;
-}
-.accordionItem__fLl6C:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  font-size: 15px;
-}
-.text__myDg {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 16px;
-  font-weight: 500;
-  min-width: 0;
-}
-@media (max-width: 500px) {
-  .text__myDg {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    font-size: 16px;
-    font-weight: 500;
-    min-width: 0;
-  }
-}
-.text__j0Wwh {
   width: 100%;
   height: auto;
   max-width: 100%;

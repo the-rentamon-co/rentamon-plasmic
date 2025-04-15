@@ -131,7 +131,6 @@ export type Plasmicتعرفهخدمات__OverridesType = {
   _1?: Flex__<"div">;
   _4?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
-  _6?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -2749,7 +2748,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0641\u0642\u0637 \u062f\u0631\u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u00ab\u0631\u0632\u0631\u0648 \u0646\u0647\u0627\u06cc\u06cc\u00bb \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647.\r\n"
+                              "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f\u060c \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u00ab\u0631\u0632\u0631\u0648 \u0646\u0647\u0627\u06cc\u06cc\u00bb \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647.\r\n"
                             }
                           </div>
                         </AntdAccordionItem>
@@ -2781,7 +2780,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u0627\u0645\u0627 \u0645\u0648\u0627\u0631\u062f\u06cc \u06a9\u0647 \u06a9\u0627\u0631\u0645\u0632\u062f \u062f\u0627\u0631\u0646\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062f\u0631\u0635\u062f\u06cc \u0627\u0632 \u062c\u0645\u0639 \u0645\u0628\u0644\u063a \u0647\u0631 \u0631\u0632\u0631\u0648 \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0646.\n\n\u0645\u062b\u0627\u0644: \u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645\u00bb \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u0647\u060c \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u06cc \u0628\u06af\u06cc\u0631\u06cc\u060c \u0645\u06cc\u0632\u0627\u0646 \u06f1.\u06f5\u066a \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647:\n\u06f3\u06f0,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 = \u06f1.\u06f5\u066a \u00d7 \u06f2,\u06f0\u06f0\u06f0,\u06f0\u06f0\u06f0\n\n\r\n\r"
+                              "\u0637\u0628\u0642 \u062c\u062f\u0648\u0644 \u0628\u0627\u0644\u0627\u060c \u0627\u063a\u0644\u0628 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0647\u0633\u062a\u0646 \u0648 \u0628\u062f\u0648\u0646 \u067e\u0631\u062f\u0627\u062e\u062a \u0647\u0632\u06cc\u0646\u0647 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc\u062f \u0627\u0632 \u0627\u0648\u0646\u200c\u0647\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f. \u0627\u0645\u0627 \u0628\u0627\u0628\u062a \u0645\u0648\u0627\u0631\u062f\u06cc \u06a9\u0647 \u06a9\u0627\u0631\u0645\u0632\u062f \u062f\u0627\u0631\u0646\u062f\u060c \u0644\u0627\u0632\u0645\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc\u060c \u06a9\u0627\u0631\u0645\u0632\u062f \u067e\u0631\u062f\u0627\u062e\u062a \u06a9\u0646\u06cc\u062f.\n\n\u0645\u062b\u0627\u0644: \u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645\u00bb \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u0647\u060c \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u06cc \u0628\u06af\u06cc\u0631\u06cc\u060c \u06f1/\u06f5 \u062f\u0631\u0635\u062f \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647:\n\u06f3\u06f0,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 = \u06f1.\u06f5\u066a \u00d7 \u06f2,\u06f0\u06f0\u06f0,\u06f0\u06f0\u06f0\n\n\r\n\r"
                             }
                           </div>
                         </AntdAccordionItem>
@@ -2814,38 +2813,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                           >
                             {
                               "\u0645\u0627 \u062a\u0645\u0627\u0645 \u062a\u0644\u0627\u0634\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u062a\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0631\u0627\u0636\u06cc \u0628\u0627\u0634\u06cc. \u0648\u0644\u06cc \u0647\u0631 \u0632\u0645\u0627\u0646 \u0648 \u0628\u0647 \u0647\u0631 \u062f\u0644\u06cc\u0644 \u062a\u0645\u0627\u06cc\u0644\u06cc \u0628\u0647 \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u062f\u0627\u0634\u062a\u06cc\u060c \u0639\u0636\u0648\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f\u0647 \u0648 \u06a9\u0644 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647.\n"
-                            }
-                          </div>
-                        </AntdAccordionItem>
-                        <AntdAccordionItem
-                          data-plasmic-name={"_6"}
-                          data-plasmic-override={overrides._6}
-                          className={classNames("__wab_instance", sty._6)}
-                          id={"44"}
-                          label2={
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__rpfQf
-                              )}
-                            >
-                              {
-                                "\u06a9\u06cc\u0641 \u067e\u0648\u0644\u0645 \u0631\u0648 \u0686\u0637\u0648\u0631 \u0634\u0627\u0631\u0698 \u06a9\u0646\u0645\u061f\r"
-                              }
-                            </div>
-                          }
-                          showArrow={true}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__dYYhE
-                            )}
-                          >
-                            {
-                              "\u06a9\u0627\u0641\u06cc\u0647 \u0631\u0648\u06cc \u06cc\u06a9\u06cc \u0627\u0632 \u0628\u0633\u062a\u0647\u200c\u0647\u0627\u06cc \u0628\u0627\u0644\u0627 \u0628\u0632\u0646\u06cc \u0648 \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9 \u067e\u0631\u062f\u0627\u062e\u062a \u06a9\u0646\u06cc. \u0628\u0627 \u06cc\u06a9 \u0641\u0627\u0635\u0644\u0647\u200c\u06cc \u0632\u0645\u0627\u0646\u06cc \u06a9\u0648\u062a\u0627\u0647\u060c \u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647.\r\n\r\n"
                             }
                           </div>
                         </AntdAccordionItem>
@@ -2912,39 +2879,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                           >
                             {
                               "\u0628\u0644\u0647. \u062f\u0631\u0635\u0648\u0631\u062a \u0644\u063a\u0648 \u0634\u062f\u0646 \u0631\u0632\u0631\u0648\u060c \u06a9\u0627\u0631\u0645\u0632\u062f \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647.\n"
-                            }
-                          </div>
-                        </AntdAccordionItem>
-                        <AntdAccordionItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.accordionItem__fLl6C
-                          )}
-                          id={"77"}
-                          label2={
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__myDg
-                              )}
-                            >
-                              {
-                                "\u0627\u06cc\u0646 \u062a\u0639\u0631\u0641\u0647 \u0628\u0631\u0627\u06cc \u0633\u0627\u0644 \u062c\u062f\u06cc\u062f \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
-                              }
-                            </div>
-                          }
-                          showArrow={true}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__j0Wwh
-                            )}
-                          >
-                            {
-                              "\u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u0647\u06cc\u0686 \u062a\u0635\u0645\u06cc\u0645 \u0648 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0627\u06cc \u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u062a\u0639\u0631\u0641\u0647\u200c\u0647\u0627 \u062f\u0631 \u0633\u0627\u0644 \u062c\u062f\u06cc\u062f (\u06f1\u06f4\u06f0\u06f4) \u0646\u062f\u0627\u0631\u06cc\u0645."
                             }
                           </div>
                         </AntdAccordionItem>
@@ -3061,7 +2995,6 @@ const PlasmicDescendants = {
     "_1",
     "_4",
     "_5",
-    "_6",
     "html",
     "clarity2",
     "goftino",
@@ -3134,17 +3067,15 @@ const PlasmicDescendants = {
     "_1",
     "_4",
     "_5",
-    "_6",
     "html",
     "clarity2",
     "goftino"
   ],
-  accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6"],
+  accordionMain: ["accordionMain", "_2", "_1", "_4", "_5"],
   _2: ["_2", "_1"],
   _1: ["_1"],
   _4: ["_4"],
   _5: ["_5"],
-  _6: ["_6"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -3196,7 +3127,6 @@ type NodeDefaultElementType = {
   _1: "div";
   _4: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
-  _6: typeof AntdAccordionItem;
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -3305,7 +3235,6 @@ export const Plasmicتعرفهخدمات = Object.assign(
     _1: makeNodeComponent("_1"),
     _4: makeNodeComponent("_4"),
     _5: makeNodeComponent("_5"),
-    _6: makeNodeComponent("_6"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
