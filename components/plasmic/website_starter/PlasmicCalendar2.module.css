@@ -2611,35 +2611,11 @@
 .addingGuestInfo:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  position: relative;
-  left: auto;
-  top: auto;
-  align-self: center;
-  z-index: 100000;
-  right: auto;
-  bottom: auto;
+  width: 462px;
 }
 @media (max-width: 1200px) {
   .addingGuestInfo:global(.__wab_instance) {
-    align-self: auto;
-    position: relative;
-    left: auto;
-    top: auto;
-    z-index: 1;
-  }
-}
-@media (max-width: 500px) {
-  .addingGuestInfo:global(.__wab_instance) {
-    position: relative;
-    left: auto;
-    top: auto;
-  }
-}
-@media (max-width: 350px) {
-  .addingGuestInfo:global(.__wab_instance) {
-    position: relative;
-    left: auto;
-    top: auto;
+    align-self: center;
   }
 }
 .form {
@@ -2695,68 +2671,6 @@
   width: auto;
   height: 1em;
 }
-.p2 {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 5px 8px;
-}
-.phoneNumber:global(.__wab_instance) {
-  max-width: 100%;
-}
-.svg__lx3K2 {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
-.svg__nXI {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
-.text__mlZuc {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 13px;
-  min-width: 0;
-}
-.p3 {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 4px 8px;
-}
-.amount:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  align-self: stretch;
-  width: 463px;
-}
-.text__e42Ry {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 12px;
-  font-weight: 700;
-  margin-top: 4px;
-  min-width: 0;
-  padding: 0px 2px;
-}
 .p4 {
   display: flex;
   flex-direction: row;
@@ -2766,7 +2680,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: 0;
-  padding: 0px 8px;
+  padding: 8px;
 }
 .referrer {
   display: flex;
@@ -2801,6 +2715,68 @@
   object-fit: cover;
   align-self: flex-end;
 }
+.p2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.phoneNumber:global(.__wab_instance) {
+  max-width: 100%;
+}
+.svg__lx3K2 {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__nXI {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text__mlZuc {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 13px;
+  min-width: 0;
+}
+.p3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.amount:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  align-self: stretch;
+  width: 463px;
+}
+.text__e42Ry {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 4px;
+  min-width: 0;
+  padding: 10px 2px 2px;
+}
 .p5 {
   display: flex;
   flex-direction: column;
@@ -2810,7 +2786,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 0px 8px;
+  padding: 8px;
 }
 .button__lhJj9:global(.__wab_instance) {
   max-width: 100%;
