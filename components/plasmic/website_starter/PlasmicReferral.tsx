@@ -60,8 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
-import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -93,6 +93,7 @@ export type PlasmicReferral__OverridesType = {
   teamImage?: Flex__<"div">;
   introImage?: Flex__<"div">;
   introduction?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   smsImage?: Flex__<"div">;
   introCalendarLeft2?: Flex__<"div">;
   introduction2?: Flex__<"div">;
@@ -100,7 +101,6 @@ export type PlasmicReferral__OverridesType = {
   ctaText?: Flex__<"div">;
   ctaButton?: Flex__<"div">;
   copyText?: Flex__<typeof AntdModal>;
-  freeBox?: Flex__<"div">;
   refertxt?: Flex__<"div">;
   ctaButton2?: Flex__<"div">;
   html?: Flex__<"div">;
@@ -333,6 +333,29 @@ function PlasmicReferral__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 </div>
+                <div className={classNames(projectcss.all, sty.freeBox__ciToe)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___1Ew7O
+                    )}
+                  >
+                    {
+                      "\u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u062c\u0634\u0646\u0648\u0627\u0631\u0647"
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__oQAg3)}>
+                  <Embed
+                    data-plasmic-name={"embedHtml"}
+                    data-plasmic-override={overrides.embedHtml}
+                    className={classNames("__wab_instance", sty.embedHtml)}
+                    code={
+                      '<div id="countdown" class="countdown-wrapper">\r\n  <div class="time-box">\r\n    <div id="days" class="time-number">--</div>\r\n    <div class="time-label">\u0631\u0648\u0632</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="hours" class="time-number">--</div>\r\n    <div class="time-label">\u0633\u0627\u0639\u062a</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="minutes" class="time-number">--</div>\r\n    <div class="time-label">\u062f\u0642\u06cc\u0642\u0647</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="seconds" class="time-number">--</div>\r\n    <div class="time-label">\u062b\u0627\u0646\u06cc\u0647</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .countdown-wrapper {\r\n    direction: ltr;\r\n    display: flex;\r\n    gap: 36px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: Vazirmatn, sans-serif;\r\n    color: #444444;\r\n    font-weight: bold;\r\n    flex-wrap: wrap;\r\n  }\r\n\r\n  .time-box {\r\n    text-align: center;\r\n  }\r\n\r\n  .time-number {\r\n    font-size: 32px;\r\n    width: 50px;\r\n    text-align: center;\r\n  }\r\n\r\n  .time-label {\r\n    font-size: 14px;\r\n  }\r\n\r\n  .separator {\r\n    font-size: 28px;\r\n  }\r\n\r\n  @media (max-width: 480px) {\r\n    .countdown-wrapper {\r\n      gap: 16px;\r\n    }\r\n\r\n    .time-number {\r\n      font-size: 22px;\r\n      width: 32px;\r\n    }\r\n\r\n    .separator {\r\n      font-size: 19px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    const persianDigits = [\'\u06f0\',\'\u06f1\',\'\u06f2\',\'\u06f3\',\'\u06f4\',\'\u06f5\',\'\u06f6\',\'\u06f7\',\'\u06f8\',\'\u06f9\'];\r\n    return num.toString().replace(/\\d/g, d => persianDigits[d]);\r\n  }\r\n\r\n  const endDate = new Date("2025-05-05T23:59:59").getTime();\r\n\r\n  const x = setInterval(() => {\r\n    const now = new Date().getTime();\r\n    const distance = endDate - now;\r\n\r\n    if (distance < 0) {\r\n      clearInterval(x);\r\n      document.getElementById("countdown").innerHTML = "\ud83c\udf89 \u062c\u0634\u0646\u0648\u0627\u0631\u0647 \u0628\u0647 \u067e\u0627\u06cc\u0627\u0646 \u0631\u0633\u06cc\u062f\u0647 \u0627\u0633\u062a!";\r\n      return;\r\n    }\r\n\r\n    const days = Math.floor(distance / (1000 * 60 * 60 * 24));\r\n    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\r\n    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));\r\n    const seconds = Math.floor((distance % (1000 * 60)) / 1000);\r\n\r\n    document.getElementById("days").textContent = toPersianNumber(days.toString().padStart(2, \'0\'));\r\n    document.getElementById("hours").textContent = toPersianNumber(hours.toString().padStart(2, \'0\'));\r\n    document.getElementById("minutes").textContent = toPersianNumber(minutes.toString().padStart(2, \'0\'));\r\n    document.getElementById("seconds").textContent = toPersianNumber(seconds.toString().padStart(2, \'0\'));\r\n  }, 1000);\r\n</script>\r\n'
+                    }
+                  />
+                </div>
               </div>
               <div
                 data-plasmic-name={"smsImage"}
@@ -380,9 +403,9 @@ function PlasmicReferral__RenderFunc(props: {
                       sty.text__fzwa0
                     )}
                   >
-                    {
-                      "\u2714\ufe0f \u0627\u06cc\u0646 \u062c\u0634\u0646\u0648\u0627\u0631\u0647 \u062a\u0627 \u06f1\u06f0 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a \u0628\u0631\u0642\u0631\u0627\u0631\u0647.\r\n\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."
+                      : "\r\n\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."}
                   </div>
                 </div>
               </div>
@@ -505,9 +528,7 @@ function PlasmicReferral__RenderFunc(props: {
                   trigger={null}
                 >
                   <div
-                    data-plasmic-name={"freeBox"}
-                    data-plasmic-override={overrides.freeBox}
-                    className={classNames(projectcss.all, sty.freeBox)}
+                    className={classNames(projectcss.all, sty.freeBox__ybr0A)}
                   >
                     <div
                       data-plasmic-name={"refertxt"}
@@ -634,6 +655,61 @@ rentamon.com`;
                             "invokeGlobalAction"
                           ];
                         }
+
+                        $steps["runCode2"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return function share() {
+                                    const shareText = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
+
+۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
+
+اینجا بزن 👇
+rentamon.com`;
+
+                                    if (navigator.share) {
+                                      navigator
+                                        .share({
+                                          title: "رنتامون",
+                                          text: shareText,
+                                          url: "https://rentamon.com"
+                                        })
+                                        .then(() =>
+                                          console.log("Shared successfully")
+                                        )
+                                        .catch(error =>
+                                          console.error("Error sharing:", error)
+                                        );
+                                    } else {
+                                      navigator.clipboard
+                                        .writeText(shareText)
+                                        .then(() => {
+                                          alert(
+                                            "متن در حافظه کپی شد و آماده ارسال به دیگرانه"
+                                          );
+                                        })
+                                        .catch(() => {
+                                          alert(
+                                            "کپی کردن متن با خطا مواجه شد. لطفاً دستی کپی کن."
+                                          );
+                                        });
+                                    }
+                                  };
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode2"] != null &&
+                          typeof $steps["runCode2"] === "object" &&
+                          typeof $steps["runCode2"].then === "function"
+                        ) {
+                          $steps["runCode2"] = await $steps["runCode2"];
+                        }
                       }}
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
@@ -689,6 +765,7 @@ const PlasmicDescendants = {
     "teamImage",
     "introImage",
     "introduction",
+    "embedHtml",
     "smsImage",
     "introCalendarLeft2",
     "introduction2",
@@ -696,7 +773,6 @@ const PlasmicDescendants = {
     "ctaText",
     "ctaButton",
     "copyText",
-    "freeBox",
     "refertxt",
     "ctaButton2",
     "html",
@@ -712,6 +788,7 @@ const PlasmicDescendants = {
     "teamImage",
     "introImage",
     "introduction",
+    "embedHtml",
     "smsImage",
     "introCalendarLeft2",
     "introduction2",
@@ -719,7 +796,6 @@ const PlasmicDescendants = {
     "ctaText",
     "ctaButton",
     "copyText",
-    "freeBox",
     "refertxt",
     "ctaButton2"
   ],
@@ -729,6 +805,7 @@ const PlasmicDescendants = {
     "teamImage",
     "introImage",
     "introduction",
+    "embedHtml",
     "smsImage",
     "introCalendarLeft2",
     "introduction2",
@@ -736,30 +813,21 @@ const PlasmicDescendants = {
     "ctaText",
     "ctaButton",
     "copyText",
-    "freeBox",
     "refertxt",
     "ctaButton2"
   ],
   introTitle: ["introTitle"],
-  teamImage: ["teamImage", "introImage", "introduction"],
+  teamImage: ["teamImage", "introImage", "introduction", "embedHtml"],
   introImage: ["introImage"],
   introduction: ["introduction"],
+  embedHtml: ["embedHtml"],
   smsImage: ["smsImage", "introCalendarLeft2", "introduction2"],
   introCalendarLeft2: ["introCalendarLeft2"],
   introduction2: ["introduction2"],
-  cta: [
-    "cta",
-    "ctaText",
-    "ctaButton",
-    "copyText",
-    "freeBox",
-    "refertxt",
-    "ctaButton2"
-  ],
+  cta: ["cta", "ctaText", "ctaButton", "copyText", "refertxt", "ctaButton2"],
   ctaText: ["ctaText"],
   ctaButton: ["ctaButton"],
-  copyText: ["copyText", "freeBox", "refertxt", "ctaButton2"],
-  freeBox: ["freeBox", "refertxt"],
+  copyText: ["copyText", "refertxt", "ctaButton2"],
   refertxt: ["refertxt"],
   ctaButton2: ["ctaButton2"],
   html: ["html", "clarity2", "goftino"],
@@ -779,6 +847,7 @@ type NodeDefaultElementType = {
   teamImage: "div";
   introImage: "div";
   introduction: "div";
+  embedHtml: typeof Embed;
   smsImage: "div";
   introCalendarLeft2: "div";
   introduction2: "div";
@@ -786,7 +855,6 @@ type NodeDefaultElementType = {
   ctaText: "div";
   ctaButton: "div";
   copyText: typeof AntdModal;
-  freeBox: "div";
   refertxt: "div";
   ctaButton2: "div";
   html: "div";
@@ -862,6 +930,7 @@ export const PlasmicReferral = Object.assign(
     teamImage: makeNodeComponent("teamImage"),
     introImage: makeNodeComponent("introImage"),
     introduction: makeNodeComponent("introduction"),
+    embedHtml: makeNodeComponent("embedHtml"),
     smsImage: makeNodeComponent("smsImage"),
     introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     introduction2: makeNodeComponent("introduction2"),
@@ -869,7 +938,6 @@ export const PlasmicReferral = Object.assign(
     ctaText: makeNodeComponent("ctaText"),
     ctaButton: makeNodeComponent("ctaButton"),
     copyText: makeNodeComponent("copyText"),
-    freeBox: makeNodeComponent("freeBox"),
     refertxt: makeNodeComponent("refertxt"),
     ctaButton2: makeNodeComponent("ctaButton2"),
     html: makeNodeComponent("html"),

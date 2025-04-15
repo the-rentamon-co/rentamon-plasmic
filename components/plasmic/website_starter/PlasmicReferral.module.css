@@ -303,6 +303,80 @@
     font-size: 15px;
   }
 }
+.freeBox__ciToe {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 29px 8px 8px;
+}
+@media (max-width: 350px) {
+  .freeBox__ciToe {
+    padding-top: 31px;
+    padding-bottom: 0px;
+  }
+}
+.text___1Ew7O {
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.8;
+  padding-right: 0px;
+  font-weight: 600;
+}
+@media (max-width: 500px) {
+  .text___1Ew7O {
+    font-size: 17px;
+  }
+}
+.freeBox__oQAg3 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+      ellipse 40% 60% at 47% 51%,
+      #ffffda 0%,
+      #56b9ff00 100%
+    )
+    0% 0% / 100% 100% repeat;
+  min-width: 0;
+  padding: 32px 8px 28px;
+}
+@media (max-width: 500px) {
+  .freeBox__oQAg3 {
+    background: radial-gradient(
+        ellipse 70% 50% at 50% 52%,
+        #ffffda 0%,
+        #56b9ff00 100%
+      )
+      0% 0% / 100% 100% repeat;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__oQAg3 {
+    background: radial-gradient(
+        ellipse 60% 46% at 50% 52%,
+        #ffffda 0%,
+        #56b9ff00 100%
+      )
+      0% 0% / 100% 100% repeat;
+    padding-top: 15px;
+  }
+}
+.embedHtml:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  text-align: center;
+}
 .smsImage {
   display: flex;
   flex-direction: column-reverse;
@@ -344,7 +418,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 46px 0px 8px;
+  padding: 30px 0px 8px;
 }
 .introCalendarLeft2 > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -749,7 +823,7 @@
   object-fit: cover;
   align-self: auto;
 }
-.freeBox {
+.freeBox__ybr0A {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -764,7 +838,7 @@
   border-width: 2px;
 }
 @media (max-width: 500px) {
-  .freeBox {
+  .freeBox__ybr0A {
     padding-right: 8px;
     padding-left: 8px;
     padding-bottom: 10px;
@@ -772,7 +846,7 @@
   }
 }
 @media (max-width: 350px) {
-  .freeBox {
+  .freeBox__ybr0A {
     margin-top: 0px;
     border-radius: 0px;
     padding: 0px;
