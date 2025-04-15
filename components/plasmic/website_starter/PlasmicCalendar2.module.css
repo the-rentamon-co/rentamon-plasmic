@@ -2612,10 +2612,31 @@
   max-width: 100%;
   object-fit: cover;
   width: 462px;
+  position: absolute;
+  left: 460px;
+  top: 80px;
 }
 @media (max-width: 1200px) {
   .addingGuestInfo:global(.__wab_instance) {
-    align-self: center;
+    align-self: auto;
+    position: absolute;
+    left: 217px;
+    top: 80px;
+    z-index: 1;
+  }
+}
+@media (max-width: 500px) {
+  .addingGuestInfo:global(.__wab_instance) {
+    position: absolute;
+    left: 15px;
+    top: 80px;
+  }
+}
+@media (max-width: 350px) {
+  .addingGuestInfo:global(.__wab_instance) {
+    position: absolute;
+    left: 0px;
+    top: 85px;
   }
 }
 .form {
