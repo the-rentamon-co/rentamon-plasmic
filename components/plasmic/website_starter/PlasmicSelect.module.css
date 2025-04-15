@@ -499,9 +499,10 @@
 }
 .overlay:global(.__wab_instance) {
   position: absolute;
-  left: 0px;
-  top: 100%;
-  z-index: 1000;
+  left: 0;
+  top: 0;
+  z-index: 10000000;
+  right: 0;
 }
 .optionsContainer {
   display: flex;
