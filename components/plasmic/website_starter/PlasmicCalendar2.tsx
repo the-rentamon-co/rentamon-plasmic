@@ -154,7 +154,6 @@ export type PlasmicCalendar2__OverridesType = {
   amount?: Flex__<typeof AntdInputNumber>;
   p4?: Flex__<"div">;
   referrer?: Flex__<"div">;
-  source?: Flex__<typeof Select>;
   guestReferrer?: Flex__<typeof Select>;
   count2?: Flex__<"div">;
   guestCount?: Flex__<typeof AntdInputNumber>;
@@ -621,12 +620,6 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
-      },
-      {
-        path: "source.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "divar"
       }
     ],
     [$props, $ctx, $refs]
@@ -8828,14 +8821,15 @@ function PlasmicCalendar2__RenderFunc(props: {
               className={classNames(projectcss.all, sty.referrer)}
             >
               <Select
-                data-plasmic-name={"source"}
-                data-plasmic-override={overrides.source}
-                className={classNames("__wab_instance", sty.source)}
+                data-plasmic-name={"guestReferrer"}
+                data-plasmic-override={overrides.guestReferrer}
+                className={classNames("__wab_instance", sty.guestReferrer)}
                 onChange={async (...eventArgs: any) => {
                   ((...eventArgs) => {
-                    generateStateOnChangeProp($state, ["source", "value"])(
-                      eventArgs[0]
-                    );
+                    generateStateOnChangeProp($state, [
+                      "guestReferrer",
+                      "value"
+                    ])(eventArgs[0]);
                   }).apply(null, eventArgs);
 
                   if (
@@ -8852,7 +8846,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     { value: null, label: null },
                     { value: null, label: null },
                     { value: null, label: null },
-                    { value: null, label: null },
+                    { label: null, value: null },
                     { value: null, label: null }
                   ];
                   __composite["0"]["value"] = "divar";
@@ -8864,84 +8858,29 @@ function PlasmicCalendar2__RenderFunc(props: {
                   __composite["3"]["value"] = "Returning_Guest";
                   __composite["3"]["label"] =
                     "\u0645\u0633\u0627\u0641\u0631 \u0642\u0628\u0644\u06cc";
-                  __composite["4"]["value"] = "instagram";
                   __composite["4"]["label"] =
                     "\u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645";
+                  __composite["4"]["value"] = "instagram";
                   __composite["5"]["value"] = "others";
                   __composite["5"]["label"] = "\u0633\u0627\u06cc\u0631";
                   return __composite;
                 })()}
-                value={generateStateValueProp($state, ["source", "value"])}
+                placeholder={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__lq6I1
+                    )}
+                  >
+                    {"\u0645\u0639\u0631\u0641 \u0645\u0647\u0645\u0627\u0646"}
+                  </div>
+                }
+                value={generateStateValueProp($state, [
+                  "guestReferrer",
+                  "value"
+                ])}
               />
-
-              {false ? (
-                <Select
-                  data-plasmic-name={"guestReferrer"}
-                  data-plasmic-override={overrides.guestReferrer}
-                  className={classNames("__wab_instance", sty.guestReferrer)}
-                  onChange={async (...eventArgs: any) => {
-                    ((...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "guestReferrer",
-                        "value"
-                      ])(eventArgs[0]);
-                    }).apply(null, eventArgs);
-
-                    if (
-                      eventArgs.length > 1 &&
-                      eventArgs[1] &&
-                      eventArgs[1]._plasmic_state_init_
-                    ) {
-                      return;
-                    }
-                  }}
-                  options={(() => {
-                    const __composite = [
-                      { value: null, label: null },
-                      { value: null, label: null },
-                      { value: null, label: null },
-                      { value: null, label: null },
-                      { label: null, value: null },
-                      { value: null, label: null }
-                    ];
-                    __composite["0"]["value"] = "divar";
-                    __composite["0"]["label"] =
-                      "\u062f\u06cc\u0648\u0627\u0631";
-                    __composite["1"]["value"] = "Broker";
-                    __composite["1"]["label"] =
-                      "\u0648\u0627\u0633\u0637\u0647";
-                    __composite["2"]["value"] = "Colleague";
-                    __composite["2"]["label"] =
-                      "\u0647\u0645\u06a9\u0627\u0631";
-                    __composite["3"]["value"] = "Returning_Guest";
-                    __composite["3"]["label"] =
-                      "\u0645\u0633\u0627\u0641\u0631 \u0642\u0628\u0644\u06cc";
-                    __composite["4"]["label"] =
-                      "\u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645";
-                    __composite["4"]["value"] = "instagram";
-                    __composite["5"]["value"] = "others";
-                    __composite["5"]["label"] = "\u0633\u0627\u06cc\u0631";
-                    return __composite;
-                  })()}
-                  placeholder={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__lq6I1
-                      )}
-                    >
-                      {
-                        "\u0645\u0639\u0631\u0641 \u0645\u0647\u0645\u0627\u0646"
-                      }
-                    </div>
-                  }
-                  value={generateStateValueProp($state, [
-                    "guestReferrer",
-                    "value"
-                  ])}
-                />
-              ) : null}
             </div>
             <div
               data-plasmic-name={"count2"}
@@ -9062,7 +9001,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   guest_name: $state.guestName.value,
                                   phone_number: $state.phoneNumber.value,
                                   amount: $state.amount.value,
-                                  referrer: $state.source.value,
+                                  referrer: $state.guestReferrer.value,
                                   guest_count: $state.guestCount.value,
                                   property_id: $props.propertyId,
                                   check_in: jalaliDates[0],
@@ -9223,15 +9162,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     $state.amount.value / 1000
                                   ),
                                   website:
-                                    $state.source.value == "divar"
+                                    $state.guestReferrer.value == "divar"
                                       ? "دیوار"
-                                      : $state.source.value == "Broker"
+                                      : $state.guestReferrer.value == "Broker"
                                       ? "واسطه"
-                                      : $state.source.value == "Colleague"
+                                      : $state.guestReferrer.value ==
+                                        "Colleague"
                                       ? "همکار"
-                                      : $state.source.value == "Returning_Guest"
+                                      : $state.guestReferrer.value ==
+                                        "Returning_Guest"
                                       ? "مسافر قبلی"
-                                      : $state.source.value == "instagram"
+                                      : $state.guestReferrer.value ==
+                                        "instagram"
                                       ? "اینستاگرام"
                                       : "سایر"
                                 };
@@ -9333,7 +9275,6 @@ const PlasmicDescendants = {
     "amount",
     "p4",
     "referrer",
-    "source",
     "guestReferrer",
     "count2",
     "guestCount",
@@ -9389,7 +9330,6 @@ const PlasmicDescendants = {
     "amount",
     "p4",
     "referrer",
-    "source",
     "guestReferrer",
     "count2",
     "guestCount",
@@ -9405,7 +9345,6 @@ const PlasmicDescendants = {
     "amount",
     "p4",
     "referrer",
-    "source",
     "guestReferrer",
     "count2",
     "guestCount",
@@ -9417,9 +9356,8 @@ const PlasmicDescendants = {
   phoneNumber: ["phoneNumber"],
   p3: ["p3", "amount"],
   amount: ["amount"],
-  p4: ["p4", "referrer", "source", "guestReferrer", "count2", "guestCount"],
-  referrer: ["referrer", "source", "guestReferrer"],
-  source: ["source"],
+  p4: ["p4", "referrer", "guestReferrer", "count2", "guestCount"],
+  referrer: ["referrer", "guestReferrer"],
   guestReferrer: ["guestReferrer"],
   count2: ["count2", "guestCount"],
   guestCount: ["guestCount"],
@@ -9471,7 +9409,6 @@ type NodeDefaultElementType = {
   amount: typeof AntdInputNumber;
   p4: "div";
   referrer: "div";
-  source: typeof Select;
   guestReferrer: typeof Select;
   count2: "div";
   guestCount: typeof AntdInputNumber;
@@ -9579,7 +9516,6 @@ export const PlasmicCalendar2 = Object.assign(
     amount: makeNodeComponent("amount"),
     p4: makeNodeComponent("p4"),
     referrer: makeNodeComponent("referrer"),
-    source: makeNodeComponent("source"),
     guestReferrer: makeNodeComponent("guestReferrer"),
     count2: makeNodeComponent("count2"),
     guestCount: makeNodeComponent("guestCount"),

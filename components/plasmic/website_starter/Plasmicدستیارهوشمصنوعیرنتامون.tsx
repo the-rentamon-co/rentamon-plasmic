@@ -294,26 +294,6 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                   className={classNames("__wab_instance", sty.ai)}
                   onLoad={async event => {
                     const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return console.log("open");
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
                   }}
                   preview={true}
                   src={
