@@ -2701,7 +2701,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 5px 8px;
 }
 .phoneNumber:global(.__wab_instance) {
   max-width: 100%;
@@ -2735,7 +2735,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 4px 8px;
 }
 .amount:global(.__wab_instance) {
   max-width: 100%;
@@ -2752,7 +2752,7 @@
   font-weight: 700;
   margin-top: 4px;
   min-width: 0;
-  padding: 10px 2px 2px;
+  padding: 0px 2px;
 }
 .p4 {
   display: flex;
@@ -2763,7 +2763,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 0px 8px;
 }
 .referrer {
   display: flex;
@@ -2807,7 +2807,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 0px 8px;
 }
 .button__lhJj9:global(.__wab_instance) {
   max-width: 100%;

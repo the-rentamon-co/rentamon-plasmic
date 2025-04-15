@@ -278,9 +278,21 @@
   text-align: right;
   font-size: 18px;
   line-height: 1.8;
+  font-weight: 600;
 }
 @media (max-width: 500px) {
   .text__uXKee {
+    font-size: 16px;
+  }
+}
+.text__gmyMg {
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.8;
+  padding-top: 10px;
+}
+@media (max-width: 500px) {
+  .text__gmyMg {
     font-size: 16px;
   }
 }
