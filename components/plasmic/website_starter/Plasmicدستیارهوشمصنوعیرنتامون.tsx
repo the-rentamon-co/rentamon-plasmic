@@ -299,13 +299,7 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return (() => {
-                                return document
-                                  .querySelectorAll(".chat-header")
-                                  .forEach(el => {
-                                    el.style.display = "none";
-                                  });
-                              })();
+                              return console.log("open");
                             }
                           };
                           return (({ customFunction }) => {

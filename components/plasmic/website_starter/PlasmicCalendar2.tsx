@@ -9223,18 +9223,15 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     $state.amount.value / 1000
                                   ),
                                   website:
-                                    $state.guestReferrer.value == "divar"
+                                    $state.source.value == "divar"
                                       ? "دیوار"
-                                      : $state.guestReferrer.value == "Broker"
+                                      : $state.source.value == "Broker"
                                       ? "واسطه"
-                                      : $state.guestReferrer.value ==
-                                        "Colleague"
+                                      : $state.source.value == "Colleague"
                                       ? "همکار"
-                                      : $state.guestReferrer.value ==
-                                        "Returning_Guest"
+                                      : $state.source.value == "Returning_Guest"
                                       ? "مسافر قبلی"
-                                      : $state.guestReferrer.value ==
-                                        "instagram"
+                                      : $state.source.value == "instagram"
                                       ? "اینستاگرام"
                                       : "سایر"
                                 };
