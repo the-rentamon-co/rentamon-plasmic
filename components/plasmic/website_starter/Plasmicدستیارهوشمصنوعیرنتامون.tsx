@@ -97,7 +97,8 @@ export type Plasmicدستیارهوشمصنوعیرنتامون__OverridesType =
   ai?: Flex__<typeof Iframe>;
   introCalendarLeft2?: Flex__<"div">;
   html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
+  clarity?: Flex__<typeof Embed>;
+  favIcon?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -348,11 +349,20 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
             className={classNames(projectcss.all, sty.html)}
           >
             <Embed
-              data-plasmic-name={"clarity2"}
-              data-plasmic-override={overrides.clarity2}
-              className={classNames("__wab_instance", sty.clarity2)}
+              data-plasmic-name={"clarity"}
+              data-plasmic-override={overrides.clarity}
+              className={classNames("__wab_instance", sty.clarity)}
               code={
                 '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"favIcon"}
+              data-plasmic-override={overrides.favIcon}
+              className={classNames("__wab_instance", sty.favIcon)}
+              code={
+                "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
               }
             />
           </div>
@@ -380,7 +390,8 @@ const PlasmicDescendants = {
     "ai",
     "introCalendarLeft2",
     "html",
-    "clarity2",
+    "clarity",
+    "favIcon",
     "rentamonFooter"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
@@ -409,8 +420,9 @@ const PlasmicDescendants = {
   img: ["img"],
   ai: ["ai"],
   introCalendarLeft2: ["introCalendarLeft2"],
-  html: ["html", "clarity2"],
-  clarity2: ["clarity2"],
+  html: ["html", "clarity", "favIcon"],
+  clarity: ["clarity"],
+  favIcon: ["favIcon"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -428,7 +440,8 @@ type NodeDefaultElementType = {
   ai: typeof Iframe;
   introCalendarLeft2: "div";
   html: "div";
-  clarity2: typeof Embed;
+  clarity: typeof Embed;
+  favIcon: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -505,7 +518,8 @@ export const Plasmicدستیارهوشمصنوعیرنتامون = Object.assign
     ai: makeNodeComponent("ai"),
     introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
+    clarity: makeNodeComponent("clarity"),
+    favIcon: makeNodeComponent("favIcon"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for Plasmicدستیارهوشمصنوعیرنتامون
