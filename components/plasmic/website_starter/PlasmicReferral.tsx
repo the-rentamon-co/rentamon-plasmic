@@ -61,6 +61,7 @@ import {
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
@@ -72,6 +73,9 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicReferral.module.css"; // plasmic-import: SXQexie-iAHy/css
+
+import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 
 createPlasmicElementProxy;
 
@@ -94,15 +98,15 @@ export type PlasmicReferral__OverridesType = {
   introImage?: Flex__<"div">;
   introduction?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
-  smsImage?: Flex__<"div">;
-  introCalendarLeft2?: Flex__<"div">;
   cta?: Flex__<"div">;
   ctaText?: Flex__<"div">;
   ctaButton?: Flex__<"div">;
+  textInput?: Flex__<typeof TextInput>;
   rules?: Flex__<"div">;
   copyText?: Flex__<typeof AntdModal>;
   refertxt?: Flex__<"div">;
   ctaButton2?: Flex__<"div">;
+  smsImage?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -165,6 +169,13 @@ function PlasmicReferral__RenderFunc(props: {
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
+      },
+      {
+        path: "textInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          "rentamon.com/referral/?xyzw123"
       }
     ],
     [$props, $ctx, $refs]
@@ -385,41 +396,6 @@ function PlasmicReferral__RenderFunc(props: {
                 </div>
               </div>
               <div
-                data-plasmic-name={"smsImage"}
-                data-plasmic-override={overrides.smsImage}
-                className={classNames(projectcss.all, sty.smsImage)}
-              >
-                <Stack__
-                  as={"div"}
-                  data-plasmic-name={"introCalendarLeft2"}
-                  data-plasmic-override={overrides.introCalendarLeft2}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.introCalendarLeft2)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__uxHdh)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "100%"
-                        : "70%"
-                    }
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"100%"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image81.png",
-                      fullWidth: 800,
-                      fullHeight: 450,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </Stack__>
-              </div>
-              <div
                 data-plasmic-name={"cta"}
                 data-plasmic-override={overrides.cta}
                 className={classNames(projectcss.all, sty.cta)}
@@ -498,8 +474,35 @@ function PlasmicReferral__RenderFunc(props: {
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                      : "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                      : "\u06a9\u067e\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"}
                   </div>
+                  <TextInput
+                    data-plasmic-name={"textInput"}
+                    data-plasmic-override={overrides.textInput}
+                    className={classNames("__wab_instance", sty.textInput)}
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "textInput",
+                          "value"
+                        ])((e => e.target?.value).apply(null, eventArgs));
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                    placeholder={"rentamon.com/referral/?xyzw123"}
+                    value={
+                      generateStateValueProp($state, ["textInput", "value"]) ??
+                      ""
+                    }
+                  />
                 </div>
                 <div
                   data-plasmic-name={"rules"}
@@ -744,6 +747,31 @@ rentamon.com`;
             </div>
           </div>
           <div
+            data-plasmic-name={"smsImage"}
+            data-plasmic-override={overrides.smsImage}
+            className={classNames(projectcss.all, sty.smsImage)}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__uxHdh)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={
+                hasVariant(globalVariants, "screen", "mobile") ? "100%" : "70%"
+              }
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"100%"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image81.png",
+                fullWidth: 800,
+                fullHeight: 450,
+                aspectRatio: undefined
+              }}
+            />
+          </div>
+          <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
             className={classNames(projectcss.all, sty.html)}
@@ -788,15 +816,15 @@ const PlasmicDescendants = {
     "introImage",
     "introduction",
     "embedHtml",
-    "smsImage",
-    "introCalendarLeft2",
     "cta",
     "ctaText",
     "ctaButton",
+    "textInput",
     "rules",
     "copyText",
     "refertxt",
     "ctaButton2",
+    "smsImage",
     "html",
     "clarity2",
     "goftino",
@@ -811,11 +839,10 @@ const PlasmicDescendants = {
     "introImage",
     "introduction",
     "embedHtml",
-    "smsImage",
-    "introCalendarLeft2",
     "cta",
     "ctaText",
     "ctaButton",
+    "textInput",
     "rules",
     "copyText",
     "refertxt",
@@ -828,11 +855,10 @@ const PlasmicDescendants = {
     "introImage",
     "introduction",
     "embedHtml",
-    "smsImage",
-    "introCalendarLeft2",
     "cta",
     "ctaText",
     "ctaButton",
+    "textInput",
     "rules",
     "copyText",
     "refertxt",
@@ -843,23 +869,24 @@ const PlasmicDescendants = {
   introImage: ["introImage"],
   introduction: ["introduction"],
   embedHtml: ["embedHtml"],
-  smsImage: ["smsImage", "introCalendarLeft2"],
-  introCalendarLeft2: ["introCalendarLeft2"],
   cta: [
     "cta",
     "ctaText",
     "ctaButton",
+    "textInput",
     "rules",
     "copyText",
     "refertxt",
     "ctaButton2"
   ],
   ctaText: ["ctaText"],
-  ctaButton: ["ctaButton"],
+  ctaButton: ["ctaButton", "textInput"],
+  textInput: ["textInput"],
   rules: ["rules"],
   copyText: ["copyText", "refertxt", "ctaButton2"],
   refertxt: ["refertxt"],
   ctaButton2: ["ctaButton2"],
+  smsImage: ["smsImage"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -878,15 +905,15 @@ type NodeDefaultElementType = {
   introImage: "div";
   introduction: "div";
   embedHtml: typeof Embed;
-  smsImage: "div";
-  introCalendarLeft2: "div";
   cta: "div";
   ctaText: "div";
   ctaButton: "div";
+  textInput: typeof TextInput;
   rules: "div";
   copyText: typeof AntdModal;
   refertxt: "div";
   ctaButton2: "div";
+  smsImage: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -961,15 +988,15 @@ export const PlasmicReferral = Object.assign(
     introImage: makeNodeComponent("introImage"),
     introduction: makeNodeComponent("introduction"),
     embedHtml: makeNodeComponent("embedHtml"),
-    smsImage: makeNodeComponent("smsImage"),
-    introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     cta: makeNodeComponent("cta"),
     ctaText: makeNodeComponent("ctaText"),
     ctaButton: makeNodeComponent("ctaButton"),
+    textInput: makeNodeComponent("textInput"),
     rules: makeNodeComponent("rules"),
     copyText: makeNodeComponent("copyText"),
     refertxt: makeNodeComponent("refertxt"),
     ctaButton2: makeNodeComponent("ctaButton2"),
+    smsImage: makeNodeComponent("smsImage"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),

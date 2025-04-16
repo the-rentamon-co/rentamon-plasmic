@@ -164,7 +164,21 @@ function PlasmicInvitationPage__RenderFunc(props: {
               sty.text
             )}
           >
-            {"Enter some text"}
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $ctx.params.invite_code;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
           </div>
         </div>
       </div>
