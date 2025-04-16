@@ -810,9 +810,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     }
                   }}
                 >
-                  {
-                    "\u0635\u062d\u0628\u062a \u0628\u0627 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc"
-                  }
+                  {"\u0627\u0645\u062a\u062d\u0627\u0646\u0634 \u06a9\u0646"}
                 </div>
               </Button>
             </div>
