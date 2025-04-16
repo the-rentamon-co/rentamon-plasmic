@@ -187,7 +187,7 @@ function PlasmicReferral__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return $state.apiRequest.data.referralUrl;
+              return $state.apiRequest.data.code_referral;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -517,6 +517,40 @@ function PlasmicReferral__RenderFunc(props: {
                         $steps["updateCopyTextOpen"] = await $steps[
                           "updateCopyTextOpen"
                         ];
+                      }
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  const text = $state.textInput.value;
+                                  return navigator.clipboard
+                                    .writeText(text)
+                                    .then(() => {
+                                      alert("متن با موفقیت کپی شد!");
+                                      console.log("copy");
+                                    })
+                                    .catch(err => {
+                                      console.error(
+                                        "خطا در کپی کردن متن:",
+                                        err
+                                      );
+                                    });
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
                       }
                     }}
                   >
