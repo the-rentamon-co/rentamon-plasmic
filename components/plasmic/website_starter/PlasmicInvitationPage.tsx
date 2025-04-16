@@ -360,12 +360,11 @@ function PlasmicInvitationPage__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["runCode"] = false
+                    $steps["runCode"] = true
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                $ctx.params.invite_code;
                                 function setCookie(name, value, hours) {
                                   let expires = "";
                                   if (hours) {
@@ -382,7 +381,11 @@ function PlasmicInvitationPage__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("alertModal", "true", 168);
+                                return setCookie(
+                                  "invite_code",
+                                  $ctx.params.invite_code,
+                                  720
+                                );
                               })();
                             }
                           };
