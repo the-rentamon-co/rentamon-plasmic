@@ -281,9 +281,9 @@ function PlasmicReferral__RenderFunc(props: {
                     displayWidth={"100%"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/image80.png",
-                      fullWidth: 1104,
-                      fullHeight: 503,
+                      src: "/plasmic/website_starter/images/manosTidesJpg.jpg",
+                      fullWidth: 722,
+                      fullHeight: 526,
                       aspectRatio: undefined
                     }}
                   />
