@@ -1712,7 +1712,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["updateStateVariable2"] = true
+              $steps["updateStateVariable2"] = false
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
