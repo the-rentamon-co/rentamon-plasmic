@@ -62,8 +62,10 @@ import {
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -76,6 +78,7 @@ import sty from "./PlasmicReferral.module.css"; // plasmic-import: SXQexie-iAHy/
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import Icon51Icon from "./icons/PlasmicIcon__Icon51"; // plasmic-import: Bz9Sx99JdB-a/icon
 
 createPlasmicElementProxy;
 
@@ -102,15 +105,18 @@ export type PlasmicReferral__OverridesType = {
   ctaText?: Flex__<"div">;
   ctaButton?: Flex__<"div">;
   textInput?: Flex__<typeof TextInput>;
-  rules?: Flex__<"div">;
-  copyText?: Flex__<typeof AntdModal>;
+  apiRequest?: Flex__<typeof ApiRequest>;
+  shareLink?: Flex__<typeof AntdModal>;
   refertxt?: Flex__<"div">;
   ctaButton2?: Flex__<"div">;
+  svg?: Flex__<"svg">;
   smsImage?: Flex__<"div">;
+  rules?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultReferralProps {}
@@ -164,18 +170,58 @@ function PlasmicReferral__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
       },
       {
-        path: "copyText.open",
+        path: "shareLink.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
       },
       {
         path: "textInput.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          "rentamon.com/referral/?xyzw123"
+          (() => {
+            try {
+              return $state.apiRequest.data.referralUrl;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -421,9 +467,11 @@ function PlasmicReferral__RenderFunc(props: {
                       : "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646 \ud83d\udc47\r"}
                   </div>
                 </Stack__>
-                <div
+                <Stack__
+                  as={"div"}
                   data-plasmic-name={"ctaButton"}
                   data-plasmic-override={overrides.ctaButton}
+                  hasGap={true}
                   className={classNames(projectcss.all, sty.ctaButton)}
                 >
                   <div
@@ -440,7 +488,7 @@ function PlasmicReferral__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["copyText", "open"]
+                                variablePath: ["shareLink", "open"]
                               },
                               operation: 0,
                               value: true
@@ -473,7 +521,7 @@ function PlasmicReferral__RenderFunc(props: {
                     }}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062f\u0639\u0648\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      ? "\u06a9\u067e\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"
                       : "\u06a9\u067e\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"}
                   </div>
                   <TextInput
@@ -503,28 +551,64 @@ function PlasmicReferral__RenderFunc(props: {
                       ""
                     }
                   />
-                </div>
-                <div
-                  data-plasmic-name={"rules"}
-                  data-plasmic-override={overrides.rules}
-                  className={classNames(projectcss.all, sty.rules)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fzwa0
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\r\n\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647.\n\u2714\ufe0f \u06a9\u0627\u0641\u06cc\u0647 \u062f\u0648\u0633\u062a \u0634\u0645\u0627 \u0645\u0648\u0642\u0639 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u060c \u0646\u0627\u0645 \u06cc\u0627 \u0634\u0645\u0627\u0631\u0647\u200c\u06cc \u0634\u0645\u0627 \u0631\u0648 \u0628\u0647 \u0645\u0627 \u0628\u062f\u0647.\n"
-                      : "\r\n\u2714\ufe0f \u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062d\u0633\u0627\u0628 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647.\n\u2714\ufe0f \u06a9\u0627\u0641\u06cc\u0647 \u062f\u0648\u0633\u062a \u0634\u0645\u0627 \u0645\u0648\u0642\u0639 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u060c \u0646\u0627\u0645 \u06cc\u0627 \u0634\u0645\u0627\u0631\u0647\u200c\u06cc \u0634\u0645\u0627 \u0631\u0648 \u0628\u0647 \u0645\u0627 \u0628\u062f\u0647."}
-                  </div>
-                </div>
+
+                  <ApiRequest
+                    data-plasmic-name={"apiRequest"}
+                    data-plasmic-override={overrides.apiRequest}
+                    className={classNames("__wab_instance", sty.apiRequest)}
+                    errorDisplay={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__vWzFd
+                        )}
+                      >
+                        {"Error fetching data"}
+                      </div>
+                    }
+                    loadingDisplay={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hyJic
+                        )}
+                      >
+                        {"Loading..."}
+                      </div>
+                    }
+                    method={"POST"}
+                    onError={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequest",
+                        "error"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onLoading={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequest",
+                        "loading"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onSuccess={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequest",
+                        "data"
+                      ]).apply(null, eventArgs);
+                    }}
+                    ref={ref => {
+                      $refs["apiRequest"] = ref;
+                    }}
+                    url={
+                      "https://gateway.rentamon.com/webhook/generate_referral_code"
+                    }
+                  />
+                </Stack__>
                 <AntdModal
-                  data-plasmic-name={"copyText"}
-                  data-plasmic-override={overrides.copyText}
-                  className={classNames("__wab_instance", sty.copyText)}
+                  data-plasmic-name={"shareLink"}
+                  data-plasmic-override={overrides.shareLink}
+                  className={classNames("__wab_instance", sty.shareLink)}
                   defaultStylesClassName={classNames(
                     projectcss.root_reset,
                     projectcss.plasmic_default_styles,
@@ -534,14 +618,14 @@ function PlasmicReferral__RenderFunc(props: {
                     plasmic_plasmic_rich_components_css.plasmic_tokens
                   )}
                   hideFooter={true}
-                  modalScopeClassName={sty["copyText__modal"]}
+                  modalScopeClassName={sty["shareLink__modal"]}
                   onOpenChange={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
-                      "copyText",
+                      "shareLink",
                       "open"
                     ]).apply(null, eventArgs);
                   }}
-                  open={generateStateValueProp($state, ["copyText", "open"])}
+                  open={generateStateValueProp($state, ["shareLink", "open"])}
                   title={
                     <div
                       className={classNames(
@@ -571,6 +655,8 @@ function PlasmicReferral__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\r\u0627\u0632 \u0637\u0631\u06cc\u0642 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c\u200c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648... \u06cc\u06a9\u062c\u0627 \u0642\u06cc\u0645\u062a \u0628\u0630\u0627\u0631\u06cc.\n\n\u06f7 \u062a\u0627 \u0627\u0632 \u0645\u0639\u0631\u0648\u0641\u200c\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u062a\u062c\u0645\u06cc\u0639 \u06a9\u0631\u062f\u0647 \u0648 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u062a\u0648\u06cc \u062e\u0648\u062f\u0634 \u062f\u0627\u0631\u0647.\n\n\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646 \ud83d\udc47\r\nrentamon.com"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\r\u0627\u0632 \u0637\u0631\u06cc\u0642 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c\u200c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648... \u06cc\u06a9\u062c\u0627 \u0642\u06cc\u0645\u062a \u0628\u0630\u0627\u0631\u06cc.\n\n\u06f7 \u062a\u0627 \u0627\u0632 \u0645\u0639\u0631\u0648\u0641\u200c\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u062a\u062c\u0645\u06cc\u0639 \u06a9\u0631\u062f\u0647 \u0648 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u062a\u0648\u06cc \u062e\u0648\u062f\u0634 \u062f\u0627\u0631\u0647.\n\n\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646 \ud83d\udc47\r\nrentamon.com/referral/?xyz123"
                         : "\r\u0627\u0632 \u0637\u0631\u06cc\u0642 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0631\u0627\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c\u200c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648... \u06cc\u06a9\u062c\u0627 \u0642\u06cc\u0645\u062a \u0628\u0630\u0627\u0631\u06cc.\n\n\u06f7 \u062a\u0627 \u0627\u0632 \u0645\u0639\u0631\u0648\u0641\u200c\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u062a\u062c\u0645\u06cc\u0639 \u06a9\u0631\u062f\u0647 \u0648 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u062a\u0648\u06cc \u062e\u0648\u062f\u0634 \u062f\u0627\u0631\u0647.\n\n\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646 \ud83d\udc47\r\nrentamon.com"}
                     </div>
                   </div>
@@ -580,166 +666,187 @@ function PlasmicReferral__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.ctaButton2)}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__jWl2Q
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
+                      className={classNames(projectcss.all, sty.freeBox__nosZ8)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__jWl2Q
+                        )}
+                        onClick={async event => {
+                          const $steps = {};
 
-                        $steps["runCode2"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return function share() {
-                                    const shareText = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری. ۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره. اینجا بزن 👇 rentamon.com`;
+                          $steps["runCode2"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return function share() {
+                                      const shareText = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری. ۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره. اینجا بزن 👇 rentamon.com`;
 
-                                    if (navigator.share) {
-                                      navigator
-                                        .share({
-                                          title: "رنتامون",
-                                          text: shareText,
-                                          url: "https://rentamon.com"
-                                        })
-                                        .then(() =>
-                                          console.log("Shared successfully")
-                                        )
-                                        .catch(error =>
-                                          console.error("Error sharing:", error)
-                                        );
-                                    } else {
-                                      navigator.clipboard
-                                        .writeText(shareText)
-                                        .then(() => {
-                                          alert(
-                                            "متن در حافظه کپی شد و آماده ارسال به دیگرانه"
+                                      if (navigator.share) {
+                                        navigator
+                                          .share({
+                                            title: "رنتامون",
+                                            text: shareText,
+                                            url: "https://rentamon.com"
+                                          })
+                                          .then(() =>
+                                            console.log("Shared successfully")
+                                          )
+                                          .catch(error =>
+                                            console.error(
+                                              "Error sharing:",
+                                              error
+                                            )
                                           );
-                                        })
-                                        .catch(() => {
-                                          alert(
-                                            "کپی کردن متن با خطا مواجه شد. لطفاً دستی کپی کن."
-                                          );
-                                        });
-                                    }
-                                  };
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode2"] != null &&
-                          typeof $steps["runCode2"] === "object" &&
-                          typeof $steps["runCode2"].then === "function"
-                        ) {
-                          $steps["runCode2"] = await $steps["runCode2"];
-                        }
+                                      } else {
+                                        navigator.clipboard
+                                          .writeText(shareText)
+                                          .then(() => {
+                                            alert(
+                                              "متن در حافظه کپی شد و آماده ارسال به دیگرانه"
+                                            );
+                                          })
+                                          .catch(() => {
+                                            alert(
+                                              "کپی کردن متن با خطا مواجه شد. لطفاً دستی کپی کن."
+                                            );
+                                          });
+                                      }
+                                    };
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode2"] != null &&
+                            typeof $steps["runCode2"] === "object" &&
+                            typeof $steps["runCode2"].then === "function"
+                          ) {
+                            $steps["runCode2"] = await $steps["runCode2"];
+                          }
 
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    const text = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      const text = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
 
 ۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
 
 اینجا بزن 👇
 rentamon.com`;
-                                    return navigator.clipboard
-                                      .writeText(text)
-                                      .then(() =>
-                                        console.log(
-                                          "متن با موفقیت در کلیپ‌بورد کپی شد!"
+                                      return navigator.clipboard
+                                        .writeText(text)
+                                        .then(() =>
+                                          console.log(
+                                            "متن با موفقیت در کلیپ‌بورد کپی شد!"
+                                          )
                                         )
-                                      )
-                                      .catch(err =>
-                                        console.error("خطا در کپی متن: ", err)
-                                      );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
+                                        .catch(err =>
+                                          console.error("خطا در کپی متن: ", err)
+                                        );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
 
-                        $steps["updateCopyTextOpen"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["copyText", "open"]
-                                },
-                                operation: 0
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
+                          $steps["updateCopyTextOpen"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["shareLink", "open"]
+                                  },
+                                  operation: 0
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
 
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["updateCopyTextOpen"] != null &&
-                          typeof $steps["updateCopyTextOpen"] === "object" &&
-                          typeof $steps["updateCopyTextOpen"].then ===
-                            "function"
-                        ) {
-                          $steps["updateCopyTextOpen"] = await $steps[
-                            "updateCopyTextOpen"
-                          ];
-                        }
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateCopyTextOpen"] != null &&
+                            typeof $steps["updateCopyTextOpen"] === "object" &&
+                            typeof $steps["updateCopyTextOpen"].then ===
+                              "function"
+                          ) {
+                            $steps["updateCopyTextOpen"] = await $steps[
+                              "updateCopyTextOpen"
+                            ];
+                          }
 
-                        $steps["invokeGlobalAction"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  "\u0645\u062a\u0646 \u062f\u0631 \u062d\u0627\u0641\u0638\u0647 \u06a9\u067e\u06cc \u0634\u062f \u0648 \u0622\u0645\u0627\u062f\u0647 \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 \u062f\u0648\u0633\u062a\u0627\u0646\u0647 :)",
-                                  "top-center"
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["invokeGlobalAction"] != null &&
-                          typeof $steps["invokeGlobalAction"] === "object" &&
-                          typeof $steps["invokeGlobalAction"].then ===
-                            "function"
-                        ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
-                          ];
-                        }
-                      }}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u06a9\u067e\u06cc \u0645\u062a\u0646"
-                        : "\u06a9\u067e\u06cc \u0645\u062a\u0646"}
+                          $steps["invokeGlobalAction"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u0645\u062a\u0646 \u062f\u0631 \u062d\u0627\u0641\u0638\u0647 \u06a9\u067e\u06cc \u0634\u062f \u0648 \u0622\u0645\u0627\u062f\u0647 \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 \u062f\u0648\u0633\u062a\u0627\u0646\u0647 :)",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction"] != null &&
+                            typeof $steps["invokeGlobalAction"] === "object" &&
+                            typeof $steps["invokeGlobalAction"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction"] = await $steps[
+                              "invokeGlobalAction"
+                            ];
+                          }
+                        }}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u06a9\u067e\u06cc \u0645\u062a\u0646"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"
+                          : "\u06a9\u067e\u06cc \u0645\u062a\u0646"}
+                      </div>
+                      {(
+                        hasVariant(globalVariants, "screen", "tablet")
+                          ? true
+                          : false
+                      ) ? (
+                        <Icon51Icon
+                          data-plasmic-name={"svg"}
+                          data-plasmic-override={overrides.svg}
+                          className={classNames(projectcss.all, sty.svg)}
+                          role={"img"}
+                        />
+                      ) : null}
                     </div>
                   </div>
                 </AntdModal>
@@ -772,6 +879,34 @@ rentamon.com`;
             />
           </div>
           <div
+            data-plasmic-name={"rules"}
+            data-plasmic-override={overrides.rules}
+            className={classNames(projectcss.all, sty.rules)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__fzwa0
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u062f\u061f"
+                : "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u062f\u061f"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__wamHc
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "1\ufe0f\u20e3 \u0634\u0645\u0627 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0645\u06cc\u200c\u0641\u0631\u0633\u062a\u06cc\r\n2\ufe0f\u20e3\u062f\u0648\u0633\u062a\u0627\u0646 \u0634\u0645\u0627 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f\r\n3\ufe0f\u20e3\u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0634 \u0631\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0634\u0627\u0631\u0698 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3\u0645\u0628\u0644\u063a \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647"
+                : "1\ufe0f\u20e3 \u0634\u0645\u0627 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0645\u06cc\u200c\u0641\u0631\u0633\u062a\u06cc\r\n2\ufe0f\u20e3\u062f\u0648\u0633\u062a\u0627\u0646 \u0634\u0645\u0627 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f\r\n3\ufe0f\u20e3\u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0634 \u0631\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0634\u0627\u0631\u0698 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3\u0645\u0628\u0644\u063a \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647"}
+            </div>
+          </div>
+          <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
             className={classNames(projectcss.all, sty.html)}
@@ -799,6 +934,119 @@ rentamon.com`;
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          console.log("side effect started");
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            console.log("side effect in the cudition");
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -820,15 +1068,18 @@ const PlasmicDescendants = {
     "ctaText",
     "ctaButton",
     "textInput",
-    "rules",
-    "copyText",
+    "apiRequest",
+    "shareLink",
     "refertxt",
     "ctaButton2",
+    "svg",
     "smsImage",
+    "rules",
     "html",
     "clarity2",
     "goftino",
-    "rentamonFooter"
+    "rentamonFooter",
+    "sideEffect"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   mainContents: [
@@ -843,10 +1094,11 @@ const PlasmicDescendants = {
     "ctaText",
     "ctaButton",
     "textInput",
-    "rules",
-    "copyText",
+    "apiRequest",
+    "shareLink",
     "refertxt",
-    "ctaButton2"
+    "ctaButton2",
+    "svg"
   ],
   intro1st: [
     "intro1st",
@@ -859,10 +1111,11 @@ const PlasmicDescendants = {
     "ctaText",
     "ctaButton",
     "textInput",
-    "rules",
-    "copyText",
+    "apiRequest",
+    "shareLink",
     "refertxt",
-    "ctaButton2"
+    "ctaButton2",
+    "svg"
   ],
   introTitle: ["introTitle"],
   teamImage: ["teamImage", "introImage", "introduction", "embedHtml"],
@@ -874,23 +1127,27 @@ const PlasmicDescendants = {
     "ctaText",
     "ctaButton",
     "textInput",
-    "rules",
-    "copyText",
+    "apiRequest",
+    "shareLink",
     "refertxt",
-    "ctaButton2"
+    "ctaButton2",
+    "svg"
   ],
   ctaText: ["ctaText"],
-  ctaButton: ["ctaButton", "textInput"],
+  ctaButton: ["ctaButton", "textInput", "apiRequest"],
   textInput: ["textInput"],
-  rules: ["rules"],
-  copyText: ["copyText", "refertxt", "ctaButton2"],
+  apiRequest: ["apiRequest"],
+  shareLink: ["shareLink", "refertxt", "ctaButton2", "svg"],
   refertxt: ["refertxt"],
-  ctaButton2: ["ctaButton2"],
+  ctaButton2: ["ctaButton2", "svg"],
+  svg: ["svg"],
   smsImage: ["smsImage"],
+  rules: ["rules"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -909,15 +1166,18 @@ type NodeDefaultElementType = {
   ctaText: "div";
   ctaButton: "div";
   textInput: typeof TextInput;
-  rules: "div";
-  copyText: typeof AntdModal;
+  apiRequest: typeof ApiRequest;
+  shareLink: typeof AntdModal;
   refertxt: "div";
   ctaButton2: "div";
+  svg: "svg";
   smsImage: "div";
+  rules: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -992,15 +1252,18 @@ export const PlasmicReferral = Object.assign(
     ctaText: makeNodeComponent("ctaText"),
     ctaButton: makeNodeComponent("ctaButton"),
     textInput: makeNodeComponent("textInput"),
-    rules: makeNodeComponent("rules"),
-    copyText: makeNodeComponent("copyText"),
+    apiRequest: makeNodeComponent("apiRequest"),
+    shareLink: makeNodeComponent("shareLink"),
     refertxt: makeNodeComponent("refertxt"),
     ctaButton2: makeNodeComponent("ctaButton2"),
+    svg: makeNodeComponent("svg"),
     smsImage: makeNodeComponent("smsImage"),
+    rules: makeNodeComponent("rules"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicReferral
     internalVariantProps: PlasmicReferral__VariantProps,
