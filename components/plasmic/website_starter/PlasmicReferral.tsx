@@ -797,7 +797,7 @@ ${$state.textInput.value}`;
                         onClick={async event => {
                           const $steps = {};
 
-                          $steps["runCode2"] = true
+                          $steps["runCode2"] = false
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
@@ -959,7 +959,7 @@ rentamon.com`;
 ۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
 
 اینجا بزن 👇
-\${$state.textInput.value}
+${$state.textInput.value}
 `;
                                         if (navigator.share) {
                                           try {
