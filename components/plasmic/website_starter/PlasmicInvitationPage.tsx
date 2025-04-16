@@ -201,62 +201,74 @@ function PlasmicInvitationPage__RenderFunc(props: {
             sty.root
           )}
         >
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__t97UG
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__u2GpF
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
+            }}
+            url={(() => {
+              try {
+                return `https://gateway.rentamon.com/webhook/get_referral_code_info?code=${$ctx.params.invite_code}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          />
+
           <Stack__
             as={"div"}
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox___73I8V)}
           >
-            <ApiRequest
-              data-plasmic-name={"apiRequest"}
-              data-plasmic-override={overrides.apiRequest}
-              className={classNames("__wab_instance", sty.apiRequest)}
-              errorDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__huGi
-                  )}
-                >
-                  {"Error fetching data"}
-                </div>
-              }
-              loadingDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dNpb
-                  )}
-                >
-                  {"Loading..."}
-                </div>
-              }
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequest",
-                  "error"
-                ]).apply(null, eventArgs);
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequest",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["apiRequest"] = ref;
-              }}
-              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-            />
-
             <div className={classNames(projectcss.all, sty.freeBox__pdbF7)}>
               <div className={classNames(projectcss.all, sty.freeBox__lIzAm)}>
                 <PlasmicImg__
@@ -273,7 +285,7 @@ function PlasmicInvitationPage__RenderFunc(props: {
                   loading={"lazy"}
                   src={(() => {
                     try {
-                      return $state.apiRequest.data.user_info.profile_image;
+                      return $state.apiRequest.data[0].profile_pic;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -303,9 +315,9 @@ function PlasmicInvitationPage__RenderFunc(props: {
                     {(() => {
                       try {
                         return (
-                          $state.apiRequest.data.user_info.first_name +
+                          $state.apiRequest.data[0].first_name +
                           " " +
-                          $state.apiRequest.data.user_info.last_name
+                          $state.apiRequest.data[0].last_name
                         );
                       } catch (e) {
                         if (
@@ -330,9 +342,25 @@ function PlasmicInvitationPage__RenderFunc(props: {
                     sty.text__kLvIj
                   )}
                 >
-                  {
-                    "\u0646\u06cc\u0645\u0627 \u0627\u06a9\u0628\u0631 \u0632\u0627\u062f\u0647 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0639\u0648\u062a\u062a \u06a9\u0631\u062f\u0647. \u0628\u0647 \u062c\u0645\u0639 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0631 \u0645\u0633\u06cc\u0631 \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634\u0648\u0646 \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u0650 \u06a9\u0634\u0648\u0631 \u0632\u06cc\u0628\u0627\u0645\u0648\u0646 \u0647\u0633\u062a\u0646 :)"
-                  }
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return `${
+                          $state.apiRequest.data[0].first_name +
+                          " " +
+                          $state.apiRequest.data[0].last_name
+                        } به رنتامون دعوتت کرده. به جمع میزبان‌هایی که در مسیر رشد کسب‌وکارشون و توسعه‌ی گردشگریِ کشور زیبامون هستن :)`;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0646\u06cc\u0645\u0627 \u0627\u06a9\u0628\u0631 \u0632\u0627\u062f\u0647 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0639\u0648\u062a\u062a \u06a9\u0631\u062f\u0647. \u0628\u0647 \u062c\u0645\u0639 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0631 \u0645\u0633\u06cc\u0631 \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634\u0648\u0646 \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u0650 \u06a9\u0634\u0648\u0631 \u0632\u06cc\u0628\u0627\u0645\u0648\u0646 \u0647\u0633\u062a\u0646 :)";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
               </div>
             </div>
@@ -410,7 +438,12 @@ function PlasmicInvitationPage__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return undefined;
+                              return (() => {
+                                return window.open(
+                                  "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/activation/1/",
+                                  "_blank"
+                                );
+                              })();
                             }
                           };
                           return (({ customFunction }) => {
