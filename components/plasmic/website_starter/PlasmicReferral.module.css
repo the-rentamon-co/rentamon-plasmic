@@ -755,6 +755,7 @@
 .refertxt {
   font-size: 17px;
   text-align: right;
+  user-select: text;
 }
 @media (max-width: 500px) {
   .refertxt {

@@ -528,7 +528,6 @@ function PlasmicReferral__RenderFunc(props: {
                                   return navigator.clipboard
                                     .writeText(text)
                                     .then(() => {
-                                      alert("متن با موفقیت کپی شد!");
                                       console.log("copy");
                                     })
                                     .catch(err => {
@@ -741,8 +740,7 @@ https://app.rentamon.com/Invitation_Page/${$state.textInput.value}/
 
 
 اینجا بزن 👇
-https://app.rentamon.com/Invitation_Page/${$state.textInput.value}/
-`;
+${$state.textInput.value}`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
