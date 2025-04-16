@@ -750,9 +750,22 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   sty.text__xsnqv
                 )}
               >
-                {
-                  "\ud83e\udd2f\r\n\u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648\u0646\u0645\u0627\u06cc\u06cc \u0634\u062f\r\n\u0647\u0631 \u0633\u0648\u0627\u0644\u06cc \u062f\u0631 \u0645\u0648\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0627\u0631\u06cc \u0631\u0648 \u0633\u0631\u06cc\u0639 \u067e\u0627\u0633\u062e \u0645\u06cc\u200c\u062f\u0647\r\n\u2705\u0631\u0627\u06cc\u06af\u0627\u0646"
-                }
+                <React.Fragment>
+                  <React.Fragment>{"\ud83e\udd2f\r\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "\u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    }
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u0631\u0648\u0646\u0645\u0627\u06cc\u06cc \u0634\u062f\r\n\u0647\u0631 \u0633\u0648\u0627\u0644\u06cc \u062f\u0631 \u0645\u0648\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0627\u0631\u06cc \u0631\u0648 \u0633\u0631\u06cc\u0639 \u067e\u0627\u0633\u062e \u0645\u06cc\u200c\u062f\u0647\r\n\u2705\u0631\u0627\u06cc\u06af\u0627\u0646"
+                    }
+                  </React.Fragment>
+                </React.Fragment>
               </div>
               <Button
                 data-plasmic-name={"button"}
