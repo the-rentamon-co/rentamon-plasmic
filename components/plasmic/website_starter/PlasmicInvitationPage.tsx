@@ -205,28 +205,8 @@ function PlasmicInvitationPage__RenderFunc(props: {
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
             className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__t97UG
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__u2GpF
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
+            errorDisplay={null}
+            loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
@@ -292,9 +272,9 @@ function PlasmicInvitationPage__RenderFunc(props: {
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
                         return {
-                          src: "/plasmic/website_starter/images/small300X288Jpg2.jpg",
+                          src: "/plasmic/website_starter/images/linePricingPng.png",
                           fullWidth: 300,
-                          fullHeight: 300,
+                          fullHeight: 2,
                           aspectRatio: undefined
                         };
                       }
@@ -324,7 +304,7 @@ function PlasmicInvitationPage__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u0645\u06cc\u0644\u0627\u062f \u0647\u0645\u062a\u06cc";
+                          return "\u06cc\u0627\u0641\u062a \u0646\u0634\u062f";
                         }
                         throw e;
                       }
