@@ -545,7 +545,9 @@ function PlasmicReferral__RenderFunc(props: {
                         return;
                       }
                     }}
-                    placeholder={"rentamon.com/referral/?xyzw123"}
+                    placeholder={
+                      "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc....."
+                    }
                     value={
                       generateStateValueProp($state, ["textInput", "value"]) ??
                       ""
@@ -567,17 +569,7 @@ function PlasmicReferral__RenderFunc(props: {
                         {"Error fetching data"}
                       </div>
                     }
-                    loadingDisplay={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__hyJic
-                        )}
-                      >
-                        {"Loading..."}
-                      </div>
-                    }
+                    loadingDisplay={null}
                     method={"POST"}
                     onError={async (...eventArgs: any) => {
                       generateStateOnChangeProp($state, [
