@@ -803,7 +803,6 @@ ${$state.textInput.value}`;
                                   customFunction: async () => {
                                     return function share() {
                                       const shareText = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری. ۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره. اینجا بزن 👇 rentamon.com`;
-
                                       if (navigator.share) {
                                         navigator
                                           .share({
@@ -850,7 +849,7 @@ ${$state.textInput.value}`;
                             $steps["runCode2"] = await $steps["runCode2"];
                           }
 
-                          $steps["runCode"] = true
+                          $steps["runCode"] = false
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
@@ -923,7 +922,7 @@ rentamon.com`;
                             ];
                           }
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["invokeGlobalAction"] = false
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -946,6 +945,56 @@ rentamon.com`;
                             $steps["invokeGlobalAction"] = await $steps[
                               "invokeGlobalAction"
                             ];
+                          }
+
+                          $steps["runCode3"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (async () => {
+                                      return (async () => {
+                                        const shareText = `
+از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
+
+۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
+
+اینجا بزن 👇
+\${$state.textInput.value}
+`;
+                                        if (navigator.share) {
+                                          try {
+                                            await navigator.share({
+                                              text: shareText
+                                            });
+                                            console.log(
+                                              "اشتراک‌گذاری با موفقیت انجام شد!"
+                                            );
+                                          } catch (err) {
+                                            console.error(
+                                              "خطا در اشتراک‌گذاری:",
+                                              err
+                                            );
+                                          }
+                                        } else {
+                                          console.log(
+                                            "مرورگر شما از Web Share API پشتیبانی نمی‌کند."
+                                          );
+                                        }
+                                      })();
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode3"] != null &&
+                            typeof $steps["runCode3"] === "object" &&
+                            typeof $steps["runCode3"].then === "function"
+                          ) {
+                            $steps["runCode3"] = await $steps["runCode3"];
                           }
                         }}
                       >
