@@ -1260,19 +1260,6 @@
           "path": "/panel-2"
         },
         {
-          "id": "NKEuaTqYxvdh",
-          "name": "SideLite",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSideLite.tsx",
-          "importSpec": {
-            "modulePath": "SideLite.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicSideLite.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "4KhpZ-of93My",
           "name": "تعرفهخدمات",
           "type": "managed",
@@ -1355,6 +1342,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/Invitation_Page/[invite_code]"
+        },
+        {
+          "id": "NKEuaTqYxvdh",
+          "name": "SidebarLite",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSidebarLite.tsx",
+          "importSpec": {
+            "modulePath": "SidebarLite.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSidebarLite.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

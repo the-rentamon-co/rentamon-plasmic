@@ -61,7 +61,7 @@ import {
 
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import SideLite from "../../SideLite"; // plasmic-import: NKEuaTqYxvdh/component
+import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
@@ -97,7 +97,7 @@ export type PlasmicLitePanel__OverridesType = {
   right?: Flex__<"div">;
   right1?: Flex__<"div">;
   right3?: Flex__<"div">;
-  sideLite?: Flex__<typeof SideLite>;
+  sidebarLite?: Flex__<typeof SidebarLite>;
   right4?: Flex__<"div">;
   right2?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
@@ -645,10 +645,10 @@ function PlasmicLitePanel__RenderFunc(props: {
                       }}
                     />
 
-                    <SideLite
-                      data-plasmic-name={"sideLite"}
-                      data-plasmic-override={overrides.sideLite}
-                      className={classNames("__wab_instance", sty.sideLite)}
+                    <SidebarLite
+                      data-plasmic-name={"sidebarLite"}
+                      data-plasmic-override={overrides.sidebarLite}
+                      className={classNames("__wab_instance", sty.sidebarLite)}
                       isOpen={false}
                       userData={(() => {
                         try {
@@ -1314,7 +1314,7 @@ const PlasmicDescendants = {
     "right",
     "right1",
     "right3",
-    "sideLite",
+    "sidebarLite",
     "right4",
     "right2",
     "select2",
@@ -1335,7 +1335,7 @@ const PlasmicDescendants = {
     "right",
     "right1",
     "right3",
-    "sideLite",
+    "sidebarLite",
     "right4",
     "right2",
     "select2",
@@ -1347,7 +1347,7 @@ const PlasmicDescendants = {
     "right",
     "right1",
     "right3",
-    "sideLite",
+    "sidebarLite",
     "right4",
     "right2",
     "select2",
@@ -1358,14 +1358,14 @@ const PlasmicDescendants = {
     "right",
     "right1",
     "right3",
-    "sideLite",
+    "sidebarLite",
     "right4",
     "right2",
     "select2"
   ],
-  right1: ["right1", "right3", "sideLite", "right4"],
-  right3: ["right3", "sideLite"],
-  sideLite: ["sideLite"],
+  right1: ["right1", "right3", "sidebarLite", "right4"],
+  right3: ["right3", "sidebarLite"],
+  sidebarLite: ["sidebarLite"],
   right4: ["right4"],
   right2: ["right2", "select2"],
   select2: ["select2"],
@@ -1390,7 +1390,7 @@ type NodeDefaultElementType = {
   right: "div";
   right1: "div";
   right3: "div";
-  sideLite: typeof SideLite;
+  sidebarLite: typeof SidebarLite;
   right4: "div";
   right2: "div";
   select2: typeof Select;
@@ -1471,7 +1471,7 @@ export const PlasmicLitePanel = Object.assign(
     right: makeNodeComponent("right"),
     right1: makeNodeComponent("right1"),
     right3: makeNodeComponent("right3"),
-    sideLite: makeNodeComponent("sideLite"),
+    sidebarLite: makeNodeComponent("sidebarLite"),
     right4: makeNodeComponent("right4"),
     right2: makeNodeComponent("right2"),
     select2: makeNodeComponent("select2"),

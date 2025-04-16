@@ -61,7 +61,7 @@ import {
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
-import SideLite from "../../SideLite"; // plasmic-import: NKEuaTqYxvdh/component
+import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
@@ -97,7 +97,7 @@ export type PlasmicReservations__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
-  sideLite?: Flex__<typeof SideLite>;
+  sidebarLite?: Flex__<typeof SidebarLite>;
   profile?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
   alertIcon?: Flex__<"div">;
@@ -599,10 +599,10 @@ function PlasmicReservations__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <SideLite
-                data-plasmic-name={"sideLite"}
-                data-plasmic-override={overrides.sideLite}
-                className={classNames("__wab_instance", sty.sideLite)}
+              <SidebarLite
+                data-plasmic-name={"sidebarLite"}
+                data-plasmic-override={overrides.sidebarLite}
+                className={classNames("__wab_instance", sty.sidebarLite)}
                 isOpen={false}
                 userData={(() => {
                   try {
@@ -4400,7 +4400,7 @@ const PlasmicDescendants = {
     "sideEffect",
     "header",
     "sideBar2",
-    "sideLite",
+    "sidebarLite",
     "profile",
     "apiRequest",
     "alertIcon",
@@ -4460,9 +4460,9 @@ const PlasmicDescendants = {
     "cancelle"
   ],
   sideEffect: ["sideEffect"],
-  header: ["header", "sideBar2", "sideLite", "profile"],
+  header: ["header", "sideBar2", "sidebarLite", "profile"],
   sideBar2: ["sideBar2"],
-  sideLite: ["sideLite"],
+  sidebarLite: ["sidebarLite"],
   profile: ["profile"],
   apiRequest: ["apiRequest", "alertIcon", "alertText", "alertButton", "button"],
   alertIcon: ["alertIcon"],
@@ -4646,7 +4646,7 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   header: "div";
   sideBar2: typeof SideBar2;
-  sideLite: typeof SideLite;
+  sidebarLite: typeof SidebarLite;
   profile: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
   alertIcon: "div";
@@ -4769,7 +4769,7 @@ export const PlasmicReservations = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
-    sideLite: makeNodeComponent("sideLite"),
+    sidebarLite: makeNodeComponent("sidebarLite"),
     profile: makeNodeComponent("profile"),
     apiRequest: makeNodeComponent("apiRequest"),
     alertIcon: makeNodeComponent("alertIcon"),

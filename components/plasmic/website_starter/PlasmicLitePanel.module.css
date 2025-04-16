@@ -510,7 +510,7 @@
     flex-shrink: 0;
   }
 }
-.sideLite:global(.__wab_instance):global(.__wab_instance) {
+.sidebarLite:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
   left: auto;
   top: -6px;
