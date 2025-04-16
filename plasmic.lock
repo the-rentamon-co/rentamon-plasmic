@@ -2452,6 +2452,16 @@
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
           "type": "projectCss",
           "checksum": "27557f5af0474e77299c0eb59830771a"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "_g5mpGGn_lAP",
+          "checksum": "9ea65986aa3c1d53f50a3bdd21097995"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "_g5mpGGn_lAP",
+          "checksum": "9ea65986aa3c1d53f50a3bdd21097995"
         }
       ],
       "codegenVersion": "0.0.1"

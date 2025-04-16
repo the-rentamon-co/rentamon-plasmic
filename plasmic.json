@@ -1341,6 +1341,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/feature-setting"
+        },
+        {
+          "id": "_g5mpGGn_lAP",
+          "name": "InvitationPage",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicInvitationPage.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/Invitation_Page/[invite_code].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicInvitationPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/Invitation_Page/[invite_code]"
         }
       ],
       "icons": [
