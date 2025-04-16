@@ -381,10 +381,14 @@ function PlasmicInvitationPage__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie(
+                                setCookie(
                                   "invite_code",
                                   $ctx.params.invite_code,
                                   720
+                                );
+                                return console.log(
+                                  "done",
+                                  $ctx.params.invite_code
                                 );
                               })();
                             }
@@ -400,6 +404,26 @@ function PlasmicInvitationPage__RenderFunc(props: {
                       typeof $steps["runCode"].then === "function"
                     ) {
                       $steps["runCode"] = await $steps["runCode"];
+                    }
+
+                    $steps["runCode2"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return undefined;
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode2"] != null &&
+                      typeof $steps["runCode2"] === "object" &&
+                      typeof $steps["runCode2"].then === "function"
+                    ) {
+                      $steps["runCode2"] = await $steps["runCode2"];
                     }
                   }}
                 >
