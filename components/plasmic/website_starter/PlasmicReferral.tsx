@@ -692,7 +692,7 @@ function PlasmicReferral__RenderFunc(props: {
 
 
 اینجا بزن 👇
-${$state.textInput.value}`;
+لینک دعوت`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -716,7 +716,7 @@ ${$state.textInput.value}`;
 
 
 اینجا بزن 👇
-${$state.textInput.value}`;
+لینک دعوت`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -740,7 +740,7 @@ ${$state.textInput.value}`;
 
 
 اینجا بزن 👇
-https://app.rentamon.com/Invitation_Page/${$state.textInput.value}/
+لینک دعوت
 `;
                             } catch (e) {
                               if (
@@ -765,7 +765,7 @@ https://app.rentamon.com/Invitation_Page/${$state.textInput.value}/
 
 
 اینجا بزن 👇
-${$state.textInput.value}`;
+لینک دعوت`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
