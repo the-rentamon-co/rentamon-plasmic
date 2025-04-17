@@ -420,7 +420,7 @@ function PlasmicInvitationPage__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 return window.open(
-                                  "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/activation/1/",
+                                  "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/",
                                   "_blank"
                                 );
                               })();
