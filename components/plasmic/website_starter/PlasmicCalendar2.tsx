@@ -8541,7 +8541,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             )}
           >
             {
-              "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0645\u0647\u0645\u0627\u0646"
+              "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
             }
           </div>
         }
@@ -8912,7 +8912,12 @@ function PlasmicCalendar2__RenderFunc(props: {
               className={classNames("__wab_instance", sty.button__lhJj9)}
               isDisabled={(() => {
                 try {
-                  return $state.phoneNumber.value == "";
+                  return (
+                    $state.phoneNumber.value == "" ||
+                    $state.amount.value <= 99999 ||
+                    $state.amount.value == null ||
+                    $state.amount.value >= 20000000
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
