@@ -570,6 +570,12 @@ function PlasmicActivation__RenderFunc(props: {
           mihmansho: 0,
           homsa: 0
         })
+      },
+      {
+        path: "invitationCode",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -4010,6 +4016,74 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
+                          $steps["updateInput6Value3"] = $state.policiesCheckbox
+                            .isChecked
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      function getCookieValue(cookieName) {
+                                        const cookies = document.cookie
+                                          .split(";")
+                                          .map(cookie => cookie.trim());
+                                        for (const cookie of cookies) {
+                                          const [name, value] =
+                                            cookie.split("=");
+                                          if (name === cookieName) {
+                                            return value;
+                                          }
+                                        }
+                                        return null;
+                                      }
+                                      if (
+                                        document.cookie.includes("invite_code")
+                                      ) {
+                                        const inviteCode =
+                                          getCookieValue("invite_code");
+                                        $state.invitationCode = inviteCode;
+                                        return console.log(
+                                          "invite_code:",
+                                          $state.invitationCode
+                                        );
+                                      }
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateInput6Value3"] != null &&
+                            typeof $steps["updateInput6Value3"] === "object" &&
+                            typeof $steps["updateInput6Value3"].then ===
+                              "function"
+                          ) {
+                            $steps["updateInput6Value3"] = await $steps[
+                              "updateInput6Value3"
+                            ];
+                          }
+
+                          $steps["invokeGlobalAction"] = true
+                            ? (() => {
+                                const actionArgs = { args: ["GET"] };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction"] != null &&
+                            typeof $steps["invokeGlobalAction"] === "object" &&
+                            typeof $steps["invokeGlobalAction"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction"] = await $steps[
+                              "invokeGlobalAction"
+                            ];
+                          }
+
                           $steps["goToLitePanel"] = $state.policiesCheckbox
                             .isChecked
                             ? (() => {
@@ -4035,118 +4109,6 @@ function PlasmicActivation__RenderFunc(props: {
                           ) {
                             $steps["goToLitePanel"] = await $steps[
                               "goToLitePanel"
-                            ];
-                          }
-
-                          $steps["updateInput6Value"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["input6", "value"]
-                                  },
-                                  operation: 0
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateInput6Value"] != null &&
-                            typeof $steps["updateInput6Value"] === "object" &&
-                            typeof $steps["updateInput6Value"].then ===
-                              "function"
-                          ) {
-                            $steps["updateInput6Value"] = await $steps[
-                              "updateInput6Value"
-                            ];
-                          }
-
-                          $steps["updateInput6Value2"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      if (
-                                        document.cookie.includes("invite_code")
-                                      ) {
-                                        return console.log("have it");
-                                      }
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateInput6Value2"] != null &&
-                            typeof $steps["updateInput6Value2"] === "object" &&
-                            typeof $steps["updateInput6Value2"].then ===
-                              "function"
-                          ) {
-                            $steps["updateInput6Value2"] = await $steps[
-                              "updateInput6Value2"
-                            ];
-                          }
-
-                          $steps["updateInput6Value3"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      function getCookieValue(cookieName) {
-                                        const cookies = document.cookie
-                                          .split(";")
-                                          .map(cookie => cookie.trim());
-                                        for (const cookie of cookies) {
-                                          const [name, value] =
-                                            cookie.split("=");
-                                          if (name === cookieName) {
-                                            return value;
-                                          }
-                                        }
-                                        return null;
-                                      }
-                                      if (
-                                        document.cookie.includes("invite_code")
-                                      ) {
-                                        const inviteCode =
-                                          getCookieValue("invite_code");
-                                        return console.log(
-                                          "invite_code:",
-                                          inviteCode
-                                        );
-                                      }
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateInput6Value3"] != null &&
-                            typeof $steps["updateInput6Value3"] === "object" &&
-                            typeof $steps["updateInput6Value3"].then ===
-                              "function"
-                          ) {
-                            $steps["updateInput6Value3"] = await $steps[
-                              "updateInput6Value3"
                             ];
                           }
                         }}
