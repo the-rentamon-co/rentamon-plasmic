@@ -4075,7 +4075,12 @@ function PlasmicActivation__RenderFunc(props: {
                                     undefined,
                                     (() => {
                                       try {
-                                        return $state.invitationCode;
+                                        return (() => {
+                                          return {
+                                            invitationCode:
+                                              $state.invitationCode
+                                          };
+                                        })();
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
