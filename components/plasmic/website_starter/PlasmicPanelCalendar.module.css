@@ -441,6 +441,7 @@
   font-weight: 400;
   text-align: left;
   cursor: pointer;
+  color: var(--token-8nedppYkGVaH);
   flex-shrink: 0;
 }
 .sideBar {

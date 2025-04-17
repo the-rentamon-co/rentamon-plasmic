@@ -1330,20 +1330,6 @@
           "path": "/feature-setting"
         },
         {
-          "id": "_g5mpGGn_lAP",
-          "name": "InvitationPage",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicInvitationPage.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/Invitation_Page/[invite_code].tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicInvitationPage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/Invitation_Page/[invite_code]"
-        },
-        {
           "id": "NKEuaTqYxvdh",
           "name": "SidebarLite",
           "type": "managed",
@@ -1355,6 +1341,34 @@
           "cssFilePath": "plasmic/website_starter/PlasmicSidebarLite.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "_g5mpGGn_lAP",
+          "name": "Invite",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicInvite.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/invite/[invite_code].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicInvite.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/invite/[invite_code]"
+        },
+        {
+          "id": "rgUIidrS02xT",
+          "name": "Lite",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicLite.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/lite.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicLite.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/lite"
         }
       ],
       "icons": [

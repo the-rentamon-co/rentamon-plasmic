@@ -179,8 +179,8 @@ function PlasmicReferral__RenderFunc(props: {
             : hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+            ? true
+            : true
       },
       {
         path: "textInput.value",
@@ -687,9 +687,7 @@ function PlasmicReferral__RenderFunc(props: {
                               return `
 از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
 
-
 ۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
-
 
 اینجا بزن 👇
 لینک دعوت`;
@@ -787,6 +785,93 @@ function PlasmicReferral__RenderFunc(props: {
                   >
                     <div
                       className={classNames(projectcss.all, sty.freeBox__nosZ8)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (async () => {
+                                    const shareText = `
+از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
+
+۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
+
+اینجا بزن 👇
+${$state.textInput.value}
+`;
+                                    if (navigator.share) {
+                                      try {
+                                        await navigator.share({
+                                          text: shareText
+                                        });
+                                        console.log(
+                                          "اشتراک‌گذاری با موفقیت انجام شد!"
+                                        );
+                                      } catch (err) {
+                                        console.error(
+                                          "خطا در اشتراک‌گذاری:",
+                                          err
+                                        );
+                                      }
+                                    } else {
+                                      console.log(
+                                        "مرورگر شما از Web Share API پشتیبانی نمی‌کند."
+                                      );
+                                    }
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+
+                        $steps["updateShareLinkOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["shareLink", "open"]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateShareLinkOpen"] != null &&
+                          typeof $steps["updateShareLinkOpen"] === "object" &&
+                          typeof $steps["updateShareLinkOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateShareLinkOpen"] = await $steps[
+                            "updateShareLinkOpen"
+                          ];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(
@@ -886,7 +971,7 @@ rentamon.com`;
                             $steps["runCode"] = await $steps["runCode"];
                           }
 
-                          $steps["updateCopyTextOpen"] = true
+                          $steps["updateCopyTextOpen"] = false
                             ? (() => {
                                 const actionArgs = {
                                   variable: {
@@ -947,7 +1032,7 @@ rentamon.com`;
                             ];
                           }
 
-                          $steps["runCode3"] = true
+                          $steps["runCode3"] = false
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
@@ -999,23 +1084,17 @@ ${$state.textInput.value}
                         }}
                       >
                         {hasVariant(globalVariants, "screen", "mobile")
-                          ? "\u06a9\u067e\u06cc \u0645\u062a\u0646"
+                          ? "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"
                           : "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"}
                       </div>
-                      {(
-                        hasVariant(globalVariants, "screen", "tablet")
-                          ? true
-                          : false
-                      ) ? (
-                        <Icon51Icon
-                          data-plasmic-name={"svg"}
-                          data-plasmic-override={overrides.svg}
-                          className={classNames(projectcss.all, sty.svg)}
-                          role={"img"}
-                        />
-                      ) : null}
+                      <Icon51Icon
+                        data-plasmic-name={"svg"}
+                        data-plasmic-override={overrides.svg}
+                        className={classNames(projectcss.all, sty.svg)}
+                        role={"img"}
+                      />
                     </div>
                   </div>
                 </AntdModal>
@@ -1071,8 +1150,8 @@ ${$state.textInput.value}
               )}
             >
               {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "1\ufe0f\u20e3 \u0634\u0645\u0627 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0645\u06cc\u200c\u0641\u0631\u0633\u062a\u06cc\r\n2\ufe0f\u20e3\u062f\u0648\u0633\u062a\u0627\u0646 \u0634\u0645\u0627 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f\r\n3\ufe0f\u20e3\u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0634 \u0631\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0634\u0627\u0631\u0698 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3\u0645\u0628\u0644\u063a \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647"
-                : "1\ufe0f\u20e3 \u0634\u0645\u0627 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0645\u06cc\u200c\u0641\u0631\u0633\u062a\u06cc\r\n2\ufe0f\u20e3\u062f\u0648\u0633\u062a\u0627\u0646 \u0634\u0645\u0627 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f\r\n3\ufe0f\u20e3\u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0634 \u0631\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0634\u0627\u0631\u0698 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3\u0645\u0628\u0644\u063a \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647"}
+                ? "1\ufe0f\u20e3 \u0634\u0645\u0627 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0645\u06cc\u200c\u0641\u0631\u0633\u062a\u06cc\r\n2\ufe0f\u20e3 \u062f\u0648\u0633\u062a\u0627\u0646 \u0634\u0645\u0627 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0634 \u0631\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0634\u0627\u0631\u0698 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647"
+                : "1\ufe0f\u20e3 \u0634\u0645\u0627 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0645\u06cc\u200c\u0641\u0631\u0633\u062a\u06cc\r\n2\ufe0f\u20e3 \u062f\u0648\u0633\u062a\u0627\u0646 \u0634\u0645\u0627 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0634 \u0631\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0634\u0627\u0631\u0698 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647"}
             </div>
           </div>
           <div

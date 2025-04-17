@@ -751,18 +751,17 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 )}
               >
                 <React.Fragment>
-                  <React.Fragment>{"\ud83e\udd2f\r\n"}</React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 700 }}
                   >
                     {
-                      "\u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      "\ud83e\udd16\u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc\u0650 \u062a\u0648"
                     }
                   </span>
                   <React.Fragment>
                     {
-                      " \u0631\u0648\u0646\u0645\u0627\u06cc\u06cc \u0634\u062f\r\n\u0647\u0631 \u0633\u0648\u0627\u0644\u06cc \u062f\u0631 \u0645\u0648\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0627\u0631\u06cc \u0631\u0648 \u0633\u0631\u06cc\u0639 \u067e\u0627\u0633\u062e \u0645\u06cc\u200c\u062f\u0647\r\n\u2705\u0631\u0627\u06cc\u06af\u0627\u0646"
+                      "\r\n\u0647\u0645\u0647 \u0633\u0648\u0627\u0644\u0627\u062a\u062a\u0648 \u062f\u0631\u062c\u0627 \u067e\u0627\u0633\u062e \u0645\u06cc\u200c\u062f\u0647\n\n\r\n\u231a\ufe0f\u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647\n\u2705\u0631\u0627\u06cc\u06af\u0627\u0646\r\n\ud83d\ude80\u0633\u0631\u06cc\u0639\n"
                     }
                   </React.Fragment>
                 </React.Fragment>
@@ -810,7 +809,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     }
                   }}
                 >
-                  {"\u0627\u0645\u062a\u062d\u0627\u0646\u0634 \u06a9\u0646"}
+                  {
+                    "\u0628\u067e\u0631\u0633 \u0628\u0628\u06cc\u0646 \u0686\u06cc \u0628\u0644\u062f\u0647"
+                  }
                 </div>
               </Button>
             </div>
