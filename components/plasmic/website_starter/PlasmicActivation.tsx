@@ -4065,9 +4065,30 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["invokeGlobalAction"] = $state.policiesCheckbox
+                            .isChecked
                             ? (() => {
-                                const actionArgs = { args: ["GET"] };
+                                const actionArgs = {
+                                  args: [
+                                    "POST",
+                                    "https://gateway.rentamon.com/webhook/add_referal_code",
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return $state.invitationCode;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
                                 return $globalActions[
                                   "Fragment.apiRequest"
                                 ]?.apply(null, [...actionArgs.args]);
@@ -4081,6 +4102,32 @@ function PlasmicActivation__RenderFunc(props: {
                           ) {
                             $steps["invokeGlobalAction"] = await $steps[
                               "invokeGlobalAction"
+                            ];
+                          }
+
+                          $steps["invokeGlobalAction2"] =
+                            $steps.invokeGlobalAction.status == 200
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      "\u06a9\u062f \u062f\u0639\u0648\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                          if (
+                            $steps["invokeGlobalAction2"] != null &&
+                            typeof $steps["invokeGlobalAction2"] === "object" &&
+                            typeof $steps["invokeGlobalAction2"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction2"] = await $steps[
+                              "invokeGlobalAction2"
                             ];
                           }
 
