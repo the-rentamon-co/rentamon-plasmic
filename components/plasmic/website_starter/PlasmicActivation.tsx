@@ -3911,9 +3911,7 @@ function PlasmicActivation__RenderFunc(props: {
                                             }
                                             throw e;
                                           }
-                                        })(),
-                                        undefined,
-                                        undefined
+                                        })()
                                       ]
                                     };
                                     return $globalActions[
@@ -3930,129 +3928,6 @@ function PlasmicActivation__RenderFunc(props: {
                               ) {
                                 $steps["invokeGlobalAction"] = await $steps[
                                   "invokeGlobalAction"
-                                ];
-                              }
-
-                              $steps["runCode"] =
-                                $steps.invokeGlobalAction.status == 200
-                                  ? (() => {
-                                      const actionArgs = {
-                                        customFunction: async () => {
-                                          return (() => {
-                                            function getCookieValue(
-                                              cookieName
-                                            ) {
-                                              const cookies = document.cookie
-                                                .split(";")
-                                                .map(cookie => cookie.trim());
-                                              for (const cookie of cookies) {
-                                                const [name, value] =
-                                                  cookie.split("=");
-                                                if (name === cookieName) {
-                                                  return value;
-                                                }
-                                              }
-                                              return null;
-                                            }
-                                            if (
-                                              document.cookie.includes(
-                                                "invite_code"
-                                              )
-                                            ) {
-                                              const inviteCode =
-                                                getCookieValue("invite_code");
-                                              $state.invitationCode =
-                                                inviteCode;
-                                              return console.log(
-                                                "invite_code:",
-                                                $state.invitationCode
-                                              );
-                                            }
-                                          })();
-                                        }
-                                      };
-                                      return (({ customFunction }) => {
-                                        return customFunction();
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
-
-                              $steps["invokeGlobalAction2"] =
-                                $steps.invokeGlobalAction.status == 200
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://gateway.rentamon.com/webhook/add_referal_code",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                return {
-                                                  invitationCode:
-                                                    $state.invitationCode
-                                                };
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["invokeGlobalAction2"] != null &&
-                                typeof $steps["invokeGlobalAction2"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction2"].then ===
-                                  "function"
-                              ) {
-                                $steps["invokeGlobalAction2"] = await $steps[
-                                  "invokeGlobalAction2"
-                                ];
-                              }
-
-                              $steps["invokeGlobalAction3"] =
-                                $steps.invokeGlobalAction2.status == 200
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          undefined,
-                                          "\u06a9\u062f \u062f\u0639\u0648\u062a \u062b\u0628\u062a \u0634\u062f"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["invokeGlobalAction3"] != null &&
-                                typeof $steps["invokeGlobalAction3"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction3"].then ===
-                                  "function"
-                              ) {
-                                $steps["invokeGlobalAction3"] = await $steps[
-                                  "invokeGlobalAction3"
                                 ];
                               }
                             }).apply(null, eventArgs);
@@ -4141,7 +4016,8 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["updateInput6Value3"] = false
+                          $steps["updateInput6Value3"] = $state.policiesCheckbox
+                            .isChecked
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
@@ -4189,7 +4065,8 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["invokeGlobalAction"] = false
+                          $steps["invokeGlobalAction"] = $state.policiesCheckbox
+                            .isChecked
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -4233,20 +4110,21 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["invokeGlobalAction2"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u06a9\u062f \u062f\u0639\u0648\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
-                                    "top-center"
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
+                          $steps["invokeGlobalAction2"] =
+                            $steps.invokeGlobalAction.status == 200
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      "\u06a9\u062f \u062f\u0639\u0648\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
                           if (
                             $steps["invokeGlobalAction2"] != null &&
                             typeof $steps["invokeGlobalAction2"] === "object" &&
