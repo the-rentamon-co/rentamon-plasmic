@@ -3936,7 +3936,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       customFunction: async () => {
                                         return console.log(
-                                          $steps.invokeGlobalAction.data
+                                          $steps.invokeGlobalAction.data.message
                                         );
                                       }
                                     };
