@@ -6,7 +6,24 @@ import GlobalContextsProvider from "../../components/plasmic/website_starter/Pla
 
 import { PlasmicLitePanel } from "../../components/plasmic/website_starter/PlasmicLitePanel";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
+function usePWAStatus() {
+  const [pwaStatus, setPwaStatus] = React.useState<'installed' | 'browser'>('browser');
+
+  React.useEffect(() => {
+    // بررسی وجود window برای جلوگیری از خطا در سمت سرور
+    if (typeof window !== 'undefined') {
+      const isStandalone = 
+        ('standalone' in window.navigator && window.navigator['standalone']) ||
+        window.matchMedia('(display-mode: standalone)').matches;
+      
+      setPwaStatus(isStandalone ? 'installed' : 'browser');
+    }
+  }, []);
+
+  return pwaStatus;
+}
 function LitePanel() {
   // Use PlasmicLitePanel to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
@@ -26,7 +43,25 @@ function LitePanel() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   return (
-    <GlobalContextsProvider>
+    <>
+      <Head>
+        <title>رنتامون - تقویم یکپارچه اقامتگاه</title>
+        <meta name="description" content="مدیریت اقامتگاه" />
+        <meta name="application-name" content="رنتامون" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="رنتامون" />
+        <meta name="theme-color" content="#7444BC" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png" />
+        <meta property="og:title" content="رنتامون" />
+        <meta property="og:description" content="برنامه مدیریت اقامتگاه" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://app.rentamon.com/" />
+        <meta property="og:image" content="https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png" />
+      </Head>
+
+     <GlobalContextsProvider>
       <PageParamsProvider__
         route={useRouter()?.pathname}
         params={useRouter()?.query}
@@ -35,6 +70,7 @@ function LitePanel() {
         <PlasmicLitePanel />
       </PageParamsProvider__>
     </GlobalContextsProvider>
+    </>
   );
 }
 
