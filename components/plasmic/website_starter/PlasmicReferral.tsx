@@ -179,8 +179,8 @@ function PlasmicReferral__RenderFunc(props: {
             : hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
-            ? true
-            : true
+            ? false
+            : false
       },
       {
         path: "textInput.value",
@@ -559,36 +559,45 @@ function PlasmicReferral__RenderFunc(props: {
                       ? "\u06a9\u067e\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"
                       : "\u06a9\u067e\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"}
                   </div>
-                  <TextInput
-                    data-plasmic-name={"textInput"}
-                    data-plasmic-override={overrides.textInput}
-                    className={classNames("__wab_instance", sty.textInput)}
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      sty.freeBox__cvTxm,
+                      "ltr"
+                    )}
+                  >
+                    <TextInput
+                      data-plasmic-name={"textInput"}
+                      data-plasmic-override={overrides.textInput}
+                      className={classNames("__wab_instance", sty.textInput)}
+                      isDisabled={true}
+                      onChange={async (...eventArgs: any) => {
+                        ((...eventArgs) => {
+                          generateStateOnChangeProp($state, [
+                            "textInput",
+                            "value"
+                          ])((e => e.target?.value).apply(null, eventArgs));
+                        }).apply(null, eventArgs);
+
+                        if (
+                          eventArgs.length > 1 &&
+                          eventArgs[1] &&
+                          eventArgs[1]._plasmic_state_init_
+                        ) {
+                          return;
+                        }
+                      }}
+                      placeholder={
+                        "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc....."
+                      }
+                      value={
+                        generateStateValueProp($state, [
                           "textInput",
                           "value"
-                        ])((e => e.target?.value).apply(null, eventArgs));
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
+                        ]) ?? ""
                       }
-                    }}
-                    placeholder={
-                      "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc....."
-                    }
-                    value={
-                      generateStateValueProp($state, ["textInput", "value"]) ??
-                      ""
-                    }
-                  />
-
+                    />
+                  </div>
                   <ApiRequest
                     data-plasmic-name={"apiRequest"}
                     data-plasmic-override={overrides.apiRequest}
