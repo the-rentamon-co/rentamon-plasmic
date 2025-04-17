@@ -175,6 +175,36 @@
   padding-bottom: 0px;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .text__kLvIj {
+    font-size: 17px;
+  }
+}
+@media (max-width: 350px) {
+  .text__kLvIj {
+    font-size: 15px;
+  }
+}
+.text___7F7JG {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 18px;
+  padding-bottom: 0px;
+  padding-top: 12px;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text___7F7JG {
+    font-size: 17px;
+  }
+}
+@media (max-width: 350px) {
+  .text___7F7JG {
+    font-size: 15px;
+  }
+}
 .freeBox__jn6Yz {
   display: flex;
   flex-direction: column;
@@ -212,6 +242,7 @@
   max-width: 100%;
   font-size: 16px;
   text-align: center;
+  font-weight: 600;
   min-width: 0;
 }
 .freeBox__oi07T {
