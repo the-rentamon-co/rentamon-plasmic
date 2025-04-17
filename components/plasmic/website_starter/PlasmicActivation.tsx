@@ -3954,7 +3954,7 @@ function PlasmicActivation__RenderFunc(props: {
                               }
 
                               $steps["runCode2"] =
-                                $steps.invokeGlobalAction.data.message ==
+                                $steps.invokeGlobalAction.data.message !=
                                 "user is already registered"
                                   ? (() => {
                                       const actionArgs = {
@@ -4006,7 +4006,7 @@ function PlasmicActivation__RenderFunc(props: {
                               }
 
                               $steps["invokeGlobalAction2"] =
-                                $steps.invokeGlobalAction.data.message ==
+                                $steps.invokeGlobalAction.data.message !=
                                 "user is already registered"
                                   ? (() => {
                                       const actionArgs = {
