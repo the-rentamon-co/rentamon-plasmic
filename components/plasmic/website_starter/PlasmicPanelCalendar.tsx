@@ -651,7 +651,68 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               );
             }}
             open={generateStateValueProp($state, ["alertModal", "open"])}
-            title={null}
+            title={
+              <div className={classNames(projectcss.all, sty.freeBox__b7YLz)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__gKdHp)}
+                  displayHeight={"20px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie("alertModal", "true", 24);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                  src={{
+                    src: "/plasmic/website_starter/images/image48.svg",
+                    fullWidth: 18,
+                    fullHeight: 18,
+                    aspectRatio: 1
+                  }}
+                />
+              </div>
+            }
             trigger={null}
             width={"400"}
           >
