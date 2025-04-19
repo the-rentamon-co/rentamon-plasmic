@@ -703,6 +703,41 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     ) {
                       $steps["runCode"] = await $steps["runCode"];
                     }
+
+                    $steps["updateAlertModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["alertModal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateAlertModalOpen"] != null &&
+                      typeof $steps["updateAlertModalOpen"] === "object" &&
+                      typeof $steps["updateAlertModalOpen"].then === "function"
+                    ) {
+                      $steps["updateAlertModalOpen"] = await $steps[
+                        "updateAlertModalOpen"
+                      ];
+                    }
                   }}
                   src={{
                     src: "/plasmic/website_starter/images/image48.svg",
