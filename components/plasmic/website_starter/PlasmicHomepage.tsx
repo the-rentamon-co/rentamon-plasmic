@@ -780,9 +780,24 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.text__zdLdH
                   )}
                 >
-                  {
-                    "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f6\u06f3\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
-                  }
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ textDecorationLine: "underline" }}
+                    >
+                      {"\u06f7\u06f0\u06f0"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        " \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
                 </div>
               </div>
               <div
