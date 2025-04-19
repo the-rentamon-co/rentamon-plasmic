@@ -260,8 +260,7 @@
 }
 @media (max-width: 350px) {
   .freeBox__jn6Yz {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px 0px;
   }
 }
 .text__hEvvJ {
@@ -269,10 +268,15 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
   font-weight: 600;
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__hEvvJ {
+    font-size: 19px;
+  }
 }
 .freeBox__oi07T {
   display: flex;
@@ -290,6 +294,12 @@
   max-width: 100%;
   width: 283px;
 }
+@media (max-width: 500px) {
+  .button___9Wqe:global(.__wab_instance) {
+    width: 100%;
+    min-width: 0;
+  }
+}
 .svg__u4QrX {
   position: relative;
   object-fit: cover;
@@ -297,7 +307,7 @@
   height: 1em;
 }
 .text__hLLaC {
-  font-size: 17px;
+  font-size: 20px;
 }
 .svg__u9YpC {
   position: relative;
@@ -310,7 +320,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 17px;
   text-align: center;
   font-weight: 600;
   min-width: 0;
@@ -706,15 +716,36 @@
     padding-bottom: 40px;
   }
 }
+@media (max-width: 350px) {
+  .freeBox__kb3W2 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
 .text__pvaXy {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
   font-weight: 600;
   min-width: 0;
+}
+@media (max-width: 1200px) {
+  .text__pvaXy {
+    font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .text__pvaXy {
+    font-size: 18px;
+  }
+}
+@media (max-width: 350px) {
+  .text__pvaXy {
+    font-size: 18px;
+  }
 }
 .freeBox__vMItQ {
   display: flex;
@@ -732,6 +763,12 @@
   max-width: 100%;
   width: 283px;
 }
+@media (max-width: 500px) {
+  .button__uW0Sj:global(.__wab_instance) {
+    width: 100%;
+    min-width: 0;
+  }
+}
 .svg__iVdnu {
   position: relative;
   object-fit: cover;
@@ -739,7 +776,7 @@
   height: 1em;
 }
 .text__fVk7O {
-  font-size: 17px;
+  font-size: 20px;
 }
 .svg__o6XHd {
   position: relative;
@@ -752,7 +789,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 17px;
   text-align: center;
   font-weight: 600;
   min-width: 0;

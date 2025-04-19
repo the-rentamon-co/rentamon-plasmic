@@ -340,7 +340,8 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         path: "alertModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
       }
     ],
     [$props, $ctx, $refs]
@@ -650,121 +651,42 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               );
             }}
             open={generateStateValueProp($state, ["alertModal", "open"])}
-            title={
-              <div className={classNames(projectcss.all, sty.freeBox__aniAn)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__iXdzw
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateAlertModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["alertModal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateAlertModalOpen"] != null &&
-                      typeof $steps["updateAlertModalOpen"] === "object" &&
-                      typeof $steps["updateAlertModalOpen"].then === "function"
-                    ) {
-                      $steps["updateAlertModalOpen"] = await $steps[
-                        "updateAlertModalOpen"
-                      ];
-                    }
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
-                                  }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/";
-                                }
-                                return setCookie("alertModal", "true", 168);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-                  }}
-                >
-                  {"x"}
-                </div>
-              </div>
-            }
+            title={null}
             trigger={null}
             width={"400"}
           >
             <div className={classNames(projectcss.all, sty.freeBox___8Wqja)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xsnqv
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {
-                      "\ud83e\udd16\u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc\u0650 \u062a\u0648"
-                    }
-                  </span>
-                  <React.Fragment>
-                    {
-                      "\r\n\u0647\u0645\u0647 \u0633\u0648\u0627\u0644\u0627\u062a\u062a\u0648 \u062f\u0631\u062c\u0627 \u067e\u0627\u0633\u062e \u0645\u06cc\u200c\u062f\u0647\n\n\r\n\u231a\ufe0f\u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647\n\u2705\u0631\u0627\u06cc\u06af\u0627\u0646\r\n\ud83d\ude80\u0633\u0631\u06cc\u0639\n"
-                    }
-                  </React.Fragment>
-                </React.Fragment>
+              <div className={classNames(projectcss.all, sty.freeBox___0AZ0C)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xsnqv
+                  )}
+                >
+                  {
+                    "\ud83c\udf89 \u0627\u0648\u0644\u06cc\u0646 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631  \u0631\u0648\u0646\u0645\u0627\u06cc\u06cc \u0634\u062f!\n"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__je0Jp)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__yrWUx)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image93.png",
+                    fullWidth: 128,
+                    fullHeight: 73,
+                    aspectRatio: undefined
+                  }}
+                />
               </div>
               <Button
                 data-plasmic-name={"button"}
@@ -810,7 +732,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   }}
                 >
                   {
-                    "\u0628\u067e\u0631\u0633 \u0628\u0628\u06cc\u0646 \u0686\u06cc \u0628\u0644\u062f\u0647"
+                    "\u0627\u06cc\u0646\u062c\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646"
                   }
                 </div>
               </Button>

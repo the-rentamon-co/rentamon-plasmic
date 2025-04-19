@@ -707,9 +707,9 @@ function PlasmicInvite__RenderFunc(props: {
                   sty.text__pvaXy
                 )}
               >
-                {
-                  "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"
-                }
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"
+                  : "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"}
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__vMItQ)}>
                 <Button
