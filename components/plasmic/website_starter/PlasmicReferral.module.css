@@ -248,7 +248,15 @@
 @media (max-width: 500px) {
   .img___0Yxcz {
     max-width: 100%;
+    height: 260px;
+    flex-shrink: 0;
     border-radius: 20px;
+  }
+}
+@media (max-width: 350px) {
+  .img___0Yxcz {
+    height: 240px;
+    flex-shrink: 0;
   }
 }
 .introduction {
@@ -274,6 +282,7 @@
   .introduction {
     max-width: 100%;
     padding-top: 10px;
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -312,6 +321,35 @@
     font-size: 15px;
     padding-right: 8px;
     padding-left: 8px;
+  }
+}
+.freeBox___4Q4Fb {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 8px 0px;
+}
+@media (max-width: 500px) {
+  .freeBox___4Q4Fb {
+    padding-top: 20px;
+  }
+}
+.img__odfDe {
+  object-fit: cover;
+  max-width: 10%;
+}
+.img__odfDe > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .img__odfDe {
+    max-width: 16%;
   }
 }
 .freeBox__ciToe {
@@ -399,7 +437,9 @@
   align-items: center;
   background: #fcfcfc;
   min-width: 0;
+  border-radius: 50px;
   padding: 30px 14px 26px;
+  border-width: 2px;
 }
 @media (max-width: 1200px) {
   .cta {
@@ -413,6 +453,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 0px;
+    border-radius: 30px;
   }
 }
 @media (max-width: 350px) {
@@ -420,6 +461,7 @@
     padding-top: 12px;
     padding-right: 0px;
     padding-left: 0px;
+    border-radius: 30px;
   }
 }
 .ctaText {
@@ -473,7 +515,7 @@
 @media (max-width: 500px) {
   .ctaText {
     max-width: 100%;
-    padding-top: 10px;
+    padding-top: 18px;
   }
 }
 @media (max-width: 350px) {
@@ -514,6 +556,7 @@
   line-height: 1.8;
   padding-right: 30px;
   padding-left: 30px;
+  font-weight: 600;
 }
 @media (max-width: 1200px) {
   .text___7S8Zm {
@@ -822,6 +865,8 @@
   padding-left: 0px;
   padding-top: 20px;
   width: 100%;
+  color: var(--token-8nedppYkGVaH);
+  font-weight: 500;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -830,7 +875,7 @@
     padding-right: 0px;
     padding-left: 0px;
     font-size: 15px;
-    text-align: right;
+    text-align: center;
     line-height: 1.8;
   }
 }
@@ -839,6 +884,7 @@
     font-size: 15px;
     padding-top: 8px;
     text-align: center;
+    color: var(--token-8nedppYkGVaH);
   }
 }
 @media (max-width: 350px) {

@@ -329,7 +329,13 @@ function PlasmicReferral__RenderFunc(props: {
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img___0Yxcz)}
-                    displayHeight={"auto"}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "240px"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "260px"
+                        : "auto"
+                    }
                     displayMaxHeight={"none"}
                     displayMaxWidth={
                       hasVariant(globalVariants, "screen", "mobile")
@@ -394,6 +400,29 @@ function PlasmicReferral__RenderFunc(props: {
                           }
                         </React.Fragment>
                       </React.Fragment>
+                    ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        <React.Fragment>
+                          {
+                            "\u0628\u0627 \u062f\u0639\u0648\u062a \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u0645\u0628\u0644\u063a "
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {
+                            "\u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646"
+                          }
+                        </span>
+                        <React.Fragment>
+                          {
+                            " \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646. \u06cc\u0639\u0646\u06cc \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u062f\u0639\u0648\u062a \u06f1\u06f0 \u0646\u0641\u0631"
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
                     ) : (
                       <React.Fragment>
                         <React.Fragment>
@@ -419,6 +448,31 @@ function PlasmicReferral__RenderFunc(props: {
                       </React.Fragment>
                     )}
                   </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___4Q4Fb)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__odfDe)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "16%"
+                          : "10%"
+                      }
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image89.gif",
+                        fullWidth: 480,
+                        fullHeight: 432,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__ciToe)}>
                   <div
@@ -439,7 +493,7 @@ function PlasmicReferral__RenderFunc(props: {
                     data-plasmic-override={overrides.embedHtml}
                     className={classNames("__wab_instance", sty.embedHtml)}
                     code={
-                      '<div id="countdown" class="countdown-wrapper">\r\n  <div class="time-box">\r\n    <div id="days" class="time-number">--</div>\r\n    <div class="time-label">\u0631\u0648\u0632</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="hours" class="time-number">--</div>\r\n    <div class="time-label">\u0633\u0627\u0639\u062a</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="minutes" class="time-number">--</div>\r\n    <div class="time-label">\u062f\u0642\u06cc\u0642\u0647</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="seconds" class="time-number">--</div>\r\n    <div class="time-label">\u062b\u0627\u0646\u06cc\u0647</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .countdown-wrapper {\r\n    direction: ltr;\r\n    display: flex;\r\n    gap: 36px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: Vazirmatn, sans-serif;\r\n    color: #444444;\r\n    font-weight: bold;\r\n    flex-wrap: wrap;\r\n  }\r\n\r\n  .time-box {\r\n    text-align: center;\r\n  }\r\n\r\n  .time-number {\r\n    font-size: 32px;\r\n    width: 50px;\r\n    text-align: center;\r\n  }\r\n\r\n  .time-label {\r\n    font-size: 14px;\r\n  }\r\n\r\n  .separator {\r\n    font-size: 28px;\r\n  }\r\n\r\n  @media (max-width: 480px) {\r\n    .countdown-wrapper {\r\n      gap: 16px;\r\n    }\r\n\r\n    .time-number {\r\n      font-size: 22px;\r\n      width: 32px;\r\n    }\r\n\r\n    .separator {\r\n      font-size: 19px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    const persianDigits = [\'\u06f0\',\'\u06f1\',\'\u06f2\',\'\u06f3\',\'\u06f4\',\'\u06f5\',\'\u06f6\',\'\u06f7\',\'\u06f8\',\'\u06f9\'];\r\n    return num.toString().replace(/\\d/g, d => persianDigits[d]);\r\n  }\r\n\r\n  const endDate = new Date("2025-04-25T23:59:59").getTime();\r\n\r\n  const x = setInterval(() => {\r\n    const now = new Date().getTime();\r\n    const distance = endDate - now;\r\n\r\n    if (distance < 0) {\r\n      clearInterval(x);\r\n      document.getElementById("countdown").innerHTML = "\ud83c\udf89 \u062c\u0634\u0646\u0648\u0627\u0631\u0647 \u0628\u0647 \u067e\u0627\u06cc\u0627\u0646 \u0631\u0633\u06cc\u062f\u0647 \u0627\u0633\u062a!";\r\n      return;\r\n    }\r\n\r\n    const days = Math.floor(distance / (1000 * 60 * 60 * 24));\r\n    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\r\n    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));\r\n    const seconds = Math.floor((distance % (1000 * 60)) / 1000);\r\n\r\n    document.getElementById("days").textContent = toPersianNumber(days.toString().padStart(2, \'0\'));\r\n    document.getElementById("hours").textContent = toPersianNumber(hours.toString().padStart(2, \'0\'));\r\n    document.getElementById("minutes").textContent = toPersianNumber(minutes.toString().padStart(2, \'0\'));\r\n    document.getElementById("seconds").textContent = toPersianNumber(seconds.toString().padStart(2, \'0\'));\r\n  }, 1000);\r\n</script>\r\n'
+                      '<div id="countdown" class="countdown-wrapper">\r\n  <div class="time-box">\r\n    <div id="days" class="time-number">--</div>\r\n    <div class="time-label">\u0631\u0648\u0632</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="hours" class="time-number">--</div>\r\n    <div class="time-label">\u0633\u0627\u0639\u062a</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="minutes" class="time-number">--</div>\r\n    <div class="time-label">\u062f\u0642\u06cc\u0642\u0647</div>\r\n  </div>\r\n  <div class="separator">:</div>\r\n  <div class="time-box">\r\n    <div id="seconds" class="time-number">--</div>\r\n    <div class="time-label">\u062b\u0627\u0646\u06cc\u0647</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .countdown-wrapper {\r\n    direction: ltr;\r\n    display: flex;\r\n    gap: 36px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: Vazirmatn, sans-serif;\r\n    color: #444444;\r\n    font-weight: bold;\r\n    flex-wrap: wrap;\r\n  }\r\n\r\n  .time-box {\r\n    text-align: center;\r\n  }\r\n\r\n  .time-number {\r\n    font-size: 32px;\r\n    width: 50px;\r\n    text-align: center;\r\n  }\r\n\r\n  .time-label {\r\n    font-size: 14px;\r\n  }\r\n\r\n  .separator {\r\n    font-size: 28px;\r\n  }\r\n\r\n  @media (max-width: 480px) {\r\n    .countdown-wrapper {\r\n      gap: 16px;\r\n    }\r\n\r\n    .time-number {\r\n      font-size: 22px;\r\n      width: 32px;\r\n    }\r\n\r\n    .separator {\r\n      font-size: 19px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    const persianDigits = [\'\u06f0\',\'\u06f1\',\'\u06f2\',\'\u06f3\',\'\u06f4\',\'\u06f5\',\'\u06f6\',\'\u06f7\',\'\u06f8\',\'\u06f9\'];\r\n    return num.toString().replace(/\\d/g, d => persianDigits[d]);\r\n  }\r\n\r\n  const endDate = new Date("2025-04-29T23:59:59").getTime();\r\n  \r\n  const x = setInterval(() => {\r\n    const now = new Date().getTime();\r\n    const distance = endDate - now;\r\n\r\n    if (distance < 0) {\r\n      clearInterval(x);\r\n      document.getElementById("countdown").innerHTML = "\ud83c\udf89 \u062c\u0634\u0646\u0648\u0627\u0631\u0647 \u0628\u0647 \u067e\u0627\u06cc\u0627\u0646 \u0631\u0633\u06cc\u062f\u0647 \u0627\u0633\u062a!";\r\n      return;\r\n    }\r\n\r\n    const days = Math.floor(distance / (1000 * 60 * 60 * 24));\r\n    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\r\n    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));\r\n    const seconds = Math.floor((distance % (1000 * 60)) / 1000);\r\n\r\n    document.getElementById("days").textContent = toPersianNumber(days.toString().padStart(2, \'0\'));\r\n    document.getElementById("hours").textContent = toPersianNumber(hours.toString().padStart(2, \'0\'));\r\n    document.getElementById("minutes").textContent = toPersianNumber(minutes.toString().padStart(2, \'0\'));\r\n    document.getElementById("seconds").textContent = toPersianNumber(seconds.toString().padStart(2, \'0\'));\r\n  }, 1000);\r\n</script>\r\n'
                     }
                   />
                 </div>
@@ -464,10 +518,12 @@ function PlasmicReferral__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646\r"
+                      ? "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646\r"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646 \ud83d\udc47\r"
                       : hasVariant(globalVariants, "screen", "tablet")
                       ? "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646 \ud83d\udc47\r"
-                      : "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646 \ud83d\udc47\r"}
+                      : "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646 \ud83d\udc47\r"}
                   </div>
                 </Stack__>
                 <Stack__
@@ -486,7 +542,7 @@ function PlasmicReferral__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateCopyTextOpen"] = true
+                      $steps["updateCopyTextOpen"] = false
                         ? (() => {
                             const actionArgs = {
                               variable: {
@@ -554,11 +610,59 @@ function PlasmicReferral__RenderFunc(props: {
                       ) {
                         $steps["runCode"] = await $steps["runCode"];
                       }
+
+                      $steps["runCode2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (async () => {
+                                  const shareText = `
+از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
+
+۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
+
+اینجا بزن 👇
+${$state.textInput.value}
+`;
+                                  if (navigator.share) {
+                                    try {
+                                      await navigator.share({
+                                        text: shareText
+                                      });
+                                      console.log(
+                                        "اشتراک‌گذاری با موفقیت انجام شد!"
+                                      );
+                                    } catch (err) {
+                                      console.error(
+                                        "خطا در اشتراک‌گذاری:",
+                                        err
+                                      );
+                                    }
+                                  } else {
+                                    console.log(
+                                      "مرورگر شما از Web Share API پشتیبانی نمی‌کند."
+                                    );
+                                  }
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode2"] != null &&
+                        typeof $steps["runCode2"] === "object" &&
+                        typeof $steps["runCode2"].then === "function"
+                      ) {
+                        $steps["runCode2"] = await $steps["runCode2"];
+                      }
                     }}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06a9\u067e\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"
-                      : "\u06a9\u067e\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"}
+                      ? "\u0627\u0631\u0633\u0627\u0644 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"
+                      : "\u0627\u0631\u0633\u0627\u0644 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a"}
                   </div>
                   <div
                     className={classNames(

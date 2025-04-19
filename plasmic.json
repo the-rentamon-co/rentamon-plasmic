@@ -2818,6 +2818,21 @@
           "id": "R6OqgSGXtwiT",
           "name": "manos-tides.jpg",
           "filePath": "../public/plasmic/website_starter/images/manosTidesJpg.jpg"
+        },
+        {
+          "id": "uQNjcybUwiZe",
+          "name": "image 89",
+          "filePath": "../public/plasmic/website_starter/images/image89.gif"
+        },
+        {
+          "id": "QfQj5oG0rMCa",
+          "name": "image 90",
+          "filePath": "../public/plasmic/website_starter/images/image90.png"
+        },
+        {
+          "id": "PkznVD-XK0sV",
+          "name": "image 91",
+          "filePath": "../public/plasmic/website_starter/images/image91.gif"
         }
       ],
       "indirect": false,
