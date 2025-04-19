@@ -1572,6 +1572,73 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             })()}
           />
 
+          <div
+            className={classNames(projectcss.all, sty.freeBox__eJqks)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["goToReferral"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/referral` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToReferral"] != null &&
+                typeof $steps["goToReferral"] === "object" &&
+                typeof $steps["goToReferral"].then === "function"
+              ) {
+                $steps["goToReferral"] = await $steps["goToReferral"];
+              }
+            }}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img___4Tm6K)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "100px"
+                  : hasVariant(globalVariants, "screen", "mobile")
+                  ? "110px"
+                  : "180px"
+              }
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image94.gif",
+                fullWidth: 800,
+                fullHeight: 600,
+                aspectRatio: undefined
+              }}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___5EQbr
+              )}
+            >
+              {
+                "\u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
+              }
+            </div>
+          </div>
           <SideEffect
             data-plasmic-name={"sideEffect"}
             data-plasmic-override={overrides.sideEffect}

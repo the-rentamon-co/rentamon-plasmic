@@ -676,7 +676,6 @@ ${$state.textInput.value}
                       data-plasmic-name={"textInput"}
                       data-plasmic-override={overrides.textInput}
                       className={classNames("__wab_instance", sty.textInput)}
-                      isDisabled={true}
                       onChange={async (...eventArgs: any) => {
                         ((...eventArgs) => {
                           generateStateOnChangeProp($state, [
