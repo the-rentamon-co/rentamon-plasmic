@@ -74,13 +74,13 @@
   align-items: center;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 8px 0px 38px;
+  padding: 8px 0px 20px;
 }
 @media (max-width: 1200px) {
   .mainContents {
     max-width: 100%;
     width: 100%;
-    padding-bottom: 31px;
+    padding-bottom: 28px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
   }
@@ -89,6 +89,13 @@
   .mainContents {
     padding-right: 0px;
     padding-left: 0px;
+    padding-bottom: 22px;
+  }
+}
+@media (max-width: 350px) {
+  .mainContents {
+    margin-bottom: 0px;
+    padding-bottom: 16px;
   }
 }
 .intro1st {
@@ -1085,60 +1092,6 @@
     font-size: 18px;
   }
 }
-.smsImage {
-  display: flex;
-  flex-direction: column-reverse;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 25px 0px 8px;
-}
-@media (max-width: 1200px) {
-  .smsImage {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-}
-@media (max-width: 500px) {
-  .smsImage {
-    display: flex;
-    flex-direction: column-reverse;
-    padding-top: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
-@media (max-width: 350px) {
-  .smsImage {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-.img__uxHdh {
-  object-fit: cover;
-  max-width: 80%;
-  width: 100%;
-  min-width: 0;
-  border-radius: 50px;
-}
-.img__uxHdh > picture > img {
-  object-fit: cover;
-}
-@media (max-width: 1200px) {
-  .img__uxHdh {
-    border-radius: 30px;
-  }
-}
-@media (max-width: 500px) {
-  .img__uxHdh {
-    max-width: 100%;
-    border-radius: 20px;
-  }
-}
 .rules {
   display: flex;
   flex-direction: column;
@@ -1149,7 +1102,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 0px 8px 55px;
+  padding: 0px 8px 20px;
 }
 @media (max-width: 1200px) {
   .rules {
@@ -1204,13 +1157,13 @@
 }
 @media (max-width: 500px) {
   .text__fzwa0 {
-    font-size: 15px;
+    font-size: 16px;
     padding-top: 0px;
   }
 }
 @media (max-width: 350px) {
   .text__fzwa0 {
-    font-size: 14px;
+    font-size: 15px;
     padding-top: 24px;
   }
 }
@@ -1218,11 +1171,9 @@
   text-align: right;
   font-size: 18px;
   line-height: 1.8;
-  padding-top: 12px;
-  padding-right: 30px;
-  padding-left: 30px;
   width: 100%;
   min-width: 0;
+  padding: 12px 30px 0px;
 }
 @media (max-width: 1200px) {
   .text__wamHc {
@@ -1236,7 +1187,7 @@
 @media (max-width: 500px) {
   .text__wamHc {
     font-size: 15px;
-    padding-top: 0px;
+    padding-top: 9px;
   }
 }
 @media (max-width: 350px) {
@@ -1245,7 +1196,61 @@
     padding-top: 12px;
   }
 }
-.rules2 {
+.smsImage {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 25px 0px 8px;
+}
+@media (max-width: 1200px) {
+  .smsImage {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .smsImage {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .smsImage {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.img__uxHdh {
+  object-fit: cover;
+  max-width: 80%;
+  width: 100%;
+  min-width: 0;
+  border-radius: 50px;
+}
+.img__uxHdh > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .img__uxHdh {
+    border-radius: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .img__uxHdh {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+}
+.tips {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1255,10 +1260,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 0px 8px 55px;
+  padding: 18px 8px 55px;
 }
 @media (max-width: 1200px) {
-  .rules2 {
+  .tips {
     max-width: 90%;
     width: 100%;
     height: auto;
@@ -1270,14 +1275,14 @@
   }
 }
 @media (max-width: 500px) {
-  .rules2 {
+  .tips {
     max-width: 100%;
     padding-top: 22px;
     padding-bottom: 20px;
   }
 }
 @media (max-width: 350px) {
-  .rules2 {
+  .tips {
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -1340,7 +1345,7 @@
 @media (max-width: 500px) {
   .text__afnP3 {
     font-size: 15px;
-    padding-top: 0px;
+    padding-top: 10px;
   }
 }
 @media (max-width: 350px) {
