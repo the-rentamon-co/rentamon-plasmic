@@ -106,6 +106,7 @@ export type PlasmicInvite__OverridesType = {
   introCalendarRight3?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
+  titlePart?: Flex__<"div">;
   testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
   embedHtml?: Flex__<typeof Embed>;
   qA?: Flex__<"div">;
@@ -651,6 +652,38 @@ function PlasmicInvite__RenderFunc(props: {
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___5Eq8E)}>
+              <div
+                data-plasmic-name={"titlePart"}
+                data-plasmic-override={overrides.titlePart}
+                className={classNames(projectcss.all, sty.titlePart)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fJyaW
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ textDecorationLine: "underline" }}
+                    >
+                      {"\u06f7\u06f0\u06f0"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        " \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
               <div className={classNames(projectcss.all, sty.freeBox__llEcH)}>
                 <TestimonialsScrolling
                   data-plasmic-name={"testimonialsScrolling"}
@@ -1194,6 +1227,7 @@ const PlasmicDescendants = {
     "introCalendarRight3",
     "introCalendarLeft",
     "htmlVideo",
+    "titlePart",
     "testimonialsScrolling",
     "embedHtml",
     "qA",
@@ -1240,6 +1274,7 @@ const PlasmicDescendants = {
   introCalendarRight3: ["introCalendarRight3"],
   introCalendarLeft: ["introCalendarLeft", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
+  titlePart: ["titlePart"],
   testimonialsScrolling: ["testimonialsScrolling"],
   embedHtml: ["embedHtml"],
   qA: [
@@ -1284,6 +1319,7 @@ type NodeDefaultElementType = {
   introCalendarRight3: "div";
   introCalendarLeft: "div";
   htmlVideo: typeof Video;
+  titlePart: "div";
   testimonialsScrolling: typeof TestimonialsScrolling;
   embedHtml: typeof Embed;
   qA: "div";
@@ -1372,6 +1408,7 @@ export const PlasmicInvite = Object.assign(
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     htmlVideo: makeNodeComponent("htmlVideo"),
+    titlePart: makeNodeComponent("titlePart"),
     testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
     embedHtml: makeNodeComponent("embedHtml"),
     qA: makeNodeComponent("qA"),
