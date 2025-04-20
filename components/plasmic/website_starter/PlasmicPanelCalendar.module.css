@@ -984,7 +984,7 @@
   align-self: flex-end;
   width: 60px;
   cursor: pointer;
-  opacity: 0.85;
+  opacity: 1;
   border-radius: 10px;
 }
 .img__okyVc > picture > img {

@@ -1602,7 +1602,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   data-plasmic-override={overrides.iframe}
                   className={classNames("__wab_instance", sty.iframe)}
                   src={
-                    "https://n8n-ger.darkube.app/webhook/e26291be-d10e-43cd-b6e8-f0f49ad6cf55/chat"
+                    "https://n8n-ger.darkube.app/webhook/a63f81dc-fe4f-4904-8923-1584a8e5c772/chat"
                   }
                 />
 
