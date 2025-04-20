@@ -258,20 +258,16 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                   className={classNames(sty.img)}
                   displayHeight={"auto"}
                   displayMaxHeight={"none"}
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "tablet")
-                      ? "18%"
-                      : "16%"
-                  }
+                  displayMaxWidth={"20%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/website_starter/images/photo20250312220117Jpg.jpg",
-                    fullWidth: 640,
-                    fullHeight: 640,
-                    aspectRatio: undefined
+                    src: "/plasmic/website_starter/images/image97.svg",
+                    fullWidth: 145,
+                    fullHeight: 89,
+                    aspectRatio: 1.629213
                   }}
                 />
 

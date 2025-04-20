@@ -947,7 +947,7 @@
   cursor: pointer;
   transition-duration: 1s;
   transition-property: all;
-  width: 30px;
+  width: 20px;
   max-width: 100%;
   object-fit: cover;
   -webkit-transition-property: all;

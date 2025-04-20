@@ -1623,7 +1623,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   displayWidth={
                     hasVariant(globalVariants, "screen", "tablet")
                       ? "20px"
-                      : "30px"
+                      : "20px"
                   }
                   loading={"lazy"}
                   onClick={async event => {
@@ -1724,10 +1724,10 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 }
               }}
               src={{
-                src: "/plasmic/website_starter/images/photo20250312220117Jpg.jpg",
-                fullWidth: 640,
-                fullHeight: 640,
-                aspectRatio: undefined
+                src: "/plasmic/website_starter/images/image96.svg",
+                fullWidth: 145,
+                fullHeight: 89,
+                aspectRatio: 1.629213
               }}
             />
           </div>
