@@ -973,7 +973,7 @@
   align-self: flex-end;
   width: 70px;
   cursor: pointer;
-  opacity: 0;
+  opacity: 1;
   border-radius: 10px;
 }
 .img__okyVc > picture > img {

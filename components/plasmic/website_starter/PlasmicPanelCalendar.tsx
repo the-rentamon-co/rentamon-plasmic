@@ -1580,145 +1580,156 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             })()}
           />
 
-          <div
-            className={classNames(projectcss.all, sty.freeBox__hlXr, "fix-ai")}
-          >
-            {(() => {
-              try {
-                return $state.aiShow;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox__jofXz)}>
-                <Iframe
-                  data-plasmic-name={"iframe"}
-                  data-plasmic-override={overrides.iframe}
-                  className={classNames("__wab_instance", sty.iframe)}
-                  src={
-                    "https://n8n-ger.darkube.app/webhook/e26291be-d10e-43cd-b6e8-f0f49ad6cf55/chat"
+          {false ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__hlXr,
+                "fix-ai"
+              )}
+            >
+              {(() => {
+                try {
+                  return $state.aiShow;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
                   }
-                />
-
-                <div className={classNames(projectcss.all, sty.freeBox__iuRwe)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__k6U2L)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"30px"}
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateAiShow"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["aiShow"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateAiShow"] != null &&
-                        typeof $steps["updateAiShow"] === "object" &&
-                        typeof $steps["updateAiShow"].then === "function"
-                      ) {
-                        $steps["updateAiShow"] = await $steps["updateAiShow"];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image33.svg",
-                      fullWidth: 20,
-                      fullHeight: 18,
-                      aspectRatio: 1.111111
-                    }}
-                  />
-                </div>
-              </div>
-            ) : null}
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__okyVc)}
-              displayHeight={"auto"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"70px"}
-              loading={"lazy"}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateAiShow"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["aiShow"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateAiShow"] != null &&
-                  typeof $steps["updateAiShow"] === "object" &&
-                  typeof $steps["updateAiShow"].then === "function"
-                ) {
-                  $steps["updateAiShow"] = await $steps["updateAiShow"];
+                  throw e;
                 }
-              }}
-              src={{
-                src: "/plasmic/website_starter/images/photo20250312220117Jpg.jpg",
-                fullWidth: 640,
-                fullHeight: 640,
-                aspectRatio: undefined
-              }}
-            />
-          </div>
+              })() ? (
+                <div className={classNames(projectcss.all, sty.freeBox__jofXz)}>
+                  <Iframe
+                    data-plasmic-name={"iframe"}
+                    data-plasmic-override={overrides.iframe}
+                    className={classNames("__wab_instance", sty.iframe)}
+                    src={
+                      "https://n8n-ger.darkube.app/webhook/e26291be-d10e-43cd-b6e8-f0f49ad6cf55/chat"
+                    }
+                  />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__iuRwe)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__k6U2L)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"30px"}
+                      loading={"lazy"}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateAiShow"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["aiShow"]
+                                },
+                                operation: 4
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, !oldValue);
+                                return !oldValue;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateAiShow"] != null &&
+                          typeof $steps["updateAiShow"] === "object" &&
+                          typeof $steps["updateAiShow"].then === "function"
+                        ) {
+                          $steps["updateAiShow"] = await $steps["updateAiShow"];
+                        }
+                      }}
+                      src={{
+                        src: "/plasmic/website_starter/images/image33.svg",
+                        fullWidth: 20,
+                        fullHeight: 18,
+                        aspectRatio: 1.111111
+                      }}
+                    />
+                  </div>
+                </div>
+              ) : null}
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__okyVc)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"70px"}
+                loading={"lazy"}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateAiShow"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["aiShow"]
+                          },
+                          operation: 4
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          const oldValue = $stateGet(objRoot, variablePath);
+                          $stateSet(objRoot, variablePath, !oldValue);
+                          return !oldValue;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAiShow"] != null &&
+                    typeof $steps["updateAiShow"] === "object" &&
+                    typeof $steps["updateAiShow"].then === "function"
+                  ) {
+                    $steps["updateAiShow"] = await $steps["updateAiShow"];
+                  }
+                }}
+                src={{
+                  src: "/plasmic/website_starter/images/photo20250312220117Jpg.jpg",
+                  fullWidth: 640,
+                  fullHeight: 640,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
+          ) : null}
           <div
             className={classNames(projectcss.all, sty.freeBox__eJqks)}
             onClick={async event => {
