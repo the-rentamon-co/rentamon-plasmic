@@ -1615,7 +1615,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
-                    displayWidth={"30px"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? "20px"
+                        : "30px"
+                    }
                     loading={"lazy"}
                     onClick={async event => {
                       const $steps = {};
@@ -1672,7 +1676,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"70px"}
+              displayWidth={"60px"}
               loading={"lazy"}
               onClick={async event => {
                 const $steps = {};
