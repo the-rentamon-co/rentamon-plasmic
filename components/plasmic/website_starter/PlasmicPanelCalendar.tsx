@@ -66,6 +66,7 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
+import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -111,6 +112,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   left?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
+  iframe?: Flex__<typeof Iframe>;
   sideEffect?: Flex__<typeof SideEffect>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
@@ -342,6 +344,12 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile") ? false : false
+      },
+      {
+        path: "aiShow",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -1573,6 +1581,145 @@ function PlasmicPanelCalendar__RenderFunc(props: {
           />
 
           <div
+            className={classNames(projectcss.all, sty.freeBox__hlXr, "fix-ai")}
+          >
+            {(() => {
+              try {
+                return $state.aiShow;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox__jofXz)}>
+                <Iframe
+                  data-plasmic-name={"iframe"}
+                  data-plasmic-override={overrides.iframe}
+                  className={classNames("__wab_instance", sty.iframe)}
+                  src={
+                    "https://n8n-ger.darkube.app/webhook/e26291be-d10e-43cd-b6e8-f0f49ad6cf55/chat"
+                  }
+                />
+
+                <div className={classNames(projectcss.all, sty.freeBox__iuRwe)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__k6U2L)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"30px"}
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateAiShow"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["aiShow"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateAiShow"] != null &&
+                        typeof $steps["updateAiShow"] === "object" &&
+                        typeof $steps["updateAiShow"].then === "function"
+                      ) {
+                        $steps["updateAiShow"] = await $steps["updateAiShow"];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image33.svg",
+                      fullWidth: 20,
+                      fullHeight: 18,
+                      aspectRatio: 1.111111
+                    }}
+                  />
+                </div>
+              </div>
+            ) : null}
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__okyVc)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"70px"}
+              loading={"lazy"}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateAiShow"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["aiShow"]
+                        },
+                        operation: 4
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        const oldValue = $stateGet(objRoot, variablePath);
+                        $stateSet(objRoot, variablePath, !oldValue);
+                        return !oldValue;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateAiShow"] != null &&
+                  typeof $steps["updateAiShow"] === "object" &&
+                  typeof $steps["updateAiShow"].then === "function"
+                ) {
+                  $steps["updateAiShow"] = await $steps["updateAiShow"];
+                }
+              }}
+              src={{
+                src: "/plasmic/website_starter/images/photo20250312220117Jpg.jpg",
+                fullWidth: 640,
+                fullHeight: 640,
+                aspectRatio: undefined
+              }}
+            />
+          </div>
+          <div
             className={classNames(projectcss.all, sty.freeBox__eJqks)}
             onClick={async event => {
               const $steps = {};
@@ -2087,6 +2234,7 @@ const PlasmicDescendants = {
     "left",
     "profile",
     "calendar2",
+    "iframe",
     "sideEffect",
     "userAvailableFeature",
     "modal",
@@ -2144,6 +2292,7 @@ const PlasmicDescendants = {
   left: ["left"],
   profile: ["profile"],
   calendar2: ["calendar2"],
+  iframe: ["iframe"],
   sideEffect: ["sideEffect"],
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
@@ -2172,6 +2321,7 @@ type NodeDefaultElementType = {
   left: "div";
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
+  iframe: typeof Iframe;
   sideEffect: typeof SideEffect;
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
@@ -2256,6 +2406,7 @@ export const PlasmicPanelCalendar = Object.assign(
     left: makeNodeComponent("left"),
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
+    iframe: makeNodeComponent("iframe"),
     sideEffect: makeNodeComponent("sideEffect"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
