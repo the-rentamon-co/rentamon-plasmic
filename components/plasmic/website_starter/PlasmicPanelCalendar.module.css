@@ -878,7 +878,6 @@
 .calendar2:global(.__wab_instance) {
   max-width: 100%;
   width: 100%;
-  z-index: 100000;
   min-width: 0;
   margin: 0px 0px 39px;
 }
@@ -893,58 +892,36 @@
     grid-column-end: -1 !important;
   }
 }
-.freeBox__hlXr {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  justify-content: flex-start;
-  align-items: center;
-  cursor: auto;
-  justify-self: flex-start;
-  left: auto;
-  top: auto;
-  position: relative;
-  opacity: 1;
-  z-index: 1;
-  right: auto;
-  bottom: auto;
-  grid-column-start: 3 !important;
-  grid-column-end: -3 !important;
-  border-radius: 30px;
-  padding: 1rem;
-}
 .freeBox__jofXz {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  width: 100%;
+  width: var(--plsmc-standard-width);
   height: 500px;
-  max-width: 50%;
+  max-width: 500px;
   justify-content: flex-start;
   align-items: center;
-  left: 68px;
-  top: -478px;
   z-index: 1000000000;
-  right: auto;
+  left: 0;
+  top: auto;
+  position: absolute;
   margin-bottom: 0px;
+  bottom: 0;
   min-width: 0;
-  flex-shrink: 0;
   padding: 8px;
 }
 @media (max-width: 500px) {
   .freeBox__jofXz {
     max-width: 94%;
-    left: auto;
+    left: 0px;
+    top: 0px;
   }
 }
 .iframe:global(.__wab_instance) {
-  width: 100%;
+  width: 369px;
   height: 100%;
   max-width: 100%;
   object-fit: cover;
   filter: none;
-  min-width: 0;
   border-radius: 15px;
 }
 .freeBox__iuRwe {
@@ -956,8 +933,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  left: 0;
-  top: 0;
+  left: 0px;
+  top: 0px;
   min-width: 0;
   padding: 8px;
 }
@@ -981,6 +958,25 @@
   .img__k6U2L {
     width: 20px;
   }
+}
+.freeBox__hlXr {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: auto;
+  justify-self: flex-start;
+  left: auto;
+  top: auto;
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+  right: auto;
+  bottom: auto;
+  border-radius: 30px;
+  padding: 1rem;
 }
 .img__okyVc {
   object-fit: cover;
