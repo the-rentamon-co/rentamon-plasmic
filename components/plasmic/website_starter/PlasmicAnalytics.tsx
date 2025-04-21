@@ -91,6 +91,10 @@ export type PlasmicAnalytics__OverridesType = {
   sideBar2?: Flex__<typeof SideBar2>;
   freeBox?: Flex__<"div">;
   profile2?: Flex__<typeof ApiRequest>;
+  apiRequestPie?: Flex__<typeof ApiRequest>;
+  apiRequest?: Flex__<typeof ApiRequest>;
+  apiRequestOccupancy?: Flex__<typeof ApiRequest>;
+  apiRequestAvgDailyrate?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   introduction?: Flex__<"div">;
   teamImage?: Flex__<"div">;
@@ -98,8 +102,6 @@ export type PlasmicAnalytics__OverridesType = {
   img?: Flex__<typeof PlasmicImg__>;
   sectionTitle3?: Flex__<"div">;
   monthlyIncome?: Flex__<"div">;
-  fragmentChart?: Flex__<typeof Chart>;
-  apiRequest?: Flex__<typeof ApiRequest>;
   sources?: Flex__<"div">;
   occupancyRate?: Flex__<"div">;
   avgDailyRate?: Flex__<"div">;
@@ -210,6 +212,78 @@ function PlasmicAnalytics__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "apiRequestPie.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestPie"
+      },
+      {
+        path: "apiRequestPie.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestPie"
+      },
+      {
+        path: "apiRequestPie.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestPie"
+      },
+      {
+        path: "apiRequestOccupancy.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestOccupancy"
+      },
+      {
+        path: "apiRequestOccupancy.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestOccupancy"
+      },
+      {
+        path: "apiRequestOccupancy.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestOccupancy"
+      },
+      {
+        path: "apiRequestAvgDailyrate.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyrate"
+      },
+      {
+        path: "apiRequestAvgDailyrate.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyrate"
+      },
+      {
+        path: "apiRequestAvgDailyrate.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyrate"
       }
     ],
     [$props, $ctx, $refs]
@@ -340,6 +414,214 @@ function PlasmicAnalytics__RenderFunc(props: {
               url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
             />
           </div>
+          <ApiRequest
+            data-plasmic-name={"apiRequestPie"}
+            data-plasmic-override={overrides.apiRequestPie}
+            className={classNames("__wab_instance", sty.apiRequestPie)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___3Bu1C
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wQdKd
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"POST"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestPie",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestPie",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestPie",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["apiRequestPie"] = ref;
+            }}
+            url={
+              "https://gateway.rentamon.com/webhook/6209d842-5d5b-4b50-9904-b623d524549f"
+            }
+          />
+
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__mIo8S
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__aje3J
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"POST"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
+            }}
+            url={"https://gateway.rentamon.com/webhook/analytics-snf"}
+          />
+
+          <ApiRequest
+            data-plasmic-name={"apiRequestOccupancy"}
+            data-plasmic-override={overrides.apiRequestOccupancy}
+            className={classNames("__wab_instance", sty.apiRequestOccupancy)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__hbhrg
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___4Cikn
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"POST"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestOccupancy",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestOccupancy",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestOccupancy",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["apiRequestOccupancy"] = ref;
+            }}
+            url={
+              "https://gateway.rentamon.com/webhook/6209d842-5d5b-4b50-990s549f"
+            }
+          />
+
+          <ApiRequest
+            data-plasmic-name={"apiRequestAvgDailyrate"}
+            data-plasmic-override={overrides.apiRequestAvgDailyrate}
+            className={classNames("__wab_instance", sty.apiRequestAvgDailyrate)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__hzcka
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__zv5H
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"POST"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestAvgDailyrate",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestAvgDailyrate",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestAvgDailyrate",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["apiRequestAvgDailyrate"] = ref;
+            }}
+            url={"https://gateway.rentamon.com/webhook/6209d842-50-990s549f"}
+          />
+
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
@@ -416,50 +698,34 @@ function PlasmicAnalytics__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0645\u0639\u062f\u0644 \u062f\u0631\u0622\u0645\u062f \u0647\u0631\u0645\u0627\u0647"
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___9ALu0
-                )}
-              >
-                {
-                  "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646: \u06f9\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a: \u06f8\u06f9 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u062e\u0631\u062f\u0627\u062f: \u06f1\u06f0\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
+                  "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                 }
               </div>
               <Chart
-                data-plasmic-name={"fragmentChart"}
-                data-plasmic-override={overrides.fragmentChart}
                 cartesianGrid={[]}
                 chartConfig={(() => {
                   const __composite = [
                     {
-                      color: "#000000",
+                      color: null,
                       type: "natural",
                       dot: false,
                       key: null,
                       label: null
-                    },
-                    { color: "#000000", type: "natural", dot: false, key: null }
+                    }
                   ];
-                  __composite["0"]["key"] = "month";
-                  __composite["0"]["label"] = "Month";
-                  __composite["1"]["key"] = "income";
+                  __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                  __composite["0"]["key"] = "income";
+                  __composite["0"]["label"] =
+                    "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647";
                   return __composite;
                 })()}
-                className={classNames("__wab_instance", sty.fragmentChart)}
+                className={classNames(
+                  "__wab_instance",
+                  sty.fragmentChart__uBw5I
+                )}
                 data={(() => {
                   try {
-                    return [
-                      { month: "فروردین", income: 92000000 },
-                      { month: "اردیبهشت", income: 79000000 },
-                      { month: "خرداد", income: 10000000 },
-                      { month: "تیر", income: 6000000 },
-                      { month: "مرداد", income: 105000000 }
-                    ];
+                    return $state.apiRequest.data;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -470,62 +736,65 @@ function PlasmicAnalytics__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-                label={true}
+                label={
+                  hasVariant(globalVariants, "screen", "mobile") ? true : true
+                }
                 layout={"horizontal"}
-                legend={true}
-                stack={false}
+                legend={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : false
+                }
+                stack={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : false
+                }
                 type={"bar"}
-              />
-
-              <ApiRequest
-                data-plasmic-name={"apiRequest"}
-                data-plasmic-override={overrides.apiRequest}
-                className={classNames("__wab_instance", sty.apiRequest)}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mIo8S
-                    )}
-                  >
-                    {"Error fetching data"}
-                  </div>
+                xAxis={
+                  hasVariant(globalVariants, "screen", "tablet")
+                    ? (() => {
+                        const __composite = { enabled: null, key: null };
+                        __composite["enabled"] = true;
+                        __composite["key"] = "month";
+                        return __composite;
+                      })()
+                    : (() => {
+                        const __composite = { enabled: null, key: null };
+                        __composite["enabled"] = true;
+                        __composite["key"] = "month";
+                        return __composite;
+                      })()
                 }
-                loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aje3J
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
+                yAxis={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        const __composite = {
+                          key: null,
+                          enabled: null,
+                          type: null,
+                          tickLine: null,
+                          axisLine: null
+                        };
+                        __composite["key"] = "income";
+                        __composite["enabled"] = false;
+                        __composite["type"] = "number";
+                        __composite["tickLine"] = false;
+                        __composite["axisLine"] = false;
+                        return __composite;
+                      })()
+                    : (() => {
+                        const __composite = {
+                          key: null,
+                          enabled: null,
+                          type: null,
+                          tickLine: null,
+                          axisLine: null
+                        };
+                        __composite["key"] = "income";
+                        __composite["enabled"] = false;
+                        __composite["type"] = "number";
+                        __composite["tickLine"] = false;
+                        __composite["axisLine"] = false;
+                        return __composite;
+                      })()
                 }
-                method={"GET"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["apiRequest"] = ref;
-                }}
-                url={"https://gateway.rentamon.com/webhook/get_transactions"}
               />
             </div>
             <div
@@ -541,18 +810,7 @@ function PlasmicAnalytics__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0645\u06cc\u0632\u0627\u0646 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ajUQs
-                )}
-              >
-                {
-                  "\u062c\u0627\u0628\u0627\u0645\u0627: \u06f2\u06f0 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u062c\u0627\u062c\u06cc\u06af\u0627: \u06f1\u06f4 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0634\u0628: \u06f7 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0627\u062a\u0627\u0642\u06a9: \u06f4 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0647\u0648\u0645\u0633\u0627: \u06f1.\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
+                  "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
                 }
               </div>
             </div>
@@ -568,21 +826,54 @@ function PlasmicAnalytics__RenderFunc(props: {
                   sty.text__vMzey
                 )}
               >
-                {
-                  "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"
-                }
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u062f\u0631 \u0647\u0631 \u0645\u0627\u0647"
+                  : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
               </div>
-              <div
+              <Chart
+                chartConfig={(() => {
+                  const __composite = [
+                    { color: null, type: "natural", dot: false, key: null }
+                  ];
+                  __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                  __composite["0"]["key"] = "reserved_nights";
+                  return __composite;
+                })()}
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__g1We
+                  "__wab_instance",
+                  sty.fragmentChart__pUo5B
                 )}
-              >
-                {
-                  "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646: \u06f2\u06f4 \u0634\u0628\n\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a: \u06f2\u06f0 \u0634\u0628\n\u062e\u0631\u062f\u0627\u062f: \u06f2\u06f8 \u0634\u0628"
-                }
-              </div>
+                data={(() => {
+                  try {
+                    return $state.apiRequestOccupancy.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+                layout={"horizontal"}
+                type={"bar"}
+                xAxis={(() => {
+                  const __composite = {
+                    key: null,
+                    type: null,
+                    enabled: null,
+                    tickLine: null,
+                    axisLine: null
+                  };
+                  __composite["key"] = "shamsi_month";
+                  __composite["type"] = "category";
+                  __composite["enabled"] = true;
+                  __composite["tickLine"] = false;
+                  __composite["axisLine"] = false;
+                  return __composite;
+                })()}
+              />
             </div>
             <div
               data-plasmic-name={"avgDailyRate"}
@@ -654,6 +945,10 @@ const PlasmicDescendants = {
     "sideBar2",
     "freeBox",
     "profile2",
+    "apiRequestPie",
+    "apiRequest",
+    "apiRequestOccupancy",
+    "apiRequestAvgDailyrate",
     "mainContents",
     "introduction",
     "teamImage",
@@ -661,8 +956,6 @@ const PlasmicDescendants = {
     "img",
     "sectionTitle3",
     "monthlyIncome",
-    "fragmentChart",
-    "apiRequest",
     "sources",
     "occupancyRate",
     "avgDailyRate",
@@ -675,6 +968,10 @@ const PlasmicDescendants = {
   sideBar2: ["sideBar2"],
   freeBox: ["freeBox"],
   profile2: ["profile2"],
+  apiRequestPie: ["apiRequestPie"],
+  apiRequest: ["apiRequest"],
+  apiRequestOccupancy: ["apiRequestOccupancy"],
+  apiRequestAvgDailyrate: ["apiRequestAvgDailyrate"],
   mainContents: [
     "mainContents",
     "introduction",
@@ -683,8 +980,6 @@ const PlasmicDescendants = {
     "img",
     "sectionTitle3",
     "monthlyIncome",
-    "fragmentChart",
-    "apiRequest",
     "sources",
     "occupancyRate",
     "avgDailyRate"
@@ -700,9 +995,7 @@ const PlasmicDescendants = {
   introCalendarLeft: ["introCalendarLeft", "img"],
   img: ["img"],
   sectionTitle3: ["sectionTitle3"],
-  monthlyIncome: ["monthlyIncome", "fragmentChart", "apiRequest"],
-  fragmentChart: ["fragmentChart"],
-  apiRequest: ["apiRequest"],
+  monthlyIncome: ["monthlyIncome"],
   sources: ["sources"],
   occupancyRate: ["occupancyRate"],
   avgDailyRate: ["avgDailyRate"],
@@ -720,6 +1013,10 @@ type NodeDefaultElementType = {
   sideBar2: typeof SideBar2;
   freeBox: "div";
   profile2: typeof ApiRequest;
+  apiRequestPie: typeof ApiRequest;
+  apiRequest: typeof ApiRequest;
+  apiRequestOccupancy: typeof ApiRequest;
+  apiRequestAvgDailyrate: typeof ApiRequest;
   mainContents: "div";
   introduction: "div";
   teamImage: "div";
@@ -727,8 +1024,6 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   sectionTitle3: "div";
   monthlyIncome: "div";
-  fragmentChart: typeof Chart;
-  apiRequest: typeof ApiRequest;
   sources: "div";
   occupancyRate: "div";
   avgDailyRate: "div";
@@ -802,6 +1097,10 @@ export const PlasmicAnalytics = Object.assign(
     sideBar2: makeNodeComponent("sideBar2"),
     freeBox: makeNodeComponent("freeBox"),
     profile2: makeNodeComponent("profile2"),
+    apiRequestPie: makeNodeComponent("apiRequestPie"),
+    apiRequest: makeNodeComponent("apiRequest"),
+    apiRequestOccupancy: makeNodeComponent("apiRequestOccupancy"),
+    apiRequestAvgDailyrate: makeNodeComponent("apiRequestAvgDailyrate"),
     mainContents: makeNodeComponent("mainContents"),
     introduction: makeNodeComponent("introduction"),
     teamImage: makeNodeComponent("teamImage"),
@@ -809,8 +1108,6 @@ export const PlasmicAnalytics = Object.assign(
     img: makeNodeComponent("img"),
     sectionTitle3: makeNodeComponent("sectionTitle3"),
     monthlyIncome: makeNodeComponent("monthlyIncome"),
-    fragmentChart: makeNodeComponent("fragmentChart"),
-    apiRequest: makeNodeComponent("apiRequest"),
     sources: makeNodeComponent("sources"),
     occupancyRate: makeNodeComponent("occupancyRate"),
     avgDailyRate: makeNodeComponent("avgDailyRate"),

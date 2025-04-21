@@ -457,19 +457,39 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 sty.text__qkgw
               )}
             >
-              <React.Fragment>
+              {hasVariant(globalVariants, "screen", "mobile") ? (
                 <React.Fragment>
-                  {
-                    "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb \u062a\u0627 \u062a\u0627\u0631\u06cc\u062e "
-                  }
+                  <React.Fragment>
+                    {
+                      "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb \u062a\u0627 "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "\u06f3\u06f1 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
+                    }
+                  </span>
                 </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {"\u06f3\u06f1 \u0641\u0631\u0648\u0631\u062f\u06cc\u0646"}
-                </span>
-              </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb \u062a\u0627 \u062a\u0627\u0631\u06cc\u062e "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "\u06f3\u06f1 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
+                    }
+                  </span>
+                </React.Fragment>
+              )}
             </div>
           </section>
           <section

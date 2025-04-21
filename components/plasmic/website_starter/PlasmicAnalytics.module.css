@@ -131,6 +131,83 @@
   max-width: 100%;
   object-fit: cover;
 }
+.apiRequestPie:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__wQdKd {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text___3Bu1C {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.apiRequest:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .apiRequest:global(.__wab_instance) {
+    display: none;
+  }
+}
+.text__aje3J {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__mIo8S {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.apiRequestOccupancy:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text___4Cikn {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__hbhrg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.apiRequestAvgDailyrate:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__zv5H {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__hzcka {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
 .mainContents {
   display: flex;
   flex-direction: column;
@@ -302,8 +379,8 @@
   width: 100%;
   height: auto;
   max-width: 80%;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   min-width: 0;
   padding: 30px 8px 8px;
@@ -317,7 +394,7 @@
 }
 @media (max-width: 350px) {
   .monthlyIncome {
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
   }
 }
@@ -338,6 +415,7 @@
 @media (max-width: 500px) {
   .text__j8U01 {
     padding-right: 0px;
+    padding-bottom: 14px;
   }
 }
 @media (max-width: 350px) {
@@ -347,53 +425,32 @@
     padding-right: 0px;
   }
 }
-.text___9ALu0 {
-  text-align: right;
-  font-size: 17px;
-  line-height: 1.8;
-  padding-right: 8px;
-  padding-left: 8px;
-  padding-bottom: 0px;
+.fragmentChart__uBw5I:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 18px;
+  min-width: 0;
 }
 @media (max-width: 1200px) {
-  .text___9ALu0 {
-    padding-right: 0px;
-    padding-left: 0px;
+  .fragmentChart__uBw5I:global(.__wab_instance) {
+    font-size: 17px;
+    height: 100%;
+    min-height: 0;
   }
 }
 @media (max-width: 500px) {
-  .text___9ALu0 {
-    font-size: 16px;
+  .fragmentChart__uBw5I:global(.__wab_instance) {
+    position: relative;
+    left: auto;
+    top: auto;
+    font-size: 14px;
   }
 }
 @media (max-width: 350px) {
-  .text___9ALu0 {
-    font-size: 15px;
+  .fragmentChart__uBw5I:global(.__wab_instance) {
+    font-size: 12px;
   }
-}
-.fragmentChart:global(.__wab_instance) {
-  width: 100%;
-  max-width: 100%;
-  object-fit: cover;
-  min-width: 0;
-}
-.apiRequest:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__aje3J {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__mIo8S {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
 }
 .sources {
   display: flex;
@@ -402,8 +459,8 @@
   width: 100%;
   height: auto;
   max-width: 80%;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   min-width: 0;
   padding: 30px 8px 8px;
 }
@@ -414,14 +471,14 @@
     height: auto;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     min-width: 0;
     padding: 30px 14px 8px;
   }
 }
 @media (max-width: 350px) {
   .sources {
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
     height: auto;
@@ -457,32 +514,6 @@
     padding-right: 0px;
   }
 }
-.text__ajUQs {
-  text-align: right;
-  font-size: 17px;
-  line-height: 1.8;
-  padding: 0px 8px;
-}
-@media (max-width: 1200px) {
-  .text__ajUQs {
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    font-size: 17px;
-    text-align: right;
-    line-height: 1.8;
-  }
-}
-@media (max-width: 500px) {
-  .text__ajUQs {
-    font-size: 16px;
-  }
-}
-@media (max-width: 350px) {
-  .text__ajUQs {
-    font-size: 15px;
-  }
-}
 .occupancyRate {
   display: flex;
   flex-direction: column;
@@ -490,8 +521,8 @@
   width: 100%;
   height: auto;
   max-width: 80%;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   min-width: 0;
   padding: 30px 8px 8px;
 }
@@ -502,14 +533,14 @@
     max-width: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     min-width: 0;
     padding: 30px 14px 8px;
   }
 }
 @media (max-width: 350px) {
   .occupancyRate {
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
     height: auto;
@@ -520,7 +551,7 @@
   }
 }
 .text__vMzey {
-  text-align: right;
+  text-align: center;
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
@@ -545,32 +576,23 @@
     padding-right: 0px;
   }
 }
-.text__g1We {
-  text-align: right;
+.fragmentChart__pUo5B:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
   font-size: 17px;
-  line-height: 1.8;
-  padding-right: 8px;
-  padding-left: 8px;
-  padding-bottom: 0px;
-}
-@media (max-width: 1200px) {
-  .text__g1We {
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    font-size: 17px;
-    text-align: right;
-    line-height: 1.8;
-  }
+  min-width: 0;
 }
 @media (max-width: 500px) {
-  .text__g1We {
-    font-size: 16px;
+  .fragmentChart__pUo5B:global(.__wab_instance) {
+    height: 274px;
+    font-size: 14px;
+    flex-shrink: 0;
   }
 }
 @media (max-width: 350px) {
-  .text__g1We {
-    font-size: 15px;
+  .fragmentChart__pUo5B:global(.__wab_instance) {
+    font-size: 10px;
   }
 }
 .avgDailyRate {
