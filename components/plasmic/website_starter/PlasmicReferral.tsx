@@ -1424,7 +1424,7 @@ ${$state.textInput.value}
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
                               return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/");
+                                "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/referral/");
                             } else {
                               console.log("got here in refreshToken");
                               return fetch(
@@ -1447,7 +1447,7 @@ ${$state.textInput.value}
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/referral/";
                                 });
                             }
                           }

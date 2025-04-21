@@ -1369,6 +1369,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/lite"
+        },
+        {
+          "id": "8d3uvVUzIbi1",
+          "name": "Analytics",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicAnalytics.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/analytics.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicAnalytics.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/analytics"
         }
       ],
       "icons": [
@@ -2863,6 +2877,41 @@
           "id": "lGY1ak68LO0b",
           "name": "image 97",
           "filePath": "../public/plasmic/website_starter/images/image97.svg"
+        },
+        {
+          "id": "eaprhN2pFBep",
+          "name": "image 98",
+          "filePath": "../public/plasmic/website_starter/images/image98.svg"
+        },
+        {
+          "id": "EhEWwSVfe21z",
+          "name": "lite.jpg",
+          "filePath": "../public/plasmic/website_starter/images/liteJpg.jpg"
+        },
+        {
+          "id": "rejoyvNllikq",
+          "name": "lite.png",
+          "filePath": "../public/plasmic/website_starter/images/litePng.png"
+        },
+        {
+          "id": "r1Q9AIZCsMLU",
+          "name": "image 99",
+          "filePath": "../public/plasmic/website_starter/images/image99.png"
+        },
+        {
+          "id": "-gcgYeudIluc",
+          "name": "image 100",
+          "filePath": "../public/plasmic/website_starter/images/image100.png"
+        },
+        {
+          "id": "WhwZNFB9sHCL",
+          "name": "image 101",
+          "filePath": "../public/plasmic/website_starter/images/image101.png"
+        },
+        {
+          "id": "dCMht5sw8kSl",
+          "name": "Group 672.png",
+          "filePath": "../public/plasmic/website_starter/images/group672Png.png"
         }
       ],
       "indirect": false,
@@ -3876,8 +3925,7 @@
           "componentImportPath": "@plasmicpkgs/react-aria/skinny/registerDialog"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "tGFFjizqpBh1JPEqzUQxjY",

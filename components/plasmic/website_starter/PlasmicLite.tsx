@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
-import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -104,12 +103,6 @@ export type PlasmicLite__OverridesType = {
   introCalendarRight3?: Flex__<"div">;
   introCalendarRight4?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
-  introAutoSync?: Flex__<"div">;
-  introAutoSyncTitle?: Flex__<"div">;
-  introAutoSyncCaption?: Flex__<"div">;
-  introAutoSyncDesc?: Flex__<"div">;
-  introAutoSyncBenefits?: Flex__<"div">;
-  introAutoSyncGif?: Flex__<"div">;
   _3Benefits?: Flex__<"div">;
   _3Benefits1st?: Flex__<"div">;
   icon?: Flex__<"div">;
@@ -123,12 +116,12 @@ export type PlasmicLite__OverridesType = {
   icon3?: Flex__<"div">;
   title3?: Flex__<"div">;
   caption3?: Flex__<"div">;
-  image?: Flex__<"div">;
-  introAutoSyncTitle2?: Flex__<"div">;
-  introAutoSyncCaption2?: Flex__<"div">;
-  introAutoSyncDesc2?: Flex__<"div">;
-  introAutoSyncGif2?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
+  introAutoSync?: Flex__<"div">;
+  introAutoSyncTitle?: Flex__<"div">;
+  introAutoSyncCaption?: Flex__<"div">;
+  introAutoSyncDesc?: Flex__<"div">;
+  introAutoSyncBenefits?: Flex__<"div">;
+  introAutoSyncGif?: Flex__<"div">;
   testimonials?: Flex__<"div">;
   titlePart?: Flex__<"div">;
   commentsScrolling?: Flex__<"div">;
@@ -146,8 +139,6 @@ export type PlasmicLite__OverridesType = {
   _2?: Flex__<typeof AntdAccordionItem>;
   _1?: Flex__<"div">;
   _4?: Flex__<typeof AntdAccordionItem>;
-  _5?: Flex__<typeof AntdAccordionItem>;
-  _6?: Flex__<typeof AntdAccordionItem>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
@@ -300,7 +291,7 @@ function PlasmicLite__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062a\u0642\u0648\u06cc\u0645 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648... \u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0627\u0632 \u00ab\u06cc\u06a9\u200c\u062c\u0627\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u0647\r"
+                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
                 </div>
               </div>
@@ -317,7 +308,7 @@ function PlasmicLite__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a \u0648 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0631\u0648 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647!\r\n\r"
+                    "\u062a\u0645\u0627\u0645 \u0648\u0642\u0627\u06cc\u0639 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0647\u0645\u06cc\u0634\u0647 \u0647\u0645\u0631\u0627\u0647\u062a \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634."
                   }
                 </div>
               </div>
@@ -349,10 +340,10 @@ function PlasmicLite__RenderFunc(props: {
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
+                        ? "\u2705 \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062a\u0648\u06cc \u062c\u06cc\u0628\u062a\u0647\n\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u06cc\u06a9 \u0646\u06af\u0627\u0647\n\r\n\u2705 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u06af\u0630\u0627\u0631\u06cc \u0631\u0648\u06cc \u06cc\u06a9 \u0631\u0648\u0632 \u062e\u0627\u0635"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
-                        : "\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u060c \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\r\n\u2705 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r"}
+                        ? "\u2705 \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062a\u0648\u06cc \u062c\u06cc\u0628\u062a\u0647\n\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u06cc\u06a9 \u0646\u06af\u0627\u0647\n\r\n\u2705 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u06af\u0630\u0627\u0631\u06cc \u0631\u0648\u06cc \u06cc\u06a9 \u0631\u0648\u0632 \u062e\u0627\u0635"
+                        : "\u2705 \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062a\u0648\u06cc \u062c\u06cc\u0628\u062a\u0647\n\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u06cc\u06a9 \u0646\u06af\u0627\u0647\n\r\n\u2705 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u06af\u0630\u0627\u0631\u06cc \u0631\u0648\u06cc \u06cc\u06a9 \u0631\u0648\u0632 \u062e\u0627\u0635\r"}
                     </div>
                   </div>
                   <div
@@ -409,118 +400,34 @@ function PlasmicLite__RenderFunc(props: {
                   data-plasmic-override={overrides.introCalendarLeft}
                   className={classNames(projectcss.all, sty.introCalendarLeft)}
                 >
-                  <Video
-                    autoPlay={true}
-                    className={classNames(
-                      "__wab_instance",
-                      sty.htmlVideo___6MA0
-                    )}
-                    controls={false}
-                    loop={true}
-                    muted={true}
-                    src={
-                      "https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___1Dsyn)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "522px"
                     }
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"introAutoSync"}
-              data-plasmic-override={overrides.introAutoSync}
-              className={classNames(projectcss.all, sty.introAutoSync)}
-            >
-              <div
-                data-plasmic-name={"introAutoSyncTitle"}
-                data-plasmic-override={overrides.introAutoSyncTitle}
-                className={classNames(projectcss.all, sty.introAutoSyncTitle)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rpXu2
-                  )}
-                >
-                  {
-                    "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
-                  }
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"introAutoSyncCaption"}
-                data-plasmic-override={overrides.introAutoSyncCaption}
-                className={classNames(projectcss.all, sty.introAutoSyncCaption)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qVu8H
-                  )}
-                >
-                  {
-                    "\u200f\u200f\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647.\r\n\r"
-                  }
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"introAutoSyncDesc"}
-                data-plasmic-override={overrides.introAutoSyncDesc}
-                className={classNames(projectcss.all, sty.introAutoSyncDesc)}
-              >
-                <div
-                  data-plasmic-name={"introAutoSyncBenefits"}
-                  data-plasmic-override={overrides.introAutoSyncBenefits}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introAutoSyncBenefits
-                  )}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xWfan
-                    )}
-                  >
-                    {
-                      "\u0645\u0632\u06cc\u062a \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627:"
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "90%"
+                        : "100%"
                     }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___6YC3
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                      : "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"}
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"introAutoSyncGif"}
-                  data-plasmic-override={overrides.introAutoSyncGif}
-                  className={classNames(projectcss.all, sty.introAutoSyncGif)}
-                >
-                  <Video
-                    autoPlay={true}
-                    className={classNames(
-                      "__wab_instance",
-                      sty.htmlVideo__ija5M
-                    )}
-                    controls={false}
-                    loop={true}
-                    muted={true}
-                    src={
-                      "https://rentamon-files.storage.iran.liara.space/auto-sync.mp4"
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "auto"
                     }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/litePng.png",
+                      fullWidth: 600,
+                      fullHeight: 866,
+                      aspectRatio: undefined
+                    }}
                   />
                 </div>
               </div>
@@ -577,7 +484,7 @@ function PlasmicLite__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u062a\u0647"
+                      "\u0648\u0636\u0639\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u06a9\u0641 \u062f\u0633\u062a\u062a\u0647"
                     }
                   </div>
                 </div>
@@ -612,7 +519,7 @@ function PlasmicLite__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u0641\u0632\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a"
+                      "\u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f"
                     }
                   </div>
                 </div>
@@ -629,7 +536,7 @@ function PlasmicLite__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632\u0647"
+                      "\u062a\u0642\u0648\u06cc\u0645\u062a \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632\u0647"
                     }
                   </div>
                 </div>
@@ -679,84 +586,99 @@ function PlasmicLite__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u0632 \u0686\u0646\u062f\u062a\u0627 \u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646 \u0648 \u0633\u0631 \u0631\u0633\u06cc\u062f \u062e\u0644\u0627\u0635 \u0634\u0648"
+                      "\u0627\u0632 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0633\u0631 \u0631\u0633\u06cc\u062f \u062e\u0644\u0627\u0635 \u0634\u0648"
                     }
                   </div>
                 </div>
               </div>
             </div>
             <div
-              data-plasmic-name={"image"}
-              data-plasmic-override={overrides.image}
-              className={classNames(projectcss.all, sty.image)}
+              data-plasmic-name={"introAutoSync"}
+              data-plasmic-override={overrides.introAutoSync}
+              className={classNames(projectcss.all, sty.introAutoSync)}
             >
               <div
-                data-plasmic-name={"introAutoSyncTitle2"}
-                data-plasmic-override={overrides.introAutoSyncTitle2}
-                className={classNames(projectcss.all, sty.introAutoSyncTitle2)}
+                data-plasmic-name={"introAutoSyncTitle"}
+                data-plasmic-override={overrides.introAutoSyncTitle}
+                className={classNames(projectcss.all, sty.introAutoSyncTitle)}
               >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__noipi
+                    sty.text__rpXu2
                   )}
                 >
                   {
-                    "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r\n\r"
+                    "\u0634\u0641\u0627\u0641\u06cc\u062a \u062d\u0633\u0627\u0628 \u0648 \u06a9\u062a\u0627\u0628\u200c\u0647\u0627"
                   }
                 </div>
               </div>
               <div
-                data-plasmic-name={"introAutoSyncCaption2"}
-                data-plasmic-override={overrides.introAutoSyncCaption2}
-                className={classNames(
-                  projectcss.all,
-                  sty.introAutoSyncCaption2
-                )}
+                data-plasmic-name={"introAutoSyncCaption"}
+                data-plasmic-override={overrides.introAutoSyncCaption}
+                className={classNames(projectcss.all, sty.introAutoSyncCaption)}
               >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__vs6E
+                    sty.text__qVu8H
                   )}
                 >
                   {
-                    "\u0628\u0647\u200c\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628\u060c \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648\u060c \u0647\u0648\u0645\u0633\u0627 \u0648 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0631\u0648 \u0628\u0633\u067e\u0627\u0631 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0648 \u062e\u0648\u062f\u062a \u0628\u0631\u0648 \u0633\u0631\u0627\u063a \u0628\u0642\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0647\u0627 :\u200c)\r\n\r"
+                    "\u0628\u0627 \u062b\u0628\u062a \u0646\u0631\u062e \u0631\u0648\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0647\u0631 \u0631\u0632\u0631\u0648\u060c \u0645\u0648\u0642\u0639 \u062d\u0633\u0627\u0628 \u0648 \u06a9\u062a\u0627\u0628 \u0647\u06cc\u0686 \u062e\u0637\u0627\u06cc\u06cc \u067e\u06cc\u0634 \u0646\u0645\u06cc\u0627\u062f."
                   }
                 </div>
               </div>
               <div
-                data-plasmic-name={"introAutoSyncDesc2"}
-                data-plasmic-override={overrides.introAutoSyncDesc2}
-                className={classNames(projectcss.all, sty.introAutoSyncDesc2)}
+                data-plasmic-name={"introAutoSyncDesc"}
+                data-plasmic-override={overrides.introAutoSyncDesc}
+                className={classNames(projectcss.all, sty.introAutoSyncDesc)}
               >
                 <div
-                  data-plasmic-name={"introAutoSyncGif2"}
-                  data-plasmic-override={overrides.introAutoSyncGif2}
-                  className={classNames(projectcss.all, sty.introAutoSyncGif2)}
+                  data-plasmic-name={"introAutoSyncBenefits"}
+                  data-plasmic-override={overrides.introAutoSyncBenefits}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introAutoSyncBenefits
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6YC3
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                      : "\u2705 \u062b\u0628\u062a \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0647\u0631 \u0631\u0648\u0632 \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062b\u0628\u062a \u062a\u062e\u0641\u06cc\u0641\n\u2705 \u0627\u0633\u062a\u0641\u0627\u062f\u0647\u200c\u06cc \u0647\u0645\u0632\u0645\u0627\u0646 \u0686\u0646\u062f \u0646\u0641\u0631 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 (\u0627\u0628\u0631\u06cc)"}
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"introAutoSyncGif"}
+                  data-plasmic-override={overrides.introAutoSyncGif}
+                  className={classNames(projectcss.all, sty.introAutoSyncGif)}
                 >
                   <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img)}
-                    displayHeight={"522px"}
+                    className={classNames(sty.img__ePAo)}
+                    displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "100%"
-                        : "auto"
-                    }
+                    displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/handsOnAppPng2.png",
-                      fullWidth: 456,
-                      fullHeight: 600,
+                      src: "/plasmic/website_starter/images/image99.png",
+                      fullWidth: 486,
+                      fullHeight: 573,
                       aspectRatio: undefined
                     }}
                   />
@@ -781,7 +703,7 @@ function PlasmicLite__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f6\u06f3\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
+                    "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f7\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
                   }
                 </div>
               </div>
@@ -842,8 +764,8 @@ function PlasmicLite__RenderFunc(props: {
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u0627\u0646  \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u062f\u0631 \u06cc\u06a9\u062c\u0627"
-                    : "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u0627\u0646  \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u062f\u0631 \u06cc\u06a9\u062c\u0627"}
+                    ? "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062a\u0627\u0631\u06cc\u062e\u0686\u0647 \u0645\u0647\u0645\u0627\u0646\u0627\u0646  \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647"
+                    : "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062a\u0627\u0631\u06cc\u062e\u0686\u0647 \u0645\u0647\u0645\u0627\u0646\u0627\u0646  \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647"}
                 </div>
               </div>
             </div>
@@ -991,7 +913,7 @@ function PlasmicLite__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0686\u0642\u062f\u0631\u0647\u061f"
+                              "\u0622\u06cc\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062f\u06cc\u06af\u0647\u200c\u0627\u06cc \u0647\u0645 \u062f\u0627\u0631\u0647\u061f"
                             }
                           </div>
                         }
@@ -1005,71 +927,7 @@ function PlasmicLite__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u06a9\u0627\u0631\u0645\u0632\u062f \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0647\u0633\u062a. \u0645\u062b\u0644\u0627 \u0627\u06af\u0647 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u0647 \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u06cc \u0628\u06af\u06cc\u0631\u06cc\u060c \u06f1.\u06f5\u066a \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u0627\u0632 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647:\n\u06f3\u06f0,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 = \u06f1.\u06f5\u066a \u00d7 \u06f2,\u06f0\u06f0\u06f0,\u06f0\u06f0\u06f0\n\r\n\r"
-                          }
-                        </div>
-                      </AntdAccordionItem>
-                      <AntdAccordionItem
-                        data-plasmic-name={"_5"}
-                        data-plasmic-override={overrides._5}
-                        className={classNames("__wab_instance", sty._5)}
-                        id={"33"}
-                        label2={
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___5UyCa
-                            )}
-                          >
-                            {
-                              "\u0627\u0645\u06a9\u0627\u0646 \u0644\u063a\u0648 \u0639\u0636\u0648\u06cc\u062a \u062f\u0631 \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0647\u0633\u062a\u061f"
-                            }
-                          </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__cUe2F
-                          )}
-                        >
-                          {
-                            "\u0645\u0627 \u062a\u0645\u0627\u0645 \u062a\u0644\u0627\u0634\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u062a\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0631\u0627\u0636\u06cc \u0628\u0627\u0634\u06cc. \u0648\u0644\u06cc \u0647\u0631 \u0632\u0645\u0627\u0646 \u0648 \u0628\u0647 \u0647\u0631 \u062f\u0644\u06cc\u0644 \u062a\u0645\u0627\u06cc\u0644\u06cc \u0628\u0647 \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u062f\u0627\u0634\u062a\u06cc\u060c \u0639\u0636\u0648\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f\u0647 \u0648 \u06a9\u0644 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647.\n"
-                          }
-                        </div>
-                      </AntdAccordionItem>
-                      <AntdAccordionItem
-                        data-plasmic-name={"_6"}
-                        data-plasmic-override={overrides._6}
-                        className={classNames("__wab_instance", sty._6)}
-                        id={"44"}
-                        label2={
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__nfwJy
-                            )}
-                          >
-                            {
-                              "\u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0627\u06cc\u062f \u062d\u062a\u0645\u0627 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u062b\u0628\u062a \u0628\u0627\u0634\u0647\u061f"
-                            }
-                          </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__o0EEv
-                          )}
-                        >
-                          {
-                            "\u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc. \u0627\u0645\u0627 \u0647\u0631 \u0686\u0642\u062f\u0631  \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u06cc\u060c\u200c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u062a \u0645\u0641\u06cc\u062f\u062a\u0631 \u0645\u06cc\u200c\u0634\u0647."
+                            "\u0628\u0644\u0647. \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u067e\u06cc\u0634\u0631\u0641\u062a\u0647\u200c\u062a\u0631\u06cc \u0647\u0645 \u062f\u0627\u0631\u0647. \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0634\u0645\u0627 \u0631\u0648 \u062a\u0628\u062f\u06cc\u0644 \u0628\u0647 \u06cc\u06a9 \u0645\u06cc\u0632\u0628\u0627\u0646 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u06a9\u0646\u0647. \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f."
                           }
                         </div>
                       </AntdAccordionItem>
@@ -1103,72 +961,6 @@ function PlasmicLite__RenderFunc(props: {
                         >
                           {
                             "\u0647\u0631 \u0686\u0646\u062f\u062a\u0627 \u06a9\u0647 \u0628\u062e\u0648\u0627\u06cc! \u0645\u062d\u062f\u0648\u062f\u06cc\u062a\u06cc \u0646\u06cc\u0633\u062a. \u0641\u0642\u0637 \u06a9\u0627\u0641\u06cc\u0647  \u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u060c \u0645\u0631\u0627\u062d\u0644 \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u067e\u06cc\u0634 \u0628\u0628\u0631\u06cc."
-                          }
-                        </div>
-                      </AntdAccordionItem>
-                      <AntdAccordionItem
-                        className={classNames(
-                          "__wab_instance",
-                          sty.accordionItem___6ML6P
-                        )}
-                        id={"66"}
-                        label2={
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__q93Jm
-                            )}
-                          >
-                            {
-                              "\u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u0627\u0632 \u062e\u0648\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u0645\u061f"
-                            }
-                          </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__wjkd3
-                          )}
-                        >
-                          {
-                            "\u0628\u0644\u0647\u060c \u0647\u0631 \u0632\u0645\u0627\u0646 \u0628\u062e\u0648\u0627\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648\u0627\u0631\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0634\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u062f\u0633\u062a\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc. \u0648\u0644\u06cc \u0645\u0627 \u062a\u0648\u0635\u06cc\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0647\u0645\u06cc\u0634\u0647 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0631\u0648 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u06cc \u062a\u0627 \u0648\u0636\u0639\u06cc\u062a \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u06cc\u06a9\u0633\u0627\u0646 \u0628\u0627\u0634\u0647. \u0627\u06cc\u0646\u062c\u0648\u0631\u06cc \u0628\u0627\u0632\u062f\u06cc\u062f\u06a9\u0646\u0646\u062f\u06af\u0627\u0646 \u0622\u06af\u0647\u06cc \u0634\u0645\u0627\u060c \u0645\u063a\u0627\u06cc\u0631\u062a\u06cc \u0646\u0645\u06cc\u200c\u0628\u06cc\u0646\u0646 \u0648 \u0628\u0647 \u0634\u0645\u0627 \u0627\u0639\u062a\u0645\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0646."
-                          }
-                        </div>
-                      </AntdAccordionItem>
-                      <AntdAccordionItem
-                        className={classNames(
-                          "__wab_instance",
-                          sty.accordionItem__tRbJc
-                        )}
-                        id={"77"}
-                        label2={
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__lx6Yq
-                            )}
-                          >
-                            {
-                              "\u0686\u0637\u0648\u0631 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u0645\u061f"
-                            }
-                          </div>
-                        }
-                        showArrow={true}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__byoqe
-                          )}
-                        >
-                          {
-                            "\u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0631\u0627\u06cc \u06f5 \u062a\u0627 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644\u06cc \u06a9\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\u06cc\u060c \u0647\u06cc\u0686 \u0647\u0632\u06cc\u0646\u0647\u200c\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0646\u0645\u06cc\u0634\u0647 \u0648 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u067e\u0633 \u0628\u0627 \u062e\u06cc\u0627\u0644 \u0631\u0627\u062d\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646. \u0628\u0639\u062f \u0627\u06af\u0647 \u0639\u0644\u0627\u0642\u0645\u0646\u062f \u0634\u062f\u06cc\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0631\u0648 \u0634\u0627\u0631\u0698 \u06a9\u0646\u06cc."
                           }
                         </div>
                       </AntdAccordionItem>
@@ -1313,12 +1105,6 @@ const PlasmicDescendants = {
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarLeft",
-    "introAutoSync",
-    "introAutoSyncTitle",
-    "introAutoSyncCaption",
-    "introAutoSyncDesc",
-    "introAutoSyncBenefits",
-    "introAutoSyncGif",
     "_3Benefits",
     "_3Benefits1st",
     "icon",
@@ -1332,12 +1118,12 @@ const PlasmicDescendants = {
     "icon3",
     "title3",
     "caption3",
-    "image",
-    "introAutoSyncTitle2",
-    "introAutoSyncCaption2",
-    "introAutoSyncDesc2",
-    "introAutoSyncGif2",
-    "img",
+    "introAutoSync",
+    "introAutoSyncTitle",
+    "introAutoSyncCaption",
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -1355,8 +1141,6 @@ const PlasmicDescendants = {
     "_2",
     "_1",
     "_4",
-    "_5",
-    "_6",
     "link",
     "html",
     "clarity2",
@@ -1374,12 +1158,6 @@ const PlasmicDescendants = {
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarLeft",
-    "introAutoSync",
-    "introAutoSyncTitle",
-    "introAutoSyncCaption",
-    "introAutoSyncDesc",
-    "introAutoSyncBenefits",
-    "introAutoSyncGif",
     "_3Benefits",
     "_3Benefits1st",
     "icon",
@@ -1393,12 +1171,12 @@ const PlasmicDescendants = {
     "icon3",
     "title3",
     "caption3",
-    "image",
-    "introAutoSyncTitle2",
-    "introAutoSyncCaption2",
-    "introAutoSyncDesc2",
-    "introAutoSyncGif2",
-    "img",
+    "introAutoSync",
+    "introAutoSyncTitle",
+    "introAutoSyncCaption",
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -1432,23 +1210,6 @@ const PlasmicDescendants = {
   introCalendarRight3: ["introCalendarRight3"],
   introCalendarRight4: ["introCalendarRight4"],
   introCalendarLeft: ["introCalendarLeft"],
-  introAutoSync: [
-    "introAutoSync",
-    "introAutoSyncTitle",
-    "introAutoSyncCaption",
-    "introAutoSyncDesc",
-    "introAutoSyncBenefits",
-    "introAutoSyncGif"
-  ],
-  introAutoSyncTitle: ["introAutoSyncTitle"],
-  introAutoSyncCaption: ["introAutoSyncCaption"],
-  introAutoSyncDesc: [
-    "introAutoSyncDesc",
-    "introAutoSyncBenefits",
-    "introAutoSyncGif"
-  ],
-  introAutoSyncBenefits: ["introAutoSyncBenefits"],
-  introAutoSyncGif: ["introAutoSyncGif"],
   _3Benefits: [
     "_3Benefits",
     "_3Benefits1st",
@@ -1476,19 +1237,23 @@ const PlasmicDescendants = {
   icon3: ["icon3"],
   title3: ["title3"],
   caption3: ["caption3"],
-  image: [
-    "image",
-    "introAutoSyncTitle2",
-    "introAutoSyncCaption2",
-    "introAutoSyncDesc2",
-    "introAutoSyncGif2",
-    "img"
+  introAutoSync: [
+    "introAutoSync",
+    "introAutoSyncTitle",
+    "introAutoSyncCaption",
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif"
   ],
-  introAutoSyncTitle2: ["introAutoSyncTitle2"],
-  introAutoSyncCaption2: ["introAutoSyncCaption2"],
-  introAutoSyncDesc2: ["introAutoSyncDesc2", "introAutoSyncGif2", "img"],
-  introAutoSyncGif2: ["introAutoSyncGif2", "img"],
-  img: ["img"],
+  introAutoSyncTitle: ["introAutoSyncTitle"],
+  introAutoSyncCaption: ["introAutoSyncCaption"],
+  introAutoSyncDesc: [
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif"
+  ],
+  introAutoSyncBenefits: ["introAutoSyncBenefits"],
+  introAutoSyncGif: ["introAutoSyncGif"],
   testimonials: [
     "testimonials",
     "titlePart",
@@ -1518,19 +1283,15 @@ const PlasmicDescendants = {
     "_2",
     "_1",
     "_4",
-    "_5",
-    "_6",
     "link",
     "html",
     "clarity2",
     "goftino"
   ],
-  accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6", "link"],
+  accordionMain: ["accordionMain", "_2", "_1", "_4", "link"],
   _2: ["_2", "_1"],
   _1: ["_1"],
   _4: ["_4"],
-  _5: ["_5"],
-  _6: ["_6"],
   link: ["link"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
@@ -1552,12 +1313,6 @@ type NodeDefaultElementType = {
   introCalendarRight3: "div";
   introCalendarRight4: "div";
   introCalendarLeft: "div";
-  introAutoSync: "div";
-  introAutoSyncTitle: "div";
-  introAutoSyncCaption: "div";
-  introAutoSyncDesc: "div";
-  introAutoSyncBenefits: "div";
-  introAutoSyncGif: "div";
   _3Benefits: "div";
   _3Benefits1st: "div";
   icon: "div";
@@ -1571,12 +1326,12 @@ type NodeDefaultElementType = {
   icon3: "div";
   title3: "div";
   caption3: "div";
-  image: "div";
-  introAutoSyncTitle2: "div";
-  introAutoSyncCaption2: "div";
-  introAutoSyncDesc2: "div";
-  introAutoSyncGif2: "div";
-  img: typeof PlasmicImg__;
+  introAutoSync: "div";
+  introAutoSyncTitle: "div";
+  introAutoSyncCaption: "div";
+  introAutoSyncDesc: "div";
+  introAutoSyncBenefits: "div";
+  introAutoSyncGif: "div";
   testimonials: "div";
   titlePart: "div";
   commentsScrolling: "div";
@@ -1594,8 +1349,6 @@ type NodeDefaultElementType = {
   _2: typeof AntdAccordionItem;
   _1: "div";
   _4: typeof AntdAccordionItem;
-  _5: typeof AntdAccordionItem;
-  _6: typeof AntdAccordionItem;
   link: "a";
   html: "div";
   clarity2: typeof Embed;
@@ -1673,12 +1426,6 @@ export const PlasmicLite = Object.assign(
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     introCalendarRight4: makeNodeComponent("introCalendarRight4"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
-    introAutoSync: makeNodeComponent("introAutoSync"),
-    introAutoSyncTitle: makeNodeComponent("introAutoSyncTitle"),
-    introAutoSyncCaption: makeNodeComponent("introAutoSyncCaption"),
-    introAutoSyncDesc: makeNodeComponent("introAutoSyncDesc"),
-    introAutoSyncBenefits: makeNodeComponent("introAutoSyncBenefits"),
-    introAutoSyncGif: makeNodeComponent("introAutoSyncGif"),
     _3Benefits: makeNodeComponent("_3Benefits"),
     _3Benefits1st: makeNodeComponent("_3Benefits1st"),
     icon: makeNodeComponent("icon"),
@@ -1692,12 +1439,12 @@ export const PlasmicLite = Object.assign(
     icon3: makeNodeComponent("icon3"),
     title3: makeNodeComponent("title3"),
     caption3: makeNodeComponent("caption3"),
-    image: makeNodeComponent("image"),
-    introAutoSyncTitle2: makeNodeComponent("introAutoSyncTitle2"),
-    introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
-    introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),
-    introAutoSyncGif2: makeNodeComponent("introAutoSyncGif2"),
-    img: makeNodeComponent("img"),
+    introAutoSync: makeNodeComponent("introAutoSync"),
+    introAutoSyncTitle: makeNodeComponent("introAutoSyncTitle"),
+    introAutoSyncCaption: makeNodeComponent("introAutoSyncCaption"),
+    introAutoSyncDesc: makeNodeComponent("introAutoSyncDesc"),
+    introAutoSyncBenefits: makeNodeComponent("introAutoSyncBenefits"),
+    introAutoSyncGif: makeNodeComponent("introAutoSyncGif"),
     testimonials: makeNodeComponent("testimonials"),
     titlePart: makeNodeComponent("titlePart"),
     commentsScrolling: makeNodeComponent("commentsScrolling"),
@@ -1715,8 +1462,6 @@ export const PlasmicLite = Object.assign(
     _2: makeNodeComponent("_2"),
     _1: makeNodeComponent("_1"),
     _4: makeNodeComponent("_4"),
-    _5: makeNodeComponent("_5"),
-    _6: makeNodeComponent("_6"),
     link: makeNodeComponent("link"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),

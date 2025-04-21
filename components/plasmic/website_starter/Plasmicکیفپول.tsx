@@ -858,9 +858,11 @@ function Plasmicکیفپول__RenderFunc(props: {
                       }
                     }}
                   >
-                    {
-                      "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                   </div>
                   <div
                     className={classNames(
@@ -908,9 +910,11 @@ function Plasmicکیفپول__RenderFunc(props: {
                       }
                     }}
                   >
-                    {
-                      "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                   </div>
                   <div
                     className={classNames(
@@ -958,9 +962,11 @@ function Plasmicکیفپول__RenderFunc(props: {
                       }
                     }}
                   >
-                    {
-                      "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                   </div>
                 </div>
               </div>

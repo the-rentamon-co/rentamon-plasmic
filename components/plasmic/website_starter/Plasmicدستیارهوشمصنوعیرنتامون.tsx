@@ -93,7 +93,6 @@ export type Plasmicدستیارهوشمصنوعیرنتامون__OverridesType =
   introTitle?: Flex__<"div">;
   دربارهما?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   ai?: Flex__<typeof Iframe>;
   introCalendarLeft2?: Flex__<"div">;
   html?: Flex__<"div">;
@@ -252,22 +251,20 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                 className={classNames(projectcss.all, sty.introCalendarLeft)}
               >
                 <PlasmicImg__
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
                   alt={""}
-                  className={classNames(sty.img)}
+                  className={classNames(sty.img__yeaZj)}
                   displayHeight={"auto"}
                   displayMaxHeight={"none"}
-                  displayMaxWidth={"20%"}
+                  displayMaxWidth={"16%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/website_starter/images/image97.svg",
-                    fullWidth: 145,
-                    fullHeight: 89,
-                    aspectRatio: 1.629213
+                    src: "/plasmic/website_starter/images/group672Png.png",
+                    fullWidth: 252,
+                    fullHeight: 194,
+                    aspectRatio: undefined
                   }}
                 />
 
@@ -292,6 +289,30 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                   className={classNames("__wab_instance", sty.ai)}
                   onLoad={async event => {
                     const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                const sessionId =
+                                  localStorage.getItem("n8n-chat/sessionId");
+                                return console.log("sessionId", sessionId);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
                   }}
                   preview={true}
                   src={
@@ -326,16 +347,39 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                 ? "- \u0645\u0647\u0645\u0627\u0646 \u0646\u0638\u0631 \u06af\u0630\u0627\u0634\u062a\u0647 \u00ab\u0633\u0631\u0648\u06cc\u0633 \u0628\u0647\u062f\u0627\u0634\u062a\u06cc \u0634\u0633\u062a\u0647 \u0648 \u0636\u062f\u0639\u0641\u0648\u0646\u06cc \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\u00bb \u062d\u0627\u0644\u0627 \u0645\u0646 \u0686\u0637\u0648\u0631 \u067e\u0627\u0633\u062e \u0628\u062f\u0645\u061f\n- \u062a\u0627\u0632\u0647 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u0645. \u0686\u0637\u0648\u0631 \u0645\u0633\u0627\u0641\u0631\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0686\u0637\u0648\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632 \u06f5 \u0633\u062a\u0627\u0631\u0647 \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0647 \u062e\u062f\u0645\u0627\u062a\u06cc \u062f\u0627\u0631\u0647\u061f\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0642\u062f\u0631\u0647\u061f"
                 : "- \u0645\u0647\u0645\u0627\u0646 \u0646\u0638\u0631 \u06af\u0630\u0627\u0634\u062a\u0647 \u00ab\u0633\u0631\u0648\u06cc\u0633 \u0628\u0647\u062f\u0627\u0634\u062a\u06cc \u0634\u0633\u062a\u0647 \u0648 \u0636\u062f\u0639\u0641\u0648\u0646\u06cc \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\u00bb \u062d\u0627\u0644\u0627 \u0645\u0646 \u0686\u0637\u0648\u0631 \u067e\u0627\u0633\u062e \u0628\u062f\u0645\u061f\n- \u062a\u0627\u0632\u0647 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u0645. \u0686\u0637\u0648\u0631 \u0645\u0633\u0627\u0641\u0631\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0686\u0637\u0648\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632 \u06f5 \u0633\u062a\u0627\u0631\u0647 \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0647 \u062e\u062f\u0645\u0627\u062a\u06cc \u062f\u0627\u0631\u0647\u061f\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0642\u062f\u0631\u0647\u061f"}
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__b6WLs
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "tablet")
-                ? "\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0627 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u0645\u0648\u0641\u0642\u200c\u062a\u0631\u06cc \u0628\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f\u060c \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u062d\u0633\u0627\u0628\u06cc \u0631\u0634\u062f \u0628\u062f\u06cc. \u270c\ufe0f"
-                : "\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0627 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u0645\u0648\u0641\u0642\u200c\u062a\u0631\u06cc \u0628\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f\u060c \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u062d\u0633\u0627\u0628\u06cc \u0631\u0634\u062f \u0628\u062f\u06cc. \u270c\ufe0f"}
+            <div className={classNames(projectcss.all, sty.freeBox__oLz4E)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__b6WLs
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "tablet")
+                  ? "\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0627 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u0645\u0648\u0641\u0642\u200c\u062a\u0631\u06cc \u0628\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f\u060c \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u062d\u0633\u0627\u0628\u06cc \u0631\u0634\u062f \u0628\u062f\u06cc. \u270c\ufe0f"
+                  : "\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0627 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u0645\u0648\u0641\u0642\u200c\u062a\u0631\u06cc \u0628\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f\u060c \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u062d\u0633\u0627\u0628\u06cc \u0631\u0634\u062f \u0628\u062f\u06cc. \u270c\ufe0f"}
+              </div>
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__slB8)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"16%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/group672Png.png",
+                    fullWidth: 252,
+                    fullHeight: 194,
+                    aspectRatio: undefined
+                  }}
+                />
+              ) : null}
             </div>
           </div>
           <div
@@ -381,7 +425,6 @@ const PlasmicDescendants = {
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "introCalendarLeft",
-    "img",
     "ai",
     "introCalendarLeft2",
     "html",
@@ -396,23 +439,20 @@ const PlasmicDescendants = {
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "introCalendarLeft",
-    "img",
     "ai"
   ],
   intro1st: [
     "intro1st",
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
-    "introCalendarLeft",
-    "img"
+    "introCalendarLeft"
   ],
   introTitle: [
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
   ],
   دربارهما: ["\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"],
-  introCalendarLeft: ["introCalendarLeft", "img"],
-  img: ["img"],
+  introCalendarLeft: ["introCalendarLeft"],
   ai: ["ai"],
   introCalendarLeft2: ["introCalendarLeft2"],
   html: ["html", "clarity", "favIcon"],
@@ -431,7 +471,6 @@ type NodeDefaultElementType = {
   introTitle: "div";
   دربارهما: "div";
   introCalendarLeft: "div";
-  img: typeof PlasmicImg__;
   ai: typeof Iframe;
   introCalendarLeft2: "div";
   html: "div";
@@ -509,7 +548,6 @@ export const Plasmicدستیارهوشمصنوعیرنتامون = Object.assign
       "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
     ),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
-    img: makeNodeComponent("img"),
     ai: makeNodeComponent("ai"),
     introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     html: makeNodeComponent("html"),

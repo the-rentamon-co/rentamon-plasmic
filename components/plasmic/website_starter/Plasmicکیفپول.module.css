@@ -623,9 +623,9 @@
   background: linear-gradient(
         58deg,
         #fcfcfc 0%,
-        #ecececb3 24%,
+        #ececec80 24%,
         #fcfcfc 54%,
-        #ecececb3 79%,
+        #ececec80 79%,
         #ffffff 98%
       )
       0% 0% / 100% 100% repeat,
@@ -658,9 +658,9 @@
     background: linear-gradient(
         51deg,
         #ffffff 0%,
-        #ececec99 25%,
+        #ececec75 25%,
         #fcfcfc 50%,
-        #ececec99 72%,
+        #ececec75 72%,
         #ffffff 97%
       )
       0% 0% / 100% 100% repeat;
@@ -965,26 +965,28 @@
   padding-bottom: 12px;
   margin-left: 10px;
   margin-right: 0px;
-  background: linear-gradient(0deg, #ffffff 0%, #f2f2f2 100%);
+  background: #ffffff;
   color: #444444;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   min-width: 0;
   border-radius: 30px;
   border: 2px solid #cfcfcf;
 }
 @media (max-width: 500px) {
   .text__m3UhN {
-    font-size: 15px;
+    font-size: 16px;
     width: 100%;
     height: auto;
     max-width: 100%;
     margin-right: 0px;
     margin-left: 4px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     font-weight: 500;
     text-align: center;
-    background: linear-gradient(0deg, #ffffff 0%, #f2f2f2 100%);
+    background: #ffffff;
     color: #444444;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
     min-width: 0;
     border-radius: 30px;
     border: 2px solid #cfcfcf;
@@ -992,10 +994,11 @@
 }
 @media (max-width: 350px) {
   .text__m3UhN {
-    font-size: 13px;
+    font-size: 15px;
     margin-left: 4px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
   }
 }
 .text__mLjd {
@@ -1010,8 +1013,9 @@
   margin-right: 0px;
   margin-left: 10px;
   padding-top: 12px;
-  background: linear-gradient(0deg, #ffffff 0%, #f2f2f2 100%);
+  background: #ffffff;
   color: #444444;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   min-width: 0;
   border-radius: 30px;
   border: 2px solid #cfcfcf;
@@ -1023,13 +1027,14 @@
     max-width: 100%;
     margin-right: 0px;
     margin-left: 4px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    font-size: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
     font-weight: 500;
     text-align: center;
-    background: linear-gradient(0deg, #ffffff 0%, #f2f2f2 100%);
+    background: #ffffff;
     color: #444444;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
     min-width: 0;
     border-radius: 30px;
     border: 2px solid #cfcfcf;
@@ -1037,18 +1042,19 @@
 }
 @media (max-width: 350px) {
   .text__mLjd {
-    font-size: 13px;
+    font-size: 15px;
     margin-left: 4px;
     width: 100%;
     height: auto;
     max-width: 100%;
     margin-right: 0px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-weight: 500;
     text-align: center;
-    background: linear-gradient(0deg, #ffffff 0%, #f2f2f2 100%);
+    background: #ffffff;
     color: #444444;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
     min-width: 0;
     border-radius: 30px;
     border: 2px solid #cfcfcf;
@@ -1066,8 +1072,9 @@
   padding-bottom: 12px;
   margin-right: 0px;
   margin-left: 0px;
-  background: linear-gradient(0deg, #ffffff 0%, #f2f2f2 100%);
+  background: #ffffff;
   color: #444444;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   min-width: 0;
   border-radius: 30px;
   border: 2px solid #cfcfcf;
@@ -1079,13 +1086,13 @@
     max-width: 100%;
     margin-right: 0px;
     margin-left: 0px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    font-size: 15px;
+    padding-bottom: 12px;
+    font-size: 16px;
     font-weight: 500;
     text-align: center;
-    background: linear-gradient(0deg, #ffffff 0%, #f2f2f2 100%);
+    background: #ffffff;
     color: #444444;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
     min-width: 0;
     border-radius: 30px;
     border: 2px solid #cfcfcf;
@@ -1093,18 +1100,19 @@
 }
 @media (max-width: 350px) {
   .text__yqQfD {
-    font-size: 13px;
+    font-size: 15px;
     width: 100%;
     height: auto;
     max-width: 100%;
     margin-right: 0px;
     margin-left: 0px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-weight: 500;
     text-align: center;
-    background: linear-gradient(0deg, #ffffff 0%, #f2f2f2 100%);
+    background: #ffffff;
     color: #444444;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
     min-width: 0;
     border-radius: 30px;
     border: 2px solid #cfcfcf;
