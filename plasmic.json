@@ -1383,6 +1383,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/analytics"
+        },
+        {
+          "id": "zPDZCwtGoWsV",
+          "name": "Chat",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicChat.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/chat.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicChat.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/chat"
         }
       ],
       "icons": [
@@ -4014,7 +4028,8 @@
           "componentImportPath": "@plasmicpkgs/react-chartjs-2"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

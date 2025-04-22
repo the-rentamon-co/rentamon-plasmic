@@ -1580,19 +1580,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             })()}
           />
 
-          {(() => {
-            try {
-              return $state.aiShow;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
+          {false ? (
             <div
               className={classNames(
                 projectcss.all,
@@ -1673,64 +1661,70 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-          <div
-            className={classNames(projectcss.all, sty.freeBox__hlXr, "fix-ai")}
-          >
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__okyVc)}
-              displayHeight={"auto"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"60px"}
-              loading={"lazy"}
-              onClick={async event => {
-                const $steps = {};
+          {false ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__hlXr,
+                "fix-ai"
+              )}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__okyVc)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"60px"}
+                loading={"lazy"}
+                onClick={async event => {
+                  const $steps = {};
 
-                $steps["updateAiShow"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["aiShow"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+                  $steps["updateAiShow"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["aiShow"]
+                          },
+                          operation: 4
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateAiShow"] != null &&
-                  typeof $steps["updateAiShow"] === "object" &&
-                  typeof $steps["updateAiShow"].then === "function"
-                ) {
-                  $steps["updateAiShow"] = await $steps["updateAiShow"];
-                }
-              }}
-              src={{
-                src: "/plasmic/website_starter/images/image96.svg",
-                fullWidth: 145,
-                fullHeight: 89,
-                aspectRatio: 1.629213
-              }}
-            />
-          </div>
+                          const oldValue = $stateGet(objRoot, variablePath);
+                          $stateSet(objRoot, variablePath, !oldValue);
+                          return !oldValue;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAiShow"] != null &&
+                    typeof $steps["updateAiShow"] === "object" &&
+                    typeof $steps["updateAiShow"].then === "function"
+                  ) {
+                    $steps["updateAiShow"] = await $steps["updateAiShow"];
+                  }
+                }}
+                src={{
+                  src: "/plasmic/website_starter/images/image96.svg",
+                  fullWidth: 145,
+                  fullHeight: 89,
+                  aspectRatio: 1.629213
+                }}
+              />
+            </div>
+          ) : null}
           <div
             className={classNames(projectcss.all, sty.freeBox__eJqks)}
             onClick={async event => {
