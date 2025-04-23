@@ -146,6 +146,7 @@ export type PlasmicHomepage__OverridesType = {
   _2?: Flex__<typeof AntdAccordionItem>;
   _1?: Flex__<"div">;
   _4?: Flex__<typeof AntdAccordionItem>;
+  _7?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
   link?: Flex__<"a"> & Partial<LinkProps>;
@@ -401,6 +402,21 @@ function PlasmicHomepage__RenderFunc(props: {
                       {
                         "\u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0631\u0627\u06cc\u06af\u0627\u0646"
                       }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__t3HG4
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                        : "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
                     </div>
                   </div>
                 </div>
@@ -927,6 +943,21 @@ function PlasmicHomepage__RenderFunc(props: {
                 }
               </div>
             </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__fqgQm
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                : hasVariant(globalVariants, "screen", "tablet")
+                ? "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                : "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
+            </div>
           </div>
           <div
             data-plasmic-name={"qA"}
@@ -1021,6 +1052,38 @@ function PlasmicHomepage__RenderFunc(props: {
                         >
                           {
                             "\u06a9\u0627\u0631\u0645\u0632\u062f \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u06f1.\u06f5\u066a \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0647\u0633\u062a. \u0645\u062b\u0644\u0627 \u0627\u06af\u0647 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u0647 \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u06cc \u0628\u06af\u06cc\u0631\u06cc\u060c \u06f1.\u06f5\u066a \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u0627\u0632 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647:\n\u06f3\u06f0,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 = \u06f1.\u06f5\u066a \u00d7 \u06f2,\u06f0\u06f0\u06f0,\u06f0\u06f0\u06f0\n\r\n\r"
+                          }
+                        </div>
+                      </AntdAccordionItem>
+                      <AntdAccordionItem
+                        data-plasmic-name={"_7"}
+                        data-plasmic-override={overrides._7}
+                        className={classNames("__wab_instance", sty._7)}
+                        id={"12"}
+                        label2={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__c8Vwv
+                            )}
+                          >
+                            {
+                              "\u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u0645\u061f"
+                            }
+                          </div>
+                        }
+                        showArrow={true}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__rv9
+                          )}
+                        >
+                          {
+                            "\u0628\u0644\u0647. \u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0648 \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc\u060c \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0634\u0645\u0627 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u06cc\u200c\u0634\u0647.\r"
                           }
                         </div>
                       </AntdAccordionItem>
@@ -1370,6 +1433,7 @@ const PlasmicDescendants = {
     "_2",
     "_1",
     "_4",
+    "_7",
     "_5",
     "_6",
     "link",
@@ -1533,6 +1597,7 @@ const PlasmicDescendants = {
     "_2",
     "_1",
     "_4",
+    "_7",
     "_5",
     "_6",
     "link",
@@ -1540,10 +1605,11 @@ const PlasmicDescendants = {
     "clarity2",
     "goftino"
   ],
-  accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6", "link"],
+  accordionMain: ["accordionMain", "_2", "_1", "_4", "_7", "_5", "_6", "link"],
   _2: ["_2", "_1"],
   _1: ["_1"],
   _4: ["_4"],
+  _7: ["_7"],
   _5: ["_5"],
   _6: ["_6"],
   link: ["link"],
@@ -1609,6 +1675,7 @@ type NodeDefaultElementType = {
   _2: typeof AntdAccordionItem;
   _1: "div";
   _4: typeof AntdAccordionItem;
+  _7: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
   link: "a";
@@ -1730,6 +1797,7 @@ export const PlasmicHomepage = Object.assign(
     _2: makeNodeComponent("_2"),
     _1: makeNodeComponent("_1"),
     _4: makeNodeComponent("_4"),
+    _7: makeNodeComponent("_7"),
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
     link: makeNodeComponent("link"),
