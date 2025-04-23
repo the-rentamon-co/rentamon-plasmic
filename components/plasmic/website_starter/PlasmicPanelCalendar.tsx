@@ -368,7 +368,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{PlasmicPanelCalendar.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -379,6 +379,35 @@ function PlasmicPanelCalendar__RenderFunc(props: {
           key="twitter:title"
           name="twitter:title"
           content={PlasmicPanelCalendar.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicPanelCalendar.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicPanelCalendar.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicPanelCalendar.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicPanelCalendar.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicPanelCalendar.pageMetadata.ogImageSrc}
+        />
+        <link
+          rel="canonical"
+          href={PlasmicPanelCalendar.pageMetadata.canonical}
         />
       </Head>
 
@@ -2422,12 +2451,28 @@ export const PlasmicPanelCalendar = Object.assign(
     internalVariantProps: PlasmicPanelCalendar__VariantProps,
     internalArgProps: PlasmicPanelCalendar__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      ogTitle:
+        "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
+      ogDescription:
+        "\u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0648\u0636\u0639\u06cc\u062a \u0631\u0632\u0631\u0648 \u0648 \u0642\u06cc\u0645\u062a\u200c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0627 \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0627\u0632 \u06cc\u06a9\u062c\u0627 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06a9\u0646\u06cc\u062f.",
+      ogUrl: "https://app.rentamon.com/panel/",
+      ogType: "website",
+      twitterTitle:
+        "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648 \u0648 \u0642\u06cc\u0645\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0686\u0646\u062f \u0633\u0627\u06cc\u062a \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645",
+      twitterDescription:
+        "\u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0628\u0631\u0627\u06cc \u0647\u0645\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0634\u0628\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u06cc\u0634\u062a\u0631."
+    },
+
     // Page metadata
     pageMetadata: {
-      title: "تقویم یکپارچه اقامتگاه",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+      description:
+        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/ee3ed0fb1a4e40e832c91ea8bd51e58b.jpg",
+      canonical: "https://app.rentamon.com/panel"
     }
   }
 );

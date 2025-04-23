@@ -154,6 +154,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 26px;
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
   border-radius: 30px;
@@ -3209,6 +3210,72 @@
     padding-right: 4px;
   }
 }
+.freeBox__y9Qpf {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(
+      45deg,
+      var(--token-ixQAh6dzIToM) 0%,
+      #85a1f1 25%,
+      var(--token-ixQAh6dzIToM) 46%,
+      #89a5f2 83%,
+      var(--token-ixQAh6dzIToM) 96%
+    )
+    0% 0% / 100% 100% repeat;
+  min-width: 0;
+  border-radius: 50px;
+  padding: 0px;
+}
+@media (max-width: 500px) {
+  .freeBox__y9Qpf {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 100%;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
+    border-radius: 0px;
+  }
+}
+.text__iazOe {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-top: 12px;
+  font-size: 17px;
+  padding-right: 0px;
+  line-height: 2;
+  font-family: "Estedad";
+  font-weight: 600;
+  font-style: normal;
+  color: #fcfcfc;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+  cursor: pointer;
+  padding-bottom: 12px;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__iazOe {
+    padding-right: 0px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 350px) {
+  .text__iazOe {
+    padding-right: 4px;
+  }
+}
 .freeBox__mims1 {
   display: flex;
   flex-direction: column;
@@ -4135,10 +4202,11 @@
   font-size: 18px;
   font-weight: 600;
   color: #fcfcfc;
-  background: #8165d6;
+  background: linear-gradient(43deg, var(--token-8nedppYkGVaH) 0%, #9276e5 100%)
+    0% 0% / cover;
   cursor: pointer;
-  border-radius: 30px;
-  padding: 12px 40px;
+  border-radius: 50px;
+  padding: 18px 40px;
   margin: 0px;
   border: 2px solid #8165d6;
 }

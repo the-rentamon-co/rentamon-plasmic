@@ -1689,7 +1689,7 @@ ${$state.textInput.value}
                                 "screen",
                                 "smallMobile"
                               )
-                                ? "25px"
+                                ? "30px"
                                 : "30px"
                             }
                             loading={"lazy"}
@@ -1725,7 +1725,7 @@ ${$state.textInput.value}
                             displayMaxWidth={"100%"}
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
-                            displayWidth={"35px"}
+                            displayWidth={"40px"}
                             loading={"lazy"}
                             src={{
                               src: "/plasmic/website_starter/images/image103.svg",
@@ -1735,6 +1735,13 @@ ${$state.textInput.value}
                             }}
                           />
                         ) : null}
+                      </Stack__>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__o47Ei
+                        )}
+                      >
                         <div
                           className={classNames(
                             projectcss.all,
@@ -1762,7 +1769,7 @@ ${$state.textInput.value}
                             })()}
                           </React.Fragment>
                         </div>
-                      </Stack__>
+                      </div>
                     </div>
                   );
                 })}

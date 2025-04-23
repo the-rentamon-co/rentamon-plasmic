@@ -2133,6 +2133,19 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               </Stack__>
             </div>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__y9Qpf)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__iazOe
+              )}
+            >
+              {
+                "\u062a\u0627\u0632\u0647 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0622\u0634\u0646\u0627 \u0634\u062f\u06cc\u061f\n\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f\u060c \u0628\u0631\u0627\u06cc \u06f5 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"
+              }
+            </div>
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__mims1)}>
             <div className={classNames(projectcss.all, sty.freeBox__aBc11)}>
               <div
