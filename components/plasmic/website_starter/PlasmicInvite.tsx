@@ -313,8 +313,10 @@ function PlasmicInvite__RenderFunc(props: {
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "70px"
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "90px"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "80px"
                       : "100px"
                   }
                   loading={"lazy"}
@@ -435,7 +437,13 @@ function PlasmicInvite__RenderFunc(props: {
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__jEmLx)}
-                    displayHeight={"37px"}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "26px"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "30px"
+                        : "37px"
+                    }
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
@@ -489,7 +497,7 @@ function PlasmicInvite__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0628\u0647 \u062c\u0645\u0639 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0631 \u0645\u0633\u06cc\u0631 \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634\u0648\u0646 \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u0650 \u06a9\u0634\u0648\u0631 \u0632\u06cc\u0628\u0627\u0645\u0648\u0646 \u0647\u0633\u062a\u0646 :)"
+                    "\u0628\u0647 \u062c\u0645\u0639 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0631 \u062a\u0644\u0627\u0634 \u0628\u0631\u0627\u06cc \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634\u0648\u0646 \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u0650 \u06a9\u0634\u0648\u0631 \u0632\u06cc\u0628\u0627\u0645\u0648\u0646 \u0647\u0633\u062a\u0646 :)"
                   }
                 </div>
               </div>

@@ -112,9 +112,9 @@ export type PlasmicReferral__OverridesType = {
   ctaButton2?: Flex__<"div">;
   svg?: Flex__<"svg">;
   rules?: Flex__<"div">;
+  apiRequest2?: Flex__<typeof ApiRequest>;
   smsImage?: Flex__<"div">;
   tips?: Flex__<"div">;
-  apiRequest2?: Flex__<typeof ApiRequest>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -1293,63 +1293,8 @@ ${$state.textInput.value}
               )}
             >
               {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "1\ufe0f\u20e3 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0641\u0631\u0633\u062a\r\n2\ufe0f\u20e3 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u200c\u0627\u0634 \u0645\u062a\u0635\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647"
+                ? "1\ufe0f\u20e3 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0641\u0631\u0633\u062a\r\n2\ufe0f\u20e3 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u200c\u0627\u0634 \u0645\u062a\u0635\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647\n5\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647"
                 : "1\ufe0f\u20e3 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0641\u0631\u0633\u062a\r\n2\ufe0f\u20e3 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u200c\u0627\u0634 \u0645\u062a\u0635\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647\n5\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647"}
-            </div>
-          </div>
-          <div
-            data-plasmic-name={"smsImage"}
-            data-plasmic-override={overrides.smsImage}
-            className={classNames(projectcss.all, sty.smsImage)}
-          >
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__uxHdh)}
-              displayHeight={"auto"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={
-                hasVariant(globalVariants, "screen", "mobile") ? "100%" : "80%"
-              }
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"100%"}
-              loading={"lazy"}
-              src={{
-                src: "/plasmic/website_starter/images/image81.png",
-                fullWidth: 800,
-                fullHeight: 450,
-                aspectRatio: undefined
-              }}
-            />
-          </div>
-          <div
-            data-plasmic-name={"tips"}
-            data-plasmic-override={overrides.tips}
-            className={classNames(projectcss.all, sty.tips)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___8XjgW
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\u0628\u0631\u0627\u06cc \u062c\u0627\u06cc\u0632\u0647\u200c\u06cc \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0648 \u062d\u062a\u06cc \u0628\u06cc\u0634\u062a\u0631"
-                : "\u0628\u0631\u0627\u06cc \u062c\u0627\u06cc\u0632\u0647\u200c\u06cc \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0648 \u062d\u062a\u06cc \u0628\u06cc\u0634\u062a\u0631"}
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__afnP3
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "- \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06a9\u0647 \u062d\u062a\u0645\u0627 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u0631\u0648 \u0628\u0634\u0646\u0627\u0633\u06cc. \u06a9\u0627\u0641\u06cc\u0647 \u0627\u0641\u0631\u0627\u062f \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a\u062a\u060c \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0646\n- \u0647\u0631 \u06cc\u06a9 \u062f\u0639\u0648\u062a \u0645\u0648\u0641\u0642\u060c \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u062f\u0627\u0631\u0647. \u067e\u0633 \u0647\u0631 \u0686\u0647 \u062f\u0639\u0648\u062a \u0628\u06cc\u0634\u062a\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631!\n- \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0631 \u0627\u0633\u062a\u0648\u0631\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u06cc\u060c \u0648 \u06cc\u0627 \u062f\u0631 \u06af\u0631\u0648\u0647\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0631\u0633\u0627\u0644 \u06a9\u0646\u06cc\n- \u0645\u062b\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062f\u0631 \u06cc\u06a9 \u067e\u06cc\u0627\u0645 \u06cc\u0627 \u0627\u0633\u062a\u0648\u0631\u06cc\u060c \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u0639\u0631\u0641\u06cc\u060c \u0648 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0627\u062e\u0644\u0634 \u0628\u0630\u0627\u0631\u06cc"
-                : hasVariant(globalVariants, "screen", "mobile")
-                ? "- \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06a9\u0647 \u062d\u062a\u0645\u0627 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u0631\u0648 \u0628\u0634\u0646\u0627\u0633\u06cc. \u06a9\u0627\u0641\u06cc\u0647 \u0627\u0641\u0631\u0627\u062f \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a\u062a\u060c \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0646\n- \u0647\u0631 \u06cc\u06a9 \u062f\u0639\u0648\u062a \u0645\u0648\u0641\u0642\u060c \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u062f\u0627\u0631\u0647. \u067e\u0633 \u0647\u0631 \u0686\u0647 \u062f\u0639\u0648\u062a \u0628\u06cc\u0634\u062a\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631!\n- \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0631 \u0627\u0633\u062a\u0648\u0631\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u06cc\u060c \u0648 \u06cc\u0627 \u062f\u0631 \u06af\u0631\u0648\u0647\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0631\u0633\u0627\u0644 \u06a9\u0646\u06cc\n- \u0645\u062b\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062f\u0631 \u06cc\u06a9 \u067e\u06cc\u0627\u0645 \u06cc\u0627 \u0627\u0633\u062a\u0648\u0631\u06cc\u060c \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u0639\u0631\u0641\u06cc\u060c \u0648 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0627\u062e\u0644\u0634 \u0628\u0630\u0627\u0631\u06cc"
-                : "- \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06a9\u0647 \u062d\u062a\u0645\u0627 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u0631\u0648 \u0628\u0634\u0646\u0627\u0633\u06cc. \u06a9\u0627\u0641\u06cc\u0647 \u0627\u0641\u0631\u0627\u062f \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a\u062a\u060c \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0646\n- \u0647\u0631 \u06cc\u06a9 \u062f\u0639\u0648\u062a \u0645\u0648\u0641\u0642\u060c \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u062f\u0627\u0631\u0647. \u067e\u0633 \u0647\u0631 \u0686\u0647 \u062f\u0639\u0648\u062a \u0628\u06cc\u0634\u062a\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631!\n- \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0631 \u0627\u0633\u062a\u0648\u0631\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u06cc\u060c \u0648 \u06cc\u0627 \u062f\u0631 \u06af\u0631\u0648\u0647\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0631\u0633\u0627\u0644 \u06a9\u0646\u06cc\n- \u0645\u062b\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062f\u0631 \u06cc\u06a9 \u067e\u06cc\u0627\u0645 \u06cc\u0627 \u0627\u0633\u062a\u0648\u0631\u06cc\u060c \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u0639\u0631\u0641\u06cc\u060c \u0648 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0627\u062e\u0644\u0634 \u0628\u0630\u0627\u0631\u06cc\n"}
             </div>
           </div>
           <Stack__
@@ -1363,164 +1308,224 @@ ${$state.textInput.value}
               className={classNames(projectcss.all, sty.freeBox__gdp1I)}
             >
               <div className={classNames(projectcss.all, sty.freeBox__fDkXb)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__oysSn
-                  )}
-                >
-                  {"\u062f\u0639\u0648\u062a\u200c\u0647\u0627"}
+                <div className={classNames(projectcss.all, sty.freeBox__z9E3B)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__oysSn
+                    )}
+                  >
+                    {"\u062f\u0639\u0648\u062a\u200c\u0647\u0627"}
+                  </div>
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qqO4L
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox___9OyKc)}
                 >
-                  {"\u0645\u0648\u0641\u0642"}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__qqO4L
+                    )}
+                  >
+                    {"\u0645\u0648\u0641\u0642"}
+                  </div>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kilUs
-                  )}
-                >
-                  {
-                    "\u0647\u062f\u06cc\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc"
-                  }
+                <div className={classNames(projectcss.all, sty.freeBox__sCzW4)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kilUs
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0647\u062f\u06cc\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc "
+                        }
+                      </React.Fragment>
+                      {
+                        <sup
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.sup___6KQyx
+                          )}
+                        >
+                          {"(\u062a\u0648\u0645\u0627\u0646)"}
+                        </sup>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  </div>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qs8ZC
-                  )}
-                >
-                  {"\u062f\u0631 \u0627\u0646\u062a\u0638\u0627\u0631"}
+                <div className={classNames(projectcss.all, sty.freeBox__k4YbL)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__qs8ZC
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {"\u062f\u0631 \u0627\u0646\u062a\u0638\u0627\u0631"}
+                      </React.Fragment>
+                      {
+                        <sup
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.sup__pXuHw
+                          )}
+                        >
+                          {"(\u062a\u0648\u0645\u0627\u0646)"}
+                        </sup>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  </div>
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__ztFk)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__susvn
-                  )}
+                <div className={classNames(projectcss.all, sty.freeBox__tX50X)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__susvn
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            let all =
+                              $state.apiRequest2.data[1].statuses.paidCount +
+                              $state.apiRequest2.data[1].statuses.pendingCount;
+                            return all
+                              .toString()
+                              .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__wYvn)}
                 >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return (() => {
-                          let all =
-                            $state.apiRequest2.data[1].statuses.paidCount +
-                            $state.apiRequest2.data[1].statuses.pendingCount;
-                          return all
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bmRh
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.apiRequest2.data[1].statuses.paidCount
                             .toString()
                             .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bmRh
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $state.apiRequest2.data[1].statuses.paidCount
-                          .toString()
-                          .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__sVmT9
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return (() => {
-                          {
-                            {
-                              return (
-                                $state.apiRequest2.data[1].statuses.paidCount *
-                                200000
-                              ).toLocaleString("fa-IR");
-                            }
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
                           }
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yods0
-                  )}
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__znaIq)}
                 >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return (() => {
-                          {
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__sVmT9
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
                             {
-                              return (
-                                $state.apiRequest2.data[1].statuses
-                                  .pendingCount * 200000
-                              ).toLocaleString("fa-IR");
+                              {
+                                return (
+                                  $state.apiRequest2.data[1].statuses
+                                    .paidCount * 200000
+                                ).toLocaleString("fa-IR");
+                              }
                             }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
                           }
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </Stack__>
+                <div className={classNames(projectcss.all, sty.freeBox__eQaNs)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yods0
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            {
+                              {
+                                return (
+                                  $state.apiRequest2.data[1].statuses
+                                    .pendingCount * 200000
+                                ).toLocaleString("fa-IR");
+                              }
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
                 </div>
               </div>
             </Stack__>
@@ -1765,6 +1770,61 @@ ${$state.textInput.value}
             </div>
           </Stack__>
           <div
+            data-plasmic-name={"smsImage"}
+            data-plasmic-override={overrides.smsImage}
+            className={classNames(projectcss.all, sty.smsImage)}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__uxHdh)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={
+                hasVariant(globalVariants, "screen", "mobile") ? "100%" : "80%"
+              }
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"100%"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image81.png",
+                fullWidth: 800,
+                fullHeight: 450,
+                aspectRatio: undefined
+              }}
+            />
+          </div>
+          <div
+            data-plasmic-name={"tips"}
+            data-plasmic-override={overrides.tips}
+            className={classNames(projectcss.all, sty.tips)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___8XjgW
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u0628\u0631\u0627\u06cc \u062c\u0627\u06cc\u0632\u0647\u200c\u06cc \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0648 \u062d\u062a\u06cc \u0628\u06cc\u0634\u062a\u0631"
+                : "\u0628\u0631\u0627\u06cc \u062c\u0627\u06cc\u0632\u0647\u200c\u06cc \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0648 \u062d\u062a\u06cc \u0628\u06cc\u0634\u062a\u0631"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__afnP3
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "- \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06a9\u0647 \u062d\u062a\u0645\u0627 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u0631\u0648 \u0628\u0634\u0646\u0627\u0633\u06cc. \u06a9\u0627\u0641\u06cc\u0647 \u0627\u0641\u0631\u0627\u062f \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a\u062a\u060c \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0646\n- \u0647\u0631 \u06cc\u06a9 \u062f\u0639\u0648\u062a \u0645\u0648\u0641\u0642\u060c \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u062f\u0627\u0631\u0647. \u067e\u0633 \u0647\u0631 \u0686\u0647 \u062f\u0639\u0648\u062a \u0628\u06cc\u0634\u062a\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631!\n- \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0631 \u0627\u0633\u062a\u0648\u0631\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u06cc\u060c \u0648 \u06cc\u0627 \u062f\u0631 \u06af\u0631\u0648\u0647\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0631\u0633\u0627\u0644 \u06a9\u0646\u06cc\n- \u0645\u062b\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062f\u0631 \u06cc\u06a9 \u067e\u06cc\u0627\u0645 \u06cc\u0627 \u0627\u0633\u062a\u0648\u0631\u06cc\u060c \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u0639\u0631\u0641\u06cc\u060c \u0648 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0627\u062e\u0644\u0634 \u0628\u0630\u0627\u0631\u06cc"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "- \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06a9\u0647 \u062d\u062a\u0645\u0627 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u0631\u0648 \u0628\u0634\u0646\u0627\u0633\u06cc. \u06a9\u0627\u0641\u06cc\u0647 \u0627\u0641\u0631\u0627\u062f \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a\u062a\u060c \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0646\n- \u0647\u0631 \u06cc\u06a9 \u062f\u0639\u0648\u062a \u0645\u0648\u0641\u0642\u060c \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u062f\u0627\u0631\u0647. \u067e\u0633 \u0647\u0631 \u0686\u0647 \u062f\u0639\u0648\u062a \u0628\u06cc\u0634\u062a\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631!\n- \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0631 \u0627\u0633\u062a\u0648\u0631\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u06cc\u060c \u0648 \u06cc\u0627 \u062f\u0631 \u06af\u0631\u0648\u0647\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0631\u0633\u0627\u0644 \u06a9\u0646\u06cc\n- \u0645\u062b\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062f\u0631 \u06cc\u06a9 \u067e\u06cc\u0627\u0645 \u06cc\u0627 \u0627\u0633\u062a\u0648\u0631\u06cc\u060c \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u0639\u0631\u0641\u06cc\u060c \u0648 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0627\u062e\u0644\u0634 \u0628\u0630\u0627\u0631\u06cc"
+                : "- \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06a9\u0647 \u062d\u062a\u0645\u0627 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u0631\u0648 \u0628\u0634\u0646\u0627\u0633\u06cc. \u06a9\u0627\u0641\u06cc\u0647 \u0627\u0641\u0631\u0627\u062f \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a\u062a\u060c \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0646\n- \u0647\u0631 \u06cc\u06a9 \u062f\u0639\u0648\u062a \u0645\u0648\u0641\u0642\u060c \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u062f\u0627\u0631\u0647. \u067e\u0633 \u0647\u0631 \u0686\u0647 \u062f\u0639\u0648\u062a \u0628\u06cc\u0634\u062a\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631!\n- \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0631 \u0627\u0633\u062a\u0648\u0631\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u06cc\u060c \u0648 \u06cc\u0627 \u062f\u0631 \u06af\u0631\u0648\u0647\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0631\u0633\u0627\u0644 \u06a9\u0646\u06cc\n- \u0645\u062b\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062f\u0631 \u06cc\u06a9 \u067e\u06cc\u0627\u0645 \u06cc\u0627 \u0627\u0633\u062a\u0648\u0631\u06cc\u060c \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u0639\u0631\u0641\u06cc\u060c \u0648 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0627\u062e\u0644\u0634 \u0628\u0630\u0627\u0631\u06cc\n"}
+            </div>
+          </div>
+          <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
             className={classNames(projectcss.all, sty.html)}
@@ -1933,9 +1993,9 @@ const PlasmicDescendants = {
     "ctaButton2",
     "svg",
     "rules",
+    "apiRequest2",
     "smsImage",
     "tips",
-    "apiRequest2",
     "html",
     "clarity2",
     "goftino",
@@ -2007,9 +2067,9 @@ const PlasmicDescendants = {
   ctaButton2: ["ctaButton2", "svg"],
   svg: ["svg"],
   rules: ["rules"],
+  apiRequest2: ["apiRequest2"],
   smsImage: ["smsImage"],
   tips: ["tips"],
-  apiRequest2: ["apiRequest2"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -2040,9 +2100,9 @@ type NodeDefaultElementType = {
   ctaButton2: "div";
   svg: "svg";
   rules: "div";
+  apiRequest2: typeof ApiRequest;
   smsImage: "div";
   tips: "div";
-  apiRequest2: typeof ApiRequest;
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -2129,9 +2189,9 @@ export const PlasmicReferral = Object.assign(
     ctaButton2: makeNodeComponent("ctaButton2"),
     svg: makeNodeComponent("svg"),
     rules: makeNodeComponent("rules"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
     smsImage: makeNodeComponent("smsImage"),
     tips: makeNodeComponent("tips"),
-    apiRequest2: makeNodeComponent("apiRequest2"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
