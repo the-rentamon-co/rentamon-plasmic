@@ -1397,6 +1397,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/chat"
+        },
+        {
+          "id": "RM37OKgPSvTt",
+          "name": "SideBar22",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSideBar22.tsx",
+          "importSpec": {
+            "modulePath": "SideBar22.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSideBar22.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

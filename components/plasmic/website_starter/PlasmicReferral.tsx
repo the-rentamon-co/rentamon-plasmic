@@ -1743,7 +1743,7 @@ ${$state.textInput.value}
                                 return $state.apiRequest2.data[0].referrers[
                                   currentIndex
                                 ].status == "pending"
-                                  ? "در انتظار تایید حساب"
+                                  ? "در انتظار فعالسازی"
                                   : "دعوت موفق";
                               } catch (e) {
                                 if (
