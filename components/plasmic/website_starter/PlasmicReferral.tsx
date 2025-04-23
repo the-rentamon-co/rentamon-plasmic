@@ -114,6 +114,7 @@ export type PlasmicReferral__OverridesType = {
   rules?: Flex__<"div">;
   smsImage?: Flex__<"div">;
   tips?: Flex__<"div">;
+  apiRequest2?: Flex__<typeof ApiRequest>;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
@@ -226,6 +227,30 @@ function PlasmicReferral__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "apiRequest2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
       }
     ],
     [$props, $ctx, $refs]
@@ -1327,6 +1352,422 @@ ${$state.textInput.value}
                 : "- \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06a9\u0647 \u062d\u062a\u0645\u0627 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u0631\u0648 \u0628\u0634\u0646\u0627\u0633\u06cc. \u06a9\u0627\u0641\u06cc\u0647 \u0627\u0641\u0631\u0627\u062f \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a\u062a\u060c \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0646\n- \u0647\u0631 \u06cc\u06a9 \u062f\u0639\u0648\u062a \u0645\u0648\u0641\u0642\u060c \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u062f\u0627\u0631\u0647. \u067e\u0633 \u0647\u0631 \u0686\u0647 \u062f\u0639\u0648\u062a \u0628\u06cc\u0634\u062a\u0631\u060c \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631!\n- \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0631 \u0627\u0633\u062a\u0648\u0631\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u06cc\u060c \u0648 \u06cc\u0627 \u062f\u0631 \u06af\u0631\u0648\u0647\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0631\u0633\u0627\u0644 \u06a9\u0646\u06cc\n- \u0645\u062b\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062f\u0631 \u06cc\u06a9 \u067e\u06cc\u0627\u0645 \u06cc\u0627 \u0627\u0633\u062a\u0648\u0631\u06cc\u060c \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u0639\u0631\u0641\u06cc\u060c \u0648 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u062e\u0648\u062f\u062a \u0631\u0648 \u062f\u0627\u062e\u0644\u0634 \u0628\u0630\u0627\u0631\u06cc\n"}
             </div>
           </div>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__zy5QH)}
+          >
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__gdp1I)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__fDkXb)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oysSn
+                  )}
+                >
+                  {"\u062f\u0639\u0648\u062a\u200c\u0647\u0627"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qqO4L
+                  )}
+                >
+                  {"\u0645\u0648\u0641\u0642"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kilUs
+                  )}
+                >
+                  {
+                    "\u0647\u062f\u06cc\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qs8ZC
+                  )}
+                >
+                  {"\u062f\u0631 \u0627\u0646\u062a\u0638\u0627\u0631"}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__ztFk)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__susvn
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          let all =
+                            $state.apiRequest2.data[1].statuses.paidCount +
+                            $state.apiRequest2.data[1].statuses.pendingCount;
+                          return all
+                            .toString()
+                            .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bmRh
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.apiRequest2.data[1].statuses.paidCount
+                          .toString()
+                          .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__sVmT9
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          {
+                            {
+                              return (
+                                (
+                                  $state.apiRequest2.data[1].statuses
+                                    .paidCount * 200000
+                                ).toLocaleString("fa-IR") + " تومان"
+                              );
+                            }
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yods0
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          {
+                            {
+                              return (
+                                (
+                                  $state.apiRequest2.data[1].statuses
+                                    .paidCount * 200000
+                                ).toLocaleString("fa-IR") + " تومان"
+                              );
+                            }
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              </div>
+            </Stack__>
+            <div className={classNames(projectcss.all, sty.freeBox__leVaB)}>
+              <div className={classNames(projectcss.all, sty.freeBox__nIhuu)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__m5MWl
+                  )}
+                >
+                  {
+                    "\u062c\u0632\u0626\u06cc\u0627\u062a \u062f\u0639\u0648\u062a \u0634\u0648\u0646\u062f\u0647\u0627"
+                  }
+                </div>
+              </div>
+              <ApiRequest
+                data-plasmic-name={"apiRequest2"}
+                data-plasmic-override={overrides.apiRequest2}
+                className={classNames("__wab_instance", sty.apiRequest2)}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dmLq6
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__l4WmW
+                    )}
+                  >
+                    {
+                      "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ...."
+                    }
+                  </div>
+                }
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest2",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest2",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest2",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequest2"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/get_referral_data"}
+              >
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $state.apiRequest2.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__ylm9Q)}
+                      key={currentIndex}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__qtgvs
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__dvgf4
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $state.apiRequest2.data[0].referrers[
+                                  currentIndex
+                                ].username
+                                  .toString()
+                                  .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <Stack__
+                        as={"div"}
+                        hasGap={true}
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___30Pc
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return (
+                              $state.apiRequest2.data[0].referrers[currentIndex]
+                                .status != "pending"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__qgUbn)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "25px"
+                                : "30px"
+                            }
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image102.svg",
+                              fullWidth: 23,
+                              fullHeight: 23,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (
+                              $state.apiRequest2.data[0].referrers[currentIndex]
+                                .status == "pending"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__lkOxy)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"35px"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image103.svg",
+                              fullWidth: 33,
+                              fullHeight: 33,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___7UZC
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $state.apiRequest2.data[0].referrers[
+                                  currentIndex
+                                ].status == "pending"
+                                  ? "در انتظار اتصال سایت‌ها"
+                                  : "دعوت موفق";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </Stack__>
+                    </div>
+                  );
+                })}
+              </ApiRequest>
+            </div>
+          </Stack__>
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
@@ -1498,6 +1939,7 @@ const PlasmicDescendants = {
     "rules",
     "smsImage",
     "tips",
+    "apiRequest2",
     "html",
     "clarity2",
     "goftino",
@@ -1571,6 +2013,7 @@ const PlasmicDescendants = {
   rules: ["rules"],
   smsImage: ["smsImage"],
   tips: ["tips"],
+  apiRequest2: ["apiRequest2"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
@@ -1603,6 +2046,7 @@ type NodeDefaultElementType = {
   rules: "div";
   smsImage: "div";
   tips: "div";
+  apiRequest2: typeof ApiRequest;
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
@@ -1691,6 +2135,7 @@ export const PlasmicReferral = Object.assign(
     rules: makeNodeComponent("rules"),
     smsImage: makeNodeComponent("smsImage"),
     tips: makeNodeComponent("tips"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),

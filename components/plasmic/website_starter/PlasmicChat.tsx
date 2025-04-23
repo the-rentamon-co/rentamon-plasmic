@@ -196,7 +196,14 @@ function PlasmicChat__RenderFunc(props: {
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__yCKe)}>
+          <div
+            className={classNames(
+              projectcss.all,
+              sty.freeBox__yCKe,
+              "chat-container "
+            )}
+            id={"chatBox"}
+          >
             {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
               (() => {
                 try {
@@ -247,147 +254,167 @@ function PlasmicChat__RenderFunc(props: {
                 </div>
               );
             })}
-            <TextInput
-              data-plasmic-name={"textInput"}
-              data-plasmic-override={overrides.textInput}
-              className={classNames("__wab_instance", sty.textInput)}
-              onChange={async (...eventArgs: any) => {
-                ((...eventArgs) => {
-                  generateStateOnChangeProp($state, ["textInput", "value"])(
-                    (e => e.target?.value).apply(null, eventArgs)
-                  );
-                }).apply(null, eventArgs);
-
-                if (
-                  eventArgs.length > 1 &&
-                  eventArgs[1] &&
-                  eventArgs[1]._plasmic_state_init_
-                ) {
-                  return;
-                }
-              }}
-              value={
-                generateStateValueProp($state, ["textInput", "value"]) ?? ""
-              }
-            />
-
-            <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateChat2"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["chat"]
-                        },
-                        operation: 0,
-                        value: (() => {
-                          let a = {
-                            chat: $state.textInput.value,
-                            from: "user"
-                          };
-                          $state.textInput.value = "";
-                          $state.chat = [...$state.chat, a];
-
-                          console.log($state.chat);
-                          return $state.chat;
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateChat2"] != null &&
-                  typeof $steps["updateChat2"] === "object" &&
-                  typeof $steps["updateChat2"].then === "function"
-                ) {
-                  $steps["updateChat2"] = await $steps["updateChat2"];
-                }
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://gateway.rentamon.com/webhook/generate_chat"
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
-                }
-
-                $steps["updateChat"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["chat"]
-                        },
-                        operation: 0,
-                        value: (() => {
-                          let a = $steps.invokeGlobalAction.data;
-                          $state.chat = [...$state.chat, a];
-
-                          console.log($state.chat);
-                          return $state.chat;
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateChat"] != null &&
-                  typeof $steps["updateChat"] === "object" &&
-                  typeof $steps["updateChat"].then === "function"
-                ) {
-                  $steps["updateChat"] = await $steps["updateChat"];
-                }
-              }}
-            />
           </div>
+          <TextInput
+            data-plasmic-name={"textInput"}
+            data-plasmic-override={overrides.textInput}
+            className={classNames("__wab_instance", sty.textInput)}
+            onChange={async (...eventArgs: any) => {
+              ((...eventArgs) => {
+                generateStateOnChangeProp($state, ["textInput", "value"])(
+                  (e => e.target?.value).apply(null, eventArgs)
+                );
+              }).apply(null, eventArgs);
+
+              if (
+                eventArgs.length > 1 &&
+                eventArgs[1] &&
+                eventArgs[1]._plasmic_state_init_
+              ) {
+                return;
+              }
+            }}
+            value={generateStateValueProp($state, ["textInput", "value"]) ?? ""}
+          />
+
+          <Button
+            data-plasmic-name={"button"}
+            data-plasmic-override={overrides.button}
+            className={classNames("__wab_instance", sty.button)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["updateChat2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["chat"]
+                      },
+                      operation: 0,
+                      value: (() => {
+                        let a = {
+                          chat: $state.textInput.value,
+                          from: "user"
+                        };
+                        $state.textInput.value = "";
+                        $state.chat = [...$state.chat, a];
+
+                        console.log($state.chat);
+                        return $state.chat;
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateChat2"] != null &&
+                typeof $steps["updateChat2"] === "object" &&
+                typeof $steps["updateChat2"].then === "function"
+              ) {
+                $steps["updateChat2"] = await $steps["updateChat2"];
+              }
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/generate_chat"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+
+              $steps["updateChat"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["chat"]
+                      },
+                      operation: 0,
+                      value: (() => {
+                        let a = $steps.invokeGlobalAction.data;
+                        $state.chat = [...$state.chat, a];
+
+                        console.log($state.chat);
+                        return $state.chat;
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateChat"] != null &&
+                typeof $steps["updateChat"] === "object" &&
+                typeof $steps["updateChat"].then === "function"
+              ) {
+                $steps["updateChat"] = await $steps["updateChat"];
+              }
+
+              $steps["updateChat3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function scrollToBottom() {
+                            const chatBox = document.getElementById("chatBox");
+                            if (!chatBox) return;
+                            requestAnimationFrame(() => {
+                              chatBox.scrollTo({
+                                top: chatBox.scrollHeight,
+                                behavior: "auto"
+                              });
+                            });
+                          }
+                          scrollToBottom();
+                          return console.log("done");
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateChat3"] != null &&
+                typeof $steps["updateChat3"] === "object" &&
+                typeof $steps["updateChat3"].then === "function"
+              ) {
+                $steps["updateChat3"] = await $steps["updateChat3"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
