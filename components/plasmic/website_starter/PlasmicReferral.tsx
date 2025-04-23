@@ -1472,11 +1472,9 @@ ${$state.textInput.value}
                           {
                             {
                               return (
-                                (
-                                  $state.apiRequest2.data[1].statuses
-                                    .paidCount * 200000
-                                ).toLocaleString("fa-IR") + " تومان"
-                              );
+                                $state.apiRequest2.data[1].statuses.paidCount *
+                                200000
+                              ).toLocaleString("fa-IR");
                             }
                           }
                         })();
@@ -1506,11 +1504,9 @@ ${$state.textInput.value}
                           {
                             {
                               return (
-                                (
-                                  $state.apiRequest2.data[1].statuses
-                                    .paidCount * 200000
-                                ).toLocaleString("fa-IR") + " تومان"
-                              );
+                                $state.apiRequest2.data[1].statuses
+                                  .pendingCount * 200000
+                              ).toLocaleString("fa-IR");
                             }
                           }
                         })();

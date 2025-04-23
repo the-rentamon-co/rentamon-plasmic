@@ -312,7 +312,11 @@ function PlasmicInvite__RenderFunc(props: {
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"100px"}
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "70px"
+                      : "100px"
+                  }
                   loading={"lazy"}
                   src={(() => {
                     try {
@@ -334,33 +338,117 @@ function PlasmicInvite__RenderFunc(props: {
                   })()}
                 />
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__euiv1)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___7R8Gd
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return (
-                          $state.apiRequest.data[0].first_name +
-                          " " +
-                          $state.apiRequest.data[0].last_name
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u06cc\u0627\u0641\u062a \u0646\u0634\u062f";
+              <div className={classNames(projectcss.all, sty.freeBox__op8Pv)}>
+                <div className={classNames(projectcss.all, sty.freeBox__euiv1)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___7R8Gd
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (
+                            $state.apiRequest.data[0].first_name +
+                            " " +
+                            $state.apiRequest.data[0].last_name
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u06cc\u0627\u0641\u062a \u0646\u0634\u062f";
+                          }
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__ogPS)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bC4N
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            const dateJoined = new Date(
+                              $state.apiRequest.data[0].date_joined
+                            );
+                            const currentDate = new Date();
+                            const timeDiff = currentDate - dateJoined;
+                            const daysDiff = Math.floor(
+                              timeDiff / (1000 * 3600 * 24)
+                            );
+                            return (
+                              daysDiff.toLocaleString("fa") +
+                              " روز همراهی با رنتامون"
+                            );
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u06cc\u0627\u0641\u062a \u0646\u0634\u062f";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__r2Yx)}>
+                <div className={classNames(projectcss.all, sty.freeBox__nc1Oo)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__irRLm
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.apiRequest.data[0].city;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u06cc\u0627\u0641\u062a \u0646\u0634\u062f";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__jEmLx)}
+                    displayHeight={"37px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image104.svg",
+                      fullWidth: 20,
+                      fullHeight: 20,
+                      aspectRatio: 1
+                    }}
+                  />
                 </div>
               </div>
             </div>
