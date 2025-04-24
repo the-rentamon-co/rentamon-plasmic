@@ -2959,6 +2959,16 @@
           "id": "ERvsh8CAWO3I",
           "name": "Rentamon Panel.jpg",
           "filePath": "../public/plasmic/website_starter/images/rentamonPanelJpg.jpg"
+        },
+        {
+          "id": "ZBmxO6epi3VW",
+          "name": "image 105",
+          "filePath": "../public/plasmic/website_starter/images/image105.svg"
+        },
+        {
+          "id": "V7jmIVa1m5lm",
+          "name": "image 106",
+          "filePath": "../public/plasmic/website_starter/images/image106.svg"
         }
       ],
       "indirect": false,
