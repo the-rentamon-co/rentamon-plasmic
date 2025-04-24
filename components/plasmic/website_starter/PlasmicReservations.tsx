@@ -3453,19 +3453,7 @@ function PlasmicReservations__RenderFunc(props: {
                           })()}
                         />
                       ) : null}
-                      {(() => {
-                        try {
-                          return currentItem.is_settled == false;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
+                      {false ? (
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__wBj6S)}
