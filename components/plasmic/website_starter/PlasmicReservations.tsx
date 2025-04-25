@@ -1643,24 +1643,40 @@ function PlasmicReservations__RenderFunc(props: {
                     >
                       {"\u0645\u0628\u0644\u063a \u06a9\u0644:"}
                     </div>
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__sio28)}
-                      displayHeight={"32px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image106.svg",
-                        fullWidth: 27,
-                        fullHeight: 27,
-                        aspectRatio: 1
-                      }}
-                    />
-
+                    {(() => {
+                      try {
+                        return (
+                          $state.modalData[0].is_sattled != true &&
+                          $state.modalData[0].status == "Past"
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__sio28)}
+                        displayHeight={"32px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image106.svg",
+                          fullWidth: 27,
+                          fullHeight: 27,
+                          aspectRatio: 1
+                        }}
+                      />
+                    ) : null}
                     <div
                       className={classNames(
                         projectcss.all,
@@ -3453,7 +3469,22 @@ function PlasmicReservations__RenderFunc(props: {
                           })()}
                         />
                       ) : null}
-                      {false ? (
+                      {(() => {
+                        try {
+                          return (
+                            currentItem.is_settled != true &&
+                            currentItem.status == "Past"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__wBj6S)}
