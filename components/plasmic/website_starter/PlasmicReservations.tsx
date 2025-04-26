@@ -1280,7 +1280,9 @@ function PlasmicReservations__RenderFunc(props: {
                     data-plasmic-override={overrides._12}
                     className={classNames(projectcss.all, sty._12)}
                   >
-                    <div
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
                       className={classNames(projectcss.all, sty.freeBox__hd3Qx)}
                     >
                       <div
@@ -1514,7 +1516,7 @@ function PlasmicReservations__RenderFunc(props: {
                           </div>
                         ) : null}
                       </Stack__>
-                    </div>
+                    </Stack__>
                   </div>
                 </Stack__>
                 <Stack__

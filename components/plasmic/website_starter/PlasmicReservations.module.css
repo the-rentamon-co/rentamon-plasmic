@@ -543,26 +543,41 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  min-width: 0;
+}
+.freeBox__hd3Qx > :global(.__wab_flex-container) {
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   min-width: 0;
+  margin-left: calc(0px - 15px);
+  width: calc(100% + 15px);
+}
+.freeBox__hd3Qx > :global(.__wab_flex-container) > *,
+.freeBox__hd3Qx > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__hd3Qx > :global(.__wab_flex-container) > picture > img,
+.freeBox__hd3Qx
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 15px;
 }
 .freeBox__zmBvF {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: 50%;
   justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
+  align-items: flex-start;
   padding: 8px 0px;
 }
 .userPhone {
   width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: 70%;
   font-size: 15px;
   text-align: right;
   color: #203647;
