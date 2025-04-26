@@ -104,6 +104,7 @@
     padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
+    background: none;
   }
 }
 @media (max-width: 350px) {
@@ -129,6 +130,7 @@
     flex-direction: column;
     padding-right: 0px;
     padding-left: 0px;
+    padding-bottom: 0px;
   }
 }
 .introCalendarRight {
@@ -166,6 +168,11 @@
   font-weight: 600;
   color: #fcfcfc;
 }
+@media (max-width: 500px) {
+  .text___86Oug {
+    color: #444444;
+  }
+}
 @media (max-width: 350px) {
   .text___86Oug {
     font-size: 20px;
@@ -192,6 +199,7 @@
 @media (max-width: 500px) {
   .text__nIz0M {
     font-size: 16px;
+    color: #444444;
   }
 }
 @media (max-width: 350px) {
@@ -216,6 +224,7 @@
     padding-right: 0px;
     padding-left: 0px;
     height: auto;
+    padding-bottom: 0px;
     border-radius: 30px;
   }
 }
