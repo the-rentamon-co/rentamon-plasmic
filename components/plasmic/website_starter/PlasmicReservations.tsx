@@ -1717,7 +1717,10 @@ function PlasmicReservations__RenderFunc(props: {
                   </div>
                   {(() => {
                     try {
-                      return $state.modalData[0].is_sattled != null;
+                      return (
+                        $state.modalData[0].is_sattled != null &&
+                        $state.modalData[0].status == "Past"
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -3586,7 +3589,7 @@ function PlasmicReservations__RenderFunc(props: {
                       {(() => {
                         try {
                           return (
-                            currentItem.is_settled != true &&
+                            currentItem.is_settled == false &&
                             currentItem.status == "Past"
                           );
                         } catch (e) {
