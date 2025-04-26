@@ -299,6 +299,21 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
+                  sty.link___9Ui3
+                )}
+                component={Link}
+                href={`/download`}
+                platform={"nextjs"}
+              >
+                {
+                  "\u062f\u0627\u0646\u0644\u0648\u062f \u0628\u0631\u0646\u0627\u0645\u0647"
+                }
+              </PlasmicLink__>
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
                   sty.link__vseFw
                 )}
                 component={Link}
@@ -363,6 +378,21 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
               platform={"nextjs"}
             >
               {"\u062a\u0639\u0631\u0641\u0647"}
+            </PlasmicLink__>
+            <PlasmicLink__
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link___4LkUn
+              )}
+              component={Link}
+              href={`/download`}
+              platform={"nextjs"}
+            >
+              {
+                "\u062f\u0627\u0646\u0644\u0648\u062f \u0628\u0631\u0646\u0627\u0645\u0647"
+              }
             </PlasmicLink__>
             <PlasmicLink__
               className={classNames(

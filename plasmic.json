@@ -1413,17 +1413,17 @@
         },
         {
           "id": "wLy6Qx2J0ci-",
-          "name": "OnboardingVideo",
+          "name": "Intro",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicOnboardingVideo.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicIntro.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/onboarding-video.tsx"
+            "modulePath": "../src/pages/intro.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicOnboardingVideo.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicIntro.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/onboarding-video"
+          "path": "/intro"
         }
       ],
       "icons": [
@@ -2988,6 +2988,16 @@
           "id": "9MnfUglghjJi",
           "name": "image 107",
           "filePath": "../public/plasmic/website_starter/images/image107.svg"
+        },
+        {
+          "id": "3vOouBzcgXPU",
+          "name": "cover.jpg",
+          "filePath": "../public/plasmic/website_starter/images/coverJpg.jpg"
+        },
+        {
+          "id": "9lMXKoew9Yqj",
+          "name": "cover.jpg 2",
+          "filePath": "../public/plasmic/website_starter/images/coverJpg2.jpg"
         }
       ],
       "indirect": false,

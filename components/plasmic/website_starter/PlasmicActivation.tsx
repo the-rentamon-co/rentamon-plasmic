@@ -4281,10 +4281,10 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["goToLitePanel"] = $state.policiesCheckbox
-                            .isChecked
+                          $steps["goToOnboardingVideo"] = $state
+                            .policiesCheckbox.isChecked
                             ? (() => {
-                                const actionArgs = { destination: `/calendar` };
+                                const actionArgs = { destination: `/intro` };
                                 return (({ destination }) => {
                                   if (
                                     typeof destination === "string" &&
@@ -4300,12 +4300,13 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["goToLitePanel"] != null &&
-                            typeof $steps["goToLitePanel"] === "object" &&
-                            typeof $steps["goToLitePanel"].then === "function"
+                            $steps["goToOnboardingVideo"] != null &&
+                            typeof $steps["goToOnboardingVideo"] === "object" &&
+                            typeof $steps["goToOnboardingVideo"].then ===
+                              "function"
                           ) {
-                            $steps["goToLitePanel"] = await $steps[
-                              "goToLitePanel"
+                            $steps["goToOnboardingVideo"] = await $steps[
+                              "goToOnboardingVideo"
                             ];
                           }
                         }}
