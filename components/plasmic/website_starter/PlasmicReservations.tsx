@@ -3588,10 +3588,17 @@ function PlasmicReservations__RenderFunc(props: {
                       ) : null}
                       {(() => {
                         try {
-                          return (
-                            currentItem.is_settled == false &&
-                            currentItem.status == "Past"
-                          );
+                          return (() => {
+                            if (
+                              currentItem.is_settled == false &&
+                              (currentItem.status === "Past" ||
+                                currentItem.status === "Cancelled")
+                            ) {
+                              return true;
+                            } else {
+                              return false;
+                            }
+                          })();
                         } catch (e) {
                           if (
                             e instanceof TypeError ||

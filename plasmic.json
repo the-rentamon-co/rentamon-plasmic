@@ -1410,6 +1410,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicSideBar22.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "wLy6Qx2J0ci-",
+          "name": "OnboardingVideo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicOnboardingVideo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/onboarding-video.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicOnboardingVideo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/onboarding-video"
         }
       ],
       "icons": [
