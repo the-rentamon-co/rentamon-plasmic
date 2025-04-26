@@ -103,12 +103,12 @@ export type Plasmicدانلوداپلیکیشن__OverridesType = {
   iOs?: Flex__<"div">;
   text2?: Flex__<"div">;
   icon2?: Flex__<"div">;
-  myket?: Flex__<"div">;
-  text5?: Flex__<"div">;
-  icon5?: Flex__<"div">;
   cafeBazar?: Flex__<"div">;
   text4?: Flex__<"div">;
   icon4?: Flex__<"div">;
+  myket?: Flex__<"div">;
+  text5?: Flex__<"div">;
+  icon5?: Flex__<"div">;
   image?: Flex__<"div">;
   introAutoSyncCaption2?: Flex__<"div">;
   introAutoSyncDesc2?: Flex__<"div">;
@@ -545,6 +545,86 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                 </Stack__>
                 <Stack__
                   as={"div"}
+                  data-plasmic-name={"cafeBazar"}
+                  data-plasmic-override={overrides.cafeBazar}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.cafeBazar)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return window.open(
+                                  "https://cafebazaar.ir/app/com.rentamon.webview",
+                                  "_blank"
+                                );
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  <div
+                    data-plasmic-name={"text4"}
+                    data-plasmic-override={overrides.text4}
+                    className={classNames(projectcss.all, sty.text4)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___5Br6W
+                      )}
+                    >
+                      {"\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0632"}
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"icon4"}
+                    data-plasmic-override={overrides.icon4}
+                    className={classNames(projectcss.all, sty.icon4)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__mj9Il)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "110px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "114px"
+                          : "auto"
+                      }
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image59.svg",
+                        fullWidth: 117,
+                        fullHeight: 52,
+                        aspectRatio: 2.25
+                      }}
+                    />
+                  </div>
+                </Stack__>
+                <Stack__
+                  as={"div"}
                   data-plasmic-name={"myket"}
                   data-plasmic-override={overrides.myket}
                   hasGap={true}
@@ -617,56 +697,6 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                         fullWidth: 109,
                         fullHeight: 44,
                         aspectRatio: 2.477273
-                      }}
-                    />
-                  </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  data-plasmic-name={"cafeBazar"}
-                  data-plasmic-override={overrides.cafeBazar}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.cafeBazar)}
-                >
-                  <div
-                    data-plasmic-name={"text4"}
-                    data-plasmic-override={overrides.text4}
-                    className={classNames(projectcss.all, sty.text4)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___5Br6W
-                      )}
-                    >
-                      {"\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0632"}
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"icon4"}
-                    data-plasmic-override={overrides.icon4}
-                    className={classNames(projectcss.all, sty.icon4)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__mj9Il)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "117px"
-                          : "auto"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image59.svg",
-                        fullWidth: 117,
-                        fullHeight: 52,
-                        aspectRatio: 2.25
                       }}
                     />
                   </div>
@@ -817,12 +847,12 @@ const PlasmicDescendants = {
     "iOs",
     "text2",
     "icon2",
-    "myket",
-    "text5",
-    "icon5",
     "cafeBazar",
     "text4",
     "icon4",
+    "myket",
+    "text5",
+    "icon5",
     "image",
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
@@ -851,12 +881,12 @@ const PlasmicDescendants = {
     "iOs",
     "text2",
     "icon2",
-    "myket",
-    "text5",
-    "icon5",
     "cafeBazar",
     "text4",
     "icon4",
+    "myket",
+    "text5",
+    "icon5",
     "image",
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
@@ -901,12 +931,12 @@ const PlasmicDescendants = {
     "iOs",
     "text2",
     "icon2",
-    "myket",
-    "text5",
-    "icon5",
     "cafeBazar",
     "text4",
-    "icon4"
+    "icon4",
+    "myket",
+    "text5",
+    "icon5"
   ],
   title: ["title"],
   downloadLinks: [
@@ -917,12 +947,12 @@ const PlasmicDescendants = {
     "iOs",
     "text2",
     "icon2",
-    "myket",
-    "text5",
-    "icon5",
     "cafeBazar",
     "text4",
-    "icon4"
+    "icon4",
+    "myket",
+    "text5",
+    "icon5"
   ],
   directDl: ["directDl", "text", "icon"],
   text: ["text"],
@@ -930,12 +960,12 @@ const PlasmicDescendants = {
   iOs: ["iOs", "text2", "icon2"],
   text2: ["text2"],
   icon2: ["icon2"],
-  myket: ["myket", "text5", "icon5"],
-  text5: ["text5"],
-  icon5: ["icon5"],
   cafeBazar: ["cafeBazar", "text4", "icon4"],
   text4: ["text4"],
   icon4: ["icon4"],
+  myket: ["myket", "text5", "icon5"],
+  text5: ["text5"],
+  icon5: ["icon5"],
   image: [
     "image",
     "introAutoSyncCaption2",
@@ -973,12 +1003,12 @@ type NodeDefaultElementType = {
   iOs: "div";
   text2: "div";
   icon2: "div";
-  myket: "div";
-  text5: "div";
-  icon5: "div";
   cafeBazar: "div";
   text4: "div";
   icon4: "div";
+  myket: "div";
+  text5: "div";
+  icon5: "div";
   image: "div";
   introAutoSyncCaption2: "div";
   introAutoSyncDesc2: "div";
@@ -1068,12 +1098,12 @@ export const Plasmicدانلوداپلیکیشن = Object.assign(
     iOs: makeNodeComponent("iOs"),
     text2: makeNodeComponent("text2"),
     icon2: makeNodeComponent("icon2"),
-    myket: makeNodeComponent("myket"),
-    text5: makeNodeComponent("text5"),
-    icon5: makeNodeComponent("icon5"),
     cafeBazar: makeNodeComponent("cafeBazar"),
     text4: makeNodeComponent("text4"),
     icon4: makeNodeComponent("icon4"),
+    myket: makeNodeComponent("myket"),
+    text5: makeNodeComponent("text5"),
+    icon5: makeNodeComponent("icon5"),
     image: makeNodeComponent("image"),
     introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
     introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),

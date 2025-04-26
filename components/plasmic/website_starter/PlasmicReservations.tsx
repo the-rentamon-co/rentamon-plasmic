@@ -114,12 +114,12 @@ export type PlasmicReservations__OverridesType = {
   status?: Flex__<"div">;
   status3?: Flex__<"div">;
   falseStatus?: Flex__<"div">;
-  _2?: Flex__<"div">;
-  _16?: Flex__<"div">;
   _13?: Flex__<"div">;
   _14?: Flex__<"div">;
+  _2?: Flex__<"div">;
   _113?: Flex__<"div">;
   _15?: Flex__<"div">;
+  _16?: Flex__<"div">;
   shab?: Flex__<typeof PlasmicImg__>;
   jabama?: Flex__<typeof PlasmicImg__>;
   jajiga?: Flex__<typeof PlasmicImg__>;
@@ -859,311 +859,340 @@ function PlasmicReservations__RenderFunc(props: {
               }}
               open={generateStateValueProp($state, ["modal", "open"])}
               title={
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___3CnqH)}
-                >
-                  {(() => {
-                    try {
-                      return $state.modalData[0].platfromName == "شب";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      data-plasmic-name={"shab"}
-                      data-plasmic-override={overrides.shab}
-                      alt={""}
-                      className={classNames(sty.shab)}
-                      displayHeight={"42px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image20.svg",
-                        fullWidth: 46,
-                        fullHeight: 45,
-                        aspectRatio: 1.022222
-                      }}
-                    />
-                  ) : null}
-                  {(() => {
-                    try {
-                      return $state.modalData[0].platfromName == "جاباما";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      data-plasmic-name={"jabama"}
-                      data-plasmic-override={overrides.jabama}
-                      alt={""}
-                      className={classNames(sty.jabama)}
-                      displayHeight={"42px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? {
-                              src: "/plasmic/website_starter/images/image19.svg",
-                              fullWidth: 45,
-                              fullHeight: 46,
-                              aspectRatio: 0.978261
-                            }
-                          : {
-                              src: "/plasmic/website_starter/images/image19.svg",
-                              fullWidth: 45,
-                              fullHeight: 46,
-                              aspectRatio: 0.978261
-                            }
-                      }
-                    />
-                  ) : null}
-                  {(() => {
-                    try {
-                      return $state.modalData[0].platfromName == "جاجیگا";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      data-plasmic-name={"jajiga"}
-                      data-plasmic-override={overrides.jajiga}
-                      alt={""}
-                      className={classNames(sty.jajiga)}
-                      displayHeight={"42px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/jajigaWebp.webp",
-                        fullWidth: 192,
-                        fullHeight: 192,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  ) : null}
-                  {(() => {
-                    try {
-                      return $state.modalData[0].platfromName == "مهمانشو";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      data-plasmic-name={"mihmansho"}
-                      data-plasmic-override={overrides.mihmansho}
-                      alt={""}
-                      className={classNames(sty.mihmansho)}
-                      displayHeight={"42px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? {
-                              src: "/plasmic/website_starter/images/image21.svg",
-                              fullWidth: 46,
-                              fullHeight: 45,
-                              aspectRatio: 1.022222
-                            }
-                          : {
-                              src: "/plasmic/website_starter/images/image21.svg",
-                              fullWidth: 46,
-                              fullHeight: 45,
-                              aspectRatio: 1.022222
-                            }
-                      }
-                    />
-                  ) : null}
-                  {(() => {
-                    try {
-                      return $state.modalData[0].platfromName == "میزبون";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      data-plasmic-name={"mizbon"}
-                      data-plasmic-override={overrides.mizbon}
-                      alt={""}
-                      className={classNames(sty.mizbon)}
-                      displayHeight={"42px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? {
-                              src: "/plasmic/website_starter/images/image15.svg",
-                              fullWidth: 46,
-                              fullHeight: 45,
-                              aspectRatio: 1.022222
-                            }
-                          : {
-                              src: "/plasmic/website_starter/images/image15.svg",
-                              fullWidth: 46,
-                              fullHeight: 45,
-                              aspectRatio: 1.022222
-                            }
-                      }
-                    />
-                  ) : null}
-                  {(() => {
-                    try {
-                      return $state.modalData[0].platfromName == "هومسا";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      data-plasmic-name={"homsa"}
-                      data-plasmic-override={overrides.homsa}
-                      alt={""}
-                      className={classNames(sty.homsa)}
-                      displayHeight={"42px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? {
-                              src: "/plasmic/website_starter/images/image18.svg",
-                              fullWidth: 46,
-                              fullHeight: 45,
-                              aspectRatio: 1.022222
-                            }
-                          : {
-                              src: "/plasmic/website_starter/images/image18.svg",
-                              fullWidth: 46,
-                              fullHeight: 45,
-                              aspectRatio: 1.022222
-                            }
-                      }
-                    />
-                  ) : null}
-                  {(() => {
-                    try {
-                      return $state.modalData[0].platfromName == "اتاقک";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      data-plasmic-name={"otaghak"}
-                      data-plasmic-override={overrides.otaghak}
-                      alt={""}
-                      className={classNames(sty.otaghak)}
-                      displayHeight={"42px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? {
-                              src: "/plasmic/website_starter/images/image13.svg",
-                              fullWidth: 46,
-                              fullHeight: 46,
-                              aspectRatio: 1
-                            }
-                          : {
-                              src: "/plasmic/website_starter/images/image13.svg",
-                              fullWidth: 46,
-                              fullHeight: 46,
-                              aspectRatio: 1
-                            }
-                      }
-                    />
-                  ) : null}
+                <div className={classNames(projectcss.all, sty.freeBox__y44Dl)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__cmWvx
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__vpbyV)}
                   >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $state.modalData[0].platfromName;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__pvOwf
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData[0].propertyName;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
-                </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox___3CnqH)}
+                  >
+                    {(() => {
+                      try {
+                        return $state.modalData[0].platfromName == "شب";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"shab"}
+                        data-plasmic-override={overrides.shab}
+                        alt={""}
+                        className={classNames(sty.shab)}
+                        displayHeight={"42px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image20.svg",
+                          fullWidth: 46,
+                          fullHeight: 45,
+                          aspectRatio: 1.022222
+                        }}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.modalData[0].platfromName == "جاباما";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"jabama"}
+                        data-plasmic-override={overrides.jabama}
+                        alt={""}
+                        className={classNames(sty.jabama)}
+                        displayHeight={"42px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? {
+                                src: "/plasmic/website_starter/images/image19.svg",
+                                fullWidth: 45,
+                                fullHeight: 46,
+                                aspectRatio: 0.978261
+                              }
+                            : {
+                                src: "/plasmic/website_starter/images/image19.svg",
+                                fullWidth: 45,
+                                fullHeight: 46,
+                                aspectRatio: 0.978261
+                              }
+                        }
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.modalData[0].platfromName == "جاجیگا";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"jajiga"}
+                        data-plasmic-override={overrides.jajiga}
+                        alt={""}
+                        className={classNames(sty.jajiga)}
+                        displayHeight={"42px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/jajigaWebp.webp",
+                          fullWidth: 192,
+                          fullHeight: 192,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.modalData[0].platfromName == "مهمانشو";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"mihmansho"}
+                        data-plasmic-override={overrides.mihmansho}
+                        alt={""}
+                        className={classNames(sty.mihmansho)}
+                        displayHeight={"42px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? {
+                                src: "/plasmic/website_starter/images/image21.svg",
+                                fullWidth: 46,
+                                fullHeight: 45,
+                                aspectRatio: 1.022222
+                              }
+                            : {
+                                src: "/plasmic/website_starter/images/image21.svg",
+                                fullWidth: 46,
+                                fullHeight: 45,
+                                aspectRatio: 1.022222
+                              }
+                        }
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.modalData[0].platfromName == "میزبون";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"mizbon"}
+                        data-plasmic-override={overrides.mizbon}
+                        alt={""}
+                        className={classNames(sty.mizbon)}
+                        displayHeight={"42px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? {
+                                src: "/plasmic/website_starter/images/image15.svg",
+                                fullWidth: 46,
+                                fullHeight: 45,
+                                aspectRatio: 1.022222
+                              }
+                            : {
+                                src: "/plasmic/website_starter/images/image15.svg",
+                                fullWidth: 46,
+                                fullHeight: 45,
+                                aspectRatio: 1.022222
+                              }
+                        }
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.modalData[0].platfromName == "هومسا";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"homsa"}
+                        data-plasmic-override={overrides.homsa}
+                        alt={""}
+                        className={classNames(sty.homsa)}
+                        displayHeight={"42px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? {
+                                src: "/plasmic/website_starter/images/image18.svg",
+                                fullWidth: 46,
+                                fullHeight: 45,
+                                aspectRatio: 1.022222
+                              }
+                            : {
+                                src: "/plasmic/website_starter/images/image18.svg",
+                                fullWidth: 46,
+                                fullHeight: 45,
+                                aspectRatio: 1.022222
+                              }
+                        }
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.modalData[0].platfromName == "اتاقک";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"otaghak"}
+                        data-plasmic-override={overrides.otaghak}
+                        alt={""}
+                        className={classNames(sty.otaghak)}
+                        displayHeight={"42px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? {
+                                src: "/plasmic/website_starter/images/image13.svg",
+                                fullWidth: 46,
+                                fullHeight: 46,
+                                aspectRatio: 1
+                              }
+                            : {
+                                src: "/plasmic/website_starter/images/image13.svg",
+                                fullWidth: 46,
+                                fullHeight: 46,
+                                aspectRatio: 1
+                              }
+                        }
+                      />
+                    ) : null}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__cmWvx
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData[0].platfromName;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </Stack__>
+                </div>
               }
               trigger={null}
               width={"350"}
@@ -1518,43 +1547,6 @@ function PlasmicReservations__RenderFunc(props: {
                       </Stack__>
                     </Stack__>
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  data-plasmic-name={"_2"}
-                  data-plasmic-override={overrides._2}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty._2)}
-                >
-                  <div
-                    data-plasmic-name={"_16"}
-                    data-plasmic-override={overrides._16}
-                    className={classNames(projectcss.all, sty._16)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__gBs01
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.modalData[0].propertyName;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "1403/4/5";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
-                  </div>
                   <div
                     data-plasmic-name={"_13"}
                     data-plasmic-override={overrides._13}
@@ -1631,6 +1623,14 @@ function PlasmicReservations__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
+                </Stack__>
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"_2"}
+                  data-plasmic-override={overrides._2}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty._2)}
+                >
                   <div
                     data-plasmic-name={"_113"}
                     data-plasmic-override={overrides._113}
@@ -1645,40 +1645,6 @@ function PlasmicReservations__RenderFunc(props: {
                     >
                       {"\u0645\u0628\u0644\u063a \u06a9\u0644:"}
                     </div>
-                    {(() => {
-                      try {
-                        return (
-                          $state.modalData[0].is_sattled != true &&
-                          $state.modalData[0].status == "Past"
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__sio28)}
-                        displayHeight={"32px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image106.svg",
-                          fullWidth: 27,
-                          fullHeight: 27,
-                          aspectRatio: 1
-                        }}
-                      />
-                    ) : null}
                     <div
                       className={classNames(
                         projectcss.all,
@@ -1731,9 +1697,9 @@ function PlasmicReservations__RenderFunc(props: {
                               if (
                                 platformsWithCommission.includes(platformName)
                               ) {
-                                return (message = "پس از کسر کمیسیون");
+                                return (message = "(پس از کسر کمیسیون)");
                               } else {
-                                return (message = "  پیش از کسر کمیسیون");
+                                return (message = "(پیش از کسر کمیسیون)");
                               }
                             })();
                           } catch (e) {
@@ -1749,6 +1715,152 @@ function PlasmicReservations__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
+                  {(() => {
+                    try {
+                      return $state.modalData[0].is_sattled != null;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"_16"}
+                      data-plasmic-override={overrides._16}
+                      className={classNames(projectcss.all, sty._16)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__ncyuH
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__gAnyI
+                          )}
+                        >
+                          {"\u062a\u0633\u0648\u06cc\u0647:"}
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__u1Eqn
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return $state.modalData[0].is_sattled != true;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__nSErI
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__vigpR
+                              )}
+                            >
+                              {
+                                "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
+                              }
+                            </div>
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__dhlWp)}
+                              displayHeight={"22px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image106.svg",
+                                fullWidth: 27,
+                                fullHeight: 27,
+                                aspectRatio: 1
+                              }}
+                            />
+                          </Stack__>
+                        ) : null}
+                        {(() => {
+                          try {
+                            return $state.modalData[0].is_sattled;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___4Iihu
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__hbOk)}
+                              displayHeight={"22px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image107.svg",
+                                fullWidth: 22,
+                                fullHeight: 22,
+                                aspectRatio: 1
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__fOjWh
+                              )}
+                            >
+                              {
+                                "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
+                              }
+                            </div>
+                          </Stack__>
+                        ) : null}
+                      </div>
+                    </div>
+                  ) : null}
                 </Stack__>
               </Stack__>
               <Button
@@ -4494,12 +4606,12 @@ const PlasmicDescendants = {
     "status",
     "status3",
     "falseStatus",
-    "_2",
-    "_16",
     "_13",
     "_14",
+    "_2",
     "_113",
     "_15",
+    "_16",
     "shab",
     "jabama",
     "jajiga",
@@ -4557,12 +4669,12 @@ const PlasmicDescendants = {
     "status",
     "status3",
     "falseStatus",
-    "_2",
-    "_16",
     "_13",
     "_14",
+    "_2",
     "_113",
     "_15",
+    "_16",
     "shab",
     "jabama",
     "jajiga",
@@ -4604,12 +4716,12 @@ const PlasmicDescendants = {
     "status",
     "status3",
     "falseStatus",
-    "_2",
-    "_16",
     "_13",
     "_14",
+    "_2",
     "_113",
     "_15",
+    "_16",
     "shab",
     "jabama",
     "jajiga",
@@ -4627,26 +4739,36 @@ const PlasmicDescendants = {
     "status",
     "status3",
     "falseStatus",
-    "_2",
-    "_16",
     "_13",
     "_14",
+    "_2",
     "_113",
-    "_15"
+    "_15",
+    "_16"
   ],
-  _1: ["_1", "_11", "_12", "userPhone", "status", "status3", "falseStatus"],
+  _1: [
+    "_1",
+    "_11",
+    "_12",
+    "userPhone",
+    "status",
+    "status3",
+    "falseStatus",
+    "_13",
+    "_14"
+  ],
   _11: ["_11"],
   _12: ["_12", "userPhone", "status", "status3", "falseStatus"],
   userPhone: ["userPhone"],
   status: ["status"],
   status3: ["status3"],
   falseStatus: ["falseStatus"],
-  _2: ["_2", "_16", "_13", "_14", "_113", "_15"],
-  _16: ["_16"],
   _13: ["_13"],
   _14: ["_14"],
+  _2: ["_2", "_113", "_15", "_16"],
   _113: ["_113"],
   _15: ["_15"],
+  _16: ["_16"],
   shab: ["shab"],
   jabama: ["jabama"],
   jajiga: ["jajiga"],
@@ -4740,12 +4862,12 @@ type NodeDefaultElementType = {
   status: "div";
   status3: "div";
   falseStatus: "div";
-  _2: "div";
-  _16: "div";
   _13: "div";
   _14: "div";
+  _2: "div";
   _113: "div";
   _15: "div";
+  _16: "div";
   shab: typeof PlasmicImg__;
   jabama: typeof PlasmicImg__;
   jajiga: typeof PlasmicImg__;
@@ -4863,12 +4985,12 @@ export const PlasmicReservations = Object.assign(
     status: makeNodeComponent("status"),
     status3: makeNodeComponent("status3"),
     falseStatus: makeNodeComponent("falseStatus"),
-    _2: makeNodeComponent("_2"),
-    _16: makeNodeComponent("_16"),
     _13: makeNodeComponent("_13"),
     _14: makeNodeComponent("_14"),
+    _2: makeNodeComponent("_2"),
     _113: makeNodeComponent("_113"),
     _15: makeNodeComponent("_15"),
+    _16: makeNodeComponent("_16"),
     shab: makeNodeComponent("shab"),
     jabama: makeNodeComponent("jabama"),
     jajiga: makeNodeComponent("jajiga"),
