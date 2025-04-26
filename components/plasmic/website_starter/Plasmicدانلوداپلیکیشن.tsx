@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
-import { Video } from "@plasmicpkgs/plasmic-basic-components";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -93,7 +93,7 @@ export type Plasmicدانلوداپلیکیشن__OverridesType = {
   introCalendarRight2?: Flex__<"div">;
   introCalendarRight3?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
-  htmlVideo?: Flex__<typeof Video>;
+  carousel?: Flex__<typeof Embed>;
   link?: Flex__<"div">;
   title?: Flex__<"div">;
   downloadLinks?: Flex__<"div">;
@@ -296,14 +296,12 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                   data-plasmic-override={overrides.introCalendarLeft}
                   className={classNames(projectcss.all, sty.introCalendarLeft)}
                 >
-                  <Video
-                    data-plasmic-name={"htmlVideo"}
-                    data-plasmic-override={overrides.htmlVideo}
-                    className={classNames("__wab_instance", sty.htmlVideo)}
-                    controls={true}
-                    loop={true}
-                    src={
-                      "https://rentamon-files.storage.iran.liara.space/video/pro.mp4"
+                  <Embed
+                    data-plasmic-name={"carousel"}
+                    data-plasmic-override={overrides.carousel}
+                    className={classNames("__wab_instance", sty.carousel)}
+                    code={
+                      '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n    <meta charset="UTF-8">\r\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\r\n    <title>Simple Image Slider</title>\r\n    <style>\r\n        .slider-container {\r\n            position: relative;\r\n            width: 100%;\r\n            max-width: 800px;\r\n            height: 400px;\r\n            overflow: hidden;\r\n        }\r\n        .slider-container img {\r\n            position: absolute;\r\n            width: 100%;\r\n            height: 100%;\r\n            object-fit: contain;\r\n            opacity: 0;\r\n            transition: opacity 0.5s ease-in-out;\r\n        }\r\n        .slider-container img.active {\r\n            opacity: 1;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div class="slider-container">\r\n        <img src="https://rentamon-files.storage.iran.liara.space/img/1.png" class="active" alt="Slide 1">\r\n        <img src="https://rentamon-files.storage.iran.liara.space/img/2.png" alt="Slide 2">\r\n        <img src="https://rentamon-files.storage.iran.liara.space/img/3.png" alt="Slide 3">\r\n        <img src="https://rentamon-files.storage.iran.liara.space/img/4.png" alt="Slide 4">\r\n    </div>\r\n\r\n    <script>\r\n        document.addEventListener("DOMContentLoaded", function () {\r\n            var images = document.querySelectorAll(".slider-container img");\r\n            var currentIndex = 0;\r\n            \r\n            function changeSlide() {\r\n                images[currentIndex].classList.remove("active");\r\n                currentIndex = (currentIndex + 1) % images.length;\r\n                images[currentIndex].classList.add("active");\r\n            }\r\n            \r\n            setInterval(changeSlide, 4000);\r\n        });\r\n    </script>\r\n</body>\r\n</html>\r\n'
                     }
                   />
                 </div>
@@ -837,7 +835,7 @@ const PlasmicDescendants = {
     "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarLeft",
-    "htmlVideo",
+    "carousel",
     "link",
     "title",
     "downloadLinks",
@@ -871,7 +869,7 @@ const PlasmicDescendants = {
     "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarLeft",
-    "htmlVideo",
+    "carousel",
     "link",
     "title",
     "downloadLinks",
@@ -902,7 +900,7 @@ const PlasmicDescendants = {
     "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarLeft",
-    "htmlVideo"
+    "carousel"
   ],
   introCalendar4: [
     "introCalendar4",
@@ -910,7 +908,7 @@ const PlasmicDescendants = {
     "introCalendarRight2",
     "introCalendarRight3",
     "introCalendarLeft",
-    "htmlVideo"
+    "carousel"
   ],
   introCalendarRight: [
     "introCalendarRight",
@@ -919,8 +917,8 @@ const PlasmicDescendants = {
   ],
   introCalendarRight2: ["introCalendarRight2"],
   introCalendarRight3: ["introCalendarRight3"],
-  introCalendarLeft: ["introCalendarLeft", "htmlVideo"],
-  htmlVideo: ["htmlVideo"],
+  introCalendarLeft: ["introCalendarLeft", "carousel"],
+  carousel: ["carousel"],
   link: [
     "link",
     "title",
@@ -993,7 +991,7 @@ type NodeDefaultElementType = {
   introCalendarRight2: "div";
   introCalendarRight3: "div";
   introCalendarLeft: "div";
-  htmlVideo: typeof Video;
+  carousel: typeof Embed;
   link: "div";
   title: "div";
   downloadLinks: "div";
@@ -1088,7 +1086,7 @@ export const Plasmicدانلوداپلیکیشن = Object.assign(
     introCalendarRight2: makeNodeComponent("introCalendarRight2"),
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
+    carousel: makeNodeComponent("carousel"),
     link: makeNodeComponent("link"),
     title: makeNodeComponent("title"),
     downloadLinks: makeNodeComponent("downloadLinks"),

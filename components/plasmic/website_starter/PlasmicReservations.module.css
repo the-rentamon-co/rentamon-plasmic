@@ -858,6 +858,8 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-size: 15px;
+  font-weight: 400;
   min-width: 0;
 }
 .img__dhlWp {
@@ -908,6 +910,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-size: 15px;
   min-width: 0;
 }
 .button__cJdtF:global(.__wab_instance) {
