@@ -3893,6 +3893,58 @@ function PlasmicActivation__RenderFunc(props: {
                             (async isChecked => {
                               const $steps = {};
 
+                              $steps["runCode2"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function getCookieValue(cookieName) {
+                                            const cookies = document.cookie
+                                              .split(";")
+                                              .map(cookie => cookie.trim());
+                                            for (const cookie of cookies) {
+                                              const [name, value] =
+                                                cookie.split("=");
+                                              if (name === cookieName) {
+                                                return value;
+                                              }
+                                            }
+                                            return null;
+                                          }
+                                          if (
+                                            document.cookie.includes(
+                                              "invite_code"
+                                            )
+                                          ) {
+                                            const inviteCode =
+                                              getCookieValue("invite_code");
+                                            $state.invitationCode = inviteCode;
+                                            $state.source = "referral";
+                                            console.log(
+                                              "invite_code:",
+                                              $state.invitationCode
+                                            );
+                                            return console.log(
+                                              "source:",
+                                              $state.source
+                                            );
+                                          }
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode2"] != null &&
+                                typeof $steps["runCode2"] === "object" &&
+                                typeof $steps["runCode2"].then === "function"
+                              ) {
+                                $steps["runCode2"] = await $steps["runCode2"];
+                              }
+
                               $steps["invokeGlobalAction"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -3935,58 +3987,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["invokeGlobalAction"] = await $steps[
                                   "invokeGlobalAction"
                                 ];
-                              }
-
-                              $steps["runCode2"] =
-                                $steps.invokeGlobalAction.data.message !=
-                                "user is already registered"
-                                  ? (() => {
-                                      const actionArgs = {
-                                        customFunction: async () => {
-                                          return (() => {
-                                            function getCookieValue(
-                                              cookieName
-                                            ) {
-                                              const cookies = document.cookie
-                                                .split(";")
-                                                .map(cookie => cookie.trim());
-                                              for (const cookie of cookies) {
-                                                const [name, value] =
-                                                  cookie.split("=");
-                                                if (name === cookieName) {
-                                                  return value;
-                                                }
-                                              }
-                                              return null;
-                                            }
-                                            if (
-                                              document.cookie.includes(
-                                                "invite_code"
-                                              )
-                                            ) {
-                                              const inviteCode =
-                                                getCookieValue("invite_code");
-                                              $state.invitationCode =
-                                                inviteCode;
-                                              return console.log(
-                                                "invite_code:",
-                                                $state.invitationCode
-                                              );
-                                            }
-                                          })();
-                                        }
-                                      };
-                                      return (({ customFunction }) => {
-                                        return customFunction();
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["runCode2"] != null &&
-                                typeof $steps["runCode2"] === "object" &&
-                                typeof $steps["runCode2"].then === "function"
-                              ) {
-                                $steps["runCode2"] = await $steps["runCode2"];
                               }
 
                               $steps["invokeGlobalAction2"] =
