@@ -113,6 +113,7 @@ export type PlasmicReferral__OverridesType = {
   svg?: Flex__<"svg">;
   rules?: Flex__<"div">;
   apiRequest2?: Flex__<typeof ApiRequest>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   smsImage?: Flex__<"div">;
   tips?: Flex__<"div">;
   html?: Flex__<"div">;
@@ -1673,12 +1674,31 @@ ${$state.textInput.value}
                               sty.freeBox__qtgvs
                             )}
                           >
-                            <div
+                            <PlasmicLink__
+                              data-plasmic-name={"link"}
+                              data-plasmic-override={overrides.link}
                               className={classNames(
                                 projectcss.all,
+                                projectcss.a,
                                 projectcss.__wab_text,
-                                sty.text__dvgf4
+                                sty.link
                               )}
+                              component={Link}
+                              href={(() => {
+                                try {
+                                  return `tel:${$state.apiRequest2.data[0].referrers[currentIndex].username}`;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                              platform={"nextjs"}
                             >
                               <React.Fragment>
                                 {(() => {
@@ -1700,7 +1720,7 @@ ${$state.textInput.value}
                                   }
                                 })()}
                               </React.Fragment>
-                            </div>
+                            </PlasmicLink__>
                           </div>
                           {(() => {
                             try {
@@ -2093,6 +2113,7 @@ const PlasmicDescendants = {
     "svg",
     "rules",
     "apiRequest2",
+    "link",
     "smsImage",
     "tips",
     "html",
@@ -2166,7 +2187,8 @@ const PlasmicDescendants = {
   ctaButton2: ["ctaButton2", "svg"],
   svg: ["svg"],
   rules: ["rules"],
-  apiRequest2: ["apiRequest2"],
+  apiRequest2: ["apiRequest2", "link"],
+  link: ["link"],
   smsImage: ["smsImage"],
   tips: ["tips"],
   html: ["html", "clarity2", "goftino"],
@@ -2200,6 +2222,7 @@ type NodeDefaultElementType = {
   svg: "svg";
   rules: "div";
   apiRequest2: typeof ApiRequest;
+  link: "a";
   smsImage: "div";
   tips: "div";
   html: "div";
@@ -2289,6 +2312,7 @@ export const PlasmicReferral = Object.assign(
     svg: makeNodeComponent("svg"),
     rules: makeNodeComponent("rules"),
     apiRequest2: makeNodeComponent("apiRequest2"),
+    link: makeNodeComponent("link"),
     smsImage: makeNodeComponent("smsImage"),
     tips: makeNodeComponent("tips"),
     html: makeNodeComponent("html"),

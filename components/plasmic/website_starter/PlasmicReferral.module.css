@@ -1861,7 +1861,7 @@
     max-width: 34%;
   }
 }
-.text__dvgf4 {
+.link {
   position: relative;
   width: 100%;
   height: auto;
@@ -1871,7 +1871,7 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .text__dvgf4 {
+  .link {
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -1881,7 +1881,7 @@
   }
 }
 @media (max-width: 350px) {
-  .text__dvgf4 {
+  .link {
     font-size: 15px;
   }
 }

@@ -4174,7 +4174,7 @@ function PlasmicActivation__RenderFunc(props: {
                             .isChecked
                             ? (() => {
                                 const actionArgs = {
-                                  destination: `/intro/[type]`
+                                  destination: `/intro/${"lite"}`
                                 };
                                 return (({ destination }) => {
                                   if (
