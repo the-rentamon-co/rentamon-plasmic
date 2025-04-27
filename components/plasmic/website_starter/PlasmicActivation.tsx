@@ -4063,7 +4063,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["defineUserSource"] = true
+                              $steps["defineUserType"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
@@ -4082,10 +4082,10 @@ function PlasmicActivation__RenderFunc(props: {
                                             return null;
                                           }
                                           if (
-                                            document.cookie.includes("soruce")
+                                            document.cookie.includes("source")
                                           ) {
                                             const user_type =
-                                              getCookieValue("soruce");
+                                              getCookieValue("source");
                                             $state.source = user_type;
                                             return console.log(
                                               "user_type:",
@@ -4101,14 +4101,13 @@ function PlasmicActivation__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["defineUserSource"] != null &&
-                                typeof $steps["defineUserSource"] ===
-                                  "object" &&
-                                typeof $steps["defineUserSource"].then ===
+                                $steps["defineUserType"] != null &&
+                                typeof $steps["defineUserType"] === "object" &&
+                                typeof $steps["defineUserType"].then ===
                                   "function"
                               ) {
-                                $steps["defineUserSource"] = await $steps[
-                                  "defineUserSource"
+                                $steps["defineUserType"] = await $steps[
+                                  "defineUserType"
                                 ];
                               }
                             }).apply(null, eventArgs);
