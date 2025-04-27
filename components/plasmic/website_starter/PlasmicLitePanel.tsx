@@ -116,7 +116,7 @@ export type PlasmicLitePanel__OverridesType = {
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
   favicon?: Flex__<typeof Embed>;
-  modal2?: Flex__<typeof AntdModal>;
+  proPanelModal?: Flex__<typeof AntdModal>;
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
   textArea?: Flex__<typeof AntdTextArea>;
@@ -319,7 +319,7 @@ function PlasmicLitePanel__RenderFunc(props: {
         refName: "userAvailableFeature"
       },
       {
-        path: "modal2.open",
+        path: "proPanelModal.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -1195,7 +1195,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                             console.log("stage1");
                             return setTimeout(() => {
                               console.log("stage2");
-                              $state.modal2.open = true;
+                              $state.proPanelModal.open = true;
                             }, 10000);
                           }
                         })();
@@ -1365,9 +1365,9 @@ function PlasmicLitePanel__RenderFunc(props: {
           />
 
           <AntdModal
-            data-plasmic-name={"modal2"}
-            data-plasmic-override={overrides.modal2}
-            className={classNames("__wab_instance", sty.modal2)}
+            data-plasmic-name={"proPanelModal"}
+            data-plasmic-override={overrides.proPanelModal}
+            className={classNames("__wab_instance", sty.proPanelModal)}
             defaultStylesClassName={classNames(
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
@@ -1377,14 +1377,14 @@ function PlasmicLitePanel__RenderFunc(props: {
               plasmic_plasmic_rich_components_css.plasmic_tokens
             )}
             hideFooter={true}
-            modalScopeClassName={sty["modal2__modal"]}
+            modalScopeClassName={sty["proPanelModal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal2", "open"]).apply(
-                null,
-                eventArgs
-              );
+              generateStateOnChangeProp($state, [
+                "proPanelModal",
+                "open"
+              ]).apply(null, eventArgs);
             }}
-            open={generateStateValueProp($state, ["modal2", "open"])}
+            open={generateStateValueProp($state, ["proPanelModal", "open"])}
             title={"Modal title"}
             trigger={null}
           >
@@ -1442,7 +1442,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField___7UBcI
+                      sty.formField__xodgG
                     )}
                     label={"Name"}
                     name={"name"}
@@ -1454,7 +1454,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__zu3Ok
+                      sty.formField__xiLSu
                     )}
                     label={"Message"}
                     name={"message"}
@@ -1472,7 +1472,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text___50Nso
+                        sty.text__eA4
                       )}
                     >
                       {"Submit"}
@@ -1510,7 +1510,7 @@ const PlasmicDescendants = {
     "userAvailableFeature",
     "modal",
     "favicon",
-    "modal2",
+    "proPanelModal",
     "form",
     "input",
     "textArea",
@@ -1566,7 +1566,7 @@ const PlasmicDescendants = {
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
   favicon: ["favicon"],
-  modal2: ["modal2", "form", "input", "textArea", "button"],
+  proPanelModal: ["proPanelModal", "form", "input", "textArea", "button"],
   form: ["form", "input", "textArea", "button"],
   input: ["input"],
   textArea: ["textArea"],
@@ -1596,7 +1596,7 @@ type NodeDefaultElementType = {
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
   favicon: typeof Embed;
-  modal2: typeof AntdModal;
+  proPanelModal: typeof AntdModal;
   form: typeof FormWrapper;
   input: typeof AntdInput;
   textArea: typeof AntdTextArea;
@@ -1682,7 +1682,7 @@ export const PlasmicLitePanel = Object.assign(
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
     favicon: makeNodeComponent("favicon"),
-    modal2: makeNodeComponent("modal2"),
+    proPanelModal: makeNodeComponent("proPanelModal"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     textArea: makeNodeComponent("textArea"),
