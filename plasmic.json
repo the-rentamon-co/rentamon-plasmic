@@ -1427,17 +1427,17 @@
         },
         {
           "id": "EiemSs0Lr6oN",
-          "name": "Segmentation",
+          "name": "Tier",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSegmentation.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTier.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/segmentation.tsx"
+            "modulePath": "../src/pages/tier.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicSegmentation.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicTier.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/segmentation"
+          "path": "/tier"
         }
       ],
       "icons": [
