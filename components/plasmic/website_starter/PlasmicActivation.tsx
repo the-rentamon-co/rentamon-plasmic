@@ -4133,18 +4133,10 @@ function PlasmicActivation__RenderFunc(props: {
                                         }
                                         return null;
                                       }
-                                      console.log("stage1");
                                       if (document.cookie.includes("source")) {
-                                        console.log("stage2");
                                         const user_type =
                                           getCookieValue("source");
-                                        console.log("stage3");
-                                        $state.source = user_type;
-                                        console.log("stage4");
-                                        return console.log(
-                                          "user_type:",
-                                          $state.source
-                                        );
+                                        return ($state.source = user_type);
                                       }
                                     })();
                                   }

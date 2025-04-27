@@ -1184,6 +1184,35 @@ function PlasmicLitePanel__RenderFunc(props: {
                   "invokeGlobalAction"
                 ];
               }
+
+              $steps["runCode2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          console.log("stage0");
+                          if (document.cookie.includes("is_new")) {
+                            console.log("stage1");
+                            return setTimeout(() => {
+                              console.log("stage2");
+                              $state.alertModal.open = true;
+                            }, 10000);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode2"] != null &&
+                typeof $steps["runCode2"] === "object" &&
+                typeof $steps["runCode2"].then === "function"
+              ) {
+                $steps["runCode2"] = await $steps["runCode2"];
+              }
             }}
           />
 
@@ -1413,7 +1442,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__a80ER
+                      sty.formField__jr8Wp
                     )}
                     label={"Name"}
                     name={"name"}
@@ -1425,7 +1454,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__c9R8Y
+                      sty.formField__cfnzV
                     )}
                     label={"Message"}
                     name={"message"}
@@ -1443,7 +1472,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__gvKqw
+                        sty.text__aNx1B
                       )}
                     >
                       {"Submit"}
