@@ -1418,12 +1418,26 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicIntro.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/intro.tsx"
+            "modulePath": "../src/pages/intro/[type].tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicIntro.module.css",
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/intro"
+        },
+        {
+          "id": "EiemSs0Lr6oN",
+          "name": "Segmentation",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSegmentation.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/segmentation.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSegmentation.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/segmentation"
         }
       ],
       "icons": [

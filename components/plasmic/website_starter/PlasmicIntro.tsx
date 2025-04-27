@@ -334,7 +334,7 @@ function PlasmicIntro__RenderFunc(props: {
           ) : null}
           {(() => {
             try {
-              return $ctx.query.type == "pro";
+              return $ctx.params.type == "pro";
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -403,7 +403,7 @@ function PlasmicIntro__RenderFunc(props: {
           ) : null}
           {(() => {
             try {
-              return $ctx.query.type == "lite";
+              return $ctx.params.type == "lite";
             } catch (e) {
               if (
                 e instanceof TypeError ||
