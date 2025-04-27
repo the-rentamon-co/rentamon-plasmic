@@ -481,7 +481,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "12px"
+                            ? "10px"
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "15px"
                             : "17px"

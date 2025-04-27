@@ -4120,180 +4120,209 @@ function PlasmicActivation__RenderFunc(props: {
                           </div>
                         </Checkbox>
                       </div>
-                      <AntdButton
-                        data-plasmic-name={"submitButton"}
-                        data-plasmic-override={overrides.submitButton}
+                      <div
                         className={classNames(
-                          "__wab_instance",
-                          sty.submitButton
+                          projectcss.all,
+                          sty.freeBox__zu7N
                         )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["runCode"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      function getCookieValue(cookieName) {
-                                        const cookies = document.cookie
-                                          .split(";")
-                                          .map(cookie => cookie.trim());
-                                        for (const cookie of cookies) {
-                                          const [name, value] =
-                                            cookie.split("=");
-                                          if (name === cookieName) {
-                                            return value;
-                                          }
-                                        }
-                                        return null;
-                                      }
-                                      if (document.cookie.includes("source")) {
-                                        const user_type =
-                                          getCookieValue("source");
-                                        $state.source = user_type;
-                                      }
-                                      return console.log($state.source);
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-
-                          $steps["updateInput6Value2"] = $state.policiesCheckbox
-                            .isChecked
-                            ? (() => {
-                                const actionArgs = { destination: `/tier` };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateInput6Value2"] != null &&
-                            typeof $steps["updateInput6Value2"] === "object" &&
-                            typeof $steps["updateInput6Value2"].then ===
-                              "function"
-                          ) {
-                            $steps["updateInput6Value2"] = await $steps[
-                              "updateInput6Value2"
-                            ];
-                          }
-
-                          $steps["updateInput6Value3"] = $state.policiesCheckbox
-                            .isChecked
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/set_user_source",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return (() => {
-                                          return { source: $state.source };
-                                        })();
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateInput6Value3"] != null &&
-                            typeof $steps["updateInput6Value3"] === "object" &&
-                            typeof $steps["updateInput6Value3"].then ===
-                              "function"
-                          ) {
-                            $steps["updateInput6Value3"] = await $steps[
-                              "updateInput6Value3"
-                            ];
-                          }
-
-                          $steps["runCode2"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      function setCookie(name, value, hours) {
-                                        let expires = "";
-                                        if (hours) {
-                                          const date = new Date();
-                                          date.setTime(
-                                            date.getTime() +
-                                              hours * 60 * 60 * 1000
-                                          );
-                                          expires =
-                                            "; expires=" + date.toUTCString();
-                                        }
-                                        document.cookie =
-                                          name +
-                                          "=" +
-                                          (value || "") +
-                                          expires +
-                                          "; path=/";
-                                      }
-                                      return setCookie("is_new", "true", 2160);
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode2"] != null &&
-                            typeof $steps["runCode2"] === "object" &&
-                            typeof $steps["runCode2"].then === "function"
-                          ) {
-                            $steps["runCode2"] = await $steps["runCode2"];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__yojJ1
+                            sty.freeBox__fdLtc
                           )}
                         >
-                          {"\u0628\u0631\u06cc\u0645"}
+                          <AntdButton
+                            data-plasmic-name={"submitButton"}
+                            data-plasmic-override={overrides.submitButton}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.submitButton
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["runCode"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function getCookieValue(cookieName) {
+                                            const cookies = document.cookie
+                                              .split(";")
+                                              .map(cookie => cookie.trim());
+                                            for (const cookie of cookies) {
+                                              const [name, value] =
+                                                cookie.split("=");
+                                              if (name === cookieName) {
+                                                return value;
+                                              }
+                                            }
+                                            return null;
+                                          }
+                                          if (
+                                            document.cookie.includes("source")
+                                          ) {
+                                            const user_type =
+                                              getCookieValue("source");
+                                            $state.source = user_type;
+                                          }
+                                          return console.log($state.source);
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
+                              $steps["updateInput6Value2"] = $state
+                                .policiesCheckbox.isChecked
+                                ? (() => {
+                                    const actionArgs = { destination: `/tier` };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateInput6Value2"] != null &&
+                                typeof $steps["updateInput6Value2"] ===
+                                  "object" &&
+                                typeof $steps["updateInput6Value2"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateInput6Value2"] = await $steps[
+                                  "updateInput6Value2"
+                                ];
+                              }
+
+                              $steps["updateInput6Value3"] = $state
+                                .policiesCheckbox.isChecked
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/set_user_source",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              return { source: $state.source };
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateInput6Value3"] != null &&
+                                typeof $steps["updateInput6Value3"] ===
+                                  "object" &&
+                                typeof $steps["updateInput6Value3"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateInput6Value3"] = await $steps[
+                                  "updateInput6Value3"
+                                ];
+                              }
+
+                              $steps["runCode2"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function setCookie(
+                                            name,
+                                            value,
+                                            hours
+                                          ) {
+                                            let expires = "";
+                                            if (hours) {
+                                              const date = new Date();
+                                              date.setTime(
+                                                date.getTime() +
+                                                  hours * 60 * 60 * 1000
+                                              );
+                                              expires =
+                                                "; expires=" +
+                                                date.toUTCString();
+                                            }
+                                            document.cookie =
+                                              name +
+                                              "=" +
+                                              (value || "") +
+                                              expires +
+                                              "; path=/";
+                                          }
+                                          return setCookie(
+                                            "is_new",
+                                            "true",
+                                            2160
+                                          );
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode2"] != null &&
+                                typeof $steps["runCode2"] === "object" &&
+                                typeof $steps["runCode2"].then === "function"
+                              ) {
+                                $steps["runCode2"] = await $steps["runCode2"];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__yojJ1
+                              )}
+                            >
+                              {"\u0628\u0631\u06cc\u0645"}
+                            </div>
+                          </AntdButton>
                         </div>
-                      </AntdButton>
+                      </div>
                     </FormItemWrapper>
                   ) : null}
                   {(() => {
@@ -10962,6 +10991,21 @@ function PlasmicActivation__RenderFunc(props: {
                   }
                 })()}
               </React.Fragment>
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__uAwxe)}>
+            <div className={classNames(projectcss.all, sty.freeBox__pMoPs)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__p6Vl
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"
+                  : "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"}
+              </div>
             </div>
           </div>
         </div>

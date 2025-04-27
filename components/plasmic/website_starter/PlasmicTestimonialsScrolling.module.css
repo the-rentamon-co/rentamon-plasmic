@@ -238,7 +238,7 @@
 }
 @media (max-width: 500px) {
   .userName4 {
-    font-size: 14px;
+    font-size: 13px;
     max-width: 100%;
     padding-right: 0px;
   }
@@ -342,7 +342,7 @@
 }
 @media (max-width: 350px) {
   .img__l4Sj7 {
-    width: 12px;
+    width: 10px;
     height: 17px;
     align-self: center;
     margin-bottom: 8px;
@@ -375,6 +375,7 @@
 @media (max-width: 350px) {
   .userCity {
     padding-right: 2px;
+    font-size: 14px;
   }
 }
 .freeBox__vGlv7 {
