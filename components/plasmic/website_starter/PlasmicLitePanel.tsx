@@ -1195,7 +1195,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                             console.log("stage1");
                             return setTimeout(() => {
                               console.log("stage2");
-                              $state.alertModal.open = true;
+                              $state.modal2.open = true;
                             }, 10000);
                           }
                         })();
@@ -1442,7 +1442,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__jr8Wp
+                      sty.formField___7UBcI
                     )}
                     label={"Name"}
                     name={"name"}
@@ -1454,7 +1454,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__cfnzV
+                      sty.formField__zu3Ok
                     )}
                     label={"Message"}
                     name={"message"}
@@ -1472,7 +1472,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__aNx1B
+                        sty.text___50Nso
                       )}
                     >
                       {"Submit"}
