@@ -1955,12 +1955,13 @@
   .text__fzwa0 {
     font-size: 15px;
     padding-top: 24px;
+    padding-right: 8px;
   }
 }
 .text__wamHc {
   text-align: right;
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 2;
   width: 100%;
   min-width: 0;
   padding: 12px 30px 0px;
@@ -1978,6 +1979,7 @@
   .text__wamHc {
     font-size: 15px;
     padding-top: 9px;
+    line-height: 2;
   }
 }
 @media (max-width: 350px) {
@@ -2104,6 +2106,7 @@
     text-align: right;
     line-height: 1.8;
     padding-left: 0px;
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 500px) {
