@@ -111,9 +111,9 @@ export type PlasmicReferral__OverridesType = {
   refertxt?: Flex__<"div">;
   ctaButton2?: Flex__<"div">;
   svg?: Flex__<"svg">;
-  rules?: Flex__<"div">;
   apiRequest2?: Flex__<typeof ApiRequest>;
   link?: Flex__<"a"> & Partial<LinkProps>;
+  rules?: Flex__<"div">;
   smsImage?: Flex__<"div">;
   tips?: Flex__<"div">;
   html?: Flex__<"div">;
@@ -458,7 +458,7 @@ function PlasmicReferral__RenderFunc(props: {
                       <React.Fragment>
                         <React.Fragment>
                           {
-                            "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u0645\u0628\u0644\u063a "
+                            "\u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u062c\u0634\u0646\u0648\u0627\u0631\u0647\u060c \u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u0645\u0628\u0644\u063a "
                           }
                         </React.Fragment>
                         <span
@@ -1268,36 +1268,6 @@ ${$state.textInput.value}
               </div>
             </div>
           </div>
-          <div
-            data-plasmic-name={"rules"}
-            data-plasmic-override={overrides.rules}
-            className={classNames(projectcss.all, sty.rules)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__fzwa0
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
-                : "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u062f\u061f"}
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__wamHc
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "1\ufe0f\u20e3 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0641\u0631\u0633\u062a\r\n2\ufe0f\u20e3 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u200c\u0627\u0634 \u0645\u062a\u0635\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647\n5\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647"
-                : "1\ufe0f\u20e3 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0641\u0631\u0633\u062a\r\n2\ufe0f\u20e3 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u200c\u0627\u0634 \u0645\u062a\u0635\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647\n5\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647"}
-            </div>
-          </div>
           <Stack__
             as={"div"}
             hasGap={true}
@@ -1889,6 +1859,36 @@ ${$state.textInput.value}
             </div>
           </Stack__>
           <div
+            data-plasmic-name={"rules"}
+            data-plasmic-override={overrides.rules}
+            className={classNames(projectcss.all, sty.rules)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__fzwa0
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                : hasVariant(globalVariants, "screen", "tablet")
+                ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                : "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u062f\u061f"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__wamHc
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "1\ufe0f\u20e3 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0641\u0631\u0633\u062a\r\n2\ufe0f\u20e3 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u200c\u0627\u0634 \u0645\u062a\u0635\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647\n5\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647"
+                : "1\ufe0f\u20e3 \u0644\u06cc\u0646\u06a9 \u062f\u0639\u0648\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u062e\u0648\u062f\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0641\u0631\u0633\u062a\r\n2\ufe0f\u20e3 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9\u060c \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0646\r\n3\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647\u060c \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u200c\u0627\u0634 \u0645\u062a\u0635\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n4\ufe0f\u20e3 \u0645\u0628\u0644\u063a \u06f2\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647\n5\ufe0f\u20e3 \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647"}
+            </div>
+          </div>
+          <div
             data-plasmic-name={"smsImage"}
             data-plasmic-override={overrides.smsImage}
             className={classNames(projectcss.all, sty.smsImage)}
@@ -2111,9 +2111,9 @@ const PlasmicDescendants = {
     "refertxt",
     "ctaButton2",
     "svg",
-    "rules",
     "apiRequest2",
     "link",
+    "rules",
     "smsImage",
     "tips",
     "html",
@@ -2186,9 +2186,9 @@ const PlasmicDescendants = {
   refertxt: ["refertxt"],
   ctaButton2: ["ctaButton2", "svg"],
   svg: ["svg"],
-  rules: ["rules"],
   apiRequest2: ["apiRequest2", "link"],
   link: ["link"],
+  rules: ["rules"],
   smsImage: ["smsImage"],
   tips: ["tips"],
   html: ["html", "clarity2", "goftino"],
@@ -2220,9 +2220,9 @@ type NodeDefaultElementType = {
   refertxt: "div";
   ctaButton2: "div";
   svg: "svg";
-  rules: "div";
   apiRequest2: typeof ApiRequest;
   link: "a";
+  rules: "div";
   smsImage: "div";
   tips: "div";
   html: "div";
@@ -2310,9 +2310,9 @@ export const PlasmicReferral = Object.assign(
     refertxt: makeNodeComponent("refertxt"),
     ctaButton2: makeNodeComponent("ctaButton2"),
     svg: makeNodeComponent("svg"),
-    rules: makeNodeComponent("rules"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     link: makeNodeComponent("link"),
+    rules: makeNodeComponent("rules"),
     smsImage: makeNodeComponent("smsImage"),
     tips: makeNodeComponent("tips"),
     html: makeNodeComponent("html"),
