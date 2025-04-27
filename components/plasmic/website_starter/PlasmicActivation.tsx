@@ -4122,7 +4122,7 @@ function PlasmicActivation__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["runCode"] = $state.policiesCheckbox.isChecked
+                          $steps["runCode"] = false
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
