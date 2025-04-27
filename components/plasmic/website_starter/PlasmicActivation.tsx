@@ -4115,7 +4115,7 @@ function PlasmicActivation__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["runCode"] = true
+                          $steps["runCode"] = $state.policiesCheckbox.isChecked
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
@@ -4162,7 +4162,8 @@ function PlasmicActivation__RenderFunc(props: {
                             $steps["runCode"] = await $steps["runCode"];
                           }
 
-                          $steps["updateInput6Value2"] = true
+                          $steps["updateInput6Value2"] = $state.policiesCheckbox
+                            .isChecked
                             ? (() => {
                                 const actionArgs = { destination: `/intro` };
                                 return (({ destination }) => {
@@ -4190,7 +4191,8 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["updateInput6Value3"] = true
+                          $steps["updateInput6Value3"] = $state.policiesCheckbox
+                            .isChecked
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -4229,6 +4231,46 @@ function PlasmicActivation__RenderFunc(props: {
                             $steps["updateInput6Value3"] = await $steps[
                               "updateInput6Value3"
                             ];
+                          }
+
+                          $steps["runCode2"] = $state.policiesCheckbox.isChecked
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      function setCookie(name, value, hours) {
+                                        let expires = "";
+                                        if (hours) {
+                                          const date = new Date();
+                                          date.setTime(
+                                            date.getTime() +
+                                              hours * 60 * 60 * 1000
+                                          );
+                                          expires =
+                                            "; expires=" + date.toUTCString();
+                                        }
+                                        document.cookie =
+                                          name +
+                                          "=" +
+                                          (value || "") +
+                                          expires +
+                                          "; path=/";
+                                      }
+                                      return setCookie("is_new", "true", 2160);
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode2"] != null &&
+                            typeof $steps["runCode2"] === "object" &&
+                            typeof $steps["runCode2"].then === "function"
+                          ) {
+                            $steps["runCode2"] = await $steps["runCode2"];
                           }
                         }}
                         submitsForm={true}
