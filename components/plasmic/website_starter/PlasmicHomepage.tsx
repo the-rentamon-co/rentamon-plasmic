@@ -373,16 +373,54 @@ function PlasmicHomepage__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["runCode"] = true
+                        $steps["createCookie"] = true
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
                                   return (() => {
-                                    return window.open(
-                                      "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
-                                      "_blank"
-                                    );
+                                    function setCookie(name, value, hours) {
+                                      let expires = "";
+                                      if (hours) {
+                                        const date = new Date();
+                                        date.setTime(
+                                          date.getTime() +
+                                            hours * 60 * 60 * 1000
+                                        );
+                                        expires =
+                                          "; expires=" + date.toUTCString();
+                                      }
+                                      document.cookie =
+                                        name +
+                                        "=" +
+                                        (value || "") +
+                                        expires +
+                                        "; path=/";
+                                    }
+                                    return setCookie("source", "web", 12);
                                   })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["createCookie"] != null &&
+                          typeof $steps["createCookie"] === "object" &&
+                          typeof $steps["createCookie"].then === "function"
+                        ) {
+                          $steps["createCookie"] = await $steps["createCookie"];
+                        }
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return window.open(
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
+                                    "_blank"
+                                  );
                                 }
                               };
                               return (({ customFunction }) => {
@@ -912,16 +950,52 @@ function PlasmicHomepage__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["runCode"] = true
+                  $steps["createCookie"] = true
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              return window.open(
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
-                                "_blank"
-                              );
+                              function setCookie(name, value, hours) {
+                                let expires = "";
+                                if (hours) {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + hours * 60 * 60 * 1000
+                                  );
+                                  expires = "; expires=" + date.toUTCString();
+                                }
+                                document.cookie =
+                                  name +
+                                  "=" +
+                                  (value || "") +
+                                  expires +
+                                  "; path=/";
+                              }
+                              return setCookie("source", "web", 12);
                             })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["createCookie"] != null &&
+                    typeof $steps["createCookie"] === "object" &&
+                    typeof $steps["createCookie"].then === "function"
+                  ) {
+                    $steps["createCookie"] = await $steps["createCookie"];
+                  }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return window.open(
+                              "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
+                              "_blank"
+                            );
                           }
                         };
                         return (({ customFunction }) => {

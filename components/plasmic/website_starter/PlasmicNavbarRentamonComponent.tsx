@@ -332,6 +332,47 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
               )}
               component={Link}
               href={`/calendar`}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["createCookie"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            function setCookie(name, value, hours) {
+                              let expires = "";
+                              if (hours) {
+                                const date = new Date();
+                                date.setTime(
+                                  date.getTime() + hours * 60 * 60 * 1000
+                                );
+                                expires = "; expires=" + date.toUTCString();
+                              }
+                              document.cookie =
+                                name +
+                                "=" +
+                                (value || "") +
+                                expires +
+                                "; path=/";
+                            }
+                            return setCookie("source", "web", 12);
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["createCookie"] != null &&
+                  typeof $steps["createCookie"] === "object" &&
+                  typeof $steps["createCookie"].then === "function"
+                ) {
+                  $steps["createCookie"] = await $steps["createCookie"];
+                }
+              }}
               platform={"nextjs"}
             >
               {"\u0648\u0631\u0648\u062f"}

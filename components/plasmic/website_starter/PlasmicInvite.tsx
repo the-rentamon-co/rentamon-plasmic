@@ -545,14 +545,10 @@ function PlasmicInvite__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                setCookie(
+                                return setCookie(
                                   "invite_code",
                                   $ctx.params.invite_code,
                                   720
-                                );
-                                return console.log(
-                                  "done",
-                                  $ctx.params.invite_code
                                 );
                               })();
                             }
