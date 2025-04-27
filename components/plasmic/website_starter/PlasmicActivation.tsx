@@ -4135,40 +4135,7 @@ function PlasmicActivation__RenderFunc(props: {
                         onClick={async () => {
                           const $steps = {};
 
-                          $steps["updateStateVariable"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  operation: 0,
-                                  value: ($state.step = 13)
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStateVariable"] != null &&
-                            typeof $steps["updateStateVariable"] === "object" &&
-                            typeof $steps["updateStateVariable"].then ===
-                              "function"
-                          ) {
-                            $steps["updateStateVariable"] = await $steps[
-                              "updateStateVariable"
-                            ];
-                          }
-
-                          $steps["updateInput6Value3"] = false
+                          $steps["runCode"] = true
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
@@ -4186,15 +4153,17 @@ function PlasmicActivation__RenderFunc(props: {
                                         }
                                         return null;
                                       }
-                                      if (
-                                        document.cookie.includes("invite_code")
-                                      ) {
-                                        const inviteCode =
-                                          getCookieValue("invite_code");
-                                        $state.invitationCode = inviteCode;
+                                      console.log("stage1");
+                                      if (document.cookie.includes("source")) {
+                                        console.log("stage2");
+                                        const user_type =
+                                          getCookieValue("source");
+                                        console.log("stage3");
+                                        $state.source = user_type;
+                                        console.log("stage4");
                                         return console.log(
-                                          "invite_code:",
-                                          $state.invitationCode
+                                          "user_type:",
+                                          $state.source
                                         );
                                       }
                                     })();
@@ -4206,82 +4175,38 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["updateInput6Value3"] != null &&
-                            typeof $steps["updateInput6Value3"] === "object" &&
-                            typeof $steps["updateInput6Value3"].then ===
-                              "function"
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
                           ) {
-                            $steps["updateInput6Value3"] = await $steps[
-                              "updateInput6Value3"
-                            ];
+                            $steps["runCode"] = await $steps["runCode"];
                           }
 
-                          $steps["invokeGlobalAction"] = false
+                          $steps["updateInput6Value2"] = true
                             ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/add_referal_code",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return (() => {
-                                          return {
-                                            invitationCode:
-                                              $state.invitationCode
-                                          };
-                                        })();
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
+                                const actionArgs = { destination: `/intro` };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
                           if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
+                            $steps["updateInput6Value2"] != null &&
+                            typeof $steps["updateInput6Value2"] === "object" &&
+                            typeof $steps["updateInput6Value2"].then ===
                               "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
-                          }
-
-                          $steps["invokeGlobalAction2"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u06a9\u062f \u062f\u0639\u0648\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
-                                    "top-center"
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction2"] != null &&
-                            typeof $steps["invokeGlobalAction2"] === "object" &&
-                            typeof $steps["invokeGlobalAction2"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction2"] = await $steps[
-                              "invokeGlobalAction2"
+                            $steps["updateInput6Value2"] = await $steps[
+                              "updateInput6Value2"
                             ];
                           }
                         }}
