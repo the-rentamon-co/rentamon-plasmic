@@ -3932,7 +3932,10 @@ function PlasmicActivation__RenderFunc(props: {
                                             console.log("in the web_source");
                                             const user_type =
                                               getCookieValue("source");
-                                            $state.source = user_type;
+                                            console.log("user_type", user_type);
+                                            if (user_type != null) {
+                                              $state.source = user_type;
+                                            }
                                           }
                                           return console.log(
                                             "source:",
