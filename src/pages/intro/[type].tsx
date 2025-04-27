@@ -4,7 +4,7 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicIntro } from "../../components/plasmic/website_starter/PlasmicIntro";
+import { PlasmicIntro } from "../../../components/plasmic/website_starter/PlasmicIntro";
 import { useRouter } from "next/router";
 
 function Intro() {
