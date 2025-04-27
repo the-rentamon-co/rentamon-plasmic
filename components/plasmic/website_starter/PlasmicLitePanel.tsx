@@ -1185,7 +1185,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode2"] = true
+              $steps["runCode2"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -1364,124 +1364,126 @@ function PlasmicLitePanel__RenderFunc(props: {
             }
           />
 
-          <AntdModal
-            data-plasmic-name={"proPanelModal"}
-            data-plasmic-override={overrides.proPanelModal}
-            className={classNames("__wab_instance", sty.proPanelModal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            modalScopeClassName={sty["proPanelModal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "proPanelModal",
-                "open"
-              ]).apply(null, eventArgs);
-            }}
-            open={generateStateValueProp($state, ["proPanelModal", "open"])}
-            title={"Modal title"}
-            trigger={null}
-          >
-            {(() => {
-              const child$Props = {
-                className: classNames("__wab_instance", sty.form),
-                extendedOnValuesChange: async (...eventArgs: any) => {
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "value",
-                    ["form", "value"],
-                    FormWrapper_Helpers
-                  ).apply(null, eventArgs);
-                },
-                formItems: undefined,
-                labelCol: { span: 8, horizontalOnly: true },
-                layout: "vertical",
-                mode: undefined,
-                onIsSubmittingChange: async (...eventArgs: any) => {
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "isSubmitting",
-                    ["form", "isSubmitting"],
-                    FormWrapper_Helpers
-                  ).apply(null, eventArgs);
-                },
-                ref: ref => {
-                  $refs["form"] = ref;
-                },
-                wrapperCol: { span: 16, horizontalOnly: true }
-              };
-              initializeCodeComponentStates(
-                $state,
-                [
-                  {
-                    name: "value",
-                    plasmicStateName: "form.value"
+          {false ? (
+            <AntdModal
+              data-plasmic-name={"proPanelModal"}
+              data-plasmic-override={overrides.proPanelModal}
+              className={classNames("__wab_instance", sty.proPanelModal)}
+              defaultStylesClassName={classNames(
+                projectcss.root_reset,
+                projectcss.plasmic_default_styles,
+                projectcss.plasmic_mixins,
+                projectcss.plasmic_tokens,
+                plasmic_antd_5_hostless_css.plasmic_tokens,
+                plasmic_plasmic_rich_components_css.plasmic_tokens
+              )}
+              hideFooter={true}
+              modalScopeClassName={sty["proPanelModal__modal"]}
+              onOpenChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "proPanelModal",
+                  "open"
+                ]).apply(null, eventArgs);
+              }}
+              open={generateStateValueProp($state, ["proPanelModal", "open"])}
+              title={"Modal title"}
+              trigger={null}
+            >
+              {(() => {
+                const child$Props = {
+                  className: classNames("__wab_instance", sty.form),
+                  extendedOnValuesChange: async (...eventArgs: any) => {
+                    generateStateOnChangePropForCodeComponents(
+                      $state,
+                      "value",
+                      ["form", "value"],
+                      FormWrapper_Helpers
+                    ).apply(null, eventArgs);
                   },
-                  {
-                    name: "isSubmitting",
-                    plasmicStateName: "form.isSubmitting"
-                  }
-                ],
-                [],
-                FormWrapper_Helpers ?? {},
-                child$Props
-              );
+                  formItems: undefined,
+                  labelCol: { span: 8, horizontalOnly: true },
+                  layout: "vertical",
+                  mode: undefined,
+                  onIsSubmittingChange: async (...eventArgs: any) => {
+                    generateStateOnChangePropForCodeComponents(
+                      $state,
+                      "isSubmitting",
+                      ["form", "isSubmitting"],
+                      FormWrapper_Helpers
+                    ).apply(null, eventArgs);
+                  },
+                  ref: ref => {
+                    $refs["form"] = ref;
+                  },
+                  wrapperCol: { span: 16, horizontalOnly: true }
+                };
+                initializeCodeComponentStates(
+                  $state,
+                  [
+                    {
+                      name: "value",
+                      plasmicStateName: "form.value"
+                    },
+                    {
+                      name: "isSubmitting",
+                      plasmicStateName: "form.isSubmitting"
+                    }
+                  ],
+                  [],
+                  FormWrapper_Helpers ?? {},
+                  child$Props
+                );
 
-              return (
-                <FormWrapper
-                  data-plasmic-name={"form"}
-                  data-plasmic-override={overrides.form}
-                  {...child$Props}
-                >
-                  <FormItemWrapper
-                    className={classNames(
-                      "__wab_instance",
-                      sty.formField__xodgG
-                    )}
-                    label={"Name"}
-                    name={"name"}
+                return (
+                  <FormWrapper
+                    data-plasmic-name={"form"}
+                    data-plasmic-override={overrides.form}
+                    {...child$Props}
                   >
-                    <AntdInput
-                      className={classNames("__wab_instance", sty.input)}
-                    />
-                  </FormItemWrapper>
-                  <FormItemWrapper
-                    className={classNames(
-                      "__wab_instance",
-                      sty.formField__xiLSu
-                    )}
-                    label={"Message"}
-                    name={"message"}
-                  >
-                    <AntdTextArea
-                      className={classNames("__wab_instance", sty.textArea)}
-                    />
-                  </FormItemWrapper>
-                  <AntdButton
-                    className={classNames("__wab_instance", sty.button)}
-                    submitsForm={true}
-                    type={"primary"}
-                  >
-                    <div
+                    <FormItemWrapper
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__eA4
+                        "__wab_instance",
+                        sty.formField__jXxVd
                       )}
+                      label={"Name"}
+                      name={"name"}
                     >
-                      {"Submit"}
-                    </div>
-                  </AntdButton>
-                </FormWrapper>
-              );
-            })()}
-          </AntdModal>
+                      <AntdInput
+                        className={classNames("__wab_instance", sty.input)}
+                      />
+                    </FormItemWrapper>
+                    <FormItemWrapper
+                      className={classNames(
+                        "__wab_instance",
+                        sty.formField__a9BJ
+                      )}
+                      label={"Message"}
+                      name={"message"}
+                    >
+                      <AntdTextArea
+                        className={classNames("__wab_instance", sty.textArea)}
+                      />
+                    </FormItemWrapper>
+                    <AntdButton
+                      className={classNames("__wab_instance", sty.button)}
+                      submitsForm={true}
+                      type={"primary"}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___7WhCy
+                        )}
+                      >
+                        {"Submit"}
+                      </div>
+                    </AntdButton>
+                  </FormWrapper>
+                );
+              })()}
+            </AntdModal>
+          ) : null}
         </div>
       </div>
     </React.Fragment>

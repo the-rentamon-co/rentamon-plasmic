@@ -4225,44 +4225,38 @@ function PlasmicActivation__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["runCode2"] =
-                            $state.policiesCheckbox.isChecked &&
-                            !["aps-c", "aps-m"].includes($state.source)
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return (() => {
-                                        function setCookie(name, value, hours) {
-                                          let expires = "";
-                                          if (hours) {
-                                            const date = new Date();
-                                            date.setTime(
-                                              date.getTime() +
-                                                hours * 60 * 60 * 1000
-                                            );
-                                            expires =
-                                              "; expires=" + date.toUTCString();
-                                          }
-                                          document.cookie =
-                                            name +
-                                            "=" +
-                                            (value || "") +
-                                            expires +
-                                            "; path=/";
+                          $steps["runCode2"] = false
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      function setCookie(name, value, hours) {
+                                        let expires = "";
+                                        if (hours) {
+                                          const date = new Date();
+                                          date.setTime(
+                                            date.getTime() +
+                                              hours * 60 * 60 * 1000
+                                          );
+                                          expires =
+                                            "; expires=" + date.toUTCString();
                                         }
-                                        return setCookie(
-                                          "is_new",
-                                          "true",
-                                          2160
-                                        );
-                                      })();
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
+                                        document.cookie =
+                                          name +
+                                          "=" +
+                                          (value || "") +
+                                          expires +
+                                          "; path=/";
+                                      }
+                                      return setCookie("is_new", "true", 2160);
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
                           if (
                             $steps["runCode2"] != null &&
                             typeof $steps["runCode2"] === "object" &&
