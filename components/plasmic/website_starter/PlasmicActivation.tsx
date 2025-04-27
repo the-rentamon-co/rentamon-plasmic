@@ -4063,40 +4063,11 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["defineUserType"] = true
+                              $steps["runCode"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
-                                        return (() => {
-                                          function getCookieValue(cookieName) {
-                                            const cookies = document.cookie
-                                              .split(";")
-                                              .map(cookie => cookie.trim());
-                                            for (const cookie of cookies) {
-                                              const [name, value] =
-                                                cookie.split("=");
-                                              if (name === cookieName) {
-                                                return value;
-                                              }
-                                            }
-                                            return null;
-                                          }
-                                          console.log("stage1");
-                                          if (
-                                            document.cookie.includes("source")
-                                          ) {
-                                            console.log("stage2");
-                                            const user_type =
-                                              getCookieValue("source");
-                                            console.log("stage3");
-                                            $state.source = user_type;
-                                            console.log("stage4");
-                                            return console.log(
-                                              "user_type:",
-                                              $state.source
-                                            );
-                                          }
-                                        })();
+                                        return console.log("done");
                                       }
                                     };
                                     return (({ customFunction }) => {
@@ -4105,14 +4076,11 @@ function PlasmicActivation__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["defineUserType"] != null &&
-                                typeof $steps["defineUserType"] === "object" &&
-                                typeof $steps["defineUserType"].then ===
-                                  "function"
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
                               ) {
-                                $steps["defineUserType"] = await $steps[
-                                  "defineUserType"
-                                ];
+                                $steps["runCode"] = await $steps["runCode"];
                               }
                             }).apply(null, eventArgs);
                           }}
@@ -4314,35 +4282,6 @@ function PlasmicActivation__RenderFunc(props: {
                           ) {
                             $steps["invokeGlobalAction2"] = await $steps[
                               "invokeGlobalAction2"
-                            ];
-                          }
-
-                          $steps["goToOnboardingVideo"] = $state
-                            .policiesCheckbox.isChecked
-                            ? (() => {
-                                const actionArgs = { destination: `/intro` };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["goToOnboardingVideo"] != null &&
-                            typeof $steps["goToOnboardingVideo"] === "object" &&
-                            typeof $steps["goToOnboardingVideo"].then ===
-                              "function"
-                          ) {
-                            $steps["goToOnboardingVideo"] = await $steps[
-                              "goToOnboardingVideo"
                             ];
                           }
                         }}
