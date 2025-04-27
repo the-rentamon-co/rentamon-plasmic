@@ -139,8 +139,6 @@ function PlasmicIntro__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const $globalActions = useGlobalActions?.();
-
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -148,12 +146,6 @@ function PlasmicIntro__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => true
-      },
-      {
-        path: "userType",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -202,57 +194,6 @@ function PlasmicIntro__RenderFunc(props: {
             className={classNames("__wab_instance", sty.sideEffect)}
             onMount={async () => {
               const $steps = {};
-
-              $steps["updateShowToggle2"] =
-                $ctx.query.type != null
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "GET",
-                          "https://gateway.rentamon.com/webhook/get_user_referrer"
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-              if (
-                $steps["updateShowToggle2"] != null &&
-                typeof $steps["updateShowToggle2"] === "object" &&
-                typeof $steps["updateShowToggle2"].then === "function"
-              ) {
-                $steps["updateShowToggle2"] = await $steps["updateShowToggle2"];
-              }
-
-              $steps["updateShowToggle3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          if ($ctx.query.type == null) {
-                            $state.userType =
-                              $steps.updateShowToggle2.data[0].referrer;
-                          } else {
-                            $state.userType = "lite";
-                          }
-                          return console.log($state.userType);
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateShowToggle3"] != null &&
-                typeof $steps["updateShowToggle3"] === "object" &&
-                typeof $steps["updateShowToggle3"].then === "function"
-              ) {
-                $steps["updateShowToggle3"] = await $steps["updateShowToggle3"];
-              }
 
               $steps["updateShowToggle"] = true
                 ? (() => {
@@ -393,7 +334,7 @@ function PlasmicIntro__RenderFunc(props: {
           ) : null}
           {(() => {
             try {
-              return $state.userType == "pro";
+              return $ctx.query.type == "pro";
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -462,7 +403,7 @@ function PlasmicIntro__RenderFunc(props: {
           ) : null}
           {(() => {
             try {
-              return $state.userType == "lite";
+              return $ctx.query.type == "lite";
             } catch (e) {
               if (
                 e instanceof TypeError ||
