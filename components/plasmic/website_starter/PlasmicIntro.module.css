@@ -379,6 +379,7 @@
   font-size: 22px;
   font-weight: 600;
   text-align: center;
+  padding-bottom: 10px;
   min-width: 0;
 }
 @media (max-width: 1200px) {

@@ -293,7 +293,7 @@ function PlasmicIntro__RenderFunc(props: {
           ) : null}
           {(() => {
             try {
-              return $state.showToggle;
+              return !$state.showToggle;
             } catch (e) {
               if (
                 e instanceof TypeError ||
