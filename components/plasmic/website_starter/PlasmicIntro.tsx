@@ -96,9 +96,6 @@ export type PlasmicIntro__OverridesType = {
   navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
   img?: Flex__<typeof PlasmicImg__>;
   button?: Flex__<typeof Button>;
-  iframe?: Flex__<typeof Iframe>;
-  embedHtml?: Flex__<typeof Embed>;
-  htmlVideo?: Flex__<typeof Video>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -142,6 +139,8 @@ function PlasmicIntro__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -149,6 +148,12 @@ function PlasmicIntro__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => true
+      },
+      {
+        path: "userType",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -197,6 +202,57 @@ function PlasmicIntro__RenderFunc(props: {
             className={classNames("__wab_instance", sty.sideEffect)}
             onMount={async () => {
               const $steps = {};
+
+              $steps["updateShowToggle2"] =
+                $ctx.query.type != null
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "GET",
+                          "https://gateway.rentamon.com/webhook/get_user_referrer"
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+              if (
+                $steps["updateShowToggle2"] != null &&
+                typeof $steps["updateShowToggle2"] === "object" &&
+                typeof $steps["updateShowToggle2"].then === "function"
+              ) {
+                $steps["updateShowToggle2"] = await $steps["updateShowToggle2"];
+              }
+
+              $steps["updateShowToggle3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if ($ctx.query.type == null) {
+                            $state.userType =
+                              $steps.updateShowToggle2.data[0].referrer;
+                          } else {
+                            $state.userType = "lite";
+                          }
+                          return console.log($state.userType);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateShowToggle3"] != null &&
+                typeof $steps["updateShowToggle3"] === "object" &&
+                typeof $steps["updateShowToggle3"].then === "function"
+              ) {
+                $steps["updateShowToggle3"] = await $steps["updateShowToggle3"];
+              }
 
               $steps["updateShowToggle"] = true
                 ? (() => {
@@ -335,58 +391,144 @@ function PlasmicIntro__RenderFunc(props: {
               </Button>
             </Stack__>
           ) : null}
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__nepg6)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__vqRx4
-              )}
-            >
-              {
-                "\u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+          {(() => {
+            try {
+              return $state.userType == "pro";
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
               }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__yiK3J)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__nepg6)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vqRx4
+                  )}
+                >
+                  {
+                    "\u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jjTWo
+                  )}
+                >
+                  {"\u0648\u06cc\u062f\u0648 \u067e\u0631\u0648"}
+                </div>
+              </Stack__>
+              <Iframe
+                className={classNames("__wab_instance", sty.iframe__vLsgo)}
+                src={``}
+              />
+
+              <Embed
+                className={classNames("__wab_instance", sty.embedHtml__y7JkN)}
+                code={
+                  '<div id="19987570163"><script type="text/JavaScript" src="https://www.aparat.com/embed/dnu9g57?data[rnddiv]=19987570163&data[responsive]=yes"></script></div>'
+                }
+              />
+
+              <Video
+                autoPlay={false}
+                className={classNames("__wab_instance", sty.htmlVideo__yucuM)}
+                controls={true}
+                poster={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "/plasmic/website_starter/images/coverJpg2.jpg"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "/plasmic/website_starter/images/coverJpg2.jpg"
+                    : "/plasmic/website_starter/images/coverJpg2.jpg"
+                }
+                src={
+                  "https://rentamon-files.storage.iran.liara.space/video/rentamon-onboarding.mp4"
+                }
+              />
             </div>
-          </Stack__>
-          <div className={classNames(projectcss.all, sty.freeBox__yiK3J)}>
-            <Iframe
-              data-plasmic-name={"iframe"}
-              data-plasmic-override={overrides.iframe}
-              className={classNames("__wab_instance", sty.iframe)}
-              src={``}
-            />
+          ) : null}
+          {(() => {
+            try {
+              return $state.userType == "lite";
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__vVBpa)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__kphtq)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__c2E9M
+                  )}
+                >
+                  {
+                    "\u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yQtX
+                  )}
+                >
+                  {"\u0648\u06cc\u062f\u0648 \u0644\u0627\u06cc\u062a"}
+                </div>
+              </Stack__>
+              <Iframe
+                className={classNames("__wab_instance", sty.iframe___1TAO)}
+                src={``}
+              />
 
-            <Embed
-              data-plasmic-name={"embedHtml"}
-              data-plasmic-override={overrides.embedHtml}
-              className={classNames("__wab_instance", sty.embedHtml)}
-              code={
-                '<div id="19987570163"><script type="text/JavaScript" src="https://www.aparat.com/embed/dnu9g57?data[rnddiv]=19987570163&data[responsive]=yes"></script></div>'
-              }
-            />
+              <Embed
+                className={classNames("__wab_instance", sty.embedHtml__v1L9J)}
+                code={
+                  '<div id="19987570163"><script type="text/JavaScript" src="https://www.aparat.com/embed/dnu9g57?data[rnddiv]=19987570163&data[responsive]=yes"></script></div>'
+                }
+              />
 
-            <Video
-              data-plasmic-name={"htmlVideo"}
-              data-plasmic-override={overrides.htmlVideo}
-              autoPlay={false}
-              className={classNames("__wab_instance", sty.htmlVideo)}
-              controls={true}
-              poster={
-                hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "/plasmic/website_starter/images/coverJpg2.jpg"
-                  : hasVariant(globalVariants, "screen", "mobile")
-                  ? "/plasmic/website_starter/images/coverJpg2.jpg"
-                  : "/plasmic/website_starter/images/coverJpg2.jpg"
-              }
-              src={
-                "https://rentamon-files.storage.iran.liara.space/video/rentamon-onboarding.mp4"
-              }
-            />
-          </div>
+              <Video
+                autoPlay={false}
+                className={classNames("__wab_instance", sty.htmlVideo__zdbxb)}
+                controls={true}
+                poster={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "/plasmic/website_starter/images/coverJpg2.jpg"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "/plasmic/website_starter/images/coverJpg2.jpg"
+                    : "/plasmic/website_starter/images/coverJpg2.jpg"
+                }
+                src={
+                  "https://rentamon-files.storage.iran.liara.space/video/rentamon-onboarding.mp4"
+                }
+              />
+            </div>
+          ) : null}
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
             data-plasmic-override={overrides.rentamonFooter}
@@ -405,18 +547,12 @@ const PlasmicDescendants = {
     "navbarRentamonComponent",
     "img",
     "button",
-    "iframe",
-    "embedHtml",
-    "htmlVideo",
     "rentamonFooter"
   ],
   sideEffect: ["sideEffect"],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   img: ["img"],
   button: ["button"],
-  iframe: ["iframe"],
-  embedHtml: ["embedHtml"],
-  htmlVideo: ["htmlVideo"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -428,9 +564,6 @@ type NodeDefaultElementType = {
   navbarRentamonComponent: typeof NavbarRentamonComponent;
   img: typeof PlasmicImg__;
   button: typeof Button;
-  iframe: typeof Iframe;
-  embedHtml: typeof Embed;
-  htmlVideo: typeof Video;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -498,9 +631,6 @@ export const PlasmicIntro = Object.assign(
     navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
     img: makeNodeComponent("img"),
     button: makeNodeComponent("button"),
-    iframe: makeNodeComponent("iframe"),
-    embedHtml: makeNodeComponent("embedHtml"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicIntro
