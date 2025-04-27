@@ -329,10 +329,10 @@ function PlasmicInvite__RenderFunc(props: {
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
                         return {
-                          src: "/plasmic/website_starter/images/linePricingPng.png",
-                          fullWidth: 300,
-                          fullHeight: 2,
-                          aspectRatio: undefined
+                          src: "/plasmic/website_starter/images/image31.svg",
+                          fullWidth: 96,
+                          fullHeight: 96,
+                          aspectRatio: 1
                         };
                       }
                       throw e;
