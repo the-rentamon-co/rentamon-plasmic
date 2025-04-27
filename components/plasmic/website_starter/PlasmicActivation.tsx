@@ -3916,6 +3916,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               "invite_code"
                                             )
                                           ) {
+                                            console.log("in the invite");
                                             const inviteCode =
                                               getCookieValue("invite_code");
                                             $state.invitationCode = inviteCode;
@@ -3928,6 +3929,7 @@ function PlasmicActivation__RenderFunc(props: {
                                           if (
                                             document.cookie.includes("source")
                                           ) {
+                                            console.log("in the web_source");
                                             const user_type =
                                               getCookieValue("source");
                                             $state.source = user_type;
