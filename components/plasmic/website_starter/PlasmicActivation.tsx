@@ -3924,11 +3924,18 @@ function PlasmicActivation__RenderFunc(props: {
                                               "invite_code:",
                                               $state.invitationCode
                                             );
-                                            return console.log(
-                                              "source:",
-                                              $state.source
-                                            );
                                           }
+                                          if (
+                                            document.cookie.includes("source")
+                                          ) {
+                                            const user_type =
+                                              getCookieValue("source");
+                                            $state.source = user_type;
+                                          }
+                                          return console.log(
+                                            "source:",
+                                            $state.source
+                                          );
                                         })();
                                       }
                                     };
@@ -4136,8 +4143,9 @@ function PlasmicActivation__RenderFunc(props: {
                                       if (document.cookie.includes("source")) {
                                         const user_type =
                                           getCookieValue("source");
-                                        return ($state.source = user_type);
+                                        $state.source = user_type;
                                       }
+                                      return console.log($state.source);
                                     })();
                                   }
                                 };
