@@ -576,6 +576,12 @@ function PlasmicActivation__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "source",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -3931,28 +3937,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return console.log(
-                                          $steps.invokeGlobalAction.data.message
-                                        );
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
-
                               $steps["runCode2"] =
                                 $steps.invokeGlobalAction.data.message !=
                                 "user is already registered"
@@ -4076,6 +4060,55 @@ function PlasmicActivation__RenderFunc(props: {
                               ) {
                                 $steps["invokeGlobalAction3"] = await $steps[
                                   "invokeGlobalAction3"
+                                ];
+                              }
+
+                              $steps["defineUserSource"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function getCookieValue(cookieName) {
+                                            const cookies = document.cookie
+                                              .split(";")
+                                              .map(cookie => cookie.trim());
+                                            for (const cookie of cookies) {
+                                              const [name, value] =
+                                                cookie.split("=");
+                                              if (name === cookieName) {
+                                                return value;
+                                              }
+                                            }
+                                            return null;
+                                          }
+                                          if (
+                                            document.cookie.includes("soruce")
+                                          ) {
+                                            const user_type =
+                                              getCookieValue("soruce");
+                                            $state.source = user_type;
+                                            return console.log(
+                                              "user_type:",
+                                              $state.source
+                                            );
+                                          }
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["defineUserSource"] != null &&
+                                typeof $steps["defineUserSource"] ===
+                                  "object" &&
+                                typeof $steps["defineUserSource"].then ===
+                                  "function"
+                              ) {
+                                $steps["defineUserSource"] = await $steps[
+                                  "defineUserSource"
                                 ];
                               }
                             }).apply(null, eventArgs);
