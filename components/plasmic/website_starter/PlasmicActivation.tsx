@@ -4173,9 +4173,7 @@ function PlasmicActivation__RenderFunc(props: {
                           $steps["updateInput6Value2"] = $state.policiesCheckbox
                             .isChecked
                             ? (() => {
-                                const actionArgs = {
-                                  destination: `/intro/${"lite"}`
-                                };
+                                const actionArgs = { destination: `/tier` };
                                 return (({ destination }) => {
                                   if (
                                     typeof destination === "string" &&

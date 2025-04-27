@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -69,9 +69,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTier.module.css"; // plasmic-import: EiemSs0Lr6oN/css
-
-import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -86,6 +83,7 @@ export const PlasmicTier__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTier__OverridesType = {
   root?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultTierProps {}
@@ -128,6 +126,8 @@ function PlasmicTier__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
   });
@@ -169,7 +169,7 @@ function PlasmicTier__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0622\u06cc\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648 \u06cc\u0627 \u0647\u0648\u0645\u0633\u0627 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u06cc\u061f"
+                  "\u0622\u06cc\u0627 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648 \u06cc\u0627 \u0647\u0648\u0645\u0633\u0627 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u06cc\u061f"
                 }
               </div>
             </div>
@@ -412,39 +412,159 @@ function PlasmicTier__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.freeBox__mnhb7)}
               >
-                <Button
-                  className={classNames("__wab_instance", sty.button__ysGs)}
-                  color={"softYellow"}
-                  link={`/intro/${"pro"}`}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yeFhF
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToIntro"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/intro/${"pro"}` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToIntro"] != null &&
+                      typeof $steps["goToIntro"] === "object" &&
+                      typeof $steps["goToIntro"].then === "function"
+                    ) {
+                      $steps["goToIntro"] = await $steps["goToIntro"];
+                    }
+                  }}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__i3VG
-                    )}
-                  >
-                    {"\u0628\u0644\u0647"}
-                  </div>
-                </Button>
-                <Button
-                  className={classNames("__wab_instance", sty.button__j1Bwr)}
-                  color={"softBlue"}
-                  link={`/intro/${"lite"}`}
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
+                    : "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mUag9
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToIntro"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/intro/${"lite"}`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToIntro"] != null &&
+                      typeof $steps["goToIntro"] === "object" &&
+                      typeof $steps["goToIntro"].then === "function"
+                    ) {
+                      $steps["goToIntro"] = await $steps["goToIntro"];
+                    }
+                  }}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___0X11F
-                    )}
-                  >
-                    {"\u062e\u06cc\u0631"}
-                  </div>
-                </Button>
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
+                    : "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"}
+                </div>
               </Stack__>
             </div>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/get_user_referrer"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          let user_type =
+                            $steps.invokeGlobalAction.data[0].referrer;
+                          if (user_type == "referral") {
+                            window.location.href =
+                              "https://app.rentamon.com/intro/pro/";
+                          }
+                          if (user_type == "app_store") {
+                            return (window.location.href =
+                              "https://app.rentamon.com/intro/lite/");
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -452,13 +572,15 @@ function PlasmicTier__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "sideEffect"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -521,6 +643,7 @@ export const PlasmicTier = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicTier
     internalVariantProps: PlasmicTier__VariantProps,

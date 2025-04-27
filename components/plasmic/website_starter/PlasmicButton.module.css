@@ -5,8 +5,7 @@
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
-  background: linear-gradient(58deg, #8165d6 0%, #9880e4 100%) 0% 0% / 100% 100%
-    repeat;
+  background: none;
   margin-top: 14px;
   max-width: 164px;
   width: 100%;
