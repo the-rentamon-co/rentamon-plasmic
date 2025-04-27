@@ -5,7 +5,7 @@
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
-  background: none;
+  background: var(--token-8nedppYkGVaH);
   margin-top: 14px;
   max-width: 164px;
   width: 100%;

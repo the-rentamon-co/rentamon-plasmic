@@ -293,7 +293,7 @@ function PlasmicIntro__RenderFunc(props: {
           ) : null}
           {(() => {
             try {
-              return !$state.showToggle;
+              return $state.showToggle;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -324,7 +324,21 @@ function PlasmicIntro__RenderFunc(props: {
                 data-plasmic-name={"button"}
                 data-plasmic-override={overrides.button}
                 className={classNames("__wab_instance", sty.button)}
-                link={`/calendar`}
+                link={(() => {
+                  try {
+                    return $ctx.params.type == "lite"
+                      ? "https://app.rentamon.com/calendar/"
+                      : "https://app.rentamon.com/panel/";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return `/calendar`;
+                    }
+                    throw e;
+                  }
+                })()}
               >
                 {
                   "\u0648\u0631\u0648\u062f \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"

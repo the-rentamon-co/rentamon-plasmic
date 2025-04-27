@@ -182,6 +182,16 @@
   margin-top: calc(10px + 0px) !important;
   margin-bottom: 10px;
 }
+@media (max-width: 1200px) {
+  .button:global(.__wab_instance) {
+    margin-top: calc(10px + 0px) !important;
+  }
+}
+@media (max-width: 500px) {
+  .button:global(.__wab_instance) {
+    margin-top: calc(10px + 0px) !important;
+  }
+}
 .svg__tlAb {
   position: relative;
   object-fit: cover;
