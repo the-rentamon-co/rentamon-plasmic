@@ -4062,26 +4062,6 @@ function PlasmicActivation__RenderFunc(props: {
                                   "invokeGlobalAction3"
                                 ];
                               }
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return console.log("done");
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
                             }).apply(null, eventArgs);
                           }}
                         >
@@ -4207,6 +4187,47 @@ function PlasmicActivation__RenderFunc(props: {
                           ) {
                             $steps["updateInput6Value2"] = await $steps[
                               "updateInput6Value2"
+                            ];
+                          }
+
+                          $steps["updateInput6Value3"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "POST",
+                                    "https://gateway.rentamon.com/webhook/set_user_source",
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return (() => {
+                                          return { source: $state.source };
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateInput6Value3"] != null &&
+                            typeof $steps["updateInput6Value3"] === "object" &&
+                            typeof $steps["updateInput6Value3"].then ===
+                              "function"
+                          ) {
+                            $steps["updateInput6Value3"] = await $steps[
+                              "updateInput6Value3"
                             ];
                           }
                         }}
