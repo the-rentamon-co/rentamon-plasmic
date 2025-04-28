@@ -4184,38 +4184,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["runCode"] = await $steps["runCode"];
                               }
 
-                              $steps["updateInput6Value2"] = $state
-                                .policiesCheckbox.isChecked
-                                ? (() => {
-                                    const actionArgs = { destination: `/tier` };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["updateInput6Value2"] != null &&
-                                typeof $steps["updateInput6Value2"] ===
-                                  "object" &&
-                                typeof $steps["updateInput6Value2"].then ===
-                                  "function"
-                              ) {
-                                $steps["updateInput6Value2"] = await $steps[
-                                  "updateInput6Value2"
-                                ];
-                              }
-
                               $steps["updateInput6Value3"] = $state
                                 .policiesCheckbox.isChecked
                                 ? (() => {
@@ -4306,6 +4274,38 @@ function PlasmicActivation__RenderFunc(props: {
                                 typeof $steps["runCode2"].then === "function"
                               ) {
                                 $steps["runCode2"] = await $steps["runCode2"];
+                              }
+
+                              $steps["updateInput6Value2"] = $state
+                                .policiesCheckbox.isChecked
+                                ? (() => {
+                                    const actionArgs = { destination: `/tier` };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateInput6Value2"] != null &&
+                                typeof $steps["updateInput6Value2"] ===
+                                  "object" &&
+                                typeof $steps["updateInput6Value2"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateInput6Value2"] = await $steps[
+                                  "updateInput6Value2"
+                                ];
                               }
                             }}
                             submitsForm={true}
