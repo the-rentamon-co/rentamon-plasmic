@@ -2011,7 +2011,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       value: (() => {
                         if ($steps.checkOldUser.data.flag == 3) {
                           return (window.location.href =
-                            "https://rentamon.com/panels/?prop_id=1");
+                            "https://web.rentamon.com/panels/?prop_id=1");
                         } else if ($steps.checkOldUser.data.flag == 2) {
                           return (window.location.href =
                             "https://app.rentamon.com//calendar/");

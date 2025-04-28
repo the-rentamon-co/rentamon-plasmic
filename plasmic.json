@@ -1438,6 +1438,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/tier"
+        },
+        {
+          "id": "fKx94rj2n5oZ",
+          "name": "RedirectFromPanelsToPanel",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRedirectFromPanelsToPanel.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/panels.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRedirectFromPanelsToPanel.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/panels"
         }
       ],
       "icons": [
