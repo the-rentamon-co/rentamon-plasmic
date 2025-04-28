@@ -421,6 +421,30 @@ function PlasmicTier__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
+                    $steps["invokeGlobalAction"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "POST",
+                              "https://gateway.rentamon.com/webhook/send_user_to_pro_panel"
+                            ]
+                          };
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                    if (
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
+                    ) {
+                      $steps["invokeGlobalAction"] = await $steps[
+                        "invokeGlobalAction"
+                      ];
+                    }
+
                     $steps["goToIntro"] = true
                       ? (() => {
                           const actionArgs = { destination: `/intro/${"pro"}` };

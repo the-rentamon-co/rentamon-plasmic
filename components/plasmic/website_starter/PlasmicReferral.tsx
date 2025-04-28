@@ -1616,7 +1616,7 @@ ${$state.textInput.value}
                       !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                       (() => {
                         try {
-                          return $state.apiRequest2.data;
+                          return $state.apiRequest2.data[0].referrers;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -1695,8 +1695,9 @@ ${$state.textInput.value}
                           {(() => {
                             try {
                               return (
-                                $state.apiRequest2.data[0].referrers[0]
-                                  .first_name != null
+                                $state.apiRequest2.data[0].referrers[
+                                  currentIndex
+                                ].first_name != null
                               );
                             } catch (e) {
                               if (
