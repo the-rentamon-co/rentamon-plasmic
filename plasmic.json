@@ -1452,6 +1452,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/panels"
+        },
+        {
+          "id": "wqhmVdxkd2UU",
+          "name": "بهترینسایتاجارهویلا",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicبهترینسایتاجارهویلا.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/best-villa-rental-sites.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicبهترینسایتاجارهویلا.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/best-villa-rental-sites"
         }
       ],
       "icons": [
@@ -3031,6 +3045,41 @@
           "id": "l0QH37KFZbDy",
           "name": "ENAMADpng.parspng.com_.png",
           "filePath": "../public/plasmic/website_starter/images/enamaDpngParspngComPng.png"
+        },
+        {
+          "id": "XeK9V5RCq80o",
+          "name": "income.jpg",
+          "filePath": "../public/plasmic/website_starter/images/incomeJpg.jpg"
+        },
+        {
+          "id": "RiV2M0kOyZJ8",
+          "name": "waiting.jpg",
+          "filePath": "../public/plasmic/website_starter/images/waitingJpg.jpg"
+        },
+        {
+          "id": "Z2W4OIs2xcsF",
+          "name": "support.jpg",
+          "filePath": "../public/plasmic/website_starter/images/supportJpg.jpg"
+        },
+        {
+          "id": "E4C29XYmwAEl",
+          "name": "share-chart.png",
+          "filePath": "../public/plasmic/website_starter/images/shareChartPng.png"
+        },
+        {
+          "id": "d9FyBtXYItdJ",
+          "name": "share-table.png",
+          "filePath": "../public/plasmic/website_starter/images/shareTablePng.png"
+        },
+        {
+          "id": "105iV82Iook_",
+          "name": "chat.png",
+          "filePath": "../public/plasmic/website_starter/images/chatPng.png"
+        },
+        {
+          "id": "1rGWmjHLSgeB",
+          "name": "Spinner@1x-1.0s-200px-200px.svg",
+          "filePath": "../public/plasmic/website_starter/images/spinner1X10S200Px200PxSvg.svg"
         }
       ],
       "indirect": false,
