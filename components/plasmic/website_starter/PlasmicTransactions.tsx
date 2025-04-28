@@ -791,7 +791,15 @@ function PlasmicTransactions__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__jklRg)}
-                              displayHeight={"15px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "13px"
+                                  : "15px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -825,7 +833,15 @@ function PlasmicTransactions__RenderFunc(props: {
                             <PlasmicImg__
                               alt={""}
                               className={classNames(sty.img__uxrTx)}
-                              displayHeight={"15px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "13px"
+                                  : "15px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}

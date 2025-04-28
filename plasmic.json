@@ -3026,6 +3026,11 @@
           "id": "9lMXKoew9Yqj",
           "name": "cover.jpg 2",
           "filePath": "../public/plasmic/website_starter/images/coverJpg2.jpg"
+        },
+        {
+          "id": "l0QH37KFZbDy",
+          "name": "ENAMADpng.parspng.com_.png",
+          "filePath": "../public/plasmic/website_starter/images/enamaDpngParspngComPng.png"
         }
       ],
       "indirect": false,

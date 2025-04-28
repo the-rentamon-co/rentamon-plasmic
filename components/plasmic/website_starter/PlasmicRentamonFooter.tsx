@@ -166,7 +166,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                 data-plasmic-override={overrides.embedHtml}
                 className={classNames("__wab_instance", sty.embedHtml)}
                 code={
-                  "<div>\r\n<a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=519096&Code=fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'><img referrerpolicy='origin' src='https://rentamon.com/wp-content/uploads/2023/08/ENAMADpng.parspng.com_.png' alt='' style='cursor:pointer' code='fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'></a>\r\n\r\n</div>"
+                  "<div>\r\n<a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=519096&Code=fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'><img referrerpolicy='origin' src='https://img.plasmic.app/img-optimizer/v1/img?src=https%3A%2F%2Fimg.plasmic.app%2Fimg-optimizer%2Fv1%2Fimg%2F0f805c9e4bd51ef3520744003aa4f1a7.png&q=75&f=webp' alt='' style='cursor:pointer' code='fdj2sP7CDtWiwQ8TSBYwkC5IZBhGPG16'></a>\r\n\r\n</div>"
                 }
               />
             </div>
