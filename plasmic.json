@@ -1468,20 +1468,6 @@
           "path": "/best-villa-rental-sites"
         },
         {
-          "id": "8TcoVSj4ZBG-",
-          "name": "اجارهکوتاهمدت",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicاجارهکوتاهمدت.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/short-term-rental.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicاجارهکوتاهمدت.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/short-term-rental"
-        },
-        {
           "id": "1vN9Eff09IS1",
           "name": "ثبتآگهیاقامتگاه",
           "type": "managed",
@@ -1494,6 +1480,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/list-your-property"
+        },
+        {
+          "id": "8TcoVSj4ZBG-",
+          "name": "راهنمایجامعدرآمدازاجارهویلا",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicراهنمایجامعدرآمدازاجارهویلا.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/vacation-rental-income.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicراهنمایجامعدرآمدازاجارهویلا.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/vacation-rental-income"
+        },
+        {
+          "id": "toyYO-nFHLHU",
+          "name": "چراجارهکوتاهمدت",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicچراجارهکوتاهمدت.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/short-term-rental.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicچراجارهکوتاهمدت.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/short-term-rental"
         }
       ],
       "icons": [

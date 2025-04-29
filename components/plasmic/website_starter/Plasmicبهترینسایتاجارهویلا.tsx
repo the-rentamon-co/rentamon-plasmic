@@ -1533,7 +1533,7 @@ function Plasmicبهترینسایتاجارهویلا__RenderFunc(props: {
                           sty.link__mvPc5
                         )}
                         component={Link}
-                        href={`/short-term-rental`}
+                        href={`/vacation-rental-income`}
                         platform={"nextjs"}
                       >
                         {

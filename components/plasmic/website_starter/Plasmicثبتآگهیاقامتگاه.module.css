@@ -705,6 +705,12 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  background: radial-gradient(
+      ellipse 50% 50% at 50% 50%,
+      #d8e4ff 0%,
+      #56b9ff00 97%
+    )
+    0% 0% / 100% 100% repeat;
   min-width: 0;
   padding: 8px;
 }
@@ -719,6 +725,12 @@
     padding-left: 0px;
     display: flex;
     flex-direction: column;
+    background: radial-gradient(
+        ellipse 90% 50% at 50% 50%,
+        #d8e4ff 0%,
+        #56b9ff00 97%
+      )
+      0% 0% / 100% 100% repeat;
   }
 }
 @media (max-width: 350px) {
@@ -856,7 +868,7 @@
   .freeBox___6AvZ {
     align-items: center;
     justify-content: center;
-    max-width: 100%;
+    max-width: 70%;
   }
 }
 @media (max-width: 500px) {
@@ -2055,6 +2067,7 @@
   font-size: 17px;
   line-height: 2;
   color: var(--token-8nedppYkGVaH);
+  font-weight: 600;
   min-width: 0;
   padding: 10px 20px;
 }

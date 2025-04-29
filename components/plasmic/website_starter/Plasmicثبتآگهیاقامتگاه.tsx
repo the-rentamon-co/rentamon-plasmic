@@ -113,6 +113,7 @@ export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   videos?: Flex__<"div">;
   strDefinition3?: Flex__<"div">;
   relatedContents2?: Flex__<"div">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   bot?: Flex__<"div">;
   more?: Flex__<"div">;
   certificates?: Flex__<"div">;
@@ -822,7 +823,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                                 ).apply(null, eventArgs);
                               },
                               placeholder:
-                                "\u062a\u0648\u0636\u06cc\u062d\u0627\u062a",
+                                "\u0646\u0627\u0645 \u0648\u06cc\u0644\u0627 \u0648 \u062a\u0648\u0636\u06cc\u062d\u0627\u062a",
                               value: generateStateValueProp($state, [
                                 "textArea",
                                 "value"
@@ -1389,47 +1390,32 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
                     }
                   </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
+                  <React.Fragment>{"\n- "}</React.Fragment>
                   {
                     <PlasmicLink__
+                      data-plasmic-name={"link"}
+                      data-plasmic-override={overrides.link}
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
                         projectcss.__wab_text,
                         projectcss.plasmic_default__inline,
-                        sty.link__rpqH
+                        sty.link
                       )}
                       component={Link}
-                      href={`/short-term-rental`}
+                      href={"rentamon.com/best-villa-rental-sites"}
                       platform={"nextjs"}
                     >
                       {
-                        "- \u06f2/\u06f5 \u0628\u0631\u0627\u0628\u0631 \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631 \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
+                        "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
                       }
                     </PlasmicLink__>
                   }
-                  <React.Fragment>{"\n - "}</React.Fragment>
-                  {
-                    <PlasmicLink__
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
-                        sty.link___4FOzl
-                      )}
-                      component={Link}
-                      href={
-                        "https://rentamon.com/%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7/"
-                      }
-                      platform={"nextjs"}
-                    >
-                      {
-                        "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      }
-                    </PlasmicLink__>
-                  }
-                  <React.Fragment>{""}</React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\n - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                    }
+                  </React.Fragment>
                 </React.Fragment>
               </div>
             </div>
@@ -1660,6 +1646,7 @@ const PlasmicDescendants = {
     "videos",
     "strDefinition3",
     "relatedContents2",
+    "link",
     "bot",
     "more",
     "certificates",
@@ -1688,6 +1675,7 @@ const PlasmicDescendants = {
     "videos",
     "strDefinition3",
     "relatedContents2",
+    "link",
     "bot",
     "more",
     "certificates",
@@ -1719,7 +1707,8 @@ const PlasmicDescendants = {
   title: ["title"],
   videos: ["videos"],
   strDefinition3: ["strDefinition3"],
-  relatedContents2: ["relatedContents2"],
+  relatedContents2: ["relatedContents2", "link"],
+  link: ["link"],
   bot: [
     "bot",
     "more",
@@ -1760,6 +1749,7 @@ type NodeDefaultElementType = {
   videos: "div";
   strDefinition3: "div";
   relatedContents2: "div";
+  link: "a";
   bot: "div";
   more: "div";
   certificates: "div";
@@ -1849,6 +1839,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     videos: makeNodeComponent("videos"),
     strDefinition3: makeNodeComponent("strDefinition3"),
     relatedContents2: makeNodeComponent("relatedContents2"),
+    link: makeNodeComponent("link"),
     bot: makeNodeComponent("bot"),
     more: makeNodeComponent("more"),
     certificates: makeNodeComponent("certificates"),
