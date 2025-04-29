@@ -790,6 +790,7 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   min-width: 0;
   padding: 0px;
 }

@@ -1735,6 +1735,89 @@ function PlasmicReservations__RenderFunc(props: {
                       data-plasmic-name={"_16"}
                       data-plasmic-override={overrides._16}
                       className={classNames(projectcss.all, sty._16)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] =
+                          $state.modalData[0].is_sattled == false &&
+                          $state.modalData[0].status == "Past"
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    (() => {
+                                      try {
+                                        return `${$state.modalData[0].platfromName} درآمد این رزرو رو با شما تسویه نکرده`;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })(),
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+
+                        $steps["invokeGlobalAction2"] =
+                          $state.modalData[0].is_sattled == true &&
+                          $state.modalData[0].status == "Past"
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "success",
+                                    (() => {
+                                      try {
+                                        return `${$state.modalData[0].platfromName} درآمد این رزرو رو با شما تسویه کرده`;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })(),
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["invokeGlobalAction2"] != null &&
+                          typeof $steps["invokeGlobalAction2"] === "object" &&
+                          typeof $steps["invokeGlobalAction2"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction2"] = await $steps[
+                            "invokeGlobalAction2"
+                          ];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(
