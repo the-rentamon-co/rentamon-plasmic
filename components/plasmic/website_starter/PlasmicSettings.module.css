@@ -2017,6 +2017,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 45px;
+  display: none;
 }
 .img__la2M2 > picture > img {
   object-fit: cover;

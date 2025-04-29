@@ -667,11 +667,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         <FormItemWrapper
                           className={classNames(
                             "__wab_instance",
-                            sty.formField__aq51B
+                            sty.formField__pl9Yz
                           )}
-                          initialValue={
-                            "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
-                          }
+                          initialValue={``}
                           label={
                             "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
                           }
@@ -692,6 +690,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                                   AntdInput_Helpers
                                 ).apply(null, eventArgs);
                               },
+                              placeholder:
+                                "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
                               size: "large",
                               value: generateStateValueProp($state, [
                                 "input",
@@ -723,7 +723,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         <FormItemWrapper
                           className={classNames(
                             "__wab_instance",
-                            sty.formField__svyNz
+                            sty.formField__dhBgs
                           )}
                           initialValue={``}
                           label={"\u0645\u0648\u0628\u0627\u06cc\u0644"}
@@ -741,6 +741,15 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               length: 11,
                               message:
                                 "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                            },
+
+                            {
+                              ruleType: "advanced",
+                              custom: (rule, value) => {
+                                return /^09\d{9}$/;
+                              },
+                              message:
+                                "\u0644\u0637\u0641\u0627 \u0627\u0632  \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646"
                             }
                           ]}
                         >
@@ -750,7 +759,6 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                                 "__wab_instance",
                                 sty.input2
                               ),
-                              maxLength: 11,
                               onChange: async (...eventArgs: any) => {
                                 generateStateOnChangePropForCodeComponents(
                                   $state,
@@ -793,7 +801,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         <FormItemWrapper
                           className={classNames(
                             "__wab_instance",
-                            sty.formField__xUsEa
+                            sty.formField__oExKp
                           )}
                           label={"\u062a\u0648\u0636\u06cc\u062d\u0627\u062a"}
                           name={"message"}
@@ -855,7 +863,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__mEyFv
+                              sty.text__e6FTz
                             )}
                           >
                             {"Submit"}
@@ -909,6 +917,32 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       ) {
                         $steps["invokeGlobalAction"] = await $steps[
                           "invokeGlobalAction"
+                        ];
+                      }
+
+                      $steps["invokeGlobalAction2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                undefined,
+                                "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062b\u0628\u062a \u0634\u062f\u060c \u0628\u0632\u0648\u062f\u06cc \u0628\u0627 \u0634\u0645\u0627 \u0627\u0631\u062a\u0628\u0627\u0637 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645 :)",
+                                "top-center",
+                                5000
+                              ]
+                            };
+                            return $globalActions["Fragment.showToast"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction2"] != null &&
+                        typeof $steps["invokeGlobalAction2"] === "object" &&
+                        typeof $steps["invokeGlobalAction2"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction2"] = await $steps[
+                          "invokeGlobalAction2"
                         ];
                       }
                     }}

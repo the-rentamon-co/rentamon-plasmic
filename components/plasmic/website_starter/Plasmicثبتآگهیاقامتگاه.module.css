@@ -914,7 +914,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__aq51B:global(.__wab_instance) {
+.formField__pl9Yz:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -923,7 +923,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__svyNz:global(.__wab_instance) {
+.formField__dhBgs:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -932,9 +932,9 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__xUsEa:global(.__wab_instance) {
+.formField__oExKp:global(.__wab_instance) {
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 24px;
   min-width: 0;
 }
 .textArea:global(.__wab_instance) {
@@ -946,7 +946,7 @@
   object-fit: cover;
   display: none;
 }
-.text__mEyFv {
+.text__e6FTz {
   position: relative;
   width: 100%;
   height: auto;
@@ -957,12 +957,12 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 80%;
+  max-width: 70%;
   text-align: center;
   background: #8165d6;
   color: #fcfcfc;
   padding-bottom: 14px;
-  font-size: 20px;
+  font-size: 18px;
   padding-top: 14px;
   font-weight: 600;
   cursor: pointer;

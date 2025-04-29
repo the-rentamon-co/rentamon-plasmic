@@ -5094,12 +5094,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
                             loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/spinner1X10S200Px200PxSvg.svg",
-                              fullWidth: 100,
-                              fullHeight: 100,
-                              aspectRatio: 1
-                            }}
+                            src={
+                              "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                            }
                           />
                         ) : null}
                         {(() => {
