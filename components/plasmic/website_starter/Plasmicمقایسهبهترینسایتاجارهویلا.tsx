@@ -1537,7 +1537,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                           "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
                         }
                       </span>
-                      <React.Fragment>{"\n"}</React.Fragment>
+                      <React.Fragment>{"\n- "}</React.Fragment>
                       {
                         <PlasmicLink__
                           className={classNames(
@@ -1545,14 +1545,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                             projectcss.a,
                             projectcss.__wab_text,
                             projectcss.plasmic_default__inline,
-                            sty.link__tj5Zo
+                            sty.link___4BJaZ
                           )}
                           component={Link}
-                          href={"rentamon.com/short-term-rental"}
+                          href={"/short-term-rental"}
                           platform={"nextjs"}
                         >
                           {
-                            "- \u06f2/\u06f5 \u0628\u0631\u0627\u0628\u0631 \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631 \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
+                            "\u06f2/\u06f5 \u0628\u0631\u0627\u0628\u0631 \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631 \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
                           }
                         </PlasmicLink__>
                       }
@@ -1564,10 +1564,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                             projectcss.a,
                             projectcss.__wab_text,
                             projectcss.plasmic_default__inline,
-                            sty.link__erNsq
+                            sty.link__w16Gw
                           )}
                           component={Link}
-                          href={"rentamon.com/vacation-rental-income"}
+                          href={"/vacation-rental-income"}
                           platform={"nextjs"}
                         >
                           {

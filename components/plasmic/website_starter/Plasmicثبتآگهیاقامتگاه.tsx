@@ -1373,10 +1373,10 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         projectcss.a,
                         projectcss.__wab_text,
                         projectcss.plasmic_default__inline,
-                        sty.link__rvmoN
+                        sty.link__hwbso
                       )}
                       component={Link}
-                      href={"rentamon.com/best-villa-rental-sites"}
+                      href={"/best-villa-rental-sites"}
                       platform={"nextjs"}
                     >
                       {
@@ -1384,7 +1384,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }
                     </PlasmicLink__>
                   }
-                  <React.Fragment>{"\n - "}</React.Fragment>
+                  <React.Fragment>{"\n"}</React.Fragment>
                   {
                     <PlasmicLink__
                       className={classNames(
@@ -1392,14 +1392,14 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         projectcss.a,
                         projectcss.__wab_text,
                         projectcss.plasmic_default__inline,
-                        sty.link__wKRhE
+                        sty.link__shuOg
                       )}
                       component={Link}
-                      href={"rentamon.com/vacation-rental-income"}
+                      href={"/vacation-rental-income"}
                       platform={"nextjs"}
                     >
                       {
-                        "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                        " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                       }
                     </PlasmicLink__>
                   }
