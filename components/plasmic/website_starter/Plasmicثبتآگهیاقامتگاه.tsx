@@ -113,7 +113,6 @@ export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   videos?: Flex__<"div">;
   strDefinition3?: Flex__<"div">;
   relatedContents2?: Flex__<"div">;
-  link?: Flex__<"a"> & Partial<LinkProps>;
   bot?: Flex__<"div">;
   more?: Flex__<"div">;
   certificates?: Flex__<"div">;
@@ -508,37 +507,6 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       : "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
                   </div>
                 </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___0CdAs)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__fQq0)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"60px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/mizboonPng.png",
-                      fullWidth: 140,
-                      fullHeight: 140,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__lXmRe
-                    )}
-                  >
-                    {"\u0645\u06cc\u0632\u0628\u0648\u0646"}
-                  </div>
-                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__rrCw)}>
                 <PlasmicImg__
@@ -585,7 +553,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0631 \u0633\u0627\u06cc\u062a \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u0639\u062a \u0632\u0645\u0627\u0646 \u0648 \u06a9\u0644\u06cc \u0631\u0641\u062a\u200c\u0648\u0628\u0631\u06af\u0634\u062a \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u0647!"
+                    "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0631 \u0633\u0627\u06cc\u062a \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u0639\u062a \u0632\u0645\u0627\u0646 \u0648 \u06a9\u0644\u06cc \u067e\u06cc\u06af\u06cc\u0631\u06cc \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u0647!"
                   }
                 </div>
                 <div
@@ -596,7 +564,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u06a9\u0627\u0641\u06cc\u0647 \u0627\u06cc\u0646\u062c\u0627 \u0645\u0634\u062e\u0635\u0627\u062a\u062a \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633\u06cc\u060c \u062a\u0627 \u0645\u0627 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0648 \u062a\u0648\u06cc \u0686\u0646\u062f\u062a\u0627 \u0633\u0627\u06cc\u062a \u062b\u0628\u062a \u06a9\u0646\u06cc\u0645. \u0627\u0644\u0627\u0646 \u062c\u0634\u0646\u0648\u0627\u0631\u0647 \u062f\u0627\u0631\u06cc\u0645 \u0648 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647 :)"
+                    "\u06a9\u0627\u0641\u06cc\u0647 \u0627\u06cc\u0646\u062c\u0627 \u0645\u0634\u062e\u0635\u0627\u062a\u062a \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633\u06cc\u060c \u062a\u0627 \u0645\u0627 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0648 \u062a\u0648\u06cc \u0686\u0646\u062f\u062a\u0627 \u0633\u0627\u06cc\u062a \u062b\u0628\u062a \u06a9\u0646\u06cc\u0645. \u062e\u0628\u0631 \u062e\u0648\u0628 \u0627\u06cc\u0646\u06a9\u0647 \u0627\u0644\u0627\u0646 \u062c\u0634\u0646\u0648\u0627\u0631\u0647 \u062f\u0627\u0631\u06cc\u0645 \u0648 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647 :)"
                   }
                 </div>
               </div>
@@ -751,6 +719,13 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               },
                               message:
                                 "\u0644\u0637\u0641\u0627 \u0627\u0632  \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646"
+                            },
+
+                            {
+                              ruleType: "min",
+                              length: 11,
+                              message:
+                                "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
                             }
                           ]}
                         >
@@ -1182,11 +1157,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["goToHttpsWwwJajigaComUser1918265"] = true
+                        $steps["goToHttpsWwwJabamaComHost3360637"] = true
                           ? (() => {
                               const actionArgs = {
                                 destination:
-                                  "https://www.jajiga.com/user/1918265"
+                                  "https://www.jabama.com/host/3360637"
                               };
                               return (({ destination }) => {
                                 if (
@@ -1203,14 +1178,14 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                             })()
                           : undefined;
                         if (
-                          $steps["goToHttpsWwwJajigaComUser1918265"] != null &&
-                          typeof $steps["goToHttpsWwwJajigaComUser1918265"] ===
+                          $steps["goToHttpsWwwJabamaComHost3360637"] != null &&
+                          typeof $steps["goToHttpsWwwJabamaComHost3360637"] ===
                             "object" &&
-                          typeof $steps["goToHttpsWwwJajigaComUser1918265"]
+                          typeof $steps["goToHttpsWwwJabamaComHost3360637"]
                             .then === "function"
                         ) {
-                          $steps["goToHttpsWwwJajigaComUser1918265"] =
-                            await $steps["goToHttpsWwwJajigaComUser1918265"];
+                          $steps["goToHttpsWwwJabamaComHost3360637"] =
+                            await $steps["goToHttpsWwwJabamaComHost3360637"];
                         }
                       }}
                     >
@@ -1234,9 +1209,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           sty.text__lb7OH
                         )}
                       >
-                        {
-                          "\u0645\u0646\u0635\u0648\u0631\u0647 \u0645\u0631\u0627\u062f\u062d\u0633\u06cc\u0646\u06cc"
-                        }
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "\u062e\u0627\u0646\u0645 \u0645\u0631\u0627\u062f\u062d\u0633\u06cc\u0646\u06cc"
+                          : "\u0645\u0646\u0635\u0648\u0631\u0647 \u0645\u0631\u0627\u062f\u062d\u0633\u06cc\u0646\u06cc"}
                       </div>
                     </div>
                     <div
@@ -1252,9 +1227,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           sty.text__ybkvp
                         )}
                       >
-                        {
-                          "\u0645\u0627\u0632\u0646\u062f\u0627\u0631\u0646\u060c \u0646\u0634\u062a\u0627\u0631\u0648\u062f"
-                        }
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "\u0646\u0634\u062a\u0627\u0631\u0648\u062f"
+                          : "\u0645\u0627\u0632\u0646\u062f\u0627\u0631\u0646\u060c \u0646\u0634\u062a\u0627\u0631\u0648\u062f"}
                       </div>
                     </div>
                   </div>
@@ -1364,7 +1339,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u06cc\u062a\u060c \u0628\u0627\u0639\u062b \u0645\u06cc\u0634\u0647 \u0648\u0642\u062a\u06cc \u0645\u0633\u0627\u0641\u0631 \u0627\u0633\u0645 \u0634\u0647\u0631 \u06cc\u0627 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0648 \u062c\u0633\u062a\u062c\u0648 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0627\u062d\u062a\u0645\u0627\u0644 \u062f\u06cc\u062f\u0647 \u0634\u062f\u0646 \u0634\u0645\u0627 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u06af\u0648\u06af\u0644 \u0686\u0646\u062f\u06cc\u0646 \u0628\u0631\u0627\u0628\u0631 \u0628\u0634\u0647. \u0648 \u0627\u06cc\u0646 \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u0633\u0627\u0641\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f!"
+                    "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u06cc\u062a\u060c \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u0648\u0642\u062a\u06cc \u0645\u0633\u0627\u0641\u0631 \u0627\u0633\u0645 \u0634\u0647\u0631 \u06cc\u0627 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0648 \u062c\u0633\u062a\u062c\u0648 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0627\u062d\u062a\u0645\u0627\u0644 \u062f\u06cc\u062f\u0647 \u0634\u062f\u0646 \u0634\u0645\u0627 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u06af\u0648\u06af\u0644 \u0686\u0646\u062f\u06cc\u0646 \u0628\u0631\u0627\u0628\u0631 \u0628\u0634\u0647. \u0648 \u0627\u06cc\u0646 \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u0633\u0627\u0641\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f!"
                   }
                 </div>
               </div>
@@ -1393,14 +1368,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   <React.Fragment>{"\n- "}</React.Fragment>
                   {
                     <PlasmicLink__
-                      data-plasmic-name={"link"}
-                      data-plasmic-override={overrides.link}
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
                         projectcss.__wab_text,
                         projectcss.plasmic_default__inline,
-                        sty.link
+                        sty.link__rvmoN
                       )}
                       component={Link}
                       href={"rentamon.com/best-villa-rental-sites"}
@@ -1411,11 +1384,26 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }
                     </PlasmicLink__>
                   }
-                  <React.Fragment>
-                    {
-                      "\n - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                    }
-                  </React.Fragment>
+                  <React.Fragment>{"\n - "}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__wKRhE
+                      )}
+                      component={Link}
+                      href={"rentamon.com/vacation-rental-income"}
+                      platform={"nextjs"}
+                    >
+                      {
+                        "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      }
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               </div>
             </div>
@@ -1646,7 +1634,6 @@ const PlasmicDescendants = {
     "videos",
     "strDefinition3",
     "relatedContents2",
-    "link",
     "bot",
     "more",
     "certificates",
@@ -1675,7 +1662,6 @@ const PlasmicDescendants = {
     "videos",
     "strDefinition3",
     "relatedContents2",
-    "link",
     "bot",
     "more",
     "certificates",
@@ -1707,8 +1693,7 @@ const PlasmicDescendants = {
   title: ["title"],
   videos: ["videos"],
   strDefinition3: ["strDefinition3"],
-  relatedContents2: ["relatedContents2", "link"],
-  link: ["link"],
+  relatedContents2: ["relatedContents2"],
   bot: [
     "bot",
     "more",
@@ -1749,7 +1734,6 @@ type NodeDefaultElementType = {
   videos: "div";
   strDefinition3: "div";
   relatedContents2: "div";
-  link: "a";
   bot: "div";
   more: "div";
   certificates: "div";
@@ -1839,7 +1823,6 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     videos: makeNodeComponent("videos"),
     strDefinition3: makeNodeComponent("strDefinition3"),
     relatedContents2: makeNodeComponent("relatedContents2"),
-    link: makeNodeComponent("link"),
     bot: makeNodeComponent("bot"),
     more: makeNodeComponent("more"),
     certificates: makeNodeComponent("certificates"),

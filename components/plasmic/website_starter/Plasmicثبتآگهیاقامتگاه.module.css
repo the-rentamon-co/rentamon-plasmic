@@ -598,72 +598,6 @@
     min-width: 0;
   }
 }
-.freeBox___0CdAs {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 20%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 350px) {
-  .freeBox___0CdAs {
-    width: 100%;
-    height: auto;
-    max-width: 25%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    min-width: 0;
-    padding: 8px;
-  }
-}
-.img__fQq0 {
-  object-fit: cover;
-  max-width: 100%;
-  width: 60px;
-  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-}
-.img__fQq0 > picture > img {
-  object-fit: cover;
-}
-.text__lXmRe {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  font-size: 18px;
-  padding-top: 7px;
-  min-width: 0;
-}
-@media (max-width: 500px) {
-  .text__lXmRe {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    padding-top: 7px;
-    font-size: 17px;
-    text-align: center;
-    min-width: 0;
-  }
-}
-@media (max-width: 350px) {
-  .text__lXmRe {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    padding-top: 7px;
-    font-size: 15px;
-    text-align: center;
-    min-width: 0;
-  }
-}
 .freeBox__rrCw {
   display: flex;
   flex-direction: column;
@@ -1258,19 +1192,19 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
   text-align: right;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__gx9JO {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 @media (max-width: 500px) {
   .text__gx9JO {
-    font-size: 17px;
+    font-size: 16px;
     padding-left: 8px;
     padding-right: 8px;
   }
@@ -1278,7 +1212,7 @@
 @media (max-width: 350px) {
   .text__gx9JO {
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .freeBox__yjDmI {
@@ -1297,27 +1231,33 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
   text-align: left;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__wkvt {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 @media (max-width: 500px) {
   .text__wkvt {
-    font-size: 17px;
+    font-size: 16px;
     padding-left: 8px;
     padding-right: 8px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 400;
+    text-align: left;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .text__wkvt {
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .freeBox__eCa7T {
@@ -1354,7 +1294,7 @@
 }
 .text__yPdu1 {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   width: 100%;
   line-height: 1.8;
   padding-top: 10px;
@@ -1504,27 +1444,39 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
   text-align: right;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__ui0Ev {
-    font-size: 18px;
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 400;
+    text-align: right;
+    min-width: 0;
   }
 }
 @media (max-width: 500px) {
   .text__ui0Ev {
-    font-size: 17px;
+    font-size: 16px;
     padding-left: 8px;
     padding-right: 8px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 400;
+    text-align: right;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .text__ui0Ev {
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .freeBox__eiONo {
@@ -1543,27 +1495,39 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
   text-align: left;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__renrb {
-    font-size: 18px;
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 400;
+    text-align: left;
+    min-width: 0;
   }
 }
 @media (max-width: 500px) {
   .text__renrb {
-    font-size: 17px;
+    font-size: 16px;
     padding-left: 8px;
     padding-right: 8px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 400;
+    text-align: left;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .text__renrb {
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .freeBox__voY8Z {
@@ -1599,7 +1563,7 @@
 }
 .text__tayFz {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   width: 100%;
   line-height: 1.8;
   padding-top: 10px;
@@ -1749,27 +1713,33 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
   text-align: right;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__lb7OH {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 @media (max-width: 500px) {
   .text__lb7OH {
-    font-size: 17px;
+    font-size: 16px;
     padding-left: 8px;
     padding-right: 8px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 400;
+    text-align: right;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .text__lb7OH {
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .freeBox___6GLoF {
@@ -1788,27 +1758,39 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
   text-align: left;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__ybkvp {
-    font-size: 18px;
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 400;
+    text-align: left;
+    min-width: 0;
   }
 }
 @media (max-width: 500px) {
   .text__ybkvp {
-    font-size: 17px;
+    font-size: 16px;
     padding-left: 8px;
     padding-right: 8px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 400;
+    text-align: left;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .text__ybkvp {
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .freeBox__b6E4C {
@@ -1844,7 +1826,7 @@
 }
 .text___0AgMw {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   width: 100%;
   line-height: 1.8;
   padding-top: 10px;
@@ -1943,12 +1925,14 @@
     padding-left: 0px;
     display: flex;
     flex-direction: column;
+    padding-top: 21px;
   }
 }
 @media (max-width: 350px) {
   .strDefinition3 {
     padding-right: 2px;
     padding-left: 2px;
+    padding-top: 23px;
   }
 }
 .freeBox__hQqni {

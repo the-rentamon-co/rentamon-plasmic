@@ -151,6 +151,18 @@
     padding-top: 0px;
   }
 }
+@media (max-width: 500px) {
+  .right {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .right {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
 .introTitle {
   display: flex;
   flex-direction: column;
@@ -940,6 +952,9 @@
     padding-left: 0px;
     font-size: 15px;
   }
+}
+.link__jpFl {
+  padding-right: 0px;
 }
 .freeBox__zmoGb {
   display: flex;

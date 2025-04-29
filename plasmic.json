@@ -1454,20 +1454,6 @@
           "path": "/panels"
         },
         {
-          "id": "wqhmVdxkd2UU",
-          "name": "بهترینسایتاجارهویلا",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicبهترینسایتاجارهویلا.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/best-villa-rental-sites.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicبهترینسایتاجارهویلا.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/best-villa-rental-sites"
-        },
-        {
           "id": "1vN9Eff09IS1",
           "name": "ثبتآگهیاقامتگاه",
           "type": "managed",
@@ -1508,6 +1494,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/short-term-rental"
+        },
+        {
+          "id": "wqhmVdxkd2UU",
+          "name": "مقایسهبهترینسایتاجارهویلا",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicمقایسهبهترینسایتاجارهویلا.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/best-villa-rental-sites.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicمقایسهبهترینسایتاجارهویلا.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/best-villa-rental-sites"
         }
       ],
       "icons": [
