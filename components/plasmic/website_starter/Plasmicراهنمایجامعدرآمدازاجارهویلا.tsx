@@ -295,7 +295,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                           sty.link__hApOx
                         )}
                         component={Link}
-                        href={"rentamon.com/short-term-rental"}
+                        href={"/short-term-rental"}
                         platform={"nextjs"}
                       >
                         {
@@ -708,7 +708,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                           sty.link__kVhLx
                         )}
                         component={Link}
-                        href={"rentamon.com/best-villa-rental-sites"}
+                        href={"/best-villa-rental-sites"}
                         platform={"nextjs"}
                       >
                         {
