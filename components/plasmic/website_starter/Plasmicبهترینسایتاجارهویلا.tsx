@@ -104,8 +104,8 @@ export type Plasmicبهترینسایتاجارهویلا__OverridesType = {
   strDefinition5?: Flex__<"div">;
   titlesRow6?: Flex__<"div">;
   titlesRow7?: Flex__<"div">;
-  ownership?: Flex__<"div">;
-  ownershipDesc?: Flex__<"div">;
+  support?: Flex__<"div">;
+  supportText?: Flex__<"div">;
   outlines?: Flex__<"div">;
   bot?: Flex__<"div">;
   more?: Flex__<"div">;
@@ -1265,34 +1265,34 @@ function Plasmicبهترینسایتاجارهویلا__RenderFunc(props: {
                 "\u0628\u0647 \u06af\u0641\u062a\u0647\u200c\u06cc \u0628\u0631\u062e\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u060c \u0645\u0645\u06a9\u0646\u0647 \u0648\u0627\u0631\u06cc\u0632 \u0648\u062c\u0647\u0650 \u0634\u0628 \u0648 \u062c\u0627\u0628\u0627\u0645\u0627 \u062a\u0627 \u0686\u0646\u062f \u0631\u0648\u0632 \u0628\u0627 \u062a\u0627\u062e\u06cc\u0631 \u0627\u0646\u062c\u0627\u0645 \u0628\u0634\u0647."
               }
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___5Hatn)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___2W4Ag)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/supportJpg.jpg",
-                  fullWidth: 850,
-                  fullHeight: 413,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
             <div
-              data-plasmic-name={"ownership"}
-              data-plasmic-override={overrides.ownership}
-              className={classNames(projectcss.all, sty.ownership)}
+              data-plasmic-name={"support"}
+              data-plasmic-override={overrides.support}
+              className={classNames(projectcss.all, sty.support)}
             >
+              <div className={classNames(projectcss.all, sty.freeBox___5Hatn)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img___2W4Ag)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/supportJpg.jpg",
+                    fullWidth: 850,
+                    fullHeight: 413,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
               <div
-                data-plasmic-name={"ownershipDesc"}
-                data-plasmic-override={overrides.ownershipDesc}
-                className={classNames(projectcss.all, sty.ownershipDesc)}
+                data-plasmic-name={"supportText"}
+                data-plasmic-override={overrides.supportText}
+                className={classNames(projectcss.all, sty.supportText)}
               >
                 <div
                   className={classNames(
@@ -1522,7 +1522,7 @@ function Plasmicبهترینسایتاجارهویلا__RenderFunc(props: {
                         "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
                       }
                     </span>
-                    <React.Fragment>{"\n - "}</React.Fragment>
+                    <React.Fragment>{"\n"}</React.Fragment>
                     {
                       <PlasmicLink__
                         className={classNames(
@@ -1533,13 +1533,11 @@ function Plasmicبهترینسایتاجارهویلا__RenderFunc(props: {
                           sty.link__mvPc5
                         )}
                         component={Link}
-                        href={
-                          "https://rentamon.com/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%DA%A9%D9%88%D8%AA%D8%A7%D9%87-%D9%85%D8%AF%D8%AA/"
-                        }
+                        href={`/short-term-rental`}
                         platform={"nextjs"}
                       >
                         {
-                          "\u062a\u0627 \u06f2/\u06f5 \u0628\u0631\u0627\u0628\u0631 \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631 \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
+                          "- \u06f2/\u06f5 \u0628\u0631\u0627\u0628\u0631 \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631 \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
                         }
                       </PlasmicLink__>
                     }
@@ -1749,8 +1747,8 @@ const PlasmicDescendants = {
     "strDefinition5",
     "titlesRow6",
     "titlesRow7",
-    "ownership",
-    "ownershipDesc",
+    "support",
+    "supportText",
     "outlines",
     "bot",
     "more",
@@ -1783,8 +1781,8 @@ const PlasmicDescendants = {
     "strDefinition5",
     "titlesRow6",
     "titlesRow7",
-    "ownership",
-    "ownershipDesc",
+    "support",
+    "supportText",
     "outlines",
     "bot",
     "more",
@@ -1831,8 +1829,8 @@ const PlasmicDescendants = {
   strDefinition5: ["strDefinition5", "titlesRow6", "titlesRow7"],
   titlesRow6: ["titlesRow6"],
   titlesRow7: ["titlesRow7"],
-  ownership: ["ownership", "ownershipDesc", "outlines"],
-  ownershipDesc: ["ownershipDesc"],
+  support: ["support", "supportText", "outlines"],
+  supportText: ["supportText"],
   outlines: ["outlines"],
   bot: [
     "bot",
@@ -1881,8 +1879,8 @@ type NodeDefaultElementType = {
   strDefinition5: "div";
   titlesRow6: "div";
   titlesRow7: "div";
-  ownership: "div";
-  ownershipDesc: "div";
+  support: "div";
+  supportText: "div";
   outlines: "div";
   bot: "div";
   more: "div";
@@ -1976,8 +1974,8 @@ export const Plasmicبهترینسایتاجارهویلا = Object.assign(
     strDefinition5: makeNodeComponent("strDefinition5"),
     titlesRow6: makeNodeComponent("titlesRow6"),
     titlesRow7: makeNodeComponent("titlesRow7"),
-    ownership: makeNodeComponent("ownership"),
-    ownershipDesc: makeNodeComponent("ownershipDesc"),
+    support: makeNodeComponent("support"),
+    supportText: makeNodeComponent("supportText"),
     outlines: makeNodeComponent("outlines"),
     bot: makeNodeComponent("bot"),
     more: makeNodeComponent("more"),

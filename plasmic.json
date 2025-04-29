@@ -1466,6 +1466,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/best-villa-rental-sites"
+        },
+        {
+          "id": "8TcoVSj4ZBG-",
+          "name": "اجارهکوتاهمدت",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicاجارهکوتاهمدت.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/short-term-rental.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicاجارهکوتاهمدت.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/short-term-rental"
+        },
+        {
+          "id": "1vN9Eff09IS1",
+          "name": "ثبتآگهیاقامتگاه",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicثبتآگهیاقامتگاه.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/list-your-property.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicثبتآگهیاقامتگاه.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/list-your-property"
         }
       ],
       "icons": [
@@ -3080,6 +3108,61 @@
           "id": "1rGWmjHLSgeB",
           "name": "Spinner@1x-1.0s-200px-200px.svg",
           "filePath": "../public/plasmic/website_starter/images/spinner1X10S200Px200PxSvg.svg"
+        },
+        {
+          "id": "lIXXOJm7DxrK",
+          "name": "persian-house3-wide.jpg",
+          "filePath": "../public/plasmic/website_starter/images/persianHouse3WideJpg.jpg"
+        },
+        {
+          "id": "LatC5AKHjgZs",
+          "name": "ltr-vs-str-monthly-diagram.webp",
+          "filePath": "../public/plasmic/website_starter/images/ltrVsStrMonthlyDiagramWebp.webp"
+        },
+        {
+          "id": "z8HeTsPViL8n",
+          "name": "ltr-vs-str-annual-diagram.webp",
+          "filePath": "../public/plasmic/website_starter/images/ltrVsStrAnnualDiagramWebp.webp"
+        },
+        {
+          "id": "1Qxfr9kEFFyR",
+          "name": "str-vs-ltr-table.png",
+          "filePath": "../public/plasmic/website_starter/images/strVsLtrTablePng.png"
+        },
+        {
+          "id": "Dsvppz6a7G9-",
+          "name": "2022-7-84dfeada-e616-40c6-b613-9f200d0c8a71-67c46110c1067c5ba767f4b1.jpeg",
+          "filePath": "../public/plasmic/website_starter/images/_2022784DfeadaE61640C6B6139F200D0C8A7167C46110C1067C5Ba767F4B1Jpeg.jpg"
+        },
+        {
+          "id": "D4okEAy8f4Tz",
+          "name": "اجاره-ویلا-به-مسافران.jpg",
+          "filePath": "../public/plasmic/website_starter/images/اجارهویلابهمسافرانJpg.jpg"
+        },
+        {
+          "id": "nryNHShfY8GY",
+          "name": "websites-mobile.jpg",
+          "filePath": "../public/plasmic/website_starter/images/websitesMobileJpg.jpg"
+        },
+        {
+          "id": "_GzaqcuIsqm3",
+          "name": "درآمد-از-اجاره-ویلا.jpg",
+          "filePath": "../public/plasmic/website_starter/images/درآمدازاجارهویلاJpg.jpg"
+        },
+        {
+          "id": "_YQNcKOc_3EG",
+          "name": "درآمدزایی-از-اجاره-ویلا.jpg",
+          "filePath": "../public/plasmic/website_starter/images/درآمدزاییازاجارهویلاJpg.jpg"
+        },
+        {
+          "id": "J73Ee6XtaMOk",
+          "name": "ثبت-آگهی-اقامتگاه.jpg",
+          "filePath": "../public/plasmic/website_starter/images/ثبتآگهیاقامتگاهJpg.jpg"
+        },
+        {
+          "id": "FoOYz8K-7sD0",
+          "name": "image 108",
+          "filePath": "../public/plasmic/website_starter/images/image108.png"
         }
       ],
       "indirect": false,

@@ -497,7 +497,7 @@
   cursor: pointer;
   margin-left: 0px;
   flex-shrink: 0;
-  display: none !important;
+  display: none;
 }
 .img__wo8Kz > picture > img {
   object-fit: cover;
@@ -752,7 +752,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__hr8Yh:global(.__wab_instance) {
+.formField___3HHdi:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -761,7 +761,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__i8TSs:global(.__wab_instance) {
+.formField___5Sq3W:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -774,7 +774,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__ijrPr {
+.text__ggWD {
   position: relative;
   width: 100%;
   height: auto;

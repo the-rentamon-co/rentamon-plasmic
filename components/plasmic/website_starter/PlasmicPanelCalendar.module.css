@@ -624,7 +624,7 @@
   cursor: pointer;
   margin-left: 0px;
   flex-shrink: 0;
-  display: none !important;
+  display: none;
 }
 .img__mtK4H > picture > img {
   object-fit: cover;

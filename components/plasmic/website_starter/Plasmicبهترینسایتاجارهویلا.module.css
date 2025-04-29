@@ -2030,7 +2030,7 @@
   .strDefinition5 {
     padding-right: 2px;
     padding-left: 2px;
-    padding-top: 12px;
+    padding-top: 18px;
   }
 }
 .freeBox___9WNex {
@@ -2369,7 +2369,7 @@
   font-size: 17px;
   line-height: 1.8;
   padding-top: 14px;
-  padding-bottom: 0px;
+  padding-bottom: 24px;
   text-align: center;
   min-width: 0;
 }
@@ -2392,6 +2392,24 @@
     padding-right: 0px;
     padding-left: 0px;
     font-size: 15px;
+  }
+}
+.support {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #fcfcfc;
+  min-width: 0;
+  padding: 0px 8px 8px;
+}
+@media (max-width: 500px) {
+  .support {
+    padding-top: 0px;
   }
 }
 .freeBox___5Hatn {
@@ -2419,25 +2437,7 @@
     border-radius: 0px;
   }
 }
-.ownership {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background: #fcfcfc;
-  min-width: 0;
-  padding: 40px 8px 8px;
-}
-@media (max-width: 500px) {
-  .ownership {
-    padding-top: 30px;
-  }
-}
-.ownershipDesc {
+.supportText {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -2447,20 +2447,20 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 8px;
+  padding: 26px 8px 8px;
 }
 @media (max-width: 1200px) {
-  .ownershipDesc {
+  .supportText {
     padding-right: 30px;
   }
 }
 @media (max-width: 500px) {
-  .ownershipDesc {
+  .supportText {
     padding-right: 10px;
   }
 }
 @media (max-width: 350px) {
-  .ownershipDesc {
+  .supportText {
     padding-right: 4px;
     padding-left: 4px;
   }
@@ -2544,8 +2544,8 @@
 }
 @media (max-width: 350px) {
   .outlines {
-    padding-left: 0px;
-    padding-right: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -2850,11 +2850,13 @@
   .relatedContents {
     padding-right: 22px;
     padding-top: 30px;
+    padding-bottom: 26px;
   }
 }
 @media (max-width: 350px) {
   .relatedContents {
     padding-right: 14px;
+    padding-bottom: 24px;
   }
 }
 .text__raLIx {
@@ -2899,11 +2901,16 @@
   align-items: flex-start;
   background: #fcfcfc;
   min-width: 0;
-  padding: 40px 8px 8px;
+  padding: 21px 8px 8px;
+}
+@media (max-width: 1200px) {
+  .neighbours {
+    padding-top: 15px;
+  }
 }
 @media (max-width: 500px) {
   .neighbours {
-    padding-top: 30px;
+    padding-top: 12px;
   }
 }
 .benefitsTitle2 {

@@ -496,12 +496,12 @@
 }
 @media (max-width: 500px) {
   ._true {
-    display: block !important;
+    display: block;
   }
 }
 @media (max-width: 350px) {
   ._true {
-    display: block !important;
+    display: block;
   }
 }
 .paltform {
@@ -529,12 +529,12 @@
 }
 @media (max-width: 500px) {
   ._false {
-    display: block !important;
+    display: block;
   }
 }
 @media (max-width: 350px) {
   ._false {
-    display: block !important;
+    display: block;
   }
 }
 .add {
@@ -609,7 +609,7 @@
 }
 @media (max-width: 500px) {
   .true2 {
-    display: block !important;
+    display: block;
   }
 }
 .false2 {
@@ -627,7 +627,7 @@
 }
 @media (max-width: 500px) {
   .false2 {
-    display: block !important;
+    display: block;
   }
 }
 .add2 {
@@ -712,7 +712,7 @@
 }
 @media (max-width: 500px) {
   .true3 {
-    display: block !important;
+    display: block;
   }
 }
 .false3 {
@@ -811,7 +811,7 @@
 }
 @media (max-width: 500px) {
   .true4 {
-    display: block !important;
+    display: block;
   }
 }
 .false4 {
@@ -909,7 +909,7 @@
 }
 @media (max-width: 500px) {
   .true5 {
-    display: block !important;
+    display: block;
   }
 }
 .false5 {
@@ -927,7 +927,7 @@
 }
 @media (max-width: 500px) {
   .false5 {
-    display: block !important;
+    display: block;
   }
 }
 .add5 {

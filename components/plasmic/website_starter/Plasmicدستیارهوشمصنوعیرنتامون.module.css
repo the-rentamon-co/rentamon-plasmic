@@ -184,7 +184,7 @@
 }
 @media (max-width: 500px) {
   .img__yeaZj {
-    display: none !important;
+    display: none;
   }
 }
 .text__j0An {
@@ -418,7 +418,7 @@
 }
 @media (max-width: 500px) {
   .img__slB8 {
-    display: block !important;
+    display: block;
   }
 }
 .html {
