@@ -444,11 +444,13 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                   "screen",
                                   "smallMobile"
                                 )
-                                  ? "\u062a\u0639\u062f\u0627\u062f\n\u0631\u0632\u0631\u0648"
+                                  ? "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648"
                                   : "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648"}
                               </div>
                             </div>
-                            <div
+                            <Stack__
+                              as={"div"}
+                              hasGap={true}
                               className={classNames(
                                 projectcss.all,
                                 sty.freeBox__yCEuC
@@ -463,7 +465,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               >
                                 {"\u06a9\u0627\u0631\u0645\u0632\u062f"}
                               </div>
-                            </div>
+                            </Stack__>
                             <div
                               className={classNames(
                                 projectcss.all,
@@ -558,7 +560,9 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     </React.Fragment>
                                   </div>
                                 </div>
-                                <div
+                                <Stack__
+                                  as={"div"}
+                                  hasGap={true}
                                   className={classNames(
                                     projectcss.all,
                                     sty.freeBox__utHVl
@@ -588,8 +592,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                       })()}
                                     </React.Fragment>
                                   </div>
-                                </div>
-                                <div
+                                </Stack__>
+                                <Stack__
+                                  as={"div"}
+                                  hasGap={true}
                                   className={classNames(
                                     projectcss.all,
                                     sty.freeBox__yUbK3
@@ -619,8 +625,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                       })()}
                                     </React.Fragment>
                                   </div>
-                                </div>
-                                <div
+                                </Stack__>
+                                <Stack__
+                                  as={"div"}
+                                  hasGap={true}
                                   className={classNames(
                                     projectcss.all,
                                     sty.freeBox__zjnRu
@@ -650,8 +658,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                       })()}
                                     </React.Fragment>
                                   </div>
-                                </div>
-                                <div
+                                </Stack__>
+                                <Stack__
+                                  as={"div"}
+                                  hasGap={true}
                                   className={classNames(
                                     projectcss.all,
                                     sty.freeBox__nowX
@@ -681,7 +691,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                       })()}
                                     </React.Fragment>
                                   </div>
-                                </div>
+                                </Stack__>
                                 <div
                                   className={classNames(
                                     projectcss.all,

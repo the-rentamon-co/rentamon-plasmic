@@ -4369,7 +4369,7 @@ function PlasmicActivation__RenderFunc(props: {
                               displayWidth={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "114px"
-                                  : "auto"
+                                  : "80px"
                               }
                               height={
                                 hasVariant(globalVariants, "screen", "mobile")
@@ -4377,9 +4377,12 @@ function PlasmicActivation__RenderFunc(props: {
                                   : "120"
                               }
                               loading={"lazy"}
-                              src={
-                                "https://rentamon.com/wp-content/uploads/2024/02/jabama.png"
-                              }
+                              src={{
+                                src: "/plasmic/website_starter/images/image19.svg",
+                                fullWidth: 45,
+                                fullHeight: 46,
+                                aspectRatio: 0.978261
+                              }}
                               width={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "120"
@@ -5108,7 +5111,7 @@ function PlasmicActivation__RenderFunc(props: {
                               displayWidth={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "114px"
-                                  : "auto"
+                                  : "80px"
                               }
                               height={
                                 hasVariant(globalVariants, "screen", "mobile")
@@ -5116,9 +5119,12 @@ function PlasmicActivation__RenderFunc(props: {
                                   : "120"
                               }
                               loading={"lazy"}
-                              src={
-                                "https://rentamon.com/wp-content/uploads/2024/02/jajiga.png"
-                              }
+                              src={{
+                                src: "/plasmic/website_starter/images/image9.svg",
+                                fullWidth: 44,
+                                fullHeight: 44,
+                                aspectRatio: 1
+                              }}
                               width={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "120"
@@ -5812,7 +5818,7 @@ function PlasmicActivation__RenderFunc(props: {
                               displayWidth={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "114px"
-                                  : "auto"
+                                  : "80px"
                               }
                               height={
                                 hasVariant(globalVariants, "screen", "mobile")
@@ -5820,9 +5826,12 @@ function PlasmicActivation__RenderFunc(props: {
                                   : "120"
                               }
                               loading={"lazy"}
-                              src={
-                                "https://rentamon.com/wp-content/uploads/2024/02/shab.png"
-                              }
+                              src={{
+                                src: "/plasmic/website_starter/images/image.png",
+                                fullWidth: 88,
+                                fullHeight: 88,
+                                aspectRatio: undefined
+                              }}
                               width={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "120"
@@ -6584,7 +6593,7 @@ function PlasmicActivation__RenderFunc(props: {
                               displayWidth={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "114px"
-                                  : "auto"
+                                  : "80px"
                               }
                               height={
                                 hasVariant(globalVariants, "screen", "mobile")
@@ -6592,9 +6601,12 @@ function PlasmicActivation__RenderFunc(props: {
                                   : "120"
                               }
                               loading={"lazy"}
-                              src={
-                                "https://rentamon.com/wp-content/uploads/2024/02/otaghak-1.png"
-                              }
+                              src={{
+                                src: "/plasmic/website_starter/images/image13.svg",
+                                fullWidth: 46,
+                                fullHeight: 46,
+                                aspectRatio: 1
+                              }}
                               width={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "120"
@@ -7348,7 +7360,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 displayWidth={
                                   hasVariant(globalVariants, "screen", "mobile")
                                     ? "114px"
-                                    : "auto"
+                                    : "80px"
                                 }
                                 height={
                                   hasVariant(globalVariants, "screen", "mobile")
@@ -7356,9 +7368,12 @@ function PlasmicActivation__RenderFunc(props: {
                                     : "120"
                                 }
                                 loading={"lazy"}
-                                src={
-                                  "https://rentamon.com/wp-content/uploads/2024/02/mihmansho2.png"
-                                }
+                                src={{
+                                  src: "/plasmic/website_starter/images/image21.svg",
+                                  fullWidth: 46,
+                                  fullHeight: 45,
+                                  aspectRatio: 1.022222
+                                }}
                                 width={
                                   hasVariant(globalVariants, "screen", "mobile")
                                     ? "120"
@@ -8190,7 +8205,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 displayWidth={
                                   hasVariant(globalVariants, "screen", "mobile")
                                     ? "114px"
-                                    : "auto"
+                                    : "80px"
                                 }
                                 height={
                                   hasVariant(globalVariants, "screen", "mobile")
@@ -8198,9 +8213,12 @@ function PlasmicActivation__RenderFunc(props: {
                                     : "120"
                                 }
                                 loading={"lazy"}
-                                src={
-                                  "https://rentamon.com/wp-content/uploads/2024/02/homsa.png"
-                                }
+                                src={{
+                                  src: "/plasmic/website_starter/images/image18.svg",
+                                  fullWidth: 46,
+                                  fullHeight: 45,
+                                  aspectRatio: 1.022222
+                                }}
                                 width={
                                   hasVariant(globalVariants, "screen", "mobile")
                                     ? "120"
