@@ -413,7 +413,7 @@ function PlasmicIntro__RenderFunc(props: {
                     : "/plasmic/website_starter/images/coverJpg2.jpg"
                 }
                 src={
-                  "https://rentamon-files.storage.iran.liara.space/video/rentamon-pro-onboarding.mp4"
+                  "https://rentamon-files.storage.iran.liara.space/video/rentamon-pro-intro-video.mp4"
                 }
               />
             </div>

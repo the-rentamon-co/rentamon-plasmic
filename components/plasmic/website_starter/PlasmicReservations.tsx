@@ -1787,7 +1787,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     "success",
                                     (() => {
                                       try {
-                                        return `${$state.modalData[0].platfromName} درآمد این رزرو رو با شما تسویه کرده`;
+                                        return `${$state.modalData[0].platfromName} هنوز درآمد این رزرو رو با شما تسویه نکرده`;
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
