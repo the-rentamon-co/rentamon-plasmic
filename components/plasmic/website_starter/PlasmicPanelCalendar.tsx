@@ -1937,7 +1937,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 $steps["checkOldUser"] = await $steps["checkOldUser"];
               }
 
-              $steps["updateStateVariable3"] = false
+              $steps["updateStateVariable3"] = true
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
