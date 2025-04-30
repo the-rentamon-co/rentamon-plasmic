@@ -3778,7 +3778,7 @@ function PlasmicReservations__RenderFunc(props: {
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={
-                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                      "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
                     }
                   />
                 }

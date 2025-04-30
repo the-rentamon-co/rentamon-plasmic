@@ -1491,9 +1491,17 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     className={classNames(sty.img___6Jg)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "80%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "50%"
+                        : "30%"
+                    }
                     displayMinHeight={"0"}
-                    displayMinWidth={"0"}
+                    displayMinWidth={"auto"}
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
@@ -1509,7 +1517,15 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     className={classNames(sty.img__nsPr6)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "80%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "44%"
+                        : "26%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
@@ -1634,12 +1650,20 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     displayHeight={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
                         : hasVariant(globalVariants, "screen", "tablet")
                         ? "410px"
                         : "auto"
                     }
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "40%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={
@@ -1707,7 +1731,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       $steps["goToثبتآگهیاقامتگاه"] = true
                         ? (() => {
                             const actionArgs = {
-                              destination: `/list-your-property`
+                              destination: `/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87`
                             };
                             return (({ destination }) => {
                               if (

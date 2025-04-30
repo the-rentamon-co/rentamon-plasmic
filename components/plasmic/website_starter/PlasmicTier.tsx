@@ -177,374 +177,426 @@ function PlasmicTier__RenderFunc(props: {
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__gxyGk)}>
-            <div className={classNames(projectcss.all, sty.freeBox__mEp65)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pxmJ5
-                )}
-              >
-                {
-                  "\u0622\u06cc\u0627 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648 \u06cc\u0627 \u0647\u0648\u0645\u0633\u0627 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u06cc\u061f"
+          {(() => {
+            try {
+              return $state.userType == "web";
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__gxyGk)}>
+              <div className={classNames(projectcss.all, sty.freeBox__mEp65)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pxmJ5
+                  )}
+                >
+                  {
+                    "\u0622\u06cc\u0627 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648 \u06cc\u0627 \u0647\u0648\u0645\u0633\u0627 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u06cc\u061f"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__aPlBi)}>
+                <div className={classNames(projectcss.all, sty.freeBox__y790)}>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__yySkr)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___2BB22)}
+                      displayHeight={"52px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/jajigaWebp.webp",
+                        fullWidth: 192,
+                        fullHeight: 192,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__xiF5G
+                      )}
+                    >
+                      {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
+                    </div>
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__rMT3)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__gMmGk)}
+                      displayHeight={"52px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/jabamaWebp.webp",
+                        fullWidth: 512,
+                        fullHeight: 512,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ymkan
+                      )}
+                    >
+                      {"\u062c\u0627\u0628\u0627\u0645\u0627"}
+                    </div>
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__gjRrw)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__t4ODp)}
+                      displayHeight={"52px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image20.svg",
+                        fullWidth: 46,
+                        fullHeight: 45,
+                        aspectRatio: 1.022222
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__t8D2Y
+                      )}
+                    >
+                      {"\u0634\u0628"}
+                    </div>
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__pp4AP)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__mdCdV)}
+                      displayHeight={"52px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image13.svg",
+                        fullWidth: 46,
+                        fullHeight: 46,
+                        aspectRatio: 1
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__majj
+                      )}
+                    >
+                      {"\u0627\u062a\u0627\u0642\u06a9"}
+                    </div>
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__nhze)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__eQvYx)}
+                      displayHeight={"52px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image18.svg",
+                        fullWidth: 46,
+                        fullHeight: 45,
+                        aspectRatio: 1.022222
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__vTTbl
+                      )}
+                    >
+                      {"\u0647\u0648\u0645\u0633\u0627"}
+                    </div>
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__mr1Ry)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___0SFyU)}
+                      displayHeight={"52px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image68.png",
+                        fullWidth: 512,
+                        fullHeight: 512,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__o6LD
+                      )}
+                    >
+                      {"\u0645\u0647\u0645\u0627\u0646\u0634\u0648"}
+                    </div>
+                  </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox___7Y3M)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__tpzPj)}
+                      displayHeight={"52px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/mizboonPng.png",
+                        fullWidth: 140,
+                        fullHeight: 140,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__gOeDh
+                      )}
+                    >
+                      {"\u0645\u06cc\u0632\u0628\u0648\u0646"}
+                    </div>
+                  </Stack__>
+                </div>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__mnhb7)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yeFhF
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["invokeGlobalAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "POST",
+                                "https://gateway.rentamon.com/webhook/send_user_to_pro_panel"
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
+                        ];
+                      }
+
+                      $steps["goToIntro"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/intro/${"pro"}`
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToIntro"] != null &&
+                        typeof $steps["goToIntro"] === "object" &&
+                        typeof $steps["goToIntro"].then === "function"
+                      ) {
+                        $steps["goToIntro"] = await $steps["goToIntro"];
+                      }
+                    }}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
+                      : "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mUag9
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToIntro"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/intro/${"lite"}`
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToIntro"] != null &&
+                        typeof $steps["goToIntro"] === "object" &&
+                        typeof $steps["goToIntro"].then === "function"
+                      ) {
+                        $steps["goToIntro"] = await $steps["goToIntro"];
+                      }
+                    }}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
+                      : "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"}
+                  </div>
+                </Stack__>
+              </div>
+            </div>
+          ) : null}
+          {(() => {
+            try {
+              return $state.userType != "web";
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox___4IUjw)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___7ZmWs)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "34px"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "55px"
+                    : "76px"
                 }
-              </div>
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={
+                  "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                }
+              />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__aPlBi)}>
-              <div className={classNames(projectcss.all, sty.freeBox__y790)}>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__yySkr)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___2BB22)}
-                    displayHeight={"52px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/jajigaWebp.webp",
-                      fullWidth: 192,
-                      fullHeight: 192,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xiF5G
-                    )}
-                  >
-                    {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
-                  </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__rMT3)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__gMmGk)}
-                    displayHeight={"52px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/jabamaWebp.webp",
-                      fullWidth: 512,
-                      fullHeight: 512,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ymkan
-                    )}
-                  >
-                    {"\u062c\u0627\u0628\u0627\u0645\u0627"}
-                  </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__gjRrw)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__t4ODp)}
-                    displayHeight={"52px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image20.svg",
-                      fullWidth: 46,
-                      fullHeight: 45,
-                      aspectRatio: 1.022222
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__t8D2Y
-                    )}
-                  >
-                    {"\u0634\u0628"}
-                  </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__pp4AP)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__mdCdV)}
-                    displayHeight={"52px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image13.svg",
-                      fullWidth: 46,
-                      fullHeight: 46,
-                      aspectRatio: 1
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__majj
-                    )}
-                  >
-                    {"\u0627\u062a\u0627\u0642\u06a9"}
-                  </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__nhze)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__eQvYx)}
-                    displayHeight={"52px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image18.svg",
-                      fullWidth: 46,
-                      fullHeight: 45,
-                      aspectRatio: 1.022222
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vTTbl
-                    )}
-                  >
-                    {"\u0647\u0648\u0645\u0633\u0627"}
-                  </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__mr1Ry)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___0SFyU)}
-                    displayHeight={"52px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image68.png",
-                      fullWidth: 512,
-                      fullHeight: 512,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__o6LD
-                    )}
-                  >
-                    {"\u0645\u0647\u0645\u0627\u0646\u0634\u0648"}
-                  </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___7Y3M)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__tpzPj)}
-                    displayHeight={"52px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/mizboonPng.png",
-                      fullWidth: 140,
-                      fullHeight: 140,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gOeDh
-                    )}
-                  >
-                    {"\u0645\u06cc\u0632\u0628\u0648\u0646"}
-                  </div>
-                </Stack__>
-              </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__mnhb7)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yeFhF
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["invokeGlobalAction"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            args: [
-                              "POST",
-                              "https://gateway.rentamon.com/webhook/send_user_to_pro_panel"
-                            ]
-                          };
-                          return $globalActions["Fragment.apiRequest"]?.apply(
-                            null,
-                            [...actionArgs.args]
-                          );
-                        })()
-                      : undefined;
-                    if (
-                      $steps["invokeGlobalAction"] != null &&
-                      typeof $steps["invokeGlobalAction"] === "object" &&
-                      typeof $steps["invokeGlobalAction"].then === "function"
-                    ) {
-                      $steps["invokeGlobalAction"] = await $steps[
-                        "invokeGlobalAction"
-                      ];
-                    }
-
-                    $steps["goToIntro"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/intro/${"pro"}` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToIntro"] != null &&
-                      typeof $steps["goToIntro"] === "object" &&
-                      typeof $steps["goToIntro"].then === "function"
-                    ) {
-                      $steps["goToIntro"] = await $steps["goToIntro"];
-                    }
-                  }}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"
-                    : "\u0628\u0644\u0647 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u0645"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mUag9
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["goToIntro"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            destination: `/intro/${"lite"}`
-                          };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToIntro"] != null &&
-                      typeof $steps["goToIntro"] === "object" &&
-                      typeof $steps["goToIntro"].then === "function"
-                    ) {
-                      $steps["goToIntro"] = await $steps["goToIntro"];
-                    }
-                  }}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
-                    : "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"}
-                </div>
-              </Stack__>
-            </div>
-          </div>
+          ) : null}
           <SideEffect
             data-plasmic-name={"sideEffect"}
             data-plasmic-override={overrides.sideEffect}

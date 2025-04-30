@@ -1634,14 +1634,19 @@
 .img__u8Ckj {
   object-fit: cover;
   max-width: 100%;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 .img__u8Ckj > picture > img {
   object-fit: cover;
 }
+@media (max-width: 1200px) {
+  .img__u8Ckj {
+    border-radius: 50px;
+  }
+}
 @media (max-width: 500px) {
   .img__u8Ckj {
-    border-radius: 0px;
+    border-radius: 20px;
   }
 }
 .strDefinition2 {
@@ -2222,14 +2227,14 @@
 .img__svCGt {
   object-fit: cover;
   max-width: 100%;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 .img__svCGt > picture > img {
   object-fit: cover;
 }
 @media (max-width: 500px) {
   .img__svCGt {
-    border-radius: 0px;
+    border-radius: 20px;
   }
 }
 .strDefinition3 {
@@ -2835,7 +2840,7 @@
 }
 @media (max-width: 500px) {
   .img___2W4Ag {
-    border-radius: 0px;
+    border-radius: 20px;
   }
 }
 .supportText {
@@ -3193,7 +3198,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 27px 8px 8px;
+  min-width: 0;
+  padding: 36px 8px 8px;
 }
 @media (max-width: 1200px) {
   .iamges {
@@ -3219,20 +3225,49 @@
   }
 }
 .img___6Jg {
-  object-fit: cover;
-  max-width: 100%;
-  margin: 10px;
+  max-width: 30%;
+  width: auto;
+  min-width: auto;
+  border-radius: 30px;
+  margin: 0px;
 }
-.img___6Jg > picture > img {
-  object-fit: cover;
+@media (max-width: 1200px) {
+  .img___6Jg {
+    max-width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .img___6Jg {
+    max-width: 80%;
+    border-radius: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .img___6Jg {
+    max-width: 100%;
+  }
 }
 .img__nsPr6 {
-  object-fit: cover;
-  max-width: 100%;
-  margin: 10px;
+  max-width: 26%;
+  width: auto;
+  border-radius: 30px;
+  margin: 0px;
 }
-.img__nsPr6 > picture > img {
-  object-fit: cover;
+@media (max-width: 1200px) {
+  .img__nsPr6 {
+    max-width: 44%;
+  }
+}
+@media (max-width: 500px) {
+  .img__nsPr6 {
+    max-width: 80%;
+    border-radius: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .img__nsPr6 {
+    max-width: 100%;
+  }
 }
 .relatedContents {
   display: flex;
@@ -3333,6 +3368,8 @@
 @media (max-width: 350px) {
   .neighbours {
     padding-top: 18px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 .benefitsTitle2 {
@@ -3359,8 +3396,8 @@
 }
 @media (max-width: 350px) {
   .benefitsTitle2 {
-    padding-right: 4px;
-    padding-left: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
   }
 }
 .text__sEu9Y {
@@ -3442,7 +3479,7 @@
 }
 .img__zmAfw {
   object-fit: cover;
-  max-width: 100%;
+  max-width: 40%;
   width: auto;
   border-radius: 30px;
 }
@@ -3455,10 +3492,18 @@
     flex-shrink: 0;
   }
 }
+@media (max-width: 500px) {
+  .img__zmAfw {
+    max-width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+}
 @media (max-width: 350px) {
   .img__zmAfw {
     width: 100%;
     height: 100%;
+    max-width: 100%;
     min-width: 0;
     min-height: 0;
   }
@@ -3493,8 +3538,8 @@
 }
 @media (max-width: 350px) {
   .text__wkyZx {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 8px;
+    padding-left: 8px;
     font-size: 15px;
   }
 }
@@ -3604,11 +3649,13 @@
   .text__vYRdE {
     font-weight: 600;
     max-width: 96%;
+    font-size: 18px;
   }
 }
 @media (max-width: 350px) {
   .text__vYRdE {
     max-width: 100%;
+    font-size: 18px;
   }
 }
 .rentamonFooter:global(.__wab_instance) {
