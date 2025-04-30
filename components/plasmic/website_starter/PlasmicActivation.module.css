@@ -1695,7 +1695,9 @@
   .img__syrE0 {
     width: 114px;
     object-fit: contain;
+    box-shadow: none;
     border-radius: 20px;
+    border-width: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -2137,6 +2139,7 @@
     width: 114px;
     object-fit: contain;
     border-radius: 20px;
+    border-width: 1px;
   }
 }
 @media (max-width: 500px) {
@@ -2363,13 +2366,15 @@
 @media (max-width: 500px) {
   .img__hoHzN {
     width: 114px;
-    object-fit: contain;
+    object-fit: cover;
+    box-shadow: none;
     border-radius: 20px;
+    border-width: 0px;
   }
 }
 @media (max-width: 500px) {
   .img__hoHzN > picture > img {
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 .freeBox___8Bgkb {
@@ -2605,6 +2610,7 @@
     width: 114px;
     object-fit: contain;
     border-radius: 20px;
+    border-width: 1px;
   }
 }
 @media (max-width: 500px) {
@@ -2864,6 +2870,7 @@
     width: 114px;
     object-fit: contain;
     border-radius: 20px;
+    border-width: 1px;
   }
 }
 @media (max-width: 500px) {

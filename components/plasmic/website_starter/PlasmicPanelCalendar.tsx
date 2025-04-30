@@ -2039,7 +2039,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["invokeGlobalAction"] = true
+              $steps["invokeGlobalAction"] = false
                 ? (() => {
                     const actionArgs = {
                       args: [

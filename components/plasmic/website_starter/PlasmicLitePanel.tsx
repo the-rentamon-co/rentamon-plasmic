@@ -1162,7 +1162,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                 ];
               }
 
-              $steps["invokeGlobalAction"] = true
+              $steps["invokeGlobalAction"] = false
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -1443,7 +1443,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__oyk7E
+                        sty.formField__rcIf
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1455,7 +1455,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jDm0F
+                        sty.formField__cgPeL
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1473,7 +1473,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__pv0Yo
+                          sty.text__svbv
                         )}
                       >
                         {"Submit"}
