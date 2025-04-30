@@ -435,6 +435,33 @@ function PlasmicHomepage__RenderFunc(props: {
                         ) {
                           $steps["runCode"] = await $steps["runCode"];
                         }
+
+                        $steps["runCode2"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    function deleteCookie(name) {
+                                      document.cookie =
+                                        name +
+                                        "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                    }
+                                    return deleteCookie("alert");
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode2"] != null &&
+                          typeof $steps["runCode2"] === "object" &&
+                          typeof $steps["runCode2"].then === "function"
+                        ) {
+                          $steps["runCode2"] = await $steps["runCode2"];
+                        }
                       }}
                     >
                       {
