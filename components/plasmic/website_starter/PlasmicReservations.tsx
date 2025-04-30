@@ -1747,7 +1747,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     "error",
                                     (() => {
                                       try {
-                                        return `${$state.modalData[0].platfromName} درآمد این رزرو رو با شما تسویه نکرده`;
+                                        return `${$state.modalData[0].platfromName} هنوز درآمد این رزرو رو با شما تسویه نکرده`;
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -1787,7 +1787,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     "success",
                                     (() => {
                                       try {
-                                        return `${$state.modalData[0].platfromName} هنوز درآمد این رزرو رو با شما تسویه نکرده`;
+                                        return `${$state.modalData[0].platfromName} درآمد این رزرو رو با شما تسویه کرده`;
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||

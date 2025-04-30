@@ -4481,237 +4481,260 @@ function PlasmicCalendar2__RenderFunc(props: {
             </div>
           </div>
         </AntdModal>
-        <Button
-          className={classNames("__wab_instance", sty.button__fNtwK)}
-          onClick={async event => {
-            const $steps = {};
-
-            $steps["updateStateVariable"] = true
-              ? (() => {
-                  const actionArgs = {
-                    operation: 0,
-                    value: (() => {
-                      const startOfToday = new Date();
-                      startOfToday.setHours(0, 0, 0, 0);
-                      const startOfTodayTimestamp = Math.floor(
-                        startOfToday.getTime() / 1000
-                      );
-                      $state.fragmentDatePicker.values =
-                        $state.fragmentDatePicker.values.filter(timestamp => {
-                          return timestamp >= startOfTodayTimestamp;
-                        });
-                      return console.log($state.fragmentDatePicker.values);
-                    })()
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateStateVariable"] != null &&
-              typeof $steps["updateStateVariable"] === "object" &&
-              typeof $steps["updateStateVariable"].then === "function"
-            ) {
-              $steps["updateStateVariable"] = await $steps[
-                "updateStateVariable"
-              ];
-            }
-
-            $steps["updateModalOpen"] = (() => {
-              if ($state.fragmentDatePicker.values == 0) {
-                return false;
-              } else {
-                return true;
-              }
-            })()
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["modal", "open"]
-                    },
-                    operation: 0,
-                    value: true
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateModalOpen"] != null &&
-              typeof $steps["updateModalOpen"] === "object" &&
-              typeof $steps["updateModalOpen"].then === "function"
-            ) {
-              $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-            }
-
-            $steps["updateCheckForChangeOpen"] = false
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["checkForChange", "open"]
-                    },
-                    operation: 0,
-                    value: (() => {
-                      const timestamps = $state.fragmentDatePicker.values;
-                      const dates = timestamps.map(timestamp => {
-                        const date = new Date(timestamp * 1000);
-                        return date.toISOString().split("T")[0];
-                      });
-                      const calendar = $state.apiRequest.data[1].calendar;
-                      const result = dates.some(date => {
-                        const item = calendar.find(
-                          entry => entry.date === date
-                        );
-                        return (
-                          item &&
-                          item.website !== "" &&
-                          item.website !== "رزرو" &&
-                          item.website != null
-                        );
-                      });
-                      return result;
-                    })()
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateCheckForChangeOpen"] != null &&
-              typeof $steps["updateCheckForChangeOpen"] === "object" &&
-              typeof $steps["updateCheckForChangeOpen"].then === "function"
-            ) {
-              $steps["updateCheckForChangeOpen"] = await $steps[
-                "updateCheckForChangeOpen"
-              ];
-            }
-
-            $steps["invokeGlobalAction"] = (() => {
-              if ($state.fragmentDatePicker.values == 0) {
-                return true;
-              } else {
-                return false;
-              }
-            })()
-              ? (() => {
-                  const actionArgs = {
-                    args: [
-                      "error",
-                      "\u0631\u0648\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f",
-                      "top-center",
-                      3000
-                    ]
-                  };
-                  return $globalActions["Fragment.showToast"]?.apply(null, [
-                    ...actionArgs.args
-                  ]);
-                })()
-              : undefined;
-            if (
-              $steps["invokeGlobalAction"] != null &&
-              typeof $steps["invokeGlobalAction"] === "object" &&
-              typeof $steps["invokeGlobalAction"].then === "function"
-            ) {
-              $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
-            }
-
-            $steps["updateStateVariable2"] = true
-              ? (() => {
-                  const actionArgs = {
-                    operation: 0,
-                    value: ($state.textInput4.value = "0")
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateStateVariable2"] != null &&
-              typeof $steps["updateStateVariable2"] === "object" &&
-              typeof $steps["updateStateVariable2"].then === "function"
-            ) {
-              $steps["updateStateVariable2"] = await $steps[
-                "updateStateVariable2"
-              ];
-            }
-          }}
-        >
-          <div className={classNames(projectcss.all, sty.freeBox__ary0S)}>
-            {(() => {
-              try {
-                return (() => {
-                  if ($state.apiRequest.loading == true) {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__rzHqA)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"45px"}
-                loading={"lazy"}
-                src={
-                  "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                }
-              />
-            ) : null}
+        <div className={classNames(projectcss.all, sty.freeBox__iosJu)}>
+          <div
+            className={classNames(
+              projectcss.all,
+              sty.freeBox__iGn2N,
+              "attention-bounce"
+            )}
+          >
             <div
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__psStq
+                sty.text__c5J5P
               )}
             >
-              {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
+              {
+                "\u0631\u0648\u06cc \u0627\u06cc\u0646\u062c\u0627 \u06a9\u0644\u06cc\u06a9 \u06a9\u0646\u06cc\u0646"
+              }
             </div>
           </div>
-        </Button>
+          <Button
+            className={classNames("__wab_instance", sty.button__fNtwK)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        const startOfToday = new Date();
+                        startOfToday.setHours(0, 0, 0, 0);
+                        const startOfTodayTimestamp = Math.floor(
+                          startOfToday.getTime() / 1000
+                        );
+                        $state.fragmentDatePicker.values =
+                          $state.fragmentDatePicker.values.filter(timestamp => {
+                            return timestamp >= startOfTodayTimestamp;
+                          });
+                        return console.log($state.fragmentDatePicker.values);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
+
+              $steps["updateModalOpen"] = (() => {
+                if ($state.fragmentDatePicker.values == 0) {
+                  return false;
+                } else {
+                  return true;
+                }
+              })()
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["modal", "open"]
+                      },
+                      operation: 0,
+                      value: true
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalOpen"] != null &&
+                typeof $steps["updateModalOpen"] === "object" &&
+                typeof $steps["updateModalOpen"].then === "function"
+              ) {
+                $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+              }
+
+              $steps["updateCheckForChangeOpen"] = false
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["checkForChange", "open"]
+                      },
+                      operation: 0,
+                      value: (() => {
+                        const timestamps = $state.fragmentDatePicker.values;
+                        const dates = timestamps.map(timestamp => {
+                          const date = new Date(timestamp * 1000);
+                          return date.toISOString().split("T")[0];
+                        });
+                        const calendar = $state.apiRequest.data[1].calendar;
+                        const result = dates.some(date => {
+                          const item = calendar.find(
+                            entry => entry.date === date
+                          );
+                          return (
+                            item &&
+                            item.website !== "" &&
+                            item.website !== "رزرو" &&
+                            item.website != null
+                          );
+                        });
+                        return result;
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateCheckForChangeOpen"] != null &&
+                typeof $steps["updateCheckForChangeOpen"] === "object" &&
+                typeof $steps["updateCheckForChangeOpen"].then === "function"
+              ) {
+                $steps["updateCheckForChangeOpen"] = await $steps[
+                  "updateCheckForChangeOpen"
+                ];
+              }
+
+              $steps["invokeGlobalAction"] = (() => {
+                if ($state.fragmentDatePicker.values == 0) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })()
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "error",
+                        "\u0631\u0648\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f",
+                        "top-center",
+                        3000
+                      ]
+                    };
+                    return $globalActions["Fragment.showToast"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+
+              $steps["updateStateVariable2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.textInput4.value = "0")
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable2"] != null &&
+                typeof $steps["updateStateVariable2"] === "object" &&
+                typeof $steps["updateStateVariable2"].then === "function"
+              ) {
+                $steps["updateStateVariable2"] = await $steps[
+                  "updateStateVariable2"
+                ];
+              }
+            }}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__ary0S)}>
+              {(() => {
+                try {
+                  return (() => {
+                    if ($state.apiRequest.loading == true) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__rzHqA)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"45px"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                  }
+                />
+              ) : null}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__psStq
+                )}
+              >
+                {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
+              </div>
+            </div>
+          </Button>
+        </div>
         <AntdModal
           data-plasmic-name={"fetchModal"}
           data-plasmic-override={overrides.fetchModal}
