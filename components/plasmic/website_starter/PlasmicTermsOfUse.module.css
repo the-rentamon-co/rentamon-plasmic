@@ -34,6 +34,11 @@
   }
 }
 @media (max-width: 500px) {
+  .root {
+    padding-top: 0px;
+  }
+}
+@media (max-width: 500px) {
   .root > * {
     grid-column: 4;
   }

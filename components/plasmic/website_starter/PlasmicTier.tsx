@@ -128,6 +128,24 @@ function PlasmicTier__RenderFunc(props: {
 
   const $globalActions = useGlobalActions?.();
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "userType",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
   });
@@ -564,6 +582,8 @@ function PlasmicTier__RenderFunc(props: {
                         return (() => {
                           let user_type =
                             $steps.invokeGlobalAction.data[0].referrer;
+                          $state.userType = user_type;
+                          console.log($state.userType);
                           if (user_type == "referral") {
                             window.location.href =
                               "https://app.rentamon.com/intro/pro/";

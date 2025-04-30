@@ -664,7 +664,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                           sty.link__zsL5V
                         )}
                         component={Link}
-                        href={`/short-term-rental`}
+                        href={`/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%DA%A9%D9%88%D8%AA%D8%A7%D9%87-%D9%85%D8%AF%D8%AA`}
                         platform={"nextjs"}
                       >
                         {

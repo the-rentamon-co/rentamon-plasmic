@@ -34,8 +34,18 @@
   }
 }
 @media (max-width: 500px) {
+  .home {
+    padding-top: 0px;
+  }
+}
+@media (max-width: 500px) {
   .home > * {
     grid-column: 4;
+  }
+}
+@media (max-width: 350px) {
+  .home {
+    padding-top: 0px;
   }
 }
 @media (max-width: 350px) {
