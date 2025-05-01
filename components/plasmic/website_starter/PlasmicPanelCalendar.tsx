@@ -966,25 +966,46 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       }}
                     />
 
-                    <SideBar2
-                      data-plasmic-name={"sideBar2"}
-                      data-plasmic-override={overrides.sideBar2}
-                      className={classNames("__wab_instance", sty.sideBar2)}
-                      isOpen={false}
-                      userData={(() => {
-                        try {
-                          return $state.profile.data;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return {};
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox__yzzwM,
+                        "side_bar_border"
+                      )}
+                    >
+                      <SideBar2
+                        data-plasmic-name={"sideBar2"}
+                        data-plasmic-override={overrides.sideBar2}
+                        className={classNames("__wab_instance", sty.sideBar2)}
+                        isFirstVisit={(() => {
+                          try {
+                            return $state.isTheFirstVisit;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                    />
+                        })()}
+                        isOpen={false}
+                        userData={(() => {
+                          try {
+                            return $state.profile.data;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return {};
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    </div>
                   </div>
                   <div
                     data-plasmic-name={"right4"}

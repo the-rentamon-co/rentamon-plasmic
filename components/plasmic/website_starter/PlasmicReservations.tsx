@@ -2041,7 +2041,7 @@ function PlasmicReservations__RenderFunc(props: {
                   $steps["updateModalOpen2"] =
                     $state.isTheFirstVisit == true
                       ? (() => {
-                          const actionArgs = { destination: `/lite` };
+                          const actionArgs = { destination: `/calendar` };
                           return (({ destination }) => {
                             if (
                               typeof destination === "string" &&
@@ -2063,6 +2063,35 @@ function PlasmicReservations__RenderFunc(props: {
                   ) {
                     $steps["updateModalOpen2"] = await $steps[
                       "updateModalOpen2"
+                    ];
+                  }
+
+                  $steps["updateModalOpen3"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function deleteCookie(name) {
+                                document.cookie =
+                                  name +
+                                  "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                              }
+                              return deleteCookie("first_visit");
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalOpen3"] != null &&
+                    typeof $steps["updateModalOpen3"] === "object" &&
+                    typeof $steps["updateModalOpen3"].then === "function"
+                  ) {
+                    $steps["updateModalOpen3"] = await $steps[
+                      "updateModalOpen3"
                     ];
                   }
                 }}

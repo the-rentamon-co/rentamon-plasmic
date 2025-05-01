@@ -387,15 +387,20 @@
 }
 @media (max-width: 500px) {
   .monthlyIncome {
-    padding-right: 14px;
-    padding-left: 14px;
     max-width: 100%;
+    padding: 0px;
   }
 }
 @media (max-width: 350px) {
   .monthlyIncome {
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    min-width: 0;
+    padding: 30px 14px 8px;
   }
 }
 .text__j8U01 {
@@ -447,6 +452,7 @@
     left: auto;
     top: auto;
     font-size: 14px;
+    min-height: auto;
   }
 }
 @media (max-width: 350px) {
@@ -461,10 +467,14 @@
   width: 100%;
   height: auto;
   max-width: 80%;
+  min-width: 0;
+  padding: 30px 8px 8px;
+}
+.sources > :global(.__wab_flex-container) {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 30px 8px 8px;
 }
 @media (max-width: 500px) {
   .sources {
@@ -472,22 +482,62 @@
     width: 100%;
     height: auto;
     flex-direction: column;
-    justify-content: flex-start;
+    min-width: 0;
+    padding: 62px 14px 8px;
+  }
+}
+@media (max-width: 500px) {
+  .sources > :global(.__wab_flex-container) {
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-width: 0;
-    padding: 30px 14px 8px;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 500px) {
+  .sources > :global(.__wab_flex-container) > *,
+  .sources > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .sources > :global(.__wab_flex-container) > picture > img,
+  .sources
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 @media (max-width: 350px) {
   .sources {
-    align-items: center;
-    justify-content: flex-start;
     width: 100%;
     height: auto;
     max-width: 100%;
     flex-direction: column;
     min-width: 0;
     padding: 30px 14px 8px;
+  }
+}
+@media (max-width: 350px) {
+  .sources > :global(.__wab_flex-container) {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-width: 0;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 350px) {
+  .sources > :global(.__wab_flex-container) > *,
+  .sources > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .sources > :global(.__wab_flex-container) > picture > img,
+  .sources
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 .text__gkfL8 {
@@ -515,6 +565,38 @@
     font-size: 18px;
     padding-right: 0px;
   }
+}
+.freeBox__z02AS {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__z02AS {
+    align-self: stretch;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__z02AS {
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 1;
+    align-self: stretch;
+  }
+}
+.fragmentChart___5Y0CB:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  min-width: 0;
 }
 .occupancyRate {
   display: flex;
@@ -588,6 +670,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 0px;
+  overflow: auto;
   min-width: 0;
   padding: 8px;
 }
@@ -610,15 +693,16 @@
 }
 @media (max-width: 500px) {
   .fragmentChart__pUo5B:global(.__wab_instance) {
-    height: 274px;
+    height: 300px;
     font-size: 14px;
     display: block;
     overflow: auto;
     overflow-x: auto;
     overflow-y: auto;
-    min-width: 1000px;
-    padding-right: 100px;
-    padding-left: 100px;
+    min-width: 800px;
+    padding-right: 12px;
+    padding-left: 12px;
+    align-self: stretch;
     flex-shrink: 0;
   }
 }
@@ -626,6 +710,14 @@
   .fragmentChart__pUo5B:global(.__wab_instance) {
     font-size: 10px;
     width: auto;
+    left: auto;
+    top: auto;
+    z-index: 1;
+    position: relative;
+    align-self: stretch;
+    padding-right: 14px;
+    padding-left: 14px;
+    min-width: 700px;
   }
 }
 .avgDailyRate {

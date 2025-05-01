@@ -637,6 +637,17 @@
     flex-shrink: 0;
   }
 }
+.freeBox__yzzwM {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8px;
+}
 .sideBar2:global(.__wab_instance):global(.__wab_instance) {
   height: auto;
   z-index: 1;

@@ -818,9 +818,11 @@ function PlasmicAnalytics__RenderFunc(props: {
                 }
               />
             </div>
-            <div
+            <Stack__
+              as={"div"}
               data-plasmic-name={"sources"}
               data-plasmic-override={overrides.sources}
+              hasGap={true}
               className={classNames(projectcss.all, sty.sources)}
             >
               <div
@@ -834,7 +836,57 @@ function PlasmicAnalytics__RenderFunc(props: {
                   "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
                 }
               </div>
-            </div>
+              <div className={classNames(projectcss.all, sty.freeBox__z02AS)}>
+                <Chart
+                  chartConfig={(() => {
+                    const __composite = [
+                      { color: null, type: "natural", dot: false, key: null }
+                    ];
+                    __composite["0"]["color"] = "#3F5673";
+                    __composite["0"]["key"] = "transaction_count";
+                    return __composite;
+                  })()}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.fragmentChart___5Y0CB
+                  )}
+                  data={(() => {
+                    try {
+                      return $state.apiRequestPie.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                  label={true}
+                  layout={"horizontal"}
+                  stack={false}
+                  type={"bar"}
+                  xAxis={(() => {
+                    const __composite = { enabled: null, key: null };
+                    __composite["enabled"] = true;
+                    __composite["key"] = "website_name";
+                    return __composite;
+                  })()}
+                  yAxis={(() => {
+                    const __composite = {
+                      key: null,
+                      enabled: null,
+                      axisLine: null
+                    };
+                    __composite["key"] = "transaction_count";
+                    __composite["enabled"] = true;
+                    __composite["axisLine"] = false;
+                    return __composite;
+                  })()}
+                />
+              </div>
+            </Stack__>
             <div
               data-plasmic-name={"occupancyRate"}
               data-plasmic-override={overrides.occupancyRate}
