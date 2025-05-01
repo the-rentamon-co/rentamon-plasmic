@@ -646,6 +646,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  border-radius: 30px;
   padding: 8px;
 }
 .sideBar2:global(.__wab_instance):global(.__wab_instance) {

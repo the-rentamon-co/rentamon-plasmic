@@ -348,6 +348,12 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "tourSteps",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -900,6 +906,19 @@ function PlasmicReservations__RenderFunc(props: {
                 plasmic_plasmic_rich_components_css.plasmic_tokens
               )}
               hideFooter={true}
+              maskClosable={(() => {
+                try {
+                  return !$state.isTheFirstVisit;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })()}
               modalScopeClassName={sty["modal__modal"]}
               onOpenChange={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, ["modal", "open"]).apply(
@@ -2001,6 +2020,19 @@ function PlasmicReservations__RenderFunc(props: {
               </Stack__>
               <Button
                 className={classNames("__wab_instance", sty.button__cJdtF)}
+                isDisabled={(() => {
+                  try {
+                    return $state.isTheFirstVisit;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
                 onClick={async event => {
                   const $steps = {};
 
@@ -2037,9 +2069,29 @@ function PlasmicReservations__RenderFunc(props: {
                   ) {
                     $steps["updateModalOpen"] = await $steps["updateModalOpen"];
                   }
+                }}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+              </Button>
+              {(() => {
+                try {
+                  return $state.isTheFirstVisit;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <Button
+                  className={classNames("__wab_instance", sty.button__no0Dk)}
+                  onClick={async event => {
+                    const $steps = {};
 
-                  $steps["updateModalOpen2"] =
-                    $state.isTheFirstVisit == true
+                    $steps["updateModalOpen2"] = true
                       ? (() => {
                           const actionArgs = { destination: `/calendar` };
                           return (({ destination }) => {
@@ -2056,64 +2108,86 @@ function PlasmicReservations__RenderFunc(props: {
                           })?.apply(null, [actionArgs]);
                         })()
                       : undefined;
-                  if (
-                    $steps["updateModalOpen2"] != null &&
-                    typeof $steps["updateModalOpen2"] === "object" &&
-                    typeof $steps["updateModalOpen2"].then === "function"
-                  ) {
-                    $steps["updateModalOpen2"] = await $steps[
-                      "updateModalOpen2"
-                    ];
-                  }
-
-                  $steps["updateModalOpen3"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function deleteCookie(name) {
-                                document.cookie =
-                                  name +
-                                  "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                              }
-                              return deleteCookie("first_visit");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalOpen3"] != null &&
-                    typeof $steps["updateModalOpen3"] === "object" &&
-                    typeof $steps["updateModalOpen3"].then === "function"
-                  ) {
-                    $steps["updateModalOpen3"] = await $steps[
-                      "updateModalOpen3"
-                    ];
-                  }
-                }}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $state.isTheFirstVisit == true
-                        ? "بازگشت به تقویم"
-                        : "بازگشت";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u0628\u0627\u0632\u06af\u0634\u062a";
-                      }
-                      throw e;
+                    if (
+                      $steps["updateModalOpen2"] != null &&
+                      typeof $steps["updateModalOpen2"] === "object" &&
+                      typeof $steps["updateModalOpen2"].then === "function"
+                    ) {
+                      $steps["updateModalOpen2"] = await $steps[
+                        "updateModalOpen2"
+                      ];
                     }
-                  })()}
-                </React.Fragment>
-              </Button>
+
+                    $steps["updateModalOpen3"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function deleteCookie(name) {
+                                  document.cookie =
+                                    name +
+                                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                }
+                                return deleteCookie("first_visit");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen3"] != null &&
+                      typeof $steps["updateModalOpen3"] === "object" &&
+                      typeof $steps["updateModalOpen3"].then === "function"
+                    ) {
+                      $steps["updateModalOpen3"] = await $steps[
+                        "updateModalOpen3"
+                      ];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__brAhU
+                    )}
+                  >
+                    {
+                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
+                    }
+                  </div>
+                </Button>
+              ) : null}
+              {(() => {
+                try {
+                  return $state.isTheFirstVisit;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div className={classNames(projectcss.all, sty.freeBox__fviYd)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__nikRx
+                    )}
+                  >
+                    {
+                      "\u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u0631\u0648 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u062c\u0627 \u0628\u0628\u06cc\u0646\u06cc"
+                    }
+                  </div>
+                </div>
+              ) : null}
             </AntdModal>
             <AntdModal
               data-plasmic-name={"confirmed"}
@@ -3690,6 +3764,45 @@ function PlasmicReservations__RenderFunc(props: {
                           "updateModalOpen2"
                         ];
                       }
+
+                      $steps["updateModalOpen3"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["tourSteps"]
+                              },
+                              operation: 0,
+                              value:
+                                $state.tourSteps == 0
+                                  ? ($state.tourSteps = 1)
+                                  : ($state.tourSteps = 0)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateModalOpen3"] != null &&
+                        typeof $steps["updateModalOpen3"] === "object" &&
+                        typeof $steps["updateModalOpen3"].then === "function"
+                      ) {
+                        $steps["updateModalOpen3"] = await $steps[
+                          "updateModalOpen3"
+                        ];
+                      }
                     }}
                   >
                     <div
@@ -3948,6 +4061,46 @@ function PlasmicReservations__RenderFunc(props: {
                 }}
                 url={"https://gateway.rentamon.com/webhook/getReserve"}
               />
+
+              {(() => {
+                try {
+                  return $state.isTheFirstVisit && $state.tourSteps == 0;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div className={classNames(projectcss.all, sty.freeBox__p8NEt)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__cRiIk
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0627\u06cc\u0646\u062c\u0627 \u0644\u06cc\u0633\u062a \u0631\u0632\u0631\u0648 \u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062b\u0628\u062a \u06a9\u0631\u062f\u06cc \u0631\u0648 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc\n\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 600 }}
+                      >
+                        {
+                          "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u0631\u0632\u0631\u0648 \u0628\u0632\u0646"
+                        }
+                      </span>
+                    </React.Fragment>
+                  </div>
+                </div>
+              ) : null}
             </Stack__>
           </Stack__>
           <div
