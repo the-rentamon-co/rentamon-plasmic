@@ -1199,7 +1199,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                 $steps["checkOldUser"] = await $steps["checkOldUser"];
               }
 
-              $steps["updateStateVariable3"] = false
+              $steps["updateStateVariable3"] = true
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
@@ -1559,7 +1559,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__kUhR
+                        sty.formField__lE2I5
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1571,7 +1571,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__moavm
+                        sty.formField___0PrJ5
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1589,7 +1589,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__kj5Bk
+                          sty.text__ciKgr
                         )}
                       >
                         {"Submit"}
