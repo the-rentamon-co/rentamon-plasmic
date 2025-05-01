@@ -89,7 +89,6 @@ export type PlasmicAnalytics__OverridesType = {
   root?: Flex__<"div">;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
-  freeBox?: Flex__<"div">;
   profile2?: Flex__<typeof ApiRequest>;
   apiRequestPie?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
@@ -366,11 +365,7 @@ function PlasmicAnalytics__RenderFunc(props: {
               })()}
             />
 
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__ihhXu)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -583,7 +578,9 @@ function PlasmicAnalytics__RenderFunc(props: {
                   sty.text__hzcka
                 )}
               >
-                {"Error fetching data"}
+                {
+                  "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
+                }
               </div>
             }
             loadingDisplay={
@@ -744,8 +741,19 @@ function PlasmicAnalytics__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "mobile") ? false : false
                 }
                 stack={
-                  hasVariant(globalVariants, "screen", "mobile") ? false : false
+                  hasVariant(globalVariants, "screen", "mobile") ? false : true
                 }
+                tooltip={(() => {
+                  const __composite = {
+                    enabled: null,
+                    indicator: null,
+                    hideLabel: null
+                  };
+                  __composite["enabled"] = false;
+                  __composite["indicator"] = "dashed";
+                  __composite["hideLabel"] = false;
+                  return __composite;
+                })()}
                 type={"bar"}
                 xAxis={
                   hasVariant(globalVariants, "screen", "tablet")
@@ -756,9 +764,20 @@ function PlasmicAnalytics__RenderFunc(props: {
                         return __composite;
                       })()
                     : (() => {
-                        const __composite = { enabled: null, key: null };
+                        const __composite = {
+                          enabled: null,
+                          key: null,
+                          type: null,
+                          tickLine: null,
+                          tickMargin: null,
+                          axisLine: null
+                        };
                         __composite["enabled"] = true;
                         __composite["key"] = "month";
+                        __composite["type"] = "category";
+                        __composite["tickLine"] = false;
+                        __composite["tickMargin"] = 4;
+                        __composite["axisLine"] = true;
                         return __composite;
                       })()
                 }
@@ -785,13 +804,15 @@ function PlasmicAnalytics__RenderFunc(props: {
                           enabled: null,
                           type: null,
                           tickLine: null,
-                          axisLine: null
+                          axisLine: null,
+                          tickMargin: null
                         };
                         __composite["key"] = "income";
                         __composite["enabled"] = false;
                         __composite["type"] = "number";
                         __composite["tickLine"] = false;
                         __composite["axisLine"] = false;
+                        __composite["tickMargin"] = 20;
                         return __composite;
                       })()
                 }
@@ -830,50 +851,77 @@ function PlasmicAnalytics__RenderFunc(props: {
                   ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u062f\u0631 \u0647\u0631 \u0645\u0627\u0647"
                   : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
               </div>
-              <Chart
-                chartConfig={(() => {
-                  const __composite = [
-                    { color: null, type: "natural", dot: false, key: null }
-                  ];
-                  __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
-                  __composite["0"]["key"] = "reserved_nights";
-                  return __composite;
-                })()}
-                className={classNames(
-                  "__wab_instance",
-                  sty.fragmentChart__pUo5B
-                )}
-                data={(() => {
-                  try {
-                    return $state.apiRequestOccupancy.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
+              <div className={classNames(projectcss.all, sty.freeBox__lQmRi)}>
+                <Chart
+                  cartesianGrid={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? []
+                      : undefined
                   }
-                })()}
-                layout={"horizontal"}
-                type={"bar"}
-                xAxis={(() => {
-                  const __composite = {
-                    key: null,
-                    type: null,
-                    enabled: null,
-                    tickLine: null,
-                    axisLine: null
-                  };
-                  __composite["key"] = "shamsi_month";
-                  __composite["type"] = "category";
-                  __composite["enabled"] = true;
-                  __composite["tickLine"] = false;
-                  __composite["axisLine"] = false;
-                  return __composite;
-                })()}
-              />
+                  chartConfig={(() => {
+                    const __composite = [
+                      { color: null, type: "natural", dot: false, key: null }
+                    ];
+                    __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                    __composite["0"]["key"] = "reserved_nights";
+                    return __composite;
+                  })()}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.fragmentChart__pUo5B
+                  )}
+                  data={(() => {
+                    try {
+                      return $state.apiRequestOccupancy.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                  label={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? true
+                      : true
+                  }
+                  layout={"horizontal"}
+                  legend={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? false
+                      : undefined
+                  }
+                  stack={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? true
+                      : true
+                  }
+                  type={"bar"}
+                  xAxis={(() => {
+                    const __composite = {
+                      key: null,
+                      type: null,
+                      enabled: null,
+                      tickLine: null,
+                      axisLine: null
+                    };
+                    __composite["key"] = "shamsi_month";
+                    __composite["type"] = "category";
+                    __composite["enabled"] = true;
+                    __composite["tickLine"] = false;
+                    __composite["axisLine"] = false;
+                    return __composite;
+                  })()}
+                  yAxis={(() => {
+                    const __composite = { enabled: null };
+                    __composite["enabled"] = false;
+                    return __composite;
+                  })()}
+                />
+              </div>
             </div>
             <div
               data-plasmic-name={"avgDailyRate"}
@@ -943,7 +991,6 @@ const PlasmicDescendants = {
     "root",
     "header",
     "sideBar2",
-    "freeBox",
     "profile2",
     "apiRequestPie",
     "apiRequest",
@@ -964,9 +1011,8 @@ const PlasmicDescendants = {
     "goftino",
     "rentamonFooter"
   ],
-  header: ["header", "sideBar2", "freeBox", "profile2"],
+  header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
-  freeBox: ["freeBox"],
   profile2: ["profile2"],
   apiRequestPie: ["apiRequestPie"],
   apiRequest: ["apiRequest"],
@@ -1011,7 +1057,6 @@ type NodeDefaultElementType = {
   root: "div";
   header: "div";
   sideBar2: typeof SideBar2;
-  freeBox: "div";
   profile2: typeof ApiRequest;
   apiRequestPie: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
@@ -1095,7 +1140,6 @@ export const PlasmicAnalytics = Object.assign(
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
-    freeBox: makeNodeComponent("freeBox"),
     profile2: makeNodeComponent("profile2"),
     apiRequestPie: makeNodeComponent("apiRequestPie"),
     apiRequest: makeNodeComponent("apiRequest"),

@@ -87,11 +87,16 @@ export type PlasmicSidebarLite__VariantsArgs = {};
 type VariantPropType = keyof PlasmicSidebarLite__VariantsArgs;
 export const PlasmicSidebarLite__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicSidebarLite__ArgsType = { isOpen?: boolean; userData?: any };
+export type PlasmicSidebarLite__ArgsType = {
+  isOpen?: boolean;
+  userData?: any;
+  isFirstVisit?: boolean;
+};
 type ArgPropType = keyof PlasmicSidebarLite__ArgsType;
 export const PlasmicSidebarLite__ArgProps = new Array<ArgPropType>(
   "isOpen",
-  "userData"
+  "userData",
+  "isFirstVisit"
 );
 
 export type PlasmicSidebarLite__OverridesType = {
@@ -104,6 +109,7 @@ export type PlasmicSidebarLite__OverridesType = {
 export interface DefaultSidebarLiteProps {
   isOpen?: boolean;
   userData?: any;
+  isFirstVisit?: boolean;
   className?: string;
 }
 
@@ -128,7 +134,8 @@ function PlasmicSidebarLite__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          isOpen: true
+          isOpen: true,
+          isFirstVisit: false
         },
         Object.fromEntries(
           Object.entries(props.args).filter(([_, v]) => v !== undefined)
@@ -513,7 +520,25 @@ function PlasmicSidebarLite__RenderFunc(props: {
         <Stack__
           as={"div"}
           hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__lIV5, "clickable")}
+          className={classNames(
+            projectcss.all,
+            sty.freeBox__lIV5,
+            (() => {
+              try {
+                return $props.isFirstVisit == true
+                  ? "blinkBorderTourGuide clickable"
+                  : "";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()
+          )}
           onClick={async event => {
             const $steps = {};
 

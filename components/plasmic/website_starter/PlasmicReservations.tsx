@@ -342,6 +342,12 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "isTheFirstVisit",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -544,6 +550,50 @@ function PlasmicReservations__RenderFunc(props: {
                 $steps["updateStateVariable"] = await $steps[
                   "updateStateVariable"
                 ];
+              }
+
+              $steps["runCode2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("first_visit")) {
+                            console.log("in the visit");
+                            const first_visit = getCookieValue("first_visit");
+                            if (first_visit != null) {
+                              $state.isTheFirstVisit = true;
+                            }
+                            return console.log(
+                              "first_visit:",
+                              $state.isTheFirstVisit
+                            );
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode2"] != null &&
+                typeof $steps["runCode2"] === "object" &&
+                typeof $steps["runCode2"].then === "function"
+              ) {
+                $steps["runCode2"] = await $steps["runCode2"];
               }
             }}
           />
@@ -1954,31 +2004,32 @@ function PlasmicReservations__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["updateModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modal", "open"]
-                          }
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                  $steps["updateModalOpen"] =
+                    $state.isTheFirstVisit != true
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modal", "open"]
+                            }
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
 
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                   if (
                     $steps["updateModalOpen"] != null &&
                     typeof $steps["updateModalOpen"] === "object" &&
@@ -1986,9 +2037,53 @@ function PlasmicReservations__RenderFunc(props: {
                   ) {
                     $steps["updateModalOpen"] = await $steps["updateModalOpen"];
                   }
+
+                  $steps["updateModalOpen2"] =
+                    $state.isTheFirstVisit == true
+                      ? (() => {
+                          const actionArgs = { destination: `/lite` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateModalOpen2"] != null &&
+                    typeof $steps["updateModalOpen2"] === "object" &&
+                    typeof $steps["updateModalOpen2"].then === "function"
+                  ) {
+                    $steps["updateModalOpen2"] = await $steps[
+                      "updateModalOpen2"
+                    ];
+                  }
                 }}
               >
-                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.isTheFirstVisit == true
+                        ? "بازگشت به تقویم"
+                        : "بازگشت";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0628\u0627\u0632\u06af\u0634\u062a";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
               </Button>
             </AntdModal>
             <AntdModal
@@ -3569,7 +3664,25 @@ function PlasmicReservations__RenderFunc(props: {
                     }}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__lAff)}
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox__lAff,
+                        (() => {
+                          try {
+                            return $state.isTheFirstVisit == true
+                              ? "attention-grabber"
+                              : "";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      )}
                     >
                       {(() => {
                         try {

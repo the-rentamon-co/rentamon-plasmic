@@ -341,6 +341,12 @@ function PlasmicLitePanel__RenderFunc(props: {
 
         refName: "form",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
+      },
+      {
+        path: "isTheFirstVisit",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -682,25 +688,78 @@ function PlasmicLitePanel__RenderFunc(props: {
                       }}
                     />
 
-                    <SidebarLite
-                      data-plasmic-name={"sidebarLite"}
-                      data-plasmic-override={overrides.sidebarLite}
-                      className={classNames("__wab_instance", sty.sidebarLite)}
-                      isOpen={false}
-                      userData={(() => {
-                        try {
-                          return $state.profile.data;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox__idWgY,
+                        "side_bar_border"
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    return document
+                                      .querySelectorAll(".side_bar_border")
+                                      .forEach(el => {
+                                        el.style.animation = "";
+                                      });
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
                         }
-                      })()}
-                    />
+                      }}
+                    >
+                      <SidebarLite
+                        data-plasmic-name={"sidebarLite"}
+                        data-plasmic-override={overrides.sidebarLite}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.sidebarLite
+                        )}
+                        isFirstVisit={(() => {
+                          try {
+                            return $state.isTheFirstVisit;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        isOpen={false}
+                        userData={(() => {
+                          try {
+                            return $state.profile.data;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    </div>
                   </div>
                   <div
                     data-plasmic-name={"right4"}
@@ -982,6 +1041,19 @@ function PlasmicLitePanel__RenderFunc(props: {
                 throw e;
               }
             })()}
+            isFirstVisit={(() => {
+              try {
+                return $state.isTheFirstVisit;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
+                }
+                throw e;
+              }
+            })()}
             propertyId={(() => {
               try {
                 return $state.propId;
@@ -1127,7 +1199,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                 $steps["checkOldUser"] = await $steps["checkOldUser"];
               }
 
-              $steps["updateStateVariable3"] = true
+              $steps["updateStateVariable3"] = false
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
@@ -1212,6 +1284,50 @@ function PlasmicLitePanel__RenderFunc(props: {
                 typeof $steps["runCode2"].then === "function"
               ) {
                 $steps["runCode2"] = await $steps["runCode2"];
+              }
+
+              $steps["runCode3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("first_visit")) {
+                            console.log("in the visit");
+                            const first_visit = getCookieValue("first_visit");
+                            if (first_visit != null) {
+                              $state.isTheFirstVisit = true;
+                            }
+                            return console.log(
+                              "first_visit:",
+                              $state.isTheFirstVisit
+                            );
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode3"] != null &&
+                typeof $steps["runCode3"] === "object" &&
+                typeof $steps["runCode3"].then === "function"
+              ) {
+                $steps["runCode3"] = await $steps["runCode3"];
               }
             }}
           />
@@ -1443,7 +1559,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__i2Ao1
+                        sty.formField___0Ux4D
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1455,7 +1571,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__yyamk
+                        sty.formField__pQ8Px
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1473,7 +1589,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___8PAQq
+                          sty.text__pBjXf
                         )}
                       >
                         {"Submit"}

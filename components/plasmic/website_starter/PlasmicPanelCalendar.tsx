@@ -350,6 +350,12 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "isTheFirstVisit",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -1576,6 +1582,14 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               </ApiRequest>
             </div>
           </div>
+          <div
+            className={classNames(
+              projectcss.all,
+              sty.freeBox__zEfuz,
+              "blinkBorderTourGuide"
+            )}
+          />
+
           <Calendar2
             data-plasmic-name={"calendar2"}
             data-plasmic-override={overrides.calendar2}
@@ -1590,6 +1604,19 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   e?.plasmicType === "PlasmicUndefinedDataError"
                 ) {
                   return undefined;
+                }
+                throw e;
+              }
+            })()}
+            isFirstVisit={(() => {
+              try {
+                return $state.isTheFirstVisit == true;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
                 }
                 throw e;
               }
@@ -1890,8 +1917,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       operation: 0,
                       value: (() => {
                         if ($steps.runCode2.data.status != "access denied") {
-                          $state.feature.reservation = true;
-                          return console.log($state.feature);
+                          return ($state.feature.reservation = true);
                         }
                       })()
                     };
@@ -1972,29 +1998,6 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["invokeGlobalAction"] = false
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://gateway.rentamon.com/webhook/73e96117-8d0c-40c7-9a70-259bc1fd7077"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
-
               $steps["updateStateVariable2"] = false
                 ? (() => {
                     const actionArgs = {
@@ -2023,6 +2026,52 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               ) {
                 $steps["updateStateVariable2"] = await $steps[
                   "updateStateVariable2"
+                ];
+              }
+
+              $steps["getFirstTimeCookie"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("first_visit")) {
+                            console.log("in the visit");
+                            const first_visit = getCookieValue("first_visit");
+                            if (first_visit != null) {
+                              $state.isTheFirstVisit = true;
+                            }
+                            return console.log(
+                              "first_visit:",
+                              $state.isTheFirstVisit
+                            );
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["getFirstTimeCookie"] != null &&
+                typeof $steps["getFirstTimeCookie"] === "object" &&
+                typeof $steps["getFirstTimeCookie"].then === "function"
+              ) {
+                $steps["getFirstTimeCookie"] = await $steps[
+                  "getFirstTimeCookie"
                 ];
               }
             }}

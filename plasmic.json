@@ -1460,7 +1460,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/Plasmicثبتآگهیاقامتگاه.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87.tsx"
+            "modulePath": "../src/pages/test.tsx"
           },
           "cssFilePath": "plasmic/website_starter/Plasmicثبتآگهیاقامتگاه.module.css",
           "scheme": "blackbox",

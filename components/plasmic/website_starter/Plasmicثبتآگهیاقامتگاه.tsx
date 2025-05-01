@@ -68,6 +68,7 @@ import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/reg
 import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -108,6 +109,7 @@ export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   input2?: Flex__<typeof AntdInput>;
   textArea?: Flex__<typeof AntdTextArea>;
   button?: Flex__<typeof AntdButton>;
+  modal?: Flex__<typeof AntdModal>;
   testimonials?: Flex__<"div">;
   title?: Flex__<"div">;
   videos?: Flex__<"div">;
@@ -214,6 +216,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdTextArea_Helpers)
+      },
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -857,7 +865,31 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["invokeGlobalAction"] = true
+                      $steps["toast"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                undefined,
+                                `${$state.form.value.name} جان اطلاعات ثبت شد، بزودی با شما ارتباط می‌گیریم :)`,
+                                "top-center",
+                                5000
+                              ]
+                            };
+                            return $globalActions["Fragment.showToast"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["toast"] != null &&
+                        typeof $steps["toast"] === "object" &&
+                        typeof $steps["toast"].then === "function"
+                      ) {
+                        $steps["toast"] = await $steps["toast"];
+                      }
+
+                      $steps["apiRequest"] = true
                         ? (() => {
                             const actionArgs = {
                               args: [
@@ -887,43 +919,319 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
+                        $steps["apiRequest"] != null &&
+                        typeof $steps["apiRequest"] === "object" &&
+                        typeof $steps["apiRequest"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["apiRequest"] = await $steps["apiRequest"];
                       }
 
-                      $steps["invokeGlobalAction2"] = true
+                      $steps["wait"] = true
                         ? (() => {
-                            const actionArgs = {
-                              args: [
-                                undefined,
-                                "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062b\u0628\u062a \u0634\u062f\u060c \u0628\u0632\u0648\u062f\u06cc \u0628\u0627 \u0634\u0645\u0627 \u0627\u0631\u062a\u0628\u0627\u0637 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645 :)",
-                                "top-center",
-                                5000
-                              ]
-                            };
-                            return $globalActions["Fragment.showToast"]?.apply(
+                            const actionArgs = { args: [1000] };
+                            return $globalActions["Fragment.wait"]?.apply(
                               null,
                               [...actionArgs.args]
                             );
                           })()
                         : undefined;
                       if (
-                        $steps["invokeGlobalAction2"] != null &&
-                        typeof $steps["invokeGlobalAction2"] === "object" &&
-                        typeof $steps["invokeGlobalAction2"].then === "function"
+                        $steps["wait"] != null &&
+                        typeof $steps["wait"] === "object" &&
+                        typeof $steps["wait"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction2"] = await $steps[
-                          "invokeGlobalAction2"
+                        $steps["wait"] = await $steps["wait"];
+                      }
+
+                      $steps["updateModalOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["modal", "open"]
+                              },
+                              operation: 0,
+                              value: true
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateModalOpen"] != null &&
+                        typeof $steps["updateModalOpen"] === "object" &&
+                        typeof $steps["updateModalOpen"].then === "function"
+                      ) {
+                        $steps["updateModalOpen"] = await $steps[
+                          "updateModalOpen"
                         ];
                       }
                     }}
                   >
                     {"\u0627\u0631\u0633\u0627\u0644"}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__hN0Hf)}
+                  >
+                    <AntdModal
+                      data-plasmic-name={"modal"}
+                      data-plasmic-override={overrides.modal}
+                      className={classNames("__wab_instance", sty.modal)}
+                      defaultStylesClassName={classNames(
+                        projectcss.root_reset,
+                        projectcss.plasmic_default_styles,
+                        projectcss.plasmic_mixins,
+                        projectcss.plasmic_tokens,
+                        plasmic_antd_5_hostless_css.plasmic_tokens,
+                        plasmic_plasmic_rich_components_css.plasmic_tokens
+                      )}
+                      hideFooter={true}
+                      modalScopeClassName={sty["modal__modal"]}
+                      onOpenChange={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "modal",
+                          "open"
+                        ]).apply(null, eventArgs);
+                      }}
+                      open={generateStateValueProp($state, ["modal", "open"])}
+                      title={null}
+                      trigger={null}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__ax3HD
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__xxfRh
+                          )}
+                        >
+                          {
+                            "\u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0647\u0645\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u062a \u0647\u0645\u06cc\u0634\u0647 \u0631\u0648\u06cc \u06cc\u0647 \u062a\u0642\u0648\u06cc\u0645 \u062a\u0648 \u062c\u06cc\u0628\u062a \u0628\u0627\u0634\u0647\u061f"
+                          }
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__loGNk
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img___3Cf1K)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"60%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/handsOnAppPng2.png",
+                            fullWidth: 456,
+                            fullHeight: 600,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__cGXa
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__jTrBz
+                          )}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["invokeGlobalAction2"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return "مشخصات ثبت شد و بزودی تماس می‌گیریم :) بریم روی تقویم آنلاین";
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      "top-center",
+                                      5000
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["invokeGlobalAction2"] != null &&
+                              typeof $steps["invokeGlobalAction2"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction2"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction2"] = await $steps[
+                                "invokeGlobalAction2"
+                              ];
+                            }
+
+                            $steps["invokeGlobalAction"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/cross-listing-smf",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $state.form.value;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] = await $steps[
+                                "invokeGlobalAction"
+                              ];
+                            }
+
+                            $steps["invokeGlobalAction3"] = true
+                              ? (() => {
+                                  const actionArgs = { args: [] };
+                                  return $globalActions["Fragment.wait"]?.apply(
+                                    null,
+                                    [...actionArgs.args]
+                                  );
+                                })()
+                              : undefined;
+                            if (
+                              $steps["invokeGlobalAction3"] != null &&
+                              typeof $steps["invokeGlobalAction3"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction3"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction3"] = await $steps[
+                                "invokeGlobalAction3"
+                              ];
+                            }
+
+                            $steps["runCode"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return setTimeout(() => {
+                                        window.location.href =
+                                          "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/";
+                                      }, 4000);
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
+
+                            $steps["updateModalOpen"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["modal", "open"]
+                                    },
+                                    operation: 0,
+                                    value: true
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateModalOpen"] != null &&
+                              typeof $steps["updateModalOpen"] === "object" &&
+                              typeof $steps["updateModalOpen"].then ===
+                                "function"
+                            ) {
+                              $steps["updateModalOpen"] = await $steps[
+                                "updateModalOpen"
+                              ];
+                            }
+                          }}
+                        >
+                          {"\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645"}
+                        </div>
+                      </div>
+                    </AntdModal>
                   </div>
                 </div>
               </div>
@@ -1629,6 +1937,7 @@ const PlasmicDescendants = {
     "input2",
     "textArea",
     "button",
+    "modal",
     "testimonials",
     "title",
     "videos",
@@ -1657,6 +1966,7 @@ const PlasmicDescendants = {
     "input2",
     "textArea",
     "button",
+    "modal",
     "testimonials",
     "title",
     "videos",
@@ -1681,14 +1991,24 @@ const PlasmicDescendants = {
     "input",
     "input2",
     "textArea",
-    "button"
+    "button",
+    "modal"
   ],
-  regForm: ["regForm", "form", "input", "input2", "textArea", "button"],
+  regForm: [
+    "regForm",
+    "form",
+    "input",
+    "input2",
+    "textArea",
+    "button",
+    "modal"
+  ],
   form: ["form", "input", "input2", "textArea", "button"],
   input: ["input"],
   input2: ["input2"],
   textArea: ["textArea"],
   button: ["button"],
+  modal: ["modal"],
   testimonials: ["testimonials", "title", "videos"],
   title: ["title"],
   videos: ["videos"],
@@ -1729,6 +2049,7 @@ type NodeDefaultElementType = {
   input2: typeof AntdInput;
   textArea: typeof AntdTextArea;
   button: typeof AntdButton;
+  modal: typeof AntdModal;
   testimonials: "div";
   title: "div";
   videos: "div";
@@ -1818,6 +2139,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     input2: makeNodeComponent("input2"),
     textArea: makeNodeComponent("textArea"),
     button: makeNodeComponent("button"),
+    modal: makeNodeComponent("modal"),
     testimonials: makeNodeComponent("testimonials"),
     title: makeNodeComponent("title"),
     videos: makeNodeComponent("videos"),

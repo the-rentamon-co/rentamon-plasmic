@@ -1730,9 +1730,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
 
                       $steps["goToثبتآگهیاقامتگاه"] = true
                         ? (() => {
-                            const actionArgs = {
-                              destination: `/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87`
-                            };
+                            const actionArgs = { destination: `/test` };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&

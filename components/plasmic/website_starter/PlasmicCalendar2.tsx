@@ -102,13 +102,15 @@ export type PlasmicCalendar2__ArgsType = {
   daystatuses?: any;
   featurePermission?: any;
   calendarType?: string;
+  isFirstVisit?: boolean;
 };
 type ArgPropType = keyof PlasmicCalendar2__ArgsType;
 export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
   "propertyId",
   "daystatuses",
   "featurePermission",
-  "calendarType"
+  "calendarType",
+  "isFirstVisit"
 );
 
 export type PlasmicCalendar2__OverridesType = {
@@ -165,6 +167,7 @@ export interface DefaultCalendar2Props {
   daystatuses?: any;
   featurePermission?: any;
   calendarType?: string;
+  isFirstVisit?: boolean;
   className?: string;
 }
 
@@ -188,7 +191,9 @@ function PlasmicCalendar2__RenderFunc(props: {
   const args = React.useMemo(
     () =>
       Object.assign(
-        {},
+        {
+          isFirstVisit: false
+        },
         Object.fromEntries(
           Object.entries(props.args).filter(([_, v]) => v !== undefined)
         )
@@ -617,6 +622,12 @@ function PlasmicCalendar2__RenderFunc(props: {
       },
       {
         path: "updateStyle",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "tourSteps",
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
@@ -1140,7 +1151,27 @@ function PlasmicCalendar2__RenderFunc(props: {
         }}
       />
 
-      <div className={classNames(projectcss.all, sty.freeBox__ppyHd)}>
+      <div
+        className={classNames(
+          projectcss.all,
+          sty.freeBox__ppyHd,
+          (() => {
+            try {
+              return $props.isFirstVisit == true && $state.tourSteps == 0
+                ? "attention-grabber"
+                : "";
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+        )}
+      >
         <DatePicker
           data-plasmic-name={"fragmentDatePicker"}
           data-plasmic-override={overrides.fragmentDatePicker}
@@ -1538,6 +1569,38 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "updateStateVariable"
                 ];
               }
+
+              $steps["updateTourSteps"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["tourSteps"]
+                      },
+                      operation: 0,
+                      value:
+                        $state.tourSteps == 0
+                          ? ($state.tourSteps = 1)
+                          : ($state.tourSteps = 1)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateTourSteps"] != null &&
+                typeof $steps["updateTourSteps"] === "object" &&
+                typeof $steps["updateTourSteps"].then === "function"
+              ) {
+                $steps["updateTourSteps"] = await $steps["updateTourSteps"];
+              }
             }).apply(null, eventArgs);
           }}
           onMonthChange={async (...eventArgs: any) => {
@@ -1628,84 +1691,6 @@ function PlasmicCalendar2__RenderFunc(props: {
           ])}
         />
 
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox___3AobZ)}
-        >
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__sZgZ)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__bNcp)} />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__c7Dd
-              )}
-            >
-              {"\u0631\u0632\u0631\u0648"}
-            </div>
-          </Stack__>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__yeclM)}
-          >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__qPx3C)}
-            />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ynzkJ
-              )}
-            >
-              {"\u0628\u0633\u062a\u0647"}
-            </div>
-          </Stack__>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__cfHXh)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox___8V028)} />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ghiWo
-              )}
-            >
-              {"\u062a\u062e\u0641\u06cc\u0641"}
-            </div>
-          </Stack__>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__oPytY)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox___0D7PK)} />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__qtcUn
-              )}
-            >
-              {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
-            </div>
-          </Stack__>
-        </Stack__>
         <AntdModal
           data-plasmic-name={"modalDiscount"}
           data-plasmic-override={overrides.modalDiscount}
@@ -2861,7 +2846,11 @@ function PlasmicCalendar2__RenderFunc(props: {
             className={classNames(
               projectcss.all,
               sty.section__rqNfm,
-              "clickable"
+              ` ${
+                $props.isFirstVisit == true && $state.tourSteps == 2
+                  ? "blinkBorderTourGuide clickable"
+                  : ""
+              }`
             )}
             onClick={async event => {
               const $steps = {};
@@ -4481,260 +4470,6 @@ function PlasmicCalendar2__RenderFunc(props: {
             </div>
           </div>
         </AntdModal>
-        <div className={classNames(projectcss.all, sty.freeBox__iosJu)}>
-          <div
-            className={classNames(
-              projectcss.all,
-              sty.freeBox__iGn2N,
-              "attention-bounce"
-            )}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__c5J5P
-              )}
-            >
-              {
-                "\u0631\u0648\u06cc \u0627\u06cc\u0646\u062c\u0627 \u06a9\u0644\u06cc\u06a9 \u06a9\u0646\u06cc\u0646"
-              }
-            </div>
-          </div>
-          <Button
-            className={classNames("__wab_instance", sty.button__fNtwK)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        const startOfToday = new Date();
-                        startOfToday.setHours(0, 0, 0, 0);
-                        const startOfTodayTimestamp = Math.floor(
-                          startOfToday.getTime() / 1000
-                        );
-                        $state.fragmentDatePicker.values =
-                          $state.fragmentDatePicker.values.filter(timestamp => {
-                            return timestamp >= startOfTodayTimestamp;
-                          });
-                        return console.log($state.fragmentDatePicker.values);
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
-              }
-
-              $steps["updateModalOpen"] = (() => {
-                if ($state.fragmentDatePicker.values == 0) {
-                  return false;
-                } else {
-                  return true;
-                }
-              })()
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["modal", "open"]
-                      },
-                      operation: 0,
-                      value: true
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateModalOpen"] != null &&
-                typeof $steps["updateModalOpen"] === "object" &&
-                typeof $steps["updateModalOpen"].then === "function"
-              ) {
-                $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-              }
-
-              $steps["updateCheckForChangeOpen"] = false
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["checkForChange", "open"]
-                      },
-                      operation: 0,
-                      value: (() => {
-                        const timestamps = $state.fragmentDatePicker.values;
-                        const dates = timestamps.map(timestamp => {
-                          const date = new Date(timestamp * 1000);
-                          return date.toISOString().split("T")[0];
-                        });
-                        const calendar = $state.apiRequest.data[1].calendar;
-                        const result = dates.some(date => {
-                          const item = calendar.find(
-                            entry => entry.date === date
-                          );
-                          return (
-                            item &&
-                            item.website !== "" &&
-                            item.website !== "رزرو" &&
-                            item.website != null
-                          );
-                        });
-                        return result;
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateCheckForChangeOpen"] != null &&
-                typeof $steps["updateCheckForChangeOpen"] === "object" &&
-                typeof $steps["updateCheckForChangeOpen"].then === "function"
-              ) {
-                $steps["updateCheckForChangeOpen"] = await $steps[
-                  "updateCheckForChangeOpen"
-                ];
-              }
-
-              $steps["invokeGlobalAction"] = (() => {
-                if ($state.fragmentDatePicker.values == 0) {
-                  return true;
-                } else {
-                  return false;
-                }
-              })()
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "error",
-                        "\u0631\u0648\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f",
-                        "top-center",
-                        3000
-                      ]
-                    };
-                    return $globalActions["Fragment.showToast"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
-
-              $steps["updateStateVariable2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: ($state.textInput4.value = "0")
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable2"] != null &&
-                typeof $steps["updateStateVariable2"] === "object" &&
-                typeof $steps["updateStateVariable2"].then === "function"
-              ) {
-                $steps["updateStateVariable2"] = await $steps[
-                  "updateStateVariable2"
-                ];
-              }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__ary0S)}>
-              {(() => {
-                try {
-                  return (() => {
-                    if ($state.apiRequest.loading == true) {
-                      return true;
-                    } else {
-                      return false;
-                    }
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__rzHqA)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"45px"}
-                  loading={"lazy"}
-                  src={
-                    "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                  }
-                />
-              ) : null}
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__psStq
-                )}
-              >
-                {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
-              </div>
-            </div>
-          </Button>
-        </div>
         <AntdModal
           data-plasmic-name={"fetchModal"}
           data-plasmic-override={overrides.fetchModal}
@@ -5692,7 +5427,27 @@ function PlasmicCalendar2__RenderFunc(props: {
             data-plasmic-name={"reserve"}
             data-plasmic-override={overrides.reserve}
             hasGap={true}
-            className={classNames(projectcss.all, sty.reserve, "clickable")}
+            className={classNames(
+              projectcss.all,
+              sty.reserve,
+              (() => {
+                try {
+                  return ($props.isFirstVisit == true &&
+                    $state.tourSteps == 2) ||
+                    $state.tourSteps == 3
+                    ? "blinkBorderTourGuide clickable"
+                    : "";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
+            )}
             onClick={async event => {
               const $steps = {};
 
@@ -8525,6 +8280,394 @@ function PlasmicCalendar2__RenderFunc(props: {
           </div>
         </AntdModal>
       </div>
+      <Stack__
+        as={"div"}
+        hasGap={true}
+        className={classNames(projectcss.all, sty.freeBox___3AobZ)}
+      >
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__sZgZ)}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__bNcp)} />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__c7Dd
+            )}
+          >
+            {"\u0631\u0632\u0631\u0648"}
+          </div>
+        </Stack__>
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__yeclM)}
+        >
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__qPx3C)}
+          />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__ynzkJ
+            )}
+          >
+            {"\u0628\u0633\u062a\u0647"}
+          </div>
+        </Stack__>
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__cfHXh)}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox___8V028)} />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__ghiWo
+            )}
+          >
+            {"\u062a\u062e\u0641\u06cc\u0641"}
+          </div>
+        </Stack__>
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__oPytY)}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox___0D7PK)} />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__qtcUn
+            )}
+          >
+            {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+          </div>
+        </Stack__>
+      </Stack__>
+      <div className={classNames(projectcss.all, sty.freeBox__iosJu)}>
+        <div
+          className={classNames(
+            projectcss.all,
+            sty.freeBox___8O4D,
+            (() => {
+              try {
+                return $props.isFirstVisit == true && $state.tourSteps == 1
+                  ? "blinkBorderTourGuide"
+                  : "";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()
+          )}
+        >
+          <Button
+            className={classNames("__wab_instance", sty.button__fNtwK)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        const startOfToday = new Date();
+                        startOfToday.setHours(0, 0, 0, 0);
+                        const startOfTodayTimestamp = Math.floor(
+                          startOfToday.getTime() / 1000
+                        );
+                        $state.fragmentDatePicker.values =
+                          $state.fragmentDatePicker.values.filter(timestamp => {
+                            return timestamp >= startOfTodayTimestamp;
+                          });
+                        return console.log($state.fragmentDatePicker.values);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
+
+              $steps["updateModalOpen"] = (() => {
+                if ($state.fragmentDatePicker.values == 0) {
+                  return false;
+                } else {
+                  return true;
+                }
+              })()
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["modal", "open"]
+                      },
+                      operation: 0,
+                      value: true
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalOpen"] != null &&
+                typeof $steps["updateModalOpen"] === "object" &&
+                typeof $steps["updateModalOpen"].then === "function"
+              ) {
+                $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+              }
+
+              $steps["updateCheckForChangeOpen"] = false
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["checkForChange", "open"]
+                      },
+                      operation: 0,
+                      value: (() => {
+                        const timestamps = $state.fragmentDatePicker.values;
+                        const dates = timestamps.map(timestamp => {
+                          const date = new Date(timestamp * 1000);
+                          return date.toISOString().split("T")[0];
+                        });
+                        const calendar = $state.apiRequest.data[1].calendar;
+                        const result = dates.some(date => {
+                          const item = calendar.find(
+                            entry => entry.date === date
+                          );
+                          return (
+                            item &&
+                            item.website !== "" &&
+                            item.website !== "رزرو" &&
+                            item.website != null
+                          );
+                        });
+                        return result;
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateCheckForChangeOpen"] != null &&
+                typeof $steps["updateCheckForChangeOpen"] === "object" &&
+                typeof $steps["updateCheckForChangeOpen"].then === "function"
+              ) {
+                $steps["updateCheckForChangeOpen"] = await $steps[
+                  "updateCheckForChangeOpen"
+                ];
+              }
+
+              $steps["invokeGlobalAction"] = (() => {
+                if ($state.fragmentDatePicker.values == 0) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })()
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "error",
+                        "\u0631\u0648\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f",
+                        "top-center",
+                        3000
+                      ]
+                    };
+                    return $globalActions["Fragment.showToast"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+
+              $steps["updateStateVariable2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.textInput4.value = "0")
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable2"] != null &&
+                typeof $steps["updateStateVariable2"] === "object" &&
+                typeof $steps["updateStateVariable2"].then === "function"
+              ) {
+                $steps["updateStateVariable2"] = await $steps[
+                  "updateStateVariable2"
+                ];
+              }
+
+              $steps["updateTourSteps"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["tourSteps"]
+                      },
+                      operation: 0,
+                      value:
+                        $state.tourSteps == 1
+                          ? ($state.tourSteps = 2)
+                          : ($state.tourSteps = 2)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateTourSteps"] != null &&
+                typeof $steps["updateTourSteps"] === "object" &&
+                typeof $steps["updateTourSteps"].then === "function"
+              ) {
+                $steps["updateTourSteps"] = await $steps["updateTourSteps"];
+              }
+            }}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__ary0S)}>
+              {(() => {
+                try {
+                  return (() => {
+                    if ($state.apiRequest.loading == true) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__rzHqA)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"45px"}
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                  }
+                />
+              ) : null}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__psStq
+                )}
+              >
+                {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
+              </div>
+            </div>
+          </Button>
+        </div>
+        {(hasVariant(globalVariants, "screen", "tablet") ? false : false) ? (
+          <div
+            className={classNames(
+              projectcss.all,
+              sty.freeBox__iGn2N,
+              "attention-bounce"
+            )}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__c5J5P
+              )}
+            >
+              {
+                "\u0631\u0648\u06cc \u0627\u06cc\u0646\u062c\u0627 \u06a9\u0644\u06cc\u06a9 \u06a9\u0646\u06cc\u0646"
+              }
+            </div>
+          </div>
+        ) : null}
+      </div>
       <Embed
         data-plasmic-name={"embedHtml"}
         data-plasmic-override={overrides.embedHtml}
@@ -8931,203 +9074,308 @@ function PlasmicCalendar2__RenderFunc(props: {
             data-plasmic-override={overrides.p5}
             className={classNames(projectcss.all, sty.p5)}
           >
-            <Button
-              className={classNames("__wab_instance", sty.button__lhJj9)}
-              isDisabled={(() => {
-                try {
-                  return (
-                    $state.phoneNumber.value == "" ||
-                    $state.amount.value <= 99999 ||
-                    $state.amount.value == null ||
-                    $state.amount.value >= 20000000
-                  );
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return [];
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__vYyi7,
+                (() => {
+                  try {
+                    return $props.isFirstVisit == true && $state.tourSteps == 2
+                      ? "blinkBorderTourGuide clickable"
+                      : "";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-              onClick={async event => {
-                const $steps = {};
+                })()
+              )}
+            >
+              <Button
+                className={classNames("__wab_instance", sty.button__lhJj9)}
+                isDisabled={(() => {
+                  try {
+                    return (
+                      $state.phoneNumber.value == "" ||
+                      $state.amount.value <= 99999 ||
+                      $state.amount.value == null ||
+                      $state.amount.value >= 20000000
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
+                onClick={async event => {
+                  const $steps = {};
 
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://gateway.rentamon.com/webhook/add_contact",
-                          undefined,
-                          (() => {
-                            try {
-                              return (() => {
-                                function gregorianToJalali(gy, gm, gd) {
-                                  let g_d_m = [
-                                    0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
-                                    30, 31
-                                  ];
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://gateway.rentamon.com/webhook/add_contact",
+                            undefined,
+                            (() => {
+                              try {
+                                return (() => {
+                                  function gregorianToJalali(gy, gm, gd) {
+                                    let g_d_m = [
+                                      0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
+                                      30, 31
+                                    ];
 
-                                  let jy = gy <= 1600 ? 0 : 979;
-                                  gy -= gy <= 1600 ? 621 : 1600;
-                                  let gy2 = gm > 2 ? gy + 1 : gy;
-                                  let days =
-                                    365 * gy +
-                                    Math.floor((gy2 + 3) / 4) -
-                                    Math.floor((gy2 + 99) / 100) +
-                                    Math.floor((gy2 + 399) / 400);
-                                  for (let i = 0; i < gm; i++) {
-                                    days += g_d_m[i];
+                                    let jy = gy <= 1600 ? 0 : 979;
+                                    gy -= gy <= 1600 ? 621 : 1600;
+                                    let gy2 = gm > 2 ? gy + 1 : gy;
+                                    let days =
+                                      365 * gy +
+                                      Math.floor((gy2 + 3) / 4) -
+                                      Math.floor((gy2 + 99) / 100) +
+                                      Math.floor((gy2 + 399) / 400);
+                                    for (let i = 0; i < gm; i++) {
+                                      days += g_d_m[i];
+                                    }
+                                    days += gd - 1;
+                                    let j_days = days - 79;
+                                    let j_np = Math.floor(j_days / 12053);
+                                    j_days %= 12053;
+                                    jy +=
+                                      33 * j_np + 4 * Math.floor(j_days / 1461);
+                                    j_days %= 1461;
+                                    if (j_days >= 366) {
+                                      jy += Math.floor((j_days - 1) / 365);
+                                      j_days = (j_days - 1) % 365;
+                                    }
+                                    let jm, jd;
+                                    if (j_days < 186) {
+                                      jm = 1 + Math.floor(j_days / 31);
+                                      jd = 1 + (j_days % 31);
+                                    } else {
+                                      jm = 7 + Math.floor((j_days - 186) / 30);
+                                      jd = 1 + ((j_days - 186) % 30);
+                                    }
+                                    return {
+                                      jy,
+                                      jm,
+                                      jd
+                                    };
                                   }
-                                  days += gd - 1;
-                                  let j_days = days - 79;
-                                  let j_np = Math.floor(j_days / 12053);
-                                  j_days %= 12053;
-                                  jy +=
-                                    33 * j_np + 4 * Math.floor(j_days / 1461);
-                                  j_days %= 1461;
-                                  if (j_days >= 366) {
-                                    jy += Math.floor((j_days - 1) / 365);
-                                    j_days = (j_days - 1) % 365;
+                                  function convertTimestampToJalali(timestamp) {
+                                    let date = new Date(timestamp * 1000);
+                                    let gy = date.getUTCFullYear();
+                                    let gm = date.getUTCMonth() + 1;
+                                    let gd = date.getUTCDate();
+                                    let { jy, jm, jd } = gregorianToJalali(
+                                      gy,
+                                      gm,
+                                      gd
+                                    );
+                                    return `${jy}-${String(jm).padStart(
+                                      2,
+                                      "0"
+                                    )}-${String(jd).padStart(2, "0")}`;
                                   }
-                                  let jm, jd;
-                                  if (j_days < 186) {
-                                    jm = 1 + Math.floor(j_days / 31);
-                                    jd = 1 + (j_days % 31);
-                                  } else {
-                                    jm = 7 + Math.floor((j_days - 186) / 30);
-                                    jd = 1 + ((j_days - 186) % 30);
-                                  }
+                                  let timestamps = $state.selectedDay;
+                                  let jalaliDates = timestamps.map(ts =>
+                                    convertTimestampToJalali(ts)
+                                  );
+                                  let a = {
+                                    guest_name: $state.guestName.value,
+                                    phone_number: $state.phoneNumber.value,
+                                    amount: $state.amount.value,
+                                    referrer: $state.guestReferrer.value,
+                                    guest_count: $state.guestCount.value,
+                                    property_id: $props.propertyId,
+                                    check_in: jalaliDates[0],
+                                    check_out:
+                                      jalaliDates[jalaliDates.length - 1],
+                                    all_days: jalaliDates
+                                  };
+                                  return a;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction2"] =
+                    $steps.invokeGlobalAction.status == 200
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              undefined,
+                              "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062b\u0628\u062a \u0634\u062f",
+                              "top-center"
+                            ]
+                          };
+                          return $globalActions["Fragment.showToast"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                  if (
+                    $steps["invokeGlobalAction2"] != null &&
+                    typeof $steps["invokeGlobalAction2"] === "object" &&
+                    typeof $steps["invokeGlobalAction2"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction2"] = await $steps[
+                      "invokeGlobalAction2"
+                    ];
+                  }
+
+                  $steps["invokeGlobalAction3"] =
+                    $steps.invokeGlobalAction.status == 422
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "error",
+                              "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062f\u0631\u0633\u062a \u0646\u06cc\u0633\u062a",
+                              "top-center"
+                            ]
+                          };
+                          return $globalActions["Fragment.showToast"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                  if (
+                    $steps["invokeGlobalAction3"] != null &&
+                    typeof $steps["invokeGlobalAction3"] === "object" &&
+                    typeof $steps["invokeGlobalAction3"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction3"] = await $steps[
+                      "invokeGlobalAction3"
+                    ];
+                  }
+
+                  $steps["updateAddingGuestInfoOpen"] =
+                    $steps.invokeGlobalAction.status != 422
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["addingGuestInfo", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateAddingGuestInfoOpen"] != null &&
+                    typeof $steps["updateAddingGuestInfoOpen"] === "object" &&
+                    typeof $steps["updateAddingGuestInfoOpen"].then ===
+                      "function"
+                  ) {
+                    $steps["updateAddingGuestInfoOpen"] = await $steps[
+                      "updateAddingGuestInfoOpen"
+                    ];
+                  }
+
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: (() => {
+                            function convertToEnglishNumber(persianStr = "") {
+                              let str = persianStr.replace(/٬/g, "");
+                              const faDigits = /[۰-۹]/g;
+                              const faMap = "۰۱۲۳۴۵۶۷۸۹";
+                              str = str.replace(faDigits, char =>
+                                faMap.indexOf(char)
+                              );
+                              return Number(str);
+                            }
+                            function formatPriceToPersian(num = 0) {
+                              const formatter = new Intl.NumberFormat("fa-IR");
+                              return formatter.format(num);
+                            }
+                            const changedDaysTimestamps =
+                              $state.selectedDay || [];
+                            const changedDaysDates = changedDaysTimestamps.map(
+                              timestamp => {
+                                const date = new Date(timestamp * 1000);
+                                return date.toISOString().split("T")[0];
+                              }
+                            );
+                            const updatedCalendar =
+                              $state.apiRequest.data[1].calendar.map(day => {
+                                if (changedDaysDates.includes(day.date)) {
                                   return {
-                                    jy,
-                                    jm,
-                                    jd
+                                    ...day,
+                                    price: formatPriceToPersian(
+                                      $state.amount.value / 1000
+                                    ),
+                                    website:
+                                      $state.guestReferrer.value == "divar"
+                                        ? "دیوار"
+                                        : $state.guestReferrer.value == "Broker"
+                                        ? "واسطه"
+                                        : $state.guestReferrer.value ==
+                                          "Colleague"
+                                        ? "همکار"
+                                        : $state.guestReferrer.value ==
+                                          "Returning_Guest"
+                                        ? "مسافر قبلی"
+                                        : $state.guestReferrer.value ==
+                                          "instagram"
+                                        ? "اینستاگرام"
+                                        : "سایر"
                                   };
                                 }
-                                function convertTimestampToJalali(timestamp) {
-                                  let date = new Date(timestamp * 1000);
-                                  let gy = date.getUTCFullYear();
-                                  let gm = date.getUTCMonth() + 1;
-                                  let gd = date.getUTCDate();
-                                  let { jy, jm, jd } = gregorianToJalali(
-                                    gy,
-                                    gm,
-                                    gd
-                                  );
-                                  return `${jy}-${String(jm).padStart(
-                                    2,
-                                    "0"
-                                  )}-${String(jd).padStart(2, "0")}`;
-                                }
-                                let timestamps = $state.selectedDay;
-                                let jalaliDates = timestamps.map(ts =>
-                                  convertTimestampToJalali(ts)
-                                );
-                                let a = {
-                                  guest_name: $state.guestName.value,
-                                  phone_number: $state.phoneNumber.value,
-                                  amount: $state.amount.value,
-                                  referrer: $state.guestReferrer.value,
-                                  guest_count: $state.guestCount.value,
-                                  property_id: $props.propertyId,
-                                  check_in: jalaliDates[0],
-                                  check_out:
-                                    jalaliDates[jalaliDates.length - 1],
-                                  all_days: jalaliDates
-                                };
-                                return a;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
+                                return day;
+                              });
+                            return ($state.apiRequest.data[1].calendar =
+                              updatedCalendar);
                           })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
-                }
-
-                $steps["invokeGlobalAction2"] =
-                  $steps.invokeGlobalAction.status == 200
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            undefined,
-                            "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062b\u0628\u062a \u0634\u062f",
-                            "top-center"
-                          ]
-                        };
-                        return $globalActions["Fragment.showToast"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
-                if (
-                  $steps["invokeGlobalAction2"] != null &&
-                  typeof $steps["invokeGlobalAction2"] === "object" &&
-                  typeof $steps["invokeGlobalAction2"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction2"] = await $steps[
-                    "invokeGlobalAction2"
-                  ];
-                }
-
-                $steps["invokeGlobalAction3"] =
-                  $steps.invokeGlobalAction.status == 422
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            "error",
-                            "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062f\u0631\u0633\u062a \u0646\u06cc\u0633\u062a",
-                            "top-center"
-                          ]
-                        };
-                        return $globalActions["Fragment.showToast"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
-                if (
-                  $steps["invokeGlobalAction3"] != null &&
-                  typeof $steps["invokeGlobalAction3"] === "object" &&
-                  typeof $steps["invokeGlobalAction3"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction3"] = await $steps[
-                    "invokeGlobalAction3"
-                  ];
-                }
-
-                $steps["updateAddingGuestInfoOpen"] =
-                  $steps.invokeGlobalAction.status != 422
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["addingGuestInfo", "open"]
-                          },
-                          operation: 0
                         };
                         return (({
                           variable,
@@ -9145,113 +9393,76 @@ function PlasmicCalendar2__RenderFunc(props: {
                         })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
-                if (
-                  $steps["updateAddingGuestInfoOpen"] != null &&
-                  typeof $steps["updateAddingGuestInfoOpen"] === "object" &&
-                  typeof $steps["updateAddingGuestInfoOpen"].then === "function"
-                ) {
-                  $steps["updateAddingGuestInfoOpen"] = await $steps[
-                    "updateAddingGuestInfoOpen"
-                  ];
-                }
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] = await $steps[
+                      "updateStateVariable"
+                    ];
+                  }
 
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          function convertToEnglishNumber(persianStr = "") {
-                            let str = persianStr.replace(/٬/g, "");
-                            const faDigits = /[۰-۹]/g;
-                            const faMap = "۰۱۲۳۴۵۶۷۸۹";
-                            str = str.replace(faDigits, char =>
-                              faMap.indexOf(char)
-                            );
-                            return Number(str);
-                          }
-                          function formatPriceToPersian(num = 0) {
-                            const formatter = new Intl.NumberFormat("fa-IR");
-                            return formatter.format(num);
-                          }
-                          const changedDaysTimestamps =
-                            $state.selectedDay || [];
-                          const changedDaysDates = changedDaysTimestamps.map(
-                            timestamp => {
-                              const date = new Date(timestamp * 1000);
-                              return date.toISOString().split("T")[0];
+                  $steps["updateTourSteps"] =
+                    $props.isFirstVisit == true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["tourSteps"]
+                            },
+                            operation: 0,
+                            value: (() => {
+                              $state.tourSteps == 2
+                                ? ($state.tourSteps = 5)
+                                : ($state.tourSteps = 2);
+                              return document
+                                .querySelectorAll(".side_bar_border")
+                                .forEach(el => {
+                                  el.style.animation =
+                                    "blinkBorderTourGuide 0.5s infinite";
+                                });
+                            })()
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
                             }
-                          );
-                          const updatedCalendar =
-                            $state.apiRequest.data[1].calendar.map(day => {
-                              if (changedDaysDates.includes(day.date)) {
-                                return {
-                                  ...day,
-                                  price: formatPriceToPersian(
-                                    $state.amount.value / 1000
-                                  ),
-                                  website:
-                                    $state.guestReferrer.value == "divar"
-                                      ? "دیوار"
-                                      : $state.guestReferrer.value == "Broker"
-                                      ? "واسطه"
-                                      : $state.guestReferrer.value ==
-                                        "Colleague"
-                                      ? "همکار"
-                                      : $state.guestReferrer.value ==
-                                        "Returning_Guest"
-                                      ? "مسافر قبلی"
-                                      : $state.guestReferrer.value ==
-                                        "instagram"
-                                      ? "اینستاگرام"
-                                      : "سایر"
-                                };
-                              }
-                              return day;
-                            });
-                          return ($state.apiRequest.data[1].calendar =
-                            updatedCalendar);
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+                            const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
-                }
-              }}
-              submitsForm={false}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__iQ5SN
-                )}
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateTourSteps"] != null &&
+                    typeof $steps["updateTourSteps"] === "object" &&
+                    typeof $steps["updateTourSteps"].then === "function"
+                  ) {
+                    $steps["updateTourSteps"] = await $steps["updateTourSteps"];
+                  }
+                }}
+                submitsForm={false}
               >
-                {
-                  "\u062b\u0628\u062a \u062f\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
-                }
-              </div>
-            </Button>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__iQ5SN
+                  )}
+                >
+                  {
+                    "\u062b\u0628\u062a \u062f\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
+                  }
+                </div>
+              </Button>
+            </div>
           </div>
         </div>
       </AntdModal>
