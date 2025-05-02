@@ -59,10 +59,15 @@
   box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.2);
   left: auto;
   top: 84px;
-  z-index: 10000000000;
+  z-index: 500;
   align-self: center;
   border-radius: 30px;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__tmteh {
+    z-index: 500;
+  }
 }
 .text__tKitd {
   position: relative;
@@ -75,6 +80,18 @@
   min-width: 0;
   padding: 20px;
 }
+@media (max-width: 500px) {
+  .text__tKitd {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 16px;
+    color: var(--token-8R7jjC_-F9FF);
+    text-align: center;
+    min-width: 0;
+    padding: 20px;
+  }
+}
 .text__dU44Z {
   position: relative;
   width: 100%;
@@ -86,6 +103,18 @@
   min-width: 0;
   padding: 20px;
 }
+@media (max-width: 500px) {
+  .text__dU44Z {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 16px;
+    color: var(--token-8R7jjC_-F9FF);
+    text-align: center;
+    min-width: 0;
+    padding: 20px;
+  }
+}
 .text__hre39 {
   position: relative;
   width: 100%;
@@ -96,6 +125,11 @@
   color: var(--token-8R7jjC_-F9FF);
   min-width: 0;
   padding: 20px;
+}
+@media (max-width: 500px) {
+  .text__hre39 {
+    font-size: 16px;
+  }
 }
 .fragmentDatePicker:global(.__wab_instance) {
   max-width: 100%;
@@ -748,6 +782,11 @@
   min-width: 0;
   padding: 20px;
 }
+@media (max-width: 500px) {
+  .text__kMTvf {
+    font-size: 16px;
+  }
+}
 .section__xsRl {
   display: grid;
   align-content: center;
@@ -1388,6 +1427,11 @@
   align-self: flex-end;
   min-width: 0;
   padding: 20px;
+}
+@media (max-width: 500px) {
+  .text__zpQtD {
+    font-size: 16px;
+  }
 }
 .reserve {
   display: flex;
@@ -2796,6 +2840,7 @@
   max-width: 100%;
   object-fit: cover;
   width: 462px;
+  align-self: auto;
 }
 @media (max-width: 1200px) {
   .addingGuestInfo:global(.__wab_instance) {
@@ -3016,9 +3061,9 @@
   align-items: center;
   background: var(--token-qkMXlUhOdBHU);
   left: 0;
-  top: auto;
+  top: -155px;
   right: 0;
-  bottom: -169px;
+  bottom: auto;
   border-radius: 30px;
   padding: 8px;
 }
@@ -3032,6 +3077,11 @@
   text-align: center;
   min-width: 0;
   padding: 20px;
+}
+@media (max-width: 500px) {
+  .text___8BTeb {
+    font-size: 16px;
+  }
 }
 .text__acyke {
   text-align: center;

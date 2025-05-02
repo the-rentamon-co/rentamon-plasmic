@@ -651,12 +651,17 @@
 }
 .sideBar2:global(.__wab_instance):global(.__wab_instance) {
   height: auto;
-  z-index: 1;
+  z-index: 80000000000;
   right: -1px;
   bottom: 0;
   left: auto;
   top: -6px;
   position: fixed;
+}
+@media (max-width: 500px) {
+  .sideBar2:global(.__wab_instance):global(.__wab_instance) {
+    z-index: 80000000000;
+  }
 }
 .right4 {
   display: flex;

@@ -94,6 +94,7 @@ export type PlasmicAnalytics__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   apiRequestOccupancy?: Flex__<typeof ApiRequest>;
   apiRequestAvgDailyrate?: Flex__<typeof ApiRequest>;
+  apiRequestAvgDailyrateBoojar?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   introduction?: Flex__<"div">;
   teamImage?: Flex__<"div">;
@@ -101,6 +102,7 @@ export type PlasmicAnalytics__OverridesType = {
   img?: Flex__<typeof PlasmicImg__>;
   sectionTitle3?: Flex__<"div">;
   monthlyIncome?: Flex__<"div">;
+  monthlyIncomeBoojar?: Flex__<"div">;
   sources?: Flex__<"div">;
   occupancyRate?: Flex__<"div">;
   avgDailyRate?: Flex__<"div">;
@@ -283,6 +285,30 @@ function PlasmicAnalytics__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequestAvgDailyrate"
+      },
+      {
+        path: "apiRequestAvgDailyrateBoojar.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyrateBoojar"
+      },
+      {
+        path: "apiRequestAvgDailyrateBoojar.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyrateBoojar"
+      },
+      {
+        path: "apiRequestAvgDailyrateBoojar.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyrateBoojar"
       }
     ],
     [$props, $ctx, $refs]
@@ -619,6 +645,62 @@ function PlasmicAnalytics__RenderFunc(props: {
             url={"https://gateway.rentamon.com/webhook/6209d842-50-990s549f"}
           />
 
+          <ApiRequest
+            data-plasmic-name={"apiRequestAvgDailyrateBoojar"}
+            data-plasmic-override={overrides.apiRequestAvgDailyrateBoojar}
+            className={classNames(
+              "__wab_instance",
+              sty.apiRequestAvgDailyrateBoojar
+            )}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wkQm1
+                )}
+              >
+                {
+                  "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
+                }
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rj7E
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"POST"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestAvgDailyrateBoojar",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestAvgDailyrateBoojar",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequestAvgDailyrateBoojar",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["apiRequestAvgDailyrateBoojar"] = ref;
+            }}
+            url={"https://gateway.rentamon.com/webhook/monthly-income"}
+          />
+
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
@@ -723,6 +805,152 @@ function PlasmicAnalytics__RenderFunc(props: {
                 data={(() => {
                   try {
                     return $state.apiRequest.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+                label={
+                  hasVariant(globalVariants, "screen", "mobile") ? true : true
+                }
+                layout={"horizontal"}
+                legend={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : false
+                }
+                stack={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : true
+                }
+                tooltip={(() => {
+                  const __composite = {
+                    enabled: null,
+                    indicator: null,
+                    hideLabel: null
+                  };
+                  __composite["enabled"] = false;
+                  __composite["indicator"] = "dashed";
+                  __composite["hideLabel"] = false;
+                  return __composite;
+                })()}
+                type={"bar"}
+                xAxis={
+                  hasVariant(globalVariants, "screen", "tablet")
+                    ? (() => {
+                        const __composite = { enabled: null, key: null };
+                        __composite["enabled"] = true;
+                        __composite["key"] = "month";
+                        return __composite;
+                      })()
+                    : (() => {
+                        const __composite = {
+                          enabled: null,
+                          key: null,
+                          type: null,
+                          tickLine: null,
+                          tickMargin: null,
+                          axisLine: null
+                        };
+                        __composite["enabled"] = true;
+                        __composite["key"] = "month";
+                        __composite["type"] = "category";
+                        __composite["tickLine"] = false;
+                        __composite["tickMargin"] = 4;
+                        __composite["axisLine"] = true;
+                        return __composite;
+                      })()
+                }
+                yAxis={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        const __composite = {
+                          key: null,
+                          enabled: null,
+                          type: null,
+                          tickLine: null,
+                          axisLine: null
+                        };
+                        __composite["key"] = "income";
+                        __composite["enabled"] = false;
+                        __composite["type"] = "number";
+                        __composite["tickLine"] = false;
+                        __composite["axisLine"] = false;
+                        return __composite;
+                      })()
+                    : (() => {
+                        const __composite = {
+                          key: null,
+                          enabled: null,
+                          type: null,
+                          tickLine: null,
+                          axisLine: null,
+                          tickMargin: null
+                        };
+                        __composite["key"] = "income";
+                        __composite["enabled"] = false;
+                        __composite["type"] = "number";
+                        __composite["tickLine"] = false;
+                        __composite["axisLine"] = false;
+                        __composite["tickMargin"] = 20;
+                        return __composite;
+                      })()
+                }
+              />
+            </div>
+            <div
+              data-plasmic-name={"monthlyIncomeBoojar"}
+              data-plasmic-override={overrides.monthlyIncomeBoojar}
+              className={classNames(projectcss.all, sty.monthlyIncomeBoojar)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vJcqE
+                )}
+              >
+                {
+                  "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 - \u0628\u0648\u062c\u0627\u0631"
+                }
+              </div>
+              <Chart
+                cartesianGrid={[]}
+                chartConfig={(() => {
+                  const __composite = [
+                    {
+                      color: null,
+                      type: "natural",
+                      dot: false,
+                      key: null,
+                      label: null
+                    }
+                  ];
+                  __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                  __composite["0"]["key"] = "income";
+                  __composite["0"]["label"] =
+                    "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647";
+                  return __composite;
+                })()}
+                className={classNames(
+                  "__wab_instance",
+                  sty.fragmentChart__jwvIz
+                )}
+                data={(() => {
+                  try {
+                    return $state.apiRequestAvgDailyrateBoojar.data.map(
+                      item => ({
+                        month: item.jalali_month
+                          .replace("1403-11", "بهمن ۴۰۳")
+                          .replace("1403-12", "اسفند ۴۰۳")
+                          .replace("1404-01", "فروردین ۴۰۴")
+                          .replace("1404-02", "اردیبهشت ۴۰۴")
+                          .replace("1404-03", "خرداد ۴۰۴"),
+                        income: item.average_price_per_night
+                      })
+                    );
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -998,9 +1226,44 @@ function PlasmicAnalytics__RenderFunc(props: {
                   sty.text__ztAop
                 )}
               >
-                {
-                  "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646: \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a: \u06f2.\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u062e\u0631\u062f\u0627\u062f: \u06f2.\u06f7 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"
-                }
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.apiRequestAvgDailyrateBoojar.data
+                        .map(item => {
+                          const months = {
+                            "01": "فروردین",
+                            "02": "اردیبهشت",
+                            "03": "خرداد",
+                            "04": "تیر",
+                            "05": "مرداد",
+                            "06": "شهریور",
+                            "07": "مهر",
+                            "08": "آبان",
+                            "09": "آذر",
+                            "10": "دی",
+                            "11": "بهمن",
+                            "12": "اسفند"
+                          };
+                          const jalaliMonth =
+                            months[item.jalali_month.slice(5)];
+                          const persianPrice = new Intl.NumberFormat(
+                            "fa-IR"
+                          ).format(item.average_price_per_night);
+                          return `${jalaliMonth} : ${persianPrice}`;
+                        })
+                        .join("\n");
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646: \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a: \u06f2.\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u062e\u0631\u062f\u0627\u062f: \u06f2.\u06f7 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
               </div>
             </div>
           </div>
@@ -1048,6 +1311,7 @@ const PlasmicDescendants = {
     "apiRequest",
     "apiRequestOccupancy",
     "apiRequestAvgDailyrate",
+    "apiRequestAvgDailyrateBoojar",
     "mainContents",
     "introduction",
     "teamImage",
@@ -1055,6 +1319,7 @@ const PlasmicDescendants = {
     "img",
     "sectionTitle3",
     "monthlyIncome",
+    "monthlyIncomeBoojar",
     "sources",
     "occupancyRate",
     "avgDailyRate",
@@ -1070,6 +1335,7 @@ const PlasmicDescendants = {
   apiRequest: ["apiRequest"],
   apiRequestOccupancy: ["apiRequestOccupancy"],
   apiRequestAvgDailyrate: ["apiRequestAvgDailyrate"],
+  apiRequestAvgDailyrateBoojar: ["apiRequestAvgDailyrateBoojar"],
   mainContents: [
     "mainContents",
     "introduction",
@@ -1078,6 +1344,7 @@ const PlasmicDescendants = {
     "img",
     "sectionTitle3",
     "monthlyIncome",
+    "monthlyIncomeBoojar",
     "sources",
     "occupancyRate",
     "avgDailyRate"
@@ -1094,6 +1361,7 @@ const PlasmicDescendants = {
   img: ["img"],
   sectionTitle3: ["sectionTitle3"],
   monthlyIncome: ["monthlyIncome"],
+  monthlyIncomeBoojar: ["monthlyIncomeBoojar"],
   sources: ["sources"],
   occupancyRate: ["occupancyRate"],
   avgDailyRate: ["avgDailyRate"],
@@ -1114,6 +1382,7 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   apiRequestOccupancy: typeof ApiRequest;
   apiRequestAvgDailyrate: typeof ApiRequest;
+  apiRequestAvgDailyrateBoojar: typeof ApiRequest;
   mainContents: "div";
   introduction: "div";
   teamImage: "div";
@@ -1121,6 +1390,7 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   sectionTitle3: "div";
   monthlyIncome: "div";
+  monthlyIncomeBoojar: "div";
   sources: "div";
   occupancyRate: "div";
   avgDailyRate: "div";
@@ -1197,6 +1467,9 @@ export const PlasmicAnalytics = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     apiRequestOccupancy: makeNodeComponent("apiRequestOccupancy"),
     apiRequestAvgDailyrate: makeNodeComponent("apiRequestAvgDailyrate"),
+    apiRequestAvgDailyrateBoojar: makeNodeComponent(
+      "apiRequestAvgDailyrateBoojar"
+    ),
     mainContents: makeNodeComponent("mainContents"),
     introduction: makeNodeComponent("introduction"),
     teamImage: makeNodeComponent("teamImage"),
@@ -1204,6 +1477,7 @@ export const PlasmicAnalytics = Object.assign(
     img: makeNodeComponent("img"),
     sectionTitle3: makeNodeComponent("sectionTitle3"),
     monthlyIncome: makeNodeComponent("monthlyIncome"),
+    monthlyIncomeBoojar: makeNodeComponent("monthlyIncomeBoojar"),
     sources: makeNodeComponent("sources"),
     occupancyRate: makeNodeComponent("occupancyRate"),
     avgDailyRate: makeNodeComponent("avgDailyRate"),

@@ -631,6 +631,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "lastSteps",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -1181,11 +1187,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                   $state.tourSteps == 1 ||
                   $state.tourSteps == 5
                 ) {
+                  console.log("here1");
+                  console.log("here1");
                   return true;
                 } else {
+                  console.log($state.tourSteps);
+                  console.log("here2");
                   return false;
                 }
               } else {
+                console.log("here3");
                 return false;
               }
             })();
@@ -1227,7 +1238,10 @@ function PlasmicCalendar2__RenderFunc(props: {
             ) : null}
             {(() => {
               try {
-                return $state.tourSteps == 5 ? true : false;
+                return (() => {
+                  console.log($state.tourSteps == 5 ? true : false);
+                  return $state.tourSteps == 5 ? true : false;
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -3103,7 +3117,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>
                       {
-                        "\u0627\u0632 \u0628\u06cc\u0646 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \n\n"
+                        "\u0627\u0632 \u0628\u06cc\u0646 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \n"
                       }
                     </React.Fragment>
                     <span
@@ -3111,7 +3125,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       style={{ fontWeight: 600 }}
                     >
                       {
-                        "<\u067e\u0631> \u0631\u0648\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                        "\u00ab\u067e\u0631\u00bb \u0631\u0648\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
                       }
                     </span>
                   </React.Fragment>
@@ -9643,16 +9657,15 @@ function PlasmicCalendar2__RenderFunc(props: {
                             },
                             operation: 0,
                             value: (() => {
-                              $state.tourSteps == 2
-                                ? ($state.tourSteps = 5)
-                                : ($state.tourSteps = 2);
-                              console.log($state.tourSteps);
-                              return document
+                              document
                                 .querySelectorAll(".side_bar_border")
                                 .forEach(el => {
                                   el.style.animation =
                                     "blinkBorderTourGuide 0.5s infinite";
                                 });
+                              return $state.tourSteps == 2
+                                ? ($state.tourSteps = 5)
+                                : ($state.tourSteps = 2);
                             })()
                           };
                           return (({
