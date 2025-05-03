@@ -1208,7 +1208,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                             "https://web.rentamon.com/panels/?prop_id=1");
                         } else if ($steps.checkOldUser.data.flag == 1) {
                           return (window.location.href =
-                            "https://app.rentamon.com/panel/");
+                            "https://rentamon.com/panel/");
                         }
                       })()
                     };
@@ -1558,7 +1558,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___0Nuwb
+                        sty.formField__hGce2
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1570,7 +1570,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jsHdu
+                        sty.formField__mzMes
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1588,7 +1588,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__xumrx
+                          sty.text__gxoXu
                         )}
                       >
                         {"Submit"}
