@@ -1522,6 +1522,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%88%DB%8C%D9%84%D8%A7"
+        },
+        {
+          "id": "A6vFyD-Zpe1c",
+          "name": "Properties",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicProperties.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/properties.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicProperties.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/properties"
+        },
+        {
+          "id": "oEgwlD3XbRDL",
+          "name": "Property",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicProperty.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/[id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicProperty.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/[id]"
         }
       ],
       "icons": [
@@ -3196,6 +3224,16 @@
           "id": "cLToypeNokwk",
           "name": "image 109",
           "filePath": "../public/plasmic/website_starter/images/image109.png"
+        },
+        {
+          "id": "H05rpaQMl35D",
+          "name": "image 110",
+          "filePath": "../public/plasmic/website_starter/images/image110.svg"
+        },
+        {
+          "id": "EuMPpbVOz2oo",
+          "name": "image 111",
+          "filePath": "../public/plasmic/website_starter/images/image111.svg"
         }
       ],
       "indirect": false,
