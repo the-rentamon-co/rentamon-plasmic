@@ -93,7 +93,7 @@
     {
       "name": "Brand/Brand",
       "type": "color",
-      "value": "#2563EB",
+      "value": "#027DFF",
       "category": "color",
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
@@ -2718,6 +2718,36 @@
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
         "id": "e7eMNdnTMahe"
+      }
+    },
+    {
+      "name": "Unnamed Style Token 15",
+      "type": "color",
+      "value": "#20364780",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "MdJBXvgwPbdZ"
+      }
+    },
+    {
+      "name": "Unnamed Style Token 16",
+      "type": "color",
+      "value": "#027BFF",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "dwh9WW3KaLuM"
+      }
+    },
+    {
+      "name": "Unnamed Style Token 17",
+      "type": "color",
+      "value": "#027DFF",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "KcT8SL_MgztD"
       }
     },
     {

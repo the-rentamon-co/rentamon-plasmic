@@ -3740,9 +3740,7 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.freeBox__lAff,
                         (() => {
                           try {
-                            return $state.isTheFirstVisit == true
-                              ? "soft-glow"
-                              : "";
+                            return (() => {})();
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -3815,6 +3813,19 @@ function PlasmicReservations__RenderFunc(props: {
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
                                 return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
+                          firstVisit={(() => {
+                            try {
+                              return $state.isTheFirstVisit;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
                               }
                               throw e;
                             }

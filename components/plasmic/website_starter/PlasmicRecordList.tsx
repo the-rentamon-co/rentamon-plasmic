@@ -90,11 +90,16 @@ export const PlasmicRecordList__VariantProps = new Array<VariantPropType>(
   "pendingBookings"
 );
 
-export type PlasmicRecordList__ArgsType = { currentIndex?: any; data?: any };
+export type PlasmicRecordList__ArgsType = {
+  currentIndex?: any;
+  data?: any;
+  firstVisit?: boolean;
+};
 type ArgPropType = keyof PlasmicRecordList__ArgsType;
 export const PlasmicRecordList__ArgProps = new Array<ArgPropType>(
   "currentIndex",
-  "data"
+  "data",
+  "firstVisit"
 );
 
 export type PlasmicRecordList__OverridesType = {
@@ -107,6 +112,7 @@ export type PlasmicRecordList__OverridesType = {
 export interface DefaultRecordListProps {
   currentIndex?: any;
   data?: any;
+  firstVisit?: boolean;
   pastBookingsBox?: SingleBooleanChoiceArg<"pastBookingsBox">;
   cancelledBookings?: SingleBooleanChoiceArg<"cancelledBookings">;
   confirmedBookings?: SingleBooleanChoiceArg<"confirmedBookings">;
@@ -134,7 +140,9 @@ function PlasmicRecordList__RenderFunc(props: {
   const args = React.useMemo(
     () =>
       Object.assign(
-        {},
+        {
+          firstVisit: false
+        },
         Object.fromEntries(
           Object.entries(props.args).filter(([_, v]) => v !== undefined)
         )
@@ -213,7 +221,19 @@ function PlasmicRecordList__RenderFunc(props: {
         sty.root,
         hasVariant($state, "pendingBookings", "pendingBookings")
           ? "pendingStyle"
-          : undefined,
+          : (() => {
+              try {
+                return $props.firstVisit == true ? "soft-glow" : "";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })(),
         {
           [sty.rootcancelledBookings]: hasVariant(
             $state,

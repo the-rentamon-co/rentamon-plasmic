@@ -1508,6 +1508,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/best-villa-rental-sites"
+        },
+        {
+          "id": "lU71surWQVHn",
+          "name": "مدیریتویلا",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicمدیریتویلا.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%88%DB%8C%D9%84%D8%A7.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicمدیریتویلا.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%88%DB%8C%D9%84%D8%A7"
         }
       ],
       "icons": [
@@ -3177,6 +3191,11 @@
           "id": "FoOYz8K-7sD0",
           "name": "image 108",
           "filePath": "../public/plasmic/website_starter/images/image108.png"
+        },
+        {
+          "id": "cLToypeNokwk",
+          "name": "image 109",
+          "filePath": "../public/plasmic/website_starter/images/image109.png"
         }
       ],
       "indirect": false,
