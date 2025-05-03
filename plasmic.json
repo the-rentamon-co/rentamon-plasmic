@@ -1550,6 +1550,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/property/[id]"
+        },
+        {
+          "id": "YgmWRwZ4aPr5",
+          "name": "PropertyEdit",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPropertyEdit.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/edit/[id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPropertyEdit.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/edit/[id]"
         }
       ],
       "icons": [
