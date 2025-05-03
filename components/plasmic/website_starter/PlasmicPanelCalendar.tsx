@@ -1543,7 +1543,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                                 ) {
                                   console.log("go to activation");
                                   return (window.location.href =
-                                    "https://app.rentamon.com/activation/1/");
+                                    "https://rentamon.com/activation/1/");
                                 }
                               })();
                             }

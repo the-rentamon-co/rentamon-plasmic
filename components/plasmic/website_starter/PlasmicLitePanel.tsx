@@ -961,9 +961,8 @@ function PlasmicLitePanel__RenderFunc(props: {
                                   $state.profile.error.detail ===
                                   "No Profile matches the given query."
                                 ) {
-                                  console.log("go to activation");
                                   return (window.location.href =
-                                    "https://app.rentamon.com/activation/1/");
+                                    "https://rentamon.com/activation/1/");
                                 }
                               })();
                             }
@@ -1559,7 +1558,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jmrZy
+                        sty.formField___0Nuwb
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1571,7 +1570,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__kwrFg
+                        sty.formField__jsHdu
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1589,7 +1588,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__f7JbM
+                          sty.text__xumrx
                         )}
                       >
                         {"Submit"}
