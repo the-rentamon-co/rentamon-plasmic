@@ -1557,9 +1557,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["goToPage"] = true
+                      $steps["goToProperties"] = true
                         ? (() => {
-                            const actionArgs = {};
+                            const actionArgs = { destination: `/properties` };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&
@@ -1575,11 +1575,13 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToPage"] != null &&
-                        typeof $steps["goToPage"] === "object" &&
-                        typeof $steps["goToPage"].then === "function"
+                        $steps["goToProperties"] != null &&
+                        typeof $steps["goToProperties"] === "object" &&
+                        typeof $steps["goToProperties"].then === "function"
                       ) {
-                        $steps["goToPage"] = await $steps["goToPage"];
+                        $steps["goToProperties"] = await $steps[
+                          "goToProperties"
+                        ];
                       }
                     }}
                   >

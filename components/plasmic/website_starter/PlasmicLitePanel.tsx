@@ -892,49 +892,132 @@ function PlasmicLitePanel__RenderFunc(props: {
                 data-plasmic-override={overrides.left}
                 className={classNames(projectcss.all, sty.left)}
               >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__rEnj)}
-                  displayHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "80px"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "80px"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "130px"
-                      : "100%"
-                  }
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "220px"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "100%"
-                      : "100%"
-                  }
-                  loading={"lazy"}
-                  src={(() => {
-                    try {
-                      return $state.profile.data.user_info.profile_pic_link;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return {
-                          src: "/plasmic/website_starter/images/untitled1Jpg.jpg",
-                          fullWidth: 38,
-                          fullHeight: 32,
-                          aspectRatio: undefined
-                        };
-                      }
-                      throw e;
+                {(() => {
+                  try {
+                    return (
+                      $state.profile.data.properties[$state.propId - 1]
+                        .property_name != "اقامتگاه ۱"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
                     }
-                  })()}
-                />
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___46DxU)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__rEnj)}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "80px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "80px"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "130px"
+                          : "100%"
+                      }
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "220px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : "100%"
+                      }
+                      loading={"lazy"}
+                      src={(() => {
+                        try {
+                          return $state.profile.data.user_info.profile_pic_link;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return {
+                              src: "/plasmic/website_starter/images/untitled1Jpg.jpg",
+                              fullWidth: 38,
+                              fullHeight: 32,
+                              aspectRatio: undefined
+                            };
+                          }
+                          throw e;
+                        }
+                      })()}
+                    />
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return (
+                      $state.profile.data.properties[$state.propId - 1]
+                        .property_name == "اقامتگاه ۱"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__g06Pg)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToProperties"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/properties` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToProperties"] != null &&
+                        typeof $steps["goToProperties"] === "object" &&
+                        typeof $steps["goToProperties"].then === "function"
+                      ) {
+                        $steps["goToProperties"] = await $steps[
+                          "goToProperties"
+                        ];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uZs89
+                      )}
+                    >
+                      {
+                        "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      }
+                    </div>
+                  </div>
+                ) : null}
               </div>
               <ApiRequest
                 data-plasmic-name={"profile"}
@@ -1558,7 +1641,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__qtPQg
+                        sty.formField__kKmdi
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1570,7 +1653,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__v6VnJ
+                        sty.formField__tc8Hf
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1588,7 +1671,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___2UrE0
+                          sty.text__fh2IW
                         )}
                       >
                         {"Submit"}
