@@ -3929,6 +3929,9 @@ function PlasmicActivation__RenderFunc(props: {
                                               $state.invitationCode
                                             );
                                           }
+                                          console.log(
+                                            "beetween  to coundition"
+                                          );
                                           if (
                                             document.cookie.includes("source")
                                           ) {

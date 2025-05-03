@@ -3741,7 +3741,7 @@ function PlasmicReservations__RenderFunc(props: {
                         (() => {
                           try {
                             return $state.isTheFirstVisit == true
-                              ? "attention-grabber"
+                              ? "soft-glow"
                               : "";
                           } catch (e) {
                             if (
