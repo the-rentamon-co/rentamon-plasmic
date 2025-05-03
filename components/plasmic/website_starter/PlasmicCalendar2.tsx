@@ -8793,7 +8793,14 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
-                      value: ($state.textInput4.value = "0")
+                      value: (() => {
+                        $state.textInput4.value = "0";
+                        $state.guestName.value = "";
+                        $state.guestCount.value = 0;
+                        $state.guestReferrer.value = "";
+                        $state.phoneNumber.value = "";
+                        return ($state.amount.value = "");
+                      })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
                       if (!variable) {
@@ -8827,7 +8834,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       value:
                         $state.tourSteps == 1
                           ? ($state.tourSteps = 2)
-                          : ($state.tourSteps = 2)
+                          : ($state.tourSteps = 0)
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
                       if (!variable) {
@@ -8880,7 +8887,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   displayWidth={"45px"}
                   loading={"lazy"}
                   src={
-                    "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
                   }
                 />
               ) : null}
