@@ -637,6 +637,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "watingForResponse",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -9347,7 +9353,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                       $state.phoneNumber.value == "" ||
                       $state.amount.value <= 99999 ||
                       $state.amount.value == null ||
-                      $state.amount.value >= 20000000
+                      $state.amount.value >= 20000000 ||
+                      $state.watingForResponse
                     );
                   } catch (e) {
                     if (
@@ -9361,6 +9368,42 @@ function PlasmicCalendar2__RenderFunc(props: {
                 })()}
                 onClick={async event => {
                   const $steps = {};
+
+                  $steps["updateWatingForResponse"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["watingForResponse"]
+                          },
+                          operation: 4
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          const oldValue = $stateGet(objRoot, variablePath);
+                          $stateSet(objRoot, variablePath, !oldValue);
+                          return !oldValue;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateWatingForResponse"] != null &&
+                    typeof $steps["updateWatingForResponse"] === "object" &&
+                    typeof $steps["updateWatingForResponse"].then === "function"
+                  ) {
+                    $steps["updateWatingForResponse"] = await $steps[
+                      "updateWatingForResponse"
+                    ];
+                  }
 
                   $steps["invokeGlobalAction"] = true
                     ? (() => {
@@ -9472,6 +9515,44 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ) {
                     $steps["invokeGlobalAction"] = await $steps[
                       "invokeGlobalAction"
+                    ];
+                  }
+
+                  $steps["updateWatingForResponse2"] =
+                    $steps.invokeGlobalAction.status != null
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["watingForResponse"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateWatingForResponse2"] != null &&
+                    typeof $steps["updateWatingForResponse2"] === "object" &&
+                    typeof $steps["updateWatingForResponse2"].then ===
+                      "function"
+                  ) {
+                    $steps["updateWatingForResponse2"] = await $steps[
+                      "updateWatingForResponse2"
                     ];
                   }
 
