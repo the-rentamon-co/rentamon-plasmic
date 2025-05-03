@@ -330,8 +330,8 @@ function PlasmicIntro__RenderFunc(props: {
                 link={(() => {
                   try {
                     return $ctx.params.type == "lite"
-                      ? "https://app.rentamon.com/calendar/"
-                      : "https://app.rentamon.com/panel/";
+                      ? "https://rentamon.com/calendar/"
+                      : "https://rentamon.com/panel/";
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
