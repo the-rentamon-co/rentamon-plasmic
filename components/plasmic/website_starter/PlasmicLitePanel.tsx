@@ -1157,7 +1157,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/calendar/";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/";
                                 });
                             }
                           }
@@ -1558,7 +1558,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__hGce2
+                        sty.formField___48Otf
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1570,7 +1570,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__mzMes
+                        sty.formField__bvavx
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1588,7 +1588,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__gxoXu
+                          sty.text__zgWZd
                         )}
                       >
                         {"Submit"}

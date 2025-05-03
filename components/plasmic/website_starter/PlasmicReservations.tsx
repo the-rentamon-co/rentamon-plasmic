@@ -487,7 +487,7 @@ function PlasmicReservations__RenderFunc(props: {
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/reservations/";
                                 });
                             }
                           }
