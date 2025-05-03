@@ -1823,7 +1823,8 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  border-radius: 15px;
+  padding: 5px 2px;
 }
 .recordList__lPd:global(.__wab_instance) {
   height: 50px;
