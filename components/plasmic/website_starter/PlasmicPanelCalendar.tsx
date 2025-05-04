@@ -1522,7 +1522,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "90px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "140px"
+                          ? "110px"
                           : "100%"
                       }
                       displayMaxHeight={
@@ -1531,7 +1531,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "90px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "140px"
+                          ? "110px"
                           : "none"
                       }
                       displayMaxWidth={
@@ -1540,7 +1540,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "110px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "180px"
+                          ? "140px"
                           : "100%"
                       }
                       displayMinHeight={
@@ -1549,7 +1549,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "90px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "140px"
+                          ? "110px"
                           : "0"
                       }
                       displayMinWidth={
@@ -1558,7 +1558,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "110px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "180px"
+                          ? "140px"
                           : "0"
                       }
                       displayWidth={
@@ -1567,7 +1567,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "110px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "180px"
+                          ? "140px"
                           : "100%"
                       }
                       loading={"lazy"}

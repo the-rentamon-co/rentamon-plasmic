@@ -2662,29 +2662,29 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["runCode"] = true
+                  $steps["goToHomepage"] = true
                     ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return window.open(
-                                "https://goftino.com/c/WgsGXv",
-                                "_blank"
-                              );
-                            })();
+                        const actionArgs = { destination: `/` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
                           }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
                         })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
                   if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
+                    $steps["goToHomepage"] != null &&
+                    typeof $steps["goToHomepage"] === "object" &&
+                    typeof $steps["goToHomepage"].then === "function"
                   ) {
-                    $steps["runCode"] = await $steps["runCode"];
+                    $steps["goToHomepage"] = await $steps["goToHomepage"];
                   }
                 }}
               >

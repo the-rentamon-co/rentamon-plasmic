@@ -8829,7 +8829,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                         $state.guestCount.value = 0;
                         $state.guestReferrer.value = "";
                         $state.phoneNumber.value = "";
-                        return ($state.amount.value = "");
+                        $state.amount.value = "";
+                        return ($state.input.value = 0);
                       })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
