@@ -71,6 +71,9 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicProperties.module.css"; // plasmic-import: A6vFyD-Zpe1c/css
 
+import Icon52Icon from "./icons/PlasmicIcon__Icon52"; // plasmic-import: P-t6G5Dmr-Fr/icon
+import Icon53Icon from "./icons/PlasmicIcon__Icon53"; // plasmic-import: vQ6MrBMAr5nq/icon
+
 createPlasmicElementProxy;
 
 export type PlasmicProperties__VariantMembers = {};
@@ -84,6 +87,7 @@ export const PlasmicProperties__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProperties__OverridesType = {
   root?: Flex__<"div">;
+  navFoot?: Flex__<"div">;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
@@ -224,6 +228,254 @@ function PlasmicProperties__RenderFunc(props: {
             sty.root
           )}
         >
+          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            <div
+              data-plasmic-name={"navFoot"}
+              data-plasmic-override={overrides.navFoot}
+              className={classNames(projectcss.all, sty.navFoot, "fix")}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__sVcft)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__fGcOc)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToPanelCalendar"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/panel` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToPanelCalendar"] != null &&
+                      typeof $steps["goToPanelCalendar"] === "object" &&
+                      typeof $steps["goToPanelCalendar"].then === "function"
+                    ) {
+                      $steps["goToPanelCalendar"] = await $steps[
+                        "goToPanelCalendar"
+                      ];
+                    }
+                  }}
+                >
+                  <Icon52Icon
+                    className={classNames(projectcss.all, sty.svg__vJ9RQ)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__voXyi
+                    )}
+                  >
+                    {"\u062a\u0642\u0648\u06cc\u0645"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__nw03)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToReservations"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/reservations` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToReservations"] != null &&
+                      typeof $steps["goToReservations"] === "object" &&
+                      typeof $steps["goToReservations"].then === "function"
+                    ) {
+                      $steps["goToReservations"] = await $steps[
+                        "goToReservations"
+                      ];
+                    }
+                  }}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__fDziy)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "28px"
+                        : "30px"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : "100%"
+                    }
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "34px"
+                        : "36px"
+                    }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image115.svg",
+                      fullWidth: 23,
+                      fullHeight: 19,
+                      aspectRatio: 1.210526
+                    }}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__oewVs
+                    )}
+                  >
+                    {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__zyy7J)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToکیفپول"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/wallet` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToکیفپول"] != null &&
+                      typeof $steps["goToکیفپول"] === "object" &&
+                      typeof $steps["goToکیفپول"].then === "function"
+                    ) {
+                      $steps["goToکیفپول"] = await $steps["goToکیفپول"];
+                    }
+                  }}
+                >
+                  <Icon53Icon
+                    className={classNames(projectcss.all, sty.svg___9R5W)}
+                    role={"img"}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__iCvGo
+                    )}
+                  >
+                    {"\u06a9\u06cc\u0641 \u067e\u0648\u0644"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__jqr2O)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToSettings"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/settings` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToSettings"] != null &&
+                      typeof $steps["goToSettings"] === "object" &&
+                      typeof $steps["goToSettings"].then === "function"
+                    ) {
+                      $steps["goToSettings"] = await $steps["goToSettings"];
+                    }
+                  }}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__cadkb)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "28px"
+                        : "30px"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : "100%"
+                    }
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "34px"
+                        : "36px"
+                    }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image116.svg",
+                      fullWidth: 28,
+                      fullHeight: 28,
+                      aspectRatio: 1
+                    }}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___5ARwF
+                    )}
+                  >
+                    {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : null}
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
@@ -332,7 +584,12 @@ function PlasmicProperties__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return undefined;
+                        return {
+                          src: "/plasmic/website_starter/images/image113.svg",
+                          fullWidth: 20,
+                          fullHeight: 20,
+                          aspectRatio: 1
+                        };
                       }
                       throw e;
                     }
@@ -382,7 +639,7 @@ function PlasmicProperties__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u06cc\u0627\u0641\u062a \u0646\u0634\u062f";
+                              return "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc....";
                             }
                             throw e;
                           }
@@ -435,7 +692,7 @@ function PlasmicProperties__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "";
+                              return "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc....";
                             }
                             throw e;
                           }
@@ -443,37 +700,41 @@ function PlasmicProperties__RenderFunc(props: {
                       </React.Fragment>
                     )}
                   </div>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__ul21Y)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "21px"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "23px"
-                        : "43px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image111.svg",
-                      fullWidth: 20,
-                      fullHeight: 20,
-                      aspectRatio: 1
-                    }}
-                  />
+                  {false ? (
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__ul21Y)}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "21px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "23px"
+                          : "43px"
+                      }
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image111.svg",
+                        fullWidth: 20,
+                        fullHeight: 20,
+                        aspectRatio: 1
+                      }}
+                    />
+                  ) : null}
                 </div>
               </div>
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__hIpz)}>
-            <div
+            <Stack__
+              as={"div"}
               data-plasmic-name={"property"}
               data-plasmic-override={overrides.property}
+              hasGap={true}
               className={classNames(projectcss.all, sty.property)}
             >
               <div className={classNames(projectcss.all, sty.freeBox__tgmu7)}>
@@ -506,15 +767,20 @@ function PlasmicProperties__RenderFunc(props: {
                     </div>
                   }
                   loadingDisplay={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__hzrsi
-                      )}
-                    >
-                      {"Loading..."}
-                    </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__gFugq)}
+                      displayHeight={"60px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={
+                        "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                      }
+                    />
                   }
                   method={"GET"}
                   onError={async (...eventArgs: any) => {
@@ -782,7 +1048,7 @@ function PlasmicProperties__RenderFunc(props: {
                   />
                 </ApiRequest>
               </div>
-            </div>
+            </Stack__>
           </div>
         </div>
       </div>
@@ -793,6 +1059,7 @@ function PlasmicProperties__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "navFoot",
     "header",
     "sideBar2",
     "profile2",
@@ -801,6 +1068,7 @@ const PlasmicDescendants = {
     "property",
     "apiRequest"
   ],
+  navFoot: ["navFoot"],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
@@ -814,6 +1082,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  navFoot: "div";
   header: "div";
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
@@ -883,6 +1152,7 @@ export const PlasmicProperties = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    navFoot: makeNodeComponent("navFoot"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),

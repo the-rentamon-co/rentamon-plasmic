@@ -1236,7 +1236,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062a\u0635\u0648\u06cc\u0631"
+                            "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062a\u0635\u0648\u06cc\u0631"
                           }
                         </div>
                       </Stack__>

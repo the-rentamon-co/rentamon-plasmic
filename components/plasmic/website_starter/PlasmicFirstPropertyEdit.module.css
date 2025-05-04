@@ -884,7 +884,7 @@
   width: 200px;
   height: 150px;
   max-width: 100%;
-  border-radius: 15px;
+  border-radius: 30px;
   border-width: 1px;
 }
 .freeBox__dGo5A > :global(.__wab_flex-container) {
@@ -908,6 +908,7 @@
   object-fit: cover;
   max-width: 100%;
   height: 100%;
+  border-radius: 30px;
 }
 .img__rl70P > picture > img {
   object-fit: cover;
