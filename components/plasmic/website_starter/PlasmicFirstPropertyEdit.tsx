@@ -162,7 +162,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 2
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       },
       {
         path: "hostType",
@@ -830,41 +830,41 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook/change_property_name",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return (() => {
-                                      let a = {
-                                        prop_id: "1",
-                                        property_name: $state.textInput.value
-                                      };
-                                      return a;
-                                    })();
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
+                      $steps["invokeGlobalAction"] =
+                        $state.textInput.value != ""
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/change_property_name",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return (() => {
+                                        let a = {
+                                          prop_id: "1",
+                                          property_name: $state.textInput.value
+                                        };
+                                        return a;
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
                       if (
                         $steps["invokeGlobalAction"] != null &&
                         typeof $steps["invokeGlobalAction"] === "object" &&
@@ -1206,6 +1206,40 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
+                    $steps["updateLoading"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["loading"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateLoading"] != null &&
+                      typeof $steps["updateLoading"] === "object" &&
+                      typeof $steps["updateLoading"].then === "function"
+                    ) {
+                      $steps["updateLoading"] = await $steps["updateLoading"];
+                    }
+
                     $steps["invokeGlobalAction"] = true
                       ? (() => {
                           const actionArgs = {
@@ -1249,40 +1283,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       $steps["invokeGlobalAction"] = await $steps[
                         "invokeGlobalAction"
                       ];
-                    }
-
-                    $steps["updateLoading"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["loading"]
-                            },
-                            operation: 4
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            const oldValue = $stateGet(objRoot, variablePath);
-                            $stateSet(objRoot, variablePath, !oldValue);
-                            return !oldValue;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateLoading"] != null &&
-                      typeof $steps["updateLoading"] === "object" &&
-                      typeof $steps["updateLoading"].then === "function"
-                    ) {
-                      $steps["updateLoading"] = await $steps["updateLoading"];
                     }
 
                     $steps["goToProperties"] =
