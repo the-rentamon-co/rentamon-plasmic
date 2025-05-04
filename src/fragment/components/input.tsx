@@ -1,7 +1,12 @@
-/* eslint-disable react/display-name */
+/* eslint-disable react/display-name */ 
 import { CodeComponentMeta, useSelector } from "@plasmicapp/host";
 import * as InputPrimitive from "@/components/ui/input";
 import { HTMLInputTypeAttribute, RefAttributes } from "react";
+
+const formatWithCommas = (value: string | number): string => {
+  const number = value.toString().replace(/[^\d]/g, "");
+  return number.replace(/\B(?=(\d{3})+(?!\d))/g, "٬");
+};
 
 type InputType = {
   placeholder?: string;
@@ -30,11 +35,16 @@ export const Input = (props: InputType) => {
     accept,
   } = props;
   const fragmentConfig = useSelector("Fragment");
+  const formattedValue =
+    type === "number" && value !== undefined && value !== null
+      ? formatWithCommas(value)
+      : value;
+
   return (
     <InputPrimitive.Input
       disabled={disabled}
       onChange={(e) => onChange?.(e.target?.value ?? "")}
-      value={value}
+      value={formattedValue}
       dir={type !== "text" ? "ltr" : fragmentConfig.rtl ? "rtl" : "ltr"}
       name={name}
       placeholder={placeholder}
