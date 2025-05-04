@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { CodeComponentMeta, useSelector } from "@plasmicapp/host";
+import { CodeComponentMeta } from "@plasmicapp/host";
 import * as ChartPrimitive from "@/components/ui/chart";
 import {
   Bar,
@@ -15,6 +15,13 @@ import {
   Pie,
   PieChart,
 } from "recharts";
+
+import { type ChartConfig } from "@/components/ui/chart";
+import { useMemo } from "react";
+import { cn } from "@/lib/utils";
+
+const formatWithCommas = (value: number | string) =>
+  value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "٬");
 
 type ChartType = {
   cartesianGrid: any[];
@@ -32,10 +39,6 @@ type ChartType = {
   legend?: boolean;
   className?: string;
 };
-
-import { type ChartConfig } from "@/components/ui/chart";
-import { useMemo } from "react";
-import { cn } from "@/lib/utils";
 
 export const Chart = (props: ChartType) => {
   const {
@@ -65,33 +68,17 @@ export const Chart = (props: ChartType) => {
   ) ?? {}) satisfies ChartConfig;
 
   const ComponentContainerChart: any = useMemo(() => {
-    if (type === "bar") {
-      return BarChart;
-    }
-    if (type === "area") {
-      return AreaChart;
-    }
-    if (type === "line") {
-      return LineChart;
-    }
-    if (type === "pie") {
-      return PieChart;
-    }
+    if (type === "bar") return BarChart;
+    if (type === "area") return AreaChart;
+    if (type === "line") return LineChart;
+    if (type === "pie") return PieChart;
   }, [type]);
 
   const ComponentChart: any = useMemo(() => {
-    if (type === "bar") {
-      return Bar;
-    }
-    if (type === "area") {
-      return Area;
-    }
-    if (type === "line") {
-      return Line;
-    }
-    if (type === "pie") {
-      return Pie;
-    }
+    if (type === "bar") return Bar;
+    if (type === "area") return Area;
+    if (type === "line") return Line;
+    if (type === "pie") return Pie;
   }, [type]);
 
   return (
@@ -103,11 +90,7 @@ export const Chart = (props: ChartType) => {
         accessibilityLayer
         {...(type === "bar" && { layout })}
         {...(type !== "pie" && { data })}
-        margin={{
-          right: 16,
-          left: 16,
-          top: 16,
-        }}
+        margin={{ right: 16, left: 16, top: 16 }}
       >
         {type !== "pie" && cartesianGrid?.length > 0 && (
           <CartesianGrid
@@ -152,7 +135,9 @@ export const Chart = (props: ChartType) => {
                 dataKey={nameKey?.key}
                 fontSize={12}
                 fontWeight={100}
-                formatter={(value: string) => reformmatedConfig[value]?.label}
+                formatter={(value: string) =>
+                  reformmatedConfig[value]?.label
+                }
               />
             )}
           </ComponentChart>
@@ -188,6 +173,7 @@ export const Chart = (props: ChartType) => {
                   }
                   offset={8}
                   fontSize={12}
+                  formatter={formatWithCommas}
                 />
               )}
             </ComponentChart>
@@ -208,29 +194,25 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
       type: "cardPicker",
       options: [
         {
-          imgUrl:
-            "https://raw.githubusercontent.com/makefragment/chart/main/bar.png",
+          imgUrl: "https://raw.githubusercontent.com/makefragment/chart/main/bar.png",
           value: "bar",
           label: "Bar",
           footer: "Bar Chart",
         },
         {
-          imgUrl:
-            "https://raw.githubusercontent.com/makefragment/chart/main/area.png",
+          imgUrl: "https://raw.githubusercontent.com/makefragment/chart/main/area.png",
           value: "area",
           label: "Area",
           footer: "Area Chart",
         },
         {
-          imgUrl:
-            "https://raw.githubusercontent.com/makefragment/chart/main/line.png",
+          imgUrl: "https://raw.githubusercontent.com/makefragment/chart/main/line.png",
           value: "line",
           label: "Line",
           footer: "Line Chart",
         },
         {
-          imgUrl:
-            "https://raw.githubusercontent.com/makefragment/chart/main/pie.png",
+          imgUrl: "https://raw.githubusercontent.com/makefragment/chart/main/pie.png",
           value: "pie",
           label: "Pie",
           footer: "Pie Chart",
@@ -247,9 +229,7 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
       fields: {
         key: {
           type: "choice",
-          options: (ps) => {
-            return Object.keys(ps.data?.[0] ?? []);
-          },
+          options: (ps) => Object.keys(ps.data?.[0] ?? []),
         },
         label: {
           type: "string",
@@ -263,9 +243,7 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
       fields: {
         key: {
           type: "choice",
-          options: (ps) => {
-            return Object.keys(ps.data?.[0] ?? []);
-          },
+          options: (ps) => Object.keys(ps.data?.[0] ?? []),
         },
         label: {
           type: "string",
@@ -282,13 +260,12 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
         fields: {
           key: {
             type: "choice",
-            options: (ps) => {
-              return !!ps?.type && ["pie"].includes(ps?.type)
+            options: (ps) =>
+              !!ps?.type && ["pie"].includes(ps?.type)
                 ? Array.from(
                     new Set(ps.data?.map((entry) => entry[ps?.nameKey?.key]))
                   )
-                : Object.keys(ps.data?.[0] ?? []);
-            },
+                : Object.keys(ps.data?.[0] ?? []),
           },
           label: {
             type: "string",
@@ -300,18 +277,14 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
           },
           type: {
             type: "choice",
-            hidden: (ps) => {
-              return !!ps?.type && ["bar", "pie"].includes(ps?.type);
-            },
+            hidden: (ps) => !!ps?.type && ["bar", "pie"].includes(ps?.type),
             options: ["natural", "linear", "step"],
             defaultValueHint: "natural",
             defaultValue: "natural",
           },
           dot: {
             type: "boolean",
-            hidden: (ps) => {
-              return !!ps?.type && ["bar", "pie"].includes(ps?.type);
-            },
+            hidden: (ps) => !!ps?.type && ["bar", "pie"].includes(ps?.type),
             defaultValueHint: false,
             defaultValue: false,
           },
@@ -320,18 +293,10 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
     },
     layout: {
       type: "choice",
-      hidden: (ps) => {
-        return ps.type != "bar";
-      },
+      hidden: (ps) => ps.type !== "bar",
       options: [
-        {
-          label: "Vertical",
-          value: "vertical",
-        },
-        {
-          label: "Horizontal",
-          value: "horizontal",
-        },
+        { label: "Vertical", value: "vertical" },
+        { label: "Horizontal", value: "horizontal" },
       ],
       defaultValue: "vertical",
       defaultValueHint: "horizontal",
@@ -342,14 +307,8 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
       hidden: (ps) => ps.type === "pie",
       multiSelect: true,
       options: [
-        {
-          label: "Vertical",
-          value: "vertical",
-        },
-        {
-          label: "Horizontal",
-          value: "horizontal",
-        },
+        { label: "Vertical", value: "vertical" },
+        { label: "Horizontal", value: "horizontal" },
       ],
     },
     xAxis: {
@@ -361,32 +320,18 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
         enabled: "boolean",
         key: {
           type: "choice",
-          options: (ps) => {
-            return ["auto", ...Object.keys(ps.data?.[0] ?? [])];
-          },
+          options: (ps) => ["auto", ...Object.keys(ps.data?.[0] ?? [])],
         },
         type: {
           type: "choice",
-          hidden: (_, __, ps) => {
-            return ps.item?.key === "auto";
-          },
+          hidden: (_, __, ps) => ps.item?.key === "auto",
           options: [
-            {
-              label: "Category",
-              value: "category",
-            },
-            {
-              label: "Number",
-              value: "number",
-            },
+            { label: "Category", value: "category" },
+            { label: "Number", value: "number" },
           ],
         },
         tickLine: "boolean",
-        tickMargin: {
-          type: "number",
-          defaultValue: 10,
-          defaultValueHint: 10,
-        },
+        tickMargin: { type: "number", defaultValue: 10, defaultValueHint: 10 },
         axisLine: "boolean",
       },
     },
@@ -399,32 +344,18 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
         enabled: "boolean",
         key: {
           type: "choice",
-          options: (ps) => {
-            return ["auto", ...Object.keys(ps.data?.[0] ?? [])];
-          },
+          options: (ps) => ["auto", ...Object.keys(ps.data?.[0] ?? [])],
         },
         type: {
           type: "choice",
-          hidden: (_, __, ps) => {
-            return ps.item?.key === "auto";
-          },
+          hidden: (_, __, ps) => ps.item?.key === "auto",
           options: [
-            {
-              label: "Category",
-              value: "category",
-            },
-            {
-              label: "Number",
-              value: "number",
-            },
+            { label: "Category", value: "category" },
+            { label: "Number", value: "number" },
           ],
         },
         tickLine: "boolean",
-        tickMargin: {
-          type: "number",
-          defaultValue: 10,
-          defaultValueHint: 10,
-        },
+        tickMargin: { type: "number", defaultValue: 10, defaultValueHint: 10 },
         axisLine: "boolean",
       },
     },
@@ -436,18 +367,9 @@ export const chartMeta: CodeComponentMeta<ChartType> = {
         indicator: {
           type: "choice",
           options: [
-            {
-              label: "dot",
-              value: "dot",
-            },
-            {
-              label: "line",
-              value: "line",
-            },
-            {
-              label: "dashed",
-              value: "dashed",
-            },
+            { label: "dot", value: "dot" },
+            { label: "line", value: "line" },
+            { label: "dashed", value: "dashed" },
           ],
         },
         hideLabel: "boolean",
