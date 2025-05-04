@@ -1270,22 +1270,41 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           }}
                         />
                       ) : null}
-                      {(() => {
-                        try {
-                          return (
-                            Object.keys($state.apiRequest.data.status)
-                              .length === 0
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
+                      {(
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? (() => {
+                              try {
+                                return (
+                                  Object.keys($state.apiRequest.data.status)
+                                    .length === 0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return (
+                                  Object.keys($state.apiRequest.data.status)
+                                    .length === 0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                      ) ? (
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__cdshO)}
@@ -1499,7 +1518,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       className={classNames(sty.img__mGbB3)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "80px"
+                          ? "82px"
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "90px"
                           : hasVariant(globalVariants, "screen", "tablet")
@@ -1507,28 +1526,36 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           : "100%"
                       }
                       displayMaxHeight={
-                        hasVariant(globalVariants, "screen", "mobile")
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "82px"
+                          : hasVariant(globalVariants, "screen", "mobile")
                           ? "90px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "140px"
                           : "none"
                       }
                       displayMaxWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100px"
+                          : hasVariant(globalVariants, "screen", "mobile")
                           ? "110px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "180px"
                           : "100%"
                       }
                       displayMinHeight={
-                        hasVariant(globalVariants, "screen", "mobile")
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "82px"
+                          : hasVariant(globalVariants, "screen", "mobile")
                           ? "90px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "140px"
                           : "0"
                       }
                       displayMinWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100px"
+                          : hasVariant(globalVariants, "screen", "mobile")
                           ? "110px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "180px"
@@ -1536,7 +1563,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       }
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "220px"
+                          ? "100px"
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "110px"
                           : hasVariant(globalVariants, "screen", "tablet")
