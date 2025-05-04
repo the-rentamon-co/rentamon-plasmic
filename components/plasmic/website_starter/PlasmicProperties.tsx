@@ -640,9 +640,22 @@ function PlasmicProperties__RenderFunc(props: {
                                 sty.text__a827Q
                               )}
                             >
-                              {
-                                "\u0633\u0648\u0626\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628"
-                              }
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return currentItem.property_name;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "\u0633\u0648\u0626\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
                             </div>
                           </div>
                         </div>
@@ -688,9 +701,11 @@ function PlasmicProperties__RenderFunc(props: {
                             await $steps["goToPropertyEditFirstProperty"];
                         }
 
-                        $steps["goToPage"] = false
+                        $steps["goToPropertyCreate"] = true
                           ? (() => {
-                              const actionArgs = {};
+                              const actionArgs = {
+                                destination: `/property/create`
+                              };
                               return (({ destination }) => {
                                 if (
                                   typeof destination === "string" &&
@@ -706,11 +721,14 @@ function PlasmicProperties__RenderFunc(props: {
                             })()
                           : undefined;
                         if (
-                          $steps["goToPage"] != null &&
-                          typeof $steps["goToPage"] === "object" &&
-                          typeof $steps["goToPage"].then === "function"
+                          $steps["goToPropertyCreate"] != null &&
+                          typeof $steps["goToPropertyCreate"] === "object" &&
+                          typeof $steps["goToPropertyCreate"].then ===
+                            "function"
                         ) {
-                          $steps["goToPage"] = await $steps["goToPage"];
+                          $steps["goToPropertyCreate"] = await $steps[
+                            "goToPropertyCreate"
+                          ];
                         }
                       }}
                     >

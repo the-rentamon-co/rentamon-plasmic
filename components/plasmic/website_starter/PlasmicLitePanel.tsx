@@ -1641,7 +1641,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__hFikr
+                        sty.formField__t5JvC
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1653,7 +1653,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__trFee
+                        sty.formField__lWjYm
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1671,7 +1671,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__sqwbs
+                          sty.text___1V2N3
                         )}
                       >
                         {"Submit"}

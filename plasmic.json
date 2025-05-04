@@ -1604,6 +1604,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicVilaType.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "WpzbJ1Pm7PCS",
+          "name": "PropertyCreate",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPropertyCreate.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/create.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPropertyCreate.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/create"
         }
       ],
       "icons": [

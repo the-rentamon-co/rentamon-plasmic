@@ -110,6 +110,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   right2?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
   left?: Flex__<"div">;
+  image?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
   iframe?: Flex__<typeof Iframe>;
@@ -1489,7 +1490,9 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__c3J37)}
+                    data-plasmic-name={"image"}
+                    data-plasmic-override={overrides.image}
+                    className={classNames(projectcss.all, sty.image)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -1498,20 +1501,46 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "80px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "80px"
+                          ? "90px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "130px"
+                          ? "140px"
                           : "100%"
                       }
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
+                      displayMaxHeight={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "90px"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "140px"
+                          : "none"
+                      }
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "110px"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "180px"
+                          : "100%"
+                      }
+                      displayMinHeight={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "90px"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "140px"
+                          : "0"
+                      }
+                      displayMinWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "110px"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "180px"
+                          : "0"
+                      }
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "220px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "100%"
+                          ? "110px"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "180px"
                           : "100%"
                       }
                       loading={"lazy"}
@@ -2356,6 +2385,7 @@ const PlasmicDescendants = {
     "right2",
     "select2",
     "left",
+    "image",
     "profile",
     "calendar2",
     "iframe",
@@ -2381,6 +2411,7 @@ const PlasmicDescendants = {
     "right2",
     "select2",
     "left",
+    "image",
     "profile"
   ],
   header: [
@@ -2394,6 +2425,7 @@ const PlasmicDescendants = {
     "right2",
     "select2",
     "left",
+    "image",
     "profile"
   ],
   right: [
@@ -2413,7 +2445,8 @@ const PlasmicDescendants = {
   apiRequest: ["apiRequest"],
   right2: ["right2", "select2"],
   select2: ["select2"],
-  left: ["left"],
+  left: ["left", "image"],
+  image: ["image"],
   profile: ["profile"],
   calendar2: ["calendar2"],
   iframe: ["iframe"],
@@ -2443,6 +2476,7 @@ type NodeDefaultElementType = {
   right2: "div";
   select2: typeof Select;
   left: "div";
+  image: "div";
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
   iframe: typeof Iframe;
@@ -2528,6 +2562,7 @@ export const PlasmicPanelCalendar = Object.assign(
     right2: makeNodeComponent("right2"),
     select2: makeNodeComponent("select2"),
     left: makeNodeComponent("left"),
+    image: makeNodeComponent("image"),
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
     iframe: makeNodeComponent("iframe"),
