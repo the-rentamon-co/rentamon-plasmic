@@ -67,6 +67,7 @@ import DayCell from "../../DayCell"; // plasmic-import: cU6Nt4MA6DXT/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
+import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
@@ -125,6 +126,7 @@ export type PlasmicCalendar2__OverridesType = {
   modal?: Flex__<typeof AntdModal>;
   modalChangePrice?: Flex__<typeof AntdModal>;
   main2?: Flex__<"div">;
+  input?: Flex__<typeof Input>;
   textInput?: Flex__<typeof TextInput>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
   fetchModal?: Flex__<typeof AntdModal>;
@@ -643,6 +645,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "input.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -4231,6 +4239,23 @@ function PlasmicCalendar2__RenderFunc(props: {
               data-plasmic-override={overrides.main2}
               className={classNames(projectcss.all, sty.main2)}
             >
+              <Input
+                data-plasmic-name={"input"}
+                data-plasmic-override={overrides.input}
+                className={classNames("__wab_instance", sty.input)}
+                onChange={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["input", "value"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                placeholder={
+                  "\u0645\u062b\u0644\u0627 \u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"
+                }
+                type={"number"}
+                value={generateStateValueProp($state, ["input", "value"])}
+              />
+
               <TextInput
                 data-plasmic-name={"textInput"}
                 data-plasmic-override={overrides.textInput}
@@ -4403,7 +4428,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             : result;
                           return finalResult.trim() + " تومان";
                         }
-                        const input = $state.textInput?.value || "";
+                        const input = $state.input?.value || "";
                         const output =
                           input === "" ? "صفر" : numberToPersian(Number(input));
                         return output;
@@ -4427,9 +4452,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 isDisabled={(() => {
                   try {
                     return (
-                      $state.textInput.value <= 99999 ||
-                      $state.textInput.value == null ||
-                      $state.textInput.value >= 20000000
+                      $state.input.value <= 99999 ||
+                      $state.input.value == null ||
+                      $state.input.value >= 20000000
                     );
                   } catch (e) {
                     if (
@@ -4575,7 +4600,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               const data = {
                                 days: [$state.fragmentDatePicker.values],
                                 property_id: $props.propertyId,
-                                price: String($state.textInput.value)
+                                price: String($state.input.value)
                               };
                               $state.requestdata = data;
                               data.days = data.days
@@ -9847,6 +9872,7 @@ const PlasmicDescendants = {
     "modal",
     "modalChangePrice",
     "main2",
+    "input",
     "textInput",
     "numberInput2",
     "fetchModal",
@@ -9891,8 +9917,15 @@ const PlasmicDescendants = {
   main: ["main", "textInput2"],
   textInput2: ["textInput2"],
   modal: ["modal"],
-  modalChangePrice: ["modalChangePrice", "main2", "textInput", "numberInput2"],
-  main2: ["main2", "textInput", "numberInput2"],
+  modalChangePrice: [
+    "modalChangePrice",
+    "main2",
+    "input",
+    "textInput",
+    "numberInput2"
+  ],
+  main2: ["main2", "input", "textInput", "numberInput2"],
+  input: ["input"],
   textInput: ["textInput"],
   numberInput2: ["numberInput2"],
   fetchModal: [
@@ -9981,6 +10014,7 @@ type NodeDefaultElementType = {
   modal: typeof AntdModal;
   modalChangePrice: typeof AntdModal;
   main2: "div";
+  input: typeof Input;
   textInput: typeof TextInput;
   numberInput2: typeof AntdInputNumber;
   fetchModal: typeof AntdModal;
@@ -10088,6 +10122,7 @@ export const PlasmicCalendar2 = Object.assign(
     modal: makeNodeComponent("modal"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
     main2: makeNodeComponent("main2"),
+    input: makeNodeComponent("input"),
     textInput: makeNodeComponent("textInput"),
     numberInput2: makeNodeComponent("numberInput2"),
     fetchModal: makeNodeComponent("fetchModal"),

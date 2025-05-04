@@ -62,7 +62,7 @@ import {
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
-import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -119,7 +119,7 @@ export type Plasmicتعرفهخدمات__OverridesType = {
   item111?: Flex__<"div">;
   services?: Flex__<"div">;
   calc?: Flex__<"div">;
-  numberInput?: Flex__<typeof AntdInputNumber>;
+  input2?: Flex__<typeof Input>;
   valueText?: Flex__<"div">;
   value?: Flex__<"div">;
   toman?: Flex__<"div">;
@@ -251,12 +251,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "numberInput.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
         path: "checkbox10.isChecked",
         type: "private",
         variableType: "boolean",
@@ -267,6 +261,12 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+      },
+      {
+        path: "input2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -2511,14 +2511,13 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   }
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__jkFhU)}>
-                  <AntdInputNumber
-                    data-plasmic-name={"numberInput"}
-                    data-plasmic-override={overrides.numberInput}
-                    allowClear={true}
-                    className={classNames("__wab_instance", sty.numberInput)}
+                  <Input
+                    data-plasmic-name={"input2"}
+                    data-plasmic-override={overrides.input2}
+                    className={classNames("__wab_instance", sty.input2)}
                     onChange={async (...eventArgs: any) => {
                       generateStateOnChangeProp($state, [
-                        "numberInput",
+                        "input2",
                         "value"
                       ]).apply(null, eventArgs);
                     }}
@@ -2526,10 +2525,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       "\u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647 \u06cc\u06a9 \u0634\u0628 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
                     }
                     type={"number"}
-                    value={generateStateValueProp($state, [
-                      "numberInput",
-                      "value"
-                    ])}
+                    value={generateStateValueProp($state, ["input2", "value"])}
                   />
 
                   <div
@@ -2562,19 +2558,19 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $state.numberInput.value
-                              ? `${new Intl.NumberFormat().format(
+                            return $state.input2.value
+                              ? `${new Intl.NumberFormat("en-US").format(
                                   Math.round(
                                     ($state.checkbox5.isChecked
-                                      ? $state.numberInput.value * 1.55
+                                      ? $state.input2.value * 1.55
                                       : 0) +
                                       ($state.checkbox6.isChecked
-                                        ? $state.numberInput.value * 1.155
+                                        ? $state.input2.value * 1.155
                                         : 0) +
                                       ($state.checkbox7.isChecked
-                                        ? $state.numberInput.value * 1.1
+                                        ? $state.input2.value * 1.1
                                         : 0) +
-                                      $state.numberInput.value * 1.1
+                                      $state.input2.value * 1.1
                                   )
                                 )} تومان`
                               : null;
@@ -2621,17 +2617,17 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $state.numberInput.value
-                              ? `${new Intl.NumberFormat().format(
+                            return $state.input2.value
+                              ? `${new Intl.NumberFormat("en-US").format(
                                   Math.round(
                                     ($state.checkbox5.isChecked
-                                      ? $state.numberInput.value * 0.015
+                                      ? $state.input2.value * 0.015
                                       : 0) +
                                       ($state.checkbox6.isChecked
-                                        ? $state.numberInput.value * 0.01
+                                        ? $state.input2.value * 0.01
                                         : 0) +
                                       ($state.checkbox7.isChecked
-                                        ? $state.numberInput.value * 0.005
+                                        ? $state.input2.value * 0.005
                                         : 0)
                                   )
                                 )} تومان`
@@ -2996,7 +2992,7 @@ const PlasmicDescendants = {
     "item111",
     "services",
     "calc",
-    "numberInput",
+    "input2",
     "valueText",
     "value",
     "toman",
@@ -3066,8 +3062,8 @@ const PlasmicDescendants = {
   item110: ["item110"],
   item111: ["item111"],
   services: ["services"],
-  calc: ["calc", "numberInput", "valueText", "value", "toman", "commission"],
-  numberInput: ["numberInput"],
+  calc: ["calc", "input2", "valueText", "value", "toman", "commission"],
+  input2: ["input2"],
   valueText: ["valueText"],
   value: ["value"],
   toman: ["toman"],
@@ -3128,7 +3124,7 @@ type NodeDefaultElementType = {
   item111: "div";
   services: "div";
   calc: "div";
-  numberInput: typeof AntdInputNumber;
+  input2: typeof Input;
   valueText: "div";
   value: "div";
   toman: "div";
@@ -3236,7 +3232,7 @@ export const Plasmicتعرفهخدمات = Object.assign(
     item111: makeNodeComponent("item111"),
     services: makeNodeComponent("services"),
     calc: makeNodeComponent("calc"),
-    numberInput: makeNodeComponent("numberInput"),
+    input2: makeNodeComponent("input2"),
     valueText: makeNodeComponent("valueText"),
     value: makeNodeComponent("value"),
     toman: makeNodeComponent("toman"),

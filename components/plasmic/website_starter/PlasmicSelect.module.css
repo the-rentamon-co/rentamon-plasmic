@@ -346,6 +346,17 @@
   > img {
   overflow: hidden;
 }
+@media (max-width: 500px) {
+  .slotTargetPlaceholder {
+    font-weight: 500;
+  }
+}
+@media (max-width: 350px) {
+  .slotTargetPlaceholder {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
 .slotTargetPlaceholdershowPlaceholder {
   font-size: 17px;
   font-weight: 600;
