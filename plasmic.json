@@ -1618,6 +1618,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/property/create"
+        },
+        {
+          "id": "y37kcAs9RXYg",
+          "name": "NavigationRntFooter",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNavigationRntFooter.tsx",
+          "importSpec": {
+            "modulePath": "NavigationRntFooter.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNavigationRntFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -1985,6 +1998,16 @@
           "id": "vQ6MrBMAr5nq",
           "name": "Icon53Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon53.tsx"
+        },
+        {
+          "id": "anAnnZ2H0jCb",
+          "name": "Icon54Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon54.tsx"
+        },
+        {
+          "id": "IFHAnQhrCbSe",
+          "name": "Icon55Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon55.tsx"
         }
       ],
       "images": [
