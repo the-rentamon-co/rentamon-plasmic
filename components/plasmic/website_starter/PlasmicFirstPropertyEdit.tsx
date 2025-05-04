@@ -266,7 +266,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                 </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__ajOX)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__ajOX,
+                  "clickable"
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -405,26 +409,29 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
               >
                 <VilaType
                   className={classNames("__wab_instance", sty.vilaType__jKf5)}
-                  select={(() => {
-                    try {
-                      return $state.hostType == "villa_cottage";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return [];
-                      }
-                      throw e;
-                    }
-                  })()}
                   text={
                     "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
                   }
                 />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___7QuDz
+                  )}
+                >
+                  {
+                    "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
+                  }
+                </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox___6Ffep)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox___6Ffep,
+                  "clickable"
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -580,9 +587,25 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
                   }
                 />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___74BVc
+                  )}
+                >
+                  {
+                    "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u0626\u06cc\u062a"
+                  }
+                </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__uleua)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__uleua,
+                  "clickable"
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -738,6 +761,18 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
                   }
                 />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__h50Cf
+                  )}
+                >
+                  {
+                    "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
+                  }
+                </div>
               </div>
             </Stack__>
           ) : null}

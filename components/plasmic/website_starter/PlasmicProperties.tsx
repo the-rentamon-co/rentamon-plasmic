@@ -485,7 +485,7 @@ function PlasmicProperties__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"
+                    "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627\u06cc \u0645\u0646"
                   }
                 </div>
               </div>
@@ -597,18 +597,15 @@ function PlasmicProperties__RenderFunc(props: {
                                 className={classNames(sty.img__yFlfQ)}
                                 displayHeight={"auto"}
                                 displayMaxHeight={"none"}
-                                displayMaxWidth={
-                                  hasVariant(globalVariants, "screen", "mobile")
-                                    ? "50%"
-                                    : "100%"
-                                }
+                                displayMaxWidth={"100%"}
                                 displayMinHeight={"0"}
                                 displayMinWidth={"0"}
                                 displayWidth={
                                   hasVariant(globalVariants, "screen", "mobile")
-                                    ? "40%"
-                                    : "60%"
+                                    ? "100%"
+                                    : "100%"
                                 }
+                                height={``}
                                 loading={"lazy"}
                                 src={(() => {
                                   try {

@@ -265,7 +265,11 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                 </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__mttbp)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__mttbp,
+                  "clickable"
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -377,9 +381,25 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
                   }
                 />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nAmrM
+                  )}
+                >
+                  {
+                    "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
+                  }
+                </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__p1Oh3)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__p1Oh3,
+                  "clickable"
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -491,9 +511,25 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
                   }
                 />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zg9RD
+                  )}
+                >
+                  {
+                    "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u0626\u06cc\u062a"
+                  }
+                </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__himxr)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__himxr,
+                  "clickable"
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -605,6 +641,18 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
                   }
                 />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mmDs4
+                  )}
+                >
+                  {
+                    "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
+                  }
+                </div>
               </div>
             </Stack__>
           ) : null}

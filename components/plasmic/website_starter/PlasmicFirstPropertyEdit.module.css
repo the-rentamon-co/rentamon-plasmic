@@ -241,6 +241,17 @@
     padding-top: 10px;
   }
 }
+.vilaType__jKf5:global(.__wab_instance) {
+  display: none;
+}
+.text___7QuDz {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 18px;
+  min-width: 0;
+}
 .freeBox___6Ffep {
   display: flex;
   flex-direction: column;
@@ -297,6 +308,17 @@
     border-style: solid;
   }
 }
+.vilaType__twHzx:global(.__wab_instance) {
+  display: none;
+}
+.text___74BVc {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 18px;
+  min-width: 0;
+}
 .freeBox__uleua {
   display: flex;
   flex-direction: column;
@@ -352,6 +374,17 @@
     padding: 10px 8px;
     border-style: solid;
   }
+}
+.vilaType__coH0G:global(.__wab_instance) {
+  display: none;
+}
+.text__h50Cf {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 18px;
+  min-width: 0;
 }
 .freeBox__qObmX {
   display: flex;
