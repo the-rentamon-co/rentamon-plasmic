@@ -277,7 +277,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           },
                           operation: 0,
                           value: (() => {
-                            return "Villa";
+                            return "villa_cottage";
                           })()
                         };
                         return (({
@@ -405,7 +405,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   className={classNames("__wab_instance", sty.vilaType__jKf5)}
                   select={(() => {
                     try {
-                      return $state.hostType == "Villa";
+                      return $state.hostType == "villa_cottage";
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -435,7 +435,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           },
                           operation: 0,
                           value: (() => {
-                            return "Apartment";
+                            return "apartment_suite";
                           })()
                         };
                         return (({
@@ -563,7 +563,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   className={classNames("__wab_instance", sty.vilaType__twHzx)}
                   select={(() => {
                     try {
-                      return $state.hostType == "Apartment";
+                      return $state.hostType == "apartment_suite";
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -593,7 +593,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           },
                           operation: 0,
                           value: (() => {
-                            return "Hostel";
+                            return "hotel_ecolodge";
                           })()
                         };
                         return (({
@@ -721,7 +721,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   className={classNames("__wab_instance", sty.vilaType__coH0G)}
                   select={(() => {
                     try {
-                      return $state.hostType == "Hostel";
+                      return $state.hostType == "hotel_ecolodge";
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
