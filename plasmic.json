@@ -1564,6 +1564,46 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/property/edit/[id]"
+        },
+        {
+          "id": "KNLZ6uFxuV-7",
+          "name": "FirstPropertyEdit",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicFirstPropertyEdit.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/edit/first-property.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicFirstPropertyEdit.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/edit/first-property"
+        },
+        {
+          "id": "9eOtUiO4ksxK",
+          "name": "ButtonRnt",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicButtonRnt.tsx",
+          "importSpec": {
+            "modulePath": "ButtonRnt.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicButtonRnt.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Ovb_QdBC9YkI",
+          "name": "VilaType",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicVilaType.tsx",
+          "importSpec": {
+            "modulePath": "VilaType.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicVilaType.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -3248,6 +3288,16 @@
           "id": "EuMPpbVOz2oo",
           "name": "image 111",
           "filePath": "../public/plasmic/website_starter/images/image111.svg"
+        },
+        {
+          "id": "J7375XkWiMh1",
+          "name": "image 112",
+          "filePath": "../public/plasmic/website_starter/images/image112.svg"
+        },
+        {
+          "id": "htfU2u8_0Vlv",
+          "name": "Group 698.png",
+          "filePath": "../public/plasmic/website_starter/images/group698Png.png"
         }
       ],
       "indirect": false,

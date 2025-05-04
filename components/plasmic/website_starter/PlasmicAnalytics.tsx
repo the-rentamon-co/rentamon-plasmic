@@ -97,12 +97,10 @@ export type PlasmicAnalytics__OverridesType = {
   apiRequestAvgDailyrateBoojar?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   introduction?: Flex__<"div">;
-  teamImage?: Flex__<"div">;
-  introCalendarLeft?: Flex__<"div">;
+  image?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
-  sectionTitle3?: Flex__<"div">;
+  caption?: Flex__<"div">;
   monthlyIncome?: Flex__<"div">;
-  monthlyIncomeBoojar?: Flex__<"div">;
   sources?: Flex__<"div">;
   occupancyRate?: Flex__<"div">;
   avgDailyRate?: Flex__<"div">;
@@ -712,44 +710,38 @@ function PlasmicAnalytics__RenderFunc(props: {
               className={classNames(projectcss.all, sty.introduction)}
             >
               <div
-                data-plasmic-name={"teamImage"}
-                data-plasmic-override={overrides.teamImage}
-                className={classNames(projectcss.all, sty.teamImage)}
+                data-plasmic-name={"image"}
+                data-plasmic-override={overrides.image}
+                className={classNames(projectcss.all, sty.image)}
               >
-                <div
-                  data-plasmic-name={"introCalendarLeft"}
-                  data-plasmic-override={overrides.introCalendarLeft}
-                  className={classNames(projectcss.all, sty.introCalendarLeft)}
-                >
-                  <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
-                    alt={""}
-                    className={classNames(sty.img)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "220px"
-                        : "320px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"100%"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image101.png",
-                      fullWidth: 705,
-                      fullHeight: 466,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
+                <PlasmicImg__
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "220px"
+                      : "320px"
+                  }
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"100%"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image101.png",
+                    fullWidth: 705,
+                    fullHeight: 466,
+                    aspectRatio: undefined
+                  }}
+                />
               </div>
               <div
-                data-plasmic-name={"sectionTitle3"}
-                data-plasmic-override={overrides.sectionTitle3}
-                className={classNames(projectcss.all, sty.sectionTitle3)}
+                data-plasmic-name={"caption"}
+                data-plasmic-override={overrides.caption}
+                className={classNames(projectcss.all, sty.caption)}
               >
                 <div
                   className={classNames(
@@ -769,282 +761,132 @@ function PlasmicAnalytics__RenderFunc(props: {
               data-plasmic-override={overrides.monthlyIncome}
               className={classNames(projectcss.all, sty.monthlyIncome)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__j8U01
-                )}
-              >
-                {
-                  "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                }
-              </div>
-              <Chart
-                cartesianGrid={[]}
-                chartConfig={(() => {
-                  const __composite = [
-                    {
-                      color: null,
-                      type: "natural",
-                      dot: false,
-                      key: null,
-                      label: null
-                    }
-                  ];
-                  __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
-                  __composite["0"]["key"] = "income";
-                  __composite["0"]["label"] =
-                    "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647";
-                  return __composite;
-                })()}
-                className={classNames(
-                  "__wab_instance",
-                  sty.fragmentChart__uBw5I
-                )}
-                data={(() => {
-                  try {
-                    return $state.apiRequest.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
+              <div className={classNames(projectcss.all, sty.freeBox__w3Dif)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__j8U01
+                  )}
+                >
+                  {
+                    "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
-                })()}
-                label={
-                  hasVariant(globalVariants, "screen", "mobile") ? true : true
-                }
-                layout={"horizontal"}
-                legend={
-                  hasVariant(globalVariants, "screen", "mobile") ? false : false
-                }
-                stack={
-                  hasVariant(globalVariants, "screen", "mobile") ? false : true
-                }
-                tooltip={(() => {
-                  const __composite = {
-                    enabled: null,
-                    indicator: null,
-                    hideLabel: null
-                  };
-                  __composite["enabled"] = false;
-                  __composite["indicator"] = "dashed";
-                  __composite["hideLabel"] = false;
-                  return __composite;
-                })()}
-                type={"bar"}
-                xAxis={
-                  hasVariant(globalVariants, "screen", "tablet")
-                    ? (() => {
-                        const __composite = { enabled: null, key: null };
-                        __composite["enabled"] = true;
-                        __composite["key"] = "month";
-                        return __composite;
-                      })()
-                    : (() => {
-                        const __composite = {
-                          enabled: null,
-                          key: null,
-                          type: null,
-                          tickLine: null,
-                          tickMargin: null,
-                          axisLine: null
-                        };
-                        __composite["enabled"] = true;
-                        __composite["key"] = "month";
-                        __composite["type"] = "category";
-                        __composite["tickLine"] = false;
-                        __composite["tickMargin"] = 4;
-                        __composite["axisLine"] = true;
-                        return __composite;
-                      })()
-                }
-                yAxis={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        const __composite = {
-                          key: null,
-                          enabled: null,
-                          type: null,
-                          tickLine: null,
-                          axisLine: null
-                        };
-                        __composite["key"] = "income";
-                        __composite["enabled"] = false;
-                        __composite["type"] = "number";
-                        __composite["tickLine"] = false;
-                        __composite["axisLine"] = false;
-                        return __composite;
-                      })()
-                    : (() => {
-                        const __composite = {
-                          key: null,
-                          enabled: null,
-                          type: null,
-                          tickLine: null,
-                          axisLine: null,
-                          tickMargin: null
-                        };
-                        __composite["key"] = "income";
-                        __composite["enabled"] = false;
-                        __composite["type"] = "number";
-                        __composite["tickLine"] = false;
-                        __composite["axisLine"] = false;
-                        __composite["tickMargin"] = 20;
-                        return __composite;
-                      })()
-                }
-              />
-            </div>
-            <div
-              data-plasmic-name={"monthlyIncomeBoojar"}
-              data-plasmic-override={overrides.monthlyIncomeBoojar}
-              className={classNames(projectcss.all, sty.monthlyIncomeBoojar)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vJcqE
-                )}
-              >
-                {
-                  "\u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 - \u0628\u0648\u062c\u0627\u0631"
-                }
+                </div>
               </div>
-              <Chart
-                cartesianGrid={[]}
-                chartConfig={(() => {
-                  const __composite = [
-                    {
-                      color: null,
-                      type: "natural",
-                      dot: false,
-                      key: null,
-                      label: null
+              <div className={classNames(projectcss.all, sty.freeBox__eVtAr)}>
+                <Chart
+                  cartesianGrid={[]}
+                  chartConfig={(() => {
+                    const __composite = [
+                      {
+                        color: null,
+                        type: "natural",
+                        dot: false,
+                        key: null,
+                        label: null
+                      }
+                    ];
+                    __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                    __composite["0"]["key"] = "income";
+                    __composite["0"]["label"] =
+                      "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647";
+                    return __composite;
+                  })()}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.fragmentChart__uBw5I
+                  )}
+                  data={(() => {
+                    try {
+                      return $state.apiRequest.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
                     }
-                  ];
-                  __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
-                  __composite["0"]["key"] = "income";
-                  __composite["0"]["label"] =
-                    "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647";
-                  return __composite;
-                })()}
-                className={classNames(
-                  "__wab_instance",
-                  sty.fragmentChart__jwvIz
-                )}
-                data={(() => {
-                  try {
-                    return $state.apiRequestAvgDailyrateBoojar.data.map(
-                      item => ({
-                        month: item.jalali_month
-                          .replace("1403-11", "بهمن ۴۰۳")
-                          .replace("1403-12", "اسفند ۴۰۳")
-                          .replace("1404-01", "فروردین ۴۰۴")
-                          .replace("1404-02", "اردیبهشت ۴۰۴")
-                          .replace("1404-03", "خرداد ۴۰۴"),
-                        income: item.average_price_per_night
-                      })
-                    );
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
+                  })()}
+                  label={
+                    hasVariant(globalVariants, "screen", "mobile") ? true : true
                   }
-                })()}
-                label={
-                  hasVariant(globalVariants, "screen", "mobile") ? true : true
-                }
-                layout={"horizontal"}
-                legend={
-                  hasVariant(globalVariants, "screen", "mobile") ? false : false
-                }
-                stack={
-                  hasVariant(globalVariants, "screen", "mobile") ? false : true
-                }
-                tooltip={(() => {
-                  const __composite = {
-                    enabled: null,
-                    indicator: null,
-                    hideLabel: null
-                  };
-                  __composite["enabled"] = false;
-                  __composite["indicator"] = "dashed";
-                  __composite["hideLabel"] = false;
-                  return __composite;
-                })()}
-                type={"bar"}
-                xAxis={
-                  hasVariant(globalVariants, "screen", "tablet")
-                    ? (() => {
-                        const __composite = { enabled: null, key: null };
-                        __composite["enabled"] = true;
-                        __composite["key"] = "month";
-                        return __composite;
-                      })()
-                    : (() => {
-                        const __composite = {
-                          enabled: null,
-                          key: null,
-                          type: null,
-                          tickLine: null,
-                          tickMargin: null,
-                          axisLine: null
-                        };
-                        __composite["enabled"] = true;
-                        __composite["key"] = "month";
-                        __composite["type"] = "category";
-                        __composite["tickLine"] = false;
-                        __composite["tickMargin"] = 4;
-                        __composite["axisLine"] = true;
-                        return __composite;
-                      })()
-                }
-                yAxis={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        const __composite = {
-                          key: null,
-                          enabled: null,
-                          type: null,
-                          tickLine: null,
-                          axisLine: null
-                        };
-                        __composite["key"] = "income";
-                        __composite["enabled"] = false;
-                        __composite["type"] = "number";
-                        __composite["tickLine"] = false;
-                        __composite["axisLine"] = false;
-                        return __composite;
-                      })()
-                    : (() => {
-                        const __composite = {
-                          key: null,
-                          enabled: null,
-                          type: null,
-                          tickLine: null,
-                          axisLine: null,
-                          tickMargin: null
-                        };
-                        __composite["key"] = "income";
-                        __composite["enabled"] = false;
-                        __composite["type"] = "number";
-                        __composite["tickLine"] = false;
-                        __composite["axisLine"] = false;
-                        __composite["tickMargin"] = 20;
-                        return __composite;
-                      })()
-                }
-              />
+                  layout={"horizontal"}
+                  legend={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? false
+                      : false
+                  }
+                  stack={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? false
+                      : true
+                  }
+                  tooltip={(() => {
+                    const __composite = {
+                      enabled: null,
+                      indicator: null,
+                      hideLabel: null
+                    };
+                    __composite["enabled"] = false;
+                    __composite["indicator"] = "dashed";
+                    __composite["hideLabel"] = false;
+                    return __composite;
+                  })()}
+                  type={"bar"}
+                  xAxis={
+                    hasVariant(globalVariants, "screen", "tablet")
+                      ? (() => {
+                          const __composite = { enabled: null, key: null };
+                          __composite["enabled"] = true;
+                          __composite["key"] = "month";
+                          return __composite;
+                        })()
+                      : (() => {
+                          const __composite = {
+                            enabled: null,
+                            key: null,
+                            type: null,
+                            tickLine: null,
+                            tickMargin: null,
+                            axisLine: null
+                          };
+                          __composite["enabled"] = true;
+                          __composite["key"] = "month";
+                          __composite["type"] = "category";
+                          __composite["tickLine"] = false;
+                          __composite["tickMargin"] = 4;
+                          __composite["axisLine"] = true;
+                          return __composite;
+                        })()
+                  }
+                  yAxis={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          const __composite = {
+                            key: null,
+                            enabled: null,
+                            type: null,
+                            tickLine: null,
+                            axisLine: null
+                          };
+                          __composite["key"] = "income";
+                          __composite["enabled"] = false;
+                          __composite["type"] = "number";
+                          __composite["tickLine"] = false;
+                          __composite["axisLine"] = false;
+                          return __composite;
+                        })()
+                      : (() => {
+                          const __composite = { enabled: null };
+                          __composite["enabled"] = false;
+                          return __composite;
+                        })()
+                  }
+                />
+              </div>
             </div>
             <Stack__
               as={"div"}
@@ -1053,19 +895,22 @@ function PlasmicAnalytics__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.sources)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gkfL8
-                )}
-              >
-                {
-                  "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
-                }
+              <div className={classNames(projectcss.all, sty.freeBox__qbSdR)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gkfL8
+                  )}
+                >
+                  {
+                    "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
+                  }
+                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__z02AS)}>
                 <Chart
+                  cartesianGrid={[]}
                   chartConfig={(() => {
                     const __composite = [
                       { color: null, type: "natural", dot: false, key: null }
@@ -1091,27 +936,81 @@ function PlasmicAnalytics__RenderFunc(props: {
                       throw e;
                     }
                   })()}
-                  label={true}
+                  label={
+                    hasVariant(globalVariants, "screen", "mobile") ? true : true
+                  }
                   layout={"horizontal"}
-                  stack={false}
+                  legend={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? false
+                      : undefined
+                  }
+                  stack={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? false
+                      : false
+                  }
+                  tooltip={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          const __composite = { enabled: null };
+                          __composite["enabled"] = false;
+                          return __composite;
+                        })()
+                      : undefined
+                  }
                   type={"bar"}
-                  xAxis={(() => {
-                    const __composite = { enabled: null, key: null };
-                    __composite["enabled"] = true;
-                    __composite["key"] = "website_name";
-                    return __composite;
-                  })()}
-                  yAxis={(() => {
-                    const __composite = {
-                      key: null,
-                      enabled: null,
-                      axisLine: null
-                    };
-                    __composite["key"] = "transaction_count";
-                    __composite["enabled"] = true;
-                    __composite["axisLine"] = false;
-                    return __composite;
-                  })()}
+                  xAxis={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          const __composite = {
+                            enabled: null,
+                            key: null,
+                            type: null,
+                            axisLine: null
+                          };
+                          __composite["enabled"] = true;
+                          __composite["key"] = "website_name";
+                          __composite["type"] = "category";
+                          __composite["axisLine"] = false;
+                          return __composite;
+                        })()
+                      : (() => {
+                          const __composite = { enabled: null, key: null };
+                          __composite["enabled"] = true;
+                          __composite["key"] = "website_name";
+                          return __composite;
+                        })()
+                  }
+                  yAxis={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          const __composite = {
+                            key: null,
+                            enabled: null,
+                            axisLine: null,
+                            tickLine: null,
+                            type: null
+                          };
+                          __composite["key"] = "transaction_count";
+                          __composite["enabled"] = false;
+                          __composite["axisLine"] = false;
+                          __composite["tickLine"] = false;
+                          __composite["type"] = "number";
+                          return __composite;
+                        })()
+                      : (() => {
+                          const __composite = {
+                            key: null,
+                            enabled: null,
+                            axisLine: null
+                          };
+                          __composite["key"] = "transaction_count";
+                          __composite["enabled"] = false;
+                          __composite["axisLine"] = false;
+                          return __composite;
+                        })()
+                  }
                 />
               </div>
             </Stack__>
@@ -1195,11 +1094,6 @@ function PlasmicAnalytics__RenderFunc(props: {
                     __composite["axisLine"] = false;
                     return __composite;
                   })()}
-                  yAxis={(() => {
-                    const __composite = { enabled: null };
-                    __composite["enabled"] = false;
-                    return __composite;
-                  })()}
                 />
               </div>
             </div>
@@ -1216,7 +1110,7 @@ function PlasmicAnalytics__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647"
+                  "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 (\u062a\u0648\u0645\u0627\u0646):"
                 }
               </div>
               <div
@@ -1314,12 +1208,10 @@ const PlasmicDescendants = {
     "apiRequestAvgDailyrateBoojar",
     "mainContents",
     "introduction",
-    "teamImage",
-    "introCalendarLeft",
+    "image",
     "img",
-    "sectionTitle3",
+    "caption",
     "monthlyIncome",
-    "monthlyIncomeBoojar",
     "sources",
     "occupancyRate",
     "avgDailyRate",
@@ -1339,29 +1231,19 @@ const PlasmicDescendants = {
   mainContents: [
     "mainContents",
     "introduction",
-    "teamImage",
-    "introCalendarLeft",
+    "image",
     "img",
-    "sectionTitle3",
+    "caption",
     "monthlyIncome",
-    "monthlyIncomeBoojar",
     "sources",
     "occupancyRate",
     "avgDailyRate"
   ],
-  introduction: [
-    "introduction",
-    "teamImage",
-    "introCalendarLeft",
-    "img",
-    "sectionTitle3"
-  ],
-  teamImage: ["teamImage", "introCalendarLeft", "img"],
-  introCalendarLeft: ["introCalendarLeft", "img"],
+  introduction: ["introduction", "image", "img", "caption"],
+  image: ["image", "img"],
   img: ["img"],
-  sectionTitle3: ["sectionTitle3"],
+  caption: ["caption"],
   monthlyIncome: ["monthlyIncome"],
-  monthlyIncomeBoojar: ["monthlyIncomeBoojar"],
   sources: ["sources"],
   occupancyRate: ["occupancyRate"],
   avgDailyRate: ["avgDailyRate"],
@@ -1385,12 +1267,10 @@ type NodeDefaultElementType = {
   apiRequestAvgDailyrateBoojar: typeof ApiRequest;
   mainContents: "div";
   introduction: "div";
-  teamImage: "div";
-  introCalendarLeft: "div";
+  image: "div";
   img: typeof PlasmicImg__;
-  sectionTitle3: "div";
+  caption: "div";
   monthlyIncome: "div";
-  monthlyIncomeBoojar: "div";
   sources: "div";
   occupancyRate: "div";
   avgDailyRate: "div";
@@ -1472,12 +1352,10 @@ export const PlasmicAnalytics = Object.assign(
     ),
     mainContents: makeNodeComponent("mainContents"),
     introduction: makeNodeComponent("introduction"),
-    teamImage: makeNodeComponent("teamImage"),
-    introCalendarLeft: makeNodeComponent("introCalendarLeft"),
+    image: makeNodeComponent("image"),
     img: makeNodeComponent("img"),
-    sectionTitle3: makeNodeComponent("sectionTitle3"),
+    caption: makeNodeComponent("caption"),
     monthlyIncome: makeNodeComponent("monthlyIncome"),
-    monthlyIncomeBoojar: makeNodeComponent("monthlyIncomeBoojar"),
     sources: makeNodeComponent("sources"),
     occupancyRate: makeNodeComponent("occupancyRate"),
     avgDailyRate: makeNodeComponent("avgDailyRate"),

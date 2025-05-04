@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 85%;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--token-8R7jjC_-F9FF);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.7s;
+  min-width: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.7s;
+  padding: 8px;
+}
+.rootselect {
+  background: var(--token-8nedppYkGVaH);
+  border-radius: 15px;
+}
+.text {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: right;
+  min-width: 0;
+}
+.textselect {
+  color: var(--token-8R7jjC_-F9FF);
+}

@@ -435,7 +435,9 @@ function PlasmicProperties__RenderFunc(props: {
                   {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                     (() => {
                       try {
-                        return $state.apiRequest.data.properties;
+                        return $state.apiRequest.data.properties.filter(
+                          item => item.property_name !== "اقامتگاه ۱"
+                        );
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -457,37 +459,52 @@ function PlasmicProperties__RenderFunc(props: {
                         )}
                         key={currentIndex}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__kzgsv
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__yFlfQ)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"100%"}
-                            loading={"lazy"}
-                            src={(() => {
-                              try {
-                                return currentItem.profile_pic_link;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
+                        {(() => {
+                          try {
+                            return true;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__kzgsv
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__yFlfQ)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"100%"}
+                              loading={"lazy"}
+                              src={(() => {
+                                try {
+                                  return currentItem.profile_pic_link;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          />
-                        </div>
+                              })()}
+                            />
+                          </div>
+                        ) : null}
                         <div
                           className={classNames(
                             projectcss.all,
@@ -511,6 +528,71 @@ function PlasmicProperties__RenderFunc(props: {
                   })}
                   <div
                     className={classNames(projectcss.all, sty.freeBox__ojr5X)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToPropertyEditFirstProperty"] =
+                        $state.apiRequest.data.properties.filter(
+                          item => item.property_name !== "اقامتگاه ۱"
+                        ).length == 0
+                          ? (() => {
+                              const actionArgs = {
+                                destination: `/property/edit/first-property`
+                              };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["goToPropertyEditFirstProperty"] != null &&
+                        typeof $steps["goToPropertyEditFirstProperty"] ===
+                          "object" &&
+                        typeof $steps["goToPropertyEditFirstProperty"].then ===
+                          "function"
+                      ) {
+                        $steps["goToPropertyEditFirstProperty"] = await $steps[
+                          "goToPropertyEditFirstProperty"
+                        ];
+                      }
+
+                      $steps["goToPage"] =
+                        $state.apiRequest.data.properties.filter(
+                          item => item.property_name !== "اقامتگاه ۱"
+                        ).length >= 1
+                          ? (() => {
+                              const actionArgs = {};
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["goToPage"] != null &&
+                        typeof $steps["goToPage"] === "object" &&
+                        typeof $steps["goToPage"].then === "function"
+                      ) {
+                        $steps["goToPage"] = await $steps["goToPage"];
+                      }
+                    }}
                   >
                     <div
                       className={classNames(projectcss.all, sty.freeBox__aIuYj)}
