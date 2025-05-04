@@ -164,7 +164,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 2
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       },
       {
         path: "hostType",
@@ -577,7 +577,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     }
                   })()}
                   text={
-                    "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u0626\u06cc\u062a"
+                    "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
                   }
                 />
               </div>
@@ -784,7 +784,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
+                      "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
                     }
                   </div>
                 </div>
