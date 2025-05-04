@@ -7,8 +7,6 @@
   justify-content: flex-start;
   align-items: center;
   background: var(--token-8R7jjC_-F9FF);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
   position: relative;
   transition-property: all;
   transition-duration: 0.7s;
@@ -26,7 +24,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   text-align: right;
   min-width: 0;
