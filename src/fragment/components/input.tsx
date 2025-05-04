@@ -35,6 +35,7 @@ export const Input = (props: InputType) => {
     accept,
   } = props;
   const fragmentConfig = useSelector("Fragment");
+
   const formattedValue =
     type === "number" && value !== undefined && value !== null
       ? formatWithCommas(value)
@@ -43,7 +44,10 @@ export const Input = (props: InputType) => {
   return (
     <InputPrimitive.Input
       disabled={disabled}
-      onChange={(e) => onChange?.(e.target?.value ?? "")}
+      onChange={(e) => {
+        const rawValue = e.target.value.replace(/[^\d]/g, "");
+        onChange?.(rawValue);
+      }}
       value={formattedValue}
       dir={type !== "text" ? "ltr" : fragmentConfig.rtl ? "rtl" : "ltr"}
       name={name}
