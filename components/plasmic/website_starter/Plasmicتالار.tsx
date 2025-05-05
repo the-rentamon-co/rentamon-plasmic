@@ -63,6 +63,7 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -140,6 +141,7 @@ export type Plasmicتالار__OverridesType = {
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultتالارProps {}
@@ -182,6 +184,8 @@ function Plasmicتالار__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -213,6 +217,12 @@ function Plasmicتالار__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile2"
+      },
+      {
+        path: "userType",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -473,261 +483,304 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            <div
-              data-plasmic-name={"wallet"}
-              data-plasmic-override={overrides.wallet}
-              className={classNames(projectcss.all, sty.wallet)}
-            >
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div
-                  data-plasmic-name={"walletInfo"}
-                  data-plasmic-override={overrides.walletInfo}
-                  className={classNames(
-                    projectcss.all,
-                    sty.walletInfo,
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? (() => {
-                          try {
-                            return parseInt(
-                              $state.profile2.data.user_info.balance_info
-                            ) < 100000
-                              ? "blinkBorderWallet"
-                              : "";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                      : (() => {
-                          try {
-                            return (
-                              // if ($props.isFirstVisit == true) {
-                              //   return ""
-                              // }
-                              parseInt(
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $state.userType != 2;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"wallet"}
+                data-plasmic-override={overrides.wallet}
+                className={classNames(projectcss.all, sty.wallet)}
+              >
+                {(
+                  hasVariant(globalVariants, "screen", "mobile") ? true : false
+                ) ? (
+                  <div
+                    data-plasmic-name={"walletInfo"}
+                    data-plasmic-override={overrides.walletInfo}
+                    className={classNames(
+                      projectcss.all,
+                      sty.walletInfo,
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? (() => {
+                            try {
+                              return parseInt(
                                 $state.profile2.data.user_info.balance_info
                               ) < 100000
                                 ? "blinkBorderWallet"
-                                : ""
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["goToکیفپول"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/wallet` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToکیفپول"] != null &&
-                      typeof $steps["goToکیفپول"] === "object" &&
-                      typeof $steps["goToکیفپول"].then === "function"
-                    ) {
-                      $steps["goToکیفپول"] = await $steps["goToکیفپول"];
-                    }
-                  }}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pqB03)}
-                  >
-                    {(
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? true
-                        : false
-                    ) ? (
-                      <div
-                        data-plasmic-name={"right2"}
-                        data-plasmic-override={overrides.right2}
-                        className={classNames(projectcss.all, sty.right2)}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__yqsVo)}
-                          displayHeight={"32px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "32px"
-                              : "36px"
-                          }
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image83.svg",
-                            fullWidth: 100,
-                            fullHeight: 100,
-                            aspectRatio: 1
-                          }}
-                        />
-                      </div>
-                    ) : null}
-                    <div
-                      data-plasmic-name={"mid2"}
-                      data-plasmic-override={overrides.mid2}
-                      className={classNames(projectcss.all, sty.mid2)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___58WW
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (() => {
-                                const balance_info =
-                                  $state.profile2.data.user_info.balance_info;
-                                const reducedBalance = Math.floor(
-                                  balance_info.balance / 10
-                                );
-                                const formattedBalance = new Intl.NumberFormat(
-                                  "fa-IR"
-                                ).format(reducedBalance);
-                                return `کیف پول: ${formattedBalance} تومان`;
-                              })();
+                                : "";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return "";
+                                return undefined;
                               }
                               throw e;
                             }
-                          })()}
-                        </React.Fragment>
+                          })()
+                        : (() => {
+                            try {
+                              return (
+                                // if ($props.isFirstVisit == true) {
+                                //   return ""
+                                // }
+                                parseInt(
+                                  $state.profile2.data.user_info.balance_info
+                                ) < 100000
+                                  ? "blinkBorderWallet"
+                                  : ""
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToکیفپول"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/wallet` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToکیفپول"] != null &&
+                        typeof $steps["goToکیفپول"] === "object" &&
+                        typeof $steps["goToکیفپول"].then === "function"
+                      ) {
+                        $steps["goToکیفپول"] = await $steps["goToکیفپول"];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__pqB03)}
+                    >
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? true
+                          : false
+                      ) ? (
+                        <div
+                          data-plasmic-name={"right2"}
+                          data-plasmic-override={overrides.right2}
+                          className={classNames(projectcss.all, sty.right2)}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__yqsVo)}
+                            displayHeight={"32px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "32px"
+                                : "36px"
+                            }
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image83.svg",
+                              fullWidth: 100,
+                              fullHeight: 100,
+                              aspectRatio: 1
+                            }}
+                          />
+                        </div>
+                      ) : null}
+                      <div
+                        data-plasmic-name={"mid2"}
+                        data-plasmic-override={overrides.mid2}
+                        className={classNames(projectcss.all, sty.mid2)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___58WW
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  const balance_info =
+                                    $state.profile2.data.user_info.balance_info;
+                                  const reducedBalance = Math.floor(
+                                    balance_info.balance / 10
+                                  );
+                                  const formattedBalance =
+                                    new Intl.NumberFormat("fa-IR").format(
+                                      reducedBalance
+                                    );
+                                  return `کیف پول: ${formattedBalance} تومان`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ) : null}
-            </div>
-            <div
-              data-plasmic-name={"items"}
-              data-plasmic-override={overrides.items}
-              className={classNames(projectcss.all, sty.items)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToChannelManager"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/channel-manager` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToChannelManager"] != null &&
-                  typeof $steps["goToChannelManager"] === "object" &&
-                  typeof $steps["goToChannelManager"].then === "function"
-                ) {
-                  $steps["goToChannelManager"] = await $steps[
-                    "goToChannelManager"
-                  ];
-                }
-              }}
-            >
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div
-                  data-plasmic-name={"right"}
-                  data-plasmic-override={overrides.right}
-                  className={classNames(projectcss.all, sty.right)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___8Nxz)}
-                    displayHeight={"32px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"32px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image78.svg",
-                      fullWidth: 24,
-                      fullHeight: 24,
-                      aspectRatio: 1
-                    }}
-                  />
-                </div>
-              ) : null}
-              <div
-                data-plasmic-name={"mid"}
-                data-plasmic-override={overrides.mid}
-                className={classNames(projectcss.all, sty.mid)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__qoJwp)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kOXp
-                    )}
-                  >
-                    {
-                      "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                ) : null}
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $state.userType != 2;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
                     }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"items"}
+                data-plasmic-override={overrides.items}
+                className={classNames(projectcss.all, sty.items)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToChannelManager"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/channel-manager` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToChannelManager"] != null &&
+                    typeof $steps["goToChannelManager"] === "object" &&
+                    typeof $steps["goToChannelManager"].then === "function"
+                  ) {
+                    $steps["goToChannelManager"] = await $steps[
+                      "goToChannelManager"
+                    ];
+                  }
+                }}
+              >
+                {(
+                  hasVariant(globalVariants, "screen", "mobile") ? true : false
+                ) ? (
+                  <div
+                    data-plasmic-name={"right"}
+                    data-plasmic-override={overrides.right}
+                    className={classNames(projectcss.all, sty.right)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___8Nxz)}
+                      displayHeight={"32px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"32px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image78.svg",
+                        fullWidth: 24,
+                        fullHeight: 24,
+                        aspectRatio: 1
+                      }}
+                    />
+                  </div>
+                ) : null}
+                <div
+                  data-plasmic-name={"mid"}
+                  data-plasmic-override={overrides.mid}
+                  className={classNames(projectcss.all, sty.mid)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__qoJwp)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__kOXp
+                      )}
+                    >
+                      {
+                        "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                      }
+                    </div>
                   </div>
                 </div>
+                <div
+                  data-plasmic-name={"left"}
+                  data-plasmic-override={overrides.left}
+                  className={classNames(projectcss.all, sty.left)}
+                >
+                  <Icon69Icon
+                    className={classNames(projectcss.all, sty.svg__giW0J)}
+                    role={"img"}
+                  />
+                </div>
               </div>
-              <div
-                data-plasmic-name={"left"}
-                data-plasmic-override={overrides.left}
-                className={classNames(projectcss.all, sty.left)}
-              >
-                <Icon69Icon
-                  className={classNames(projectcss.all, sty.svg__giW0J)}
-                  role={"img"}
-                />
-              </div>
-            </div>
+            ) : null}
             {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
               <div
                 data-plasmic-name={"items2"}
@@ -807,7 +860,23 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $state.userType != 2;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()
+                : false
+            ) ? (
               <div
                 data-plasmic-name={"items3"}
                 data-plasmic-override={overrides.items3}
@@ -888,7 +957,23 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $state.userType != 2;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()
+                : false
+            ) ? (
               <div
                 data-plasmic-name={"items4"}
                 data-plasmic-override={overrides.items4}
@@ -1239,6 +1324,76 @@ function Plasmicتالار__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navigationRntFooter)}
             navPage={"menu"}
           />
+
+          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            <SideEffect
+              data-plasmic-name={"sideEffect"}
+              data-plasmic-override={overrides.sideEffect}
+              className={classNames("__wab_instance", sty.sideEffect)}
+              onMount={async () => {
+                const $steps = {};
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          undefined,
+                          "https://api-v2.rentamon.com/api/is_user_old"
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
+                }
+
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: (() => {
+                          $state.userType = $steps.invokeGlobalAction.data.flag;
+                          return console.log($state.userType);
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
+              }}
+            />
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -1293,7 +1448,8 @@ const PlasmicDescendants = {
     "left6",
     "html",
     "clarity2",
-    "navigationRntFooter"
+    "navigationRntFooter",
+    "sideEffect"
   ],
   header: ["header", "sideBar2", "headerTitle", "profile2"],
   sideBar2: ["sideBar2"],
@@ -1380,7 +1536,8 @@ const PlasmicDescendants = {
   left6: ["left6"],
   html: ["html", "clarity2"],
   clarity2: ["clarity2"],
-  navigationRntFooter: ["navigationRntFooter"]
+  navigationRntFooter: ["navigationRntFooter"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1433,6 +1590,7 @@ type NodeDefaultElementType = {
   html: "div";
   clarity2: typeof Embed;
   navigationRntFooter: typeof NavigationRntFooter;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1541,6 +1699,7 @@ export const Plasmicتالار = Object.assign(
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for Plasmicتالار
     internalVariantProps: Plasmicتالار__VariantProps,

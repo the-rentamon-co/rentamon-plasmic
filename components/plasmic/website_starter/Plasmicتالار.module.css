@@ -227,7 +227,7 @@
   height: auto;
   max-width: 100%;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   min-width: 0;
   padding: 0px 40px;
 }
@@ -241,7 +241,7 @@
     padding-right: 20px;
     padding-left: 20px;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
   }
 }
 .image {
@@ -281,11 +281,16 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 60%;
   justify-content: center;
   align-items: flex-start;
   min-width: 0;
   padding: 8px 12px 8px 8px;
+}
+@media (max-width: 350px) {
+  .info {
+    width: 100%;
+    min-width: 0;
+  }
 }
 .name {
   display: flex;
@@ -293,7 +298,6 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 60%;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
@@ -307,6 +311,11 @@
   font-weight: 500;
   font-size: 16px;
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text___5FrEf {
+    user-select: none;
+  }
 }
 .number {
   display: flex;
@@ -328,6 +337,11 @@
   font-size: 15px;
   min-width: 0;
 }
+@media (max-width: 350px) {
+  .text__q03Nc {
+    user-select: none;
+  }
+}
 .editIcon {
   display: flex;
   flex-direction: column;
@@ -339,6 +353,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 350px) {
+  .editIcon {
+    max-width: 14%;
+  }
 }
 .svg__lAq0C {
   object-fit: cover;
@@ -493,6 +512,7 @@
 @media (max-width: 350px) {
   .text___58WW {
     padding-right: 8px;
+    user-select: none;
   }
 }
 .items {
@@ -1622,4 +1642,8 @@
   .navigationRntFooter:global(.__wab_instance) {
     display: flex;
   }
+}
+.sideEffect:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }
