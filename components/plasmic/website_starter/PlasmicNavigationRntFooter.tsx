@@ -199,10 +199,28 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               data-plasmic-override={overrides.backCal}
               className={classNames(projectcss.all, sty.backCal)}
             >
-              <Icon52Icon
-                className={classNames(projectcss.all, sty.svg___4Q6Ig)}
-                role={"img"}
-              />
+              {(
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? true
+                  : (() => {
+                      try {
+                        return $ctx.GrowthBook.attributes.url !== "/properties";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
+              ) ? (
+                <Icon52Icon
+                  className={classNames(projectcss.all, sty.svg___4Q6Ig)}
+                  role={"img"}
+                />
+              ) : null}
             </div>
           </div>
           <div

@@ -83,6 +83,11 @@
   height: 30px;
   flex-shrink: 0;
 }
+@media (max-width: 500px) {
+  .svg___4Q6Ig {
+    display: block;
+  }
+}
 @media (max-width: 350px) {
   .svg___4Q6Ig {
     width: 34px;

@@ -184,6 +184,12 @@ function PlasmicProperties__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile2"
+      },
+      {
+        path: "step",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -260,19 +266,39 @@ function PlasmicProperties__RenderFunc(props: {
               })()}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__ykwHb)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__f1AbN
-                )}
-              >
-                {
-                  "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"
-                }
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return true;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : hasVariant(globalVariants, "screen", "tablet")
+                ? true
+                : true
+            ) ? (
+              <div className={classNames(projectcss.all, sty.freeBox__ykwHb)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__f1AbN
+                  )}
+                >
+                  {
+                    "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"
+                  }
+                </div>
               </div>
-            </div>
+            ) : null}
             <ApiRequest
               data-plasmic-name={"profile2"}
               data-plasmic-override={overrides.profile2}

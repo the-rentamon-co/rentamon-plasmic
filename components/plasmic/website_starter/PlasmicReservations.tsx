@@ -787,103 +787,119 @@ function PlasmicReservations__RenderFunc(props: {
                 })()
               )}
             >
-              <div className={classNames(projectcss.all, sty.freeBox___3DmSp)}>
+              {(() => {
+                try {
+                  return !$state.isTheFirstVisit;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
                 <div
-                  data-plasmic-name={"alertIcon"}
-                  data-plasmic-override={overrides.alertIcon}
-                  className={classNames(projectcss.all, sty.alertIcon)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__vgQvQ)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "20px"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "35px"
-                        : "43px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image72.svg",
-                      fullWidth: 42,
-                      fullHeight: 42,
-                      aspectRatio: 1
-                    }}
-                  />
-                </div>
-                <div
-                  data-plasmic-name={"alertText"}
-                  data-plasmic-override={overrides.alertText}
-                  className={classNames(projectcss.all, sty.alertText)}
+                  className={classNames(projectcss.all, sty.freeBox___3DmSp)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zlYkA
-                    )}
+                    data-plasmic-name={"alertIcon"}
+                    data-plasmic-override={overrides.alertIcon}
+                    className={classNames(projectcss.all, sty.alertIcon)}
                   >
-                    {
-                      "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
-                    }
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"alertButton"}
-                  data-plasmic-override={overrides.alertButton}
-                  className={classNames(projectcss.all, sty.alertButton)}
-                >
-                  <div
-                    data-plasmic-name={"button"}
-                    data-plasmic-override={overrides.button}
-                    className={classNames(projectcss.all, sty.button)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["goToSetting"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/settings` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToSetting"] != null &&
-                        typeof $steps["goToSetting"] === "object" &&
-                        typeof $steps["goToSetting"].then === "function"
-                      ) {
-                        $steps["goToSetting"] = await $steps["goToSetting"];
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__vgQvQ)}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "20px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "35px"
+                          : "43px"
                       }
-                    }}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image72.svg",
+                        fullWidth: 42,
+                        fullHeight: 42,
+                        aspectRatio: 1
+                      }}
+                    />
+                  </div>
+                  <div
+                    data-plasmic-name={"alertText"}
+                    data-plasmic-override={overrides.alertText}
+                    className={classNames(projectcss.all, sty.alertText)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__kxibR
+                        sty.text__zlYkA
                       )}
                     >
-                      {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                      {
+                        "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
+                      }
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"alertButton"}
+                    data-plasmic-override={overrides.alertButton}
+                    className={classNames(projectcss.all, sty.alertButton)}
+                  >
+                    <div
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames(projectcss.all, sty.button)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["goToSetting"] = true
+                          ? (() => {
+                              const actionArgs = { destination: `/settings` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToSetting"] != null &&
+                          typeof $steps["goToSetting"] === "object" &&
+                          typeof $steps["goToSetting"].then === "function"
+                        ) {
+                          $steps["goToSetting"] = await $steps["goToSetting"];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kxibR
+                        )}
+                      >
+                        {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : null}
             </div>
           </ApiRequest>
           <Stack__
