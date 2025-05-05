@@ -748,25 +748,28 @@ function PlasmicProperties__RenderFunc(props: {
                             await $steps["goToPropertyEditFirstProperty"];
                         }
 
-                        $steps["goToPropertyCreate"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                destination: `/property/create`
-                              };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
+                        $steps["goToPropertyCreate"] =
+                          $state.apiRequest.data.properties.filter(
+                            item => item.property_name !== "اقامتگاه ۱"
+                          ).length >= 1
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: `/property/create`
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
                         if (
                           $steps["goToPropertyCreate"] != null &&
                           typeof $steps["goToPropertyCreate"] === "object" &&
