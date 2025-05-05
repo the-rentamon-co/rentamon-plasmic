@@ -68,9 +68,12 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNavigationRntFooter.module.css"; // plasmic-import: y37kcAs9RXYg/css
 
-import Icon58Icon from "./icons/PlasmicIcon__Icon58"; // plasmic-import: AjM0LMNvB3b9/icon
+import Icon59Icon from "./icons/PlasmicIcon__Icon59"; // plasmic-import: zKz1KhV3axdj/icon
 import Icon52Icon from "./icons/PlasmicIcon__Icon52"; // plasmic-import: P-t6G5Dmr-Fr/icon
+import Icon58Icon from "./icons/PlasmicIcon__Icon58"; // plasmic-import: AjM0LMNvB3b9/icon
 import Icon57Icon from "./icons/PlasmicIcon__Icon57"; // plasmic-import: bkD7B2qxVCwE/icon
+import Icon60Icon from "./icons/PlasmicIcon__Icon60"; // plasmic-import: b0lwc3XVPJOU/icon
+import Icon48Icon from "./icons/PlasmicIcon__Icon48"; // plasmic-import: EUsJ3MtRCJEN/icon
 
 createPlasmicElementProxy;
 
@@ -90,14 +93,28 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   navFoot?: Flex__<"div">;
   top?: Flex__<"div">;
   cal?: Flex__<"div">;
-  backProp?: Flex__<"div">;
-  normProp?: Flex__<"div">;
-  backProp2?: Flex__<"div">;
-  normProp2?: Flex__<"div">;
-  backProp3?: Flex__<"div">;
-  normProp3?: Flex__<"div">;
-  backProp4?: Flex__<"div">;
-  normProp4?: Flex__<"div">;
+  top1?: Flex__<"div">;
+  backCal?: Flex__<"div">;
+  spacerText7?: Flex__<"div">;
+  spacerText8?: Flex__<"div">;
+  normCal?: Flex__<"div">;
+  res?: Flex__<"div">;
+  top2?: Flex__<"div">;
+  backRes?: Flex__<"div">;
+  spacerText5?: Flex__<"div">;
+  spacerText6?: Flex__<"div">;
+  normRes?: Flex__<"div">;
+  props?: Flex__<"div">;
+  top3?: Flex__<"div">;
+  backProps?: Flex__<"div">;
+  spacerText3?: Flex__<"div">;
+  spacerText4?: Flex__<"div">;
+  normProps?: Flex__<"div">;
+  sett?: Flex__<"div">;
+  backSett?: Flex__<"div">;
+  spacerText2?: Flex__<"div">;
+  spacerText?: Flex__<"div">;
+  normSett?: Flex__<"div">;
   bot?: Flex__<"div">;
 };
 
@@ -206,19 +223,42 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             }}
           >
             <div
-              data-plasmic-name={"backProp"}
-              data-plasmic-override={overrides.backProp}
-              className={classNames(projectcss.all, sty.backProp)}
+              data-plasmic-name={"top1"}
+              data-plasmic-override={overrides.top1}
+              className={classNames(projectcss.all, sty.top1)}
             >
-              <Icon58Icon
-                className={classNames(projectcss.all, sty.svg___2Zov0)}
-                role={"img"}
-              />
+              <div
+                data-plasmic-name={"backCal"}
+                data-plasmic-override={overrides.backCal}
+                className={classNames(projectcss.all, sty.backCal)}
+              >
+                <Icon59Icon
+                  className={classNames(projectcss.all, sty.svg___5FnM)}
+                  role={"img"}
+                />
+              </div>
+              <div
+                data-plasmic-name={"spacerText7"}
+                data-plasmic-override={overrides.spacerText7}
+                className={classNames(projectcss.all, sty.spacerText7)}
+              >
+                <div
+                  data-plasmic-name={"spacerText8"}
+                  data-plasmic-override={overrides.spacerText8}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.spacerText8
+                  )}
+                >
+                  {" "}
+                </div>
+              </div>
             </div>
             <div
-              data-plasmic-name={"normProp"}
-              data-plasmic-override={overrides.normProp}
-              className={classNames(projectcss.all, sty.normProp)}
+              data-plasmic-name={"normCal"}
+              data-plasmic-override={overrides.normCal}
+              className={classNames(projectcss.all, sty.normCal)}
             >
               <Icon52Icon
                 className={classNames(projectcss.all, sty.svg__aZ9Q4)}
@@ -227,7 +267,9 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             </div>
           </div>
           <div
-            className={classNames(projectcss.all, sty.freeBox__rsYkX)}
+            data-plasmic-name={"res"}
+            data-plasmic-override={overrides.res}
+            className={classNames(projectcss.all, sty.res)}
             onClick={async event => {
               const $steps = {};
 
@@ -258,19 +300,55 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             }}
           >
             <div
-              data-plasmic-name={"backProp2"}
-              data-plasmic-override={overrides.backProp2}
-              className={classNames(projectcss.all, sty.backProp2)}
+              data-plasmic-name={"top2"}
+              data-plasmic-override={overrides.top2}
+              className={classNames(projectcss.all, sty.top2)}
             >
-              <Icon58Icon
-                className={classNames(projectcss.all, sty.svg___08D1B)}
-                role={"img"}
-              />
+              <div
+                data-plasmic-name={"backRes"}
+                data-plasmic-override={overrides.backRes}
+                className={classNames(projectcss.all, sty.backRes)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__yCGi)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"30px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image117.svg",
+                    fullWidth: 23,
+                    fullHeight: 19,
+                    aspectRatio: 1.210526
+                  }}
+                />
+              </div>
+              <div
+                data-plasmic-name={"spacerText5"}
+                data-plasmic-override={overrides.spacerText5}
+                className={classNames(projectcss.all, sty.spacerText5)}
+              >
+                <div
+                  data-plasmic-name={"spacerText6"}
+                  data-plasmic-override={overrides.spacerText6}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.spacerText6
+                  )}
+                >
+                  {" "}
+                </div>
+              </div>
             </div>
             <div
-              data-plasmic-name={"normProp2"}
-              data-plasmic-override={overrides.normProp2}
-              className={classNames(projectcss.all, sty.normProp2)}
+              data-plasmic-name={"normRes"}
+              data-plasmic-override={overrides.normRes}
+              className={classNames(projectcss.all, sty.normRes)}
             >
               <PlasmicImg__
                 alt={""}
@@ -304,7 +382,9 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             </div>
           </div>
           <div
-            className={classNames(projectcss.all, sty.freeBox__qVktW)}
+            data-plasmic-name={"props"}
+            data-plasmic-override={overrides.props}
+            className={classNames(projectcss.all, sty.props)}
             onClick={async event => {
               const $steps = {};
 
@@ -335,19 +415,42 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             }}
           >
             <div
-              data-plasmic-name={"backProp3"}
-              data-plasmic-override={overrides.backProp3}
-              className={classNames(projectcss.all, sty.backProp3)}
+              data-plasmic-name={"top3"}
+              data-plasmic-override={overrides.top3}
+              className={classNames(projectcss.all, sty.top3)}
             >
-              <Icon58Icon
-                className={classNames(projectcss.all, sty.svg__cpVuT)}
-                role={"img"}
-              />
+              <div
+                data-plasmic-name={"backProps"}
+                data-plasmic-override={overrides.backProps}
+                className={classNames(projectcss.all, sty.backProps)}
+              >
+                <Icon58Icon
+                  className={classNames(projectcss.all, sty.svg__cpVuT)}
+                  role={"img"}
+                />
+              </div>
+              <div
+                data-plasmic-name={"spacerText3"}
+                data-plasmic-override={overrides.spacerText3}
+                className={classNames(projectcss.all, sty.spacerText3)}
+              >
+                <div
+                  data-plasmic-name={"spacerText4"}
+                  data-plasmic-override={overrides.spacerText4}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.spacerText4
+                  )}
+                >
+                  {" "}
+                </div>
+              </div>
             </div>
             <div
-              data-plasmic-name={"normProp3"}
-              data-plasmic-override={overrides.normProp3}
-              className={classNames(projectcss.all, sty.normProp3)}
+              data-plasmic-name={"normProps"}
+              data-plasmic-override={overrides.normProps}
+              className={classNames(projectcss.all, sty.normProps)}
             >
               <Icon57Icon
                 className={classNames(projectcss.all, sty.svg___3Yheu)}
@@ -356,7 +459,9 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             </div>
           </div>
           <div
-            className={classNames(projectcss.all, sty.freeBox__kca7K)}
+            data-plasmic-name={"sett"}
+            data-plasmic-override={overrides.sett}
+            className={classNames(projectcss.all, sty.sett)}
             onClick={async event => {
               const $steps = {};
 
@@ -386,49 +491,43 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               }
             }}
           >
-            <div
-              data-plasmic-name={"backProp4"}
-              data-plasmic-override={overrides.backProp4}
-              className={classNames(projectcss.all, sty.backProp4)}
+            <Stack__
+              as={"div"}
+              data-plasmic-name={"backSett"}
+              data-plasmic-override={overrides.backSett}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.backSett)}
             >
-              <Icon58Icon
-                className={classNames(projectcss.all, sty.svg___2Rhj1)}
+              <Icon60Icon
+                className={classNames(projectcss.all, sty.svg__lpWk8)}
                 role={"img"}
               />
+            </Stack__>
+            <div
+              data-plasmic-name={"spacerText2"}
+              data-plasmic-override={overrides.spacerText2}
+              className={classNames(projectcss.all, sty.spacerText2)}
+            >
+              <div
+                data-plasmic-name={"spacerText"}
+                data-plasmic-override={overrides.spacerText}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.spacerText
+                )}
+              >
+                {" "}
+              </div>
             </div>
             <div
-              data-plasmic-name={"normProp4"}
-              data-plasmic-override={overrides.normProp4}
-              className={classNames(projectcss.all, sty.normProp4)}
+              data-plasmic-name={"normSett"}
+              data-plasmic-override={overrides.normSett}
+              className={classNames(projectcss.all, sty.normSett)}
             >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__nFnAz)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "28px"
-                    : "30px"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "100%"
-                    : "100%"
-                }
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "34px"
-                    : "36px"
-                }
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image116.svg",
-                  fullWidth: 28,
-                  fullHeight: 28,
-                  aspectRatio: 1
-                }}
+              <Icon48Icon
+                className={classNames(projectcss.all, sty.svg__hDEeU)}
+                role={"img"}
               />
             </div>
           </div>
@@ -623,37 +722,86 @@ const PlasmicDescendants = {
     "navFoot",
     "top",
     "cal",
-    "backProp",
-    "normProp",
-    "backProp2",
-    "normProp2",
-    "backProp3",
-    "normProp3",
-    "backProp4",
-    "normProp4",
+    "top1",
+    "backCal",
+    "spacerText7",
+    "spacerText8",
+    "normCal",
+    "res",
+    "top2",
+    "backRes",
+    "spacerText5",
+    "spacerText6",
+    "normRes",
+    "props",
+    "top3",
+    "backProps",
+    "spacerText3",
+    "spacerText4",
+    "normProps",
+    "sett",
+    "backSett",
+    "spacerText2",
+    "spacerText",
+    "normSett",
     "bot"
   ],
   top: [
     "top",
     "cal",
-    "backProp",
-    "normProp",
-    "backProp2",
-    "normProp2",
-    "backProp3",
-    "normProp3",
-    "backProp4",
-    "normProp4"
+    "top1",
+    "backCal",
+    "spacerText7",
+    "spacerText8",
+    "normCal",
+    "res",
+    "top2",
+    "backRes",
+    "spacerText5",
+    "spacerText6",
+    "normRes",
+    "props",
+    "top3",
+    "backProps",
+    "spacerText3",
+    "spacerText4",
+    "normProps",
+    "sett",
+    "backSett",
+    "spacerText2",
+    "spacerText",
+    "normSett"
   ],
-  cal: ["cal", "backProp", "normProp"],
-  backProp: ["backProp"],
-  normProp: ["normProp"],
-  backProp2: ["backProp2"],
-  normProp2: ["normProp2"],
-  backProp3: ["backProp3"],
-  normProp3: ["normProp3"],
-  backProp4: ["backProp4"],
-  normProp4: ["normProp4"],
+  cal: ["cal", "top1", "backCal", "spacerText7", "spacerText8", "normCal"],
+  top1: ["top1", "backCal", "spacerText7", "spacerText8"],
+  backCal: ["backCal"],
+  spacerText7: ["spacerText7", "spacerText8"],
+  spacerText8: ["spacerText8"],
+  normCal: ["normCal"],
+  res: ["res", "top2", "backRes", "spacerText5", "spacerText6", "normRes"],
+  top2: ["top2", "backRes", "spacerText5", "spacerText6"],
+  backRes: ["backRes"],
+  spacerText5: ["spacerText5", "spacerText6"],
+  spacerText6: ["spacerText6"],
+  normRes: ["normRes"],
+  props: [
+    "props",
+    "top3",
+    "backProps",
+    "spacerText3",
+    "spacerText4",
+    "normProps"
+  ],
+  top3: ["top3", "backProps", "spacerText3", "spacerText4"],
+  backProps: ["backProps"],
+  spacerText3: ["spacerText3", "spacerText4"],
+  spacerText4: ["spacerText4"],
+  normProps: ["normProps"],
+  sett: ["sett", "backSett", "spacerText2", "spacerText", "normSett"],
+  backSett: ["backSett"],
+  spacerText2: ["spacerText2", "spacerText"],
+  spacerText: ["spacerText"],
+  normSett: ["normSett"],
   bot: ["bot"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -663,14 +811,28 @@ type NodeDefaultElementType = {
   navFoot: "div";
   top: "div";
   cal: "div";
-  backProp: "div";
-  normProp: "div";
-  backProp2: "div";
-  normProp2: "div";
-  backProp3: "div";
-  normProp3: "div";
-  backProp4: "div";
-  normProp4: "div";
+  top1: "div";
+  backCal: "div";
+  spacerText7: "div";
+  spacerText8: "div";
+  normCal: "div";
+  res: "div";
+  top2: "div";
+  backRes: "div";
+  spacerText5: "div";
+  spacerText6: "div";
+  normRes: "div";
+  props: "div";
+  top3: "div";
+  backProps: "div";
+  spacerText3: "div";
+  spacerText4: "div";
+  normProps: "div";
+  sett: "div";
+  backSett: "div";
+  spacerText2: "div";
+  spacerText: "div";
+  normSett: "div";
   bot: "div";
 };
 
@@ -736,14 +898,28 @@ export const PlasmicNavigationRntFooter = Object.assign(
     // Helper components rendering sub-elements
     top: makeNodeComponent("top"),
     cal: makeNodeComponent("cal"),
-    backProp: makeNodeComponent("backProp"),
-    normProp: makeNodeComponent("normProp"),
-    backProp2: makeNodeComponent("backProp2"),
-    normProp2: makeNodeComponent("normProp2"),
-    backProp3: makeNodeComponent("backProp3"),
-    normProp3: makeNodeComponent("normProp3"),
-    backProp4: makeNodeComponent("backProp4"),
-    normProp4: makeNodeComponent("normProp4"),
+    top1: makeNodeComponent("top1"),
+    backCal: makeNodeComponent("backCal"),
+    spacerText7: makeNodeComponent("spacerText7"),
+    spacerText8: makeNodeComponent("spacerText8"),
+    normCal: makeNodeComponent("normCal"),
+    res: makeNodeComponent("res"),
+    top2: makeNodeComponent("top2"),
+    backRes: makeNodeComponent("backRes"),
+    spacerText5: makeNodeComponent("spacerText5"),
+    spacerText6: makeNodeComponent("spacerText6"),
+    normRes: makeNodeComponent("normRes"),
+    props: makeNodeComponent("props"),
+    top3: makeNodeComponent("top3"),
+    backProps: makeNodeComponent("backProps"),
+    spacerText3: makeNodeComponent("spacerText3"),
+    spacerText4: makeNodeComponent("spacerText4"),
+    normProps: makeNodeComponent("normProps"),
+    sett: makeNodeComponent("sett"),
+    backSett: makeNodeComponent("backSett"),
+    spacerText2: makeNodeComponent("spacerText2"),
+    spacerText: makeNodeComponent("spacerText"),
+    normSett: makeNodeComponent("normSett"),
     bot: makeNodeComponent("bot"),
 
     // Metadata about props expected for PlasmicNavigationRntFooter

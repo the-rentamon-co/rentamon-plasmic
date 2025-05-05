@@ -528,15 +528,14 @@ function PlasmicSideBar2__RenderFunc(props: {
             (() => {
               try {
                 return (() => {
-                  const classes =
-                    !$props.isFirstVisit ||
-                    parseInt(
-                      $props.userData.user_info.balance_info.balance,
-                      10
-                    ) < 100000
-                      ? "blinkBorderWallet"
-                      : "";
-                  return classes;
+                  if ($props.isFirstVisit == true) {
+                    return "";
+                  }
+                  return parseInt(
+                    $props.userData.user_info.balance_info.balance
+                  ) < 100000
+                    ? "blinkBorderWallet"
+                    : "";
                 })();
               } catch (e) {
                 if (
