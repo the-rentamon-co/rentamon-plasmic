@@ -1645,7 +1645,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___4Od9
+                        sty.formField___58Sz7
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1657,7 +1657,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___1BJU
+                        sty.formField__dxErr
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1675,7 +1675,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__cWkg
+                          sty.text__cd0Zz
                         )}
                       >
                         {"Submit"}
@@ -1690,6 +1690,7 @@ function PlasmicLitePanel__RenderFunc(props: {
             data-plasmic-name={"navigationRntFooter"}
             data-plasmic-override={overrides.navigationRntFooter}
             className={classNames("__wab_instance", sty.navigationRntFooter)}
+            navPage={"calendar"}
           />
         </div>
       </div>
