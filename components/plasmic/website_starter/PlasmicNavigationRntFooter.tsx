@@ -69,7 +69,7 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgc
 import sty from "./PlasmicNavigationRntFooter.module.css"; // plasmic-import: y37kcAs9RXYg/css
 
 import Icon52Icon from "./icons/PlasmicIcon__Icon52"; // plasmic-import: P-t6G5Dmr-Fr/icon
-import Icon55Icon from "./icons/PlasmicIcon__Icon55"; // plasmic-import: IFHAnQhrCbSe/icon
+import Icon56Icon from "./icons/PlasmicIcon__Icon56"; // plasmic-import: yZzSrSO-JV4H/icon
 
 createPlasmicElementProxy;
 
@@ -91,6 +91,7 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   backCal?: Flex__<"div">;
   backRes?: Flex__<"div">;
   backProp?: Flex__<"div">;
+  normProp?: Flex__<"div">;
   backSett?: Flex__<"div">;
   bot?: Flex__<"div">;
 };
@@ -389,8 +390,18 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               data-plasmic-override={overrides.backProp}
               className={classNames(projectcss.all, sty.backProp)}
             >
-              <Icon55Icon
-                className={classNames(projectcss.all, sty.svg__i3RY)}
+              <Icon56Icon
+                className={classNames(projectcss.all, sty.svg___58Uaz)}
+                role={"img"}
+              />
+            </div>
+            <div
+              data-plasmic-name={"normProp"}
+              data-plasmic-override={overrides.normProp}
+              className={classNames(projectcss.all, sty.normProp)}
+            >
+              <Icon56Icon
+                className={classNames(projectcss.all, sty.svg__eKuPc)}
                 role={"img"}
               />
             </div>
@@ -655,13 +666,15 @@ const PlasmicDescendants = {
     "backCal",
     "backRes",
     "backProp",
+    "normProp",
     "backSett",
     "bot"
   ],
-  top: ["top", "backCal", "backRes", "backProp", "backSett"],
+  top: ["top", "backCal", "backRes", "backProp", "normProp", "backSett"],
   backCal: ["backCal"],
   backRes: ["backRes"],
   backProp: ["backProp"],
+  normProp: ["normProp"],
   backSett: ["backSett"],
   bot: ["bot"]
 } as const;
@@ -674,6 +687,7 @@ type NodeDefaultElementType = {
   backCal: "div";
   backRes: "div";
   backProp: "div";
+  normProp: "div";
   backSett: "div";
   bot: "div";
 };
@@ -742,6 +756,7 @@ export const PlasmicNavigationRntFooter = Object.assign(
     backCal: makeNodeComponent("backCal"),
     backRes: makeNodeComponent("backRes"),
     backProp: makeNodeComponent("backProp"),
+    normProp: makeNodeComponent("normProp"),
     backSett: makeNodeComponent("backSett"),
     bot: makeNodeComponent("bot"),
 

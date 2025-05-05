@@ -2008,6 +2008,11 @@
           "id": "IFHAnQhrCbSe",
           "name": "Icon55Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon55.tsx"
+        },
+        {
+          "id": "yZzSrSO-JV4H",
+          "name": "Icon56Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon56.tsx"
         }
       ],
       "images": [

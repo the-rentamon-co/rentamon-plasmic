@@ -160,6 +160,7 @@ export type PlasmicCalendar2__OverridesType = {
   p2?: Flex__<"div">;
   phoneNumber?: Flex__<typeof TextInput>;
   p3?: Flex__<"div">;
+  input2?: Flex__<typeof Input>;
   amount?: Flex__<typeof AntdInputNumber>;
   p5?: Flex__<"div">;
 };
@@ -648,6 +649,12 @@ function PlasmicCalendar2__RenderFunc(props: {
       },
       {
         path: "input.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "input2.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
@@ -9202,6 +9209,23 @@ function PlasmicCalendar2__RenderFunc(props: {
             data-plasmic-override={overrides.p3}
             className={classNames(projectcss.all, sty.p3)}
           >
+            <Input
+              data-plasmic-name={"input2"}
+              data-plasmic-override={overrides.input2}
+              className={classNames("__wab_instance", sty.input2)}
+              onChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["input2", "value"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              placeholder={
+                "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+              }
+              type={"number"}
+              value={generateStateValueProp($state, ["input2", "value"])}
+            />
+
             <AntdInputNumber
               data-plasmic-name={"amount"}
               data-plasmic-override={overrides.amount}
@@ -9339,7 +9363,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           : result;
                         return finalResult.trim() + " تومان";
                       }
-                      const input = $state.amount?.value || "";
+                      const input = $state.input2?.value || "";
                       const output =
                         input === "" ? "صفر" : numberToPersian(Number(input));
                       return output;
@@ -9389,9 +9413,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                   try {
                     return (
                       $state.phoneNumber.value == "" ||
-                      $state.amount.value <= 99999 ||
-                      $state.amount.value == null ||
-                      $state.amount.value >= 20000000 ||
+                      $state.input2.value <= 99999 ||
+                      $state.input2.value == null ||
+                      $state.input2.value >= 20000000 ||
                       $state.watingForResponse
                     );
                   } catch (e) {
@@ -9517,7 +9541,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   let a = {
                                     guest_name: $state.guestName.value,
                                     phone_number: $state.phoneNumber.value,
-                                    amount: $state.amount.value,
+                                    amount: $state.input2.value,
                                     referrer: $state.guestReferrer.value,
                                     guest_count: $state.guestCount.value,
                                     property_id: $props.propertyId,
@@ -9907,6 +9931,7 @@ const PlasmicDescendants = {
     "p2",
     "phoneNumber",
     "p3",
+    "input2",
     "amount",
     "p5"
   ],
@@ -9969,6 +9994,7 @@ const PlasmicDescendants = {
     "p2",
     "phoneNumber",
     "p3",
+    "input2",
     "amount",
     "p5"
   ],
@@ -9984,6 +10010,7 @@ const PlasmicDescendants = {
     "p2",
     "phoneNumber",
     "p3",
+    "input2",
     "amount",
     "p5"
   ],
@@ -9996,7 +10023,8 @@ const PlasmicDescendants = {
   guestCount: ["guestCount"],
   p2: ["p2", "phoneNumber"],
   phoneNumber: ["phoneNumber"],
-  p3: ["p3", "amount"],
+  p3: ["p3", "input2", "amount"],
+  input2: ["input2"],
   amount: ["amount"],
   p5: ["p5"]
 } as const;
@@ -10049,6 +10077,7 @@ type NodeDefaultElementType = {
   p2: "div";
   phoneNumber: typeof TextInput;
   p3: "div";
+  input2: typeof Input;
   amount: typeof AntdInputNumber;
   p5: "div";
 };
@@ -10157,6 +10186,7 @@ export const PlasmicCalendar2 = Object.assign(
     p2: makeNodeComponent("p2"),
     phoneNumber: makeNodeComponent("phoneNumber"),
     p3: makeNodeComponent("p3"),
+    input2: makeNodeComponent("input2"),
     amount: makeNodeComponent("amount"),
     p5: makeNodeComponent("p5"),
 
