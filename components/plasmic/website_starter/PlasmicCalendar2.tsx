@@ -3146,7 +3146,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       style={{ fontWeight: 600 }}
                     >
                       {
-                        "\u00ab\u067e\u0631\u00bb \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                        "\u00ab\u067e\u0631\u00bb \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
                       }
                     </span>
                   </React.Fragment>

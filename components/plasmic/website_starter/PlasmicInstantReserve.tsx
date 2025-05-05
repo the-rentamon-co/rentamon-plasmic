@@ -170,11 +170,13 @@ function PlasmicInstantReserve__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return (
-                // $state.properties.data.find(property => property.property_name === $state.selectProperty.value).website_ids.find(website => website.website_id === 4).is_instant
-
-                false
-              );
+              return $state.properties.data
+                .find(
+                  property =>
+                    property.property_name === $state.selectProperty.value
+                )
+                .website_ids.find(website => website.website_id === 4)
+                .is_instant;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -768,7 +770,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                         "checked"
                       ])}
                       className={classNames("__wab_instance", sty.shabSwitch)}
-                      disabled={true}
+                      disabled={false}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
                           "shabSwitch",
@@ -778,12 +780,12 @@ function PlasmicInstantReserve__RenderFunc(props: {
                         (async checked => {
                           const $steps = {};
 
-                          $steps["invokeGlobalAction"] = true
+                          $steps["apiRequestForInstant"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
                                     "POST",
-                                    "https://dev.rentamon.com/webhook/shab-instant",
+                                    "https://gateway.rentamon.com/webhook/shab-instant",
                                     undefined,
                                     (() => {
                                       try {
@@ -812,34 +814,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           e?.plasmicType ===
                                             "PlasmicUndefinedDataError"
                                         ) {
-                                          return {
-                                            dates: "1403-05-30",
-                                            property_id: 1,
-                                            action: "unset_instant"
-                                          };
+                                          return {};
                                         }
                                         throw e;
                                       }
                                     })(),
                                     (() => {
                                       try {
-                                        return {
-                                          headers: {
-                                            "Content-Type":
-                                              "application/x-www-form-urlencoded",
-                                            Authorization: `Bearer ${
-                                              document.cookie
-                                                .split("; ")
-                                                .find(row =>
-                                                  row.startsWith(
-                                                    "usso_access_token"
-                                                  )
-                                                )
-                                                .split("=")[1]
-                                            }`
-                                          },
-                                          withCredentials: true
-                                        };
+                                        return undefined;
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -865,38 +847,39 @@ function PlasmicInstantReserve__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
+                            $steps["apiRequestForInstant"] != null &&
+                            typeof $steps["apiRequestForInstant"] ===
+                              "object" &&
+                            typeof $steps["apiRequestForInstant"].then ===
                               "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
+                            $steps["apiRequestForInstant"] = await $steps[
+                              "apiRequestForInstant"
                             ];
                           }
 
-                          $steps["invokeGlobalAction2"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "success",
-                                    "\u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0639\u0645\u0627\u0644 \u0634\u062f",
-                                    "top-center"
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
+                          $steps["successToast"] =
+                            $steps.apiRequestForInstant.status === 200
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "success",
+                                      "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0639\u0645\u0627\u0644 \u0627\u0646\u062c\u0627\u0645 \u0634\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
                           if (
-                            $steps["invokeGlobalAction2"] != null &&
-                            typeof $steps["invokeGlobalAction2"] === "object" &&
-                            typeof $steps["invokeGlobalAction2"].then ===
-                              "function"
+                            $steps["successToast"] != null &&
+                            typeof $steps["successToast"] === "object" &&
+                            typeof $steps["successToast"].then === "function"
                           ) {
-                            $steps["invokeGlobalAction2"] = await $steps[
-                              "invokeGlobalAction2"
+                            $steps["successToast"] = await $steps[
+                              "successToast"
                             ];
                           }
 
@@ -908,15 +891,33 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                     variablePath: ["shabSwitch", "checked"]
                                   },
                                   operation: 0,
-                                  value: ($state.properties.data
-                                    .find(
-                                      property =>
-                                        property.property_name ===
-                                        $state.selectProperty.value
-                                    )
-                                    .website_ids.find(
-                                      website => website.website_id === 4
-                                    ).is_instant = $state.shabSwitch.checked)
+                                  value: (() => {
+                                    if (
+                                      $steps.apiRequestForInstant.status === 200
+                                    ) {
+                                      return ($state.properties.data
+                                        .find(
+                                          property =>
+                                            property.property_name ===
+                                            $state.selectProperty.value
+                                        )
+                                        .website_ids.find(
+                                          website => website.website_id === 4
+                                        ).is_instant =
+                                        $state.shabSwitch.checked);
+                                    } else {
+                                      return ($state.properties.data
+                                        .find(
+                                          property =>
+                                            property.property_name ===
+                                            $state.selectProperty.value
+                                        )
+                                        .website_ids.find(
+                                          website => website.website_id === 4
+                                        ).is_instant =
+                                        !$state.shabSwitch.checked);
+                                    }
+                                  })()
                                 };
                                 return (({
                                   variable,
@@ -944,6 +945,29 @@ function PlasmicInstantReserve__RenderFunc(props: {
                             $steps["updateShabSwitchChecked"] = await $steps[
                               "updateShabSwitchChecked"
                             ];
+                          }
+
+                          $steps["failedToast"] =
+                            $steps.apiRequestForInstant.status != 200
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "error",
+                                      "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u062e\u0648\u0631\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                          if (
+                            $steps["failedToast"] != null &&
+                            typeof $steps["failedToast"] === "object" &&
+                            typeof $steps["failedToast"].then === "function"
+                          ) {
+                            $steps["failedToast"] = await $steps["failedToast"];
                           }
                         }).apply(null, eventArgs);
                       }}

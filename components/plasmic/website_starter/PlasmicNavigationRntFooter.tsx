@@ -68,12 +68,12 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNavigationRntFooter.module.css"; // plasmic-import: y37kcAs9RXYg/css
 
+import Icon64Icon from "./icons/PlasmicIcon__Icon64"; // plasmic-import: tMkEMYJMQb4Q/icon
+import Icon65Icon from "./icons/PlasmicIcon__Icon65"; // plasmic-import: C7Sh85EuwDPm/icon
 import Icon59Icon from "./icons/PlasmicIcon__Icon59"; // plasmic-import: zKz1KhV3axdj/icon
 import Icon52Icon from "./icons/PlasmicIcon__Icon52"; // plasmic-import: P-t6G5Dmr-Fr/icon
 import Icon58Icon from "./icons/PlasmicIcon__Icon58"; // plasmic-import: AjM0LMNvB3b9/icon
 import Icon57Icon from "./icons/PlasmicIcon__Icon57"; // plasmic-import: bkD7B2qxVCwE/icon
-import Icon60Icon from "./icons/PlasmicIcon__Icon60"; // plasmic-import: b0lwc3XVPJOU/icon
-import Icon48Icon from "./icons/PlasmicIcon__Icon48"; // plasmic-import: EUsJ3MtRCJEN/icon
 
 createPlasmicElementProxy;
 
@@ -92,29 +92,22 @@ export const PlasmicNavigationRntFooter__ArgProps = new Array<ArgPropType>(
 export type PlasmicNavigationRntFooter__OverridesType = {
   navFoot?: Flex__<"div">;
   top?: Flex__<"div">;
+  menu?: Flex__<"div">;
+  normMenu?: Flex__<"div">;
+  top4?: Flex__<"div">;
+  backSett?: Flex__<"div">;
   cal?: Flex__<"div">;
   top1?: Flex__<"div">;
   backCal?: Flex__<"div">;
-  spacerText7?: Flex__<"div">;
-  spacerText8?: Flex__<"div">;
   normCal?: Flex__<"div">;
   res?: Flex__<"div">;
   top2?: Flex__<"div">;
   backRes?: Flex__<"div">;
-  spacerText5?: Flex__<"div">;
-  spacerText6?: Flex__<"div">;
   normRes?: Flex__<"div">;
   props?: Flex__<"div">;
   top3?: Flex__<"div">;
   backProps?: Flex__<"div">;
-  spacerText3?: Flex__<"div">;
-  spacerText4?: Flex__<"div">;
   normProps?: Flex__<"div">;
-  sett?: Flex__<"div">;
-  backSett?: Flex__<"div">;
-  spacerText2?: Flex__<"div">;
-  spacerText?: Flex__<"div">;
-  normSett?: Flex__<"div">;
   bot?: Flex__<"div">;
 };
 
@@ -189,6 +182,134 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
           data-plasmic-override={overrides.top}
           className={classNames(projectcss.all, sty.top)}
         >
+          <Stack__
+            as={"div"}
+            data-plasmic-name={"menu"}
+            data-plasmic-override={overrides.menu}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.menu)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["goToتالار"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/menu` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToتالار"] != null &&
+                typeof $steps["goToتالار"] === "object" &&
+                typeof $steps["goToتالار"].then === "function"
+              ) {
+                $steps["goToتالار"] = await $steps["goToتالار"];
+              }
+            }}
+          >
+            {(
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? (() => {
+                    try {
+                      return $props.navPage !== "menu";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage !== "settings";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"normMenu"}
+                data-plasmic-override={overrides.normMenu}
+                className={classNames(projectcss.all, sty.normMenu)}
+              >
+                <Icon64Icon
+                  className={classNames(projectcss.all, sty.svg__y8AJf)}
+                  role={"img"}
+                />
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? (() => {
+                    try {
+                      return $props.navPage == "menu";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage == "settings";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"top4"}
+                data-plasmic-override={overrides.top4}
+                className={classNames(projectcss.all, sty.top4)}
+              >
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"backSett"}
+                  data-plasmic-override={overrides.backSett}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.backSett)}
+                >
+                  <Icon65Icon
+                    className={classNames(projectcss.all, sty.svg___6PDfU)}
+                    role={"img"}
+                  />
+                </Stack__>
+              </div>
+            ) : null}
+          </Stack__>
           <div
             data-plasmic-name={"cal"}
             data-plasmic-override={overrides.cal}
@@ -196,9 +317,9 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToProperties"] = true
+              $steps["goToPanelCalendar"] = true
                 ? (() => {
-                    const actionArgs = { destination: `/properties` };
+                    const actionArgs = { destination: `/panel` };
                     return (({ destination }) => {
                       if (
                         typeof destination === "string" &&
@@ -214,68 +335,89 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["goToProperties"] != null &&
-                typeof $steps["goToProperties"] === "object" &&
-                typeof $steps["goToProperties"].then === "function"
+                $steps["goToPanelCalendar"] != null &&
+                typeof $steps["goToPanelCalendar"] === "object" &&
+                typeof $steps["goToPanelCalendar"].then === "function"
               ) {
-                $steps["goToProperties"] = await $steps["goToProperties"];
+                $steps["goToPanelCalendar"] = await $steps["goToPanelCalendar"];
               }
             }}
           >
-            <div
-              data-plasmic-name={"top1"}
-              data-plasmic-override={overrides.top1}
-              className={classNames(projectcss.all, sty.top1)}
-            >
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage == "calendar";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
               <div
-                data-plasmic-name={"backCal"}
-                data-plasmic-override={overrides.backCal}
-                className={classNames(projectcss.all, sty.backCal)}
+                data-plasmic-name={"top1"}
+                data-plasmic-override={overrides.top1}
+                className={classNames(projectcss.all, sty.top1)}
               >
-                <Icon59Icon
-                  className={classNames(projectcss.all, sty.svg___5FnM)}
+                <div
+                  data-plasmic-name={"backCal"}
+                  data-plasmic-override={overrides.backCal}
+                  className={classNames(projectcss.all, sty.backCal)}
+                >
+                  <Icon59Icon
+                    className={classNames(projectcss.all, sty.svg___5FnM)}
+                    role={"img"}
+                  />
+                </div>
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage !== "calendar";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"normCal"}
+                data-plasmic-override={overrides.normCal}
+                className={classNames(projectcss.all, sty.normCal)}
+              >
+                <Icon52Icon
+                  className={classNames(projectcss.all, sty.svg__aZ9Q4)}
                   role={"img"}
                 />
               </div>
-              <div
-                data-plasmic-name={"spacerText7"}
-                data-plasmic-override={overrides.spacerText7}
-                className={classNames(projectcss.all, sty.spacerText7)}
-              >
-                <div
-                  data-plasmic-name={"spacerText8"}
-                  data-plasmic-override={overrides.spacerText8}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.spacerText8
-                  )}
-                >
-                  {" "}
-                </div>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"normCal"}
-              data-plasmic-override={overrides.normCal}
-              className={classNames(projectcss.all, sty.normCal)}
-            >
-              <Icon52Icon
-                className={classNames(projectcss.all, sty.svg__aZ9Q4)}
-                role={"img"}
-              />
-            </div>
+            ) : null}
           </div>
-          <div
+          <Stack__
+            as={"div"}
             data-plasmic-name={"res"}
             data-plasmic-override={overrides.res}
+            hasGap={true}
             className={classNames(projectcss.all, sty.res)}
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToProperties"] = true
+              $steps["goToReservations"] = true
                 ? (() => {
-                    const actionArgs = { destination: `/properties` };
+                    const actionArgs = { destination: `/reservations` };
                     return (({ destination }) => {
                       if (
                         typeof destination === "string" &&
@@ -291,99 +433,108 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["goToProperties"] != null &&
-                typeof $steps["goToProperties"] === "object" &&
-                typeof $steps["goToProperties"].then === "function"
+                $steps["goToReservations"] != null &&
+                typeof $steps["goToReservations"] === "object" &&
+                typeof $steps["goToReservations"].then === "function"
               ) {
-                $steps["goToProperties"] = await $steps["goToProperties"];
+                $steps["goToReservations"] = await $steps["goToReservations"];
               }
             }}
           >
-            <div
-              data-plasmic-name={"top2"}
-              data-plasmic-override={overrides.top2}
-              className={classNames(projectcss.all, sty.top2)}
-            >
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage == "reservations";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
               <div
-                data-plasmic-name={"backRes"}
-                data-plasmic-override={overrides.backRes}
-                className={classNames(projectcss.all, sty.backRes)}
+                data-plasmic-name={"top2"}
+                data-plasmic-override={overrides.top2}
+                className={classNames(projectcss.all, sty.top2)}
+              >
+                <div
+                  data-plasmic-name={"backRes"}
+                  data-plasmic-override={overrides.backRes}
+                  className={classNames(projectcss.all, sty.backRes)}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___2MPaI)}
+                    displayHeight={"22px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"28px"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image117.svg",
+                      fullWidth: 23,
+                      fullHeight: 19,
+                      aspectRatio: 1.210526
+                    }}
+                  />
+                </div>
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage !== "reservations";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"normRes"}
+                data-plasmic-override={overrides.normRes}
+                className={classNames(projectcss.all, sty.normRes)}
               >
                 <PlasmicImg__
                   alt={""}
-                  className={classNames(sty.img__yCGi)}
-                  displayHeight={"100%"}
+                  className={classNames(sty.img__jYzcK)}
+                  displayHeight={"24px"}
                   displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
+                  displayMaxWidth={"30px"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"30px"}
+                  displayWidth={"auto"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/website_starter/images/image117.svg",
+                    src: "/plasmic/website_starter/images/image119.svg",
                     fullWidth: 23,
                     fullHeight: 19,
                     aspectRatio: 1.210526
                   }}
                 />
               </div>
-              <div
-                data-plasmic-name={"spacerText5"}
-                data-plasmic-override={overrides.spacerText5}
-                className={classNames(projectcss.all, sty.spacerText5)}
-              >
-                <div
-                  data-plasmic-name={"spacerText6"}
-                  data-plasmic-override={overrides.spacerText6}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.spacerText6
-                  )}
-                >
-                  {" "}
-                </div>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"normRes"}
-              data-plasmic-override={overrides.normRes}
-              className={classNames(projectcss.all, sty.normRes)}
-            >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___9QcJa)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "28px"
-                    : "30px"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "100%"
-                    : "100%"
-                }
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "34px"
-                    : "36px"
-                }
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image115.svg",
-                  fullWidth: 23,
-                  fullHeight: 19,
-                  aspectRatio: 1.210526
-                }}
-              />
-            </div>
-          </div>
-          <div
+            ) : null}
+          </Stack__>
+          <Stack__
+            as={"div"}
             data-plasmic-name={"props"}
             data-plasmic-override={overrides.props}
+            hasGap={true}
             className={classNames(projectcss.all, sty.props)}
             onClick={async event => {
               const $steps = {};
@@ -414,60 +565,83 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               }
             }}
           >
-            <div
-              data-plasmic-name={"top3"}
-              data-plasmic-override={overrides.top3}
-              className={classNames(projectcss.all, sty.top3)}
-            >
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage == "properties";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
               <div
-                data-plasmic-name={"backProps"}
-                data-plasmic-override={overrides.backProps}
-                className={classNames(projectcss.all, sty.backProps)}
+                data-plasmic-name={"top3"}
+                data-plasmic-override={overrides.top3}
+                className={classNames(projectcss.all, sty.top3)}
               >
-                <Icon58Icon
-                  className={classNames(projectcss.all, sty.svg__cpVuT)}
+                <div
+                  data-plasmic-name={"backProps"}
+                  data-plasmic-override={overrides.backProps}
+                  className={classNames(projectcss.all, sty.backProps)}
+                >
+                  <Icon58Icon
+                    className={classNames(projectcss.all, sty.svg__cpVuT)}
+                    role={"img"}
+                  />
+                </div>
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage !== "properties";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"normProps"}
+                data-plasmic-override={overrides.normProps}
+                className={classNames(projectcss.all, sty.normProps)}
+              >
+                <Icon57Icon
+                  className={classNames(projectcss.all, sty.svg___3Yheu)}
                   role={"img"}
                 />
               </div>
-              <div
-                data-plasmic-name={"spacerText3"}
-                data-plasmic-override={overrides.spacerText3}
-                className={classNames(projectcss.all, sty.spacerText3)}
-              >
-                <div
-                  data-plasmic-name={"spacerText4"}
-                  data-plasmic-override={overrides.spacerText4}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.spacerText4
-                  )}
-                >
-                  {" "}
-                </div>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"normProps"}
-              data-plasmic-override={overrides.normProps}
-              className={classNames(projectcss.all, sty.normProps)}
-            >
-              <Icon57Icon
-                className={classNames(projectcss.all, sty.svg___3Yheu)}
-                role={"img"}
-              />
-            </div>
-          </div>
+            ) : null}
+          </Stack__>
+        </div>
+        <div
+          data-plasmic-name={"bot"}
+          data-plasmic-override={overrides.bot}
+          className={classNames(projectcss.all, sty.bot)}
+        >
           <div
-            data-plasmic-name={"sett"}
-            data-plasmic-override={overrides.sett}
-            className={classNames(projectcss.all, sty.sett)}
+            className={classNames(projectcss.all, sty.freeBox__jBF1)}
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToProperties"] = true
+              $steps["goToتالار"] = true
                 ? (() => {
-                    const actionArgs = { destination: `/properties` };
+                    const actionArgs = { destination: `/menu` };
                     return (({ destination }) => {
                       if (
                         typeof destination === "string" &&
@@ -483,60 +657,28 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["goToProperties"] != null &&
-                typeof $steps["goToProperties"] === "object" &&
-                typeof $steps["goToProperties"].then === "function"
+                $steps["goToتالار"] != null &&
+                typeof $steps["goToتالار"] === "object" &&
+                typeof $steps["goToتالار"].then === "function"
               ) {
-                $steps["goToProperties"] = await $steps["goToProperties"];
+                $steps["goToتالار"] = await $steps["goToتالار"];
               }
             }}
           >
-            <Stack__
-              as={"div"}
-              data-plasmic-name={"backSett"}
-              data-plasmic-override={overrides.backSett}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.backSett)}
-            >
-              <Icon60Icon
-                className={classNames(projectcss.all, sty.svg__lpWk8)}
-                role={"img"}
-              />
-            </Stack__>
-            <div
-              data-plasmic-name={"spacerText2"}
-              data-plasmic-override={overrides.spacerText2}
-              className={classNames(projectcss.all, sty.spacerText2)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__n9Wh1)}>
               <div
-                data-plasmic-name={"spacerText"}
-                data-plasmic-override={overrides.spacerText}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.spacerText
+                  sty.text___7A8Zo
                 )}
               >
-                {" "}
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u062a\u0627\u0644\u0627\u0631"
+                  : "\u062a\u0627\u0644\u0627\u0631"}
               </div>
             </div>
-            <div
-              data-plasmic-name={"normSett"}
-              data-plasmic-override={overrides.normSett}
-              className={classNames(projectcss.all, sty.normSett)}
-            >
-              <Icon48Icon
-                className={classNames(projectcss.all, sty.svg__hDEeU)}
-                role={"img"}
-              />
-            </div>
           </div>
-        </div>
-        <div
-          data-plasmic-name={"bot"}
-          data-plasmic-override={overrides.bot}
-          className={classNames(projectcss.all, sty.bot)}
-        >
           <div
             className={classNames(projectcss.all, sty.freeBox__bjtom)}
             onClick={async event => {
@@ -662,52 +804,9 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   sty.text__ybLty
                 )}
               >
-                {
-                  "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"
-                }
-              </div>
-            </div>
-          </div>
-          <div
-            className={classNames(projectcss.all, sty.freeBox__jBF1)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["goToSettings"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/settings` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToSettings"] != null &&
-                typeof $steps["goToSettings"] === "object" &&
-                typeof $steps["goToSettings"].then === "function"
-              ) {
-                $steps["goToSettings"] = await $steps["goToSettings"];
-              }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__n9Wh1)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___7A8Zo
-                )}
-              >
-                {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                  : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"}
               </div>
             </div>
           </div>
@@ -721,87 +820,59 @@ const PlasmicDescendants = {
   navFoot: [
     "navFoot",
     "top",
+    "menu",
+    "normMenu",
+    "top4",
+    "backSett",
     "cal",
     "top1",
     "backCal",
-    "spacerText7",
-    "spacerText8",
     "normCal",
     "res",
     "top2",
     "backRes",
-    "spacerText5",
-    "spacerText6",
     "normRes",
     "props",
     "top3",
     "backProps",
-    "spacerText3",
-    "spacerText4",
     "normProps",
-    "sett",
-    "backSett",
-    "spacerText2",
-    "spacerText",
-    "normSett",
     "bot"
   ],
   top: [
     "top",
+    "menu",
+    "normMenu",
+    "top4",
+    "backSett",
     "cal",
     "top1",
     "backCal",
-    "spacerText7",
-    "spacerText8",
     "normCal",
     "res",
     "top2",
     "backRes",
-    "spacerText5",
-    "spacerText6",
     "normRes",
     "props",
     "top3",
     "backProps",
-    "spacerText3",
-    "spacerText4",
-    "normProps",
-    "sett",
-    "backSett",
-    "spacerText2",
-    "spacerText",
-    "normSett"
-  ],
-  cal: ["cal", "top1", "backCal", "spacerText7", "spacerText8", "normCal"],
-  top1: ["top1", "backCal", "spacerText7", "spacerText8"],
-  backCal: ["backCal"],
-  spacerText7: ["spacerText7", "spacerText8"],
-  spacerText8: ["spacerText8"],
-  normCal: ["normCal"],
-  res: ["res", "top2", "backRes", "spacerText5", "spacerText6", "normRes"],
-  top2: ["top2", "backRes", "spacerText5", "spacerText6"],
-  backRes: ["backRes"],
-  spacerText5: ["spacerText5", "spacerText6"],
-  spacerText6: ["spacerText6"],
-  normRes: ["normRes"],
-  props: [
-    "props",
-    "top3",
-    "backProps",
-    "spacerText3",
-    "spacerText4",
     "normProps"
   ],
-  top3: ["top3", "backProps", "spacerText3", "spacerText4"],
-  backProps: ["backProps"],
-  spacerText3: ["spacerText3", "spacerText4"],
-  spacerText4: ["spacerText4"],
-  normProps: ["normProps"],
-  sett: ["sett", "backSett", "spacerText2", "spacerText", "normSett"],
+  menu: ["menu", "normMenu", "top4", "backSett"],
+  normMenu: ["normMenu"],
+  top4: ["top4", "backSett"],
   backSett: ["backSett"],
-  spacerText2: ["spacerText2", "spacerText"],
-  spacerText: ["spacerText"],
-  normSett: ["normSett"],
+  cal: ["cal", "top1", "backCal", "normCal"],
+  top1: ["top1", "backCal"],
+  backCal: ["backCal"],
+  normCal: ["normCal"],
+  res: ["res", "top2", "backRes", "normRes"],
+  top2: ["top2", "backRes"],
+  backRes: ["backRes"],
+  normRes: ["normRes"],
+  props: ["props", "top3", "backProps", "normProps"],
+  top3: ["top3", "backProps"],
+  backProps: ["backProps"],
+  normProps: ["normProps"],
   bot: ["bot"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -810,29 +881,22 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   navFoot: "div";
   top: "div";
+  menu: "div";
+  normMenu: "div";
+  top4: "div";
+  backSett: "div";
   cal: "div";
   top1: "div";
   backCal: "div";
-  spacerText7: "div";
-  spacerText8: "div";
   normCal: "div";
   res: "div";
   top2: "div";
   backRes: "div";
-  spacerText5: "div";
-  spacerText6: "div";
   normRes: "div";
   props: "div";
   top3: "div";
   backProps: "div";
-  spacerText3: "div";
-  spacerText4: "div";
   normProps: "div";
-  sett: "div";
-  backSett: "div";
-  spacerText2: "div";
-  spacerText: "div";
-  normSett: "div";
   bot: "div";
 };
 
@@ -897,29 +961,22 @@ export const PlasmicNavigationRntFooter = Object.assign(
   {
     // Helper components rendering sub-elements
     top: makeNodeComponent("top"),
+    menu: makeNodeComponent("menu"),
+    normMenu: makeNodeComponent("normMenu"),
+    top4: makeNodeComponent("top4"),
+    backSett: makeNodeComponent("backSett"),
     cal: makeNodeComponent("cal"),
     top1: makeNodeComponent("top1"),
     backCal: makeNodeComponent("backCal"),
-    spacerText7: makeNodeComponent("spacerText7"),
-    spacerText8: makeNodeComponent("spacerText8"),
     normCal: makeNodeComponent("normCal"),
     res: makeNodeComponent("res"),
     top2: makeNodeComponent("top2"),
     backRes: makeNodeComponent("backRes"),
-    spacerText5: makeNodeComponent("spacerText5"),
-    spacerText6: makeNodeComponent("spacerText6"),
     normRes: makeNodeComponent("normRes"),
     props: makeNodeComponent("props"),
     top3: makeNodeComponent("top3"),
     backProps: makeNodeComponent("backProps"),
-    spacerText3: makeNodeComponent("spacerText3"),
-    spacerText4: makeNodeComponent("spacerText4"),
     normProps: makeNodeComponent("normProps"),
-    sett: makeNodeComponent("sett"),
-    backSett: makeNodeComponent("backSett"),
-    spacerText2: makeNodeComponent("spacerText2"),
-    spacerText: makeNodeComponent("spacerText"),
-    normSett: makeNodeComponent("normSett"),
     bot: makeNodeComponent("bot"),
 
     // Metadata about props expected for PlasmicNavigationRntFooter

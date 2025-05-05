@@ -68,6 +68,7 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import RecordList from "../../RecordList"; // plasmic-import: dDeToLEgGJS_/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -150,8 +151,8 @@ export type PlasmicReservations__OverridesType = {
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
   reserveData?: Flex__<typeof ApiRequest>;
-  returnButton?: Flex__<"div">;
   favicon?: Flex__<typeof Embed>;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarity?: Flex__<typeof Embed>;
   finalModal?: Flex__<typeof AntdModal>;
   cancelle?: Flex__<typeof AntdButton>;
@@ -4059,50 +4060,6 @@ function PlasmicReservations__RenderFunc(props: {
               ) : null}
             </Stack__>
           </Stack__>
-          <div
-            data-plasmic-name={"returnButton"}
-            data-plasmic-override={overrides.returnButton}
-            className={classNames(projectcss.all, sty.returnButton, "fix")}
-          >
-            <div
-              className={classNames(projectcss.all, sty.freeBox__zwnkN)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            return window.history.back();
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__maw5U
-                )}
-              >
-                {"\u0628\u0627\u0632\u06af\u0634\u062a "}
-              </div>
-            </div>
-          </div>
           <Button className={classNames("__wab_instance", sty.button__x5Anb)}>
             <div
               className={classNames(
@@ -4121,6 +4078,13 @@ function PlasmicReservations__RenderFunc(props: {
             code={
               '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon.com/wp-content/uploads/2023/08/R-Logo-7059df.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "192x192"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
             }
+          />
+
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+            navPage={"reservations"}
           />
 
           <Embed
@@ -4986,8 +4950,8 @@ const PlasmicDescendants = {
     "reserveData2",
     "reserveMainStack",
     "reserveData",
-    "returnButton",
     "favicon",
+    "navigationRntFooter",
     "clarity",
     "finalModal",
     "cancelle"
@@ -5175,8 +5139,8 @@ const PlasmicDescendants = {
   reserveData2: ["reserveData2"],
   reserveMainStack: ["reserveMainStack", "reserveData"],
   reserveData: ["reserveData"],
-  returnButton: ["returnButton"],
   favicon: ["favicon"],
+  navigationRntFooter: ["navigationRntFooter"],
   clarity: ["clarity"],
   finalModal: ["finalModal", "cancelle"],
   cancelle: ["cancelle"]
@@ -5242,8 +5206,8 @@ type NodeDefaultElementType = {
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
   reserveData: typeof ApiRequest;
-  returnButton: "div";
   favicon: typeof Embed;
+  navigationRntFooter: typeof NavigationRntFooter;
   clarity: typeof Embed;
   finalModal: typeof AntdModal;
   cancelle: typeof AntdButton;
@@ -5365,8 +5329,8 @@ export const PlasmicReservations = Object.assign(
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
     reserveData: makeNodeComponent("reserveData"),
-    returnButton: makeNodeComponent("returnButton"),
     favicon: makeNodeComponent("favicon"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarity: makeNodeComponent("clarity"),
     finalModal: makeNodeComponent("finalModal"),
     cancelle: makeNodeComponent("cancelle"),

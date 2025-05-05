@@ -68,6 +68,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -117,6 +118,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   favicon?: Flex__<typeof Embed>;
 };
 
@@ -2379,6 +2381,13 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               }
             </div>
           </AntdModal>
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+            navPage={"calendar"}
+          />
+
           <Embed
             data-plasmic-name={"favicon"}
             data-plasmic-override={overrides.favicon}
@@ -2419,6 +2428,7 @@ const PlasmicDescendants = {
     "sideEffect",
     "userAvailableFeature",
     "modal",
+    "navigationRntFooter",
     "favicon"
   ],
   main: ["main"],
@@ -2480,6 +2490,7 @@ const PlasmicDescendants = {
   sideEffect: ["sideEffect"],
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
+  navigationRntFooter: ["navigationRntFooter"],
   favicon: ["favicon"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -2510,6 +2521,7 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
+  navigationRntFooter: typeof NavigationRntFooter;
   favicon: typeof Embed;
 };
 
@@ -2596,6 +2608,7 @@ export const PlasmicPanelCalendar = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     favicon: makeNodeComponent("favicon"),
 
     // Metadata about props expected for PlasmicPanelCalendar

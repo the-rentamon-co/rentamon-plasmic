@@ -37,6 +37,11 @@
     padding-top: 12px;
   }
 }
+@media (max-width: 500px) {
+  .freeBox__bbk5A {
+    background: #ebfaff;
+  }
+}
 .mid {
   display: flex;
   flex-direction: row;
