@@ -66,6 +66,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -121,6 +122,7 @@ export type PlasmicReferral__OverridesType = {
   goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultReferralProps {}
@@ -2055,6 +2057,12 @@ ${$state.textInput.value}
               }
             }}
           />
+
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2091,7 +2099,8 @@ const PlasmicDescendants = {
     "clarity2",
     "goftino",
     "rentamonFooter",
-    "sideEffect"
+    "sideEffect",
+    "navigationRntFooter"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   mainContents: [
@@ -2166,7 +2175,8 @@ const PlasmicDescendants = {
   clarity2: ["clarity2"],
   goftino: ["goftino"],
   rentamonFooter: ["rentamonFooter"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2201,6 +2211,7 @@ type NodeDefaultElementType = {
   goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
   sideEffect: typeof SideEffect;
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2291,6 +2302,7 @@ export const PlasmicReferral = Object.assign(
     goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicReferral
     internalVariantProps: PlasmicReferral__VariantProps,

@@ -97,6 +97,7 @@ export type PlasmicReservations__OverridesType = {
   root?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   header?: Flex__<"div">;
+  sidebar?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   sidebarLite?: Flex__<typeof SidebarLite>;
   profile?: Flex__<typeof ApiRequest>;
@@ -610,52 +611,34 @@ function PlasmicReservations__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            {(() => {
-              try {
-                return $state.userType != "2";
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <SideBar2
-                data-plasmic-name={"sideBar2"}
-                data-plasmic-override={overrides.sideBar2}
-                className={classNames("__wab_instance", sty.sideBar2)}
-                isOpen={false}
-                userData={(() => {
-                  try {
-                    return $state.profile.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
+            <div
+              data-plasmic-name={"sidebar"}
+              data-plasmic-override={overrides.sidebar}
+              className={classNames(projectcss.all, sty.sidebar)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__itHf)}>
+                <SideBar2
+                  data-plasmic-name={"sideBar2"}
+                  data-plasmic-override={overrides.sideBar2}
+                  className={classNames("__wab_instance", sty.sideBar2)}
+                  isOpen={false}
+                  userData={(() => {
+                    try {
+                      return $state.profile.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              />
-            ) : null}
-            {(() => {
-              try {
-                return $state.userType == "2";
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
+                  })()}
+                />
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__jyxIz)}>
               <SidebarLite
                 data-plasmic-name={"sidebarLite"}
                 data-plasmic-override={overrides.sidebarLite}
@@ -675,7 +658,7 @@ function PlasmicReservations__RenderFunc(props: {
                   }
                 })()}
               />
-            ) : null}
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__bMTr4)}>
               <div
                 className={classNames(
@@ -687,36 +670,38 @@ function PlasmicReservations__RenderFunc(props: {
                 {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
               </div>
             </div>
-            <ApiRequest
-              data-plasmic-name={"profile"}
-              data-plasmic-override={overrides.profile}
-              className={classNames("__wab_instance", sty.profile)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "loading"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile"] = ref;
-              }}
-              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__ihmaM)}>
+              <ApiRequest
+                data-plasmic-name={"profile"}
+                data-plasmic-override={overrides.profile}
+                className={classNames("__wab_instance", sty.profile)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile", "error"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile", "data"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                ref={ref => {
+                  $refs["profile"] = ref;
+                }}
+                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+              />
+            </div>
           </div>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
@@ -4896,6 +4881,7 @@ const PlasmicDescendants = {
     "root",
     "sideEffect",
     "header",
+    "sidebar",
     "sideBar2",
     "sidebarLite",
     "profile",
@@ -4957,7 +4943,8 @@ const PlasmicDescendants = {
     "cancelle"
   ],
   sideEffect: ["sideEffect"],
-  header: ["header", "sideBar2", "sidebarLite", "profile"],
+  header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
+  sidebar: ["sidebar", "sideBar2"],
   sideBar2: ["sideBar2"],
   sidebarLite: ["sidebarLite"],
   profile: ["profile"],
@@ -5152,6 +5139,7 @@ type NodeDefaultElementType = {
   root: "div";
   sideEffect: typeof SideEffect;
   header: "div";
+  sidebar: "div";
   sideBar2: typeof SideBar2;
   sidebarLite: typeof SidebarLite;
   profile: typeof ApiRequest;
@@ -5275,6 +5263,7 @@ export const PlasmicReservations = Object.assign(
     // Helper components rendering sub-elements
     sideEffect: makeNodeComponent("sideEffect"),
     header: makeNodeComponent("header"),
+    sidebar: makeNodeComponent("sidebar"),
     sideBar2: makeNodeComponent("sideBar2"),
     sidebarLite: makeNodeComponent("sidebarLite"),
     profile: makeNodeComponent("profile"),

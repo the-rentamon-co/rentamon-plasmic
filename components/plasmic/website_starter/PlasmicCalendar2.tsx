@@ -806,39 +806,81 @@ function PlasmicCalendar2__RenderFunc(props: {
         ref={ref => {
           $refs["apiRequest"] = ref;
         }}
-        url={(() => {
-          try {
-            return (() => {
-              function toEnglishDigits(str) {
-                return str.replace(/[۰-۹]/g, function (char) {
-                  return String.fromCharCode(char.charCodeAt(0) - 1728);
-                });
-              }
-              const secondSpan = document.querySelector(
-                ".rmdp-header-values span:nth-child(3)"
-              );
-              if (secondSpan) {
-                $state.year = secondSpan.textContent;
-              }
-              let initialMonth = new Date().toLocaleDateString("fa").split("/");
-              let monStr = $state.fragmentDatePicker?.month ?? initialMonth[1];
-              if (/[\u06F0-\u06F9]/.test(monStr)) {
-                monStr = toEnglishDigits(monStr);
-              }
-              let mon = parseInt(monStr, 10);
-              let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
-            })();
-          } catch (e) {
-            if (
-              e instanceof TypeError ||
-              e?.plasmicType === "PlasmicUndefinedDataError"
-            ) {
-              return undefined;
-            }
-            throw e;
-          }
-        })()}
+        url={
+          hasVariant(globalVariants, "screen", "mobile")
+            ? (() => {
+                try {
+                  return (() => {
+                    function toEnglishDigits(str) {
+                      return str.replace(/[۰-۹]/g, function (char) {
+                        return String.fromCharCode(char.charCodeAt(0) - 1728);
+                      });
+                    }
+                    const secondSpan = document.querySelector(
+                      ".rmdp-header-values span:nth-child(3)"
+                    );
+                    if (secondSpan) {
+                      $state.year = secondSpan.textContent;
+                    }
+                    let initialMonth = new Date()
+                      .toLocaleDateString("fa")
+                      .split("/");
+                    let monStr =
+                      $state.fragmentDatePicker?.month ?? initialMonth[1];
+                    if (/[\u06F0-\u06F9]/.test(monStr)) {
+                      monStr = toEnglishDigits(monStr);
+                    }
+                    let mon = parseInt(monStr, 10);
+                    let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
+            : (() => {
+                try {
+                  return (() => {
+                    function toEnglishDigits(str) {
+                      return str.replace(/[۰-۹]/g, function (char) {
+                        return String.fromCharCode(char.charCodeAt(0) - 1728);
+                      });
+                    }
+                    const secondSpan = document.querySelector(
+                      ".rmdp-header-values span:nth-child(3)"
+                    );
+                    if (secondSpan) {
+                      $state.year = secondSpan.textContent;
+                    }
+                    let initialMonth = new Date()
+                      .toLocaleDateString("fa")
+                      .split("/");
+                    let monStr =
+                      $state.fragmentDatePicker?.month ?? initialMonth[1];
+                    if (/[\u06F0-\u06F9]/.test(monStr)) {
+                      monStr = toEnglishDigits(monStr);
+                    }
+                    let mon = parseInt(monStr, 10);
+                    let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
+        }
       />
 
       <SideEffect
@@ -1280,30 +1322,42 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__dU44Z
                 )}
               >
-                <React.Fragment>
+                {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
-                    {
-                      "\u062d\u0627\u0644\u0627 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646 \u0631\u0648\u0632  \u0631\u0648 \u062a\u0648\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0628\u0628\u06cc\u0646\u06cc \u06a9\u0647 \u0633\u0628\u0632 \u0631\u0646\u06af \u0634\u062f\u0647\n\n"
-                    }
+                    <React.Fragment>
+                      {
+                        "\u062d\u0627\u0644\u0627 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646 \u0631\u0648\u0632  \u0631\u0648 \u062a\u0648\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0628\u0628\u06cc\u0646\u06cc \u06a9\u0647 \u0633\u0628\u0632 \u0631\u0646\u06af \u0634\u062f\u0647\r\n\r\n"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "\u0631\u0648\u06cc \u06af\u0632\u06cc\u0646\u0647 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0628\u0632\u0646"
+                      }
+                    </span>
                   </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0645\u0646\u0648 \u0628\u0632\u0646 \u0648 \u0628\u0639\u062f "
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\u06af\u0632\u06cc\u0646\u0647 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
-                    }
-                  </span>
-                </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u062d\u0627\u0644\u0627 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646 \u0631\u0648\u0632  \u0631\u0648 \u062a\u0648\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0628\u0628\u06cc\u0646\u06cc \u06a9\u0647 \u0633\u0628\u0632 \u0631\u0646\u06af \u0634\u062f\u0647"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 600 }}
+                    >
+                      {"\r"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        "\n\u0631\u0648\u06cc \u0645\u0646\u0648 \u0628\u0627\u0644\u0627 \u0628\u0632\u0646 \u0648 \u0631\u0648\u06cc \u06af\u0632\u06cc\u0646\u0647 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0628\u0632\u0646"
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
+                )}
               </div>
             ) : null}
             {(() => {

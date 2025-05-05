@@ -63,6 +63,7 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -134,6 +135,7 @@ export type PlasmicSupport__OverridesType = {
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultSupportProps {}
@@ -267,28 +269,29 @@ function PlasmicSupport__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <SideBar2
-              data-plasmic-name={"sideBar2"}
-              data-plasmic-override={overrides.sideBar2}
-              className={classNames("__wab_instance", sty.sideBar2)}
-              isOpen={
-                hasVariant(globalVariants, "screen", "mobile") ? false : false
-              }
-              userData={(() => {
-                try {
-                  return $state.profile2.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
+            <div className={classNames(projectcss.all, sty.freeBox__fil3J)}>
+              <SideBar2
+                data-plasmic-name={"sideBar2"}
+                data-plasmic-override={overrides.sideBar2}
+                className={classNames("__wab_instance", sty.sideBar2)}
+                isOpen={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : false
                 }
-              })()}
-            />
-
+                userData={(() => {
+                  try {
+                    return $state.profile2.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__maJ5L)}>
               <div
                 className={classNames(
@@ -1318,6 +1321,12 @@ function PlasmicSupport__RenderFunc(props: {
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1370,7 +1379,8 @@ const PlasmicDescendants = {
     "html",
     "clarity2",
     "goftino",
-    "rentamonFooter"
+    "rentamonFooter",
+    "navigationRntFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -1508,7 +1518,8 @@ const PlasmicDescendants = {
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1559,6 +1570,7 @@ type NodeDefaultElementType = {
   clarity2: typeof Embed;
   goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1665,6 +1677,7 @@ export const PlasmicSupport = Object.assign(
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicSupport
     internalVariantProps: PlasmicSupport__VariantProps,

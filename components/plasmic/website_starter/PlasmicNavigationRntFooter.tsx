@@ -95,7 +95,7 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   menu?: Flex__<"div">;
   normMenu?: Flex__<"div">;
   top4?: Flex__<"div">;
-  backSett?: Flex__<"div">;
+  backMenu?: Flex__<"div">;
   cal?: Flex__<"div">;
   top1?: Flex__<"div">;
   backCal?: Flex__<"div">;
@@ -108,7 +108,6 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   top3?: Flex__<"div">;
   backProps?: Flex__<"div">;
   normProps?: Flex__<"div">;
-  bot?: Flex__<"div">;
 };
 
 export interface DefaultNavigationRntFooterProps {
@@ -235,7 +234,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 : hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
                     try {
-                      return $props.navPage !== "settings";
+                      return $props.navPage !== "menu";
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -277,7 +276,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 : hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
                     try {
-                      return $props.navPage == "settings";
+                      return $props.navPage == "menu";
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -297,10 +296,10 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               >
                 <Stack__
                   as={"div"}
-                  data-plasmic-name={"backSett"}
-                  data-plasmic-override={overrides.backSett}
+                  data-plasmic-name={"backMenu"}
+                  data-plasmic-override={overrides.backMenu}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.backSett)}
+                  className={classNames(projectcss.all, sty.backMenu)}
                 >
                   <Icon65Icon
                     className={classNames(projectcss.all, sty.svg___6PDfU)}
@@ -309,6 +308,23 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 </Stack__>
               </div>
             ) : null}
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__n9Wh1)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___7A8Zo
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u062a\u0627\u0644\u0627\u0631"
+                  : "\u062a\u0627\u0644\u0627\u0631"}
+              </div>
+            </Stack__>
           </Stack__>
           <div
             data-plasmic-name={"cal"}
@@ -405,6 +421,21 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 />
               </div>
             ) : null}
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__ubiag)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__lJohS
+                )}
+              >
+                {"\u062a\u0642\u0648\u06cc\u0645"}
+              </div>
+            </Stack__>
           </div>
           <Stack__
             as={"div"}
@@ -529,6 +560,21 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 />
               </div>
             ) : null}
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__e0Sqm)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___4RjZj
+                )}
+              >
+                {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"}
+              </div>
+            </Stack__>
           </Stack__>
           <Stack__
             as={"div"}
@@ -627,176 +673,11 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 />
               </div>
             ) : null}
-          </Stack__>
-        </div>
-        <div
-          data-plasmic-name={"bot"}
-          data-plasmic-override={overrides.bot}
-          className={classNames(projectcss.all, sty.bot)}
-        >
-          <div
-            className={classNames(projectcss.all, sty.freeBox__jBF1)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["goToتالار"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/menu` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToتالار"] != null &&
-                typeof $steps["goToتالار"] === "object" &&
-                typeof $steps["goToتالار"].then === "function"
-              ) {
-                $steps["goToتالار"] = await $steps["goToتالار"];
-              }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__n9Wh1)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___7A8Zo
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u062a\u0627\u0644\u0627\u0631"
-                  : "\u062a\u0627\u0644\u0627\u0631"}
-              </div>
-            </div>
-          </div>
-          <div
-            className={classNames(projectcss.all, sty.freeBox__bjtom)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["goToPanelCalendar"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/panel` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToPanelCalendar"] != null &&
-                typeof $steps["goToPanelCalendar"] === "object" &&
-                typeof $steps["goToPanelCalendar"].then === "function"
-              ) {
-                $steps["goToPanelCalendar"] = await $steps["goToPanelCalendar"];
-              }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__ubiag)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__lJohS
-                )}
-              >
-                {"\u062a\u0642\u0648\u06cc\u0645"}
-              </div>
-            </div>
-          </div>
-          <div
-            className={classNames(projectcss.all, sty.freeBox___6SisB)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["goToReservations"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/reservations` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToReservations"] != null &&
-                typeof $steps["goToReservations"] === "object" &&
-                typeof $steps["goToReservations"].then === "function"
-              ) {
-                $steps["goToReservations"] = await $steps["goToReservations"];
-              }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__e0Sqm)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___4RjZj
-                )}
-              >
-                {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"}
-              </div>
-            </div>
-          </div>
-          <div
-            className={classNames(projectcss.all, sty.freeBox___7Zx5B)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["goToProperties"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/properties` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToProperties"] != null &&
-                typeof $steps["goToProperties"] === "object" &&
-                typeof $steps["goToProperties"].then === "function"
-              ) {
-                $steps["goToProperties"] = await $steps["goToProperties"];
-              }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__jY1W2)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__jY1W2)}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -808,8 +689,8 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"}
               </div>
-            </div>
-          </div>
+            </Stack__>
+          </Stack__>
         </div>
       </div>
     ) : null
@@ -823,27 +704,7 @@ const PlasmicDescendants = {
     "menu",
     "normMenu",
     "top4",
-    "backSett",
-    "cal",
-    "top1",
-    "backCal",
-    "normCal",
-    "res",
-    "top2",
-    "backRes",
-    "normRes",
-    "props",
-    "top3",
-    "backProps",
-    "normProps",
-    "bot"
-  ],
-  top: [
-    "top",
-    "menu",
-    "normMenu",
-    "top4",
-    "backSett",
+    "backMenu",
     "cal",
     "top1",
     "backCal",
@@ -857,10 +718,29 @@ const PlasmicDescendants = {
     "backProps",
     "normProps"
   ],
-  menu: ["menu", "normMenu", "top4", "backSett"],
+  top: [
+    "top",
+    "menu",
+    "normMenu",
+    "top4",
+    "backMenu",
+    "cal",
+    "top1",
+    "backCal",
+    "normCal",
+    "res",
+    "top2",
+    "backRes",
+    "normRes",
+    "props",
+    "top3",
+    "backProps",
+    "normProps"
+  ],
+  menu: ["menu", "normMenu", "top4", "backMenu"],
   normMenu: ["normMenu"],
-  top4: ["top4", "backSett"],
-  backSett: ["backSett"],
+  top4: ["top4", "backMenu"],
+  backMenu: ["backMenu"],
   cal: ["cal", "top1", "backCal", "normCal"],
   top1: ["top1", "backCal"],
   backCal: ["backCal"],
@@ -872,8 +752,7 @@ const PlasmicDescendants = {
   props: ["props", "top3", "backProps", "normProps"],
   top3: ["top3", "backProps"],
   backProps: ["backProps"],
-  normProps: ["normProps"],
-  bot: ["bot"]
+  normProps: ["normProps"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -884,7 +763,7 @@ type NodeDefaultElementType = {
   menu: "div";
   normMenu: "div";
   top4: "div";
-  backSett: "div";
+  backMenu: "div";
   cal: "div";
   top1: "div";
   backCal: "div";
@@ -897,7 +776,6 @@ type NodeDefaultElementType = {
   top3: "div";
   backProps: "div";
   normProps: "div";
-  bot: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -964,7 +842,7 @@ export const PlasmicNavigationRntFooter = Object.assign(
     menu: makeNodeComponent("menu"),
     normMenu: makeNodeComponent("normMenu"),
     top4: makeNodeComponent("top4"),
-    backSett: makeNodeComponent("backSett"),
+    backMenu: makeNodeComponent("backMenu"),
     cal: makeNodeComponent("cal"),
     top1: makeNodeComponent("top1"),
     backCal: makeNodeComponent("backCal"),
@@ -977,7 +855,6 @@ export const PlasmicNavigationRntFooter = Object.assign(
     top3: makeNodeComponent("top3"),
     backProps: makeNodeComponent("backProps"),
     normProps: makeNodeComponent("normProps"),
-    bot: makeNodeComponent("bot"),
 
     // Metadata about props expected for PlasmicNavigationRntFooter
     internalVariantProps: PlasmicNavigationRntFooter__VariantProps,

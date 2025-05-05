@@ -64,6 +64,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -107,6 +108,7 @@ export type PlasmicChannelManager__OverridesType = {
   item?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   returnButton?: Flex__<"div">;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultChannelManagerProps {}
@@ -270,26 +272,27 @@ function PlasmicChannelManager__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <SideBar2
-              data-plasmic-name={"sideBar2"}
-              data-plasmic-override={overrides.sideBar2}
-              className={classNames("__wab_instance", sty.sideBar2)}
-              isOpen={false}
-              userData={(() => {
-                try {
-                  return $state.profile.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
+            <div className={classNames(projectcss.all, sty.freeBox___7S7O2)}>
+              <SideBar2
+                data-plasmic-name={"sideBar2"}
+                data-plasmic-override={overrides.sideBar2}
+                className={classNames("__wab_instance", sty.sideBar2)}
+                isOpen={false}
+                userData={(() => {
+                  try {
+                    return $state.profile.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            />
-
+                })()}
+              />
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__mfzC7)}>
               <div
                 className={classNames(
@@ -303,36 +306,38 @@ function PlasmicChannelManager__RenderFunc(props: {
                 }
               </div>
             </div>
-            <ApiRequest
-              data-plasmic-name={"profile"}
-              data-plasmic-override={overrides.profile}
-              className={classNames("__wab_instance", sty.profile)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "loading"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile"] = ref;
-              }}
-              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__wi6An)}>
+              <ApiRequest
+                data-plasmic-name={"profile"}
+                data-plasmic-override={overrides.profile}
+                className={classNames("__wab_instance", sty.profile)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile", "error"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile", "data"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                ref={ref => {
+                  $refs["profile"] = ref;
+                }}
+                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+              />
+            </div>
           </div>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
@@ -2694,6 +2699,11 @@ function PlasmicChannelManager__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2719,7 +2729,8 @@ const PlasmicDescendants = {
     "button",
     "item",
     "sideEffect",
-    "returnButton"
+    "returnButton",
+    "navigationRntFooter"
   ],
   header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
@@ -2771,7 +2782,8 @@ const PlasmicDescendants = {
   button: ["button"],
   item: ["item"],
   sideEffect: ["sideEffect"],
-  returnButton: ["returnButton"]
+  returnButton: ["returnButton"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2795,6 +2807,7 @@ type NodeDefaultElementType = {
   item: "div";
   sideEffect: typeof SideEffect;
   returnButton: "div";
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2874,6 +2887,7 @@ export const PlasmicChannelManager = Object.assign(
     item: makeNodeComponent("item"),
     sideEffect: makeNodeComponent("sideEffect"),
     returnButton: makeNodeComponent("returnButton"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicChannelManager
     internalVariantProps: PlasmicChannelManager__VariantProps,

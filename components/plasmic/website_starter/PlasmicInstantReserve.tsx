@@ -65,6 +65,7 @@ import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -117,6 +118,7 @@ export type PlasmicInstantReserve__OverridesType = {
   desc?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   returnButton?: Flex__<"div">;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultInstantReserveProps {}
@@ -368,41 +370,45 @@ function PlasmicInstantReserve__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            {(() => {
-              try {
-                return $state.isOld == false;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <SideBar2
-                data-plasmic-name={"sideBar2"}
-                data-plasmic-override={overrides.sideBar2}
-                className={classNames("__wab_instance", sty.sideBar2)}
-                isOpen={
-                  hasVariant(globalVariants, "screen", "mobile") ? false : false
-                }
-                userData={(() => {
-                  try {
-                    return $state.profile2.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
+            <div className={classNames(projectcss.all, sty.freeBox__sWlgm)}>
+              {(() => {
+                try {
+                  return $state.isOld == false;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
                   }
-                })()}
-              />
-            ) : null}
+                  throw e;
+                }
+              })() ? (
+                <SideBar2
+                  data-plasmic-name={"sideBar2"}
+                  data-plasmic-override={overrides.sideBar2}
+                  className={classNames("__wab_instance", sty.sideBar2)}
+                  isOpen={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? false
+                      : false
+                  }
+                  userData={(() => {
+                    try {
+                      return $state.profile2.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+              ) : null}
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__okh64)}>
               <div
                 className={classNames(
@@ -416,36 +422,38 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 }
               </div>
             </div>
-            <ApiRequest
-              data-plasmic-name={"profile2"}
-              data-plasmic-override={overrides.profile2}
-              className={classNames("__wab_instance", sty.profile2)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile2", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "profile2",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile2", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile2"] = ref;
-              }}
-              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__hxCw1)}>
+              <ApiRequest
+                data-plasmic-name={"profile2"}
+                data-plasmic-override={overrides.profile2}
+                className={classNames("__wab_instance", sty.profile2)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                ref={ref => {
+                  $refs["profile2"] = ref;
+                }}
+                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+              />
+            </div>
           </div>
           <section
             data-plasmic-name={"topContainer"}
@@ -2401,6 +2409,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2438,7 +2451,8 @@ const PlasmicDescendants = {
     "fragmentSwitch4",
     "desc",
     "sideEffect",
-    "returnButton"
+    "returnButton",
+    "navigationRntFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -2509,7 +2523,8 @@ const PlasmicDescendants = {
   fragmentSwitch4: ["fragmentSwitch4"],
   desc: ["desc"],
   sideEffect: ["sideEffect"],
-  returnButton: ["returnButton"]
+  returnButton: ["returnButton"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2545,6 +2560,7 @@ type NodeDefaultElementType = {
   desc: "div";
   sideEffect: typeof SideEffect;
   returnButton: "div";
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2636,6 +2652,7 @@ export const PlasmicInstantReserve = Object.assign(
     desc: makeNodeComponent("desc"),
     sideEffect: makeNodeComponent("sideEffect"),
     returnButton: makeNodeComponent("returnButton"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicInstantReserve
     internalVariantProps: PlasmicInstantReserve__VariantProps,

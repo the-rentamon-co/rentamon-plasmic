@@ -124,6 +124,7 @@
   max-width: 100%;
   font-size: 22px;
   font-weight: 600;
+  user-select: none;
   min-width: 0;
 }
 .introCalendarCaption {
@@ -144,6 +145,7 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
+  user-select: none;
   min-width: 0;
 }
 .introCalendar4 {
@@ -212,6 +214,7 @@
   text-align: right;
   font-size: 17px;
   line-height: 1.8;
+  user-select: none;
 }
 .introCalendarRight4 {
   display: flex;
@@ -250,6 +253,7 @@
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+  user-select: none;
   min-width: 0;
   border-radius: 30px;
 }
@@ -263,6 +267,7 @@
   font-size: 17px;
   line-height: 1.8;
   padding-top: 4px;
+  user-select: none;
 }
 .introCalendarLeft {
   display: flex;
@@ -286,6 +291,7 @@
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  user-select: none;
   border-radius: 40px;
 }
 @media (max-width: 1200px) {
@@ -332,6 +338,7 @@
   font-size: 20px;
   font-weight: 600;
   padding-top: 0px;
+  user-select: none;
 }
 .introAutoSyncCaption {
   display: flex;
@@ -349,6 +356,7 @@
   text-align: right;
   font-size: 17px;
   line-height: 1.8;
+  user-select: none;
 }
 .introAutoSyncDesc {
   display: flex;
@@ -398,6 +406,7 @@
   line-height: 2;
   padding-top: 0px;
   font-weight: 600;
+  user-select: none;
 }
 @media (max-width: 500px) {
   .text__csa9P {
@@ -408,6 +417,7 @@
   font-size: 18px;
   line-height: 2;
   padding-top: 12px;
+  user-select: none;
 }
 @media (max-width: 500px) {
   .text__jfko {
@@ -436,6 +446,7 @@
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  user-select: none;
 }
 @media (max-width: 500px) {
   .htmlVideo__uaglf:global(.__wab_instance) {
@@ -574,6 +585,7 @@
   color: #fcfcfc;
   font-size: 17px;
   text-align: right;
+  user-select: none;
 }
 @media (max-width: 350px) {
   .text__mhPKa {
@@ -597,6 +609,7 @@
   font-size: 17px;
   color: #fcfcfc;
   font-weight: 400;
+  user-select: none;
 }
 @media (max-width: 1200px) {
   .text__iq9O {
@@ -707,6 +720,7 @@
   font-weight: 600;
   padding-right: 0px;
   max-width: 100%;
+  user-select: none;
 }
 @media (max-width: 350px) {
   .text__fMa1T {
@@ -730,6 +744,7 @@
   font-size: 17px;
   color: #fcfcfc;
   font-weight: 400;
+  user-select: none;
 }
 @media (max-width: 1200px) {
   .text__up4Yp {
@@ -815,6 +830,7 @@
   font-weight: 600;
   max-width: 100%;
   padding-right: 0px;
+  user-select: none;
 }
 @media (max-width: 350px) {
   .text__gVyb {
@@ -843,6 +859,7 @@
   font-size: 17px;
   color: #fcfcfc;
   font-weight: 400;
+  user-select: none;
 }
 @media (max-width: 1200px) {
   .text___1ThH4 {
@@ -898,6 +915,7 @@
   font-size: 20px;
   font-weight: 600;
   padding-top: 0px;
+  user-select: none;
 }
 @media (max-width: 350px) {
   .text__aLhzu {
@@ -920,6 +938,7 @@
   text-align: right;
   font-size: 17px;
   line-height: 1.8;
+  user-select: none;
 }
 .introAutoSyncDesc2 {
   display: flex;
@@ -1048,6 +1067,7 @@
   font-size: 20px;
   font-weight: 600;
   padding-top: 0px;
+  user-select: none;
 }
 @media (max-width: 350px) {
   .text__zdLdH {
@@ -1098,6 +1118,7 @@
   max-width: 100%;
   object-fit: cover;
   width: 100%;
+  user-select: none;
   min-width: 0;
 }
 .screenshots {
@@ -1204,6 +1225,7 @@
   width: 70%;
   line-height: 1.8;
   font-weight: 600;
+  user-select: none;
 }
 @media (max-width: 1200px) {
   .text__lLqoZ {
@@ -1320,6 +1342,7 @@
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+  user-select: none;
   min-width: 0;
   border-radius: 30px;
 }
@@ -1340,6 +1363,7 @@
   font-size: 17px;
   line-height: 1.8;
   padding-top: 4px;
+  user-select: none;
 }
 .qA {
   display: flex;
@@ -1414,6 +1438,7 @@
   padding-right: 5px;
   padding-top: 5px;
   color: #444444;
+  user-select: none;
   min-width: 0;
 }
 @media (max-width: 500px) {

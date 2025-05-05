@@ -65,6 +65,7 @@ import Switch from "../../Switch"; // plasmic-import: XDOKoC2AhwWH/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -150,6 +151,7 @@ export type PlasmicSettings__OverridesType = {
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultSettingsProps {}
@@ -475,26 +477,27 @@ function PlasmicSettings__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <SideBar2
-              data-plasmic-name={"sideBar2"}
-              data-plasmic-override={overrides.sideBar2}
-              className={classNames("__wab_instance", sty.sideBar2)}
-              isOpen={false}
-              userData={(() => {
-                try {
-                  return $state.profile.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
+            <div className={classNames(projectcss.all, sty.freeBox__xSvr4)}>
+              <SideBar2
+                data-plasmic-name={"sideBar2"}
+                data-plasmic-override={overrides.sideBar2}
+                className={classNames("__wab_instance", sty.sideBar2)}
+                isOpen={false}
+                userData={(() => {
+                  try {
+                    return $state.profile.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            />
-
+                })()}
+              />
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__vSsa5)}>
               <div
                 className={classNames(
@@ -506,36 +509,38 @@ function PlasmicSettings__RenderFunc(props: {
                 {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
               </div>
             </div>
-            <ApiRequest
-              data-plasmic-name={"profile"}
-              data-plasmic-override={overrides.profile}
-              className={classNames("__wab_instance", sty.profile)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "loading"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile"] = ref;
-              }}
-              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox___8Ay3J)}>
+              <ApiRequest
+                data-plasmic-name={"profile"}
+                data-plasmic-override={overrides.profile}
+                className={classNames("__wab_instance", sty.profile)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile", "error"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile", "data"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                ref={ref => {
+                  $refs["profile"] = ref;
+                }}
+                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+              />
+            </div>
           </div>
           <div
             data-plasmic-name={"main"}
@@ -3555,6 +3560,11 @@ function PlasmicSettings__RenderFunc(props: {
               }
             />
           </div>
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -3625,7 +3635,8 @@ const PlasmicDescendants = {
     "sideEffect",
     "html",
     "clarity2",
-    "goftino"
+    "goftino",
+    "navigationRntFooter"
   ],
   header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
@@ -3822,7 +3833,8 @@ const PlasmicDescendants = {
   sideEffect: ["sideEffect"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
-  goftino: ["goftino"]
+  goftino: ["goftino"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -3891,6 +3903,7 @@ type NodeDefaultElementType = {
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -4017,6 +4030,7 @@ export const PlasmicSettings = Object.assign(
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicSettings
     internalVariantProps: PlasmicSettings__VariantProps,

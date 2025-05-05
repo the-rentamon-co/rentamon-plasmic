@@ -70,6 +70,7 @@ import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/sk
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -137,6 +138,7 @@ export type Plasmicکیفپول__OverridesType = {
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   profile?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultکیفپولProps {}
@@ -333,28 +335,29 @@ function Plasmicکیفپول__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <SideBar2
-              data-plasmic-name={"sideBar2"}
-              data-plasmic-override={overrides.sideBar2}
-              className={classNames("__wab_instance", sty.sideBar2)}
-              isOpen={
-                hasVariant(globalVariants, "screen", "mobile") ? false : false
-              }
-              userData={(() => {
-                try {
-                  return $state.profile2.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
+            <div className={classNames(projectcss.all, sty.freeBox__aD3Fh)}>
+              <SideBar2
+                data-plasmic-name={"sideBar2"}
+                data-plasmic-override={overrides.sideBar2}
+                className={classNames("__wab_instance", sty.sideBar2)}
+                isOpen={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : false
                 }
-              })()}
-            />
-
+                userData={(() => {
+                  try {
+                    return $state.profile2.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__vz8Jg)}>
               <div
                 className={classNames(
@@ -366,36 +369,38 @@ function Plasmicکیفپول__RenderFunc(props: {
                 {"\u06a9\u06cc\u0641 \u067e\u0648\u0644"}
               </div>
             </div>
-            <ApiRequest
-              data-plasmic-name={"profile2"}
-              data-plasmic-override={overrides.profile2}
-              className={classNames("__wab_instance", sty.profile2)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile2", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "profile2",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile2", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile2"] = ref;
-              }}
-              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__l1Vxy)}>
+              <ApiRequest
+                data-plasmic-name={"profile2"}
+                data-plasmic-override={overrides.profile2}
+                className={classNames("__wab_instance", sty.profile2)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                ref={ref => {
+                  $refs["profile2"] = ref;
+                }}
+                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+              />
+            </div>
           </div>
           <Embed
             data-plasmic-name={"favIcon"}
@@ -1831,9 +1836,9 @@ function Plasmicکیفپول__RenderFunc(props: {
                   }
                 }}
               >
-                {
-                  "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"
-                }
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81"
+                  : "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"}
               </div>
             </div>
             <div
@@ -2019,6 +2024,12 @@ function Plasmicکیفپول__RenderFunc(props: {
               }
             }}
           />
+
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2067,7 +2078,8 @@ const PlasmicDescendants = {
     "goftino",
     "rentamonFooter",
     "profile",
-    "sideEffect"
+    "sideEffect",
+    "navigationRntFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -2132,7 +2144,8 @@ const PlasmicDescendants = {
   goftino: ["goftino"],
   rentamonFooter: ["rentamonFooter"],
   profile: ["profile"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2179,6 +2192,7 @@ type NodeDefaultElementType = {
   rentamonFooter: typeof RentamonFooter;
   profile: typeof ApiRequest;
   sideEffect: typeof SideEffect;
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2281,6 +2295,7 @@ export const Plasmicکیفپول = Object.assign(
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     profile: makeNodeComponent("profile"),
     sideEffect: makeNodeComponent("sideEffect"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for Plasmicکیفپول
     internalVariantProps: Plasmicکیفپول__VariantProps,

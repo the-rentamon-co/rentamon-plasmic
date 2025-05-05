@@ -89,8 +89,6 @@ export type PlasmicProperties__OverridesType = {
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
-  user?: Flex__<"div">;
-  profile?: Flex__<"div">;
   property?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
 };
@@ -245,28 +243,33 @@ function PlasmicProperties__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <SideBar2
-              data-plasmic-name={"sideBar2"}
-              data-plasmic-override={overrides.sideBar2}
-              className={classNames("__wab_instance", sty.sideBar2)}
-              isOpen={
-                hasVariant(globalVariants, "screen", "mobile") ? false : false
-              }
-              userData={(() => {
-                try {
-                  return $state.profile2.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
+            <div className={classNames(projectcss.all, sty.freeBox__thBtN)}>
+              <div className={classNames(projectcss.all, sty.freeBox___6EuQ)}>
+                <SideBar2
+                  data-plasmic-name={"sideBar2"}
+                  data-plasmic-override={overrides.sideBar2}
+                  className={classNames("__wab_instance", sty.sideBar2)}
+                  isOpen={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? false
+                      : false
                   }
-                  throw e;
-                }
-              })()}
-            />
-
+                  userData={(() => {
+                    try {
+                      return $state.profile2.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+              </div>
+            </div>
             {(
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
@@ -300,217 +303,37 @@ function PlasmicProperties__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            <ApiRequest
-              data-plasmic-name={"profile2"}
-              data-plasmic-override={overrides.profile2}
-              className={classNames("__wab_instance", sty.profile2)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile2", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "profile2",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile2", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile2"] = ref;
-              }}
-              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-            />
-          </div>
-          <div
-            data-plasmic-name={"user"}
-            data-plasmic-override={overrides.user}
-            className={classNames(projectcss.all, sty.user)}
-          >
-            <div
-              data-plasmic-name={"profile"}
-              data-plasmic-override={overrides.profile}
-              className={classNames(projectcss.all, sty.profile)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__mYg23)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__oi2Gl)}
-                  displayHeight={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "74px"
-                      : "141px"
-                  }
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "80px"
-                      : "145px"
-                  }
-                  loading={"lazy"}
-                  src={(() => {
-                    try {
-                      return $state.apiRequest.data.user_info.profile_image;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return {
-                          src: "/plasmic/website_starter/images/image113.svg",
-                          fullWidth: 20,
-                          fullHeight: 20,
-                          aspectRatio: 1
-                        };
-                      }
-                      throw e;
-                    }
-                  })()}
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__y4Rt)}>
-                <div className={classNames(projectcss.all, sty.freeBox__jcNu)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bYx4X
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequest.loading == true
-                              ? "درحال بارگذاری"
-                              : $state.apiRequest.data.user_info.first_name +
-                                  " " +
-                                  $state.apiRequest.data.user_info.last_name;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u06cc\u0627\u0641\u062a \u0646\u0634\u062f";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    ) : (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequest.loading == true
-                              ? "درحال بارگذاری"
-                              : $state.apiRequest.data.user_info.first_name +
-                                  " " +
-                                  $state.apiRequest.data.user_info.last_name;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc....";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    )}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__bg05S)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hkYl5
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequest.loading == true
-                              ? "درحال بارگذاری"
-                              : $state.apiRequest.data.user_info.phone_number.replace(
-                                  /\d/g,
-                                  d => "۰۱۲۳۴۵۶۷۸۹"[d]
-                                );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    ) : (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequest.loading == true
-                              ? "درحال بارگذاری"
-                              : $state.apiRequest.data.user_info.phone_number.replace(
-                                  /\d/g,
-                                  d => "۰۱۲۳۴۵۶۷۸۹"[d]
-                                );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc....";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    )}
-                  </div>
-                  {false ? (
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__ul21Y)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "21px"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                          ? "23px"
-                          : "43px"
-                      }
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image111.svg",
-                        fullWidth: 20,
-                        fullHeight: 20,
-                        aspectRatio: 1
-                      }}
-                    />
-                  ) : null}
-                </div>
-              </div>
+            <div className={classNames(projectcss.all, sty.freeBox__hwczB)}>
+              <ApiRequest
+                data-plasmic-name={"profile2"}
+                data-plasmic-override={overrides.profile2}
+                className={classNames("__wab_instance", sty.profile2)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                ref={ref => {
+                  $refs["profile2"] = ref;
+                }}
+                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+              />
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__hIpz)}>
@@ -521,19 +344,6 @@ function PlasmicProperties__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.property)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__tgmu7)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kpMpY
-                  )}
-                >
-                  {
-                    "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627\u06cc \u0645\u0646"
-                  }
-                </div>
-              </div>
               <div className={classNames(projectcss.all, sty.freeBox__mjr7H)}>
                 <ApiRequest
                   data-plasmic-name={"apiRequest"}
@@ -830,13 +640,11 @@ function PlasmicProperties__RenderFunc(props: {
                       </div>
                     </Stack__>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__gaAh)}
-                  />
                 </ApiRequest>
               </div>
             </Stack__>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__gaAh)} />
         </div>
       </div>
     </React.Fragment>
@@ -850,8 +658,6 @@ const PlasmicDescendants = {
     "header",
     "sideBar2",
     "profile2",
-    "user",
-    "profile",
     "property",
     "apiRequest"
   ],
@@ -859,8 +665,6 @@ const PlasmicDescendants = {
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
-  user: ["user", "profile"],
-  profile: ["profile"],
   property: ["property", "apiRequest"],
   apiRequest: ["apiRequest"]
 } as const;
@@ -873,8 +677,6 @@ type NodeDefaultElementType = {
   header: "div";
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
-  user: "div";
-  profile: "div";
   property: "div";
   apiRequest: typeof ApiRequest;
 };
@@ -943,8 +745,6 @@ export const PlasmicProperties = Object.assign(
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
-    user: makeNodeComponent("user"),
-    profile: makeNodeComponent("profile"),
     property: makeNodeComponent("property"),
     apiRequest: makeNodeComponent("apiRequest"),
 

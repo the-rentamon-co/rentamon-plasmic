@@ -59,12 +59,13 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -91,12 +92,12 @@ export const PlasmicTransactions__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTransactions__OverridesType = {
   root?: Flex__<"div">;
-  sideEffect?: Flex__<typeof SideEffect>;
-  profile?: Flex__<typeof ApiRequest>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
+  profile?: Flex__<typeof ApiRequest>;
   tableHeader?: Flex__<"div">;
   item?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
   apiRequest?: Flex__<typeof ApiRequest>;
   favicon?: Flex__<typeof Embed>;
   returnButton?: Flex__<"div">;
@@ -104,6 +105,7 @@ export type PlasmicTransactions__OverridesType = {
   deposit?: Flex__<typeof AntdModal>;
   clarity?: Flex__<typeof Embed>;
   modal?: Flex__<typeof AntdModal>;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultTransactionsProps {}
@@ -276,177 +278,33 @@ function PlasmicTransactions__RenderFunc(props: {
             sty.root
           )}
         >
-          <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
-            onMount={async () => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (async () => {
-                          const isPlasmicStudio =
-                            Object.values($ctx.Fragment.previewApiConfig)
-                              .length > 0;
-                          console.log("side effect started");
-                          async function refreshToken() {
-                            if (isPlasmicStudio) return;
-                            console.log("side effect in the cudition");
-                            try {
-                              const response = await fetch(
-                                "https://sso.rentamon.com/auth/refresh",
-                                {
-                                  method: "GET",
-                                  credentials: "include"
-                                }
-                              );
-                              console.log("Refreshed Token in 10 minutes");
-                              if (response.ok) {
-                                const data = await response.json();
-                                console.log(
-                                  "Token refreshed successfully:",
-                                  data
-                                );
-                              } else {
-                                console.error(
-                                  "Failed to refresh token:",
-                                  response.status
-                                );
-                              }
-                            } catch (error) {
-                              console.error("Error refreshing token:", error);
-                            }
-                          }
-                          setInterval(refreshToken, 300000);
-                          refreshToken();
-                          function getCookie(name) {
-                            const value = `; ${globalThis.document.cookie}`;
-                            const parts = value.split(`; ${name}=`);
-                            if (parts.length === 2)
-                              return parts.pop().split(";").shift();
-                          }
-                          const ussoRefreshAvailable =
-                            getCookie("usso_refresh_available") || false;
-                          console.log(
-                            "this is ussoRefresh: ",
-                            ussoRefreshAvailable
-                          );
-                          const ussoAccessAvailable =
-                            getCookie("usso_access_available") || false;
-                          console.log(
-                            "this is ussoAccessAvailable: ",
-                            ussoAccessAvailable
-                          );
-                          if (!ussoAccessAvailable && !isPlasmicStudio) {
-                            if (!ussoRefreshAvailable) {
-                              console.log("got here in redirect");
-                              return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/");
-                            } else {
-                              console.log("got here in refreshToken");
-                              return fetch(
-                                "https://sso.rentamon.com/auth/refresh",
-                                {
-                                  method: "GET",
-                                  credentials: "include"
-                                }
-                              )
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error("Failed to refresh token");
-                                  }
-                                  return response.json();
-                                })
-                                .then(data => {
-                                  console.log("Token refreshed:", data);
-                                  window.location.reload();
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/";
-                                });
-                            }
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-            }}
-          />
-
-          <ApiRequest
-            data-plasmic-name={"profile"}
-            data-plasmic-override={overrides.profile}
-            children={null}
-            className={classNames("__wab_instance", sty.profile)}
-            errorDisplay={null}
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile", "loading"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            ref={ref => {
-              $refs["profile"] = ref;
-            }}
-            url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-          />
-
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
             <div className={classNames(projectcss.all, sty.freeBox__sDWy4)}>
-              <SideBar2
-                data-plasmic-name={"sideBar2"}
-                data-plasmic-override={overrides.sideBar2}
-                className={classNames("__wab_instance", sty.sideBar2)}
-                isOpen={false}
-                userData={(() => {
-                  try {
-                    return $state.profile.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
+              <div className={classNames(projectcss.all, sty.freeBox__jmasE)}>
+                <SideBar2
+                  data-plasmic-name={"sideBar2"}
+                  data-plasmic-override={overrides.sideBar2}
+                  className={classNames("__wab_instance", sty.sideBar2)}
+                  isOpen={false}
+                  userData={(() => {
+                    try {
+                      return $state.profile.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              />
-
+                  })()}
+                />
+              </div>
               <div className={classNames(projectcss.all, sty.freeBox__pfauu)}>
                 <div
                   className={classNames(
@@ -459,6 +317,41 @@ function PlasmicTransactions__RenderFunc(props: {
                     "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
                   }
                 </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__vWmj6)}>
+                <ApiRequest
+                  data-plasmic-name={"profile"}
+                  data-plasmic-override={overrides.profile}
+                  children={null}
+                  className={classNames("__wab_instance", sty.profile)}
+                  errorDisplay={null}
+                  loadingDisplay={null}
+                  method={"GET"}
+                  onError={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "profile",
+                      "error"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onLoading={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "profile",
+                      "loading"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onSuccess={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "profile",
+                      "data"
+                    ]).apply(null, eventArgs);
+                  }}
+                  ref={ref => {
+                    $refs["profile"] = ref;
+                  }}
+                  url={
+                    "https://api-v2.rentamon.com/api/user_info?property_id=1"
+                  }
+                />
               </div>
             </div>
             <Stack__
@@ -1012,6 +905,119 @@ function PlasmicTransactions__RenderFunc(props: {
                 : null}
             </Stack__>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          console.log("side effect started");
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            console.log("side effect in the cudition");
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
+
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
@@ -2027,6 +2033,11 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
             </Stack__>
           </AntdModal>
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2036,45 +2047,47 @@ function PlasmicTransactions__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "sideEffect",
-    "profile",
     "header",
     "sideBar2",
+    "profile",
     "tableHeader",
     "item",
+    "sideEffect",
     "apiRequest",
     "favicon",
     "returnButton",
     "withdraw",
     "deposit",
     "clarity",
-    "modal"
+    "modal",
+    "navigationRntFooter"
   ],
-  sideEffect: ["sideEffect"],
-  profile: ["profile"],
-  header: ["header", "sideBar2", "tableHeader", "item"],
+  header: ["header", "sideBar2", "profile", "tableHeader", "item"],
   sideBar2: ["sideBar2"],
+  profile: ["profile"],
   tableHeader: ["tableHeader"],
   item: ["item"],
+  sideEffect: ["sideEffect"],
   apiRequest: ["apiRequest"],
   favicon: ["favicon"],
   returnButton: ["returnButton"],
   withdraw: ["withdraw"],
   deposit: ["deposit"],
   clarity: ["clarity"],
-  modal: ["modal"]
+  modal: ["modal"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  sideEffect: typeof SideEffect;
-  profile: typeof ApiRequest;
   header: "div";
   sideBar2: typeof SideBar2;
+  profile: typeof ApiRequest;
   tableHeader: "div";
   item: "div";
+  sideEffect: typeof SideEffect;
   apiRequest: typeof ApiRequest;
   favicon: typeof Embed;
   returnButton: "div";
@@ -2082,6 +2095,7 @@ type NodeDefaultElementType = {
   deposit: typeof AntdModal;
   clarity: typeof Embed;
   modal: typeof AntdModal;
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2144,12 +2158,12 @@ export const PlasmicTransactions = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    sideEffect: makeNodeComponent("sideEffect"),
-    profile: makeNodeComponent("profile"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
+    profile: makeNodeComponent("profile"),
     tableHeader: makeNodeComponent("tableHeader"),
     item: makeNodeComponent("item"),
+    sideEffect: makeNodeComponent("sideEffect"),
     apiRequest: makeNodeComponent("apiRequest"),
     favicon: makeNodeComponent("favicon"),
     returnButton: makeNodeComponent("returnButton"),
@@ -2157,6 +2171,7 @@ export const PlasmicTransactions = Object.assign(
     deposit: makeNodeComponent("deposit"),
     clarity: makeNodeComponent("clarity"),
     modal: makeNodeComponent("modal"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicTransactions
     internalVariantProps: PlasmicTransactions__VariantProps,

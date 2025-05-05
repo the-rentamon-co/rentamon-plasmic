@@ -168,6 +168,7 @@
     border-bottom-width: 1px;
     border-bottom-style: dashed;
     font-size: 17px;
+    user-select: none;
     min-width: 0;
     margin: 10px 0px 0px;
   }
@@ -190,6 +191,7 @@
   cursor: pointer;
   border-bottom-style: dashed;
   border-bottom-width: 1px;
+  user-select: none;
   min-width: 0;
   border-radius: 30px;
   padding: 4px 30px;
@@ -241,6 +243,7 @@
   border-bottom-width: 1px;
   text-align: right;
   background: none;
+  user-select: none;
   min-width: 0;
   border-radius: 30px;
   padding: 4px 30px;
@@ -264,6 +267,7 @@
   border-bottom-width: 1px;
   text-align: right;
   background: none;
+  user-select: none;
   min-width: 0;
   border-radius: 30px;
   padding: 4px 30px;
@@ -287,6 +291,7 @@
   border-bottom-width: 1px;
   text-align: right;
   background: none;
+  user-select: none;
   min-width: 0;
   border-radius: 30px;
   padding: 4px 30px;
@@ -306,6 +311,8 @@
   font-weight: 600;
   background: #8165d6;
   color: #fcfcfc;
+  user-select: none;
+  cursor: pointer;
   border-radius: 30px;
   padding: 5px 30px;
   margin: 10px 20px 10px 10px;
@@ -333,6 +340,8 @@
   color: #8165d6;
   background: none;
   text-align: center;
+  user-select: none;
+  cursor: pointer;
   border-radius: 30px;
   padding: 4px 30px;
   margin: 10px 20px 10px 0px;
@@ -380,6 +389,8 @@
   font-size: 17px;
   font-weight: 600;
   color: #444444;
+  user-select: none;
+  cursor: pointer;
   padding: 4px 29px 4px 20px;
   margin: 10px 0px;
 }
@@ -401,6 +412,8 @@
   font-size: 17px;
   font-weight: 600;
   color: #444444;
+  user-select: none;
+  cursor: pointer;
   padding: 4px 10px 4px 30px;
   margin: 10px 0px;
 }
@@ -422,6 +435,8 @@
   font-size: 17px;
   font-weight: 600;
   color: #444444;
+  user-select: none;
+  cursor: pointer;
   padding: 4px 0px 4px 30px;
   margin: 10px 20px 10px 0px;
 }

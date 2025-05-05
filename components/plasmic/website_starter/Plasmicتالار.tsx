@@ -311,36 +311,38 @@ function Plasmicتالار__RenderFunc(props: {
                 {"\u062a\u0627\u0644\u0627\u0631"}
               </div>
             </div>
-            <ApiRequest
-              data-plasmic-name={"profile2"}
-              data-plasmic-override={overrides.profile2}
-              className={classNames("__wab_instance", sty.profile2)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile2", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "profile2",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile2", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile2"] = ref;
-              }}
-              url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__cr3Y7)}>
+              <ApiRequest
+                data-plasmic-name={"profile2"}
+                data-plasmic-override={overrides.profile2}
+                className={classNames("__wab_instance", sty.profile2)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                ref={ref => {
+                  $refs["profile2"] = ref;
+                }}
+                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+              />
+            </div>
           </div>
           <div
             data-plasmic-name={"menu"}
@@ -364,26 +366,26 @@ function Plasmicتالار__RenderFunc(props: {
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__sDsaW)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
+                      displayHeight={"70px"}
+                      displayMaxHeight={"70px"}
+                      displayMaxWidth={"70px"}
+                      displayMinHeight={"70px"}
+                      displayMinWidth={"70px"}
+                      displayWidth={"70px"}
                       loading={"lazy"}
                       src={(() => {
                         try {
-                          return $props.userData.user_info.profile_image;
+                          return $state.profile2.data.user_info.profile_image;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
                             e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
                             return {
-                              src: "/plasmic/website_starter/images/parsaJpg.jpg",
-                              fullWidth: 243,
-                              fullHeight: 243,
-                              aspectRatio: undefined
+                              src: "/plasmic/website_starter/images/image120.svg",
+                              fullWidth: 28,
+                              fullHeight: 28,
+                              aspectRatio: 1
                             };
                           }
                           throw e;
@@ -412,9 +414,9 @@ function Plasmicتالار__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $props.userData.user_info.first_name.concat(
+                            return $state.profile2.data.user_info.first_name.concat(
                               " ",
-                              $props.userData.user_info.last_name
+                              $state.profile2.data.user_info.last_name
                             );
                           } catch (e) {
                             if (
@@ -444,16 +446,13 @@ function Plasmicتالار__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $props.userData.user_info.first_name.concat(
-                              " ",
-                              $props.userData.user_info.last_name
-                            );
+                            return $state.profile2.data.user_info.phone_number;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "09123456789";
+                              return " ";
                             }
                             throw e;
                           }
@@ -488,28 +487,46 @@ function Plasmicتالار__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     sty.walletInfo,
-                    (() => {
-                      try {
-                        return (() => {
-                          if ($props.isFirstVisit == true) {
-                            return "";
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? (() => {
+                          try {
+                            return parseInt(
+                              $state.profile2.data.user_info.balance_info
+                            ) < 100000
+                              ? "blinkBorderWallet"
+                              : "";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
                           }
-                          return parseInt(
-                            $props.userData.user_info.balance_info.balance
-                          ) < 100000
-                            ? "blinkBorderWallet"
-                            : "";
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()
+                        })()
+                      : (() => {
+                          try {
+                            return (
+                              // if ($props.isFirstVisit == true) {
+                              //   return ""
+                              // }
+                              parseInt(
+                                $state.profile2.data.user_info.balance_info
+                              ) < 100000
+                                ? "blinkBorderWallet"
+                                : ""
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                   )}
                   onClick={async event => {
                     const $steps = {};
@@ -540,72 +557,80 @@ function Plasmicتالار__RenderFunc(props: {
                     }
                   }}
                 >
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? true
-                      : false
-                  ) ? (
-                    <div
-                      data-plasmic-name={"right2"}
-                      data-plasmic-override={overrides.right2}
-                      className={classNames(projectcss.all, sty.right2)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__yqsVo)}
-                        displayHeight={"32px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"36px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image83.svg",
-                          fullWidth: 100,
-                          fullHeight: 100,
-                          aspectRatio: 1
-                        }}
-                      />
-                    </div>
-                  ) : null}
                   <div
-                    data-plasmic-name={"mid2"}
-                    data-plasmic-override={overrides.mid2}
-                    className={classNames(projectcss.all, sty.mid2)}
+                    className={classNames(projectcss.all, sty.freeBox__pqB03)}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___58WW
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return (() => {
-                              const balance_info =
-                                $props.userData.user_info.balance_info;
-                              const reducedBalance = Math.floor(
-                                balance_info.balance / 10
-                              );
-                              const formattedBalance = new Intl.NumberFormat(
-                                "fa-IR"
-                              ).format(reducedBalance);
-                              return `کیف پول: ${formattedBalance} تومان`;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "";
-                            }
-                            throw e;
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : false
+                    ) ? (
+                      <div
+                        data-plasmic-name={"right2"}
+                        data-plasmic-override={overrides.right2}
+                        className={classNames(projectcss.all, sty.right2)}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__yqsVo)}
+                          displayHeight={"32px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "32px"
+                              : "36px"
                           }
-                        })()}
-                      </React.Fragment>
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image83.svg",
+                            fullWidth: 100,
+                            fullHeight: 100,
+                            aspectRatio: 1
+                          }}
+                        />
+                      </div>
+                    ) : null}
+                    <div
+                      data-plasmic-name={"mid2"}
+                      data-plasmic-override={overrides.mid2}
+                      className={classNames(projectcss.all, sty.mid2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___58WW
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                const balance_info =
+                                  $state.profile2.data.user_info.balance_info;
+                                const reducedBalance = Math.floor(
+                                  balance_info.balance / 10
+                                );
+                                const formattedBalance = new Intl.NumberFormat(
+                                  "fa-IR"
+                                ).format(reducedBalance);
+                                return `کیف پول: ${formattedBalance} تومان`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -987,12 +1012,12 @@ function Plasmicتالار__RenderFunc(props: {
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img___7AvpE)}
-                      displayHeight={"32px"}
+                      displayHeight={"28px"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
-                      displayWidth={"32px"}
+                      displayWidth={"28px"}
                       loading={"lazy"}
                       src={{
                         src: "/plasmic/website_starter/images/image118.svg",
@@ -1152,16 +1177,18 @@ function Plasmicتالار__RenderFunc(props: {
                 {(
                   hasVariant(globalVariants, "screen", "mobile") ? true : false
                 ) ? (
-                  <div
+                  <Stack__
+                    as={"div"}
                     data-plasmic-name={"right7"}
                     data-plasmic-override={overrides.right7}
+                    hasGap={true}
                     className={classNames(projectcss.all, sty.right7)}
                   >
                     <Icon72Icon
                       className={classNames(projectcss.all, sty.svg__eJx3R)}
                       role={"img"}
                     />
-                  </div>
+                  </Stack__>
                 ) : null}
                 <div
                   data-plasmic-name={"mid7"}
@@ -1204,6 +1231,8 @@ function Plasmicتالار__RenderFunc(props: {
               }
             />
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__sgL9C)} />
+
           <NavigationRntFooter
             data-plasmic-name={"navigationRntFooter"}
             data-plasmic-override={overrides.navigationRntFooter}

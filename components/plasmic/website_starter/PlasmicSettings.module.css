@@ -68,16 +68,32 @@
   align-items: center;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 2em 8px 1em;
+  padding: 9px 8px 0em;
+}
+.freeBox__xSvr4 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 10%;
+  justify-content: flex-start;
+  align-items: center;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  z-index: 1;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__xSvr4 {
+    display: none;
+  }
 }
 .sideBar2:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
-  left: auto;
-  top: -12px;
-  z-index: 1;
-  position: fixed;
-  bottom: auto;
-  right: -7px;
 }
 .freeBox__vSsa5 {
   display: flex;
@@ -90,6 +106,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__vSsa5 {
+    padding-top: 0px;
+  }
 }
 .text__i01Xj {
   width: 100%;
@@ -108,6 +129,18 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
+}
+.freeBox___8Ay3J {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 10%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
 }
 .profile:global(.__wab_instance) {
   max-width: 100%;
@@ -138,7 +171,7 @@
   .main {
     padding-right: 0px;
     padding-left: 0px;
-    margin-bottom: 100px;
+    margin: 0px;
   }
 }
 .intro {
@@ -480,8 +513,8 @@
 @media (max-width: 500px) {
   .optionsButtons {
     max-width: 100%;
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-right: 8px;
+    padding-left: 8px;
     padding-bottom: 0px;
     border-radius: 0px;
     border-width: 0px;
@@ -607,7 +640,7 @@
 @media (max-width: 500px) {
   .p2 {
     padding-right: 0px;
-    max-width: 65%;
+    max-width: 60%;
     padding-left: 0px;
   }
 }
@@ -823,7 +856,7 @@
 }
 @media (max-width: 500px) {
   .p22 {
-    max-width: 65%;
+    max-width: 60%;
     width: 100%;
     height: auto;
     flex-direction: column;
@@ -1074,7 +1107,7 @@
 }
 @media (max-width: 500px) {
   .p23 {
-    max-width: 65%;
+    max-width: 60%;
     width: 100%;
     height: auto;
     flex-direction: column;
@@ -2347,6 +2380,7 @@
 }
 @media (max-width: 500px) {
   .returnButton {
+    display: none;
     padding: 8px;
   }
 }
@@ -2416,4 +2450,13 @@
 .goftino:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+}
+.navigationRntFooter:global(.__wab_instance) {
+  max-width: 100%;
+  display: none;
+}
+@media (max-width: 500px) {
+  .navigationRntFooter:global(.__wab_instance) {
+    display: flex;
+  }
 }
