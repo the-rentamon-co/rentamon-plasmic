@@ -9793,7 +9793,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   return {
                                     ...day,
                                     price: formatPriceToPersian(
-                                      $state.amount.value / 1000
+                                      $state.input2.value / 1000
                                     ),
                                     website:
                                       $state.guestReferrer.value == "divar"
