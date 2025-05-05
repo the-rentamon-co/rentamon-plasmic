@@ -2013,6 +2013,16 @@
           "id": "yZzSrSO-JV4H",
           "name": "Icon56Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon56.tsx"
+        },
+        {
+          "id": "bkD7B2qxVCwE",
+          "name": "Icon57Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon57.tsx"
+        },
+        {
+          "id": "AjM0LMNvB3b9",
+          "name": "Icon58Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon58.tsx"
         }
       ],
       "images": [
