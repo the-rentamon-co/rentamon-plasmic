@@ -527,11 +527,17 @@ function PlasmicSideBar2__RenderFunc(props: {
             sty.freeBox__frdDg,
             (() => {
               try {
-                return parseInt(
-                  $props.userData.user_info.balance_info.balance
-                ) < 100000
-                  ? "blinkBorderWallet"
-                  : "";
+                return (() => {
+                  const classes =
+                    !$props.isFirstVisit ||
+                    parseInt(
+                      $props.userData.user_info.balance_info.balance,
+                      10
+                    ) < 100000
+                      ? "blinkBorderWallet"
+                      : "";
+                  return classes;
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -669,18 +675,9 @@ function PlasmicSideBar2__RenderFunc(props: {
             sty.freeBox__hcaX9,
             (() => {
               try {
-                return (() => {
-                  const classes =
-                    parseInt(
-                      $props.userData.user_info.balance_info.balance,
-                      10
-                    ) < 100000
-                      ? "blinkBorderWallet"
-                      : $props.isFirstVisit === true
-                      ? "blinkBorderTourGuide clickable"
-                      : "";
-                  return classes;
-                })();
+                return $props.isFirstVisit == true
+                  ? "blinkBorderTourGuide clickable"
+                  : "";
               } catch (e) {
                 if (
                   e instanceof TypeError ||

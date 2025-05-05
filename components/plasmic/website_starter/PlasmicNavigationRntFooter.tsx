@@ -79,9 +79,11 @@ type VariantPropType = keyof PlasmicNavigationRntFooter__VariantsArgs;
 export const PlasmicNavigationRntFooter__VariantProps =
   new Array<VariantPropType>();
 
-export type PlasmicNavigationRntFooter__ArgsType = {};
+export type PlasmicNavigationRntFooter__ArgsType = { navPage?: string };
 type ArgPropType = keyof PlasmicNavigationRntFooter__ArgsType;
-export const PlasmicNavigationRntFooter__ArgProps = new Array<ArgPropType>();
+export const PlasmicNavigationRntFooter__ArgProps = new Array<ArgPropType>(
+  "navPage"
+);
 
 export type PlasmicNavigationRntFooter__OverridesType = {
   navFoot?: Flex__<"div">;
@@ -94,6 +96,7 @@ export type PlasmicNavigationRntFooter__OverridesType = {
 };
 
 export interface DefaultNavigationRntFooterProps {
+  navPage?: string;
   className?: string;
 }
 
@@ -201,7 +204,19 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             >
               {(
                 hasVariant(globalVariants, "screen", "mobile")
-                  ? true
+                  ? (() => {
+                      try {
+                        return true;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
                   : (() => {
                       try {
                         return $ctx.GrowthBook.attributes.url !== "/properties";
@@ -254,41 +269,89 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               }
             }}
           >
-            <div
-              data-plasmic-name={"backRes"}
-              data-plasmic-override={overrides.backRes}
-              className={classNames(projectcss.all, sty.backRes)}
-            >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__j1Ww8)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "28px"
-                    : "30px"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "100%"
-                    : "100%"
-                }
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "34px"
-                    : "36px"
-                }
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image115.svg",
-                  fullWidth: 23,
-                  fullHeight: 19,
-                  aspectRatio: 1.210526
-                }}
-              />
-            </div>
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage == "reservation";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : (() => {
+                    try {
+                      return $props.navPage == "reservation";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+            ) ? (
+              <div
+                data-plasmic-name={"backRes"}
+                data-plasmic-override={overrides.backRes}
+                className={classNames(projectcss.all, sty.backRes)}
+              >
+                {(
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return true;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : true
+                ) ? (
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__j1Ww8)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "28px"
+                        : "30px"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : "100%"
+                    }
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "34px"
+                        : "36px"
+                    }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image115.svg",
+                      fullWidth: 23,
+                      fullHeight: 19,
+                      aspectRatio: 1.210526
+                    }}
+                  />
+                ) : null}
+              </div>
+            ) : null}
           </div>
           <div
             className={classNames(projectcss.all, sty.freeBox__iITk)}

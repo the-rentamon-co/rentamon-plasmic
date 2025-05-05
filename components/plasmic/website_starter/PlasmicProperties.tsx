@@ -237,6 +237,7 @@ function PlasmicProperties__RenderFunc(props: {
               data-plasmic-name={"navigationRntFooter"}
               data-plasmic-override={overrides.navigationRntFooter}
               className={classNames("__wab_instance", sty.navigationRntFooter)}
+              navPage={"reservation"}
             />
           ) : null}
           <div
