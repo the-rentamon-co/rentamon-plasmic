@@ -307,16 +307,36 @@ function PlasmicInvite__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img___2Zl6T)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
+                  displayHeight={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "70px"
+                      : "100px"
+                  }
+                  displayMaxHeight={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "70px"
+                      : "100px"
+                  }
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "70px"
+                      : "100px"
+                  }
+                  displayMinHeight={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "70px"
+                      : "100px"
+                  }
+                  displayMinWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "70px"
+                      : "100px"
+                  }
                   displayWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "90px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "80px"
+                      ? "70px"
                       : "100px"
                   }
                   loading={"lazy"}
