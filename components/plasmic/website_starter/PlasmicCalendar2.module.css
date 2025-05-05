@@ -722,7 +722,7 @@
       calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
-  border-radius: 0px;
+  border-radius: 10px;
   padding: 6px 0;
 }
 .section__rqNfm > * {

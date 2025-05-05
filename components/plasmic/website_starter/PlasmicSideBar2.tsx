@@ -669,9 +669,18 @@ function PlasmicSideBar2__RenderFunc(props: {
             sty.freeBox__hcaX9,
             (() => {
               try {
-                return $props.isFirstVisit == true
-                  ? "blinkBorderTourGuide clickable"
-                  : "";
+                return (() => {
+                  const classes =
+                    parseInt(
+                      $props.userData.user_info.balance_info.balance,
+                      10
+                    ) < 100000
+                      ? "blinkBorderWallet"
+                      : $props.isFirstVisit === true
+                      ? "blinkBorderTourGuide clickable"
+                      : "";
+                  return classes;
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||
