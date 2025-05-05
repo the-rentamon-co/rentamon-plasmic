@@ -442,7 +442,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             data-plasmic-name={"res"}
             data-plasmic-override={overrides.res}
             hasGap={true}
-            className={classNames(projectcss.all, sty.res)}
+            className={classNames(projectcss.all, sty.res, "side_bar_border")}
             onClick={async event => {
               const $steps = {};
 
