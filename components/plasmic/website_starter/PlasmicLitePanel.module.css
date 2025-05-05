@@ -35,8 +35,8 @@
 }
 @media (max-width: 350px) {
   .root {
-    justify-items: stretch;
-    align-content: center;
+    justify-items: center;
+    align-content: flex-start;
   }
 }
 @media (max-width: 350px) {
@@ -488,6 +488,12 @@
   .right3 {
     padding-right: 0px;
     padding-bottom: 0px;
+    display: none;
+  }
+}
+@media (max-width: 350px) {
+  .right3 {
+    display: none;
   }
 }
 .img__wo8Kz {
@@ -777,6 +783,25 @@
   object-fit: cover;
   font-size: 13px;
 }
+.freeBox___418Um {
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 60px;
+  max-height: 60px;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox___418Um {
+    display: flex;
+  }
+}
 .proPanelModal:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -794,7 +819,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__ve6Gt:global(.__wab_instance) {
+.formField__pVscT:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -803,7 +828,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__hW6Xe:global(.__wab_instance) {
+.formField__aAp5K:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -816,10 +841,19 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__kyLb {
+.text__tOB3 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
+}
+.navigationRntFooter:global(.__wab_instance) {
+  max-width: 100%;
+  display: none;
+}
+@media (max-width: 500px) {
+  .navigationRntFooter:global(.__wab_instance) {
+    display: flex;
+  }
 }

@@ -74,6 +74,7 @@ import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/reg
 import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -121,6 +122,7 @@ export type PlasmicLitePanel__OverridesType = {
   input?: Flex__<typeof AntdInput>;
   textArea?: Flex__<typeof AntdTextArea>;
   button?: Flex__<typeof AntdButton>;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultLitePanelProps {}
@@ -1562,6 +1564,8 @@ function PlasmicLitePanel__RenderFunc(props: {
             }
           />
 
+          <div className={classNames(projectcss.all, sty.freeBox___418Um)} />
+
           {false ? (
             <AntdModal
               data-plasmic-name={"proPanelModal"}
@@ -1641,7 +1645,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ve6Gt
+                        sty.formField__pVscT
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1653,7 +1657,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__hW6Xe
+                        sty.formField__aAp5K
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1671,7 +1675,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__kyLb
+                          sty.text__tOB3
                         )}
                       >
                         {"Submit"}
@@ -1682,6 +1686,11 @@ function PlasmicLitePanel__RenderFunc(props: {
               })()}
             </AntdModal>
           ) : null}
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1714,7 +1723,8 @@ const PlasmicDescendants = {
     "form",
     "input",
     "textArea",
-    "button"
+    "button",
+    "navigationRntFooter"
   ],
   main: ["main"],
   select: ["select"],
@@ -1770,7 +1780,8 @@ const PlasmicDescendants = {
   form: ["form", "input", "textArea", "button"],
   input: ["input"],
   textArea: ["textArea"],
-  button: ["button"]
+  button: ["button"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1801,6 +1812,7 @@ type NodeDefaultElementType = {
   input: typeof AntdInput;
   textArea: typeof AntdTextArea;
   button: typeof AntdButton;
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1887,6 +1899,7 @@ export const PlasmicLitePanel = Object.assign(
     input: makeNodeComponent("input"),
     textArea: makeNodeComponent("textArea"),
     button: makeNodeComponent("button"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicLitePanel
     internalVariantProps: PlasmicLitePanel__VariantProps,
