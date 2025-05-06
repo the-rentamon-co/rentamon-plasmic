@@ -1391,7 +1391,6 @@ function PlasmicLitePanel__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          console.log("befor cookie checker");
                           function getCookieValue(cookieName) {
                             const cookies = document.cookie
                               .split(";")
@@ -1405,15 +1404,10 @@ function PlasmicLitePanel__RenderFunc(props: {
                             return null;
                           }
                           if (document.cookie.includes("first_visit")) {
-                            console.log("in the visit");
                             const first_visit = getCookieValue("first_visit");
                             if (first_visit != null) {
-                              $state.isTheFirstVisit = true;
+                              return ($state.isTheFirstVisit = true);
                             }
-                            return console.log(
-                              "first_visit:",
-                              $state.isTheFirstVisit
-                            );
                           }
                         })();
                       }
@@ -1666,7 +1660,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jxhpi
+                        sty.formField__koElO
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1678,7 +1672,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__vrHcl
+                        sty.formField__jVy8A
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1696,7 +1690,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__viFcf
+                          sty.text__fzuw2
                         )}
                       >
                         {"Submit"}

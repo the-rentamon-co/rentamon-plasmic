@@ -639,11 +639,11 @@ function PlasmicTier__RenderFunc(props: {
                           console.log($state.userType);
                           if (user_type == "referral") {
                             window.location.href =
-                              "https://app.rentamon.com/intro/pro/";
+                              "https://rentamon.com/intro/pro/";
                           }
                           if (user_type == "app_store") {
                             return (window.location.href =
-                              "https://app.rentamon.com/intro/lite/");
+                              "https://rentamon.com/intro/lite/");
                           }
                         })();
                       }
