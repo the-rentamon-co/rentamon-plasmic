@@ -59,12 +59,13 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
-import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
@@ -95,6 +96,11 @@ export const PlasmicPanelCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPanelCalendar__OverridesType = {
   root?: Flex__<"div">;
+  header2?: Flex__<"div">;
+  sidebar?: Flex__<"div">;
+  sideBar22?: Flex__<typeof SideBar2>;
+  sidebarLite?: Flex__<typeof SidebarLite>;
+  profile2?: Flex__<typeof ApiRequest>;
   main?: Flex__<"div">;
   select?: Flex__<typeof Select>;
   clarity?: Flex__<typeof Embed>;
@@ -103,13 +109,12 @@ export type PlasmicPanelCalendar__OverridesType = {
   sideBar?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
-  right1?: Flex__<"div">;
-  right3?: Flex__<"div">;
-  sideBar2?: Flex__<typeof SideBar2>;
-  right4?: Flex__<"div">;
+  newHeader?: Flex__<"div">;
+  r1?: Flex__<"div">;
+  select2?: Flex__<typeof Select>;
+  r2?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   right2?: Flex__<"div">;
-  select2?: Flex__<typeof Select>;
   left?: Flex__<"div">;
   image?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
@@ -360,6 +365,30 @@ function PlasmicPanelCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
       }
     ],
     [$props, $ctx, $refs]
@@ -444,6 +473,103 @@ function PlasmicPanelCalendar__RenderFunc(props: {
             sty.root
           )}
         >
+          <div
+            data-plasmic-name={"header2"}
+            data-plasmic-override={overrides.header2}
+            className={classNames(projectcss.all, sty.header2)}
+          >
+            <div
+              data-plasmic-name={"sidebar"}
+              data-plasmic-override={overrides.sidebar}
+              className={classNames(projectcss.all, sty.sidebar)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__q6Xp0)}>
+                <SideBar2
+                  data-plasmic-name={"sideBar22"}
+                  data-plasmic-override={overrides.sideBar22}
+                  className={classNames("__wab_instance", sty.sideBar22)}
+                  isOpen={false}
+                  userData={(() => {
+                    try {
+                      return $state.profile2.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__zXwQs)}>
+              <SidebarLite
+                data-plasmic-name={"sidebarLite"}
+                data-plasmic-override={overrides.sidebarLite}
+                className={classNames("__wab_instance", sty.sidebarLite)}
+                isOpen={false}
+                userData={(() => {
+                  try {
+                    return $state.profile2.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__y6XjP)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fosEb
+                )}
+              >
+                {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__w7TBq)}>
+              <ApiRequest
+                data-plasmic-name={"profile2"}
+                data-plasmic-override={overrides.profile2}
+                className={classNames("__wab_instance", sty.profile2)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "profile2",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                ref={ref => {
+                  $refs["profile2"] = ref;
+                }}
+                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+              />
+            </div>
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__sal78)}>
             <div className={classNames(projectcss.all, sty.freeBox__fbYPi)}>
               <div className={classNames(projectcss.all, sty.freeBox__xzWrY)}>
@@ -935,86 +1061,137 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.right)}
               >
                 <div
-                  data-plasmic-name={"right1"}
-                  data-plasmic-override={overrides.right1}
-                  className={classNames(projectcss.all, sty.right1)}
+                  data-plasmic-name={"newHeader"}
+                  data-plasmic-override={overrides.newHeader}
+                  className={classNames(projectcss.all, sty.newHeader)}
                 >
                   <div
-                    data-plasmic-name={"right3"}
-                    data-plasmic-override={overrides.right3}
-                    className={classNames(projectcss.all, sty.right3)}
+                    data-plasmic-name={"r1"}
+                    data-plasmic-override={overrides.r1}
+                    className={classNames(projectcss.all, sty.r1)}
                   >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__mtK4H)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "26px"
-                          : "auto"
-                      }
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "22px"
-                          : "33px"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image37.svg",
-                        fullWidth: 21,
-                        fullHeight: 24,
-                        aspectRatio: 0.875
-                      }}
-                    />
+                    <Select
+                      data-plasmic-name={"select2"}
+                      data-plasmic-override={overrides.select2}
+                      className={classNames("__wab_instance", sty.select2)}
+                      onChange={async (...eventArgs: any) => {
+                        ((...eventArgs) => {
+                          generateStateOnChangeProp($state, [
+                            "select2",
+                            "value"
+                          ])(eventArgs[0]);
+                        }).apply(null, eventArgs);
 
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox__yzzwM,
-                        "side_bar_border"
-                      )}
-                    >
-                      <SideBar2
-                        data-plasmic-name={"sideBar2"}
-                        data-plasmic-override={overrides.sideBar2}
-                        className={classNames("__wab_instance", sty.sideBar2)}
-                        isFirstVisit={(() => {
-                          try {
-                            return $state.isTheFirstVisit;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
+                        if (
+                          eventArgs.length > 1 &&
+                          eventArgs[1] &&
+                          eventArgs[1]._plasmic_state_init_
+                        ) {
+                          return;
+                        }
+
+                        (async value => {
+                          const $steps = {};
+
+                          $steps["updateStateVariable"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  operation: 0,
+                                  value: (() => {
+                                    let value =
+                                      $state.profile.data.properties.find(
+                                        property =>
+                                          property.property_name ===
+                                          $state.select2.value
+                                      );
+                                    $state.pageUrl = value.link;
+                                    return ($state.propId = value.id);
+                                  })()
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateStateVariable"] != null &&
+                            typeof $steps["updateStateVariable"] === "object" &&
+                            typeof $steps["updateStateVariable"].then ===
+                              "function"
+                          ) {
+                            $steps["updateStateVariable"] = await $steps[
+                              "updateStateVariable"
+                            ];
                           }
-                        })()}
-                        isOpen={false}
-                        userData={(() => {
-                          try {
-                            return $state.profile.data;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return {};
-                            }
-                            throw e;
+                        }).apply(null, eventArgs);
+                      }}
+                      options={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? (() => {
+                              try {
+                                return $state.profile.data.properties.map(
+                                  property => property.property_name
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return [{}];
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return $state.profile.data.properties.map(
+                                  property => property.property_name
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return [{}];
+                                }
+                                throw e;
+                              }
+                            })()
+                      }
+                      placeholder={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__hz4Ln
+                          )}
+                        >
+                          {
+                            "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
                           }
-                        })()}
-                      />
-                    </div>
+                        </div>
+                      }
+                      value={generateStateValueProp($state, [
+                        "select2",
+                        "value"
+                      ])}
+                    />
                   </div>
                   <div
-                    data-plasmic-name={"right4"}
-                    data-plasmic-override={overrides.right4}
-                    className={classNames(projectcss.all, sty.right4)}
+                    data-plasmic-name={"r2"}
+                    data-plasmic-override={overrides.r2}
+                    className={classNames(projectcss.all, sty.r2)}
                   >
                     <ApiRequest
                       data-plasmic-name={"apiRequest"}
@@ -1137,6 +1314,8 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           className={classNames(sty.img__bVtw7)}
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "24px"
+                              : hasVariant(globalVariants, "screen", "mobile")
                               ? "30px"
                               : "34px"
                           }
@@ -1183,12 +1362,28 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                               ];
                             }
                           }}
-                          src={{
-                            src: "/plasmic/website_starter/images/image25.svg",
-                            fullWidth: 86,
-                            fullHeight: 35,
-                            aspectRatio: 2.457143
-                          }}
+                          src={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? {
+                                  src: "/plasmic/website_starter/images/image121.svg",
+                                  fullWidth: 30,
+                                  fullHeight: 30,
+                                  aspectRatio: 1
+                                }
+                              : hasVariant(globalVariants, "screen", "mobile")
+                              ? {
+                                  src: "/plasmic/website_starter/images/image121.svg",
+                                  fullWidth: 30,
+                                  fullHeight: 30,
+                                  aspectRatio: 1
+                                }
+                              : {
+                                  src: "/plasmic/website_starter/images/image25.svg",
+                                  fullWidth: 86,
+                                  fullHeight: 35,
+                                  aspectRatio: 2.457143
+                                }
+                          }
                         />
                       ) : null}
                       {(() => {
@@ -1223,6 +1418,8 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           className={classNames(sty.img__tnqU9)}
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "24px"
+                              : hasVariant(globalVariants, "screen", "mobile")
                               ? "30px"
                               : "34px"
                           }
@@ -1265,12 +1462,28 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                               ];
                             }
                           }}
-                          src={{
-                            src: "/plasmic/website_starter/images/image26.svg",
-                            fullWidth: 86,
-                            fullHeight: 35,
-                            aspectRatio: 2.457143
-                          }}
+                          src={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? {
+                                  src: "/plasmic/website_starter/images/image8.svg",
+                                  fullWidth: 30,
+                                  fullHeight: 30,
+                                  aspectRatio: 1
+                                }
+                              : hasVariant(globalVariants, "screen", "mobile")
+                              ? {
+                                  src: "/plasmic/website_starter/images/image8.svg",
+                                  fullWidth: 30,
+                                  fullHeight: 30,
+                                  aspectRatio: 1
+                                }
+                              : {
+                                  src: "/plasmic/website_starter/images/image26.svg",
+                                  fullWidth: 86,
+                                  fullHeight: 35,
+                                  aspectRatio: 2.457143
+                                }
+                          }
                         />
                       ) : null}
                       {(
@@ -1313,6 +1526,8 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           className={classNames(sty.img__cdshO)}
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "24px"
+                              : hasVariant(globalVariants, "screen", "mobile")
                               ? "30px"
                               : "34px"
                           }
@@ -1359,12 +1574,28 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                               ];
                             }
                           }}
-                          src={{
-                            src: "/plasmic/website_starter/images/image42.svg",
-                            fullWidth: 86,
-                            fullHeight: 35,
-                            aspectRatio: 2.457143
-                          }}
+                          src={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? {
+                                  src: "/plasmic/website_starter/images/image122.svg",
+                                  fullWidth: 22,
+                                  fullHeight: 22,
+                                  aspectRatio: 1
+                                }
+                              : hasVariant(globalVariants, "screen", "mobile")
+                              ? {
+                                  src: "/plasmic/website_starter/images/image122.svg",
+                                  fullWidth: 22,
+                                  fullHeight: 22,
+                                  aspectRatio: 1
+                                }
+                              : {
+                                  src: "/plasmic/website_starter/images/image42.svg",
+                                  fullWidth: 86,
+                                  fullHeight: 35,
+                                  aspectRatio: 2.457143
+                                }
+                          }
                         />
                       ) : null}
                     </ApiRequest>
@@ -1374,121 +1605,7 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                   data-plasmic-name={"right2"}
                   data-plasmic-override={overrides.right2}
                   className={classNames(projectcss.all, sty.right2)}
-                >
-                  <Select
-                    data-plasmic-name={"select2"}
-                    data-plasmic-override={overrides.select2}
-                    className={classNames("__wab_instance", sty.select2)}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, ["select2", "value"])(
-                          eventArgs[0]
-                        );
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-
-                      (async value => {
-                        const $steps = {};
-
-                        $steps["updateStateVariable"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                operation: 0,
-                                value: (() => {
-                                  let value =
-                                    $state.profile.data.properties.find(
-                                      property =>
-                                        property.property_name ===
-                                        $state.select2.value
-                                    );
-                                  $state.pageUrl = value.link;
-                                  return ($state.propId = value.id);
-                                })()
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["updateStateVariable"] != null &&
-                          typeof $steps["updateStateVariable"] === "object" &&
-                          typeof $steps["updateStateVariable"].then ===
-                            "function"
-                        ) {
-                          $steps["updateStateVariable"] = await $steps[
-                            "updateStateVariable"
-                          ];
-                        }
-                      }).apply(null, eventArgs);
-                    }}
-                    options={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? (() => {
-                            try {
-                              return $state.profile.data.properties.map(
-                                property => property.property_name
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [{}];
-                              }
-                              throw e;
-                            }
-                          })()
-                        : (() => {
-                            try {
-                              return $state.profile.data.properties.map(
-                                property => property.property_name
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [{}];
-                              }
-                              throw e;
-                            }
-                          })()
-                    }
-                    placeholder={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__hz4Ln
-                        )}
-                      >
-                        {
-                          "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
-                        }
-                      </div>
-                    }
-                    value={generateStateValueProp($state, ["select2", "value"])}
-                  />
-                </div>
+                />
               </div>
               <div
                 data-plasmic-name={"left"}
@@ -1521,57 +1638,57 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       className={classNames(sty.img__mGbB3)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "82px"
+                          ? "60px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "90px"
+                          ? "60px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "110px"
-                          : "100%"
+                          : "auto"
                       }
                       displayMaxHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "82px"
+                          ? "60px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "90px"
+                          ? "60px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "110px"
                           : "none"
                       }
                       displayMaxWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100px"
+                          ? "90px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "110px"
+                          ? "88px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "140px"
-                          : "100%"
+                          : "none"
                       }
                       displayMinHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "82px"
+                          ? "60px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "90px"
+                          ? "60px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "110px"
                           : "0"
                       }
                       displayMinWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100px"
+                          ? "90px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "110px"
+                          ? "88px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "140px"
                           : "0"
                       }
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100px"
+                          ? "90px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "110px"
+                          ? "88px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "140px"
-                          : "100%"
+                          : "auto"
                       }
                       loading={"lazy"}
                       src={(() => {
@@ -2408,6 +2525,11 @@ function PlasmicPanelCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "header2",
+    "sidebar",
+    "sideBar22",
+    "sidebarLite",
+    "profile2",
     "main",
     "select",
     "clarity",
@@ -2416,13 +2538,12 @@ const PlasmicDescendants = {
     "sideBar",
     "header",
     "right",
-    "right1",
-    "right3",
-    "sideBar2",
-    "right4",
+    "newHeader",
+    "r1",
+    "select2",
+    "r2",
     "apiRequest",
     "right2",
-    "select2",
     "left",
     "image",
     "profile",
@@ -2434,6 +2555,11 @@ const PlasmicDescendants = {
     "navigationRntFooter",
     "favicon"
   ],
+  header2: ["header2", "sidebar", "sideBar22", "sidebarLite", "profile2"],
+  sidebar: ["sidebar", "sideBar22"],
+  sideBar22: ["sideBar22"],
+  sidebarLite: ["sidebarLite"],
+  profile2: ["profile2"],
   main: ["main"],
   select: ["select"],
   clarity: ["clarity"],
@@ -2443,13 +2569,12 @@ const PlasmicDescendants = {
     "sideBar",
     "header",
     "right",
-    "right1",
-    "right3",
-    "sideBar2",
-    "right4",
+    "newHeader",
+    "r1",
+    "select2",
+    "r2",
     "apiRequest",
     "right2",
-    "select2",
     "left",
     "image",
     "profile"
@@ -2457,34 +2582,23 @@ const PlasmicDescendants = {
   header: [
     "header",
     "right",
-    "right1",
-    "right3",
-    "sideBar2",
-    "right4",
+    "newHeader",
+    "r1",
+    "select2",
+    "r2",
     "apiRequest",
     "right2",
-    "select2",
     "left",
     "image",
     "profile"
   ],
-  right: [
-    "right",
-    "right1",
-    "right3",
-    "sideBar2",
-    "right4",
-    "apiRequest",
-    "right2",
-    "select2"
-  ],
-  right1: ["right1", "right3", "sideBar2", "right4", "apiRequest"],
-  right3: ["right3", "sideBar2"],
-  sideBar2: ["sideBar2"],
-  right4: ["right4", "apiRequest"],
-  apiRequest: ["apiRequest"],
-  right2: ["right2", "select2"],
+  right: ["right", "newHeader", "r1", "select2", "r2", "apiRequest", "right2"],
+  newHeader: ["newHeader", "r1", "select2", "r2", "apiRequest"],
+  r1: ["r1", "select2"],
   select2: ["select2"],
+  r2: ["r2", "apiRequest"],
+  apiRequest: ["apiRequest"],
+  right2: ["right2"],
   left: ["left", "image"],
   image: ["image"],
   profile: ["profile"],
@@ -2501,6 +2615,11 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  header2: "div";
+  sidebar: "div";
+  sideBar22: typeof SideBar2;
+  sidebarLite: typeof SidebarLite;
+  profile2: typeof ApiRequest;
   main: "div";
   select: typeof Select;
   clarity: typeof Embed;
@@ -2509,13 +2628,12 @@ type NodeDefaultElementType = {
   sideBar: "div";
   header: "div";
   right: "div";
-  right1: "div";
-  right3: "div";
-  sideBar2: typeof SideBar2;
-  right4: "div";
+  newHeader: "div";
+  r1: "div";
+  select2: typeof Select;
+  r2: "div";
   apiRequest: typeof ApiRequest;
   right2: "div";
-  select2: typeof Select;
   left: "div";
   image: "div";
   profile: typeof ApiRequest;
@@ -2588,6 +2706,11 @@ export const PlasmicPanelCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    header2: makeNodeComponent("header2"),
+    sidebar: makeNodeComponent("sidebar"),
+    sideBar22: makeNodeComponent("sideBar22"),
+    sidebarLite: makeNodeComponent("sidebarLite"),
+    profile2: makeNodeComponent("profile2"),
     main: makeNodeComponent("main"),
     select: makeNodeComponent("select"),
     clarity: makeNodeComponent("clarity"),
@@ -2596,13 +2719,12 @@ export const PlasmicPanelCalendar = Object.assign(
     sideBar: makeNodeComponent("sideBar"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
-    right1: makeNodeComponent("right1"),
-    right3: makeNodeComponent("right3"),
-    sideBar2: makeNodeComponent("sideBar2"),
-    right4: makeNodeComponent("right4"),
+    newHeader: makeNodeComponent("newHeader"),
+    r1: makeNodeComponent("r1"),
+    select2: makeNodeComponent("select2"),
+    r2: makeNodeComponent("r2"),
     apiRequest: makeNodeComponent("apiRequest"),
     right2: makeNodeComponent("right2"),
-    select2: makeNodeComponent("select2"),
     left: makeNodeComponent("left"),
     image: makeNodeComponent("image"),
     profile: makeNodeComponent("profile"),

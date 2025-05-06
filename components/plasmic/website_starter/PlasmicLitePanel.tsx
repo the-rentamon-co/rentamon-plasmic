@@ -921,12 +921,16 @@ function PlasmicLitePanel__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "80px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "80px"
+                          ? "60px"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "130px"
                           : "auto"
                       }
-                      displayMaxHeight={"none"}
+                      displayMaxHeight={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "60px"
+                          : "none"
+                      }
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
@@ -1646,7 +1650,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__piQ7R
+                        sty.formField__a6MEz
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1658,7 +1662,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__aOdmx
+                        sty.formField___5QuMj
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1676,7 +1680,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___856Vw
+                          sty.text__ohwg1
                         )}
                       >
                         {"Submit"}

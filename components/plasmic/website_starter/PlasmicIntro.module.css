@@ -93,21 +93,14 @@
   > img {
   margin-top: 0px;
 }
-.loading {
-  object-fit: none;
+.img {
+  object-fit: cover;
   max-width: 100%;
   height: 76px;
-  margin-bottom: 0px;
   flex-shrink: 0;
 }
-.loading > picture > img {
-  object-fit: none;
-}
-@media (max-width: 500px) {
-  .loading {
-    height: 40px;
-    flex-shrink: 0;
-  }
+.img > picture > img {
+  object-fit: cover;
 }
 .text__rLw2K {
   position: relative;

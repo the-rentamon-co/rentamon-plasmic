@@ -94,7 +94,7 @@ export type PlasmicIntro__OverridesType = {
   root?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
-  loading?: Flex__<typeof PlasmicImg__>;
+  img?: Flex__<typeof PlasmicImg__>;
   button?: Flex__<typeof Button>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
@@ -259,27 +259,20 @@ function PlasmicIntro__RenderFunc(props: {
               className={classNames(projectcss.all, sty.freeBox__cn8R7)}
             >
               <PlasmicImg__
-                data-plasmic-name={"loading"}
-                data-plasmic-override={overrides.loading}
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.loading)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? "40px"
-                    : "76px"
-                }
+                className={classNames(sty.img)}
+                displayHeight={"76px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
                 loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/spinner1X10S200Px200PxSvg.svg",
-                  fullWidth: 100,
-                  fullHeight: 100,
-                  aspectRatio: 1
-                }}
+                src={
+                  "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                }
               />
 
               <div
@@ -545,13 +538,13 @@ const PlasmicDescendants = {
     "root",
     "sideEffect",
     "navbarRentamonComponent",
-    "loading",
+    "img",
     "button",
     "rentamonFooter"
   ],
   sideEffect: ["sideEffect"],
   navbarRentamonComponent: ["navbarRentamonComponent"],
-  loading: ["loading"],
+  img: ["img"],
   button: ["button"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
@@ -562,7 +555,7 @@ type NodeDefaultElementType = {
   root: "div";
   sideEffect: typeof SideEffect;
   navbarRentamonComponent: typeof NavbarRentamonComponent;
-  loading: typeof PlasmicImg__;
+  img: typeof PlasmicImg__;
   button: typeof Button;
   rentamonFooter: typeof RentamonFooter;
 };
@@ -629,7 +622,7 @@ export const PlasmicIntro = Object.assign(
     // Helper components rendering sub-elements
     sideEffect: makeNodeComponent("sideEffect"),
     navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
-    loading: makeNodeComponent("loading"),
+    img: makeNodeComponent("img"),
     button: makeNodeComponent("button"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 

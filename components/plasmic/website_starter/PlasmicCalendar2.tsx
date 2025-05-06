@@ -1798,7 +1798,22 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["updateTourSteps"] = true
+              $steps["updateTourSteps"] = (() => {
+                if ($props.isFirstVisit == false) {
+                  return false;
+                }
+                const startOfToday = new Date();
+                startOfToday.setHours(0, 0, 0, 0);
+                const startOfTodayTimestamp = Math.floor(
+                  startOfToday.getTime() / 1000
+                );
+                const hasUnfilteredDay = $state.fragmentDatePicker.values.some(
+                  timestamp => timestamp >= startOfTodayTimestamp
+                );
+                if (hasUnfilteredDay) {
+                  return ($state.tourSteps = 1);
+                }
+              })()
                 ? (() => {
                     const actionArgs = {
                       variable: {
@@ -8737,11 +8752,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const startOfTodayTimestamp = Math.floor(
                           startOfToday.getTime() / 1000
                         );
-                        $state.fragmentDatePicker.values =
+                        return ($state.fragmentDatePicker.values =
                           $state.fragmentDatePicker.values.filter(timestamp => {
                             return timestamp >= startOfTodayTimestamp;
-                          });
-                        return console.log($state.fragmentDatePicker.values);
+                          }));
                       })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
@@ -9928,7 +9942,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0648\u0646\u062a \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646 \n\u0648 \u0628\u0639\u062f \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u067e\u0627\u06cc\u06cc\u0646 \u0631\u0648 \u0628\u0632\u0646"
+                  "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0648\u0646\u062a \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646 \n\u0648 \u0628\u0639\u062f \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0632\u0646"
                 }
               </div>
             </div>

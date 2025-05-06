@@ -670,118 +670,122 @@ function Plasmicتالار__RenderFunc(props: {
                 ) : null}
               </div>
             ) : null}
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $state.userType != 2;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
-                    }
-                  })()
-                : true
-            ) ? (
-              <div
-                data-plasmic-name={"items"}
-                data-plasmic-override={overrides.items}
-                className={classNames(projectcss.all, sty.items)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToChannelManager"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/channel-manager` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
+            <div
+              data-plasmic-name={"items"}
+              data-plasmic-override={overrides.items}
+              className={classNames(
+                projectcss.all,
+                sty.items,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return (() => {
+                          if ($state.userType == 1) {
+                            return "display_block";
                           } else {
-                            __nextRouter?.push(destination);
+                            return "hidden";
                           }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToChannelManager"] != null &&
-                    typeof $steps["goToChannelManager"] === "object" &&
-                    typeof $steps["goToChannelManager"].then === "function"
-                  ) {
-                    $steps["goToChannelManager"] = await $steps[
-                      "goToChannelManager"
-                    ];
-                  }
-                }}
-              >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    data-plasmic-name={"right"}
-                    data-plasmic-override={overrides.right}
-                    className={classNames(projectcss.all, sty.right)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img___8Nxz)}
-                      displayHeight={"32px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"32px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image78.svg",
-                        fullWidth: 24,
-                        fullHeight: 24,
-                        aspectRatio: 1
-                      }}
-                    />
-                  </div>
-                ) : null}
-                <div
-                  data-plasmic-name={"mid"}
-                  data-plasmic-override={overrides.mid}
-                  className={classNames(projectcss.all, sty.mid)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__qoJwp)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__kOXp
-                      )}
-                    >
-                      {
-                        "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
                       }
-                    </div>
-                  </div>
-                </div>
+                    })()
+                  : `hidden${undefined}`
+              )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToChannelManager"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/channel-manager` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToChannelManager"] != null &&
+                  typeof $steps["goToChannelManager"] === "object" &&
+                  typeof $steps["goToChannelManager"].then === "function"
+                ) {
+                  $steps["goToChannelManager"] = await $steps[
+                    "goToChannelManager"
+                  ];
+                }
+              }}
+            >
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
                 <div
-                  data-plasmic-name={"left"}
-                  data-plasmic-override={overrides.left}
-                  className={classNames(projectcss.all, sty.left)}
+                  data-plasmic-name={"right"}
+                  data-plasmic-override={overrides.right}
+                  className={classNames(projectcss.all, sty.right)}
                 >
-                  <Icon74Icon
-                    className={classNames(projectcss.all, sty.svg__xgS23)}
-                    role={"img"}
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___8Nxz)}
+                    displayHeight={"32px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"32px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image78.svg",
+                      fullWidth: 24,
+                      fullHeight: 24,
+                      aspectRatio: 1
+                    }}
                   />
                 </div>
+              ) : null}
+              <div
+                data-plasmic-name={"mid"}
+                data-plasmic-override={overrides.mid}
+                className={classNames(projectcss.all, sty.mid)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__qoJwp)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kOXp
+                    )}
+                  >
+                    {
+                      "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                    }
+                  </div>
+                </div>
               </div>
-            ) : null}
+              <div
+                data-plasmic-name={"left"}
+                data-plasmic-override={overrides.left}
+                className={classNames(projectcss.all, sty.left)}
+              >
+                <Icon74Icon
+                  className={classNames(projectcss.all, sty.svg__xgS23)}
+                  role={"img"}
+                />
+              </div>
+            </div>
             {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
               <div
                 data-plasmic-name={"items2"}
@@ -861,27 +865,33 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
+            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+              <div
+                data-plasmic-name={"items3"}
+                data-plasmic-override={overrides.items3}
+                className={classNames(
+                  projectcss.all,
+                  sty.items3,
+                  (() => {
                     try {
-                      return $state.userType != 2;
+                      return (() => {
+                        if ($state.userType == 1) {
+                          return "display_block";
+                        } else {
+                          return "hidden";
+                        }
+                      })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return false;
+                        return undefined;
                       }
                       throw e;
                     }
                   })()
-                : false
-            ) ? (
-              <div
-                data-plasmic-name={"items3"}
-                data-plasmic-override={overrides.items3}
-                className={classNames(projectcss.all, sty.items3)}
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -958,27 +968,33 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
+            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+              <div
+                data-plasmic-name={"items4"}
+                data-plasmic-override={overrides.items4}
+                className={classNames(
+                  projectcss.all,
+                  sty.items4,
+                  (() => {
                     try {
-                      return $state.userType != 2;
+                      return (() => {
+                        if ($state.userType == 1) {
+                          return "display_block";
+                        } else {
+                          return "hidden";
+                        }
+                      })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return false;
+                        return undefined;
                       }
                       throw e;
                     }
                   })()
-                : false
-            ) ? (
-              <div
-                data-plasmic-name={"items4"}
-                data-plasmic-override={overrides.items4}
-                className={classNames(projectcss.all, sty.items4)}
+                )}
                 onClick={async event => {
                   const $steps = {};
 

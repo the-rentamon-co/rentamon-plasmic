@@ -521,7 +521,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u0626\u06cc\u062a"
+                    "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
                   }
                 </div>
               </div>

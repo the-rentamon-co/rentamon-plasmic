@@ -68,8 +68,8 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNavigationRntFooter.module.css"; // plasmic-import: y37kcAs9RXYg/css
 
-import Icon64Icon from "./icons/PlasmicIcon__Icon64"; // plasmic-import: tMkEMYJMQb4Q/icon
 import Icon65Icon from "./icons/PlasmicIcon__Icon65"; // plasmic-import: C7Sh85EuwDPm/icon
+import Icon64Icon from "./icons/PlasmicIcon__Icon64"; // plasmic-import: tMkEMYJMQb4Q/icon
 import Icon59Icon from "./icons/PlasmicIcon__Icon59"; // plasmic-import: zKz1KhV3axdj/icon
 import Icon52Icon from "./icons/PlasmicIcon__Icon52"; // plasmic-import: P-t6G5Dmr-Fr/icon
 import Icon58Icon from "./icons/PlasmicIcon__Icon58"; // plasmic-import: AjM0LMNvB3b9/icon
@@ -93,9 +93,9 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   navFoot?: Flex__<"div">;
   top?: Flex__<"div">;
   menu?: Flex__<"div">;
-  normMenu?: Flex__<"div">;
   top4?: Flex__<"div">;
   backMenu?: Flex__<"div">;
+  normMenu?: Flex__<"div">;
   cal?: Flex__<"div">;
   top1?: Flex__<"div">;
   backCal?: Flex__<"div">;
@@ -193,23 +193,24 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToتالار"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/menu` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["goToتالار"] =
+                $props.navPage != "menu"
+                  ? (() => {
+                      const actionArgs = { destination: `/menu` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["goToتالار"] != null &&
                 typeof $steps["goToتالار"] === "object" &&
@@ -219,48 +220,6 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               }
             }}
           >
-            {(
-              hasVariant(globalVariants, "screen", "smallMobile")
-                ? (() => {
-                    try {
-                      return $props.navPage !== "menu";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-                : hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $props.navPage !== "menu";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-                : true
-            ) ? (
-              <div
-                data-plasmic-name={"normMenu"}
-                data-plasmic-override={overrides.normMenu}
-                className={classNames(projectcss.all, sty.normMenu)}
-              >
-                <Icon64Icon
-                  className={classNames(projectcss.all, sty.svg__y8AJf)}
-                  role={"img"}
-                />
-              </div>
-            ) : null}
             {(
               hasVariant(globalVariants, "screen", "smallMobile")
                 ? (() => {
@@ -309,6 +268,48 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                     role={"img"}
                   />
                 </Stack__>
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? (() => {
+                    try {
+                      return $props.navPage !== "menu";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $props.navPage !== "menu";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"normMenu"}
+                data-plasmic-override={overrides.normMenu}
+                className={classNames(projectcss.all, sty.normMenu)}
+              >
+                <Icon64Icon
+                  className={classNames(projectcss.all, sty.svg__y8AJf)}
+                  role={"img"}
+                />
               </div>
             ) : null}
             <Stack__
@@ -360,7 +361,8 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               }
 
               $steps["goToPanelCalendar"] =
-                $steps.invokeGlobalAction.data.flag == 1
+                $steps.invokeGlobalAction.data.flag == 1 &&
+                $props.navPage != "calendar"
                   ? (() => {
                       const actionArgs = { destination: `/panel` };
                       return (({ destination }) => {
@@ -499,23 +501,24 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToReservations"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/reservations` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["goToReservations"] =
+                $props.navPage != "reservations"
+                  ? (() => {
+                      const actionArgs = { destination: `/reservations` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["goToReservations"] != null &&
                 typeof $steps["goToReservations"] === "object" &&
@@ -638,23 +641,24 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToProperties"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/properties` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["goToProperties"] =
+                $props.navPage != "properties"
+                  ? (() => {
+                      const actionArgs = { destination: `/properties` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["goToProperties"] != null &&
                 typeof $steps["goToProperties"] === "object" &&
@@ -755,9 +759,9 @@ const PlasmicDescendants = {
     "navFoot",
     "top",
     "menu",
-    "normMenu",
     "top4",
     "backMenu",
+    "normMenu",
     "cal",
     "top1",
     "backCal",
@@ -774,9 +778,9 @@ const PlasmicDescendants = {
   top: [
     "top",
     "menu",
-    "normMenu",
     "top4",
     "backMenu",
+    "normMenu",
     "cal",
     "top1",
     "backCal",
@@ -790,10 +794,10 @@ const PlasmicDescendants = {
     "backProps",
     "normProps"
   ],
-  menu: ["menu", "normMenu", "top4", "backMenu"],
-  normMenu: ["normMenu"],
+  menu: ["menu", "top4", "backMenu", "normMenu"],
   top4: ["top4", "backMenu"],
   backMenu: ["backMenu"],
+  normMenu: ["normMenu"],
   cal: ["cal", "top1", "backCal", "normCal"],
   top1: ["top1", "backCal"],
   backCal: ["backCal"],
@@ -814,9 +818,9 @@ type NodeDefaultElementType = {
   navFoot: "div";
   top: "div";
   menu: "div";
-  normMenu: "div";
   top4: "div";
   backMenu: "div";
+  normMenu: "div";
   cal: "div";
   top1: "div";
   backCal: "div";
@@ -893,9 +897,9 @@ export const PlasmicNavigationRntFooter = Object.assign(
     // Helper components rendering sub-elements
     top: makeNodeComponent("top"),
     menu: makeNodeComponent("menu"),
-    normMenu: makeNodeComponent("normMenu"),
     top4: makeNodeComponent("top4"),
     backMenu: makeNodeComponent("backMenu"),
+    normMenu: makeNodeComponent("normMenu"),
     cal: makeNodeComponent("cal"),
     top1: makeNodeComponent("top1"),
     backCal: makeNodeComponent("backCal"),
