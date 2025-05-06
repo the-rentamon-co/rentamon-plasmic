@@ -59,13 +59,13 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
+import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
@@ -98,16 +98,11 @@ export const PlasmicLiteCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLiteCalendar__OverridesType = {
   root?: Flex__<"div">;
-  main?: Flex__<"div">;
-  select?: Flex__<typeof Select>;
-  clarity?: Flex__<typeof Embed>;
-  sideBar?: Flex__<"div">;
+  deskTablet?: Flex__<"div">;
+  sidebarLite?: Flex__<typeof SidebarLite>;
+  headerMain?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
-  right1?: Flex__<"div">;
-  right3?: Flex__<"div">;
-  sidebarLite?: Flex__<typeof SidebarLite>;
-  right4?: Flex__<"div">;
   right2?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
   left?: Flex__<"div">;
@@ -117,6 +112,7 @@ export type PlasmicLiteCalendar__OverridesType = {
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
   favicon?: Flex__<typeof Embed>;
+  clarity?: Flex__<typeof Embed>;
   spacer?: Flex__<"div">;
   proPanelModal?: Flex__<typeof AntdModal>;
   form?: Flex__<typeof FormWrapper>;
@@ -200,41 +196,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile"
-      },
-      {
-        path: "select.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile")
-            ? (() => {
-                try {
-                  return $state.profile.data.properties[$state.propId - 1]
-                    .property_name;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
-                  }
-                  throw e;
-                }
-              })()
-            : (() => {
-                try {
-                  return $state.profile.data.properties[$state.propId - 1]
-                    .property_name;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "\u0648\u06cc\u0644\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646";
-                  }
-                  throw e;
-                }
-              })()
       },
       {
         path: "pageUrl",
@@ -406,245 +367,48 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___8Ze4B)}>
-            <div className={classNames(projectcss.all, sty.freeBox___4Tya)}>
-              <div className={classNames(projectcss.all, sty.freeBox__makxt)}>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___5MvWi)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__ycGB)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "20px"
-                        : "30px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image37.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
-                </div>
-                <Stack__
-                  as={"div"}
-                  data-plasmic-name={"main"}
-                  data-plasmic-override={overrides.main}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.main)}
-                />
-              </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__zhk9V)}
-              >
-                <Select
-                  data-plasmic-name={"select"}
-                  data-plasmic-override={overrides.select}
-                  className={classNames("__wab_instance", sty.select)}
-                  onChange={async (...eventArgs: any) => {
-                    ((...eventArgs) => {
-                      generateStateOnChangeProp($state, ["select", "value"])(
-                        eventArgs[0]
-                      );
-                    }).apply(null, eventArgs);
-
-                    if (
-                      eventArgs.length > 1 &&
-                      eventArgs[1] &&
-                      eventArgs[1]._plasmic_state_init_
-                    ) {
-                      return;
-                    }
-
-                    (async value => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: (() => {
-                                let value = $state.profile.data.properties.find(
-                                  property =>
-                                    property.property_name ===
-                                    $state.select.value
-                                );
-                                $state.pageUrl = value.link;
-                                return ($state.propId = value.id);
-                              })()
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-                    }).apply(null, eventArgs);
-                  }}
-                  options={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? (() => {
-                          try {
-                            return $state.profile.data.properties.map(
-                              property => property.property_name
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [{}];
-                            }
-                            throw e;
-                          }
-                        })()
-                      : (() => {
-                          try {
-                            return $state.profile.data.properties.map(
-                              property => property.property_name
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [{}];
-                            }
-                            throw e;
-                          }
-                        })()
-                  }
-                  placeholder={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__okeXv
-                      )}
-                    >
-                      {
-                        "\u062f\u0631\u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
-                      }
-                    </div>
-                  }
-                  value={generateStateValueProp($state, ["select", "value"])}
-                />
-
-                {(() => {
-                  try {
-                    return $state.profile.loading;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__wSeSn)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "39px"
-                        : "45px"
-                    }
-                    loading={"lazy"}
-                    src={
-                      "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
-                  />
-                ) : null}
-              </Stack__>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__zU8D)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__uj6Nk)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "97px"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "100px"
-                    : "150px"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "220px"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "100%"
-                    : "100%"
-                }
-                loading={"lazy"}
-                src={(() => {
-                  try {
-                    return $state.profile.data.user_info.profile_pic_link;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-              />
-            </div>
-          </div>
-          <Embed
-            data-plasmic-name={"clarity"}
-            data-plasmic-override={overrides.clarity}
-            className={classNames("__wab_instance", sty.clarity)}
-            code={
-              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-            }
-          />
-
           <div
-            data-plasmic-name={"sideBar"}
-            data-plasmic-override={overrides.sideBar}
-            className={classNames(projectcss.all, sty.sideBar)}
+            data-plasmic-name={"deskTablet"}
+            data-plasmic-override={overrides.deskTablet}
+            className={classNames(projectcss.all, sty.deskTablet)}
+          >
+            <SidebarLite
+              data-plasmic-name={"sidebarLite"}
+              data-plasmic-override={overrides.sidebarLite}
+              className={classNames("__wab_instance", sty.sidebarLite)}
+              isFirstVisit={(() => {
+                try {
+                  return $state.isTheFirstVisit;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
+                  }
+                  throw e;
+                }
+              })()}
+              isOpen={false}
+              userData={(() => {
+                try {
+                  return $state.profile.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            />
+          </div>
+          <div
+            data-plasmic-name={"headerMain"}
+            data-plasmic-override={overrides.headerMain}
+            className={classNames(projectcss.all, sty.headerMain)}
           >
             <div
               data-plasmic-name={"header"}
@@ -658,121 +422,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.right)}
               >
-                <div
-                  data-plasmic-name={"right1"}
-                  data-plasmic-override={overrides.right1}
-                  className={classNames(projectcss.all, sty.right1)}
-                >
-                  <div
-                    data-plasmic-name={"right3"}
-                    data-plasmic-override={overrides.right3}
-                    className={classNames(projectcss.all, sty.right3)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__wo8Kz)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "26px"
-                          : "auto"
-                      }
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "22px"
-                          : "33px"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image37.svg",
-                        fullWidth: 21,
-                        fullHeight: 24,
-                        aspectRatio: 0.875
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox__idWgY,
-                        "side_bar_border"
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return document
-                                      .querySelectorAll(".side_bar_border")
-                                      .forEach(el => {
-                                        el.style.animation = "";
-                                      });
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      <SidebarLite
-                        data-plasmic-name={"sidebarLite"}
-                        data-plasmic-override={overrides.sidebarLite}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.sidebarLite
-                        )}
-                        isFirstVisit={(() => {
-                          try {
-                            return $state.isTheFirstVisit;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })()}
-                        isOpen={false}
-                        userData={(() => {
-                          try {
-                            return $state.profile.data;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"right4"}
-                    data-plasmic-override={overrides.right4}
-                    className={classNames(projectcss.all, sty.right4)}
-                  />
-                </div>
                 <div
                   data-plasmic-name={"right2"}
                   data-plasmic-override={overrides.right2}
@@ -1555,6 +1204,15 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             }
           />
 
+          <Embed
+            data-plasmic-name={"clarity"}
+            data-plasmic-override={overrides.clarity}
+            className={classNames("__wab_instance", sty.clarity)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
+
           <div
             data-plasmic-name={"spacer"}
             data-plasmic-override={overrides.spacer}
@@ -1640,7 +1298,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__uLdzp
+                        sty.formField___5C79
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1652,7 +1310,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__uPRaY
+                        sty.formField__wFk2M
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1670,7 +1328,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__fw7Hc
+                          sty.text__cOzOv
                         )}
                       >
                         {"Submit"}
@@ -1696,16 +1354,11 @@ function PlasmicLiteCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "main",
-    "select",
-    "clarity",
-    "sideBar",
+    "deskTablet",
+    "sidebarLite",
+    "headerMain",
     "header",
     "right",
-    "right1",
-    "right3",
-    "sidebarLite",
-    "right4",
     "right2",
     "select2",
     "left",
@@ -1715,6 +1368,7 @@ const PlasmicDescendants = {
     "userAvailableFeature",
     "modal",
     "favicon",
+    "clarity",
     "spacer",
     "proPanelModal",
     "form",
@@ -1723,47 +1377,19 @@ const PlasmicDescendants = {
     "button",
     "navigationRntFooter"
   ],
-  main: ["main"],
-  select: ["select"],
-  clarity: ["clarity"],
-  sideBar: [
-    "sideBar",
-    "header",
-    "right",
-    "right1",
-    "right3",
-    "sidebarLite",
-    "right4",
-    "right2",
-    "select2",
-    "left",
-    "profile"
-  ],
-  header: [
-    "header",
-    "right",
-    "right1",
-    "right3",
-    "sidebarLite",
-    "right4",
-    "right2",
-    "select2",
-    "left",
-    "profile"
-  ],
-  right: [
-    "right",
-    "right1",
-    "right3",
-    "sidebarLite",
-    "right4",
-    "right2",
-    "select2"
-  ],
-  right1: ["right1", "right3", "sidebarLite", "right4"],
-  right3: ["right3", "sidebarLite"],
+  deskTablet: ["deskTablet", "sidebarLite"],
   sidebarLite: ["sidebarLite"],
-  right4: ["right4"],
+  headerMain: [
+    "headerMain",
+    "header",
+    "right",
+    "right2",
+    "select2",
+    "left",
+    "profile"
+  ],
+  header: ["header", "right", "right2", "select2", "left", "profile"],
+  right: ["right", "right2", "select2"],
   right2: ["right2", "select2"],
   select2: ["select2"],
   left: ["left"],
@@ -1773,6 +1399,7 @@ const PlasmicDescendants = {
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
   favicon: ["favicon"],
+  clarity: ["clarity"],
   spacer: ["spacer"],
   proPanelModal: ["proPanelModal", "form", "input", "textArea", "button"],
   form: ["form", "input", "textArea", "button"],
@@ -1786,16 +1413,11 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  main: "div";
-  select: typeof Select;
-  clarity: typeof Embed;
-  sideBar: "div";
+  deskTablet: "div";
+  sidebarLite: typeof SidebarLite;
+  headerMain: "div";
   header: "div";
   right: "div";
-  right1: "div";
-  right3: "div";
-  sidebarLite: typeof SidebarLite;
-  right4: "div";
   right2: "div";
   select2: typeof Select;
   left: "div";
@@ -1805,6 +1427,7 @@ type NodeDefaultElementType = {
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
   favicon: typeof Embed;
+  clarity: typeof Embed;
   spacer: "div";
   proPanelModal: typeof AntdModal;
   form: typeof FormWrapper;
@@ -1874,16 +1497,11 @@ export const PlasmicLiteCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    main: makeNodeComponent("main"),
-    select: makeNodeComponent("select"),
-    clarity: makeNodeComponent("clarity"),
-    sideBar: makeNodeComponent("sideBar"),
+    deskTablet: makeNodeComponent("deskTablet"),
+    sidebarLite: makeNodeComponent("sidebarLite"),
+    headerMain: makeNodeComponent("headerMain"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
-    right1: makeNodeComponent("right1"),
-    right3: makeNodeComponent("right3"),
-    sidebarLite: makeNodeComponent("sidebarLite"),
-    right4: makeNodeComponent("right4"),
     right2: makeNodeComponent("right2"),
     select2: makeNodeComponent("select2"),
     left: makeNodeComponent("left"),
@@ -1893,6 +1511,7 @@ export const PlasmicLiteCalendar = Object.assign(
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
     favicon: makeNodeComponent("favicon"),
+    clarity: makeNodeComponent("clarity"),
     spacer: makeNodeComponent("spacer"),
     proPanelModal: makeNodeComponent("proPanelModal"),
     form: makeNodeComponent("form"),
