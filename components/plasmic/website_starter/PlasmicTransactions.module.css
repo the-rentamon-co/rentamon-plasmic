@@ -92,6 +92,10 @@
 }
 .sideBar2:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
+  position: absolute;
+  left: auto;
+  top: 0;
+  right: 0;
 }
 .freeBox__pfauu {
   display: flex;

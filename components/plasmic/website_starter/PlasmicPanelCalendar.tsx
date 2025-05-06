@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
-import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -99,7 +98,7 @@ export type PlasmicPanelCalendar__OverridesType = {
   header2?: Flex__<"div">;
   sidebar?: Flex__<"div">;
   sideBar22?: Flex__<typeof SideBar2>;
-  sidebarLite?: Flex__<typeof SidebarLite>;
+  sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
   main?: Flex__<"div">;
   select?: Flex__<typeof Select>;
@@ -506,10 +505,10 @@ function PlasmicPanelCalendar__RenderFunc(props: {
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__zXwQs)}>
-              <SidebarLite
-                data-plasmic-name={"sidebarLite"}
-                data-plasmic-override={overrides.sidebarLite}
-                className={classNames("__wab_instance", sty.sidebarLite)}
+              <SideBar2
+                data-plasmic-name={"sideBar2"}
+                data-plasmic-override={overrides.sideBar2}
+                className={classNames("__wab_instance", sty.sideBar2)}
                 isOpen={false}
                 userData={(() => {
                   try {
@@ -1286,29 +1285,57 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                         }
                       })()}
                     >
-                      {(() => {
-                        try {
-                          return (() => {
-                            if ($state.apiRequest.data == null) {
-                              return false;
-                            } else {
-                              const statuses = $state.apiRequest.data.status;
-                              const anyFalse = Object.values(statuses).some(
-                                value => value === false
-                              );
-                              return anyFalse ? true : false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? (() => {
+                              try {
+                                return (() => {
+                                  if ($state.apiRequest.data == null) {
+                                    return false;
+                                  } else {
+                                    const statuses =
+                                      $state.apiRequest.data.status;
+                                    const anyFalse = Object.values(
+                                      statuses
+                                    ).some(value => value === false);
+                                    return anyFalse ? true : false;
+                                  }
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return (() => {
+                                  if ($state.apiRequest.data == null) {
+                                    return false;
+                                  } else {
+                                    const statuses =
+                                      $state.apiRequest.data.status;
+                                    const anyFalse = Object.values(
+                                      statuses
+                                    ).some(value => value === false);
+                                    return anyFalse ? true : false;
+                                  }
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                      ) ? (
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__bVtw7)}
@@ -1386,33 +1413,65 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                           }
                         />
                       ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (
-                              Object.keys($state.apiRequest.data.status)
-                                .length === 0 &&
-                              !$state.apiRequest.loading
-                            ) {
-                              return false;
-                            } else {
-                              const statuses = $state.apiRequest.data.status;
-                              const allTrue = Object.values(statuses).every(
-                                value => value === true
-                              );
-                              return allTrue ? true : false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? (() => {
+                              try {
+                                return (() => {
+                                  if (
+                                    Object.keys($state.apiRequest.data.status)
+                                      .length === 0 &&
+                                    !$state.apiRequest.loading
+                                  ) {
+                                    return false;
+                                  } else {
+                                    const statuses =
+                                      $state.apiRequest.data.status;
+                                    const allTrue = Object.values(
+                                      statuses
+                                    ).every(value => value === true);
+                                    return allTrue ? true : false;
+                                  }
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return (() => {
+                                  if (
+                                    Object.keys($state.apiRequest.data.status)
+                                      .length === 0 &&
+                                    !$state.apiRequest.loading
+                                  ) {
+                                    return false;
+                                  } else {
+                                    const statuses =
+                                      $state.apiRequest.data.status;
+                                    const allTrue = Object.values(
+                                      statuses
+                                    ).every(value => value === true);
+                                    return allTrue ? true : false;
+                                  }
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                      ) ? (
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__tnqU9)}
@@ -1488,6 +1547,23 @@ function PlasmicPanelCalendar__RenderFunc(props: {
                       ) : null}
                       {(
                         hasVariant(globalVariants, "screen", "smallMobile")
+                          ? (() => {
+                              try {
+                                return (
+                                  Object.keys($state.apiRequest.data.status)
+                                    .length === 0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : hasVariant(globalVariants, "screen", "mobile")
                           ? (() => {
                               try {
                                 return (
@@ -2528,7 +2604,7 @@ const PlasmicDescendants = {
     "header2",
     "sidebar",
     "sideBar22",
-    "sidebarLite",
+    "sideBar2",
     "profile2",
     "main",
     "select",
@@ -2555,10 +2631,10 @@ const PlasmicDescendants = {
     "navigationRntFooter",
     "favicon"
   ],
-  header2: ["header2", "sidebar", "sideBar22", "sidebarLite", "profile2"],
+  header2: ["header2", "sidebar", "sideBar22", "sideBar2", "profile2"],
   sidebar: ["sidebar", "sideBar22"],
   sideBar22: ["sideBar22"],
-  sidebarLite: ["sidebarLite"],
+  sideBar2: ["sideBar2"],
   profile2: ["profile2"],
   main: ["main"],
   select: ["select"],
@@ -2618,7 +2694,7 @@ type NodeDefaultElementType = {
   header2: "div";
   sidebar: "div";
   sideBar22: typeof SideBar2;
-  sidebarLite: typeof SidebarLite;
+  sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
   main: "div";
   select: typeof Select;
@@ -2709,7 +2785,7 @@ export const PlasmicPanelCalendar = Object.assign(
     header2: makeNodeComponent("header2"),
     sidebar: makeNodeComponent("sidebar"),
     sideBar22: makeNodeComponent("sideBar22"),
-    sidebarLite: makeNodeComponent("sidebarLite"),
+    sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
     main: makeNodeComponent("main"),
     select: makeNodeComponent("select"),

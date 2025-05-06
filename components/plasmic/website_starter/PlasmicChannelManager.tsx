@@ -65,6 +65,7 @@ import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -109,6 +110,7 @@ export type PlasmicChannelManager__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   returnButton?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  clarity?: Flex__<typeof Embed>;
 };
 
 export interface DefaultChannelManagerProps {}
@@ -2705,6 +2707,15 @@ function PlasmicChannelManager__RenderFunc(props: {
             data-plasmic-override={overrides.navigationRntFooter}
             className={classNames("__wab_instance", sty.navigationRntFooter)}
           />
+
+          <Embed
+            data-plasmic-name={"clarity"}
+            data-plasmic-override={overrides.clarity}
+            className={classNames("__wab_instance", sty.clarity)}
+            code={
+              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2731,7 +2742,8 @@ const PlasmicDescendants = {
     "item",
     "sideEffect",
     "returnButton",
-    "navigationRntFooter"
+    "navigationRntFooter",
+    "clarity"
   ],
   header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
@@ -2784,7 +2796,8 @@ const PlasmicDescendants = {
   item: ["item"],
   sideEffect: ["sideEffect"],
   returnButton: ["returnButton"],
-  navigationRntFooter: ["navigationRntFooter"]
+  navigationRntFooter: ["navigationRntFooter"],
+  clarity: ["clarity"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2809,6 +2822,7 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   returnButton: "div";
   navigationRntFooter: typeof NavigationRntFooter;
+  clarity: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2889,6 +2903,7 @@ export const PlasmicChannelManager = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     returnButton: makeNodeComponent("returnButton"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    clarity: makeNodeComponent("clarity"),
 
     // Metadata about props expected for PlasmicChannelManager
     internalVariantProps: PlasmicChannelManager__VariantProps,

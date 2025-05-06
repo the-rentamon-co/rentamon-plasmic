@@ -62,6 +62,7 @@ import {
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -91,6 +92,7 @@ export type PlasmicProperties__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   property?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  clarity?: Flex__<typeof Embed>;
 };
 
 export interface DefaultPropertiesProps {}
@@ -645,7 +647,16 @@ function PlasmicProperties__RenderFunc(props: {
               </div>
             </Stack__>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__gaAh)} />
+          <div className={classNames(projectcss.all, sty.freeBox__gaAh)}>
+            <Embed
+              data-plasmic-name={"clarity"}
+              data-plasmic-override={overrides.clarity}
+              className={classNames("__wab_instance", sty.clarity)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -660,14 +671,16 @@ const PlasmicDescendants = {
     "sideBar2",
     "profile2",
     "property",
-    "apiRequest"
+    "apiRequest",
+    "clarity"
   ],
   navigationRntFooter: ["navigationRntFooter"],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
   property: ["property", "apiRequest"],
-  apiRequest: ["apiRequest"]
+  apiRequest: ["apiRequest"],
+  clarity: ["clarity"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -680,6 +693,7 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   property: "div";
   apiRequest: typeof ApiRequest;
+  clarity: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -748,6 +762,7 @@ export const PlasmicProperties = Object.assign(
     profile2: makeNodeComponent("profile2"),
     property: makeNodeComponent("property"),
     apiRequest: makeNodeComponent("apiRequest"),
+    clarity: makeNodeComponent("clarity"),
 
     // Metadata about props expected for PlasmicProperties
     internalVariantProps: PlasmicProperties__VariantProps,

@@ -62,6 +62,7 @@ import {
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -88,6 +89,7 @@ export type PlasmicContacts__OverridesType = {
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   sideBar2?: Flex__<typeof SideBar2>;
   profile?: Flex__<typeof ApiRequest>;
+  clarity?: Flex__<typeof Embed>;
   apiRequest?: Flex__<typeof ApiRequest>;
   img?: Flex__<typeof PlasmicImg__>;
   frame?: Flex__<"div">;
@@ -302,6 +304,14 @@ function PlasmicContacts__RenderFunc(props: {
                 url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
               />
             </div>
+            <Embed
+              data-plasmic-name={"clarity"}
+              data-plasmic-override={overrides.clarity}
+              className={classNames("__wab_instance", sty.clarity)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
           </div>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
@@ -555,6 +565,7 @@ const PlasmicDescendants = {
     "navigationRntFooter",
     "sideBar2",
     "profile",
+    "clarity",
     "apiRequest",
     "img",
     "frame",
@@ -568,6 +579,7 @@ const PlasmicDescendants = {
   navigationRntFooter: ["navigationRntFooter"],
   sideBar2: ["sideBar2"],
   profile: ["profile"],
+  clarity: ["clarity"],
   apiRequest: [
     "apiRequest",
     "img",
@@ -595,6 +607,7 @@ type NodeDefaultElementType = {
   navigationRntFooter: typeof NavigationRntFooter;
   sideBar2: typeof SideBar2;
   profile: typeof ApiRequest;
+  clarity: typeof Embed;
   apiRequest: typeof ApiRequest;
   img: typeof PlasmicImg__;
   frame: "div";
@@ -669,6 +682,7 @@ export const PlasmicContacts = Object.assign(
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile: makeNodeComponent("profile"),
+    clarity: makeNodeComponent("clarity"),
     apiRequest: makeNodeComponent("apiRequest"),
     img: makeNodeComponent("img"),
     frame: makeNodeComponent("frame"),

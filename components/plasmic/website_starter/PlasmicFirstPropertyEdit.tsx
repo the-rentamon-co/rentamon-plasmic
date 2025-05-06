@@ -1340,6 +1340,32 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
+                      $steps["invokeGlobalAction2"] =
+                        $steps.invokeGlobalAction.status == 413
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u0646",
+                                  undefined,
+                                  4000
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["invokeGlobalAction2"] != null &&
+                        typeof $steps["invokeGlobalAction2"] === "object" &&
+                        typeof $steps["invokeGlobalAction2"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction2"] = await $steps[
+                          "invokeGlobalAction2"
+                        ];
+                      }
+
                       $steps["goToLitePanel"] =
                         $steps.invokeGlobalAction.status == 200
                           ? (() => {
