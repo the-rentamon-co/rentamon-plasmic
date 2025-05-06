@@ -498,20 +498,6 @@
           "path": "/instant-reserve"
         },
         {
-          "id": "ssh21My6pq8y",
-          "name": "PanelCalendar",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicPanelCalendar.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/panel.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicPanelCalendar.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/panel-calendar"
-        },
-        {
           "id": "XZmf7ZlhFOgx",
           "name": "Calendar4",
           "type": "managed",
@@ -1246,20 +1232,6 @@
           "path": "/api-terms-of-use"
         },
         {
-          "id": "wDX6CsUVKNmL",
-          "name": "LitePanel",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicLitePanel.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/calendar.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicLitePanel.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/panel-2"
-        },
-        {
           "id": "4KhpZ-of93My",
           "name": "تعرفهخدمات",
           "type": "managed",
@@ -1645,6 +1617,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/menu"
+        },
+        {
+          "id": "ssh21My6pq8y",
+          "name": "ProCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicProCalendar.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/panel.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicProCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/panel"
+        },
+        {
+          "id": "wDX6CsUVKNmL",
+          "name": "LiteCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicLiteCalendar.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/calendar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicLiteCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/calendar"
         }
       ],
       "icons": [

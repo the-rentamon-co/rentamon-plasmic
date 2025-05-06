@@ -1433,6 +1433,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .form:global(.__wab_instance) {
+    display: flex;
+  }
+}
 .platforms:global(.__wab_instance) {
   width: 100%;
   min-width: 0;

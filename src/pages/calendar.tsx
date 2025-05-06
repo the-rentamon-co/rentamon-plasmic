@@ -4,74 +4,38 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicLitePanel } from "../../components/plasmic/website_starter/PlasmicLitePanel";
+import { PlasmicLiteCalendar } from "../../components/plasmic/website_starter/PlasmicLiteCalendar";
 import { useRouter } from "next/router";
-import Head from "next/head";
 
-function usePWAStatus() {
-  const [pwaStatus, setPwaStatus] = React.useState<'installed' | 'browser'>('browser');
-
-  React.useEffect(() => {
-    // بررسی وجود window برای جلوگیری از خطا در سمت سرور
-    if (typeof window !== 'undefined') {
-      const isStandalone = 
-        ('standalone' in window.navigator && window.navigator['standalone']) ||
-        window.matchMedia('(display-mode: standalone)').matches;
-      
-      setPwaStatus(isStandalone ? 'installed' : 'browser');
-    }
-  }, []);
-
-  return pwaStatus;
-}
-function LitePanel() {
-  // Use PlasmicLitePanel to render this component as it was
+function LiteCalendar() {
+  // Use PlasmicLiteCalendar to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicLitePanel are:
+  // Props you can pass into PlasmicLiteCalendar are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicLitePanel is wrapped by your project's global
+  // By default, PlasmicLiteCalendar is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   return (
-    <>
-      <Head>
-        <title>رنتامون - تقویم یکپارچه اقامتگاه</title>
-        <meta name="description" content="مدیریت اقامتگاه" />
-        <meta name="application-name" content="رنتامون" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-title" content="رنتامون" />
-        <meta name="theme-color" content="#7444BC" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png" />
-        <meta property="og:title" content="رنتامون" />
-        <meta property="og:description" content="برنامه مدیریت اقامتگاه" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://app.rentamon.com/" />
-        <meta property="og:image" content="https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png" />
-      </Head>
-
-     <GlobalContextsProvider>
+    <GlobalContextsProvider>
       <PageParamsProvider__
         route={useRouter()?.pathname}
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicLitePanel />
+        <PlasmicLiteCalendar />
       </PageParamsProvider__>
     </GlobalContextsProvider>
-    </>
   );
 }
 
-export default LitePanel;
+export default LiteCalendar;
