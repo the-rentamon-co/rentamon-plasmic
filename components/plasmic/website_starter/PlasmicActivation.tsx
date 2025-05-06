@@ -703,7 +703,7 @@ function PlasmicActivation__RenderFunc(props: {
                         customFunction: async () => {
                           return (() => {
                             return (window.location.href =
-                              "https://app.rentamon.com/panel/");
+                              "https://rentamon.com/panel/");
                           })();
                         }
                       };
@@ -4694,7 +4694,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     customFunction: async () => {
                                       return (() => {
                                         return (window.location.href =
-                                          "https://app.rentamon.com/panel/");
+                                          "https://rentamon.com/panel/");
                                       })();
                                     }
                                   };
@@ -5409,7 +5409,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     customFunction: async () => {
                                       return (() => {
                                         return (window.location.href =
-                                          "https://app.rentamon.com/panel/");
+                                          "https://rentamon.com/panel/");
                                       })();
                                     }
                                   };
@@ -6187,7 +6187,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     customFunction: async () => {
                                       return (() => {
                                         return (window.location.href =
-                                          "https://app.rentamon.com/panel/");
+                                          "https://rentamon.com/panel/");
                                       })();
                                     }
                                   };
@@ -6940,7 +6940,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     customFunction: async () => {
                                       return (() => {
                                         return (window.location.href =
-                                          "https://app.rentamon.com/panel/");
+                                          "https://rentamon.com/panel/");
                                       })();
                                     }
                                   };
@@ -8123,7 +8123,7 @@ function PlasmicActivation__RenderFunc(props: {
                                       customFunction: async () => {
                                         return (() => {
                                           return (window.location.href =
-                                            "https://app.rentamon.com/panel/");
+                                            "https://rentamon.com/panel/");
                                         })();
                                       }
                                     };
@@ -8635,7 +8635,7 @@ function PlasmicActivation__RenderFunc(props: {
                                       customFunction: async () => {
                                         return (() => {
                                           return (window.location.href =
-                                            "https://app.rentamon.com/panel/");
+                                            "https://rentamon.com/panel/");
                                         })();
                                       }
                                     };
@@ -10065,9 +10065,9 @@ function PlasmicActivation__RenderFunc(props: {
                     sty.text__w8Gmv
                   )}
                 >
-                  {
-                    "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"
+                    : "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"}
                 </div>
               </AntdButton>
             </div>

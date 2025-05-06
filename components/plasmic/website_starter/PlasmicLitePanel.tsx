@@ -117,6 +117,7 @@ export type PlasmicLitePanel__OverridesType = {
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
   favicon?: Flex__<typeof Embed>;
+  spacer?: Flex__<"div">;
   proPanelModal?: Flex__<typeof AntdModal>;
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
@@ -650,9 +651,11 @@ function PlasmicLitePanel__RenderFunc(props: {
               data-plasmic-override={overrides.header}
               className={classNames(projectcss.all, sty.header)}
             >
-              <div
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"right"}
                 data-plasmic-override={overrides.right}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.right)}
               >
                 <div
@@ -889,7 +892,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     value={generateStateValueProp($state, ["select2", "value"])}
                   />
                 </div>
-              </div>
+              </Stack__>
               <div
                 data-plasmic-name={"left"}
                 data-plasmic-override={overrides.left}
@@ -931,9 +934,17 @@ function PlasmicLitePanel__RenderFunc(props: {
                           ? "60px"
                           : "80px"
                       }
-                      displayMaxWidth={"120px"}
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "88px"
+                          : "120px"
+                      }
                       displayMinHeight={"0"}
-                      displayMinWidth={"120px"}
+                      displayMinWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "88px"
+                          : "120px"
+                      }
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "220px"
@@ -1380,6 +1391,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
+                          console.log("befor cookie checker");
                           function getCookieValue(cookieName) {
                             const cookies = document.cookie
                               .split(";")
@@ -1569,7 +1581,11 @@ function PlasmicLitePanel__RenderFunc(props: {
             }
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___418Um)} />
+          <div
+            data-plasmic-name={"spacer"}
+            data-plasmic-override={overrides.spacer}
+            className={classNames(projectcss.all, sty.spacer)}
+          />
 
           {false ? (
             <AntdModal
@@ -1650,7 +1666,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___2Gi8I
+                        sty.formField__jxhpi
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1662,7 +1678,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__zL9Gs
+                        sty.formField__vrHcl
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1680,7 +1696,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__xGfTc
+                          sty.text__viFcf
                         )}
                       >
                         {"Submit"}
@@ -1725,6 +1741,7 @@ const PlasmicDescendants = {
     "userAvailableFeature",
     "modal",
     "favicon",
+    "spacer",
     "proPanelModal",
     "form",
     "input",
@@ -1782,6 +1799,7 @@ const PlasmicDescendants = {
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
   favicon: ["favicon"],
+  spacer: ["spacer"],
   proPanelModal: ["proPanelModal", "form", "input", "textArea", "button"],
   form: ["form", "input", "textArea", "button"],
   input: ["input"],
@@ -1813,6 +1831,7 @@ type NodeDefaultElementType = {
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
   favicon: typeof Embed;
+  spacer: "div";
   proPanelModal: typeof AntdModal;
   form: typeof FormWrapper;
   input: typeof AntdInput;
@@ -1900,6 +1919,7 @@ export const PlasmicLitePanel = Object.assign(
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
     favicon: makeNodeComponent("favicon"),
+    spacer: makeNodeComponent("spacer"),
     proPanelModal: makeNodeComponent("proPanelModal"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),

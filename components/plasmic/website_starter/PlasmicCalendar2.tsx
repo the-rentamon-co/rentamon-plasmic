@@ -147,6 +147,8 @@ export type PlasmicCalendar2__OverridesType = {
   checkForChange?: Flex__<typeof AntdModal>;
   newDiscountModal?: Flex__<typeof AntdModal>;
   textInput4?: Flex__<typeof TextInput>;
+  guide?: Flex__<"div">;
+  submitChange?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   addingGuestInfo?: Flex__<typeof AntdModal>;
   form?: Flex__<"div">;
@@ -8639,8 +8641,10 @@ function PlasmicCalendar2__RenderFunc(props: {
       </div>
       <Stack__
         as={"div"}
+        data-plasmic-name={"guide"}
+        data-plasmic-override={overrides.guide}
         hasGap={true}
-        className={classNames(projectcss.all, sty.freeBox___3AobZ)}
+        className={classNames(projectcss.all, sty.guide)}
       >
         <Stack__
           as={"div"}
@@ -8715,7 +8719,11 @@ function PlasmicCalendar2__RenderFunc(props: {
           </div>
         </Stack__>
       </Stack__>
-      <div className={classNames(projectcss.all, sty.freeBox__iosJu)}>
+      <div
+        data-plasmic-name={"submitChange"}
+        data-plasmic-override={overrides.submitChange}
+        className={classNames(projectcss.all, sty.submitChange)}
+      >
         <div
           className={classNames(
             projectcss.all,
@@ -9987,6 +9995,8 @@ const PlasmicDescendants = {
     "checkForChange",
     "newDiscountModal",
     "textInput4",
+    "guide",
+    "submitChange",
     "embedHtml",
     "addingGuestInfo",
     "form",
@@ -10049,6 +10059,8 @@ const PlasmicDescendants = {
   checkForChange: ["checkForChange"],
   newDiscountModal: ["newDiscountModal", "textInput4"],
   textInput4: ["textInput4"],
+  guide: ["guide"],
+  submitChange: ["submitChange"],
   embedHtml: ["embedHtml"],
   addingGuestInfo: [
     "addingGuestInfo",
@@ -10133,6 +10145,8 @@ type NodeDefaultElementType = {
   checkForChange: typeof AntdModal;
   newDiscountModal: typeof AntdModal;
   textInput4: typeof TextInput;
+  guide: "div";
+  submitChange: "div";
   embedHtml: typeof Embed;
   addingGuestInfo: typeof AntdModal;
   form: "div";
@@ -10242,6 +10256,8 @@ export const PlasmicCalendar2 = Object.assign(
     checkForChange: makeNodeComponent("checkForChange"),
     newDiscountModal: makeNodeComponent("newDiscountModal"),
     textInput4: makeNodeComponent("textInput4"),
+    guide: makeNodeComponent("guide"),
+    submitChange: makeNodeComponent("submitChange"),
     embedHtml: makeNodeComponent("embedHtml"),
     addingGuestInfo: makeNodeComponent("addingGuestInfo"),
     form: makeNodeComponent("form"),

@@ -171,7 +171,7 @@ function PlasmicRedirectFromPanelsToPanel__RenderFunc(props: {
             )}
           >
             {
-              "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0635\u0641\u062d\u0647 \u062c\u062f\u06cc\u062f..."
+              "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644..."
             }
           </div>
           <SideEffect
