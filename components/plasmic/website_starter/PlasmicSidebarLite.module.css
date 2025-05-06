@@ -587,7 +587,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 0px 8px;
 }
 @media (max-width: 350px) {
   .freeBox__kYudi {

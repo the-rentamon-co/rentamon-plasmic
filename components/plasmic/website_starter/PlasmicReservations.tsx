@@ -639,27 +639,69 @@ function PlasmicReservations__RenderFunc(props: {
                 />
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__jyxIz)}>
-              <SidebarLite
-                data-plasmic-name={"sidebarLite"}
-                data-plasmic-override={overrides.sidebarLite}
-                className={classNames("__wab_instance", sty.sidebarLite)}
-                isOpen={false}
-                userData={(() => {
-                  try {
-                    return $state.profile.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? true
+                : (() => {
+                    try {
+                      return $state.userType == "1";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              />
-            </div>
+                  })()
+            ) ? (
+              <div className={classNames(projectcss.all, sty.freeBox__jyxIz)}>
+                <SideBar2
+                  className={classNames("__wab_instance", sty.sideBar2__xw7PR)}
+                  isOpen={false}
+                  userData={(() => {
+                    try {
+                      return $state.profile.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? true
+                : (() => {
+                    try {
+                      return $state.userType == "2";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()
+            ) ? (
+              <div className={classNames(projectcss.all, sty.freeBox___2XtMn)}>
+                <SidebarLite
+                  data-plasmic-name={"sidebarLite"}
+                  data-plasmic-override={overrides.sidebarLite}
+                  className={classNames("__wab_instance", sty.sidebarLite)}
+                  isOpen={false}
+                />
+              </div>
+            ) : null}
             <div className={classNames(projectcss.all, sty.freeBox__bMTr4)}>
               <div
                 className={classNames(

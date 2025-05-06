@@ -61,8 +61,10 @@ import {
 
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -88,6 +90,7 @@ export type PlasmicContacts__OverridesType = {
   contacts?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   sideBar2?: Flex__<typeof SideBar2>;
+  sidebarLite?: Flex__<typeof SidebarLite>;
   profile?: Flex__<typeof ApiRequest>;
   clarity?: Flex__<typeof Embed>;
   apiRequest?: Flex__<typeof ApiRequest>;
@@ -99,6 +102,7 @@ export type PlasmicContacts__OverridesType = {
   phones?: Flex__<"div">;
   guestPhone?: Flex__<"a"> & Partial<LinkProps>;
   returnButton?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultContactsProps {}
@@ -141,6 +145,8 @@ function PlasmicContacts__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const $globalActions = useGlobalActions?.();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -191,6 +197,12 @@ function PlasmicContacts__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile"
+      },
+      {
+        path: "userType",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -240,27 +252,84 @@ function PlasmicContacts__RenderFunc(props: {
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__tdKik)}>
-            <div className={classNames(projectcss.all, sty.freeBox__wmfUa)}>
-              <SideBar2
-                data-plasmic-name={"sideBar2"}
-                data-plasmic-override={overrides.sideBar2}
-                className={classNames("__wab_instance", sty.sideBar2)}
-                isOpen={false}
-                userData={(() => {
-                  try {
-                    return $state.profile.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? true
+                : (() => {
+                    try {
+                      return $state.userType == "1";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              />
-            </div>
+                  })()
+            ) ? (
+              <div className={classNames(projectcss.all, sty.freeBox__wmfUa)}>
+                <SideBar2
+                  data-plasmic-name={"sideBar2"}
+                  data-plasmic-override={overrides.sideBar2}
+                  className={classNames("__wab_instance", sty.sideBar2)}
+                  isOpen={false}
+                  userData={(() => {
+                    try {
+                      return $state.profile.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? true
+                : (() => {
+                    try {
+                      return $state.userType == "2";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()
+            ) ? (
+              <div className={classNames(projectcss.all, sty.freeBox__vVaUo)}>
+                <SidebarLite
+                  data-plasmic-name={"sidebarLite"}
+                  data-plasmic-override={overrides.sidebarLite}
+                  className={classNames("__wab_instance", sty.sidebarLite)}
+                  isOpen={false}
+                  userData={(() => {
+                    try {
+                      return $state.profile.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+              </div>
+            ) : null}
             <div className={classNames(projectcss.all, sty.freeBox__ogaDu)}>
               <div
                 className={classNames(
@@ -553,6 +622,169 @@ function PlasmicContacts__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          console.log("side effect started");
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            console.log("side effect in the cudition");
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/contacts//");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/contacts//";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["updateStateVariable2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://api-v2.rentamon.com/api/is_user_old"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable2"] != null &&
+                typeof $steps["updateStateVariable2"] === "object" &&
+                typeof $steps["updateStateVariable2"].then === "function"
+              ) {
+                $steps["updateStateVariable2"] = await $steps[
+                  "updateStateVariable2"
+                ];
+              }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.userType =
+                        $steps.invokeGlobalAction.data.flag)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -564,6 +796,7 @@ const PlasmicDescendants = {
     "contacts",
     "navigationRntFooter",
     "sideBar2",
+    "sidebarLite",
     "profile",
     "clarity",
     "apiRequest",
@@ -574,10 +807,12 @@ const PlasmicDescendants = {
     "guestName",
     "phones",
     "guestPhone",
-    "returnButton"
+    "returnButton",
+    "sideEffect"
   ],
   navigationRntFooter: ["navigationRntFooter"],
   sideBar2: ["sideBar2"],
+  sidebarLite: ["sidebarLite"],
   profile: ["profile"],
   clarity: ["clarity"],
   apiRequest: [
@@ -597,7 +832,8 @@ const PlasmicDescendants = {
   guestName: ["guestName"],
   phones: ["phones", "guestPhone"],
   guestPhone: ["guestPhone"],
-  returnButton: ["returnButton"]
+  returnButton: ["returnButton"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -606,6 +842,7 @@ type NodeDefaultElementType = {
   contacts: "div";
   navigationRntFooter: typeof NavigationRntFooter;
   sideBar2: typeof SideBar2;
+  sidebarLite: typeof SidebarLite;
   profile: typeof ApiRequest;
   clarity: typeof Embed;
   apiRequest: typeof ApiRequest;
@@ -617,6 +854,7 @@ type NodeDefaultElementType = {
   phones: "div";
   guestPhone: "a";
   returnButton: "div";
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -681,6 +919,7 @@ export const PlasmicContacts = Object.assign(
     // Helper components rendering sub-elements
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     sideBar2: makeNodeComponent("sideBar2"),
+    sidebarLite: makeNodeComponent("sidebarLite"),
     profile: makeNodeComponent("profile"),
     clarity: makeNodeComponent("clarity"),
     apiRequest: makeNodeComponent("apiRequest"),
@@ -692,6 +931,7 @@ export const PlasmicContacts = Object.assign(
     phones: makeNodeComponent("phones"),
     guestPhone: makeNodeComponent("guestPhone"),
     returnButton: makeNodeComponent("returnButton"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicContacts
     internalVariantProps: PlasmicContacts__VariantProps,
