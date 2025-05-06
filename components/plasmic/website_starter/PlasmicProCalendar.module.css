@@ -72,6 +72,10 @@
 }
 .sideBar2:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
+  position: absolute;
+  left: auto;
+  top: 0;
+  right: 0;
 }
 @media (max-width: 1200px) {
   .sideBar2:global(.__wab_instance):global(.__wab_instance) {
@@ -877,6 +881,18 @@
 .sideEffect:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+}
+.freeBox__lcrtN {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
 }
 .userAvailableFeature:global(.__wab_instance) {
   max-width: 100%;

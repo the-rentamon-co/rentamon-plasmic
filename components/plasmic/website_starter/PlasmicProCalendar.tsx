@@ -2131,6 +2131,8 @@ function PlasmicProCalendar__RenderFunc(props: {
             }}
           />
 
+          <div className={classNames(projectcss.all, sty.freeBox__lcrtN)} />
+
           <ApiRequest
             data-plasmic-name={"userAvailableFeature"}
             data-plasmic-override={overrides.userAvailableFeature}

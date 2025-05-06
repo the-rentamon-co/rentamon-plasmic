@@ -3687,7 +3687,28 @@ function PlasmicActivation__RenderFunc(props: {
           >
             {(
               hasVariant(globalVariants, "screen", "mobile")
-                ? true
+                ? (() => {
+                    try {
+                      return (() => {
+                        const platforms = $state.platformstatus.status;
+                        if (platforms && Object.keys(platforms).length > 0) {
+                          const allTrue = Object.values(platforms).every(
+                            value => value === true
+                          );
+                          return allTrue ? false : true;
+                        }
+                        return true;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
                 : (() => {
                     try {
                       return (() => {
@@ -3698,7 +3719,7 @@ function PlasmicActivation__RenderFunc(props: {
                           );
                           return allTrue ? false : true;
                         }
-                        return false;
+                        return true;
                       })();
                     } catch (e) {
                       if (

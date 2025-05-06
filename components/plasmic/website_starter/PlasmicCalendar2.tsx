@@ -8910,7 +8910,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       value: (() => {
                         $state.textInput4.value = "0";
                         $state.guestName.value = "";
-                        $state.guestCount.value = 0;
+                        $state.guestCount.value = null;
                         $state.guestReferrer.value = "";
                         $state.phoneNumber.value = "";
                         $state.input2.value = "";
