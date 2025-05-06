@@ -380,6 +380,7 @@
   left: auto;
   top: 0;
   right: 0;
+  z-index: 1;
   padding: 8px;
 }
 @media (max-width: 1200px) {
@@ -536,7 +537,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__j6So3:global(.__wab_instance) {
+.formField__htdhq:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -545,7 +546,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__aDxcc:global(.__wab_instance) {
+.formField___5C1P:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -558,7 +559,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__wXsGb {
+.text__hiEkD {
   position: relative;
   width: 100%;
   height: auto;
