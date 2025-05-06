@@ -75,7 +75,7 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgc
 import sty from "./Plasmicتالار.module.css"; // plasmic-import: awYJCWS6HouC/css
 
 import Icon66Icon from "./icons/PlasmicIcon__Icon66"; // plasmic-import: n1MUhjxn9v4m/icon
-import Icon69Icon from "./icons/PlasmicIcon__Icon69"; // plasmic-import: Fwhbrww-mv1s/icon
+import Icon74Icon from "./icons/PlasmicIcon__Icon74"; // plasmic-import: 8KZpBYIvE0K7/icon
 import Icon50Icon from "./icons/PlasmicIcon__Icon50"; // plasmic-import: c8twinuxODWl/icon
 import Icon70Icon from "./icons/PlasmicIcon__Icon70"; // plasmic-import: A-bs_J5BMn_p/icon
 import Icon71Icon from "./icons/PlasmicIcon__Icon71"; // plasmic-import: DdEZyyc0OzIH/icon
@@ -775,8 +775,8 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-override={overrides.left}
                   className={classNames(projectcss.all, sty.left)}
                 >
-                  <Icon69Icon
-                    className={classNames(projectcss.all, sty.svg__giW0J)}
+                  <Icon74Icon
+                    className={classNames(projectcss.all, sty.svg__xgS23)}
                     role={"img"}
                   />
                 </div>
@@ -854,8 +854,8 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-override={overrides.left2}
                   className={classNames(projectcss.all, sty.left2)}
                 >
-                  <Icon69Icon
-                    className={classNames(projectcss.all, sty.svg__nMrK)}
+                  <Icon74Icon
+                    className={classNames(projectcss.all, sty.svg__qtzyl)}
                     role={"img"}
                   />
                 </div>
@@ -951,8 +951,8 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-override={overrides.left3}
                   className={classNames(projectcss.all, sty.left3)}
                 >
-                  <Icon69Icon
-                    className={classNames(projectcss.all, sty.svg__f6V8)}
+                  <Icon74Icon
+                    className={classNames(projectcss.all, sty.svg__b9Mr)}
                     role={"img"}
                   />
                 </div>
@@ -1046,8 +1046,8 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-override={overrides.left4}
                   className={classNames(projectcss.all, sty.left4)}
                 >
-                  <Icon69Icon
-                    className={classNames(projectcss.all, sty.svg__w9NBt)}
+                  <Icon74Icon
+                    className={classNames(projectcss.all, sty.svg__aZFzr)}
                     role={"img"}
                   />
                 </div>
@@ -1138,8 +1138,8 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-override={overrides.left5}
                   className={classNames(projectcss.all, sty.left5)}
                 >
-                  <Icon69Icon
-                    className={classNames(projectcss.all, sty.svg__sD47D)}
+                  <Icon74Icon
+                    className={classNames(projectcss.all, sty.svg___9TRUe)}
                     role={"img"}
                   />
                 </div>
@@ -1219,8 +1219,8 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-override={overrides.left7}
                   className={classNames(projectcss.all, sty.left7)}
                 >
-                  <Icon69Icon
-                    className={classNames(projectcss.all, sty.svg__cwVGa)}
+                  <Icon74Icon
+                    className={classNames(projectcss.all, sty.svg__mwDF)}
                     role={"img"}
                   />
                 </div>

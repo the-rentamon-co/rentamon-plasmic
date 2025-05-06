@@ -83,14 +83,10 @@ type VariantPropType = keyof PlasmicNavigationRntFooter__VariantsArgs;
 export const PlasmicNavigationRntFooter__VariantProps =
   new Array<VariantPropType>();
 
-export type PlasmicNavigationRntFooter__ArgsType = {
-  navPage?: string;
-  userType?: string;
-};
+export type PlasmicNavigationRntFooter__ArgsType = { navPage?: string };
 type ArgPropType = keyof PlasmicNavigationRntFooter__ArgsType;
 export const PlasmicNavigationRntFooter__ArgProps = new Array<ArgPropType>(
-  "navPage",
-  "userType"
+  "navPage"
 );
 
 export type PlasmicNavigationRntFooter__OverridesType = {
@@ -116,7 +112,6 @@ export type PlasmicNavigationRntFooter__OverridesType = {
 
 export interface DefaultNavigationRntFooterProps {
   navPage?: string;
-  userType?: string;
   className?: string;
 }
 
@@ -158,6 +153,8 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const $globalActions = useGlobalActions?.();
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
@@ -339,8 +336,31 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://api-v2.rentamon.com/api/is_user_old"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+
               $steps["goToPanelCalendar"] =
-                $props.userType == "1"
+                $steps.invokeGlobalAction.data.flag == 1
                   ? (() => {
                       const actionArgs = { destination: `/panel` };
                       return (({ destination }) => {
@@ -363,6 +383,32 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 typeof $steps["goToPanelCalendar"].then === "function"
               ) {
                 $steps["goToPanelCalendar"] = await $steps["goToPanelCalendar"];
+              }
+
+              $steps["goToLitePanel"] =
+                $steps.invokeGlobalAction.data.flag == 2
+                  ? (() => {
+                      const actionArgs = { destination: `/calendar` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+              if (
+                $steps["goToLitePanel"] != null &&
+                typeof $steps["goToLitePanel"] === "object" &&
+                typeof $steps["goToLitePanel"].then === "function"
+              ) {
+                $steps["goToLitePanel"] = await $steps["goToLitePanel"];
               }
             }}
           >
