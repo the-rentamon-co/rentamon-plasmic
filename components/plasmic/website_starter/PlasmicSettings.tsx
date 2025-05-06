@@ -1698,7 +1698,7 @@ function PlasmicSettings__RenderFunc(props: {
                         displayWidth={"45px"}
                         loading={"lazy"}
                         src={
-                          "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                          "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
                         }
                       />
                     ) : null}
@@ -2177,7 +2177,7 @@ function PlasmicSettings__RenderFunc(props: {
                         displayWidth={"45px"}
                         loading={"lazy"}
                         src={
-                          "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                          "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
                         }
                       />
                     ) : null}
@@ -2601,7 +2601,7 @@ function PlasmicSettings__RenderFunc(props: {
                         displayWidth={"45px"}
                         loading={"lazy"}
                         src={
-                          "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                          "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
                         }
                       />
                     ) : null}

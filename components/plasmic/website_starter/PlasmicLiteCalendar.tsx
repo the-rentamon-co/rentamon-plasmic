@@ -59,9 +59,9 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
@@ -98,8 +98,6 @@ export const PlasmicLiteCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLiteCalendar__OverridesType = {
   root?: Flex__<"div">;
-  deskTablet?: Flex__<"div">;
-  sidebarLite?: Flex__<typeof SidebarLite>;
   headerMain?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -107,6 +105,8 @@ export type PlasmicLiteCalendar__OverridesType = {
   select2?: Flex__<typeof Select>;
   left?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
+  deskTablet?: Flex__<"div">;
+  sidebarLite?: Flex__<typeof SidebarLite>;
   calendar2?: Flex__<typeof Calendar2>;
   sideEffect?: Flex__<typeof SideEffect>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
@@ -367,44 +367,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
-            data-plasmic-name={"deskTablet"}
-            data-plasmic-override={overrides.deskTablet}
-            className={classNames(projectcss.all, sty.deskTablet)}
-          >
-            <SidebarLite
-              data-plasmic-name={"sidebarLite"}
-              data-plasmic-override={overrides.sidebarLite}
-              className={classNames("__wab_instance", sty.sidebarLite)}
-              isFirstVisit={(() => {
-                try {
-                  return $state.isTheFirstVisit;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return false;
-                  }
-                  throw e;
-                }
-              })()}
-              isOpen={false}
-              userData={(() => {
-                try {
-                  return $state.profile.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            />
-          </div>
           <div
             data-plasmic-name={"headerMain"}
             data-plasmic-override={overrides.headerMain}
@@ -750,6 +712,44 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                   {"Enter some text"}
                 </div>
               </ApiRequest>
+            </div>
+            <div
+              data-plasmic-name={"deskTablet"}
+              data-plasmic-override={overrides.deskTablet}
+              className={classNames(projectcss.all, sty.deskTablet)}
+            >
+              <SidebarLite
+                data-plasmic-name={"sidebarLite"}
+                data-plasmic-override={overrides.sidebarLite}
+                className={classNames("__wab_instance", sty.sidebarLite)}
+                isFirstVisit={(() => {
+                  try {
+                    return $state.isTheFirstVisit;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })()}
+                isOpen={false}
+                userData={(() => {
+                  try {
+                    return $state.profile.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
             </div>
           </div>
           <Calendar2
@@ -1298,7 +1298,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___5C79
+                        sty.formField__wfobT
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1310,7 +1310,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__wFk2M
+                        sty.formField__tWdC4
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1328,7 +1328,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__cOzOv
+                          sty.text__jAiHb
                         )}
                       >
                         {"Submit"}
@@ -1354,8 +1354,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "deskTablet",
-    "sidebarLite",
     "headerMain",
     "header",
     "right",
@@ -1363,6 +1361,8 @@ const PlasmicDescendants = {
     "select2",
     "left",
     "profile",
+    "deskTablet",
+    "sidebarLite",
     "calendar2",
     "sideEffect",
     "userAvailableFeature",
@@ -1377,8 +1377,6 @@ const PlasmicDescendants = {
     "button",
     "navigationRntFooter"
   ],
-  deskTablet: ["deskTablet", "sidebarLite"],
-  sidebarLite: ["sidebarLite"],
   headerMain: [
     "headerMain",
     "header",
@@ -1386,7 +1384,9 @@ const PlasmicDescendants = {
     "right2",
     "select2",
     "left",
-    "profile"
+    "profile",
+    "deskTablet",
+    "sidebarLite"
   ],
   header: ["header", "right", "right2", "select2", "left", "profile"],
   right: ["right", "right2", "select2"],
@@ -1394,6 +1394,8 @@ const PlasmicDescendants = {
   select2: ["select2"],
   left: ["left"],
   profile: ["profile"],
+  deskTablet: ["deskTablet", "sidebarLite"],
+  sidebarLite: ["sidebarLite"],
   calendar2: ["calendar2"],
   sideEffect: ["sideEffect"],
   userAvailableFeature: ["userAvailableFeature"],
@@ -1413,8 +1415,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  deskTablet: "div";
-  sidebarLite: typeof SidebarLite;
   headerMain: "div";
   header: "div";
   right: "div";
@@ -1422,6 +1422,8 @@ type NodeDefaultElementType = {
   select2: typeof Select;
   left: "div";
   profile: typeof ApiRequest;
+  deskTablet: "div";
+  sidebarLite: typeof SidebarLite;
   calendar2: typeof Calendar2;
   sideEffect: typeof SideEffect;
   userAvailableFeature: typeof ApiRequest;
@@ -1497,8 +1499,6 @@ export const PlasmicLiteCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    deskTablet: makeNodeComponent("deskTablet"),
-    sidebarLite: makeNodeComponent("sidebarLite"),
     headerMain: makeNodeComponent("headerMain"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
@@ -1506,6 +1506,8 @@ export const PlasmicLiteCalendar = Object.assign(
     select2: makeNodeComponent("select2"),
     left: makeNodeComponent("left"),
     profile: makeNodeComponent("profile"),
+    deskTablet: makeNodeComponent("deskTablet"),
+    sidebarLite: makeNodeComponent("sidebarLite"),
     calendar2: makeNodeComponent("calendar2"),
     sideEffect: makeNodeComponent("sideEffect"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),

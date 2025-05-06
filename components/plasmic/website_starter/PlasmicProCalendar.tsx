@@ -96,7 +96,7 @@ export const PlasmicProCalendar__ArgProps = new Array<ArgPropType>();
 export type PlasmicProCalendar__OverridesType = {
   root?: Flex__<"div">;
   header2?: Flex__<"div">;
-  sideBar22?: Flex__<typeof SideBar2>;
+  sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
   clarity?: Flex__<typeof Embed>;
   alertModal?: Flex__<typeof AntdModal>;
@@ -439,9 +439,9 @@ function PlasmicProCalendar__RenderFunc(props: {
             className={classNames(projectcss.all, sty.header2)}
           >
             <SideBar2
-              data-plasmic-name={"sideBar22"}
-              data-plasmic-override={overrides.sideBar22}
-              className={classNames("__wab_instance", sty.sideBar22)}
+              data-plasmic-name={"sideBar2"}
+              data-plasmic-override={overrides.sideBar2}
+              className={classNames("__wab_instance", sty.sideBar2)}
               isOpen={false}
               userData={(() => {
                 try {
@@ -2300,7 +2300,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header2",
-    "sideBar22",
+    "sideBar2",
     "profile2",
     "clarity",
     "alertModal",
@@ -2325,8 +2325,8 @@ const PlasmicDescendants = {
     "navigationRntFooter",
     "favicon"
   ],
-  header2: ["header2", "sideBar22", "profile2"],
-  sideBar22: ["sideBar22"],
+  header2: ["header2", "sideBar2", "profile2"],
+  sideBar2: ["sideBar2"],
   profile2: ["profile2"],
   clarity: ["clarity"],
   alertModal: ["alertModal", "button"],
@@ -2382,7 +2382,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header2: "div";
-  sideBar22: typeof SideBar2;
+  sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
   clarity: typeof Embed;
   alertModal: typeof AntdModal;
@@ -2469,7 +2469,7 @@ export const PlasmicProCalendar = Object.assign(
   {
     // Helper components rendering sub-elements
     header2: makeNodeComponent("header2"),
-    sideBar22: makeNodeComponent("sideBar22"),
+    sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
     clarity: makeNodeComponent("clarity"),
     alertModal: makeNodeComponent("alertModal"),
