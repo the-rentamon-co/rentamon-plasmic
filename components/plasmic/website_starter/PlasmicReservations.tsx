@@ -699,6 +699,19 @@ function PlasmicReservations__RenderFunc(props: {
                   data-plasmic-override={overrides.sidebarLite}
                   className={classNames("__wab_instance", sty.sidebarLite)}
                   isOpen={false}
+                  userData={(() => {
+                    try {
+                      return $state.profile.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                 />
               </div>
             ) : null}

@@ -1183,7 +1183,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                                 args: [
                                   "error",
                                   "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u0646",
-                                  undefined,
+                                  "top-center",
                                   4000
                                 ]
                               };

@@ -760,8 +760,10 @@ function PlasmicContacts__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
-                      value: ($state.userType =
-                        $steps.invokeGlobalAction.data.flag)
+                      value: (() => {
+                        $state.userType = $steps.runCode.data.flag;
+                        return console.log($state.userType);
+                      })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
                       if (!variable) {
