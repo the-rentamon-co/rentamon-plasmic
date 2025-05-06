@@ -167,6 +167,7 @@
   font-size: 22px;
   font-weight: 600;
   text-align: center;
+  user-select: none;
   min-width: 0;
 }
 .freeBox__eLAe {
@@ -195,6 +196,7 @@
   font-size: 17px;
   font-weight: 600;
   text-align: right;
+  user-select: none;
   min-width: 0;
 }
 .freeBox__ajOX {
@@ -250,6 +252,7 @@
   height: auto;
   max-width: 100%;
   font-size: 18px;
+  user-select: none;
   min-width: 0;
 }
 .freeBox___6Ffep {
@@ -317,6 +320,7 @@
   height: auto;
   max-width: 100%;
   font-size: 18px;
+  user-select: none;
   min-width: 0;
 }
 .freeBox__uleua {
@@ -384,6 +388,7 @@
   height: auto;
   max-width: 100%;
   font-size: 18px;
+  user-select: none;
   min-width: 0;
 }
 .freeBox__qObmX {
@@ -477,6 +482,7 @@
   font-size: 22px;
   font-weight: 600;
   text-align: center;
+  user-select: none;
   min-width: 0;
 }
 .freeBox__ciqgx {
@@ -519,6 +525,7 @@
   font-size: 18px;
   font-weight: 600;
   text-align: right;
+  user-select: none;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -659,6 +666,7 @@
   font-size: 18px;
   text-align: center;
   font-weight: 500;
+  user-select: none;
   min-width: 0;
 }
 .privious {
@@ -687,6 +695,7 @@
   font-size: 18px;
   text-align: center;
   font-weight: 500;
+  user-select: none;
   min-width: 0;
 }
 .name2 {
@@ -770,6 +779,7 @@
   font-size: 22px;
   font-weight: 600;
   text-align: center;
+  user-select: none;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -833,6 +843,7 @@
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+  user-select: none;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1091,6 +1102,7 @@
   font-size: 18px;
   text-align: center;
   font-weight: 500;
+  user-select: none;
 }
 @media (max-width: 350px) {
   .text__dr2IG {
@@ -1123,6 +1135,7 @@
   font-size: 18px;
   text-align: center;
   font-weight: 500;
+  user-select: none;
   min-width: 0;
 }
 @media (max-width: 350px) {

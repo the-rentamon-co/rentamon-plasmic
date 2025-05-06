@@ -1220,7 +1220,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
                               return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/calendar/");
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/");
                             } else {
                               console.log("got here in refreshToken");
                               return fetch(
@@ -1646,7 +1646,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__dYaCb
+                        sty.formField__pz66P
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1658,7 +1658,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jri8R
+                        sty.formField__cuqj1
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1676,7 +1676,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___6XJxo
+                          sty.text__l6Lz
                         )}
                       >
                         {"Submit"}

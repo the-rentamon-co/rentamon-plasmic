@@ -83,10 +83,14 @@ type VariantPropType = keyof PlasmicNavigationRntFooter__VariantsArgs;
 export const PlasmicNavigationRntFooter__VariantProps =
   new Array<VariantPropType>();
 
-export type PlasmicNavigationRntFooter__ArgsType = { navPage?: string };
+export type PlasmicNavigationRntFooter__ArgsType = {
+  navPage?: string;
+  userType?: string;
+};
 type ArgPropType = keyof PlasmicNavigationRntFooter__ArgsType;
 export const PlasmicNavigationRntFooter__ArgProps = new Array<ArgPropType>(
-  "navPage"
+  "navPage",
+  "userType"
 );
 
 export type PlasmicNavigationRntFooter__OverridesType = {
@@ -112,6 +116,7 @@ export type PlasmicNavigationRntFooter__OverridesType = {
 
 export interface DefaultNavigationRntFooterProps {
   navPage?: string;
+  userType?: string;
   className?: string;
 }
 
@@ -334,23 +339,24 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToPanelCalendar"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/panel` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["goToPanelCalendar"] =
+                $props.userType == "1"
+                  ? (() => {
+                      const actionArgs = { destination: `/panel` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["goToPanelCalendar"] != null &&
                 typeof $steps["goToPanelCalendar"] === "object" &&

@@ -1655,12 +1655,21 @@ function PlasmicAboutUs__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          const loc = window.location;
-                          console.log("پروتکل:", loc.protocol);
-                          console.log("میزبان (هاست):", loc.host);
-                          console.log("مسیر:", loc.pathname);
-                          console.log("پارامترها:", loc.search);
-                          return console.log("مارکر:", loc.hash);
+                          return (function redirectIfAppSubdomain() {
+                            const {
+                              protocol,
+                              hostname,
+                              pathname,
+                              search,
+                              hash
+                            } = window.location;
+                            console.log("here");
+                            if (hostname === "app.rentamon.com") {
+                              const targetHost = "rentamon.com";
+                              const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
+                              window.location.replace(newUrl);
+                            }
+                          })();
                         })();
                       }
                     };
