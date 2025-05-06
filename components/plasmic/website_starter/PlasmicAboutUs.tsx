@@ -62,6 +62,7 @@ import {
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -137,6 +138,7 @@ export type PlasmicAboutUs__OverridesType = {
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultAboutUsProps {}
@@ -175,6 +177,7 @@ function PlasmicAboutUs__RenderFunc(props: {
   };
 
   const __nextRouter = useNextRouter();
+
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
@@ -1639,6 +1642,42 @@ function PlasmicAboutUs__RenderFunc(props: {
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          const loc = window.location;
+                          console.log("پروتکل:", loc.protocol);
+                          console.log("میزبان (هاست):", loc.host);
+                          console.log("مسیر:", loc.pathname);
+                          console.log("پارامترها:", loc.search);
+                          return console.log("مارکر:", loc.hash);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1699,7 +1738,8 @@ const PlasmicDescendants = {
     "html",
     "clarity2",
     "goftino",
-    "rentamonFooter"
+    "rentamonFooter",
+    "sideEffect"
   ],
   navbarRentamonComponent: ["navbarRentamonComponent"],
   mainContents: [
@@ -1843,7 +1883,8 @@ const PlasmicDescendants = {
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1902,6 +1943,7 @@ type NodeDefaultElementType = {
   clarity2: typeof Embed;
   goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2018,6 +2060,7 @@ export const PlasmicAboutUs = Object.assign(
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicAboutUs
     internalVariantProps: PlasmicAboutUs__VariantProps,

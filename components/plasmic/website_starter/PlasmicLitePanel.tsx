@@ -161,6 +161,7 @@ function PlasmicLitePanel__RenderFunc(props: {
   };
 
   const __nextRouter = useNextRouter();
+
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
@@ -1645,7 +1646,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___58Sz7
+                        sty.formField__dYaCb
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1657,7 +1658,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__dxErr
+                        sty.formField__jri8R
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1675,7 +1676,7 @@ function PlasmicLitePanel__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__cd0Zz
+                          sty.text___6XJxo
                         )}
                       >
                         {"Submit"}
