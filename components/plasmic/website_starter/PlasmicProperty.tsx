@@ -100,8 +100,8 @@ export type PlasmicProperty__OverridesType = {
   occupancyRate?: Flex__<"div">;
   apiRequestOccupancyRate?: Flex__<typeof ApiRequest>;
   avgDailyRate2?: Flex__<"div">;
-  apiRequestAvgDailyRate?: Flex__<typeof ApiRequest>;
   avgDailyRate?: Flex__<"div">;
+  apiRequestAvgDailyRate?: Flex__<typeof ApiRequest>;
   back?: Flex__<"div">;
   spacer?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
@@ -534,6 +534,125 @@ function PlasmicProperty__RenderFunc(props: {
                       : "(\u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646)"}
                   </div>
                 </div>
+                <ApiRequest
+                  data-plasmic-name={"apiRequestMonthlyIncome"}
+                  data-plasmic-override={overrides.apiRequestMonthlyIncome}
+                  body={(() => {
+                    try {
+                      return {
+                        property_id: $ctx.params.id
+                      };
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.apiRequestMonthlyIncome
+                  )}
+                  errorDisplay={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___9XuYa
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequestAvgDailyRate.data
+                                .map(item => {
+                                  const months = {
+                                    "01": "▪️ فروردین",
+                                    "02": "▪️ اردیبهشت",
+                                    "03": "▪️ خرداد",
+                                    "04": "▪️ تیر",
+                                    "05": "▪️ مرداد",
+                                    "06": "▪️ شهریور",
+                                    "07": "▪️ مهر",
+                                    "08": "▪️ آبان",
+                                    "09": "▪️ آذر",
+                                    "10": "▪️ دی",
+                                    "11": "▪️ بهمن",
+                                    "12": "▪️ اسفند"
+                                  };
+                                  const jalaliMonth =
+                                    months[item.jalali_month.slice(5)];
+                                  const persianPrice = new Intl.NumberFormat(
+                                    "fa-IR"
+                                  ).format(item.average_price_per_night);
+                                  return `${jalaliMonth}: ${persianPrice}`;
+                                })
+                                .join("\n");
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      ) : (
+                        "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
+                      )}
+                    </div>
+                  }
+                  loadingDisplay={
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___2OEl)}
+                      displayHeight={"36px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"36px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                        fullWidth: 500,
+                        fullHeight: 500,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  }
+                  method={"POST"}
+                  onError={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestMonthlyIncome",
+                      "error"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onLoading={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestMonthlyIncome",
+                      "loading"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onSuccess={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestMonthlyIncome",
+                      "data"
+                    ]).apply(null, eventArgs);
+                  }}
+                  params={undefined}
+                  ref={ref => {
+                    $refs["apiRequestMonthlyIncome"] = ref;
+                  }}
+                  url={"https://gateway.rentamon.com/webhook/monthly-income"}
+                />
+
                 <div
                   className={classNames(projectcss.all, sty.freeBox___9Uhb6)}
                 >
@@ -652,124 +771,6 @@ function PlasmicProperty__RenderFunc(props: {
                   />
                 </div>
               </Stack__>
-              <ApiRequest
-                data-plasmic-name={"apiRequestMonthlyIncome"}
-                data-plasmic-override={overrides.apiRequestMonthlyIncome}
-                body={(() => {
-                  try {
-                    return {
-                      property_id: $ctx.params.id
-                    };
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-                className={classNames(
-                  "__wab_instance",
-                  sty.apiRequestMonthlyIncome
-                )}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___9XuYa
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile") ? (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequestAvgDailyRate.data
-                              .map(item => {
-                                const months = {
-                                  "01": "▪️ فروردین",
-                                  "02": "▪️ اردیبهشت",
-                                  "03": "▪️ خرداد",
-                                  "04": "▪️ تیر",
-                                  "05": "▪️ مرداد",
-                                  "06": "▪️ شهریور",
-                                  "07": "▪️ مهر",
-                                  "08": "▪️ آبان",
-                                  "09": "▪️ آذر",
-                                  "10": "▪️ دی",
-                                  "11": "▪️ بهمن",
-                                  "12": "▪️ اسفند"
-                                };
-                                const jalaliMonth =
-                                  months[item.jalali_month.slice(5)];
-                                const persianPrice = new Intl.NumberFormat(
-                                  "fa-IR"
-                                ).format(item.average_price_per_night);
-                                return `${jalaliMonth}: ${persianPrice}`;
-                              })
-                              .join("\n");
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    ) : (
-                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
-                    )}
-                  </div>
-                }
-                loadingDisplay={
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___2OEl)}
-                    displayHeight={"36px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"36px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
-                      fullWidth: 500,
-                      fullHeight: 500,
-                      aspectRatio: undefined
-                    }}
-                  />
-                }
-                method={"POST"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestMonthlyIncome",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestMonthlyIncome",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestMonthlyIncome",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                params={undefined}
-                ref={ref => {
-                  $refs["apiRequestMonthlyIncome"] = ref;
-                }}
-                url={"https://gateway.rentamon.com/webhook/monthly-income"}
-              />
             </Stack__>
             <Stack__
               as={"div"}
@@ -797,6 +798,123 @@ function PlasmicProperty__RenderFunc(props: {
                       "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
                     }
                   </div>
+                  <ApiRequest
+                    data-plasmic-name={"apiRequestSourceOfReserves"}
+                    data-plasmic-override={overrides.apiRequestSourceOfReserves}
+                    body={(() => {
+                      try {
+                        return {
+                          property_id: $ctx.params.id
+                        };
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.apiRequestSourceOfReserves
+                    )}
+                    errorDisplay={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dwhAi
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $state.apiRequestAvgDailyRate.data
+                                  .map(item => {
+                                    const months = {
+                                      "01": "▪️ فروردین",
+                                      "02": "▪️ اردیبهشت",
+                                      "03": "▪️ خرداد",
+                                      "04": "▪️ تیر",
+                                      "05": "▪️ مرداد",
+                                      "06": "▪️ شهریور",
+                                      "07": "▪️ مهر",
+                                      "08": "▪️ آبان",
+                                      "09": "▪️ آذر",
+                                      "10": "▪️ دی",
+                                      "11": "▪️ بهمن",
+                                      "12": "▪️ اسفند"
+                                    };
+                                    const jalaliMonth =
+                                      months[item.jalali_month.slice(5)];
+                                    const persianPrice = new Intl.NumberFormat(
+                                      "fa-IR"
+                                    ).format(item.average_price_per_night);
+                                    return `${jalaliMonth}: ${persianPrice}`;
+                                  })
+                                  .join("\n");
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
+                        )}
+                      </div>
+                    }
+                    loadingDisplay={
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__jwQlY)}
+                        displayHeight={"36px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"36px"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                          fullWidth: 500,
+                          fullHeight: 500,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    }
+                    method={"POST"}
+                    onError={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequestSourceOfReserves",
+                        "error"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onLoading={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequestSourceOfReserves",
+                        "loading"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onSuccess={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequestSourceOfReserves",
+                        "data"
+                      ]).apply(null, eventArgs);
+                    }}
+                    ref={ref => {
+                      $refs["apiRequestSourceOfReserves"] = ref;
+                    }}
+                    url={"https://gateway.rentamon.com/webhook/reserves-source"}
+                  />
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__zxn3)}>
                   <Chart
@@ -906,123 +1024,6 @@ function PlasmicProperty__RenderFunc(props: {
                   />
                 </div>
               </Stack__>
-              <ApiRequest
-                data-plasmic-name={"apiRequestSourceOfReserves"}
-                data-plasmic-override={overrides.apiRequestSourceOfReserves}
-                body={(() => {
-                  try {
-                    return {
-                      property_id: $ctx.params.id
-                    };
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-                className={classNames(
-                  "__wab_instance",
-                  sty.apiRequestSourceOfReserves
-                )}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dwhAi
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile") ? (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequestAvgDailyRate.data
-                              .map(item => {
-                                const months = {
-                                  "01": "▪️ فروردین",
-                                  "02": "▪️ اردیبهشت",
-                                  "03": "▪️ خرداد",
-                                  "04": "▪️ تیر",
-                                  "05": "▪️ مرداد",
-                                  "06": "▪️ شهریور",
-                                  "07": "▪️ مهر",
-                                  "08": "▪️ آبان",
-                                  "09": "▪️ آذر",
-                                  "10": "▪️ دی",
-                                  "11": "▪️ بهمن",
-                                  "12": "▪️ اسفند"
-                                };
-                                const jalaliMonth =
-                                  months[item.jalali_month.slice(5)];
-                                const persianPrice = new Intl.NumberFormat(
-                                  "fa-IR"
-                                ).format(item.average_price_per_night);
-                                return `${jalaliMonth}: ${persianPrice}`;
-                              })
-                              .join("\n");
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    ) : (
-                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
-                    )}
-                  </div>
-                }
-                loadingDisplay={
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__jwQlY)}
-                    displayHeight={"36px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"36px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
-                      fullWidth: 500,
-                      fullHeight: 500,
-                      aspectRatio: undefined
-                    }}
-                  />
-                }
-                method={"POST"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestSourceOfReserves",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestSourceOfReserves",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestSourceOfReserves",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["apiRequestSourceOfReserves"] = ref;
-                }}
-                url={"https://gateway.rentamon.com/webhook/reserves-source"}
-              />
             </Stack__>
             <Stack__
               as={"div"}
@@ -1047,6 +1048,124 @@ function PlasmicProperty__RenderFunc(props: {
                     ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u062f\u0631 \u0647\u0631 \u0645\u0627\u0647"
                     : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
                 </div>
+                <ApiRequest
+                  data-plasmic-name={"apiRequestOccupancyRate"}
+                  data-plasmic-override={overrides.apiRequestOccupancyRate}
+                  body={(() => {
+                    try {
+                      return {
+                        property_id: $ctx.params.id
+                      };
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.apiRequestOccupancyRate
+                  )}
+                  errorDisplay={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__zLd8H
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequestAvgDailyRate.data
+                                .map(item => {
+                                  const months = {
+                                    "01": "▪️ فروردین",
+                                    "02": "▪️ اردیبهشت",
+                                    "03": "▪️ خرداد",
+                                    "04": "▪️ تیر",
+                                    "05": "▪️ مرداد",
+                                    "06": "▪️ شهریور",
+                                    "07": "▪️ مهر",
+                                    "08": "▪️ آبان",
+                                    "09": "▪️ آذر",
+                                    "10": "▪️ دی",
+                                    "11": "▪️ بهمن",
+                                    "12": "▪️ اسفند"
+                                  };
+                                  const jalaliMonth =
+                                    months[item.jalali_month.slice(5)];
+                                  const persianPrice = new Intl.NumberFormat(
+                                    "fa-IR"
+                                  ).format(item.average_price_per_night);
+                                  return `${jalaliMonth}: ${persianPrice}`;
+                                })
+                                .join("\n");
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      ) : (
+                        "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
+                      )}
+                    </div>
+                  }
+                  loadingDisplay={
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__d7ZE8)}
+                      displayHeight={"36px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"36px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                        fullWidth: 500,
+                        fullHeight: 500,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  }
+                  method={"POST"}
+                  onError={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestOccupancyRate",
+                      "error"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onLoading={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestOccupancyRate",
+                      "loading"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onSuccess={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestOccupancyRate",
+                      "data"
+                    ]).apply(null, eventArgs);
+                  }}
+                  ref={ref => {
+                    $refs["apiRequestOccupancyRate"] = ref;
+                  }}
+                  url={"https://gateway.rentamon.com/webhook/cccupancy-rate"}
+                />
+
                 <div className={classNames(projectcss.all, sty.freeBox__jXf6)}>
                   <Chart
                     cartesianGrid={
@@ -1102,247 +1221,12 @@ function PlasmicProperty__RenderFunc(props: {
                   />
                 </div>
               </div>
-              <ApiRequest
-                data-plasmic-name={"apiRequestOccupancyRate"}
-                data-plasmic-override={overrides.apiRequestOccupancyRate}
-                body={(() => {
-                  try {
-                    return {
-                      property_id: $ctx.params.id
-                    };
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-                className={classNames(
-                  "__wab_instance",
-                  sty.apiRequestOccupancyRate
-                )}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zLd8H
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile") ? (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequestAvgDailyRate.data
-                              .map(item => {
-                                const months = {
-                                  "01": "▪️ فروردین",
-                                  "02": "▪️ اردیبهشت",
-                                  "03": "▪️ خرداد",
-                                  "04": "▪️ تیر",
-                                  "05": "▪️ مرداد",
-                                  "06": "▪️ شهریور",
-                                  "07": "▪️ مهر",
-                                  "08": "▪️ آبان",
-                                  "09": "▪️ آذر",
-                                  "10": "▪️ دی",
-                                  "11": "▪️ بهمن",
-                                  "12": "▪️ اسفند"
-                                };
-                                const jalaliMonth =
-                                  months[item.jalali_month.slice(5)];
-                                const persianPrice = new Intl.NumberFormat(
-                                  "fa-IR"
-                                ).format(item.average_price_per_night);
-                                return `${jalaliMonth}: ${persianPrice}`;
-                              })
-                              .join("\n");
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    ) : (
-                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
-                    )}
-                  </div>
-                }
-                loadingDisplay={
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__d7ZE8)}
-                    displayHeight={"36px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"36px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
-                      fullWidth: 500,
-                      fullHeight: 500,
-                      aspectRatio: undefined
-                    }}
-                  />
-                }
-                method={"POST"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestOccupancyRate",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestOccupancyRate",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestOccupancyRate",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["apiRequestOccupancyRate"] = ref;
-                }}
-                url={"https://gateway.rentamon.com/webhook/cccupancy-rate"}
-              />
             </Stack__>
             <div
               data-plasmic-name={"avgDailyRate2"}
               data-plasmic-override={overrides.avgDailyRate2}
               className={classNames(projectcss.all, sty.avgDailyRate2)}
             >
-              <ApiRequest
-                data-plasmic-name={"apiRequestAvgDailyRate"}
-                data-plasmic-override={overrides.apiRequestAvgDailyRate}
-                body={(() => {
-                  try {
-                    return {
-                      property_id: $ctx.params.id
-                    };
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-                className={classNames(
-                  "__wab_instance",
-                  sty.apiRequestAvgDailyRate
-                )}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___3C64Y
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile") ? (
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $state.apiRequestAvgDailyRate.data
-                              .map(item => {
-                                const months = {
-                                  "01": "▪️ فروردین",
-                                  "02": "▪️ اردیبهشت",
-                                  "03": "▪️ خرداد",
-                                  "04": "▪️ تیر",
-                                  "05": "▪️ مرداد",
-                                  "06": "▪️ شهریور",
-                                  "07": "▪️ مهر",
-                                  "08": "▪️ آبان",
-                                  "09": "▪️ آذر",
-                                  "10": "▪️ دی",
-                                  "11": "▪️ بهمن",
-                                  "12": "▪️ اسفند"
-                                };
-                                const jalaliMonth =
-                                  months[item.jalali_month.slice(5)];
-                                const persianPrice = new Intl.NumberFormat(
-                                  "fa-IR"
-                                ).format(item.average_price_per_night);
-                                return `${jalaliMonth}: ${persianPrice}`;
-                              })
-                              .join("\n");
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    ) : (
-                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
-                    )}
-                  </div>
-                }
-                loadingDisplay={
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__puJuO)}
-                    displayHeight={"36px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"36px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
-                      fullWidth: 500,
-                      fullHeight: 500,
-                      aspectRatio: undefined
-                    }}
-                  />
-                }
-                method={"POST"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestAvgDailyRate",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestAvgDailyRate",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequestAvgDailyRate",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["apiRequestAvgDailyRate"] = ref;
-                }}
-                url={"https://gateway.rentamon.com/webhook/avg-daily-rate"}
-              />
-
               <Stack__
                 as={"div"}
                 data-plasmic-name={"avgDailyRate"}
@@ -1380,6 +1264,124 @@ function PlasmicProperty__RenderFunc(props: {
                     </div>
                   ) : null}
                 </div>
+                <ApiRequest
+                  data-plasmic-name={"apiRequestAvgDailyRate"}
+                  data-plasmic-override={overrides.apiRequestAvgDailyRate}
+                  body={(() => {
+                    try {
+                      return {
+                        property_id: $ctx.params.id
+                      };
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.apiRequestAvgDailyRate
+                  )}
+                  errorDisplay={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___3C64Y
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequestAvgDailyRate.data
+                                .map(item => {
+                                  const months = {
+                                    "01": "▪️ فروردین",
+                                    "02": "▪️ اردیبهشت",
+                                    "03": "▪️ خرداد",
+                                    "04": "▪️ تیر",
+                                    "05": "▪️ مرداد",
+                                    "06": "▪️ شهریور",
+                                    "07": "▪️ مهر",
+                                    "08": "▪️ آبان",
+                                    "09": "▪️ آذر",
+                                    "10": "▪️ دی",
+                                    "11": "▪️ بهمن",
+                                    "12": "▪️ اسفند"
+                                  };
+                                  const jalaliMonth =
+                                    months[item.jalali_month.slice(5)];
+                                  const persianPrice = new Intl.NumberFormat(
+                                    "fa-IR"
+                                  ).format(item.average_price_per_night);
+                                  return `${jalaliMonth}: ${persianPrice}`;
+                                })
+                                .join("\n");
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      ) : (
+                        "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
+                      )}
+                    </div>
+                  }
+                  loadingDisplay={
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__puJuO)}
+                      displayHeight={"36px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"36px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                        fullWidth: 500,
+                        fullHeight: 500,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  }
+                  method={"POST"}
+                  onError={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestAvgDailyRate",
+                      "error"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onLoading={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestAvgDailyRate",
+                      "loading"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onSuccess={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequestAvgDailyRate",
+                      "data"
+                    ]).apply(null, eventArgs);
+                  }}
+                  ref={ref => {
+                    $refs["apiRequestAvgDailyRate"] = ref;
+                  }}
+                  url={"https://gateway.rentamon.com/webhook/avg-daily-rate"}
+                />
+
                 <div className={classNames(projectcss.all, sty.freeBox__nC6Cn)}>
                   <div
                     className={classNames(
@@ -1421,7 +1423,7 @@ function PlasmicProperty__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                              return " ";
                             }
                             throw e;
                           }
@@ -1552,8 +1554,8 @@ const PlasmicDescendants = {
     "occupancyRate",
     "apiRequestOccupancyRate",
     "avgDailyRate2",
-    "apiRequestAvgDailyRate",
     "avgDailyRate",
+    "apiRequestAvgDailyRate",
     "back",
     "spacer",
     "navigationRntFooter"
@@ -1574,33 +1576,33 @@ const PlasmicDescendants = {
     "occupancyRate",
     "apiRequestOccupancyRate",
     "avgDailyRate2",
-    "apiRequestAvgDailyRate",
-    "avgDailyRate"
+    "avgDailyRate",
+    "apiRequestAvgDailyRate"
   ],
   monthlyIncome2: [
     "monthlyIncome2",
     "monthlyIncome",
     "apiRequestMonthlyIncome"
   ],
-  monthlyIncome: ["monthlyIncome"],
+  monthlyIncome: ["monthlyIncome", "apiRequestMonthlyIncome"],
   apiRequestMonthlyIncome: ["apiRequestMonthlyIncome"],
   sourcesOfReserves2: [
     "sourcesOfReserves2",
     "sourcesOfReserves",
     "apiRequestSourceOfReserves"
   ],
-  sourcesOfReserves: ["sourcesOfReserves"],
+  sourcesOfReserves: ["sourcesOfReserves", "apiRequestSourceOfReserves"],
   apiRequestSourceOfReserves: ["apiRequestSourceOfReserves"],
   occupancyRate2: [
     "occupancyRate2",
     "occupancyRate",
     "apiRequestOccupancyRate"
   ],
-  occupancyRate: ["occupancyRate"],
+  occupancyRate: ["occupancyRate", "apiRequestOccupancyRate"],
   apiRequestOccupancyRate: ["apiRequestOccupancyRate"],
-  avgDailyRate2: ["avgDailyRate2", "apiRequestAvgDailyRate", "avgDailyRate"],
+  avgDailyRate2: ["avgDailyRate2", "avgDailyRate", "apiRequestAvgDailyRate"],
+  avgDailyRate: ["avgDailyRate", "apiRequestAvgDailyRate"],
   apiRequestAvgDailyRate: ["apiRequestAvgDailyRate"],
-  avgDailyRate: ["avgDailyRate"],
   back: ["back"],
   spacer: ["spacer"],
   navigationRntFooter: ["navigationRntFooter"]
@@ -1625,8 +1627,8 @@ type NodeDefaultElementType = {
   occupancyRate: "div";
   apiRequestOccupancyRate: typeof ApiRequest;
   avgDailyRate2: "div";
-  apiRequestAvgDailyRate: typeof ApiRequest;
   avgDailyRate: "div";
+  apiRequestAvgDailyRate: typeof ApiRequest;
   back: "div";
   spacer: "div";
   navigationRntFooter: typeof NavigationRntFooter;
@@ -1707,8 +1709,8 @@ export const PlasmicProperty = Object.assign(
     occupancyRate: makeNodeComponent("occupancyRate"),
     apiRequestOccupancyRate: makeNodeComponent("apiRequestOccupancyRate"),
     avgDailyRate2: makeNodeComponent("avgDailyRate2"),
-    apiRequestAvgDailyRate: makeNodeComponent("apiRequestAvgDailyRate"),
     avgDailyRate: makeNodeComponent("avgDailyRate"),
+    apiRequestAvgDailyRate: makeNodeComponent("apiRequestAvgDailyRate"),
     back: makeNodeComponent("back"),
     spacer: makeNodeComponent("spacer"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
