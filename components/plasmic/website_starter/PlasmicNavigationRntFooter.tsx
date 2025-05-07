@@ -394,7 +394,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["goToProCalendar"] = await $steps["goToProCalendar"];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
