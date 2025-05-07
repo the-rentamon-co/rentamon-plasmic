@@ -6,14 +6,16 @@
   align-content: flex-start;
   justify-items: center;
   background: linear-gradient(
-      37deg,
-      #ebfaff 9%,
-      #fcfcfc 29%,
-      #f2fbfe 60%,
-      #fcfcfc 79%,
-      #ebfaff 88%
+      40deg,
+      #fcfcfc 0%,
+      #ebfaff 38%,
+      #fcfcfc 63%,
+      #ebfaff 96%
     )
     0% 0% / 100% 100% repeat;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   grid-template-columns:
@@ -23,7 +25,7 @@
       calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
-  padding: 9px 0px 0px;
+  padding: 0px;
 }
 .home > * {
   grid-column: 4;

@@ -9,11 +9,11 @@
   justify-content: flex-start;
   align-items: center;
   background: linear-gradient(
-      55deg,
-      #d7fbff 0%,
-      #f5f5f5 29%,
-      #e4f7ff 65%,
-      #ffffff 90%
+      40deg,
+      #fcfcfc 0%,
+      #ebfaff 38%,
+      #fcfcfc 63%,
+      #ebfaff 96%
     )
     0% 0% / 100% 100% repeat;
   grid-row-gap: 10px;
@@ -26,7 +26,7 @@
       calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
-  padding: 9px 0rem 0rem;
+  padding: 0px;
 }
 .root > * {
   grid-column: 4;

@@ -102,7 +102,6 @@ export type Plasmicکیفپول__OverridesType = {
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
   favIcon?: Flex__<typeof Embed>;
-  walletDesc?: Flex__<"div">;
   balanceAndCharge?: Flex__<"div">;
   balance?: Flex__<"div">;
   balance2?: Flex__<"div">;
@@ -412,23 +411,6 @@ function Plasmicکیفپول__RenderFunc(props: {
             }
           />
 
-          <div
-            data-plasmic-name={"walletDesc"}
-            data-plasmic-override={overrides.walletDesc}
-            className={classNames(projectcss.all, sty.walletDesc)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__dfpnz
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "\u0647\u0631 \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0647\u060c \u0627\u06cc\u0646\u200c\u062c\u0627\u0633\u062a. "
-                : "\u0647\u0631 \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u0647\u060c \u0627\u06cc\u0646\u200c\u062c\u0627\u0633\u062a. "}
-            </div>
-          </div>
           <div
             data-plasmic-name={"balanceAndCharge"}
             data-plasmic-override={overrides.balanceAndCharge}
@@ -2044,7 +2026,6 @@ const PlasmicDescendants = {
     "sideBar2",
     "profile2",
     "favIcon",
-    "walletDesc",
     "balanceAndCharge",
     "balance",
     "balance2",
@@ -2086,7 +2067,6 @@ const PlasmicDescendants = {
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
   favIcon: ["favIcon"],
-  walletDesc: ["walletDesc"],
   balanceAndCharge: ["balanceAndCharge", "balance", "balance2", "report"],
   balance: ["balance", "balance2"],
   balance2: ["balance2"],
@@ -2157,7 +2137,6 @@ type NodeDefaultElementType = {
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
   favIcon: typeof Embed;
-  walletDesc: "div";
   balanceAndCharge: "div";
   balance: "div";
   balance2: "div";
@@ -2260,7 +2239,6 @@ export const Plasmicکیفپول = Object.assign(
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
     favIcon: makeNodeComponent("favIcon"),
-    walletDesc: makeNodeComponent("walletDesc"),
     balanceAndCharge: makeNodeComponent("balanceAndCharge"),
     balance: makeNodeComponent("balance"),
     balance2: makeNodeComponent("balance2"),

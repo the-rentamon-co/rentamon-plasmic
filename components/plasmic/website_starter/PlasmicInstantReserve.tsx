@@ -104,7 +104,7 @@ export type PlasmicInstantReserve__OverridesType = {
   shabContainer?: Flex__<"div">;
   shabSwitch?: Flex__<typeof Switch>;
   otaghakContainer?: Flex__<"div">;
-  otaghak?: Flex__<typeof Switch>;
+  otaghakSwitch?: Flex__<typeof Switch>;
   jabamaContainer?: Flex__<"div">;
   fragmentSwitch3?: Flex__<typeof Switch>;
   jajigaContainer?: Flex__<"div">;
@@ -266,7 +266,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "otaghak.checked",
+        path: "otaghakSwitch.checked",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -1096,23 +1096,26 @@ function PlasmicInstantReserve__RenderFunc(props: {
                         </div>
                       </div>
                       <Switch
-                        data-plasmic-name={"otaghak"}
-                        data-plasmic-override={overrides.otaghak}
+                        data-plasmic-name={"otaghakSwitch"}
+                        data-plasmic-override={overrides.otaghakSwitch}
                         checked={generateStateValueProp($state, [
-                          "otaghak",
+                          "otaghakSwitch",
                           "checked"
                         ])}
-                        className={classNames("__wab_instance", sty.otaghak)}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.otaghakSwitch
+                        )}
                         onCheckedChange={async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
-                            "otaghak",
+                            "otaghakSwitch",
                             "checked"
                           ]).apply(null, eventArgs);
 
                           (async checked => {
                             const $steps = {};
 
-                            $steps["invokeGlobalAction"] = true
+                            $steps["apiRequestForOtaghakInstant"] = true
                               ? (() => {
                                   const actionArgs = {
                                     args: [
@@ -1121,7 +1124,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                       undefined,
                                       (() => {
                                         try {
-                                          return $state.otaghak.checked
+                                          return $state.otaghakSwitch.checked
                                             ? {
                                                 action: "set_instant",
                                                 property_id:
@@ -1162,40 +1165,69 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                 })()
                               : undefined;
                             if (
-                              $steps["invokeGlobalAction"] != null &&
-                              typeof $steps["invokeGlobalAction"] ===
+                              $steps["apiRequestForOtaghakInstant"] != null &&
+                              typeof $steps["apiRequestForOtaghakInstant"] ===
                                 "object" &&
-                              typeof $steps["invokeGlobalAction"].then ===
+                              typeof $steps["apiRequestForOtaghakInstant"]
+                                .then === "function"
+                            ) {
+                              $steps["apiRequestForOtaghakInstant"] =
+                                await $steps["apiRequestForOtaghakInstant"];
+                            }
+
+                            $steps["turnOnSuccessToast"] =
+                              $steps.apiRequestForOtaghakInstant.status ===
+                                200 && $state.otaghakSwitch.checked
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        " \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u062a\u0627\u0642\u06a9 \u0631\u0648\u0634\u0646 \u0634\u062f.",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOnSuccessToast"] != null &&
+                              typeof $steps["turnOnSuccessToast"] ===
+                                "object" &&
+                              typeof $steps["turnOnSuccessToast"].then ===
                                 "function"
                             ) {
-                              $steps["invokeGlobalAction"] = await $steps[
-                                "invokeGlobalAction"
+                              $steps["turnOnSuccessToast"] = await $steps[
+                                "turnOnSuccessToast"
                               ];
                             }
 
-                            $steps["invokeGlobalAction2"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      undefined,
-                                      "\u062a\u063a\u06cc\u06cc\u0631 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0639\u0645\u0627\u0644 \u0634\u062f",
-                                      "top-center"
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
+                            $steps["turnOffSuccessToast"] =
+                              $steps.apiRequestForOtaghakInstant.status ===
+                                200 && !$state.otaghakSwitch.checked
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        " \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u062a\u0627\u0642\u06a9 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
                             if (
-                              $steps["invokeGlobalAction2"] != null &&
-                              typeof $steps["invokeGlobalAction2"] ===
+                              $steps["turnOffSuccessToast"] != null &&
+                              typeof $steps["turnOffSuccessToast"] ===
                                 "object" &&
-                              typeof $steps["invokeGlobalAction2"].then ===
+                              typeof $steps["turnOffSuccessToast"].then ===
                                 "function"
                             ) {
-                              $steps["invokeGlobalAction2"] = await $steps[
-                                "invokeGlobalAction2"
+                              $steps["turnOffSuccessToast"] = await $steps[
+                                "turnOffSuccessToast"
                               ];
                             }
 
@@ -1204,18 +1236,37 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     variable: {
                                       objRoot: $state,
-                                      variablePath: ["otaghak", "checked"]
+                                      variablePath: ["otaghakSwitch", "checked"]
                                     },
                                     operation: 0,
-                                    value: ($state.properties.data
-                                      .find(
-                                        property =>
-                                          property.property_name ===
-                                          $state.selectProperty.value
-                                      )
-                                      .website_ids.find(
-                                        website => website.website_id === 6
-                                      ).is_instant = $state.otaghak.checked)
+                                    value: (() => {
+                                      if (
+                                        $steps.apiRequestForOtaghakInstant
+                                          .status === 200
+                                      ) {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 6
+                                          ).is_instant =
+                                          $state.otaghakSwitch.checked);
+                                      } else {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 6
+                                          ).is_instant =
+                                          !$state.otaghakSwitch.checked);
+                                      }
+                                    })()
                                   };
                                   return (({
                                     variable,
@@ -1245,40 +1296,28 @@ function PlasmicInstantReserve__RenderFunc(props: {
                               ];
                             }
 
-                            $steps["updateShabSwitchChecked"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["shabSwitch", "checked"]
-                                    },
-                                    operation: 0
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
+                            $steps["failedToast"] =
+                              $steps.apiRequestForOtaghakInstant.status != 200
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u062e\u0648\u0631\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
                             if (
-                              $steps["updateShabSwitchChecked"] != null &&
-                              typeof $steps["updateShabSwitchChecked"] ===
-                                "object" &&
-                              typeof $steps["updateShabSwitchChecked"].then ===
-                                "function"
+                              $steps["failedToast"] != null &&
+                              typeof $steps["failedToast"] === "object" &&
+                              typeof $steps["failedToast"].then === "function"
                             ) {
-                              $steps["updateShabSwitchChecked"] = await $steps[
-                                "updateShabSwitchChecked"
+                              $steps["failedToast"] = await $steps[
+                                "failedToast"
                               ];
                             }
                           }).apply(null, eventArgs);
@@ -2319,6 +2358,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
               "\u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u0628\u0647 \u0645\u0647\u0645\u0627\u0646 \u0627\u062c\u0627\u0632\u0647 \u0645\u06cc\u062f\u0647 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u062a\u0627\u06cc\u06cc\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u0628\u0627\u0639\u062b \u0628\u06cc\u0634\u062a\u0631 \u0634\u062f\u0646 \u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u06a9\u0627\u0647\u0634 \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0648 \u0628\u0627\u0644\u0627\u062a\u0631 \u0631\u0641\u062a\u0646 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u062c\u0633\u062a\u062c\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0645\u06cc\u200c\u0634\u0647."
             }
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__x7Fvp)} />
+
           <Embed
             className={classNames("__wab_instance", sty.embedHtml___64Fi)}
             code={
@@ -2576,7 +2617,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghak",
+    "otaghakSwitch",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -2615,7 +2656,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghak",
+    "otaghakSwitch",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -2633,7 +2674,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghak",
+    "otaghakSwitch",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -2648,8 +2689,8 @@ const PlasmicDescendants = {
   selectProperty: ["selectProperty"],
   shabContainer: ["shabContainer", "shabSwitch"],
   shabSwitch: ["shabSwitch"],
-  otaghakContainer: ["otaghakContainer", "otaghak"],
-  otaghak: ["otaghak"],
+  otaghakContainer: ["otaghakContainer", "otaghakSwitch"],
+  otaghakSwitch: ["otaghakSwitch"],
   jabamaContainer: ["jabamaContainer", "fragmentSwitch3"],
   fragmentSwitch3: ["fragmentSwitch3"],
   jajigaContainer: ["jajigaContainer", "fragmentSwitch5"],
@@ -2686,7 +2727,7 @@ type NodeDefaultElementType = {
   shabContainer: "div";
   shabSwitch: typeof Switch;
   otaghakContainer: "div";
-  otaghak: typeof Switch;
+  otaghakSwitch: typeof Switch;
   jabamaContainer: "div";
   fragmentSwitch3: typeof Switch;
   jajigaContainer: "div";
@@ -2779,7 +2820,7 @@ export const PlasmicInstantReserve = Object.assign(
     shabContainer: makeNodeComponent("shabContainer"),
     shabSwitch: makeNodeComponent("shabSwitch"),
     otaghakContainer: makeNodeComponent("otaghakContainer"),
-    otaghak: makeNodeComponent("otaghak"),
+    otaghakSwitch: makeNodeComponent("otaghakSwitch"),
     jabamaContainer: makeNodeComponent("jabamaContainer"),
     fragmentSwitch3: makeNodeComponent("fragmentSwitch3"),
     jajigaContainer: makeNodeComponent("jajigaContainer"),

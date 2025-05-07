@@ -8,6 +8,14 @@
   justify-items: center;
   justify-content: flex-start;
   align-items: center;
+  background: linear-gradient(
+    24deg,
+    #ebfaff 0%,
+    #fcfcfc 20%,
+    #ebfaff 39%,
+    #fcfcfc 74%,
+    #ebfaff 100%
+  );
   min-width: 0;
   min-height: 0;
   grid-template-columns:
@@ -17,6 +25,7 @@
       calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+  padding: 0px;
 }
 .root > * {
   grid-column: 4;
@@ -24,6 +33,27 @@
 @media (max-width: 1200px) {
   .root > * {
     grid-column: 4;
+  }
+}
+@media (max-width: 500px) {
+  .root {
+    background: linear-gradient(
+        40deg,
+        #fcfcfc 0%,
+        #ebfaff 38%,
+        #fcfcfc 63%,
+        #ebfaff 96%
+      )
+      0% 0% / 100% 100% repeat;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    min-width: 0;
+    min-height: 0;
+    padding: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -463,7 +493,7 @@
   width: 100%;
   height: auto;
   max-width: 387px;
-  background: #f3f3f3;
+  background: #fcfcfc;
   min-height: 70vh;
   min-width: 0;
   grid-template-columns:
@@ -475,7 +505,8 @@
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
   border-radius: 30px;
   padding: 0px 0px 8px;
-  margin: 0px 16px 16px;
+  margin: 0px;
+  border-width: 2px;
 }
 .mainSection > * {
   grid-column: 4;
@@ -649,7 +680,7 @@
   text-align: right;
   padding-left: 0px;
 }
-.otaghak:global(.__wab_instance) {
+.otaghakSwitch:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   transition-property: all;
@@ -1022,7 +1053,7 @@
   max-width: 100%;
   line-height: 1.8;
   font-size: 16px;
-  margin-bottom: 101px;
+  margin-bottom: 0px;
   min-width: 0;
   padding: 40px 40px 26px;
 }
@@ -1037,6 +1068,20 @@
   .desc {
     font-size: 14px;
   }
+}
+.freeBox__x7Fvp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 50px;
+  max-height: 50px;
+  min-width: 0;
+  padding: 8px;
 }
 .embedHtml___64Fi:global(.__wab_instance) {
   max-width: 100%;

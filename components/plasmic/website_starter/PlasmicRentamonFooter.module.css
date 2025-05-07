@@ -28,7 +28,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  background: #ebfaff;
+  background: linear-gradient(40deg, #ececec 0%, #fcfcfc 59%, #ececec 98%);
   min-width: 0;
   padding: 0px 8px;
 }
@@ -39,7 +39,7 @@
 }
 @media (max-width: 500px) {
   .freeBox__bbk5A {
-    background: #ebfaff;
+    background: linear-gradient(40deg, #ececec 0%, #fcfcfc 55%, #ececec 100%);
   }
 }
 .mid {

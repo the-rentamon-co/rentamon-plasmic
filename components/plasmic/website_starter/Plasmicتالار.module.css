@@ -35,12 +35,12 @@
 @media (max-width: 500px) {
   .root {
     background: linear-gradient(
-      50deg,
-      #f9feff 0%,
-      #fcfcfc 24%,
-      #f9feff 47%,
-      #fcfcfc 78%,
-      #f9feff 96%
+      24deg,
+      #ebfaff 0%,
+      #fcfcfc 20%,
+      #ebfaff 39%,
+      #fcfcfc 74%,
+      #ebfaff 100%
     );
   }
 }
@@ -74,9 +74,9 @@
 }
 @media (max-width: 500px) {
   .header {
-    display: flex;
     flex-direction: row;
     padding-top: 9px;
+    display: none;
   }
 }
 .headerTitle {

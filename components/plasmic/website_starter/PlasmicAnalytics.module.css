@@ -131,30 +131,12 @@
   max-width: 100%;
   object-fit: cover;
 }
-.apiRequestPie:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__wQdKd {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text___3Bu1C {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.apiRequest:global(.__wab_instance) {
+.apiRequestMonthlyIncome:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
 @media (max-width: 1200px) {
-  .apiRequest:global(.__wab_instance) {
+  .apiRequestMonthlyIncome:global(.__wab_instance) {
     display: none;
   }
 }
@@ -172,7 +154,25 @@
   max-width: 100%;
   min-width: 0;
 }
-.apiRequestOccupancy:global(.__wab_instance) {
+.apiRequestSourceOfReserves:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__wQdKd {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text___3Bu1C {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.apiRequestOccupancyRate:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -184,24 +184,6 @@
   min-width: 0;
 }
 .text__hbhrg {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.apiRequestAvgDailyrate:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__zv5H {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__hzcka {
   position: relative;
   width: 100%;
   height: auto;
@@ -467,7 +449,7 @@
     font-size: 12px;
   }
 }
-.sources {
+.sourcesOfReserves {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -477,14 +459,14 @@
   min-width: 0;
   padding: 30px 8px 8px;
 }
-.sources > :global(.__wab_flex-container) {
+.sourcesOfReserves > :global(.__wab_flex-container) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .sources {
+  .sourcesOfReserves {
     max-width: 100%;
     width: 100%;
     height: auto;
@@ -494,7 +476,7 @@
   }
 }
 @media (max-width: 500px) {
-  .sources > :global(.__wab_flex-container) {
+  .sourcesOfReserves > :global(.__wab_flex-container) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -504,10 +486,13 @@
   }
 }
 @media (max-width: 500px) {
-  .sources > :global(.__wab_flex-container) > *,
-  .sources > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .sources > :global(.__wab_flex-container) > picture > img,
-  .sources
+  .sourcesOfReserves > :global(.__wab_flex-container) > *,
+  .sourcesOfReserves
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > *,
+  .sourcesOfReserves > :global(.__wab_flex-container) > picture > img,
+  .sourcesOfReserves
     > :global(.__wab_flex-container)
     > :global(.__wab_slot)
     > picture
@@ -516,7 +501,7 @@
   }
 }
 @media (max-width: 350px) {
-  .sources {
+  .sourcesOfReserves {
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -526,7 +511,7 @@
   }
 }
 @media (max-width: 350px) {
-  .sources > :global(.__wab_flex-container) {
+  .sourcesOfReserves > :global(.__wab_flex-container) {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
@@ -536,10 +521,13 @@
   }
 }
 @media (max-width: 350px) {
-  .sources > :global(.__wab_flex-container) > *,
-  .sources > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .sources > :global(.__wab_flex-container) > picture > img,
-  .sources
+  .sourcesOfReserves > :global(.__wab_flex-container) > *,
+  .sourcesOfReserves
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > *,
+  .sourcesOfReserves > :global(.__wab_flex-container) > picture > img,
+  .sourcesOfReserves
     > :global(.__wab_flex-container)
     > :global(.__wab_slot)
     > picture
@@ -761,7 +749,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox__zgrJ {
+.avgDailyRate2 {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -774,7 +762,7 @@
   grid-column-end: -3 !important;
   padding: 8px;
 }
-.apiRequestAvgDailyrateBoojar:global(.__wab_instance) {
+.apiRequestAvgDailyRate:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -887,4 +875,16 @@
 }
 .rentamonFooter:global(.__wab_instance) {
   max-width: 100%;
+}
+.occupancyRate2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
 }

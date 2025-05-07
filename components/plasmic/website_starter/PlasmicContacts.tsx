@@ -252,45 +252,27 @@ function PlasmicContacts__RenderFunc(props: {
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__tdKik)}>
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? true
-                : (() => {
-                    try {
-                      return $state.userType == "1";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
+            <div className={classNames(projectcss.all, sty.freeBox__wmfUa)}>
+              <SideBar2
+                data-plasmic-name={"sideBar2"}
+                data-plasmic-override={overrides.sideBar2}
+                className={classNames("__wab_instance", sty.sideBar2)}
+                isOpen={false}
+                userData={(() => {
+                  try {
+                    return $state.profile.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
                     }
-                  })()
-            ) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__wmfUa)}>
-                <SideBar2
-                  data-plasmic-name={"sideBar2"}
-                  data-plasmic-override={overrides.sideBar2}
-                  className={classNames("__wab_instance", sty.sideBar2)}
-                  isOpen={false}
-                  userData={(() => {
-                    try {
-                      return $state.profile.data;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
-                />
-              </div>
-            ) : null}
+                    throw e;
+                  }
+                })()}
+              />
+            </div>
             {(
               hasVariant(globalVariants, "screen", "mobile")
                 ? true

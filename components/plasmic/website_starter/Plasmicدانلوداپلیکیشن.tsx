@@ -310,6 +310,8 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                 </div>
               </div>
             </div>
+            <div className={classNames(projectcss.all, sty.freeBox__qdVee)} />
+
             <div
               data-plasmic-name={"link"}
               data-plasmic-override={overrides.link}
@@ -816,6 +818,8 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
               </div>
             </Stack__>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox___7Lda8)} />
+
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
             data-plasmic-override={overrides.rentamonFooter}
