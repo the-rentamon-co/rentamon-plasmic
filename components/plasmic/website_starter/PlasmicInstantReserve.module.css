@@ -464,6 +464,7 @@
   height: auto;
   max-width: 387px;
   background: #f3f3f3;
+  min-height: 70vh;
   min-width: 0;
   grid-template-columns:
     var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
