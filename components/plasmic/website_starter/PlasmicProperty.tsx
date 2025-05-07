@@ -944,19 +944,7 @@ function PlasmicProperty__RenderFunc(props: {
                       "__wab_instance",
                       sty.fragmentChart__gmtm4
                     )}
-                    data={(() => {
-                      try {
-                        return $state.apiRequestOccupancyRate.data;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
+                    data={$state.apiRequestOccupancyRate.data}
                     label={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? true
@@ -1192,7 +1180,7 @@ function PlasmicProperty__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646: \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a: \u06f2.\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u062e\u0631\u062f\u0627\u062f: \u06f2.\u06f7 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646";
+                          return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
                         }
                         throw e;
                       }
