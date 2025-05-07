@@ -470,29 +470,6 @@ function PlasmicProperty__RenderFunc(props: {
                 </div>
               </div>
             </ApiRequest>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___3V5T
-              )}
-            >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return $ctx.params.id;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "";
-                    }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__n9ASc)}>
             <div
@@ -507,6 +484,8 @@ function PlasmicProperty__RenderFunc(props: {
                 : "\u0628\u0632\u0648\u062f\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0648 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc\u062f.\n\u062f\u0631 \u0631\u0648\u0632\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u0627\u06cc\u0646\u062c\u0627 \u0633\u0631 \u0628\u0632\u0646."}
             </div>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__o90Qc)} />
+
           <div
             data-plasmic-name={"analytics"}
             data-plasmic-override={overrides.analytics}
@@ -656,6 +635,21 @@ function PlasmicProperty__RenderFunc(props: {
               <ApiRequest
                 data-plasmic-name={"apiRequestMonthlyIncome"}
                 data-plasmic-override={overrides.apiRequestMonthlyIncome}
+                body={(() => {
+                  try {
+                    return {
+                      property_id: $ctx.params.id
+                    };
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 className={classNames(
                   "__wab_instance",
                   sty.apiRequestMonthlyIncome
@@ -701,6 +695,7 @@ function PlasmicProperty__RenderFunc(props: {
                     "data"
                   ]).apply(null, eventArgs);
                 }}
+                params={undefined}
                 ref={ref => {
                   $refs["apiRequestMonthlyIncome"] = ref;
                 }}
@@ -843,6 +838,21 @@ function PlasmicProperty__RenderFunc(props: {
               <ApiRequest
                 data-plasmic-name={"apiRequestSourceOfReserves"}
                 data-plasmic-override={overrides.apiRequestSourceOfReserves}
+                body={(() => {
+                  try {
+                    return {
+                      property_id: $ctx.params.id
+                    };
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 className={classNames(
                   "__wab_instance",
                   sty.apiRequestSourceOfReserves
@@ -985,6 +995,21 @@ function PlasmicProperty__RenderFunc(props: {
               <ApiRequest
                 data-plasmic-name={"apiRequestOccupancyRate"}
                 data-plasmic-override={overrides.apiRequestOccupancyRate}
+                body={(() => {
+                  try {
+                    return {
+                      property_id: $ctx.params.id
+                    };
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 className={classNames(
                   "__wab_instance",
                   sty.apiRequestOccupancyRate
@@ -1044,6 +1069,21 @@ function PlasmicProperty__RenderFunc(props: {
               <ApiRequest
                 data-plasmic-name={"apiRequestAvgDailyRate"}
                 data-plasmic-override={overrides.apiRequestAvgDailyRate}
+                body={(() => {
+                  try {
+                    return {
+                      property_id: $ctx.params.id
+                    };
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 className={classNames(
                   "__wab_instance",
                   sty.apiRequestAvgDailyRate

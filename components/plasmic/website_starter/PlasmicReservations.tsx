@@ -107,6 +107,10 @@ export type PlasmicReservations__OverridesType = {
   alertButton?: Flex__<"div">;
   button?: Flex__<"div">;
   container?: Flex__<"div">;
+  titles?: Flex__<"div">;
+  guestName?: Flex__<"div">;
+  arriveDate?: Flex__<"div">;
+  source?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
   _1?: Flex__<"div">;
@@ -886,9 +890,9 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.text__zlYkA
                       )}
                     >
-                      {
-                        "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
-                      }
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
+                        : "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"}
                     </div>
                   </div>
                   <div
@@ -951,6 +955,61 @@ function PlasmicReservations__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.container)}
           >
+            <div
+              data-plasmic-name={"titles"}
+              data-plasmic-override={overrides.titles}
+              className={classNames(projectcss.all, sty.titles)}
+            >
+              <div
+                data-plasmic-name={"guestName"}
+                data-plasmic-override={overrides.guestName}
+                className={classNames(projectcss.all, sty.guestName)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dxAlP
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0645\u0647\u0645\u0627\u0646"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0645\u0647\u0645\u0627\u0646"
+                    : "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"arriveDate"}
+                data-plasmic-override={overrides.arriveDate}
+                className={classNames(projectcss.all, sty.arriveDate)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__k0T0L
+                  )}
+                >
+                  {"\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f"}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"source"}
+                data-plasmic-override={overrides.source}
+                className={classNames(projectcss.all, sty.source)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__o8Lk1
+                  )}
+                >
+                  {"\u0645\u0639\u0631\u0641"}
+                </div>
+              </div>
+            </div>
             <AntdModal
               data-plasmic-name={"modal"}
               data-plasmic-override={overrides.modal}
@@ -4971,6 +5030,10 @@ const PlasmicDescendants = {
     "alertButton",
     "button",
     "container",
+    "titles",
+    "guestName",
+    "arriveDate",
+    "source",
     "modal",
     "main",
     "_1",
@@ -5035,6 +5098,10 @@ const PlasmicDescendants = {
   button: ["button"],
   container: [
     "container",
+    "titles",
+    "guestName",
+    "arriveDate",
+    "source",
     "modal",
     "main",
     "_1",
@@ -5081,6 +5148,10 @@ const PlasmicDescendants = {
     "reserveMainStack",
     "reserveData"
   ],
+  titles: ["titles", "guestName", "arriveDate", "source"],
+  guestName: ["guestName"],
+  arriveDate: ["arriveDate"],
+  source: ["source"],
   modal: [
     "modal",
     "main",
@@ -5229,6 +5300,10 @@ type NodeDefaultElementType = {
   alertButton: "div";
   button: "div";
   container: "div";
+  titles: "div";
+  guestName: "div";
+  arriveDate: "div";
+  source: "div";
   modal: typeof AntdModal;
   main: "div";
   _1: "div";
@@ -5353,6 +5428,10 @@ export const PlasmicReservations = Object.assign(
     alertButton: makeNodeComponent("alertButton"),
     button: makeNodeComponent("button"),
     container: makeNodeComponent("container"),
+    titles: makeNodeComponent("titles"),
+    guestName: makeNodeComponent("guestName"),
+    arriveDate: makeNodeComponent("arriveDate"),
+    source: makeNodeComponent("source"),
     modal: makeNodeComponent("modal"),
     main: makeNodeComponent("main"),
     _1: makeNodeComponent("_1"),

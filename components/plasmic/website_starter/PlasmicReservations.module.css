@@ -83,6 +83,11 @@
   grid-column-end: -1 !important;
   padding: 0em 8px 1em;
 }
+@media (max-width: 500px) {
+  .header {
+    padding-bottom: 10px;
+  }
+}
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -298,6 +303,7 @@
   .freeBox___7ZJdP {
     padding-left: 4px;
     padding-right: 4px;
+    padding-top: 10px;
   }
 }
 @media (max-width: 350px) {
@@ -504,11 +510,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   margin-top: 1em;
+  position: relative;
   min-width: 0;
   padding: 0em 8px 8px;
 }
@@ -538,6 +544,156 @@
     padding-left: 10px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
+  }
+}
+.titles {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 0px 0px;
+}
+@media (max-width: 1200px) {
+  .titles {
+    max-width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .titles {
+    max-width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .titles {
+    padding-bottom: 0px;
+  }
+}
+.guestName {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 20%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 22px 8px 0px;
+}
+@media (max-width: 500px) {
+  .guestName {
+    max-width: 30%;
+  }
+}
+@media (max-width: 350px) {
+  .guestName {
+    padding-right: 0px;
+    max-width: 36%;
+  }
+}
+.text__dxAlP {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Estedad";
+  font-size: 17px;
+  font-weight: 600;
+  font-style: normal;
+  color: #203647;
+  text-align: right;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+  min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__dxAlP {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+.arriveDate {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 40%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 0px;
+}
+.text__k0T0L {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Estedad";
+  font-size: 17px;
+  font-weight: 600;
+  font-style: normal;
+  color: #203647;
+  text-align: center;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+  min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__k0T0L {
+    font-size: 16px;
+  }
+}
+.source {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 20%;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-width: 0;
+  padding: 8px 8px 8px 15px;
+}
+.text__o8Lk1 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Estedad";
+  font-size: 17px;
+  font-weight: 600;
+  font-style: normal;
+  color: #203647;
+  text-align: left;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+  min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__o8Lk1 {
+    font-size: 16px;
   }
 }
 .modal:global(.__wab_instance) {
@@ -1888,6 +2044,30 @@
     padding: 0em 0px 1em;
   }
 }
+@media (max-width: 350px) {
+  .reserveMainStack2 > :global(.__wab_flex-container) {
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - 10px);
+    height: calc(100% + 10px);
+  }
+}
+@media (max-width: 350px) {
+  .reserveMainStack2 > :global(.__wab_flex-container) > *,
+  .reserveMainStack2
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > *,
+  .reserveMainStack2 > :global(.__wab_flex-container) > picture > img,
+  .reserveMainStack2
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+}
 .freeBox__roKyl {
   display: flex;
   flex-direction: column;
@@ -1900,7 +2080,7 @@
   min-width: 0;
 }
 .recordList__j2Fns:global(.__wab_instance) {
-  height: 50px;
+  height: 64px;
   flex-shrink: 0;
 }
 @media (max-width: 1200px) {
@@ -1915,6 +2095,7 @@
 }
 @media (max-width: 350px) {
   .recordList__j2Fns:global(.__wab_instance) {
+    height: 62px;
     flex-shrink: 0;
   }
 }

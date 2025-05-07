@@ -342,8 +342,8 @@
 }
 @media (max-width: 500px) {
   .wallet {
-    padding-right: 34px;
-    padding-left: 34px;
+    padding-right: 18px;
+    padding-left: 18px;
   }
 }
 @media (max-width: 350px) {
