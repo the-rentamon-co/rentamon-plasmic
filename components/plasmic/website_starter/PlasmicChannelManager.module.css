@@ -1448,6 +1448,11 @@
   text-overflow: clip;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .text___3UBqc {
+    font-size: 16px;
+  }
+}
 @media (max-width: 350px) {
   .text___3UBqc {
     font-size: 16px;
@@ -1487,6 +1492,11 @@
   text-decoration-line: none;
   text-overflow: clip;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__caISk {
+    font-size: 16px;
+  }
 }
 @media (max-width: 350px) {
   .text__caISk {
@@ -1529,6 +1539,11 @@
   text-overflow: clip;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .text__f3HgU {
+    font-size: 16px;
+  }
+}
 @media (max-width: 350px) {
   .text__f3HgU {
     font-size: 16px;
@@ -1569,6 +1584,11 @@
   text-decoration-line: none;
   text-overflow: clip;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text___06Pll {
+    font-size: 16px;
+  }
 }
 @media (max-width: 350px) {
   .text___06Pll {

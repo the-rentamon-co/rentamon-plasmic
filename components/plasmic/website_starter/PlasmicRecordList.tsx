@@ -310,7 +310,7 @@ function PlasmicRecordList__RenderFunc(props: {
                   e instanceof TypeError ||
                   e?.plasmicType === "PlasmicUndefinedDataError"
                 ) {
-                  return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
+                  return " ";
                 }
                 throw e;
               }
@@ -349,7 +349,7 @@ function PlasmicRecordList__RenderFunc(props: {
                   e instanceof TypeError ||
                   e?.plasmicType === "PlasmicUndefinedDataError"
                 ) {
-                  return "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f4/\u06f1\u06f2";
+                  return " ";
                 }
                 throw e;
               }
@@ -415,7 +415,7 @@ function PlasmicRecordList__RenderFunc(props: {
                   e instanceof TypeError ||
                   e?.plasmicType === "PlasmicUndefinedDataError"
                 ) {
-                  return "\u0634\u0628";
+                  return " ";
                 }
                 throw e;
               }

@@ -859,16 +859,20 @@ function PlasmicReservations__RenderFunc(props: {
                       className={classNames(sty.img__vgQvQ)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "20px"
+                          ? "26px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "35px"
+                          ? "28px"
                           : "43px"
                       }
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
-                      displayWidth={"auto"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "26px"
+                          : "auto"
+                      }
                       loading={"lazy"}
                       src={{
                         src: "/plasmic/website_starter/images/image72.svg",
@@ -3862,19 +3866,35 @@ function PlasmicReservations__RenderFunc(props: {
                         })()
                       )}
                     >
-                      {(() => {
-                        try {
-                          return $state.reserveData.data[0].Id != null;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? (() => {
+                              try {
+                                return $state.reserveData.data[0].Id != null;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return $state.reserveData.data[0].Id != null;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                      ) ? (
                         <RecordList
                           cancelledBookings={(() => {
                             try {

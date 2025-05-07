@@ -38,12 +38,11 @@
 @media (max-width: 500px) {
   .root {
     background: linear-gradient(
-        0deg,
-        #6bafc5 0%,
-        #fcfcfc 26%,
-        #b4dbe8 47%,
-        #fcfcfc 66%,
-        #83c3d8 97%
+        40deg,
+        #fcfcfc 0%,
+        #ebfaff 38%,
+        #fcfcfc 63%,
+        #ebfaff 96%
       )
       0% 0% / 100% 100% repeat;
     width: 100%;
@@ -54,6 +53,7 @@
     align-content: flex-start;
     min-width: 0;
     min-height: 0;
+    padding: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -413,6 +413,7 @@
   .monthlyIncome2 {
     background: #fcfcfc;
     border-radius: 30px;
+    border-width: 2px;
   }
 }
 @media (max-width: 350px) {
@@ -706,6 +707,7 @@
     min-width: 0;
     border-radius: 30px;
     padding: 8px;
+    border-width: 2px;
   }
 }
 @media (max-width: 500px) {
@@ -998,6 +1000,7 @@
     min-width: 0;
     border-radius: 30px;
     padding: 8px;
+    border-width: 2px;
   }
 }
 @media (max-width: 500px) {
@@ -1224,6 +1227,7 @@
     min-width: 0;
     border-radius: 30px;
     padding: 8px;
+    border-width: 2px;
   }
 }
 .apiRequestAvgDailyRate:global(.__wab_instance) {
@@ -1448,7 +1452,7 @@
 }
 @media (max-width: 500px) {
   .text___6KSbr {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
