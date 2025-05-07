@@ -396,6 +396,26 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["goToProCalendar"] = await $steps["goToProCalendar"];
               }
 
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return console.log("$props.userType", $props.userType);
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
               $steps["invokeGlobalAction"] =
                 $props.userType == null
                   ? (() => {
