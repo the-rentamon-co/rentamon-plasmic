@@ -396,7 +396,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["goToProCalendar"] = await $steps["goToProCalendar"];
               }
 
-              $steps["invokeGlobalAction"] = true
+              $steps["invokeGlobalAction"] = false
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -419,25 +419,23 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 ];
               }
 
-              $steps["goToPanelCalendar"] =
-                $steps.invokeGlobalAction.data.flag == 1 &&
-                $props.navPage != "calendar"
-                  ? (() => {
-                      const actionArgs = { destination: `/panel` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+              $steps["goToPanelCalendar"] = false
+                ? (() => {
+                    const actionArgs = { destination: `/panel` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
               if (
                 $steps["goToPanelCalendar"] != null &&
                 typeof $steps["goToPanelCalendar"] === "object" &&
@@ -446,24 +444,23 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["goToPanelCalendar"] = await $steps["goToPanelCalendar"];
               }
 
-              $steps["goToLitePanel"] =
-                $steps.invokeGlobalAction.data.flag == 2
-                  ? (() => {
-                      const actionArgs = { destination: `/calendar` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+              $steps["goToLitePanel"] = false
+                ? (() => {
+                    const actionArgs = { destination: `/calendar` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
               if (
                 $steps["goToLitePanel"] != null &&
                 typeof $steps["goToLitePanel"] === "object" &&

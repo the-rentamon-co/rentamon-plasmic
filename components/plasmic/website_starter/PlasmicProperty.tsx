@@ -103,6 +103,7 @@ export type PlasmicProperty__OverridesType = {
   apiRequestAvgDailyRate?: Flex__<typeof ApiRequest>;
   avgDailyRate?: Flex__<"div">;
   back?: Flex__<"div">;
+  spacer?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
@@ -1234,6 +1235,13 @@ function PlasmicProperty__RenderFunc(props: {
               </div>
             </div>
           </div>
+          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            <div
+              data-plasmic-name={"spacer"}
+              data-plasmic-override={overrides.spacer}
+              className={classNames(projectcss.all, sty.spacer)}
+            />
+          ) : null}
           <NavigationRntFooter
             data-plasmic-name={"navigationRntFooter"}
             data-plasmic-override={overrides.navigationRntFooter}
@@ -1266,6 +1274,7 @@ const PlasmicDescendants = {
     "apiRequestAvgDailyRate",
     "avgDailyRate",
     "back",
+    "spacer",
     "navigationRntFooter"
   ],
   main: ["main", "apiRequest", "coverImage", "propertyName"],
@@ -1312,6 +1321,7 @@ const PlasmicDescendants = {
   apiRequestAvgDailyRate: ["apiRequestAvgDailyRate"],
   avgDailyRate: ["avgDailyRate"],
   back: ["back"],
+  spacer: ["spacer"],
   navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1337,6 +1347,7 @@ type NodeDefaultElementType = {
   apiRequestAvgDailyRate: typeof ApiRequest;
   avgDailyRate: "div";
   back: "div";
+  spacer: "div";
   navigationRntFooter: typeof NavigationRntFooter;
 };
 
@@ -1418,6 +1429,7 @@ export const PlasmicProperty = Object.assign(
     apiRequestAvgDailyRate: makeNodeComponent("apiRequestAvgDailyRate"),
     avgDailyRate: makeNodeComponent("avgDailyRate"),
     back: makeNodeComponent("back"),
+    spacer: makeNodeComponent("spacer"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicProperty
