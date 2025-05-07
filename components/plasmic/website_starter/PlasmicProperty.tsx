@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { Chart } from "@/fragment/components/chart"; // plasmic-import: AKmMZITDmA8F/codeComponent
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -88,6 +89,19 @@ export type PlasmicProperty__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   coverImage?: Flex__<"div">;
   propertyName?: Flex__<"div">;
+  analytics?: Flex__<"div">;
+  monthlyIncome2?: Flex__<"div">;
+  monthlyIncome?: Flex__<"div">;
+  apiRequestMonthlyIncome?: Flex__<typeof ApiRequest>;
+  sourcesOfReserves2?: Flex__<"div">;
+  sourcesOfReserves?: Flex__<"div">;
+  apiRequestSourceOfReserves?: Flex__<typeof ApiRequest>;
+  occupancyRate2?: Flex__<"div">;
+  occupancyRate?: Flex__<"div">;
+  apiRequestOccupancyRate?: Flex__<typeof ApiRequest>;
+  avgDailyRate2?: Flex__<"div">;
+  apiRequestAvgDailyRate?: Flex__<typeof ApiRequest>;
+  avgDailyRate?: Flex__<"div">;
   back?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
@@ -158,6 +172,102 @@ function PlasmicProperty__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "apiRequestAvgDailyRate.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyRate"
+      },
+      {
+        path: "apiRequestAvgDailyRate.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyRate"
+      },
+      {
+        path: "apiRequestAvgDailyRate.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestAvgDailyRate"
+      },
+      {
+        path: "apiRequestOccupancyRate.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestOccupancyRate"
+      },
+      {
+        path: "apiRequestOccupancyRate.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestOccupancyRate"
+      },
+      {
+        path: "apiRequestOccupancyRate.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestOccupancyRate"
+      },
+      {
+        path: "apiRequestSourceOfReserves.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestSourceOfReserves"
+      },
+      {
+        path: "apiRequestSourceOfReserves.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestSourceOfReserves"
+      },
+      {
+        path: "apiRequestSourceOfReserves.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestSourceOfReserves"
+      },
+      {
+        path: "apiRequestMonthlyIncome.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestMonthlyIncome"
+      },
+      {
+        path: "apiRequestMonthlyIncome.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestMonthlyIncome"
+      },
+      {
+        path: "apiRequestMonthlyIncome.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequestMonthlyIncome"
       }
     ],
     [$props, $ctx, $refs]
@@ -398,6 +508,661 @@ function PlasmicProperty__RenderFunc(props: {
             </div>
           </div>
           <div
+            data-plasmic-name={"analytics"}
+            data-plasmic-override={overrides.analytics}
+            className={classNames(projectcss.all, sty.analytics)}
+          >
+            <div
+              data-plasmic-name={"monthlyIncome2"}
+              data-plasmic-override={overrides.monthlyIncome2}
+              className={classNames(projectcss.all, sty.monthlyIncome2)}
+            >
+              <div
+                data-plasmic-name={"monthlyIncome"}
+                data-plasmic-override={overrides.monthlyIncome}
+                className={classNames(projectcss.all, sty.monthlyIncome)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__zGsQx)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tqtWf
+                    )}
+                  >
+                    {
+                      "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                    }
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___9Uhb6)}
+                >
+                  <Chart
+                    cartesianGrid={[]}
+                    chartConfig={(() => {
+                      const __composite = [
+                        {
+                          color: null,
+                          type: "natural",
+                          dot: false,
+                          key: null,
+                          label: null
+                        }
+                      ];
+                      __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                      __composite["0"]["key"] = "income";
+                      __composite["0"]["label"] =
+                        "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647";
+                      return __composite;
+                    })()}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentChart__fa4Bf
+                    )}
+                    data={(() => {
+                      try {
+                        return $state.apiRequestMonthlyIncome.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    label={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : true
+                    }
+                    layout={"horizontal"}
+                    legend={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : false
+                    }
+                    stack={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : true
+                    }
+                    tooltip={(() => {
+                      const __composite = {
+                        enabled: null,
+                        indicator: null,
+                        hideLabel: null
+                      };
+                      __composite["enabled"] = false;
+                      __composite["indicator"] = "dashed";
+                      __composite["hideLabel"] = false;
+                      return __composite;
+                    })()}
+                    type={"bar"}
+                    xAxis={
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            const __composite = { enabled: null, key: null };
+                            __composite["enabled"] = true;
+                            __composite["key"] = "month";
+                            return __composite;
+                          })()
+                        : (() => {
+                            const __composite = {
+                              enabled: null,
+                              key: null,
+                              type: null,
+                              tickLine: null,
+                              tickMargin: null,
+                              axisLine: null
+                            };
+                            __composite["enabled"] = true;
+                            __composite["key"] = "month";
+                            __composite["type"] = "category";
+                            __composite["tickLine"] = false;
+                            __composite["tickMargin"] = 4;
+                            __composite["axisLine"] = true;
+                            return __composite;
+                          })()
+                    }
+                    yAxis={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            const __composite = {
+                              key: null,
+                              enabled: null,
+                              type: null,
+                              tickLine: null,
+                              axisLine: null
+                            };
+                            __composite["key"] = "income";
+                            __composite["enabled"] = false;
+                            __composite["type"] = "number";
+                            __composite["tickLine"] = false;
+                            __composite["axisLine"] = false;
+                            return __composite;
+                          })()
+                        : (() => {
+                            const __composite = { enabled: null };
+                            __composite["enabled"] = false;
+                            return __composite;
+                          })()
+                    }
+                  />
+                </div>
+              </div>
+              <ApiRequest
+                data-plasmic-name={"apiRequestMonthlyIncome"}
+                data-plasmic-override={overrides.apiRequestMonthlyIncome}
+                className={classNames(
+                  "__wab_instance",
+                  sty.apiRequestMonthlyIncome
+                )}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___90O2R
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__i1Lj2
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"POST"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestMonthlyIncome",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestMonthlyIncome",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestMonthlyIncome",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequestMonthlyIncome"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/monthly-income"}
+              />
+            </div>
+            <div
+              data-plasmic-name={"sourcesOfReserves2"}
+              data-plasmic-override={overrides.sourcesOfReserves2}
+              className={classNames(projectcss.all, sty.sourcesOfReserves2)}
+            >
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"sourcesOfReserves"}
+                data-plasmic-override={overrides.sourcesOfReserves}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.sourcesOfReserves)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__ftUj2)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__vNRpn
+                    )}
+                  >
+                    {
+                      "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__zxn3)}>
+                  <Chart
+                    cartesianGrid={[]}
+                    chartConfig={(() => {
+                      const __composite = [
+                        { color: null, type: "natural", dot: false, key: null }
+                      ];
+                      __composite["0"]["color"] = "#3F5673";
+                      __composite["0"]["key"] = "transaction_count";
+                      return __composite;
+                    })()}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentChart___0BRbL
+                    )}
+                    data={(() => {
+                      try {
+                        return $state.apiRequestSourceOfReserves.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    label={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : true
+                    }
+                    layout={"horizontal"}
+                    legend={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : undefined
+                    }
+                    stack={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : false
+                    }
+                    tooltip={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            const __composite = { enabled: null };
+                            __composite["enabled"] = false;
+                            return __composite;
+                          })()
+                        : undefined
+                    }
+                    type={"bar"}
+                    xAxis={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            const __composite = {
+                              enabled: null,
+                              key: null,
+                              type: null,
+                              axisLine: null
+                            };
+                            __composite["enabled"] = true;
+                            __composite["key"] = "website_name";
+                            __composite["type"] = "category";
+                            __composite["axisLine"] = false;
+                            return __composite;
+                          })()
+                        : (() => {
+                            const __composite = { enabled: null, key: null };
+                            __composite["enabled"] = true;
+                            __composite["key"] = "website_name";
+                            return __composite;
+                          })()
+                    }
+                    yAxis={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            const __composite = {
+                              key: null,
+                              enabled: null,
+                              axisLine: null,
+                              tickLine: null,
+                              type: null
+                            };
+                            __composite["key"] = "transaction_count";
+                            __composite["enabled"] = false;
+                            __composite["axisLine"] = false;
+                            __composite["tickLine"] = false;
+                            __composite["type"] = "number";
+                            return __composite;
+                          })()
+                        : (() => {
+                            const __composite = {
+                              key: null,
+                              enabled: null,
+                              axisLine: null
+                            };
+                            __composite["key"] = "transaction_count";
+                            __composite["enabled"] = false;
+                            __composite["axisLine"] = false;
+                            return __composite;
+                          })()
+                    }
+                  />
+                </div>
+              </Stack__>
+              <ApiRequest
+                data-plasmic-name={"apiRequestSourceOfReserves"}
+                data-plasmic-override={overrides.apiRequestSourceOfReserves}
+                className={classNames(
+                  "__wab_instance",
+                  sty.apiRequestSourceOfReserves
+                )}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__b2I6E
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__smc67
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"POST"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestSourceOfReserves",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestSourceOfReserves",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestSourceOfReserves",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequestSourceOfReserves"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/reserves-source"}
+              />
+            </div>
+            <div
+              data-plasmic-name={"occupancyRate2"}
+              data-plasmic-override={overrides.occupancyRate2}
+              className={classNames(projectcss.all, sty.occupancyRate2)}
+            >
+              <div
+                data-plasmic-name={"occupancyRate"}
+                data-plasmic-override={overrides.occupancyRate}
+                className={classNames(projectcss.all, sty.occupancyRate)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hLv2K
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u062f\u0631 \u0647\u0631 \u0645\u0627\u0647"
+                    : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__jXf6)}>
+                  <Chart
+                    cartesianGrid={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? []
+                        : undefined
+                    }
+                    chartConfig={(() => {
+                      const __composite = [
+                        { color: null, type: "natural", dot: false, key: null }
+                      ];
+                      __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                      __composite["0"]["key"] = "reserved_nights";
+                      return __composite;
+                    })()}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentChart__gmtm4
+                    )}
+                    data={(() => {
+                      try {
+                        return $state.apiRequestOccupancyRate.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    label={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? true
+                        : true
+                    }
+                    layout={"horizontal"}
+                    legend={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? false
+                        : undefined
+                    }
+                    stack={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? true
+                        : true
+                    }
+                    type={"bar"}
+                    xAxis={(() => {
+                      const __composite = {
+                        key: null,
+                        type: null,
+                        enabled: null,
+                        tickLine: null,
+                        axisLine: null
+                      };
+                      __composite["key"] = "shamsi_month";
+                      __composite["type"] = "category";
+                      __composite["enabled"] = true;
+                      __composite["tickLine"] = false;
+                      __composite["axisLine"] = false;
+                      return __composite;
+                    })()}
+                  />
+                </div>
+              </div>
+              <ApiRequest
+                data-plasmic-name={"apiRequestOccupancyRate"}
+                data-plasmic-override={overrides.apiRequestOccupancyRate}
+                className={classNames(
+                  "__wab_instance",
+                  sty.apiRequestOccupancyRate
+                )}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__twNn5
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__akrkd
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"POST"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestOccupancyRate",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestOccupancyRate",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestOccupancyRate",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequestOccupancyRate"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/cccupancy-rate"}
+              />
+            </div>
+            <div
+              data-plasmic-name={"avgDailyRate2"}
+              data-plasmic-override={overrides.avgDailyRate2}
+              className={classNames(projectcss.all, sty.avgDailyRate2)}
+            >
+              <ApiRequest
+                data-plasmic-name={"apiRequestAvgDailyRate"}
+                data-plasmic-override={overrides.apiRequestAvgDailyRate}
+                className={classNames(
+                  "__wab_instance",
+                  sty.apiRequestAvgDailyRate
+                )}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__nvlyi
+                    )}
+                  >
+                    {
+                      "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
+                    }
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rrxWz
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"POST"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestAvgDailyRate",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestAvgDailyRate",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestAvgDailyRate",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequestAvgDailyRate"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/avg-daily-rate"}
+              />
+
+              <div
+                data-plasmic-name={"avgDailyRate"}
+                data-plasmic-override={overrides.avgDailyRate}
+                className={classNames(projectcss.all, sty.avgDailyRate)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mkzmO
+                  )}
+                >
+                  {
+                    "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 (\u062a\u0648\u0645\u0627\u0646):"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___6KSbr
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.apiRequestAvgDailyRate.data
+                          .map(item => {
+                            const months = {
+                              "01": "فروردین",
+                              "02": "اردیبهشت",
+                              "03": "خرداد",
+                              "04": "تیر",
+                              "05": "مرداد",
+                              "06": "شهریور",
+                              "07": "مهر",
+                              "08": "آبان",
+                              "09": "آذر",
+                              "10": "دی",
+                              "11": "بهمن",
+                              "12": "اسفند"
+                            };
+                            const jalaliMonth =
+                              months[item.jalali_month.slice(5)];
+                            const persianPrice = new Intl.NumberFormat(
+                              "fa-IR"
+                            ).format(item.average_price_per_night);
+                            return `${jalaliMonth} : ${persianPrice}`;
+                          })
+                          .join("\n");
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646: \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a: \u06f2.\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u062e\u0631\u062f\u0627\u062f: \u06f2.\u06f7 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
             data-plasmic-name={"back"}
             data-plasmic-override={overrides.back}
             className={classNames(projectcss.all, sty.back)}
@@ -459,6 +1224,19 @@ const PlasmicDescendants = {
     "apiRequest",
     "coverImage",
     "propertyName",
+    "analytics",
+    "monthlyIncome2",
+    "monthlyIncome",
+    "apiRequestMonthlyIncome",
+    "sourcesOfReserves2",
+    "sourcesOfReserves",
+    "apiRequestSourceOfReserves",
+    "occupancyRate2",
+    "occupancyRate",
+    "apiRequestOccupancyRate",
+    "avgDailyRate2",
+    "apiRequestAvgDailyRate",
+    "avgDailyRate",
     "back",
     "navigationRntFooter"
   ],
@@ -466,6 +1244,45 @@ const PlasmicDescendants = {
   apiRequest: ["apiRequest", "coverImage", "propertyName"],
   coverImage: ["coverImage"],
   propertyName: ["propertyName"],
+  analytics: [
+    "analytics",
+    "monthlyIncome2",
+    "monthlyIncome",
+    "apiRequestMonthlyIncome",
+    "sourcesOfReserves2",
+    "sourcesOfReserves",
+    "apiRequestSourceOfReserves",
+    "occupancyRate2",
+    "occupancyRate",
+    "apiRequestOccupancyRate",
+    "avgDailyRate2",
+    "apiRequestAvgDailyRate",
+    "avgDailyRate"
+  ],
+  monthlyIncome2: [
+    "monthlyIncome2",
+    "monthlyIncome",
+    "apiRequestMonthlyIncome"
+  ],
+  monthlyIncome: ["monthlyIncome"],
+  apiRequestMonthlyIncome: ["apiRequestMonthlyIncome"],
+  sourcesOfReserves2: [
+    "sourcesOfReserves2",
+    "sourcesOfReserves",
+    "apiRequestSourceOfReserves"
+  ],
+  sourcesOfReserves: ["sourcesOfReserves"],
+  apiRequestSourceOfReserves: ["apiRequestSourceOfReserves"],
+  occupancyRate2: [
+    "occupancyRate2",
+    "occupancyRate",
+    "apiRequestOccupancyRate"
+  ],
+  occupancyRate: ["occupancyRate"],
+  apiRequestOccupancyRate: ["apiRequestOccupancyRate"],
+  avgDailyRate2: ["avgDailyRate2", "apiRequestAvgDailyRate", "avgDailyRate"],
+  apiRequestAvgDailyRate: ["apiRequestAvgDailyRate"],
+  avgDailyRate: ["avgDailyRate"],
   back: ["back"],
   navigationRntFooter: ["navigationRntFooter"]
 } as const;
@@ -478,6 +1295,19 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   coverImage: "div";
   propertyName: "div";
+  analytics: "div";
+  monthlyIncome2: "div";
+  monthlyIncome: "div";
+  apiRequestMonthlyIncome: typeof ApiRequest;
+  sourcesOfReserves2: "div";
+  sourcesOfReserves: "div";
+  apiRequestSourceOfReserves: typeof ApiRequest;
+  occupancyRate2: "div";
+  occupancyRate: "div";
+  apiRequestOccupancyRate: typeof ApiRequest;
+  avgDailyRate2: "div";
+  apiRequestAvgDailyRate: typeof ApiRequest;
+  avgDailyRate: "div";
   back: "div";
   navigationRntFooter: typeof NavigationRntFooter;
 };
@@ -546,6 +1376,19 @@ export const PlasmicProperty = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     coverImage: makeNodeComponent("coverImage"),
     propertyName: makeNodeComponent("propertyName"),
+    analytics: makeNodeComponent("analytics"),
+    monthlyIncome2: makeNodeComponent("monthlyIncome2"),
+    monthlyIncome: makeNodeComponent("monthlyIncome"),
+    apiRequestMonthlyIncome: makeNodeComponent("apiRequestMonthlyIncome"),
+    sourcesOfReserves2: makeNodeComponent("sourcesOfReserves2"),
+    sourcesOfReserves: makeNodeComponent("sourcesOfReserves"),
+    apiRequestSourceOfReserves: makeNodeComponent("apiRequestSourceOfReserves"),
+    occupancyRate2: makeNodeComponent("occupancyRate2"),
+    occupancyRate: makeNodeComponent("occupancyRate"),
+    apiRequestOccupancyRate: makeNodeComponent("apiRequestOccupancyRate"),
+    avgDailyRate2: makeNodeComponent("avgDailyRate2"),
+    apiRequestAvgDailyRate: makeNodeComponent("apiRequestAvgDailyRate"),
+    avgDailyRate: makeNodeComponent("avgDailyRate"),
     back: makeNodeComponent("back"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 

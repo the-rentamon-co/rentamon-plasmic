@@ -3998,7 +3998,6 @@ function PlasmicReservations__RenderFunc(props: {
               <ApiRequest
                 data-plasmic-name={"reserveData"}
                 data-plasmic-override={overrides.reserveData}
-                children={null}
                 className={classNames("__wab_instance", sty.reserveData)}
                 errorDisplay={
                   <div
@@ -4058,8 +4057,33 @@ function PlasmicReservations__RenderFunc(props: {
                   $refs["reserveData"] = ref;
                 }}
                 url={"https://gateway.rentamon.com/webhook/getReserve"}
-              />
-
+              >
+                {(() => {
+                  try {
+                    return $state.reserveData.data[0].item == "empty";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rjo3V
+                    )}
+                  >
+                    {
+                      "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc."
+                    }
+                  </div>
+                ) : null}
+              </ApiRequest>
               {(() => {
                 try {
                   return $state.isTheFirstVisit && $state.tourSteps == 0;

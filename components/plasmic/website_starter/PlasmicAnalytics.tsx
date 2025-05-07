@@ -90,25 +90,27 @@ export type PlasmicAnalytics__OverridesType = {
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
-  apiRequestMonthlyIncome?: Flex__<typeof ApiRequest>;
-  apiRequestSourceOfReserves?: Flex__<typeof ApiRequest>;
-  apiRequestOccupancyRate?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   introduction?: Flex__<"div">;
   image?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
   caption?: Flex__<"div">;
+  monthlyIncome2?: Flex__<"div">;
   monthlyIncome?: Flex__<"div">;
+  apiRequestMonthlyIncome?: Flex__<typeof ApiRequest>;
+  sourcesOfReserves2?: Flex__<"div">;
   sourcesOfReserves?: Flex__<"div">;
+  apiRequestSourceOfReserves?: Flex__<typeof ApiRequest>;
+  occupancyRate2?: Flex__<"div">;
   occupancyRate?: Flex__<"div">;
-  html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
-  goftino?: Flex__<typeof Embed>;
+  apiRequestOccupancyRate?: Flex__<typeof ApiRequest>;
   avgDailyRate2?: Flex__<"div">;
   apiRequestAvgDailyRate?: Flex__<typeof ApiRequest>;
   avgDailyRate?: Flex__<"div">;
+  html?: Flex__<"div">;
+  clarity2?: Flex__<typeof Embed>;
+  goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
-  occupancyRate2?: Flex__<"div">;
 };
 
 export interface DefaultAnalyticsProps {}
@@ -411,168 +413,6 @@ function PlasmicAnalytics__RenderFunc(props: {
               url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
             />
           </div>
-          <ApiRequest
-            data-plasmic-name={"apiRequestMonthlyIncome"}
-            data-plasmic-override={overrides.apiRequestMonthlyIncome}
-            className={classNames(
-              "__wab_instance",
-              sty.apiRequestMonthlyIncome
-            )}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mIo8S
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aje3J
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"POST"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestMonthlyIncome",
-                "error"
-              ]).apply(null, eventArgs);
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestMonthlyIncome",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestMonthlyIncome",
-                "data"
-              ]).apply(null, eventArgs);
-            }}
-            ref={ref => {
-              $refs["apiRequestMonthlyIncome"] = ref;
-            }}
-            url={"https://gateway.rentamon.com/webhook/monthly-income"}
-          />
-
-          <ApiRequest
-            data-plasmic-name={"apiRequestSourceOfReserves"}
-            data-plasmic-override={overrides.apiRequestSourceOfReserves}
-            className={classNames(
-              "__wab_instance",
-              sty.apiRequestSourceOfReserves
-            )}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___3Bu1C
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wQdKd
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"POST"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestSourceOfReserves",
-                "error"
-              ]).apply(null, eventArgs);
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestSourceOfReserves",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestSourceOfReserves",
-                "data"
-              ]).apply(null, eventArgs);
-            }}
-            ref={ref => {
-              $refs["apiRequestSourceOfReserves"] = ref;
-            }}
-            url={"https://gateway.rentamon.com/webhook/reserves-source"}
-          />
-
-          <ApiRequest
-            data-plasmic-name={"apiRequestOccupancyRate"}
-            data-plasmic-override={overrides.apiRequestOccupancyRate}
-            className={classNames(
-              "__wab_instance",
-              sty.apiRequestOccupancyRate
-            )}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hbhrg
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___4Cikn
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"POST"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestOccupancyRate",
-                "error"
-              ]).apply(null, eventArgs);
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestOccupancyRate",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestOccupancyRate",
-                "data"
-              ]).apply(null, eventArgs);
-            }}
-            ref={ref => {
-              $refs["apiRequestOccupancyRate"] = ref;
-            }}
-            url={"https://gateway.rentamon.com/webhook/cccupancy-rate"}
-          />
-
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
@@ -631,344 +471,650 @@ function PlasmicAnalytics__RenderFunc(props: {
               </div>
             </div>
             <div
-              data-plasmic-name={"monthlyIncome"}
-              data-plasmic-override={overrides.monthlyIncome}
-              className={classNames(projectcss.all, sty.monthlyIncome)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__w3Dif)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__j8U01
-                  )}
-                >
-                  {
-                    "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                  }
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__eVtAr)}>
-                <Chart
-                  cartesianGrid={[]}
-                  chartConfig={(() => {
-                    const __composite = [
-                      {
-                        color: null,
-                        type: "natural",
-                        dot: false,
-                        key: null,
-                        label: null
-                      }
-                    ];
-                    __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
-                    __composite["0"]["key"] = "income";
-                    __composite["0"]["label"] =
-                      "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647";
-                    return __composite;
-                  })()}
-                  className={classNames(
-                    "__wab_instance",
-                    sty.fragmentChart__uBw5I
-                  )}
-                  data={(() => {
-                    try {
-                      return $state.apiRequestMonthlyIncome.data;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
-                  label={
-                    hasVariant(globalVariants, "screen", "mobile") ? true : true
-                  }
-                  layout={"horizontal"}
-                  legend={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? false
-                      : false
-                  }
-                  stack={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? false
-                      : true
-                  }
-                  tooltip={(() => {
-                    const __composite = {
-                      enabled: null,
-                      indicator: null,
-                      hideLabel: null
-                    };
-                    __composite["enabled"] = false;
-                    __composite["indicator"] = "dashed";
-                    __composite["hideLabel"] = false;
-                    return __composite;
-                  })()}
-                  type={"bar"}
-                  xAxis={
-                    hasVariant(globalVariants, "screen", "tablet")
-                      ? (() => {
-                          const __composite = { enabled: null, key: null };
-                          __composite["enabled"] = true;
-                          __composite["key"] = "month";
-                          return __composite;
-                        })()
-                      : (() => {
-                          const __composite = {
-                            enabled: null,
-                            key: null,
-                            type: null,
-                            tickLine: null,
-                            tickMargin: null,
-                            axisLine: null
-                          };
-                          __composite["enabled"] = true;
-                          __composite["key"] = "month";
-                          __composite["type"] = "category";
-                          __composite["tickLine"] = false;
-                          __composite["tickMargin"] = 4;
-                          __composite["axisLine"] = true;
-                          return __composite;
-                        })()
-                  }
-                  yAxis={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          const __composite = {
-                            key: null,
-                            enabled: null,
-                            type: null,
-                            tickLine: null,
-                            axisLine: null
-                          };
-                          __composite["key"] = "income";
-                          __composite["enabled"] = false;
-                          __composite["type"] = "number";
-                          __composite["tickLine"] = false;
-                          __composite["axisLine"] = false;
-                          return __composite;
-                        })()
-                      : (() => {
-                          const __composite = { enabled: null };
-                          __composite["enabled"] = false;
-                          return __composite;
-                        })()
-                  }
-                />
-              </div>
-            </div>
-            <Stack__
-              as={"div"}
-              data-plasmic-name={"sourcesOfReserves"}
-              data-plasmic-override={overrides.sourcesOfReserves}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.sourcesOfReserves)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__qbSdR)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__gkfL8
-                  )}
-                >
-                  {
-                    "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
-                  }
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__z02AS)}>
-                <Chart
-                  cartesianGrid={[]}
-                  chartConfig={(() => {
-                    const __composite = [
-                      { color: null, type: "natural", dot: false, key: null }
-                    ];
-                    __composite["0"]["color"] = "#3F5673";
-                    __composite["0"]["key"] = "transaction_count";
-                    return __composite;
-                  })()}
-                  className={classNames(
-                    "__wab_instance",
-                    sty.fragmentChart___5Y0CB
-                  )}
-                  data={(() => {
-                    try {
-                      return $state.apiRequestSourceOfReserves.data;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
-                  label={
-                    hasVariant(globalVariants, "screen", "mobile") ? true : true
-                  }
-                  layout={"horizontal"}
-                  legend={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? false
-                      : undefined
-                  }
-                  stack={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? false
-                      : false
-                  }
-                  tooltip={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          const __composite = { enabled: null };
-                          __composite["enabled"] = false;
-                          return __composite;
-                        })()
-                      : undefined
-                  }
-                  type={"bar"}
-                  xAxis={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          const __composite = {
-                            enabled: null,
-                            key: null,
-                            type: null,
-                            axisLine: null
-                          };
-                          __composite["enabled"] = true;
-                          __composite["key"] = "website_name";
-                          __composite["type"] = "category";
-                          __composite["axisLine"] = false;
-                          return __composite;
-                        })()
-                      : (() => {
-                          const __composite = { enabled: null, key: null };
-                          __composite["enabled"] = true;
-                          __composite["key"] = "website_name";
-                          return __composite;
-                        })()
-                  }
-                  yAxis={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          const __composite = {
-                            key: null,
-                            enabled: null,
-                            axisLine: null,
-                            tickLine: null,
-                            type: null
-                          };
-                          __composite["key"] = "transaction_count";
-                          __composite["enabled"] = false;
-                          __composite["axisLine"] = false;
-                          __composite["tickLine"] = false;
-                          __composite["type"] = "number";
-                          return __composite;
-                        })()
-                      : (() => {
-                          const __composite = {
-                            key: null,
-                            enabled: null,
-                            axisLine: null
-                          };
-                          __composite["key"] = "transaction_count";
-                          __composite["enabled"] = false;
-                          __composite["axisLine"] = false;
-                          return __composite;
-                        })()
-                  }
-                />
-              </div>
-            </Stack__>
-            <div
-              data-plasmic-name={"occupancyRate"}
-              data-plasmic-override={overrides.occupancyRate}
-              className={classNames(projectcss.all, sty.occupancyRate)}
+              data-plasmic-name={"monthlyIncome2"}
+              data-plasmic-override={overrides.monthlyIncome2}
+              className={classNames(projectcss.all, sty.monthlyIncome2)}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vMzey
-                )}
+                data-plasmic-name={"monthlyIncome"}
+                data-plasmic-override={overrides.monthlyIncome}
+                className={classNames(projectcss.all, sty.monthlyIncome)}
               >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u062f\u0631 \u0647\u0631 \u0645\u0627\u0647"
-                  : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__lQmRi)}>
-                <Chart
-                  cartesianGrid={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? []
-                      : undefined
-                  }
-                  chartConfig={(() => {
-                    const __composite = [
-                      { color: null, type: "natural", dot: false, key: null }
-                    ];
-                    __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
-                    __composite["0"]["key"] = "reserved_nights";
-                    return __composite;
-                  })()}
-                  className={classNames(
-                    "__wab_instance",
-                    sty.fragmentChart__pUo5B
-                  )}
-                  data={(() => {
-                    try {
-                      return $state.apiRequestOccupancyRate.data;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
+                <div className={classNames(projectcss.all, sty.freeBox__w3Dif)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__j8U01
+                    )}
+                  >
+                    {
+                      "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                     }
-                  })()}
-                  label={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? true
-                      : true
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__eVtAr)}>
+                  <Chart
+                    cartesianGrid={[]}
+                    chartConfig={(() => {
+                      const __composite = [
+                        {
+                          color: null,
+                          type: "natural",
+                          dot: false,
+                          key: null,
+                          label: null
+                        }
+                      ];
+                      __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                      __composite["0"]["key"] = "income";
+                      __composite["0"]["label"] =
+                        "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647";
+                      return __composite;
+                    })()}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentChart__uBw5I
+                    )}
+                    data={(() => {
+                      try {
+                        return $state.apiRequestMonthlyIncome.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    label={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : true
+                    }
+                    layout={"horizontal"}
+                    legend={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : false
+                    }
+                    stack={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : true
+                    }
+                    tooltip={(() => {
+                      const __composite = {
+                        enabled: null,
+                        indicator: null,
+                        hideLabel: null
+                      };
+                      __composite["enabled"] = false;
+                      __composite["indicator"] = "dashed";
+                      __composite["hideLabel"] = false;
+                      return __composite;
+                    })()}
+                    type={"bar"}
+                    xAxis={
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            const __composite = { enabled: null, key: null };
+                            __composite["enabled"] = true;
+                            __composite["key"] = "month";
+                            return __composite;
+                          })()
+                        : (() => {
+                            const __composite = {
+                              enabled: null,
+                              key: null,
+                              type: null,
+                              tickLine: null,
+                              tickMargin: null,
+                              axisLine: null
+                            };
+                            __composite["enabled"] = true;
+                            __composite["key"] = "month";
+                            __composite["type"] = "category";
+                            __composite["tickLine"] = false;
+                            __composite["tickMargin"] = 4;
+                            __composite["axisLine"] = true;
+                            return __composite;
+                          })()
+                    }
+                    yAxis={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            const __composite = {
+                              key: null,
+                              enabled: null,
+                              type: null,
+                              tickLine: null,
+                              axisLine: null
+                            };
+                            __composite["key"] = "income";
+                            __composite["enabled"] = false;
+                            __composite["type"] = "number";
+                            __composite["tickLine"] = false;
+                            __composite["axisLine"] = false;
+                            return __composite;
+                          })()
+                        : (() => {
+                            const __composite = { enabled: null };
+                            __composite["enabled"] = false;
+                            return __composite;
+                          })()
+                    }
+                  />
+                </div>
+              </div>
+              <ApiRequest
+                data-plasmic-name={"apiRequestMonthlyIncome"}
+                data-plasmic-override={overrides.apiRequestMonthlyIncome}
+                className={classNames(
+                  "__wab_instance",
+                  sty.apiRequestMonthlyIncome
+                )}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mIo8S
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aje3J
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"POST"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestMonthlyIncome",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestMonthlyIncome",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestMonthlyIncome",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequestMonthlyIncome"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/monthly-income"}
+              />
+            </div>
+            <div
+              data-plasmic-name={"sourcesOfReserves2"}
+              data-plasmic-override={overrides.sourcesOfReserves2}
+              className={classNames(projectcss.all, sty.sourcesOfReserves2)}
+            >
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"sourcesOfReserves"}
+                data-plasmic-override={overrides.sourcesOfReserves}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.sourcesOfReserves)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__qbSdR)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gkfL8
+                    )}
+                  >
+                    {
+                      "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__z02AS)}>
+                  <Chart
+                    cartesianGrid={[]}
+                    chartConfig={(() => {
+                      const __composite = [
+                        { color: null, type: "natural", dot: false, key: null }
+                      ];
+                      __composite["0"]["color"] = "#3F5673";
+                      __composite["0"]["key"] = "transaction_count";
+                      return __composite;
+                    })()}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentChart___5Y0CB
+                    )}
+                    data={(() => {
+                      try {
+                        return $state.apiRequestSourceOfReserves.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    label={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : true
+                    }
+                    layout={"horizontal"}
+                    legend={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : undefined
+                    }
+                    stack={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : false
+                    }
+                    tooltip={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            const __composite = { enabled: null };
+                            __composite["enabled"] = false;
+                            return __composite;
+                          })()
+                        : undefined
+                    }
+                    type={"bar"}
+                    xAxis={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            const __composite = {
+                              enabled: null,
+                              key: null,
+                              type: null,
+                              axisLine: null
+                            };
+                            __composite["enabled"] = true;
+                            __composite["key"] = "website_name";
+                            __composite["type"] = "category";
+                            __composite["axisLine"] = false;
+                            return __composite;
+                          })()
+                        : (() => {
+                            const __composite = { enabled: null, key: null };
+                            __composite["enabled"] = true;
+                            __composite["key"] = "website_name";
+                            return __composite;
+                          })()
+                    }
+                    yAxis={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            const __composite = {
+                              key: null,
+                              enabled: null,
+                              axisLine: null,
+                              tickLine: null,
+                              type: null
+                            };
+                            __composite["key"] = "transaction_count";
+                            __composite["enabled"] = false;
+                            __composite["axisLine"] = false;
+                            __composite["tickLine"] = false;
+                            __composite["type"] = "number";
+                            return __composite;
+                          })()
+                        : (() => {
+                            const __composite = {
+                              key: null,
+                              enabled: null,
+                              axisLine: null
+                            };
+                            __composite["key"] = "transaction_count";
+                            __composite["enabled"] = false;
+                            __composite["axisLine"] = false;
+                            return __composite;
+                          })()
+                    }
+                  />
+                </div>
+              </Stack__>
+              <ApiRequest
+                data-plasmic-name={"apiRequestSourceOfReserves"}
+                data-plasmic-override={overrides.apiRequestSourceOfReserves}
+                className={classNames(
+                  "__wab_instance",
+                  sty.apiRequestSourceOfReserves
+                )}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___3Bu1C
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wQdKd
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"POST"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestSourceOfReserves",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestSourceOfReserves",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestSourceOfReserves",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequestSourceOfReserves"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/reserves-source"}
+              />
+            </div>
+            <div
+              data-plasmic-name={"occupancyRate2"}
+              data-plasmic-override={overrides.occupancyRate2}
+              className={classNames(projectcss.all, sty.occupancyRate2)}
+            >
+              <div
+                data-plasmic-name={"occupancyRate"}
+                data-plasmic-override={overrides.occupancyRate}
+                className={classNames(projectcss.all, sty.occupancyRate)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vMzey
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u062f\u0631 \u0647\u0631 \u0645\u0627\u0647"
+                    : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__lQmRi)}>
+                  <Chart
+                    cartesianGrid={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? []
+                        : undefined
+                    }
+                    chartConfig={(() => {
+                      const __composite = [
+                        { color: null, type: "natural", dot: false, key: null }
+                      ];
+                      __composite["0"]["color"] = "var(--token-8nedppYkGVaH)";
+                      __composite["0"]["key"] = "reserved_nights";
+                      return __composite;
+                    })()}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentChart__pUo5B
+                    )}
+                    data={(() => {
+                      try {
+                        return $state.apiRequestOccupancyRate.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    label={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? true
+                        : true
+                    }
+                    layout={"horizontal"}
+                    legend={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? false
+                        : undefined
+                    }
+                    stack={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? true
+                        : true
+                    }
+                    type={"bar"}
+                    xAxis={(() => {
+                      const __composite = {
+                        key: null,
+                        type: null,
+                        enabled: null,
+                        tickLine: null,
+                        axisLine: null
+                      };
+                      __composite["key"] = "shamsi_month";
+                      __composite["type"] = "category";
+                      __composite["enabled"] = true;
+                      __composite["tickLine"] = false;
+                      __composite["axisLine"] = false;
+                      return __composite;
+                    })()}
+                  />
+                </div>
+              </div>
+              <ApiRequest
+                data-plasmic-name={"apiRequestOccupancyRate"}
+                data-plasmic-override={overrides.apiRequestOccupancyRate}
+                className={classNames(
+                  "__wab_instance",
+                  sty.apiRequestOccupancyRate
+                )}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__hbhrg
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___4Cikn
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"POST"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestOccupancyRate",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestOccupancyRate",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestOccupancyRate",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequestOccupancyRate"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/cccupancy-rate"}
+              />
+            </div>
+            <div
+              data-plasmic-name={"avgDailyRate2"}
+              data-plasmic-override={overrides.avgDailyRate2}
+              className={classNames(projectcss.all, sty.avgDailyRate2)}
+            >
+              <ApiRequest
+                data-plasmic-name={"apiRequestAvgDailyRate"}
+                data-plasmic-override={overrides.apiRequestAvgDailyRate}
+                className={classNames(
+                  "__wab_instance",
+                  sty.apiRequestAvgDailyRate
+                )}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wkQm1
+                    )}
+                  >
+                    {
+                      "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
+                    }
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rj7E
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"POST"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestAvgDailyRate",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestAvgDailyRate",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequestAvgDailyRate",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequestAvgDailyRate"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/avg-daily-rate"}
+              />
+
+              <div
+                data-plasmic-name={"avgDailyRate"}
+                data-plasmic-override={overrides.avgDailyRate}
+                className={classNames(projectcss.all, sty.avgDailyRate)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___6Nn1C
+                  )}
+                >
+                  {
+                    "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 (\u062a\u0648\u0645\u0627\u0646):"
                   }
-                  layout={"horizontal"}
-                  legend={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? false
-                      : undefined
-                  }
-                  stack={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? true
-                      : true
-                  }
-                  type={"bar"}
-                  xAxis={(() => {
-                    const __composite = {
-                      key: null,
-                      type: null,
-                      enabled: null,
-                      tickLine: null,
-                      axisLine: null
-                    };
-                    __composite["key"] = "shamsi_month";
-                    __composite["type"] = "category";
-                    __composite["enabled"] = true;
-                    __composite["tickLine"] = false;
-                    __composite["axisLine"] = false;
-                    return __composite;
-                  })()}
-                />
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ztAop
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.apiRequestAvgDailyRate.data
+                          .map(item => {
+                            const months = {
+                              "01": "فروردین",
+                              "02": "اردیبهشت",
+                              "03": "خرداد",
+                              "04": "تیر",
+                              "05": "مرداد",
+                              "06": "شهریور",
+                              "07": "مهر",
+                              "08": "آبان",
+                              "09": "آذر",
+                              "10": "دی",
+                              "11": "بهمن",
+                              "12": "اسفند"
+                            };
+                            const jalaliMonth =
+                              months[item.jalali_month.slice(5)];
+                            const persianPrice = new Intl.NumberFormat(
+                              "fa-IR"
+                            ).format(item.average_price_per_night);
+                            return `${jalaliMonth} : ${persianPrice}`;
+                          })
+                          .join("\n");
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646: \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a: \u06f2.\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u062e\u0631\u062f\u0627\u062f: \u06f2.\u06f7 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
               </div>
             </div>
           </div>
@@ -995,141 +1141,10 @@ function PlasmicAnalytics__RenderFunc(props: {
               }
             />
           </div>
-          <div
-            data-plasmic-name={"avgDailyRate2"}
-            data-plasmic-override={overrides.avgDailyRate2}
-            className={classNames(projectcss.all, sty.avgDailyRate2)}
-          >
-            <ApiRequest
-              data-plasmic-name={"apiRequestAvgDailyRate"}
-              data-plasmic-override={overrides.apiRequestAvgDailyRate}
-              className={classNames(
-                "__wab_instance",
-                sty.apiRequestAvgDailyRate
-              )}
-              errorDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wkQm1
-                  )}
-                >
-                  {
-                    "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
-                  }
-                </div>
-              }
-              loadingDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rj7E
-                  )}
-                >
-                  {"Loading..."}
-                </div>
-              }
-              method={"POST"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequestAvgDailyRate",
-                  "error"
-                ]).apply(null, eventArgs);
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequestAvgDailyRate",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequestAvgDailyRate",
-                  "data"
-                ]).apply(null, eventArgs);
-              }}
-              ref={ref => {
-                $refs["apiRequestAvgDailyRate"] = ref;
-              }}
-              url={"https://gateway.rentamon.com/webhook/avg-daily-rate"}
-            />
-
-            <div
-              data-plasmic-name={"avgDailyRate"}
-              data-plasmic-override={overrides.avgDailyRate}
-              className={classNames(projectcss.all, sty.avgDailyRate)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___6Nn1C
-                )}
-              >
-                {
-                  "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 (\u062a\u0648\u0645\u0627\u0646):"
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ztAop
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $state.apiRequestAvgDailyRate.data
-                        .map(item => {
-                          const months = {
-                            "01": "فروردین",
-                            "02": "اردیبهشت",
-                            "03": "خرداد",
-                            "04": "تیر",
-                            "05": "مرداد",
-                            "06": "شهریور",
-                            "07": "مهر",
-                            "08": "آبان",
-                            "09": "آذر",
-                            "10": "دی",
-                            "11": "بهمن",
-                            "12": "اسفند"
-                          };
-                          const jalaliMonth =
-                            months[item.jalali_month.slice(5)];
-                          const persianPrice = new Intl.NumberFormat(
-                            "fa-IR"
-                          ).format(item.average_price_per_night);
-                          return `${jalaliMonth} : ${persianPrice}`;
-                        })
-                        .join("\n");
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646: \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a: \u06f2.\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\n\u062e\u0631\u062f\u0627\u062f: \u06f2.\u06f7 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            </div>
-          </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
-          />
-
-          <div
-            data-plasmic-name={"occupancyRate2"}
-            data-plasmic-override={overrides.occupancyRate2}
-            className={classNames(projectcss.all, sty.occupancyRate2)}
           />
         </div>
       </div>
@@ -1143,57 +1158,82 @@ const PlasmicDescendants = {
     "header",
     "sideBar2",
     "profile2",
-    "apiRequestMonthlyIncome",
-    "apiRequestSourceOfReserves",
-    "apiRequestOccupancyRate",
     "mainContents",
     "introduction",
     "image",
     "img",
     "caption",
+    "monthlyIncome2",
     "monthlyIncome",
+    "apiRequestMonthlyIncome",
+    "sourcesOfReserves2",
     "sourcesOfReserves",
+    "apiRequestSourceOfReserves",
+    "occupancyRate2",
     "occupancyRate",
-    "html",
-    "clarity2",
-    "goftino",
+    "apiRequestOccupancyRate",
     "avgDailyRate2",
     "apiRequestAvgDailyRate",
     "avgDailyRate",
-    "rentamonFooter",
-    "occupancyRate2"
+    "html",
+    "clarity2",
+    "goftino",
+    "rentamonFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
-  apiRequestMonthlyIncome: ["apiRequestMonthlyIncome"],
-  apiRequestSourceOfReserves: ["apiRequestSourceOfReserves"],
-  apiRequestOccupancyRate: ["apiRequestOccupancyRate"],
   mainContents: [
     "mainContents",
     "introduction",
     "image",
     "img",
     "caption",
+    "monthlyIncome2",
     "monthlyIncome",
+    "apiRequestMonthlyIncome",
+    "sourcesOfReserves2",
     "sourcesOfReserves",
-    "occupancyRate"
+    "apiRequestSourceOfReserves",
+    "occupancyRate2",
+    "occupancyRate",
+    "apiRequestOccupancyRate",
+    "avgDailyRate2",
+    "apiRequestAvgDailyRate",
+    "avgDailyRate"
   ],
   introduction: ["introduction", "image", "img", "caption"],
   image: ["image", "img"],
   img: ["img"],
   caption: ["caption"],
+  monthlyIncome2: [
+    "monthlyIncome2",
+    "monthlyIncome",
+    "apiRequestMonthlyIncome"
+  ],
   monthlyIncome: ["monthlyIncome"],
+  apiRequestMonthlyIncome: ["apiRequestMonthlyIncome"],
+  sourcesOfReserves2: [
+    "sourcesOfReserves2",
+    "sourcesOfReserves",
+    "apiRequestSourceOfReserves"
+  ],
   sourcesOfReserves: ["sourcesOfReserves"],
+  apiRequestSourceOfReserves: ["apiRequestSourceOfReserves"],
+  occupancyRate2: [
+    "occupancyRate2",
+    "occupancyRate",
+    "apiRequestOccupancyRate"
+  ],
   occupancyRate: ["occupancyRate"],
-  html: ["html", "clarity2", "goftino"],
-  clarity2: ["clarity2"],
-  goftino: ["goftino"],
+  apiRequestOccupancyRate: ["apiRequestOccupancyRate"],
   avgDailyRate2: ["avgDailyRate2", "apiRequestAvgDailyRate", "avgDailyRate"],
   apiRequestAvgDailyRate: ["apiRequestAvgDailyRate"],
   avgDailyRate: ["avgDailyRate"],
-  rentamonFooter: ["rentamonFooter"],
-  occupancyRate2: ["occupancyRate2"]
+  html: ["html", "clarity2", "goftino"],
+  clarity2: ["clarity2"],
+  goftino: ["goftino"],
+  rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1203,25 +1243,27 @@ type NodeDefaultElementType = {
   header: "div";
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
-  apiRequestMonthlyIncome: typeof ApiRequest;
-  apiRequestSourceOfReserves: typeof ApiRequest;
-  apiRequestOccupancyRate: typeof ApiRequest;
   mainContents: "div";
   introduction: "div";
   image: "div";
   img: typeof PlasmicImg__;
   caption: "div";
+  monthlyIncome2: "div";
   monthlyIncome: "div";
+  apiRequestMonthlyIncome: typeof ApiRequest;
+  sourcesOfReserves2: "div";
   sourcesOfReserves: "div";
+  apiRequestSourceOfReserves: typeof ApiRequest;
+  occupancyRate2: "div";
   occupancyRate: "div";
-  html: "div";
-  clarity2: typeof Embed;
-  goftino: typeof Embed;
+  apiRequestOccupancyRate: typeof ApiRequest;
   avgDailyRate2: "div";
   apiRequestAvgDailyRate: typeof ApiRequest;
   avgDailyRate: "div";
+  html: "div";
+  clarity2: typeof Embed;
+  goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
-  occupancyRate2: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1287,25 +1329,27 @@ export const PlasmicAnalytics = Object.assign(
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
-    apiRequestMonthlyIncome: makeNodeComponent("apiRequestMonthlyIncome"),
-    apiRequestSourceOfReserves: makeNodeComponent("apiRequestSourceOfReserves"),
-    apiRequestOccupancyRate: makeNodeComponent("apiRequestOccupancyRate"),
     mainContents: makeNodeComponent("mainContents"),
     introduction: makeNodeComponent("introduction"),
     image: makeNodeComponent("image"),
     img: makeNodeComponent("img"),
     caption: makeNodeComponent("caption"),
+    monthlyIncome2: makeNodeComponent("monthlyIncome2"),
     monthlyIncome: makeNodeComponent("monthlyIncome"),
+    apiRequestMonthlyIncome: makeNodeComponent("apiRequestMonthlyIncome"),
+    sourcesOfReserves2: makeNodeComponent("sourcesOfReserves2"),
     sourcesOfReserves: makeNodeComponent("sourcesOfReserves"),
+    apiRequestSourceOfReserves: makeNodeComponent("apiRequestSourceOfReserves"),
+    occupancyRate2: makeNodeComponent("occupancyRate2"),
     occupancyRate: makeNodeComponent("occupancyRate"),
-    html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
-    goftino: makeNodeComponent("goftino"),
+    apiRequestOccupancyRate: makeNodeComponent("apiRequestOccupancyRate"),
     avgDailyRate2: makeNodeComponent("avgDailyRate2"),
     apiRequestAvgDailyRate: makeNodeComponent("apiRequestAvgDailyRate"),
     avgDailyRate: makeNodeComponent("avgDailyRate"),
+    html: makeNodeComponent("html"),
+    clarity2: makeNodeComponent("clarity2"),
+    goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
-    occupancyRate2: makeNodeComponent("occupancyRate2"),
 
     // Metadata about props expected for PlasmicAnalytics
     internalVariantProps: PlasmicAnalytics__VariantProps,

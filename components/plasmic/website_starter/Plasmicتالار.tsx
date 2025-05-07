@@ -408,7 +408,7 @@ function Plasmicتالار__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u0646\u0627\u0645 \u06a9\u0627\u0631\u0628\u0631";
+                              return " ";
                             }
                             throw e;
                           }
@@ -1301,6 +1301,19 @@ function Plasmicتالار__RenderFunc(props: {
             data-plasmic-override={overrides.navigationRntFooter}
             className={classNames("__wab_instance", sty.navigationRntFooter)}
             navPage={"menu"}
+            userType={(() => {
+              try {
+                return $state.userType;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
