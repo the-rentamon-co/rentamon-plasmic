@@ -251,6 +251,19 @@ function PlasmicProperties__RenderFunc(props: {
               data-plasmic-override={overrides.navigationRntFooter}
               className={classNames("__wab_instance", sty.navigationRntFooter)}
               navPage={"properties"}
+              userType={(() => {
+                try {
+                  return $state.userType;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             />
           ) : null}
           <div

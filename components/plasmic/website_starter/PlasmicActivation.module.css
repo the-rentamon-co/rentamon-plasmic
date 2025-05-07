@@ -4020,6 +4020,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 24px;
   justify-content: flex-start;
   align-items: center;
   background: linear-gradient(
@@ -4033,7 +4036,6 @@
     0% 0% / 100% 100% repeat;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 24px 8px 25px;
 }
 .freeBox__pMoPs {
   display: flex;

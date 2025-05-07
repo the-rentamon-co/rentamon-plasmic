@@ -36,6 +36,27 @@
   }
 }
 @media (max-width: 500px) {
+  .root {
+    background: linear-gradient(
+        0deg,
+        #6bafc5 0%,
+        #fcfcfc 26%,
+        #b4dbe8 47%,
+        #fcfcfc 66%,
+        #83c3d8 97%
+      )
+      0% 0% / 100% 100% repeat;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    min-width: 0;
+    min-height: 0;
+  }
+}
+@media (max-width: 500px) {
   .root > * {
     grid-column: 4;
   }
@@ -265,7 +286,8 @@
 }
 @media (max-width: 500px) {
   .freeBox__n9ASc {
-    padding: 20px;
+    max-width: 100%;
+    padding: 20px 8px;
   }
 }
 @media (max-width: 350px) {
@@ -283,51 +305,18 @@
   height: auto;
   max-width: 100%;
   font-size: 18px;
+  line-height: 1.8;
   min-width: 0;
 }
 @media (max-width: 500px) {
   .text__kgk1O {
-    text-align: center;
+    text-align: right;
   }
 }
 @media (max-width: 350px) {
   .text__kgk1O {
     text-align: right;
     font-size: 15px;
-  }
-}
-.freeBox__o90Qc {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 1000px;
-  min-width: 0;
-  padding: 37px 8px 20px;
-}
-@media (max-width: 1200px) {
-  .freeBox__o90Qc {
-    max-width: 90%;
-  }
-}
-@media (max-width: 500px) {
-  .freeBox__o90Qc {
-    min-height: 600px;
-    padding: 20px;
-  }
-}
-@media (max-width: 350px) {
-  .freeBox__o90Qc {
-    padding-right: 7px;
-    padding-left: 7px;
-    max-width: 96%;
-    width: 100%;
-    grid-column-start: 1 !important;
-    grid-column-end: -1 !important;
   }
 }
 .analytics {
@@ -337,10 +326,46 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.analytics > :global(.__wab_flex-container) {
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  margin-top: calc(0px - 20px);
+  height: calc(100% + 20px);
+}
+.analytics > :global(.__wab_flex-container) > *,
+.analytics > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.analytics > :global(.__wab_flex-container) > picture > img,
+.analytics
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 20px;
+}
+@media (max-width: 500px) {
+  .analytics > :global(.__wab_flex-container) {
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-top: calc(0px - 30px);
+    height: calc(100% + 30px);
+  }
+}
+@media (max-width: 500px) {
+  .analytics > :global(.__wab_flex-container) > *,
+  .analytics > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .analytics > :global(.__wab_flex-container) > picture > img,
+  .analytics
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-top: 30px;
+  }
 }
 .monthlyIncome2 {
   display: flex;
@@ -351,8 +376,16 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  background: #fcfcfc;
   min-width: 0;
+  border-radius: 30px;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .monthlyIncome2 {
+    background: #fcfcfc;
+    border-radius: 30px;
+  }
 }
 .monthlyIncome {
   display: flex;
@@ -394,7 +427,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 0px;
 }
 .text__tqtWf {
   text-align: right;
@@ -418,6 +451,45 @@
 }
 @media (max-width: 350px) {
   .text__tqtWf {
+    text-align: center;
+    font-size: 18px;
+    padding-right: 0px;
+  }
+}
+.freeBox__zKZqp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0px 8px 12px;
+}
+.text__yPIke {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 300;
+  padding-top: 0px;
+  padding-right: 8px;
+  padding-left: 8px;
+  line-height: 1.8;
+}
+@media (max-width: 1200px) {
+  .text__yPIke {
+    padding-right: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .text__yPIke {
+    padding-right: 0px;
+    padding-bottom: 14px;
+  }
+}
+@media (max-width: 350px) {
+  .text__yPIke {
     text-align: center;
     font-size: 18px;
     padding-right: 0px;
@@ -502,8 +574,24 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  background: #fcfcfc;
   min-width: 0;
+  border-radius: 30px;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .sourcesOfReserves2 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    background: #fcfcfc;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    border-radius: 30px;
+    padding: 8px;
+  }
 }
 .sourcesOfReserves {
   display: flex;
@@ -528,13 +616,13 @@
     height: auto;
     flex-direction: column;
     min-width: 0;
-    padding: 62px 14px 8px;
+    padding: 12px 14px;
   }
 }
 @media (max-width: 500px) {
   .sourcesOfReserves > :global(.__wab_flex-container) {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     min-width: 0;
     margin-left: calc(0px - 0px);
@@ -688,8 +776,24 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  background: #fcfcfc;
   min-width: 0;
+  border-radius: 30px;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .occupancyRate2 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    background: #fcfcfc;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    border-radius: 30px;
+    padding: 8px;
+  }
 }
 .occupancyRate {
   display: flex;
@@ -712,7 +816,7 @@
     justify-content: flex-start;
     align-items: center;
     min-width: 0;
-    padding: 30px 0px 8px;
+    padding: 12px 0px;
   }
 }
 @media (max-width: 350px) {
@@ -841,8 +945,24 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  background: #fcfcfc;
   min-width: 0;
+  border-radius: 30px;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .avgDailyRate2 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    background: #fcfcfc;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    border-radius: 30px;
+    padding: 12px 8px;
+  }
 }
 .apiRequestAvgDailyRate:global(.__wab_instance) {
   max-width: 100%;

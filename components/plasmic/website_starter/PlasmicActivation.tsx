@@ -471,7 +471,7 @@ function PlasmicActivation__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return 2;
+                return 3;
               }
               throw e;
             }
@@ -4798,6 +4798,7 @@ function PlasmicActivation__RenderFunc(props: {
                                         customFunction: async () => {
                                           return (() => {
                                             return (window.location.href =
+                                              document.referrer ||
                                               "https://rentamon.com/panel/");
                                           })();
                                         }
@@ -4825,9 +4826,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__jKat9
                                 )}
                               >
-                                {
-                                  "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                                }
+                                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                               </div>
                             </AntdButton>
                           </div>
@@ -5182,7 +5181,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__fPBr8
                                 )}
                               >
-                                {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                                {"\u062a\u0627\u06cc\u06cc\u062f"}
                               </div>
                             </AntdButton>
                           </div>
@@ -5552,6 +5551,7 @@ function PlasmicActivation__RenderFunc(props: {
                                         customFunction: async () => {
                                           return (() => {
                                             return (window.location.href =
+                                              document.referrer ||
                                               "https://rentamon.com/panel/");
                                           })();
                                         }
@@ -5579,9 +5579,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__ctiGm
                                 )}
                               >
-                                {
-                                  "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                                }
+                                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                               </div>
                             </AntdButton>
                           </div>
@@ -5935,7 +5933,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__z1LHa
                                 )}
                               >
-                                {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                                {"\u062a\u0627\u06cc\u06cc\u062f"}
                               </div>
                             </AntdButton>
                           </div>
@@ -6378,6 +6376,7 @@ function PlasmicActivation__RenderFunc(props: {
                                         customFunction: async () => {
                                           return (() => {
                                             return (window.location.href =
+                                              document.referrer ||
                                               "https://rentamon.com/panel/");
                                           })();
                                         }
@@ -6405,9 +6404,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__wOCr
                                 )}
                               >
-                                {
-                                  "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                                }
+                                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                               </div>
                             </AntdButton>
                           </div>
@@ -6762,7 +6759,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__e2DBa
                                 )}
                               >
-                                {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                                {"\u062a\u0627\u06cc\u06cc\u062f"}
                               </div>
                             </AntdButton>
                           </div>
@@ -7179,6 +7176,7 @@ function PlasmicActivation__RenderFunc(props: {
                                         customFunction: async () => {
                                           return (() => {
                                             return (window.location.href =
+                                              document.referrer ||
                                               "https://rentamon.com/panel/");
                                           })();
                                         }
@@ -7206,9 +7204,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__cVdoM
                                 )}
                               >
-                                {
-                                  "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                                }
+                                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                               </div>
                             </AntdButton>
                           </div>
@@ -7560,7 +7556,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__yDjNu
                                 )}
                               >
-                                {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                                {"\u062a\u0627\u06cc\u06cc\u062f"}
                               </div>
                             </AntdButton>
                           </div>
@@ -8360,7 +8356,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     sty.text___1WRCt
                                   )}
                                 >
-                                  {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                                  {"\u062a\u0627\u06cc\u06cc\u062f"}
                                 </div>
                               </AntdButton>
                               <AntdButton
@@ -8418,6 +8414,7 @@ function PlasmicActivation__RenderFunc(props: {
                                           customFunction: async () => {
                                             return (() => {
                                               return (window.location.href =
+                                                document.referrer ||
                                                 "https://rentamon.com/panel/");
                                             })();
                                           }
@@ -8445,9 +8442,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     sty.text__lebDs
                                   )}
                                 >
-                                  {
-                                    "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                                  }
+                                  {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                                 </div>
                               </AntdButton>
                             </div>
@@ -8900,7 +8895,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     sty.text__yHf2
                                   )}
                                 >
-                                  {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
+                                  {"\u062a\u0627\u06cc\u06cc\u062f"}
                                 </div>
                               </AntdButton>
                               <AntdButton
@@ -8958,6 +8953,7 @@ function PlasmicActivation__RenderFunc(props: {
                                           customFunction: async () => {
                                             return (() => {
                                               return (window.location.href =
+                                                document.referrer ||
                                                 "https://rentamon.com/panel/");
                                             })();
                                           }
@@ -8985,9 +8981,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     sty.text__ymnEy
                                   )}
                                 >
-                                  {
-                                    "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
-                                  }
+                                  {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                                 </div>
                               </AntdButton>
                             </div>

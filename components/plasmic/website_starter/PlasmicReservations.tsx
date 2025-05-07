@@ -4209,6 +4209,19 @@ function PlasmicReservations__RenderFunc(props: {
             data-plasmic-override={overrides.navigationRntFooter}
             className={classNames("__wab_instance", sty.navigationRntFooter)}
             navPage={"reservations"}
+            userType={(() => {
+              try {
+                return $state.userType;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           <Embed
