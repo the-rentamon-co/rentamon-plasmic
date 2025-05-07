@@ -3529,6 +3529,11 @@
           "id": "_5913whAv-kS",
           "name": "image 123",
           "filePath": "../public/plasmic/website_starter/images/image123.svg"
+        },
+        {
+          "id": "W8f1BLhJ9HO1",
+          "name": "loading-purple.gif",
+          "filePath": "../public/plasmic/website_starter/images/loadingPurpleGif.gif"
         }
       ],
       "indirect": false,

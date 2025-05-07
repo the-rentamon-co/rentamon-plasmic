@@ -208,24 +208,6 @@
   max-width: 100%;
   min-width: 0;
 }
-.apiRequestAvgDailyrateBoojar:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__rj7E {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__wkQm1 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .mainContents {
   display: flex;
   flex-direction: column;
@@ -758,6 +740,58 @@
     min-width: 700px;
   }
 }
+.html {
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
+.clarity2:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.goftino:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.freeBox__zgrJ {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column-start: 3 !important;
+  grid-column-end: -3 !important;
+  padding: 8px;
+}
+.apiRequestAvgDailyrateBoojar:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__rj7E {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__wkQm1 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
 .avgDailyRate {
   display: flex;
   flex-direction: column;
@@ -850,27 +884,6 @@
   .text__ztAop {
     font-size: 15px;
   }
-}
-.html {
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  opacity: 0;
-  min-width: 0;
-  display: none;
-  padding: 8px;
-}
-.clarity2:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.goftino:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
 }
 .rentamonFooter:global(.__wab_instance) {
   max-width: 100%;

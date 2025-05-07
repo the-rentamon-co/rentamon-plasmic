@@ -87,7 +87,6 @@ export type PlasmicProperty__OverridesType = {
   main?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   coverImage?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   propertyName?: Flex__<"div">;
   back?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
@@ -222,32 +221,24 @@ function PlasmicProperty__RenderFunc(props: {
                 </div>
               }
               loadingDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cy4Up
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile") ? (
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return undefined;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "Loading...";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  ) : (
-                    "Loading..."
-                  )}
+                <div className={classNames(projectcss.all, sty.freeBox__ei2Gv)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__uIWf)}
+                    displayHeight={"40px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"40px"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
+                  />
                 </div>
               }
               method={"GET"}
@@ -293,10 +284,8 @@ function PlasmicProperty__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.coverImage)}
                 >
                   <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img)}
+                    className={classNames(sty.img__mWwMh)}
                     displayHeight={
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "180px"
@@ -371,6 +360,29 @@ function PlasmicProperty__RenderFunc(props: {
                 </div>
               </div>
             </ApiRequest>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___3V5T
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $ctx.params.id;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__n9ASc)}>
             <div
@@ -446,15 +458,13 @@ const PlasmicDescendants = {
     "main",
     "apiRequest",
     "coverImage",
-    "img",
     "propertyName",
     "back",
     "navigationRntFooter"
   ],
-  main: ["main", "apiRequest", "coverImage", "img", "propertyName"],
-  apiRequest: ["apiRequest", "coverImage", "img", "propertyName"],
-  coverImage: ["coverImage", "img"],
-  img: ["img"],
+  main: ["main", "apiRequest", "coverImage", "propertyName"],
+  apiRequest: ["apiRequest", "coverImage", "propertyName"],
+  coverImage: ["coverImage"],
   propertyName: ["propertyName"],
   back: ["back"],
   navigationRntFooter: ["navigationRntFooter"]
@@ -467,7 +477,6 @@ type NodeDefaultElementType = {
   main: "div";
   apiRequest: typeof ApiRequest;
   coverImage: "div";
-  img: typeof PlasmicImg__;
   propertyName: "div";
   back: "div";
   navigationRntFooter: typeof NavigationRntFooter;
@@ -536,7 +545,6 @@ export const PlasmicProperty = Object.assign(
     main: makeNodeComponent("main"),
     apiRequest: makeNodeComponent("apiRequest"),
     coverImage: makeNodeComponent("coverImage"),
-    img: makeNodeComponent("img"),
     propertyName: makeNodeComponent("propertyName"),
     back: makeNodeComponent("back"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),

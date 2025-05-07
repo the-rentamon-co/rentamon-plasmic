@@ -60,9 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
-import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -133,7 +132,6 @@ export type PlasmicHomepage__OverridesType = {
   titlePart?: Flex__<"div">;
   commentsScrolling?: Flex__<"div">;
   testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
-  embedHtml?: Flex__<typeof Embed>;
   screenshots?: Flex__<"div">;
   screenshotsRight?: Flex__<"div">;
   screenshotsCaption?: Flex__<"div">;
@@ -464,17 +462,13 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.introCalendarLeft}
                   className={classNames(projectcss.all, sty.introCalendarLeft)}
                 >
-                  <Video
-                    autoPlay={true}
+                  <Embed
                     className={classNames(
                       "__wab_instance",
-                      sty.htmlVideo___9OH96
+                      sty.embedHtml___2YmQ
                     )}
-                    controls={false}
-                    loop={true}
-                    muted={true}
-                    src={
-                      "https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"
+                    code={
+                      '<video\r\n  src="https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
                     }
                   />
                 </div>
@@ -564,17 +558,13 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.introAutoSyncGif}
                   className={classNames(projectcss.all, sty.introAutoSyncGif)}
                 >
-                  <Video
-                    autoPlay={true}
+                  <Embed
                     className={classNames(
                       "__wab_instance",
-                      sty.htmlVideo__uaglf
+                      sty.embedHtml__gDn1
                     )}
-                    controls={false}
-                    loop={true}
-                    muted={true}
-                    src={
-                      "https://rentamon-files.storage.iran.liara.space/auto-sync.mp4"
+                    code={
+                      '<video\r\n  src="https://rentamon-files.storage.iran.liara.space/auto-sync.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
                     }
                   />
                 </div>
@@ -872,9 +862,7 @@ function PlasmicHomepage__RenderFunc(props: {
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___8VXaH)}>
               <Embed
-                data-plasmic-name={"embedHtml"}
-                data-plasmic-override={overrides.embedHtml}
-                className={classNames("__wab_instance", sty.embedHtml)}
+                className={classNames("__wab_instance", sty.embedHtml__ixk23)}
                 code={
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 20px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 20px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 30px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    const persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    let formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    let startTime = null;\r\n    const step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      const progress = (timestamp - startTime) / duration;\r\n      const currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  let hasCounted = false;\r\n\r\n  function onScroll() {\r\n    const counterSection = document.getElementById('counterSection');\r\n    const rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 910, 5000);\r\n      startCounter(document.getElementById('count2'), 0, 12000, 6000);\r\n      startCounter(document.getElementById('count3'), 0, 72000, 7000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
@@ -1495,7 +1483,6 @@ const PlasmicDescendants = {
     "titlePart",
     "commentsScrolling",
     "testimonialsScrolling",
-    "embedHtml",
     "screenshots",
     "screenshotsRight",
     "screenshotsCaption",
@@ -1556,8 +1543,7 @@ const PlasmicDescendants = {
     "testimonials",
     "titlePart",
     "commentsScrolling",
-    "testimonialsScrolling",
-    "embedHtml"
+    "testimonialsScrolling"
   ],
   introCalendar: [
     "introCalendar",
@@ -1652,7 +1638,6 @@ const PlasmicDescendants = {
   titlePart: ["titlePart"],
   commentsScrolling: ["commentsScrolling", "testimonialsScrolling"],
   testimonialsScrolling: ["testimonialsScrolling"],
-  embedHtml: ["embedHtml"],
   screenshots: [
     "screenshots",
     "screenshotsRight",
@@ -1737,7 +1722,6 @@ type NodeDefaultElementType = {
   titlePart: "div";
   commentsScrolling: "div";
   testimonialsScrolling: typeof TestimonialsScrolling;
-  embedHtml: typeof Embed;
   screenshots: "div";
   screenshotsRight: "div";
   screenshotsCaption: "div";
@@ -1859,7 +1843,6 @@ export const PlasmicHomepage = Object.assign(
     titlePart: makeNodeComponent("titlePart"),
     commentsScrolling: makeNodeComponent("commentsScrolling"),
     testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
-    embedHtml: makeNodeComponent("embedHtml"),
     screenshots: makeNodeComponent("screenshots"),
     screenshotsRight: makeNodeComponent("screenshotsRight"),
     screenshotsCaption: makeNodeComponent("screenshotsCaption"),

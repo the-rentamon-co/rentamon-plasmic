@@ -34,9 +34,17 @@
   overflow: visible;
   max-height: 56px;
   min-height: 64px;
+  cursor: pointer;
+  pointer-events: auto;
+  mix-blend-mode: normal;
+  isolation: auto;
+  filter: none;
+  backdrop-filter: none;
+  transform: none;
   min-width: 0;
   flex-shrink: 0;
-  padding: 0px 8px 4px;
+  -webkit-backdrop-filter: none;
+  padding: 0px 0px 4px;
 }
 @media (max-width: 350px) {
   .top {
@@ -208,12 +216,16 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  justify-content: center;
-  align-items: center;
   left: auto;
   top: auto;
   min-width: 0;
-  padding: 4px 0px;
+  padding: 4px 0px 0px;
+}
+.normMenu > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
 }
 @media (max-width: 500px) {
   .normMenu {
@@ -222,9 +234,35 @@
 }
 @media (max-width: 350px) {
   .normMenu {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    min-width: 0;
     display: flex;
+    padding: 6px 0px 2px;
+  }
+}
+@media (max-width: 350px) {
+  .normMenu > :global(.__wab_flex-container) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 350px) {
+  .normMenu > :global(.__wab_flex-container) > *,
+  .normMenu > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .normMenu > :global(.__wab_flex-container) > picture > img,
+  .normMenu
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 .svg__y8AJf {
@@ -405,7 +443,7 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 4px 0px;
+  padding: 4px 0px 0px;
 }
 @media (max-width: 350px) {
   .normCal {
@@ -416,7 +454,7 @@
     justify-content: center;
     align-items: center;
     min-width: 0;
-    padding: 6px 0px;
+    padding: 6px 0px 2px;
   }
 }
 .svg__aZ9Q4 {
@@ -618,10 +656,14 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  min-width: 0;
+  padding: 4px 0px 0px;
+}
+.normRes > :global(.__wab_flex-container) {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 4px 0px;
 }
 @media (max-width: 350px) {
   .normRes {
@@ -629,10 +671,30 @@
     height: auto;
     max-width: 100%;
     flex-direction: column;
+    min-width: 0;
+    padding: 6px 0px 2px;
+  }
+}
+@media (max-width: 350px) {
+  .normRes > :global(.__wab_flex-container) {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 0;
-    padding: 6px 0px;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 350px) {
+  .normRes > :global(.__wab_flex-container) > *,
+  .normRes > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .normRes > :global(.__wab_flex-container) > picture > img,
+  .normRes
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 .img__jYzcK {
@@ -827,10 +889,14 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  min-width: 0;
+  padding: 4px 0px 0px;
+}
+.normProps > :global(.__wab_flex-container) {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 4px 0px;
 }
 @media (max-width: 350px) {
   .normProps {
@@ -838,10 +904,30 @@
     height: auto;
     max-width: 100%;
     flex-direction: column;
+    min-width: 0;
+    padding: 6px 0px 2px;
+  }
+}
+@media (max-width: 350px) {
+  .normProps > :global(.__wab_flex-container) {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 0;
-    padding: 6px 0px;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+  }
+}
+@media (max-width: 350px) {
+  .normProps > :global(.__wab_flex-container) > *,
+  .normProps > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .normProps > :global(.__wab_flex-container) > picture > img,
+  .normProps
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
   }
 }
 .svg___3Yheu {

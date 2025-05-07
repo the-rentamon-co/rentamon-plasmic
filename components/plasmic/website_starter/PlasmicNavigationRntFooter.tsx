@@ -301,16 +301,18 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   })()
                 : true
             ) ? (
-              <div
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"normMenu"}
                 data-plasmic-override={overrides.normMenu}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.normMenu)}
               >
                 <Icon64Icon
                   className={classNames(projectcss.all, sty.svg__y8AJf)}
                   role={"img"}
                 />
-              </div>
+              </Stack__>
             ) : null}
             <Stack__
               as={"div"}
@@ -592,9 +594,11 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   })()
                 : true
             ) ? (
-              <div
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"normRes"}
                 data-plasmic-override={overrides.normRes}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.normRes)}
               >
                 <PlasmicImg__
@@ -614,7 +618,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                     aspectRatio: 1.210526
                   }}
                 />
-              </div>
+              </Stack__>
             ) : null}
             <Stack__
               as={"div"}
@@ -719,16 +723,18 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   })()
                 : true
             ) ? (
-              <div
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"normProps"}
                 data-plasmic-override={overrides.normProps}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.normProps)}
               >
                 <Icon57Icon
                   className={classNames(projectcss.all, sty.svg___3Yheu)}
                   role={"img"}
                 />
-              </div>
+              </Stack__>
             ) : null}
             <Stack__
               as={"div"}

@@ -705,7 +705,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       sty.text__strx4
                     )}
                   >
-                    {"Select\u2026"}
+                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
                   </div>
                 }
                 value={generateStateValueProp($state, [
@@ -1117,7 +1117,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "POST",
-                                      "https://dev.rentamon.com/webhook/otaghak-instant",
+                                      "https://gateway.rentamon.com/webhook/otaghak-instant",
                                       undefined,
                                       (() => {
                                         try {
@@ -1153,13 +1153,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           throw e;
                                         }
                                       })(),
-                                      {
-                                        headers: {
-                                          "Content-Type":
-                                            "application/x-www-form-urlencoded"
-                                        },
-                                        withCredentials: true
-                                      }
+                                      {}
                                     ]
                                   };
                                   return $globalActions[
@@ -1248,6 +1242,43 @@ function PlasmicInstantReserve__RenderFunc(props: {
                             ) {
                               $steps["updateOtaghakChecked"] = await $steps[
                                 "updateOtaghakChecked"
+                              ];
+                            }
+
+                            $steps["updateShabSwitchChecked"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["shabSwitch", "checked"]
+                                    },
+                                    operation: 0
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateShabSwitchChecked"] != null &&
+                              typeof $steps["updateShabSwitchChecked"] ===
+                                "object" &&
+                              typeof $steps["updateShabSwitchChecked"].then ===
+                                "function"
+                            ) {
+                              $steps["updateShabSwitchChecked"] = await $steps[
+                                "updateShabSwitchChecked"
                               ];
                             }
                           }).apply(null, eventArgs);

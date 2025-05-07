@@ -59,11 +59,10 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -96,7 +95,6 @@ export const Plasmicتالار__ArgProps = new Array<ArgPropType>();
 export type Plasmicتالار__OverridesType = {
   root?: Flex__<"div">;
   header?: Flex__<"div">;
-  sideBar2?: Flex__<typeof SideBar2>;
   headerTitle?: Flex__<"div">;
   profile2?: Flex__<typeof ApiRequest>;
   menu?: Flex__<"div">;
@@ -138,8 +136,6 @@ export type Plasmicتالار__OverridesType = {
   right7?: Flex__<"div">;
   mid7?: Flex__<"div">;
   left6?: Flex__<"div">;
-  html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
   clarity?: Flex__<typeof Embed>;
@@ -285,29 +281,6 @@ function Plasmicتالار__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__wCkpc)}>
-              <SideBar2
-                data-plasmic-name={"sideBar2"}
-                data-plasmic-override={overrides.sideBar2}
-                className={classNames("__wab_instance", sty.sideBar2)}
-                isOpen={
-                  hasVariant(globalVariants, "screen", "mobile") ? false : false
-                }
-                userData={(() => {
-                  try {
-                    return $state.profile2.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-              />
-            </div>
             <div
               data-plasmic-name={"headerTitle"}
               data-plasmic-override={overrides.headerTitle}
@@ -1321,20 +1294,6 @@ function Plasmicتالار__RenderFunc(props: {
               </Stack__>
             ) : null}
           </div>
-          <div
-            data-plasmic-name={"html"}
-            data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
-          >
-            <Embed
-              data-plasmic-name={"clarity2"}
-              data-plasmic-override={overrides.clarity2}
-              className={classNames("__wab_instance", sty.clarity2)}
-              code={
-                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-              }
-            />
-          </div>
           <div className={classNames(projectcss.all, sty.freeBox__sgL9C)} />
 
           <NavigationRntFooter
@@ -1431,7 +1390,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header",
-    "sideBar2",
     "headerTitle",
     "profile2",
     "menu",
@@ -1473,14 +1431,11 @@ const PlasmicDescendants = {
     "right7",
     "mid7",
     "left6",
-    "html",
-    "clarity2",
     "navigationRntFooter",
     "sideEffect",
     "clarity"
   ],
-  header: ["header", "sideBar2", "headerTitle", "profile2"],
-  sideBar2: ["sideBar2"],
+  header: ["header", "headerTitle", "profile2"],
   headerTitle: ["headerTitle"],
   profile2: ["profile2"],
   menu: [
@@ -1562,8 +1517,6 @@ const PlasmicDescendants = {
   right7: ["right7"],
   mid7: ["mid7"],
   left6: ["left6"],
-  html: ["html", "clarity2"],
-  clarity2: ["clarity2"],
   navigationRntFooter: ["navigationRntFooter"],
   sideEffect: ["sideEffect"],
   clarity: ["clarity"]
@@ -1574,7 +1527,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: "div";
-  sideBar2: typeof SideBar2;
   headerTitle: "div";
   profile2: typeof ApiRequest;
   menu: "div";
@@ -1616,8 +1568,6 @@ type NodeDefaultElementType = {
   right7: "div";
   mid7: "div";
   left6: "div";
-  html: "div";
-  clarity2: typeof Embed;
   navigationRntFooter: typeof NavigationRntFooter;
   sideEffect: typeof SideEffect;
   clarity: typeof Embed;
@@ -1684,7 +1634,6 @@ export const Plasmicتالار = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    sideBar2: makeNodeComponent("sideBar2"),
     headerTitle: makeNodeComponent("headerTitle"),
     profile2: makeNodeComponent("profile2"),
     menu: makeNodeComponent("menu"),
@@ -1726,8 +1675,6 @@ export const Plasmicتالار = Object.assign(
     right7: makeNodeComponent("right7"),
     mid7: makeNodeComponent("mid7"),
     left6: makeNodeComponent("left6"),
-    html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarity: makeNodeComponent("clarity"),

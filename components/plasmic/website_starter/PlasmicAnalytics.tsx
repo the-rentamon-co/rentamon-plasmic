@@ -94,7 +94,6 @@ export type PlasmicAnalytics__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   apiRequestOccupancy?: Flex__<typeof ApiRequest>;
   apiRequestAvgDailyrate?: Flex__<typeof ApiRequest>;
-  apiRequestAvgDailyrateBoojar?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   introduction?: Flex__<"div">;
   image?: Flex__<"div">;
@@ -103,10 +102,11 @@ export type PlasmicAnalytics__OverridesType = {
   monthlyIncome?: Flex__<"div">;
   sources?: Flex__<"div">;
   occupancyRate?: Flex__<"div">;
-  avgDailyRate?: Flex__<"div">;
   html?: Flex__<"div">;
   clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
+  apiRequestAvgDailyrateBoojar?: Flex__<typeof ApiRequest>;
+  avgDailyRate?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -644,62 +644,6 @@ function PlasmicAnalytics__RenderFunc(props: {
             url={"https://gateway.rentamon.com/webhook/6209d842-50-990s549f"}
           />
 
-          <ApiRequest
-            data-plasmic-name={"apiRequestAvgDailyrateBoojar"}
-            data-plasmic-override={overrides.apiRequestAvgDailyrateBoojar}
-            className={classNames(
-              "__wab_instance",
-              sty.apiRequestAvgDailyrateBoojar
-            )}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wkQm1
-                )}
-              >
-                {
-                  "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
-                }
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rj7E
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"POST"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestAvgDailyrateBoojar",
-                "error"
-              ]).apply(null, eventArgs);
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestAvgDailyrateBoojar",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequestAvgDailyrateBoojar",
-                "data"
-              ]).apply(null, eventArgs);
-            }}
-            ref={ref => {
-              $refs["apiRequestAvgDailyrateBoojar"] = ref;
-            }}
-            url={"https://gateway.rentamon.com/webhook/monthly-income"}
-          />
-
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
@@ -1098,6 +1042,87 @@ function PlasmicAnalytics__RenderFunc(props: {
                 />
               </div>
             </div>
+          </div>
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"clarity2"}
+              data-plasmic-override={overrides.clarity2}
+              className={classNames("__wab_instance", sty.clarity2)}
+              code={
+                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+              }
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__zgrJ)}>
+            <ApiRequest
+              data-plasmic-name={"apiRequestAvgDailyrateBoojar"}
+              data-plasmic-override={overrides.apiRequestAvgDailyrateBoojar}
+              className={classNames(
+                "__wab_instance",
+                sty.apiRequestAvgDailyrateBoojar
+              )}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wkQm1
+                  )}
+                >
+                  {
+                    "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
+                  }
+                </div>
+              }
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rj7E
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"POST"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequestAvgDailyrateBoojar",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequestAvgDailyrateBoojar",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequestAvgDailyrateBoojar",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              ref={ref => {
+                $refs["apiRequestAvgDailyrateBoojar"] = ref;
+              }}
+              url={"https://gateway.rentamon.com/webhook/monthly-income"}
+            />
+
             <div
               data-plasmic-name={"avgDailyRate"}
               data-plasmic-override={overrides.avgDailyRate}
@@ -1162,29 +1187,6 @@ function PlasmicAnalytics__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div
-            data-plasmic-name={"html"}
-            data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
-          >
-            <Embed
-              data-plasmic-name={"clarity2"}
-              data-plasmic-override={overrides.clarity2}
-              className={classNames("__wab_instance", sty.clarity2)}
-              code={
-                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-              }
-            />
-
-            <Embed
-              data-plasmic-name={"goftino"}
-              data-plasmic-override={overrides.goftino}
-              className={classNames("__wab_instance", sty.goftino)}
-              code={
-                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-              }
-            />
-          </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
             data-plasmic-override={overrides.rentamonFooter}
@@ -1206,7 +1208,6 @@ const PlasmicDescendants = {
     "apiRequest",
     "apiRequestOccupancy",
     "apiRequestAvgDailyrate",
-    "apiRequestAvgDailyrateBoojar",
     "mainContents",
     "introduction",
     "image",
@@ -1215,10 +1216,11 @@ const PlasmicDescendants = {
     "monthlyIncome",
     "sources",
     "occupancyRate",
-    "avgDailyRate",
     "html",
     "clarity2",
     "goftino",
+    "apiRequestAvgDailyrateBoojar",
+    "avgDailyRate",
     "rentamonFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
@@ -1228,7 +1230,6 @@ const PlasmicDescendants = {
   apiRequest: ["apiRequest"],
   apiRequestOccupancy: ["apiRequestOccupancy"],
   apiRequestAvgDailyrate: ["apiRequestAvgDailyrate"],
-  apiRequestAvgDailyrateBoojar: ["apiRequestAvgDailyrateBoojar"],
   mainContents: [
     "mainContents",
     "introduction",
@@ -1237,8 +1238,7 @@ const PlasmicDescendants = {
     "caption",
     "monthlyIncome",
     "sources",
-    "occupancyRate",
-    "avgDailyRate"
+    "occupancyRate"
   ],
   introduction: ["introduction", "image", "img", "caption"],
   image: ["image", "img"],
@@ -1247,10 +1247,11 @@ const PlasmicDescendants = {
   monthlyIncome: ["monthlyIncome"],
   sources: ["sources"],
   occupancyRate: ["occupancyRate"],
-  avgDailyRate: ["avgDailyRate"],
   html: ["html", "clarity2", "goftino"],
   clarity2: ["clarity2"],
   goftino: ["goftino"],
+  apiRequestAvgDailyrateBoojar: ["apiRequestAvgDailyrateBoojar"],
+  avgDailyRate: ["avgDailyRate"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1265,7 +1266,6 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   apiRequestOccupancy: typeof ApiRequest;
   apiRequestAvgDailyrate: typeof ApiRequest;
-  apiRequestAvgDailyrateBoojar: typeof ApiRequest;
   mainContents: "div";
   introduction: "div";
   image: "div";
@@ -1274,10 +1274,11 @@ type NodeDefaultElementType = {
   monthlyIncome: "div";
   sources: "div";
   occupancyRate: "div";
-  avgDailyRate: "div";
   html: "div";
   clarity2: typeof Embed;
   goftino: typeof Embed;
+  apiRequestAvgDailyrateBoojar: typeof ApiRequest;
+  avgDailyRate: "div";
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -1348,9 +1349,6 @@ export const PlasmicAnalytics = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     apiRequestOccupancy: makeNodeComponent("apiRequestOccupancy"),
     apiRequestAvgDailyrate: makeNodeComponent("apiRequestAvgDailyrate"),
-    apiRequestAvgDailyrateBoojar: makeNodeComponent(
-      "apiRequestAvgDailyrateBoojar"
-    ),
     mainContents: makeNodeComponent("mainContents"),
     introduction: makeNodeComponent("introduction"),
     image: makeNodeComponent("image"),
@@ -1359,10 +1357,13 @@ export const PlasmicAnalytics = Object.assign(
     monthlyIncome: makeNodeComponent("monthlyIncome"),
     sources: makeNodeComponent("sources"),
     occupancyRate: makeNodeComponent("occupancyRate"),
-    avgDailyRate: makeNodeComponent("avgDailyRate"),
     html: makeNodeComponent("html"),
     clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
+    apiRequestAvgDailyrateBoojar: makeNodeComponent(
+      "apiRequestAvgDailyrateBoojar"
+    ),
+    avgDailyRate: makeNodeComponent("avgDailyRate"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicAnalytics
