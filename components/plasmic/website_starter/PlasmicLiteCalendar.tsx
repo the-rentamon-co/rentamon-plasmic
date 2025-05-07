@@ -509,62 +509,86 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 data-plasmic-override={overrides.left}
                 className={classNames(projectcss.all, sty.left)}
               >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__rEnj)}
-                  displayHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "80px"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "60px"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "130px"
-                      : "80px"
-                  }
-                  displayMaxHeight={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "60px"
-                      : "80px"
-                  }
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "88px"
-                      : "120px"
-                  }
-                  displayMinHeight={"0"}
-                  displayMinWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "88px"
-                      : "120px"
-                  }
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "220px"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "100%"
-                      : "100%"
-                  }
-                  loading={"lazy"}
-                  src={(() => {
-                    try {
-                      return $state.profile.data.user_info.profile_pic_link;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return {
-                          src: "/plasmic/website_starter/images/untitled1Jpg.jpg",
-                          fullWidth: 38,
-                          fullHeight: 32,
-                          aspectRatio: undefined
-                        };
+                {(
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? true
+                    : (() => {
+                        try {
+                          return (
+                            $state.profile.data.properties[$state.propId - 1]
+                              .property_name != "اقامتگاه ۱"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__nNsXe)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__rEnj)}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "80px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "60px"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "130px"
+                          : "80px"
                       }
-                      throw e;
-                    }
-                  })()}
-                />
-
+                      displayMaxHeight={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "60px"
+                          : "80px"
+                      }
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "88px"
+                          : "120px"
+                      }
+                      displayMinHeight={"0"}
+                      displayMinWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "88px"
+                          : "120px"
+                      }
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "220px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : "100%"
+                      }
+                      loading={"lazy"}
+                      src={(() => {
+                        try {
+                          return $state.profile.data.user_info.profile_pic_link;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return {
+                              src: "/plasmic/website_starter/images/untitled1Jpg.jpg",
+                              fullWidth: 38,
+                              fullHeight: 32,
+                              aspectRatio: undefined
+                            };
+                          }
+                          throw e;
+                        }
+                      })()}
+                    />
+                  </div>
+                ) : null}
                 {(() => {
                   try {
                     return (
@@ -1298,7 +1322,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__htdhq
+                        sty.formField___6GDy
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1310,7 +1334,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___5C1P
+                        sty.formField__zDpdv
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1328,7 +1352,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__hiEkD
+                          sty.text__zCbEi
                         )}
                       >
                         {"Submit"}

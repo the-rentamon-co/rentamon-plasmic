@@ -868,13 +868,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
                             ];
                           }
 
-                          $steps["successToast"] =
-                            $steps.apiRequestForInstant.status === 200
+                          $steps["turnOnSuccessToast"] =
+                            $steps.apiRequestForInstant.status === 200 &&
+                            $state.shabSwitch.checked
                               ? (() => {
                                   const actionArgs = {
                                     args: [
                                       "success",
-                                      "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0639\u0645\u0627\u0644 \u0627\u0646\u062c\u0627\u0645 \u0634\u062f",
+                                      "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0634\u0628 \u0631\u0648\u0634\u0646 \u0634\u062f",
                                       "top-center"
                                     ]
                                   };
@@ -884,13 +885,65 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                 })()
                               : undefined;
                           if (
-                            $steps["successToast"] != null &&
-                            typeof $steps["successToast"] === "object" &&
-                            typeof $steps["successToast"].then === "function"
+                            $steps["turnOnSuccessToast"] != null &&
+                            typeof $steps["turnOnSuccessToast"] === "object" &&
+                            typeof $steps["turnOnSuccessToast"].then ===
+                              "function"
                           ) {
-                            $steps["successToast"] = await $steps[
-                              "successToast"
+                            $steps["turnOnSuccessToast"] = await $steps[
+                              "turnOnSuccessToast"
                             ];
+                          }
+
+                          $steps["turnOffSuccessMessage"] =
+                            $steps.apiRequestForInstant.status === 200 &&
+                            !$state.shabSwitch.checked
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0634\u0628 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                          if (
+                            $steps["turnOffSuccessMessage"] != null &&
+                            typeof $steps["turnOffSuccessMessage"] ===
+                              "object" &&
+                            typeof $steps["turnOffSuccessMessage"].then ===
+                              "function"
+                          ) {
+                            $steps["turnOffSuccessMessage"] = await $steps[
+                              "turnOffSuccessMessage"
+                            ];
+                          }
+
+                          $steps["failedToast"] =
+                            $steps.apiRequestForInstant.status != 200
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "error",
+                                      "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u062e\u0648\u0631\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                          if (
+                            $steps["failedToast"] != null &&
+                            typeof $steps["failedToast"] === "object" &&
+                            typeof $steps["failedToast"].then === "function"
+                          ) {
+                            $steps["failedToast"] = await $steps["failedToast"];
                           }
 
                           $steps["updateShabSwitchChecked"] = true
@@ -955,29 +1008,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                             $steps["updateShabSwitchChecked"] = await $steps[
                               "updateShabSwitchChecked"
                             ];
-                          }
-
-                          $steps["failedToast"] =
-                            $steps.apiRequestForInstant.status != 200
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "error",
-                                      "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u062e\u0648\u0631\u062f",
-                                      "top-center"
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                          if (
-                            $steps["failedToast"] != null &&
-                            typeof $steps["failedToast"] === "object" &&
-                            typeof $steps["failedToast"].then === "function"
-                          ) {
-                            $steps["failedToast"] = await $steps["failedToast"];
                           }
                         }).apply(null, eventArgs);
                       }}

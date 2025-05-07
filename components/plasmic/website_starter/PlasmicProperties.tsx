@@ -504,6 +504,51 @@ function PlasmicProperties__RenderFunc(props: {
                             sty.freeBox__gAlJf
                           )}
                           key={currentIndex}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["goToProperty"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/property/${(() => {
+                                      try {
+                                        return currentItem.id;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()}`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["goToProperty"] != null &&
+                              typeof $steps["goToProperty"] === "object" &&
+                              typeof $steps["goToProperty"].then === "function"
+                            ) {
+                              $steps["goToProperty"] = await $steps[
+                                "goToProperty"
+                              ];
+                            }
+                          }}
                         >
                           {(() => {
                             try {

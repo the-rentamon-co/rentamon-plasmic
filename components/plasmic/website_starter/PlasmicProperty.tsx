@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -83,9 +84,13 @@ export const PlasmicProperty__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProperty__OverridesType = {
   root?: Flex__<"div">;
+  main?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
-  freeBox?: Flex__<"div">;
+  coverImage?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
+  propertyName?: Flex__<"div">;
+  back?: Flex__<"div">;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultPropertyProps {}
@@ -196,128 +201,221 @@ function PlasmicProperty__RenderFunc(props: {
             sty.root
           )}
         >
-          <ApiRequest
-            data-plasmic-name={"apiRequest"}
-            data-plasmic-override={overrides.apiRequest}
-            className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___35Imh
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__cy4Up
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequest",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            ref={ref => {
-              $refs["apiRequest"] = ref;
-            }}
-            url={(() => {
-              try {
-                return `https://api-v2.rentamon.com/api/user_info?property_id=${$ctx.params.id}`;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
+          <div
+            data-plasmic-name={"main"}
+            data-plasmic-override={overrides.main}
+            className={classNames(projectcss.all, sty.main)}
+          >
+            <ApiRequest
+              data-plasmic-name={"apiRequest"}
+              data-plasmic-override={overrides.apiRequest}
+              className={classNames("__wab_instance", sty.apiRequest)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___35Imh
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
               }
-            })()}
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cy4Up
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["apiRequest"] = ref;
+              }}
+              url={(() => {
+                try {
+                  return `https://api-v2.rentamon.com/api/user_info?property_id=${$ctx.params.id}`;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__t8Vqu)}>
+                <div
+                  data-plasmic-name={"coverImage"}
+                  data-plasmic-override={overrides.coverImage}
+                  className={classNames(projectcss.all, sty.coverImage)}
+                >
+                  <PlasmicImg__
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
+                    alt={""}
+                    className={classNames(sty.img)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "180px"
+                        : "auto"
+                    }
+                    displayMaxHeight={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "180px"
+                        : "none"
+                    }
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "180px"
+                        : "0"
+                    }
+                    displayMinWidth={"0"}
+                    displayWidth={"100%"}
+                    loading={"lazy"}
+                    src={(() => {
+                      try {
+                        return $state.apiRequest.data.properties[
+                          $ctx.params.id - 1
+                        ].profile_pic_link;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    width={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : undefined
+                    }
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"propertyName"}
+                  data-plasmic-override={overrides.propertyName}
+                  className={classNames(projectcss.all, sty.propertyName)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gsFhN
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.apiRequest.data.properties[
+                            $ctx.params.id - 1
+                          ].property_name;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+            </ApiRequest>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__n9ASc)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__kgk1O
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "\u0628\u0632\u0648\u062f\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0648 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc\u062f.\n\n\u062f\u0631 \u0631\u0648\u0632\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u0627\u06cc\u0646\u062c\u0627 \u0633\u0631 \u0628\u0632\u0646 :)"
+                : "\u0628\u0632\u0648\u062f\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0648 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc\u062f.\n\u062f\u0631 \u0631\u0648\u0632\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u0627\u06cc\u0646\u062c\u0627 \u0633\u0631 \u0628\u0632\u0646."}
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"back"}
+            data-plasmic-override={overrides.back}
+            className={classNames(projectcss.all, sty.back)}
           >
             <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
-            >
-              <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={(() => {
-                  try {
-                    return $state.apiRequest.data.properties[$ctx.params.id - 1]
-                      .profile_pic_link;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-              />
+              className={classNames(projectcss.all, sty.freeBox__vJxva)}
+              onClick={async event => {
+                const $steps = {};
 
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return window.history.back();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__gsFhN
+                  sty.text___4Hvqf
                 )}
               >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $state.apiRequest.data.properties[
-                        $ctx.params.id - 1
-                      ].property_name;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
+                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
               </div>
             </div>
-          </ApiRequest>
+          </div>
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -325,19 +423,36 @@ function PlasmicProperty__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "apiRequest", "freeBox", "img"],
-  apiRequest: ["apiRequest", "freeBox", "img"],
-  freeBox: ["freeBox", "img"],
-  img: ["img"]
+  root: [
+    "root",
+    "main",
+    "apiRequest",
+    "coverImage",
+    "img",
+    "propertyName",
+    "back",
+    "navigationRntFooter"
+  ],
+  main: ["main", "apiRequest", "coverImage", "img", "propertyName"],
+  apiRequest: ["apiRequest", "coverImage", "img", "propertyName"],
+  coverImage: ["coverImage", "img"],
+  img: ["img"],
+  propertyName: ["propertyName"],
+  back: ["back"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  main: "div";
   apiRequest: typeof ApiRequest;
-  freeBox: "div";
+  coverImage: "div";
   img: typeof PlasmicImg__;
+  propertyName: "div";
+  back: "div";
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -400,9 +515,13 @@ export const PlasmicProperty = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    main: makeNodeComponent("main"),
     apiRequest: makeNodeComponent("apiRequest"),
-    freeBox: makeNodeComponent("freeBox"),
+    coverImage: makeNodeComponent("coverImage"),
     img: makeNodeComponent("img"),
+    propertyName: makeNodeComponent("propertyName"),
+    back: makeNodeComponent("back"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicProperty
     internalVariantProps: PlasmicProperty__VariantProps,
