@@ -511,7 +511,22 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               >
                 {(
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? true
+                    ? (() => {
+                        try {
+                          return (
+                            $state.profile.data.properties[$state.propId - 1]
+                              .property_name !== "اقامتگاه ۱"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
                     : (() => {
                         try {
                           return (
@@ -1322,7 +1337,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ino2I
+                        sty.formField__gkqfC
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1334,7 +1349,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__fhrm5
+                        sty.formField__qNpr6
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1352,7 +1367,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__o1AqY
+                          sty.text__hI9F9
                         )}
                       >
                         {"Submit"}

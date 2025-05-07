@@ -480,9 +480,11 @@ function PlasmicProperty__RenderFunc(props: {
                 sty.text__kgk1O
               )}
             >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0686\u0642\u062f\u0631 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647\u060c \u0627\u0632 \u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0631\u0632\u0631\u0648 \u06af\u0631\u0641\u062a\u0647\u060c \u0686\u0646\u062f \u0634\u0628 \u067e\u0631 \u0628\u0648\u062f\u0647 \u0648...\n\u06cc\u0647 \u062a\u0635\u0648\u06cc\u0631 \u0634\u0641\u0627\u0641 \u0627\u0632 \u0639\u0645\u0644\u06a9\u0631\u062f \u06a9\u0647 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647\u200c\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."
-                : "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0686\u0642\u062f\u0631 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647\u060c \u0627\u0632 \u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0631\u0632\u0631\u0648 \u06af\u0631\u0641\u062a\u0647\u060c \u0686\u0646\u062f \u0634\u0628 \u067e\u0631 \u0628\u0648\u062f\u0647 \u0648...\n\u06cc\u0647 \u062a\u0635\u0648\u06cc\u0631 \u0634\u0641\u0627\u0641 \u0627\u0632 \u0639\u0645\u0644\u06a9\u0631\u062f \u06a9\u0647 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647\u200c\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."}
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0686\u0642\u062f\u0631 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647\u060c \u0627\u0632 \u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0631\u0632\u0631\u0648 \u06af\u0631\u0641\u062a\u0647\u060c \u0686\u0646\u062f \u0634\u0628 \u067e\u0631 \u0628\u0648\u062f\u0647 \u0648...\n\u0627\u06cc\u0646 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u06cc\u0647 \u062a\u0635\u0648\u06cc\u0631 \u0634\u0641\u0627\u0641 \u0627\u0632 \u0639\u0645\u0644\u06a9\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647 \u0648 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647\u200c\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0686\u0642\u062f\u0631 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647\u060c \u0627\u0632 \u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0631\u0632\u0631\u0648 \u06af\u0631\u0641\u062a\u0647\u060c \u0686\u0646\u062f \u0634\u0628 \u067e\u0631 \u0628\u0648\u062f\u0647 \u0648...\n\u0627\u06cc\u0646 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u06cc\u0647 \u062a\u0635\u0648\u06cc\u0631 \u0634\u0641\u0627\u0641 \u0627\u0632 \u0639\u0645\u0644\u06a9\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647 \u0648 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647\u200c\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."
+                : "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0686\u0642\u062f\u0631 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647\u060c \u0627\u0632 \u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0631\u0632\u0631\u0648 \u06af\u0631\u0641\u062a\u0647\u060c \u0686\u0646\u062f \u0634\u0628 \u067e\u0631 \u0628\u0648\u062f\u0647 \u0648...\n\u0627\u06cc\u0646 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u06cc\u0647 \u062a\u0635\u0648\u06cc\u0631 \u0634\u0641\u0627\u0641 \u0627\u0632 \u0639\u0645\u0644\u06a9\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647 \u0648 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647\u200c\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."}
             </div>
           </div>
           <Stack__
@@ -677,22 +679,71 @@ function PlasmicProperty__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text___90O2R
+                      sty.text___9XuYa
                     )}
                   >
-                    {"Error fetching data"}
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequestAvgDailyRate.data
+                              .map(item => {
+                                const months = {
+                                  "01": "▪️ فروردین",
+                                  "02": "▪️ اردیبهشت",
+                                  "03": "▪️ خرداد",
+                                  "04": "▪️ تیر",
+                                  "05": "▪️ مرداد",
+                                  "06": "▪️ شهریور",
+                                  "07": "▪️ مهر",
+                                  "08": "▪️ آبان",
+                                  "09": "▪️ آذر",
+                                  "10": "▪️ دی",
+                                  "11": "▪️ بهمن",
+                                  "12": "▪️ اسفند"
+                                };
+                                const jalaliMonth =
+                                  months[item.jalali_month.slice(5)];
+                                const persianPrice = new Intl.NumberFormat(
+                                  "fa-IR"
+                                ).format(item.average_price_per_night);
+                                return `${jalaliMonth}: ${persianPrice}`;
+                              })
+                              .join("\n");
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
+                    )}
                   </div>
                 }
                 loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__i1Lj2
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___2OEl)}
+                    displayHeight={"36px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"36px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
+                  />
                 }
                 method={"POST"}
                 onError={async (...eventArgs: any) => {
@@ -882,22 +933,71 @@ function PlasmicProperty__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__b2I6E
+                      sty.text__dwhAi
                     )}
                   >
-                    {"Error fetching data"}
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequestAvgDailyRate.data
+                              .map(item => {
+                                const months = {
+                                  "01": "▪️ فروردین",
+                                  "02": "▪️ اردیبهشت",
+                                  "03": "▪️ خرداد",
+                                  "04": "▪️ تیر",
+                                  "05": "▪️ مرداد",
+                                  "06": "▪️ شهریور",
+                                  "07": "▪️ مهر",
+                                  "08": "▪️ آبان",
+                                  "09": "▪️ آذر",
+                                  "10": "▪️ دی",
+                                  "11": "▪️ بهمن",
+                                  "12": "▪️ اسفند"
+                                };
+                                const jalaliMonth =
+                                  months[item.jalali_month.slice(5)];
+                                const persianPrice = new Intl.NumberFormat(
+                                  "fa-IR"
+                                ).format(item.average_price_per_night);
+                                return `${jalaliMonth}: ${persianPrice}`;
+                              })
+                              .join("\n");
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
+                    )}
                   </div>
                 }
                 loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__smc67
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__jwQlY)}
+                    displayHeight={"36px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"36px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
+                  />
                 }
                 method={"POST"}
                 onError={async (...eventArgs: any) => {
@@ -1029,22 +1129,71 @@ function PlasmicProperty__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__twNn5
+                      sty.text__zLd8H
                     )}
                   >
-                    {"Error fetching data"}
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequestAvgDailyRate.data
+                              .map(item => {
+                                const months = {
+                                  "01": "▪️ فروردین",
+                                  "02": "▪️ اردیبهشت",
+                                  "03": "▪️ خرداد",
+                                  "04": "▪️ تیر",
+                                  "05": "▪️ مرداد",
+                                  "06": "▪️ شهریور",
+                                  "07": "▪️ مهر",
+                                  "08": "▪️ آبان",
+                                  "09": "▪️ آذر",
+                                  "10": "▪️ دی",
+                                  "11": "▪️ بهمن",
+                                  "12": "▪️ اسفند"
+                                };
+                                const jalaliMonth =
+                                  months[item.jalali_month.slice(5)];
+                                const persianPrice = new Intl.NumberFormat(
+                                  "fa-IR"
+                                ).format(item.average_price_per_night);
+                                return `${jalaliMonth}: ${persianPrice}`;
+                              })
+                              .join("\n");
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
+                    )}
                   </div>
                 }
                 loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__akrkd
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__d7ZE8)}
+                    displayHeight={"36px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"36px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
+                  />
                 }
                 method={"POST"}
                 onError={async (...eventArgs: any) => {
@@ -1103,24 +1252,71 @@ function PlasmicProperty__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__nvlyi
+                      sty.text___3C64Y
                     )}
                   >
-                    {
-                      "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
-                    }
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequestAvgDailyRate.data
+                              .map(item => {
+                                const months = {
+                                  "01": "▪️ فروردین",
+                                  "02": "▪️ اردیبهشت",
+                                  "03": "▪️ خرداد",
+                                  "04": "▪️ تیر",
+                                  "05": "▪️ مرداد",
+                                  "06": "▪️ شهریور",
+                                  "07": "▪️ مهر",
+                                  "08": "▪️ آبان",
+                                  "09": "▪️ آذر",
+                                  "10": "▪️ دی",
+                                  "11": "▪️ بهمن",
+                                  "12": "▪️ اسفند"
+                                };
+                                const jalaliMonth =
+                                  months[item.jalali_month.slice(5)];
+                                const persianPrice = new Intl.NumberFormat(
+                                  "fa-IR"
+                                ).format(item.average_price_per_night);
+                                return `${jalaliMonth}: ${persianPrice}`;
+                              })
+                              .join("\n");
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a. \u0644\u0637\u0641\u0627 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0631\u0641\u0631\u0634 \u06a9\u0646."
+                    )}
                   </div>
                 }
                 loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rrxWz
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__puJuO)}
+                    displayHeight={"36px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"36px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
+                  />
                 }
                 method={"POST"}
                 onError={async (...eventArgs: any) => {
