@@ -492,9 +492,11 @@ function PlasmicProperty__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.analytics)}
           >
-            <div
+            <Stack__
+              as={"div"}
               data-plasmic-name={"monthlyIncome2"}
               data-plasmic-override={overrides.monthlyIncome2}
+              hasGap={true}
               className={classNames(projectcss.all, sty.monthlyIncome2)}
             >
               <Stack__
@@ -717,10 +719,12 @@ function PlasmicProperty__RenderFunc(props: {
                 }}
                 url={"https://gateway.rentamon.com/webhook/monthly-income"}
               />
-            </div>
-            <div
+            </Stack__>
+            <Stack__
+              as={"div"}
               data-plasmic-name={"sourcesOfReserves2"}
               data-plasmic-override={overrides.sourcesOfReserves2}
+              hasGap={true}
               className={classNames(projectcss.all, sty.sourcesOfReserves2)}
             >
               <Stack__
@@ -919,10 +923,12 @@ function PlasmicProperty__RenderFunc(props: {
                 }}
                 url={"https://gateway.rentamon.com/webhook/reserves-source"}
               />
-            </div>
-            <div
+            </Stack__>
+            <Stack__
+              as={"div"}
               data-plasmic-name={"occupancyRate2"}
               data-plasmic-override={overrides.occupancyRate2}
+              hasGap={true}
               className={classNames(projectcss.all, sty.occupancyRate2)}
             >
               <div
@@ -1064,7 +1070,7 @@ function PlasmicProperty__RenderFunc(props: {
                 }}
                 url={"https://gateway.rentamon.com/webhook/cccupancy-rate"}
               />
-            </div>
+            </Stack__>
             <div
               data-plasmic-name={"avgDailyRate2"}
               data-plasmic-override={overrides.avgDailyRate2}
