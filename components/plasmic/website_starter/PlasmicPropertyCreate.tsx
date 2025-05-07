@@ -101,6 +101,7 @@ export type PlasmicPropertyCreate__OverridesType = {
   newButtons2?: Flex__<"div">;
   next2?: Flex__<"div">;
   privious2?: Flex__<"div">;
+  back?: Flex__<"div">;
 };
 
 export interface DefaultPropertyCreateProps {}
@@ -1361,6 +1362,50 @@ function PlasmicPropertyCreate__RenderFunc(props: {
               </div>
             </Stack__>
           ) : null}
+          <div
+            data-plasmic-name={"back"}
+            data-plasmic-override={overrides.back}
+            className={classNames(projectcss.all, sty.back)}
+          >
+            <div
+              className={classNames(projectcss.all, sty.freeBox__ziFgt)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return window.history.back();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__nYl6
+                )}
+              >
+                {"\u0627\u0646\u0635\u0631\u0627\u0641"}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1382,7 +1427,8 @@ const PlasmicDescendants = {
     "upload",
     "newButtons2",
     "next2",
-    "privious2"
+    "privious2",
+    "back"
   ],
   type: ["type"],
   name: ["name", "textInput", "newButtons", "next", "privious"],
@@ -1404,7 +1450,8 @@ const PlasmicDescendants = {
   upload: ["upload"],
   newButtons2: ["newButtons2", "next2", "privious2"],
   next2: ["next2"],
-  privious2: ["privious2"]
+  privious2: ["privious2"],
+  back: ["back"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1424,6 +1471,7 @@ type NodeDefaultElementType = {
   newButtons2: "div";
   next2: "div";
   privious2: "div";
+  back: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1499,6 +1547,7 @@ export const PlasmicPropertyCreate = Object.assign(
     newButtons2: makeNodeComponent("newButtons2"),
     next2: makeNodeComponent("next2"),
     privious2: makeNodeComponent("privious2"),
+    back: makeNodeComponent("back"),
 
     // Metadata about props expected for PlasmicPropertyCreate
     internalVariantProps: PlasmicPropertyCreate__VariantProps,

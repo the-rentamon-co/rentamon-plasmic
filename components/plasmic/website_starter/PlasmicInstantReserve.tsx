@@ -727,37 +727,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__gWfWp)}
-                  onWaiting={async event => {
-                    const $steps = {};
-
-                    $steps["invokeGlobalAction"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            args: [
-                              undefined,
-                              "\u0628\u0627\u06cc\u062f \u0648\u0628\u0633\u0627\u06cc\u062a \u0647\u0627\u062a\u0648 \u0648\u0635\u0644 \u06a9\u0646\u06cc",
-                              "top-center"
-                            ]
-                          };
-                          return $globalActions["Fragment.showToast"]?.apply(
-                            null,
-                            [...actionArgs.args]
-                          );
-                        })()
-                      : undefined;
-                    if (
-                      $steps["invokeGlobalAction"] != null &&
-                      typeof $steps["invokeGlobalAction"] === "object" &&
-                      typeof $steps["invokeGlobalAction"].then === "function"
-                    ) {
-                      $steps["invokeGlobalAction"] = await $steps[
-                        "invokeGlobalAction"
-                      ];
-                    }
-                  }}
-                >
+                <div className={classNames(projectcss.all, sty.freeBox__gWfWp)}>
                   {(() => {
                     try {
                       return $state.properties.data

@@ -229,7 +229,25 @@ function PlasmicProperty__RenderFunc(props: {
                     sty.text__cy4Up
                   )}
                 >
-                  {"Loading..."}
+                  {hasVariant(globalVariants, "screen", "mobile") ? (
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return undefined;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "Loading...";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  ) : (
+                    "Loading..."
+                  )}
                 </div>
               }
               method={"GET"}
