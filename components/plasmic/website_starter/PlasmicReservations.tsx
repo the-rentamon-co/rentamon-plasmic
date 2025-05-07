@@ -3470,21 +3470,41 @@ function PlasmicReservations__RenderFunc(props: {
                       }
                     }}
                   >
-                    {(() => {
-                      try {
-                        return (
-                          $state.reserveData.data.status != "access denied"
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            try {
+                              return (
+                                $state.reserveData.data.status !=
+                                "access denied"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return (
+                                $state.reserveData.data.status !=
+                                "access denied"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <RecordList
                         cancelledBookings={(() => {
                           try {
@@ -3566,34 +3586,6 @@ function PlasmicReservations__RenderFunc(props: {
                           }
                         })()}
                       />
-                    ) : null}
-                    {(() => {
-                      try {
-                        return (
-                          !$state.reserveData2.data[0] ||
-                          Object.keys($state.reserveData2.data[0]).length === 0
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__zy9VR
-                        )}
-                      >
-                        {
-                          "\u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f"
-                        }
-                      </div>
                     ) : null}
                   </div>
                 );
@@ -4023,34 +4015,6 @@ function PlasmicReservations__RenderFunc(props: {
                         />
                       ) : null}
                     </div>
-                    {(() => {
-                      try {
-                        return (
-                          !$state.reserveData.data[0] ||
-                          Object.keys($state.reserveData.data[0]).length === 0
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__csVa2
-                        )}
-                      >
-                        {
-                          "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0646\u06a9\u0631\u062f\u06cc"
-                        }
-                      </div>
-                    ) : null}
                   </div>
                 );
               })}

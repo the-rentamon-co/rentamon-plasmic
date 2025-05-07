@@ -85,7 +85,7 @@
 }
 @media (max-width: 500px) {
   .header {
-    padding-bottom: 10px;
+    padding-bottom: 0px;
   }
 }
 .sidebar {
@@ -301,9 +301,7 @@
 }
 @media (max-width: 500px) {
   .freeBox___7ZJdP {
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 10px;
+    padding: 10px 4px;
   }
 }
 @media (max-width: 350px) {
@@ -536,6 +534,27 @@
   > img {
   margin-top: 10px;
 }
+@media (max-width: 500px) {
+  .container > :global(.__wab_flex-container) {
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - 0px);
+    height: calc(100% + 0px);
+  }
+}
+@media (max-width: 500px) {
+  .container > :global(.__wab_flex-container) > *,
+  .container > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .container > :global(.__wab_flex-container) > picture > img,
+  .container
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+}
 @media (max-width: 350px) {
   .container {
     padding-top: 0em;
@@ -566,6 +585,7 @@
 @media (max-width: 500px) {
   .titles {
     max-width: 100%;
+    padding-top: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -2036,6 +2056,7 @@
 @media (max-width: 500px) {
   .reserveMainStack2 {
     max-width: 100%;
+    padding-bottom: 0em;
   }
 }
 @media (max-width: 350px) {
@@ -2091,6 +2112,7 @@
 @media (max-width: 500px) {
   .recordList__j2Fns:global(.__wab_instance) {
     flex-shrink: 0;
+    display: flex;
   }
 }
 @media (max-width: 350px) {
@@ -2098,15 +2120,6 @@
     height: 62px;
     flex-shrink: 0;
   }
-}
-.text__zy9VR {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  font-size: 17px;
-  min-width: 0;
 }
 .reserveData2:global(.__wab_instance) {
   max-width: 100%;
@@ -2183,6 +2196,11 @@
 .recordList__lPd:global(.__wab_instance) {
   height: 50px;
 }
+@media (max-width: 500px) {
+  .recordList__lPd:global(.__wab_instance) {
+    height: 64px;
+  }
+}
 .img__wBj6S {
   object-fit: cover;
   max-width: 100%;
@@ -2193,17 +2211,6 @@
 }
 .img__wBj6S > picture > img {
   object-fit: cover;
-}
-.text__csVa2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  font-size: 17px;
-  padding-bottom: 0px;
-  user-select: none;
-  min-width: 0;
 }
 .reserveData:global(.__wab_instance) {
   max-width: 100%;
@@ -2243,6 +2250,11 @@
   font-weight: 500;
   text-align: center;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__rjo3V {
+    padding-top: 20px;
+  }
 }
 .freeBox__p8NEt {
   display: flex;
