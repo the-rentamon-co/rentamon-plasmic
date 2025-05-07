@@ -396,19 +396,21 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["goToProCalendar"] = await $steps["goToProCalendar"];
               }
 
-              $steps["invokeGlobalAction"] = false
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://api-v2.rentamon.com/api/is_user_old"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
+              $steps["invokeGlobalAction"] =
+                $props.userType == null
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          undefined,
+                          "https://api-v2.rentamon.com/api/is_user_old"
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
               if (
                 $steps["invokeGlobalAction"] != null &&
                 typeof $steps["invokeGlobalAction"] === "object" &&
@@ -419,23 +421,26 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 ];
               }
 
-              $steps["goToPanelCalendar"] = false
-                ? (() => {
-                    const actionArgs = { destination: `/panel` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["goToPanelCalendar"] =
+                $steps.invokeGlobalAction.data.flag == 1 &&
+                $props.navPage != "calendar" &&
+                $props.userType != null
+                  ? (() => {
+                      const actionArgs = { destination: `/panel` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["goToPanelCalendar"] != null &&
                 typeof $steps["goToPanelCalendar"] === "object" &&
@@ -444,23 +449,26 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["goToPanelCalendar"] = await $steps["goToPanelCalendar"];
               }
 
-              $steps["goToLitePanel"] = false
-                ? (() => {
-                    const actionArgs = { destination: `/calendar` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["goToLitePanel"] =
+                $steps.invokeGlobalAction.data.flag == 2 &&
+                $props.userType != null &&
+                $props.navPage != "calendar"
+                  ? (() => {
+                      const actionArgs = { destination: `/calendar` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["goToLitePanel"] != null &&
                 typeof $steps["goToLitePanel"] === "object" &&

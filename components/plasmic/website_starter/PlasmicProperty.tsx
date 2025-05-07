@@ -497,9 +497,11 @@ function PlasmicProperty__RenderFunc(props: {
               data-plasmic-override={overrides.monthlyIncome2}
               className={classNames(projectcss.all, sty.monthlyIncome2)}
             >
-              <div
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"monthlyIncome"}
                 data-plasmic-override={overrides.monthlyIncome}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.monthlyIncome)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__zGsQx)}>
@@ -524,7 +526,7 @@ function PlasmicProperty__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 "
+                      ? "(\u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646)"
                       : "(\u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646)"}
                   </div>
                 </div>
@@ -645,7 +647,7 @@ function PlasmicProperty__RenderFunc(props: {
                     }
                   />
                 </div>
-              </div>
+              </Stack__>
               <ApiRequest
                 data-plasmic-name={"apiRequestMonthlyIncome"}
                 data-plasmic-override={overrides.apiRequestMonthlyIncome}
@@ -1139,69 +1141,133 @@ function PlasmicProperty__RenderFunc(props: {
                 url={"https://gateway.rentamon.com/webhook/avg-daily-rate"}
               />
 
-              <div
+              <Stack__
+                as={"div"}
                 data-plasmic-name={"avgDailyRate"}
                 data-plasmic-override={overrides.avgDailyRate}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.avgDailyRate)}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mkzmO
-                  )}
-                >
-                  {
-                    "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 (\u062a\u0648\u0645\u0627\u0646):"
-                  }
+                <div className={classNames(projectcss.all, sty.freeBox__dm6F)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mkzmO
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628"
+                      : "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 (\u062a\u0648\u0645\u0627\u0646):"}
+                  </div>
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ncFgK
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "(\u062a\u0648\u0645\u0627\u0646)"
+                        : "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 (\u062a\u0648\u0645\u0627\u0646):"}
+                    </div>
+                  ) : null}
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___6KSbr
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $state.apiRequestAvgDailyRate.data
-                          .map(item => {
-                            const months = {
-                              "01": "فروردین",
-                              "02": "اردیبهشت",
-                              "03": "خرداد",
-                              "04": "تیر",
-                              "05": "مرداد",
-                              "06": "شهریور",
-                              "07": "مهر",
-                              "08": "آبان",
-                              "09": "آذر",
-                              "10": "دی",
-                              "11": "بهمن",
-                              "12": "اسفند"
-                            };
-                            const jalaliMonth =
-                              months[item.jalali_month.slice(5)];
-                            const persianPrice = new Intl.NumberFormat(
-                              "fa-IR"
-                            ).format(item.average_price_per_night);
-                            return `${jalaliMonth}: ${persianPrice}`;
-                          })
-                          .join("\n");
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
+                <div className={classNames(projectcss.all, sty.freeBox__nC6Cn)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6KSbr
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequestAvgDailyRate.data
+                              .map(item => {
+                                const months = {
+                                  "01": "▪️ فروردین",
+                                  "02": "▪️ اردیبهشت",
+                                  "03": "▪️ خرداد",
+                                  "04": "▪️ تیر",
+                                  "05": "▪️ مرداد",
+                                  "06": "▪️ شهریور",
+                                  "07": "▪️ مهر",
+                                  "08": "▪️ آبان",
+                                  "09": "▪️ آذر",
+                                  "10": "▪️ دی",
+                                  "11": "▪️ بهمن",
+                                  "12": "▪️ اسفند"
+                                };
+                                const jalaliMonth =
+                                  months[item.jalali_month.slice(5)];
+                                const persianPrice = new Intl.NumberFormat(
+                                  "fa-IR"
+                                ).format(item.average_price_per_night);
+                                return `${jalaliMonth}: ${persianPrice}`;
+                              })
+                              .join("\n");
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.apiRequestAvgDailyRate.data
+                              .map(item => {
+                                const months = {
+                                  "01": "فروردین",
+                                  "02": "اردیبهشت",
+                                  "03": "خرداد",
+                                  "04": "تیر",
+                                  "05": "مرداد",
+                                  "06": "شهریور",
+                                  "07": "مهر",
+                                  "08": "آبان",
+                                  "09": "آذر",
+                                  "10": "دی",
+                                  "11": "بهمن",
+                                  "12": "اسفند"
+                                };
+                                const jalaliMonth =
+                                  months[item.jalali_month.slice(5)];
+                                const persianPrice = new Intl.NumberFormat(
+                                  "fa-IR"
+                                ).format(item.average_price_per_night);
+                                return `${jalaliMonth}: ${persianPrice}`;
+                              })
+                              .join("\n");
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0647\u0646\u0648\u0632 \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0646\u062f\u0627\u0631\u06cc";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </Stack__>
             </div>
           </Stack__>
           <div
