@@ -898,6 +898,7 @@
   font-weight: 400;
   font-family: "Estedad";
   min-width: 0;
+  display: none;
 }
 @media (max-width: 350px) {
   .input3:global(.__wab_instance) {
@@ -905,6 +906,11 @@
     margin-right: 0px;
     font-family: "Estedad";
   }
+}
+.numberInput:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  width: 206px;
 }
 .left {
   display: flex;
