@@ -287,6 +287,11 @@
   min-width: 0;
   padding: 8px 8px 0px;
 }
+@media (max-width: 500px) {
+  .contactsRow {
+    cursor: pointer;
+  }
+}
 @media (max-width: 350px) {
   .contactsRow {
     padding-right: 0px;
@@ -425,4 +430,7 @@
   .freeBox__syTfP {
     display: flex;
   }
+}
+.text__bBxfN {
+  font-size: 15px;
 }

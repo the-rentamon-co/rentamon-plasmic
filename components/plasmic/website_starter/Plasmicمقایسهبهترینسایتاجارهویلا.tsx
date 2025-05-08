@@ -1724,7 +1724,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__vYRdE
+                      sty.text__vYRdE,
+                      "clickable"
                     )}
                     onClick={async event => {
                       const $steps = {};

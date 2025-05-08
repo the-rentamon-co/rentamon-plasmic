@@ -489,7 +489,8 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__usD5H
+                        sty.text__usD5H,
+                        "clickable"
                       )}
                       onClick={async event => {
                         const $steps = {};
@@ -744,7 +745,8 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__cNnoU
+                      sty.text__cNnoU,
+                      "clickable"
                     )}
                     onClick={async event => {
                       const $steps = {};
@@ -879,7 +881,8 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text___9GDbe
+                sty.text___9GDbe,
+                "clickable"
               )}
               onClick={async event => {
                 const $steps = {};

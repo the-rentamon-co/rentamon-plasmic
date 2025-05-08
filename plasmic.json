@@ -375,20 +375,6 @@
           "componentType": "component"
         },
         {
-          "id": "ErG8wzgBVki3",
-          "name": "Comparison",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicComparison.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/comparison.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicComparison.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/comparison"
-        },
-        {
           "id": "DpoRYqi8MTy5",
           "name": "SelfRegister",
           "type": "managed",
@@ -1063,20 +1049,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/contacts"
-        },
-        {
-          "id": "WQWXz0cyryQV",
-          "name": "NewChanges",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewChanges.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-changes.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewChanges.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-changes"
         },
         {
           "id": "eddiHU6vfbzN",

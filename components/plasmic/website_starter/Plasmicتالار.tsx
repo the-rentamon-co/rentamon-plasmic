@@ -523,8 +523,8 @@ function Plasmicتالار__RenderFunc(props: {
                               parseInt(
                                 $state.profile2.data.user_info.balance_info
                               ) < 100000
-                                ? "blinkBorderWallet"
-                                : ""
+                                ? "blinkBorderWallet clickable"
+                                : "clickable"
                             );
                           } catch (e) {
                             if (
@@ -656,9 +656,9 @@ function Plasmicتالار__RenderFunc(props: {
                       try {
                         return (() => {
                           if ($state.userType == 1) {
-                            return "display_block";
+                            return "display_block clickable";
                           } else {
-                            return "hidden";
+                            return "hidden clickable";
                           }
                         })();
                       } catch (e) {
@@ -765,7 +765,7 @@ function Plasmicتالار__RenderFunc(props: {
               <div
                 data-plasmic-name={"items2"}
                 data-plasmic-override={overrides.items2}
-                className={classNames(projectcss.all, sty.items2)}
+                className={classNames(projectcss.all, sty.items2, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -864,9 +864,9 @@ function Plasmicتالار__RenderFunc(props: {
                     try {
                       return (() => {
                         if ($state.userType == 1) {
-                          return "display_block";
+                          return "display_block clickable";
                         } else {
-                          return "hidden";
+                          return "hidden clickable";
                         }
                       })();
                     } catch (e) {
@@ -967,9 +967,9 @@ function Plasmicتالار__RenderFunc(props: {
                     try {
                       return (() => {
                         if ($state.userType == 1) {
-                          return "display_block";
+                          return "display_block clickable";
                         } else {
-                          return "hidden";
+                          return "hidden clickable";
                         }
                       })();
                     } catch (e) {
@@ -1061,7 +1061,7 @@ function Plasmicتالار__RenderFunc(props: {
               <div
                 data-plasmic-name={"items5"}
                 data-plasmic-override={overrides.items5}
-                className={classNames(projectcss.all, sty.items5)}
+                className={classNames(projectcss.all, sty.items5, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1140,7 +1140,7 @@ function Plasmicتالار__RenderFunc(props: {
               <div
                 data-plasmic-name={"items7"}
                 data-plasmic-override={overrides.items7}
-                className={classNames(projectcss.all, sty.items7)}
+                className={classNames(projectcss.all, sty.items7, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1223,7 +1223,7 @@ function Plasmicتالار__RenderFunc(props: {
                 data-plasmic-name={"items6"}
                 data-plasmic-override={overrides.items6}
                 hasGap={true}
-                className={classNames(projectcss.all, sty.items6)}
+                className={classNames(projectcss.all, sty.items6, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 

@@ -204,8 +204,8 @@
   .freeBox__prOxi {
     padding-bottom: 10em;
     max-width: 100%;
-    padding-right: 2px;
-    padding-left: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 }
 @media (max-width: 350px) {

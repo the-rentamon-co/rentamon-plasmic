@@ -61,7 +61,6 @@ import {
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -72,9 +71,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPaymentError.module.css"; // plasmic-import: jfPuTUqbVaoo/css
-
-import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -447,22 +443,53 @@ function PlasmicPaymentError__RenderFunc(props: {
               data-plasmic-override={overrides.button}
               className={classNames(projectcss.all, sty.button)}
             >
-              <Button
-                className={classNames("__wab_instance", sty.button___3IJnw)}
-                link={`/wallet`}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__fMFrv,
+                  "clickable"
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToکیفپول"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/wallet` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToکیفپول"] != null &&
+                    typeof $steps["goToکیفپول"] === "object" &&
+                    typeof $steps["goToکیفپول"].then === "function"
+                  ) {
+                    $steps["goToکیفپول"] = await $steps["goToکیفپول"];
+                  }
+                }}
               >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___7ZR1
+                    sty.text___7J56M
                   )}
                 >
                   {
                     "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
                   }
                 </div>
-              </Button>
+              </div>
             </div>
           </div>
         </div>

@@ -8731,8 +8731,8 @@ function PlasmicCalendar2__RenderFunc(props: {
             (() => {
               try {
                 return $props.isFirstVisit == true && $state.tourSteps == 1
-                  ? "blinkBorderTourGuide"
-                  : "";
+                  ? "blinkBorderTourGuide clickable"
+                  : "clickable";
               } catch (e) {
                 if (
                   e instanceof TypeError ||

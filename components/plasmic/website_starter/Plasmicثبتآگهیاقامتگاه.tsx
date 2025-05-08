@@ -861,7 +861,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__gqH9N
+                      sty.text__gqH9N,
+                      "clickable"
                     )}
                     onClick={async event => {
                       const $steps = {};
@@ -1346,7 +1347,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__kGm6W
+                        sty.text__kGm6W,
+                        "clickable"
                       )}
                       onClick={async event => {
                         const $steps = {};
@@ -1461,7 +1463,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__bfmlC
+                        sty.text__bfmlC,
+                        "clickable"
                       )}
                       onClick={async event => {
                         const $steps = {};
@@ -1578,7 +1581,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text___5SrM
+                        sty.text___5SrM,
+                        "clickable"
                       )}
                       onClick={async event => {
                         const $steps = {};
@@ -1871,7 +1875,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__aiwrr
+                        sty.text__aiwrr,
+                        "clickable"
                       )}
                       onClick={async event => {
                         const $steps = {};

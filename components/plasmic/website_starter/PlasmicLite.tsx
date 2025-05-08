@@ -359,7 +359,8 @@ function PlasmicLite__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__bbSiO
+                        sty.text__bbSiO,
+                        "clickable"
                       )}
                       onClick={async event => {
                         const $steps = {};
@@ -799,7 +800,8 @@ function PlasmicLite__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__iWtB
+                  sty.text__iWtB,
+                  "clickable"
                 )}
                 onClick={async event => {
                   const $steps = {};

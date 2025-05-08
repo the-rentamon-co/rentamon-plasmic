@@ -2234,8 +2234,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                         try {
                           return $state.apiRequest.data[currentIndex]
                             .request_for == "cancelled"
-                            ? "cancelled"
-                            : "";
+                            ? "cancelled clickable"
+                            : "clickable";
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -2664,7 +2664,11 @@ function PlasmicChannelManager__RenderFunc(props: {
             className={classNames(projectcss.all, sty.returnButton, "fix")}
           >
             <div
-              className={classNames(projectcss.all, sty.freeBox___9ZxWb)}
+              className={classNames(
+                projectcss.all,
+                sty.freeBox___9ZxWb,
+                "clickable"
+              )}
               onClick={async event => {
                 const $steps = {};
 

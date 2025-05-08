@@ -830,7 +830,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 data-plasmic-name={"item16"}
                 data-plasmic-override={overrides.item16}
                 hasGap={true}
-                className={classNames(projectcss.all, sty.item16)}
+                className={classNames(projectcss.all, sty.item16, "clickable")}
               >
                 <Stack__
                   as={"div"}
@@ -896,7 +896,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 data-plasmic-name={"item17"}
                 data-plasmic-override={overrides.item17}
                 hasGap={true}
-                className={classNames(projectcss.all, sty.item17)}
+                className={classNames(projectcss.all, sty.item17, "clickable")}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__cnbU8)}>
                   <Checkbox
@@ -2658,7 +2658,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___6Zx8G
+                  sty.text___6Zx8G,
+                  "clickable"
                 )}
                 onClick={async event => {
                   const $steps = {};

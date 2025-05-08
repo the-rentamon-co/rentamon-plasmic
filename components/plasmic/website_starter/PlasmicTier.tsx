@@ -201,7 +201,7 @@ function PlasmicTier__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0622\u06cc\u0627 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648 \u06cc\u0627 \u0647\u0648\u0645\u0633\u0627 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u06cc\u061f"
+                    "\u0622\u06cc\u0627 \u062a\u0648\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0641\u0639\u0627\u0644 \u0647\u0633\u062a\u06cc\u061f"
                   }
                 </div>
               </div>
@@ -448,7 +448,8 @@ function PlasmicTier__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__yeFhF
+                      sty.text__yeFhF,
+                      "clickable"
                     )}
                     onClick={async event => {
                       const $steps = {};
@@ -517,7 +518,8 @@ function PlasmicTier__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__mUag9
+                      sty.text__mUag9,
+                      "clickable"
                     )}
                     onClick={async event => {
                       const $steps = {};

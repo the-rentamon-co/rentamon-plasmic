@@ -2340,7 +2340,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
             className={classNames(projectcss.all, sty.returnButton, "fix")}
           >
             <div
-              className={classNames(projectcss.all, sty.freeBox___0QIg)}
+              className={classNames(
+                projectcss.all,
+                sty.freeBox___0QIg,
+                "clickable"
+              )}
               onClick={async event => {
                 const $steps = {};
 

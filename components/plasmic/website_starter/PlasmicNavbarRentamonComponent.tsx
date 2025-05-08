@@ -169,7 +169,7 @@ function PlasmicNavbarRentamonComponent__RenderFunc(props: {
           >
             <PlasmicImg__
               alt={""}
-              className={classNames(sty.img__iP1Vn)}
+              className={classNames(sty.img__iP1Vn, "clickable")}
               displayHeight={"36px"}
               displayMaxHeight={"none"}
               displayMaxWidth={"none"}

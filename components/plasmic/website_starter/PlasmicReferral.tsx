@@ -539,7 +539,8 @@ function PlasmicReferral__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__vvG7H
+                      sty.text__vvG7H,
+                      "clickable"
                     )}
                     onClick={async event => {
                       const $steps = {};

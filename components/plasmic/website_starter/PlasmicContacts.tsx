@@ -443,7 +443,13 @@ function PlasmicContacts__RenderFunc(props: {
                   <div
                     data-plasmic-name={"contactsRow"}
                     data-plasmic-override={overrides.contactsRow}
-                    className={classNames(projectcss.all, sty.contactsRow)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.contactsRow,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "clickable"
+                        : undefined
+                    )}
                     key={currentIndex}
                   >
                     <div
@@ -541,7 +547,11 @@ function PlasmicContacts__RenderFunc(props: {
             className={classNames(projectcss.all, sty.returnButton, "fix")}
           >
             <div
-              className={classNames(projectcss.all, sty.freeBox__w39Ju)}
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__w39Ju,
+                "clickable"
+              )}
               onClick={async event => {
                 const $steps = {};
 

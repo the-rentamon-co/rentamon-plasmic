@@ -342,7 +342,11 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                 <div
                   data-plasmic-name={"directDl"}
                   data-plasmic-override={overrides.directDl}
-                  className={classNames(projectcss.all, sty.directDl)}
+                  className={classNames(
+                    projectcss.all,
+                    sty.directDl,
+                    "clickable"
+                  )}
                   onClick={async event => {
                     const $steps = {};
 
@@ -448,7 +452,7 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                   data-plasmic-name={"iOs"}
                   data-plasmic-override={overrides.iOs}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.iOs)}
+                  className={classNames(projectcss.all, sty.iOs, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
@@ -551,7 +555,11 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                   data-plasmic-name={"cafeBazar"}
                   data-plasmic-override={overrides.cafeBazar}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.cafeBazar)}
+                  className={classNames(
+                    projectcss.all,
+                    sty.cafeBazar,
+                    "clickable"
+                  )}
                   onClick={async event => {
                     const $steps = {};
 
@@ -631,7 +639,7 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                   data-plasmic-name={"myket"}
                   data-plasmic-override={overrides.myket}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.myket)}
+                  className={classNames(projectcss.all, sty.myket, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 

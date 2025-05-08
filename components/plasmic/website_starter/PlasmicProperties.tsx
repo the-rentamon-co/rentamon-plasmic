@@ -514,7 +514,8 @@ function PlasmicProperties__RenderFunc(props: {
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__gAlJf
+                            sty.freeBox__gAlJf,
+                            "clickable"
                           )}
                           key={currentIndex}
                           onClick={async event => {
@@ -651,7 +652,11 @@ function PlasmicProperties__RenderFunc(props: {
                     <Stack__
                       as={"div"}
                       hasGap={true}
-                      className={classNames(projectcss.all, sty.freeBox__ojr5X)}
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox__ojr5X,
+                        "clickable"
+                      )}
                       onClick={async event => {
                         const $steps = {};
 

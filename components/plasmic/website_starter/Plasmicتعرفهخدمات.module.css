@@ -3225,17 +3225,9 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(
-      45deg,
-      var(--token-ixQAh6dzIToM) 0%,
-      #85a1f1 25%,
-      var(--token-ixQAh6dzIToM) 46%,
-      #89a5f2 83%,
-      var(--token-ixQAh6dzIToM) 96%
-    )
+  background: linear-gradient(90deg, #81a2bb00 7%, #81a2bb 55%, #81a2bb00 100%)
     0% 0% / 100% 100% repeat;
   min-width: 0;
-  border-radius: 50px;
   padding: 0px;
 }
 @media (max-width: 500px) {
@@ -3243,6 +3235,15 @@
     padding-top: 4px;
     padding-bottom: 4px;
     width: 100%;
+    background: linear-gradient(
+        90deg,
+        #81a2bb00 0%,
+        #81a2bbb3 10%,
+        #81a2bb 55%,
+        #81a2bbb3 90%,
+        #81a2bb00 100%
+      )
+      0% 0% / 100% 100% repeat;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
     border-radius: 0px;
@@ -3252,7 +3253,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  padding-top: 12px;
+  padding-top: 22px;
   font-size: 17px;
   padding-right: 0px;
   line-height: 2;
@@ -3268,7 +3269,7 @@
   text-decoration-line: none;
   text-overflow: clip;
   cursor: pointer;
-  padding-bottom: 12px;
+  padding-bottom: 22px;
   min-width: 0;
 }
 @media (max-width: 500px) {

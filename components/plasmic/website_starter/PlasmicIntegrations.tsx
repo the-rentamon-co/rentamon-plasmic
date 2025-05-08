@@ -1175,7 +1175,8 @@ function PlasmicIntegrations__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__zwJw9
+                      sty.text__zwJw9,
+                      "clickable"
                     )}
                     onClick={async event => {
                       const $steps = {};

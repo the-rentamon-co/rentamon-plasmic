@@ -2845,10 +2845,8 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  padding-bottom: 8px;
-  padding-right: 8px;
-  padding-left: 8px;
-  border-radius: 15px;
+  border-radius: 30px;
+  padding: 0px;
 }
 @media (max-width: 350px) {
   .freeBox___8O4D {

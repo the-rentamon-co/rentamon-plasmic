@@ -367,7 +367,8 @@ function PlasmicHomepage__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__lwviT
+                        sty.text__lwviT,
+                        "clickable"
                       )}
                       onClick={async event => {
                         const $steps = {};
@@ -934,7 +935,8 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__vepAb
+                  sty.text__vepAb,
+                  "clickable"
                 )}
                 onClick={async event => {
                   const $steps = {};

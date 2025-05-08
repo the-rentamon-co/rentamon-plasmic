@@ -296,7 +296,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
         <div className={classNames(projectcss.all, sty.freeBox__mfJK)}>
           <PlasmicImg__
             alt={""}
-            className={classNames(sty.img__n8G93)}
+            className={classNames(sty.img__n8G93, "clickable")}
             displayHeight={"auto"}
             displayMaxHeight={"none"}
             displayMaxWidth={"40%"}
@@ -340,7 +340,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
         <div className={classNames(projectcss.all, sty.freeBox__ptz4H)}>
           <PlasmicImg__
             alt={""}
-            className={classNames(sty.img__lRbQg)}
+            className={classNames(sty.img__lRbQg, "clickable")}
             displayHeight={"auto"}
             displayMaxHeight={"none"}
             displayMaxWidth={"40%"}
@@ -386,7 +386,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
         <div className={classNames(projectcss.all, sty.freeBox__pbryw)}>
           <PlasmicImg__
             alt={""}
-            className={classNames(sty.img__lkNc)}
+            className={classNames(sty.img__lkNc, "clickable")}
             displayHeight={"auto"}
             displayMaxHeight={"none"}
             displayMaxWidth={"40%"}

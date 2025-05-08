@@ -530,7 +530,11 @@ function PlasmicTransactions__RenderFunc(props: {
                       <div
                         data-plasmic-name={"item"}
                         data-plasmic-override={overrides.item}
-                        className={classNames(projectcss.all, sty.item)}
+                        className={classNames(
+                          projectcss.all,
+                          sty.item,
+                          "clickable"
+                        )}
                         key={currentIndex}
                         onClick={async event => {
                           const $steps = {};
@@ -1130,7 +1134,11 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
             </div>
             <div
-              className={classNames(projectcss.all, sty.freeBox__i6Ki)}
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__i6Ki,
+                "clickable"
+              )}
               onClick={async event => {
                 const $steps = {};
 

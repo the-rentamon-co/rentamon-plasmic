@@ -540,89 +540,92 @@ function PlasmicInvite__RenderFunc(props: {
                 }
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__oi07T)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button___9Wqe)}
-                  onClick={async event => {
-                    const $steps = {};
+                <div className={classNames(projectcss.all, sty.freeBox__rz8Me)}>
+                  <Button
+                    className={classNames("__wab_instance", sty.button___9Wqe)}
+                    onClick={async event => {
+                      const $steps = {};
 
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  function setCookie(name, value, hours) {
+                                    let expires = "";
+                                    if (hours) {
+                                      const date = new Date();
+                                      date.setTime(
+                                        date.getTime() + hours * 60 * 60 * 1000
+                                      );
+                                      expires =
+                                        "; expires=" + date.toUTCString();
+                                    }
+                                    document.cookie =
+                                      name +
+                                      "=" +
+                                      (value || "") +
+                                      expires +
+                                      "; path=/";
                                   }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/";
-                                }
-                                return setCookie(
-                                  "invite_code",
-                                  $ctx.params.invite_code,
-                                  720
-                                );
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
+                                  return setCookie(
+                                    "invite_code",
+                                    $ctx.params.invite_code,
+                                    720
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
 
-                    $steps["runCode2"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                return window.open(
-                                  "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/",
-                                  "_blank"
-                                );
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode2"] != null &&
-                      typeof $steps["runCode2"] === "object" &&
-                      typeof $steps["runCode2"].then === "function"
-                    ) {
-                      $steps["runCode2"] = await $steps["runCode2"];
-                    }
-                  }}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hLLaC
-                    )}
+                      $steps["runCode2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return window.open(
+                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/",
+                                    "_blank"
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode2"] != null &&
+                        typeof $steps["runCode2"] === "object" &&
+                        typeof $steps["runCode2"].then === "function"
+                      ) {
+                        $steps["runCode2"] = await $steps["runCode2"];
+                      }
+                    }}
                   >
-                    {"\u062b\u0628\u062a \u0646\u0627\u0645"}
-                  </div>
-                </Button>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hLLaC
+                      )}
+                    >
+                      {"\u062b\u0628\u062a \u0646\u0627\u0645"}
+                    </div>
+                  </Button>
+                </div>
               </div>
               <div
                 className={classNames(
@@ -824,7 +827,13 @@ function PlasmicInvite__RenderFunc(props: {
                   ? "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"
                   : "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"}
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__vMItQ)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__vMItQ,
+                  "clickable"
+                )}
+              >
                 <Button
                   className={classNames("__wab_instance", sty.button__uW0Sj)}
                   onClick={async event => {

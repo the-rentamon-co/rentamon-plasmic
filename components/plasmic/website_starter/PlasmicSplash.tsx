@@ -85,6 +85,7 @@ export const PlasmicSplash__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSplash__OverridesType = {
   root?: Flex__<"div">;
+  center?: Flex__<"div">;
   svg?: Flex__<"svg">;
   text?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
@@ -164,27 +165,33 @@ function PlasmicSplash__RenderFunc(props: {
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__bXpcU)}>
-            <Icon79Icon
-              data-plasmic-name={"svg"}
-              data-plasmic-override={overrides.svg}
-              className={classNames(projectcss.all, sty.svg)}
-              role={"img"}
-            />
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__pwpH)}>
-            <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text
-              )}
-            >
-              {
-                "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-              }
+          <div
+            data-plasmic-name={"center"}
+            data-plasmic-override={overrides.center}
+            className={classNames(projectcss.all, sty.center)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__bXpcU)}>
+              <Icon79Icon
+                data-plasmic-name={"svg"}
+                data-plasmic-override={overrides.svg}
+                className={classNames(projectcss.all, sty.svg)}
+                role={"img"}
+              />
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__pwpH)}>
+              <div
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text
+                )}
+              >
+                {
+                  "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                }
+              </div>
             </div>
           </div>
           <SideEffect
@@ -193,6 +200,108 @@ function PlasmicSplash__RenderFunc(props: {
             className={classNames("__wab_instance", sty.sideEffect)}
             onMount={async () => {
               const $steps = {};
+
+              $steps["runCode2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode2"] != null &&
+                typeof $steps["runCode2"] === "object" &&
+                typeof $steps["runCode2"].then === "function"
+              ) {
+                $steps["runCode2"] = await $steps["runCode2"];
+              }
 
               $steps["invokeGlobalAction"] = true
                 ? (() => {
@@ -249,6 +358,28 @@ function PlasmicSplash__RenderFunc(props: {
               ) {
                 $steps["runCode"] = await $steps["runCode"];
               }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {};
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+                      undefined;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
             }}
           />
         </div>
@@ -258,7 +389,8 @@ function PlasmicSplash__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "svg", "text", "sideEffect"],
+  root: ["root", "center", "svg", "text", "sideEffect"],
+  center: ["center", "svg", "text"],
   svg: ["svg"],
   text: ["text"],
   sideEffect: ["sideEffect"]
@@ -268,6 +400,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  center: "div";
   svg: "svg";
   text: "div";
   sideEffect: typeof SideEffect;
@@ -333,6 +466,7 @@ export const PlasmicSplash = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    center: makeNodeComponent("center"),
     svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),
     sideEffect: makeNodeComponent("sideEffect"),

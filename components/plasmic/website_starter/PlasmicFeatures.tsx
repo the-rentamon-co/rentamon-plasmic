@@ -794,7 +794,8 @@ function PlasmicFeatures__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text___93Ep
+                sty.text___93Ep,
+                "clickable"
               )}
               onClick={async event => {
                 const $steps = {};

@@ -865,7 +865,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   <div
                     data-plasmic-name={"next"}
                     data-plasmic-override={overrides.next}
-                    className={classNames(projectcss.all, sty.next)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.next,
+                      "clickable"
+                    )}
                     onClick={async event => {
                       const $steps = {};
 
@@ -962,7 +966,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   <div
                     data-plasmic-name={"privious"}
                     data-plasmic-override={overrides.privious}
-                    className={classNames(projectcss.all, sty.privious)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.privious,
+                      "clickable"
+                    )}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1152,7 +1160,8 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         hasGap={true}
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__dGo5A
+                          sty.freeBox__dGo5A,
+                          "clickable"
                         )}
                       >
                         <PlasmicImg__
@@ -1209,7 +1218,8 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         hasGap={true}
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__rpFix
+                          sty.freeBox__rpFix,
+                          "clickable"
                         )}
                       >
                         <PlasmicImg__
@@ -1257,7 +1267,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     data-plasmic-name={"next2"}
                     data-plasmic-override={overrides.next2}
                     hasGap={true}
-                    className={classNames(projectcss.all, sty.next2)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.next2,
+                      "clickable"
+                    )}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1470,7 +1484,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   <div
                     data-plasmic-name={"privious2"}
                     data-plasmic-override={overrides.privious2}
-                    className={classNames(projectcss.all, sty.privious2)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.privious2,
+                      "clickable"
+                    )}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1529,7 +1547,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
             className={classNames(projectcss.all, sty.back)}
           >
             <div
-              className={classNames(projectcss.all, sty.freeBox__rxe3U)}
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__rxe3U,
+                "clickable"
+              )}
               onClick={async event => {
                 const $steps = {};
 

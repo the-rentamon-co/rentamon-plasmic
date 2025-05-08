@@ -161,6 +161,7 @@ export type PlasmicReservations__OverridesType = {
   clarity?: Flex__<typeof Embed>;
   finalModal?: Flex__<typeof AntdModal>;
   cancelle?: Flex__<typeof AntdButton>;
+  returnButton?: Flex__<"div">;
 };
 
 export interface DefaultReservationsProps {}
@@ -907,7 +908,11 @@ function PlasmicReservations__RenderFunc(props: {
                     <div
                       data-plasmic-name={"button"}
                       data-plasmic-override={overrides.button}
-                      className={classNames(projectcss.all, sty.button)}
+                      className={classNames(
+                        projectcss.all,
+                        sty.button,
+                        "clickable"
+                      )}
                       onClick={async event => {
                         const $steps = {};
 
@@ -3362,7 +3367,11 @@ function PlasmicReservations__RenderFunc(props: {
                 const currentIndex = __plasmic_idx_0;
                 return (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__roKyl)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.freeBox__roKyl,
+                      "clickable"
+                    )}
                     key={currentIndex}
                     onClick={async event => {
                       const $steps = {};
@@ -5010,6 +5019,54 @@ function PlasmicReservations__RenderFunc(props: {
               </AntdButton>
             </Stack__>
           </AntdModal>
+          <div
+            data-plasmic-name={"returnButton"}
+            data-plasmic-override={overrides.returnButton}
+            className={classNames(projectcss.all, sty.returnButton, "fix")}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__xhWvn,
+                "clickable"
+              )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return window.history.back();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fx84W
+                )}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a "}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -5084,7 +5141,8 @@ const PlasmicDescendants = {
     "navigationRntFooter",
     "clarity",
     "finalModal",
-    "cancelle"
+    "cancelle",
+    "returnButton"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -5282,7 +5340,8 @@ const PlasmicDescendants = {
   navigationRntFooter: ["navigationRntFooter"],
   clarity: ["clarity"],
   finalModal: ["finalModal", "cancelle"],
-  cancelle: ["cancelle"]
+  cancelle: ["cancelle"],
+  returnButton: ["returnButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -5355,6 +5414,7 @@ type NodeDefaultElementType = {
   clarity: typeof Embed;
   finalModal: typeof AntdModal;
   cancelle: typeof AntdButton;
+  returnButton: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -5483,6 +5543,7 @@ export const PlasmicReservations = Object.assign(
     clarity: makeNodeComponent("clarity"),
     finalModal: makeNodeComponent("finalModal"),
     cancelle: makeNodeComponent("cancelle"),
+    returnButton: makeNodeComponent("returnButton"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,

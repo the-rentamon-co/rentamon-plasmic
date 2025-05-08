@@ -669,7 +669,8 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__bbS1O
+                      sty.text__bbS1O,
+                      "clickable"
                     )}
                     onClick={async event => {
                       const $steps = {};

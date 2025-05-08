@@ -107,6 +107,7 @@ export type Plasmicکیفپول__OverridesType = {
   balance2?: Flex__<"div">;
   report?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
+  button2?: Flex__<"div">;
   title?: Flex__<"div">;
   charge?: Flex__<"div">;
   input?: Flex__<"div">;
@@ -121,7 +122,6 @@ export type Plasmicکیفپول__OverridesType = {
   left2?: Flex__<"div">;
   paymentbutton?: Flex__<"div">;
   button?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   pricing?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
@@ -207,7 +207,7 @@ function Plasmicکیفپول__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : false
+            : true
       },
       {
         path: "tokenResponse",
@@ -462,7 +462,7 @@ function Plasmicکیفپول__RenderFunc(props: {
             <div
               data-plasmic-name={"report"}
               data-plasmic-override={overrides.report}
-              className={classNames(projectcss.all, sty.report)}
+              className={classNames(projectcss.all, sty.report, ``)}
               onClick={async event => {
                 const $steps = {};
 
@@ -496,7 +496,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__hiIkz
+                  sty.text__hiIkz,
+                  "clickable"
                 )}
               >
                 {
@@ -669,6 +670,79 @@ function Plasmicکیفپول__RenderFunc(props: {
                     : "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u06cc"}
                 </div>
               </Button>
+              <div
+                data-plasmic-name={"button2"}
+                data-plasmic-override={overrides.button2}
+                className={classNames(projectcss.all, sty.button2, "clickable")}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return window.open(
+                                "https://payment.zarinpal.com/pg/StartPay/" +
+                                  $state.tokenResponse.payInfo
+                              );
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              >
+                {(() => {
+                  try {
+                    return $state.loading;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___5NHpa)}
+                    displayHeight={"34px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={
+                      "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                    }
+                  />
+                ) : null}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___8JEz
+                  )}
+                >
+                  {
+                    "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u06cc"
+                  }
+                </div>
+              </div>
             </div>
           </AntdModal>
           <div className={classNames(projectcss.all, sty.freeBox__fx5B)}>
@@ -806,7 +880,10 @@ function Plasmicکیفپول__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__m3UhN
+                      sty.text__m3UhN,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "clickable"
+                        : undefined
                     )}
                     onClick={async event => {
                       const $steps = {};
@@ -858,7 +935,10 @@ function Plasmicکیفپول__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__mLjd
+                      sty.text__mLjd,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "clickable"
+                        : undefined
                     )}
                     onClick={async event => {
                       const $steps = {};
@@ -910,7 +990,10 @@ function Plasmicکیفپول__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__yqQfD
+                      sty.text__yqQfD,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "clickable"
+                        : undefined
                     )}
                     onClick={async event => {
                       const $steps = {};
@@ -1142,7 +1225,7 @@ function Plasmicکیفپول__RenderFunc(props: {
               <div
                 data-plasmic-name={"button"}
                 data-plasmic-override={overrides.button}
-                className={classNames(projectcss.all, sty.button)}
+                className={classNames(projectcss.all, sty.button, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1386,10 +1469,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                   }
                 })() ? (
                   <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img)}
+                    className={classNames(sty.img__b20Ry)}
                     displayHeight={"34px"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -1788,7 +1869,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___45D1H
+                  sty.text___45D1H,
+                  "clickable"
                 )}
                 onClick={async event => {
                   const $steps = {};
@@ -2034,6 +2116,7 @@ const PlasmicDescendants = {
     "balance2",
     "report",
     "modal",
+    "button2",
     "title",
     "charge",
     "input",
@@ -2048,7 +2131,6 @@ const PlasmicDescendants = {
     "left2",
     "paymentbutton",
     "button",
-    "img",
     "pricing",
     "qA",
     "accordionMain",
@@ -2074,7 +2156,8 @@ const PlasmicDescendants = {
   balance: ["balance", "balance2"],
   balance2: ["balance2"],
   report: ["report"],
-  modal: ["modal"],
+  modal: ["modal", "button2"],
+  button2: ["button2"],
   title: ["title"],
   charge: [
     "charge",
@@ -2099,9 +2182,8 @@ const PlasmicDescendants = {
   intext: ["intext", "right2", "left2"],
   right2: ["right2"],
   left2: ["left2"],
-  paymentbutton: ["paymentbutton", "button", "img"],
-  button: ["button", "img"],
-  img: ["img"],
+  paymentbutton: ["paymentbutton", "button"],
+  button: ["button"],
   pricing: ["pricing"],
   qA: [
     "qA",
@@ -2145,6 +2227,7 @@ type NodeDefaultElementType = {
   balance2: "div";
   report: "div";
   modal: typeof AntdModal;
+  button2: "div";
   title: "div";
   charge: "div";
   input: "div";
@@ -2159,7 +2242,6 @@ type NodeDefaultElementType = {
   left2: "div";
   paymentbutton: "div";
   button: "div";
-  img: typeof PlasmicImg__;
   pricing: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
@@ -2247,6 +2329,7 @@ export const Plasmicکیفپول = Object.assign(
     balance2: makeNodeComponent("balance2"),
     report: makeNodeComponent("report"),
     modal: makeNodeComponent("modal"),
+    button2: makeNodeComponent("button2"),
     title: makeNodeComponent("title"),
     charge: makeNodeComponent("charge"),
     input: makeNodeComponent("input"),
@@ -2261,7 +2344,6 @@ export const Plasmicکیفپول = Object.assign(
     left2: makeNodeComponent("left2"),
     paymentbutton: makeNodeComponent("paymentbutton"),
     button: makeNodeComponent("button"),
-    img: makeNodeComponent("img"),
     pricing: makeNodeComponent("pricing"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),

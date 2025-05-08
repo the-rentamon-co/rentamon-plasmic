@@ -424,7 +424,11 @@ function PlasmicSupport__RenderFunc(props: {
                         data-plasmic-name={"contact6"}
                         data-plasmic-override={overrides.contact6}
                         hasGap={true}
-                        className={classNames(projectcss.all, sty.contact6)}
+                        className={classNames(
+                          projectcss.all,
+                          sty.contact6,
+                          "clickable"
+                        )}
                         onClick={async event => {
                           const $steps = {};
 
@@ -562,7 +566,11 @@ function PlasmicSupport__RenderFunc(props: {
                         data-plasmic-name={"contact10"}
                         data-plasmic-override={overrides.contact10}
                         hasGap={true}
-                        className={classNames(projectcss.all, sty.contact10)}
+                        className={classNames(
+                          projectcss.all,
+                          sty.contact10,
+                          "clickable"
+                        )}
                         onClick={async event => {
                           const $steps = {};
 
@@ -688,7 +696,11 @@ function PlasmicSupport__RenderFunc(props: {
                         data-plasmic-name={"contact7"}
                         data-plasmic-override={overrides.contact7}
                         hasGap={true}
-                        className={classNames(projectcss.all, sty.contact7)}
+                        className={classNames(
+                          projectcss.all,
+                          sty.contact7,
+                          "clickable"
+                        )}
                         onClick={async event => {
                           const $steps = {};
 
@@ -828,7 +840,11 @@ function PlasmicSupport__RenderFunc(props: {
                         data-plasmic-name={"contact8"}
                         data-plasmic-override={overrides.contact8}
                         hasGap={true}
-                        className={classNames(projectcss.all, sty.contact8)}
+                        className={classNames(
+                          projectcss.all,
+                          sty.contact8,
+                          "clickable"
+                        )}
                         onClick={async event => {
                           const $steps = {};
 
@@ -968,7 +984,11 @@ function PlasmicSupport__RenderFunc(props: {
                         data-plasmic-name={"contact9"}
                         data-plasmic-override={overrides.contact9}
                         hasGap={true}
-                        className={classNames(projectcss.all, sty.contact9)}
+                        className={classNames(
+                          projectcss.all,
+                          sty.contact9,
+                          "clickable"
+                        )}
                         onClick={async event => {
                           const $steps = {};
 
@@ -1094,7 +1114,11 @@ function PlasmicSupport__RenderFunc(props: {
                         data-plasmic-name={"contact11"}
                         data-plasmic-override={overrides.contact11}
                         hasGap={true}
-                        className={classNames(projectcss.all, sty.contact11)}
+                        className={classNames(
+                          projectcss.all,
+                          sty.contact11,
+                          "clickable"
+                        )}
                         onClick={async event => {
                           const $steps = {};
 

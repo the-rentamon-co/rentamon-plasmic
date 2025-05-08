@@ -363,7 +363,8 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__iBKi4
+                  sty.text__iBKi4,
+                  "clickable"
                 )}
                 onClick={async event => {
                   const $steps = {};
@@ -619,7 +620,8 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__wUgC
+                sty.text__wUgC,
+                "clickable"
               )}
               onClick={async event => {
                 const $steps = {};

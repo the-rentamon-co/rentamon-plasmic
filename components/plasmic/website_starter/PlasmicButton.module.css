@@ -1,14 +1,14 @@
 .root {
   display: flex;
-  position: relative;
   flex-direction: row;
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
   background: var(--token-8nedppYkGVaH);
-  margin-top: 14px;
   max-width: 164px;
   width: 100%;
+  margin-top: 14px;
+  position: relative;
   min-width: 0;
   -webkit-transition-property: background;
   -webkit-transition-duration: 0.1s;
