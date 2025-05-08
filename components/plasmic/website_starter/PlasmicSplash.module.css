@@ -28,6 +28,12 @@
   }
 }
 @media (max-width: 500px) {
+  .root {
+    background: linear-gradient(40deg, #8165d6 38%, #9d83ea 100%) 0% 0% / 100%
+      100% repeat;
+  }
+}
+@media (max-width: 500px) {
   .root > * {
     grid-column: 4;
   }
