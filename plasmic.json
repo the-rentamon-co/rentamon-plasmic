@@ -1645,6 +1645,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/calendar"
+        },
+        {
+          "id": "ew-lMhwJhrpF",
+          "name": "Splash",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSplash.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/splash.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSplash.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/splash"
         }
       ],
       "icons": [
