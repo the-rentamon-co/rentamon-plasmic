@@ -1103,15 +1103,26 @@
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
 }
+.freeBox__caIlP {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  top: auto;
+  left: auto;
+  right: auto;
+  align-self: auto;
+  min-width: 0;
+  padding: 8px;
+}
 .fetchModal:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  width: 536px;
-  position: relative;
-  left: auto;
-  top: auto;
-  bottom: auto;
-  right: auto;
+  display: block;
   border-radius: 30px;
 }
 .fetchModal__modal :global(.ant-modal-content) {
@@ -1405,13 +1416,13 @@
     min-width: 0;
   }
 }
-.svg__f29Jc {
+.svg__rb3F8 {
   position: relative;
   object-fit: cover;
   width: auto;
   height: 1em;
 }
-.svg__ygRNd {
+.svg__dk3S {
   position: relative;
   object-fit: cover;
   width: auto;
