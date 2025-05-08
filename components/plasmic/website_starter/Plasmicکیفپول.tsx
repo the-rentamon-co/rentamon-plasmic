@@ -207,7 +207,7 @@ function Plasmicکیفپول__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : true
+            : false
       },
       {
         path: "tokenResponse",
@@ -497,7 +497,9 @@ function Plasmicکیفپول__RenderFunc(props: {
                   projectcss.all,
                   projectcss.__wab_text,
                   sty.text__hiIkz,
-                  "clickable"
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "clickable"
+                    : "clickable"
                 )}
               >
                 {

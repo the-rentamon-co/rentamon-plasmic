@@ -224,7 +224,9 @@ function PlasmicRecordList__RenderFunc(props: {
           ? "pendingStyle"
           : (() => {
               try {
-                return $props.firstVisit == true ? "soft-glow" : "";
+                return $props.firstVisit == true
+                  ? "soft-glow clickable"
+                  : "clickable";
               } catch (e) {
                 if (
                   e instanceof TypeError ||
