@@ -725,7 +725,8 @@ function PlasmicReservations__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__ia94Z
+                  sty.text__ia94Z,
+                  "fadeinf"
                 )}
               >
                 {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
@@ -848,7 +849,11 @@ function PlasmicReservations__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___3DmSp)}
+                  className={classNames(
+                    projectcss.all,
+                    sty.freeBox___3DmSp,
+                    "fadein"
+                  )}
                 >
                   <div
                     data-plasmic-name={"alertIcon"}
@@ -967,7 +972,7 @@ function PlasmicReservations__RenderFunc(props: {
             <div
               data-plasmic-name={"titles"}
               data-plasmic-override={overrides.titles}
-              className={classNames(projectcss.all, sty.titles)}
+              className={classNames(projectcss.all, sty.titles, "fadeinf")}
             >
               <div
                 data-plasmic-name={"guestName"}

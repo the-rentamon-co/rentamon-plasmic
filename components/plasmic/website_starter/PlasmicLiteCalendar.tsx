@@ -613,7 +613,13 @@ function PlasmicLiteCalendar__RenderFunc(props: {
           <div
             data-plasmic-name={"headerMain"}
             data-plasmic-override={overrides.headerMain}
-            className={classNames(projectcss.all, sty.headerMain)}
+            className={classNames(
+              projectcss.all,
+              sty.headerMain,
+              hasVariant(globalVariants, "screen", "mobile")
+                ? "fadein"
+                : "fadein"
+            )}
           >
             <div
               data-plasmic-name={"header"}
@@ -752,95 +758,58 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 data-plasmic-override={overrides.left}
                 className={classNames(projectcss.all, sty.left)}
               >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        try {
-                          return (
-                            $state.profile.data.properties[$state.propId - 1]
-                              .property_name !== "اقامتگاه ۱"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()
-                    : (() => {
-                        try {
-                          return (
-                            $state.profile.data.properties[$state.propId - 1]
-                              .property_name != "اقامتگاه ۱"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()
-                ) ? (
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(
-                      projectcss.all,
-                      sty.freeBox__nNsXe,
+                <div className={classNames(projectcss.all, sty.freeBox__y2KmV)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__rEnj)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "80px"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "130px"
+                        : "auto"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"none"}
+                    displayMinHeight={
                       hasVariant(globalVariants, "screen", "mobile")
-                        ? "shine"
+                        ? "80px"
+                        : "0"
+                    }
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "220px"
+                        : "auto"
+                    }
+                    height={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? ``
                         : undefined
-                    )}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__rEnj)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "80px"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                          ? "100%"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                          ? "130px"
-                          : "80px"
-                      }
-                      displayMaxHeight={"80px"}
-                      displayMaxWidth={"120px"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"120px"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "220px"
-                          : "100%"
-                      }
-                      loading={"lazy"}
-                      src={(() => {
-                        try {
-                          return $state.profile.data.user_info.profile_pic_link;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return {
-                              src: "/plasmic/website_starter/images/untitled1Jpg.jpg",
-                              fullWidth: 38,
-                              fullHeight: 32,
-                              aspectRatio: undefined
-                            };
-                          }
-                          throw e;
+                    }
+                    loading={"lazy"}
+                    src={(() => {
+                      try {
+                        return $state.profile.data.user_info.profile_pic_link;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return {
+                            src: "/plasmic/website_starter/images/untitled1Jpg.jpg",
+                            fullWidth: 38,
+                            fullHeight: 32,
+                            aspectRatio: undefined
+                          };
                         }
-                      })()}
-                    />
-                  </Stack__>
-                ) : null}
+                        throw e;
+                      }
+                    })()}
+                  />
+                </div>
                 {(() => {
                   try {
                     return (
@@ -1316,7 +1285,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__uMo3N
+                        sty.formField___2ANcv
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1328,7 +1297,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__roC4V
+                        sty.formField___2RxVg
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1346,7 +1315,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__fuds4
+                          sty.text__fwofZ
                         )}
                       >
                         {"Submit"}

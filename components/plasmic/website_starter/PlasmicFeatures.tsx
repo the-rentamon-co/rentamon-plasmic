@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
@@ -86,7 +86,7 @@ export const PlasmicFeatures__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicFeatures__OverridesType = {
   root?: Flex__<"div">;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   intro?: Flex__<"div">;
   featuresDesc?: Flex__<"div">;
   featuresDesc3?: Flex__<"div">;
@@ -187,13 +187,10 @@ function PlasmicFeatures__RenderFunc(props: {
             sty.root
           )}
         >
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
+          <NavbarRntHeader
+            data-plasmic-name={"navbarRntHeader"}
+            data-plasmic-override={overrides.navbarRntHeader}
+            className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
           <div
@@ -705,7 +702,7 @@ function PlasmicFeatures__RenderFunc(props: {
             <div
               data-plasmic-name={"appDemo"}
               data-plasmic-override={overrides.appDemo}
-              className={classNames(projectcss.all, sty.appDemo)}
+              className={classNames(projectcss.all, sty.appDemo, "fadein")}
             >
               <Video
                 data-plasmic-name={"htmlVideo"}
@@ -745,7 +742,7 @@ function PlasmicFeatures__RenderFunc(props: {
               data-plasmic-name={"img"}
               data-plasmic-override={overrides.img}
               alt={""}
-              className={classNames(sty.img)}
+              className={classNames(sty.img, "fadein")}
               displayHeight={"auto"}
               displayMaxHeight={"none"}
               displayMaxWidth={
@@ -881,7 +878,7 @@ function PlasmicFeatures__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "navbarRentamonComponent",
+    "navbarRntHeader",
     "intro",
     "featuresDesc",
     "featuresDesc3",
@@ -896,7 +893,7 @@ const PlasmicDescendants = {
     "favIcon",
     "rentamonFooter"
   ],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
+  navbarRntHeader: ["navbarRntHeader"],
   intro: ["intro"],
   featuresDesc: ["featuresDesc"],
   featuresDesc3: ["featuresDesc3"],
@@ -916,7 +913,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  navbarRntHeader: typeof NavbarRntHeader;
   intro: "div";
   featuresDesc: "div";
   featuresDesc3: "div";
@@ -992,7 +989,7 @@ export const PlasmicFeatures = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     intro: makeNodeComponent("intro"),
     featuresDesc: makeNodeComponent("featuresDesc"),
     featuresDesc3: makeNodeComponent("featuresDesc3"),

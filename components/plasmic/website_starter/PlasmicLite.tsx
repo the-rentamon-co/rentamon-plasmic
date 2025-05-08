@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -93,7 +93,7 @@ export const PlasmicLite__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLite__OverridesType = {
   home?: Flex__<"div">;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   mainContents?: Flex__<"div">;
   introCalendar?: Flex__<"div">;
   introCalendarTitle?: Flex__<"div">;
@@ -260,13 +260,10 @@ function PlasmicLite__RenderFunc(props: {
             sty.home
           )}
         >
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
+          <NavbarRntHeader
+            data-plasmic-name={"navbarRntHeader"}
+            data-plasmic-override={overrides.navbarRntHeader}
+            className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
           <div
@@ -370,10 +367,8 @@ function PlasmicLite__RenderFunc(props: {
                               const actionArgs = {
                                 customFunction: async () => {
                                   return (() => {
-                                    return window.open(
-                                      "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
-                                      "_blank"
-                                    );
+                                    return (window.location.href =
+                                      "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
                                   })();
                                 }
                               };
@@ -811,10 +806,8 @@ function PlasmicLite__RenderFunc(props: {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              return window.open(
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
-                                "_blank"
-                              );
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
                             })();
                           }
                         };
@@ -1098,7 +1091,7 @@ function PlasmicLite__RenderFunc(props: {
 const PlasmicDescendants = {
   home: [
     "home",
-    "navbarRentamonComponent",
+    "navbarRntHeader",
     "mainContents",
     "introCalendar",
     "introCalendarTitle",
@@ -1150,7 +1143,7 @@ const PlasmicDescendants = {
     "goftino",
     "rentamonFooter"
   ],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
+  navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
     "mainContents",
     "introCalendar",
@@ -1306,7 +1299,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   home: "div";
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  navbarRntHeader: typeof NavbarRntHeader;
   mainContents: "div";
   introCalendar: "div";
   introCalendarTitle: "div";
@@ -1419,7 +1412,7 @@ export const PlasmicLite = Object.assign(
   makeNodeComponent("home"),
   {
     // Helper components rendering sub-elements
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     mainContents: makeNodeComponent("mainContents"),
     introCalendar: makeNodeComponent("introCalendar"),
     introCalendarTitle: makeNodeComponent("introCalendarTitle"),

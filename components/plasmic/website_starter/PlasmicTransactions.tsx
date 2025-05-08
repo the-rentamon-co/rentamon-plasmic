@@ -311,7 +311,8 @@ function PlasmicTransactions__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__gX6Ao
+                    sty.text__gX6Ao,
+                    "fadeinf"
                   )}
                 >
                   {
@@ -363,7 +364,11 @@ function PlasmicTransactions__RenderFunc(props: {
               <div
                 data-plasmic-name={"tableHeader"}
                 data-plasmic-override={overrides.tableHeader}
-                className={classNames(projectcss.all, sty.tableHeader)}
+                className={classNames(
+                  projectcss.all,
+                  sty.tableHeader,
+                  "fadeinf"
+                )}
               >
                 <Stack__
                   as={"div"}
@@ -533,7 +538,7 @@ function PlasmicTransactions__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           sty.item,
-                          "clickable"
+                          "clickable fadein"
                         )}
                         key={currentIndex}
                         onClick={async event => {
@@ -1097,7 +1102,8 @@ function PlasmicTransactions__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___6V8Xa
+                  sty.text___6V8Xa,
+                  "fadein"
                 )}
               >
                 {

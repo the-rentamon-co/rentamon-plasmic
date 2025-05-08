@@ -108,6 +108,7 @@ export type Plasmicتالار__OverridesType = {
   walletInfo?: Flex__<"div">;
   right2?: Flex__<"div">;
   mid2?: Flex__<"div">;
+  items8?: Flex__<"div">;
   items?: Flex__<"div">;
   right?: Flex__<"div">;
   mid?: Flex__<"div">;
@@ -332,13 +333,17 @@ function Plasmicتالار__RenderFunc(props: {
           <div
             data-plasmic-name={"menu"}
             data-plasmic-override={overrides.menu}
-            className={classNames(projectcss.all, sty.menu)}
+            className={classNames(
+              projectcss.all,
+              sty.menu,
+              hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
+            )}
           >
             {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
               <div
                 data-plasmic-name={"topProfile"}
                 data-plasmic-override={overrides.topProfile}
-                className={classNames(projectcss.all, sty.topProfile)}
+                className={classNames(projectcss.all, sty.topProfile, "fadein")}
               >
                 {(
                   hasVariant(globalVariants, "screen", "mobile") ? true : false
@@ -646,13 +651,244 @@ function Plasmicتالار__RenderFunc(props: {
               ) : null}
             </div>
             <div
-              data-plasmic-name={"items"}
-              data-plasmic-override={overrides.items}
+              data-plasmic-name={"items8"}
+              data-plasmic-override={overrides.items8}
               className={classNames(
                 projectcss.all,
-                sty.items,
+                sty.items8,
                 hasVariant(globalVariants, "screen", "mobile")
-                  ? (() => {
+                  ? "fadeinf"
+                  : undefined
+              )}
+            >
+              <div
+                data-plasmic-name={"items"}
+                data-plasmic-override={overrides.items}
+                className={classNames(
+                  projectcss.all,
+                  sty.items,
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            if ($state.userType == 1) {
+                              return "display_block clickable";
+                            } else {
+                              return "hidden clickable";
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : `hidden${undefined}`
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToChannelManager"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/channel-manager` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToChannelManager"] != null &&
+                    typeof $steps["goToChannelManager"] === "object" &&
+                    typeof $steps["goToChannelManager"].then === "function"
+                  ) {
+                    $steps["goToChannelManager"] = await $steps[
+                      "goToChannelManager"
+                    ];
+                  }
+                }}
+              >
+                {(
+                  hasVariant(globalVariants, "screen", "mobile") ? true : false
+                ) ? (
+                  <div
+                    data-plasmic-name={"right"}
+                    data-plasmic-override={overrides.right}
+                    className={classNames(projectcss.all, sty.right)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___8Nxz)}
+                      displayHeight={"32px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"32px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image78.svg",
+                        fullWidth: 24,
+                        fullHeight: 24,
+                        aspectRatio: 1
+                      }}
+                    />
+                  </div>
+                ) : null}
+                <div
+                  data-plasmic-name={"mid"}
+                  data-plasmic-override={overrides.mid}
+                  className={classNames(projectcss.all, sty.mid)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__qoJwp)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__kOXp
+                      )}
+                    >
+                      {
+                        "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                      }
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"left"}
+                  data-plasmic-override={overrides.left}
+                  className={classNames(projectcss.all, sty.left)}
+                >
+                  <Icon74Icon
+                    className={classNames(projectcss.all, sty.svg__xgS23)}
+                    role={"img"}
+                  />
+                </div>
+              </div>
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"items2"}
+                  data-plasmic-override={overrides.items2}
+                  className={classNames(
+                    projectcss.all,
+                    sty.items2,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToContacts"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/contacts` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToContacts"] != null &&
+                      typeof $steps["goToContacts"] === "object" &&
+                      typeof $steps["goToContacts"].then === "function"
+                    ) {
+                      $steps["goToContacts"] = await $steps["goToContacts"];
+                    }
+                  }}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right3"}
+                      data-plasmic-override={overrides.right3}
+                      className={classNames(projectcss.all, sty.right3)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__gKll)}
+                        displayHeight={"30px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"30px"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image123.svg",
+                          fullWidth: 24,
+                          fullHeight: 24,
+                          aspectRatio: 1
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid3"}
+                    data-plasmic-override={overrides.mid3}
+                    className={classNames(projectcss.all, sty.mid3)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__slcuH)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__grKFw
+                        )}
+                      >
+                        {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"left2"}
+                    data-plasmic-override={overrides.left2}
+                    className={classNames(projectcss.all, sty.left2)}
+                  >
+                    <Icon74Icon
+                      className={classNames(projectcss.all, sty.svg__qtzyl)}
+                      role={"img"}
+                    />
+                  </div>
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"items3"}
+                  data-plasmic-override={overrides.items3}
+                  className={classNames(
+                    projectcss.all,
+                    sty.items3,
+                    (() => {
                       try {
                         return (() => {
                           if ($state.userType == 1) {
@@ -671,628 +907,456 @@ function Plasmicتالار__RenderFunc(props: {
                         throw e;
                       }
                     })()
-                  : `hidden${undefined}`
-              )}
-              onClick={async event => {
-                const $steps = {};
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
 
-                $steps["goToChannelManager"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/channel-manager` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToChannelManager"] != null &&
-                  typeof $steps["goToChannelManager"] === "object" &&
-                  typeof $steps["goToChannelManager"].then === "function"
-                ) {
-                  $steps["goToChannelManager"] = await $steps[
-                    "goToChannelManager"
-                  ];
-                }
-              }}
-            >
+                    $steps["goToInstantReserve"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/instant-reserve`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToInstantReserve"] != null &&
+                      typeof $steps["goToInstantReserve"] === "object" &&
+                      typeof $steps["goToInstantReserve"].then === "function"
+                    ) {
+                      $steps["goToInstantReserve"] = await $steps[
+                        "goToInstantReserve"
+                      ];
+                    }
+                  }}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right4"}
+                      data-plasmic-override={overrides.right4}
+                      className={classNames(projectcss.all, sty.right4)}
+                    >
+                      <Icon70Icon
+                        className={classNames(projectcss.all, sty.svg__esVgu)}
+                        role={"img"}
+                      />
+                    </div>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid4"}
+                    data-plasmic-override={overrides.mid4}
+                    className={classNames(projectcss.all, sty.mid4)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___9SPft
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__mjqj0
+                        )}
+                      >
+                        {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"left3"}
+                    data-plasmic-override={overrides.left3}
+                    className={classNames(projectcss.all, sty.left3)}
+                  >
+                    <Icon74Icon
+                      className={classNames(projectcss.all, sty.svg__b9Mr)}
+                      role={"img"}
+                    />
+                  </div>
+                </div>
+              ) : null}
               {(
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
-                  data-plasmic-name={"right"}
-                  data-plasmic-override={overrides.right}
-                  className={classNames(projectcss.all, sty.right)}
+                  data-plasmic-name={"items4"}
+                  data-plasmic-override={overrides.items4}
+                  className={classNames(
+                    projectcss.all,
+                    sty.items4,
+                    (() => {
+                      try {
+                        return (() => {
+                          if ($state.userType == 1) {
+                            return "display_block clickable";
+                          } else {
+                            return "hidden clickable";
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToSettings"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/settings` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToSettings"] != null &&
+                      typeof $steps["goToSettings"] === "object" &&
+                      typeof $steps["goToSettings"].then === "function"
+                    ) {
+                      $steps["goToSettings"] = await $steps["goToSettings"];
+                    }
+                  }}
                 >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___8Nxz)}
-                    displayHeight={"32px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"32px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image78.svg",
-                      fullWidth: 24,
-                      fullHeight: 24,
-                      aspectRatio: 1
-                    }}
-                  />
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right5"}
+                      data-plasmic-override={overrides.right5}
+                      className={classNames(projectcss.all, sty.right5)}
+                    >
+                      <Icon71Icon
+                        className={classNames(projectcss.all, sty.svg__zQElm)}
+                        role={"img"}
+                      />
+                    </div>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid5"}
+                    data-plasmic-override={overrides.mid5}
+                    className={classNames(projectcss.all, sty.mid5)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__vX8Ws)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__sG2Yf
+                        )}
+                      >
+                        {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"left4"}
+                    data-plasmic-override={overrides.left4}
+                    className={classNames(projectcss.all, sty.left4)}
+                  >
+                    <Icon74Icon
+                      className={classNames(projectcss.all, sty.svg__aZFzr)}
+                      role={"img"}
+                    />
+                  </div>
                 </div>
               ) : null}
-              <div
-                data-plasmic-name={"mid"}
-                data-plasmic-override={overrides.mid}
-                className={classNames(projectcss.all, sty.mid)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__qoJwp)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kOXp
-                    )}
-                  >
-                    {
-                      "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"items5"}
+                  data-plasmic-override={overrides.items5}
+                  className={classNames(
+                    projectcss.all,
+                    sty.items5,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToSupport"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/support` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToSupport"] != null &&
+                      typeof $steps["goToSupport"] === "object" &&
+                      typeof $steps["goToSupport"].then === "function"
+                    ) {
+                      $steps["goToSupport"] = await $steps["goToSupport"];
                     }
+                  }}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right6"}
+                      data-plasmic-override={overrides.right6}
+                      className={classNames(projectcss.all, sty.right6)}
+                    >
+                      <Icon78Icon
+                        className={classNames(projectcss.all, sty.svg___77W2)}
+                        role={"img"}
+                      />
+                    </div>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid6"}
+                    data-plasmic-override={overrides.mid6}
+                    className={classNames(projectcss.all, sty.mid6)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__z97Q)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__duD
+                        )}
+                      >
+                        {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"left5"}
+                    data-plasmic-override={overrides.left5}
+                    className={classNames(projectcss.all, sty.left5)}
+                  >
+                    <Icon74Icon
+                      className={classNames(projectcss.all, sty.svg___9TRUe)}
+                      role={"img"}
+                    />
                   </div>
                 </div>
-              </div>
-              <div
-                data-plasmic-name={"left"}
-                data-plasmic-override={overrides.left}
-                className={classNames(projectcss.all, sty.left)}
-              >
-                <Icon74Icon
-                  className={classNames(projectcss.all, sty.svg__xgS23)}
-                  role={"img"}
-                />
-              </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"items7"}
+                  data-plasmic-override={overrides.items7}
+                  className={classNames(
+                    projectcss.all,
+                    sty.items7,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToHomepage"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToHomepage"] != null &&
+                      typeof $steps["goToHomepage"] === "object" &&
+                      typeof $steps["goToHomepage"].then === "function"
+                    ) {
+                      $steps["goToHomepage"] = await $steps["goToHomepage"];
+                    }
+                  }}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right8"}
+                      data-plasmic-override={overrides.right8}
+                      className={classNames(projectcss.all, sty.right8)}
+                    >
+                      <Icon73Icon
+                        className={classNames(projectcss.all, sty.svg___1BebJ)}
+                        role={"img"}
+                      />
+                    </div>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid8"}
+                    data-plasmic-override={overrides.mid8}
+                    className={classNames(projectcss.all, sty.mid8)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__lCZuj)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__qmM8W
+                        )}
+                      >
+                        {
+                          "\u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc \u0633\u0627\u06cc\u062a"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"left7"}
+                    data-plasmic-override={overrides.left7}
+                    className={classNames(projectcss.all, sty.left7)}
+                  >
+                    <Icon74Icon
+                      className={classNames(projectcss.all, sty.svg__mwDF)}
+                      role={"img"}
+                    />
+                  </div>
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"items6"}
+                  data-plasmic-override={overrides.items6}
+                  hasGap={true}
+                  className={classNames(
+                    projectcss.all,
+                    sty.items6,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return (window.location.href =
+                                  "https://sso.rentamon.com/auth/logout?callback=https://rentamon.com/panel");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <Stack__
+                      as={"div"}
+                      data-plasmic-name={"right7"}
+                      data-plasmic-override={overrides.right7}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.right7)}
+                    >
+                      <Icon72Icon
+                        className={classNames(projectcss.all, sty.svg__eJx3R)}
+                        role={"img"}
+                      />
+                    </Stack__>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid7"}
+                    data-plasmic-override={overrides.mid7}
+                    className={classNames(projectcss.all, sty.mid7)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__zAsHi)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__rZeHq
+                        )}
+                      >
+                        {"\u062e\u0631\u0648\u062c"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"left6"}
+                    data-plasmic-override={overrides.left6}
+                    className={classNames(projectcss.all, sty.left6)}
+                  />
+                </Stack__>
+              ) : null}
             </div>
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-              <div
-                data-plasmic-name={"items2"}
-                data-plasmic-override={overrides.items2}
-                className={classNames(projectcss.all, sty.items2, "clickable")}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToContacts"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/contacts` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToContacts"] != null &&
-                    typeof $steps["goToContacts"] === "object" &&
-                    typeof $steps["goToContacts"].then === "function"
-                  ) {
-                    $steps["goToContacts"] = await $steps["goToContacts"];
-                  }
-                }}
-              >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    data-plasmic-name={"right3"}
-                    data-plasmic-override={overrides.right3}
-                    className={classNames(projectcss.all, sty.right3)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__gKll)}
-                      displayHeight={"30px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"30px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image123.svg",
-                        fullWidth: 24,
-                        fullHeight: 24,
-                        aspectRatio: 1
-                      }}
-                    />
-                  </div>
-                ) : null}
-                <div
-                  data-plasmic-name={"mid3"}
-                  data-plasmic-override={overrides.mid3}
-                  className={classNames(projectcss.all, sty.mid3)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__slcuH)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__grKFw
-                      )}
-                    >
-                      {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"left2"}
-                  data-plasmic-override={overrides.left2}
-                  className={classNames(projectcss.all, sty.left2)}
-                >
-                  <Icon74Icon
-                    className={classNames(projectcss.all, sty.svg__qtzyl)}
-                    role={"img"}
-                  />
-                </div>
-              </div>
-            ) : null}
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-              <div
-                data-plasmic-name={"items3"}
-                data-plasmic-override={overrides.items3}
-                className={classNames(
-                  projectcss.all,
-                  sty.items3,
-                  (() => {
-                    try {
-                      return (() => {
-                        if ($state.userType == 1) {
-                          return "display_block clickable";
-                        } else {
-                          return "hidden clickable";
-                        }
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToInstantReserve"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/instant-reserve` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToInstantReserve"] != null &&
-                    typeof $steps["goToInstantReserve"] === "object" &&
-                    typeof $steps["goToInstantReserve"].then === "function"
-                  ) {
-                    $steps["goToInstantReserve"] = await $steps[
-                      "goToInstantReserve"
-                    ];
-                  }
-                }}
-              >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    data-plasmic-name={"right4"}
-                    data-plasmic-override={overrides.right4}
-                    className={classNames(projectcss.all, sty.right4)}
-                  >
-                    <Icon70Icon
-                      className={classNames(projectcss.all, sty.svg__esVgu)}
-                      role={"img"}
-                    />
-                  </div>
-                ) : null}
-                <div
-                  data-plasmic-name={"mid4"}
-                  data-plasmic-override={overrides.mid4}
-                  className={classNames(projectcss.all, sty.mid4)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___9SPft)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__mjqj0
-                      )}
-                    >
-                      {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"}
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"left3"}
-                  data-plasmic-override={overrides.left3}
-                  className={classNames(projectcss.all, sty.left3)}
-                >
-                  <Icon74Icon
-                    className={classNames(projectcss.all, sty.svg__b9Mr)}
-                    role={"img"}
-                  />
-                </div>
-              </div>
-            ) : null}
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-              <div
-                data-plasmic-name={"items4"}
-                data-plasmic-override={overrides.items4}
-                className={classNames(
-                  projectcss.all,
-                  sty.items4,
-                  (() => {
-                    try {
-                      return (() => {
-                        if ($state.userType == 1) {
-                          return "display_block clickable";
-                        } else {
-                          return "hidden clickable";
-                        }
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToSettings"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/settings` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToSettings"] != null &&
-                    typeof $steps["goToSettings"] === "object" &&
-                    typeof $steps["goToSettings"].then === "function"
-                  ) {
-                    $steps["goToSettings"] = await $steps["goToSettings"];
-                  }
-                }}
-              >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    data-plasmic-name={"right5"}
-                    data-plasmic-override={overrides.right5}
-                    className={classNames(projectcss.all, sty.right5)}
-                  >
-                    <Icon71Icon
-                      className={classNames(projectcss.all, sty.svg__zQElm)}
-                      role={"img"}
-                    />
-                  </div>
-                ) : null}
-                <div
-                  data-plasmic-name={"mid5"}
-                  data-plasmic-override={overrides.mid5}
-                  className={classNames(projectcss.all, sty.mid5)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__vX8Ws)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__sG2Yf
-                      )}
-                    >
-                      {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"left4"}
-                  data-plasmic-override={overrides.left4}
-                  className={classNames(projectcss.all, sty.left4)}
-                >
-                  <Icon74Icon
-                    className={classNames(projectcss.all, sty.svg__aZFzr)}
-                    role={"img"}
-                  />
-                </div>
-              </div>
-            ) : null}
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-              <div
-                data-plasmic-name={"items5"}
-                data-plasmic-override={overrides.items5}
-                className={classNames(projectcss.all, sty.items5, "clickable")}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToSupport"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/support` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToSupport"] != null &&
-                    typeof $steps["goToSupport"] === "object" &&
-                    typeof $steps["goToSupport"].then === "function"
-                  ) {
-                    $steps["goToSupport"] = await $steps["goToSupport"];
-                  }
-                }}
-              >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    data-plasmic-name={"right6"}
-                    data-plasmic-override={overrides.right6}
-                    className={classNames(projectcss.all, sty.right6)}
-                  >
-                    <Icon78Icon
-                      className={classNames(projectcss.all, sty.svg___77W2)}
-                      role={"img"}
-                    />
-                  </div>
-                ) : null}
-                <div
-                  data-plasmic-name={"mid6"}
-                  data-plasmic-override={overrides.mid6}
-                  className={classNames(projectcss.all, sty.mid6)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__z97Q)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__duD
-                      )}
-                    >
-                      {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"left5"}
-                  data-plasmic-override={overrides.left5}
-                  className={classNames(projectcss.all, sty.left5)}
-                >
-                  <Icon74Icon
-                    className={classNames(projectcss.all, sty.svg___9TRUe)}
-                    role={"img"}
-                  />
-                </div>
-              </div>
-            ) : null}
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-              <div
-                data-plasmic-name={"items7"}
-                data-plasmic-override={overrides.items7}
-                className={classNames(projectcss.all, sty.items7, "clickable")}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToHomepage"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToHomepage"] != null &&
-                    typeof $steps["goToHomepage"] === "object" &&
-                    typeof $steps["goToHomepage"].then === "function"
-                  ) {
-                    $steps["goToHomepage"] = await $steps["goToHomepage"];
-                  }
-                }}
-              >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    data-plasmic-name={"right8"}
-                    data-plasmic-override={overrides.right8}
-                    className={classNames(projectcss.all, sty.right8)}
-                  >
-                    <Icon73Icon
-                      className={classNames(projectcss.all, sty.svg___1BebJ)}
-                      role={"img"}
-                    />
-                  </div>
-                ) : null}
-                <div
-                  data-plasmic-name={"mid8"}
-                  data-plasmic-override={overrides.mid8}
-                  className={classNames(projectcss.all, sty.mid8)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__lCZuj)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__qmM8W
-                      )}
-                    >
-                      {
-                        "\u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc \u0633\u0627\u06cc\u062a"
-                      }
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"left7"}
-                  data-plasmic-override={overrides.left7}
-                  className={classNames(projectcss.all, sty.left7)}
-                >
-                  <Icon74Icon
-                    className={classNames(projectcss.all, sty.svg__mwDF)}
-                    role={"img"}
-                  />
-                </div>
-              </div>
-            ) : null}
-            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"items6"}
-                data-plasmic-override={overrides.items6}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.items6, "clickable")}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://sso.rentamon.com/auth/logout?callback=https://rentamon.com/panel");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <Stack__
-                    as={"div"}
-                    data-plasmic-name={"right7"}
-                    data-plasmic-override={overrides.right7}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.right7)}
-                  >
-                    <Icon72Icon
-                      className={classNames(projectcss.all, sty.svg__eJx3R)}
-                      role={"img"}
-                    />
-                  </Stack__>
-                ) : null}
-                <div
-                  data-plasmic-name={"mid7"}
-                  data-plasmic-override={overrides.mid7}
-                  className={classNames(projectcss.all, sty.mid7)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__zAsHi)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__rZeHq
-                      )}
-                    >
-                      {"\u062e\u0631\u0648\u062c"}
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"left6"}
-                  data-plasmic-override={overrides.left6}
-                  className={classNames(projectcss.all, sty.left6)}
-                />
-              </Stack__>
-            ) : null}
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__sgL9C)} />
 
@@ -1416,6 +1480,7 @@ const PlasmicDescendants = {
     "walletInfo",
     "right2",
     "mid2",
+    "items8",
     "items",
     "right",
     "mid",
@@ -1463,6 +1528,7 @@ const PlasmicDescendants = {
     "walletInfo",
     "right2",
     "mid2",
+    "items8",
     "items",
     "right",
     "mid",
@@ -1502,6 +1568,37 @@ const PlasmicDescendants = {
   walletInfo: ["walletInfo", "right2", "mid2"],
   right2: ["right2"],
   mid2: ["mid2"],
+  items8: [
+    "items8",
+    "items",
+    "right",
+    "mid",
+    "left",
+    "items2",
+    "right3",
+    "mid3",
+    "left2",
+    "items3",
+    "right4",
+    "mid4",
+    "left3",
+    "items4",
+    "right5",
+    "mid5",
+    "left4",
+    "items5",
+    "right6",
+    "mid6",
+    "left5",
+    "items7",
+    "right8",
+    "mid8",
+    "left7",
+    "items6",
+    "right7",
+    "mid7",
+    "left6"
+  ],
   items: ["items", "right", "mid", "left"],
   right: ["right"],
   mid: ["mid"],
@@ -1553,6 +1650,7 @@ type NodeDefaultElementType = {
   walletInfo: "div";
   right2: "div";
   mid2: "div";
+  items8: "div";
   items: "div";
   right: "div";
   mid: "div";
@@ -1660,6 +1758,7 @@ export const Plasmicتالار = Object.assign(
     walletInfo: makeNodeComponent("walletInfo"),
     right2: makeNodeComponent("right2"),
     mid2: makeNodeComponent("mid2"),
+    items8: makeNodeComponent("items8"),
     items: makeNodeComponent("items"),
     right: makeNodeComponent("right"),
     mid: makeNodeComponent("mid"),

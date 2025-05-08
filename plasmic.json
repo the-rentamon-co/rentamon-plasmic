@@ -737,19 +737,6 @@
           "componentType": "component"
         },
         {
-          "id": "gWac1FMbIJat",
-          "name": "NavbarRentamonComponent",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNavbarRentamonComponent.tsx",
-          "importSpec": {
-            "modulePath": "NavbarRentamonComponent.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNavbarRentamonComponent.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "5VoVqiGmU3In",
           "name": "Button3",
           "type": "managed",
@@ -1631,6 +1618,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/splash"
+        },
+        {
+          "id": "gWac1FMbIJat",
+          "name": "NavbarRntHeader",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNavbarRntHeader.tsx",
+          "importSpec": {
+            "modulePath": "NavbarRntHeader.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNavbarRntHeader.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

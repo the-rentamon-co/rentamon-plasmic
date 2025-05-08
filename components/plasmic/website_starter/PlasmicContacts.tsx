@@ -317,7 +317,8 @@ function PlasmicContacts__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__hQvko
+                  sty.text__hQvko,
+                  "fadeinf"
                 )}
               >
                 {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
@@ -388,9 +389,12 @@ function PlasmicContacts__RenderFunc(props: {
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
                 loading={"lazy"}
-                src={
-                  "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                }
+                src={{
+                  src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                  fullWidth: 500,
+                  fullHeight: 500,
+                  aspectRatio: undefined
+                }}
               />
             }
             method={"GET"}
@@ -420,7 +424,7 @@ function PlasmicContacts__RenderFunc(props: {
             <div
               data-plasmic-name={"frame"}
               data-plasmic-override={overrides.frame}
-              className={classNames(projectcss.all, sty.frame)}
+              className={classNames(projectcss.all, sty.frame, "fadein")}
             >
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                 (() => {
@@ -785,7 +789,8 @@ function PlasmicContacts__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__bBxfN
+                sty.text__bBxfN,
+                "fadein"
               )}
             >
               {

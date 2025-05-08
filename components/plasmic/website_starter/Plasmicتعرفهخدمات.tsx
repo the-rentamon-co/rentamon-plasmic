@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -91,7 +91,7 @@ export const Plasmicتعرفهخدمات__ArgProps = new Array<ArgPropType>();
 export type Plasmicتعرفهخدمات__OverridesType = {
   root?: Flex__<"div">;
   favIcon?: Flex__<typeof Embed>;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   featuresDesc2?: Flex__<"div">;
   _1stPart?: Flex__<"div">;
   item1?: Flex__<"div">;
@@ -319,13 +319,10 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
             }
           />
 
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
+          <NavbarRntHeader
+            data-plasmic-name={"navbarRntHeader"}
+            data-plasmic-override={overrides.navbarRntHeader}
+            className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__vzZul)}>
@@ -2966,7 +2963,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "favIcon",
-    "navbarRentamonComponent",
+    "navbarRntHeader",
     "featuresDesc2",
     "_1stPart",
     "item1",
@@ -3012,7 +3009,7 @@ const PlasmicDescendants = {
     "rentamonFooter"
   ],
   favIcon: ["favIcon"],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
+  navbarRntHeader: ["navbarRntHeader"],
   featuresDesc2: ["featuresDesc2"],
   _1stPart: [
     "_1stPart",
@@ -3098,7 +3095,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   favIcon: typeof Embed;
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  navbarRntHeader: typeof NavbarRntHeader;
   featuresDesc2: "div";
   _1stPart: "div";
   item1: "div";
@@ -3206,7 +3203,7 @@ export const Plasmicتعرفهخدمات = Object.assign(
   {
     // Helper components rendering sub-elements
     favIcon: makeNodeComponent("favIcon"),
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     featuresDesc2: makeNodeComponent("featuresDesc2"),
     _1stPart: makeNodeComponent("_1stPart"),
     item1: makeNodeComponent("item1"),

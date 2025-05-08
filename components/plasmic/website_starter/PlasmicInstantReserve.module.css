@@ -982,14 +982,33 @@
   max-width: 100%;
   object-fit: cover;
 }
-.desc {
+.freeBox__ddIf3 {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0px;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__ddIf3 {
+    padding-top: 23px;
+    padding-right: 14px;
+    padding-left: 14px;
+    margin: 0px;
+  }
+}
+.desc {
   width: 100%;
   height: auto;
   max-width: 100%;
   line-height: 1.8;
   font-size: 16px;
-  margin-bottom: 0px;
   min-width: 0;
   padding: 40px 40px 26px;
 }
@@ -997,7 +1016,6 @@
   .desc {
     font-size: 15px;
     padding: 0px 0px 60px;
-    margin: 0px;
   }
 }
 @media (max-width: 350px) {

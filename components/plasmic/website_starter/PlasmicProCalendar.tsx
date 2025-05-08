@@ -723,7 +723,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode3"] = false
+              $steps["runCode3"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -1072,7 +1072,11 @@ function PlasmicProCalendar__RenderFunc(props: {
           <div
             data-plasmic-name={"headerMobileNew"}
             data-plasmic-override={overrides.headerMobileNew}
-            className={classNames(projectcss.all, sty.headerMobileNew)}
+            className={classNames(
+              projectcss.all,
+              sty.headerMobileNew,
+              "fadein"
+            )}
           >
             <div
               data-plasmic-name={"header"}

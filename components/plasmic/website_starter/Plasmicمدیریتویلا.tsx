@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -86,7 +86,7 @@ export const Plasmicمدیریتویلا__ArgProps = new Array<ArgPropType>();
 
 export type Plasmicمدیریتویلا__OverridesType = {
   content?: Flex__<"div">;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   mainContents?: Flex__<"div">;
   intro?: Flex__<"div">;
   top?: Flex__<"div">;
@@ -209,13 +209,10 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
             sty.content
           )}
         >
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
+          <NavbarRntHeader
+            data-plasmic-name={"navbarRntHeader"}
+            data-plasmic-override={overrides.navbarRntHeader}
+            className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
           <div
@@ -671,7 +668,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
 const PlasmicDescendants = {
   content: [
     "content",
-    "navbarRentamonComponent",
+    "navbarRntHeader",
     "mainContents",
     "intro",
     "top",
@@ -690,7 +687,7 @@ const PlasmicDescendants = {
     "button",
     "rentamonFooter"
   ],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
+  navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
     "mainContents",
     "intro",
@@ -739,7 +736,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   content: "div";
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  navbarRntHeader: typeof NavbarRntHeader;
   mainContents: "div";
   intro: "div";
   top: "div";
@@ -820,7 +817,7 @@ export const Plasmicمدیریتویلا = Object.assign(
   makeNodeComponent("content"),
   {
     // Helper components rendering sub-elements
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     mainContents: makeNodeComponent("mainContents"),
     intro: makeNodeComponent("intro"),
     top: makeNodeComponent("top"),

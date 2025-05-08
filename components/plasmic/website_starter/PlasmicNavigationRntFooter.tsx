@@ -269,7 +269,11 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.backMenu)}
                 >
                   <Icon65Icon
-                    className={classNames(projectcss.all, sty.svg___6PDfU)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.svg___6PDfU,
+                      "fadeinf"
+                    )}
                     role={"img"}
                   />
                 </Stack__>
@@ -520,7 +524,11 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.backCal)}
                 >
                   <Icon59Icon
-                    className={classNames(projectcss.all, sty.svg___5FnM)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.svg___5FnM,
+                      "fadeinf"
+                    )}
                     role={"img"}
                   />
                 </div>
@@ -639,7 +647,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 >
                   <PlasmicImg__
                     alt={""}
-                    className={classNames(sty.img___2MPaI)}
+                    className={classNames(sty.img___2MPaI, "fadeinf")}
                     displayHeight={"22px"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"28px"}
@@ -777,10 +785,14 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 <div
                   data-plasmic-name={"backProps"}
                   data-plasmic-override={overrides.backProps}
-                  className={classNames(projectcss.all, sty.backProps)}
+                  className={classNames(projectcss.all, sty.backProps, ``)}
                 >
                   <Icon58Icon
-                    className={classNames(projectcss.all, sty.svg__cpVuT)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.svg__cpVuT,
+                      "fadeinf"
+                    )}
                     role={"img"}
                   />
                 </div>

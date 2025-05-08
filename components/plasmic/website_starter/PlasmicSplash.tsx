@@ -180,19 +180,38 @@ function PlasmicSplash__RenderFunc(props: {
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
             plasmic_plasmic_rich_components_css.plasmic_tokens,
-            sty.root
+            sty.root,
+            hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
           )}
         >
           <div
             data-plasmic-name={"center"}
             data-plasmic-override={overrides.center}
-            className={classNames(projectcss.all, sty.center)}
+            className={classNames(
+              projectcss.all,
+              sty.center,
+              hasVariant(globalVariants, "screen", "mobile")
+                ? "logo-effect1"
+                : "logo-effect1"
+            )}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__bXpcU)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__bXpcU,
+                hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
+              )}
+            >
               <Icon79Icon
                 data-plasmic-name={"svg"}
                 data-plasmic-override={overrides.svg}
-                className={classNames(projectcss.all, sty.svg)}
+                className={classNames(
+                  projectcss.all,
+                  sty.svg,
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "`"
+                    : "logo-effect"
+                )}
                 role={"img"}
               />
             </div>
@@ -203,7 +222,10 @@ function PlasmicSplash__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text
+                  sty.text,
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? ``
+                    : undefined
                 )}
               >
                 {

@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
@@ -85,7 +85,7 @@ export const Plasmicدانلوداپلیکیشن__ArgProps = new Array<ArgPropTy
 
 export type Plasmicدانلوداپلیکیشن__OverridesType = {
   downlaod?: Flex__<"div">;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   mainContents?: Flex__<"div">;
   introApp?: Flex__<"div">;
   introCalendar4?: Flex__<"div">;
@@ -222,13 +222,10 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
             sty.downlaod
           )}
         >
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
+          <NavbarRntHeader
+            data-plasmic-name={"navbarRntHeader"}
+            data-plasmic-override={overrides.navbarRntHeader}
+            className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
           <div
@@ -842,7 +839,7 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
 const PlasmicDescendants = {
   downlaod: [
     "downlaod",
-    "navbarRentamonComponent",
+    "navbarRntHeader",
     "mainContents",
     "introApp",
     "introCalendar4",
@@ -875,7 +872,7 @@ const PlasmicDescendants = {
     "introCalendarRight7",
     "rentamonFooter"
   ],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
+  navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
     "mainContents",
     "introApp",
@@ -998,7 +995,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   downlaod: "div";
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  navbarRntHeader: typeof NavbarRntHeader;
   mainContents: "div";
   introApp: "div";
   introCalendar4: "div";
@@ -1093,7 +1090,7 @@ export const Plasmicدانلوداپلیکیشن = Object.assign(
   makeNodeComponent("downlaod"),
   {
     // Helper components rendering sub-elements
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     mainContents: makeNodeComponent("mainContents"),
     introApp: makeNodeComponent("introApp"),
     introCalendar4: makeNodeComponent("introCalendar4"),

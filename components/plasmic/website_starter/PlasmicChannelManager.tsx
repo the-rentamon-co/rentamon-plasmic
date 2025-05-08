@@ -301,7 +301,10 @@ function PlasmicChannelManager__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__wv5Tm
+                  sty.text__wv5Tm,
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "fadeinf"
+                    : undefined
                 )}
               >
                 {

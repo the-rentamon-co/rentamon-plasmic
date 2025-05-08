@@ -379,7 +379,8 @@ function PlasmicProperties__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__f1AbN
+                    sty.text__f1AbN,
+                    "fadeinf"
                   )}
                 >
                   {
@@ -427,7 +428,7 @@ function PlasmicProperties__RenderFunc(props: {
               data-plasmic-name={"property"}
               data-plasmic-override={overrides.property}
               hasGap={true}
-              className={classNames(projectcss.all, sty.property)}
+              className={classNames(projectcss.all, sty.property, "fadein")}
             >
               <div className={classNames(projectcss.all, sty.freeBox__mjr7H)}>
                 <ApiRequest
@@ -515,7 +516,7 @@ function PlasmicProperties__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__gAlJf,
-                            "clickable"
+                            "clickable fadeinf"
                           )}
                           key={currentIndex}
                           onClick={async event => {
@@ -659,7 +660,7 @@ function PlasmicProperties__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         sty.freeBox__ojr5X,
-                        "clickable"
+                        "clickable fadein"
                       )}
                       onClick={async event => {
                         const $steps = {};

@@ -504,7 +504,8 @@ function PlasmicSettings__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__i01Xj
+                  sty.text__i01Xj,
+                  "fadeinf"
                 )}
               >
                 {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
@@ -546,7 +547,7 @@ function PlasmicSettings__RenderFunc(props: {
           <div
             data-plasmic-name={"main"}
             data-plasmic-override={overrides.main}
-            className={classNames(projectcss.all, sty.main)}
+            className={classNames(projectcss.all, sty.main, "fadeinf")}
           >
             <div
               data-plasmic-name={"intro"}
@@ -692,7 +693,7 @@ function PlasmicSettings__RenderFunc(props: {
                   <div
                     data-plasmic-name={"p3"}
                     data-plasmic-override={overrides.p3}
-                    className={classNames(projectcss.all, sty.p3)}
+                    className={classNames(projectcss.all, sty.p3, "fadein")}
                   >
                     <ApiRequest
                       data-plasmic-name={"apiRequest2"}
@@ -982,7 +983,7 @@ function PlasmicSettings__RenderFunc(props: {
                   <div
                     data-plasmic-name={"p32"}
                     data-plasmic-override={overrides.p32}
-                    className={classNames(projectcss.all, sty.p32)}
+                    className={classNames(projectcss.all, sty.p32, "fadein")}
                   >
                     <ApiRequest
                       data-plasmic-name={"apiRequest"}

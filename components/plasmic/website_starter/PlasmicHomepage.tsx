@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -93,7 +93,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   home?: Flex__<"div">;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   mainContents?: Flex__<"div">;
   introCalendar?: Flex__<"div">;
   introCalendarTitle?: Flex__<"div">;
@@ -268,13 +268,10 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.home
           )}
         >
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
+          <NavbarRntHeader
+            data-plasmic-name={"navbarRntHeader"}
+            data-plasmic-override={overrides.navbarRntHeader}
+            className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
           <div
@@ -373,7 +370,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["createCookie"] = true
+                        $steps["createCookie"] = false
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
@@ -417,10 +414,10 @@ function PlasmicHomepage__RenderFunc(props: {
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
-                                  return window.open(
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
-                                    "_blank"
-                                  );
+                                  return (() => {
+                                    return (window.location.href =
+                                      "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
+                                  })();
                                 }
                               };
                               return (({ customFunction }) => {
@@ -461,7 +458,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introCalendarLeft"}
                   data-plasmic-override={overrides.introCalendarLeft}
-                  className={classNames(projectcss.all, sty.introCalendarLeft)}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introCalendarLeft,
+                    "fadein"
+                  )}
                 >
                   <Embed
                     className={classNames(
@@ -557,7 +558,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introAutoSyncGif"}
                   data-plasmic-override={overrides.introAutoSyncGif}
-                  className={classNames(projectcss.all, sty.introAutoSyncGif)}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introAutoSyncGif,
+                    "fadein"
+                  )}
                 >
                   <Embed
                     className={classNames(
@@ -787,7 +792,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     data-plasmic-name={"img"}
                     data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img)}
+                    className={classNames(sty.img, "fadein")}
                     displayHeight={"522px"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -849,7 +854,11 @@ function PlasmicHomepage__RenderFunc(props: {
               <div
                 data-plasmic-name={"commentsScrolling"}
                 data-plasmic-override={overrides.commentsScrolling}
-                className={classNames(projectcss.all, sty.commentsScrolling)}
+                className={classNames(
+                  projectcss.all,
+                  sty.commentsScrolling,
+                  "fadein"
+                )}
               >
                 <TestimonialsScrolling
                   data-plasmic-name={"testimonialsScrolling"}
@@ -909,7 +918,11 @@ function PlasmicHomepage__RenderFunc(props: {
             <div
               data-plasmic-name={"screenshotsLeft"}
               data-plasmic-override={overrides.screenshotsLeft}
-              className={classNames(projectcss.all, sty.screenshotsLeft)}
+              className={classNames(
+                projectcss.all,
+                sty.screenshotsLeft,
+                "fadein"
+              )}
             >
               <Embed
                 data-plasmic-name={"carousel"}
@@ -941,7 +954,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["createCookie"] = true
+                  $steps["createCookie"] = false
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -983,10 +996,10 @@ function PlasmicHomepage__RenderFunc(props: {
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
-                            return window.open(
-                              "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel",
-                              "_blank"
-                            );
+                            return (() => {
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
+                            })();
                           }
                         };
                         return (({ customFunction }) => {
@@ -1446,7 +1459,7 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   home: [
     "home",
-    "navbarRentamonComponent",
+    "navbarRntHeader",
     "mainContents",
     "introCalendar",
     "introCalendarTitle",
@@ -1506,7 +1519,7 @@ const PlasmicDescendants = {
     "goftino",
     "rentamonFooter"
   ],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
+  navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
     "mainContents",
     "introCalendar",
@@ -1685,7 +1698,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   home: "div";
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  navbarRntHeader: typeof NavbarRntHeader;
   mainContents: "div";
   introCalendar: "div";
   introCalendarTitle: "div";
@@ -1806,7 +1819,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("home"),
   {
     // Helper components rendering sub-elements
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     mainContents: makeNodeComponent("mainContents"),
     introCalendar: makeNodeComponent("introCalendar"),
     introCalendarTitle: makeNodeComponent("introCalendarTitle"),

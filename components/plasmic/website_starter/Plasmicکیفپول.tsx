@@ -363,7 +363,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__n7WGr
+                  sty.text__n7WGr,
+                  "fadeinf"
                 )}
               >
                 {"\u06a9\u06cc\u0641 \u067e\u0648\u0644"}
@@ -428,7 +429,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.balance2
+                    sty.balance2,
+                    "fadeinf"
                   )}
                 >
                   <React.Fragment>
@@ -462,7 +464,7 @@ function Plasmicکیفپول__RenderFunc(props: {
             <div
               data-plasmic-name={"report"}
               data-plasmic-override={overrides.report}
-              className={classNames(projectcss.all, sty.report, ``)}
+              className={classNames(projectcss.all, sty.report, "fadein")}
               onClick={async event => {
                 const $steps = {};
 
@@ -747,7 +749,9 @@ function Plasmicکیفپول__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
-          <div className={classNames(projectcss.all, sty.freeBox__fx5B)}>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__fx5B, "fadeinf")}
+          >
             <div
               data-plasmic-name={"title"}
               data-plasmic-override={overrides.title}

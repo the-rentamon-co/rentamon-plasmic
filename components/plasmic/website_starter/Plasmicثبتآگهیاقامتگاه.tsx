@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRentamonComponent from "../../NavbarRentamonComponent"; // plasmic-import: gWac1FMbIJat/component
+import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
@@ -96,7 +96,7 @@ export const Plasmicثبتآگهیاقامتگاه__ArgProps = new Array<ArgProp
 
 export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   content?: Flex__<"div">;
-  navbarRentamonComponent?: Flex__<typeof NavbarRentamonComponent>;
+  navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   mainContents?: Flex__<"div">;
   intro?: Flex__<"div">;
   introTitle?: Flex__<"div">;
@@ -278,13 +278,10 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
             sty.content
           )}
         >
-          <NavbarRentamonComponent
-            data-plasmic-name={"navbarRentamonComponent"}
-            data-plasmic-override={overrides.navbarRentamonComponent}
-            className={classNames(
-              "__wab_instance",
-              sty.navbarRentamonComponent
-            )}
+          <NavbarRntHeader
+            data-plasmic-name={"navbarRntHeader"}
+            data-plasmic-override={overrides.navbarRntHeader}
+            className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
           <div
@@ -334,7 +331,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
               <div
                 data-plasmic-name={"str"}
                 data-plasmic-override={overrides.str}
-                className={classNames(projectcss.all, sty.str)}
+                className={classNames(projectcss.all, sty.str, "fadeinf")}
               >
                 <div
                   className={classNames(projectcss.all, sty.freeBox___8M63E)}
@@ -517,7 +514,13 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__rrCw)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__rrCw,
+                  "fadeinf"
+                )}
+              >
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img___9GLlr)}
@@ -1063,7 +1066,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__jTrBz
+                            sty.text__jTrBz,
+                            "clickable"
                           )}
                           onClick={async event => {
                             const $steps = {};
@@ -1252,7 +1256,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
             <div
               data-plasmic-name={"testimonials"}
               data-plasmic-override={overrides.testimonials}
-              className={classNames(projectcss.all, sty.testimonials)}
+              className={classNames(projectcss.all, sty.testimonials, "fadein")}
             >
               <div
                 data-plasmic-name={"title"}
@@ -1930,7 +1934,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
 const PlasmicDescendants = {
   content: [
     "content",
-    "navbarRentamonComponent",
+    "navbarRntHeader",
     "mainContents",
     "intro",
     "introTitle",
@@ -1958,7 +1962,7 @@ const PlasmicDescendants = {
     "button2",
     "rentamonFooter"
   ],
-  navbarRentamonComponent: ["navbarRentamonComponent"],
+  navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
     "mainContents",
     "intro",
@@ -2042,7 +2046,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   content: "div";
-  navbarRentamonComponent: typeof NavbarRentamonComponent;
+  navbarRntHeader: typeof NavbarRntHeader;
   mainContents: "div";
   intro: "div";
   introTitle: "div";
@@ -2132,7 +2136,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
   makeNodeComponent("content"),
   {
     // Helper components rendering sub-elements
-    navbarRentamonComponent: makeNodeComponent("navbarRentamonComponent"),
+    navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     mainContents: makeNodeComponent("mainContents"),
     intro: makeNodeComponent("intro"),
     introTitle: makeNodeComponent("introTitle"),

@@ -297,7 +297,8 @@ function PlasmicSupport__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__fyrea
+                  sty.text__fyrea,
+                  "fadeinf"
                 )}
               >
                 {
@@ -358,7 +359,7 @@ function PlasmicSupport__RenderFunc(props: {
                 >
                   <PlasmicImg__
                     alt={""}
-                    className={classNames(sty.img__bnyHr)}
+                    className={classNames(sty.img__bnyHr, "fadeinf")}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -392,7 +393,13 @@ function PlasmicSupport__RenderFunc(props: {
               data-plasmic-override={overrides.accessWays}
               className={classNames(projectcss.all, sty.accessWays)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__yjk5I)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__yjk5I,
+                  "fadein"
+                )}
+              >
                 <div
                   data-plasmic-name={"sectionTitle"}
                   data-plasmic-override={overrides.sectionTitle}
