@@ -70,6 +70,8 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSplash.module.css"; // plasmic-import: ew-lMhwJhrpF/css
 
+import Icon79Icon from "./icons/PlasmicIcon__Icon79"; // plasmic-import: 8tMAV60HqJyj/icon
+
 createPlasmicElementProxy;
 
 export type PlasmicSplash__VariantMembers = {};
@@ -83,6 +85,7 @@ export const PlasmicSplash__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSplash__OverridesType = {
   root?: Flex__<"div">;
+  svg?: Flex__<"svg">;
   text?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
 };
@@ -161,18 +164,28 @@ function PlasmicSplash__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text
-            )}
-          >
-            {
-              "\u062f\u0633\u062a\u0647 \u06af\u0644 \u0645\u062d\u0645\u062f\u06cc \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0627\u0645\u062f\u06cc"
-            }
+          <div className={classNames(projectcss.all, sty.freeBox__bXpcU)}>
+            <Icon79Icon
+              data-plasmic-name={"svg"}
+              data-plasmic-override={overrides.svg}
+              className={classNames(projectcss.all, sty.svg)}
+              role={"img"}
+            />
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__pwpH)}>
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text
+              )}
+            >
+              {
+                "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+              }
+            </div>
           </div>
           <SideEffect
             data-plasmic-name={"sideEffect"}
@@ -245,7 +258,8 @@ function PlasmicSplash__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "sideEffect"],
+  root: ["root", "svg", "text", "sideEffect"],
+  svg: ["svg"],
   text: ["text"],
   sideEffect: ["sideEffect"]
 } as const;
@@ -254,6 +268,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  svg: "svg";
   text: "div";
   sideEffect: typeof SideEffect;
 };
@@ -318,6 +333,7 @@ export const PlasmicSplash = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),
     sideEffect: makeNodeComponent("sideEffect"),
 

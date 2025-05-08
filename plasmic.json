@@ -2151,6 +2151,11 @@
           "id": "z2I2p-YJGmt6",
           "name": "Icon78Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon78.tsx"
+        },
+        {
+          "id": "8tMAV60HqJyj",
+          "name": "Icon79Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon79.tsx"
         }
       ],
       "images": [
