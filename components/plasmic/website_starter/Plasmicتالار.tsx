@@ -1192,7 +1192,25 @@ function Plasmicتالار__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     sty.items7,
-                    "clickable"
+                    (() => {
+                      try {
+                        return (() => {
+                          if ($state.userType == 1) {
+                            return "display_block clickable";
+                          } else {
+                            return "hidden clickable";
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
                   )}
                   onClick={async event => {
                     const $steps = {};

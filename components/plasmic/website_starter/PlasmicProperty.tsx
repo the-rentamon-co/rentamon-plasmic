@@ -1068,7 +1068,7 @@ function PlasmicProperty__RenderFunc(props: {
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
-                    : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
+                    : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"}
                 </div>
                 <ApiRequest
                   data-plasmic-name={"apiRequestOccupancyRate"}
@@ -1557,6 +1557,25 @@ function PlasmicProperty__RenderFunc(props: {
             data-plasmic-name={"navigationRntFooter"}
             data-plasmic-override={overrides.navigationRntFooter}
             className={classNames("__wab_instance", sty.navigationRntFooter)}
+            userType={
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return (() => {
+                        return null;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                : undefined
+            }
           />
         </div>
       </div>

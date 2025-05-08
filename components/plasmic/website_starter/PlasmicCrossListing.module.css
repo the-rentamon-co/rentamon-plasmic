@@ -21,6 +21,11 @@
 .crossListingPage > * {
   grid-column: 4;
 }
+@media (max-width: 500px) {
+  .crossListingPage > * {
+    grid-column: 4;
+  }
+}
 .text__oeD5Q {
   position: relative;
   width: 100%;

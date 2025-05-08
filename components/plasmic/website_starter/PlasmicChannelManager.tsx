@@ -2713,6 +2713,21 @@ function PlasmicChannelManager__RenderFunc(props: {
             data-plasmic-name={"navigationRntFooter"}
             data-plasmic-override={overrides.navigationRntFooter}
             className={classNames("__wab_instance", sty.navigationRntFooter)}
+            userType={(() => {
+              try {
+                return (() => {
+                  return null;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           <Embed
