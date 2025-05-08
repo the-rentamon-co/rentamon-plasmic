@@ -192,14 +192,16 @@ function PlasmicSplash__RenderFunc(props: {
               sty.center,
               hasVariant(globalVariants, "screen", "mobile")
                 ? "logo-effect1"
-                : "logo-effect1"
+                : ``
             )}
           >
             <div
               className={classNames(
                 projectcss.all,
                 sty.freeBox__bXpcU,
-                hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "fadeinf"
+                  : undefined
               )}
             >
               <Icon79Icon
@@ -209,13 +211,21 @@ function PlasmicSplash__RenderFunc(props: {
                   projectcss.all,
                   sty.svg,
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? "`"
-                    : "logo-effect"
+                    ? ``
+                    : "fadeinf"
                 )}
                 role={"img"}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__pwpH)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__pwpH,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "fadein"
+                  : "logo-effect1"
+              )}
+            >
               <div
                 data-plasmic-name={"text"}
                 data-plasmic-override={overrides.text}

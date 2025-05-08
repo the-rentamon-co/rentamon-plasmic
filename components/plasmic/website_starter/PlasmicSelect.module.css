@@ -284,7 +284,8 @@
 .slotTargetPlaceholder {
   white-space: pre;
   color: #706f6c;
-  font-size: 17px;
+  font-size: 15px;
+  font-weight: 400;
 }
 .slotTargetPlaceholder > :global(.__wab_text),
 .slotTargetPlaceholder > :global(.__wab_expr_html_text),
@@ -348,7 +349,7 @@
 }
 @media (max-width: 500px) {
   .slotTargetPlaceholder {
-    font-weight: 300;
+    font-weight: 500;
     font-size: 15px;
   }
 }

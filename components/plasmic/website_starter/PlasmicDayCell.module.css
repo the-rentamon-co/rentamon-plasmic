@@ -56,12 +56,12 @@
 @media (max-width: 350px) {
   .root {
     width: 100%;
-    height: 74px;
+    height: 64px;
     max-width: 40px;
     background: none;
     flex-direction: column;
     min-width: 0;
-    padding: 2px 0px 0px;
+    padding: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -149,7 +149,33 @@
 @media (max-width: 350px) {
   .cell {
     max-width: 40px;
-    margin-top: 2px;
+    margin-top: 0px;
+    height: 64px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: calc(0px + 0px) !important;
+    padding-top: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .cell > :global(.__wab_flex-container) {
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - 0px);
+    height: calc(100% + 0px);
+  }
+}
+@media (max-width: 350px) {
+  .cell > :global(.__wab_flex-container) > *,
+  .cell > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .cell > :global(.__wab_flex-container) > picture > img,
+  .cell
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+    margin-top: 0px;
   }
 }
 .cellselected {
@@ -341,6 +367,11 @@
     max-width: 50px;
   }
 }
+@media (max-width: 350px) {
+  .freeBox__gKj3 {
+    padding-top: 2px;
+  }
+}
 .text__kqTC {
   position: relative;
   width: 100%;
@@ -355,13 +386,14 @@
 }
 @media (max-width: 500px) {
   .text__kqTC {
-    font-size: 17px;
+    font-size: 15px;
     display: block;
   }
 }
 @media (max-width: 350px) {
   .text__kqTC {
     font-size: 14px;
+    font-weight: 400;
     display: block;
   }
 }
@@ -450,6 +482,14 @@
   .p {
     left: 0px;
     top: 2px;
+  }
+}
+@media (max-width: 350px) {
+  .p {
+    min-width: 7px;
+    min-height: 7px;
+    max-height: 7px;
+    max-width: 7px;
   }
 }
 .pdayStatus_disabled {
