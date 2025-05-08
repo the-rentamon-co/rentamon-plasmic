@@ -584,9 +584,11 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                               search,
                               hash
                             } = window.location;
+                            console.log("here");
                             if (hostname === "app.rentamon.com") {
                               const targetHost = "rentamon.com";
                               const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
+                              console.log("newUrl", newUrl);
                               window.location.replace(newUrl);
                             }
                           })();
@@ -785,7 +787,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         }
                       })()
                 ) ? (
-                  <div
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
                     className={classNames(
                       projectcss.all,
                       sty.freeBox__nNsXe,
@@ -801,32 +805,18 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "80px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "60px"
+                          ? "100%"
                           : hasVariant(globalVariants, "screen", "tablet")
                           ? "130px"
                           : "80px"
                       }
-                      displayMaxHeight={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "60px"
-                          : "80px"
-                      }
-                      displayMaxWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "88px"
-                          : "120px"
-                      }
+                      displayMaxHeight={"80px"}
+                      displayMaxWidth={"120px"}
                       displayMinHeight={"0"}
-                      displayMinWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "88px"
-                          : "120px"
-                      }
+                      displayMinWidth={"120px"}
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "220px"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                          ? "100%"
                           : "100%"
                       }
                       loading={"lazy"}
@@ -849,7 +839,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         }
                       })()}
                     />
-                  </div>
+                  </Stack__>
                 ) : null}
                 {(() => {
                   try {
@@ -1326,7 +1316,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__yGkdR
+                        sty.formField__wzRsn
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1338,7 +1328,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__mMrG0
+                        sty.formField__gzWwX
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1356,7 +1346,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__jdo7N
+                          sty.text___4Cefl
                         )}
                       >
                         {"Submit"}

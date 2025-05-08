@@ -253,9 +253,16 @@ function PlasmicSplash__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          let a = $state.src;
-                          console.log(a);
+                          console.log("[splash-cookie] script start");
                           function setCookie(name, value, hours) {
+                            console.log(
+                              `[splash-cookie] setCookie called with`,
+                              {
+                                name,
+                                value,
+                                hours
+                              }
+                            );
                             let expires = "";
                             if (hours) {
                               const date = new Date();
@@ -263,12 +270,38 @@ function PlasmicSplash__RenderFunc(props: {
                                 date.getTime() + hours * 60 * 60 * 1000
                               );
                               expires = "; expires=" + date.toUTCString();
+                              console.log(
+                                `[splash-cookie] cookie will expire at`,
+                                date.toUTCString()
+                              );
                             }
                             document.cookie =
                               name + "=" + (value || "") + expires + "; path=/";
+                            console.log(
+                              `[splash-cookie] document.cookie =`,
+                              document.cookie
+                            );
                           }
-                          setCookie("source", $state.src, 12);
-                          return console.log("$ctx.query.src", $ctx.query.src);
+                          const params = new URLSearchParams(
+                            window.location.search
+                          );
+                          console.log(
+                            "[splash-cookie] window.location.search =",
+                            window.location.search
+                          );
+                          const srcValue = params.get("src");
+                          if (srcValue) {
+                            console.log(
+                              "[splash-cookie] found src parameter:",
+                              srcValue
+                            );
+                            setCookie("source", srcValue, 12);
+                          } else {
+                            console.warn(
+                              "[splash-cookie] no src parameter in URL"
+                            );
+                          }
+                          return console.log("[splash-cookie] script end");
                         })();
                       }
                     };

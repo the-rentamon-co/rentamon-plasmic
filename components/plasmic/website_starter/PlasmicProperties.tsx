@@ -586,7 +586,11 @@ function PlasmicProperties__RenderFunc(props: {
                               <PlasmicImg__
                                 alt={""}
                                 className={classNames(sty.img__yFlfQ)}
-                                displayHeight={"auto"}
+                                displayHeight={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "100%"
+                                    : "auto"
+                                }
                                 displayMaxHeight={"none"}
                                 displayMaxWidth={"100%"}
                                 displayMinHeight={"0"}

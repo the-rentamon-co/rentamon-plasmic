@@ -467,12 +467,12 @@
   max-width: 100%;
   height: auto;
   width: 100%;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
   position: sticky;
   left: 0px;
   top: 0px;
   z-index: 1;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
   min-width: 0;
 }
 .img__yFlfQ > picture > img {
@@ -481,7 +481,17 @@
 @media (max-width: 500px) {
   .img__yFlfQ {
     width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    object-fit: cover;
+    height: 100%;
     min-width: 0;
+    min-height: 0;
+  }
+}
+@media (max-width: 500px) {
+  .img__yFlfQ > picture > img {
+    object-fit: cover;
   }
 }
 .freeBox__gb4Nj {

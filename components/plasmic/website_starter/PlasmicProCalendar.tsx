@@ -723,7 +723,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode3"] = true
+              $steps["runCode3"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -1499,7 +1499,12 @@ function PlasmicProCalendar__RenderFunc(props: {
                       ) ? (
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__tnqU9)}
+                          className={classNames(
+                            sty.img__tnqU9,
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? ``
+                              : undefined
+                          )}
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "24px"
@@ -1732,7 +1737,13 @@ function PlasmicProCalendar__RenderFunc(props: {
                   <div
                     data-plasmic-name={"image"}
                     data-plasmic-override={overrides.image}
-                    className={classNames(projectcss.all, sty.image)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.image,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "shine"
+                        : undefined
+                    )}
                   >
                     <PlasmicImg__
                       alt={""}
