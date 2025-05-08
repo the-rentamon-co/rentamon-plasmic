@@ -443,7 +443,7 @@ function PlasmicSplash__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode"] = false
+              $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
