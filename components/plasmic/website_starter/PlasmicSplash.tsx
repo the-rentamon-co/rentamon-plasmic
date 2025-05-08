@@ -359,26 +359,39 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["runCode"] = await $steps["runCode"];
               }
 
-              $steps["updateStateVariable"] = true
+              $steps["runCode3"] = true
                 ? (() => {
-                    const actionArgs = {};
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function setCookie(name, value, hours) {
+                            let expires = "";
+                            if (hours) {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + hours * 60 * 60 * 1000
+                              );
+                              expires = "; expires=" + date.toUTCString();
+                            }
+                            document.cookie =
+                              name + "=" + (value || "") + expires + "; path=/";
+                          }
+                          setCookie("source", $ctx.query.src, 12);
+                          return console.log("$ctx.query.src", $ctx.query.src);
+                        })();
                       }
-                      const { objRoot, variablePath } = variable;
-                      undefined;
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
                     })?.apply(null, [actionArgs]);
                   })()
                 : undefined;
               if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
+                $steps["runCode3"] != null &&
+                typeof $steps["runCode3"] === "object" &&
+                typeof $steps["runCode3"].then === "function"
               ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
+                $steps["runCode3"] = await $steps["runCode3"];
               }
             }}
           />
