@@ -2155,9 +2155,25 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  min-width: 0;
+}
+.freeBox__roKyl > :global(.__wab_flex-container) {
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.freeBox__roKyl > :global(.__wab_flex-container) > *,
+.freeBox__roKyl > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__roKyl > :global(.__wab_flex-container) > picture > img,
+.freeBox__roKyl
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 0px;
 }
 .recordList__j2Fns:global(.__wab_instance) {
   height: 64px;

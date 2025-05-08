@@ -3366,7 +3366,9 @@ function PlasmicReservations__RenderFunc(props: {
                 const currentItem = __plasmic_item_0;
                 const currentIndex = __plasmic_idx_0;
                 return (
-                  <div
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
                     className={classNames(
                       projectcss.all,
                       sty.freeBox__roKyl,
@@ -3600,7 +3602,7 @@ function PlasmicReservations__RenderFunc(props: {
                         })()}
                       />
                     ) : null}
-                  </div>
+                  </Stack__>
                 );
               })}
               <ApiRequest
