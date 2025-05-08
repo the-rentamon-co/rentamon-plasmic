@@ -65,7 +65,6 @@ import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
-import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -115,7 +114,6 @@ export type Plasmicکیفپول__OverridesType = {
   right?: Flex__<"div">;
   center?: Flex__<"div">;
   input3?: Flex__<typeof Input>;
-  numberInput?: Flex__<typeof AntdInputNumber>;
   left?: Flex__<"div">;
   packages?: Flex__<"div">;
   p1?: Flex__<"div">;
@@ -277,12 +275,6 @@ function Plasmicکیفپول__RenderFunc(props: {
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? "1000000" : "1000000"
-      },
-      {
-        path: "numberInput.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -866,27 +858,10 @@ function Plasmicکیفپول__RenderFunc(props: {
                     }
                     type={
                       hasVariant(globalVariants, "screen", "tablet")
-                        ? "number"
-                        : "number"
+                        ? "text"
+                        : "text"
                     }
                     value={generateStateValueProp($state, ["input3", "value"])}
-                  />
-
-                  <AntdInputNumber
-                    data-plasmic-name={"numberInput"}
-                    data-plasmic-override={overrides.numberInput}
-                    className={classNames("__wab_instance", sty.numberInput)}
-                    onChange={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "numberInput",
-                        "value"
-                      ]).apply(null, eventArgs);
-                    }}
-                    type={"number"}
-                    value={generateStateValueProp($state, [
-                      "numberInput",
-                      "value"
-                    ])}
                   />
                 </div>
                 <div
@@ -1234,7 +1209,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                                 : result;
                               return finalResult.trim() + " تومان";
                             }
-                            const input = $state.numberInput?.value || "";
+                            const input = $state.input3?.value || "";
                             const output =
                               input === ""
                                 ? "صفر"
@@ -1355,8 +1330,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                             value: (() => {
                               $state.tokenResponse.payInfo =
                                 $steps.invokeGlobalAction.data.payinfo;
-                              $state.tokenResponse.amount =
-                                $state.numberInput.value;
+                              $state.tokenResponse.amount = $state.input3.value;
                               return console.log($state.tokenResponse);
                             })()
                           };
@@ -2240,7 +2214,6 @@ const PlasmicDescendants = {
     "right",
     "center",
     "input3",
-    "numberInput",
     "left",
     "packages",
     "p1",
@@ -2283,7 +2256,6 @@ const PlasmicDescendants = {
     "right",
     "center",
     "input3",
-    "numberInput",
     "left",
     "packages",
     "p1",
@@ -2291,11 +2263,10 @@ const PlasmicDescendants = {
     "right2",
     "left2"
   ],
-  input: ["input", "right", "center", "input3", "numberInput", "left"],
+  input: ["input", "right", "center", "input3", "left"],
   right: ["right"],
-  center: ["center", "input3", "numberInput"],
+  center: ["center", "input3"],
   input3: ["input3"],
-  numberInput: ["numberInput"],
   left: ["left"],
   packages: ["packages", "p1"],
   p1: ["p1"],
@@ -2354,7 +2325,6 @@ type NodeDefaultElementType = {
   right: "div";
   center: "div";
   input3: typeof Input;
-  numberInput: typeof AntdInputNumber;
   left: "div";
   packages: "div";
   p1: "div";
@@ -2457,7 +2427,6 @@ export const Plasmicکیفپول = Object.assign(
     right: makeNodeComponent("right"),
     center: makeNodeComponent("center"),
     input3: makeNodeComponent("input3"),
-    numberInput: makeNodeComponent("numberInput"),
     left: makeNodeComponent("left"),
     packages: makeNodeComponent("packages"),
     p1: makeNodeComponent("p1"),
