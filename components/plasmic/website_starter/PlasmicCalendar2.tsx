@@ -8970,6 +8970,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 $steps["updateTourSteps"] = await $steps["updateTourSteps"];
               }
             }}
+            startIcon={null}
           >
             <div className={classNames(projectcss.all, sty.freeBox__ary0S)}>
               {(() => {
@@ -9018,27 +9019,6 @@ function PlasmicCalendar2__RenderFunc(props: {
             </div>
           </Button>
         </div>
-        {(hasVariant(globalVariants, "screen", "tablet") ? false : false) ? (
-          <div
-            className={classNames(
-              projectcss.all,
-              sty.freeBox__iGn2N,
-              "attention-bounce"
-            )}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__c5J5P
-              )}
-            >
-              {
-                "\u0631\u0648\u06cc \u0627\u06cc\u0646\u062c\u0627 \u06a9\u0644\u06cc\u06a9 \u06a9\u0646\u06cc\u0646"
-              }
-            </div>
-          </div>
-        ) : null}
       </div>
       <Embed
         data-plasmic-name={"embedHtml"}

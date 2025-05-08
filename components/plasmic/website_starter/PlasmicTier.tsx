@@ -646,7 +646,8 @@ function PlasmicTier__RenderFunc(props: {
                           if (
                             user_type == "app_store" ||
                             user_type == "cafe_bazar" ||
-                            user_type == "myket"
+                            user_type == "myket" ||
+                            user_type == "unknown"
                           ) {
                             return (window.location.href =
                               "https://rentamon.com/intro/lite/");

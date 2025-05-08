@@ -380,8 +380,8 @@ function PlasmicContacts__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "34px"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "55px"
-                    : "76px"
+                    ? "30px"
+                    : "40px"
                 }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}

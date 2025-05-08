@@ -2170,7 +2170,23 @@ function Plasmicکیفپول__RenderFunc(props: {
             data-plasmic-override={overrides.navigationRntFooter}
             className={classNames("__wab_instance", sty.navigationRntFooter)}
             userType={
-              hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return (() => {
+                        return null;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                : undefined
             }
           />
         </div>

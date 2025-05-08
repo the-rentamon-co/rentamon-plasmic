@@ -7,7 +7,7 @@
   background: var(--token-8nedppYkGVaH);
   max-width: 164px;
   width: 100%;
-  margin-top: 14px;
+  margin-top: 0px;
   position: relative;
   min-width: 0;
   -webkit-transition-property: background;
@@ -43,12 +43,12 @@
 @media (max-width: 500px) {
   .root {
     background: linear-gradient(
-          71.77680563572221deg,
-          var(--token-8nedppYkGVaH) 0%,
-          #997fe7 100%
-        )
-        0% 0% / 100% 100% repeat,
-      #8165d6;
+        71deg,
+        var(--token-8nedppYkGVaH) 0%,
+        #997fe7 100%
+      )
+      0% 0% / 100% 100% repeat;
+    margin-top: 0px;
   }
 }
 .rootshowStartIcon {

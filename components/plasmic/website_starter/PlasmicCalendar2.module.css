@@ -2831,13 +2831,17 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   min-width: 0;
   margin: 0px;
 }
 @media (max-width: 500px) {
   .submitChange {
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding-top: 9px;
     margin: 0px;
   }
 }
@@ -2845,19 +2849,35 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 90%;
+  width: 40%;
   height: auto;
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  border-radius: 30px;
+  border-radius: 100px;
   padding: 0px;
+}
+@media (max-width: 1200px) {
+  .freeBox___8O4D {
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox___8O4D {
+    align-items: center;
+    justify-content: center;
+    width: 94%;
+    border-radius: 100px;
+    padding: 0px;
+    margin: 0px;
+  }
 }
 @media (max-width: 350px) {
   .freeBox___8O4D {
     padding-right: 0px;
     padding-left: 0px;
     padding-bottom: 0px;
+    width: 96%;
   }
 }
 .button__fNtwK:global(.__wab_instance) {
@@ -2871,8 +2891,7 @@
 }
 @media (max-width: 500px) {
   .button__fNtwK:global(.__wab_instance) {
-    height: 60px;
-    flex-shrink: 0;
+    height: 100%;
   }
 }
 @media (max-width: 350px) {
@@ -2880,12 +2899,6 @@
     height: 60px;
     flex-shrink: 0;
   }
-}
-.svg___47Yc8 {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
 }
 .freeBox__ary0S {
   display: flex;
@@ -2917,6 +2930,7 @@
 @media (max-width: 500px) {
   .text__psStq {
     font-size: 17px;
+    color: #fcfcfc;
   }
 }
 @media (max-width: 350px) {
@@ -2930,45 +2944,6 @@
   object-fit: cover;
   width: auto;
   height: 1em;
-}
-.freeBox__iGn2N {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
-  left: -57px;
-  top: -40px;
-  z-index: 900000000000000;
-  background: var(--token-6Z4_V2ffv_0Q);
-  border-radius: 10px;
-  padding: 8px;
-}
-@media (max-width: 1200px) {
-  .freeBox__iGn2N {
-    left: 4px;
-  }
-}
-@media (max-width: 500px) {
-  .freeBox__iGn2N {
-    left: 11px;
-    top: -17px;
-    width: auto;
-    right: auto;
-  }
-}
-.text__c5J5P {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 13px;
-  min-width: 0;
-  padding: 7px;
 }
 .embedHtml:global(.__wab_instance) {
   max-width: 100%;
