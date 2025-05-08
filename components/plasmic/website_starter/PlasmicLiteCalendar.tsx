@@ -59,11 +59,11 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
@@ -98,6 +98,7 @@ export const PlasmicLiteCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLiteCalendar__OverridesType = {
   root?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
   headerMain?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -108,7 +109,6 @@ export type PlasmicLiteCalendar__OverridesType = {
   deskTablet?: Flex__<"div">;
   sidebarLite?: Flex__<typeof SidebarLite>;
   calendar2?: Flex__<typeof Calendar2>;
-  sideEffect?: Flex__<typeof SideEffect>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
   favicon?: Flex__<typeof Embed>;
@@ -367,6 +367,212 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             sty.root
           )}
         >
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["checkOldUser"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://api-v2.rentamon.com/api/is_user_old"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkOldUser"] != null &&
+                typeof $steps["checkOldUser"] === "object" &&
+                typeof $steps["checkOldUser"].then === "function"
+              ) {
+                $steps["checkOldUser"] = await $steps["checkOldUser"];
+              }
+
+              $steps["updateStateVariable3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        if ($steps.checkOldUser.data.flag == 3) {
+                          return (window.location.href =
+                            "https://web.rentamon.com/panels/?prop_id=1");
+                        } else if ($steps.checkOldUser.data.flag == 1) {
+                          return (window.location.href =
+                            "https://rentamon.com/panel/");
+                        }
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable3"] != null &&
+                typeof $steps["updateStateVariable3"] === "object" &&
+                typeof $steps["updateStateVariable3"].then === "function"
+              ) {
+                $steps["updateStateVariable3"] = await $steps[
+                  "updateStateVariable3"
+                ];
+              }
+
+              $steps["runCode3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("first_visit")) {
+                            const first_visit = getCookieValue("first_visit");
+                            if (first_visit != null) {
+                              return ($state.isTheFirstVisit = true);
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode3"] != null &&
+                typeof $steps["runCode3"] === "object" &&
+                typeof $steps["runCode3"].then === "function"
+              ) {
+                $steps["runCode3"] = await $steps["runCode3"];
+              }
+            }}
+          />
+
           <div
             data-plasmic-name={"headerMain"}
             data-plasmic-override={overrides.headerMain}
@@ -837,264 +1043,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             })()}
           />
 
-          <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
-            onMount={async () => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (async () => {
-                          const isPlasmicStudio =
-                            Object.values($ctx.Fragment.previewApiConfig)
-                              .length > 0;
-                          async function refreshToken() {
-                            if (isPlasmicStudio) return;
-                            try {
-                              const response = await fetch(
-                                "https://sso.rentamon.com/auth/refresh",
-                                {
-                                  method: "GET",
-                                  credentials: "include"
-                                }
-                              );
-                              console.log("Refreshed Token in 10 minutes");
-                              if (response.ok) {
-                                const data = await response.json();
-                                console.log(
-                                  "Token refreshed successfully:",
-                                  data
-                                );
-                              } else {
-                                console.error(
-                                  "Failed to refresh token:",
-                                  response.status
-                                );
-                              }
-                            } catch (error) {
-                              console.error("Error refreshing token:", error);
-                            }
-                          }
-                          setInterval(refreshToken, 300000);
-                          refreshToken();
-                          function getCookie(name) {
-                            const value = `; ${globalThis.document.cookie}`;
-                            const parts = value.split(`; ${name}=`);
-                            if (parts.length === 2)
-                              return parts.pop().split(";").shift();
-                          }
-                          const ussoRefreshAvailable =
-                            getCookie("usso_refresh_available") || false;
-                          console.log(
-                            "this is ussoRefresh: ",
-                            ussoRefreshAvailable
-                          );
-                          const ussoAccessAvailable =
-                            getCookie("usso_access_available") || false;
-                          console.log(
-                            "this is ussoAccessAvailable: ",
-                            ussoAccessAvailable
-                          );
-                          if (!ussoAccessAvailable && !isPlasmicStudio) {
-                            if (!ussoRefreshAvailable) {
-                              console.log("got here in redirect");
-                              return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/");
-                            } else {
-                              console.log("got here in refreshToken");
-                              return fetch(
-                                "https://sso.rentamon.com/auth/refresh",
-                                {
-                                  method: "GET",
-                                  credentials: "include"
-                                }
-                              )
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error("Failed to refresh token");
-                                  }
-                                  return response.json();
-                                })
-                                .then(data => {
-                                  console.log("Token refreshed:", data);
-                                  window.location.reload();
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/";
-                                });
-                            }
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-
-              $steps["checkOldUser"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://api-v2.rentamon.com/api/is_user_old"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["checkOldUser"] != null &&
-                typeof $steps["checkOldUser"] === "object" &&
-                typeof $steps["checkOldUser"].then === "function"
-              ) {
-                $steps["checkOldUser"] = await $steps["checkOldUser"];
-              }
-
-              $steps["updateStateVariable3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if ($steps.checkOldUser.data.flag == 3) {
-                          return (window.location.href =
-                            "https://web.rentamon.com/panels/?prop_id=1");
-                        } else if ($steps.checkOldUser.data.flag == 1) {
-                          return (window.location.href =
-                            "https://rentamon.com/panel/");
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable3"] != null &&
-                typeof $steps["updateStateVariable3"] === "object" &&
-                typeof $steps["updateStateVariable3"].then === "function"
-              ) {
-                $steps["updateStateVariable3"] = await $steps[
-                  "updateStateVariable3"
-                ];
-              }
-
-              $steps["invokeGlobalAction"] = false
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://gateway.rentamon.com/webhook/73e96117-8d0c-40c7-9a70-259bc1fd7077"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
-
-              $steps["runCode2"] = false
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          console.log("stage0");
-                          if (document.cookie.includes("is_new")) {
-                            console.log("stage1");
-                            return setTimeout(() => {
-                              console.log("stage2");
-                              $state.proPanelModal.open = true;
-                            }, 10000);
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode2"] != null &&
-                typeof $steps["runCode2"] === "object" &&
-                typeof $steps["runCode2"].then === "function"
-              ) {
-                $steps["runCode2"] = await $steps["runCode2"];
-              }
-
-              $steps["runCode3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function getCookieValue(cookieName) {
-                            const cookies = document.cookie
-                              .split(";")
-                              .map(cookie => cookie.trim());
-                            for (const cookie of cookies) {
-                              const [name, value] = cookie.split("=");
-                              if (name === cookieName) {
-                                return value;
-                              }
-                            }
-                            return null;
-                          }
-                          if (document.cookie.includes("first_visit")) {
-                            const first_visit = getCookieValue("first_visit");
-                            if (first_visit != null) {
-                              return ($state.isTheFirstVisit = true);
-                            }
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode3"] != null &&
-                typeof $steps["runCode3"] === "object" &&
-                typeof $steps["runCode3"].then === "function"
-              ) {
-                $steps["runCode3"] = await $steps["runCode3"];
-              }
-            }}
-          />
-
           <ApiRequest
             data-plasmic-name={"userAvailableFeature"}
             data-plasmic-override={overrides.userAvailableFeature}
@@ -1337,7 +1285,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__a3DGo
+                        sty.formField__xZoTx
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1349,7 +1297,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__oeOox
+                        sty.formField__piLLs
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1367,7 +1315,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___1NPFo
+                          sty.text__phW98
                         )}
                       >
                         {"Submit"}
@@ -1393,6 +1341,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "sideEffect",
     "headerMain",
     "header",
     "right",
@@ -1403,7 +1352,6 @@ const PlasmicDescendants = {
     "deskTablet",
     "sidebarLite",
     "calendar2",
-    "sideEffect",
     "userAvailableFeature",
     "modal",
     "favicon",
@@ -1416,6 +1364,7 @@ const PlasmicDescendants = {
     "button",
     "navigationRntFooter"
   ],
+  sideEffect: ["sideEffect"],
   headerMain: [
     "headerMain",
     "header",
@@ -1436,7 +1385,6 @@ const PlasmicDescendants = {
   deskTablet: ["deskTablet", "sidebarLite"],
   sidebarLite: ["sidebarLite"],
   calendar2: ["calendar2"],
-  sideEffect: ["sideEffect"],
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
   favicon: ["favicon"],
@@ -1454,6 +1402,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  sideEffect: typeof SideEffect;
   headerMain: "div";
   header: "div";
   right: "div";
@@ -1464,7 +1413,6 @@ type NodeDefaultElementType = {
   deskTablet: "div";
   sidebarLite: typeof SidebarLite;
   calendar2: typeof Calendar2;
-  sideEffect: typeof SideEffect;
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
   favicon: typeof Embed;
@@ -1538,6 +1486,7 @@ export const PlasmicLiteCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    sideEffect: makeNodeComponent("sideEffect"),
     headerMain: makeNodeComponent("headerMain"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
@@ -1548,7 +1497,6 @@ export const PlasmicLiteCalendar = Object.assign(
     deskTablet: makeNodeComponent("deskTablet"),
     sidebarLite: makeNodeComponent("sidebarLite"),
     calendar2: makeNodeComponent("calendar2"),
-    sideEffect: makeNodeComponent("sideEffect"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
     favicon: makeNodeComponent("favicon"),

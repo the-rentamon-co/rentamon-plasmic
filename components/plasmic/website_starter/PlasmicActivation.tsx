@@ -2467,6 +2467,34 @@ function PlasmicActivation__RenderFunc(props: {
                       data-plasmic-name={"mizbon"}
                       data-plasmic-override={overrides.mizbon}
                       className={classNames(projectcss.all, sty.mizbon)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u067e\u06cc\u0627\u0645 \u062f\u0647\u06cc\u062f",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(

@@ -165,7 +165,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1
       },
       {
         path: "hostType",
@@ -747,7 +747,11 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                   <div
                     data-plasmic-name={"next"}
                     data-plasmic-override={overrides.next}
-                    className={classNames(projectcss.all, sty.next)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.next,
+                      "clickable"
+                    )}
                     onClick={async event => {
                       const $steps = {};
 
@@ -799,7 +803,11 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                   <div
                     data-plasmic-name={"privious"}
                     data-plasmic-override={overrides.privious}
-                    className={classNames(projectcss.all, sty.privious)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.privious,
+                      "clickable"
+                    )}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1093,7 +1101,11 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     data-plasmic-name={"next2"}
                     data-plasmic-override={overrides.next2}
                     hasGap={true}
-                    className={classNames(projectcss.all, sty.next2)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.next2,
+                      "clickable"
+                    )}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1309,7 +1321,11 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                   <div
                     data-plasmic-name={"privious2"}
                     data-plasmic-override={overrides.privious2}
-                    className={classNames(projectcss.all, sty.privious2)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.privious2,
+                      "clickable"
+                    )}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1368,7 +1384,11 @@ function PlasmicPropertyCreate__RenderFunc(props: {
             className={classNames(projectcss.all, sty.back)}
           >
             <div
-              className={classNames(projectcss.all, sty.freeBox__ziFgt)}
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__ziFgt,
+                "clickable"
+              )}
               onClick={async event => {
                 const $steps = {};
 

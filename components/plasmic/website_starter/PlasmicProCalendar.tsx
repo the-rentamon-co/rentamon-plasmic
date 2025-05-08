@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -67,7 +68,6 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -95,6 +95,7 @@ export const PlasmicProCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProCalendar__OverridesType = {
   root?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
   header2?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
@@ -115,7 +116,6 @@ export type PlasmicProCalendar__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
   iframe?: Flex__<typeof Iframe>;
-  sideEffect?: Flex__<typeof SideEffect>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
@@ -433,6 +433,298 @@ function PlasmicProCalendar__RenderFunc(props: {
             sty.root
           )}
         >
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["checkOldUser"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://api-v2.rentamon.com/api/is_user_old"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkOldUser"] != null &&
+                typeof $steps["checkOldUser"] === "object" &&
+                typeof $steps["checkOldUser"].then === "function"
+              ) {
+                $steps["checkOldUser"] = await $steps["checkOldUser"];
+              }
+
+              $steps["updateStateVariable3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        if ($steps.checkOldUser.data.flag == 3) {
+                          return (window.location.href =
+                            "https://web.rentamon.com/panels/?prop_id=1");
+                        } else if ($steps.checkOldUser.data.flag == 2) {
+                          return (window.location.href =
+                            "https://rentamon.com//calendar/");
+                        }
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable3"] != null &&
+                typeof $steps["updateStateVariable3"] === "object" &&
+                typeof $steps["updateStateVariable3"].then === "function"
+              ) {
+                $steps["updateStateVariable3"] = await $steps[
+                  "updateStateVariable3"
+                ];
+              }
+
+              $steps["runCode2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "GET",
+                        "https://gateway.rentamon.com/webhook/check_reserve"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode2"] != null &&
+                typeof $steps["runCode2"] === "object" &&
+                typeof $steps["runCode2"].then === "function"
+              ) {
+                $steps["runCode2"] = await $steps["runCode2"];
+              }
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        if ($steps.runCode2.data.status != "access denied") {
+                          return ($state.feature.reservation = true);
+                        }
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
+
+              $steps["updateStateVariable2"] = false
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        if (!document.cookie.includes("alertModal")) {
+                          return ($state.alertModal.open = true);
+                        }
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable2"] != null &&
+                typeof $steps["updateStateVariable2"] === "object" &&
+                typeof $steps["updateStateVariable2"].then === "function"
+              ) {
+                $steps["updateStateVariable2"] = await $steps[
+                  "updateStateVariable2"
+                ];
+              }
+
+              $steps["getFirstTimeCookie"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("first_visit")) {
+                            console.log("in the visit");
+                            const first_visit = getCookieValue("first_visit");
+                            if (first_visit != null) {
+                              return ($state.isTheFirstVisit = true);
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["getFirstTimeCookie"] != null &&
+                typeof $steps["getFirstTimeCookie"] === "object" &&
+                typeof $steps["getFirstTimeCookie"].then === "function"
+              ) {
+                $steps["getFirstTimeCookie"] = await $steps[
+                  "getFirstTimeCookie"
+                ];
+              }
+            }}
+          />
+
           <div
             data-plasmic-name={"header2"}
             data-plasmic-override={overrides.header2}
@@ -1835,302 +2127,6 @@ function PlasmicProCalendar__RenderFunc(props: {
               />
             </div>
           ) : null}
-          <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
-            onMount={async () => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (async () => {
-                          const isPlasmicStudio =
-                            Object.values($ctx.Fragment.previewApiConfig)
-                              .length > 0;
-                          async function refreshToken() {
-                            if (isPlasmicStudio) return;
-                            try {
-                              const response = await fetch(
-                                "https://sso.rentamon.com/auth/refresh",
-                                {
-                                  method: "GET",
-                                  credentials: "include"
-                                }
-                              );
-                              console.log("Refreshed Token in 10 minutes");
-                              if (response.ok) {
-                                const data = await response.json();
-                                console.log(
-                                  "Token refreshed successfully:",
-                                  data
-                                );
-                              } else {
-                                console.error(
-                                  "Failed to refresh token:",
-                                  response.status
-                                );
-                              }
-                            } catch (error) {
-                              console.error("Error refreshing token:", error);
-                            }
-                          }
-                          setInterval(refreshToken, 300000);
-                          refreshToken();
-                          function getCookie(name) {
-                            const value = `; ${globalThis.document.cookie}`;
-                            const parts = value.split(`; ${name}=`);
-                            if (parts.length === 2)
-                              return parts.pop().split(";").shift();
-                          }
-                          const ussoRefreshAvailable =
-                            getCookie("usso_refresh_available") || false;
-                          console.log(
-                            "this is ussoRefresh: ",
-                            ussoRefreshAvailable
-                          );
-                          const ussoAccessAvailable =
-                            getCookie("usso_access_available") || false;
-                          console.log(
-                            "this is ussoAccessAvailable: ",
-                            ussoAccessAvailable
-                          );
-                          if (!ussoAccessAvailable && !isPlasmicStudio) {
-                            if (!ussoRefreshAvailable) {
-                              console.log("got here in redirect");
-                              return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/");
-                            } else {
-                              console.log("got here in refreshToken");
-                              return fetch(
-                                "https://sso.rentamon.com/auth/refresh",
-                                {
-                                  method: "GET",
-                                  credentials: "include"
-                                }
-                              )
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error("Failed to refresh token");
-                                  }
-                                  return response.json();
-                                })
-                                .then(data => {
-                                  console.log("Token refreshed:", data);
-                                  window.location.reload();
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/";
-                                });
-                            }
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-
-              $steps["runCode2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "GET",
-                        "https://gateway.rentamon.com/webhook/check_reserve"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode2"] != null &&
-                typeof $steps["runCode2"] === "object" &&
-                typeof $steps["runCode2"].then === "function"
-              ) {
-                $steps["runCode2"] = await $steps["runCode2"];
-              }
-
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if ($steps.runCode2.data.status != "access denied") {
-                          return ($state.feature.reservation = true);
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
-              }
-
-              $steps["checkOldUser"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://api-v2.rentamon.com/api/is_user_old"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["checkOldUser"] != null &&
-                typeof $steps["checkOldUser"] === "object" &&
-                typeof $steps["checkOldUser"].then === "function"
-              ) {
-                $steps["checkOldUser"] = await $steps["checkOldUser"];
-              }
-
-              $steps["updateStateVariable3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if ($steps.checkOldUser.data.flag == 3) {
-                          return (window.location.href =
-                            "https://web.rentamon.com/panels/?prop_id=1");
-                        } else if ($steps.checkOldUser.data.flag == 2) {
-                          return (window.location.href =
-                            "https://rentamon.com//calendar/");
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable3"] != null &&
-                typeof $steps["updateStateVariable3"] === "object" &&
-                typeof $steps["updateStateVariable3"].then === "function"
-              ) {
-                $steps["updateStateVariable3"] = await $steps[
-                  "updateStateVariable3"
-                ];
-              }
-
-              $steps["updateStateVariable2"] = false
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if (!document.cookie.includes("alertModal")) {
-                          return ($state.alertModal.open = true);
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable2"] != null &&
-                typeof $steps["updateStateVariable2"] === "object" &&
-                typeof $steps["updateStateVariable2"].then === "function"
-              ) {
-                $steps["updateStateVariable2"] = await $steps[
-                  "updateStateVariable2"
-                ];
-              }
-
-              $steps["getFirstTimeCookie"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function getCookieValue(cookieName) {
-                            const cookies = document.cookie
-                              .split(";")
-                              .map(cookie => cookie.trim());
-                            for (const cookie of cookies) {
-                              const [name, value] = cookie.split("=");
-                              if (name === cookieName) {
-                                return value;
-                              }
-                            }
-                            return null;
-                          }
-                          if (document.cookie.includes("first_visit")) {
-                            console.log("in the visit");
-                            const first_visit = getCookieValue("first_visit");
-                            if (first_visit != null) {
-                              $state.isTheFirstVisit = true;
-                            }
-                            return console.log(
-                              "first_visit:",
-                              $state.isTheFirstVisit
-                            );
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["getFirstTimeCookie"] != null &&
-                typeof $steps["getFirstTimeCookie"] === "object" &&
-                typeof $steps["getFirstTimeCookie"].then === "function"
-              ) {
-                $steps["getFirstTimeCookie"] = await $steps[
-                  "getFirstTimeCookie"
-                ];
-              }
-            }}
-          />
-
           <div className={classNames(projectcss.all, sty.freeBox__lcrtN)} />
 
           <ApiRequest
@@ -2301,6 +2297,7 @@ function PlasmicProCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "sideEffect",
     "header2",
     "sideBar2",
     "profile2",
@@ -2321,12 +2318,12 @@ const PlasmicDescendants = {
     "profile",
     "calendar2",
     "iframe",
-    "sideEffect",
     "userAvailableFeature",
     "modal",
     "navigationRntFooter",
     "favicon"
   ],
+  sideEffect: ["sideEffect"],
   header2: ["header2", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
@@ -2372,7 +2369,6 @@ const PlasmicDescendants = {
   profile: ["profile"],
   calendar2: ["calendar2"],
   iframe: ["iframe"],
-  sideEffect: ["sideEffect"],
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
   navigationRntFooter: ["navigationRntFooter"],
@@ -2383,6 +2379,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  sideEffect: typeof SideEffect;
   header2: "div";
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
@@ -2403,7 +2400,6 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
   iframe: typeof Iframe;
-  sideEffect: typeof SideEffect;
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
   navigationRntFooter: typeof NavigationRntFooter;
@@ -2470,6 +2466,7 @@ export const PlasmicProCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    sideEffect: makeNodeComponent("sideEffect"),
     header2: makeNodeComponent("header2"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
@@ -2490,7 +2487,6 @@ export const PlasmicProCalendar = Object.assign(
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
     iframe: makeNodeComponent("iframe"),
-    sideEffect: makeNodeComponent("sideEffect"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),

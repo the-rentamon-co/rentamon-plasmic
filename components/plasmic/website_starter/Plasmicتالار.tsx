@@ -350,13 +350,13 @@ function Plasmicتالار__RenderFunc(props: {
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__sDsaW, ``)}
-                      displayHeight={"70px"}
-                      displayMaxHeight={"70px"}
-                      displayMaxWidth={"70px"}
-                      displayMinHeight={"70px"}
-                      displayMinWidth={"70px"}
-                      displayWidth={"70px"}
+                      className={classNames(sty.img__sDsaW, "shine")}
+                      displayHeight={"100%"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"none"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"100%"}
                       loading={"lazy"}
                       src={(() => {
                         try {

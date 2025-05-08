@@ -64,6 +64,10 @@
     grid-column: 4;
   }
 }
+.sideEffect:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .header2 {
   display: flex;
   flex-direction: row;
@@ -897,10 +901,6 @@
   border-radius: 10px;
 }
 .img__okyVc > picture > img {
-  object-fit: cover;
-}
-.sideEffect:global(.__wab_instance) {
-  max-width: 100%;
   object-fit: cover;
 }
 .freeBox__lcrtN {
