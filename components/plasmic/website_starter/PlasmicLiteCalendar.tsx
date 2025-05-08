@@ -866,9 +866,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         sty.text__cQc5Q
                       )}
                     >
-                      {
-                        "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      }
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0627\u06cc\u062c\u0627\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                        : "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                     </div>
                   </div>
                 ) : null}
@@ -1285,7 +1285,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___2ANcv
+                        sty.formField__afVis
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1297,7 +1297,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___2RxVg
+                        sty.formField__fRNw
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1315,7 +1315,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__fwofZ
+                          sty.text__vbe52
                         )}
                       >
                         {"Submit"}

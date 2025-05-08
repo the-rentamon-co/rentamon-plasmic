@@ -1414,6 +1414,11 @@
     font-size: 13px;
   }
 }
+@media (max-width: 500px) {
+  .link__bZhwy {
+    font-weight: 700;
+  }
+}
 .pricing {
   display: flex;
   flex-direction: row;

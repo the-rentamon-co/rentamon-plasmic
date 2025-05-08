@@ -56,6 +56,7 @@
 @media (max-width: 350px) {
   .navigationBar:global(.__wab_instance) {
     height: 72px;
+    z-index: 1000000;
     flex-shrink: 0;
   }
 }
@@ -137,6 +138,11 @@
 @media (max-width: 500px) {
   .freeBox__qrXoX {
     display: flex;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__qrXoX {
+    z-index: 1;
   }
 }
 .freeBox___1StDi {

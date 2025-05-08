@@ -273,7 +273,10 @@ function PlasmicAboutUs__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.دربارهما
+                    sty.دربارهما,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "fadeinf"
+                      : undefined
                   )}
                 >
                   {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
@@ -291,7 +294,12 @@ function PlasmicAboutUs__RenderFunc(props: {
                 >
                   <PlasmicImg__
                     alt={""}
-                    className={classNames(sty.img__gyl5M)}
+                    className={classNames(
+                      sty.img__gyl5M,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "fadeinf"
+                        : undefined
+                    )}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -340,7 +348,13 @@ function PlasmicAboutUs__RenderFunc(props: {
             <div
               data-plasmic-name={"team"}
               data-plasmic-override={overrides.team}
-              className={classNames(projectcss.all, sty.team, "fadein")}
+              className={classNames(
+                projectcss.all,
+                sty.team,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "fadein"
+                  : "fadein"
+              )}
             >
               <div
                 data-plasmic-name={"sectionTitle"}
@@ -1439,7 +1453,12 @@ function PlasmicAboutUs__RenderFunc(props: {
                 >
                   <PlasmicImg__
                     alt={""}
-                    className={classNames(sty.img__eS5B6, "fadein")}
+                    className={classNames(
+                      sty.img__eS5B6,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "fadein"
+                        : "fadein"
+                    )}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}

@@ -464,7 +464,13 @@ function Plasmicکیفپول__RenderFunc(props: {
             <div
               data-plasmic-name={"report"}
               data-plasmic-override={overrides.report}
-              className={classNames(projectcss.all, sty.report, "fadein")}
+              className={classNames(
+                projectcss.all,
+                sty.report,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "fadein"
+                  : "fadein"
+              )}
               onClick={async event => {
                 const $steps = {};
 
@@ -499,7 +505,9 @@ function Plasmicکیفپول__RenderFunc(props: {
                   projectcss.all,
                   projectcss.__wab_text,
                   sty.text__hiIkz,
-                  hasVariant(globalVariants, "screen", "mobile")
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "clickable"
+                    : hasVariant(globalVariants, "screen", "mobile")
                     ? "clickable"
                     : "clickable"
                 )}
@@ -1519,9 +1527,70 @@ function Plasmicکیفپول__RenderFunc(props: {
                   sty.text__nR86T
                 )}
               >
-                {
+                {hasVariant(globalVariants, "screen", "mobile") ? (
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#444444" }}
+                    >
+                      {""}
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__bZhwy
+                        )}
+                        component={Link}
+                        href={"tel: 02191096227"}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 400, color: "#444444" }}
+                            >
+                              {
+                                "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\u00a0"
+                              }
+                            </span>
+                          </React.Fragment>
+                        ) : (
+                          "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\u00a0"
+                        )}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__ibgn6
+                        )}
+                        component={Link}
+                        href={"tel: 02191096227"}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? ""
+                          : "\r"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                ) : (
                   "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\u00a0\n\r"
-                }
+                )}
               </div>
             </div>
           </div>

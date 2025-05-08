@@ -38,6 +38,7 @@
 @media (max-width: 500px) {
   .root {
     padding-top: 0px;
+    padding-right: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -93,8 +94,7 @@
 }
 @media (max-width: 500px) {
   .mainContents {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding: 0px;
   }
 }
 .intro1st {
@@ -2469,6 +2469,11 @@
   opacity: 0;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .html {
+    display: none;
+  }
 }
 .clarity2:global(.__wab_instance) {
   max-width: 100%;
