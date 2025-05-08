@@ -94,7 +94,6 @@ export type PlasmicContacts__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   clarity?: Flex__<typeof Embed>;
   apiRequest?: Flex__<typeof ApiRequest>;
-  img?: Flex__<typeof PlasmicImg__>;
   frame?: Flex__<"div">;
   contactsRow?: Flex__<"div">;
   names?: Flex__<"div">;
@@ -370,33 +369,7 @@ function PlasmicContacts__RenderFunc(props: {
             data-plasmic-override={overrides.apiRequest}
             className={classNames("__wab_instance", sty.apiRequest)}
             errorDisplay={null}
-            loadingDisplay={
-              <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "34px"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                    ? "30px"
-                    : "40px"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
-                  fullWidth: 500,
-                  fullHeight: 500,
-                  aspectRatio: undefined
-                }}
-              />
-            }
+            loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
@@ -813,7 +786,6 @@ const PlasmicDescendants = {
     "profile",
     "clarity",
     "apiRequest",
-    "img",
     "frame",
     "contactsRow",
     "names",
@@ -830,7 +802,6 @@ const PlasmicDescendants = {
   clarity: ["clarity"],
   apiRequest: [
     "apiRequest",
-    "img",
     "frame",
     "contactsRow",
     "names",
@@ -838,7 +809,6 @@ const PlasmicDescendants = {
     "phones",
     "guestPhone"
   ],
-  img: ["img"],
   frame: ["frame", "contactsRow", "names", "guestName", "phones", "guestPhone"],
   contactsRow: ["contactsRow", "names", "guestName", "phones", "guestPhone"],
   names: ["names", "guestName"],
@@ -859,7 +829,6 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   clarity: typeof Embed;
   apiRequest: typeof ApiRequest;
-  img: typeof PlasmicImg__;
   frame: "div";
   contactsRow: "div";
   names: "div";
@@ -936,7 +905,6 @@ export const PlasmicContacts = Object.assign(
     profile: makeNodeComponent("profile"),
     clarity: makeNodeComponent("clarity"),
     apiRequest: makeNodeComponent("apiRequest"),
-    img: makeNodeComponent("img"),
     frame: makeNodeComponent("frame"),
     contactsRow: makeNodeComponent("contactsRow"),
     names: makeNodeComponent("names"),

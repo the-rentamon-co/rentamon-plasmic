@@ -422,6 +422,7 @@
     max-height: 180px;
     min-height: 180px;
     cursor: pointer;
+    background: #fcfcfc;
   }
 }
 @media (max-width: 350px) {
@@ -455,11 +456,10 @@
   .freeBox__kzgsv {
     align-items: center;
     justify-content: center;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
     background: none;
     max-height: 66%;
     min-height: 66%;
+    border-bottom-width: 0px;
   }
 }
 .img__yFlfQ {
@@ -481,10 +481,11 @@
 @media (max-width: 500px) {
   .img__yFlfQ {
     width: 100%;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
     object-fit: cover;
     height: 100%;
+    position: relative;
+    left: auto;
+    top: auto;
     min-width: 0;
     min-height: 0;
   }
@@ -567,7 +568,7 @@
     width: 100%;
     height: 180px;
     max-width: none;
-    background: var(--token-8R7jjC_-F9FF);
+    background: #fcfcfc;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
     flex-direction: column;
     min-width: 0;
@@ -627,8 +628,6 @@
     border-top-right-radius: 30px;
     min-height: 66%;
     max-height: 66%;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
     background: none;
     flex-direction: column;
     justify-content: center;

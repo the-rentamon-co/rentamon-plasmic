@@ -388,7 +388,13 @@ function PlasmicProperty__RenderFunc(props: {
                 }
               })()}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__t8Vqu)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__t8Vqu,
+                  "fadein"
+                )}
+              >
                 <div
                   data-plasmic-name={"coverImage"}
                   data-plasmic-override={overrides.coverImage}
@@ -499,7 +505,11 @@ function PlasmicProperty__RenderFunc(props: {
               data-plasmic-name={"monthlyIncome2"}
               data-plasmic-override={overrides.monthlyIncome2}
               hasGap={true}
-              className={classNames(projectcss.all, sty.monthlyIncome2)}
+              className={classNames(
+                projectcss.all,
+                sty.monthlyIncome2,
+                "fadein"
+              )}
             >
               <Stack__
                 as={"div"}
@@ -517,8 +527,8 @@ function PlasmicProperty__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 "
-                      : "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                      ? "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      : "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__zKZqp)}>
@@ -777,7 +787,13 @@ function PlasmicProperty__RenderFunc(props: {
               data-plasmic-name={"sourcesOfReserves2"}
               data-plasmic-override={overrides.sourcesOfReserves2}
               hasGap={true}
-              className={classNames(projectcss.all, sty.sourcesOfReserves2)}
+              className={classNames(
+                projectcss.all,
+                sty.sourcesOfReserves2,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "fadein"
+                  : undefined
+              )}
             >
               <Stack__
                 as={"div"}
@@ -1030,7 +1046,13 @@ function PlasmicProperty__RenderFunc(props: {
               data-plasmic-name={"occupancyRate2"}
               data-plasmic-override={overrides.occupancyRate2}
               hasGap={true}
-              className={classNames(projectcss.all, sty.occupancyRate2)}
+              className={classNames(
+                projectcss.all,
+                sty.occupancyRate2,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "fadein"
+                  : undefined
+              )}
             >
               <div
                 data-plasmic-name={"occupancyRate"}
@@ -1045,7 +1067,7 @@ function PlasmicProperty__RenderFunc(props: {
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u062f\u0631 \u0647\u0631 \u0645\u0627\u0647"
+                    ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
                     : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
                 </div>
                 <ApiRequest
@@ -1225,7 +1247,13 @@ function PlasmicProperty__RenderFunc(props: {
             <div
               data-plasmic-name={"avgDailyRate2"}
               data-plasmic-override={overrides.avgDailyRate2}
-              className={classNames(projectcss.all, sty.avgDailyRate2)}
+              className={classNames(
+                projectcss.all,
+                sty.avgDailyRate2,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "fadein"
+                  : undefined
+              )}
             >
               <Stack__
                 as={"div"}
