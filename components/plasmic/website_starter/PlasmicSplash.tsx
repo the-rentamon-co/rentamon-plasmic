@@ -134,6 +134,24 @@ function PlasmicSplash__RenderFunc(props: {
 
   const $globalActions = useGlobalActions?.();
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "src",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
   });
@@ -201,12 +219,41 @@ function PlasmicSplash__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
+              $steps["updateSrc"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["src"]
+                      },
+                      operation: 0,
+                      value: $ctx.query.src
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateSrc"] != null &&
+                typeof $steps["updateSrc"] === "object" &&
+                typeof $steps["updateSrc"].then === "function"
+              ) {
+                $steps["updateSrc"] = await $steps["updateSrc"];
+              }
+
               $steps["runCode3"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          let a = $ctx.query.src;
+                          let a = $state.src;
                           console.log(a);
                           function setCookie(name, value, hours) {
                             let expires = "";
@@ -220,7 +267,7 @@ function PlasmicSplash__RenderFunc(props: {
                             document.cookie =
                               name + "=" + (value || "") + expires + "; path=/";
                           }
-                          setCookie("source", $ctx.query.src, 12);
+                          setCookie("source", $state.src, 12);
                           return console.log("$ctx.query.src", $ctx.query.src);
                         })();
                       }
