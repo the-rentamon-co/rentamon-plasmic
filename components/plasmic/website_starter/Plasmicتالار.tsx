@@ -346,11 +346,11 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"image"}
                     data-plasmic-override={overrides.image}
-                    className={classNames(projectcss.all, sty.image)}
+                    className={classNames(projectcss.all, sty.image, "shine")}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__sDsaW)}
+                      className={classNames(sty.img__sDsaW, ``)}
                       displayHeight={"70px"}
                       displayMaxHeight={"70px"}
                       displayMaxWidth={"70px"}

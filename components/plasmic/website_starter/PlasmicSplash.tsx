@@ -303,6 +303,41 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["runCode2"] = await $steps["runCode2"];
               }
 
+              $steps["runCode3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function setCookie(name, value, hours) {
+                            let expires = "";
+                            if (hours) {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + hours * 60 * 60 * 1000
+                              );
+                              expires = "; expires=" + date.toUTCString();
+                            }
+                            document.cookie =
+                              name + "=" + (value || "") + expires + "; path=/";
+                          }
+                          setCookie("source", $ctx.query.src, 12);
+                          return console.log("$ctx.query.src", $ctx.query.src);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode3"] != null &&
+                typeof $steps["runCode3"] === "object" &&
+                typeof $steps["runCode3"].then === "function"
+              ) {
+                $steps["runCode3"] = await $steps["runCode3"];
+              }
+
               $steps["invokeGlobalAction"] = true
                 ? (() => {
                     const actionArgs = {
@@ -357,41 +392,6 @@ function PlasmicSplash__RenderFunc(props: {
                 typeof $steps["runCode"].then === "function"
               ) {
                 $steps["runCode"] = await $steps["runCode"];
-              }
-
-              $steps["runCode3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function setCookie(name, value, hours) {
-                            let expires = "";
-                            if (hours) {
-                              const date = new Date();
-                              date.setTime(
-                                date.getTime() + hours * 60 * 60 * 1000
-                              );
-                              expires = "; expires=" + date.toUTCString();
-                            }
-                            document.cookie =
-                              name + "=" + (value || "") + expires + "; path=/";
-                          }
-                          setCookie("source", $ctx.query.src, 12);
-                          return console.log("$ctx.query.src", $ctx.query.src);
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode3"] != null &&
-                typeof $steps["runCode3"] === "object" &&
-                typeof $steps["runCode3"].then === "function"
-              ) {
-                $steps["runCode3"] = await $steps["runCode3"];
               }
             }}
           />
