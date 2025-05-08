@@ -206,6 +206,8 @@ function PlasmicSplash__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
+                          let a = $ctx.query.src;
+                          console.log(a);
                           function setCookie(name, value, hours) {
                             let expires = "";
                             if (hours) {
@@ -361,7 +363,7 @@ function PlasmicSplash__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
