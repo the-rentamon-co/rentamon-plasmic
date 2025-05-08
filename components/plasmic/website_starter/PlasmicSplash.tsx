@@ -227,7 +227,7 @@ function PlasmicSplash__RenderFunc(props: {
                         variablePath: ["src"]
                       },
                       operation: 0,
-                      value: $ctx.query.src
+                      value: ($state.src = $ctx.query.src)
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {
                       if (!variable) {

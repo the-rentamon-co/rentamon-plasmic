@@ -194,7 +194,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             data-plasmic-name={"menu"}
             data-plasmic-override={overrides.menu}
             hasGap={true}
-            className={classNames(projectcss.all, sty.menu)}
+            className={classNames(projectcss.all, sty.menu, "clickable")}
             onClick={async event => {
               const $steps = {};
 
@@ -340,7 +340,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
           <div
             data-plasmic-name={"cal"}
             data-plasmic-override={overrides.cal}
-            className={classNames(projectcss.all, sty.cal)}
+            className={classNames(projectcss.all, sty.cal, "clickable")}
             onClick={async event => {
               const $steps = {};
 
@@ -575,7 +575,11 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             data-plasmic-name={"res"}
             data-plasmic-override={overrides.res}
             hasGap={true}
-            className={classNames(projectcss.all, sty.res, "side_bar_border")}
+            className={classNames(
+              projectcss.all,
+              sty.res,
+              "side_bar_border clickable"
+            )}
             onClick={async event => {
               const $steps = {};
 
@@ -717,7 +721,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             data-plasmic-name={"props"}
             data-plasmic-override={overrides.props}
             hasGap={true}
-            className={classNames(projectcss.all, sty.props)}
+            className={classNames(projectcss.all, sty.props, "clickable")}
             onClick={async event => {
               const $steps = {};
 

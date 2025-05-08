@@ -722,6 +722,41 @@ function PlasmicProCalendar__RenderFunc(props: {
                   "getFirstTimeCookie"
                 ];
               }
+
+              $steps["runCode3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          return (function redirectIfAppSubdomain() {
+                            const {
+                              protocol,
+                              hostname,
+                              pathname,
+                              search,
+                              hash
+                            } = window.location;
+                            if (hostname === "app.rentamon.com") {
+                              const targetHost = "rentamon.com";
+                              const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
+                              window.location.replace(newUrl);
+                            }
+                          })();
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode3"] != null &&
+                typeof $steps["runCode3"] === "object" &&
+                typeof $steps["runCode3"].then === "function"
+              ) {
+                $steps["runCode3"] = await $steps["runCode3"];
+              }
             }}
           />
 

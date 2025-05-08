@@ -1068,7 +1068,30 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["invokeGlobalAction2"] = true
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return setTimeout(() => {
+                                        window.location.href =
+                                          "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/";
+                                      }, 4000);
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
+
+                            $steps["invokeGlobalAction2"] = false
                               ? (() => {
                                   const actionArgs = {
                                     args: [
@@ -1108,7 +1131,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               ];
                             }
 
-                            $steps["invokeGlobalAction"] = true
+                            $steps["invokeGlobalAction"] = false
                               ? (() => {
                                   const actionArgs = {
                                     args: [
@@ -1148,7 +1171,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               ];
                             }
 
-                            $steps["invokeGlobalAction3"] = true
+                            $steps["invokeGlobalAction3"] = false
                               ? (() => {
                                   const actionArgs = { args: [] };
                                   return $globalActions["Fragment.wait"]?.apply(
@@ -1169,30 +1192,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               ];
                             }
 
-                            $steps["runCode"] = false
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return setTimeout(() => {
-                                        window.location.href =
-                                          "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/";
-                                      }, 4000);
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
-                            ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-
-                            $steps["updateModalOpen"] = true
+                            $steps["updateModalOpen"] = false
                               ? (() => {
                                   const actionArgs = {
                                     variable: {

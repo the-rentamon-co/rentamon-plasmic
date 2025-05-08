@@ -64,6 +64,7 @@
   cursor: pointer;
   flex-direction: column;
   min-width: 0;
+  border-radius: 15px;
   padding: 0px;
 }
 .menu > :global(.__wab_flex-container) {
@@ -369,6 +370,7 @@
   align-items: center;
   cursor: pointer;
   min-width: 0;
+  border-radius: 15px;
   padding: 0px;
 }
 @media (max-width: 350px) {
@@ -560,7 +562,7 @@
   max-width: 100%;
   cursor: pointer;
   min-width: 0;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 0px;
 }
 .res > :global(.__wab_flex-container) {
@@ -792,6 +794,7 @@
   max-width: 100%;
   cursor: pointer;
   min-width: 0;
+  border-radius: 15px;
   padding: 0px;
 }
 .props > :global(.__wab_flex-container) {

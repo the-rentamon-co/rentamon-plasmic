@@ -1107,6 +1107,11 @@
   max-width: 100%;
   object-fit: cover;
   width: 536px;
+  position: relative;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  right: auto;
   border-radius: 30px;
 }
 .fetchModal__modal :global(.ant-modal-content) {
@@ -1173,7 +1178,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 2px 8px;
 }
 @media (max-width: 500px) {
   .freeBox__zeq8A {
@@ -1188,7 +1193,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 2px 8px;
 }
 .freeBox__rfsi > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -1214,7 +1219,7 @@
   height: auto;
   max-width: 100%;
   padding-right: 0px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .freeBox__x9Ue1 {
   display: flex;
