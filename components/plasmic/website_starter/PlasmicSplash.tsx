@@ -209,15 +209,15 @@ function PlasmicSplash__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          if ($steps.checkOldUser.data.flag == 3) {
+                          if ($steps.invokeGlobalAction.data.flag == 3) {
                             window.location.href =
                               "https://web.rentamon.com/panels/?prop_id=1";
                           }
-                          if ($steps.checkOldUser.data.flag == 2) {
+                          if ($steps.invokeGlobalAction.data.flag == 2) {
                             window.location.href =
                               "https://rentamon.com//calendar/";
                           }
-                          if ($steps.checkOldUser.data.flag == 1) {
+                          if ($steps.invokeGlobalAction.data.flag == 1) {
                             return (window.location.href =
                               "https://rentamon.com//panel/");
                           }
