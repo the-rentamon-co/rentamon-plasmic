@@ -1367,23 +1367,27 @@ function PlasmicProperty__RenderFunc(props: {
                     </div>
                   }
                   loadingDisplay={
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__puJuO)}
-                      displayHeight={"36px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"36px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
-                        fullWidth: 500,
-                        fullHeight: 500,
-                        aspectRatio: undefined
-                      }}
-                    />
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__fHyra)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__puJuO)}
+                        displayHeight={"36px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"36px"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                          fullWidth: 500,
+                          fullHeight: 500,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
                   }
                   method={"POST"}
                   onError={async (...eventArgs: any) => {

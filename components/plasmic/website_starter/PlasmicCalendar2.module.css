@@ -3230,7 +3230,39 @@
     font-size: 16px;
   }
 }
+.freeBox__iQrxp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__iQrxp {
+    padding: 0px;
+  }
+}
 .text__acyke {
   text-align: center;
   font-size: 20px;
+}
+.svg__yj0Tz {
+  object-fit: cover;
+  max-width: 100%;
+  color: #7e7e7e;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transition-property: all;
+  transition-duration: 1s;
+  cursor: pointer;
+  height: 1em;
+  flex-shrink: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
 }

@@ -9110,16 +9110,60 @@ function PlasmicCalendar2__RenderFunc(props: {
         }}
         open={generateStateValueProp($state, ["addingGuestInfo", "open"])}
         title={
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__acyke
-            )}
-          >
-            {
-              "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
-            }
+          <div className={classNames(projectcss.all, sty.freeBox__iQrxp)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__acyke
+              )}
+            >
+              {
+                "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
+              }
+            </div>
+            <Icon23Icon
+              className={classNames(projectcss.all, sty.svg__yj0Tz)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateAddingGuestInfoOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["addingGuestInfo", "open"]
+                        }
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateAddingGuestInfoOpen"] != null &&
+                  typeof $steps["updateAddingGuestInfoOpen"] === "object" &&
+                  typeof $steps["updateAddingGuestInfoOpen"].then === "function"
+                ) {
+                  $steps["updateAddingGuestInfoOpen"] = await $steps[
+                    "updateAddingGuestInfoOpen"
+                  ];
+                }
+              }}
+              role={"img"}
+            />
           </div>
         }
         trigger={null}
