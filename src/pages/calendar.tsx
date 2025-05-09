@@ -72,6 +72,7 @@ function LiteCalendar() {
         <PlasmicLiteCalendar />
       </PageParamsProvider__>
     </GlobalContextsProvider>
+    </>
   );
 }
 
