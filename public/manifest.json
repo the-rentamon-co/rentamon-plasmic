@@ -22,20 +22,6 @@
     "سریع",
     "کاربرپسند"
   ],
-  "shortcuts": [
-    {
-      "name": "صفحه درباره ما",
-      "short_name": "درباره",
-      "description": "مشاهده اطلاعات درباره برنامه",
-      "url": "/about",
-      "icons": [
-        {
-          "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png",
-          "sizes": "192x192"
-        }
-      ]
-    }
-  ],
   "widgets": [
     {
       "name": "ویجت رنتامون",
