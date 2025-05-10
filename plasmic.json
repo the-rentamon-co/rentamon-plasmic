@@ -1631,6 +1631,33 @@
           "cssFilePath": "plasmic/website_starter/PlasmicNavbarRntHeader.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "_mkSLPxHmSdr",
+          "name": "ToastMessageRnt",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicToastMessageRnt.tsx",
+          "importSpec": {
+            "modulePath": "ToastMessageRnt.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicToastMessageRnt.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "oDtZS8iwRHFd",
+          "name": "UserInputTest",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicUserInputTest.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/user-input-test.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicUserInputTest.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/user-input-test"
         }
       ],
       "icons": [

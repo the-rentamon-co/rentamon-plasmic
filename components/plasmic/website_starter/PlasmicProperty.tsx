@@ -328,7 +328,9 @@ function PlasmicProperty__RenderFunc(props: {
                     sty.text___35Imh
                   )}
                 >
-                  {"Error fetching data"}
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a\n"
+                    : "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a\n"}
                 </div>
               }
               loadingDisplay={

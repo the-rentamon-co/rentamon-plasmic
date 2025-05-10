@@ -63,6 +63,7 @@ import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
@@ -102,10 +103,7 @@ export type PlasmicReservations__OverridesType = {
   sidebarLite?: Flex__<typeof SidebarLite>;
   profile?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
-  alertIcon?: Flex__<"div">;
-  alertText?: Flex__<"div">;
-  alertButton?: Flex__<"div">;
-  button?: Flex__<"div">;
+  toastMessageRnt?: Flex__<typeof ToastMessageRnt>;
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
   guestName?: Flex__<"div">;
@@ -806,161 +804,69 @@ function PlasmicReservations__RenderFunc(props: {
             }}
             url={"https://gateway.rentamon.com/webhook/user_access"}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox___7ZJdP,
-                (() => {
-                  try {
-                    return (() => {
-                      console.log($state.userType);
-                      if ($state.apiRequest.data.status !== "ok") {
-                        if ($state.userType == "2") {
+            {(() => {
+              try {
+                return (
+                  !$state.isTheFirstVisit &&
+                  $state.apiRequest.data.status != "ok"
+                );
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox___7ZJdP,
+                  (() => {
+                    try {
+                      return (() => {
+                        console.log($state.userType);
+                        if ($state.apiRequest.data.status !== "ok") {
+                          if ($state.userType == "2") {
+                            return "";
+                          }
+                          return "display_block";
+                        } else {
                           return "";
                         }
-                        return "display_block";
-                      } else {
-                        return "";
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
                       }
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
+                      throw e;
                     }
-                    throw e;
+                  })()
+                )}
+              >
+                <ToastMessageRnt
+                  data-plasmic-name={"toastMessageRnt"}
+                  data-plasmic-override={overrides.toastMessageRnt}
+                  buttonLink={`/settings`}
+                  buttonText={"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                  className={classNames("__wab_instance", sty.toastMessageRnt)}
+                  logo={{
+                    src: "/plasmic/website_starter/images/image72.svg",
+                    fullWidth: 42,
+                    fullHeight: 42,
+                    aspectRatio: 1
+                  }}
+                  message={
+                    "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0633\u0627\u06cc\u062a \u0647\u0627\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
                   }
-                })()
-              )}
-            >
-              {(() => {
-                try {
-                  return !$state.isTheFirstVisit;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    sty.freeBox___3DmSp,
-                    "fadein"
-                  )}
-                >
-                  <div
-                    data-plasmic-name={"alertIcon"}
-                    data-plasmic-override={overrides.alertIcon}
-                    className={classNames(projectcss.all, sty.alertIcon)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__vgQvQ)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "26px"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                          ? "28px"
-                          : "43px"
-                      }
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "26px"
-                          : "auto"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image72.svg",
-                        fullWidth: 42,
-                        fullHeight: 42,
-                        aspectRatio: 1
-                      }}
-                    />
-                  </div>
-                  <div
-                    data-plasmic-name={"alertText"}
-                    data-plasmic-override={overrides.alertText}
-                    className={classNames(projectcss.all, sty.alertText)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__zlYkA
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
-                        : "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"}
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"alertButton"}
-                    data-plasmic-override={overrides.alertButton}
-                    className={classNames(projectcss.all, sty.alertButton)}
-                  >
-                    <div
-                      data-plasmic-name={"button"}
-                      data-plasmic-override={overrides.button}
-                      className={classNames(
-                        projectcss.all,
-                        sty.button,
-                        "clickable"
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["goToSetting"] = true
-                          ? (() => {
-                              const actionArgs = { destination: `/settings` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["goToSetting"] != null &&
-                          typeof $steps["goToSetting"] === "object" &&
-                          typeof $steps["goToSetting"].then === "function"
-                        ) {
-                          $steps["goToSetting"] = await $steps["goToSetting"];
-                        }
-                      }}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__kxibR
-                        )}
-                      >
-                        {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : null}
-            </div>
+                />
+              </div>
+            ) : null}
           </ApiRequest>
           <Stack__
             as={"div"}
@@ -5090,10 +4996,7 @@ const PlasmicDescendants = {
     "sidebarLite",
     "profile",
     "apiRequest",
-    "alertIcon",
-    "alertText",
-    "alertButton",
-    "button",
+    "toastMessageRnt",
     "container",
     "titles",
     "guestName",
@@ -5157,11 +5060,8 @@ const PlasmicDescendants = {
   sideBar2: ["sideBar2"],
   sidebarLite: ["sidebarLite"],
   profile: ["profile"],
-  apiRequest: ["apiRequest", "alertIcon", "alertText", "alertButton", "button"],
-  alertIcon: ["alertIcon"],
-  alertText: ["alertText"],
-  alertButton: ["alertButton", "button"],
-  button: ["button"],
+  apiRequest: ["apiRequest", "toastMessageRnt"],
+  toastMessageRnt: ["toastMessageRnt"],
   container: [
     "container",
     "titles",
@@ -5362,10 +5262,7 @@ type NodeDefaultElementType = {
   sidebarLite: typeof SidebarLite;
   profile: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
-  alertIcon: "div";
-  alertText: "div";
-  alertButton: "div";
-  button: "div";
+  toastMessageRnt: typeof ToastMessageRnt;
   container: "div";
   titles: "div";
   guestName: "div";
@@ -5491,10 +5388,7 @@ export const PlasmicReservations = Object.assign(
     sidebarLite: makeNodeComponent("sidebarLite"),
     profile: makeNodeComponent("profile"),
     apiRequest: makeNodeComponent("apiRequest"),
-    alertIcon: makeNodeComponent("alertIcon"),
-    alertText: makeNodeComponent("alertText"),
-    alertButton: makeNodeComponent("alertButton"),
-    button: makeNodeComponent("button"),
+    toastMessageRnt: makeNodeComponent("toastMessageRnt"),
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
     guestName: makeNodeComponent("guestName"),

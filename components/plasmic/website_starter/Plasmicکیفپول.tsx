@@ -333,7 +333,15 @@ function Plasmicکیفپول__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames(
+              projectcss.all,
+              sty.header,
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? "fadeinf"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "fadeinf"
+                : "fadeinf"
+            )}
           >
             <div className={classNames(projectcss.all, sty.freeBox__aD3Fh)}>
               <SideBar2
@@ -358,7 +366,15 @@ function Plasmicکیفپول__RenderFunc(props: {
                 })()}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__vz8Jg)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__vz8Jg,
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? ``
+                  : undefined
+              )}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -420,7 +436,13 @@ function Plasmicکیفپول__RenderFunc(props: {
             <div
               data-plasmic-name={"balance"}
               data-plasmic-override={overrides.balance}
-              className={classNames(projectcss.all, sty.balance)}
+              className={classNames(
+                projectcss.all,
+                sty.balance,
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "fadein"
+                  : undefined
+              )}
             >
               <div className={classNames(projectcss.all, sty.freeBox__lvxu)}>
                 <div

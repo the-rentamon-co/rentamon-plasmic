@@ -61,6 +61,7 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
@@ -95,6 +96,8 @@ export type PlasmicChannelManager__OverridesType = {
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile?: Flex__<typeof ApiRequest>;
+  apiRequest2?: Flex__<typeof ApiRequest>;
+  toastMessageRnt?: Flex__<typeof ToastMessageRnt>;
   apiRequest?: Flex__<typeof ApiRequest>;
   tableHeader?: Flex__<"div">;
   statusModal?: Flex__<typeof AntdModal>;
@@ -215,6 +218,30 @@ function PlasmicChannelManager__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "apiRequest2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
       }
     ],
     [$props, $ctx, $refs]
@@ -345,6 +372,92 @@ function PlasmicChannelManager__RenderFunc(props: {
               />
             </div>
           </div>
+          <ApiRequest
+            data-plasmic-name={"apiRequest2"}
+            data-plasmic-override={overrides.apiRequest2}
+            className={classNames("__wab_instance", sty.apiRequest2)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ixBoV
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__uuJ1
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest2", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest2",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest2", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            params={{ feature_name: "auto_sync" }}
+            ref={ref => {
+              $refs["apiRequest2"] = ref;
+            }}
+            url={"https://gateway.rentamon.com/webhook/user_access"}
+          >
+            {(() => {
+              try {
+                return $state.apiRequest.data.status != "ok";
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox__dOM)}>
+                <ToastMessageRnt
+                  data-plasmic-name={"toastMessageRnt"}
+                  data-plasmic-override={overrides.toastMessageRnt}
+                  buttonLink={`/settings`}
+                  buttonText={
+                    "\u062a\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
+                  }
+                  className={classNames("__wab_instance", sty.toastMessageRnt)}
+                  logo={{
+                    src: "/plasmic/website_starter/images/image72.svg",
+                    fullWidth: 42,
+                    fullHeight: 42,
+                    aspectRatio: 1
+                  }}
+                  message={
+                    "\u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646 \u062a\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u062c\u0627\u06cc \u062a\u0648 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648 \u0647\u0627 \u0628\u0627\u0634\u0647"
+                  }
+                />
+              </div>
+            ) : null}
+          </ApiRequest>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
@@ -2750,6 +2863,8 @@ const PlasmicDescendants = {
     "header",
     "sideBar2",
     "profile",
+    "apiRequest2",
+    "toastMessageRnt",
     "apiRequest",
     "tableHeader",
     "statusModal",
@@ -2770,6 +2885,8 @@ const PlasmicDescendants = {
   header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
   profile: ["profile"],
+  apiRequest2: ["apiRequest2", "toastMessageRnt"],
+  toastMessageRnt: ["toastMessageRnt"],
   apiRequest: [
     "apiRequest",
     "tableHeader",
@@ -2829,6 +2946,8 @@ type NodeDefaultElementType = {
   header: "div";
   sideBar2: typeof SideBar2;
   profile: typeof ApiRequest;
+  apiRequest2: typeof ApiRequest;
+  toastMessageRnt: typeof ToastMessageRnt;
   apiRequest: typeof ApiRequest;
   tableHeader: "div";
   statusModal: typeof AntdModal;
@@ -2910,6 +3029,8 @@ export const PlasmicChannelManager = Object.assign(
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile: makeNodeComponent("profile"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
+    toastMessageRnt: makeNodeComponent("toastMessageRnt"),
     apiRequest: makeNodeComponent("apiRequest"),
     tableHeader: makeNodeComponent("tableHeader"),
     statusModal: makeNodeComponent("statusModal"),
