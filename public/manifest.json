@@ -6,7 +6,7 @@
   "description": "مدیریت انلاین اقامتگاه",
   "display": "fullscreen",
   "display_override": ["window-controls-overlay"],
-  "start_url": "https://app.rentamon.com/panel/",
+  "start_url": "https://rentamon.com/splash?src=web",
   "theme_color": "#7444BC",
   "background_color": "#7444BC",
   "orientation": "portrait-primary",
