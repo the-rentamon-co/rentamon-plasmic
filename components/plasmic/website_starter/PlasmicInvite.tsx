@@ -595,8 +595,7 @@ function PlasmicInvite__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   return window.open(
-                                    "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/",
-                                    "_blank"
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=referral"
                                   );
                                 })();
                               }
@@ -891,8 +890,7 @@ function PlasmicInvite__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 return window.open(
-                                  "https://sso.rentamon.com/web/index.html?callback=https://app.rentamon.com/panel/",
-                                  "_blank"
+                                  "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=referral"
                                 );
                               })();
                             }

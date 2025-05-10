@@ -450,6 +450,7 @@
   border-bottom-width: 2px;
   border-bottom-style: solid;
   max-height: 70%;
+  min-height: 70%;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -465,7 +466,7 @@
 .img__yFlfQ {
   object-fit: cover;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   width: 100%;
   position: sticky;
   left: 0px;
@@ -474,6 +475,7 @@
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   min-width: 0;
+  min-height: 0;
 }
 .img__yFlfQ > picture > img {
   object-fit: cover;

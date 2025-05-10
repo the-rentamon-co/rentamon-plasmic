@@ -430,7 +430,15 @@ function PlasmicProperties__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.property, "fadein")}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__mjr7H)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__mjr7H,
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "fadein"
+                    : "shine"
+                )}
+              >
                 <ApiRequest
                   data-plasmic-name={"apiRequest"}
                   data-plasmic-override={overrides.apiRequest}
@@ -516,7 +524,9 @@ function PlasmicProperties__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__gAlJf,
-                            "clickable fadeinf"
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? "clickable"
+                              : "clickable fadeinf"
                           )}
                           key={currentIndex}
                           onClick={async event => {
@@ -586,11 +596,16 @@ function PlasmicProperties__RenderFunc(props: {
                             >
                               <PlasmicImg__
                                 alt={""}
-                                className={classNames(sty.img__yFlfQ)}
+                                className={classNames(
+                                  sty.img__yFlfQ,
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "shine"
+                                    : ``
+                                )}
                                 displayHeight={
                                   hasVariant(globalVariants, "screen", "mobile")
                                     ? "100%"
-                                    : "auto"
+                                    : "100%"
                                 }
                                 displayMaxHeight={"none"}
                                 displayMaxWidth={"100%"}

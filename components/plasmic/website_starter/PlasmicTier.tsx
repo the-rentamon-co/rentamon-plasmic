@@ -256,10 +256,10 @@ function PlasmicTier__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/jabamaWebp.webp",
-                        fullWidth: 512,
-                        fullHeight: 512,
-                        aspectRatio: undefined
+                        src: "/plasmic/website_starter/images/image19.svg",
+                        fullWidth: 45,
+                        fullHeight: 46,
+                        aspectRatio: 0.978261
                       }}
                     />
 
@@ -388,10 +388,10 @@ function PlasmicTier__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/image68.png",
-                        fullWidth: 512,
-                        fullHeight: 512,
-                        aspectRatio: undefined
+                        src: "/plasmic/website_starter/images/image21.svg",
+                        fullWidth: 46,
+                        fullHeight: 45,
+                        aspectRatio: 1.022222
                       }}
                     />
 
@@ -421,10 +421,10 @@ function PlasmicTier__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/mizboonPng.png",
-                        fullWidth: 140,
-                        fullHeight: 140,
-                        aspectRatio: undefined
+                        src: "/plasmic/website_starter/images/image15.svg",
+                        fullWidth: 46,
+                        fullHeight: 45,
+                        aspectRatio: 1.022222
                       }}
                     />
 

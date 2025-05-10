@@ -269,8 +269,8 @@
 }
 @media (max-width: 500px) {
   .propertyName {
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
     padding-top: 24px;
     padding-bottom: 10px;
     padding-right: 8px;

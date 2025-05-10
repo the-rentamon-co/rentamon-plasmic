@@ -1130,9 +1130,7 @@ function Plasmicتالار__RenderFunc(props: {
                           sty.text__rvtFp
                         )}
                       >
-                        {
-                          "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646"
-                        }
+                        {"\u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646"}
                       </div>
                     </div>
                   </div>
