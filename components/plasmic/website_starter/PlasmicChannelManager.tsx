@@ -425,7 +425,7 @@ function PlasmicChannelManager__RenderFunc(props: {
           >
             {(() => {
               try {
-                return $state.apiRequest.data.status != "ok";
+                return $state.apiRequest2.data.status != "ok";
               } catch (e) {
                 if (
                   e instanceof TypeError ||
