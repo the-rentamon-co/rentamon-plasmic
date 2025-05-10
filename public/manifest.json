@@ -4,25 +4,14 @@
   "name": "رنتامون",
   "short_name": "رنتامون",
   "description": "مدیریت آنلاین اقامتگاه",
-  "start_url": "https://rentamon.com/splash?src=web",
-  "display": "fullscreen",
+  "start_url": "https://rentamon.com/",
+  "display": "browser",
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "fa",
-  "background_color": "#fcfcfc",
-  "theme_color": "#fcfcfc",
-  "icons": [
-    {
-      "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
+  "background_color": "transparent",
+  "theme_color": "transparent",
+  "icons": [],
   "categories": [
     "گردشگری",
     "خدمات"
@@ -47,12 +36,7 @@
       "name": "ویجت رنتامون",
       "tag": "liomWidget",
       "description": "ویجت نمونه برای برنامه رنتامون",
-      "icons": [
-        {
-          "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png",
-          "sizes": "48x48"
-        }
-      ]
+      "icons": []
     }
   ]
 }
