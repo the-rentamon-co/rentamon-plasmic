@@ -1,0 +1,23 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.rentamon.webview",
+      "sha256_cert_fingerprints": [
+        "F2:AB:55:8D:B7:C2:F2:29:79:64:96:AF:B2:45:54:5A:0A:E0:DA:6C:A6:F4:8D:FE:F2:69:B3:93:EF:F2:F5:0A"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "check_validation"
+    ],
+    "target": {
+      "namespace": "cafebazaar_twa",
+      "package_name": "com.rentamon.webview"
+    }
+  }
+]
