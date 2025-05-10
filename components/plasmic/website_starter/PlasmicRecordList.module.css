@@ -8,7 +8,7 @@
   cursor: pointer;
   position: relative;
   min-width: 0;
-  border-radius: 30px;
+  border-radius: 100px;
 }
 .root > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -30,7 +30,7 @@
   cursor: pointer;
   flex-direction: row;
   min-width: 0;
-  border-radius: 30px;
+  border-radius: 100px;
   border: 2px solid #2eb773;
 }
 .rootconfirmedBookings > :global(.__wab_flex-container) {
@@ -62,7 +62,7 @@
   cursor: pointer;
   flex-direction: row;
   min-width: 0;
-  border-radius: 30px;
+  border-radius: 100px;
   border: 2px dashed #2eb773;
 }
 .rootpendingBookings > :global(.__wab_flex-container) {

@@ -75,6 +75,7 @@ import sty from "./Plasmicتالار.module.css"; // plasmic-import: awYJCWS6Hou
 
 import Icon66Icon from "./icons/PlasmicIcon__Icon66"; // plasmic-import: n1MUhjxn9v4m/icon
 import Icon74Icon from "./icons/PlasmicIcon__Icon74"; // plasmic-import: 8KZpBYIvE0K7/icon
+import Icon80Icon from "./icons/PlasmicIcon__Icon80"; // plasmic-import: aDrwOfA5XwKS/icon
 import Icon70Icon from "./icons/PlasmicIcon__Icon70"; // plasmic-import: A-bs_J5BMn_p/icon
 import Icon71Icon from "./icons/PlasmicIcon__Icon71"; // plasmic-import: DdEZyyc0OzIH/icon
 import Icon78Icon from "./icons/PlasmicIcon__Icon78"; // plasmic-import: z2I2p-YJGmt6/icon
@@ -117,6 +118,15 @@ export type Plasmicتالار__OverridesType = {
   right3?: Flex__<"div">;
   mid3?: Flex__<"div">;
   left2?: Flex__<"div">;
+  items9?: Flex__<"div">;
+  right9?: Flex__<"div">;
+  mid9?: Flex__<"div">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
+  left8?: Flex__<"div">;
+  items10?: Flex__<"div">;
+  right10?: Flex__<"div">;
+  mid10?: Flex__<"div">;
+  left9?: Flex__<"div">;
   items3?: Flex__<"div">;
   right4?: Flex__<"div">;
   mid4?: Flex__<"div">;
@@ -883,6 +893,260 @@ function Plasmicتالار__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
+                  data-plasmic-name={"items9"}
+                  data-plasmic-override={overrides.items9}
+                  className={classNames(
+                    projectcss.all,
+                    sty.items9,
+                    (() => {
+                      try {
+                        return (() => {
+                          if ($state.userType != 1) {
+                            return "display_block clickable";
+                          } else {
+                            return "hidden clickable";
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return window.open(`tel:02191096227`);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right9"}
+                      data-plasmic-override={overrides.right9}
+                      className={classNames(projectcss.all, sty.right9)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__bfPoC)}
+                        displayHeight={"30px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"30px"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image118.svg",
+                          fullWidth: 29,
+                          fullHeight: 29,
+                          aspectRatio: 1
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid9"}
+                    data-plasmic-override={overrides.mid9}
+                    className={classNames(projectcss.all, sty.mid9)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__wnIo2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___4HoA
+                        )}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "#444444", fontWeight: 600 }}
+                          >
+                            {""}
+                          </span>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <PlasmicLink__
+                              data-plasmic-name={"link"}
+                              data-plasmic-override={overrides.link}
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link
+                              )}
+                              component={Link}
+                              platform={"nextjs"}
+                            >
+                              <React.Fragment>
+                                <span
+                                  className={
+                                    "plasmic_default__all plasmic_default__span"
+                                  }
+                                  style={{ color: "#444444", fontWeight: 600 }}
+                                >
+                                  {
+                                    "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062a\u0644\u0641\u0646\u06cc: \u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+                                  }
+                                </span>
+                              </React.Fragment>
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"left8"}
+                    data-plasmic-override={overrides.left8}
+                    className={classNames(projectcss.all, sty.left8)}
+                  />
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"items10"}
+                  data-plasmic-override={overrides.items10}
+                  className={classNames(
+                    projectcss.all,
+                    sty.items10,
+                    (() => {
+                      try {
+                        return (() => {
+                          if ($state.userType != 1) {
+                            return "display_block clickable";
+                          } else {
+                            return "hidden clickable";
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return window.open(
+                                  "https://goftino.com/c/WgsGXv",
+                                  "_blank"
+                                );
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right10"}
+                      data-plasmic-override={overrides.right10}
+                      className={classNames(projectcss.all, sty.right10)}
+                    >
+                      <Icon80Icon
+                        className={classNames(projectcss.all, sty.svg__vw10J)}
+                        role={"img"}
+                      />
+                    </div>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid10"}
+                    data-plasmic-override={overrides.mid10}
+                    className={classNames(projectcss.all, sty.mid10)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___5Ng1C
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__rvtFp
+                        )}
+                      >
+                        {
+                          "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"left9"}
+                    data-plasmic-override={overrides.left9}
+                    className={classNames(projectcss.all, sty.left9)}
+                  />
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
                   data-plasmic-name={"items3"}
                   data-plasmic-override={overrides.items3}
                   className={classNames(
@@ -1105,7 +1369,25 @@ function Plasmicتالار__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     sty.items5,
-                    "clickable"
+                    (() => {
+                      try {
+                        return (() => {
+                          if ($state.userType == 1) {
+                            return "display_block clickable";
+                          } else {
+                            return "hidden clickable";
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
                   )}
                   onClick={async event => {
                     const $steps = {};
@@ -1507,6 +1789,15 @@ const PlasmicDescendants = {
     "right3",
     "mid3",
     "left2",
+    "items9",
+    "right9",
+    "mid9",
+    "link",
+    "left8",
+    "items10",
+    "right10",
+    "mid10",
+    "left9",
     "items3",
     "right4",
     "mid4",
@@ -1555,6 +1846,15 @@ const PlasmicDescendants = {
     "right3",
     "mid3",
     "left2",
+    "items9",
+    "right9",
+    "mid9",
+    "link",
+    "left8",
+    "items10",
+    "right10",
+    "mid10",
+    "left9",
     "items3",
     "right4",
     "mid4",
@@ -1596,6 +1896,15 @@ const PlasmicDescendants = {
     "right3",
     "mid3",
     "left2",
+    "items9",
+    "right9",
+    "mid9",
+    "link",
+    "left8",
+    "items10",
+    "right10",
+    "mid10",
+    "left9",
     "items3",
     "right4",
     "mid4",
@@ -1625,6 +1934,15 @@ const PlasmicDescendants = {
   right3: ["right3"],
   mid3: ["mid3"],
   left2: ["left2"],
+  items9: ["items9", "right9", "mid9", "link", "left8"],
+  right9: ["right9"],
+  mid9: ["mid9", "link"],
+  link: ["link"],
+  left8: ["left8"],
+  items10: ["items10", "right10", "mid10", "left9"],
+  right10: ["right10"],
+  mid10: ["mid10"],
+  left9: ["left9"],
   items3: ["items3", "right4", "mid4", "left3"],
   right4: ["right4"],
   mid4: ["mid4"],
@@ -1677,6 +1995,15 @@ type NodeDefaultElementType = {
   right3: "div";
   mid3: "div";
   left2: "div";
+  items9: "div";
+  right9: "div";
+  mid9: "div";
+  link: "a";
+  left8: "div";
+  items10: "div";
+  right10: "div";
+  mid10: "div";
+  left9: "div";
   items3: "div";
   right4: "div";
   mid4: "div";
@@ -1785,6 +2112,15 @@ export const Plasmicتالار = Object.assign(
     right3: makeNodeComponent("right3"),
     mid3: makeNodeComponent("mid3"),
     left2: makeNodeComponent("left2"),
+    items9: makeNodeComponent("items9"),
+    right9: makeNodeComponent("right9"),
+    mid9: makeNodeComponent("mid9"),
+    link: makeNodeComponent("link"),
+    left8: makeNodeComponent("left8"),
+    items10: makeNodeComponent("items10"),
+    right10: makeNodeComponent("right10"),
+    mid10: makeNodeComponent("mid10"),
+    left9: makeNodeComponent("left9"),
     items3: makeNodeComponent("items3"),
     right4: makeNodeComponent("right4"),
     mid4: makeNodeComponent("mid4"),

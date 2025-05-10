@@ -257,7 +257,10 @@ function PlasmicRecordList__RenderFunc(props: {
             $state,
             "pendingBookings",
             "pendingBookings"
-          )
+          ),
+          [sty.rootpendingBookings_cancelledBookings]:
+            hasVariant($state, "pendingBookings", "pendingBookings") &&
+            hasVariant($state, "cancelledBookings", "cancelledBookings")
         }
       )}
     >
@@ -267,7 +270,14 @@ function PlasmicRecordList__RenderFunc(props: {
         className={classNames(
           projectcss.all,
           projectcss.__wab_text,
-          sty.website
+          sty.website,
+          {
+            [sty.websitependingBookings]: hasVariant(
+              $state,
+              "pendingBookings",
+              "pendingBookings"
+            )
+          }
         )}
       >
         {hasVariant(globalVariants, "screen", "smallMobile") ? (

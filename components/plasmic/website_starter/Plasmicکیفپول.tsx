@@ -444,7 +444,13 @@ function Plasmicکیفپول__RenderFunc(props: {
                   : undefined
               )}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__lvxu)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__lvxu,
+                  "fadein"
+                )}
+              >
                 <div
                   data-plasmic-name={"balance2"}
                   data-plasmic-override={overrides.balance2}

@@ -287,12 +287,13 @@
 }
 @media (max-width: 500px) {
   .report {
+    max-width: 90%;
     padding: 16px 0px 20px;
   }
 }
 @media (max-width: 350px) {
   .report {
-    max-width: 90%;
+    max-width: 96%;
   }
 }
 .text__hiIkz {
@@ -319,7 +320,8 @@
 }
 @media (max-width: 500px) {
   .text__hiIkz {
-    width: 306px;
+    width: 100%;
+    min-width: 0;
     padding: 12px 0px;
   }
 }
