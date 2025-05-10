@@ -8,7 +8,7 @@
   "display_override": ["window-controls-overlay"],
   "start_url": "https://rentamon.com/splash?src=web",
   "theme_color": "#fcfcfc",
-  "background_color": "#fcfcfc",
+  "background_color": "#8165D6",
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "fa",
@@ -25,7 +25,7 @@
   "icons": [
     {
       "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png",
-      "sizes": "512x512",
+      "sizes": "1x1",
       "type": "image/png",
       "purpose": "any"
     }
