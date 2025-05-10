@@ -199,9 +199,7 @@ function PlasmicSplash__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 sty.freeBox__bXpcU,
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? "fadeinf"
-                  : undefined
+                hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
               )}
             >
               <Icon79Icon
@@ -222,7 +220,7 @@ function PlasmicSplash__RenderFunc(props: {
                 projectcss.all,
                 sty.freeBox__pwpH,
                 hasVariant(globalVariants, "screen", "mobile")
-                  ? "fadein"
+                  ? ``
                   : "logo-effect1"
               )}
             >
