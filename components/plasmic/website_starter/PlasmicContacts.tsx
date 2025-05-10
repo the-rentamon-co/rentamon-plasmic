@@ -549,7 +549,7 @@ function PlasmicContacts__RenderFunc(props: {
             ) : null}
             {(() => {
               try {
-                return $state.apiRequest.data[0].name != null;
+                return $state.apiRequest.data[0].name == null;
               } catch (e) {
                 if (
                   e instanceof TypeError ||

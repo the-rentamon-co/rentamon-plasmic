@@ -291,48 +291,87 @@ function Plasmic_404__RenderFunc(props: {
             data-plasmic-override={overrides.mainContents}
             className={classNames(projectcss.all, sty.mainContents)}
           >
-            <PlasmicImg__
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"auto"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"auto"}
-              loading={"lazy"}
-              src={{
-                src: "/plasmic/website_starter/images/cb209Db691E043D18D90129537Eb84FbPng.png",
-                fullWidth: 442,
-                fullHeight: 443,
-                aspectRatio: undefined
-              }}
-            />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__nnxTo
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "\u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!"
-                : "\u0645\u062b\u0644 \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!"}
+            <div className={classNames(projectcss.all, sty.freeBox__cBplt)}>
+              <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/cb209Db691E043D18D90129537Eb84FbPng.png",
+                  fullWidth: 442,
+                  fullHeight: 443,
+                  aspectRatio: undefined
+                }}
+              />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__lLSpK)}>
+            <div className={classNames(projectcss.all, sty.freeBox__dgbbL)}>
+              <div className={classNames(projectcss.all, sty.freeBox__oXrIp)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nnxTo
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!"
+                    : "\u0645\u062b\u0644 \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!"}
+                </div>
+              </div>
               <div
                 className={classNames(
                   projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__unMnq
+                  sty.freeBox__lLSpK,
+                  "clickable"
                 )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToHomepage"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToHomepage"] != null &&
+                    typeof $steps["goToHomepage"] === "object" &&
+                    typeof $steps["goToHomepage"].then === "function"
+                  ) {
+                    $steps["goToHomepage"] = await $steps["goToHomepage"];
+                  }
+                }}
               >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!"
-                  : "\u0646\u0645\u0627\u06cc\u0634 \u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__unMnq
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0646\u0645\u0627\u06cc\u0634 \u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"
+                    : "\u0646\u0645\u0627\u06cc\u0634 \u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
+                </div>
               </div>
             </div>
           </div>

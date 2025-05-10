@@ -168,7 +168,7 @@
     0% 0% / 100% 100% repeat;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 48px 102px 102px;
+  padding: 0px 102px;
 }
 @media (max-width: 1200px) {
   .mainContents {
@@ -183,7 +183,7 @@
     padding-right: 0px;
     padding-left: 0px;
     background: radial-gradient(
-        ellipse 90% 50% at 50% 50%,
+        ellipse 80% 60% at 50% 50%,
         #8fd5e7 16%,
         #8fd5e799 57%,
         #ebfaff 100%
@@ -192,6 +192,18 @@
     padding-top: 52px;
   }
 }
+.freeBox__cBplt {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
 .img {
   object-fit: cover;
   max-width: 100%;
@@ -199,19 +211,54 @@
 .img > picture > img {
   object-fit: cover;
 }
+.freeBox__dgbbL {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 8px 85px;
+}
+@media (max-width: 500px) {
+  .freeBox__dgbbL {
+    padding-top: 0px;
+  }
+}
+.freeBox__oXrIp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 8px 30px;
+}
+@media (max-width: 500px) {
+  .freeBox__oXrIp {
+    padding-bottom: 44px;
+    padding-top: 0px;
+  }
+}
 .text__nnxTo {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   text-align: center;
-  font-size: 17px;
+  font-size: 24px;
   min-width: 0;
 }
 @media (max-width: 500px) {
   .text__nnxTo {
-    font-size: 17px;
+    font-size: 22px;
     padding-top: 0px;
+    color: #203647;
   }
 }
 .freeBox__lLSpK {
@@ -220,13 +267,29 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 30%;
+  max-width: 40%;
   justify-content: flex-start;
   align-items: center;
-  background: #ffffff;
+  background: #8165d6;
+  cursor: pointer;
   min-width: 0;
   border-radius: 100px;
-  padding: 8px;
+  padding: 18px 8px;
+}
+@media (max-width: 1200px) {
+  .freeBox__lLSpK {
+    max-width: 56%;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox__lLSpK {
+    max-width: 90%;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__lLSpK {
+    max-width: 96%;
+  }
 }
 .text__unMnq {
   width: 100%;
@@ -234,6 +297,8 @@
   max-width: 100%;
   text-align: center;
   font-size: 17px;
+  color: #fcfcfc;
+  font-weight: 500;
   min-width: 0;
 }
 @media (max-width: 500px) {
