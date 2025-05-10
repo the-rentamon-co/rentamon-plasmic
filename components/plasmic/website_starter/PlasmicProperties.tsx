@@ -434,9 +434,7 @@ function PlasmicProperties__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   sty.freeBox__mjr7H,
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? "fadein"
-                    : "shine"
+                  hasVariant(globalVariants, "screen", "mobile") ? "fadein" : ``
                 )}
               >
                 <ApiRequest
@@ -451,14 +449,20 @@ function PlasmicProperties__RenderFunc(props: {
                         sty.text__xkWcY
                       )}
                     >
-                      {"Error fetching data"}
+                      {
+                        "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
+                      }
                     </div>
                   }
                   loadingDisplay={
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__gFugq)}
-                      displayHeight={"60px"}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "40px"
+                          : "50px"
+                      }
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}

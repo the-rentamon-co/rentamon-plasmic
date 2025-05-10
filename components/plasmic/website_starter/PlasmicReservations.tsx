@@ -3985,8 +3985,8 @@ function PlasmicReservations__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "34px"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "55px"
-                        : "76px"
+                        ? "40px"
+                        : "50px"
                     }
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}

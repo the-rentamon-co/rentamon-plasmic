@@ -46,17 +46,16 @@
 .center {
   display: flex;
   flex-direction: column;
-  position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
   min-width: 0;
   padding: 8px;
 }
 .freeBox__bXpcU {
-  display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
@@ -64,6 +63,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 @media (max-width: 500px) {
@@ -95,7 +95,6 @@
   }
 }
 .freeBox__pwpH {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -104,6 +103,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 20px 8px 8px;
 }
 @media (max-width: 500px) {
