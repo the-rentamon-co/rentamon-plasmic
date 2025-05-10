@@ -7,8 +7,8 @@
   "display": "fullscreen",
   "display_override": ["window-controls-overlay"],
   "start_url": "https://rentamon.com/splash?src=web",
-  "theme_color": "#7444BC",
-  "background_color": "#8165D6",
+  "theme_color": "#fcfcfc",
+  "background_color": "#fcfcfc",
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "fa",
@@ -17,14 +17,14 @@
   "prefer_related_applications": false,
   "related_applications": [],
   "scope_extensions": [
-    { "origin": "https://app.rentamon.com/" }
+    { "origin": "https://rentamon.com/" }
   ],
   "launch_handler": {
     "client_mode": "focus-existing"
   },
   "icons": [
     {
-      "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-colored.png",
+      "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -32,8 +32,8 @@
   ],
   "screenshots": [
     {
-      "src": "https://rentamon-files.storage.iran.liara.space/icon/splashscreen.svg",
-      "sizes": "1617x1012",
+      "src": "https://rentamon.com/plasmic/website_starter/images/handsOnAppPng2.png",
+      "sizes": "1920x1080",
       "type": "image/svg+xml",
       "label": "نمایی از برنامه رنتامون"
     }
@@ -43,25 +43,11 @@
     "سریع",
     "کاربرپسند"
   ],
-  "shortcuts": [
-    {
-      "name": "صفحه درباره ما",
-      "short_name": "درباره",
-      "description": "مشاهده اطلاعات درباره برنامه",
-      "url": "/about",
-      "icons": [
-        {
-          "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-colored.png",
-          "sizes": "192x192"
-        }
-      ]
-    }
-  ],
   "widgets": [
     {
       "name": "ویجت رنتامون",
       "tag": "liomWidget",
-      "description": "ویجت نمونه برای برنامه رنتامون",
+      "description": "رنتامون، مدیریت آنلاین اقامتگاه",
       "icons": [
         {
           "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-colored.png",
