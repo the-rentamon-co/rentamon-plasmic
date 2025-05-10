@@ -2,7 +2,7 @@
   "id": "/",
   "scope": "/",
   "name": "رنتامون",
-  "short_name": "رنتامون",
+  "short_name": " ",
   "description": "مدیریت انلاین اقامتگاه",
   "display": "fullscreen",
   "display_override": ["window-controls-overlay"],
@@ -24,9 +24,10 @@
   },
   "icons": [
     {
-      "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-tr.png",
+      "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-colored.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "screenshots": [
@@ -50,7 +51,7 @@
       "url": "/about",
       "icons": [
         {
-          "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-tr.png",
+          "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-colored.png",
           "sizes": "192x192"
         }
       ]
@@ -63,7 +64,7 @@
       "description": "ویجت نمونه برای برنامه رنتامون",
       "icons": [
         {
-          "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-tr.png",
+          "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-colored.png",
           "sizes": "48x48"
         }
       ],
