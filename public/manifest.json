@@ -3,40 +3,77 @@
   "scope": "/",
   "name": "رنتامون",
   "short_name": "رنتامون",
-  "description": "مدیریت آنلاین اقامتگاه",
-  "start_url": "https://rentamon.com/",
-  "display": "browser",
+  "description": "مدیریت انلاین اقامتگاه",
+  "display": "fullscreen",
+  "display_override": ["window-controls-overlay"],
+  "start_url": "https://rentamon.com/splash?src=web",
+  "theme_color": "#7444BC",
+  "background_color": "#8165D6",
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "fa",
-  "background_color": "transparent",
-  "theme_color": "transparent",
-  "icons": [],
-  "categories": [
-    "گردشگری",
-    "خدمات"
-  ],
+  "categories": ["گردشگری", "خدمات"],
+  "iarc_rating_id": "your_iarc_rating_id_here",
   "prefer_related_applications": false,
   "related_applications": [],
   "scope_extensions": [
-    {
-      "origin": "https://rentamon.com/"
-    }
+    { "origin": "https://app.rentamon.com/" }
   ],
   "launch_handler": {
     "client_mode": "focus-existing"
   },
+  "icons": [
+    {
+      "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-tr.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://rentamon-files.storage.iran.liara.space/icon/splashscreen.svg",
+      "sizes": "1617x1012",
+      "type": "image/svg+xml",
+      "label": "نمایی از برنامه رنتامون"
+    }
+  ],
   "features": [
     "مدیریت اقامتگاه",
     "سریع",
     "کاربرپسند"
+  ],
+  "shortcuts": [
+    {
+      "name": "صفحه درباره ما",
+      "short_name": "درباره",
+      "description": "مشاهده اطلاعات درباره برنامه",
+      "url": "/about",
+      "icons": [
+        {
+          "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-tr.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
   ],
   "widgets": [
     {
       "name": "ویجت رنتامون",
       "tag": "liomWidget",
       "description": "ویجت نمونه برای برنامه رنتامون",
-      "icons": []
+      "icons": [
+        {
+          "src": "https://rentamon-files.storage.iran.liara.space/APK/manifest/logo-tr.png",
+          "sizes": "48x48"
+        }
+      ],
+      "screenshots": [
+        {
+          "src": "https://rentamon-files.storage.iran.liara.space/icon/splashscreen.svg",
+          "sizes": "500x500",
+          "label": "تصویر ویجت"
+        }
+      ]
     }
   ]
 }
