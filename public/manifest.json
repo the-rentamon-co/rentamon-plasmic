@@ -4,13 +4,11 @@
   "name": "رنتامون",
   "short_name": "رنتامون",
   "description": "مدیریت انلاین اقامتگاه",
-  "display": "fullscreen",
   "start_url": "https://rentamon.com/splash?src=web",
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "fa",
   "categories": ["گردشگری", "خدمات"],
-  "iarc_rating_id": "your_iarc_rating_id_here",
   "prefer_related_applications": false,
   "related_applications": [],
   "scope_extensions": [
