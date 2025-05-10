@@ -348,12 +348,12 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                     const $steps = {};
 
                     $steps[
-                      "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamon14Apk"
+                      "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
                     ] = true
                       ? (() => {
                           const actionArgs = {
                             destination:
-                              "https://rentamon-files.storage.iran.liara.space/APK/rentamon14.apk"
+                              "https://rentamon-files.storage.iran.liara.space/APK/rentamonv19-app.apk"
                           };
                           return (({ destination }) => {
                             if (
@@ -371,19 +371,19 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                       : undefined;
                     if (
                       $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamon14Apk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
                       ] != null &&
                       typeof $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamon14Apk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
                       ] === "object" &&
                       typeof $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamon14Apk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
                       ].then === "function"
                     ) {
                       $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamon14Apk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
                       ] = await $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamon14Apk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
                       ];
                     }
                   }}
@@ -455,7 +455,9 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
 
                     $steps["goToPanelCalendar"] = true
                       ? (() => {
-                          const actionArgs = { destination: `/panel` };
+                          const actionArgs = {
+                            destination: "https://rentamon.com/splash?src=web"
+                          };
                           return (({ destination }) => {
                             if (
                               typeof destination === "string" &&

@@ -225,7 +225,12 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
         closeButton={
           <PlasmicImg__
             alt={""}
-            className={classNames(sty.img__p1R3F)}
+            className={classNames(
+              sty.img__p1R3F,
+              hasVariant(globalVariants, "screen", "mobile")
+                ? "clickabe"
+                : undefined
+            )}
             displayHeight={"auto"}
             displayMaxHeight={"none"}
             displayMaxWidth={"none"}
@@ -250,7 +255,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["runCode"] = true
+                  $steps["createCookie"] = true
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -281,16 +286,18 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
+                    $steps["createCookie"] != null &&
+                    typeof $steps["createCookie"] === "object" &&
+                    typeof $steps["createCookie"].then === "function"
                   ) {
-                    $steps["runCode"] = await $steps["runCode"];
+                    $steps["createCookie"] = await $steps["createCookie"];
                   }
 
-                  $steps["goToSplash"] = true
+                  $steps["goToHttpsRentamonComSplashSrcWeb"] = true
                     ? (() => {
-                        const actionArgs = { destination: `/splash` };
+                        const actionArgs = {
+                          destination: "https://rentamon.com/splash?src=web"
+                        };
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&
@@ -306,11 +313,15 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["goToSplash"] != null &&
-                    typeof $steps["goToSplash"] === "object" &&
-                    typeof $steps["goToSplash"].then === "function"
+                    $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
+                    typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
+                      "object" &&
+                    typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
+                      "function"
                   ) {
-                    $steps["goToSplash"] = await $steps["goToSplash"];
+                    $steps["goToHttpsRentamonComSplashSrcWeb"] = await $steps[
+                      "goToHttpsRentamonComSplashSrcWeb"
+                    ];
                   }
                 }}
               >
@@ -371,53 +382,6 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                   platform={"nextjs"}
                 >
                   {"\u0648\u0631\u0648\u062f"}
-                </PlasmicLink__>
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox___06T0U,
-                  "clickable"
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__w3OVd
-                  )}
-                  component={Link}
-                  href={""}
-                  platform={"nextjs"}
-                >
-                  {"\u062b\u0628\u062a\u200c\u0646\u0627\u0645"}
                 </PlasmicLink__>
               </div>
               <PlasmicLink__
@@ -592,7 +556,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 sty.link__ryWoj
               )}
               component={Link}
-              href={`/splash`}
+              href={"https://rentamon.com/splash?src=web"}
               onClick={async event => {
                 const $steps = {};
 
@@ -637,19 +601,6 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               platform={"nextjs"}
             >
               {"\u0648\u0631\u0648\u062f"}
-            </PlasmicLink__>
-            <PlasmicLink__
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.link__kjkxV
-              )}
-              component={Link}
-              href={"https://rentamon.com/splash?src=web"}
-              platform={"nextjs"}
-            >
-              {"\u062b\u0628\u062a\u200c\u0646\u0627\u0645"}
             </PlasmicLink__>
             <PlasmicLink__
               className={classNames(

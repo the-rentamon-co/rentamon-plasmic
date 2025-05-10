@@ -370,67 +370,35 @@ function PlasmicHomepage__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["createCookie"] = false
+                        $steps["goToHttpsRentamonComSplashSrcWeb"] = true
                           ? (() => {
                               const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    function setCookie(name, value, hours) {
-                                      let expires = "";
-                                      if (hours) {
-                                        const date = new Date();
-                                        date.setTime(
-                                          date.getTime() +
-                                            hours * 60 * 60 * 1000
-                                        );
-                                        expires =
-                                          "; expires=" + date.toUTCString();
-                                      }
-                                      document.cookie =
-                                        name +
-                                        "=" +
-                                        (value || "") +
-                                        expires +
-                                        "; path=/";
-                                    }
-                                    return setCookie("source", "web", 12);
-                                  })();
-                                }
+                                destination:
+                                  "https://rentamon.com/splash?src=web"
                               };
-                              return (({ customFunction }) => {
-                                return customFunction();
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
                               })?.apply(null, [actionArgs]);
                             })()
                           : undefined;
                         if (
-                          $steps["createCookie"] != null &&
-                          typeof $steps["createCookie"] === "object" &&
-                          typeof $steps["createCookie"].then === "function"
+                          $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
+                          typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
+                            "object" &&
+                          typeof $steps["goToHttpsRentamonComSplashSrcWeb"]
+                            .then === "function"
                         ) {
-                          $steps["createCookie"] = await $steps["createCookie"];
-                        }
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return (window.location.href =
-                                      "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
+                          $steps["goToHttpsRentamonComSplashSrcWeb"] =
+                            await $steps["goToHttpsRentamonComSplashSrcWeb"];
                         }
                       }}
                     >
@@ -954,65 +922,35 @@ function PlasmicHomepage__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["createCookie"] = false
+                  $steps["goToHttpsRentamonComSplashSrcWeb"] = true
                     ? (() => {
                         const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function setCookie(name, value, hours) {
-                                let expires = "";
-                                if (hours) {
-                                  const date = new Date();
-                                  date.setTime(
-                                    date.getTime() + hours * 60 * 60 * 1000
-                                  );
-                                  expires = "; expires=" + date.toUTCString();
-                                }
-                                document.cookie =
-                                  name +
-                                  "=" +
-                                  (value || "") +
-                                  expires +
-                                  "; path=/";
-                              }
-                              return setCookie("source", "web", 12);
-                            })();
-                          }
+                          destination: "https://rentamon.com/splash?src=web"
                         };
-                        return (({ customFunction }) => {
-                          return customFunction();
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
                         })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
                   if (
-                    $steps["createCookie"] != null &&
-                    typeof $steps["createCookie"] === "object" &&
-                    typeof $steps["createCookie"].then === "function"
+                    $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
+                    typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
+                      "object" &&
+                    typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
+                      "function"
                   ) {
-                    $steps["createCookie"] = await $steps["createCookie"];
-                  }
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
+                    $steps["goToHttpsRentamonComSplashSrcWeb"] = await $steps[
+                      "goToHttpsRentamonComSplashSrcWeb"
+                    ];
                   }
                 }}
               >

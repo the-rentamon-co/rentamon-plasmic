@@ -657,7 +657,32 @@ function PlasmicActivation__RenderFunc(props: {
               }
             />
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__btynj)}>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__btynj)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return window.history.back();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          >
             <Icon23Icon
               className={classNames(projectcss.all, sty.svg__bwrmg)}
               onClick={async event => {
@@ -4176,24 +4201,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 }).apply(null, eventArgs);
                               }}
                             >
-                              <PlasmicLink__
-                                data-plasmic-name={"link"}
-                                data-plasmic-override={overrides.link}
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.__wab_text,
-                                  sty.link
-                                )}
-                                component={Link}
-                                href={`/terms-of-use`}
-                                platform={"nextjs"}
-                                target={"_blank"}
-                              >
-                                {
-                                  "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
-                                }
-                              </PlasmicLink__>
                               <div
                                 className={classNames(
                                   projectcss.all,
@@ -4201,18 +4208,169 @@ function PlasmicActivation__RenderFunc(props: {
                                   sty.text__lHi
                                 )}
                               >
-                                <React.Fragment>
-                                  <span
-                                    className={
-                                      "plasmic_default__all plasmic_default__span"
-                                    }
-                                    style={{ color: "#1F3546" }}
-                                  >
+                                {hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobile"
+                                ) ? (
+                                  <React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#1F3546" }}
+                                    >
+                                      {"\u0645\u0646 "}
+                                    </span>
+                                    <React.Fragment>{""}</React.Fragment>
                                     {
-                                      " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645"
+                                      <PlasmicLink__
+                                        data-plasmic-name={"link"}
+                                        data-plasmic-override={overrides.link}
+                                        className={classNames(
+                                          projectcss.all,
+                                          projectcss.a,
+                                          projectcss.__wab_text,
+                                          projectcss.plasmic_default__inline,
+                                          sty.link
+                                        )}
+                                        component={Link}
+                                        href={
+                                          "https://rentamon.com/terms-of-use/"
+                                        }
+                                        platform={"nextjs"}
+                                      >
+                                        {hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        ) ? (
+                                          <React.Fragment>
+                                            <span
+                                              className={
+                                                "plasmic_default__all plasmic_default__span"
+                                              }
+                                              style={{
+                                                color: "#8165D6",
+                                                fontWeight: 600
+                                              }}
+                                            >
+                                              {
+                                                "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
+                                              }
+                                            </span>
+                                          </React.Fragment>
+                                        ) : (
+                                          <React.Fragment>
+                                            <span
+                                              className={
+                                                "plasmic_default__all plasmic_default__span"
+                                              }
+                                              style={{
+                                                color: "#8165D6",
+                                                fontWeight: 600
+                                              }}
+                                            >
+                                              {
+                                                "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
+                                              }
+                                            </span>
+                                          </React.Fragment>
+                                        )}
+                                      </PlasmicLink__>
                                     }
-                                  </span>
-                                </React.Fragment>
+                                    <React.Fragment>{""}</React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#1F3546" }}
+                                    >
+                                      {
+                                        " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0627 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645."
+                                      }
+                                    </span>
+                                  </React.Fragment>
+                                ) : (
+                                  <React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#1F3546" }}
+                                    >
+                                      {"\u0645\u0646 "}
+                                    </span>
+                                    <React.Fragment>{""}</React.Fragment>
+                                    {
+                                      <PlasmicLink__
+                                        data-plasmic-name={"link"}
+                                        data-plasmic-override={overrides.link}
+                                        className={classNames(
+                                          projectcss.all,
+                                          projectcss.a,
+                                          projectcss.__wab_text,
+                                          projectcss.plasmic_default__inline,
+                                          sty.link
+                                        )}
+                                        component={Link}
+                                        href={
+                                          "https://rentamon.com/terms-of-use/"
+                                        }
+                                        platform={"nextjs"}
+                                      >
+                                        {hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        ) ? (
+                                          <React.Fragment>
+                                            <span
+                                              className={
+                                                "plasmic_default__all plasmic_default__span"
+                                              }
+                                              style={{
+                                                color: "#8165D6",
+                                                fontWeight: 600
+                                              }}
+                                            >
+                                              {
+                                                "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
+                                              }
+                                            </span>
+                                          </React.Fragment>
+                                        ) : (
+                                          <React.Fragment>
+                                            <span
+                                              className={
+                                                "plasmic_default__all plasmic_default__span"
+                                              }
+                                              style={{
+                                                color: "#8165D6",
+                                                fontWeight: 600
+                                              }}
+                                            >
+                                              {
+                                                "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
+                                              }
+                                            </span>
+                                          </React.Fragment>
+                                        )}
+                                      </PlasmicLink__>
+                                    }
+                                    <React.Fragment>{""}</React.Fragment>
+                                    <span
+                                      className={
+                                        "plasmic_default__all plasmic_default__span"
+                                      }
+                                      style={{ color: "#1F3546" }}
+                                    >
+                                      {
+                                        " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0627 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645."
+                                      }
+                                    </span>
+                                  </React.Fragment>
+                                )}
                               </div>
                             </Checkbox>
                           </div>
@@ -4825,11 +4983,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   ? (() => {
                                       const actionArgs = {
                                         customFunction: async () => {
-                                          return (() => {
-                                            return (window.location.href =
-                                              document.referrer ||
-                                              "https://rentamon.com/panel/");
-                                          })();
+                                          return window.history.back();
                                         }
                                       };
                                       return (({ customFunction }) => {
@@ -11367,9 +11521,9 @@ function PlasmicActivation__RenderFunc(props: {
                     sty.text___4JwlT
                   )}
                 >
-                  {
-                    "\u0646\u0638\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u0645\u0648\u0631\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc\u0647\u061f"
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f8\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    : "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f8\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
                 </div>
                 <TestimonialsScrolling
                   data-plasmic-name={"testimonialsScrolling"}

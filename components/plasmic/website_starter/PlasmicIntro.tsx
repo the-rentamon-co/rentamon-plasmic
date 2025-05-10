@@ -260,7 +260,11 @@ function PlasmicIntro__RenderFunc(props: {
                 data-plasmic-override={overrides.img}
                 alt={""}
                 className={classNames(sty.img)}
-                displayHeight={"76px"}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "50px"
+                    : "76px"
+                }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}

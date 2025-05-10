@@ -180,7 +180,7 @@ function PlasmicTier__RenderFunc(props: {
         >
           {(() => {
             try {
-              return $state.userType == "web";
+              return $state.userType == "web" || $state.userType == "app";
             } catch (e) {
               if (
                 e instanceof TypeError ||
