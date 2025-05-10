@@ -409,129 +409,169 @@ function PlasmicContacts__RenderFunc(props: {
             }}
             url={"https://gateway.rentamon.com/webhook/get_guest"}
           >
-            <div
-              data-plasmic-name={"frame"}
-              data-plasmic-override={overrides.frame}
-              className={classNames(projectcss.all, sty.frame, "fadein")}
-            >
-              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                (() => {
-                  try {
-                    return $state.apiRequest.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
+            {(() => {
+              try {
+                return $state.apiRequest.data[0].name != null;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                data-plasmic-name={"frame"}
+                data-plasmic-override={overrides.frame}
+                className={classNames(projectcss.all, sty.frame, "fadein")}
+              >
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $state.apiRequest.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()
-              ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                const currentItem = __plasmic_item_0;
-                const currentIndex = __plasmic_idx_0;
-                return (
-                  <div
-                    data-plasmic-name={"contactsRow"}
-                    data-plasmic-override={overrides.contactsRow}
-                    className={classNames(
-                      projectcss.all,
-                      sty.contactsRow,
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "clickable"
-                        : undefined
-                    )}
-                    key={currentIndex}
-                  >
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
                     <div
-                      data-plasmic-name={"names"}
-                      data-plasmic-override={overrides.names}
-                      className={classNames(projectcss.all, sty.names)}
+                      data-plasmic-name={"contactsRow"}
+                      data-plasmic-override={overrides.contactsRow}
+                      className={classNames(
+                        projectcss.all,
+                        sty.contactsRow,
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "clickable"
+                          : undefined
+                      )}
+                      key={currentIndex}
                     >
                       <div
-                        data-plasmic-name={"guestName"}
-                        data-plasmic-override={overrides.guestName}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.guestName
-                        )}
+                        data-plasmic-name={"names"}
+                        data-plasmic-override={overrides.names}
+                        className={classNames(projectcss.all, sty.names)}
                       >
-                        <React.Fragment>
-                          {(() => {
+                        <div
+                          data-plasmic-name={"guestName"}
+                          data-plasmic-override={overrides.guestName}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.guestName
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $state.apiRequest.data[currentIndex]
+                                  .name;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"phones"}
+                        data-plasmic-override={overrides.phones}
+                        className={classNames(projectcss.all, sty.phones)}
+                      >
+                        <PlasmicLink__
+                          data-plasmic-name={"guestPhone"}
+                          data-plasmic-override={overrides.guestPhone}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.guestPhone
+                          )}
+                          component={Link}
+                          href={(() => {
                             try {
-                              return $state.apiRequest.data[currentIndex].name;
+                              return `tel:${$state.apiRequest.data[currentIndex].phone}`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return "";
+                                return undefined;
                               }
                               throw e;
                             }
                           })()}
-                        </React.Fragment>
+                          platform={"nextjs"}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $state.apiRequest.data[
+                                  currentIndex
+                                ].phone.replace(/[0-9]/g, function (d) {
+                                  return String.fromCharCode(
+                                    d.charCodeAt(0) + 1728
+                                  );
+                                });
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </PlasmicLink__>
                       </div>
                     </div>
-                    <div
-                      data-plasmic-name={"phones"}
-                      data-plasmic-override={overrides.phones}
-                      className={classNames(projectcss.all, sty.phones)}
-                    >
-                      <PlasmicLink__
-                        data-plasmic-name={"guestPhone"}
-                        data-plasmic-override={overrides.guestPhone}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          sty.guestPhone
-                        )}
-                        component={Link}
-                        href={(() => {
-                          try {
-                            return `tel:${$state.apiRequest.data[currentIndex].phone}`;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
-                        platform={"nextjs"}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return $state.apiRequest.data[
-                                currentIndex
-                              ].phone.replace(/[0-9]/g, function (d) {
-                                return String.fromCharCode(
-                                  d.charCodeAt(0) + 1728
-                                );
-                              });
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </PlasmicLink__>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            ) : null}
+            {(() => {
+              try {
+                return $state.apiRequest.data[0].name != null;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__s4743
+                )}
+              >
+                {
+                  "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0634\u0645\u0627\u0631\u0647 \u0645\u0633\u0627\u0641\u0631\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc"
+                }
+              </div>
+            ) : null}
           </ApiRequest>
           <div
             data-plasmic-name={"returnButton"}

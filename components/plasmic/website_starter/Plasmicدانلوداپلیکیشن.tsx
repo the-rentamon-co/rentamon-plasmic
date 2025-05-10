@@ -348,12 +348,12 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                     const $steps = {};
 
                     $steps[
-                      "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
+                      "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
                     ] = true
                       ? (() => {
                           const actionArgs = {
                             destination:
-                              "https://rentamon-files.storage.iran.liara.space/APK/rentamonv19-app.apk"
+                              "https://rentamon-files.storage.iran.liara.space/APK/rentamon-v19-app.apk"
                           };
                           return (({ destination }) => {
                             if (
@@ -371,19 +371,19 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                       : undefined;
                     if (
                       $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
                       ] != null &&
                       typeof $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
                       ] === "object" &&
                       typeof $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
                       ].then === "function"
                     ) {
                       $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
                       ] = await $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonv19AppApk"
+                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
                       ];
                     }
                   }}

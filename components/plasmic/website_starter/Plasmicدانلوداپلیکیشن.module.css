@@ -68,13 +68,13 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: auto;
+  height: 1447px;
   max-width: 80%;
   justify-content: flex-start;
   align-items: center;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 8px 8px 0px;
+  padding: 16px 8px 0px;
 }
 @media (max-width: 1200px) {
   .mainContents {
@@ -90,6 +90,7 @@
   .mainContents {
     padding-right: 0px;
     padding-left: 0px;
+    padding-top: 0px;
   }
 }
 .introApp {
@@ -109,10 +110,8 @@
 @media (max-width: 500px) {
   .introApp {
     flex-direction: column-reverse;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
     background: none;
+    padding: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -155,7 +154,7 @@
 }
 @media (max-width: 500px) {
   .introCalendarRight {
-    padding: 8px;
+    padding: 0px 8px 8px;
   }
 }
 .introCalendarRight2 {

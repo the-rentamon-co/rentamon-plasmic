@@ -1658,6 +1658,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/user-input-test"
+        },
+        {
+          "id": "MCY7hgSl3pBE",
+          "name": "_404",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmic_404.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/404.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmic_404.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/404"
         }
       ],
       "icons": [
@@ -3557,6 +3571,16 @@
           "id": "W8f1BLhJ9HO1",
           "name": "loading-purple.gif",
           "filePath": "../public/plasmic/website_starter/images/loadingPurpleGif.gif"
+        },
+        {
+          "id": "54dmX3WpVQy0",
+          "name": "404.png",
+          "filePath": "../public/plasmic/website_starter/images/_404Png.png"
+        },
+        {
+          "id": "QNw__d4f3o_7",
+          "name": "cb209db6-91e0-43d1-8d90-129537eb84fb.png",
+          "filePath": "../public/plasmic/website_starter/images/cb209Db691E043D18D90129537Eb84FbPng.png"
         }
       ],
       "indirect": false,
