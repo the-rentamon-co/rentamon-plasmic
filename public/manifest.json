@@ -2,7 +2,7 @@
   "id": "/",
   "scope": "/",
   "name": "رنتامون",
-  "short_name": " ",
+  "short_name": "رنتامون",
   "description": "مدیریت انلاین اقامتگاه",
   "display": "fullscreen",
   "display_override": ["window-controls-overlay"],
@@ -25,7 +25,7 @@
   "icons": [
     {
       "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png",
-      "sizes": "1x1",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
