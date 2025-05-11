@@ -505,9 +505,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         if ($steps.checkOldUser.data.flag == 3) {
                           return (window.location.href =
                             "https://web.rentamon.com/panels/?prop_id=1");
-                        } else if ($steps.checkOldUser.data.flag == 2) {
+                        } else if ($steps.checkOldUser.data.flag == 1) {
                           return (window.location.href =
-                            "https://rentamon.com//calendar/");
+                            "https://rentamon.com/panel/");
                         }
                       })()
                     };
@@ -1327,7 +1327,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__oyGbL
+                        sty.formField__twZaN
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1339,7 +1339,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__l6HLy
+                        sty.formField___8UZyL
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1357,7 +1357,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__idQ4W
+                          sty.text__eS5Ik
                         )}
                       >
                         {"Submit"}
