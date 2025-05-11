@@ -490,7 +490,7 @@ function PlasmicProperties__RenderFunc(props: {
                                   localStorage.getItem("rentamon_data");
                                 if (storedData) {
                                   const parsedData = JSON.parse(storedData);
-                                  console.log(parsedData);
+                                  console.log(`parsedData`, parsedData);
                                   if (
                                     parsedData.properties &&
                                     Array.isArray(parsedData.properties)
@@ -500,7 +500,8 @@ function PlasmicProperties__RenderFunc(props: {
                                         item =>
                                           item.property_name !== "اقامتگاه ۱"
                                       );
-                                    return console.log(filtered);
+                                    console.log("filtered", filtered);
+                                    return filtered;
                                   } else {
                                     return console.log(
                                       "properties آرایه نیست یا وجود ندارد."
