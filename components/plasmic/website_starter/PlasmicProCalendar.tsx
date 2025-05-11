@@ -213,7 +213,7 @@ function PlasmicProCalendar__RenderFunc(props: {
             try {
               return (() => {
                 const lastPropId = localStorage.getItem("last_property_id");
-                return parseInt(lastPropId, 10);
+                return lastPropId ? parseInt(lastPropId, 10) : 1;
               })();
             } catch (e) {
               if (
