@@ -487,7 +487,8 @@ function PlasmicProperties__RenderFunc(props: {
                             try {
                               return (() => {
                                 const storedData =
-                                  localStorage.getItem("rentamon_data");
+                                  localStorage.getItem("property_data");
+                                return JSON.parse(storedData);
                                 if (storedData) {
                                   const parsedData = JSON.parse(storedData);
                                   console.log(`parsedData`, parsedData);
