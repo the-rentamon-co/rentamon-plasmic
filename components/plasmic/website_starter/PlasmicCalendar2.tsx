@@ -4452,14 +4452,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a:"
+                  "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
                 }
               </div>
             }
             trigger={null}
             width={
-              hasVariant(globalVariants, "screen", "mobile")
-                ? "320px"
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? "280"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "300"
                 : hasVariant(globalVariants, "screen", "tablet")
                 ? "320px"
                 : "320px"
@@ -4799,7 +4801,15 @@ function PlasmicCalendar2__RenderFunc(props: {
                               data-plasmic-override={overrides.loading}
                               alt={""}
                               className={classNames(sty.loading)}
-                              displayHeight={"34px"}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "26px"
+                                  : "30px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -4910,7 +4920,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         data-plasmic-override={overrides.ok2}
                         alt={""}
                         className={classNames(sty.ok2)}
-                        displayHeight={"34px"}
+                        displayHeight={"30px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}

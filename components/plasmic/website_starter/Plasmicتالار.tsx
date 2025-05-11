@@ -355,7 +355,11 @@ function Plasmicتالار__RenderFunc(props: {
               <div
                 data-plasmic-name={"topProfile"}
                 data-plasmic-override={overrides.topProfile}
-                className={classNames(projectcss.all, sty.topProfile, "fadein")}
+                className={classNames(
+                  projectcss.all,
+                  sty.topProfile,
+                  "fadeinf"
+                )}
               >
                 {(
                   hasVariant(globalVariants, "screen", "mobile") ? true : false
@@ -367,7 +371,7 @@ function Plasmicتالار__RenderFunc(props: {
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__sDsaW, "shine")}
+                      className={classNames(sty.img__sDsaW, "shine fadein")}
                       displayHeight={"100%"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"none"}

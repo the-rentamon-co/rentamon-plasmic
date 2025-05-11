@@ -11,6 +11,11 @@
     border-radius: 10px;
   }
 }
+@media (max-width: 350px) {
+  .root {
+    border-radius: 10px;
+  }
+}
 .rootcolor_softGreen {
   border-color: #ffffff00;
 }

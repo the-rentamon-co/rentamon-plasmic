@@ -471,6 +471,7 @@
 @media (max-width: 350px) {
   .r2 {
     max-width: 14%;
+    padding-right: 2px;
   }
 }
 .apiRequest:global(.__wab_instance) {
@@ -485,6 +486,12 @@
 .img__lrd6I > picture > img {
   object-fit: cover;
 }
+@media (max-width: 350px) {
+  .img__lrd6I {
+    height: 26px;
+    max-width: 100%;
+  }
+}
 .img__kXy9 {
   object-fit: cover;
   max-width: 100%;
@@ -493,6 +500,17 @@
 .img__kXy9 > picture > img {
   object-fit: cover;
 }
+@media (max-width: 500px) {
+  .img__kXy9 {
+    height: 34px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .img__kXy9 {
+    height: 26px;
+  }
+}
 .img__vg0SX {
   object-fit: cover;
   max-width: 100%;
@@ -500,6 +518,17 @@
 }
 .img__vg0SX > picture > img {
   object-fit: cover;
+}
+@media (max-width: 500px) {
+  .img__vg0SX {
+    height: 34px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .img__vg0SX {
+    height: 26px;
+  }
 }
 .right2 {
   flex-direction: row;

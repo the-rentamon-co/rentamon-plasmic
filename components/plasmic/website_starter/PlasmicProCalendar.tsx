@@ -1348,9 +1348,17 @@ function PlasmicProCalendar__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__lrd6I)}
-                          displayHeight={"34px"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "26px"
+                              : "34px"
+                          }
                           displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={"auto"}
@@ -1422,9 +1430,19 @@ function PlasmicProCalendar__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__kXy9)}
-                          displayHeight={"34px"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "mobile")
+                              ? "34px"
+                              : "34px"
+                          }
                           displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={"auto"}
@@ -1489,9 +1507,19 @@ function PlasmicProCalendar__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__vg0SX)}
-                          displayHeight={"34px"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "mobile")
+                              ? "34px"
+                              : "34px"
+                          }
                           displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={"auto"}

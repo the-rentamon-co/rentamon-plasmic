@@ -1186,7 +1186,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBox__xAfjs {
@@ -1199,12 +1199,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 2px 8px;
+  padding: 1px 0px;
 }
 @media (max-width: 500px) {
   .freeBox__zeq8A {
@@ -1215,17 +1215,17 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  width: 100%;
+  width: 70%;
   height: auto;
   max-width: 100%;
-  min-width: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
   padding: 2px 8px;
 }
 .freeBox__rfsi > :global(.__wab_flex-container) {
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  min-width: 0;
+  justify-content: center;
   margin-left: calc(0px - 3px);
   width: calc(100% + 3px);
 }
@@ -1239,27 +1239,42 @@
   > img {
   margin-left: 3px;
 }
+@media (max-width: 500px) {
+  .freeBox__rfsi {
+    width: 80%;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__rfsi {
+    width: 80%;
+  }
+}
 .text__i0Ncp {
   position: relative;
-  width: 40%;
+  width: 50%;
   height: auto;
   max-width: 100%;
   padding-right: 0px;
   font-size: 16px;
+  text-align: right;
+}
+@media (max-width: 350px) {
+  .text__i0Ncp {
+    font-size: 15px;
+  }
 }
 .freeBox__x9Ue1 {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 110px;
+  width: 50%;
   height: auto;
   max-width: 100%;
-  flex-shrink: 0;
   padding: 0px;
 }
 .freeBox__x9Ue1 > :global(.__wab_flex-container) {
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   margin-top: calc(0px - 4px);
   height: calc(100% + 4px);
@@ -1317,7 +1332,7 @@
   margin-right: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
-  height: 34px;
+  height: 30px;
   flex-shrink: 0;
 }
 .loading > picture > img {
@@ -1326,6 +1341,13 @@
 @media (max-width: 500px) {
   .loading {
     margin-top: calc(0px + 4px) !important;
+  }
+}
+@media (max-width: 350px) {
+  .loading {
+    height: 26px;
+    margin-top: calc(0px + 4px) !important;
+    flex-shrink: 0;
   }
 }
 .text__vJgZx {
@@ -1408,7 +1430,7 @@
   margin-right: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
-  height: 34px;
+  height: 30px;
   flex-shrink: 0;
 }
 .ok2 > picture > img {
@@ -1445,6 +1467,8 @@
 }
 .text__dfIu4 {
   background: none;
+  text-align: center;
+  padding: 0px;
 }
 .block:global(.__wab_instance) {
   max-width: 100%;
