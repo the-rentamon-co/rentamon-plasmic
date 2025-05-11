@@ -374,6 +374,52 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
+              $steps["getLcalStorageData"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (
+                            $state.profile.loading ||
+                            !$state.profile.data ||
+                            !$state.profile.data.properties ||
+                            $state.profile.data.properties.length <= 0
+                          ) {
+                            const storedData =
+                              localStorage.getItem("user_info");
+                            if (storedData) {
+                              try {
+                                const parsedData = JSON.parse(storedData);
+                                if (
+                                  parsedData &&
+                                  typeof parsedData === "object"
+                                ) {
+                                  return ($state.profile.data = {
+                                    user_info: parsedData.user_info,
+                                    properties: parsedData.properties
+                                  });
+                                }
+                              } catch (e) {}
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["getLcalStorageData"] != null &&
+                typeof $steps["getLcalStorageData"] === "object" &&
+                typeof $steps["getLcalStorageData"].then === "function"
+              ) {
+                $steps["getLcalStorageData"] = await $steps[
+                  "getLcalStorageData"
+                ];
+              }
+
               $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
@@ -575,23 +621,16 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (() => {
-                          return (function redirectIfAppSubdomain() {
-                            const {
-                              protocol,
-                              hostname,
-                              pathname,
-                              search,
-                              hash
-                            } = window.location;
-                            console.log("here");
-                            if (hostname === "app.rentamon.com") {
-                              const targetHost = "rentamon.com";
-                              const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
-                              console.log("newUrl", newUrl);
-                              window.location.replace(newUrl);
-                            }
-                          })();
+                        return (function redirectIfAppSubdomain() {
+                          const { protocol, hostname, pathname, search, hash } =
+                            window.location;
+                          console.log("here");
+                          if (hostname === "app.rentamon.com") {
+                            const targetHost = "rentamon.com";
+                            const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
+                            console.log("newUrl", newUrl);
+                            window.location.replace(newUrl);
+                          }
                         })();
                       }
                     };
@@ -971,6 +1010,41 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     null,
                     eventArgs
                   );
+
+                  (async data => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                const data = $state.profile.data;
+                                if (
+                                  data?.user_info &&
+                                  Object.keys(data.user_info).length > 0
+                                ) {
+                                  return localStorage.setItem(
+                                    "user_info",
+                                    JSON.stringify(data)
+                                  );
+                                }
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }).apply(null, eventArgs);
                 }}
                 ref={ref => {
                   $refs["profile"] = ref;
@@ -1327,7 +1401,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__q6V96
+                        sty.formField___29Wgt
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1339,7 +1413,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ksiss
+                        sty.formField__zCyFy
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1357,7 +1431,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__fMyEr
+                          sty.text__po2Ts
                         )}
                       >
                         {"Submit"}

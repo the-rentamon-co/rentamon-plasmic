@@ -440,7 +440,7 @@ function PlasmicProCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["runCode4"] = true
+              $steps["getLcalStorageData"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -477,11 +477,13 @@ function PlasmicProCalendar__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode4"] != null &&
-                typeof $steps["runCode4"] === "object" &&
-                typeof $steps["runCode4"].then === "function"
+                $steps["getLcalStorageData"] != null &&
+                typeof $steps["getLcalStorageData"] === "object" &&
+                typeof $steps["getLcalStorageData"].then === "function"
               ) {
-                $steps["runCode4"] = await $steps["runCode4"];
+                $steps["getLcalStorageData"] = await $steps[
+                  "getLcalStorageData"
+                ];
               }
 
               $steps["runCode"] = true
