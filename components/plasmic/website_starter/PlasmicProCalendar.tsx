@@ -440,6 +440,86 @@ function PlasmicProCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
+              $steps["runCode4"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (
+                            $state.profile.loading ||
+                            !$state.profile.data ||
+                            !$state.profile.data.properties ||
+                            $state.profile.data.properties.length <= 0
+                          ) {
+                            console.log(
+                              "[Profile Check] شرط فعال شد. در حال تلاش برای دریافت از localStorage..."
+                            );
+                            const storedData =
+                              localStorage.getItem("user_info");
+                            if (!storedData) {
+                              console.warn(
+                                "[LocalStorage] داده‌ای با کلید user_info پیدا نشد."
+                              );
+                            } else {
+                              console.log(
+                                "[LocalStorage] داده پیدا شد. تلاش برای parse..."
+                              );
+                              try {
+                                const parsedData = JSON.parse(storedData);
+                                console.log(
+                                  "[LocalStorage] داده parse شد:",
+                                  parsedData
+                                );
+                                if (
+                                  parsedData &&
+                                  typeof parsedData === "object"
+                                ) {
+                                  $state.profile.data = {
+                                    user_info: parsedData,
+                                    properties: []
+                                  };
+                                  console.log(
+                                    "[State Update] داده‌ی profile با داده‌های localStorage جایگزین شد:",
+                                    $state.profile.data
+                                  );
+                                } else {
+                                  console.warn(
+                                    "[Parse] داده‌ی parse شده object نیست:",
+                                    parsedData
+                                  );
+                                }
+                              } catch (e) {
+                                console.error(
+                                  "[Parse Error] خطا در parse کردن localStorage:",
+                                  e
+                                );
+                              }
+                            }
+                          } else {
+                            console.log(
+                              "[Profile Check] شرط برقرار نبود. نیازی به دریافت از localStorage نیست."
+                            );
+                          }
+                          return console.log(
+                            "[Profile Final State]:",
+                            $state.profile
+                          );
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode4"] != null &&
+                typeof $steps["runCode4"] === "object" &&
+                typeof $steps["runCode4"].then === "function"
+              ) {
+                $steps["runCode4"] = await $steps["runCode4"];
+              }
+
               $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
@@ -730,21 +810,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (() => {
-                          return (function redirectIfAppSubdomain() {
-                            const {
-                              protocol,
-                              hostname,
-                              pathname,
-                              search,
-                              hash
-                            } = window.location;
-                            if (hostname === "app.rentamon.com") {
-                              const targetHost = "rentamon.com";
-                              const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
-                              window.location.replace(newUrl);
-                            }
-                          })();
+                        return (function redirectIfAppSubdomain() {
+                          const { protocol, hostname, pathname, search, hash } =
+                            window.location;
+                          if (hostname === "app.rentamon.com") {
+                            const targetHost = "rentamon.com";
+                            const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
+                            window.location.replace(newUrl);
+                          }
                         })();
                       }
                     };
@@ -1951,6 +2024,53 @@ function PlasmicProCalendar__RenderFunc(props: {
                     null,
                     eventArgs
                   );
+
+                  (async data => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                const data = $state.profile.data;
+                                console.log("data is:", data);
+                                if (
+                                  data?.user_info &&
+                                  Object.keys(data.user_info).length > 0
+                                ) {
+                                  console.log(
+                                    "Saving to localStorage:",
+                                    data.user_info
+                                  );
+                                  localStorage.setItem(
+                                    "user_info",
+                                    JSON.stringify(data.user_info)
+                                  );
+                                  return console.log(
+                                    "\u2705 user_info saved to localStorage"
+                                  );
+                                } else {
+                                  return console.log(
+                                    "\u274C user_info is missing or empty"
+                                  );
+                                }
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }).apply(null, eventArgs);
                 }}
                 ref={ref => {
                   $refs["profile"] = ref;

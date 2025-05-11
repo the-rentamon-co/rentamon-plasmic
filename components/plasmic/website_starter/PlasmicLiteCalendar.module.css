@@ -142,7 +142,7 @@
 }
 @media (max-width: 350px) {
   .header {
-    padding: 0px 4px 4px;
+    padding: 0px 0px 4px;
   }
 }
 .right {
@@ -572,7 +572,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__ypuRq:global(.__wab_instance) {
+.formField___2ICnD:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -581,7 +581,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__lFkMu:global(.__wab_instance) {
+.formField__lsk90:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -594,7 +594,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__vEQoL {
+.text__akCcp {
   position: relative;
   width: 100%;
   height: auto;

@@ -1119,6 +1119,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__caIlP {
+    padding: 2px;
+  }
+}
 @media (max-width: 350px) {
   .freeBox__caIlP {
     padding: 0px;
@@ -2864,6 +2869,11 @@
     width: auto;
     padding-top: 9px;
     margin: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .submitChange {
+    padding-top: 4px;
   }
 }
 .freeBox___8O4D {

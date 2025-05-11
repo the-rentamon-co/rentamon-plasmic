@@ -2,6 +2,14 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  background: #fcfcfc;
+  border-radius: 10px;
+}
+@media (max-width: 500px) {
+  .root {
+    background: #fcfcfc;
+    border-radius: 10px;
+  }
 }
 .rootcolor_softGreen {
   border-color: #ffffff00;
