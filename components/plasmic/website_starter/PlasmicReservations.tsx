@@ -153,8 +153,6 @@ export type PlasmicReservations__OverridesType = {
   reserveMainStack2?: Flex__<"div">;
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
-  dataFromLocalStorage?: Flex__<"div">;
-  dataFromApiRequest?: Flex__<"div">;
   reserveData?: Flex__<typeof ApiRequest>;
   favicon?: Flex__<typeof Embed>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
@@ -3560,390 +3558,6 @@ function PlasmicReservations__RenderFunc(props: {
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                 (() => {
                   try {
-                    return (() => {
-                      const storedData = localStorage.getItem("reservations");
-                      if (storedData) {
-                        const parsedData = JSON.parse(storedData);
-                        console.log(parsedData);
-                        return parsedData;
-                      } else {
-                        return console.log(
-                          "هیچ داده‌ای در localStorage با این کلید پیدا نشد."
-                        );
-                      }
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
-                  }
-                })()
-              ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                const currentItem = __plasmic_item_0;
-                const currentIndex = __plasmic_idx_0;
-                return (
-                  <div
-                    data-plasmic-name={"dataFromLocalStorage"}
-                    data-plasmic-override={overrides.dataFromLocalStorage}
-                    className={classNames(
-                      projectcss.all,
-                      sty.dataFromLocalStorage
-                    )}
-                    key={currentIndex}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: ($state.modalData = [
-                                {
-                                  GuestName:
-                                    $state.reserveData.data[currentIndex]
-                                      .GuestName,
-                                  platfromName:
-                                    $state.reserveData.data[currentIndex]
-                                      .platformName,
-                                  enterDate:
-                                    $state.reserveData.data[currentIndex]
-                                      .checkIn,
-                                  laveDate:
-                                    $state.reserveData.data[currentIndex]
-                                      .checkOut,
-                                  propertyName:
-                                    $state.reserveData.data[currentIndex]
-                                      .property_name,
-                                  status:
-                                    $state.reserveData.data[currentIndex]
-                                      .status,
-                                  phone_number:
-                                    $state.reserveData.data[currentIndex]
-                                      .phone_number,
-                                  amount:
-                                    $state.reserveData.data[currentIndex]
-                                      .amount,
-                                  night:
-                                    $state.reserveData.data[currentIndex].night,
-                                  guests_count:
-                                    $state.reserveData.data[currentIndex]
-                                      .guests_count,
-                                  reserve_id:
-                                    $state.reserveData.data[currentIndex]
-                                      .reserve_id,
-                                  id: $state.reserveData.data[currentIndex].Id,
-                                  created_at:
-                                    $state.reserveData.data[currentIndex]
-                                      .created_at,
-                                  is_sattled:
-                                    $state.reserveData.data[currentIndex]
-                                      .is_settled
-                                }
-                              ])
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-
-                      $steps["updateModalOpen"] =
-                        $state.reserveData.data[currentIndex].status !=
-                        "Pending"
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["modal", "open"]
-                                },
-                                operation: 0,
-                                value: true
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["updateModalOpen"] != null &&
-                        typeof $steps["updateModalOpen"] === "object" &&
-                        typeof $steps["updateModalOpen"].then === "function"
-                      ) {
-                        $steps["updateModalOpen"] = await $steps[
-                          "updateModalOpen"
-                        ];
-                      }
-
-                      $steps["updateModalOpen2"] =
-                        $state.reserveData.data[currentIndex].status ==
-                        "Pending"
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["confirmed", "open"]
-                                },
-                                operation: 0,
-                                value: true
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["updateModalOpen2"] != null &&
-                        typeof $steps["updateModalOpen2"] === "object" &&
-                        typeof $steps["updateModalOpen2"].then === "function"
-                      ) {
-                        $steps["updateModalOpen2"] = await $steps[
-                          "updateModalOpen2"
-                        ];
-                      }
-
-                      $steps["updateModalOpen3"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["tourSteps"]
-                              },
-                              operation: 0,
-                              value:
-                                $state.tourSteps == 0
-                                  ? ($state.tourSteps = 1)
-                                  : ($state.tourSteps = 0)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateModalOpen3"] != null &&
-                        typeof $steps["updateModalOpen3"] === "object" &&
-                        typeof $steps["updateModalOpen3"].then === "function"
-                      ) {
-                        $steps["updateModalOpen3"] = await $steps[
-                          "updateModalOpen3"
-                        ];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___5JQ9H
-                      )}
-                    >
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return $state.reserveData.data[0].Id != null;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : true
-                      ) ? (
-                        <RecordList
-                          cancelledBookings={(() => {
-                            try {
-                              return currentItem.status == "Cancelled";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.recordList__nh1KD
-                          )}
-                          confirmedBookings={(() => {
-                            try {
-                              return currentItem.status == "Confirmed";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                          currentIndex={currentIndex}
-                          data={(() => {
-                            try {
-                              return currentItem;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
-                          firstVisit={(() => {
-                            try {
-                              return $state.isTheFirstVisit;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return false;
-                              }
-                              throw e;
-                            }
-                          })()}
-                          pastBookingsBox={(() => {
-                            try {
-                              return currentItem.status == "Past";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                          pendingBookings={(() => {
-                            try {
-                              return currentItem.status == "Pending";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (
-                              currentItem.is_settled == false &&
-                              (currentItem.status === "Past" ||
-                                currentItem.status === "Cancelled")
-                            ) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__k2Q7Q)}
-                          displayHeight={"25px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image105.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                    </div>
-                  </div>
-                );
-              })}
-              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                (() => {
-                  try {
                     return $state.reserveData.data;
                   } catch (e) {
                     if (
@@ -3960,12 +3574,7 @@ function PlasmicReservations__RenderFunc(props: {
                 const currentIndex = __plasmic_idx_0;
                 return (
                   <div
-                    data-plasmic-name={"dataFromApiRequest"}
-                    data-plasmic-override={overrides.dataFromApiRequest}
-                    className={classNames(
-                      projectcss.all,
-                      sty.dataFromApiRequest
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__uUMnB)}
                     key={currentIndex}
                     onClick={async event => {
                       const $steps = {};
@@ -4369,26 +3978,435 @@ function PlasmicReservations__RenderFunc(props: {
                   </div>
                 }
                 loadingDisplay={
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__yXdQ)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "34px"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "40px"
-                        : "50px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={
-                      "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
-                  />
+                  <React.Fragment>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__yXdQ)}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "34px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "40px"
+                          : "50px"
+                      }
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={
+                        "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                      }
+                    />
+
+                    {(_par =>
+                      !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                      (() => {
+                        try {
+                          return (() => {
+                            const storedData =
+                              localStorage.getItem("reservations");
+                            if (storedData) {
+                              const parsedData = JSON.parse(storedData);
+                              console.log(parsedData);
+                              return parsedData;
+                            } else {
+                              return console.log(
+                                "هیچ داده‌ای در localStorage با این کلید پیدا نشد."
+                              );
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
+                          }
+                          throw e;
+                        }
+                      })()
+                    ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                      const currentItem = __plasmic_item_0;
+                      const currentIndex = __plasmic_idx_0;
+                      return (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__fAOri
+                          )}
+                          key={currentIndex}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["updateStateVariable"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    operation: 0,
+                                    value: ($state.modalData = [
+                                      {
+                                        GuestName:
+                                          $state.reserveData.data[currentIndex]
+                                            .GuestName,
+                                        platfromName:
+                                          $state.reserveData.data[currentIndex]
+                                            .platformName,
+                                        enterDate:
+                                          $state.reserveData.data[currentIndex]
+                                            .checkIn,
+                                        laveDate:
+                                          $state.reserveData.data[currentIndex]
+                                            .checkOut,
+                                        propertyName:
+                                          $state.reserveData.data[currentIndex]
+                                            .property_name,
+                                        status:
+                                          $state.reserveData.data[currentIndex]
+                                            .status,
+                                        phone_number:
+                                          $state.reserveData.data[currentIndex]
+                                            .phone_number,
+                                        amount:
+                                          $state.reserveData.data[currentIndex]
+                                            .amount,
+                                        night:
+                                          $state.reserveData.data[currentIndex]
+                                            .night,
+                                        guests_count:
+                                          $state.reserveData.data[currentIndex]
+                                            .guests_count,
+                                        reserve_id:
+                                          $state.reserveData.data[currentIndex]
+                                            .reserve_id,
+                                        id: $state.reserveData.data[
+                                          currentIndex
+                                        ].Id,
+                                        created_at:
+                                          $state.reserveData.data[currentIndex]
+                                            .created_at,
+                                        is_sattled:
+                                          $state.reserveData.data[currentIndex]
+                                            .is_settled
+                                      }
+                                    ])
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateStateVariable"] != null &&
+                              typeof $steps["updateStateVariable"] ===
+                                "object" &&
+                              typeof $steps["updateStateVariable"].then ===
+                                "function"
+                            ) {
+                              $steps["updateStateVariable"] = await $steps[
+                                "updateStateVariable"
+                              ];
+                            }
+
+                            $steps["updateModalOpen"] =
+                              $state.reserveData.data[currentIndex].status !=
+                              "Pending"
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["modal", "open"]
+                                      },
+                                      operation: 0,
+                                      value: true
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["updateModalOpen"] != null &&
+                              typeof $steps["updateModalOpen"] === "object" &&
+                              typeof $steps["updateModalOpen"].then ===
+                                "function"
+                            ) {
+                              $steps["updateModalOpen"] = await $steps[
+                                "updateModalOpen"
+                              ];
+                            }
+
+                            $steps["updateModalOpen2"] =
+                              $state.reserveData.data[currentIndex].status ==
+                              "Pending"
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["confirmed", "open"]
+                                      },
+                                      operation: 0,
+                                      value: true
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["updateModalOpen2"] != null &&
+                              typeof $steps["updateModalOpen2"] === "object" &&
+                              typeof $steps["updateModalOpen2"].then ===
+                                "function"
+                            ) {
+                              $steps["updateModalOpen2"] = await $steps[
+                                "updateModalOpen2"
+                              ];
+                            }
+
+                            $steps["updateModalOpen3"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["tourSteps"]
+                                    },
+                                    operation: 0,
+                                    value:
+                                      $state.tourSteps == 0
+                                        ? ($state.tourSteps = 1)
+                                        : ($state.tourSteps = 0)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateModalOpen3"] != null &&
+                              typeof $steps["updateModalOpen3"] === "object" &&
+                              typeof $steps["updateModalOpen3"].then ===
+                                "function"
+                            ) {
+                              $steps["updateModalOpen3"] = await $steps[
+                                "updateModalOpen3"
+                              ];
+                            }
+                          }}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___5JQ9H
+                            )}
+                          >
+                            {(
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? (() => {
+                                    try {
+                                      return (
+                                        $state.reserveData.data[0].Id != null
+                                      );
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return false;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                : true
+                            ) ? (
+                              <RecordList
+                                cancelledBookings={(() => {
+                                  try {
+                                    return currentItem.status == "Cancelled";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.recordList__nh1KD
+                                )}
+                                confirmedBookings={(() => {
+                                  try {
+                                    return currentItem.status == "Confirmed";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                currentIndex={currentIndex}
+                                data={(() => {
+                                  try {
+                                    return (() => {
+                                      console.log(currentItem);
+                                      return currentItem;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                firstVisit={(() => {
+                                  try {
+                                    return $state.isTheFirstVisit;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return false;
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                pastBookingsBox={(() => {
+                                  try {
+                                    return currentItem.status == "Past";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                pendingBookings={(() => {
+                                  try {
+                                    return currentItem.status == "Pending";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              />
+                            ) : null}
+                            {(() => {
+                              try {
+                                return (() => {
+                                  if (
+                                    currentItem.is_settled == false &&
+                                    (currentItem.status === "Past" ||
+                                      currentItem.status === "Cancelled")
+                                  ) {
+                                    return true;
+                                  } else {
+                                    return false;
+                                  }
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })() ? (
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__k2Q7Q)}
+                                displayHeight={"25px"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"auto"}
+                                loading={"lazy"}
+                                src={{
+                                  src: "/plasmic/website_starter/images/image105.svg",
+                                  fullWidth: 27,
+                                  fullHeight: 27,
+                                  aspectRatio: 1
+                                }}
+                              />
+                            ) : null}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </React.Fragment>
                 }
                 method={"GET"}
                 onError={async (...eventArgs: any) => {
@@ -5472,8 +5490,6 @@ const PlasmicDescendants = {
     "reserveMainStack2",
     "reserveData2",
     "reserveMainStack",
-    "dataFromLocalStorage",
-    "dataFromApiRequest",
     "reserveData",
     "favicon",
     "navigationRntFooter",
@@ -5540,8 +5556,6 @@ const PlasmicDescendants = {
     "reserveMainStack2",
     "reserveData2",
     "reserveMainStack",
-    "dataFromLocalStorage",
-    "dataFromApiRequest",
     "reserveData"
   ],
   titles: ["titles", "guestName", "arriveDate", "source"],
@@ -5671,14 +5685,7 @@ const PlasmicDescendants = {
   otaghak2: ["otaghak2"],
   reserveMainStack2: ["reserveMainStack2", "reserveData2"],
   reserveData2: ["reserveData2"],
-  reserveMainStack: [
-    "reserveMainStack",
-    "dataFromLocalStorage",
-    "dataFromApiRequest",
-    "reserveData"
-  ],
-  dataFromLocalStorage: ["dataFromLocalStorage"],
-  dataFromApiRequest: ["dataFromApiRequest"],
+  reserveMainStack: ["reserveMainStack", "reserveData"],
   reserveData: ["reserveData"],
   favicon: ["favicon"],
   navigationRntFooter: ["navigationRntFooter"],
@@ -5749,8 +5756,6 @@ type NodeDefaultElementType = {
   reserveMainStack2: "div";
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
-  dataFromLocalStorage: "div";
-  dataFromApiRequest: "div";
   reserveData: typeof ApiRequest;
   favicon: typeof Embed;
   navigationRntFooter: typeof NavigationRntFooter;
@@ -5877,8 +5882,6 @@ export const PlasmicReservations = Object.assign(
     reserveMainStack2: makeNodeComponent("reserveMainStack2"),
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
-    dataFromLocalStorage: makeNodeComponent("dataFromLocalStorage"),
-    dataFromApiRequest: makeNodeComponent("dataFromApiRequest"),
     reserveData: makeNodeComponent("reserveData"),
     favicon: makeNodeComponent("favicon"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
