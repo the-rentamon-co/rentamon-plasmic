@@ -583,6 +583,12 @@ function PlasmicActivation__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -4396,50 +4402,70 @@ function PlasmicActivation__RenderFunc(props: {
                                 onClick={async () => {
                                   const $steps = {};
 
-                                  $steps["runCode"] = false
+                                  $steps["updateLoading"] = true
                                     ? (() => {
                                         const actionArgs = {
-                                          customFunction: async () => {
-                                            return (() => {
-                                              function getCookieValue(
-                                                cookieName
-                                              ) {
-                                                const cookies = document.cookie
-                                                  .split(";")
-                                                  .map(cookie => cookie.trim());
-                                                for (const cookie of cookies) {
-                                                  const [name, value] =
-                                                    cookie.split("=");
-                                                  if (name === cookieName) {
-                                                    return value;
-                                                  }
-                                                }
-                                                return null;
-                                              }
-                                              if (
-                                                document.cookie.includes(
-                                                  "source"
-                                                )
-                                              ) {
-                                                const user_type =
-                                                  getCookieValue("source");
-                                                $state.source = user_type;
-                                              }
-                                              return console.log($state.source);
-                                            })();
-                                          }
+                                          variable: {
+                                            objRoot: $state,
+                                            variablePath: ["loading"]
+                                          },
+                                          operation: 4
                                         };
-                                        return (({ customFunction }) => {
-                                          return customFunction();
+                                        return (({
+                                          variable,
+                                          value,
+                                          startIndex,
+                                          deleteCount
+                                        }) => {
+                                          if (!variable) {
+                                            return;
+                                          }
+                                          const { objRoot, variablePath } =
+                                            variable;
+
+                                          const oldValue = $stateGet(
+                                            objRoot,
+                                            variablePath
+                                          );
+                                          $stateSet(
+                                            objRoot,
+                                            variablePath,
+                                            !oldValue
+                                          );
+                                          return !oldValue;
                                         })?.apply(null, [actionArgs]);
                                       })()
                                     : undefined;
                                   if (
-                                    $steps["runCode"] != null &&
-                                    typeof $steps["runCode"] === "object" &&
-                                    typeof $steps["runCode"].then === "function"
+                                    $steps["updateLoading"] != null &&
+                                    typeof $steps["updateLoading"] ===
+                                      "object" &&
+                                    typeof $steps["updateLoading"].then ===
+                                      "function"
                                   ) {
-                                    $steps["runCode"] = await $steps["runCode"];
+                                    $steps["updateLoading"] = await $steps[
+                                      "updateLoading"
+                                    ];
+                                  }
+
+                                  $steps["invokeGlobalAction"] = true
+                                    ? (() => {
+                                        const actionArgs = { args: [1000] };
+                                        return $globalActions[
+                                          "Fragment.wait"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
+                                  if (
+                                    $steps["invokeGlobalAction"] != null &&
+                                    typeof $steps["invokeGlobalAction"] ===
+                                      "object" &&
+                                    typeof $steps["invokeGlobalAction"].then ===
+                                      "function"
+                                  ) {
+                                    $steps["invokeGlobalAction"] = await $steps[
+                                      "invokeGlobalAction"
+                                    ];
                                   }
 
                                   $steps["updateInput6Value3"] = $state
@@ -4487,58 +4513,6 @@ function PlasmicActivation__RenderFunc(props: {
                                     ];
                                   }
 
-                                  $steps["runCode2"] = false
-                                    ? (() => {
-                                        const actionArgs = {
-                                          customFunction: async () => {
-                                            return (() => {
-                                              function setCookie(
-                                                name,
-                                                value,
-                                                hours
-                                              ) {
-                                                let expires = "";
-                                                if (hours) {
-                                                  const date = new Date();
-                                                  date.setTime(
-                                                    date.getTime() +
-                                                      hours * 60 * 60 * 1000
-                                                  );
-                                                  expires =
-                                                    "; expires=" +
-                                                    date.toUTCString();
-                                                }
-                                                document.cookie =
-                                                  name +
-                                                  "=" +
-                                                  (value || "") +
-                                                  expires +
-                                                  "; path=/";
-                                              }
-                                              return setCookie(
-                                                "is_new",
-                                                "true",
-                                                2160
-                                              );
-                                            })();
-                                          }
-                                        };
-                                        return (({ customFunction }) => {
-                                          return customFunction();
-                                        })?.apply(null, [actionArgs]);
-                                      })()
-                                    : undefined;
-                                  if (
-                                    $steps["runCode2"] != null &&
-                                    typeof $steps["runCode2"] === "object" &&
-                                    typeof $steps["runCode2"].then ===
-                                      "function"
-                                  ) {
-                                    $steps["runCode2"] = await $steps[
-                                      "runCode2"
-                                    ];
-                                  }
-
                                   $steps["updateInput6Value2"] = $state
                                     .policiesCheckbox.isChecked
                                     ? (() => {
@@ -4574,19 +4548,103 @@ function PlasmicActivation__RenderFunc(props: {
                                       "updateInput6Value2"
                                     ];
                                   }
+
+                                  $steps["updateLoading2"] = true
+                                    ? (() => {
+                                        const actionArgs = {
+                                          variable: {
+                                            objRoot: $state,
+                                            variablePath: ["loading"]
+                                          },
+                                          operation: 4
+                                        };
+                                        return (({
+                                          variable,
+                                          value,
+                                          startIndex,
+                                          deleteCount
+                                        }) => {
+                                          if (!variable) {
+                                            return;
+                                          }
+                                          const { objRoot, variablePath } =
+                                            variable;
+
+                                          const oldValue = $stateGet(
+                                            objRoot,
+                                            variablePath
+                                          );
+                                          $stateSet(
+                                            objRoot,
+                                            variablePath,
+                                            !oldValue
+                                          );
+                                          return !oldValue;
+                                        })?.apply(null, [actionArgs]);
+                                      })()
+                                    : undefined;
+                                  if (
+                                    $steps["updateLoading2"] != null &&
+                                    typeof $steps["updateLoading2"] ===
+                                      "object" &&
+                                    typeof $steps["updateLoading2"].then ===
+                                      "function"
+                                  ) {
+                                    $steps["updateLoading2"] = await $steps[
+                                      "updateLoading2"
+                                    ];
+                                  }
                                 }}
                                 submitsForm={true}
                                 type={"primary"}
                               >
-                                <div
+                                <Stack__
+                                  as={"div"}
+                                  hasGap={true}
                                   className={classNames(
                                     projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__yojJ1
+                                    sty.freeBox__gIjbh
                                   )}
                                 >
-                                  {"\u0628\u0631\u06cc\u0645"}
-                                </div>
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__yojJ1
+                                    )}
+                                  >
+                                    {"\u0628\u0631\u06cc\u0645"}
+                                  </div>
+                                  {(() => {
+                                    try {
+                                      return $state.loading;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return true;
+                                      }
+                                      throw e;
+                                    }
+                                  })() ? (
+                                    <PlasmicImg__
+                                      alt={""}
+                                      className={classNames(sty.img__o58Ro)}
+                                      displayHeight={"26px"}
+                                      displayMaxHeight={"none"}
+                                      displayMaxWidth={"100%"}
+                                      displayMinHeight={"0"}
+                                      displayMinWidth={"0"}
+                                      displayWidth={"auto"}
+                                      loading={"lazy"}
+                                      src={
+                                        "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                                      }
+                                    />
+                                  ) : null}
+                                </Stack__>
                               </AntdButton>
                             </div>
                           </div>

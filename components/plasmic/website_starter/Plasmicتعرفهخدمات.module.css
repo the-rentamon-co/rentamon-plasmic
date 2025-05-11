@@ -4542,7 +4542,7 @@
   min-width: 0;
   padding: 8px;
 }
-.clarity2:global(.__wab_instance) {
+.clarity:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }

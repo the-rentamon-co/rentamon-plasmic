@@ -132,7 +132,7 @@ export type Plasmicتعرفهخدمات__OverridesType = {
   _4?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
+  clarity?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
@@ -2930,9 +2930,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               className={classNames(projectcss.all, sty.html)}
             >
               <Embed
-                data-plasmic-name={"clarity2"}
-                data-plasmic-override={overrides.clarity2}
-                className={classNames("__wab_instance", sty.clarity2)}
+                data-plasmic-name={"clarity"}
+                data-plasmic-override={overrides.clarity}
+                className={classNames("__wab_instance", sty.clarity)}
                 code={
                   '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
                 }
@@ -3004,7 +3004,7 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "html",
-    "clarity2",
+    "clarity",
     "goftino",
     "rentamonFooter"
   ],
@@ -3076,7 +3076,7 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "html",
-    "clarity2",
+    "clarity",
     "goftino"
   ],
   accordionMain: ["accordionMain", "_2", "_1", "_4", "_5"],
@@ -3084,8 +3084,8 @@ const PlasmicDescendants = {
   _1: ["_1"],
   _4: ["_4"],
   _5: ["_5"],
-  html: ["html", "clarity2", "goftino"],
-  clarity2: ["clarity2"],
+  html: ["html", "clarity", "goftino"],
+  clarity: ["clarity"],
   goftino: ["goftino"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
@@ -3136,7 +3136,7 @@ type NodeDefaultElementType = {
   _4: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   html: "div";
-  clarity2: typeof Embed;
+  clarity: typeof Embed;
   goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
 };
@@ -3244,7 +3244,7 @@ export const Plasmicتعرفهخدمات = Object.assign(
     _4: makeNodeComponent("_4"),
     _5: makeNodeComponent("_5"),
     html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
+    clarity: makeNodeComponent("clarity"),
     goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 

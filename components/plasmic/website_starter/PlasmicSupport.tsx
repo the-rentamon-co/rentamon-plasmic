@@ -132,7 +132,7 @@ export type PlasmicSupport__OverridesType = {
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
+  clarity?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   favicon?: Flex__<typeof Embed>;
@@ -1331,9 +1331,9 @@ function PlasmicSupport__RenderFunc(props: {
             className={classNames(projectcss.all, sty.html)}
           >
             <Embed
-              data-plasmic-name={"clarity2"}
-              data-plasmic-override={overrides.clarity2}
-              className={classNames("__wab_instance", sty.clarity2)}
+              data-plasmic-name={"clarity"}
+              data-plasmic-override={overrides.clarity}
+              className={classNames("__wab_instance", sty.clarity)}
               code={
                 '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
               }
@@ -1409,7 +1409,7 @@ const PlasmicDescendants = {
     "map",
     "embedHtml",
     "html",
-    "clarity2",
+    "clarity",
     "rentamonFooter",
     "navigationRntFooter",
     "favicon"
@@ -1547,8 +1547,8 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
-  html: ["html", "clarity2"],
-  clarity2: ["clarity2"],
+  html: ["html", "clarity"],
+  clarity: ["clarity"],
   rentamonFooter: ["rentamonFooter"],
   navigationRntFooter: ["navigationRntFooter"],
   favicon: ["favicon"]
@@ -1599,7 +1599,7 @@ type NodeDefaultElementType = {
   map: "div";
   embedHtml: typeof Embed;
   html: "div";
-  clarity2: typeof Embed;
+  clarity: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
   navigationRntFooter: typeof NavigationRntFooter;
   favicon: typeof Embed;
@@ -1706,7 +1706,7 @@ export const PlasmicSupport = Object.assign(
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
     html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
+    clarity: makeNodeComponent("clarity"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     favicon: makeNodeComponent("favicon"),
