@@ -478,12 +478,12 @@ function PlasmicProperties__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__zgYj
+                          sty.freeBox__kyYbv
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
+                        {(_par =>
+                          !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                          (() => {
                             try {
                               return (() => {
                                 const storedData =
@@ -491,12 +491,25 @@ function PlasmicProperties__RenderFunc(props: {
                                 if (storedData) {
                                   const parsedData = JSON.parse(storedData);
                                   console.log(parsedData);
-                                  return parsedData;
+                                  if (
+                                    parsedData.properties &&
+                                    Array.isArray(parsedData.properties)
+                                  ) {
+                                    const filtered =
+                                      parsedData.properties.filter(
+                                        item =>
+                                          item.property_name !== "اقامتگاه ۱"
+                                      );
+                                    return console.log(filtered);
+                                  } else {
+                                    return console.log(
+                                      "properties آرایه نیست یا وجود ندارد."
+                                    );
+                                  }
                                 } else {
-                                  console.log(
+                                  return console.log(
                                     "هیچ داده‌ای در localStorage با این کلید پیدا نشد."
                                   );
-                                  return "هیچ دیتایی نبود";
                                 }
                               })();
                             } catch (e) {
@@ -504,12 +517,312 @@ function PlasmicProperties__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return "";
+                                return [];
                               }
                               throw e;
                             }
-                          })()}
-                        </React.Fragment>
+                          })()
+                        ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                          const currentItem = __plasmic_item_0;
+                          const currentIndex = __plasmic_idx_0;
+                          return (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___9MxO,
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "clickable"
+                                  : "clickable fadeinf"
+                              )}
+                              key={currentIndex}
+                              onClick={async event => {
+                                const $steps = {};
+
+                                $steps["goToProperty"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/property/${(() => {
+                                          try {
+                                            return currentItem.id;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()}`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["goToProperty"] != null &&
+                                  typeof $steps["goToProperty"] === "object" &&
+                                  typeof $steps["goToProperty"].then ===
+                                    "function"
+                                ) {
+                                  $steps["goToProperty"] = await $steps[
+                                    "goToProperty"
+                                  ];
+                                }
+                              }}
+                            >
+                              {(() => {
+                                try {
+                                  return true;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })() ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__rfVv
+                                  )}
+                                >
+                                  <PlasmicImg__
+                                    alt={""}
+                                    className={classNames(
+                                      sty.img__ai6A,
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "shine"
+                                        : ``
+                                    )}
+                                    displayHeight={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "100%"
+                                        : "100%"
+                                    }
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"100%"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "100%"
+                                        : "100%"
+                                    }
+                                    height={``}
+                                    loading={"lazy"}
+                                    src={(() => {
+                                      try {
+                                        return currentItem.profile_pic_link;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  />
+                                </div>
+                              ) : null}
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__oqlgW
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__wir2D
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem.property_name;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "\u0633\u0648\u0626\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__sBuze,
+                            "clickable fadein"
+                          )}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["goToPropertyEditFirstProperty"] =
+                              $state.apiRequest.data.properties.filter(
+                                item => item.property_name !== "اقامتگاه ۱"
+                              ).length == 0
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/property/edit/first-property`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["goToPropertyEditFirstProperty"] != null &&
+                              typeof $steps["goToPropertyEditFirstProperty"] ===
+                                "object" &&
+                              typeof $steps["goToPropertyEditFirstProperty"]
+                                .then === "function"
+                            ) {
+                              $steps["goToPropertyEditFirstProperty"] =
+                                await $steps["goToPropertyEditFirstProperty"];
+                            }
+
+                            $steps["goToPropertyCreate"] =
+                              $state.apiRequest.data.properties.filter(
+                                item => item.property_name !== "اقامتگاه ۱"
+                              ).length >= 1
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/property/create`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["goToPropertyCreate"] != null &&
+                              typeof $steps["goToPropertyCreate"] ===
+                                "object" &&
+                              typeof $steps["goToPropertyCreate"].then ===
+                                "function"
+                            ) {
+                              $steps["goToPropertyCreate"] = await $steps[
+                                "goToPropertyCreate"
+                              ];
+                            }
+                          }}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__mooUv
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__siplE)}
+                              displayHeight={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "60px"
+                                  : "52px"
+                              }
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image110.svg",
+                                fullWidth: 51,
+                                fullHeight: 51,
+                                aspectRatio: 1
+                              }}
+                            />
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___10ONd
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__nIC
+                              )}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                                : "\u0627\u06cc\u062c\u0627\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                            </div>
+                          </div>
+                        </Stack__>
                       </div>
                     </React.Fragment>
                   }
