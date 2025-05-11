@@ -451,59 +451,23 @@ function PlasmicProCalendar__RenderFunc(props: {
                             !$state.profile.data.properties ||
                             $state.profile.data.properties.length <= 0
                           ) {
-                            console.log(
-                              "[Profile Check] شرط فعال شد. در حال تلاش برای دریافت از localStorage..."
-                            );
                             const storedData =
                               localStorage.getItem("user_info");
-                            if (!storedData) {
-                              console.warn(
-                                "[LocalStorage] داده‌ای با کلید user_info پیدا نشد."
-                              );
-                            } else {
-                              console.log(
-                                "[LocalStorage] داده پیدا شد. تلاش برای parse..."
-                              );
+                            if (storedData) {
                               try {
                                 const parsedData = JSON.parse(storedData);
-                                console.log(
-                                  "[LocalStorage] داده parse شد:",
-                                  parsedData
-                                );
                                 if (
                                   parsedData &&
                                   typeof parsedData === "object"
                                 ) {
-                                  $state.profile.data = {
+                                  return ($state.profile.data = {
                                     user_info: parsedData,
                                     properties: []
-                                  };
-                                  console.log(
-                                    "[State Update] داده‌ی profile با داده‌های localStorage جایگزین شد:",
-                                    $state.profile.data
-                                  );
-                                } else {
-                                  console.warn(
-                                    "[Parse] داده‌ی parse شده object نیست:",
-                                    parsedData
-                                  );
+                                  });
                                 }
-                              } catch (e) {
-                                console.error(
-                                  "[Parse Error] خطا در parse کردن localStorage:",
-                                  e
-                                );
-                              }
+                              } catch (e) {}
                             }
-                          } else {
-                            console.log(
-                              "[Profile Check] شرط برقرار نبود. نیازی به دریافت از localStorage نیست."
-                            );
                           }
-                          return console.log(
-                            "[Profile Final State]:",
-                            $state.profile
-                          );
                         })();
                       }
                     };
@@ -782,7 +746,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                             return null;
                           }
                           if (document.cookie.includes("first_visit")) {
-                            console.log("in the visit");
                             const first_visit = getCookieValue("first_visit");
                             if (first_visit != null) {
                               return ($state.isTheFirstVisit = true);
@@ -2034,25 +1997,13 @@ function PlasmicProCalendar__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 const data = $state.profile.data;
-                                console.log("data is:", data);
                                 if (
                                   data?.user_info &&
                                   Object.keys(data.user_info).length > 0
                                 ) {
-                                  console.log(
-                                    "Saving to localStorage:",
-                                    data.user_info
-                                  );
-                                  localStorage.setItem(
+                                  return localStorage.setItem(
                                     "user_info",
-                                    JSON.stringify(data.user_info)
-                                  );
-                                  return console.log(
-                                    "\u2705 user_info saved to localStorage"
-                                  );
-                                } else {
-                                  return console.log(
-                                    "\u274C user_info is missing or empty"
+                                    JSON.stringify(data)
                                   );
                                 }
                               })();
