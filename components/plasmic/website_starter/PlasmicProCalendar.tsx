@@ -568,12 +568,15 @@ function PlasmicProCalendar__RenderFunc(props: {
                     const actionArgs = {
                       operation: 0,
                       value: (() => {
-                        if ($steps.checkOldUser.data.flag == 3) {
+                        if ($steps.checkOldUser.data.flag === 3) {
                           return (window.location.href =
                             "https://web.rentamon.com/panels/?prop_id=1");
-                        } else if ($steps.checkOldUser.data.flag == 2) {
+                        } else if (
+                          $steps.checkOldUser.data.flag === 0 ||
+                          $steps.checkOldUser.data.flag === 2
+                        ) {
                           return (window.location.href =
-                            "https://rentamon.com//calendar/");
+                            "https://rentamon.com/calendar/");
                         }
                       })()
                     };
