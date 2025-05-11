@@ -64,6 +64,8 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -99,6 +101,8 @@ export type PlasmicPropertyEdit__OverridesType = {
   upload?: Flex__<typeof UploadWrapper>;
   imagePreview?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultPropertyEditProps {}
@@ -1013,6 +1017,19 @@ function PlasmicPropertyEdit__RenderFunc(props: {
               </Stack__>
             ) : null}
           </ApiRequest>
+          <div className={classNames(projectcss.all, sty.freeBox___6Agim)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1029,7 +1046,9 @@ const PlasmicDescendants = {
     "image",
     "upload",
     "imagePreview",
-    "img"
+    "img",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   apiRequest: [
     "apiRequest",
@@ -1047,7 +1066,9 @@ const PlasmicDescendants = {
   image: ["image", "upload"],
   upload: ["upload"],
   imagePreview: ["imagePreview", "img"],
-  img: ["img"]
+  img: ["img"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1062,6 +1083,8 @@ type NodeDefaultElementType = {
   upload: typeof UploadWrapper;
   imagePreview: "div";
   img: typeof PlasmicImg__;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1132,6 +1155,8 @@ export const PlasmicPropertyEdit = Object.assign(
     upload: makeNodeComponent("upload"),
     imagePreview: makeNodeComponent("imagePreview"),
     img: makeNodeComponent("img"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicPropertyEdit
     internalVariantProps: PlasmicPropertyEdit__VariantProps,

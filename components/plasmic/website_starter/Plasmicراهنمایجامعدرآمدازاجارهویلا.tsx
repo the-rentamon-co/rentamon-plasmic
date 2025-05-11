@@ -61,6 +61,8 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -103,6 +105,8 @@ export type Plasmicراهنمایجامعدرآمدازاجارهویلا__Overr
   cta?: Flex__<"div">;
   button4?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultراهنمایجامعدرآمدازاجارهویلاProps {}
@@ -924,6 +928,20 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <div className={classNames(projectcss.all, sty.freeBox___15Czl)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -948,7 +966,9 @@ const PlasmicDescendants = {
     "bot",
     "cta",
     "button4",
-    "rentamonFooter"
+    "rentamonFooter",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
@@ -979,7 +999,9 @@ const PlasmicDescendants = {
   bot: ["bot", "cta"],
   cta: ["cta"],
   button4: ["button4"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1002,6 +1024,8 @@ type NodeDefaultElementType = {
   cta: "div";
   button4: "div";
   rentamonFooter: typeof RentamonFooter;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1085,6 +1109,8 @@ export const Plasmicراهنمایجامعدرآمدازاجارهویلا = Obj
     cta: makeNodeComponent("cta"),
     button4: makeNodeComponent("button4"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for Plasmicراهنمایجامعدرآمدازاجارهویلا
     internalVariantProps: Plasmicراهنمایجامعدرآمدازاجارهویلا__VariantProps,

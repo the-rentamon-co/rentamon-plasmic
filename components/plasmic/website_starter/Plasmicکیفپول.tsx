@@ -61,13 +61,15 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
@@ -101,7 +103,6 @@ export type Plasmicکیفپول__OverridesType = {
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
-  favIcon?: Flex__<typeof Embed>;
   balanceAndCharge?: Flex__<"div">;
   balance?: Flex__<"div">;
   balance2?: Flex__<"div">;
@@ -132,8 +133,9 @@ export type Plasmicکیفپول__OverridesType = {
   _6?: Flex__<typeof AntdAccordionItem>;
   ctaReferral?: Flex__<"div">;
   html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   profile?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
@@ -419,15 +421,6 @@ function Plasmicکیفپول__RenderFunc(props: {
               />
             </div>
           </div>
-          <Embed
-            data-plasmic-name={"favIcon"}
-            data-plasmic-override={overrides.favIcon}
-            className={classNames("__wab_instance", sty.favIcon)}
-            code={
-              "<script>\r\n(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
-            }
-          />
-
           <div
             data-plasmic-name={"balanceAndCharge"}
             data-plasmic-override={overrides.balanceAndCharge}
@@ -2015,15 +2008,6 @@ function Plasmicکیفپول__RenderFunc(props: {
               className={classNames(projectcss.all, sty.html)}
             >
               <Embed
-                data-plasmic-name={"clarity2"}
-                data-plasmic-override={overrides.clarity2}
-                className={classNames("__wab_instance", sty.clarity2)}
-                code={
-                  '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-                }
-              />
-
-              <Embed
                 data-plasmic-name={"goftino"}
                 data-plasmic-override={overrides.goftino}
                 className={classNames("__wab_instance", sty.goftino)}
@@ -2031,6 +2015,26 @@ function Plasmicکیفپول__RenderFunc(props: {
                   '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
                 }
               />
+
+              <div className={classNames(projectcss.all, sty.freeBox__taXuI)}>
+                <ClarityRntComponent
+                  data-plasmic-name={"clarityRntComponent"}
+                  data-plasmic-override={overrides.clarityRntComponent}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.clarityRntComponent
+                  )}
+                />
+
+                <FaviconRntComponent
+                  data-plasmic-name={"faviconRntComponent"}
+                  data-plasmic-override={overrides.faviconRntComponent}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.faviconRntComponent
+                  )}
+                />
+              </div>
             </div>
           </div>
           <RentamonFooter
@@ -2229,7 +2233,6 @@ const PlasmicDescendants = {
     "header",
     "sideBar2",
     "profile2",
-    "favIcon",
     "balanceAndCharge",
     "balance",
     "balance2",
@@ -2260,8 +2263,9 @@ const PlasmicDescendants = {
     "_6",
     "ctaReferral",
     "html",
-    "clarity2",
     "goftino",
+    "clarityRntComponent",
+    "faviconRntComponent",
     "rentamonFooter",
     "profile",
     "sideEffect",
@@ -2270,7 +2274,6 @@ const PlasmicDescendants = {
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
-  favIcon: ["favIcon"],
   balanceAndCharge: ["balanceAndCharge", "balance", "balance2", "report"],
   balance: ["balance", "balance2"],
   balance2: ["balance2"],
@@ -2314,8 +2317,9 @@ const PlasmicDescendants = {
     "_6",
     "ctaReferral",
     "html",
-    "clarity2",
-    "goftino"
+    "goftino",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6"],
   _2: ["_2", "_1"],
@@ -2324,9 +2328,10 @@ const PlasmicDescendants = {
   _5: ["_5"],
   _6: ["_6"],
   ctaReferral: ["ctaReferral"],
-  html: ["html", "clarity2", "goftino"],
-  clarity2: ["clarity2"],
+  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"],
   profile: ["profile"],
   sideEffect: ["sideEffect"],
@@ -2340,7 +2345,6 @@ type NodeDefaultElementType = {
   header: "div";
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
-  favIcon: typeof Embed;
   balanceAndCharge: "div";
   balance: "div";
   balance2: "div";
@@ -2371,8 +2375,9 @@ type NodeDefaultElementType = {
   _6: typeof AntdAccordionItem;
   ctaReferral: "div";
   html: "div";
-  clarity2: typeof Embed;
   goftino: typeof Embed;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
   profile: typeof ApiRequest;
   sideEffect: typeof SideEffect;
@@ -2442,7 +2447,6 @@ export const Plasmicکیفپول = Object.assign(
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
-    favIcon: makeNodeComponent("favIcon"),
     balanceAndCharge: makeNodeComponent("balanceAndCharge"),
     balance: makeNodeComponent("balance"),
     balance2: makeNodeComponent("balance2"),
@@ -2473,8 +2477,9 @@ export const Plasmicکیفپول = Object.assign(
     _6: makeNodeComponent("_6"),
     ctaReferral: makeNodeComponent("ctaReferral"),
     html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     profile: makeNodeComponent("profile"),
     sideEffect: makeNodeComponent("sideEffect"),

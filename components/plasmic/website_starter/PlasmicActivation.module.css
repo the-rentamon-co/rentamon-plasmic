@@ -58,19 +58,28 @@
   min-width: 0;
   padding: 8px;
 }
-.clarity:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .goftino:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.favIcon:global(.__wab_instance) {
+.freeBox__y1Ako {
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
   max-width: 100%;
-  object-fit: cover;
-  height: 2px;
-  flex-shrink: 0;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
+.clarityRntComponent:global(.__wab_instance):global(.__wab_instance) {
+  display: none;
+}
+.faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  display: none;
 }
 .freeBox__btynj {
   display: flex;

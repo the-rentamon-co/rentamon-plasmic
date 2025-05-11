@@ -63,6 +63,8 @@ import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -94,6 +96,8 @@ export type PlasmicPaymentSuccess__OverridesType = {
   img?: Flex__<typeof PlasmicImg__>;
   button?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultPaymentSuccessProps {}
@@ -585,6 +589,20 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
               }
             }}
           />
+
+          <div className={classNames(projectcss.all, sty.freeBox___6N5Oc)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -598,13 +616,17 @@ const PlasmicDescendants = {
     "apiRequest",
     "img",
     "button",
-    "sideEffect"
+    "sideEffect",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   successful: ["successful"],
   apiRequest: ["apiRequest", "img"],
   img: ["img"],
   button: ["button"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -616,6 +638,8 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   button: "div";
   sideEffect: typeof SideEffect;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -683,6 +707,8 @@ export const PlasmicPaymentSuccess = Object.assign(
     img: makeNodeComponent("img"),
     button: makeNodeComponent("button"),
     sideEffect: makeNodeComponent("sideEffect"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicPaymentSuccess
     internalVariantProps: PlasmicPaymentSuccess__VariantProps,

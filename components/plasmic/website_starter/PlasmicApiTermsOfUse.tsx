@@ -61,6 +61,8 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -91,6 +93,9 @@ export type PlasmicApiTermsOfUse__OverridesType = {
   introduction?: Flex__<"div">;
   introduction2?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  freeBox?: Flex__<"div">;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultApiTermsOfUseProps {}
@@ -1052,6 +1057,24 @@ function PlasmicApiTermsOfUse__RenderFunc(props: {
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1067,7 +1090,10 @@ const PlasmicDescendants = {
     "introTitle",
     "introduction",
     "introduction2",
-    "rentamonFooter"
+    "rentamonFooter",
+    "freeBox",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
@@ -1081,7 +1107,10 @@ const PlasmicDescendants = {
   introTitle: ["introTitle"],
   introduction: ["introduction"],
   introduction2: ["introduction2"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  freeBox: ["freeBox", "clarityRntComponent", "faviconRntComponent"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1095,6 +1124,9 @@ type NodeDefaultElementType = {
   introduction: "div";
   introduction2: "div";
   rentamonFooter: typeof RentamonFooter;
+  freeBox: "div";
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1164,6 +1196,9 @@ export const PlasmicApiTermsOfUse = Object.assign(
     introduction: makeNodeComponent("introduction"),
     introduction2: makeNodeComponent("introduction2"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    freeBox: makeNodeComponent("freeBox"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicApiTermsOfUse
     internalVariantProps: PlasmicApiTermsOfUse__VariantProps,

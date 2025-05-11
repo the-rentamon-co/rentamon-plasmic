@@ -61,7 +61,8 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -96,8 +97,8 @@ export type Plasmicدستیارهوشمصنوعیرنتامون__OverridesType =
   ai?: Flex__<typeof Iframe>;
   introCalendarLeft2?: Flex__<"div">;
   html?: Flex__<"div">;
-  clarity?: Flex__<typeof Embed>;
-  favIcon?: Flex__<typeof Embed>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -385,23 +386,25 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
             data-plasmic-override={overrides.html}
             className={classNames(projectcss.all, sty.html)}
           >
-            <Embed
-              data-plasmic-name={"clarity"}
-              data-plasmic-override={overrides.clarity}
-              className={classNames("__wab_instance", sty.clarity)}
-              code={
-                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-              }
-            />
+            <div className={classNames(projectcss.all, sty.freeBox___9Ex4O)}>
+              <ClarityRntComponent
+                data-plasmic-name={"clarityRntComponent"}
+                data-plasmic-override={overrides.clarityRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.clarityRntComponent
+                )}
+              />
 
-            <Embed
-              data-plasmic-name={"favIcon"}
-              data-plasmic-override={overrides.favIcon}
-              className={classNames("__wab_instance", sty.favIcon)}
-              code={
-                "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
-              }
-            />
+              <FaviconRntComponent
+                data-plasmic-name={"faviconRntComponent"}
+                data-plasmic-override={overrides.faviconRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.faviconRntComponent
+                )}
+              />
+            </div>
           </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
@@ -426,8 +429,8 @@ const PlasmicDescendants = {
     "ai",
     "introCalendarLeft2",
     "html",
-    "clarity",
-    "favIcon",
+    "clarityRntComponent",
+    "faviconRntComponent",
     "rentamonFooter"
   ],
   navbarRntHeader: ["navbarRntHeader"],
@@ -453,9 +456,9 @@ const PlasmicDescendants = {
   introCalendarLeft: ["introCalendarLeft"],
   ai: ["ai"],
   introCalendarLeft2: ["introCalendarLeft2"],
-  html: ["html", "clarity", "favIcon"],
-  clarity: ["clarity"],
-  favIcon: ["favIcon"],
+  html: ["html", "clarityRntComponent", "faviconRntComponent"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -472,8 +475,8 @@ type NodeDefaultElementType = {
   ai: typeof Iframe;
   introCalendarLeft2: "div";
   html: "div";
-  clarity: typeof Embed;
-  favIcon: typeof Embed;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -549,8 +552,8 @@ export const Plasmicدستیارهوشمصنوعیرنتامون = Object.assign
     ai: makeNodeComponent("ai"),
     introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     html: makeNodeComponent("html"),
-    clarity: makeNodeComponent("clarity"),
-    favIcon: makeNodeComponent("favIcon"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for Plasmicدستیارهوشمصنوعیرنتامون

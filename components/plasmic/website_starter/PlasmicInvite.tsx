@@ -68,6 +68,8 @@ import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -119,9 +121,9 @@ export type PlasmicInvite__OverridesType = {
   link?: Flex__<"a"> & Partial<LinkProps>;
   html?: Flex__<"div">;
   goftino?: Flex__<typeof Embed>;
-  clarity?: Flex__<typeof Embed>;
-  favicon?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultInviteProps {}
@@ -1308,26 +1310,6 @@ function PlasmicInvite__RenderFunc(props: {
                     '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
                   }
                 />
-
-                <div className={classNames(projectcss.all, sty.freeBox__hiCm)}>
-                  <Embed
-                    data-plasmic-name={"clarity"}
-                    data-plasmic-override={overrides.clarity}
-                    className={classNames("__wab_instance", sty.clarity)}
-                    code={
-                      '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-                    }
-                  />
-
-                  <Embed
-                    data-plasmic-name={"favicon"}
-                    data-plasmic-override={overrides.favicon}
-                    className={classNames("__wab_instance", sty.favicon)}
-                    code={
-                      '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u0644\u06cc\u0646\u06a9 favicon\r\n  const faviconLink = document.createElement("link");\r\n  faviconLink.rel = "icon";\r\n  faviconLink.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  faviconLink.sizes = "192x192";\r\n  document.head.appendChild(faviconLink);\r\n\r\n  // // \u0633\u0627\u062e\u062a\u0646 \u0644\u06cc\u0646\u06a9 apple-touch-icon \u0628\u0631\u0627\u06cc iOS\r\n  // const appleTouchIcon = document.createElement("link");\r\n  // appleTouchIcon.rel = "apple-touch-icon";\r\n  // appleTouchIcon.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  // appleTouchIcon.sizes = "180x180";\r\n  // document.head.appendChild(appleTouchIcon);\r\n\r\n  // // \u062a\u0646\u0638\u06cc\u0645\u0627\u062a PWA\r\n  // const themeColorMeta = document.createElement("meta");\r\n  // themeColorMeta.name = "theme-color";\r\n  // themeColorMeta.content = "#8165D6";\r\n  // document.head.appendChild(themeColorMeta);\r\n\r\n  // const appleWebAppMeta = document.createElement("meta");\r\n  // appleWebAppMeta.name = "apple-mobile-web-app-capable";\r\n  // appleWebAppMeta.content = "yes";\r\n  // document.head.appendChild(appleWebAppMeta);\r\n\r\n  // const appleWebAppTitle = document.createElement("meta");\r\n  // appleWebAppTitle.name = "apple-mobile-web-app-title";\r\n  // appleWebAppTitle.content = "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647";\r\n  // document.head.appendChild(appleWebAppTitle);\r\n\r\n  // // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 manifest.json\r\n  // const manifestLink = document.createElement("link");\r\n  // manifestLink.rel = "manifest";\r\n  // document.head.appendChild(manifestLink);\r\n\r\n  // // \u0633\u0627\u062e\u062a \u0648 \u062b\u0628\u062a manifest.json \u062f\u0627\u062e\u0644 \u0635\u0641\u062d\u0647\r\n  // const manifestContent = {\r\n  //   name: "Rentamon",\r\n  //   short_name: "\u0631\u0646\u062a\u0627\u0645\u0648\u0646",\r\n  //   icons: [\r\n  //     {\r\n  //       src: "https://rentamon-files.storage.iran.liara.space/icon/icon.svg",\r\n  //       sizes: "192x192",\r\n  //       type: "image/png"\r\n  //     },\r\n  //     {\r\n  //       src: "https://rentamon-files.storage.iran.liara.space/icon/icon.svg",\r\n  //       sizes: "512x512",\r\n  //       type: "image/png"\r\n  //     }\r\n  //   ],\r\n  //   theme_color: "#8165D6",\r\n  //   background_color: "#8165D6",\r\n  //   display: "standalone",\r\n  //   start_url: "/"\r\n  // };\r\n\r\n  // // \u0627\u06cc\u062c\u0627\u062f \u0641\u0627\u06cc\u0644 \u0648 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0628\u0647 \u0645\u0631\u0648\u0631\u06af\u0631\r\n  // const manifestBlob = new Blob([JSON.stringify(manifestContent)], { type: "application/json" });\r\n  // const manifestURL = URL.createObjectURL(manifestBlob);\r\n  // manifestLink.href = manifestURL;\r\n\r\n  // // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 Splash Screen \u0628\u0631\u0627\u06cc iOS\r\n  // const splashScreen = document.createElement("link");\r\n  // splashScreen.rel = "apple-touch-startup-image";\r\n  // splashScreen.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  // document.head.appendChild(splashScreen);\r\n</script>\r\n'
-                    }
-                  />
-                </div>
               </div>
             </div>
           </Stack__>
@@ -1336,6 +1318,19 @@ function PlasmicInvite__RenderFunc(props: {
               data-plasmic-name={"rentamonFooter"}
               data-plasmic-override={overrides.rentamonFooter}
               className={classNames("__wab_instance", sty.rentamonFooter)}
+            />
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__xiW2W)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
         </div>
@@ -1372,9 +1367,9 @@ const PlasmicDescendants = {
     "link",
     "html",
     "goftino",
-    "clarity",
-    "favicon",
-    "rentamonFooter"
+    "rentamonFooter",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   apiRequest: ["apiRequest"],
   image: [
@@ -1420,9 +1415,7 @@ const PlasmicDescendants = {
     "_6",
     "link",
     "html",
-    "goftino",
-    "clarity",
-    "favicon"
+    "goftino"
   ],
   accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6", "link"],
   _2: ["_2", "_1"],
@@ -1431,11 +1424,11 @@ const PlasmicDescendants = {
   _5: ["_5"],
   _6: ["_6"],
   link: ["link"],
-  html: ["html", "goftino", "clarity", "favicon"],
+  html: ["html", "goftino"],
   goftino: ["goftino"],
-  clarity: ["clarity"],
-  favicon: ["favicon"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1467,9 +1460,9 @@ type NodeDefaultElementType = {
   link: "a";
   html: "div";
   goftino: typeof Embed;
-  clarity: typeof Embed;
-  favicon: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1557,9 +1550,9 @@ export const PlasmicInvite = Object.assign(
     link: makeNodeComponent("link"),
     html: makeNodeComponent("html"),
     goftino: makeNodeComponent("goftino"),
-    clarity: makeNodeComponent("clarity"),
-    favicon: makeNodeComponent("favicon"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicInvite
     internalVariantProps: PlasmicInvite__VariantProps,

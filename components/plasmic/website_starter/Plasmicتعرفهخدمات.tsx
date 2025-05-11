@@ -59,13 +59,15 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -90,7 +92,6 @@ export const Plasmicتعرفهخدمات__ArgProps = new Array<ArgPropType>();
 
 export type Plasmicتعرفهخدمات__OverridesType = {
   root?: Flex__<"div">;
-  favIcon?: Flex__<typeof Embed>;
   navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   featuresDesc2?: Flex__<"div">;
   _1stPart?: Flex__<"div">;
@@ -132,8 +133,9 @@ export type Plasmicتعرفهخدمات__OverridesType = {
   _4?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
-  clarity?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -310,15 +312,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
             sty.root
           )}
         >
-          <Embed
-            data-plasmic-name={"favIcon"}
-            data-plasmic-override={overrides.favIcon}
-            className={classNames("__wab_instance", sty.favIcon)}
-            code={
-              "<script>\r\n(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
-            }
-          />
-
           <NavbarRntHeader
             data-plasmic-name={"navbarRntHeader"}
             data-plasmic-override={overrides.navbarRntHeader}
@@ -2930,21 +2923,30 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               className={classNames(projectcss.all, sty.html)}
             >
               <Embed
-                data-plasmic-name={"clarity"}
-                data-plasmic-override={overrides.clarity}
-                className={classNames("__wab_instance", sty.clarity)}
-                code={
-                  '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-                }
-              />
-
-              <Embed
                 data-plasmic-name={"goftino"}
                 data-plasmic-override={overrides.goftino}
                 className={classNames("__wab_instance", sty.goftino)}
                 code={
                   '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
                 }
+              />
+
+              <ClarityRntComponent
+                data-plasmic-name={"clarityRntComponent"}
+                data-plasmic-override={overrides.clarityRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.clarityRntComponent
+                )}
+              />
+
+              <FaviconRntComponent
+                data-plasmic-name={"faviconRntComponent"}
+                data-plasmic-override={overrides.faviconRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.faviconRntComponent
+                )}
               />
             </div>
           </div>
@@ -2962,7 +2964,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "favIcon",
     "navbarRntHeader",
     "featuresDesc2",
     "_1stPart",
@@ -3004,11 +3005,11 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "html",
-    "clarity",
     "goftino",
+    "clarityRntComponent",
+    "faviconRntComponent",
     "rentamonFooter"
   ],
-  favIcon: ["favIcon"],
   navbarRntHeader: ["navbarRntHeader"],
   featuresDesc2: ["featuresDesc2"],
   _1stPart: [
@@ -3076,17 +3077,19 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "html",
-    "clarity",
-    "goftino"
+    "goftino",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   accordionMain: ["accordionMain", "_2", "_1", "_4", "_5"],
   _2: ["_2", "_1"],
   _1: ["_1"],
   _4: ["_4"],
   _5: ["_5"],
-  html: ["html", "clarity", "goftino"],
-  clarity: ["clarity"],
+  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -3094,7 +3097,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  favIcon: typeof Embed;
   navbarRntHeader: typeof NavbarRntHeader;
   featuresDesc2: "div";
   _1stPart: "div";
@@ -3136,8 +3138,9 @@ type NodeDefaultElementType = {
   _4: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   html: "div";
-  clarity: typeof Embed;
   goftino: typeof Embed;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -3202,7 +3205,6 @@ export const Plasmicتعرفهخدمات = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    favIcon: makeNodeComponent("favIcon"),
     navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     featuresDesc2: makeNodeComponent("featuresDesc2"),
     _1stPart: makeNodeComponent("_1stPart"),
@@ -3244,8 +3246,9 @@ export const Plasmicتعرفهخدمات = Object.assign(
     _4: makeNodeComponent("_4"),
     _5: makeNodeComponent("_5"),
     html: makeNodeComponent("html"),
-    clarity: makeNodeComponent("clarity"),
     goftino: makeNodeComponent("goftino"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for Plasmicتعرفهخدمات

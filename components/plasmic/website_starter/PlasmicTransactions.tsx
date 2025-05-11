@@ -62,10 +62,11 @@ import {
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -99,13 +100,13 @@ export type PlasmicTransactions__OverridesType = {
   item?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   apiRequest?: Flex__<typeof ApiRequest>;
-  favicon?: Flex__<typeof Embed>;
   returnButton?: Flex__<"div">;
   withdraw?: Flex__<typeof AntdModal>;
   deposit?: Flex__<typeof AntdModal>;
-  clarity?: Flex__<typeof Embed>;
   modal?: Flex__<typeof AntdModal>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultTransactionsProps {}
@@ -312,7 +313,9 @@ function PlasmicTransactions__RenderFunc(props: {
                     projectcss.all,
                     projectcss.__wab_text,
                     sty.text__gX6Ao,
-                    "fadeinf"
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "fadeinf"
+                      : "fadeinf"
                   )}
                 >
                   {
@@ -367,7 +370,9 @@ function PlasmicTransactions__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   sty.tableHeader,
-                  "fadeinf"
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "fadeinf"
+                    : "fadeinf"
                 )}
               >
                 <Stack__
@@ -538,7 +543,9 @@ function PlasmicTransactions__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           sty.item,
-                          "clickable fadein"
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "clickable fadeinf"
+                            : "clickable fadein"
                         )}
                         key={currentIndex}
                         onClick={async event => {
@@ -1103,7 +1110,9 @@ function PlasmicTransactions__RenderFunc(props: {
                   projectcss.all,
                   projectcss.__wab_text,
                   sty.text___6V8Xa,
-                  "fadein"
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "fadein"
+                    : "fadein"
                 )}
               >
                 {
@@ -1112,15 +1121,6 @@ function PlasmicTransactions__RenderFunc(props: {
               </div>
             ) : null}
           </ApiRequest>
-          <Embed
-            data-plasmic-name={"favicon"}
-            data-plasmic-override={overrides.favicon}
-            className={classNames("__wab_instance", sty.favicon)}
-            code={
-              '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon.com/wp-content/uploads/2023/08/R-Logo-7059df.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "192x192"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
-            }
-          />
-
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
@@ -1977,15 +1977,6 @@ function PlasmicTransactions__RenderFunc(props: {
               </Button>
             </Stack__>
           </AntdModal>
-          <Embed
-            data-plasmic-name={"clarity"}
-            data-plasmic-override={overrides.clarity}
-            className={classNames("__wab_instance", sty.clarity)}
-            code={
-              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-            }
-          />
-
           <AntdModal
             data-plasmic-name={"modal"}
             data-plasmic-override={overrides.modal}
@@ -2068,6 +2059,18 @@ function PlasmicTransactions__RenderFunc(props: {
               }
             })()}
           />
+
+          <ClarityRntComponent
+            data-plasmic-name={"clarityRntComponent"}
+            data-plasmic-override={overrides.clarityRntComponent}
+            className={classNames("__wab_instance", sty.clarityRntComponent)}
+          />
+
+          <FaviconRntComponent
+            data-plasmic-name={"faviconRntComponent"}
+            data-plasmic-override={overrides.faviconRntComponent}
+            className={classNames("__wab_instance", sty.faviconRntComponent)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2084,13 +2087,13 @@ const PlasmicDescendants = {
     "item",
     "sideEffect",
     "apiRequest",
-    "favicon",
     "returnButton",
     "withdraw",
     "deposit",
-    "clarity",
     "modal",
-    "navigationRntFooter"
+    "navigationRntFooter",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   header: ["header", "sideBar2", "profile", "tableHeader", "item"],
   sideBar2: ["sideBar2"],
@@ -2099,13 +2102,13 @@ const PlasmicDescendants = {
   item: ["item"],
   sideEffect: ["sideEffect"],
   apiRequest: ["apiRequest"],
-  favicon: ["favicon"],
   returnButton: ["returnButton"],
   withdraw: ["withdraw"],
   deposit: ["deposit"],
-  clarity: ["clarity"],
   modal: ["modal"],
-  navigationRntFooter: ["navigationRntFooter"]
+  navigationRntFooter: ["navigationRntFooter"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2119,13 +2122,13 @@ type NodeDefaultElementType = {
   item: "div";
   sideEffect: typeof SideEffect;
   apiRequest: typeof ApiRequest;
-  favicon: typeof Embed;
   returnButton: "div";
   withdraw: typeof AntdModal;
   deposit: typeof AntdModal;
-  clarity: typeof Embed;
   modal: typeof AntdModal;
   navigationRntFooter: typeof NavigationRntFooter;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2195,13 +2198,13 @@ export const PlasmicTransactions = Object.assign(
     item: makeNodeComponent("item"),
     sideEffect: makeNodeComponent("sideEffect"),
     apiRequest: makeNodeComponent("apiRequest"),
-    favicon: makeNodeComponent("favicon"),
     returnButton: makeNodeComponent("returnButton"),
     withdraw: makeNodeComponent("withdraw"),
     deposit: makeNodeComponent("deposit"),
-    clarity: makeNodeComponent("clarity"),
     modal: makeNodeComponent("modal"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicTransactions
     internalVariantProps: PlasmicTransactions__VariantProps,

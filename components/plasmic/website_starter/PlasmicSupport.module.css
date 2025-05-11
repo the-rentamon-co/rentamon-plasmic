@@ -2343,9 +2343,9 @@
   display: none;
   padding: 8px;
 }
-.clarity:global(.__wab_instance) {
+.faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
-  object-fit: cover;
+  display: none;
 }
 .rentamonFooter:global(.__wab_instance) {
   max-width: 100%;
@@ -2358,9 +2358,4 @@
   .navigationRntFooter:global(.__wab_instance) {
     display: flex;
   }
-}
-.favicon:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  display: none;
 }

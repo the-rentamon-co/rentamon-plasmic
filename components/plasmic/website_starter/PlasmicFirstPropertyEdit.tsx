@@ -62,6 +62,8 @@ import {
 import VilaType from "../../VilaType"; // plasmic-import: Ovb_QdBC9YkI/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -103,6 +105,8 @@ export type PlasmicFirstPropertyEdit__OverridesType = {
   next2?: Flex__<"div">;
   privious2?: Flex__<"div">;
   back?: Flex__<"div">;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultFirstPropertyEditProps {}
@@ -1589,6 +1593,19 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__b06Bk)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1611,7 +1628,9 @@ const PlasmicDescendants = {
     "newButtons2",
     "next2",
     "privious2",
-    "back"
+    "back",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   type: ["type"],
   name: ["name", "textInput", "newButtons", "next", "privious"],
@@ -1634,7 +1653,9 @@ const PlasmicDescendants = {
   newButtons2: ["newButtons2", "next2", "privious2"],
   next2: ["next2"],
   privious2: ["privious2"],
-  back: ["back"]
+  back: ["back"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1655,6 +1676,8 @@ type NodeDefaultElementType = {
   next2: "div";
   privious2: "div";
   back: "div";
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1731,6 +1754,8 @@ export const PlasmicFirstPropertyEdit = Object.assign(
     next2: makeNodeComponent("next2"),
     privious2: makeNodeComponent("privious2"),
     back: makeNodeComponent("back"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicFirstPropertyEdit
     internalVariantProps: PlasmicFirstPropertyEdit__VariantProps,

@@ -60,6 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -84,6 +86,8 @@ export const PlasmicTier__ArgProps = new Array<ArgPropType>();
 export type PlasmicTier__OverridesType = {
   root?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultTierProps {}
@@ -669,6 +673,18 @@ function PlasmicTier__RenderFunc(props: {
               }
             }}
           />
+
+          <ClarityRntComponent
+            data-plasmic-name={"clarityRntComponent"}
+            data-plasmic-override={overrides.clarityRntComponent}
+            className={classNames("__wab_instance", sty.clarityRntComponent)}
+          />
+
+          <FaviconRntComponent
+            data-plasmic-name={"faviconRntComponent"}
+            data-plasmic-override={overrides.faviconRntComponent}
+            className={classNames("__wab_instance", sty.faviconRntComponent)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -676,8 +692,10 @@ function PlasmicTier__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "sideEffect"],
-  sideEffect: ["sideEffect"]
+  root: ["root", "sideEffect", "clarityRntComponent", "faviconRntComponent"],
+  sideEffect: ["sideEffect"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -685,6 +703,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   sideEffect: typeof SideEffect;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -748,6 +768,8 @@ export const PlasmicTier = Object.assign(
   {
     // Helper components rendering sub-elements
     sideEffect: makeNodeComponent("sideEffect"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicTier
     internalVariantProps: PlasmicTier__VariantProps,

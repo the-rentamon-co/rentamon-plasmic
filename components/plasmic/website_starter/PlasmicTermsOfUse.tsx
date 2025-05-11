@@ -60,7 +60,9 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -85,12 +87,14 @@ export const PlasmicTermsOfUse__ArgProps = new Array<ArgPropType>();
 export type PlasmicTermsOfUse__OverridesType = {
   root?: Flex__<"div">;
   navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   mainContents?: Flex__<"div">;
   intro1st?: Flex__<"div">;
   introTitle?: Flex__<"div">;
   introduction?: Flex__<"div">;
   introduction2?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultTermsOfUseProps {}
@@ -200,6 +204,12 @@ function PlasmicTermsOfUse__RenderFunc(props: {
             data-plasmic-name={"navbarRntHeader"}
             data-plasmic-override={overrides.navbarRntHeader}
             className={classNames("__wab_instance", sty.navbarRntHeader)}
+          />
+
+          <ClarityRntComponent
+            data-plasmic-name={"clarityRntComponent"}
+            data-plasmic-override={overrides.clarityRntComponent}
+            className={classNames("__wab_instance", sty.clarityRntComponent)}
           />
 
           <div
@@ -2143,6 +2153,12 @@ function PlasmicTermsOfUse__RenderFunc(props: {
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <FaviconRntComponent
+            data-plasmic-name={"faviconRntComponent"}
+            data-plasmic-override={overrides.faviconRntComponent}
+            className={classNames("__wab_instance", sty.faviconRntComponent)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2153,14 +2169,17 @@ const PlasmicDescendants = {
   root: [
     "root",
     "navbarRntHeader",
+    "clarityRntComponent",
     "mainContents",
     "intro1st",
     "introTitle",
     "introduction",
     "introduction2",
-    "rentamonFooter"
+    "rentamonFooter",
+    "faviconRntComponent"
   ],
   navbarRntHeader: ["navbarRntHeader"],
+  clarityRntComponent: ["clarityRntComponent"],
   mainContents: [
     "mainContents",
     "intro1st",
@@ -2172,7 +2191,8 @@ const PlasmicDescendants = {
   introTitle: ["introTitle"],
   introduction: ["introduction"],
   introduction2: ["introduction2"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2180,12 +2200,14 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navbarRntHeader: typeof NavbarRntHeader;
+  clarityRntComponent: typeof ClarityRntComponent;
   mainContents: "div";
   intro1st: "div";
   introTitle: "div";
   introduction: "div";
   introduction2: "div";
   rentamonFooter: typeof RentamonFooter;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2249,12 +2271,14 @@ export const PlasmicTermsOfUse = Object.assign(
   {
     // Helper components rendering sub-elements
     navbarRntHeader: makeNodeComponent("navbarRntHeader"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     mainContents: makeNodeComponent("mainContents"),
     intro1st: makeNodeComponent("intro1st"),
     introTitle: makeNodeComponent("introTitle"),
     introduction: makeNodeComponent("introduction"),
     introduction2: makeNodeComponent("introduction2"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicTermsOfUse
     internalVariantProps: PlasmicTermsOfUse__VariantProps,

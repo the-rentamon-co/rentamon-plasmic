@@ -755,10 +755,6 @@
   padding-bottom: 8px;
   min-width: 0;
 }
-.favicon:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .returnButton {
   display: flex;
   flex-direction: column;
@@ -1484,10 +1480,6 @@
   font-size: 18px;
   min-width: 0;
 }
-.clarity:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .modal:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -1545,4 +1537,11 @@
   .navigationRntFooter:global(.__wab_instance) {
     display: flex;
   }
+}
+.clarityRntComponent:global(.__wab_instance):global(.__wab_instance) {
+  display: none;
+}
+.faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  display: none;
 }

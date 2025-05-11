@@ -68,8 +68,9 @@ import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import RecordList from "../../RecordList"; // plasmic-import: dDeToLEgGJS_/component
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -154,12 +155,12 @@ export type PlasmicReservations__OverridesType = {
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
   reserveData?: Flex__<typeof ApiRequest>;
-  favicon?: Flex__<typeof Embed>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
-  clarity?: Flex__<typeof Embed>;
   finalModal?: Flex__<typeof AntdModal>;
   cancelle?: Flex__<typeof AntdButton>;
   returnButton?: Flex__<"div">;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultReservationsProps {}
@@ -718,13 +719,23 @@ function PlasmicReservations__RenderFunc(props: {
                 />
               </div>
             ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__bMTr4)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__bMTr4,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "fadeinf"
+                  : undefined
+              )}
+            >
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
                   sty.text__ia94Z,
-                  "fadeinf"
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? ``
+                    : "fadeinf"
                 )}
               >
                 {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
@@ -4277,19 +4288,6 @@ function PlasmicReservations__RenderFunc(props: {
               {"\u0628\u0627\u0632\u06af\u0634\u062a"}
             </div>
           </Button>
-          <Embed
-            data-plasmic-name={"favicon"}
-            data-plasmic-override={overrides.favicon}
-            className={classNames("__wab_instance", sty.favicon)}
-            code={
-              hasVariant(globalVariants, "screen", "smallMobile")
-                ? '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon-files.storage.iran.liara.space/icon/fav-icon.svg"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "32x32"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
-                : hasVariant(globalVariants, "screen", "mobile")
-                ? '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon-files.storage.iran.liara.space/icon/fav-icon.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n  link.sizes = "32x32"; // \u0633\u0627\u06cc\u0632 \u0622\u06cc\u06a9\u0648\u0646\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
-                : '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u06cc\u06a9 \u062a\u06af link\r\n  const link = document.createElement("link");\r\n  link.rel = "icon"; // \u0646\u0648\u0639 \u0644\u06cc\u0646\u06a9: \u0622\u06cc\u06a9\u0648\u0646\r\n  link.href = "https://rentamon-files.storage.iran.liara.space/icon/fav-icon.png"; // \u0622\u062f\u0631\u0633 \u062a\u0635\u0648\u06cc\u0631\r\n\r\n  // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0647 \u062a\u06af <head>\r\n  document.head.appendChild(link);\r\n</script>\r\n'
-            }
-          />
-
           <NavigationRntFooter
             data-plasmic-name={"navigationRntFooter"}
             data-plasmic-override={overrides.navigationRntFooter}
@@ -4308,15 +4306,6 @@ function PlasmicReservations__RenderFunc(props: {
                 throw e;
               }
             })()}
-          />
-
-          <Embed
-            data-plasmic-name={"clarity"}
-            data-plasmic-override={overrides.clarity}
-            className={classNames("__wab_instance", sty.clarity)}
-            code={
-              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-            }
           />
 
           <AntdModal
@@ -5156,6 +5145,27 @@ function PlasmicReservations__RenderFunc(props: {
               </div>
             </div>
           </div>
+          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            <div className={classNames(projectcss.all, sty.freeBox__pqKvw)}>
+              <ClarityRntComponent
+                data-plasmic-name={"clarityRntComponent"}
+                data-plasmic-override={overrides.clarityRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.clarityRntComponent
+                )}
+              />
+
+              <FaviconRntComponent
+                data-plasmic-name={"faviconRntComponent"}
+                data-plasmic-override={overrides.faviconRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.faviconRntComponent
+                )}
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -5223,12 +5233,12 @@ const PlasmicDescendants = {
     "reserveData2",
     "reserveMainStack",
     "reserveData",
-    "favicon",
     "navigationRntFooter",
-    "clarity",
     "finalModal",
     "cancelle",
-    "returnButton"
+    "returnButton",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -5419,12 +5429,12 @@ const PlasmicDescendants = {
   reserveData2: ["reserveData2"],
   reserveMainStack: ["reserveMainStack", "reserveData"],
   reserveData: ["reserveData"],
-  favicon: ["favicon"],
   navigationRntFooter: ["navigationRntFooter"],
-  clarity: ["clarity"],
   finalModal: ["finalModal", "cancelle"],
   cancelle: ["cancelle"],
-  returnButton: ["returnButton"]
+  returnButton: ["returnButton"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -5489,12 +5499,12 @@ type NodeDefaultElementType = {
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
   reserveData: typeof ApiRequest;
-  favicon: typeof Embed;
   navigationRntFooter: typeof NavigationRntFooter;
-  clarity: typeof Embed;
   finalModal: typeof AntdModal;
   cancelle: typeof AntdButton;
   returnButton: "div";
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -5615,12 +5625,12 @@ export const PlasmicReservations = Object.assign(
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
     reserveData: makeNodeComponent("reserveData"),
-    favicon: makeNodeComponent("favicon"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
-    clarity: makeNodeComponent("clarity"),
     finalModal: makeNodeComponent("finalModal"),
     cancelle: makeNodeComponent("cancelle"),
     returnButton: makeNodeComponent("returnButton"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,

@@ -61,8 +61,10 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -95,11 +97,11 @@ export type PlasmicFeatures__OverridesType = {
   why?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
   cta?: Flex__<"div">;
-  html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
-  goftino?: Flex__<typeof Embed>;
-  favIcon?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  html?: Flex__<"div">;
+  goftino?: Flex__<typeof Embed>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultFeaturesProps {}
@@ -831,44 +833,47 @@ function PlasmicFeatures__RenderFunc(props: {
                 ? "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0639\u0631\u0641\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
                 : "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0639\u0631\u0641\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"}
             </div>
-            <div
-              data-plasmic-name={"html"}
-              data-plasmic-override={overrides.html}
-              className={classNames(projectcss.all, sty.html)}
-            >
-              <Embed
-                data-plasmic-name={"clarity2"}
-                data-plasmic-override={overrides.clarity2}
-                className={classNames("__wab_instance", sty.clarity2)}
-                code={
-                  '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-                }
-              />
-
-              <Embed
-                data-plasmic-name={"goftino"}
-                data-plasmic-override={overrides.goftino}
-                className={classNames("__wab_instance", sty.goftino)}
-                code={
-                  '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-                }
-              />
-
-              <Embed
-                data-plasmic-name={"favIcon"}
-                data-plasmic-override={overrides.favIcon}
-                className={classNames("__wab_instance", sty.favIcon)}
-                code={
-                  "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
-                }
-              />
-            </div>
           </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
+            />
+
+            <div className={classNames(projectcss.all, sty.freeBox__nXwb)}>
+              <ClarityRntComponent
+                data-plasmic-name={"clarityRntComponent"}
+                data-plasmic-override={overrides.clarityRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.clarityRntComponent
+                )}
+              />
+
+              <FaviconRntComponent
+                data-plasmic-name={"faviconRntComponent"}
+                data-plasmic-override={overrides.faviconRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.faviconRntComponent
+                )}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -887,11 +892,11 @@ const PlasmicDescendants = {
     "why",
     "img",
     "cta",
+    "rentamonFooter",
     "html",
-    "clarity2",
     "goftino",
-    "favIcon",
-    "rentamonFooter"
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   navbarRntHeader: ["navbarRntHeader"],
   intro: ["intro"],
@@ -901,12 +906,12 @@ const PlasmicDescendants = {
   htmlVideo: ["htmlVideo"],
   why: ["why", "img"],
   img: ["img"],
-  cta: ["cta", "html", "clarity2", "goftino", "favIcon"],
-  html: ["html", "clarity2", "goftino", "favIcon"],
-  clarity2: ["clarity2"],
+  cta: ["cta"],
+  rentamonFooter: ["rentamonFooter"],
+  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
-  favIcon: ["favIcon"],
-  rentamonFooter: ["rentamonFooter"]
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -922,11 +927,11 @@ type NodeDefaultElementType = {
   why: "div";
   img: typeof PlasmicImg__;
   cta: "div";
-  html: "div";
-  clarity2: typeof Embed;
-  goftino: typeof Embed;
-  favIcon: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
+  html: "div";
+  goftino: typeof Embed;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -998,11 +1003,11 @@ export const PlasmicFeatures = Object.assign(
     why: makeNodeComponent("why"),
     img: makeNodeComponent("img"),
     cta: makeNodeComponent("cta"),
-    html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
-    goftino: makeNodeComponent("goftino"),
-    favIcon: makeNodeComponent("favIcon"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    html: makeNodeComponent("html"),
+    goftino: makeNodeComponent("goftino"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicFeatures
     internalVariantProps: PlasmicFeatures__VariantProps,

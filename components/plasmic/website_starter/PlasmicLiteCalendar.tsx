@@ -65,7 +65,6 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
@@ -75,6 +74,8 @@ import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -105,14 +106,12 @@ export type PlasmicLiteCalendar__OverridesType = {
   right2?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
   left?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   profile?: Flex__<typeof ApiRequest>;
   deskTablet?: Flex__<"div">;
   sidebarLite?: Flex__<typeof SidebarLite>;
   calendar2?: Flex__<typeof Calendar2>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
-  modal?: Flex__<typeof AntdModal>;
-  favicon?: Flex__<typeof Embed>;
-  clarity?: Flex__<typeof Embed>;
   spacer?: Flex__<"div">;
   proPanelModal?: Flex__<typeof AntdModal>;
   form?: Flex__<typeof FormWrapper>;
@@ -120,6 +119,8 @@ export type PlasmicLiteCalendar__OverridesType = {
   textArea?: Flex__<typeof AntdTextArea>;
   button?: Flex__<typeof AntdButton>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultLiteCalendarProps {}
@@ -243,12 +244,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                   throw e;
                 }
               })()
-      },
-      {
-        path: "modal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "feature",
@@ -656,8 +651,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               projectcss.all,
               sty.headerMain,
               hasVariant(globalVariants, "screen", "mobile")
-                ? "fadein"
-                : "fadein"
+                ? "fadeinf"
+                : "fadeinf"
             )}
           >
             <div
@@ -821,8 +816,10 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     )}
                   >
                     <PlasmicImg__
+                      data-plasmic-name={"img"}
+                      data-plasmic-override={overrides.img}
                       alt={""}
-                      className={classNames(sty.img__rEnj)}
+                      className={classNames(sty.img)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "80px"
@@ -1202,120 +1199,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             })()}
           />
 
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={
-              <div className={classNames(projectcss.all, sty.freeBox__janBh)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__c6GNw)}
-                  displayHeight={"13px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["modal", "open"]
-                            },
-                            operation: 0,
-                            value: false
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
-                    ) {
-                      $steps["updateModalOpen"] = await $steps[
-                        "updateModalOpen"
-                      ];
-                    }
-                  }}
-                  src={{
-                    src: "/plasmic/website_starter/images/image24.svg",
-                    fullWidth: 20,
-                    fullHeight: 18,
-                    aspectRatio: 1.111111
-                  }}
-                />
-              </div>
-            }
-            trigger={null}
-            width={"320"}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__b4Cs
-              )}
-            >
-              {
-                "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0647\u0633\u062a\u06cc\u0645 \n\u0633\u067e\u0627\u0633 \u0627\u0632 \u0634\u06a9\u06cc\u0628\u0627\u06cc\u06cc \u0634\u0645\u0627\n \ud83e\uddd1\ud83c\udffb\u200d\ud83d\udcbb\ud83e\uddd1\ud83c\udffb\u200d\ud83d\udcbb\ud83e\uddd1\ud83c\udffb\u200d\ud83d\udcbb"
-              }
-            </div>
-          </AntdModal>
-          <Embed
-            data-plasmic-name={"favicon"}
-            data-plasmic-override={overrides.favicon}
-            className={classNames("__wab_instance", sty.favicon)}
-            code={
-              '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u0644\u06cc\u0646\u06a9 favicon\r\n  const faviconLink = document.createElement("link");\r\n  faviconLink.rel = "icon";\r\n  faviconLink.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  faviconLink.sizes = "192x192";\r\n  document.head.appendChild(faviconLink);\r\n\r\n</script>\r\n\r\n'
-            }
-          />
-
-          <Embed
-            data-plasmic-name={"clarity"}
-            data-plasmic-override={overrides.clarity}
-            className={classNames("__wab_instance", sty.clarity)}
-            code={
-              '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-            }
-          />
-
           <div
             data-plasmic-name={"spacer"}
             data-plasmic-override={overrides.spacer}
@@ -1401,7 +1284,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___29Wgt
+                        sty.formField__aqVBl
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1413,7 +1296,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__zCyFy
+                        sty.formField__iCui7
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1431,7 +1314,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__po2Ts
+                          sty.text__ln5Q
                         )}
                       >
                         {"Submit"}
@@ -1448,6 +1331,20 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navigationRntFooter)}
             navPage={"calendar"}
           />
+
+          <div className={classNames(projectcss.all, sty.freeBox__aHy6S)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1464,21 +1361,21 @@ const PlasmicDescendants = {
     "right2",
     "select2",
     "left",
+    "img",
     "profile",
     "deskTablet",
     "sidebarLite",
     "calendar2",
     "userAvailableFeature",
-    "modal",
-    "favicon",
-    "clarity",
     "spacer",
     "proPanelModal",
     "form",
     "input",
     "textArea",
     "button",
-    "navigationRntFooter"
+    "navigationRntFooter",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   sideEffect: ["sideEffect"],
   headerMain: [
@@ -1488,30 +1385,31 @@ const PlasmicDescendants = {
     "right2",
     "select2",
     "left",
+    "img",
     "profile",
     "deskTablet",
     "sidebarLite"
   ],
-  header: ["header", "right", "right2", "select2", "left", "profile"],
+  header: ["header", "right", "right2", "select2", "left", "img", "profile"],
   right: ["right", "right2", "select2"],
   right2: ["right2", "select2"],
   select2: ["select2"],
-  left: ["left"],
+  left: ["left", "img"],
+  img: ["img"],
   profile: ["profile"],
   deskTablet: ["deskTablet", "sidebarLite"],
   sidebarLite: ["sidebarLite"],
   calendar2: ["calendar2"],
   userAvailableFeature: ["userAvailableFeature"],
-  modal: ["modal"],
-  favicon: ["favicon"],
-  clarity: ["clarity"],
   spacer: ["spacer"],
   proPanelModal: ["proPanelModal", "form", "input", "textArea", "button"],
   form: ["form", "input", "textArea", "button"],
   input: ["input"],
   textArea: ["textArea"],
   button: ["button"],
-  navigationRntFooter: ["navigationRntFooter"]
+  navigationRntFooter: ["navigationRntFooter"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1525,14 +1423,12 @@ type NodeDefaultElementType = {
   right2: "div";
   select2: typeof Select;
   left: "div";
+  img: typeof PlasmicImg__;
   profile: typeof ApiRequest;
   deskTablet: "div";
   sidebarLite: typeof SidebarLite;
   calendar2: typeof Calendar2;
   userAvailableFeature: typeof ApiRequest;
-  modal: typeof AntdModal;
-  favicon: typeof Embed;
-  clarity: typeof Embed;
   spacer: "div";
   proPanelModal: typeof AntdModal;
   form: typeof FormWrapper;
@@ -1540,6 +1436,8 @@ type NodeDefaultElementType = {
   textArea: typeof AntdTextArea;
   button: typeof AntdButton;
   navigationRntFooter: typeof NavigationRntFooter;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1609,14 +1507,12 @@ export const PlasmicLiteCalendar = Object.assign(
     right2: makeNodeComponent("right2"),
     select2: makeNodeComponent("select2"),
     left: makeNodeComponent("left"),
+    img: makeNodeComponent("img"),
     profile: makeNodeComponent("profile"),
     deskTablet: makeNodeComponent("deskTablet"),
     sidebarLite: makeNodeComponent("sidebarLite"),
     calendar2: makeNodeComponent("calendar2"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
-    modal: makeNodeComponent("modal"),
-    favicon: makeNodeComponent("favicon"),
-    clarity: makeNodeComponent("clarity"),
     spacer: makeNodeComponent("spacer"),
     proPanelModal: makeNodeComponent("proPanelModal"),
     form: makeNodeComponent("form"),
@@ -1624,6 +1520,8 @@ export const PlasmicLiteCalendar = Object.assign(
     textArea: makeNodeComponent("textArea"),
     button: makeNodeComponent("button"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicLiteCalendar
     internalVariantProps: PlasmicLiteCalendar__VariantProps,

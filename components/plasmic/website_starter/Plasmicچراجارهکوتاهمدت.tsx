@@ -61,6 +61,8 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -104,6 +106,8 @@ export type Plasmicچراجارهکوتاهمدت__OverridesType = {
   cta?: Flex__<"div">;
   button?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultچراجارهکوتاهمدتProps {}
@@ -711,6 +715,20 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <div className={classNames(projectcss.all, sty.freeBox__uw6V3)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -737,7 +755,9 @@ const PlasmicDescendants = {
     "bot",
     "cta",
     "button",
-    "rentamonFooter"
+    "rentamonFooter",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
@@ -783,7 +803,9 @@ const PlasmicDescendants = {
   bot: ["bot", "cta"],
   cta: ["cta"],
   button: ["button"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -808,6 +830,8 @@ type NodeDefaultElementType = {
   cta: "div";
   button: "div";
   rentamonFooter: typeof RentamonFooter;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -889,6 +913,8 @@ export const Plasmicچراجارهکوتاهمدت = Object.assign(
     cta: makeNodeComponent("cta"),
     button: makeNodeComponent("button"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for Plasmicچراجارهکوتاهمدت
     internalVariantProps: Plasmicچراجارهکوتاهمدت__VariantProps,

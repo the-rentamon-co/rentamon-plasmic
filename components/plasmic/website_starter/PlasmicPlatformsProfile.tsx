@@ -64,6 +64,8 @@ import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -102,6 +104,8 @@ export type PlasmicPlatformsProfile__OverridesType = {
   supportSpeed?: Flex__<typeof Select>;
   supportJudgment?: Flex__<typeof Select>;
   submit?: Flex__<typeof Button>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultPlatformsProfileProps {}
@@ -1826,6 +1830,19 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
             <div className={classNames(projectcss.all, sty.freeBox___1Jlei)} />
           ) : null}
+          <div className={classNames(projectcss.all, sty.freeBox__woUao)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1844,7 +1861,9 @@ const PlasmicDescendants = {
     "supportAccess",
     "supportSpeed",
     "supportJudgment",
-    "submit"
+    "submit",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   embedHtml: ["embedHtml"],
   httpRestApiFetcher: [
@@ -1871,7 +1890,9 @@ const PlasmicDescendants = {
   supportAccess: ["supportAccess"],
   supportSpeed: ["supportSpeed"],
   supportJudgment: ["supportJudgment"],
-  submit: ["submit"]
+  submit: ["submit"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1888,6 +1909,8 @@ type NodeDefaultElementType = {
   supportSpeed: typeof Select;
   supportJudgment: typeof Select;
   submit: typeof Button;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1960,6 +1983,8 @@ export const PlasmicPlatformsProfile = Object.assign(
     supportSpeed: makeNodeComponent("supportSpeed"),
     supportJudgment: makeNodeComponent("supportJudgment"),
     submit: makeNodeComponent("submit"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicPlatformsProfile
     internalVariantProps: PlasmicPlatformsProfile__VariantProps,

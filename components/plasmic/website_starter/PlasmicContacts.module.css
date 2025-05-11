@@ -218,10 +218,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.clarity:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .returnButton {
   display: flex;
   flex-direction: row;
@@ -407,11 +403,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.favicon:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  display: none;
-}
 .freeBox__syTfP {
   flex-direction: column;
   position: relative;
@@ -431,4 +422,22 @@
 }
 .text__bBxfN {
   font-size: 15px;
+}
+.freeBox__hZ0Ms {
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.clarityRntComponent:global(.__wab_instance):global(.__wab_instance) {
+  display: none;
+}
+.faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  display: none;
 }

@@ -63,6 +63,8 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Chart } from "@/fragment/components/chart"; // plasmic-import: AKmMZITDmA8F/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -108,8 +110,9 @@ export type PlasmicAnalytics__OverridesType = {
   apiRequestAvgDailyRate?: Flex__<typeof ApiRequest>;
   avgDailyRate?: Flex__<"div">;
   html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -1124,15 +1127,6 @@ function PlasmicAnalytics__RenderFunc(props: {
             className={classNames(projectcss.all, sty.html)}
           >
             <Embed
-              data-plasmic-name={"clarity2"}
-              data-plasmic-override={overrides.clarity2}
-              className={classNames("__wab_instance", sty.clarity2)}
-              code={
-                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-              }
-            />
-
-            <Embed
               data-plasmic-name={"goftino"}
               data-plasmic-override={overrides.goftino}
               className={classNames("__wab_instance", sty.goftino)}
@@ -1140,6 +1134,26 @@ function PlasmicAnalytics__RenderFunc(props: {
                 '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
               }
             />
+
+            <div className={classNames(projectcss.all, sty.freeBox__k3H9Z)}>
+              <ClarityRntComponent
+                data-plasmic-name={"clarityRntComponent"}
+                data-plasmic-override={overrides.clarityRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.clarityRntComponent
+                )}
+              />
+
+              <FaviconRntComponent
+                data-plasmic-name={"faviconRntComponent"}
+                data-plasmic-override={overrides.faviconRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.faviconRntComponent
+                )}
+              />
+            </div>
           </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
@@ -1176,8 +1190,9 @@ const PlasmicDescendants = {
     "apiRequestAvgDailyRate",
     "avgDailyRate",
     "html",
-    "clarity2",
     "goftino",
+    "clarityRntComponent",
+    "faviconRntComponent",
     "rentamonFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
@@ -1230,9 +1245,10 @@ const PlasmicDescendants = {
   avgDailyRate2: ["avgDailyRate2", "apiRequestAvgDailyRate", "avgDailyRate"],
   apiRequestAvgDailyRate: ["apiRequestAvgDailyRate"],
   avgDailyRate: ["avgDailyRate"],
-  html: ["html", "clarity2", "goftino"],
-  clarity2: ["clarity2"],
+  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1261,8 +1277,9 @@ type NodeDefaultElementType = {
   apiRequestAvgDailyRate: typeof ApiRequest;
   avgDailyRate: "div";
   html: "div";
-  clarity2: typeof Embed;
   goftino: typeof Embed;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -1347,8 +1364,9 @@ export const PlasmicAnalytics = Object.assign(
     apiRequestAvgDailyRate: makeNodeComponent("apiRequestAvgDailyRate"),
     avgDailyRate: makeNodeComponent("avgDailyRate"),
     html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
     goftino: makeNodeComponent("goftino"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicAnalytics

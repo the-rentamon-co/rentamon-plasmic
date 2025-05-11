@@ -1672,6 +1672,32 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/404"
+        },
+        {
+          "id": "2Chy9NeUIB9Q",
+          "name": "FaviconRntComponent",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicFaviconRntComponent.tsx",
+          "importSpec": {
+            "modulePath": "FaviconRntComponent.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicFaviconRntComponent.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "J5D8c7V05ty1",
+          "name": "ClarityRntComponent",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicClarityRntComponent.tsx",
+          "importSpec": {
+            "modulePath": "ClarityRntComponent.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicClarityRntComponent.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

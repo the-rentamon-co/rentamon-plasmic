@@ -60,6 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
@@ -104,9 +106,9 @@ export const PlasmicActivation__ArgProps = new Array<ArgPropType>();
 export type PlasmicActivation__OverridesType = {
   root?: Flex__<"div">;
   html?: Flex__<"div">;
-  clarity?: Flex__<typeof Embed>;
   goftino?: Flex__<typeof Embed>;
-  favIcon?: Flex__<typeof Embed>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   platformStatus?: Flex__<"div">;
   helptStack?: Flex__<"div">;
   platforms2?: Flex__<"div">;
@@ -637,15 +639,6 @@ function PlasmicActivation__RenderFunc(props: {
             className={classNames(projectcss.all, sty.html)}
           >
             <Embed
-              data-plasmic-name={"clarity"}
-              data-plasmic-override={overrides.clarity}
-              className={classNames("__wab_instance", sty.clarity)}
-              code={
-                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-              }
-            />
-
-            <Embed
               data-plasmic-name={"goftino"}
               data-plasmic-override={overrides.goftino}
               className={classNames("__wab_instance", sty.goftino)}
@@ -654,14 +647,25 @@ function PlasmicActivation__RenderFunc(props: {
               }
             />
 
-            <Embed
-              data-plasmic-name={"favIcon"}
-              data-plasmic-override={overrides.favIcon}
-              className={classNames("__wab_instance", sty.favIcon)}
-              code={
-                "(function() {\r\n    var link = document.querySelector(\"link[rel='icon']\");\r\n\r\n    if (!link) {\r\n        link = document.createElement('link');\r\n        link.rel = 'icon';\r\n        document.head.appendChild(link);\r\n    }\r\n// icon address\r\n    link.href = 'https://rentamon.com/wp-content/uploads/2024/03/cropped-Logo-2024-fav-icon-1.png';\r\n})();\r\n</script>"
-              }
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__y1Ako)}>
+              <ClarityRntComponent
+                data-plasmic-name={"clarityRntComponent"}
+                data-plasmic-override={overrides.clarityRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.clarityRntComponent
+                )}
+              />
+
+              <FaviconRntComponent
+                data-plasmic-name={"faviconRntComponent"}
+                data-plasmic-override={overrides.faviconRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.faviconRntComponent
+                )}
+              />
+            </div>
           </div>
           <div
             className={classNames(projectcss.all, sty.freeBox__btynj)}
@@ -11648,9 +11652,9 @@ const PlasmicDescendants = {
   root: [
     "root",
     "html",
-    "clarity",
     "goftino",
-    "favIcon",
+    "clarityRntComponent",
+    "faviconRntComponent",
     "platformStatus",
     "helptStack",
     "platforms2",
@@ -11772,10 +11776,10 @@ const PlasmicDescendants = {
     "quotes",
     "testimonialsScrolling"
   ],
-  html: ["html", "clarity", "goftino", "favIcon"],
-  clarity: ["clarity"],
+  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
-  favIcon: ["favIcon"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"],
   platformStatus: [
     "platformStatus",
     "helptStack",
@@ -12100,9 +12104,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   html: "div";
-  clarity: typeof Embed;
   goftino: typeof Embed;
-  favIcon: typeof Embed;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
   platformStatus: "div";
   helptStack: "div";
   platforms2: "div";
@@ -12286,9 +12290,9 @@ export const PlasmicActivation = Object.assign(
   {
     // Helper components rendering sub-elements
     html: makeNodeComponent("html"),
-    clarity: makeNodeComponent("clarity"),
     goftino: makeNodeComponent("goftino"),
-    favIcon: makeNodeComponent("favIcon"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     platformStatus: makeNodeComponent("platformStatus"),
     helptStack: makeNodeComponent("helptStack"),
     platforms2: makeNodeComponent("platforms2"),

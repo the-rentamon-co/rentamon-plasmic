@@ -62,6 +62,8 @@ import {
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -120,6 +122,8 @@ export type Plasmicمقایسهبهترینسایتاجارهویلا__Overrides
   ctaText?: Flex__<"div">;
   button?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultمقایسهبهترینسایتاجارهویلاProps {}
@@ -1770,6 +1774,20 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
             data-plasmic-override={overrides.rentamonFooter}
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
+
+          <div className={classNames(projectcss.all, sty.freeBox___5Upoz)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1810,7 +1828,9 @@ const PlasmicDescendants = {
     "cta",
     "ctaText",
     "button",
-    "rentamonFooter"
+    "rentamonFooter",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
@@ -1904,7 +1924,9 @@ const PlasmicDescendants = {
   cta: ["cta", "ctaText", "button"],
   ctaText: ["ctaText"],
   button: ["button"],
-  rentamonFooter: ["rentamonFooter"]
+  rentamonFooter: ["rentamonFooter"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1943,6 +1965,8 @@ type NodeDefaultElementType = {
   ctaText: "div";
   button: "div";
   rentamonFooter: typeof RentamonFooter;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2039,6 +2063,8 @@ export const Plasmicمقایسهبهترینسایتاجارهویلا = Object.
     ctaText: makeNodeComponent("ctaText"),
     button: makeNodeComponent("button"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for Plasmicمقایسهبهترینسایتاجارهویلا
     internalVariantProps: Plasmicمقایسهبهترینسایتاجارهویلا__VariantProps,

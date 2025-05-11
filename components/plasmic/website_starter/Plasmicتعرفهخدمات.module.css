@@ -50,11 +50,6 @@
     grid-column: 4;
   }
 }
-.favIcon:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  height: 2px;
-}
 .navbarRntHeader:global(.__wab_instance) {
   max-width: 100%;
   width: 100%;
@@ -4542,13 +4537,16 @@
   min-width: 0;
   padding: 8px;
 }
-.clarity:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .goftino:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+}
+.clarityRntComponent:global(.__wab_instance):global(.__wab_instance) {
+  display: none;
+}
+.faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  display: none;
 }
 .rentamonFooter:global(.__wab_instance) {
   max-width: 100%;

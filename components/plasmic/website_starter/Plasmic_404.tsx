@@ -61,9 +61,10 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -92,10 +93,10 @@ export type Plasmic_404__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
-  html?: Flex__<"div">;
-  clarity2?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface Default_404Props {}
@@ -375,20 +376,6 @@ function Plasmic_404__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div
-            data-plasmic-name={"html"}
-            data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
-          >
-            <Embed
-              data-plasmic-name={"clarity2"}
-              data-plasmic-override={overrides.clarity2}
-              className={classNames("__wab_instance", sty.clarity2)}
-              code={
-                '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-              }
-            />
-          </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
             data-plasmic-override={overrides.rentamonFooter}
@@ -400,6 +387,20 @@ function Plasmic_404__RenderFunc(props: {
             data-plasmic-override={overrides.navigationRntFooter}
             className={classNames("__wab_instance", sty.navigationRntFooter)}
           />
+
+          <div className={classNames(projectcss.all, sty.freeBox__mmxHh)}>
+            <ClarityRntComponent
+              data-plasmic-name={"clarityRntComponent"}
+              data-plasmic-override={overrides.clarityRntComponent}
+              className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <FaviconRntComponent
+              data-plasmic-name={"faviconRntComponent"}
+              data-plasmic-override={overrides.faviconRntComponent}
+              className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -414,20 +415,20 @@ const PlasmicDescendants = {
     "profile2",
     "mainContents",
     "img",
-    "html",
-    "clarity2",
     "rentamonFooter",
-    "navigationRntFooter"
+    "navigationRntFooter",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
   mainContents: ["mainContents", "img"],
   img: ["img"],
-  html: ["html", "clarity2"],
-  clarity2: ["clarity2"],
   rentamonFooter: ["rentamonFooter"],
-  navigationRntFooter: ["navigationRntFooter"]
+  navigationRntFooter: ["navigationRntFooter"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -439,10 +440,10 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   mainContents: "div";
   img: typeof PlasmicImg__;
-  html: "div";
-  clarity2: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
   navigationRntFooter: typeof NavigationRntFooter;
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -510,10 +511,10 @@ export const Plasmic_404 = Object.assign(
     profile2: makeNodeComponent("profile2"),
     mainContents: makeNodeComponent("mainContents"),
     img: makeNodeComponent("img"),
-    html: makeNodeComponent("html"),
-    clarity2: makeNodeComponent("clarity2"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for Plasmic_404
     internalVariantProps: Plasmic_404__VariantProps,
