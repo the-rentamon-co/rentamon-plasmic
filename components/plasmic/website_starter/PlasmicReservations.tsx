@@ -4038,90 +4038,103 @@ function PlasmicReservations__RenderFunc(props: {
                           )}
                           key={currentIndexs}
                         >
-                          <RecordList
-                            cancelledBookings={(() => {
-                              try {
-                                return currentItems.status == "Cancelled";
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return [];
-                                }
-                                throw e;
-                              }
-                            })()}
+                          <div
                             className={classNames(
-                              "__wab_instance",
-                              sty.recordList__lgeZv
+                              projectcss.all,
+                              sty.freeBox__strKl
                             )}
-                            confirmedBookings={(() => {
-                              try {
-                                return currentItems.status == "Confirmed";
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return [];
+                          >
+                            <RecordList
+                              cancelledBookings={(() => {
+                                try {
+                                  return currentItems.status == "Cancelled";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return [];
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                            currentIndex={(() => {
-                              try {
-                                return currentIndexs;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
+                              })()}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.recordList__lgeZv
+                              )}
+                              confirmedBookings={(() => {
+                                try {
+                                  return currentItems.status == "Confirmed";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return [];
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                            data={(() => {
-                              try {
-                                return currentItems;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
+                              })()}
+                              currentIndex={(() => {
+                                try {
+                                  return currentIndexs;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                            pastBookingsBox={(() => {
-                              try {
-                                return currentItems.status == "Past";
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return [];
+                              })()}
+                              data={(() => {
+                                try {
+                                  return currentItems;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                            pendingBookings={(() => {
-                              try {
-                                return currentItems.status == "Pending";
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return [];
+                              })()}
+                              pastBookingsBox={(() => {
+                                try {
+                                  return currentItems.status == "Past";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return [];
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          />
+                              })()}
+                              pendingBookings={(() => {
+                                try {
+                                  return currentItems.status == "Pending";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return [];
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
+                          </div>
                         </div>
                       );
                     })}
