@@ -455,24 +455,63 @@ function PlasmicProperties__RenderFunc(props: {
                     </div>
                   }
                   loadingDisplay={
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__gFugq)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "40px"
-                          : "50px"
-                      }
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={
-                        "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                      }
-                    />
+                    <React.Fragment>
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__gFugq)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "40px"
+                            : "50px"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
+                        }
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__zgYj
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                const storedData =
+                                  localStorage.getItem("rentamon_data");
+                                if (storedData) {
+                                  const parsedData = JSON.parse(storedData);
+                                  console.log(parsedData);
+                                  return parsedData;
+                                } else {
+                                  console.log(
+                                    "هیچ داده‌ای در localStorage با این کلید پیدا نشد."
+                                  );
+                                  return "هیچ دیتایی نبود";
+                                }
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </React.Fragment>
                   }
                   method={"GET"}
                   onError={async (...eventArgs: any) => {
