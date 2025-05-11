@@ -2159,6 +2159,18 @@
   border-radius: 15px;
   padding: 5px 2px;
 }
+@media (max-width: 500px) {
+  .freeBox__giYau {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    padding: 0px;
+  }
+}
 .freeBox__strKl {
   display: flex;
   flex-direction: row;
@@ -2171,6 +2183,19 @@
   min-width: 0;
   border-radius: 15px;
   padding: 5px 2px;
+}
+@media (max-width: 500px) {
+  .freeBox__strKl {
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: row;
+    min-width: 0;
+    border-radius: 15px;
+    padding: 5px 2px;
+  }
 }
 .recordList__lgeZv:global(.__wab_instance) {
   max-width: 100%;
