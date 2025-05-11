@@ -1265,58 +1265,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                       data-plasmic-override={overrides.apiRequest}
                       className={classNames("__wab_instance", sty.apiRequest)}
                       errorDisplay={null}
-                      loadingDisplay={
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img___5PCMw)}
-                          displayHeight={"34px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["goToActivationNew"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: `/activation/${"3"}`
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["goToActivationNew"] != null &&
-                              typeof $steps["goToActivationNew"] === "object" &&
-                              typeof $steps["goToActivationNew"].then ===
-                                "function"
-                            ) {
-                              $steps["goToActivationNew"] = await $steps[
-                                "goToActivationNew"
-                              ];
-                            }
-                          }}
-                          src={{
-                            src: "/plasmic/website_starter/images/image42.svg",
-                            fullWidth: 86,
-                            fullHeight: 35,
-                            aspectRatio: 2.457143
-                          }}
-                        />
-                      }
+                      loadingDisplay={null}
                       method={"GET"}
                       onError={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
@@ -1353,208 +1302,37 @@ function PlasmicProCalendar__RenderFunc(props: {
                         }
                       })()}
                     >
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if ($state.apiRequest.data == null) {
-                                    return false;
-                                  } else {
-                                    const statuses =
-                                      $state.apiRequest.data.status;
-                                    const anyFalse = Object.values(
-                                      statuses
-                                    ).some(value => value === false);
-                                    return anyFalse ? true : false;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if ($state.apiRequest.data == null) {
-                                    return false;
-                                  } else {
-                                    const statuses =
-                                      $state.apiRequest.data.status;
-                                    const anyFalse = Object.values(
-                                      statuses
-                                    ).some(value => value === false);
-                                    return anyFalse ? true : false;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__bVtw7)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "24px"
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? "30px"
-                              : "34px"
-                          }
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["goToActivationNew"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: `/activation/${"3"}`
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
+                      {(() => {
+                        try {
+                          return (() => {
                             if (
-                              $steps["goToActivationNew"] != null &&
-                              typeof $steps["goToActivationNew"] === "object" &&
-                              typeof $steps["goToActivationNew"].then ===
-                                "function"
+                              Object.keys($state.apiRequest.data.status)
+                                .length === 0 &&
+                              !$state.apiRequest.loading
                             ) {
-                              $steps["goToActivationNew"] = await $steps[
-                                "goToActivationNew"
-                              ];
+                              return false;
+                            } else {
+                              const statuses = $state.apiRequest.data.status;
+                              const allTrue = Object.values(statuses).every(
+                                value => value === true
+                              );
+                              return allTrue ? true : false;
                             }
-                          }}
-                          src={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? {
-                                  src: "/plasmic/website_starter/images/image121.svg",
-                                  fullWidth: 30,
-                                  fullHeight: 30,
-                                  aspectRatio: 1
-                                }
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? {
-                                  src: "/plasmic/website_starter/images/image121.svg",
-                                  fullWidth: 30,
-                                  fullHeight: 30,
-                                  aspectRatio: 1
-                                }
-                              : {
-                                  src: "/plasmic/website_starter/images/image25.svg",
-                                  fullWidth: 86,
-                                  fullHeight: 35,
-                                  aspectRatio: 2.457143
-                                }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
                           }
-                        />
-                      ) : null}
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    Object.keys($state.apiRequest.data.status)
-                                      .length === 0 &&
-                                    !$state.apiRequest.loading
-                                  ) {
-                                    return false;
-                                  } else {
-                                    const statuses =
-                                      $state.apiRequest.data.status;
-                                    const allTrue = Object.values(
-                                      statuses
-                                    ).every(value => value === true);
-                                    return allTrue ? true : false;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    Object.keys($state.apiRequest.data.status)
-                                      .length === 0 &&
-                                    !$state.apiRequest.loading
-                                  ) {
-                                    return false;
-                                  } else {
-                                    const statuses =
-                                      $state.apiRequest.data.status;
-                                    const allTrue = Object.values(
-                                      statuses
-                                    ).every(value => value === true);
-                                    return allTrue ? true : false;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
+                          throw e;
+                        }
+                      })() ? (
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(
-                            sty.img__tnqU9,
-                            hasVariant(globalVariants, "screen", "mobile")
-                              ? ``
-                              : undefined
-                          )}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "24px"
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? "30px"
-                              : "34px"
-                          }
+                          className={classNames(sty.img__lrd6I)}
+                          displayHeight={"34px"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
                           displayMinHeight={"0"}
@@ -1564,7 +1342,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["goToActivationNew"] = true
+                            $steps["goToActivation"] = true
                               ? (() => {
                                   const actionArgs = {
                                     destination: `/activation/${"3"}`
@@ -1584,108 +1362,53 @@ function PlasmicProCalendar__RenderFunc(props: {
                                 })()
                               : undefined;
                             if (
-                              $steps["goToActivationNew"] != null &&
-                              typeof $steps["goToActivationNew"] === "object" &&
-                              typeof $steps["goToActivationNew"].then ===
+                              $steps["goToActivation"] != null &&
+                              typeof $steps["goToActivation"] === "object" &&
+                              typeof $steps["goToActivation"].then ===
                                 "function"
                             ) {
-                              $steps["goToActivationNew"] = await $steps[
-                                "goToActivationNew"
+                              $steps["goToActivation"] = await $steps[
+                                "goToActivation"
                               ];
                             }
                           }}
-                          src={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? {
-                                  src: "/plasmic/website_starter/images/image8.svg",
-                                  fullWidth: 30,
-                                  fullHeight: 30,
-                                  aspectRatio: 1
-                                }
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? {
-                                  src: "/plasmic/website_starter/images/image8.svg",
-                                  fullWidth: 30,
-                                  fullHeight: 30,
-                                  aspectRatio: 1
-                                }
-                              : {
-                                  src: "/plasmic/website_starter/images/image26.svg",
-                                  fullWidth: 86,
-                                  fullHeight: 35,
-                                  aspectRatio: 2.457143
-                                }
-                          }
+                          src={{
+                            src: "/plasmic/website_starter/images/image8.svg",
+                            fullWidth: 30,
+                            fullHeight: 30,
+                            aspectRatio: 1
+                          }}
                         />
                       ) : null}
-                      {(
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? (() => {
-                              try {
-                                return (
-                                  Object.keys($state.apiRequest.data.status)
-                                    .length === 0
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (
-                                  Object.keys($state.apiRequest.data.status)
-                                    .length === 0
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (
-                                  Object.keys($state.apiRequest.data.status)
-                                    .length === 0
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
+                      {(() => {
+                        try {
+                          return (() => {
+                            if ($state.apiRequest.data == null) {
+                              return false;
+                            } else {
+                              const statuses = $state.apiRequest.data.status;
+                              const anyFalse = Object.values(statuses).some(
+                                value => value === false
+                              );
+                              return anyFalse ? true : false;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__cdshO)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "24px"
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? "30px"
-                              : "34px"
-                          }
+                          className={classNames(sty.img__kXy9)}
+                          displayHeight={"34px"}
                           displayMaxHeight={"none"}
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
+                          displayMaxWidth={"100%"}
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={"auto"}
@@ -1693,7 +1416,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["goToActivationNew"] = true
+                            $steps["goToActivation"] = true
                               ? (() => {
                                   const actionArgs = {
                                     destination: `/activation/${"3"}`
@@ -1713,38 +1436,89 @@ function PlasmicProCalendar__RenderFunc(props: {
                                 })()
                               : undefined;
                             if (
-                              $steps["goToActivationNew"] != null &&
-                              typeof $steps["goToActivationNew"] === "object" &&
-                              typeof $steps["goToActivationNew"].then ===
+                              $steps["goToActivation"] != null &&
+                              typeof $steps["goToActivation"] === "object" &&
+                              typeof $steps["goToActivation"].then ===
                                 "function"
                             ) {
-                              $steps["goToActivationNew"] = await $steps[
-                                "goToActivationNew"
+                              $steps["goToActivation"] = await $steps[
+                                "goToActivation"
                               ];
                             }
                           }}
-                          src={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? {
-                                  src: "/plasmic/website_starter/images/image122.svg",
-                                  fullWidth: 22,
-                                  fullHeight: 22,
-                                  aspectRatio: 1
-                                }
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? {
-                                  src: "/plasmic/website_starter/images/image122.svg",
-                                  fullWidth: 22,
-                                  fullHeight: 22,
-                                  aspectRatio: 1
-                                }
-                              : {
-                                  src: "/plasmic/website_starter/images/image42.svg",
-                                  fullWidth: 86,
-                                  fullHeight: 35,
-                                  aspectRatio: 2.457143
-                                }
+                          src={{
+                            src: "/plasmic/website_starter/images/image121.svg",
+                            fullWidth: 30,
+                            fullHeight: 30,
+                            aspectRatio: 1
+                          }}
+                        />
+                      ) : null}
+                      {(() => {
+                        try {
+                          return (
+                            Object.keys($state.apiRequest.data.status)
+                              .length === 0
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
                           }
+                          throw e;
+                        }
+                      })() ? (
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__vg0SX)}
+                          displayHeight={"34px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["goToActivation"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/activation/${"3"}`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["goToActivation"] != null &&
+                              typeof $steps["goToActivation"] === "object" &&
+                              typeof $steps["goToActivation"].then ===
+                                "function"
+                            ) {
+                              $steps["goToActivation"] = await $steps[
+                                "goToActivation"
+                              ];
+                            }
+                          }}
+                          src={{
+                            src: "/plasmic/website_starter/images/image124.svg",
+                            fullWidth: 30,
+                            fullHeight: 30,
+                            aspectRatio: 1
+                          }}
                         />
                       ) : null}
                     </ApiRequest>
@@ -2052,14 +1826,6 @@ function PlasmicProCalendar__RenderFunc(props: {
               </ApiRequest>
             </div>
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              sty.freeBox__zEfuz,
-              "blinkBorderTourGuide"
-            )}
-          />
-
           <Calendar2
             data-plasmic-name={"calendar2"}
             data-plasmic-override={overrides.calendar2}
@@ -2251,8 +2017,6 @@ function PlasmicProCalendar__RenderFunc(props: {
               />
             </div>
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox__lcrtN)} />
-
           <ApiRequest
             data-plasmic-name={"userAvailableFeature"}
             data-plasmic-override={overrides.userAvailableFeature}
@@ -2410,8 +2174,6 @@ function PlasmicProCalendar__RenderFunc(props: {
               '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u0644\u06cc\u0646\u06a9 favicon\r\n  const faviconLink = document.createElement("link");\r\n  faviconLink.rel = "icon";\r\n  faviconLink.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  faviconLink.sizes = "192x192";\r\n  document.head.appendChild(faviconLink);\r\n\r\n  // // \u0633\u0627\u062e\u062a\u0646 \u0644\u06cc\u0646\u06a9 apple-touch-icon \u0628\u0631\u0627\u06cc iOS\r\n  // const appleTouchIcon = document.createElement("link");\r\n  // appleTouchIcon.rel = "apple-touch-icon";\r\n  // appleTouchIcon.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  // appleTouchIcon.sizes = "180x180";\r\n  // document.head.appendChild(appleTouchIcon);\r\n\r\n  // // \u062a\u0646\u0638\u06cc\u0645\u0627\u062a PWA\r\n  // const themeColorMeta = document.createElement("meta");\r\n  // themeColorMeta.name = "theme-color";\r\n  // themeColorMeta.content = "#8165D6";\r\n  // document.head.appendChild(themeColorMeta);\r\n\r\n  // const appleWebAppMeta = document.createElement("meta");\r\n  // appleWebAppMeta.name = "apple-mobile-web-app-capable";\r\n  // appleWebAppMeta.content = "yes";\r\n  // document.head.appendChild(appleWebAppMeta);\r\n\r\n  // const appleWebAppTitle = document.createElement("meta");\r\n  // appleWebAppTitle.name = "apple-mobile-web-app-title";\r\n  // appleWebAppTitle.content = "\u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647";\r\n  // document.head.appendChild(appleWebAppTitle);\r\n\r\n  // // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 manifest.json\r\n  // const manifestLink = document.createElement("link");\r\n  // manifestLink.rel = "manifest";\r\n  // document.head.appendChild(manifestLink);\r\n\r\n  // // \u0633\u0627\u062e\u062a \u0648 \u062b\u0628\u062a manifest.json \u062f\u0627\u062e\u0644 \u0635\u0641\u062d\u0647\r\n  // const manifestContent = {\r\n  //   name: "Rentamon",\r\n  //   short_name: "\u0631\u0646\u062a\u0627\u0645\u0648\u0646",\r\n  //   icons: [\r\n  //     {\r\n  //       src: "https://rentamon-files.storage.iran.liara.space/icon/icon.svg",\r\n  //       sizes: "192x192",\r\n  //       type: "image/png"\r\n  //     },\r\n  //     {\r\n  //       src: "https://rentamon-files.storage.iran.liara.space/icon/icon.svg",\r\n  //       sizes: "512x512",\r\n  //       type: "image/png"\r\n  //     }\r\n  //   ],\r\n  //   theme_color: "#8165D6",\r\n  //   background_color: "#8165D6",\r\n  //   display: "standalone",\r\n  //   start_url: "/"\r\n  // };\r\n\r\n  // // \u0627\u06cc\u062c\u0627\u062f \u0641\u0627\u06cc\u0644 \u0648 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0628\u0647 \u0645\u0631\u0648\u0631\u06af\u0631\r\n  // const manifestBlob = new Blob([JSON.stringify(manifestContent)], { type: "application/json" });\r\n  // const manifestURL = URL.createObjectURL(manifestBlob);\r\n  // manifestLink.href = manifestURL;\r\n\r\n  // // \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 Splash Screen \u0628\u0631\u0627\u06cc iOS\r\n  // const splashScreen = document.createElement("link");\r\n  // splashScreen.rel = "apple-touch-startup-image";\r\n  // splashScreen.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  // document.head.appendChild(splashScreen);\r\n</script>\r\n'
             }
           />
-
-          <div className={classNames(projectcss.all, sty.freeBox__iSb5P)} />
         </div>
       </div>
     </React.Fragment>
