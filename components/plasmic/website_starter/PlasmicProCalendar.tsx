@@ -461,8 +461,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                                   typeof parsedData === "object"
                                 ) {
                                   return ($state.profile.data = {
-                                    user_info: parsedData,
-                                    properties: []
+                                    user_info: parsedData.user_info,
+                                    properties: parsedData.properties
                                   });
                                 }
                               } catch (e) {}
