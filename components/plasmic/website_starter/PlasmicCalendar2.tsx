@@ -4690,7 +4690,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               displayHeight={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "30px"
-                                  : "34px"
+                                  : "30px"
                               }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
@@ -4760,7 +4760,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                               displayHeight={
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "30px"
-                                  : "34px"
+                                  : "30px"
                               }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
