@@ -860,8 +860,8 @@ function PlasmicProperties__RenderFunc(props: {
                                     Object.keys(data.user_info).length > 0
                                   ) {
                                     return localStorage.setItem(
-                                      "rentamon_data",
-                                      JSON.stringify(data)
+                                      "property_data",
+                                      JSON.stringify(data.properties)
                                     );
                                   }
                                 })();
