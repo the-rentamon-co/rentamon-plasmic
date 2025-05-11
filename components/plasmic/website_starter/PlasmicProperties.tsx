@@ -855,10 +855,15 @@ function PlasmicProperties__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   const data = $state.apiRequest.data;
-                                  return localStorage.setItem(
-                                    "rentamon_data",
-                                    JSON.stringify(data)
-                                  );
+                                  if (
+                                    data?.user_info &&
+                                    Object.keys(data.user_info).length > 0
+                                  ) {
+                                    return localStorage.setItem(
+                                      "rentamon_data",
+                                      JSON.stringify(data)
+                                    );
+                                  }
                                 })();
                               }
                             };
