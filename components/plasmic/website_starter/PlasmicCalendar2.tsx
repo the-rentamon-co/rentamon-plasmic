@@ -4687,7 +4687,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                               data-plasmic-override={overrides.ok}
                               alt={""}
                               className={classNames(sty.ok)}
-                              displayHeight={"34px"}
+                              displayHeight={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "30px"
+                                  : "34px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -4753,7 +4757,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                               data-plasmic-override={overrides.fail}
                               alt={""}
                               className={classNames(sty.fail, "element")}
-                              displayHeight={"34px"}
+                              displayHeight={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "30px"
+                                  : "34px"
+                              }
                               displayMaxHeight={"none"}
                               displayMaxWidth={"100%"}
                               displayMinHeight={"0"}
@@ -5252,27 +5260,35 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                   }}
                 >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return (() => {
-                          if ($state.requestdata.request_for == "reserve") {
-                            return "ثبت اطلاعات مهمان";
-                          } else {
-                            return "باشه";
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___8Ejyk
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            if ($state.requestdata.request_for == "reserve") {
+                              return "ثبت اطلاعات مهمان";
+                            } else {
+                              return "باشه";
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u0628\u0627\u0634\u0647";
                           }
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "\u0628\u0627\u0634\u0647";
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
+                      })()}
+                    </React.Fragment>
+                  </div>
                 </Button>
               </div>
             </ApiRequest>
