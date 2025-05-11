@@ -428,7 +428,7 @@ function PlasmicProperties__RenderFunc(props: {
               data-plasmic-name={"property"}
               data-plasmic-override={overrides.property}
               hasGap={true}
-              className={classNames(projectcss.all, sty.property, "fadein")}
+              className={classNames(projectcss.all, sty.property, "fadeinf")}
             >
               <div
                 className={classNames(
