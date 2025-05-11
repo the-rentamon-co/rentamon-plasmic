@@ -2132,6 +2132,7 @@
   object-fit: cover;
   max-width: 100%;
   height: 50px;
+  display: none;
 }
 .img__yXdQ > picture > img {
   object-fit: cover;

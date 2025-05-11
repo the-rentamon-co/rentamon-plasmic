@@ -4006,7 +4006,7 @@ function PlasmicReservations__RenderFunc(props: {
                         try {
                           return (() => {
                             const storedData =
-                              localStorage.getItem("reservation");
+                              localStorage.getItem("reservations");
                             if (storedData) {
                               const parsedData = JSON.parse(storedData);
                               console.log(parsedData);
@@ -4269,10 +4269,7 @@ function PlasmicReservations__RenderFunc(props: {
                               <RecordList
                                 cancelledBookings={(() => {
                                   try {
-                                    return (
-                                      $state.reserveData.data[currentIndex]
-                                        .status == "Cancelled"
-                                    );
+                                    return currentItem.status == "Cancelled";
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -4290,10 +4287,7 @@ function PlasmicReservations__RenderFunc(props: {
                                 )}
                                 confirmedBookings={(() => {
                                   try {
-                                    return (
-                                      $state.reserveData.data[currentIndex]
-                                        .status == "Confirmed"
-                                    );
+                                    return currentItem.status == "Confirmed";
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -4308,9 +4302,7 @@ function PlasmicReservations__RenderFunc(props: {
                                 currentIndex={currentIndex}
                                 data={(() => {
                                   try {
-                                    return $state.reserveData.data[
-                                      currentIndex
-                                    ];
+                                    return currentItem;
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -4338,10 +4330,7 @@ function PlasmicReservations__RenderFunc(props: {
                                 })()}
                                 pastBookingsBox={(() => {
                                   try {
-                                    return (
-                                      $state.reserveData.data[currentIndex]
-                                        .status == "Past"
-                                    );
+                                    return currentItem.status == "Past";
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -4355,10 +4344,7 @@ function PlasmicReservations__RenderFunc(props: {
                                 })()}
                                 pendingBookings={(() => {
                                   try {
-                                    return (
-                                      $state.reserveData.data[currentIndex]
-                                        .status == "Pending"
-                                    );
+                                    return currentItem.status == "Pending";
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
