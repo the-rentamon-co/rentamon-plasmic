@@ -281,6 +281,8 @@
     width: 100%;
     background: none;
     height: 100%;
+    align-items: center;
+    justify-content: flex-end;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
     min-height: 0;
@@ -332,6 +334,7 @@
   flex-direction: column-reverse;
   align-items: stretch;
   justify-content: space-between;
+  z-index: 15;
   min-width: 0;
   padding: 0px 8px;
 }
@@ -373,7 +376,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     padding: 0px;
   }
 }
@@ -488,6 +491,11 @@
 .img__lrd6I > picture > img {
   object-fit: cover;
 }
+@media (max-width: 500px) {
+  .img__lrd6I {
+    height: 30px;
+  }
+}
 @media (max-width: 350px) {
   .img__lrd6I {
     height: 26px;
@@ -504,7 +512,7 @@
 }
 @media (max-width: 500px) {
   .img__kXy9 {
-    height: 34px;
+    height: 30px;
     max-width: 100%;
   }
 }
@@ -523,7 +531,7 @@
 }
 @media (max-width: 500px) {
   .img__vg0SX {
-    height: 34px;
+    height: 30px;
     max-width: 100%;
   }
 }
@@ -736,15 +744,29 @@
   flex-direction: column;
   position: absolute;
   width: 100%;
+  height: 380px;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  grid-column-start: 3 !important;
+  grid-column-end: -3 !important;
+  padding: 8px;
+}
+.freeBox__pol7D {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
   height: auto;
   max-width: 100%;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  top: 12px;
-  left: 0;
-  bottom: auto;
-  right: 0;
-  z-index: 5000000;
+  top: auto;
+  left: auto;
+  z-index: 10;
   min-width: 0;
   padding: 8px;
 }
@@ -765,10 +787,16 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--token-8R7jjC_-F9FF);
+  z-index: 50;
   min-width: 0;
   padding: 8px 8px 14px;
+}
+@media (max-width: 500px) {
+  .text__aDxd9 {
+    font-size: 16px;
+  }
 }
 .freeBox__zrVRm {
   display: flex;
@@ -776,14 +804,14 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 70%;
+  max-width: 98%;
   justify-content: flex-start;
   align-items: center;
   background: none;
   cursor: pointer;
   min-width: 0;
   border-radius: 30px;
-  padding: 8px;
+  padding: 4px 8px;
   border: 2px solid var(--token-8R7jjC_-F9FF);
 }
 .text__crcF {
@@ -794,12 +822,14 @@
   text-align: center;
   font-size: 15px;
   color: var(--token-8R7jjC_-F9FF);
+  z-index: 15;
   min-width: 0;
   padding: 3px;
 }
 .calendar2:global(.__wab_instance) {
   max-width: 100%;
   width: 100%;
+  z-index: 8;
   min-width: 0;
 }
 @media (max-width: 500px) {

@@ -1394,6 +1394,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "26px"
+                              : hasVariant(globalVariants, "screen", "mobile")
+                              ? "30px"
                               : "34px"
                           }
                           displayMaxHeight={"none"}
@@ -1477,7 +1479,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "26px"
                               : hasVariant(globalVariants, "screen", "mobile")
-                              ? "34px"
+                              ? "30px"
                               : "34px"
                           }
                           displayMaxHeight={"none"}
@@ -1554,7 +1556,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "26px"
                               : hasVariant(globalVariants, "screen", "mobile")
-                              ? "34px"
+                              ? "30px"
                               : "34px"
                           }
                           displayMaxHeight={"none"}
@@ -1912,22 +1914,24 @@ function PlasmicProCalendar__RenderFunc(props: {
                 </div>
               </ApiRequest>
             </div>
-            {(() => {
-              try {
-                return $state.isModalShow && !$state.isTheFirstVisit
-                  ? true
-                  : false;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return false;
-                }
-                throw e;
+          </div>
+          {(() => {
+            try {
+              return $state.isModalShow && !$state.isTheFirstVisit
+                ? true
+                : false;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
               }
-            })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox__kTFy9)}>
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__kTFy9)}>
+              <div className={classNames(projectcss.all, sty.freeBox__pol7D)}>
                 <div className={classNames(projectcss.all, sty.freeBox__xHsc)}>
                   <div
                     className={classNames(
@@ -1937,7 +1941,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0647\u0631 \u0648\u0642\u062a \u062a\u0642\u0648\u06cc\u0645 \u0631\u0648 \u0628\u0627\u0632 \u06a9\u0646\u06cc\u060c \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc \u06a9\u0647 \u0622\u062e\u0631\u06cc\u0646 \u0628\u0627\u0631 \u0628\u0627\u0632\u0634 \u06a9\u0631\u062f\u06cc.\r\n\r\n\u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631\u060c \u0631\u0648\u06cc \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0632\u0646."
+                      "\u0647\u0631 \u0648\u0642\u062a \u062a\u0642\u0648\u06cc\u0645 \u0631\u0648 \u0628\u0627\u0632 \u06a9\u0646\u06cc\u060c \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc \u06a9\u0647 \u0622\u062e\u0631\u06cc\u0646 \u0628\u0627\u0631 \u0628\u0627\u0632\u0634 \u06a9\u0631\u062f\u06cc.\r\n\r"
                     }
                   </div>
                   <div
@@ -2037,8 +2041,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-            ) : null}
-          </div>
+            </div>
+          ) : null}
           <Calendar2
             data-plasmic-name={"calendar2"}
             data-plasmic-override={overrides.calendar2}
