@@ -366,6 +366,31 @@ function PlasmicProCalendar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile2"
+      },
+      {
+        path: "isModalShow",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                if (!document.cookie.includes("property_modal_show")) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -1147,7 +1172,25 @@ function PlasmicProCalendar__RenderFunc(props: {
                   <div
                     data-plasmic-name={"r1"}
                     data-plasmic-override={overrides.r1}
-                    className={classNames(projectcss.all, sty.r1)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.r1,
+                      (() => {
+                        try {
+                          return $state.isModalShow && !$state.isTheFirstVisit
+                            ? "blinkBorderTourGuide"
+                            : "";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                    )}
                   >
                     <Select
                       data-plasmic-name={"select2"}
@@ -1869,6 +1912,132 @@ function PlasmicProCalendar__RenderFunc(props: {
                 </div>
               </ApiRequest>
             </div>
+            {(() => {
+              try {
+                return $state.isModalShow && !$state.isTheFirstVisit
+                  ? true
+                  : false;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox__kTFy9)}>
+                <div className={classNames(projectcss.all, sty.freeBox__xHsc)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aDxd9
+                    )}
+                  >
+                    {
+                      "\u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0648\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u06a9\u0647 \u0622\u062e\u0631\u06cc\u0646 \u0628\u0627\u0631 \u062a\u063a\u06cc\u06cc\u0631 \u062f\u0627\u062f\u06cc\u060c \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0627\u0632 \u0645\u06cc\u200c\u0634\u0647\r\n\r\n\u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631\u060c \u0631\u0648\u06cc \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0632\u0646"
+                    }
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zrVRm)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateIsModalShow"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["isModalShow"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateIsModalShow"] != null &&
+                        typeof $steps["updateIsModalShow"] === "object" &&
+                        typeof $steps["updateIsModalShow"].then === "function"
+                      ) {
+                        $steps["updateIsModalShow"] = await $steps[
+                          "updateIsModalShow"
+                        ];
+                      }
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  function setCookie(name, value, hours) {
+                                    let expires = "";
+                                    if (hours) {
+                                      const date = new Date();
+                                      date.setTime(
+                                        date.getTime() + hours * 60 * 60 * 1000
+                                      );
+                                      expires =
+                                        "; expires=" + date.toUTCString();
+                                    }
+                                    document.cookie =
+                                      name +
+                                      "=" +
+                                      (value || "") +
+                                      expires +
+                                      "; path=/";
+                                  }
+                                  return setCookie(
+                                    "property_modal_show",
+                                    "true",
+                                    720
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__crcF
+                      )}
+                    >
+                      {"\u0628\u0627\u0634\u0647"}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null}
           </div>
           <Calendar2
             data-plasmic-name={"calendar2"}
