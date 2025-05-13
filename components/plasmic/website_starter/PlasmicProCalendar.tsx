@@ -392,6 +392,12 @@ function PlasmicProCalendar__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "vtStatus",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
