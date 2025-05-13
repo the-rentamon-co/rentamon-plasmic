@@ -1249,6 +1249,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const formatter = new Intl.NumberFormat("fa-IR");
                         return formatter.format(num);
                       }
+                      $state.fetchModal.open = false;
                       $state.block.open = false;
                       $state.modal.open = false;
                       $state.modalDiscount.open = false;
@@ -1375,12 +1376,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                         });
                       $state.apiRequest.data[1].calendar = updatedCalendar;
                       console.log(
-                        "Calendar updated with changes with side:",
+                        "Calendar updated with changes:",
                         updatedCalendar
                       );
+                      $state.platformRequestStatus = [];
                       $state.requestdata = [];
                       $state.fragmentDatePicker.values = [];
-                      $state.platformRequestStatus = [];
                       $state.textInput.value = 0;
                       $state.textInput2.value = 0;
                       $state.textInput4.value = 0;
@@ -5217,7 +5218,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       ];
                     }
 
-                    $steps["updateFragmentDatePickerValue"] = true
+                    $steps["updateFragmentDatePickerValue"] = false
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -5423,6 +5424,44 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ) {
                       $steps["updateFragmentDatePickerValue"] = await $steps[
                         "updateFragmentDatePickerValue"
+                      ];
+                    }
+
+                    $steps["updateFragmentDatePickerValue4"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["updateStyle"]
+                            },
+                            operation: 0,
+                            value: ($state.updateStyle = $state.updateStyle + 1)
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateFragmentDatePickerValue4"] != null &&
+                      typeof $steps["updateFragmentDatePickerValue4"] ===
+                        "object" &&
+                      typeof $steps["updateFragmentDatePickerValue4"].then ===
+                        "function"
+                    ) {
+                      $steps["updateFragmentDatePickerValue4"] = await $steps[
+                        "updateFragmentDatePickerValue4"
                       ];
                     }
                   }}
