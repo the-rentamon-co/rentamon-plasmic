@@ -5417,43 +5417,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                         "updateFragmentDatePickerValue"
                       ];
                     }
-
-                    $steps["updateFragmentDatePickerValue4"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["fetchModal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateFragmentDatePickerValue4"] != null &&
-                      typeof $steps["updateFragmentDatePickerValue4"] ===
-                        "object" &&
-                      typeof $steps["updateFragmentDatePickerValue4"].then ===
-                        "function"
-                    ) {
-                      $steps["updateFragmentDatePickerValue4"] = await $steps[
-                        "updateFragmentDatePickerValue4"
-                      ];
-                    }
                   }}
                 >
                   <div
