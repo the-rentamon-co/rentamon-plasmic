@@ -535,23 +535,43 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                             for (const cookie of cookies) {
                               const [name, value] = cookie.split("=");
                               if (name === cookieName) {
+                                console.log(
+                                  `[cookie] Found ${cookieName} = ${value}`
+                                );
                                 return value;
                               }
                             }
+                            console.log(`[cookie] ${cookieName} not found`);
                             return null;
                           }
-                          const vt = null;
-                          if (document.cookie.includes("vt")) {
-                            console.log("in the vt");
-                            vt = getCookieValue("vt");
-                            if (vt != null) {
-                              $state.vtStatus = vt;
+                          let vt = null;
+                          const vtRaw = getCookieValue("vt");
+                          if (vtRaw !== null) {
+                            vt = parseInt(vtRaw, 10);
+                            $state.vtStatus = vt;
+                            console.log(`[vt] vtStatus set to ${vt}`);
+                            if (vt === 3) {
+                              console.log(
+                                "[redirect] Redirecting to web.rentamon.com/panels"
+                              );
+                              return (window.location.href =
+                                "https://web.rentamon.com/panels/?prop_id=1");
+                            } else if (vt === 1) {
+                              console.log(
+                                "[redirect] Redirecting to rentamon.com/panel"
+                              );
+                              return (window.location.href =
+                                "https://rentamon.com/panel/");
+                            } else {
+                              return console.log(
+                                `[vt] Unrecognized vt value: ${vt}`
+                              );
                             }
+                          } else {
+                            return console.log(
+                              "[vt] No vt cookie found, skipping redirection"
+                            );
                           }
-                          return console.log(
-                            "$state.vtStatus",
-                            $state.vtStatus
-                          );
                         })();
                       }
                     };
@@ -594,12 +614,54 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     const actionArgs = {
                       operation: 0,
                       value: (() => {
-                        if ($steps.checkOldUser.data.flag == 3) {
-                          return (window.location.href =
-                            "https://web.rentamon.com/panels/?prop_id=1");
-                        } else if ($steps.checkOldUser.data.flag == 1) {
-                          return (window.location.href =
-                            "https://rentamon.com/panel/");
+                        function setCookie(name, value, hours) {
+                          let expires = "";
+                          if (hours) {
+                            const date = new Date();
+                            date.setTime(
+                              date.getTime() + hours * 60 * 60 * 1000
+                            );
+                            expires = "; expires=" + date.toUTCString();
+                            console.log(
+                              `[cookie] Setting '${name}' with value '${value}' to expire at ${date.toUTCString()}`
+                            );
+                          }
+                          document.cookie =
+                            name + "=" + (value || "") + expires + "; path=/";
+                        }
+                        const flag = $steps.checkOldUser.data.flag;
+                        const current = parseInt($state.vtStatus, 10);
+                        console.log(`[vt-check] flag from server = ${flag}`);
+                        console.log(
+                          `[vt-check] current vt from cookie/state = ${current}`
+                        );
+                        if (flag !== current) {
+                          console.log(
+                            "[vt-check] flag and cookie do not match \u2014 updating cookie and redirecting"
+                          );
+                          if (flag === 3) {
+                            setCookie("vt", "3", 0.3333);
+                            console.log(
+                              "[redirect] Redirecting to web panel (flag 3)"
+                            );
+                            return (window.location.href =
+                              "https://web.rentamon.com/panels/?prop_id=1");
+                          } else if (flag === 1) {
+                            setCookie("vt", "1", 0.3333);
+                            console.log(
+                              "[redirect] Redirecting to mobile panel (flag 1)"
+                            );
+                            return (window.location.href =
+                              "https://rentamon.com/panel/");
+                          } else {
+                            return console.log(
+                              `[info] flag value ${flag} has no redirect action`
+                            );
+                          }
+                        } else {
+                          return console.log(
+                            "[vt-check] flag and cookie match \u2014 no redirect needed"
+                          );
                         }
                       })()
                     };
@@ -1335,7 +1397,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___0PuMm
+                        sty.formField__h0LO
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1347,7 +1409,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__x11KJ
+                        sty.formField__tAk9N
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1365,7 +1427,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__yGbTo
+                          sty.text__asv0M
                         )}
                       >
                         {"Submit"}
