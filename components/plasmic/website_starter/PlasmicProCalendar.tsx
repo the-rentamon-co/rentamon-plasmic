@@ -375,6 +375,7 @@ function PlasmicProCalendar__RenderFunc(props: {
           (() => {
             try {
               return (() => {
+                return false;
                 if (!document.cookie.includes("property_modal_show")) {
                   return true;
                 } else {
@@ -630,6 +631,71 @@ function PlasmicProCalendar__RenderFunc(props: {
                 $steps["runCode"] = await $steps["runCode"];
               }
 
+              $steps["checkVtCookie"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                console.log(
+                                  `[cookie] Found ${cookieName} = ${value}`
+                                );
+                                return value;
+                              }
+                            }
+                            console.log(`[cookie] ${cookieName} not found`);
+                            return null;
+                          }
+                          let vt = null;
+                          const vtRaw = getCookieValue("vt");
+                          if (vtRaw !== null) {
+                            vt = parseInt(vtRaw, 10);
+                            $state.vtStatus = vt;
+                            console.log(`[vt] vtStatus set to ${vt}`);
+                            if (vt === 3) {
+                              console.log(
+                                "[redirect] Redirecting to web.rentamon.com/panels"
+                              );
+                              return (window.location.href =
+                                "https://web.rentamon.com/panels/?prop_id=1");
+                            } else if (vt === 2) {
+                              console.log(
+                                "[redirect] Redirecting to rentamon.com/panel"
+                              );
+                              return (window.location.href =
+                                "https://rentamon.com/calendar/");
+                            } else {
+                              return console.log(
+                                `[vt] Unrecognized vt value: ${vt}`
+                              );
+                            }
+                          } else {
+                            return console.log(
+                              "[vt] No vt cookie found, skipping redirection"
+                            );
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkVtCookie"] != null &&
+                typeof $steps["checkVtCookie"] === "object" &&
+                typeof $steps["checkVtCookie"].then === "function"
+              ) {
+                $steps["checkVtCookie"] = await $steps["checkVtCookie"];
+              }
+
               $steps["checkOldUser"] = true
                 ? (() => {
                     const actionArgs = {
@@ -656,15 +722,75 @@ function PlasmicProCalendar__RenderFunc(props: {
                     const actionArgs = {
                       operation: 0,
                       value: (() => {
-                        if ($steps.checkOldUser.data.flag === 3) {
-                          return (window.location.href =
-                            "https://web.rentamon.com/panels/?prop_id=1");
-                        } else if (
-                          $steps.checkOldUser.data.flag === 0 ||
-                          $steps.checkOldUser.data.flag === 2
-                        ) {
-                          return (window.location.href =
-                            "https://rentamon.com/calendar/");
+                        function setCookie(name, value, hours) {
+                          let expires = "";
+                          if (hours) {
+                            const date = new Date();
+                            date.setTime(
+                              date.getTime() + hours * 60 * 60 * 1000
+                            );
+                            expires = "; expires=" + date.toUTCString();
+                            console.log(
+                              `[cookie] Setting '${name}' with value '${value}' to expire at ${date.toUTCString()}`
+                            );
+                          }
+                          document.cookie =
+                            name + "=" + (value || "") + expires + "; path=/";
+                        }
+                        const flag = $steps.checkOldUser.data.flag;
+                        const current = parseInt($state.vtStatus, 10);
+                        console.log(`[vt-check] flag from server = ${flag}`);
+                        console.log(
+                          `[vt-check] current vt from cookie/state = ${current}`
+                        );
+                        if (isNaN(current)) {
+                          console.log(
+                            "[vt-check] current vt is NaN \u2014 no cookie exists, setting new one"
+                          );
+                          setCookie("vt", flag.toString(), 0.3333);
+                          if (flag === 3) {
+                            console.log(
+                              "[redirect] Redirecting to web panel (flag 3)"
+                            );
+                            return (window.location.href =
+                              "https://web.rentamon.com/panels/?prop_id=1");
+                          } else if (flag === 2) {
+                            console.log(
+                              "[redirect] Redirecting to mobile panel (flag 1)"
+                            );
+                            return (window.location.href =
+                              "https://rentamon.com/calendar/");
+                          } else {
+                            return console.log(
+                              `[info] flag value ${flag} has no redirect action`
+                            );
+                          }
+                        } else if (flag !== current) {
+                          console.log(
+                            "[vt-check] flag and cookie do not match \u2014 updating cookie and redirecting"
+                          );
+                          setCookie("vt", flag.toString(), 0.3333);
+                          if (flag === 3) {
+                            console.log(
+                              "[redirect] Redirecting to web panel (flag 3)"
+                            );
+                            return (window.location.href =
+                              "https://web.rentamon.com/panels/?prop_id=1");
+                          } else if (flag === 2) {
+                            console.log(
+                              "[redirect] Redirecting to mobile panel (flag 1)"
+                            );
+                            return (window.location.href =
+                              "https://rentamon.com/calendar/");
+                          } else {
+                            return console.log(
+                              `[info] flag value ${flag} has no redirect action`
+                            );
+                          }
+                        } else {
+                          return console.log(
+                            "[vt-check] flag and cookie match \u2014 no redirect needed"
+                          );
                         }
                       })()
                     };
