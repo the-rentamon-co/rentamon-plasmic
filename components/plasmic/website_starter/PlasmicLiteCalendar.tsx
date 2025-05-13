@@ -635,19 +635,40 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         console.log(
                           `[vt-check] current vt from cookie/state = ${current}`
                         );
-                        if (flag !== current) {
+                        if (isNaN(current)) {
                           console.log(
-                            "[vt-check] flag and cookie do not match \u2014 updating cookie and redirecting"
+                            "[vt-check] current vt is NaN \u2014 no cookie exists, setting new one"
                           );
+                          setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 3) {
-                            setCookie("vt", "3", 0.3333);
                             console.log(
                               "[redirect] Redirecting to web panel (flag 3)"
                             );
                             return (window.location.href =
                               "https://web.rentamon.com/panels/?prop_id=1");
                           } else if (flag === 1) {
-                            setCookie("vt", "1", 0.3333);
+                            console.log(
+                              "[redirect] Redirecting to mobile panel (flag 1)"
+                            );
+                            return (window.location.href =
+                              "https://rentamon.com/panel/");
+                          } else {
+                            return console.log(
+                              `[info] flag value ${flag} has no redirect action`
+                            );
+                          }
+                        } else if (flag !== current) {
+                          console.log(
+                            "[vt-check] flag and cookie do not match \u2014 updating cookie and redirecting"
+                          );
+                          setCookie("vt", flag.toString(), 0.3333);
+                          if (flag === 3) {
+                            console.log(
+                              "[redirect] Redirecting to web panel (flag 3)"
+                            );
+                            return (window.location.href =
+                              "https://web.rentamon.com/panels/?prop_id=1");
+                          } else if (flag === 1) {
                             console.log(
                               "[redirect] Redirecting to mobile panel (flag 1)"
                             );
@@ -1397,7 +1418,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__h0LO
+                        sty.formField__cK2Mu
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1409,7 +1430,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__tAk9N
+                        sty.formField__dnNMv
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1427,7 +1448,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__asv0M
+                          sty.text__oCjyV
                         )}
                       >
                         {"Submit"}
