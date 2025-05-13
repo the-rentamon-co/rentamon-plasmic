@@ -555,7 +555,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                                 "[redirect] Redirecting to web.rentamon.com/panels"
                               );
                               return (window.location.href =
-                                "https://web.rentamon.com/panels/?prop_id=1");
+                                "https://rentamon.com/splash");
                             } else if (vt === 1) {
                               console.log(
                                 "[redirect] Redirecting to rentamon.com/panel"
@@ -645,7 +645,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                               "[redirect] Redirecting to web panel (flag 3)"
                             );
                             return (window.location.href =
-                              "https://web.rentamon.com/panels/?prop_id=1");
+                              "https://rentamon.com/splash");
                           } else if (flag === 1) {
                             console.log(
                               "[redirect] Redirecting to mobile panel (flag 1)"
@@ -1418,7 +1418,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__kUhT
+                        sty.formField__rdGb3
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1430,7 +1430,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__uV150
+                        sty.formField___5Qu2T
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1448,7 +1448,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__vzY80
+                          sty.text__yPuMz
                         )}
                       >
                         {"Submit"}

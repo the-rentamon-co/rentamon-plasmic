@@ -668,7 +668,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                                 "[redirect] Redirecting to web.rentamon.com/panels"
                               );
                               return (window.location.href =
-                                "https://web.rentamon.com/panels/?prop_id=1");
+                                "https://rentamon.com/splash");
                             } else if (vt === 2) {
                               console.log(
                                 "[redirect] Redirecting to rentamon.com/panel"
@@ -758,7 +758,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                               "[redirect] Redirecting to web panel (flag 3)"
                             );
                             return (window.location.href =
-                              "https://web.rentamon.com/panels/?prop_id=1");
+                              "https://rentamon.com/splash");
                           } else if (flag === 2) {
                             console.log(
                               "[redirect] Redirecting to mobile panel (flag 1)"
