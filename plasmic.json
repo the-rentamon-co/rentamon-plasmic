@@ -1391,7 +1391,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/Plasmicثبتآگهیاقامتگاه.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87.tsx"
+            "modulePath": "../src/pages/list-your-property.tsx"
           },
           "cssFilePath": "plasmic/website_starter/Plasmicثبتآگهیاقامتگاه.module.css",
           "scheme": "blackbox",
@@ -1405,7 +1405,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/Plasmicراهنمایجامعدرآمدازاجارهویلا.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7.tsx"
+            "modulePath": "../src/pages/vacation-rental-income.tsx"
           },
           "cssFilePath": "plasmic/website_starter/Plasmicراهنمایجامعدرآمدازاجارهویلا.module.css",
           "scheme": "blackbox",
@@ -1419,7 +1419,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/Plasmicچراجارهکوتاهمدت.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%DA%A9%D9%88%D8%AA%D8%A7%D9%87-%D9%85%D8%AF%D8%AA.tsx"
+            "modulePath": "../src/pages/short-term-rental.tsx"
           },
           "cssFilePath": "plasmic/website_starter/Plasmicچراجارهکوتاهمدت.module.css",
           "scheme": "blackbox",
@@ -1433,7 +1433,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/Plasmicمقایسهبهترینسایتاجارهویلا.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7.tsx"
+            "modulePath": "../src/pages/best-villa-rental-sites.tsx"
           },
           "cssFilePath": "plasmic/website_starter/Plasmicمقایسهبهترینسایتاجارهویلا.module.css",
           "scheme": "blackbox",
@@ -1447,7 +1447,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/Plasmicمدیریتویلا.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%88%DB%8C%D9%84%D8%A7.tsx"
+            "modulePath": "../src/pages/villa-management.tsx"
           },
           "cssFilePath": "plasmic/website_starter/Plasmicمدیریتویلا.module.css",
           "scheme": "blackbox",

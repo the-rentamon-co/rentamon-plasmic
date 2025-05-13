@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -83,7 +84,9 @@ type ArgPropType = keyof PlasmicClarityRntComponent__ArgsType;
 export const PlasmicClarityRntComponent__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicClarityRntComponent__OverridesType = {
+  root?: Flex__<"div">;
   clarity?: Flex__<typeof Embed>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultClarityRntComponentProps {
@@ -134,36 +137,83 @@ function PlasmicClarityRntComponent__RenderFunc(props: {
   });
 
   return (
-    <Embed
-      data-plasmic-name={"clarity"}
-      data-plasmic-override={overrides.clarity}
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        "__wab_instance",
+        projectcss.all,
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         plasmic_antd_5_hostless_css.plasmic_tokens,
         plasmic_plasmic_rich_components_css.plasmic_tokens,
-        sty.clarity
+        sty.root
       )}
-      code={
-        '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
-      }
-    />
+    >
+      <Embed
+        data-plasmic-name={"clarity"}
+        data-plasmic-override={overrides.clarity}
+        className={classNames("__wab_instance", sty.clarity)}
+        code={
+          '<script type="text/javascript">\r\n    (function(c,l,a,r,i,t,y){\r\n        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\r\n        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;\r\n        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\r\n    })(window, document, "clarity", "script", "iv4wnfjr7k");\r\n</script>'
+        }
+      />
+
+      <SideEffect
+        data-plasmic-name={"sideEffect"}
+        data-plasmic-override={overrides.sideEffect}
+        className={classNames("__wab_instance", sty.sideEffect)}
+        onMount={async () => {
+          const $steps = {};
+
+          $steps["runCode"] = true
+            ? (() => {
+                const actionArgs = {
+                  customFunction: async () => {
+                    return (function redirectIfAppSubdomain() {
+                      const { protocol, hostname, pathname, search, hash } =
+                        window.location;
+                      if (hostname === "app.rentamon.com") {
+                        const targetHost = "rentamon.com";
+                        const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
+                        window.location.replace(newUrl);
+                      }
+                    })();
+                  }
+                };
+                return (({ customFunction }) => {
+                  return customFunction();
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["runCode"] != null &&
+            typeof $steps["runCode"] === "object" &&
+            typeof $steps["runCode"].then === "function"
+          ) {
+            $steps["runCode"] = await $steps["runCode"];
+          }
+        }}
+      />
+    </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  clarity: ["clarity"]
+  root: ["root", "clarity", "sideEffect"],
+  clarity: ["clarity"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
+  root: "div";
   clarity: typeof Embed;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -213,7 +263,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "clarity") {
+  if (nodeName === "root") {
     func.displayName = "PlasmicClarityRntComponent";
   } else {
     func.displayName = `PlasmicClarityRntComponent.${nodeName}`;
@@ -223,9 +273,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicClarityRntComponent = Object.assign(
   // Top-level PlasmicClarityRntComponent renders the root element
-  makeNodeComponent("clarity"),
+  makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    clarity: makeNodeComponent("clarity"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicClarityRntComponent
     internalVariantProps: PlasmicClarityRntComponent__VariantProps,

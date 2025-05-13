@@ -499,7 +499,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                         $steps["goToثبتآگهیاقامتگاه"] = true
                           ? (() => {
                               const actionArgs = {
-                                destination: `/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87`
+                                destination: `/list-your-property`
                               };
                               return (({ destination }) => {
                                 if (
@@ -755,7 +755,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                       $steps["goToبهترینسایتاجارهویلا"] = true
                         ? (() => {
                             const actionArgs = {
-                              destination: `/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7`
+                              destination: `/best-villa-rental-sites`
                             };
                             return (({ destination }) => {
                               if (
@@ -890,9 +890,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
 
                 $steps["goToثبتآگهیاقامتگاه"] = true
                   ? (() => {
-                      const actionArgs = {
-                        destination: `/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87`
-                      };
+                      const actionArgs = { destination: `/list-your-property` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&

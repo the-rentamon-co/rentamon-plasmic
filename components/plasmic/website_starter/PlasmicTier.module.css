@@ -718,7 +718,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.clarityRntComponent:global(.__wab_instance):global(.__wab_instance) {
+.clarityRntComponent:global(.__wab_instance) {
   display: none;
 }
 .faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
