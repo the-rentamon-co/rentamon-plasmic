@@ -73,6 +73,7 @@ import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -127,6 +128,7 @@ export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultثبتآگهیاقامتگاهProps {}
@@ -1943,6 +1945,39 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["goToPage"] = true
+                ? (() => {
+                    const actionArgs = {};
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToPage"] != null &&
+                typeof $steps["goToPage"] === "object" &&
+                typeof $steps["goToPage"].then === "function"
+              ) {
+                $steps["goToPage"] = await $steps["goToPage"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1980,7 +2015,8 @@ const PlasmicDescendants = {
     "button2",
     "rentamonFooter",
     "clarityRntComponent",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "sideEffect"
   ],
   navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
@@ -2061,7 +2097,8 @@ const PlasmicDescendants = {
   button2: ["button2"],
   rentamonFooter: ["rentamonFooter"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  faviconRntComponent: ["faviconRntComponent"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2097,6 +2134,7 @@ type NodeDefaultElementType = {
   rentamonFooter: typeof RentamonFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2189,6 +2227,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for Plasmicثبتآگهیاقامتگاه
     internalVariantProps: Plasmicثبتآگهیاقامتگاه__VariantProps,
