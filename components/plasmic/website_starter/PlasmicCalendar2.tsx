@@ -1292,16 +1292,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                   $state.tourSteps == 1 ||
                   $state.tourSteps == 5
                 ) {
-                  console.log("here1");
-                  console.log("here1");
                   return true;
                 } else {
-                  console.log($state.tourSteps);
-                  console.log("here2");
                   return false;
                 }
               } else {
-                console.log("here3");
                 return false;
               }
             })();
