@@ -540,12 +540,12 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                             }
                             return null;
                           }
+                          const vt = null;
                           if (document.cookie.includes("vt")) {
                             console.log("in the vt");
-                            const vt = getCookieValue("vt");
+                            vt = getCookieValue("vt");
                             if (vt != null) {
                               $state.vtStatus = vt;
-                              console.log("vt", vt);
                             }
                           }
                           return console.log(
@@ -1335,7 +1335,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__c2M9C
+                        sty.formField___0PuMm
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1347,7 +1347,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ivVty
+                        sty.formField__x11KJ
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1365,7 +1365,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__lmUCb
+                          sty.text__yGbTo
                         )}
                       >
                         {"Submit"}
