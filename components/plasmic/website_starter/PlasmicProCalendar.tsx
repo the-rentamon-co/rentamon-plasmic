@@ -660,7 +660,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                             $state.vtStatus = vt;
                             if (vt === 3) {
                               return (window.location.href =
-                                "https://rentamon.com/splash");
+                                "https://rentamon.com/splash-wp");
                             } else if (vt === 2) {
                               return (window.location.href =
                                 "https://rentamon.com/calendar/");
@@ -726,7 +726,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 3) {
                             return (window.location.href =
-                              "https://rentamon.com/splash");
+                              "https://rentamon.com/splash-wp");
                           } else if (flag === 2) {
                             return (window.location.href =
                               "https://rentamon.com/calendar/");
@@ -735,7 +735,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 3) {
                             return (window.location.href =
-                              "https://web.rentamon.com/panels/?prop_id=1");
+                              "https://rentamon.com/splash-wp");
                           } else if (flag === 2) {
                             return (window.location.href =
                               "https://rentamon.com/calendar/");

@@ -197,30 +197,8 @@ function PlasmicSplashWp__RenderFunc(props: {
             <div
               className={classNames(
                 projectcss.all,
-                sty.freeBox__idTBw,
-                hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
-              )}
-            >
-              <Icon79Icon
-                data-plasmic-name={"svg"}
-                data-plasmic-override={overrides.svg}
-                className={classNames(
-                  projectcss.all,
-                  sty.svg,
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? ``
-                    : "fadeinf"
-                )}
-                role={"img"}
-              />
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
                 sty.freeBox__pdB0,
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? ``
-                  : "logo-effect1"
+                hasVariant(globalVariants, "screen", "mobile") ? `` : ``
               )}
             >
               <div
@@ -242,8 +220,8 @@ function PlasmicSplashWp__RenderFunc(props: {
                   projectcss.all,
                   sty.freeBox__jJoxd,
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? "clickabel"
-                    : undefined
+                    ? "fadein clickable"
+                    : "fadein clickable"
                 )}
                 onAbort={async event => {
                   const $steps = {};
@@ -286,27 +264,51 @@ function PlasmicSplashWp__RenderFunc(props: {
                       : undefined
                   )}
                 >
-                  {
-                    "\u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u067e\u0627\u06cc\u062f\u0627\u0631\u06cc\u060c \u0644\u0637\u0641\u0627 \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0627 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u06a9\u0646\u06cc\u062f"
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a \u0628\u0627\u0632 \u0634\u062f\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u060c \u0644\u0637\u0641\u0627 \u0628\u0631\u0646\u0627\u0645\u0647 \u062e\u0648\u062f \u0631\u0627 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u06a9\u0646\u06cc\u062f"
+                    : "\u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u067e\u0627\u06cc\u062f\u0627\u0631\u06cc\u060c \u0644\u0637\u0641\u0627 \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0627 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u06a9\u0646\u06cc\u062f"}
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__zEcGc,
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? ``
-                      : "clickabel"
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-                  }}
+                  className={classNames(projectcss.all, sty.freeBox___1NRlY)}
                 >
-                  {"\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc"}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zEcGc,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? ``
+                        : "clickabel"
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+                    }}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc"
+                      : "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc"}
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            className={classNames(
+              projectcss.all,
+              sty.freeBox__idTBw,
+              hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
+            )}
+          >
+            <Icon79Icon
+              data-plasmic-name={"svg"}
+              data-plasmic-override={overrides.svg}
+              className={classNames(
+                projectcss.all,
+                sty.svg,
+                hasVariant(globalVariants, "screen", "mobile") ? `` : "fadeinf"
+              )}
+              role={"img"}
+            />
           </div>
           <SideEffect
             data-plasmic-name={"sideEffect"}
@@ -574,7 +576,7 @@ function PlasmicSplashWp__RenderFunc(props: {
 
 const PlasmicDescendants = {
   root: ["root", "center", "svg", "sideEffect"],
-  center: ["center", "svg"],
+  center: ["center"],
   svg: ["svg"],
   sideEffect: ["sideEffect"]
 } as const;
