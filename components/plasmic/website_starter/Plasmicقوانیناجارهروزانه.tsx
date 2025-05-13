@@ -184,7 +184,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{Plasmicقوانیناجارهروزانه.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -195,6 +195,35 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
           key="twitter:title"
           name="twitter:title"
           content={Plasmicقوانیناجارهروزانه.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicقوانیناجارهروزانه.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicقوانیناجارهروزانه.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicقوانیناجارهروزانه.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicقوانیناجارهروزانه.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicقوانیناجارهروزانه.pageMetadata.ogImageSrc}
+        />
+        <link
+          rel="canonical"
+          href={Plasmicقوانیناجارهروزانه.pageMetadata.canonical}
         />
       </Head>
 
@@ -295,7 +324,9 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__tjQpk)}>
                 <PlasmicImg__
-                  alt={""}
+                  alt={
+                    "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0631\u0627\u0631\u062f\u0627\u062f \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627, \u0645\u062c\u0648\u0632 \u062e\u0627\u0646\u0647 \u0645\u0633\u0627\u0641\u0631"
+                  }
                   className={classNames(sty.img__och2S)}
                   displayHeight={"auto"}
                   displayMaxHeight={"none"}
@@ -1274,12 +1305,27 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
     internalVariantProps: Plasmicقوانیناجارهروزانه__VariantProps,
     internalArgProps: Plasmicقوانیناجارهروزانه__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      title:
+        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647",
+      description:
+        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646: \u0645\u062c\u0648\u0632\u0647\u0627\u060c \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u0647\u0627\u060c \u0645\u0627\u0644\u06cc\u0627\u062a\u060c \u0628\u06cc\u0645\u0647 \u0648 \u0627\u062d\u0631\u0627\u0632 \u0647\u0648\u06cc\u062a \u0645\u0647\u0645\u0627\u0646\u061b \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u06a9\u0627\u0645\u0644 \u0628\u0631\u0627\u06cc \u0635\u0627\u062d\u0628\u0627\u0646 \u0648\u06cc\u0644\u0627 \u0648 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647.",
+      url: "https://rentamon.com/rental-rules/",
+      imageAlt:
+        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647",
+      image:
+        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      description:
+        "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/0fa21a59b2c480cb87b67e80efe4956e.jpg",
+      canonical: "https://rentamon.com/rental-rules/"
     }
   }
 );

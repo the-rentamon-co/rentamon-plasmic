@@ -1375,11 +1375,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                         });
                       $state.apiRequest.data[1].calendar = updatedCalendar;
                       console.log(
-                        "Calendar updated with changes:",
+                        "Calendar updated with changes with side:",
                         updatedCalendar
                       );
                       $state.requestdata = [];
                       $state.fragmentDatePicker.values = [];
+                      $state.platformRequestStatus = [];
                       $state.textInput.value = 0;
                       $state.textInput2.value = 0;
                       $state.textInput4.value = 0;
