@@ -71,7 +71,6 @@ import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
@@ -149,7 +148,6 @@ export type PlasmicCalendar2__OverridesType = {
   textInput4?: Flex__<typeof TextInput>;
   guide?: Flex__<"div">;
   submitChange?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
   addingGuestInfo?: Flex__<typeof AntdModal>;
   form?: Flex__<"div">;
   p1?: Flex__<"div">;
@@ -767,22 +765,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                       $state.apiRequest.data[2] =
                         $steps.invokeGlobalAction.data[1];
                       if (
-                        $state.apiRequest?.data?.[0]?.timestampsArray &&
-                        $state.apiRequest?.data?.[1]?.calendar
+                        Array.isArray(
+                          $state.apiRequest?.data?.[0]?.timestampsArray
+                        ) &&
+                        Array.isArray($state.apiRequest?.data?.[1]?.calendar)
                       ) {
-                        let notedDates =
+                        const notedDates =
                           $state.apiRequest.data[0].timestampsArray;
-                        let calendar = $state.apiRequest.data[1].calendar;
+                        const calendar = $state.apiRequest.data[1].calendar;
                         calendar.forEach(day => {
-                          if (notedDates.includes(day.date)) {
-                            day.isnoted = true;
-                          } else {
-                            day.isnoted = false;
-                          }
+                          day.isnoted = notedDates.includes(day.date);
                         });
                         return ($state.apiRequest.data[1].calendar = calendar);
-                      } else {
-                        return console.log("null");
                       }
                     })()
                   };
@@ -1205,10 +1199,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                           };
                         });
                       $state.apiRequest.data[1].calendar = updatedCalendar;
-                      console.log(
-                        "Calendar updated with changes:",
-                        updatedCalendar
-                      );
                       $state.platformRequestStatus = [];
                       $state.requestdata = [];
                       $state.fragmentDatePicker.values = [];
@@ -8686,15 +8676,6 @@ function PlasmicCalendar2__RenderFunc(props: {
           </Button>
         </div>
       </div>
-      <Embed
-        data-plasmic-name={"embedHtml"}
-        data-plasmic-override={overrides.embedHtml}
-        className={classNames("__wab_instance", sty.embedHtml)}
-        code={
-          '<script>\r\nconst element = document.getElementById("test");\r\nlet timer;\r\nconsole.log("test"element)\r\n\r\n// \u0634\u0631\u0648\u0639 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0631\u0648\u06cc \u0627\u0644\u0645\u0646\u062a\r\nconst startPress = () => {\r\n  timer = setTimeout(() => {\r\n    console.log("\u0641\u0627\u0646\u06a9\u0634\u0646 \u0628\u0631\u0627\u06cc \u0627\u0644\u0645\u0627\u0646 test \u0627\u062c\u0631\u0627 \u0634\u062f!");\r\n    // \u0627\u06cc\u0646\u062c\u0627 \r\n  }, 1000); // \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0644\u06cc\u200c\u062b\u0627\u0646\u06cc\u0647 \u0645\u0639\u0627\u062f\u0644 \u06f1 \u062b\u0627\u0646\u06cc\u0647\r\n};\r\n\r\n// \u067e\u0627\u06cc\u0627\u0646 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0631\u0648\u06cc \u0627\u0644\u0645\u0646\u062a\r\nconst endPress = () => {\r\n  clearTimeout(timer); // \u0645\u062a\u0648\u0642\u0641 \u06a9\u0631\u062f\u0646 \u062a\u0627\u06cc\u0645\u0631 \u062f\u0631 \u0635\u0648\u0631\u062a \u0631\u0647\u0627 \u06a9\u0631\u062f\u0646 \u06cc\u0627 \u0644\u063a\u0648\r\n};\r\n\r\n// \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u062f\u0633\u06a9\u062a\u0627\u067e\r\nelement.addEventListener("mousedown", startPress);\r\nelement.addEventListener("mouseup", endPress);\r\nelement.addEventListener("mouseleave", endPress);\r\n\r\n// \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644\r\nelement.addEventListener("touchstart", startPress);\r\nelement.addEventListener("touchend", endPress);\r\nelement.addEventListener("touchcancel", endPress);\r\n\r\n\r\n</script>'
-        }
-      />
-
       <AntdModal
         data-plasmic-name={"addingGuestInfo"}
         data-plasmic-override={overrides.addingGuestInfo}
@@ -9687,7 +9668,6 @@ const PlasmicDescendants = {
     "textInput4",
     "guide",
     "submitChange",
-    "embedHtml",
     "addingGuestInfo",
     "form",
     "p1",
@@ -9751,7 +9731,6 @@ const PlasmicDescendants = {
   textInput4: ["textInput4"],
   guide: ["guide"],
   submitChange: ["submitChange"],
-  embedHtml: ["embedHtml"],
   addingGuestInfo: [
     "addingGuestInfo",
     "form",
@@ -9837,7 +9816,6 @@ type NodeDefaultElementType = {
   textInput4: typeof TextInput;
   guide: "div";
   submitChange: "div";
-  embedHtml: typeof Embed;
   addingGuestInfo: typeof AntdModal;
   form: "div";
   p1: "div";
@@ -9948,7 +9926,6 @@ export const PlasmicCalendar2 = Object.assign(
     textInput4: makeNodeComponent("textInput4"),
     guide: makeNodeComponent("guide"),
     submitChange: makeNodeComponent("submitChange"),
-    embedHtml: makeNodeComponent("embedHtml"),
     addingGuestInfo: makeNodeComponent("addingGuestInfo"),
     form: makeNodeComponent("form"),
     p1: makeNodeComponent("p1"),

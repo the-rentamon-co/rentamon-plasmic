@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -112,6 +114,7 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   top3?: Flex__<"div">;
   backProps?: Flex__<"div">;
   normProps?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultNavigationRntFooterProps {
@@ -160,6 +163,24 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const $globalActions = useGlobalActions?.();
+
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "userType2",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
@@ -349,7 +370,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               const $steps = {};
 
               $steps["goToLiteCalendar"] =
-                $props.userType == "2"
+                $state.userType2 == "2"
                   ? (() => {
                       const actionArgs = { destination: `/calendar` };
                       return (({ destination }) => {
@@ -375,7 +396,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               }
 
               $steps["goToProCalendar"] =
-                $props.userType == "1"
+                $state.userType2 == "1"
                   ? (() => {
                       const actionArgs = { destination: `/panel` };
                       return (({ destination }) => {
@@ -400,7 +421,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["goToProCalendar"] = await $steps["goToProCalendar"];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -420,21 +441,19 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["runCode"] = await $steps["runCode"];
               }
 
-              $steps["invokeGlobalAction"] =
-                $props.userType == null
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          undefined,
-                          "https://api-v2.rentamon.com/api/is_user_old"
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
+              $steps["invokeGlobalAction"] = false
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://api-v2.rentamon.com/api/is_user_old"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
               if (
                 $steps["invokeGlobalAction"] != null &&
                 typeof $steps["invokeGlobalAction"] === "object" &&
@@ -445,26 +464,23 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 ];
               }
 
-              $steps["goToPanelCalendar"] =
-                ($steps.invokeGlobalAction.data.flag == 1 &&
-                  $props.navPage != "calendar") ||
-                $props.userType == null
-                  ? (() => {
-                      const actionArgs = { destination: `/panel` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+              $steps["goToPanelCalendar"] = false
+                ? (() => {
+                    const actionArgs = { destination: `/panel` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
               if (
                 $steps["goToPanelCalendar"] != null &&
                 typeof $steps["goToPanelCalendar"] === "object" &&
@@ -473,25 +489,23 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 $steps["goToPanelCalendar"] = await $steps["goToPanelCalendar"];
               }
 
-              $steps["goToLitePanel"] =
-                $steps.invokeGlobalAction.data.flag == 2 &&
-                $props.userType != null
-                  ? (() => {
-                      const actionArgs = { destination: `/calendar` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+              $steps["goToLitePanel"] = false
+                ? (() => {
+                    const actionArgs = { destination: `/calendar` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
               if (
                 $steps["goToLitePanel"] != null &&
                 typeof $steps["goToLitePanel"] === "object" &&
@@ -852,6 +866,121 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             </Stack__>
           </Stack__>
         </div>
+        <SideEffect
+          data-plasmic-name={"sideEffect"}
+          data-plasmic-override={overrides.sideEffect}
+          className={classNames("__wab_instance", sty.sideEffect)}
+          onMount={async () => {
+            const $steps = {};
+
+            $steps["runCode"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        function getCookieValue(cookieName) {
+                          const cookies = document.cookie
+                            .split(";")
+                            .map(cookie => cookie.trim());
+                          for (const cookie of cookies) {
+                            const [name, value] = cookie.split("=");
+                            if (name === cookieName) {
+                              return value;
+                            }
+                          }
+                          return null;
+                        }
+                        let vt = null;
+                        const vtRaw = getCookieValue("vt");
+                        if (vtRaw !== null) {
+                          vt = parseInt(vtRaw, 10);
+                          return ($state.userType2 = vt);
+                        } else {
+                          return ($state.userType2 = null);
+                        }
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
+            ) {
+              $steps["runCode"] = await $steps["runCode"];
+            }
+
+            $steps["invokeGlobalAction"] = true
+              ? (() => {
+                  const actionArgs = {
+                    args: [
+                      undefined,
+                      "https://api-v2.rentamon.com/api/is_user_old"
+                    ]
+                  };
+                  return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                    ...actionArgs.args
+                  ]);
+                })()
+              : undefined;
+            if (
+              $steps["invokeGlobalAction"] != null &&
+              typeof $steps["invokeGlobalAction"] === "object" &&
+              typeof $steps["invokeGlobalAction"].then === "function"
+            ) {
+              $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+            }
+
+            $steps["runCode2"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        function setCookie(name, value, hours) {
+                          let expires = "";
+                          if (hours) {
+                            const date = new Date();
+                            date.setTime(
+                              date.getTime() + hours * 60 * 60 * 1000
+                            );
+                            expires = "; expires=" + date.toUTCString();
+                          }
+                          document.cookie =
+                            name + "=" + (value || "") + expires + "; path=/";
+                        }
+                        const flag = $steps.invokeGlobalAction.data.flag;
+                        const existing = $state.userType2;
+                        if (
+                          typeof existing === "undefined" ||
+                          existing === null
+                        ) {
+                          $state.userType2 = flag;
+                          return setCookie("vt", flag.toString(), 0.3333);
+                        } else if (parseInt(existing, 10) !== flag) {
+                          $state.userType2 = flag;
+                          return setCookie("vt", flag.toString(), 0.3333);
+                        }
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode2"] != null &&
+              typeof $steps["runCode2"] === "object" &&
+              typeof $steps["runCode2"].then === "function"
+            ) {
+              $steps["runCode2"] = await $steps["runCode2"];
+            }
+          }}
+        />
       </div>
     ) : null
   ) as React.ReactElement | null;
@@ -876,7 +1005,8 @@ const PlasmicDescendants = {
     "props",
     "top3",
     "backProps",
-    "normProps"
+    "normProps",
+    "sideEffect"
   ],
   top: [
     "top",
@@ -912,7 +1042,8 @@ const PlasmicDescendants = {
   props: ["props", "top3", "backProps", "normProps"],
   top3: ["top3", "backProps"],
   backProps: ["backProps"],
-  normProps: ["normProps"]
+  normProps: ["normProps"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -936,6 +1067,7 @@ type NodeDefaultElementType = {
   top3: "div";
   backProps: "div";
   normProps: "div";
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1015,6 +1147,7 @@ export const PlasmicNavigationRntFooter = Object.assign(
     top3: makeNodeComponent("top3"),
     backProps: makeNodeComponent("backProps"),
     normProps: makeNodeComponent("normProps"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicNavigationRntFooter
     internalVariantProps: PlasmicNavigationRntFooter__VariantProps,
