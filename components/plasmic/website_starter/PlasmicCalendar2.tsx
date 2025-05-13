@@ -4612,17 +4612,79 @@ function PlasmicCalendar2__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["fetchModal", "open"])}
             title={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__dfIu4
-                )}
-              >
-                {
-                  "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
-                }
-              </div>
+              <React.Fragment>
+                <div className={classNames(projectcss.all, sty.freeBox__xlGco)}>
+                  {(() => {
+                    try {
+                      return Object.keys($state.platformRequestStatus).length;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <Icon23Icon
+                      className={classNames(projectcss.all, sty.svg__rElTd, ``)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateUpdateStyle"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["updateStyle"]
+                                },
+                                operation: 0,
+                                value: ($state.updateStyle =
+                                  $state.updateStyle + 1)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateUpdateStyle"] != null &&
+                          typeof $steps["updateUpdateStyle"] === "object" &&
+                          typeof $steps["updateUpdateStyle"].then === "function"
+                        ) {
+                          $steps["updateUpdateStyle"] = await $steps[
+                            "updateUpdateStyle"
+                          ];
+                        }
+                      }}
+                      role={"img"}
+                    />
+                  ) : null}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dfIu4
+                  )}
+                >
+                  {
+                    "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
+                  }
+                </div>
+              </React.Fragment>
             }
             trigger={null}
             width={
