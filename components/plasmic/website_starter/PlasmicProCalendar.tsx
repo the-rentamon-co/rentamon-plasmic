@@ -375,7 +375,6 @@ function PlasmicProCalendar__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                return false;
                 if (!document.cookie.includes("property_modal_show")) {
                   return true;
                 } else {

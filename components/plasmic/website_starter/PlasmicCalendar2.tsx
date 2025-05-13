@@ -8550,7 +8550,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         "error",
-                        "\u0631\u0648\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f",
+                        "\u0627\u0628\u062a\u062f\u0627 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u060c \u0628\u0639\u062f \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u0648\u06cc\u0631\u0627\u06cc\u0634 \u0628\u0632\u0646",
                         "top-center",
                         3000
                       ]
