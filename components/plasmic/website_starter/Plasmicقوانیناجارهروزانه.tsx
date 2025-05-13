@@ -635,7 +635,9 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.iamges)}
                 >
                   <PlasmicImg__
-                    alt={""}
+                    alt={
+                      "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647 \u062a\u0647\u0631\u0627\u0646,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u062e\u0627\u0646\u0647,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647,\u0628\u06cc\u0645\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646, \u0628\u06cc\u0645\u0647 \u062e\u0627\u0646\u0647 \u0645\u0633\u0627\u0641\u0631,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"
+                    }
                     className={classNames(sty.img__v3BXo)}
                     displayHeight={
                       hasVariant(globalVariants, "screen", "smallMobile")
@@ -852,7 +854,9 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox___9YAxy)}
                 >
                   <PlasmicImg__
-                    alt={""}
+                    alt={
+                      "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0645\u0646\u0632\u0644,\u0642\u0627\u0646\u0648\u0646 \u0627\u062c\u0627\u0631\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u0626\u06cc\u062a,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u06cc\u06cc\u062a"
+                    }
                     className={classNames(sty.img___1GTk0)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
