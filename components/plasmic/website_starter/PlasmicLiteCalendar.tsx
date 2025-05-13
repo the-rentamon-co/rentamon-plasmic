@@ -307,6 +307,12 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "vtStatus",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -515,6 +521,51 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 typeof $steps["runCode"].then === "function"
               ) {
                 $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["checkVtCookie"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("vt")) {
+                            console.log("in the vt");
+                            const vt = getCookieValue("vt");
+                            if (vt != null) {
+                              $state.vtStatus = vt;
+                              console.log("vt", vt);
+                            }
+                          }
+                          return console.log(
+                            "$state.vtStatus",
+                            $state.vtStatus
+                          );
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkVtCookie"] != null &&
+                typeof $steps["checkVtCookie"] === "object" &&
+                typeof $steps["checkVtCookie"].then === "function"
+              ) {
+                $steps["checkVtCookie"] = await $steps["checkVtCookie"];
               }
 
               $steps["checkOldUser"] = true
@@ -1284,7 +1335,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__cfw7I
+                        sty.formField__c2M9C
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1296,7 +1347,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__swmw
+                        sty.formField__ivVty
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1314,7 +1365,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__glY5W
+                          sty.text__lmUCb
                         )}
                       >
                         {"Submit"}
