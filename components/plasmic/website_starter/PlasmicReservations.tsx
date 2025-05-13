@@ -541,7 +541,7 @@ function PlasmicReservations__RenderFunc(props: {
                             vt = parseInt(vtRaw, 10);
                             $state.userType = vt;
                             return console.log(
-                              `[vt] userType set to ${userType}`
+                              `[vt] userType set to ${$state.userType}`
                             );
                           }
                         })();

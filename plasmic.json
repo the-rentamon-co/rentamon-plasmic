@@ -1698,6 +1698,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicClarityRntComponent.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "5r0JWFQACsXK",
+          "name": "SplashWp",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSplashWp.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/splash-wp.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSplashWp.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/splash-wp"
         }
       ],
       "icons": [
