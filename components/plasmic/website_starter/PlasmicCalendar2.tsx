@@ -882,39 +882,30 @@ function PlasmicCalendar2__RenderFunc(props: {
               })()
             : (() => {
                 try {
-                  return (
-                    // function toEnglishDigits(str) {
-                    //   return str.replace(/[۰-۹]/g, function (char) {
-                    //     return String.fromCharCode(char.charCodeAt(0) - 1728);
-                    //   });
-                    // }
-
-                    // // انتخاب المنت دوم span
-                    // const secondSpan = document.querySelector('.rmdp-header-values span:nth-child(3)');
-
-                    // // دسترسی به محتوای متن آن
-                    // if (secondSpan) {
-                    //   $state.year = secondSpan.textContent;
-                    //   // console.log($state.year); // محتوای ۱۴۰۴ را نشان می‌دهد
-                    // }
-
-                    // let initialMonth = new Date().toLocaleDateString("fa").split("/");
-                    // let monStr = $state.fragmentDatePicker?.month ?? initialMonth[1];
-
-                    // // اگر رشته شامل اعداد فارسی بود، آن را تبدیل کن
-                    // if (/[\u06F0-\u06F9]/.test(monStr)) {
-                    //   monStr = toEnglishDigits(monStr);
-                    // }
-
-                    // let mon = parseInt(monStr, 10);
-
-                    // // تعیین تعداد روزهای ماه
-                    // let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-
-                    // `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
-
-                    "https://gateway.rentamon.com/webhook/test"
-                  );
+                  return (() => {
+                    function toEnglishDigits(str) {
+                      return str.replace(/[۰-۹]/g, function (char) {
+                        return String.fromCharCode(char.charCodeAt(0) - 1728);
+                      });
+                    }
+                    const secondSpan = document.querySelector(
+                      ".rmdp-header-values span:nth-child(3)"
+                    );
+                    if (secondSpan) {
+                      $state.year = secondSpan.textContent;
+                    }
+                    let initialMonth = new Date()
+                      .toLocaleDateString("fa")
+                      .split("/");
+                    let monStr =
+                      $state.fragmentDatePicker?.month ?? initialMonth[1];
+                    if (/[\u06F0-\u06F9]/.test(monStr)) {
+                      monStr = toEnglishDigits(monStr);
+                    }
+                    let mon = parseInt(monStr, 10);
+                    let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -1387,7 +1378,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                         "Calendar updated with changes:",
                         updatedCalendar
                       );
-                      $state.platformRequestStatus = [];
                       $state.requestdata = [];
                       $state.fragmentDatePicker.values = [];
                       $state.textInput.value = 0;
@@ -5424,6 +5414,46 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ) {
                       $steps["updateFragmentDatePickerValue"] = await $steps[
                         "updateFragmentDatePickerValue"
+                      ];
+                    }
+
+                    $steps["updateFragmentDatePickerValue4"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["fetchModal", "open"]
+                            },
+                            operation: 0,
+                            value: (() => {
+                              return false;
+                            })()
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateFragmentDatePickerValue4"] != null &&
+                      typeof $steps["updateFragmentDatePickerValue4"] ===
+                        "object" &&
+                      typeof $steps["updateFragmentDatePickerValue4"].then ===
+                        "function"
+                    ) {
+                      $steps["updateFragmentDatePickerValue4"] = await $steps[
+                        "updateFragmentDatePickerValue4"
                       ];
                     }
                   }}
