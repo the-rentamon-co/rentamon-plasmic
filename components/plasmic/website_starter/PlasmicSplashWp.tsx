@@ -225,33 +225,6 @@ function PlasmicSplashWp__RenderFunc(props: {
                 )}
                 onAbort={async event => {
                   const $steps = {};
-
-                  $steps["goToدانلوداپلیکیشن"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/download` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToدانلوداپلیکیشن"] != null &&
-                    typeof $steps["goToدانلوداپلیکیشن"] === "object" &&
-                    typeof $steps["goToدانلوداپلیکیشن"].then === "function"
-                  ) {
-                    $steps["goToدانلوداپلیکیشن"] = await $steps[
-                      "goToدانلوداپلیکیشن"
-                    ];
-                  }
                 }}
               >
                 <div
@@ -267,27 +240,6 @@ function PlasmicSplashWp__RenderFunc(props: {
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a \u0628\u0627\u0632 \u0634\u062f\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u060c \u0644\u0637\u0641\u0627 \u0628\u0631\u0646\u0627\u0645\u0647 \u062e\u0648\u062f \u0631\u0627 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u06a9\u0646\u06cc\u062f"
                     : "\u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u067e\u0627\u06cc\u062f\u0627\u0631\u06cc\u060c \u0644\u0637\u0641\u0627 \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0627 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u06a9\u0646\u06cc\u062f"}
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___1NRlY)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zEcGc,
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? ``
-                        : "clickabel"
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-                    }}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc"
-                      : "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc"}
-                  </div>
                 </div>
               </div>
             </div>

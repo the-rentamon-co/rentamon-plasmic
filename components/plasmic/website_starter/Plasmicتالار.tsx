@@ -1692,6 +1692,54 @@ function Plasmicتالار__RenderFunc(props: {
               onMount={async () => {
                 const $steps = {};
 
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            function getCookieValue(cookieName) {
+                              const cookies = document.cookie
+                                .split(";")
+                                .map(cookie => cookie.trim());
+                              for (const cookie of cookies) {
+                                const [name, value] = cookie.split("=");
+                                if (name === cookieName) {
+                                  console.log(
+                                    `[cookie] Found ${cookieName} = ${value}`
+                                  );
+                                  return value;
+                                }
+                              }
+                              console.log(`[cookie] ${cookieName} not found`);
+                              return null;
+                            }
+                            let vt = null;
+                            const vtRaw = getCookieValue("vt");
+                            if (vtRaw !== null) {
+                              vt = parseInt(vtRaw, 10);
+                              $state.userType = vt;
+                              return console.log(
+                                `[vt] userType set to ${$state.userType}`
+                              );
+                            } else {
+                              return ($state.userType = null);
+                            }
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+
                 $steps["invokeGlobalAction"] = true
                   ? (() => {
                       const actionArgs = {
@@ -1721,8 +1769,47 @@ function Plasmicتالار__RenderFunc(props: {
                       const actionArgs = {
                         operation: 0,
                         value: (() => {
-                          $state.userType = $steps.invokeGlobalAction.data.flag;
-                          return console.log($state.userType);
+                          function setCookie(name, value, hours) {
+                            let expires = "";
+                            if (hours) {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + hours * 60 * 60 * 1000
+                              );
+                              expires = "; expires=" + date.toUTCString();
+                              console.log(
+                                `[cookie] Setting '${name}' = '${value}' until ${date.toUTCString()}`
+                              );
+                            }
+                            document.cookie =
+                              name + "=" + (value || "") + expires + "; path=/";
+                          }
+                          const flag = $steps.invokeGlobalAction.data.flag;
+                          const existing = $state.userType;
+                          console.log(`[check] incoming flag = ${flag}`);
+                          console.log(
+                            `[check] existing userType in state = ${existing}`
+                          );
+                          if (
+                            typeof existing === "undefined" ||
+                            existing === null
+                          ) {
+                            console.log(
+                              "[init] No userType in state \u2014 setting new value and cookie"
+                            );
+                            $state.userType = flag;
+                            return setCookie("vt", flag.toString(), 0.3333);
+                          } else if (parseInt(existing, 10) !== flag) {
+                            console.log(
+                              "[update] userType has changed \u2014 updating state and cookie"
+                            );
+                            $state.userType = flag;
+                            return setCookie("vt", flag.toString(), 0.3333);
+                          } else {
+                            return console.log(
+                              "[noop] userType matches flag \u2014 no update needed"
+                            );
+                          }
                         })()
                       };
                       return (({
