@@ -1249,7 +1249,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const formatter = new Intl.NumberFormat("fa-IR");
                         return formatter.format(num);
                       }
-                      $state.fetchModal.open = false;
                       $state.block.open = false;
                       $state.modal.open = false;
                       $state.modalDiscount.open = false;
@@ -2934,29 +2933,28 @@ function PlasmicCalendar2__RenderFunc(props: {
                     $steps["runCode"] = await $steps["runCode"];
                   }
 
-                  $steps["updateStateVariable2"] =
-                    $props.calendarType == "lite"
-                      ? (() => {
-                          const actionArgs = {
-                            operation: 0,
-                            value: ($state.updateStyle = $state.updateStyle + 1)
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
+                  $steps["updateStateVariable2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.updateStyle = $state.updateStyle + 1)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
                   if (
                     $steps["updateStateVariable2"] != null &&
                     typeof $steps["updateStateVariable2"] === "object" &&
@@ -3493,29 +3491,23 @@ function PlasmicCalendar2__RenderFunc(props: {
                 $steps["runCode"] = await $steps["runCode"];
               }
 
-              $steps["updateStateVariable2"] =
-                $props.calendarType == "lite"
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: ($state.updateStyle = $state.updateStyle + 1)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+              $steps["updateStateVariable2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.updateStyle = $state.updateStyle + 1)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
               if (
                 $steps["updateStateVariable2"] != null &&
                 typeof $steps["updateStateVariable2"] === "object" &&
