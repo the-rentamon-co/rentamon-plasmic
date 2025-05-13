@@ -278,21 +278,12 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["updateSrc"] = await $steps["updateSrc"];
               }
 
-              $steps["runCode3"] = true
+              $steps["setCookie"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          console.log("[splash-cookie] script start");
                           function setCookie(name, value, hours) {
-                            console.log(
-                              `[splash-cookie] setCookie called with`,
-                              {
-                                name,
-                                value,
-                                hours
-                              }
-                            );
                             let expires = "";
                             if (hours) {
                               const date = new Date();
@@ -300,38 +291,17 @@ function PlasmicSplash__RenderFunc(props: {
                                 date.getTime() + hours * 60 * 60 * 1000
                               );
                               expires = "; expires=" + date.toUTCString();
-                              console.log(
-                                `[splash-cookie] cookie will expire at`,
-                                date.toUTCString()
-                              );
                             }
                             document.cookie =
                               name + "=" + (value || "") + expires + "; path=/";
-                            console.log(
-                              `[splash-cookie] document.cookie =`,
-                              document.cookie
-                            );
                           }
                           const params = new URLSearchParams(
                             window.location.search
                           );
-                          console.log(
-                            "[splash-cookie] window.location.search =",
-                            window.location.search
-                          );
                           const srcValue = params.get("src");
                           if (srcValue) {
-                            console.log(
-                              "[splash-cookie] found src parameter:",
-                              srcValue
-                            );
-                            setCookie("source", srcValue, 12);
-                          } else {
-                            console.warn(
-                              "[splash-cookie] no src parameter in URL"
-                            );
+                            return setCookie("source", srcValue, 12);
                           }
-                          return console.log("[splash-cookie] script end");
                         })();
                       }
                     };
@@ -341,14 +311,14 @@ function PlasmicSplash__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode3"] != null &&
-                typeof $steps["runCode3"] === "object" &&
-                typeof $steps["runCode3"].then === "function"
+                $steps["setCookie"] != null &&
+                typeof $steps["setCookie"] === "object" &&
+                typeof $steps["setCookie"].then === "function"
               ) {
-                $steps["runCode3"] = await $steps["runCode3"];
+                $steps["setCookie"] = await $steps["setCookie"];
               }
 
-              $steps["runCode2"] = true
+              $steps["checkIsUserLogin"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -407,7 +377,7 @@ function PlasmicSplash__RenderFunc(props: {
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
                               return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash");
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash/");
                             } else {
                               console.log("got here in refreshToken");
                               return fetch(
@@ -430,7 +400,7 @@ function PlasmicSplash__RenderFunc(props: {
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash/";
                                 });
                             }
                           }
@@ -443,11 +413,11 @@ function PlasmicSplash__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode2"] != null &&
-                typeof $steps["runCode2"] === "object" &&
-                typeof $steps["runCode2"].then === "function"
+                $steps["checkIsUserLogin"] != null &&
+                typeof $steps["checkIsUserLogin"] === "object" &&
+                typeof $steps["checkIsUserLogin"].then === "function"
               ) {
-                $steps["runCode2"] = await $steps["runCode2"];
+                $steps["checkIsUserLogin"] = await $steps["checkIsUserLogin"];
               }
 
               $steps["invokeGlobalAction"] = true
@@ -473,11 +443,28 @@ function PlasmicSplash__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode"] = true
+              $steps["redirectAndSetUserCookie"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
+                          function setCookie(name, value, hours) {
+                            let expires = "";
+                            if (hours) {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + hours * 60 * 60 * 1000
+                              );
+                              expires = "; expires=" + date.toUTCString();
+                            }
+                            document.cookie =
+                              name + "=" + (value || "") + expires + "; path=/";
+                          }
+                          setCookie(
+                            "vt",
+                            $steps.invokeGlobalAction.data.flag,
+                            0.3333
+                          );
                           if ($steps.invokeGlobalAction.data.flag == 3) {
                             window.location.href =
                               "https://web.rentamon.com/panels/?prop_id=1";
@@ -503,11 +490,13 @@ function PlasmicSplash__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
+                $steps["redirectAndSetUserCookie"] != null &&
+                typeof $steps["redirectAndSetUserCookie"] === "object" &&
+                typeof $steps["redirectAndSetUserCookie"].then === "function"
               ) {
-                $steps["runCode"] = await $steps["runCode"];
+                $steps["redirectAndSetUserCookie"] = await $steps[
+                  "redirectAndSetUserCookie"
+                ];
               }
             }}
           />

@@ -153,7 +153,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
           ? ``
           : hasVariant(globalVariants, "screen", "mobile")
           ? ``
-          : "fadeinf"
+          : ``
       )}
     >
       <NavigationBar
