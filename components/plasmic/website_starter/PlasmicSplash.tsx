@@ -462,7 +462,7 @@ function PlasmicSplash__RenderFunc(props: {
                           }
                           setCookie(
                             "vt",
-                            $steps.invokeGlobalAction.data.flag,
+                            $steps.invokeGlobalAction.data.flag || 99,
                             0.3333
                           );
                           if ($steps.invokeGlobalAction.data.flag == 3) {
