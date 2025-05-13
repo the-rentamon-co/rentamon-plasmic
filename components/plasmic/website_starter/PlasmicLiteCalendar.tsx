@@ -474,7 +474,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
                               return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/");
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash/");
                             } else {
                               console.log("got here in refreshToken");
                               return fetch(
@@ -497,7 +497,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/calendar/";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash/";
                                 });
                             }
                           }
@@ -1284,7 +1284,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__vxjLr
+                        sty.formField__fhmNj
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1296,7 +1296,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__vjGjd
+                        sty.formField__eqdBb
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1314,7 +1314,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__mfOm0
+                          sty.text___7E682
                         )}
                       >
                         {"Submit"}
