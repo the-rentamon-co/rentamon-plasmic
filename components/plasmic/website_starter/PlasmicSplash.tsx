@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -89,6 +90,7 @@ export type PlasmicSplash__OverridesType = {
   svg?: Flex__<"svg">;
   text?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
 };
 
 export interface DefaultSplashProps {}
@@ -500,6 +502,12 @@ function PlasmicSplash__RenderFunc(props: {
               }
             }}
           />
+
+          <ClarityRntComponent
+            data-plasmic-name={"clarityRntComponent"}
+            data-plasmic-override={overrides.clarityRntComponent}
+            className={classNames("__wab_instance", sty.clarityRntComponent)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -507,11 +515,12 @@ function PlasmicSplash__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "center", "svg", "text", "sideEffect"],
+  root: ["root", "center", "svg", "text", "sideEffect", "clarityRntComponent"],
   center: ["center", "svg", "text"],
   svg: ["svg"],
   text: ["text"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  clarityRntComponent: ["clarityRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -522,6 +531,7 @@ type NodeDefaultElementType = {
   svg: "svg";
   text: "div";
   sideEffect: typeof SideEffect;
+  clarityRntComponent: typeof ClarityRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -588,6 +598,7 @@ export const PlasmicSplash = Object.assign(
     svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),
     sideEffect: makeNodeComponent("sideEffect"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
 
     // Metadata about props expected for PlasmicSplash
     internalVariantProps: PlasmicSplash__VariantProps,

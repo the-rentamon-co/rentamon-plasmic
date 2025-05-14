@@ -1347,6 +1347,34 @@ function PlasmicInstantReserve__RenderFunc(props: {
                         projectcss.all,
                         sty.jabamaContainer
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a.",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(
@@ -1540,6 +1568,34 @@ function PlasmicInstantReserve__RenderFunc(props: {
                         projectcss.all,
                         sty.jajigaContainer
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a.",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(
@@ -1733,6 +1789,34 @@ function PlasmicInstantReserve__RenderFunc(props: {
                         projectcss.all,
                         sty.mihmanshoContainer
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a.",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(
@@ -1923,6 +2007,34 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       data-plasmic-name={"homsaContainer"}
                       data-plasmic-override={overrides.homsaContainer}
                       className={classNames(projectcss.all, sty.homsaContainer)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a.",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(
