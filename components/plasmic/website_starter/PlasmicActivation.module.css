@@ -1411,8 +1411,8 @@
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  margin-top: 2em;
   box-shadow: none;
+  margin-top: 2em;
   min-width: 0;
   border-radius: 30px;
   padding: 0px;
@@ -1446,12 +1446,6 @@
   align-items: flex-start;
   object-fit: cover;
   min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 500px) {
-  .form:global(.__wab_instance) {
-    display: flex;
-  }
 }
 .platforms:global(.__wab_instance) {
   width: 100%;
@@ -3700,7 +3694,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 0px 0px 35px;
+  padding: 15px 0px 35px;
 }
 .img___4N2W {
   object-fit: cover;

@@ -158,6 +158,7 @@ export type PlasmicReservations__OverridesType = {
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   finalModal?: Flex__<typeof AntdModal>;
   cancelle?: Flex__<typeof AntdButton>;
+  intro?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -5185,6 +5186,25 @@ function PlasmicReservations__RenderFunc(props: {
               </AntdButton>
             </Stack__>
           </AntdModal>
+          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+            <div
+              data-plasmic-name={"intro"}
+              data-plasmic-override={overrides.intro}
+              className={classNames(projectcss.all, sty.intro)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dMWfE
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0627\u06af\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f \u0628\u06af\u06cc\u0631\u06cc \u0648 \u06cc\u0627 \u0628\u0635\u0648\u0631\u062a \u062f\u0633\u062a\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc\u060c \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u06a9\u0627\u0645\u0644 \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u0628\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."
+                  : "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u060c \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647 \u062a\u0627 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0646\u06cc\u0627\u062f. \u0646\u062a\u06cc\u062c\u0647\u200c\u0627\u0634 \u0627\u06cc\u0646 \u0639\u0645\u0644\u06cc\u0627\u062a \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."}
+              </div>
+            </div>
+          ) : null}
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
@@ -5324,6 +5344,7 @@ const PlasmicDescendants = {
     "navigationRntFooter",
     "finalModal",
     "cancelle",
+    "intro",
     "returnButton",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -5520,6 +5541,7 @@ const PlasmicDescendants = {
   navigationRntFooter: ["navigationRntFooter"],
   finalModal: ["finalModal", "cancelle"],
   cancelle: ["cancelle"],
+  intro: ["intro"],
   returnButton: ["returnButton"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -5590,6 +5612,7 @@ type NodeDefaultElementType = {
   navigationRntFooter: typeof NavigationRntFooter;
   finalModal: typeof AntdModal;
   cancelle: typeof AntdButton;
+  intro: "div";
   returnButton: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -5716,6 +5739,7 @@ export const PlasmicReservations = Object.assign(
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     finalModal: makeNodeComponent("finalModal"),
     cancelle: makeNodeComponent("cancelle"),
+    intro: makeNodeComponent("intro"),
     returnButton: makeNodeComponent("returnButton"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),

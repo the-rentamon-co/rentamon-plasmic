@@ -226,7 +226,21 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
           )}
         >
           {hasVariant(globalVariants, "screen", "mobile") ? (
-            "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646"
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.message;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
           ) : (
             <React.Fragment>
               {(() => {

@@ -116,6 +116,7 @@ export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  guideText?: Flex__<"div">;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
   dayCell?: Flex__<typeof DayCell>;
@@ -880,6 +881,43 @@ function PlasmicCalendar2__RenderFunc(props: {
                   throw e;
                 }
               })()
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? (() => {
+                try {
+                  return (() => {
+                    function toEnglishDigits(str) {
+                      return str.replace(/[۰-۹]/g, function (char) {
+                        return String.fromCharCode(char.charCodeAt(0) - 1728);
+                      });
+                    }
+                    const secondSpan = document.querySelector(
+                      ".rmdp-header-values span:nth-child(3)"
+                    );
+                    if (secondSpan) {
+                      $state.year = secondSpan.textContent;
+                    }
+                    let initialMonth = new Date()
+                      .toLocaleDateString("fa")
+                      .split("/");
+                    let monStr =
+                      $state.fragmentDatePicker?.month ?? initialMonth[1];
+                    if (/[\u06F0-\u06F9]/.test(monStr)) {
+                      monStr = toEnglishDigits(monStr);
+                    }
+                    let mon = parseInt(monStr, 10);
+                    let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
             : (() => {
                 try {
                   return (() => {
@@ -1482,7 +1520,11 @@ function PlasmicCalendar2__RenderFunc(props: {
             throw e;
           }
         })() ? (
-          <div className={classNames(projectcss.all, sty.freeBox__tmteh)}>
+          <div
+            data-plasmic-name={"guideText"}
+            data-plasmic-override={overrides.guideText}
+            className={classNames(projectcss.all, sty.guideText)}
+          >
             {(() => {
               try {
                 return $state.tourSteps == 1 ? true : false;
@@ -1819,6 +1861,46 @@ function PlasmicCalendar2__RenderFunc(props: {
                           dateProps.unix < minTimestamp ||
                           dateProps.unix > maxTimestamp
                         ) {
+                          if (calendarData[dayIndex].status == "reserved") {
+                            if (
+                              calendarData[dayIndex - 1] == null &&
+                              calendarData[dayIndex - 1] == null
+                            ) {
+                              return "passedSingleReserve";
+                            }
+                            if (
+                              calendarData[dayIndex].website !=
+                                calendarData[dayIndex - 1].website &&
+                              calendarData[dayIndex].website ==
+                                calendarData[dayIndex + 1].website
+                            ) {
+                              return "passedFirstDayReserve";
+                            }
+                            if (
+                              calendarData[dayIndex].website ==
+                                calendarData[dayIndex - 1].website &&
+                              calendarData[dayIndex].website ==
+                                calendarData[dayIndex + 1].website
+                            ) {
+                              return "passedMidDayReserve";
+                            }
+                            if (
+                              calendarData[dayIndex].website !=
+                                calendarData[dayIndex + 1].website &&
+                              calendarData[dayIndex].website ==
+                                calendarData[dayIndex - 1].website
+                            ) {
+                              return "passedLastDayReserve";
+                            }
+                            if (
+                              calendarData[dayIndex].website !=
+                                calendarData[dayIndex - 1].website &&
+                              calendarData[dayIndex].website !=
+                                calendarData[dayIndex + 1].website
+                            ) {
+                              return "passedSingleReserve";
+                            }
+                          }
                           return "disabled";
                         }
                         if (
@@ -1827,8 +1909,46 @@ function PlasmicCalendar2__RenderFunc(props: {
                           )
                         )
                           return "selected";
-                        if (calendarItem.status === "reserved")
-                          return "reserved";
+                        if (calendarItem.status === "reserved") {
+                          if (
+                            calendarData[dayIndex - 1] == null &&
+                            calendarData[dayIndex - 1] == null
+                          ) {
+                            return "passedSingleReserve";
+                          }
+                          if (
+                            calendarData[dayIndex].website !=
+                              calendarData[dayIndex - 1].website &&
+                            calendarData[dayIndex].website ==
+                              calendarData[dayIndex + 1].website
+                          ) {
+                            return "firstDayReserve";
+                          }
+                          if (
+                            calendarData[dayIndex].website ==
+                              calendarData[dayIndex - 1].website &&
+                            calendarData[dayIndex].website ==
+                              calendarData[dayIndex + 1].website
+                          ) {
+                            return "midDayReserve";
+                          }
+                          if (
+                            calendarData[dayIndex].website !=
+                              calendarData[dayIndex + 1].website &&
+                            calendarData[dayIndex].website ==
+                              calendarData[dayIndex - 1].website
+                          ) {
+                            return "lastDayReserve";
+                          }
+                          if (
+                            calendarData[dayIndex].website !=
+                              calendarData[dayIndex - 1].website &&
+                            calendarData[dayIndex].website !=
+                              calendarData[dayIndex + 1].website
+                          ) {
+                            return "reserved";
+                          }
+                        }
                         if (calendarItem.status === "blocked") return "blocked";
                         if (
                           calendarItem.discount_percentage &&
@@ -9919,6 +10039,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
+    "guideText",
     "fragmentDatePicker",
     "fragmentLongPress",
     "dayCell",
@@ -9968,6 +10089,7 @@ const PlasmicDescendants = {
     "p5"
   ],
   apiRequest: ["apiRequest"],
+  guideText: ["guideText"],
   fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
   fragmentLongPress: ["fragmentLongPress", "dayCell"],
   dayCell: ["dayCell"],
@@ -10067,6 +10189,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
+  guideText: "div";
   fragmentDatePicker: typeof DatePicker;
   fragmentLongPress: typeof FragmentLongPress;
   dayCell: typeof DayCell;
@@ -10177,6 +10300,7 @@ export const PlasmicCalendar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
+    guideText: makeNodeComponent("guideText"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),
     dayCell: makeNodeComponent("dayCell"),

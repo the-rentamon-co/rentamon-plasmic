@@ -112,6 +112,7 @@ export type PlasmicChannelManager__OverridesType = {
   button?: Flex__<typeof Button>;
   item?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  intro?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -374,82 +375,89 @@ function PlasmicChannelManager__RenderFunc(props: {
               />
             </div>
           </div>
-          <ApiRequest
-            data-plasmic-name={"apiRequest2"}
-            data-plasmic-override={overrides.apiRequest2}
-            className={classNames("__wab_instance", sty.apiRequest2)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ixBoV
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest2", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequest2",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest2", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            params={{ feature_name: "auto_sync" }}
-            ref={ref => {
-              $refs["apiRequest2"] = ref;
-            }}
-            url={"https://gateway.rentamon.com/webhook/user_access"}
-          >
-            {(() => {
-              try {
-                return $state.apiRequest2.data.status != "ok";
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return false;
-                }
-                throw e;
+          <div className={classNames(projectcss.all, sty.freeBox__odazp)}>
+            <ApiRequest
+              data-plasmic-name={"apiRequest2"}
+              data-plasmic-override={overrides.apiRequest2}
+              className={classNames("__wab_instance", sty.apiRequest2)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ixBoV
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
               }
-            })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox__dOM)}>
-                <ToastMessageRnt
-                  data-plasmic-name={"toastMessageRnt"}
-                  data-plasmic-override={overrides.toastMessageRnt}
-                  buttonLink={`/settings`}
-                  buttonText={
-                    "\u062a\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              params={{ feature_name: "auto_sync" }}
+              ref={ref => {
+                $refs["apiRequest2"] = ref;
+              }}
+              url={"https://gateway.rentamon.com/webhook/user_access"}
+            >
+              {(() => {
+                try {
+                  return $state.apiRequest2.data.status != "ok";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
                   }
-                  className={classNames("__wab_instance", sty.toastMessageRnt)}
-                  logo={{
-                    src: "/plasmic/website_starter/images/image72.svg",
-                    fullWidth: 42,
-                    fullHeight: 42,
-                    aspectRatio: 1
-                  }}
-                  message={
-                    "\u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646 \u062a\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u062c\u0627\u06cc \u062a\u0648 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648 \u0647\u0627 \u0628\u0627\u0634\u0647"
-                  }
-                />
-              </div>
-            ) : null}
-          </ApiRequest>
+                  throw e;
+                }
+              })() ? (
+                <div className={classNames(projectcss.all, sty.freeBox__dOM)}>
+                  <ToastMessageRnt
+                    data-plasmic-name={"toastMessageRnt"}
+                    data-plasmic-override={overrides.toastMessageRnt}
+                    buttonLink={`/settings`}
+                    buttonText={
+                      "\u062a\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
+                    }
+                    className={classNames(
+                      "__wab_instance",
+                      sty.toastMessageRnt
+                    )}
+                    logo={{
+                      src: "/plasmic/website_starter/images/image72.svg",
+                      fullWidth: 42,
+                      fullHeight: 42,
+                      aspectRatio: 1
+                    }}
+                    message={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646 \u062a\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u062c\u0627\u06cc \u062a\u0648 \u0645\u0631\u0627\u0642\u0628 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0627\u0634\u0647"
+                        : "\u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646 \u062a\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u062c\u0627\u06cc \u062a\u0648 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648 \u0647\u0627 \u0628\u0627\u0634\u0647"
+                    }
+                  />
+                </div>
+              ) : null}
+            </ApiRequest>
+          </div>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
@@ -2767,6 +2775,23 @@ function PlasmicChannelManager__RenderFunc(props: {
           />
 
           <div
+            data-plasmic-name={"intro"}
+            data-plasmic-override={overrides.intro}
+            className={classNames(projectcss.all, sty.intro)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__p2AEp
+              )}
+            >
+              {
+                "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u060c \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647 \u062a\u0627 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0646\u06cc\u0627\u062f. \u0646\u062a\u06cc\u062c\u0647\u200c\u0627\u0634 \u0627\u06cc\u0646 \u0639\u0645\u0644\u06cc\u0627\u062a \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."
+              }
+            </div>
+          </div>
+          <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
             className={classNames(projectcss.all, sty.returnButton, "fix")}
@@ -2883,6 +2908,7 @@ const PlasmicDescendants = {
     "button",
     "item",
     "sideEffect",
+    "intro",
     "returnButton",
     "navigationRntFooter",
     "clarityRntComponent",
@@ -2940,6 +2966,7 @@ const PlasmicDescendants = {
   button: ["button"],
   item: ["item"],
   sideEffect: ["sideEffect"],
+  intro: ["intro"],
   returnButton: ["returnButton"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2968,6 +2995,7 @@ type NodeDefaultElementType = {
   button: typeof Button;
   item: "div";
   sideEffect: typeof SideEffect;
+  intro: "div";
   returnButton: "div";
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -3052,6 +3080,7 @@ export const PlasmicChannelManager = Object.assign(
     button: makeNodeComponent("button"),
     item: makeNodeComponent("item"),
     sideEffect: makeNodeComponent("sideEffect"),
+    intro: makeNodeComponent("intro"),
     returnButton: makeNodeComponent("returnButton"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

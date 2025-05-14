@@ -118,6 +118,7 @@ export type PlasmicProCalendar__OverridesType = {
   iframe?: Flex__<typeof Iframe>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
+  spacer?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -2187,15 +2188,21 @@ function PlasmicProCalendar__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__k6U2L)}
-                  displayHeight={"auto"}
+                  displayHeight={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "30px"
+                      : "34px"
+                  }
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={
-                    hasVariant(globalVariants, "screen", "tablet")
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "30px"
+                      : hasVariant(globalVariants, "screen", "tablet")
                       ? "20px"
-                      : "20px"
+                      : "34px"
                   }
                   loading={"lazy"}
                   onClick={async event => {
@@ -2451,6 +2458,19 @@ function PlasmicProCalendar__RenderFunc(props: {
               }
             </div>
           </AntdModal>
+          {(
+            hasVariant(globalVariants, "screen", "smallMobile")
+              ? true
+              : hasVariant(globalVariants, "screen", "mobile")
+              ? true
+              : false
+          ) ? (
+            <div
+              data-plasmic-name={"spacer"}
+              data-plasmic-override={overrides.spacer}
+              className={classNames(projectcss.all, sty.spacer)}
+            />
+          ) : null}
           <NavigationRntFooter
             data-plasmic-name={"navigationRntFooter"}
             data-plasmic-override={overrides.navigationRntFooter}
@@ -2502,6 +2522,7 @@ const PlasmicDescendants = {
     "iframe",
     "userAvailableFeature",
     "modal",
+    "spacer",
     "navigationRntFooter",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -2553,6 +2574,7 @@ const PlasmicDescendants = {
   iframe: ["iframe"],
   userAvailableFeature: ["userAvailableFeature"],
   modal: ["modal"],
+  spacer: ["spacer"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -2584,6 +2606,7 @@ type NodeDefaultElementType = {
   iframe: typeof Iframe;
   userAvailableFeature: typeof ApiRequest;
   modal: typeof AntdModal;
+  spacer: "div";
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -2671,6 +2694,7 @@ export const PlasmicProCalendar = Object.assign(
     iframe: makeNodeComponent("iframe"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     modal: makeNodeComponent("modal"),
+    spacer: makeNodeComponent("spacer"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
