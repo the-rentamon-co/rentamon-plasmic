@@ -1861,45 +1861,38 @@ function PlasmicCalendar2__RenderFunc(props: {
                           dateProps.unix < minTimestamp ||
                           dateProps.unix > maxTimestamp
                         ) {
-                          if (calendarData[dayIndex].status == "reserved") {
+                          if (calendarItem.status === "reserved") {
                             if (
-                              calendarData[dayIndex - 1] == null &&
-                              calendarData[dayIndex - 1] == null
+                              !calendarData[dayIndex - 1] &&
+                              !calendarData[dayIndex + 1]
                             ) {
                               return "passedSingleReserve";
                             }
                             if (
-                              calendarData[dayIndex].website !=
-                                calendarData[dayIndex - 1].website &&
-                              calendarData[dayIndex].website ==
-                                calendarData[dayIndex + 1].website
+                              calendarItem.website !==
+                                calendarData[dayIndex - 1]?.website &&
+                              calendarItem.website ===
+                                calendarData[dayIndex + 1]?.website
                             ) {
                               return "passedFirstDayReserve";
                             }
                             if (
-                              calendarData[dayIndex].website ==
-                                calendarData[dayIndex - 1].website &&
-                              calendarData[dayIndex].website ==
-                                calendarData[dayIndex + 1].website
+                              calendarItem.website ===
+                                calendarData[dayIndex - 1]?.website &&
+                              calendarItem.website ===
+                                calendarData[dayIndex + 1]?.website
                             ) {
                               return "passedMidDayReserve";
                             }
                             if (
-                              calendarData[dayIndex].website !=
-                                calendarData[dayIndex + 1].website &&
-                              calendarData[dayIndex].website ==
-                                calendarData[dayIndex - 1].website
+                              calendarItem.website !==
+                                calendarData[dayIndex + 1]?.website &&
+                              calendarItem.website ===
+                                calendarData[dayIndex - 1]?.website
                             ) {
                               return "passedLastDayReserve";
                             }
-                            if (
-                              calendarData[dayIndex].website !=
-                                calendarData[dayIndex - 1].website &&
-                              calendarData[dayIndex].website !=
-                                calendarData[dayIndex + 1].website
-                            ) {
-                              return "passedSingleReserve";
-                            }
+                            return "passedSingleReserve";
                           }
                           return "disabled";
                         }
@@ -1907,54 +1900,48 @@ function PlasmicCalendar2__RenderFunc(props: {
                           $state.fragmentDatePicker.values.includes(
                             dateProps.unix
                           )
-                        )
+                        ) {
                           return "selected";
+                        }
                         if (calendarItem.status === "reserved") {
                           if (
-                            calendarData[dayIndex - 1] == null &&
-                            calendarData[dayIndex - 1] == null
+                            !calendarData[dayIndex - 1] &&
+                            !calendarData[dayIndex + 1]
                           ) {
                             return "reserved";
                           }
                           if (
-                            calendarData[dayIndex].website !=
-                              calendarData[dayIndex - 1].website &&
-                            calendarData[dayIndex].website ==
-                              calendarData[dayIndex + 1].website
+                            calendarItem.website !==
+                              calendarData[dayIndex - 1]?.website &&
+                            calendarItem.website ===
+                              calendarData[dayIndex + 1]?.website
                           ) {
                             return "firstDayReserve";
                           }
                           if (
-                            calendarData[dayIndex].website ==
-                              calendarData[dayIndex - 1].website &&
-                            calendarData[dayIndex].website ==
-                              calendarData[dayIndex + 1].website
+                            calendarItem.website ===
+                              calendarData[dayIndex - 1]?.website &&
+                            calendarItem.website ===
+                              calendarData[dayIndex + 1]?.website
                           ) {
                             return "midDayReserve";
                           }
                           if (
-                            calendarData[dayIndex].website !=
-                              calendarData[dayIndex + 1].website &&
-                            calendarData[dayIndex].website ==
-                              calendarData[dayIndex - 1].website
+                            calendarItem.website !==
+                              calendarData[dayIndex + 1]?.website &&
+                            calendarItem.website ===
+                              calendarData[dayIndex - 1]?.website
                           ) {
                             return "lastDayReserve";
                           }
-                          if (
-                            calendarData[dayIndex].website !=
-                              calendarData[dayIndex - 1].website &&
-                            calendarData[dayIndex].website !=
-                              calendarData[dayIndex + 1].website
-                          ) {
-                            return "reserved";
-                          }
+                          return "reserved";
                         }
-                        if (calendarItem.status === "blocked") return "blocked";
-                        if (
-                          calendarItem.discount_percentage &&
-                          calendarItem.discount_percentage > 0
-                        )
+                        if (calendarItem.status === "blocked") {
+                          return "blocked";
+                        }
+                        if (calendarItem.discount_percentage > 0) {
                           return "discount";
+                        }
                         return calendarItem.status || "";
                       }
                       return getDayClass(
