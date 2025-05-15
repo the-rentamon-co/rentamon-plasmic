@@ -306,9 +306,9 @@ function Plasmic_404__RenderFunc(props: {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/website_starter/images/cb209Db691E043D18D90129537Eb84FbPng.png",
+                  src: "/plasmic/website_starter/images/_404Png2.png",
                   fullWidth: 442,
-                  fullHeight: 443,
+                  fullHeight: 299,
                   aspectRatio: undefined
                 }}
               />
@@ -374,6 +374,158 @@ function Plasmic_404__RenderFunc(props: {
                     : "\u0646\u0645\u0627\u06cc\u0634 \u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
                 </div>
               </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__my6Xn)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__hESl, ``)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToمقایسهبهترینسایتاجارهویلا"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination: `/best-villa-rental-sites`
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToمقایسهبهترینسایتاجارهویلا"] != null &&
+                    typeof $steps["goToمقایسهبهترینسایتاجارهویلا"] ===
+                      "object" &&
+                    typeof $steps["goToمقایسهبهترینسایتاجارهویلا"].then ===
+                      "function"
+                  ) {
+                    $steps["goToمقایسهبهترینسایتاجارهویلا"] = await $steps[
+                      "goToمقایسهبهترینسایتاجارهویلا"
+                    ];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oEa27,
+                    "clickable"
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\ud83d\udd17 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\r"
+                    : "\ud83d\udd17 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"}
+                </div>
+              </Stack__>
+              <div
+                className={classNames(projectcss.all, sty.freeBox__uuj9S, ``)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToراهنمایجامعدرآمدازاجارهویلا"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination: `/vacation-rental-income`
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToراهنمایجامعدرآمدازاجارهویلا"] != null &&
+                    typeof $steps["goToراهنمایجامعدرآمدازاجارهویلا"] ===
+                      "object" &&
+                    typeof $steps["goToراهنمایجامعدرآمدازاجارهویلا"].then ===
+                      "function"
+                  ) {
+                    $steps["goToراهنمایجامعدرآمدازاجارهویلا"] = await $steps[
+                      "goToراهنمایجامعدرآمدازاجارهویلا"
+                    ];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qFge,
+                    "clickable"
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\ud83d\udd17 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r"
+                    : "\ud83d\udd17 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                </div>
+              </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__ajAll, ``)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToقوانیناجارهروزانه"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/rental-rules` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToقوانیناجارهروزانه"] != null &&
+                    typeof $steps["goToقوانیناجارهروزانه"] === "object" &&
+                    typeof $steps["goToقوانیناجارهروزانه"].then === "function"
+                  ) {
+                    $steps["goToقوانیناجارهروزانه"] = await $steps[
+                      "goToقوانیناجارهروزانه"
+                    ];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9Fi4P,
+                    "clickable"
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\ud83d\udd17 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"
+                    : "\ud83d\udd17 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"}
+                </div>
+              </Stack__>
             </div>
           </div>
           <RentamonFooter

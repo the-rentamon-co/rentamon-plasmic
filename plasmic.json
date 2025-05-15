@@ -1729,17 +1729,45 @@
         },
         {
           "id": "fLse0hRVq6K7",
-          "name": "NewPage2",
+          "name": "کسبدرآمدازاجارهویلا2",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage2.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicکسبدرآمدازاجارهویلا2.tsx",
           "importSpec": {
             "modulePath": "../src/pages/%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPage2.module.css",
+          "cssFilePath": "plasmic/website_starter/Plasmicکسبدرآمدازاجارهویلا2.module.css",
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7"
+        },
+        {
+          "id": "LYIAIzikp9Vo",
+          "name": "سایتاجارهویلا2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicسایتاجارهویلا2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicسایتاجارهویلا2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7"
+        },
+        {
+          "id": "mYbar_4-BlNd",
+          "name": "اجارهکوتاهمدت2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicاجارهکوتاهمدت2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%DA%A9%D9%88%D8%AA%D8%A7%D9%87-%D9%85%D8%AF%D8%AA.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicاجارهکوتاهمدت2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%DA%A9%D9%88%D8%AA%D8%A7%D9%87-%D9%85%D8%AF%D8%AA"
         }
       ],
       "icons": [
@@ -3654,6 +3682,11 @@
           "id": "k2vTB9LJwgV6",
           "name": "image 124",
           "filePath": "../public/plasmic/website_starter/images/image124.svg"
+        },
+        {
+          "id": "8FJQB_wigg_1",
+          "name": "404.png 2",
+          "filePath": "../public/plasmic/website_starter/images/_404Png2.png"
         }
       ],
       "indirect": false,

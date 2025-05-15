@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { Plasmicکسبدرآمدازاجارهویلا2 } from "../../components/plasmic/website_starter/Plasmic\u06A9\u0633\u0628\u062F\u0631\u0622\u0645\u062F\u0627\u0632\u0627\u062C\u0627\u0631\u0647\u0648\u06CC\u0644\u06272";
+import { Plasmicسایتاجارهویلا2 } from "../../components/plasmic/website_starter/Plasmic\u0633\u0627\u06CC\u062A\u0627\u062C\u0627\u0631\u0647\u0648\u06CC\u0644\u06272";
 import { useRouter } from "next/router";
 
-function کسبدرآمدازاجارهویلا2() {
-  // Use Plasmicکسبدرآمدازاجارهویلا2 to render this component as it was
+function سایتاجارهویلا2() {
+  // Use Plasmicسایتاجارهویلا2 to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into Plasmicکسبدرآمدازاجارهویلا2 are:
+  // Props you can pass into Plasmicسایتاجارهویلا2 are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, Plasmicکسبدرآمدازاجارهویلا2 is wrapped by your project's global
+  // By default, Plasmicسایتاجارهویلا2 is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -32,10 +32,10 @@ function کسبدرآمدازاجارهویلا2() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <Plasmicکسبدرآمدازاجارهویلا2 />
+        <Plasmicسایتاجارهویلا2 />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default کسبدرآمدازاجارهویلا2;
+export default سایتاجارهویلا2;
