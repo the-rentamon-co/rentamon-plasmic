@@ -1914,7 +1914,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             calendarData[dayIndex - 1] == null &&
                             calendarData[dayIndex - 1] == null
                           ) {
-                            return "passedSingleReserve";
+                            return "reserved";
                           }
                           if (
                             calendarData[dayIndex].website !=
