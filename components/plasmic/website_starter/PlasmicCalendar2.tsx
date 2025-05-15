@@ -1857,6 +1857,17 @@ function PlasmicCalendar2__RenderFunc(props: {
                       function getDayClass(dateProps, calendarData) {
                         const dayIndex = dateProps.date.day - 1;
                         const calendarItem = calendarData[dayIndex] || {};
+                        const bookDay = calendarItem.book_at
+                          ? calendarItem.book_at.split(".")[0]
+                          : undefined;
+                        const prevItem = calendarData[dayIndex - 1] || {};
+                        const nextItem = calendarData[dayIndex + 1] || {};
+                        const prevBookDay = prevItem.book_at
+                          ? prevItem.book_at.split(".")[0]
+                          : undefined;
+                        const nextBookDay = nextItem.book_at
+                          ? nextItem.book_at.split(".")[0]
+                          : undefined;
                         if (
                           dateProps.unix < minTimestamp ||
                           dateProps.unix > maxTimestamp
@@ -1869,26 +1880,20 @@ function PlasmicCalendar2__RenderFunc(props: {
                               return "passedSingleReserve";
                             }
                             if (
-                              calendarItem.website !==
-                                calendarData[dayIndex - 1]?.website &&
-                              calendarItem.website ===
-                                calendarData[dayIndex + 1]?.website
+                              bookDay !== prevBookDay &&
+                              bookDay === nextBookDay
                             ) {
                               return "passedFirstDayReserve";
                             }
                             if (
-                              calendarItem.website ===
-                                calendarData[dayIndex - 1]?.website &&
-                              calendarItem.website ===
-                                calendarData[dayIndex + 1]?.website
+                              bookDay === prevBookDay &&
+                              bookDay === nextBookDay
                             ) {
                               return "passedMidDayReserve";
                             }
                             if (
-                              calendarItem.website !==
-                                calendarData[dayIndex + 1]?.website &&
-                              calendarItem.website ===
-                                calendarData[dayIndex - 1]?.website
+                              bookDay !== nextBookDay &&
+                              bookDay === prevBookDay
                             ) {
                               return "passedLastDayReserve";
                             }
@@ -1911,26 +1916,20 @@ function PlasmicCalendar2__RenderFunc(props: {
                             return "reserved";
                           }
                           if (
-                            calendarItem.website !==
-                              calendarData[dayIndex - 1]?.website &&
-                            calendarItem.website ===
-                              calendarData[dayIndex + 1]?.website
+                            bookDay !== prevBookDay &&
+                            bookDay === nextBookDay
                           ) {
                             return "firstDayReserve";
                           }
                           if (
-                            calendarItem.website ===
-                              calendarData[dayIndex - 1]?.website &&
-                            calendarItem.website ===
-                              calendarData[dayIndex + 1]?.website
+                            bookDay === prevBookDay &&
+                            bookDay === nextBookDay
                           ) {
                             return "midDayReserve";
                           }
                           if (
-                            calendarItem.website !==
-                              calendarData[dayIndex + 1]?.website &&
-                            calendarItem.website ===
-                              calendarData[dayIndex - 1]?.website
+                            bookDay !== nextBookDay &&
+                            bookDay === prevBookDay
                           ) {
                             return "lastDayReserve";
                           }
