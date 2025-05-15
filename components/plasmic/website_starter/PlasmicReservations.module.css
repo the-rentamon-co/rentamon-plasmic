@@ -79,9 +79,10 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0px;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 0em 8px 1em;
+  padding: 0em 8px;
 }
 @media (max-width: 500px) {
   .header {
@@ -209,7 +210,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 0px;
 }
 @media (max-width: 1200px) {
   .freeBox__bMTr4 {
@@ -295,9 +296,10 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0px;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 2em 8px 1em;
+  padding: 0em 8px;
 }
 @media (max-width: 500px) {
   .freeBox___7ZJdP {
@@ -389,7 +391,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: 0;
-  padding: 8px 0px 0px;
+  padding: 0px;
 }
 @media (max-width: 1200px) {
   .titles {
@@ -400,6 +402,7 @@
   .titles {
     max-width: 100%;
     padding-top: 0px;
+    padding-bottom: 6px;
   }
 }
 @media (max-width: 350px) {
@@ -417,7 +420,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px 22px 8px 0px;
+  padding: 0px 22px 0px 0px;
 }
 @media (max-width: 500px) {
   .guestName {
@@ -471,7 +474,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px 0px;
+  padding: 0px;
 }
 .text__k0T0L {
   position: relative;
@@ -513,7 +516,7 @@
   justify-content: flex-start;
   align-items: stretch;
   min-width: 0;
-  padding: 8px 8px 8px 15px;
+  padding: 0px 8px 0px 15px;
 }
 @media (max-width: 500px) {
   .source {
@@ -1878,7 +1881,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 0em 0px 1.5em;
+  padding: 0em 0px;
 }
 .reserveMainStack2 > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -2030,8 +2033,8 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  margin-top: calc(0px - 15px);
-  height: calc(100% + 15px);
+  margin-top: calc(0px - 5px);
+  height: calc(100% + 5px);
 }
 .reserveMainStack > :global(.__wab_flex-container) > *,
 .reserveMainStack > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
@@ -2041,7 +2044,7 @@
   > :global(.__wab_slot)
   > picture
   > img {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 @media (max-width: 1200px) {
   .reserveMainStack {
