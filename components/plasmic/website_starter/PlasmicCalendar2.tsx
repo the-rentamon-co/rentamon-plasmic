@@ -1334,6 +1334,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           ) {
                             updates.status = "reserved";
                             updates.website = "رزرو";
+                            updates.book_at = new Date().toISOString();
                           } else if (
                             $state.requestdata.request_for === "unblock" ||
                             !$state.requestdata.request_for
