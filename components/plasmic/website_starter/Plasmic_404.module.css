@@ -370,6 +370,8 @@
   .freeBox__my6Xn {
     padding-top: 20px;
     max-width: 90%;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 350px) {
