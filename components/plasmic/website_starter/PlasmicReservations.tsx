@@ -401,7 +401,7 @@ function PlasmicReservations__RenderFunc(props: {
         path: "updateReserveModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "bookingId",
@@ -578,7 +578,7 @@ function PlasmicReservations__RenderFunc(props: {
         path: "cancelledModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -3218,7 +3218,7 @@ function PlasmicReservations__RenderFunc(props: {
                     style={{ fontWeight: 300 }}
                   >
                     {
-                      "\u0622\u06cc\u0627 \u0645\u0637\u0645\u0626\u0646\u06cc \u06a9\u0647 \u0645\u06cc\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0648\u0632 \u0631\u0648 \u0644\u063a\u0648 \u06a9\u0646\u06cc\u061f"
+                      "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0644\u063a\u0648 \u06a9\u0646\u06cc\u061f"
                     }
                   </span>
                   <React.Fragment>{"\n"}</React.Fragment>
@@ -3227,7 +3227,7 @@ function PlasmicReservations__RenderFunc(props: {
                     style={{ fontWeight: 500 }}
                   >
                     {
-                      "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648 \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648\u0632 \u0647\u0627\u06cc \u0631\u0632\u0631\u0648 \u0634\u062f\u0647 \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645 \u0634\u0645\u0627 \u0628\u0627\u0632 \u0645\u06cc\u0634\u0648\u062f!"
+                      "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0631\u0648\u0632\u0647\u0627\u06cc \u0631\u0632\u0631\u0648 \u0634\u062f\u0647 \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u00ab\u0628\u0627\u0632 \u0645\u06cc\u200c\u0634\u0647\u00bb!"
                     }
                   </span>
                 </React.Fragment>
@@ -5129,7 +5129,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   "۱۲": "اسفند"
                                 };
                                 const formattedDay = day.replace(/^۰/, "");
-                                return `ورود:${formattedDay} ${monthNames[month]}-`;
+                                return `ورود: ${formattedDay} ${monthNames[month]} - `;
                               })();
                             }
                           })();
@@ -5175,7 +5175,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   "۱۲": "اسفند"
                                 };
                                 const formattedDay = day.replace(/^۰/, "");
-                                return `خروج:${formattedDay} ${monthNames[month]}`;
+                                return ` خروج: ${formattedDay} ${monthNames[month]}`;
                               })();
                             }
                           })();
