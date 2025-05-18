@@ -99,8 +99,9 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   navFoot?: Flex__<"div">;
   top?: Flex__<"div">;
   menu?: Flex__<"div">;
-  notifBadge?: Flex__<"div">;
   top4?: Flex__<"div">;
+  notifBadge?: Flex__<"div">;
+  notifBadge2?: Flex__<"div">;
   backMenu?: Flex__<"div">;
   normMenu?: Flex__<"div">;
   cal?: Flex__<"div">;
@@ -275,12 +276,6 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               }
             }}
           >
-            <div
-              data-plasmic-name={"notifBadge"}
-              data-plasmic-override={overrides.notifBadge}
-              className={classNames(projectcss.all, sty.notifBadge)}
-            />
-
             {(
               hasVariant(globalVariants, "screen", "smallMobile")
                 ? (() => {
@@ -317,6 +312,36 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                 data-plasmic-override={overrides.top4}
                 className={classNames(projectcss.all, sty.top4)}
               >
+                <div className={classNames(projectcss.all, sty.freeBox__swoIb)}>
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return !$state.isNotify;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : true
+                  ) ? (
+                    <div
+                      data-plasmic-name={"notifBadge"}
+                      data-plasmic-override={overrides.notifBadge}
+                      className={classNames(projectcss.all, sty.notifBadge)}
+                    />
+                  ) : null}
+                  <div
+                    data-plasmic-name={"notifBadge2"}
+                    data-plasmic-override={overrides.notifBadge2}
+                    className={classNames(projectcss.all, sty.notifBadge2)}
+                  />
+                </div>
                 <Stack__
                   as={"div"}
                   data-plasmic-name={"backMenu"}
@@ -1026,8 +1051,9 @@ const PlasmicDescendants = {
     "navFoot",
     "top",
     "menu",
-    "notifBadge",
     "top4",
+    "notifBadge",
+    "notifBadge2",
     "backMenu",
     "normMenu",
     "cal",
@@ -1047,8 +1073,9 @@ const PlasmicDescendants = {
   top: [
     "top",
     "menu",
-    "notifBadge",
     "top4",
+    "notifBadge",
+    "notifBadge2",
     "backMenu",
     "normMenu",
     "cal",
@@ -1064,9 +1091,10 @@ const PlasmicDescendants = {
     "backProps",
     "normProps"
   ],
-  menu: ["menu", "notifBadge", "top4", "backMenu", "normMenu"],
+  menu: ["menu", "top4", "notifBadge", "notifBadge2", "backMenu", "normMenu"],
+  top4: ["top4", "notifBadge", "notifBadge2", "backMenu"],
   notifBadge: ["notifBadge"],
-  top4: ["top4", "backMenu"],
+  notifBadge2: ["notifBadge2"],
   backMenu: ["backMenu"],
   normMenu: ["normMenu"],
   cal: ["cal", "top1", "backCal", "normCal"],
@@ -1090,8 +1118,9 @@ type NodeDefaultElementType = {
   navFoot: "div";
   top: "div";
   menu: "div";
-  notifBadge: "div";
   top4: "div";
+  notifBadge: "div";
+  notifBadge2: "div";
   backMenu: "div";
   normMenu: "div";
   cal: "div";
@@ -1171,8 +1200,9 @@ export const PlasmicNavigationRntFooter = Object.assign(
     // Helper components rendering sub-elements
     top: makeNodeComponent("top"),
     menu: makeNodeComponent("menu"),
-    notifBadge: makeNodeComponent("notifBadge"),
     top4: makeNodeComponent("top4"),
+    notifBadge: makeNodeComponent("notifBadge"),
+    notifBadge2: makeNodeComponent("notifBadge2"),
     backMenu: makeNodeComponent("backMenu"),
     normMenu: makeNodeComponent("normMenu"),
     cal: makeNodeComponent("cal"),
