@@ -148,7 +148,7 @@ export type PlasmicReservations__OverridesType = {
   mizbon2?: Flex__<typeof PlasmicImg__>;
   homsa2?: Flex__<typeof PlasmicImg__>;
   otaghak2?: Flex__<typeof PlasmicImg__>;
-  choseAction?: Flex__<typeof AntdModal>;
+  chooseAction?: Flex__<typeof AntdModal>;
   edit2?: Flex__<typeof AntdButton>;
   updateReserveModal?: Flex__<typeof AntdModal>;
   editReserveInfo?: Flex__<typeof EditReserveInfo>;
@@ -569,7 +569,7 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "choseAction.open",
+        path: "chooseAction.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -3442,7 +3442,7 @@ function PlasmicReservations__RenderFunc(props: {
                           const actionArgs = {
                             variable: {
                               objRoot: $state,
-                              variablePath: ["choseAction", "open"]
+                              variablePath: ["chooseAction", "open"]
                             },
                             operation: 0,
                             value: true
@@ -4578,9 +4578,9 @@ function PlasmicReservations__RenderFunc(props: {
             </Stack__>
           </AntdModal>
           <AntdModal
-            data-plasmic-name={"choseAction"}
-            data-plasmic-override={overrides.choseAction}
-            className={classNames("__wab_instance", sty.choseAction)}
+            data-plasmic-name={"chooseAction"}
+            data-plasmic-override={overrides.chooseAction}
+            className={classNames("__wab_instance", sty.chooseAction)}
             defaultStylesClassName={classNames(
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
@@ -4590,18 +4590,26 @@ function PlasmicReservations__RenderFunc(props: {
               plasmic_plasmic_rich_components_css.plasmic_tokens
             )}
             hideFooter={true}
-            modalScopeClassName={sty["choseAction__modal"]}
+            modalScopeClassName={sty["chooseAction__modal"]}
             onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["choseAction", "open"]).apply(
+              generateStateOnChangeProp($state, ["chooseAction", "open"]).apply(
                 null,
                 eventArgs
               );
             }}
-            open={generateStateValueProp($state, ["choseAction", "open"])}
+            open={generateStateValueProp($state, ["chooseAction", "open"])}
             title={null}
             trigger={null}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__c0Xob)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__c0Xob,
+                "clickable"
+              )}
+            >
               <Stack__
                 as={"div"}
                 hasGap={true}
@@ -4656,7 +4664,7 @@ function PlasmicReservations__RenderFunc(props: {
                         const actionArgs = {
                           variable: {
                             objRoot: $state,
-                            variablePath: ["choseAction", "open"]
+                            variablePath: ["chooseAction", "open"]
                           },
                           operation: 0
                         };
@@ -4717,11 +4725,15 @@ function PlasmicReservations__RenderFunc(props: {
                   }
                 </div>
               </Stack__>
-            </div>
+            </Stack__>
             <Stack__
               as={"div"}
               hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__trYvw)}
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__trYvw,
+                "clickable"
+              )}
               onClick={async event => {
                 const $steps = {};
 
@@ -4730,7 +4742,7 @@ function PlasmicReservations__RenderFunc(props: {
                       const actionArgs = {
                         variable: {
                           objRoot: $state,
-                          variablePath: ["choseAction", "open"]
+                          variablePath: ["chooseAction", "open"]
                         },
                         operation: 0
                       };
@@ -4878,101 +4890,105 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
               </Stack__>
             </Stack__>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__cy24C)}
-            >
-              <AntdButton
-                data-plasmic-name={"edit2"}
-                data-plasmic-override={overrides.edit2}
-                className={classNames("__wab_instance", sty.edit2)}
-                onClick={async () => {
-                  const $steps = {};
-
-                  $steps["updateChoseActionOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["choseAction", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateChoseActionOpen"] != null &&
-                    typeof $steps["updateChoseActionOpen"] === "object" &&
-                    typeof $steps["updateChoseActionOpen"].then === "function"
-                  ) {
-                    $steps["updateChoseActionOpen"] = await $steps[
-                      "updateChoseActionOpen"
-                    ];
-                  }
-
-                  $steps["updateModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modal", "open"]
-                          },
-                          operation: 0,
-                          value: true
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalOpen"] != null &&
-                    typeof $steps["updateModalOpen"] === "object" &&
-                    typeof $steps["updateModalOpen"].then === "function"
-                  ) {
-                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                  }
-                }}
-                submitsForm={false}
-                type={"default"}
+            <div className={classNames(projectcss.all, sty.freeBox__ybHYs)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__cy24C)}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yXkbS
-                  )}
+                <AntdButton
+                  data-plasmic-name={"edit2"}
+                  data-plasmic-override={overrides.edit2}
+                  className={classNames("__wab_instance", sty.edit2)}
+                  onClick={async () => {
+                    const $steps = {};
+
+                    $steps["updateChoseActionOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["chooseAction", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateChoseActionOpen"] != null &&
+                      typeof $steps["updateChoseActionOpen"] === "object" &&
+                      typeof $steps["updateChoseActionOpen"].then === "function"
+                    ) {
+                      $steps["updateChoseActionOpen"] = await $steps[
+                        "updateChoseActionOpen"
+                      ];
+                    }
+
+                    $steps["updateModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modal", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen"] != null &&
+                      typeof $steps["updateModalOpen"] === "object" &&
+                      typeof $steps["updateModalOpen"].then === "function"
+                    ) {
+                      $steps["updateModalOpen"] = await $steps[
+                        "updateModalOpen"
+                      ];
+                    }
+                  }}
+                  submitsForm={false}
+                  type={"default"}
                 >
-                  {"\u0628\u0627\u0632\u06af\u0634\u062a"}
-                </div>
-              </AntdButton>
-            </Stack__>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yXkbS
+                    )}
+                  >
+                    {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+                  </div>
+                </AntdButton>
+              </Stack__>
+            </div>
           </AntdModal>
           <AntdModal
             data-plasmic-name={"updateReserveModal"}
@@ -5545,7 +5561,7 @@ function PlasmicReservations__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0648\u06cc\u0631\u0627\u06cc\u06cc\u0634 \u0631\u0632\u0631\u0648"
+                        "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0631\u0632\u0631\u0648"
                       }
                     </div>
                   </Button>
@@ -6760,7 +6776,7 @@ function PlasmicReservations__RenderFunc(props: {
                   return (() => {
                     const allowed = [
                       "دیوار",
-                      "واسط",
+                      ",واسطه",
                       "همکار",
                       "اینستاگرام",
                       "مسافر قبلی",
@@ -6775,7 +6791,7 @@ function PlasmicReservations__RenderFunc(props: {
                     e instanceof TypeError ||
                     e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    return true;
+                    return false;
                   }
                   throw e;
                 }
@@ -6792,7 +6808,7 @@ function PlasmicReservations__RenderFunc(props: {
                           const actionArgs = {
                             variable: {
                               objRoot: $state,
-                              variablePath: ["choseAction", "open"]
+                              variablePath: ["chooseAction", "open"]
                             },
                             operation: 0,
                             value: true
@@ -6928,7 +6944,7 @@ const PlasmicDescendants = {
     "mizbon2",
     "homsa2",
     "otaghak2",
-    "choseAction",
+    "chooseAction",
     "edit2",
     "updateReserveModal",
     "editReserveInfo",
@@ -7058,7 +7074,7 @@ const PlasmicDescendants = {
   mizbon2: ["mizbon2"],
   homsa2: ["homsa2"],
   otaghak2: ["otaghak2"],
-  choseAction: ["choseAction", "edit2"],
+  chooseAction: ["chooseAction", "edit2"],
   edit2: ["edit2"],
   updateReserveModal: [
     "updateReserveModal",
@@ -7234,7 +7250,7 @@ type NodeDefaultElementType = {
   mizbon2: typeof PlasmicImg__;
   homsa2: typeof PlasmicImg__;
   otaghak2: typeof PlasmicImg__;
-  choseAction: typeof AntdModal;
+  chooseAction: typeof AntdModal;
   edit2: typeof AntdButton;
   updateReserveModal: typeof AntdModal;
   editReserveInfo: typeof EditReserveInfo;
@@ -7383,7 +7399,7 @@ export const PlasmicReservations = Object.assign(
     mizbon2: makeNodeComponent("mizbon2"),
     homsa2: makeNodeComponent("homsa2"),
     otaghak2: makeNodeComponent("otaghak2"),
-    choseAction: makeNodeComponent("choseAction"),
+    chooseAction: makeNodeComponent("chooseAction"),
     edit2: makeNodeComponent("edit2"),
     updateReserveModal: makeNodeComponent("updateReserveModal"),
     editReserveInfo: makeNodeComponent("editReserveInfo"),
