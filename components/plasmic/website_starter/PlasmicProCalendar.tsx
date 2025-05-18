@@ -117,7 +117,6 @@ export type PlasmicProCalendar__OverridesType = {
   calendar2?: Flex__<typeof Calendar2>;
   iframe?: Flex__<typeof Iframe>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
-  modal?: Flex__<typeof AntdModal>;
   spacer?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -285,12 +284,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                   throw e;
                 }
               })()
-      },
-      {
-        path: "modal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "feature",
@@ -2359,105 +2352,6 @@ function PlasmicProCalendar__RenderFunc(props: {
             })()}
           />
 
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            maskClosable={false}
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={
-              <div className={classNames(projectcss.all, sty.freeBox__r2BTz)}>
-                {false ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__kLzz)}
-                    displayHeight={"13px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateModalOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["modal", "open"]
-                              },
-                              operation: 0,
-                              value: false
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateModalOpen"] != null &&
-                        typeof $steps["updateModalOpen"] === "object" &&
-                        typeof $steps["updateModalOpen"].then === "function"
-                      ) {
-                        $steps["updateModalOpen"] = await $steps[
-                          "updateModalOpen"
-                        ];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image24.svg",
-                      fullWidth: 20,
-                      fullHeight: 18,
-                      aspectRatio: 1.111111
-                    }}
-                  />
-                ) : null}
-              </div>
-            }
-            trigger={null}
-            width={"320"}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___2NHzm
-              )}
-            >
-              {
-                "\u062f\u0631\u062d\u0627\u0644 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0647\u0633\u062a\u06cc\u0645. \ud83e\uddd1\ud83c\udffb\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udffb\u200d\ud83d\udcbb\r\n\r\n\u062a\u0627 \u0633\u0627\u0639\u0627\u062a\u06cc \u062f\u06cc\u06af\u0631 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u06cc\u0645."
-              }
-            </div>
-          </AntdModal>
           {(
             hasVariant(globalVariants, "screen", "smallMobile")
               ? true
@@ -2521,7 +2415,6 @@ const PlasmicDescendants = {
     "calendar2",
     "iframe",
     "userAvailableFeature",
-    "modal",
     "spacer",
     "navigationRntFooter",
     "clarityRntComponent",
@@ -2573,7 +2466,6 @@ const PlasmicDescendants = {
   calendar2: ["calendar2"],
   iframe: ["iframe"],
   userAvailableFeature: ["userAvailableFeature"],
-  modal: ["modal"],
   spacer: ["spacer"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2605,7 +2497,6 @@ type NodeDefaultElementType = {
   calendar2: typeof Calendar2;
   iframe: typeof Iframe;
   userAvailableFeature: typeof ApiRequest;
-  modal: typeof AntdModal;
   spacer: "div";
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -2693,7 +2584,6 @@ export const PlasmicProCalendar = Object.assign(
     calendar2: makeNodeComponent("calendar2"),
     iframe: makeNodeComponent("iframe"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
-    modal: makeNodeComponent("modal"),
     spacer: makeNodeComponent("spacer"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

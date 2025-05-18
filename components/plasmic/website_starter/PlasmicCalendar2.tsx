@@ -148,6 +148,18 @@ export type PlasmicCalendar2__OverridesType = {
   newDiscountModal?: Flex__<typeof AntdModal>;
   textInput4?: Flex__<typeof TextInput>;
   guide?: Flex__<"div">;
+  reserve1?: Flex__<"div">;
+  color?: Flex__<"div">;
+  text?: Flex__<"div">;
+  reserve2?: Flex__<"div">;
+  color2?: Flex__<"div">;
+  text2?: Flex__<"div">;
+  reserve3?: Flex__<"div">;
+  color3?: Flex__<"div">;
+  text3?: Flex__<"div">;
+  reserve4?: Flex__<"div">;
+  color4?: Flex__<"div">;
+  text4?: Flex__<"div">;
   submitChange?: Flex__<"div">;
   addingGuestInfo?: Flex__<typeof AntdModal>;
   form?: Flex__<"div">;
@@ -5853,7 +5865,67 @@ function PlasmicCalendar2__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["updateStateVariable"] = true
+              $steps["checkConsecutive"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          const items = $state.selectedItem || [];
+                          if (items.length < 2) return true;
+                          const dates = items
+                            .map(item => new Date(item.date))
+                            .sort((a, b) => a - b);
+                          const isConsecutive = dates.every((cur, idx, arr) => {
+                            if (idx === 0) return true;
+                            const prev = arr[idx - 1];
+                            const diffInDays =
+                              (cur - prev) / (1000 * 60 * 60 * 24);
+                            return diffInDays === 1;
+                          });
+                          return isConsecutive;
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkConsecutive"] != null &&
+                typeof $steps["checkConsecutive"] === "object" &&
+                typeof $steps["checkConsecutive"].then === "function"
+              ) {
+                $steps["checkConsecutive"] = await $steps["checkConsecutive"];
+              }
+
+              $steps["toastCheckConsecutive"] =
+                $steps.checkConsecutive == false
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "error",
+                          "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0631\u0632\u0631\u0648\u060c \u0628\u0627\u06cc\u062f \u0631\u0648\u0632\u0647\u0627\u06cc \u067e\u0634\u062a \u0633\u0631\u0647\u0645 \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc!",
+                          "top-center",
+                          6000
+                        ]
+                      };
+                      return $globalActions["Fragment.showToast"]?.apply(null, [
+                        ...actionArgs.args
+                      ]);
+                    })()
+                  : undefined;
+              if (
+                $steps["toastCheckConsecutive"] != null &&
+                typeof $steps["toastCheckConsecutive"] === "object" &&
+                typeof $steps["toastCheckConsecutive"].then === "function"
+              ) {
+                $steps["toastCheckConsecutive"] = await $steps[
+                  "toastCheckConsecutive"
+                ];
+              }
+
+              $steps["updateStateVariable"] = $steps.checkConsecutive
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
@@ -5881,7 +5953,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
 
               $steps["updateFetchModalOpen"] =
-                $props.calendarType == "pro"
+                $props.calendarType == "pro" && $steps.checkConsecutive
                   ? (() => {
                       const actionArgs = {
                         variable: {
@@ -5917,7 +5989,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["reserveRequest"] = true
+              $steps["reserveRequest"] = $steps.checkConsecutive
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -6052,7 +6124,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
 
               $steps["updateStateVariable2"] =
-                $props.calendarType == "lite"
+                $props.calendarType == "lite" && $steps.checkConsecutive
                   ? (() => {
                       const actionArgs = {
                         operation: 0,
@@ -8682,86 +8754,122 @@ function PlasmicCalendar2__RenderFunc(props: {
           </div>
         </AntdModal>
       </div>
-      <Stack__
-        as={"div"}
+      <div
         data-plasmic-name={"guide"}
         data-plasmic-override={overrides.guide}
-        hasGap={true}
         className={classNames(projectcss.all, sty.guide)}
       >
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__sZgZ)}
+        <div
+          data-plasmic-name={"reserve1"}
+          data-plasmic-override={overrides.reserve1}
+          className={classNames(projectcss.all, sty.reserve1)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__bNcp)} />
-
           <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__c7Dd
-            )}
-          >
-            {"\u0631\u0632\u0631\u0648"}
-          </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__yeclM)}
-        >
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__qPx3C)}
+            data-plasmic-name={"color"}
+            data-plasmic-override={overrides.color}
+            className={classNames(projectcss.all, sty.color)}
           />
 
           <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__ynzkJ
-            )}
+            data-plasmic-name={"text"}
+            data-plasmic-override={overrides.text}
+            className={classNames(projectcss.all, sty.text)}
           >
-            {"\u0628\u0633\u062a\u0647"}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__oE5Mq
+              )}
+            >
+              {"\u0631\u0632\u0631\u0648"}
+            </div>
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__cfHXh)}
+        </div>
+        <div
+          data-plasmic-name={"reserve2"}
+          data-plasmic-override={overrides.reserve2}
+          className={classNames(projectcss.all, sty.reserve2)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___8V028)} />
+          <div
+            data-plasmic-name={"color2"}
+            data-plasmic-override={overrides.color2}
+            className={classNames(projectcss.all, sty.color2)}
+          />
 
           <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__ghiWo
-            )}
+            data-plasmic-name={"text2"}
+            data-plasmic-override={overrides.text2}
+            className={classNames(projectcss.all, sty.text2)}
           >
-            {"\u062a\u062e\u0641\u06cc\u0641"}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___3DCBm
+              )}
+            >
+              {"\u0628\u0633\u062a\u0647"}
+            </div>
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__oPytY)}
+        </div>
+        <div
+          data-plasmic-name={"reserve3"}
+          data-plasmic-override={overrides.reserve3}
+          className={classNames(projectcss.all, sty.reserve3)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___0D7PK)} />
+          <div
+            data-plasmic-name={"color3"}
+            data-plasmic-override={overrides.color3}
+            className={classNames(projectcss.all, sty.color3)}
+          />
 
           <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__qtcUn
-            )}
+            data-plasmic-name={"text3"}
+            data-plasmic-override={overrides.text3}
+            className={classNames(projectcss.all, sty.text3)}
           >
-            {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__pBKau
+              )}
+            >
+              {"\u062a\u062e\u0641\u06cc\u0641"}
+            </div>
           </div>
-        </Stack__>
-      </Stack__>
+        </div>
+        <div
+          data-plasmic-name={"reserve4"}
+          data-plasmic-override={overrides.reserve4}
+          className={classNames(projectcss.all, sty.reserve4)}
+        >
+          <Stack__
+            as={"div"}
+            data-plasmic-name={"color4"}
+            data-plasmic-override={overrides.color4}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.color4)}
+          />
+
+          <div
+            data-plasmic-name={"text4"}
+            data-plasmic-override={overrides.text4}
+            className={classNames(projectcss.all, sty.text4)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___9D5GC
+              )}
+            >
+              {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         data-plasmic-name={"submitChange"}
         data-plasmic-override={overrides.submitChange}
@@ -10059,6 +10167,18 @@ const PlasmicDescendants = {
     "newDiscountModal",
     "textInput4",
     "guide",
+    "reserve1",
+    "color",
+    "text",
+    "reserve2",
+    "color2",
+    "text2",
+    "reserve3",
+    "color3",
+    "text3",
+    "reserve4",
+    "color4",
+    "text4",
     "submitChange",
     "addingGuestInfo",
     "form",
@@ -10122,7 +10242,33 @@ const PlasmicDescendants = {
   checkForChange: ["checkForChange"],
   newDiscountModal: ["newDiscountModal", "textInput4"],
   textInput4: ["textInput4"],
-  guide: ["guide"],
+  guide: [
+    "guide",
+    "reserve1",
+    "color",
+    "text",
+    "reserve2",
+    "color2",
+    "text2",
+    "reserve3",
+    "color3",
+    "text3",
+    "reserve4",
+    "color4",
+    "text4"
+  ],
+  reserve1: ["reserve1", "color", "text"],
+  color: ["color"],
+  text: ["text"],
+  reserve2: ["reserve2", "color2", "text2"],
+  color2: ["color2"],
+  text2: ["text2"],
+  reserve3: ["reserve3", "color3", "text3"],
+  color3: ["color3"],
+  text3: ["text3"],
+  reserve4: ["reserve4", "color4", "text4"],
+  color4: ["color4"],
+  text4: ["text4"],
   submitChange: ["submitChange"],
   addingGuestInfo: [
     "addingGuestInfo",
@@ -10209,6 +10355,18 @@ type NodeDefaultElementType = {
   newDiscountModal: typeof AntdModal;
   textInput4: typeof TextInput;
   guide: "div";
+  reserve1: "div";
+  color: "div";
+  text: "div";
+  reserve2: "div";
+  color2: "div";
+  text2: "div";
+  reserve3: "div";
+  color3: "div";
+  text3: "div";
+  reserve4: "div";
+  color4: "div";
+  text4: "div";
   submitChange: "div";
   addingGuestInfo: typeof AntdModal;
   form: "div";
@@ -10320,6 +10478,18 @@ export const PlasmicCalendar2 = Object.assign(
     newDiscountModal: makeNodeComponent("newDiscountModal"),
     textInput4: makeNodeComponent("textInput4"),
     guide: makeNodeComponent("guide"),
+    reserve1: makeNodeComponent("reserve1"),
+    color: makeNodeComponent("color"),
+    text: makeNodeComponent("text"),
+    reserve2: makeNodeComponent("reserve2"),
+    color2: makeNodeComponent("color2"),
+    text2: makeNodeComponent("text2"),
+    reserve3: makeNodeComponent("reserve3"),
+    color3: makeNodeComponent("color3"),
+    text3: makeNodeComponent("text3"),
+    reserve4: makeNodeComponent("reserve4"),
+    color4: makeNodeComponent("color4"),
+    text4: makeNodeComponent("text4"),
     submitChange: makeNodeComponent("submitChange"),
     addingGuestInfo: makeNodeComponent("addingGuestInfo"),
     form: makeNodeComponent("form"),

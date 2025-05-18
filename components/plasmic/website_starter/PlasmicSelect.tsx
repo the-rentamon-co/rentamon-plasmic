@@ -511,8 +511,28 @@ function PlasmicSelect__RenderFunc(props: {
                   })()
             )
               ? renderPlasmicSlot({
-                  defaultContents:
-                    "\u062f\u0631\u062d\u0627\u0644 \u062f\u0631 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ...",
+                  defaultContents: (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ndQ6Z
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 400 }}
+                        >
+                          {
+                            "\u062f\u0631\u062d\u0627\u0644 \u062f\u0631 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc ..."
+                          }
+                        </span>
+                      </React.Fragment>
+                    </div>
+                  ),
                   value: args.placeholder,
                   className: classNames(sty.slotTargetPlaceholder, {
                     [sty.slotTargetPlaceholder___focusVisibleWithin]:

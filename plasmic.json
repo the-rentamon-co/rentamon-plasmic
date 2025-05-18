@@ -1768,6 +1768,60 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%DA%A9%D9%88%D8%AA%D8%A7%D9%87-%D9%85%D8%AF%D8%AA"
+        },
+        {
+          "id": "IxuDnIzMrMZF",
+          "name": "EditReserveInfo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicEditReserveInfo.tsx",
+          "importSpec": {
+            "modulePath": "EditReserveInfo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicEditReserveInfo.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Ni5f_RHOTfHK",
+          "name": "NewPage2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/new-page-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewPage2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page-2"
+        },
+        {
+          "id": "683spdJ2aZLx",
+          "name": "مبنایمحاسبات",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicمبنایمحاسبات.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/%D9%85%D8%A8%D9%86%D8%A7%DB%8C-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicمبنایمحاسبات.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/%D9%85%D8%A8%D9%86%D8%A7%DB%8C-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA"
+        },
+        {
+          "id": "g7mACfQqrf7P",
+          "name": "DropdownRntComponent",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDropdownRntComponent.tsx",
+          "importSpec": {
+            "modulePath": "DropdownRntComponent.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDropdownRntComponent.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -2270,6 +2324,16 @@
           "id": "aDrwOfA5XwKS",
           "name": "Icon80Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon80.tsx"
+        },
+        {
+          "id": "Z5Sw2-6QWYwz",
+          "name": "Icon81Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon81.tsx"
+        },
+        {
+          "id": "2O4NC5vDxvXg",
+          "name": "Icon82Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon82.tsx"
         }
       ],
       "images": [
@@ -3687,6 +3751,21 @@
           "id": "8FJQB_wigg_1",
           "name": "404.png 2",
           "filePath": "../public/plasmic/website_starter/images/_404Png2.png"
+        },
+        {
+          "id": "lFZ1q8HrhtHM",
+          "name": "image 125",
+          "filePath": "../public/plasmic/website_starter/images/image125.svg"
+        },
+        {
+          "id": "thklouO8EX4r",
+          "name": "image 126",
+          "filePath": "../public/plasmic/website_starter/images/image126.svg"
+        },
+        {
+          "id": "sCTlOIsBZwZi",
+          "name": "image 127",
+          "filePath": "../public/plasmic/website_starter/images/image127.svg"
         }
       ],
       "indirect": false,
