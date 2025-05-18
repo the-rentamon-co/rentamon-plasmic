@@ -401,7 +401,8 @@ function PlasmicReservations__RenderFunc(props: {
         path: "updateReserveModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "bookingId",
@@ -3212,25 +3213,20 @@ function PlasmicReservations__RenderFunc(props: {
                   sty.text__gJu3B
                 )}
               >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 300 }}
-                  >
-                    {
-                      "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0644\u063a\u0648 \u06a9\u0646\u06cc\u061f"
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 500 }}
-                  >
-                    {
-                      "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0631\u0648\u0632\u0647\u0627\u06cc \u0631\u0632\u0631\u0648 \u0634\u062f\u0647 \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u00ab\u0628\u0627\u0632 \u0645\u06cc\u200c\u0634\u0647\u00bb!"
-                    }
-                  </span>
-                </React.Fragment>
+                {
+                  "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0644\u063a\u0648 \u06a9\u0646\u06cc\u061f"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__enPyq
+                )}
+              >
+                {
+                  "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0631\u0648\u0632\u0647\u0627\u06cc \u0631\u0632\u0631\u0648 \u0634\u062f\u0647 \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u00ab\u0628\u0627\u0632 \u0645\u06cc\u200c\u0634\u0647\u00bb!"
+                }
               </div>
               <Stack__
                 as={"div"}
