@@ -99,6 +99,7 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   navFoot?: Flex__<"div">;
   top?: Flex__<"div">;
   menu?: Flex__<"div">;
+  notifBadge?: Flex__<"div">;
   top4?: Flex__<"div">;
   backMenu?: Flex__<"div">;
   normMenu?: Flex__<"div">;
@@ -171,6 +172,34 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "isNotify",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                function isNotifyEnabled() {
+                  return localStorage.getItem("is_notify") !== null;
+                }
+                if (isNotifyEnabled()) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -246,6 +275,12 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               }
             }}
           >
+            <div
+              data-plasmic-name={"notifBadge"}
+              data-plasmic-override={overrides.notifBadge}
+              className={classNames(projectcss.all, sty.notifBadge)}
+            />
+
             {(
               hasVariant(globalVariants, "screen", "smallMobile")
                 ? (() => {
@@ -991,6 +1026,7 @@ const PlasmicDescendants = {
     "navFoot",
     "top",
     "menu",
+    "notifBadge",
     "top4",
     "backMenu",
     "normMenu",
@@ -1011,6 +1047,7 @@ const PlasmicDescendants = {
   top: [
     "top",
     "menu",
+    "notifBadge",
     "top4",
     "backMenu",
     "normMenu",
@@ -1027,7 +1064,8 @@ const PlasmicDescendants = {
     "backProps",
     "normProps"
   ],
-  menu: ["menu", "top4", "backMenu", "normMenu"],
+  menu: ["menu", "notifBadge", "top4", "backMenu", "normMenu"],
+  notifBadge: ["notifBadge"],
   top4: ["top4", "backMenu"],
   backMenu: ["backMenu"],
   normMenu: ["normMenu"],
@@ -1052,6 +1090,7 @@ type NodeDefaultElementType = {
   navFoot: "div";
   top: "div";
   menu: "div";
+  notifBadge: "div";
   top4: "div";
   backMenu: "div";
   normMenu: "div";
@@ -1132,6 +1171,7 @@ export const PlasmicNavigationRntFooter = Object.assign(
     // Helper components rendering sub-elements
     top: makeNodeComponent("top"),
     menu: makeNodeComponent("menu"),
+    notifBadge: makeNodeComponent("notifBadge"),
     top4: makeNodeComponent("top4"),
     backMenu: makeNodeComponent("backMenu"),
     normMenu: makeNodeComponent("normMenu"),

@@ -74,7 +74,6 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicتالار.module.css"; // plasmic-import: awYJCWS6HouC/css
 
-import Icon66Icon from "./icons/PlasmicIcon__Icon66"; // plasmic-import: n1MUhjxn9v4m/icon
 import Icon74Icon from "./icons/PlasmicIcon__Icon74"; // plasmic-import: 8KZpBYIvE0K7/icon
 import Icon80Icon from "./icons/PlasmicIcon__Icon80"; // plasmic-import: aDrwOfA5XwKS/icon
 import Icon70Icon from "./icons/PlasmicIcon__Icon70"; // plasmic-import: A-bs_J5BMn_p/icon
@@ -105,7 +104,9 @@ export type Plasmicتالار__OverridesType = {
   info?: Flex__<"div">;
   name?: Flex__<"div">;
   number?: Flex__<"div">;
-  editIcon?: Flex__<"div">;
+  leftIcon?: Flex__<"div">;
+  notifOn?: Flex__<typeof PlasmicImg__>;
+  notifOff?: Flex__<typeof PlasmicImg__>;
   wallet?: Flex__<"div">;
   walletInfo?: Flex__<"div">;
   right2?: Flex__<"div">;
@@ -234,6 +235,42 @@ function Plasmicتالار__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "notifDisabled",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "isNotify",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                function isNotifyEnabled() {
+                  return localStorage.getItem("is_notify") !== null;
+                }
+                if (isNotifyEnabled()) {
+                  console.log("نوتیفیکیشن فعال است.");
+                  return true;
+                } else {
+                  console.log("نوتیفیکیشن غیرفعال است.");
+                  return false;
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -468,14 +505,183 @@ function Plasmicتالار__RenderFunc(props: {
                   </div>
                 </div>
                 <div
-                  data-plasmic-name={"editIcon"}
-                  data-plasmic-override={overrides.editIcon}
-                  className={classNames(projectcss.all, sty.editIcon)}
+                  data-plasmic-name={"leftIcon"}
+                  data-plasmic-override={overrides.leftIcon}
+                  className={classNames(projectcss.all, sty.leftIcon)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["invokeGlobalAction"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              undefined,
+                              " \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0647\u0631 \u0631\u0632\u0631\u0648 \u062f\u0633\u062a\u06cc\u060c \u0627\u0648\u0646\u200c \u0631\u0648 \u0644\u063a\u0648 \u06cc\u0627 \u0648\u06cc\u0631\u0627\u06cc\u0634 \u06a9\u0646\u06cc.",
+                              undefined,
+                              6000
+                            ]
+                          };
+                          return $globalActions["Fragment.showToast"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                    if (
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
+                    ) {
+                      $steps["invokeGlobalAction"] = await $steps[
+                        "invokeGlobalAction"
+                      ];
+                    }
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function enableNotify() {
+                                  localStorage.setItem("is_notify", "true");
+                                }
+                                return enableNotify();
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+
+                    $steps["updateIsNotify"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["isNotify"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateIsNotify"] != null &&
+                      typeof $steps["updateIsNotify"] === "object" &&
+                      typeof $steps["updateIsNotify"].then === "function"
+                    ) {
+                      $steps["updateIsNotify"] = await $steps["updateIsNotify"];
+                    }
+                  }}
                 >
-                  <Icon66Icon
-                    className={classNames(projectcss.all, sty.svg__lAq0C)}
-                    role={"img"}
-                  />
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return !$state.isNotify;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : true
+                  ) ? (
+                    <PlasmicImg__
+                      data-plasmic-name={"notifOn"}
+                      data-plasmic-override={overrides.notifOn}
+                      alt={""}
+                      className={classNames(sty.notifOn, "clickable")}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "36px"
+                          : "40px"
+                      }
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "36px"
+                          : "40px"
+                      }
+                      loading={"lazy"}
+                      onClick={async event => {
+                        const $steps = {};
+                      }}
+                      src={{
+                        src: "/plasmic/website_starter/images/image128.svg",
+                        fullWidth: 42,
+                        fullHeight: 42,
+                        aspectRatio: 1
+                      }}
+                    />
+                  ) : null}
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return $state.isNotify;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : true
+                  ) ? (
+                    <PlasmicImg__
+                      data-plasmic-name={"notifOff"}
+                      data-plasmic-override={overrides.notifOff}
+                      alt={""}
+                      className={classNames(sty.notifOff, "clickable")}
+                      displayHeight={"38px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"38px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image129.svg",
+                        fullWidth: 40,
+                        fullHeight: 40,
+                        aspectRatio: 1
+                      }}
+                    />
+                  ) : null}
                 </div>
               </div>
             ) : null}
@@ -1847,7 +2053,9 @@ const PlasmicDescendants = {
     "info",
     "name",
     "number",
-    "editIcon",
+    "leftIcon",
+    "notifOn",
+    "notifOff",
     "wallet",
     "walletInfo",
     "right2",
@@ -1905,7 +2113,9 @@ const PlasmicDescendants = {
     "info",
     "name",
     "number",
-    "editIcon",
+    "leftIcon",
+    "notifOn",
+    "notifOff",
     "wallet",
     "walletInfo",
     "right2",
@@ -1949,12 +2159,23 @@ const PlasmicDescendants = {
     "mid7",
     "left6"
   ],
-  topProfile: ["topProfile", "image", "info", "name", "number", "editIcon"],
+  topProfile: [
+    "topProfile",
+    "image",
+    "info",
+    "name",
+    "number",
+    "leftIcon",
+    "notifOn",
+    "notifOff"
+  ],
   image: ["image"],
   info: ["info", "name", "number"],
   name: ["name"],
   number: ["number"],
-  editIcon: ["editIcon"],
+  leftIcon: ["leftIcon", "notifOn", "notifOff"],
+  notifOn: ["notifOn"],
+  notifOff: ["notifOff"],
   wallet: ["wallet", "walletInfo", "right2", "mid2"],
   walletInfo: ["walletInfo", "right2", "mid2"],
   right2: ["right2"],
@@ -2055,7 +2276,9 @@ type NodeDefaultElementType = {
   info: "div";
   name: "div";
   number: "div";
-  editIcon: "div";
+  leftIcon: "div";
+  notifOn: typeof PlasmicImg__;
+  notifOff: typeof PlasmicImg__;
   wallet: "div";
   walletInfo: "div";
   right2: "div";
@@ -2173,7 +2396,9 @@ export const Plasmicتالار = Object.assign(
     info: makeNodeComponent("info"),
     _name: makeNodeComponent("name"),
     number: makeNodeComponent("number"),
-    editIcon: makeNodeComponent("editIcon"),
+    leftIcon: makeNodeComponent("leftIcon"),
+    notifOn: makeNodeComponent("notifOn"),
+    notifOff: makeNodeComponent("notifOff"),
     wallet: makeNodeComponent("wallet"),
     walletInfo: makeNodeComponent("walletInfo"),
     right2: makeNodeComponent("right2"),

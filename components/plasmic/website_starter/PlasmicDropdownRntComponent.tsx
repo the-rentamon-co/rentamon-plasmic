@@ -80,12 +80,12 @@ export const PlasmicDropdownRntComponent__VariantProps =
 
 export type PlasmicDropdownRntComponent__ArgsType = {
   selectedItemClicked?: boolean;
-  onSelectedItemClickedChange?: (val: string) => void;
+  onSelectedItemClickedChange2?: (val: string) => void;
 };
 type ArgPropType = keyof PlasmicDropdownRntComponent__ArgsType;
 export const PlasmicDropdownRntComponent__ArgProps = new Array<ArgPropType>(
   "selectedItemClicked",
-  "onSelectedItemClickedChange"
+  "onSelectedItemClickedChange2"
 );
 
 export type PlasmicDropdownRntComponent__OverridesType = {
@@ -103,7 +103,7 @@ export type PlasmicDropdownRntComponent__OverridesType = {
 
 export interface DefaultDropdownRntComponentProps {
   selectedItemClicked?: boolean;
-  onSelectedItemClickedChange?: (val: string) => void;
+  onSelectedItemClickedChange2?: (val: string) => void;
   className?: string;
 }
 
@@ -154,7 +154,7 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
         variableType: "boolean",
 
         valueProp: "selectedItemClicked",
-        onChangeProp: "onSelectedItemClickedChange"
+        onChangeProp: "onSelectedItemClickedChange2"
       }
     ],
     [$props, $ctx, $refs]

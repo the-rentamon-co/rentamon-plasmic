@@ -104,6 +104,33 @@
     margin-left: 0px;
   }
 }
+.notifBadge {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: var(--token-pZV_D4O-0Dnd);
+  margin-right: 0px;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  flex-shrink: 0;
+  border-radius: 30px;
+}
+@media (max-width: 500px) {
+  .notifBadge {
+    left: auto;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    display: none;
+  }
+}
 .top4 {
   display: flex;
   flex-direction: column;

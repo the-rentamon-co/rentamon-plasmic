@@ -187,7 +187,7 @@ function PlasmicNewPage2__RenderFunc(props: {
             data-plasmic-name={"dropdownRntComponent"}
             data-plasmic-override={overrides.dropdownRntComponent}
             className={classNames("__wab_instance", sty.dropdownRntComponent)}
-            onSelectedItemClickedChange={async (...eventArgs: any) => {
+            onSelectedItemClickedChange2={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, [
                 "dropdownRntComponent",
                 "selectedItemClicked"

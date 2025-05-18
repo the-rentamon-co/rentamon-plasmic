@@ -3202,21 +3202,7 @@ function PlasmicReservations__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["cancelledModal", "open"])}
             title={null}
-            trigger={
-              <AntdButton
-                className={classNames("__wab_instance", sty.button__hFjJg)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__y26GU
-                  )}
-                >
-                  {"Show modal"}
-                </div>
-              </AntdButton>
-            }
+            trigger={null}
           >
             <div className={classNames(projectcss.all, sty.freeBox__vHsu1)}>
               <div
@@ -4588,21 +4574,7 @@ function PlasmicReservations__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["choseAction", "open"])}
             title={null}
-            trigger={
-              <AntdButton
-                className={classNames("__wab_instance", sty.button__bEkYg)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aBinb
-                  )}
-                >
-                  {"Show modal"}
-                </div>
-              </AntdButton>
-            }
+            trigger={null}
           >
             <div className={classNames(projectcss.all, sty.freeBox__c0Xob)}>
               <Stack__
@@ -4795,6 +4767,30 @@ function PlasmicReservations__RenderFunc(props: {
                   typeof $steps["updateModal2Open"].then === "function"
                 ) {
                   $steps["updateModal2Open"] = await $steps["updateModal2Open"];
+                }
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          undefined,
+                          "\u0631\u0632\u0631\u0648 \u0634\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f",
+                          "top-center"
+                        ]
+                      };
+                      return $globalActions["Fragment.showToast"]?.apply(null, [
+                        ...actionArgs.args
+                      ]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
                 }
               }}
             >
@@ -5079,7 +5075,7 @@ function PlasmicReservations__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
+                      "\u0648\u06cc\u0631\u0627\u06cc\u06cc\u0634 \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
                     }
                   </div>
                 </div>
@@ -5512,6 +5508,31 @@ function PlasmicReservations__RenderFunc(props: {
                           "invokeGlobalAction"
                         ];
                       }
+
+                      $steps["invokeGlobalAction2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                undefined,
+                                "\u0631\u0632\u0631\u0648 \u0634\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0648\u06cc\u0631\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0634\u062f",
+                                "top-center"
+                              ]
+                            };
+                            return $globalActions["Fragment.showToast"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction2"] != null &&
+                        typeof $steps["invokeGlobalAction2"] === "object" &&
+                        typeof $steps["invokeGlobalAction2"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction2"] = await $steps[
+                          "invokeGlobalAction2"
+                        ];
+                      }
                     }}
                     submitsForm={false}
                   >
@@ -5523,7 +5544,7 @@ function PlasmicReservations__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u062b\u0628\u062a \u062f\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
+                        "\u0648\u06cc\u0631\u0627\u06cc\u06cc\u0634 \u0631\u0632\u0631\u0648"
                       }
                     </div>
                   </Button>
@@ -6733,95 +6754,123 @@ function PlasmicReservations__RenderFunc(props: {
               >
                 {"\u0628\u0627\u0632\u06af\u0634\u062a"}
               </Button>
-              <AntdButton
-                data-plasmic-name={"edit"}
-                data-plasmic-override={overrides.edit}
-                className={classNames("__wab_instance", sty.edit)}
-                onClick={async () => {
-                  const $steps = {};
-
-                  $steps["updateChoseActionOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["choseAction", "open"]
-                          },
-                          operation: 0,
-                          value: true
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateChoseActionOpen"] != null &&
-                    typeof $steps["updateChoseActionOpen"] === "object" &&
-                    typeof $steps["updateChoseActionOpen"].then === "function"
-                  ) {
-                    $steps["updateChoseActionOpen"] = await $steps[
-                      "updateChoseActionOpen"
+              {(() => {
+                try {
+                  return (() => {
+                    const allowed = [
+                      "دیوار",
+                      "واسط",
+                      "همکار",
+                      "اینستاگرام",
+                      "مسافر قبلی",
+                      "همکار"
                     ];
-                  }
 
-                  $steps["updateModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modal", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                    const name = $state.modalData[0].platfromName;
+                    return allowed.includes(name) ? true : false;
+                  })();
+                } catch (e) {
                   if (
-                    $steps["updateModalOpen"] != null &&
-                    typeof $steps["updateModalOpen"] === "object" &&
-                    typeof $steps["updateModalOpen"].then === "function"
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                    return true;
                   }
-                }}
-                submitsForm={false}
-                type={"default"}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__zexnj
-                  )}
+                  throw e;
+                }
+              })() ? (
+                <AntdButton
+                  data-plasmic-name={"edit"}
+                  data-plasmic-override={overrides.edit}
+                  className={classNames("__wab_instance", sty.edit)}
+                  onClick={async () => {
+                    const $steps = {};
+
+                    $steps["updateChoseActionOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["choseAction", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateChoseActionOpen"] != null &&
+                      typeof $steps["updateChoseActionOpen"] === "object" &&
+                      typeof $steps["updateChoseActionOpen"].then === "function"
+                    ) {
+                      $steps["updateChoseActionOpen"] = await $steps[
+                        "updateChoseActionOpen"
+                      ];
+                    }
+
+                    $steps["updateModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen"] != null &&
+                      typeof $steps["updateModalOpen"] === "object" &&
+                      typeof $steps["updateModalOpen"].then === "function"
+                    ) {
+                      $steps["updateModalOpen"] = await $steps[
+                        "updateModalOpen"
+                      ];
+                    }
+                  }}
+                  submitsForm={false}
+                  type={"default"}
                 >
-                  {"\u0648\u06cc\u0631\u0627\u06cc\u06cc\u0634"}
-                </div>
-              </AntdButton>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zexnj
+                    )}
+                  >
+                    {"\u0648\u06cc\u0631\u0627\u06cc\u06cc\u0634"}
+                  </div>
+                </AntdButton>
+              ) : null}
             </Stack__>
           </AntdModal>
         </div>

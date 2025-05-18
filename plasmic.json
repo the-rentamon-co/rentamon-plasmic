@@ -1822,6 +1822,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicDropdownRntComponent.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "kT-D_roF4qsx",
+          "name": "قاصدک",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicقاصدک.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/notifications.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicقاصدک.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/notifications"
         }
       ],
       "icons": [
@@ -3766,6 +3780,26 @@
           "id": "sCTlOIsBZwZi",
           "name": "image 127",
           "filePath": "../public/plasmic/website_starter/images/image127.svg"
+        },
+        {
+          "id": "P_-VU7DKhQTf",
+          "name": "image 128",
+          "filePath": "../public/plasmic/website_starter/images/image128.svg"
+        },
+        {
+          "id": "O865A6sNOpRg",
+          "name": "image 129",
+          "filePath": "../public/plasmic/website_starter/images/image129.svg"
+        },
+        {
+          "id": "9e51WUoxPZEL",
+          "name": "image 130",
+          "filePath": "../public/plasmic/website_starter/images/image130.svg"
+        },
+        {
+          "id": "S9eKTAkTJ4pq",
+          "name": "image 131",
+          "filePath": "../public/plasmic/website_starter/images/image131.svg"
         }
       ],
       "indirect": false,

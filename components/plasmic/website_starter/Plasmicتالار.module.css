@@ -312,35 +312,53 @@
     user-select: none;
   }
 }
-.editIcon {
+.leftIcon {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
   height: auto;
   max-width: 20%;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
   min-width: 0;
   padding: 8px;
 }
 @media (max-width: 350px) {
-  .editIcon {
+  .leftIcon {
     max-width: 14%;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
-.svg__lAq0C {
+.notifOn {
   object-fit: cover;
   max-width: 100%;
-  color: #acacac;
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
   flex-shrink: 0;
 }
-@media (max-width: 500px) {
-  .svg__lAq0C {
-    display: none;
+.notifOn > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 350px) {
+  .notifOn {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
   }
+}
+.notifOff {
+  object-fit: cover;
+  max-width: 100%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.notifOff > picture > img {
+  object-fit: cover;
 }
 .wallet {
   display: flex;
@@ -358,6 +376,7 @@
   .wallet {
     padding-right: 18px;
     padding-left: 18px;
+    display: none;
   }
 }
 @media (max-width: 350px) {
