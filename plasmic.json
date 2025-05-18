@@ -3800,6 +3800,11 @@
           "id": "S9eKTAkTJ4pq",
           "name": "image 131",
           "filePath": "../public/plasmic/website_starter/images/image131.svg"
+        },
+        {
+          "id": "KIB760afQOe1",
+          "name": "image 132",
+          "filePath": "../public/plasmic/website_starter/images/image132.svg"
         }
       ],
       "indirect": false,

@@ -203,6 +203,8 @@
 
 @media (max-width: 350px) {
   .plasmic_tokens {
+    --token-pZV_D4O-0Dnd: #dc2626;
+    --plasmic-token-destructive-destructive: var(--token-pZV_D4O-0Dnd);
     --token-LJG2fFX9fNUT: 1em;
     --plasmic-token-size-32: var(--token-LJG2fFX9fNUT);
   }

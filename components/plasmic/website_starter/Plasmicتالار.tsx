@@ -638,7 +638,7 @@ function Plasmicتالار__RenderFunc(props: {
                         const $steps = {};
                       }}
                       src={{
-                        src: "/plasmic/website_starter/images/image128.svg",
+                        src: "/plasmic/website_starter/images/image132.svg",
                         fullWidth: 42,
                         fullHeight: 42,
                         aspectRatio: 1
