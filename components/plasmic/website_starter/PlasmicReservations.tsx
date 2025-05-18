@@ -6884,7 +6884,7 @@ function PlasmicReservations__RenderFunc(props: {
                       sty.text__zexnj
                     )}
                   >
-                    {"\u0648\u06cc\u0631\u0627\u06cc\u06cc\u0634"}
+                    {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
                   </div>
                 </AntdButton>
               ) : null}
