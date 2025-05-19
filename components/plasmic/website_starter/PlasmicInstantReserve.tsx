@@ -634,7 +634,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   {"Loading..."}
                 </div>
               }
-              method={"GET"}
+              method={"POST"}
               onError={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, [
                   "properties",
@@ -656,7 +656,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
               ref={ref => {
                 $refs["properties"] = ref;
               }}
-              url={"https://gateway.rentamon.com/webhook/property-status?v=2"}
+              url={"https://gateway.rentamon.com/webhook/property-instant"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}
