@@ -207,9 +207,7 @@ function PlasmicTestimonial__RenderFunc(props: {
               sty.text
             )}
           >
-            {
-              "\u062e\u0637\u0627\u06cc\u06cc \u0631\u062e \u062f\u0627\u062f\u0647 \u0627\u0633\u062a"
-            }
+            {""}
           </div>
         }
         loadingDisplay={
