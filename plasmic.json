@@ -25,7 +25,7 @@
       "projectId": "7SNMkB8UMukVgcWJYokeAQ",
       "projectApiToken": "OAb8lpBormiYiN0awLwltDxEM7VDIuPwFZewHTM2lnMBqZ7ScGsDFeODYBfHWjjFc1UfX4MnZZcOutKCg",
       "projectName": "Website starter",
-      "version": ">=0.0.0",
+      "version": ">=1.1.1",
       "cssFilePath": "plasmic/website_starter/plasmic.module.css",
       "components": [
         {
