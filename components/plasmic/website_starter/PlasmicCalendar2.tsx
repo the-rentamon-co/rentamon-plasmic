@@ -863,7 +863,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                     let mon = parseInt(monStr, 10);
                     let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                   })();
                 } catch (e) {
                   if (
@@ -900,7 +900,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                     let mon = parseInt(monStr, 10);
                     let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                   })();
                 } catch (e) {
                   if (
@@ -937,7 +937,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                     let mon = parseInt(monStr, 10);
                     let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                   })();
                 } catch (e) {
                   if (
@@ -7115,7 +7115,11 @@ function PlasmicCalendar2__RenderFunc(props: {
           trigger={null}
           width={"320"}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__dmMyI)}>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__dmMyI)}
+          >
             {(() => {
               const child$Props = {
                 className: classNames("__wab_instance", sty.textarea2),
@@ -7430,7 +7434,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             >
               {"\u062b\u0628\u062a \u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
             </Button>
-          </div>
+          </Stack__>
         </AntdModal>
         <AntdModal
           data-plasmic-name={"checkForChange"}
