@@ -583,7 +583,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : false
+            : true
       },
       {
         path: "guestName.value",
@@ -680,6 +680,18 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "phoneError",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "showMobileError",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -850,7 +862,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                     let mon = parseInt(monStr, 10);
                     let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                   })();
                 } catch (e) {
                   if (
@@ -887,7 +899,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                     let mon = parseInt(monStr, 10);
                     let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                   })();
                 } catch (e) {
                   if (
@@ -924,7 +936,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                     let mon = parseInt(monStr, 10);
                     let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                   })();
                 } catch (e) {
                   if (
@@ -9434,7 +9446,7 @@ function PlasmicCalendar2__RenderFunc(props: {
 
             {(() => {
               try {
-                return $state.phoneNumber.value == "";
+                return $state.showMobileError;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -9673,7 +9685,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 isDisabled={(() => {
                   try {
                     return (
-                      $state.phoneNumber.value == "" ||
                       $state.input2.value <= 99999 ||
                       $state.input2.value == null ||
                       $state.input2.value >= 20000000 ||
@@ -9692,7 +9703,111 @@ function PlasmicCalendar2__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["updateWatingForResponse"] = true
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function toEnglishDigits(str) {
+                                const faToEn = {
+                                  "۰": "0",
+                                  "۱": "1",
+                                  "۲": "2",
+                                  "۳": "3",
+                                  "۴": "4",
+                                  "۵": "5",
+                                  "۶": "6",
+                                  "۷": "7",
+                                  "۸": "8",
+                                  "۹": "9"
+                                };
+                                return str.replace(/[۰-۹]/g, ch => faToEn[ch]);
+                              }
+                              function validateMobile() {
+                                let raw = $state.phoneNumber.value || "";
+                                const phone = toEnglishDigits(raw.trim());
+                                if (phone === "") {
+                                  $state.showMobileError = true;
+                                  $state.phoneError =
+                                    "شماره نمی‌تواند خالی باشد.";
+                                  return false;
+                                }
+                                $state.showMobileError = false;
+                                const regex = /^09\d{9}$/;
+                                if (!regex.test(phone)) {
+                                  if (phone.length !== 11) {
+                                    $state.phoneError =
+                                      "شماره باید ۱۱ رقم باشد.";
+                                  } else if (!phone.startsWith("09")) {
+                                    $state.phoneError =
+                                      "شماره باید با 09 شروع شود.";
+                                  } else {
+                                    $state.phoneError = "فرمت شماره صحیح نیست.";
+                                  }
+                                  return false;
+                                }
+                                $state.phoneError = "";
+                                return true;
+                              }
+                              const isMobileValid = validateMobile();
+                              return isMobileValid;
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+
+                  $steps["invokeGlobalAction4"] = (() => {
+                    console.log(!$steps.runCode);
+                    return !$steps.runCode;
+                  })()
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "error",
+                            (() => {
+                              try {
+                                return $state.phoneError;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            "top-center"
+                          ]
+                        };
+                        return $globalActions["Fragment.showToast"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction4"] != null &&
+                    typeof $steps["invokeGlobalAction4"] === "object" &&
+                    typeof $steps["invokeGlobalAction4"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction4"] = await $steps[
+                      "invokeGlobalAction4"
+                    ];
+                  }
+
+                  $steps["updateWatingForResponse"] = $steps.runCode
                     ? (() => {
                         const actionArgs = {
                           variable: {
@@ -9728,7 +9843,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["invokeGlobalAction"] = true
+                  $steps["invokeGlobalAction"] = $steps.runCode
                     ? (() => {
                         const actionArgs = {
                           args: [
@@ -9842,7 +9957,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
 
                   $steps["updateWatingForResponse2"] =
-                    $steps.invokeGlobalAction.status != null
+                    $steps.invokeGlobalAction.status != null && $steps.runCode
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -9880,7 +9995,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
 
                   $steps["invokeGlobalAction2"] =
-                    $steps.invokeGlobalAction.status == 200
+                    $steps.invokeGlobalAction.status == 200 && $steps.runCode
                       ? (() => {
                           const actionArgs = {
                             args: [
@@ -9906,7 +10021,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
 
                   $steps["invokeGlobalAction3"] =
-                    $steps.invokeGlobalAction.status == 422
+                    $steps.invokeGlobalAction.status == 422 && $steps.runCode
                       ? (() => {
                           const actionArgs = {
                             args: [
@@ -9932,7 +10047,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
 
                   $steps["updateAddingGuestInfoOpen"] =
-                    $steps.invokeGlobalAction.status != 422
+                    $steps.invokeGlobalAction.status != 422 && $steps.runCode
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -9968,7 +10083,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["updateStateVariable"] = true
+                  $steps["updateStateVariable"] = $steps.runCode
                     ? (() => {
                         const actionArgs = {
                           operation: 0,
@@ -10052,7 +10167,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
 
                   $steps["updateTourSteps"] =
-                    $props.isFirstVisit == true
+                    $props.isFirstVisit == true && $steps.runCode
                       ? (() => {
                           const actionArgs = {
                             variable: {

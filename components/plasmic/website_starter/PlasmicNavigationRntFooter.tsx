@@ -97,7 +97,7 @@ export const PlasmicNavigationRntFooter__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicNavigationRntFooter__OverridesType = {
   navFoot?: Flex__<"div">;
-  top?: Flex__<"div">;
+  mainStack?: Flex__<"div">;
   menu?: Flex__<"div">;
   notifStackFixator?: Flex__<"div">;
   notifBadge?: Flex__<"div">;
@@ -237,9 +237,9 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
         )}
       >
         <div
-          data-plasmic-name={"top"}
-          data-plasmic-override={overrides.top}
-          className={classNames(projectcss.all, sty.top)}
+          data-plasmic-name={"mainStack"}
+          data-plasmic-override={overrides.mainStack}
+          className={classNames(projectcss.all, sty.mainStack)}
         >
           <Stack__
             as={"div"}
@@ -1054,7 +1054,7 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
 const PlasmicDescendants = {
   navFoot: [
     "navFoot",
-    "top",
+    "mainStack",
     "menu",
     "notifStackFixator",
     "notifBadge",
@@ -1076,8 +1076,8 @@ const PlasmicDescendants = {
     "normProps",
     "sideEffect"
   ],
-  top: [
-    "top",
+  mainStack: [
+    "mainStack",
     "menu",
     "notifStackFixator",
     "notifBadge",
@@ -1132,7 +1132,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   navFoot: "div";
-  top: "div";
+  mainStack: "div";
   menu: "div";
   notifStackFixator: "div";
   notifBadge: "div";
@@ -1215,7 +1215,7 @@ export const PlasmicNavigationRntFooter = Object.assign(
   makeNodeComponent("navFoot"),
   {
     // Helper components rendering sub-elements
-    top: makeNodeComponent("top"),
+    mainStack: makeNodeComponent("mainStack"),
     menu: makeNodeComponent("menu"),
     notifStackFixator: makeNodeComponent("notifStackFixator"),
     notifBadge: makeNodeComponent("notifBadge"),

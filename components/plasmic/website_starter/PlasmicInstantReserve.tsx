@@ -656,7 +656,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
               ref={ref => {
                 $refs["properties"] = ref;
               }}
-              url={"https://gateway.rentamon.com/webhook/property-instant"}
+              url={"https://gateway.rentamon.com/webhook/property-instant?v=2"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}

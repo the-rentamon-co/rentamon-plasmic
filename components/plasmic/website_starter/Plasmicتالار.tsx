@@ -567,7 +567,8 @@ function Plasmicتالار__RenderFunc(props: {
                               objRoot: $state,
                               variablePath: ["isNotify"]
                             },
-                            operation: 4
+                            operation: 0,
+                            value: ($state.isNotify = true)
                           };
                           return (({
                             variable,
@@ -580,9 +581,8 @@ function Plasmicتالار__RenderFunc(props: {
                             }
                             const { objRoot, variablePath } = variable;
 
-                            const oldValue = $stateGet(objRoot, variablePath);
-                            $stateSet(objRoot, variablePath, !oldValue);
-                            return !oldValue;
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
                           })?.apply(null, [actionArgs]);
                         })()
                       : undefined;

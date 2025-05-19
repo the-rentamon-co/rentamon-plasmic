@@ -445,7 +445,13 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return $state.modalData[0].GuestName;
+              return (() => {
+                if ($state.modalData[0].GuestName == "-") {
+                  return null;
+                } else {
+                  return $state.modalData[0].GuestName;
+                }
+              })();
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -538,7 +544,13 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return $state.modalData[0].phone_number;
+              return (() => {
+                if ($state.modalData[0].phone_number == "-") {
+                  return null;
+                } else {
+                  return $state.modalData[0].phone_number;
+                }
+              })();
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -3253,18 +3265,19 @@ function PlasmicReservations__RenderFunc(props: {
                 )}
               >
                 <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 "
+                  {(() => {
+                    try {
+                      return `مطمئنی می‌خوای رزرو  ${$state.modalData[0].enterDate}  تا  ${$state.modalData[0].laveDate} رو لغو کنی؟`;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0631\u0632\u0631\u0648 ... \u062a\u0627 ... \u0631\u0648 \u0644\u063a\u0648 \u06a9\u0646\u06cc\u061f";
+                      }
+                      throw e;
                     }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"\u0644\u063a\u0648 "}
-                  </span>
-                  <React.Fragment>{"\u06a9\u0646\u06cc\u061f"}</React.Fragment>
+                  })()}
                 </React.Fragment>
               </div>
               <div
@@ -3275,18 +3288,19 @@ function PlasmicReservations__RenderFunc(props: {
                 )}
               >
                 <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0631\u0648\u0632\u0647\u0627\u06cc \u0631\u0632\u0631\u0648 \u0634\u062f\u0647 \u00ab"
+                  {(() => {
+                    try {
+                      return `در صورت لغو، این روزها برای واحد «${$state.modalData[0].propertyName}» خالی می‌شن.`;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0628\u0631\u0627\u06cc \u0648\u0627\u062d\u062f \u00ab\u0641\u0644\u0627\u0646\u00bb \u062e\u0627\u0644\u06cc \u0645\u06cc\u200c\u0634\u0646.\r";
+                      }
+                      throw e;
                     }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"\u0628\u0627\u0632 \u0645\u06cc\u200c\u0634\u0647"}
-                  </span>
-                  <React.Fragment>{"\u00bb!"}</React.Fragment>
+                  })()}
                 </React.Fragment>
               </div>
               <Stack__
@@ -5288,7 +5302,7 @@ function PlasmicReservations__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0648\u06cc\u0631\u0627\u06cc\u06cc\u0634 \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
+                      "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
                     }
                   </div>
                 </div>
@@ -5980,6 +5994,9 @@ function PlasmicReservations__RenderFunc(props: {
             data-plasmic-name={"modal"}
             data-plasmic-override={overrides.modal}
             className={classNames("__wab_instance", sty.modal)}
+            closeButtonClassName={classNames({
+              [sty["pcls_OepDjGThmxfE"]]: true
+            })}
             defaultStylesClassName={classNames(
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
@@ -6002,6 +6019,9 @@ function PlasmicReservations__RenderFunc(props: {
                 throw e;
               }
             })()}
+            modalContentClassName={classNames({
+              [sty["pcls_XLhQbjvA9LlE"]]: true
+            })}
             modalScopeClassName={sty["modal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["modal", "open"]).apply(
@@ -6544,6 +6564,7 @@ function PlasmicReservations__RenderFunc(props: {
             }
             trigger={null}
             width={"350"}
+            wrapClassName={classNames({ [sty["pcls_tOja-se3vysu"]]: true })}
           >
             {(() => {
               try {
@@ -7385,11 +7406,15 @@ function PlasmicReservations__RenderFunc(props: {
                       "همکار",
                       "اینستاگرام",
                       "مسافر قبلی",
-                      "همکار"
+                      "همکار",
+                      "نامشخص"
                     ];
 
                     const name = $state.modalData[0].platfromName;
-                    return allowed.includes(name) ? true : false;
+                    return allowed.includes(name) &&
+                      $state.modalData[0].status != "Cancelled"
+                      ? true
+                      : false;
                   })();
                 } catch (e) {
                   if (
