@@ -1228,41 +1228,84 @@ function PlasmicProCalendar__RenderFunc(props: {
             data-plasmic-name={"modal"}
             data-plasmic-override={overrides.modal}
             className={classNames("__wab_instance", sty.modal)}
-            closeOnBackdropClick={false}
+            closeOnBackdropClick={true}
             content={
-              <div className={classNames(projectcss.all, sty.freeBox___2VbVu)}>
+              <React.Fragment>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kdONn
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox___2VbVu)}
                 >
-                  {"\ud83d\udc77\ud83c\udffb\u200d\u2642\ufe0f"}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kdONn
+                    )}
+                  >
+                    {"\ud83d\udc77\ud83c\udffb\u200d\u2642\ufe0f"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__nm0FY
+                    )}
+                  >
+                    {
+                      "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0628\u0647 \u067e\u0627\u06cc\u0627\u0646 \u0631\u0633\u06cc\u062f"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xDcVd
+                    )}
+                  >
+                    {
+                      "\u0627\u06af\u0647 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0648\u0627\u062c\u0647 \u0634\u062f\u06cc\u060c \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647"
+                    }
+                  </div>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nm0FY
-                  )}
-                >
-                  {
-                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0627\u0633\u062a"
-                  }
+                <div className={classNames(projectcss.all, sty.freeBox__pnYtc)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__u83A9,
+                      "clickable"
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return window.open(
+                                    "https://www.goftino.com/c/WgsGXv"
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
+                  >
+                    {"\u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646"}
+                  </div>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xDcVd
-                  )}
-                >
-                  {
-                    "\u0627\u0632 \u0635\u0628\u0631 \u0648 \u0634\u06a9\u06cc\u0628\u0627\u06cc\u06cc \u0634\u0645\u0627 \u0633\u067e\u0627\u0633\u06af\u0630\u0627\u0631\u06cc\u0645"
-                  }
-                </div>
-              </div>
+              </React.Fragment>
             }
             footer={null}
             heading={null}
