@@ -583,7 +583,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : false
+            : true
       },
       {
         path: "guestName.value",
@@ -671,6 +671,12 @@ function PlasmicCalendar2__RenderFunc(props: {
       },
       {
         path: "input2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "variable",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
@@ -4734,64 +4740,72 @@ function PlasmicCalendar2__RenderFunc(props: {
             title={
               <React.Fragment>
                 <div className={classNames(projectcss.all, sty.freeBox__xlGco)}>
-                  {(() => {
-                    try {
-                      return Object.keys($state.platformRequestStatus).length;
-                    } catch (e) {
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mybxy)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateUpdateStyle"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["updateStyle"]
+                              },
+                              operation: 0,
+                              value: ($state.updateStyle =
+                                $state.updateStyle + 1)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
                       if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
+                        $steps["updateUpdateStyle"] != null &&
+                        typeof $steps["updateUpdateStyle"] === "object" &&
+                        typeof $steps["updateUpdateStyle"].then === "function"
                       ) {
-                        return true;
+                        $steps["updateUpdateStyle"] = await $steps[
+                          "updateUpdateStyle"
+                        ];
                       }
-                      throw e;
-                    }
-                  })() ? (
-                    <Icon23Icon
-                      className={classNames(projectcss.all, sty.svg__rElTd, ``)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["updateUpdateStyle"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["updateStyle"]
-                                },
-                                operation: 0,
-                                value: ($state.updateStyle =
-                                  $state.updateStyle + 1)
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
+                    }}
+                  >
+                    {(() => {
+                      try {
+                        return Object.keys($state.platformRequestStatus).length;
+                      } catch (e) {
                         if (
-                          $steps["updateUpdateStyle"] != null &&
-                          typeof $steps["updateUpdateStyle"] === "object" &&
-                          typeof $steps["updateUpdateStyle"].then === "function"
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          $steps["updateUpdateStyle"] = await $steps[
-                            "updateUpdateStyle"
-                          ];
+                          return true;
                         }
-                      }}
-                      role={"img"}
-                    />
-                  ) : null}
+                        throw e;
+                      }
+                    })() ? (
+                      <Icon23Icon
+                        className={classNames(
+                          projectcss.all,
+                          sty.svg__rElTd,
+                          ``
+                        )}
+                        role={"img"}
+                      />
+                    ) : null}
+                  </div>
                 </div>
                 <div
                   className={classNames(

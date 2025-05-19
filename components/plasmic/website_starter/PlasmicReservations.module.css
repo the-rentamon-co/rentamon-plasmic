@@ -2537,7 +2537,7 @@
   font-weight: 500;
   text-align: center;
   color: var(--token-n891C0rZfC8n);
-  padding-right: 5px;
+  padding: 0px;
 }
 .p1 {
   display: flex;
@@ -2772,6 +2772,29 @@
   object-fit: cover;
   width: auto;
   height: 1em;
+}
+.freeBox___9IfIs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.img__uS9Ka {
+  object-fit: cover;
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 21px;
+  cursor: pointer;
+}
+.img__uS9Ka > picture > img {
+  object-fit: cover;
 }
 .modal:global(.__wab_instance) {
   max-width: 100%;
@@ -3394,13 +3417,25 @@
   width: auto;
   height: 1em;
 }
+.freeBox__jsaoz {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+}
 .edit:global(.__wab_instance) {
-  max-width: 50%;
+  max-width: 100%;
   object-fit: cover;
   background: none;
   height: 56px;
   width: 100%;
   min-width: 0;
+  flex-shrink: 0;
   border-radius: 30px;
   border: 3px solid var(--token-8nedppYkGVaH);
 }
@@ -3466,6 +3501,7 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
+  text-align: center;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -3506,6 +3542,54 @@
   height: 42px;
 }
 .shab > picture > img {
+  object-fit: cover;
+}
+.divar {
+  object-fit: cover;
+  max-width: 100%;
+  height: 42px;
+}
+.divar > picture > img {
+  object-fit: cover;
+}
+.prevGuest {
+  object-fit: cover;
+  max-width: 100%;
+  height: 42px;
+}
+.prevGuest > picture > img {
+  object-fit: cover;
+}
+.colleague {
+  object-fit: cover;
+  max-width: 100%;
+  height: 42px;
+}
+.colleague > picture > img {
+  object-fit: cover;
+}
+.others {
+  object-fit: cover;
+  max-width: 100%;
+  height: 42px;
+}
+.others > picture > img {
+  object-fit: cover;
+}
+.broker {
+  object-fit: cover;
+  max-width: 100%;
+  height: 42px;
+}
+.broker > picture > img {
+  object-fit: cover;
+}
+.instagram {
+  object-fit: cover;
+  max-width: 100%;
+  height: 42px;
+}
+.instagram > picture > img {
   object-fit: cover;
 }
 .jabama {

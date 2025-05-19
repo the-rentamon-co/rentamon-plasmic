@@ -3805,6 +3805,61 @@
           "id": "KIB760afQOe1",
           "name": "image 132",
           "filePath": "../public/plasmic/website_starter/images/image132.svg"
+        },
+        {
+          "id": "7Gc10qXWiklH",
+          "name": "image 133",
+          "filePath": "../public/plasmic/website_starter/images/image133.svg"
+        },
+        {
+          "id": "qIkRFfC1IsPS",
+          "name": "icon - divar.png",
+          "filePath": "../public/plasmic/website_starter/images/iconDivarPng.png"
+        },
+        {
+          "id": "0nt_nDUFydJi",
+          "name": "icon - insta.png",
+          "filePath": "../public/plasmic/website_starter/images/iconInstaPng.png"
+        },
+        {
+          "id": "B4A1tMOh7MDQ",
+          "name": "icon - middle-man.png",
+          "filePath": "../public/plasmic/website_starter/images/iconMiddleManPng.png"
+        },
+        {
+          "id": "rXsrN1cX_lMW",
+          "name": "icon - other.png",
+          "filePath": "../public/plasmic/website_starter/images/iconOtherPng.png"
+        },
+        {
+          "id": "XQS_odNEw_bP",
+          "name": "icon - colleague.png",
+          "filePath": "../public/plasmic/website_starter/images/iconColleaguePng.png"
+        },
+        {
+          "id": "s64Bez7bdqau",
+          "name": "icon - returned.png",
+          "filePath": "../public/plasmic/website_starter/images/iconReturnedPng.png"
+        },
+        {
+          "id": "UNonKv8EV05d",
+          "name": "image 134",
+          "filePath": "../public/plasmic/website_starter/images/image134.svg"
+        },
+        {
+          "id": "KRakenhEg_dQ",
+          "name": "image 135",
+          "filePath": "../public/plasmic/website_starter/images/image135.svg"
+        },
+        {
+          "id": "OqSDolaqglAz",
+          "name": "image 136",
+          "filePath": "../public/plasmic/website_starter/images/image136.svg"
+        },
+        {
+          "id": "D5aANKVPb3zf",
+          "name": "image 137",
+          "filePath": "../public/plasmic/website_starter/images/image137.svg"
         }
       ],
       "indirect": false,

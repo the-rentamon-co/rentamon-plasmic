@@ -254,10 +254,8 @@ function Plasmicتالار__RenderFunc(props: {
                   return localStorage.getItem("is_notify") !== null;
                 }
                 if (isNotifyEnabled()) {
-                  console.log("نوتیفیکیشن فعال است.");
                   return true;
                 } else {
-                  console.log("نوتیفیکیشن غیرفعال است.");
                   return false;
                 }
               })();
@@ -621,28 +619,41 @@ function Plasmicتالار__RenderFunc(props: {
                       className={classNames(sty.notifOn, "clickable")}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "36px"
-                          : "40px"
+                          ? "100%"
+                          : "31px"
                       }
                       displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : "100%"
+                      }
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "36px"
-                          : "40px"
+                          ? "32px"
+                          : "33px"
                       }
                       loading={"lazy"}
                       onClick={async event => {
                         const $steps = {};
                       }}
-                      src={{
-                        src: "/plasmic/website_starter/images/image132.svg",
-                        fullWidth: 42,
-                        fullHeight: 42,
-                        aspectRatio: 1
-                      }}
+                      src={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/image137.svg",
+                              fullWidth: 39,
+                              fullHeight: 37,
+                              aspectRatio: 1.054054
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/image134.svg",
+                              fullWidth: 44,
+                              fullHeight: 41,
+                              aspectRatio: 1.073171
+                            }
+                      }
                     />
                   ) : null}
                   {(
@@ -667,19 +678,32 @@ function Plasmicتالار__RenderFunc(props: {
                       data-plasmic-override={overrides.notifOff}
                       alt={""}
                       className={classNames(sty.notifOff, "clickable")}
-                      displayHeight={"38px"}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : "30px"
+                      }
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
-                      displayWidth={"38px"}
+                      displayWidth={"30px"}
                       loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image129.svg",
-                        fullWidth: 40,
-                        fullHeight: 40,
-                        aspectRatio: 1
-                      }}
+                      src={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/image136.svg",
+                              fullWidth: 36,
+                              fullHeight: 35,
+                              aspectRatio: 1.028571
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/image135.svg",
+                              fullWidth: 40,
+                              fullHeight: 40,
+                              aspectRatio: 1
+                            }
+                      }
                     />
                   ) : null}
                 </div>
