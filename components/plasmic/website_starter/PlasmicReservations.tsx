@@ -72,10 +72,10 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import EditReserveInfo from "../../EditReserveInfo"; // plasmic-import: IxuDnIzMrMZF/component
-import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
+import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -88,6 +88,7 @@ import sty from "./PlasmicReservations.module.css"; // plasmic-import: gvjKIi6-p
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
+import Icon83Icon from "./icons/PlasmicIcon__Icon83"; // plasmic-import: gfE8ZaasAWNB/icon
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 
 createPlasmicElementProxy;
@@ -154,18 +155,19 @@ export type PlasmicReservations__OverridesType = {
   editReserveInfo?: Flex__<typeof EditReserveInfo>;
   form?: Flex__<"div">;
   title?: Flex__<"div">;
-  p1?: Flex__<"div">;
-  guestName2?: Flex__<typeof TextInput>;
   p4?: Flex__<"div">;
   referrer?: Flex__<"div">;
   guestReferrer?: Flex__<typeof Select>;
   count2?: Flex__<"div">;
   guestCount?: Flex__<typeof AntdInputNumber>;
-  p2?: Flex__<"div">;
-  phoneNumber?: Flex__<typeof TextInput>;
+  svg?: Flex__<"svg">;
   p3?: Flex__<"div">;
   amount2?: Flex__<typeof Input>;
   amount?: Flex__<typeof AntdInputNumber>;
+  p1?: Flex__<"div">;
+  guestName2?: Flex__<typeof TextInput>;
+  p2?: Flex__<"div">;
+  phoneNumber?: Flex__<typeof TextInput>;
   p5?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
@@ -5404,40 +5406,6 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
               </div>
               <div
-                data-plasmic-name={"p1"}
-                data-plasmic-override={overrides.p1}
-                className={classNames(projectcss.all, sty.p1)}
-              >
-                <TextInput
-                  data-plasmic-name={"guestName2"}
-                  data-plasmic-override={overrides.guestName2}
-                  className={classNames("__wab_instance", sty.guestName2)}
-                  onChange={async (...eventArgs: any) => {
-                    ((...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "guestName2",
-                        "value"
-                      ])((e => e.target?.value).apply(null, eventArgs));
-                    }).apply(null, eventArgs);
-
-                    if (
-                      eventArgs.length > 1 &&
-                      eventArgs[1] &&
-                      eventArgs[1]._plasmic_state_init_
-                    ) {
-                      return;
-                    }
-                  }}
-                  placeholder={
-                    "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"
-                  }
-                  value={
-                    generateStateValueProp($state, ["guestName2", "value"]) ??
-                    ""
-                  }
-                />
-              </div>
-              <div
                 data-plasmic-name={"p4"}
                 data-plasmic-override={overrides.p4}
                 className={classNames(projectcss.all, sty.p4)}
@@ -5536,7 +5504,97 @@ function PlasmicReservations__RenderFunc(props: {
                       "value"
                     ])}
                   />
+
+                  <Icon83Icon
+                    data-plasmic-name={"svg"}
+                    data-plasmic-override={overrides.svg}
+                    className={classNames(projectcss.all, sty.svg)}
+                    role={"img"}
+                  />
                 </div>
+              </div>
+              <div
+                data-plasmic-name={"p3"}
+                data-plasmic-override={overrides.p3}
+                className={classNames(projectcss.all, sty.p3)}
+              >
+                <Input
+                  data-plasmic-name={"amount2"}
+                  data-plasmic-override={overrides.amount2}
+                  className={classNames("__wab_instance", sty.amount2)}
+                  onChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "amount2",
+                      "value"
+                    ]).apply(null, eventArgs);
+                  }}
+                  placeholder={
+                    "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+                  }
+                  type={"number"}
+                  value={generateStateValueProp($state, ["amount2", "value"])}
+                />
+
+                <AntdInputNumber
+                  data-plasmic-name={"amount"}
+                  data-plasmic-override={overrides.amount}
+                  className={classNames("__wab_instance", sty.amount)}
+                  onChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "amount",
+                      "value"
+                    ]).apply(null, eventArgs);
+                  }}
+                  placeholder={
+                    "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+                  }
+                  type={"number"}
+                  value={generateStateValueProp($state, ["amount", "value"])}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__re5Kj
+                  )}
+                >
+                  {""}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"p1"}
+                data-plasmic-override={overrides.p1}
+                className={classNames(projectcss.all, sty.p1)}
+              >
+                <TextInput
+                  data-plasmic-name={"guestName2"}
+                  data-plasmic-override={overrides.guestName2}
+                  className={classNames("__wab_instance", sty.guestName2)}
+                  onChange={async (...eventArgs: any) => {
+                    ((...eventArgs) => {
+                      generateStateOnChangeProp($state, [
+                        "guestName2",
+                        "value"
+                      ])((e => e.target?.value).apply(null, eventArgs));
+                    }).apply(null, eventArgs);
+
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
+                  }}
+                  placeholder={
+                    "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"
+                  }
+                  value={
+                    generateStateValueProp($state, ["guestName2", "value"]) ??
+                    ""
+                  }
+                />
               </div>
               <div
                 data-plasmic-name={"p2"}
@@ -5604,55 +5662,6 @@ function PlasmicReservations__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 ) : null}
-              </div>
-              <div
-                data-plasmic-name={"p3"}
-                data-plasmic-override={overrides.p3}
-                className={classNames(projectcss.all, sty.p3)}
-              >
-                <Input
-                  data-plasmic-name={"amount2"}
-                  data-plasmic-override={overrides.amount2}
-                  className={classNames("__wab_instance", sty.amount2)}
-                  onChange={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "amount2",
-                      "value"
-                    ]).apply(null, eventArgs);
-                  }}
-                  placeholder={
-                    "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
-                  }
-                  type={"number"}
-                  value={generateStateValueProp($state, ["amount2", "value"])}
-                />
-
-                <AntdInputNumber
-                  data-plasmic-name={"amount"}
-                  data-plasmic-override={overrides.amount}
-                  className={classNames("__wab_instance", sty.amount)}
-                  onChange={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "amount",
-                      "value"
-                    ]).apply(null, eventArgs);
-                  }}
-                  placeholder={
-                    "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
-                  }
-                  type={"number"}
-                  value={generateStateValueProp($state, ["amount", "value"])}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__re5Kj
-                  )}
-                >
-                  {""}
-                </div>
               </div>
               <div
                 data-plasmic-name={"p5"}
@@ -7675,18 +7684,19 @@ const PlasmicDescendants = {
     "editReserveInfo",
     "form",
     "title",
-    "p1",
-    "guestName2",
     "p4",
     "referrer",
     "guestReferrer",
     "count2",
     "guestCount",
-    "p2",
-    "phoneNumber",
+    "svg",
     "p3",
     "amount2",
     "amount",
+    "p1",
+    "guestName2",
+    "p2",
+    "phoneNumber",
     "p5",
     "modal",
     "main",
@@ -7812,51 +7822,54 @@ const PlasmicDescendants = {
     "editReserveInfo",
     "form",
     "title",
-    "p1",
-    "guestName2",
     "p4",
     "referrer",
     "guestReferrer",
     "count2",
     "guestCount",
-    "p2",
-    "phoneNumber",
+    "svg",
     "p3",
     "amount2",
     "amount",
+    "p1",
+    "guestName2",
+    "p2",
+    "phoneNumber",
     "p5"
   ],
   editReserveInfo: ["editReserveInfo"],
   form: [
     "form",
     "title",
-    "p1",
-    "guestName2",
     "p4",
     "referrer",
     "guestReferrer",
     "count2",
     "guestCount",
-    "p2",
-    "phoneNumber",
+    "svg",
     "p3",
     "amount2",
     "amount",
+    "p1",
+    "guestName2",
+    "p2",
+    "phoneNumber",
     "p5"
   ],
   title: ["title"],
-  p1: ["p1", "guestName2"],
-  guestName2: ["guestName2"],
-  p4: ["p4", "referrer", "guestReferrer", "count2", "guestCount"],
+  p4: ["p4", "referrer", "guestReferrer", "count2", "guestCount", "svg"],
   referrer: ["referrer", "guestReferrer"],
   guestReferrer: ["guestReferrer"],
-  count2: ["count2", "guestCount"],
+  count2: ["count2", "guestCount", "svg"],
   guestCount: ["guestCount"],
-  p2: ["p2", "phoneNumber"],
-  phoneNumber: ["phoneNumber"],
+  svg: ["svg"],
   p3: ["p3", "amount2", "amount"],
   amount2: ["amount2"],
   amount: ["amount"],
+  p1: ["p1", "guestName2"],
+  guestName2: ["guestName2"],
+  p2: ["p2", "phoneNumber"],
+  phoneNumber: ["phoneNumber"],
   p5: ["p5"],
   modal: [
     "modal",
@@ -7999,18 +8012,19 @@ type NodeDefaultElementType = {
   editReserveInfo: typeof EditReserveInfo;
   form: "div";
   title: "div";
-  p1: "div";
-  guestName2: typeof TextInput;
   p4: "div";
   referrer: "div";
   guestReferrer: typeof Select;
   count2: "div";
   guestCount: typeof AntdInputNumber;
-  p2: "div";
-  phoneNumber: typeof TextInput;
+  svg: "svg";
   p3: "div";
   amount2: typeof Input;
   amount: typeof AntdInputNumber;
+  p1: "div";
+  guestName2: typeof TextInput;
+  p2: "div";
+  phoneNumber: typeof TextInput;
   p5: "div";
   modal: typeof AntdModal;
   main: "div";
@@ -8154,18 +8168,19 @@ export const PlasmicReservations = Object.assign(
     editReserveInfo: makeNodeComponent("editReserveInfo"),
     form: makeNodeComponent("form"),
     title: makeNodeComponent("title"),
-    p1: makeNodeComponent("p1"),
-    guestName2: makeNodeComponent("guestName2"),
     p4: makeNodeComponent("p4"),
     referrer: makeNodeComponent("referrer"),
     guestReferrer: makeNodeComponent("guestReferrer"),
     count2: makeNodeComponent("count2"),
     guestCount: makeNodeComponent("guestCount"),
-    p2: makeNodeComponent("p2"),
-    phoneNumber: makeNodeComponent("phoneNumber"),
+    svg: makeNodeComponent("svg"),
     p3: makeNodeComponent("p3"),
     amount2: makeNodeComponent("amount2"),
     amount: makeNodeComponent("amount"),
+    p1: makeNodeComponent("p1"),
+    guestName2: makeNodeComponent("guestName2"),
+    p2: makeNodeComponent("p2"),
+    phoneNumber: makeNodeComponent("phoneNumber"),
     p5: makeNodeComponent("p5"),
     modal: makeNodeComponent("modal"),
     main: makeNodeComponent("main"),

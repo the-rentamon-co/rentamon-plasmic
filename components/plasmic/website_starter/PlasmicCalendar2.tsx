@@ -89,6 +89,7 @@ import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: TftNRT3
 import Icon16Icon from "./icons/PlasmicIcon__Icon16"; // plasmic-import: PIv_Q4vxdPrZ/icon
 import Icon25Icon from "./icons/PlasmicIcon__Icon25"; // plasmic-import: JGzy20bJEzcD/icon
 import Icon24Icon from "./icons/PlasmicIcon__Icon24"; // plasmic-import: zCddQXMUCxH0/icon
+import Icon83Icon from "./icons/PlasmicIcon__Icon83"; // plasmic-import: gfE8ZaasAWNB/icon
 
 createPlasmicElementProxy;
 
@@ -163,18 +164,18 @@ export type PlasmicCalendar2__OverridesType = {
   submitChange?: Flex__<"div">;
   addingGuestInfo?: Flex__<typeof AntdModal>;
   form?: Flex__<"div">;
-  p1?: Flex__<"div">;
-  guestName?: Flex__<typeof TextInput>;
   p4?: Flex__<"div">;
   referrer?: Flex__<"div">;
   guestReferrer?: Flex__<typeof Select>;
   count2?: Flex__<"div">;
   guestCount?: Flex__<typeof AntdInputNumber>;
-  p2?: Flex__<"div">;
-  phoneNumber?: Flex__<typeof TextInput>;
   p3?: Flex__<"div">;
   input2?: Flex__<typeof Input>;
   amount?: Flex__<typeof AntdInputNumber>;
+  p1?: Flex__<"div">;
+  guestName?: Flex__<typeof TextInput>;
+  p2?: Flex__<"div">;
+  phoneNumber?: Flex__<typeof TextInput>;
   p5?: Flex__<"div">;
 };
 
@@ -583,7 +584,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : true
+            : false
       },
       {
         path: "guestName.value",
@@ -972,7 +973,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     }
                     let mon = parseInt(monStr, 10);
                     let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                    return `https://gateway.rentamon.com/webhook/get_calendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                    return `https://gateway.rentamon.com/webhook/9adaa2c3-6de0-4f0f-ade3-0fdade97cb12?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                   })();
                 } catch (e) {
                   if (
@@ -9231,9 +9232,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 sty.text__acyke
               )}
             >
-              {
-                "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
-              }
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "\u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0631\u0632\u0631\u0648"
+                : "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"}
             </div>
             <Icon23Icon
               className={classNames(projectcss.all, sty.svg__yj0Tz)}
@@ -9289,36 +9290,6 @@ function PlasmicCalendar2__RenderFunc(props: {
           data-plasmic-override={overrides.form}
           className={classNames(projectcss.all, sty.form)}
         >
-          <div
-            data-plasmic-name={"p1"}
-            data-plasmic-override={overrides.p1}
-            className={classNames(projectcss.all, sty.p1)}
-          >
-            <TextInput
-              data-plasmic-name={"guestName"}
-              data-plasmic-override={overrides.guestName}
-              className={classNames("__wab_instance", sty.guestName)}
-              onChange={async (...eventArgs: any) => {
-                ((...eventArgs) => {
-                  generateStateOnChangeProp($state, ["guestName", "value"])(
-                    (e => e.target?.value).apply(null, eventArgs)
-                  );
-                }).apply(null, eventArgs);
-
-                if (
-                  eventArgs.length > 1 &&
-                  eventArgs[1] &&
-                  eventArgs[1]._plasmic_state_init_
-                ) {
-                  return;
-                }
-              }}
-              placeholder={"\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
-              value={
-                generateStateValueProp($state, ["guestName", "value"]) ?? ""
-              }
-            />
-          </div>
           <div
             data-plasmic-name={"p4"}
             data-plasmic-override={overrides.p4}
@@ -9391,9 +9362,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ])}
               />
             </div>
-            <div
+            <Stack__
+              as={"div"}
               data-plasmic-name={"count2"}
               data-plasmic-override={overrides.count2}
+              hasGap={true}
               className={classNames(projectcss.all, sty.count2)}
             >
               <AntdInputNumber
@@ -9406,76 +9379,20 @@ function PlasmicCalendar2__RenderFunc(props: {
                     "value"
                   ]).apply(null, eventArgs);
                 }}
-                placeholder={"\u0646\u0641\u0631\u0627\u062a"}
+                placeholder={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a"
+                    : "\u0646\u0641\u0631\u0627\u062a"
+                }
                 type={"number"}
                 value={generateStateValueProp($state, ["guestCount", "value"])}
               />
-            </div>
-          </div>
-          <div
-            data-plasmic-name={"p2"}
-            data-plasmic-override={overrides.p2}
-            className={classNames(projectcss.all, sty.p2)}
-          >
-            <TextInput
-              data-plasmic-name={"phoneNumber"}
-              data-plasmic-override={overrides.phoneNumber}
-              className={classNames("__wab_instance", sty.phoneNumber)}
-              onChange={async (...eventArgs: any) => {
-                ((...eventArgs) => {
-                  generateStateOnChangeProp($state, ["phoneNumber", "value"])(
-                    (e => e.target?.value).apply(null, eventArgs)
-                  );
-                }).apply(null, eventArgs);
 
-                if (
-                  eventArgs.length > 1 &&
-                  eventArgs[1] &&
-                  eventArgs[1]._plasmic_state_init_
-                ) {
-                  return;
-                }
-              }}
-              placeholder={"\u0645\u0648\u0628\u0627\u06cc\u0644"}
-              required={true}
-              type={"number"}
-              value={
-                generateStateValueProp($state, ["phoneNumber", "value"]) ?? ""
-              }
-            />
-
-            {(() => {
-              try {
-                return $state.showMobileError;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mlZuc
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#DC2626" }}
-                  >
-                    {
-                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0627\u062c\u0628\u0627\u0631\u06cc\u0633\u062a"
-                    }
-                  </span>
-                </React.Fragment>
-              </div>
-            ) : null}
+              <Icon83Icon
+                className={classNames(projectcss.all, sty.svg__wuzF)}
+                role={"img"}
+              />
+            </Stack__>
           </div>
           <div
             data-plasmic-name={"p3"}
@@ -9653,6 +9570,101 @@ function PlasmicCalendar2__RenderFunc(props: {
                 })()}
               </React.Fragment>
             </div>
+          </div>
+          <div
+            data-plasmic-name={"p1"}
+            data-plasmic-override={overrides.p1}
+            className={classNames(projectcss.all, sty.p1)}
+          >
+            <TextInput
+              data-plasmic-name={"guestName"}
+              data-plasmic-override={overrides.guestName}
+              className={classNames("__wab_instance", sty.guestName)}
+              onChange={async (...eventArgs: any) => {
+                ((...eventArgs) => {
+                  generateStateOnChangeProp($state, ["guestName", "value"])(
+                    (e => e.target?.value).apply(null, eventArgs)
+                  );
+                }).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              placeholder={"\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
+              value={
+                generateStateValueProp($state, ["guestName", "value"]) ?? ""
+              }
+            />
+          </div>
+          <div
+            data-plasmic-name={"p2"}
+            data-plasmic-override={overrides.p2}
+            className={classNames(projectcss.all, sty.p2)}
+          >
+            <TextInput
+              data-plasmic-name={"phoneNumber"}
+              data-plasmic-override={overrides.phoneNumber}
+              className={classNames("__wab_instance", sty.phoneNumber)}
+              onChange={async (...eventArgs: any) => {
+                ((...eventArgs) => {
+                  generateStateOnChangeProp($state, ["phoneNumber", "value"])(
+                    (e => e.target?.value).apply(null, eventArgs)
+                  );
+                }).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              placeholder={"\u0645\u0648\u0628\u0627\u06cc\u0644"}
+              required={true}
+              type={"number"}
+              value={
+                generateStateValueProp($state, ["phoneNumber", "value"]) ?? ""
+              }
+            />
+
+            {(() => {
+              try {
+                return $state.showMobileError;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__mlZuc
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#DC2626" }}
+                  >
+                    {
+                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0627\u062c\u0628\u0627\u0631\u06cc\u0633\u062a"
+                    }
+                  </span>
+                </React.Fragment>
+              </div>
+            ) : null}
           </div>
           <div
             data-plasmic-name={"p5"}
@@ -10311,18 +10323,18 @@ const PlasmicDescendants = {
     "submitChange",
     "addingGuestInfo",
     "form",
-    "p1",
-    "guestName",
     "p4",
     "referrer",
     "guestReferrer",
     "count2",
     "guestCount",
-    "p2",
-    "phoneNumber",
     "p3",
     "input2",
     "amount",
+    "p1",
+    "guestName",
+    "p2",
+    "phoneNumber",
     "p5"
   ],
   apiRequest: ["apiRequest"],
@@ -10402,48 +10414,48 @@ const PlasmicDescendants = {
   addingGuestInfo: [
     "addingGuestInfo",
     "form",
-    "p1",
-    "guestName",
     "p4",
     "referrer",
     "guestReferrer",
     "count2",
     "guestCount",
-    "p2",
-    "phoneNumber",
     "p3",
     "input2",
     "amount",
+    "p1",
+    "guestName",
+    "p2",
+    "phoneNumber",
     "p5"
   ],
   form: [
     "form",
-    "p1",
-    "guestName",
     "p4",
     "referrer",
     "guestReferrer",
     "count2",
     "guestCount",
-    "p2",
-    "phoneNumber",
     "p3",
     "input2",
     "amount",
+    "p1",
+    "guestName",
+    "p2",
+    "phoneNumber",
     "p5"
   ],
-  p1: ["p1", "guestName"],
-  guestName: ["guestName"],
   p4: ["p4", "referrer", "guestReferrer", "count2", "guestCount"],
   referrer: ["referrer", "guestReferrer"],
   guestReferrer: ["guestReferrer"],
   count2: ["count2", "guestCount"],
   guestCount: ["guestCount"],
-  p2: ["p2", "phoneNumber"],
-  phoneNumber: ["phoneNumber"],
   p3: ["p3", "input2", "amount"],
   input2: ["input2"],
   amount: ["amount"],
+  p1: ["p1", "guestName"],
+  guestName: ["guestName"],
+  p2: ["p2", "phoneNumber"],
+  phoneNumber: ["phoneNumber"],
   p5: ["p5"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -10499,18 +10511,18 @@ type NodeDefaultElementType = {
   submitChange: "div";
   addingGuestInfo: typeof AntdModal;
   form: "div";
-  p1: "div";
-  guestName: typeof TextInput;
   p4: "div";
   referrer: "div";
   guestReferrer: typeof Select;
   count2: "div";
   guestCount: typeof AntdInputNumber;
-  p2: "div";
-  phoneNumber: typeof TextInput;
   p3: "div";
   input2: typeof Input;
   amount: typeof AntdInputNumber;
+  p1: "div";
+  guestName: typeof TextInput;
+  p2: "div";
+  phoneNumber: typeof TextInput;
   p5: "div";
 };
 
@@ -10622,18 +10634,18 @@ export const PlasmicCalendar2 = Object.assign(
     submitChange: makeNodeComponent("submitChange"),
     addingGuestInfo: makeNodeComponent("addingGuestInfo"),
     form: makeNodeComponent("form"),
-    p1: makeNodeComponent("p1"),
-    guestName: makeNodeComponent("guestName"),
     p4: makeNodeComponent("p4"),
     referrer: makeNodeComponent("referrer"),
     guestReferrer: makeNodeComponent("guestReferrer"),
     count2: makeNodeComponent("count2"),
     guestCount: makeNodeComponent("guestCount"),
-    p2: makeNodeComponent("p2"),
-    phoneNumber: makeNodeComponent("phoneNumber"),
     p3: makeNodeComponent("p3"),
     input2: makeNodeComponent("input2"),
     amount: makeNodeComponent("amount"),
+    p1: makeNodeComponent("p1"),
+    guestName: makeNodeComponent("guestName"),
+    p2: makeNodeComponent("p2"),
+    phoneNumber: makeNodeComponent("phoneNumber"),
     p5: makeNodeComponent("p5"),
 
     // Metadata about props expected for PlasmicCalendar2

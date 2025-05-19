@@ -2348,6 +2348,11 @@
           "id": "2O4NC5vDxvXg",
           "name": "Icon82Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon82.tsx"
+        },
+        {
+          "id": "gfE8ZaasAWNB",
+          "name": "Icon83Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon83.tsx"
         }
       ],
       "images": [
