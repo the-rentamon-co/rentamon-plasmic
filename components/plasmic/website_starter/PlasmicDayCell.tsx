@@ -862,12 +862,21 @@ function PlasmicDayCell__RenderFunc(props: {
             projectcss.all,
             projectcss.p,
             sty.p,
-            hasVariant($state, "dayStatus", "disabled") ? "2" : undefined,
+            hasVariant($state, "dayStatus", "passedFirstDayReserve")
+              ? "2"
+              : hasVariant($state, "dayStatus", "disabled")
+              ? "2"
+              : undefined,
             {
               [sty.pdayStatus_disabled]: hasVariant(
                 $state,
                 "dayStatus",
                 "disabled"
+              ),
+              [sty.pdayStatus_passedFirstDayReserve]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedFirstDayReserve"
               ),
               [sty.pdayStatus_reserved]: hasVariant(
                 $state,
