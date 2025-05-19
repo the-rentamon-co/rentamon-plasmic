@@ -7334,78 +7334,6 @@ function PlasmicReservations__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__szX41)}
             >
-              <Button
-                className={classNames("__wab_instance", sty.button__cJdtF)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateModalOpen2"] =
-                    $state.isTheFirstVisit == true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function deleteCookie(name) {
-                                  document.cookie =
-                                    name +
-                                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                                }
-                                deleteCookie("first_visit");
-                                return ($state.isTheFirstVisit = false);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                  if (
-                    $steps["updateModalOpen2"] != null &&
-                    typeof $steps["updateModalOpen2"] === "object" &&
-                    typeof $steps["updateModalOpen2"].then === "function"
-                  ) {
-                    $steps["updateModalOpen2"] = await $steps[
-                      "updateModalOpen2"
-                    ];
-                  }
-
-                  $steps["updateModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modal", "open"]
-                          }
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalOpen"] != null &&
-                    typeof $steps["updateModalOpen"] === "object" &&
-                    typeof $steps["updateModalOpen"].then === "function"
-                  ) {
-                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                  }
-                }}
-              >
-                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
-              </Button>
               {(() => {
                 try {
                   return (() => {
@@ -7622,6 +7550,78 @@ function PlasmicReservations__RenderFunc(props: {
                   </AntdButton>
                 </div>
               ) : null}
+              <Button
+                className={classNames("__wab_instance", sty.button__cJdtF)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateModalOpen2"] =
+                    $state.isTheFirstVisit == true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function deleteCookie(name) {
+                                  document.cookie =
+                                    name +
+                                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                }
+                                deleteCookie("first_visit");
+                                return ($state.isTheFirstVisit = false);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateModalOpen2"] != null &&
+                    typeof $steps["updateModalOpen2"] === "object" &&
+                    typeof $steps["updateModalOpen2"].then === "function"
+                  ) {
+                    $steps["updateModalOpen2"] = await $steps[
+                      "updateModalOpen2"
+                    ];
+                  }
+
+                  $steps["updateModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modal", "open"]
+                          }
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalOpen"] != null &&
+                    typeof $steps["updateModalOpen"] === "object" &&
+                    typeof $steps["updateModalOpen"].then === "function"
+                  ) {
+                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                  }
+                }}
+              >
+                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+              </Button>
             </Stack__>
           </AntdModal>
         </div>
