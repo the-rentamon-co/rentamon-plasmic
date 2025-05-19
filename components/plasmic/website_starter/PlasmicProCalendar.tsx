@@ -64,6 +64,8 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import Modal from "../../Modal"; // plasmic-import: seS3S1gMwM5R/component
+import Button3 from "../../Button3"; // plasmic-import: 5VoVqiGmU3In/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
@@ -82,6 +84,7 @@ import sty from "./PlasmicProCalendar.module.css"; // plasmic-import: ssh21My6pq
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
+import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: BTVUACcl_W-Y/icon
 
 createPlasmicElementProxy;
 
@@ -102,6 +105,8 @@ export type PlasmicProCalendar__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   alertModal?: Flex__<typeof AntdModal>;
   button?: Flex__<typeof Button>;
+  modal?: Flex__<typeof Modal>;
+  button3?: Flex__<typeof Button3>;
   headerMobileNew?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -392,6 +397,12 @@ function PlasmicProCalendar__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "modal.isOpen",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1213,6 +1224,73 @@ function PlasmicProCalendar__RenderFunc(props: {
               </Button>
             </div>
           </AntdModal>
+          <Modal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            closeOnBackdropClick={false}
+            content={
+              <div className={classNames(projectcss.all, sty.freeBox___2VbVu)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kdONn
+                  )}
+                >
+                  {"\ud83d\udc77\ud83c\udffb\u200d\u2642\ufe0f"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nm0FY
+                  )}
+                >
+                  {
+                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0627\u0633\u062a"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xDcVd
+                  )}
+                >
+                  {
+                    "\u0627\u0632 \u0635\u0628\u0631 \u0648 \u0634\u06a9\u06cc\u0628\u0627\u06cc\u06cc \u0634\u0645\u0627 \u0633\u067e\u0627\u0633\u06af\u0630\u0627\u0631\u06cc\u0645"
+                  }
+                </div>
+              </div>
+            }
+            footer={null}
+            heading={null}
+            isOpen={generateStateValueProp($state, ["modal", "isOpen"])}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "isOpen"]).apply(
+                null,
+                eventArgs
+              );
+
+              if (
+                eventArgs.length > 1 &&
+                eventArgs[1] &&
+                eventArgs[1]._plasmic_state_init_
+              ) {
+                return;
+              }
+            }}
+            trigger={
+              <Button3
+                data-plasmic-name={"button3"}
+                data-plasmic-override={overrides.button3}
+                label={null}
+                start={null}
+              />
+            }
+          />
+
           <div
             data-plasmic-name={"headerMobileNew"}
             data-plasmic-override={overrides.headerMobileNew}
@@ -2401,6 +2479,8 @@ const PlasmicDescendants = {
     "profile2",
     "alertModal",
     "button",
+    "modal",
+    "button3",
     "headerMobileNew",
     "header",
     "right",
@@ -2427,6 +2507,8 @@ const PlasmicDescendants = {
   profile2: ["profile2"],
   alertModal: ["alertModal", "button"],
   button: ["button"],
+  modal: ["modal", "button3"],
+  button3: ["button3"],
   headerMobileNew: [
     "headerMobileNew",
     "header",
@@ -2483,6 +2565,8 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   alertModal: typeof AntdModal;
   button: typeof Button;
+  modal: typeof Modal;
+  button3: typeof Button3;
   headerMobileNew: "div";
   header: "div";
   right: "div";
@@ -2570,6 +2654,8 @@ export const PlasmicProCalendar = Object.assign(
     profile2: makeNodeComponent("profile2"),
     alertModal: makeNodeComponent("alertModal"),
     button: makeNodeComponent("button"),
+    modal: makeNodeComponent("modal"),
+    button3: makeNodeComponent("button3"),
     headerMobileNew: makeNodeComponent("headerMobileNew"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),

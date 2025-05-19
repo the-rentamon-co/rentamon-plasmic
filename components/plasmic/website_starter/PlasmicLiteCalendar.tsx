@@ -76,6 +76,8 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import Modal from "../../Modal"; // plasmic-import: seS3S1gMwM5R/component
+import Button3 from "../../Button3"; // plasmic-import: 5VoVqiGmU3In/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -85,6 +87,8 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicLiteCalendar.module.css"; // plasmic-import: wDX6CsUVKNmL/css
+
+import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: BTVUACcl_W-Y/icon
 
 createPlasmicElementProxy;
 
@@ -121,6 +125,8 @@ export type PlasmicLiteCalendar__OverridesType = {
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  modal?: Flex__<typeof Modal>;
+  button3?: Flex__<typeof Button3>;
 };
 
 export interface DefaultLiteCalendarProps {}
@@ -313,6 +319,12 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "modal.isOpen",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1362,7 +1374,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__bneYz
+                        sty.formField__iS8Gz
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1374,7 +1386,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__gqGgq
+                        sty.formField__nxVM
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1392,7 +1404,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__rg5B
+                          sty.text__yoGur
                         )}
                       >
                         {"Submit"}
@@ -1421,6 +1433,75 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               data-plasmic-name={"faviconRntComponent"}
               data-plasmic-override={overrides.faviconRntComponent}
               className={classNames("__wab_instance", sty.faviconRntComponent)}
+            />
+
+            <Modal
+              data-plasmic-name={"modal"}
+              data-plasmic-override={overrides.modal}
+              className={classNames("__wab_instance", sty.modal)}
+              closeOnBackdropClick={false}
+              content={
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___1Xwv4)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__pbv0O
+                    )}
+                  >
+                    {"\ud83d\udc77\ud83c\udffb\u200d\u2642\ufe0f"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wCy2G
+                    )}
+                  >
+                    {
+                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0627\u0633\u062a"
+                    }
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__hV9Z
+                    )}
+                  >
+                    {
+                      "\u0627\u0632 \u0635\u0628\u0631 \u0648 \u0634\u06a9\u06cc\u0628\u0627\u06cc\u06cc \u0634\u0645\u0627 \u0633\u067e\u0627\u0633\u06af\u0630\u0627\u0631\u06cc\u0645"
+                    }
+                  </div>
+                </div>
+              }
+              footer={null}
+              heading={null}
+              isOpen={generateStateValueProp($state, ["modal", "isOpen"])}
+              onOpenChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["modal", "isOpen"]).apply(
+                  null,
+                  eventArgs
+                );
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              trigger={
+                <Button3
+                  data-plasmic-name={"button3"}
+                  data-plasmic-override={overrides.button3}
+                  label={null}
+                  start={null}
+                />
+              }
             />
           </div>
         </div>
@@ -1453,7 +1534,9 @@ const PlasmicDescendants = {
     "button",
     "navigationRntFooter",
     "clarityRntComponent",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "modal",
+    "button3"
   ],
   sideEffect: ["sideEffect"],
   headerMain: [
@@ -1487,7 +1570,9 @@ const PlasmicDescendants = {
   button: ["button"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  faviconRntComponent: ["faviconRntComponent"],
+  modal: ["modal", "button3"],
+  button3: ["button3"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1516,6 +1601,8 @@ type NodeDefaultElementType = {
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
+  modal: typeof Modal;
+  button3: typeof Button3;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1600,6 +1687,8 @@ export const PlasmicLiteCalendar = Object.assign(
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    modal: makeNodeComponent("modal"),
+    button3: makeNodeComponent("button3"),
 
     // Metadata about props expected for PlasmicLiteCalendar
     internalVariantProps: PlasmicLiteCalendar__VariantProps,
