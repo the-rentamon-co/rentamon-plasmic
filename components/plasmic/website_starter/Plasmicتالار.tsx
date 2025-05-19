@@ -620,7 +620,7 @@ function Plasmicتالار__RenderFunc(props: {
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "100%"
-                          : "31px"
+                          : "100%"
                       }
                       displayMaxHeight={"none"}
                       displayMaxWidth={
@@ -633,7 +633,7 @@ function Plasmicتالار__RenderFunc(props: {
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "32px"
-                          : "33px"
+                          : "32px"
                       }
                       loading={"lazy"}
                       onClick={async event => {
@@ -648,10 +648,10 @@ function Plasmicتالار__RenderFunc(props: {
                               aspectRatio: 1.054054
                             }
                           : {
-                              src: "/plasmic/website_starter/images/image134.svg",
-                              fullWidth: 44,
-                              fullHeight: 41,
-                              aspectRatio: 1.073171
+                              src: "/plasmic/website_starter/images/image137.svg",
+                              fullWidth: 39,
+                              fullHeight: 37,
+                              aspectRatio: 1.054054
                             }
                       }
                     />
@@ -681,7 +681,7 @@ function Plasmicتالار__RenderFunc(props: {
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "100%"
-                          : "30px"
+                          : "100%"
                       }
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -698,10 +698,10 @@ function Plasmicتالار__RenderFunc(props: {
                               aspectRatio: 1.028571
                             }
                           : {
-                              src: "/plasmic/website_starter/images/image135.svg",
-                              fullWidth: 40,
-                              fullHeight: 40,
-                              aspectRatio: 1
+                              src: "/plasmic/website_starter/images/image138.svg",
+                              fullWidth: 38,
+                              fullHeight: 36,
+                              aspectRatio: 1.055556
                             }
                       }
                     />

@@ -1138,7 +1138,7 @@ function PlasmicReservations__RenderFunc(props: {
                   sty.text__m3Gfd
                 )}
               >
-                {"Error fetching data"}
+                {" "}
               </div>
             }
             loadingDisplay={null}

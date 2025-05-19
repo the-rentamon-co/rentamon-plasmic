@@ -334,10 +334,10 @@
 .notifOn {
   object-fit: cover;
   max-width: 100%;
-  width: 33px;
-  height: 31px;
+  width: 32px;
+  height: 100%;
   cursor: pointer;
-  flex-shrink: 0;
+  min-height: 0;
 }
 .notifOn > picture > img {
   object-fit: cover;
@@ -355,9 +355,9 @@
   object-fit: cover;
   max-width: 100%;
   width: 30px;
-  height: 30px;
+  height: 100%;
   cursor: pointer;
-  flex-shrink: 0;
+  min-height: 0;
 }
 .notifOff > picture > img {
   object-fit: cover;

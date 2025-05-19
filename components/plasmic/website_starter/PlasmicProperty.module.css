@@ -363,6 +363,27 @@
     font-size: 15px;
   }
 }
+.text__o9YdZ {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 18px;
+  line-height: 1.8;
+  padding-top: 10px;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__o9YdZ {
+    text-align: right;
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__o9YdZ {
+    text-align: right;
+    font-size: 15px;
+  }
+}
 .analytics {
   display: flex;
   flex-direction: column;
