@@ -247,7 +247,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{Plasmicثبتآگهیاقامتگاه.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -258,6 +258,35 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
           key="twitter:title"
           name="twitter:title"
           content={Plasmicثبتآگهیاقامتگاه.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.ogImageSrc}
+        />
+        <link
+          rel="canonical"
+          href={Plasmicثبتآگهیاقامتگاه.pageMetadata.canonical}
         />
       </Head>
 
@@ -2233,12 +2262,25 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     internalVariantProps: Plasmicثبتآگهیاقامتگاه__VariantProps,
     internalArgProps: Plasmicثبتآگهیاقامتگاه__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      title:
+        "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627",
+      description:
+        "\u062b\u0628\u062a \u0631\u0627\u06cc\u06af\u0627\u0646 \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0634\u0628\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648 \u0647\u0648\u0645\u0633\u0627 \u062a\u0648\u0633\u0637 \u0645\u0627",
+      ogImageAlt:
+        "\u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a",
+      type: "article"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "ثبت آگهی ویلا",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      description:
+        "ثبت رایگان آگهی ویلا در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/33c05b5a2d13ca8a5491f31ff19d2fb3.jpg",
+      canonical: "rentamon.com/list-your-property"
     }
   }
 );

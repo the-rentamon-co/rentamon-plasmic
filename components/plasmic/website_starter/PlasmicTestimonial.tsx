@@ -252,7 +252,7 @@ function PlasmicTestimonial__RenderFunc(props: {
         ref={ref => {
           $refs["userTestimonial"] = ref;
         }}
-        url={"https://gateway.rentamon.com/webhook/testimonial"}
+        url={"https://dev.rentamon.com/webhook/testimonial"}
       />
 
       <div
