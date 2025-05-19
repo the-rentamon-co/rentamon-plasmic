@@ -878,6 +878,21 @@ function PlasmicDayCell__RenderFunc(props: {
                 "dayStatus",
                 "passedFirstDayReserve"
               ),
+              [sty.pdayStatus_passedLastDayReserve]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedLastDayReserve"
+              ),
+              [sty.pdayStatus_passedMidDayReserve]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedMidDayReserve"
+              ),
+              [sty.pdayStatus_passedSingleReserve]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedSingleReserve"
+              ),
               [sty.pdayStatus_reserved]: hasVariant(
                 $state,
                 "dayStatus",

@@ -360,6 +360,9 @@
 @media (max-width: 500px) {
   .guestName {
     font-size: 16px;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }
 .phones {
@@ -413,7 +416,7 @@
   align-items: center;
   min-width: 0;
   display: none;
-  padding: 30px 16px 8px;
+  padding: 30px 16px 70px;
 }
 @media (max-width: 500px) {
   .freeBox__syTfP {

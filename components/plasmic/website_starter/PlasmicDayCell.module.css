@@ -750,3 +750,15 @@
   background: var(--token-8nedppYkGVaH);
   display: flex;
 }
+.pdayStatus_passedFirstDayReserve {
+  opacity: 0.5;
+}
+.pdayStatus_passedMidDayReserve {
+  opacity: 0.5;
+}
+.pdayStatus_passedLastDayReserve {
+  opacity: 0.5;
+}
+.pdayStatus_passedSingleReserve {
+  opacity: 0.5;
+}
