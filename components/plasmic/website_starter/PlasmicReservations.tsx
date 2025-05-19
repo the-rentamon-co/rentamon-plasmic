@@ -59,8 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import Modal from "../../Modal"; // plasmic-import: seS3S1gMwM5R/component
-import Button3 from "../../Button3"; // plasmic-import: 5VoVqiGmU3In/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
@@ -88,7 +86,6 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicReservations.module.css"; // plasmic-import: gvjKIi6-pXeG/css
 
-import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: BTVUACcl_W-Y/icon
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -106,8 +103,6 @@ export const PlasmicReservations__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicReservations__OverridesType = {
   root?: Flex__<"div">;
-  modalAlert?: Flex__<typeof Modal>;
-  button3?: Flex__<typeof Button3>;
   sideEffect?: Flex__<typeof SideEffect>;
   header?: Flex__<"div">;
   sidebar?: Flex__<"div">;
@@ -625,12 +620,6 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
-        path: "modalAlert.isOpen",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -673,73 +662,6 @@ function PlasmicReservations__RenderFunc(props: {
             sty.root
           )}
         >
-          <Modal
-            data-plasmic-name={"modalAlert"}
-            data-plasmic-override={overrides.modalAlert}
-            className={classNames("__wab_instance", sty.modalAlert)}
-            closeOnBackdropClick={false}
-            content={
-              <div className={classNames(projectcss.all, sty.freeBox__s39Ji)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___3Iz3
-                  )}
-                >
-                  {"\ud83d\udc77\ud83c\udffb\u200d\u2642\ufe0f"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___88V0Y
-                  )}
-                >
-                  {
-                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0627\u0633\u062a"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__gn7NZ
-                  )}
-                >
-                  {
-                    "\u0627\u0632 \u0635\u0628\u0631 \u0648 \u0634\u06a9\u06cc\u0628\u0627\u06cc\u06cc \u0634\u0645\u0627 \u0633\u067e\u0627\u0633\u06af\u0630\u0627\u0631\u06cc\u0645"
-                  }
-                </div>
-              </div>
-            }
-            footer={null}
-            heading={null}
-            isOpen={generateStateValueProp($state, ["modalAlert", "isOpen"])}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modalAlert", "isOpen"]).apply(
-                null,
-                eventArgs
-              );
-
-              if (
-                eventArgs.length > 1 &&
-                eventArgs[1] &&
-                eventArgs[1]._plasmic_state_init_
-              ) {
-                return;
-              }
-            }}
-            trigger={
-              <Button3
-                data-plasmic-name={"button3"}
-                data-plasmic-override={overrides.button3}
-                label={null}
-                start={null}
-              />
-            }
-          />
-
           <SideEffect
             data-plasmic-name={"sideEffect"}
             data-plasmic-override={overrides.sideEffect}
@@ -7677,8 +7599,6 @@ function PlasmicReservations__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "modalAlert",
-    "button3",
     "sideEffect",
     "header",
     "sidebar",
@@ -7773,8 +7693,6 @@ const PlasmicDescendants = {
     "homsa",
     "otaghak"
   ],
-  modalAlert: ["modalAlert", "button3"],
-  button3: ["button3"],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
   sidebar: ["sidebar", "sideBar2"],
@@ -8005,8 +7923,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  modalAlert: typeof Modal;
-  button3: typeof Button3;
   sideEffect: typeof SideEffect;
   header: "div";
   sidebar: "div";
@@ -8162,8 +8078,6 @@ export const PlasmicReservations = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    modalAlert: makeNodeComponent("modalAlert"),
-    button3: makeNodeComponent("button3"),
     sideEffect: makeNodeComponent("sideEffect"),
     header: makeNodeComponent("header"),
     sidebar: makeNodeComponent("sidebar"),

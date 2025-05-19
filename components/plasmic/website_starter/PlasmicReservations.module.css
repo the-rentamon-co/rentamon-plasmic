@@ -66,60 +66,6 @@
     grid-column: 4;
   }
 }
-.modalAlert:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-}
-.svg__r3XhL {
-  position: relative;
-  height: 1em;
-}
-.freeBox__s39Ji {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-.text___3Iz3 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-weight: 600;
-  font-family: "Estedad";
-  padding-top: 20px;
-  text-align: center;
-  font-size: 26px;
-  min-width: 0;
-}
-.text___88V0Y {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-weight: 600;
-  font-family: "Estedad";
-  padding-top: 10px;
-  text-align: center;
-  min-width: 0;
-}
-.text__gn7NZ {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-weight: 400;
-  font-family: "Estedad";
-  padding-top: 16px;
-  text-align: center;
-  line-height: 1.8;
-  min-width: 0;
-}
 .sideEffect:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
