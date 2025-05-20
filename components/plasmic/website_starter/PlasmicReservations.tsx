@@ -480,8 +480,7 @@ function PlasmicReservations__RenderFunc(props: {
                   return (() => {
                     const map = {
                       دیوار: "divar",
-                      واسطه: "Broker",
-                      همکار: "Colleague",
+                      "واسطه یا همکار": "Broker or Colleague",
                       "مسافر قبلی": "Returning_Guest",
                       اینستاگرام: "instagram",
                       حضوری: "offline",
@@ -5449,27 +5448,23 @@ function PlasmicReservations__RenderFunc(props: {
                         { value: null, label: null },
                         { value: null, label: null },
                         { value: null, label: null },
-                        { value: null, label: null },
                         { label: null, value: null },
                         { value: null, label: null }
                       ];
                       __composite["0"]["value"] = "divar";
                       __composite["0"]["label"] =
                         "\u062f\u06cc\u0648\u0627\u0631";
-                      __composite["1"]["value"] = "Broker";
+                      __composite["1"]["value"] = "Broker or Colleague";
                       __composite["1"]["label"] =
-                        "\u0648\u0627\u0633\u0637\u0647";
-                      __composite["2"]["value"] = "Colleague";
+                        "\u0648\u0627\u0633\u0637\u0647 \u06cc\u0627 \u0647\u0645\u06a9\u0627\u0631";
+                      __composite["2"]["value"] = "Returning_Guest";
                       __composite["2"]["label"] =
-                        "\u0647\u0645\u06a9\u0627\u0631";
-                      __composite["3"]["value"] = "Returning_Guest";
-                      __composite["3"]["label"] =
                         "\u0645\u0633\u0627\u0641\u0631 \u0642\u0628\u0644\u06cc";
-                      __composite["4"]["label"] =
+                      __composite["3"]["label"] =
                         "\u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645";
-                      __composite["4"]["value"] = "instagram";
-                      __composite["5"]["value"] = "others";
-                      __composite["5"]["label"] = "\u0633\u0627\u06cc\u0631";
+                      __composite["3"]["value"] = "instagram";
+                      __composite["4"]["value"] = "others";
+                      __composite["4"]["label"] = "\u0633\u0627\u06cc\u0631";
                       return __composite;
                     })()}
                     placeholder={
@@ -5957,6 +5952,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       divar: "دیوار",
                                       instagram: "اینستاگرام",
                                       Broker: "واسطه",
+                                      "Broker or Colleague": "واسطه یا همکار",
                                       Colleague: "همکار",
                                       offline: "حضوری",
                                       others: "دیگران",
@@ -7394,7 +7390,8 @@ function PlasmicReservations__RenderFunc(props: {
                       "مسافر قبلی",
                       "همکار",
                       "نامشخص",
-                      "واسطه یا همکار"
+                      "واسطه یا همکار",
+                      "حضوری"
                     ];
 
                     const name = $state.modalData[0].platfromName;
