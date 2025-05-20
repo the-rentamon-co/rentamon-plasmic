@@ -3885,6 +3885,26 @@
           "id": "pEqD4qlxdqJi",
           "name": "icon - social media.png",
           "filePath": "../public/plasmic/website_starter/images/iconSocialMediaPng.png"
+        },
+        {
+          "id": "qCbdbnarFZ1A",
+          "name": "icon - divar.png 2",
+          "filePath": "../public/plasmic/website_starter/images/iconDivarPng2.png"
+        },
+        {
+          "id": "973I1zLzabP9",
+          "name": "icon - other.png 2",
+          "filePath": "../public/plasmic/website_starter/images/iconOtherPng2.png"
+        },
+        {
+          "id": "IHvQgxzbdsWB",
+          "name": "icon - returned.png 2",
+          "filePath": "../public/plasmic/website_starter/images/iconReturnedPng2.png"
+        },
+        {
+          "id": "Qd7KadkWqtyA",
+          "name": "icon - arrived.png 2",
+          "filePath": "../public/plasmic/website_starter/images/iconArrivedPng2.png"
         }
       ],
       "indirect": false,

@@ -3001,6 +3001,7 @@
   width: 100%;
   transition-property: all;
   transition-duration: 1s;
+  max-height: 60px;
   min-width: 0;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;

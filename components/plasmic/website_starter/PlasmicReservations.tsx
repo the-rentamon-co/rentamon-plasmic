@@ -187,12 +187,13 @@ export type PlasmicReservations__OverridesType = {
   _16?: Flex__<"div">;
   edit?: Flex__<typeof AntdButton>;
   shab?: Flex__<typeof PlasmicImg__>;
+  shab3?: Flex__<typeof PlasmicImg__>;
   divar?: Flex__<typeof PlasmicImg__>;
   prevGuest?: Flex__<typeof PlasmicImg__>;
   colleague?: Flex__<typeof PlasmicImg__>;
   others?: Flex__<typeof PlasmicImg__>;
   broker?: Flex__<typeof PlasmicImg__>;
-  broker2?: Flex__<typeof PlasmicImg__>;
+  offline?: Flex__<typeof PlasmicImg__>;
   social?: Flex__<typeof PlasmicImg__>;
   jabama?: Flex__<typeof PlasmicImg__>;
   jajiga?: Flex__<typeof PlasmicImg__>;
@@ -6116,6 +6117,39 @@ function PlasmicReservations__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
+                      return $state.modalData[0].platfromName == "شب";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <PlasmicImg__
+                      data-plasmic-name={"shab3"}
+                      data-plasmic-override={overrides.shab3}
+                      alt={""}
+                      className={classNames(sty.shab3)}
+                      displayHeight={"42px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image20.svg",
+                        fullWidth: 46,
+                        fullHeight: 45,
+                        aspectRatio: 1.022222
+                      }}
+                    />
+                  ) : null}
+                  {(() => {
+                    try {
                       return $state.modalData[0].platfromName == "دیوار";
                     } catch (e) {
                       if (
@@ -6140,9 +6174,9 @@ function PlasmicReservations__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/iconDivarPng.png",
-                        fullWidth: 138,
-                        fullHeight: 138,
+                        src: "/plasmic/website_starter/images/iconDivarPng2.png",
+                        fullWidth: 130,
+                        fullHeight: 130,
                         aspectRatio: undefined
                       }}
                     />
@@ -6173,9 +6207,9 @@ function PlasmicReservations__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/iconReturnedPng.png",
-                        fullWidth: 138,
-                        fullHeight: 138,
+                        src: "/plasmic/website_starter/images/iconReturnedPng2.png",
+                        fullWidth: 130,
+                        fullHeight: 131,
                         aspectRatio: undefined
                       }}
                     />
@@ -6239,9 +6273,9 @@ function PlasmicReservations__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/iconOtherPng.png",
-                        fullWidth: 138,
-                        fullHeight: 138,
+                        src: "/plasmic/website_starter/images/iconOtherPng2.png",
+                        fullWidth: 130,
+                        fullHeight: 131,
                         aspectRatio: undefined
                       }}
                     />
@@ -6295,10 +6329,10 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                   })() ? (
                     <PlasmicImg__
-                      data-plasmic-name={"broker2"}
-                      data-plasmic-override={overrides.broker2}
+                      data-plasmic-name={"offline"}
+                      data-plasmic-override={overrides.offline}
                       alt={""}
-                      className={classNames(sty.broker2)}
+                      className={classNames(sty.offline)}
                       displayHeight={"42px"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -6307,7 +6341,7 @@ function PlasmicReservations__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/iconArrivedPng.png",
+                        src: "/plasmic/website_starter/images/iconArrivedPng2.png",
                         fullWidth: 130,
                         fullHeight: 130,
                         aspectRatio: undefined
@@ -6762,231 +6796,221 @@ function PlasmicReservations__RenderFunc(props: {
                   data-plasmic-override={overrides._12}
                   className={classNames(projectcss.all, sty._12)}
                 >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zmBvF)}
+                  >
+                    <div
+                      data-plasmic-name={"userPhone"}
+                      data-plasmic-override={overrides.userPhone}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.userPhone
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData[0].phone_number;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "-";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
                   <Stack__
                     as={"div"}
                     hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__hd3Qx)}
+                    className={classNames(projectcss.all, sty.freeBox___70Qp)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zmBvF)}
-                    >
-                      <div
-                        data-plasmic-name={"userPhone"}
-                        data-plasmic-override={overrides.userPhone}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.userPhone
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return $state.modalData[0].phone_number;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "-";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                    </div>
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.freeBox___70Qp)}
-                    >
-                      {(() => {
-                        try {
-                          return (
-                            $state.modalData[0].status == "Confirmed" ||
-                            $state.modalData[0].status == "Past"
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
+                    {(() => {
+                      try {
+                        return (
+                          $state.modalData[0].status == "Confirmed" ||
+                          $state.modalData[0].status == "Past"
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
                         }
-                      })() ? (
-                        <div
-                          data-plasmic-name={"status"}
-                          data-plasmic-override={overrides.status}
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.status
-                          )}
-                        >
-                          {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
-                        </div>
-                      ) : null}
+                        throw e;
+                      }
+                    })() ? (
                       <div
-                        data-plasmic-name={"status3"}
-                        data-plasmic-override={overrides.status3}
+                        data-plasmic-name={"status"}
+                        data-plasmic-override={overrides.status}
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.status3
+                          sty.status
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (() => {
-                                function toJalali(gYear, gMonth, gDay) {
-                                  const gDaysInMonth = [
-                                    31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
-                                    31
-                                  ];
-
-                                  const jDaysInMonth = [
-                                    31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30,
-                                    29
-                                  ];
-
-                                  let gy = gYear - (gYear >= 1600 ? 1600 : 621);
-                                  let gm = gMonth - 1;
-                                  let gd = gDay - 1;
-                                  let gDayNo =
-                                    365 * gy +
-                                    Math.floor((gy + 3) / 4) -
-                                    Math.floor((gy + 99) / 100) +
-                                    Math.floor((gy + 399) / 400);
-                                  for (let i = 0; i < gm; i++) {
-                                    gDayNo += gDaysInMonth[i];
-                                  }
-                                  gDayNo += gd;
-                                  let jYear = gYear >= 1600 ? 979 : 0;
-                                  let jDayNo =
-                                    gDayNo - (gYear >= 1600 ? 79 : 0);
-                                  let jNp = Math.floor(jDayNo / 12053);
-                                  jDayNo %= 12053;
-                                  jYear +=
-                                    33 * jNp + 4 * Math.floor(jDayNo / 1461);
-                                  jDayNo %= 1461;
-                                  if (jDayNo >= 366) {
-                                    jYear += Math.floor((jDayNo - 1) / 365);
-                                    jDayNo = (jDayNo - 1) % 365;
-                                  }
-                                  let jMonth;
-                                  for (
-                                    jMonth = 0;
-                                    jMonth < 11 &&
-                                    jDayNo >= jDaysInMonth[jMonth];
-                                    jMonth++
-                                  ) {
-                                    jDayNo -= jDaysInMonth[jMonth];
-                                  }
-                                  let jDay = jDayNo + 1;
-                                  jYear += gYear >= 1600 ? 1600 : 621;
-                                  return {
-                                    jy: jYear,
-                                    jm: jMonth + 1,
-                                    jd: jDay
-                                  };
-                                }
-                                const persianMonths = [
-                                  "فروردین",
-                                  "اردیبهشت",
-                                  "خرداد",
-                                  "تیر",
-                                  "مرداد",
-                                  "شهریور",
-                                  "مهر",
-                                  "آبان",
-                                  "آذر",
-                                  "دی",
-                                  "بهمن",
-                                  "اسفند"
+                        {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
+                      </div>
+                    ) : null}
+                    <div
+                      data-plasmic-name={"status3"}
+                      data-plasmic-override={overrides.status3}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.status3
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              function toJalali(gYear, gMonth, gDay) {
+                                const gDaysInMonth = [
+                                  31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
                                 ];
 
-                                function toPersianDigits(input) {
-                                  const persianDigits = [
-                                    "۰",
-                                    "۱",
-                                    "۲",
-                                    "۳",
-                                    "۴",
-                                    "۵",
-                                    "۶",
-                                    "۷",
-                                    "۸",
-                                    "۹"
-                                  ];
+                                const jDaysInMonth = [
+                                  31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                                ];
 
-                                  return input
-                                    .toString()
-                                    .replace(/\d/g, function (digit) {
-                                      return persianDigits[digit];
-                                    });
+                                let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                                let gm = gMonth - 1;
+                                let gd = gDay - 1;
+                                let gDayNo =
+                                  365 * gy +
+                                  Math.floor((gy + 3) / 4) -
+                                  Math.floor((gy + 99) / 100) +
+                                  Math.floor((gy + 399) / 400);
+                                for (let i = 0; i < gm; i++) {
+                                  gDayNo += gDaysInMonth[i];
                                 }
-                                function convertDateToJalaliString(dateString) {
-                                  const date = new Date(dateString);
-                                  const gYear = date.getFullYear();
-                                  const gMonth = date.getMonth() + 1;
-                                  const gDay = date.getDate();
-                                  const { jy, jm, jd } = toJalali(
-                                    gYear,
-                                    gMonth,
-                                    gDay
-                                  );
-                                  const monthName = persianMonths[jm - 1];
-                                  const persianDay = toPersianDigits(jd);
-                                  return `${persianDay} ${monthName}`;
+                                gDayNo += gd;
+                                let jYear = gYear >= 1600 ? 979 : 0;
+                                let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                                let jNp = Math.floor(jDayNo / 12053);
+                                jDayNo %= 12053;
+                                jYear +=
+                                  33 * jNp + 4 * Math.floor(jDayNo / 1461);
+                                jDayNo %= 1461;
+                                if (jDayNo >= 366) {
+                                  jYear += Math.floor((jDayNo - 1) / 365);
+                                  jDayNo = (jDayNo - 1) % 365;
                                 }
-                                const exampleDate =
-                                  $state.modalData[0].created_at;
-                                const jalaliResult =
-                                  convertDateToJalaliString(exampleDate);
-                                return jalaliResult;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "";
+                                let jMonth;
+                                for (
+                                  jMonth = 0;
+                                  jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                                  jMonth++
+                                ) {
+                                  jDayNo -= jDaysInMonth[jMonth];
+                                }
+                                let jDay = jDayNo + 1;
+                                jYear += gYear >= 1600 ? 1600 : 621;
+                                return {
+                                  jy: jYear,
+                                  jm: jMonth + 1,
+                                  jd: jDay
+                                };
                               }
-                              throw e;
+                              const persianMonths = [
+                                "فروردین",
+                                "اردیبهشت",
+                                "خرداد",
+                                "تیر",
+                                "مرداد",
+                                "شهریور",
+                                "مهر",
+                                "آبان",
+                                "آذر",
+                                "دی",
+                                "بهمن",
+                                "اسفند"
+                              ];
+
+                              function toPersianDigits(input) {
+                                const persianDigits = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                return input
+                                  .toString()
+                                  .replace(/\d/g, function (digit) {
+                                    return persianDigits[digit];
+                                  });
+                              }
+                              function convertDateToJalaliString(dateString) {
+                                const date = new Date(dateString);
+                                const gYear = date.getFullYear();
+                                const gMonth = date.getMonth() + 1;
+                                const gDay = date.getDate();
+                                const { jy, jm, jd } = toJalali(
+                                  gYear,
+                                  gMonth,
+                                  gDay
+                                );
+                                const monthName = persianMonths[jm - 1];
+                                const persianDay = toPersianDigits(jd);
+                                return `${persianDay} ${monthName}`;
+                              }
+                              const exampleDate =
+                                $state.modalData[0].created_at;
+                              const jalaliResult =
+                                convertDateToJalaliString(exampleDate);
+                              return jalaliResult;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
                             }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                      {(() => {
-                        try {
-                          return $state.modalData[0].status == "Cancelled";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
+                            throw e;
                           }
-                          throw e;
+                        })()}
+                      </React.Fragment>
+                    </div>
+                    {(() => {
+                      try {
+                        return $state.modalData[0].status == "Cancelled";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
                         }
-                      })() ? (
-                        <div
-                          data-plasmic-name={"falseStatus"}
-                          data-plasmic-override={overrides.falseStatus}
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.falseStatus
-                          )}
-                        >
-                          {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
-                        </div>
-                      ) : null}
-                    </Stack__>
+                        throw e;
+                      }
+                    })() ? (
+                      <div
+                        data-plasmic-name={"falseStatus"}
+                        data-plasmic-override={overrides.falseStatus}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.falseStatus
+                        )}
+                      >
+                        {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
+                      </div>
+                    ) : null}
                   </Stack__>
                 </div>
                 <div
@@ -7772,12 +7796,13 @@ const PlasmicDescendants = {
     "_16",
     "edit",
     "shab",
+    "shab3",
     "divar",
     "prevGuest",
     "colleague",
     "others",
     "broker",
-    "broker2",
+    "offline",
     "social",
     "jabama",
     "jajiga",
@@ -7948,12 +7973,13 @@ const PlasmicDescendants = {
     "_16",
     "edit",
     "shab",
+    "shab3",
     "divar",
     "prevGuest",
     "colleague",
     "others",
     "broker",
-    "broker2",
+    "offline",
     "social",
     "jabama",
     "jajiga",
@@ -8003,12 +8029,13 @@ const PlasmicDescendants = {
   _16: ["_16"],
   edit: ["edit"],
   shab: ["shab"],
+  shab3: ["shab3"],
   divar: ["divar"],
   prevGuest: ["prevGuest"],
   colleague: ["colleague"],
   others: ["others"],
   broker: ["broker"],
-  broker2: ["broker2"],
+  offline: ["offline"],
   social: ["social"],
   jabama: ["jabama"],
   jajiga: ["jajiga"],
@@ -8105,12 +8132,13 @@ type NodeDefaultElementType = {
   _16: "div";
   edit: typeof AntdButton;
   shab: typeof PlasmicImg__;
+  shab3: typeof PlasmicImg__;
   divar: typeof PlasmicImg__;
   prevGuest: typeof PlasmicImg__;
   colleague: typeof PlasmicImg__;
   others: typeof PlasmicImg__;
   broker: typeof PlasmicImg__;
-  broker2: typeof PlasmicImg__;
+  offline: typeof PlasmicImg__;
   social: typeof PlasmicImg__;
   jabama: typeof PlasmicImg__;
   jajiga: typeof PlasmicImg__;
@@ -8263,12 +8291,13 @@ export const PlasmicReservations = Object.assign(
     _16: makeNodeComponent("_16"),
     edit: makeNodeComponent("edit"),
     shab: makeNodeComponent("shab"),
+    shab3: makeNodeComponent("shab3"),
     divar: makeNodeComponent("divar"),
     prevGuest: makeNodeComponent("prevGuest"),
     colleague: makeNodeComponent("colleague"),
     others: makeNodeComponent("others"),
     broker: makeNodeComponent("broker"),
-    broker2: makeNodeComponent("broker2"),
+    offline: makeNodeComponent("offline"),
     social: makeNodeComponent("social"),
     jabama: makeNodeComponent("jabama"),
     jajiga: makeNodeComponent("jajiga"),
