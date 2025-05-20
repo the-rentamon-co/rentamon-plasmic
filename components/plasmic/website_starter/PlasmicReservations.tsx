@@ -6252,7 +6252,9 @@ function PlasmicReservations__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.modalData[0].platfromName == "واسطه";
+                      return (
+                        $state.modalData[0].platfromName == "واسطه یا همکار"
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -6276,9 +6278,9 @@ function PlasmicReservations__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/iconMiddleManPng.png",
-                        fullWidth: 138,
-                        fullHeight: 138,
+                        src: "/plasmic/website_starter/images/iconColleaguePng2.png",
+                        fullWidth: 130,
+                        fullHeight: 130,
                         aspectRatio: undefined
                       }}
                     />
@@ -7391,7 +7393,8 @@ function PlasmicReservations__RenderFunc(props: {
                       "اینستاگرام",
                       "مسافر قبلی",
                       "همکار",
-                      "نامشخص"
+                      "نامشخص",
+                      "واسطه یا همکار"
                     ];
 
                     const name = $state.modalData[0].platfromName;

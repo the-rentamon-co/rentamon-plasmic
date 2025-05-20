@@ -3875,6 +3875,11 @@
           "id": "0sWh0avVOcrU",
           "name": "icon - arrived.png",
           "filePath": "../public/plasmic/website_starter/images/iconArrivedPng.png"
+        },
+        {
+          "id": "VHKGxDHmy_LI",
+          "name": "icon - colleague.png 2",
+          "filePath": "../public/plasmic/website_starter/images/iconColleaguePng2.png"
         }
       ],
       "indirect": false,
