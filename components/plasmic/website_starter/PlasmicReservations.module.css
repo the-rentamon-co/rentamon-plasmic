@@ -998,6 +998,34 @@
   max-width: 100%;
   object-fit: cover;
 }
+.title2 {
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  display: none;
+  padding: 8px 8px 12px;
+}
+@media (max-width: 500px) {
+  .title2 {
+    display: flex;
+  }
+}
+.text__rTlw0 {
+  text-align: center;
+  background: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+.text___8Sx6O {
+  text-align: center;
+  background: none;
+  font-size: 17px;
+  font-weight: 500;
+}
 .freeBox__bmCxi {
   display: flex;
   flex-direction: column;
@@ -1042,6 +1070,11 @@
   font-size: 17px;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .text___2AOv {
+    font-size: 16px;
+  }
+}
 .text__u66Pv {
   width: 100%;
   height: auto;
@@ -1050,6 +1083,11 @@
   font-size: 17px;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .text__u66Pv {
+    font-size: 16px;
+  }
+}
 .text__frYnp {
   width: 100%;
   height: auto;
@@ -1057,6 +1095,11 @@
   padding-bottom: 0px;
   font-size: 17px;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__frYnp {
+    font-size: 16px;
+  }
 }
 .freeBox__s4Gyp {
   display: flex;
@@ -1090,6 +1133,12 @@
   max-width: 100%;
   width: 150px;
   flex-shrink: 0;
+}
+@media (max-width: 500px) {
+  .button__rlPuY:global(.__wab_instance) {
+    width: 140px;
+    flex-shrink: 0;
+  }
 }
 .svg__hvc0Z {
   position: relative;
@@ -1126,6 +1175,11 @@
 }
 .text__oe8Iy {
   color: var(--token-8R7jjC_-F9FF);
+}
+@media (max-width: 500px) {
+  .text__oe8Iy {
+    font-size: 16px;
+  }
 }
 .svg__cWuKj {
   position: relative;
@@ -1257,6 +1311,12 @@
   border-radius: 30px;
   border: 2px solid var(--token-8nedppYkGVaH);
 }
+@media (max-width: 500px) {
+  .cancelle:global(.__wab_instance) {
+    margin-top: 0px;
+    margin-left: calc(0px + 10px) !important;
+  }
+}
 .text___7D8Vc {
   position: relative;
   width: 85px;
@@ -1277,15 +1337,10 @@
   text-decoration-line: none !important;
   text-overflow: clip !important;
 }
-.text__rTlw0 {
-  text-align: center;
-  background: #fcfcfc;
-  font-size: 17px;
-}
-.text___8Sx6O {
-  text-align: center;
-  background: #fcfcfc;
-  font-size: 17px;
+@media (max-width: 500px) {
+  .text___7D8Vc {
+    font-size: 16px;
+  }
 }
 .intro {
   display: flex;

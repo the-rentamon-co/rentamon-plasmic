@@ -123,6 +123,7 @@ export type PlasmicReservations__OverridesType = {
   reserveData?: Flex__<typeof ApiRequest>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   finalModal?: Flex__<typeof AntdModal>;
+  title2?: Flex__<"div">;
   cancelle?: Flex__<typeof AntdButton>;
   intro?: Flex__<"div">;
   returnButton?: Flex__<"div">;
@@ -325,7 +326,8 @@ function PlasmicReservations__RenderFunc(props: {
         path: "finalModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "selectedAction",
@@ -2378,61 +2380,64 @@ function PlasmicReservations__RenderFunc(props: {
               );
             }}
             open={generateStateValueProp($state, ["finalModal", "open"])}
-            title={
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return $state.selectedAction == "accept";
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rTlw0
-                    )}
-                  >
-                    {"\u062a\u0627\u06cc\u06cc\u062f \u0631\u0632\u0631\u0648"}
-                  </div>
-                ) : null}
-                {(() => {
-                  try {
-                    return $state.selectedAction != "accept";
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___8Sx6O
-                    )}
-                  >
-                    {
-                      "\u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648"
-                    }
-                  </div>
-                ) : null}
-              </React.Fragment>
-            }
+            title={null}
             trigger={null}
             width={"320"}
           >
+            <div
+              data-plasmic-name={"title2"}
+              data-plasmic-override={overrides.title2}
+              className={classNames(projectcss.all, sty.title2)}
+            >
+              {(() => {
+                try {
+                  return $state.selectedAction == "accept";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rTlw0
+                  )}
+                >
+                  {"\u062a\u0627\u06cc\u06cc\u062f \u0631\u0632\u0631\u0648"}
+                </div>
+              ) : null}
+              {(() => {
+                try {
+                  return $state.selectedAction != "accept";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___8Sx6O
+                  )}
+                >
+                  {
+                    "\u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648"
+                  }
+                </div>
+              ) : null}
+            </div>
             <Stack__
               as={"div"}
               hasGap={true}
@@ -3322,20 +3327,70 @@ function PlasmicReservations__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 const id = $state.modalData[0].id;
+                                console.log(
+                                  "مرحله 1: شناسه‌ی آیتم برای کنسل کردن:",
+                                  id
+                                );
+                                console.log(
+                                  "مرحله 2: قبل از به‌روزرسانی\u060C داده‌های فعلی:",
+                                  $state.reserveData.data
+                                );
                                 const updated = $state.reserveData.data.map(
-                                  item =>
-                                    item.Id === id
-                                      ? {
-                                          ...item,
-                                          status: "Cancelled"
-                                        }
-                                      : item
+                                  item => {
+                                    if (item.Id === id) {
+                                      console.log(
+                                        "  \u2192 یافتن آیتم منطبق\u060C تغییر وضعیت به Cancelled:",
+                                        item
+                                      );
+                                      return {
+                                        ...item,
+                                        status: "Cancelled"
+                                      };
+                                    }
+                                    return item;
+                                  }
+                                );
+                                console.log(
+                                  "مرحله 3: پس از ساخت آرایه‌ی به‌روز:",
+                                  updated
                                 );
                                 $state.reserveData = {
                                   ...$state.reserveData,
                                   data: updated
                                 };
-                                return updated.find(item => item.Id === id);
+                                console.log(
+                                  "مرحله 4: state.reserveData جدید:",
+                                  $state.reserveData
+                                );
+                                try {
+                                  localStorage.setItem(
+                                    "reservations",
+                                    JSON.stringify($state.reserveData.data)
+                                  );
+                                  console.log(
+                                    "مرحله 5: ذخیره‌ی موفق در localStorage"
+                                  );
+                                } catch (err) {
+                                  console.error(
+                                    "مرحله 5: خطا در ذخیره‌سازی در localStorage:",
+                                    err
+                                  );
+                                }
+                                const changedItem = updated.find(
+                                  item => item.Id === id
+                                );
+                                if (changedItem) {
+                                  console.log(
+                                    "مرحله 6: آیتم تغییر یافته برای بازگشت:",
+                                    changedItem
+                                  );
+                                } else {
+                                  console.warn(
+                                    "مرحله 6: آیتم با شناسهٔ داده‌شده یافت نشد:",
+                                    id
+                                  );
+                                }
+                                return changedItem;
                               })();
                             }
                           };
@@ -5931,17 +5986,37 @@ function PlasmicReservations__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   const b_id = $state.modalData[0].reserve_id;
+                                  console.log(
+                                    "مرحله 1: شناسه‌ی رزرو از مودال:",
+                                    b_id
+                                  );
                                   const idx = $state.reserveData.data.findIndex(
                                     item => item.reserve_id === b_id
+                                  );
+                                  console.log(
+                                    "مرحله 2: اندیس پیدا شده در reserveData.data:",
+                                    idx
                                   );
                                   if (idx !== -1) {
                                     const rawAmount = $state.amount2.value
                                       .toString()
                                       .replace(/,/g, "");
+                                    console.log(
+                                      "مرحله 3.1: مقدار خام مبلغ (بدون ویرگول):",
+                                      rawAmount
+                                    );
                                     const amountNumber = Number(rawAmount) || 0;
+                                    console.log(
+                                      "مرحله 3.2: تبدیل به عدد:",
+                                      amountNumber
+                                    );
                                     const faAmount = new Intl.NumberFormat(
                                       "fa-IR"
                                     ).format(amountNumber);
+                                    console.log(
+                                      "مرحله 3.3: مبلغ فرمت‌شده به فارسی:",
+                                      faAmount
+                                    );
                                     $state.reserveData.data[idx].amount =
                                       faAmount;
                                     const map = {
@@ -5953,15 +6028,54 @@ function PlasmicReservations__RenderFunc(props: {
                                       Returning_Guest: "مسافر قبلی"
                                     };
                                     const eng = $state.guestReferrer.value;
+                                    console.log(
+                                      "مرحله 4.1: مقدار ورودی guestReferrer:",
+                                      eng
+                                    );
+                                    const mapped = map[eng] || eng;
+                                    console.log(
+                                      "مرحله 4.2: منبع ارجاع نگاشته‌شده:",
+                                      mapped
+                                    );
                                     $state.reserveData.data[idx].platformName =
-                                      map[eng] || eng;
+                                      mapped;
+                                    console.log(
+                                      "مرحله 5: به‌روزرسانی سایر فیلدها:"
+                                    );
+                                    console.log(
+                                      "  - phone_number:",
+                                      $state.phoneNumber.value
+                                    );
+                                    console.log(
+                                      "  - GuestName:",
+                                      $state.guestName2.value
+                                    );
+                                    console.log(
+                                      "  - guests_count:",
+                                      $state.guestCount.value
+                                    );
                                     $state.reserveData.data[idx].phone_number =
                                       $state.phoneNumber.value;
                                     $state.reserveData.data[idx].GuestName =
                                       $state.guestName2.value;
-                                    return ($state.reserveData.data[
-                                      idx
-                                    ].guests_count = $state.guestCount.value);
+                                    $state.reserveData.data[idx].guests_count =
+                                      $state.guestCount.value;
+                                    console.log(
+                                      "مرحله 6: ذخیره‌ی داده‌ها در localStorage",
+                                      $state.reserveData.data
+                                    );
+                                    localStorage.setItem(
+                                      "reservations",
+                                      JSON.stringify($state.reserveData.data)
+                                    );
+                                    return console.log(
+                                      "مرحله 7: عملیات ذخیره موفقیت‌آمیز بود."
+                                    );
+                                  } else {
+                                    return console.warn(
+                                      "رزرو با شناسهٔ داده‌شده یافت نشد:",
+                                      b_id
+                                    );
                                   }
                                 })();
                               }
@@ -7652,6 +7766,7 @@ const PlasmicDescendants = {
     "reserveData",
     "navigationRntFooter",
     "finalModal",
+    "title2",
     "cancelle",
     "intro",
     "returnButton",
@@ -7756,7 +7871,8 @@ const PlasmicDescendants = {
   reserveMainStack: ["reserveMainStack", "reserveData"],
   reserveData: ["reserveData"],
   navigationRntFooter: ["navigationRntFooter"],
-  finalModal: ["finalModal", "cancelle"],
+  finalModal: ["finalModal", "title2", "cancelle"],
+  title2: ["title2"],
   cancelle: ["cancelle"],
   intro: ["intro"],
   returnButton: ["returnButton"],
@@ -7980,6 +8096,7 @@ type NodeDefaultElementType = {
   reserveData: typeof ApiRequest;
   navigationRntFooter: typeof NavigationRntFooter;
   finalModal: typeof AntdModal;
+  title2: "div";
   cancelle: typeof AntdButton;
   intro: "div";
   returnButton: "div";
@@ -8136,6 +8253,7 @@ export const PlasmicReservations = Object.assign(
     reserveData: makeNodeComponent("reserveData"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     finalModal: makeNodeComponent("finalModal"),
+    title2: makeNodeComponent("title2"),
     cancelle: makeNodeComponent("cancelle"),
     intro: makeNodeComponent("intro"),
     returnButton: makeNodeComponent("returnButton"),
