@@ -3677,14 +3677,6 @@
 .shab > picture > img {
   object-fit: cover;
 }
-.shab3 {
-  object-fit: cover;
-  max-width: 100%;
-  height: 42px;
-}
-.shab3 > picture > img {
-  object-fit: cover;
-}
 .divar {
   object-fit: cover;
   max-width: 100%;

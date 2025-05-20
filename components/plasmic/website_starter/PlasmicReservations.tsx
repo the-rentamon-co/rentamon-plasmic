@@ -187,7 +187,6 @@ export type PlasmicReservations__OverridesType = {
   _16?: Flex__<"div">;
   edit?: Flex__<typeof AntdButton>;
   shab?: Flex__<typeof PlasmicImg__>;
-  shab3?: Flex__<typeof PlasmicImg__>;
   divar?: Flex__<typeof PlasmicImg__>;
   prevGuest?: Flex__<typeof PlasmicImg__>;
   colleague?: Flex__<typeof PlasmicImg__>;
@@ -6117,39 +6116,6 @@ function PlasmicReservations__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.modalData[0].platfromName == "شب";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      data-plasmic-name={"shab3"}
-                      data-plasmic-override={overrides.shab3}
-                      alt={""}
-                      className={classNames(sty.shab3)}
-                      displayHeight={"42px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image20.svg",
-                        fullWidth: 46,
-                        fullHeight: 45,
-                        aspectRatio: 1.022222
-                      }}
-                    />
-                  ) : null}
-                  {(() => {
-                    try {
                       return $state.modalData[0].platfromName == "دیوار";
                     } catch (e) {
                       if (
@@ -7796,7 +7762,6 @@ const PlasmicDescendants = {
     "_16",
     "edit",
     "shab",
-    "shab3",
     "divar",
     "prevGuest",
     "colleague",
@@ -7973,7 +7938,6 @@ const PlasmicDescendants = {
     "_16",
     "edit",
     "shab",
-    "shab3",
     "divar",
     "prevGuest",
     "colleague",
@@ -8029,7 +7993,6 @@ const PlasmicDescendants = {
   _16: ["_16"],
   edit: ["edit"],
   shab: ["shab"],
-  shab3: ["shab3"],
   divar: ["divar"],
   prevGuest: ["prevGuest"],
   colleague: ["colleague"],
@@ -8132,7 +8095,6 @@ type NodeDefaultElementType = {
   _16: "div";
   edit: typeof AntdButton;
   shab: typeof PlasmicImg__;
-  shab3: typeof PlasmicImg__;
   divar: typeof PlasmicImg__;
   prevGuest: typeof PlasmicImg__;
   colleague: typeof PlasmicImg__;
@@ -8291,7 +8253,6 @@ export const PlasmicReservations = Object.assign(
     _16: makeNodeComponent("_16"),
     edit: makeNodeComponent("edit"),
     shab: makeNodeComponent("shab"),
-    shab3: makeNodeComponent("shab3"),
     divar: makeNodeComponent("divar"),
     prevGuest: makeNodeComponent("prevGuest"),
     colleague: makeNodeComponent("colleague"),
