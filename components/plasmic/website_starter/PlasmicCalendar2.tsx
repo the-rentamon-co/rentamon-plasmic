@@ -10139,7 +10139,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                           "Returning_Guest"
                                         ? "قبلی"
                                         : $state.guestReferrer.value == "social"
-                                        ? "پیام‌رسان و شبکه‌اجتماعی"
+                                        ? "پیام‌رسان"
                                         : $state.guestReferrer.value ==
                                           "offline"
                                         ? "حضوری"
