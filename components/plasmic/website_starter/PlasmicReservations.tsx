@@ -3151,25 +3151,23 @@ function PlasmicReservations__RenderFunc(props: {
               </AntdButton>
             </Stack__>
           </AntdModal>
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+          <div
+            data-plasmic-name={"intro"}
+            data-plasmic-override={overrides.intro}
+            className={classNames(projectcss.all, sty.intro)}
+          >
             <div
-              data-plasmic-name={"intro"}
-              data-plasmic-override={overrides.intro}
-              className={classNames(projectcss.all, sty.intro)}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__dMWfE
+              )}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__dMWfE
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0627\u06af\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f \u0628\u06af\u06cc\u0631\u06cc \u0648 \u06cc\u0627 \u0628\u0635\u0648\u0631\u062a \u062f\u0633\u062a\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc\u060c \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u06a9\u0627\u0645\u0644 \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u0628\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."
-                  : "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u060c \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647 \u062a\u0627 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0646\u06cc\u0627\u062f. \u0646\u062a\u06cc\u062c\u0647\u200c\u0627\u0634 \u0627\u06cc\u0646 \u0639\u0645\u0644\u06cc\u0627\u062a \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."}
-              </div>
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "\u0627\u06af\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f \u0628\u06af\u06cc\u0631\u06cc \u0648 \u06cc\u0627 \u0628\u0635\u0648\u0631\u062a \u062f\u0633\u062a\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc\u060c \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u06a9\u0627\u0645\u0644 \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u0628\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."
+                : "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u060c \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647 \u062a\u0627 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0646\u06cc\u0627\u062f. \u0646\u062a\u06cc\u062c\u0647\u200c\u0627\u0634 \u0627\u06cc\u0646 \u0639\u0645\u0644\u06cc\u0627\u062a \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."}
             </div>
-          ) : null}
+          </div>
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
@@ -3327,70 +3325,24 @@ function PlasmicReservations__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 const id = $state.modalData[0].id;
-                                console.log(
-                                  "مرحله 1: شناسه‌ی آیتم برای کنسل کردن:",
-                                  id
-                                );
-                                console.log(
-                                  "مرحله 2: قبل از به‌روزرسانی\u060C داده‌های فعلی:",
-                                  $state.reserveData.data
-                                );
                                 const updated = $state.reserveData.data.map(
-                                  item => {
-                                    if (item.Id === id) {
-                                      console.log(
-                                        "  \u2192 یافتن آیتم منطبق\u060C تغییر وضعیت به Cancelled:",
-                                        item
-                                      );
-                                      return {
-                                        ...item,
-                                        status: "Cancelled"
-                                      };
-                                    }
-                                    return item;
-                                  }
-                                );
-                                console.log(
-                                  "مرحله 3: پس از ساخت آرایه‌ی به‌روز:",
-                                  updated
+                                  item =>
+                                    item.Id === id
+                                      ? {
+                                          ...item,
+                                          status: "Cancelled"
+                                        }
+                                      : item
                                 );
                                 $state.reserveData = {
                                   ...$state.reserveData,
                                   data: updated
                                 };
-                                console.log(
-                                  "مرحله 4: state.reserveData جدید:",
-                                  $state.reserveData
+                                localStorage.setItem(
+                                  "reservations",
+                                  JSON.stringify($state.reserveData.data)
                                 );
-                                try {
-                                  localStorage.setItem(
-                                    "reservations",
-                                    JSON.stringify($state.reserveData.data)
-                                  );
-                                  console.log(
-                                    "مرحله 5: ذخیره‌ی موفق در localStorage"
-                                  );
-                                } catch (err) {
-                                  console.error(
-                                    "مرحله 5: خطا در ذخیره‌سازی در localStorage:",
-                                    err
-                                  );
-                                }
-                                const changedItem = updated.find(
-                                  item => item.Id === id
-                                );
-                                if (changedItem) {
-                                  console.log(
-                                    "مرحله 6: آیتم تغییر یافته برای بازگشت:",
-                                    changedItem
-                                  );
-                                } else {
-                                  console.warn(
-                                    "مرحله 6: آیتم با شناسهٔ داده‌شده یافت نشد:",
-                                    id
-                                  );
-                                }
-                                return changedItem;
+                                return updated.find(item => item.Id === id);
                               })();
                             }
                           };
@@ -5986,37 +5938,17 @@ function PlasmicReservations__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   const b_id = $state.modalData[0].reserve_id;
-                                  console.log(
-                                    "مرحله 1: شناسه‌ی رزرو از مودال:",
-                                    b_id
-                                  );
                                   const idx = $state.reserveData.data.findIndex(
                                     item => item.reserve_id === b_id
-                                  );
-                                  console.log(
-                                    "مرحله 2: اندیس پیدا شده در reserveData.data:",
-                                    idx
                                   );
                                   if (idx !== -1) {
                                     const rawAmount = $state.amount2.value
                                       .toString()
                                       .replace(/,/g, "");
-                                    console.log(
-                                      "مرحله 3.1: مقدار خام مبلغ (بدون ویرگول):",
-                                      rawAmount
-                                    );
                                     const amountNumber = Number(rawAmount) || 0;
-                                    console.log(
-                                      "مرحله 3.2: تبدیل به عدد:",
-                                      amountNumber
-                                    );
                                     const faAmount = new Intl.NumberFormat(
                                       "fa-IR"
                                     ).format(amountNumber);
-                                    console.log(
-                                      "مرحله 3.3: مبلغ فرمت‌شده به فارسی:",
-                                      faAmount
-                                    );
                                     $state.reserveData.data[idx].amount =
                                       faAmount;
                                     const map = {
@@ -6028,53 +5960,18 @@ function PlasmicReservations__RenderFunc(props: {
                                       Returning_Guest: "مسافر قبلی"
                                     };
                                     const eng = $state.guestReferrer.value;
-                                    console.log(
-                                      "مرحله 4.1: مقدار ورودی guestReferrer:",
-                                      eng
-                                    );
                                     const mapped = map[eng] || eng;
-                                    console.log(
-                                      "مرحله 4.2: منبع ارجاع نگاشته‌شده:",
-                                      mapped
-                                    );
                                     $state.reserveData.data[idx].platformName =
                                       mapped;
-                                    console.log(
-                                      "مرحله 5: به‌روزرسانی سایر فیلدها:"
-                                    );
-                                    console.log(
-                                      "  - phone_number:",
-                                      $state.phoneNumber.value
-                                    );
-                                    console.log(
-                                      "  - GuestName:",
-                                      $state.guestName2.value
-                                    );
-                                    console.log(
-                                      "  - guests_count:",
-                                      $state.guestCount.value
-                                    );
                                     $state.reserveData.data[idx].phone_number =
                                       $state.phoneNumber.value;
                                     $state.reserveData.data[idx].GuestName =
                                       $state.guestName2.value;
                                     $state.reserveData.data[idx].guests_count =
                                       $state.guestCount.value;
-                                    console.log(
-                                      "مرحله 6: ذخیره‌ی داده‌ها در localStorage",
-                                      $state.reserveData.data
-                                    );
-                                    localStorage.setItem(
+                                    return localStorage.setItem(
                                       "reservations",
                                       JSON.stringify($state.reserveData.data)
-                                    );
-                                    return console.log(
-                                      "مرحله 7: عملیات ذخیره موفقیت‌آمیز بود."
-                                    );
-                                  } else {
-                                    return console.warn(
-                                      "رزرو با شناسهٔ داده‌شده یافت نشد:",
-                                      b_id
                                     );
                                   }
                                 })();

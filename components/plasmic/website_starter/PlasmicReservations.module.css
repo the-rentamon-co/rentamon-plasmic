@@ -706,7 +706,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 0em 0px 9em;
+  padding: 0em 0px 1em;
 }
 .reserveMainStack > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -734,6 +734,7 @@
 @media (max-width: 500px) {
   .reserveMainStack {
     max-width: 100%;
+    padding-bottom: 1em;
   }
 }
 @media (max-width: 500px) {
@@ -1352,14 +1353,14 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 100px;
 }
 @media (max-width: 500px) {
   .intro {
     width: 100%;
     padding-right: 10px;
     padding-left: 10px;
-    padding-bottom: 70px;
+    padding-bottom: 80px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
   }

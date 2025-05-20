@@ -4751,87 +4751,67 @@ function PlasmicCalendar2__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["fetchModal", "open"])}
             title={
-              <React.Fragment>
-                <div className={classNames(projectcss.all, sty.freeBox__xlGco)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__mybxy)}
-                    onClick={async event => {
-                      const $steps = {};
+              <div
+                className={classNames(projectcss.all, sty.freeBox__mybxy)}
+                onClick={async event => {
+                  const $steps = {};
 
-                      $steps["updateUpdateStyle"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["updateStyle"]
-                              },
-                              operation: 0,
-                              value: ($state.updateStyle =
-                                $state.updateStyle + 1)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
+                  $steps["updateUpdateStyle"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["updateStyle"]
+                          },
+                          operation: 0,
+                          value: ($state.updateStyle = $state.updateStyle + 1)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateUpdateStyle"] != null &&
-                        typeof $steps["updateUpdateStyle"] === "object" &&
-                        typeof $steps["updateUpdateStyle"].then === "function"
-                      ) {
-                        $steps["updateUpdateStyle"] = await $steps[
-                          "updateUpdateStyle"
-                        ];
-                      }
-                    }}
-                  >
-                    {(() => {
-                      try {
-                        return Object.keys($state.platformRequestStatus).length;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <Icon23Icon
-                        className={classNames(
-                          projectcss.all,
-                          sty.svg__rElTd,
-                          ``
-                        )}
-                        role={"img"}
-                      />
-                    ) : null}
-                  </div>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dfIu4
-                  )}
-                >
-                  {
-                    "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateUpdateStyle"] != null &&
+                    typeof $steps["updateUpdateStyle"] === "object" &&
+                    typeof $steps["updateUpdateStyle"].then === "function"
+                  ) {
+                    $steps["updateUpdateStyle"] = await $steps[
+                      "updateUpdateStyle"
+                    ];
                   }
-                </div>
-              </React.Fragment>
+                }}
+              >
+                {(() => {
+                  try {
+                    return Object.keys($state.platformRequestStatus).length;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <Icon23Icon
+                    className={classNames(projectcss.all, sty.svg__rElTd, ``)}
+                    role={"img"}
+                  />
+                ) : null}
+              </div>
             }
             trigger={null}
             width={
@@ -4941,6 +4921,19 @@ function PlasmicCalendar2__RenderFunc(props: {
                 }
               })()}
             >
+              <div className={classNames(projectcss.all, sty.freeBox__xlGco)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dfIu4
+                  )}
+                >
+                  {
+                    "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
+                  }
+                </div>
+              </div>
               <div
                 className={classNames(projectcss.all, sty.freeBox__xAfjs, ``)}
               >
@@ -9331,6 +9324,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     { value: null, label: null },
                     { value: null, label: null },
                     { label: null, value: null },
+                    { value: null, label: null },
                     { value: null, label: null }
                   ];
                   __composite["0"]["value"] = "divar";
@@ -9340,13 +9334,14 @@ function PlasmicCalendar2__RenderFunc(props: {
                   __composite["2"]["value"] = "Colleague";
                   __composite["2"]["label"] = "\u0647\u0645\u06a9\u0627\u0631";
                   __composite["3"]["value"] = "Returning_Guest";
-                  __composite["3"]["label"] =
-                    "\u0645\u0633\u0627\u0641\u0631 \u0642\u0628\u0644\u06cc";
+                  __composite["3"]["label"] = "\u0642\u0628\u0644\u06cc";
                   __composite["4"]["label"] =
-                    "\u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645";
+                    "\u0627\u06cc\u0646\u0633\u062a\u0627";
                   __composite["4"]["value"] = "instagram";
                   __composite["5"]["value"] = "others";
                   __composite["5"]["label"] = "\u0633\u0627\u06cc\u0631";
+                  __composite["6"]["value"] = "offline";
+                  __composite["6"]["label"] = "\u062d\u0636\u0648\u0631\u06cc";
                   return __composite;
                 })()}
                 placeholder={

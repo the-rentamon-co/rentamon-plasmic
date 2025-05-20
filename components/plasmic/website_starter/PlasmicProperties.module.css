@@ -255,9 +255,7 @@
 }
 @media (max-width: 500px) {
   .freeBox__hIpz {
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
+    padding: 0px 0px 70px;
   }
 }
 @media (max-width: 350px) {
