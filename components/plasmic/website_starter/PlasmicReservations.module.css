@@ -3183,6 +3183,13 @@
   color: #203647;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .status3 {
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
 @media (max-width: 350px) {
   .status3 {
     font-size: 14px;

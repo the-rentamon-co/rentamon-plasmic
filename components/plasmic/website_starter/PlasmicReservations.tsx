@@ -5953,11 +5953,11 @@ function PlasmicReservations__RenderFunc(props: {
                                       faAmount;
                                     const map = {
                                       divar: "دیوار",
-                                      instagram: "اینستاگرام",
+                                      instagram: "اینستا",
                                       Broker: "واسطه",
                                       Colleague: "همکار",
                                       others: "دیگران",
-                                      Returning_Guest: "مسافر قبلی"
+                                      Returning_Guest: "مسافر"
                                     };
                                     const eng = $state.guestReferrer.value;
                                     const mapped = map[eng] || eng;
@@ -7352,8 +7352,8 @@ function PlasmicReservations__RenderFunc(props: {
                       "دیوار",
                       "واسطه",
                       "همکار",
-                      "اینستاگرام",
-                      "مسافر قبلی",
+                      "اینستا",
+                      "قبلی",
                       "همکار",
                       "نامشخص"
                     ];
