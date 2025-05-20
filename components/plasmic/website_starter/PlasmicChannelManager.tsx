@@ -220,7 +220,8 @@ function PlasmicChannelManager__RenderFunc(props: {
         path: "statusModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? false : true
       },
       {
         path: "apiRequest2.data",

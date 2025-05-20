@@ -192,6 +192,7 @@ export type PlasmicReservations__OverridesType = {
   colleague?: Flex__<typeof PlasmicImg__>;
   others?: Flex__<typeof PlasmicImg__>;
   broker?: Flex__<typeof PlasmicImg__>;
+  broker2?: Flex__<typeof PlasmicImg__>;
   instagram?: Flex__<typeof PlasmicImg__>;
   jabama?: Flex__<typeof PlasmicImg__>;
   jajiga?: Flex__<typeof PlasmicImg__>;
@@ -480,9 +481,10 @@ function PlasmicReservations__RenderFunc(props: {
                     const map = {
                       دیوار: "divar",
                       واسطه: "Broker",
-                      همکار: "colleague",
+                      همکار: "Colleague",
                       "مسافر قبلی": "Returning_Guest",
                       اینستاگرام: "instagram",
+                      حضوری: "offline",
                       سایر: "other"
                     };
                     return map[$state.modalData[0].platfromName] || "unknown";
@@ -5953,11 +5955,12 @@ function PlasmicReservations__RenderFunc(props: {
                                       faAmount;
                                     const map = {
                                       divar: "دیوار",
-                                      instagram: "اینستا",
+                                      instagram: "اینستاگرام",
                                       Broker: "واسطه",
                                       Colleague: "همکار",
+                                      offline: "حضوری",
                                       others: "دیگران",
-                                      Returning_Guest: "مسافر"
+                                      Returning_Guest: "مسافر قبلی"
                                     };
                                     const eng = $state.guestReferrer.value;
                                     const mapped = map[eng] || eng;
@@ -6276,6 +6279,39 @@ function PlasmicReservations__RenderFunc(props: {
                         src: "/plasmic/website_starter/images/iconMiddleManPng.png",
                         fullWidth: 138,
                         fullHeight: 138,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  ) : null}
+                  {(() => {
+                    try {
+                      return $state.modalData[0].platfromName == "حضوری";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <PlasmicImg__
+                      data-plasmic-name={"broker2"}
+                      data-plasmic-override={overrides.broker2}
+                      alt={""}
+                      className={classNames(sty.broker2)}
+                      displayHeight={"42px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/iconArrivedPng.png",
+                        fullWidth: 130,
+                        fullHeight: 130,
                         aspectRatio: undefined
                       }}
                     />
@@ -7352,8 +7388,8 @@ function PlasmicReservations__RenderFunc(props: {
                       "دیوار",
                       "واسطه",
                       "همکار",
-                      "اینستا",
-                      "قبلی",
+                      "اینستاگرام",
+                      "مسافر قبلی",
                       "همکار",
                       "نامشخص"
                     ];
@@ -7732,6 +7768,7 @@ const PlasmicDescendants = {
     "colleague",
     "others",
     "broker",
+    "broker2",
     "instagram",
     "jabama",
     "jajiga",
@@ -7907,6 +7944,7 @@ const PlasmicDescendants = {
     "colleague",
     "others",
     "broker",
+    "broker2",
     "instagram",
     "jabama",
     "jajiga",
@@ -7961,6 +7999,7 @@ const PlasmicDescendants = {
   colleague: ["colleague"],
   others: ["others"],
   broker: ["broker"],
+  broker2: ["broker2"],
   instagram: ["instagram"],
   jabama: ["jabama"],
   jajiga: ["jajiga"],
@@ -8062,6 +8101,7 @@ type NodeDefaultElementType = {
   colleague: typeof PlasmicImg__;
   others: typeof PlasmicImg__;
   broker: typeof PlasmicImg__;
+  broker2: typeof PlasmicImg__;
   instagram: typeof PlasmicImg__;
   jabama: typeof PlasmicImg__;
   jajiga: typeof PlasmicImg__;
@@ -8219,6 +8259,7 @@ export const PlasmicReservations = Object.assign(
     colleague: makeNodeComponent("colleague"),
     others: makeNodeComponent("others"),
     broker: makeNodeComponent("broker"),
+    broker2: makeNodeComponent("broker2"),
     instagram: makeNodeComponent("instagram"),
     jabama: makeNodeComponent("jabama"),
     jajiga: makeNodeComponent("jajiga"),

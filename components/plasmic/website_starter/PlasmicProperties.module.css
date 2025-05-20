@@ -869,6 +869,9 @@
   text-align: center;
   font-weight: 600;
   user-select: none;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
   min-width: 0;
 }
 @media (max-width: 500px) {

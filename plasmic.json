@@ -3870,6 +3870,11 @@
           "id": "p_773onaL1Fl",
           "name": "image 138",
           "filePath": "../public/plasmic/website_starter/images/image138.svg"
+        },
+        {
+          "id": "0sWh0avVOcrU",
+          "name": "icon - arrived.png",
+          "filePath": "../public/plasmic/website_starter/images/iconArrivedPng.png"
         }
       ],
       "indirect": false,

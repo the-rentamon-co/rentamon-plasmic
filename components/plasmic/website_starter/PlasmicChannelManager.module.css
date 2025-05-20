@@ -304,13 +304,13 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  background: #fcfcfc;
+  background: none;
   min-width: 0;
   padding: 0px 0px 0px 8px;
 }
 .freeBox__dTzEi > :global(.__wab_flex-container) {
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   min-width: 0;
   margin-left: calc(0px - 15px);
@@ -396,6 +396,11 @@
 .img__c6ZEc > picture > img {
   object-fit: cover;
 }
+@media (max-width: 500px) {
+  .img__c6ZEc {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  }
+}
 .img__nmqQa {
   object-fit: cover;
   max-width: 100%;
@@ -472,8 +477,8 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
   border-bottom-width: 1px;
   border-bottom-style: dotted;
   min-width: 0;
@@ -497,8 +502,11 @@
   height: auto;
   max-width: 100%;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: right;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
   min-width: 0;
 }
 @media (max-width: 350px) {
@@ -512,7 +520,7 @@
   height: auto;
   max-width: 100%;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: left;
   min-width: 0;
 }
@@ -730,7 +738,7 @@
 @media (max-width: 500px) {
   .freeBox__adLW {
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 8px;
   }
 }
 @media (max-width: 350px) {
