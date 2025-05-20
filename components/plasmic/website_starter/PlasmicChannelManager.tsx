@@ -221,7 +221,7 @@ function PlasmicChannelManager__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : true
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "apiRequest2.data",
@@ -675,7 +675,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                                 try {
                                   return (() => {
                                     return (
-                                      "رزرو از " +
+                                      "دریافت رزرو از " +
                                       ($state.modalData.source === "jabama"
                                         ? "جاباما"
                                         : $state.modalData.source === "otaghak"

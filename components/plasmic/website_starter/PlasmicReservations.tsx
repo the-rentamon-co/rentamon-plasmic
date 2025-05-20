@@ -193,7 +193,7 @@ export type PlasmicReservations__OverridesType = {
   others?: Flex__<typeof PlasmicImg__>;
   broker?: Flex__<typeof PlasmicImg__>;
   broker2?: Flex__<typeof PlasmicImg__>;
-  instagram?: Flex__<typeof PlasmicImg__>;
+  social?: Flex__<typeof PlasmicImg__>;
   jabama?: Flex__<typeof PlasmicImg__>;
   jajiga?: Flex__<typeof PlasmicImg__>;
   mihmansho?: Flex__<typeof PlasmicImg__>;
@@ -482,7 +482,7 @@ function PlasmicReservations__RenderFunc(props: {
                       دیوار: "divar",
                       "واسطه یا همکار": "Broker or Colleague",
                       "مسافر قبلی": "Returning_Guest",
-                      اینستاگرام: "instagram",
+                      "پیام‌رسان و شبکه‌اجتماعی": "social",
                       حضوری: "offline",
                       سایر: "other"
                     };
@@ -5461,8 +5461,8 @@ function PlasmicReservations__RenderFunc(props: {
                       __composite["2"]["label"] =
                         "\u0645\u0633\u0627\u0641\u0631 \u0642\u0628\u0644\u06cc";
                       __composite["3"]["label"] =
-                        "\u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645";
-                      __composite["3"]["value"] = "instagram";
+                        "\u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0648 \u0634\u0628\u06a9\u0647\u200c\u0627\u062c\u062a\u0645\u0627\u0639\u06cc";
+                      __composite["3"]["value"] = "social";
                       __composite["4"]["value"] = "others";
                       __composite["4"]["label"] = "\u0633\u0627\u06cc\u0631";
                       return __composite;
@@ -5950,7 +5950,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       faAmount;
                                     const map = {
                                       divar: "دیوار",
-                                      instagram: "اینستاگرام",
+                                      social: "پیام‌رسان و شبکه‌اجتماعی",
                                       Broker: "واسطه",
                                       "Broker or Colleague": "واسطه یا همکار",
                                       Colleague: "همکار",
@@ -6316,7 +6316,10 @@ function PlasmicReservations__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.modalData[0].platfromName == "اینستاگرام";
+                      return (
+                        $state.modalData[0].platfromName ==
+                        "پیام‌رسان و شبکه‌اجتماعی"
+                      );
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -6328,10 +6331,10 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                   })() ? (
                     <PlasmicImg__
-                      data-plasmic-name={"instagram"}
-                      data-plasmic-override={overrides.instagram}
+                      data-plasmic-name={"social"}
+                      data-plasmic-override={overrides.social}
                       alt={""}
-                      className={classNames(sty.instagram)}
+                      className={classNames(sty.social)}
                       displayHeight={"42px"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -6340,9 +6343,9 @@ function PlasmicReservations__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/iconInstaPng.png",
-                        fullWidth: 138,
-                        fullHeight: 138,
+                        src: "/plasmic/website_starter/images/iconSocialMediaPng.png",
+                        fullWidth: 130,
+                        fullHeight: 131,
                         aspectRatio: undefined
                       }}
                     />
@@ -6617,7 +6620,13 @@ function PlasmicReservations__RenderFunc(props: {
               </div>
             }
             trigger={null}
-            width={"350"}
+            width={
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? "100%"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "96%"
+                : "380"
+            }
             wrapClassName={classNames({ [sty["pcls_tOja-se3vysu"]]: true })}
           >
             {(() => {
@@ -7386,7 +7395,7 @@ function PlasmicReservations__RenderFunc(props: {
                       "دیوار",
                       "واسطه",
                       "همکار",
-                      "اینستاگرام",
+                      "پیام‌رسان و شبکه‌اجتماعی",
                       "مسافر قبلی",
                       "همکار",
                       "نامشخص",
@@ -7769,7 +7778,7 @@ const PlasmicDescendants = {
     "others",
     "broker",
     "broker2",
-    "instagram",
+    "social",
     "jabama",
     "jajiga",
     "mihmansho",
@@ -7945,7 +7954,7 @@ const PlasmicDescendants = {
     "others",
     "broker",
     "broker2",
-    "instagram",
+    "social",
     "jabama",
     "jajiga",
     "mihmansho",
@@ -8000,7 +8009,7 @@ const PlasmicDescendants = {
   others: ["others"],
   broker: ["broker"],
   broker2: ["broker2"],
-  instagram: ["instagram"],
+  social: ["social"],
   jabama: ["jabama"],
   jajiga: ["jajiga"],
   mihmansho: ["mihmansho"],
@@ -8102,7 +8111,7 @@ type NodeDefaultElementType = {
   others: typeof PlasmicImg__;
   broker: typeof PlasmicImg__;
   broker2: typeof PlasmicImg__;
-  instagram: typeof PlasmicImg__;
+  social: typeof PlasmicImg__;
   jabama: typeof PlasmicImg__;
   jajiga: typeof PlasmicImg__;
   mihmansho: typeof PlasmicImg__;
@@ -8260,7 +8269,7 @@ export const PlasmicReservations = Object.assign(
     others: makeNodeComponent("others"),
     broker: makeNodeComponent("broker"),
     broker2: makeNodeComponent("broker2"),
-    instagram: makeNodeComponent("instagram"),
+    social: makeNodeComponent("social"),
     jabama: makeNodeComponent("jabama"),
     jajiga: makeNodeComponent("jajiga"),
     mihmansho: makeNodeComponent("mihmansho"),

@@ -2,7 +2,7 @@
   "projects": [
     {
       "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-      "version": "204.4.1",
+      "version": "205.0.0",
       "dependencies": {
         "YUiM7yqBWAqsh8KSnrdj7": "0.33.0",
         "ohDidvG9XsCeFumugENU3J": "6.29.0",
@@ -182,12 +182,12 @@
         {
           "type": "renderModule",
           "assetId": "RNhZtlNmydsH",
-          "checksum": "92f77070c37239f5ab1f0235879b243b"
+          "checksum": "0aa110043780c4e1ff8aa86c645e5f73"
         },
         {
           "type": "cssRules",
           "assetId": "RNhZtlNmydsH",
-          "checksum": "92f77070c37239f5ab1f0235879b243b"
+          "checksum": "0aa110043780c4e1ff8aa86c645e5f73"
         },
         {
           "type": "renderModule",
@@ -1127,12 +1127,12 @@
         {
           "type": "renderModule",
           "assetId": "gvjKIi6-pXeG",
-          "checksum": "14a63a34f26ae4c76bc4544ab54fafda"
+          "checksum": "df9ebb43bccf449037f0cd4c9ddfe50c"
         },
         {
           "type": "cssRules",
           "assetId": "gvjKIi6-pXeG",
-          "checksum": "14a63a34f26ae4c76bc4544ab54fafda"
+          "checksum": "df9ebb43bccf449037f0cd4c9ddfe50c"
         },
         {
           "type": "icon",
@@ -2312,12 +2312,12 @@
         {
           "type": "renderModule",
           "assetId": "TARn4RyKgOfz",
-          "checksum": "6278e5cd3b838b7cdbd9a1be4512f1ca"
+          "checksum": "0525d39f24292b27dd5085731c42f4a7"
         },
         {
           "type": "cssRules",
           "assetId": "TARn4RyKgOfz",
-          "checksum": "6278e5cd3b838b7cdbd9a1be4512f1ca"
+          "checksum": "0525d39f24292b27dd5085731c42f4a7"
         },
         {
           "type": "image",
@@ -2382,12 +2382,12 @@
         {
           "type": "renderModule",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "79535cf014b282c09ddef4f5cb70e99d"
+          "checksum": "662ec09d54e8a7c4592a45ab14c74428"
         },
         {
           "type": "cssRules",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "79535cf014b282c09ddef4f5cb70e99d"
+          "checksum": "662ec09d54e8a7c4592a45ab14c74428"
         },
         {
           "type": "renderModule",
@@ -3413,6 +3413,11 @@
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
           "type": "projectCss",
           "checksum": "fa0f5632ba23274b75555f48bd5c702d"
+        },
+        {
+          "type": "image",
+          "assetId": "pEqD4qlxdqJi",
+          "checksum": "a106a35a95eac0fc4c25c72d518795b0"
         }
       ],
       "codegenVersion": "0.0.1"
