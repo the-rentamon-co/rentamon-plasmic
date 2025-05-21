@@ -192,7 +192,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">
           {Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.title}
         </title>
@@ -205,6 +205,35 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
           key="twitter:title"
           name="twitter:title"
           content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.ogImageSrc}
+        />
+        <link
+          rel="canonical"
+          href={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.canonical}
         />
       </Head>
 
@@ -2070,12 +2099,28 @@ export const Plasmicمقایسهبهترینسایتاجارهویلا = Object.
     internalVariantProps: Plasmicمقایسهبهترینسایتاجارهویلا__VariantProps,
     internalArgProps: Plasmicمقایسهبهترینسایتاجارهویلا__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      metaKeywords:
+        "\u0645\u0642\u0627\u06cc\u0633\u0647 \u0645\u06cc\u0632\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f\u060c \u06a9\u06cc\u0641\u06cc\u062a \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0648 \u062f\u0631\u0622\u0645\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0634\u0628\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648...",
+      ogType: "article",
+      ogTitle:
+        "\u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0627\u06cc\u0631\u0627\u0646 \u0627\u0632 \u0646\u0638\u0631 \u06a9\u0627\u0631\u0645\u0632\u062f\u060c \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc\u060c \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0648...",
+      ogDescription:
+        "\u062f\u0631 \u0627\u06cc\u0646 \u0645\u0637\u0644\u0628 \u0628\u0647 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0648 \u0628\u0631\u0631\u0633\u06cc \u062c\u0627\u0645\u0639 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0648\u0628\u200c\u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 \u0645\u06cc\u200c\u067e\u0631\u062f\u0627\u0632\u06cc\u0645\u061b \u0627\u0632 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u062a\u0627 \u06a9\u06cc\u0641\u06cc\u062a \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0648 \u0634\u0631\u0627\u06cc\u0637 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648.",
+      ogUrl: "https://rentamon.com/best-villa-rental-sites/",
+      ogImageAlt:
+        "\u062c\u062f\u0648\u0644 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647/\u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0627\u06cc\u0631\u0627\u0646"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "مقایسه بهترین سایت‌های اجاره ویلا",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      description:
+        "مقایسه میزان کارمزد، کیفیت پشتیبانی و درآمد سایت‌های جاباما، جاجیگا، شب، اتاقک و...",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/cc7ae424dd4a99449087afa68e7f3dd1.jpg",
+      canonical: "https://rentamon.com/best-villa-rental-sites/"
     }
   }
 );

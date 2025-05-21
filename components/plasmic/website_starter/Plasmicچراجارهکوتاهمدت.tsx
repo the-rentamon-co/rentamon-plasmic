@@ -176,7 +176,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{Plasmicچراجارهکوتاهمدت.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -187,6 +187,35 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
           key="twitter:title"
           name="twitter:title"
           content={Plasmicچراجارهکوتاهمدت.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicچراجارهکوتاهمدت.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicچراجارهکوتاهمدت.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicچراجارهکوتاهمدت.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicچراجارهکوتاهمدت.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicچراجارهکوتاهمدت.pageMetadata.ogImageSrc}
+        />
+        <link
+          rel="canonical"
+          href={Plasmicچراجارهکوتاهمدت.pageMetadata.canonical}
         />
       </Head>
 
@@ -920,12 +949,28 @@ export const Plasmicچراجارهکوتاهمدت = Object.assign(
     internalVariantProps: Plasmicچراجارهکوتاهمدت__VariantProps,
     internalArgProps: Plasmicچراجارهکوتاهمدت__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      metaKeywords:
+        "\u0645\u0642\u0627\u06cc\u0633\u0647 \u0645\u06cc\u0632\u0627\u0646 \u062f\u0631\u0622\u0645\u062f \u0648 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0645\u0646\u0632\u0644 \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647",
+      ogType: "article",
+      ogTitle:
+        "\u0647\u0645\u0647 \u0686\u06cc\u0632 \u062f\u0631\u0628\u0627\u0631\u0647 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0633\u0648\u06cc\u06cc\u062a\u060c \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646\u060c \u0648\u06cc\u0644\u0627 \u0648 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
+      ogDescription:
+        "\u0645\u0642\u0627\u06cc\u0633\u0647 \u0645\u06cc\u0632\u0627\u0646 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647 \u0627\u0632 \u0646\u0638\u0631 \u062f\u0631\u0622\u0645\u062f \u0648 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0631\u0627\u06cc\u06cc.",
+      ogUrl: "https://rentamon.com/short-term-rental/",
+      ogImageAlt:
+        "\u0646\u0645\u0648\u062f\u0627\u0631 \u0645\u0642\u0627\u06cc\u0633\u0647 \u062f\u0631\u0622\u0645\u062f \u06cc\u06a9 \u0633\u0627\u0644 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647 \u0645\u062f\u062a \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "چر اجاره کوتاه مدت",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      description:
+        "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/c85f60591d2e0c0e332ab600541cfe78.webp",
+      canonical: "https://rentamon.com/short-term-rental/"
     }
   }
 );

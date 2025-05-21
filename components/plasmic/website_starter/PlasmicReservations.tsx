@@ -3534,22 +3534,19 @@ function PlasmicReservations__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 const id = $state.modalData[0].id;
-                                const updated = $state.reserveData.data.map(
-                                  item =>
+                                const updated =
+                                  $state.reserveData.data[0].data.map(item =>
                                     item.Id === id
                                       ? {
                                           ...item,
                                           status: "Cancelled"
                                         }
                                       : item
-                                );
-                                $state.reserveData = {
-                                  ...$state.reserveData,
-                                  data: updated
-                                };
+                                  );
+                                $state.reserveData.data[0].data = updated;
                                 localStorage.setItem(
                                   "reservations",
-                                  JSON.stringify($state.reserveData.data)
+                                  JSON.stringify(updated)
                                 );
                                 return updated.find(item => item.Id === id);
                               })();
@@ -6147,9 +6144,10 @@ function PlasmicReservations__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   const b_id = $state.modalData[0].reserve_id;
-                                  const idx = $state.reserveData.data.findIndex(
-                                    item => item.reserve_id === b_id
-                                  );
+                                  const idx =
+                                    $state.reserveData.data[0].data.findIndex(
+                                      item => item.reserve_id === b_id
+                                    );
                                   if (idx !== -1) {
                                     const rawAmount = $state.amount2.value
                                       .toString()
@@ -6158,8 +6156,9 @@ function PlasmicReservations__RenderFunc(props: {
                                     const faAmount = new Intl.NumberFormat(
                                       "fa-IR"
                                     ).format(amountNumber);
-                                    $state.reserveData.data[idx].amount =
-                                      faAmount;
+                                    $state.reserveData.data[0].data[
+                                      idx
+                                    ].amount = faAmount;
                                     const map = {
                                       divar: "دیوار",
                                       social: "پیام‌رسان و شبکه‌اجتماعی",
@@ -6171,18 +6170,23 @@ function PlasmicReservations__RenderFunc(props: {
                                       Returning_Guest: "مسافر قبلی"
                                     };
                                     const eng = $state.guestReferrer.value;
-                                    const mapped = map[eng] || eng;
-                                    $state.reserveData.data[idx].platformName =
-                                      mapped;
-                                    $state.reserveData.data[idx].phone_number =
-                                      $state.phoneNumber.value;
-                                    $state.reserveData.data[idx].GuestName =
-                                      $state.guestName2.value;
-                                    $state.reserveData.data[idx].guests_count =
-                                      $state.guestCount.value;
+                                    $state.reserveData.data[0].data[
+                                      idx
+                                    ].platformName = map[eng] || eng;
+                                    $state.reserveData.data[0].data[
+                                      idx
+                                    ].phone_number = $state.phoneNumber.value;
+                                    $state.reserveData.data[0].data[
+                                      idx
+                                    ].GuestName = $state.guestName2.value;
+                                    $state.reserveData.data[0].data[
+                                      idx
+                                    ].guests_count = $state.guestCount.value;
                                     return localStorage.setItem(
                                       "reservations",
-                                      JSON.stringify($state.reserveData.data)
+                                      JSON.stringify(
+                                        $state.reserveData.data[0].data
+                                      )
                                     );
                                   }
                                 })();

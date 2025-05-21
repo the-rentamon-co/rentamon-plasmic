@@ -175,7 +175,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">
           {Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.title}
         </title>
@@ -188,6 +188,35 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
           key="twitter:title"
           name="twitter:title"
           content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.ogImageSrc}
+        />
+        <link
+          rel="canonical"
+          href={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.canonical}
         />
       </Head>
 
@@ -1114,12 +1143,35 @@ export const Plasmicراهنمایجامعدرآمدازاجارهویلا = Obj
     internalVariantProps: Plasmicراهنمایجامعدرآمدازاجارهویلا__VariantProps,
     internalArgProps: Plasmicراهنمایجامعدرآمدازاجارهویلا__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      metaKeywords:
+        "\u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c vacation rental income\u060c \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
+      ogType: "article",
+      ogTitle:
+        "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
+      ogDescription:
+        "\u062f\u0631 \u0627\u06cc\u0646 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639\u060c \u062a\u0645\u0627\u0645 \u0627\u0633\u062a\u0631\u0627\u062a\u0698\u06cc\u200c\u0647\u0627 \u0648 \u0646\u06a9\u0627\u062a \u0639\u0645\u0644\u06cc \u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u200c\u0634\u0648\u062f.",
+      ogUrl: "https://rentamon.com/vacation-rental-income/",
+      ogImageAlt:
+        "\u062f\u0633\u062a\u200c\u06af\u0631\u0641\u062a\u0646 \u06a9\u0644\u06cc\u062f \u0648\u06cc\u0644\u0627 \u2013 \u0646\u0645\u0627\u062f \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
+      twitterCard: "summary_large_image",
+      twitterTitle:
+        "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
+      twitterDescription:
+        "\u062f\u0631 \u0627\u06cc\u0646 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639\u060c \u062a\u0645\u0627\u0645 \u0627\u0633\u062a\u0631\u0627\u062a\u0698\u06cc\u200c\u0647\u0627 \u0648 \u0646\u06a9\u0627\u062a \u0639\u0645\u0644\u06cc \u0628\u0631\u0627\u06cc \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u200c\u0634\u0648\u062f.",
+      twitterImage:
+        "https://rentamon.com/plasmic/website_starter/images/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87%D9%88%DB%8C%D9%84%D8%A7%D8%A8%D9%87%D9%85%D8%B3%D8%A7%D9%81%D8%B1%D8%A7%D9%86Jpg.jpg"
+    },
+
     // Page metadata
     pageMetadata: {
-      title: "راهنمای جامع درآمد از اجاره ویلا",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      title: "راهنمای جامع درآمدزایی از اجاره ویلا",
+      description:
+        "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/15351cdec6468de813a07a902e7e2f8d.jpg",
+      canonical: "https://rentamon.com/vacation-rental-income/"
     }
   }
 );
