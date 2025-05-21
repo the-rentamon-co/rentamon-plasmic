@@ -5657,23 +5657,23 @@ function PlasmicReservations__RenderFunc(props: {
                         { value: null, label: null },
                         { value: null, label: null }
                       ];
-                      __composite["0"]["value"] = "divar";
+                      __composite["0"]["value"] = "Returning_Guest";
                       __composite["0"]["label"] =
-                        "\u062f\u06cc\u0648\u0627\u0631";
-                      __composite["1"]["value"] = "Broker or Colleague";
-                      __composite["1"]["label"] =
-                        "\u0648\u0627\u0633\u0637\u0647 \u06cc\u0627 \u0647\u0645\u06a9\u0627\u0631";
-                      __composite["2"]["value"] = "Returning_Guest";
-                      __composite["2"]["label"] =
                         "\u0645\u0633\u0627\u0641\u0631 \u0642\u0628\u0644\u06cc";
+                      __composite["1"]["value"] = "divar";
+                      __composite["1"]["label"] =
+                        "\u062f\u06cc\u0648\u0627\u0631";
+                      __composite["2"]["value"] = "Broker or Colleague";
+                      __composite["2"]["label"] =
+                        "\u0648\u0627\u0633\u0637\u0647 \u06cc\u0627 \u0647\u0645\u06a9\u0627\u0631";
                       __composite["3"]["label"] =
                         "\u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0648 \u0634\u0628\u06a9\u0647\u200c\u0627\u062c\u062a\u0645\u0627\u0639\u06cc";
                       __composite["3"]["value"] = "social";
-                      __composite["4"]["value"] = "others";
-                      __composite["4"]["label"] = "\u0633\u0627\u06cc\u0631";
-                      __composite["5"]["value"] = "offline";
-                      __composite["5"]["label"] =
+                      __composite["4"]["value"] = "offline";
+                      __composite["4"]["label"] =
                         "\u062d\u0636\u0648\u0631\u06cc";
+                      __composite["5"]["value"] = "others";
+                      __composite["5"]["label"] = "\u0633\u0627\u06cc\u0631";
                       return __composite;
                     })()}
                     placeholder={
@@ -6166,7 +6166,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       "Broker or Colleague": "واسطه یا همکار",
                                       Colleague: "همکار",
                                       offline: "حضوری",
-                                      others: "دیگران",
+                                      others: "سایر",
                                       Returning_Guest: "مسافر قبلی"
                                     };
                                     const eng = $state.guestReferrer.value;
