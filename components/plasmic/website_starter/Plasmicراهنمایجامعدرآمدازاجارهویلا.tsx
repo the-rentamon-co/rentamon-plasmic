@@ -102,7 +102,9 @@ export type Plasmicراهنمایجامعدرآمدازاجارهویلا__Overr
   button3?: Flex__<"div">;
   busy?: Flex__<"div">;
   bot?: Flex__<"div">;
-  cta?: Flex__<"div">;
+  busy2?: Flex__<"div">;
+  bot2?: Flex__<"div">;
+  cta3?: Flex__<"div">;
   button4?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -843,6 +845,39 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                 )}
               >
                 {
+                  "\u0627\u06af\u0647 \u0642\u0635\u062f \u062f\u0627\u0631\u06cc \u062e\u0648\u0646\u0647\u060c \u0648\u06cc\u0644\u0627 \u06cc\u0627 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646\u062a \u0631\u0648 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u06cc\u060c \u0628\u0647\u062a\u0631\u0647 \u0628\u0627 \u0642\u0648\u0627\u0646\u06cc\u0646\u060c \u0645\u062c\u0648\u0632\u0647\u0627 \u0648 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0646\u0648\u0639 \u0627\u062c\u0627\u0631\u0647 \u0622\u0634\u0646\u0627 \u0628\u0627\u0634\u06cc. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u0637\u0644\u0628\u060c \u0628\u0647\u200c\u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0628\u0647 \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0646\u06a9\u0627\u062a \u0642\u0627\u0646\u0648\u0646\u06cc \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 \u0645\u06cc\u200c\u067e\u0631\u062f\u0627\u0632\u06cc\u0645."
+                }
+              </div>
+              <div
+                data-plasmic-name={"bot"}
+                data-plasmic-override={overrides.bot}
+                className={classNames(projectcss.all, sty.bot)}
+              />
+            </div>
+            <div
+              data-plasmic-name={"busy2"}
+              data-plasmic-override={overrides.busy2}
+              className={classNames(projectcss.all, sty.busy2)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__b23Ap
+                )}
+              >
+                {
+                  "\u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0634\u0645\u061f\r"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qy6We
+                )}
+              >
+                {
                   "\u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u062a\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0634\u06cc\u060c \u0627\u0648\u0644 \u0628\u0627\u06cc\u062f \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a \u0645\u0648\u0631\u062f\u0646\u0638\u0631 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc \u0648 \u0645\u0631\u0627\u062d\u0644 \u0627\u062d\u0631\u0627\u0632 \u0647\u0648\u06cc\u062a \u0631\u0648 \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u06cc\u060c \u0645\u062b\u0644 \u0627\u0631\u0627\u0626\u0647 \u0645\u062f\u0627\u0631\u06a9 \u0634\u0646\u0627\u0633\u0627\u06cc\u06cc. \u0628\u0639\u062f\u0634 \u0644\u0627\u0632\u0645\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u06a9\u0627\u0645\u0644\u06cc \u0627\u0632 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u060c \u0645\u062b\u0644 \u0622\u062f\u0631\u0633\u060c \u062a\u0639\u062f\u0627\u062f \u0627\u062a\u0627\u0642\u200c\u0647\u0627\u060c \u0627\u0645\u06a9\u0627\u0646\u0627\u062a\u06cc \u06a9\u0647 \u062f\u0627\u0631\u0647 \u0648 \u0686\u0646\u062f \u062a\u0627 \u0639\u06a9\u0633 \u0628\u0627\u06a9\u06cc\u0641\u06cc\u062a \u0627\u0632 \u062e\u0648\u0646\u0647 \u06cc\u0627 \u0648\u06cc\u0644\u0627\u06cc \u062e\u0648\u062f\u062a \u0628\u0630\u0627\u0631\u06cc.\r\n\r\r"
                 }
               </div>
@@ -850,7 +885,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__oV9At
+                  sty.text__ztRkb
                 )}
               >
                 {
@@ -858,20 +893,20 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                 }
               </div>
               <div
-                data-plasmic-name={"bot"}
-                data-plasmic-override={overrides.bot}
-                className={classNames(projectcss.all, sty.bot)}
+                data-plasmic-name={"bot2"}
+                data-plasmic-override={overrides.bot2}
+                className={classNames(projectcss.all, sty.bot2)}
               >
                 <div
-                  data-plasmic-name={"cta"}
-                  data-plasmic-override={overrides.cta}
-                  className={classNames(projectcss.all, sty.cta)}
+                  data-plasmic-name={"cta3"}
+                  data-plasmic-override={overrides.cta3}
+                  className={classNames(projectcss.all, sty.cta3)}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__ul8AS
+                      sty.text__sYa5C
                     )}
                   >
                     {"\u062c\u0645\u0639\u200c\u0628\u0646\u062f\u06cc\r"}
@@ -880,7 +915,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__uwabJ
+                      sty.text__dLiz
                     )}
                   >
                     {
@@ -991,7 +1026,9 @@ const PlasmicDescendants = {
     "button3",
     "busy",
     "bot",
-    "cta",
+    "busy2",
+    "bot2",
+    "cta3",
     "button4",
     "rentamonFooter",
     "clarityRntComponent",
@@ -1011,7 +1048,9 @@ const PlasmicDescendants = {
     "button3",
     "busy",
     "bot",
-    "cta"
+    "busy2",
+    "bot2",
+    "cta3"
   ],
   intro: ["intro", "introTitle", "introDesc"],
   introTitle: ["introTitle"],
@@ -1022,9 +1061,11 @@ const PlasmicDescendants = {
   button2: ["button2"],
   strDefinition3: ["strDefinition3", "button3"],
   button3: ["button3"],
-  busy: ["busy", "bot", "cta"],
-  bot: ["bot", "cta"],
-  cta: ["cta"],
+  busy: ["busy", "bot"],
+  bot: ["bot"],
+  busy2: ["busy2", "bot2", "cta3"],
+  bot2: ["bot2", "cta3"],
+  cta3: ["cta3"],
   button4: ["button4"],
   rentamonFooter: ["rentamonFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -1048,7 +1089,9 @@ type NodeDefaultElementType = {
   button3: "div";
   busy: "div";
   bot: "div";
-  cta: "div";
+  busy2: "div";
+  bot2: "div";
+  cta3: "div";
   button4: "div";
   rentamonFooter: typeof RentamonFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -1133,7 +1176,9 @@ export const Plasmicراهنمایجامعدرآمدازاجارهویلا = Obj
     button3: makeNodeComponent("button3"),
     busy: makeNodeComponent("busy"),
     bot: makeNodeComponent("bot"),
-    cta: makeNodeComponent("cta"),
+    busy2: makeNodeComponent("busy2"),
+    bot2: makeNodeComponent("bot2"),
+    cta3: makeNodeComponent("cta3"),
     button4: makeNodeComponent("button4"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

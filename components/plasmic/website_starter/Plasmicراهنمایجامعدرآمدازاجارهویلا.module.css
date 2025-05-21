@@ -1484,43 +1484,6 @@
     min-width: 0;
   }
 }
-.text__oV9At {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 17px;
-  line-height: 1.8;
-  padding-top: 14px;
-  min-width: 0;
-}
-@media (max-width: 1200px) {
-  .text__oV9At {
-    padding-right: 0px;
-    padding-left: 6px;
-    line-height: 1.8;
-  }
-}
-@media (max-width: 500px) {
-  .text__oV9At {
-    padding-right: 0px;
-    padding-left: 0px;
-    font-size: 16px;
-  }
-}
-@media (max-width: 350px) {
-  .text__oV9At {
-    padding-right: 0px;
-    padding-left: 0px;
-    font-size: 15px;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    padding-top: 14px;
-    line-height: 1.8;
-    min-width: 0;
-  }
-}
 .bot {
   display: flex;
   flex-direction: column;
@@ -1534,7 +1497,141 @@
   min-width: 0;
   padding: 8px 0px 0px;
 }
-.cta {
+.busy2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 26px 8px 8px;
+}
+@media (max-width: 1200px) {
+  .busy2 {
+    padding-right: 30px;
+    padding-top: 12px;
+  }
+}
+@media (max-width: 500px) {
+  .busy2 {
+    padding-right: 10px;
+    padding-top: 11px;
+  }
+}
+@media (max-width: 350px) {
+  .busy2 {
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 10px;
+  }
+}
+.text__b23Ap {
+  text-align: right;
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 0px;
+}
+@media (max-width: 1200px) {
+  .text__b23Ap {
+    font-size: 18px;
+  }
+}
+@media (max-width: 350px) {
+  .text__b23Ap {
+    font-size: 17px;
+  }
+}
+.text__qy6We {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 17px;
+  line-height: 1.8;
+  padding-top: 14px;
+  min-width: 0;
+}
+@media (max-width: 1200px) {
+  .text__qy6We {
+    padding-right: 0px;
+    padding-left: 6px;
+    line-height: 1.8;
+  }
+}
+@media (max-width: 500px) {
+  .text__qy6We {
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__qy6We {
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    padding-top: 14px;
+    line-height: 1.8;
+    min-width: 0;
+  }
+}
+.text__ztRkb {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 17px;
+  line-height: 1.8;
+  padding-top: 14px;
+  min-width: 0;
+}
+@media (max-width: 1200px) {
+  .text__ztRkb {
+    padding-right: 0px;
+    padding-left: 6px;
+    line-height: 1.8;
+  }
+}
+@media (max-width: 500px) {
+  .text__ztRkb {
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__ztRkb {
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    padding-top: 14px;
+    line-height: 1.8;
+    min-width: 0;
+  }
+}
+.bot2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: none;
+  min-width: 0;
+  padding: 8px 0px 0px;
+}
+.cta3 {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1547,23 +1644,23 @@
   min-width: 0;
   padding: 8px 8px 44px;
 }
-.text__ul8AS {
+.text__sYa5C {
   text-align: right;
   font-size: 20px;
   font-weight: 600;
   padding-top: 0px;
 }
 @media (max-width: 1200px) {
-  .text__ul8AS {
+  .text__sYa5C {
     font-size: 18px;
   }
 }
 @media (max-width: 350px) {
-  .text__ul8AS {
+  .text__sYa5C {
     font-size: 17px;
   }
 }
-.text__uwabJ {
+.text__dLiz {
   position: relative;
   width: 100%;
   height: auto;
@@ -1574,21 +1671,21 @@
   min-width: 0;
 }
 @media (max-width: 1200px) {
-  .text__uwabJ {
+  .text__dLiz {
     padding-right: 0px;
     padding-left: 6px;
     line-height: 1.8;
   }
 }
 @media (max-width: 500px) {
-  .text__uwabJ {
+  .text__dLiz {
     padding-right: 0px;
     padding-left: 0px;
     font-size: 16px;
   }
 }
 @media (max-width: 350px) {
-  .text__uwabJ {
+  .text__dLiz {
     padding-right: 0px;
     padding-left: 0px;
     font-size: 15px;
