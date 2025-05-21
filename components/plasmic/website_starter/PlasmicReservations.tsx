@@ -5657,6 +5657,7 @@ function PlasmicReservations__RenderFunc(props: {
                         { value: null, label: null },
                         { value: null, label: null },
                         { label: null, value: null },
+                        { value: null, label: null },
                         { value: null, label: null }
                       ];
                       __composite["0"]["value"] = "divar";
@@ -5673,6 +5674,9 @@ function PlasmicReservations__RenderFunc(props: {
                       __composite["3"]["value"] = "social";
                       __composite["4"]["value"] = "others";
                       __composite["4"]["label"] = "\u0633\u0627\u06cc\u0631";
+                      __composite["5"]["value"] = "offline";
+                      __composite["5"]["label"] =
+                        "\u062d\u0636\u0648\u0631\u06cc";
                       return __composite;
                     })()}
                     placeholder={
@@ -7598,7 +7602,8 @@ function PlasmicReservations__RenderFunc(props: {
                       "همکار",
                       "نامشخص",
                       "واسطه یا همکار",
-                      "حضوری"
+                      "حضوری",
+                      "سایر"
                     ];
 
                     const name = $state.modalData[0].platfromName;
