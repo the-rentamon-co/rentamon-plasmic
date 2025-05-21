@@ -3563,6 +3563,22 @@ function PlasmicActivation__RenderFunc(props: {
                     "https://api-v2.rentamon.com/api/website_statuses/?property_id=1"
                   }
                 />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___4Yei8)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___2Fcyl
+                    )}
+                  >
+                    {
+                      "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0647\u0631 \u0633\u0627\u06cc\u062a\u060c \u0644\u0627\u0632\u0645\u0647\n\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"
+                    }
+                  </div>
+                </div>
               </div>
               <AntdModal
                 data-plasmic-name={"modal"}
@@ -10323,6 +10339,15 @@ function PlasmicActivation__RenderFunc(props: {
                     : "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"}
                 </div>
               </AntdButton>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__pp8Sy
+                )}
+              >
+                {"Enter some text"}
+              </div>
             </div>
           ) : null}
           {(() => {

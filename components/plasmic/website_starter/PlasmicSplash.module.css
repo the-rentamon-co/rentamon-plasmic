@@ -31,6 +31,8 @@
   .root {
     background: linear-gradient(40deg, #8165d6 38%, #9d83ea 100%) 0% 0% / 100%
       100% repeat;
+    justify-items: center;
+    align-content: flex-start;
   }
 }
 @media (max-width: 500px) {
@@ -42,6 +44,33 @@
   .root > * {
     grid-column: 4;
   }
+}
+.freeBox__v4W4T {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__v4W4T {
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 160px;
+  }
+}
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 80px;
+}
+.img > picture > img {
+  object-fit: cover;
 }
 .center {
   display: flex;

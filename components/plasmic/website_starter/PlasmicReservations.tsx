@@ -69,6 +69,8 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import { AntdPagination } from "@plasmicpkgs/antd5/skinny/registerPagination";
+import { paginationHelpers as AntdPagination_Helpers } from "@plasmicpkgs/antd5/skinny/registerPagination";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import EditReserveInfo from "../../EditReserveInfo"; // plasmic-import: IxuDnIzMrMZF/component
@@ -125,6 +127,8 @@ export type PlasmicReservations__OverridesType = {
   finalModal?: Flex__<typeof AntdModal>;
   title2?: Flex__<"div">;
   cancelle?: Flex__<typeof AntdButton>;
+  pagination2?: Flex__<"div">;
+  pagination?: Flex__<typeof AntdPagination>;
   intro?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -637,6 +641,70 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "pagination.currentPage",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.reserveData.data[0].meta.current_page;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return 1;
+              }
+              throw e;
+            }
+          })(),
+
+        onMutate: generateOnMutateForSpec("currentPage", AntdPagination_Helpers)
+      },
+      {
+        path: "pagination.pageSize",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.reserveData.data[0].meta.page_size;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return 1;
+              }
+              throw e;
+            }
+          })(),
+
+        onMutate: generateOnMutateForSpec("pageSize", AntdPagination_Helpers)
+      },
+      {
+        path: "pagination.startIndex",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("startIndex", AntdPagination_Helpers)
+      },
+      {
+        path: "pagination.endIndex",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("endIndex", AntdPagination_Helpers)
+      },
+      {
+        path: "reserveDataPage",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1
       }
     ],
     [$props, $ctx, $refs]
@@ -1616,7 +1684,7 @@ function PlasmicReservations__RenderFunc(props: {
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                 (() => {
                   try {
-                    return $state.reserveData.data;
+                    return $state.reserveData.data[0].data;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -1642,56 +1710,24 @@ function PlasmicReservations__RenderFunc(props: {
                             const actionArgs = {
                               operation: 0,
                               value: (() => {
-                                $state.bookingId =
-                                  $state.reserveData.data[
-                                    currentIndex
-                                  ].reserve_id;
+                                $state.bookingId = currentItem.reserve_id;
                                 return ($state.modalData = [
                                   {
-                                    GuestName:
-                                      $state.reserveData.data[currentIndex]
-                                        .GuestName,
-                                    platfromName:
-                                      $state.reserveData.data[currentIndex]
-                                        .platformName,
-                                    enterDate:
-                                      $state.reserveData.data[currentIndex]
-                                        .checkIn,
-                                    laveDate:
-                                      $state.reserveData.data[currentIndex]
-                                        .checkOut,
-                                    propertyName:
-                                      $state.reserveData.data[currentIndex]
-                                        .property_name,
-                                    status:
-                                      $state.reserveData.data[currentIndex]
-                                        .status,
-                                    phone_number:
-                                      $state.reserveData.data[currentIndex]
-                                        .phone_number,
-                                    amount:
-                                      $state.reserveData.data[currentIndex]
-                                        .amount,
-                                    night:
-                                      $state.reserveData.data[currentIndex]
-                                        .night,
-                                    guests_count:
-                                      $state.reserveData.data[currentIndex]
-                                        .guests_count,
-                                    reserve_id:
-                                      $state.reserveData.data[currentIndex]
-                                        .reserve_id,
-                                    id: $state.reserveData.data[currentIndex]
-                                      .Id,
-                                    created_at:
-                                      $state.reserveData.data[currentIndex]
-                                        .created_at,
-                                    is_sattled:
-                                      $state.reserveData.data[currentIndex]
-                                        .is_settled,
-                                    booking_id:
-                                      $state.reserveData.data[currentIndex]
-                                        .reserve_id
+                                    GuestName: currentItem.GuestName,
+                                    platfromName: currentItem.platformName,
+                                    enterDate: currentItem.checkIn,
+                                    laveDate: currentItem.checkOut,
+                                    propertyName: currentItem.property_name,
+                                    status: currentItem.status,
+                                    phone_number: currentItem.phone_number,
+                                    amount: currentItem.amount,
+                                    night: currentItem.night,
+                                    guests_count: currentItem.guests_count,
+                                    reserve_id: currentItem.reserve_id,
+                                    id: currentItem.Id,
+                                    created_at: currentItem.created_at,
+                                    is_sattled: currentItem.is_settled,
+                                    booking_id: currentItem.reserve_id
                                   }
                                 ]);
                               })()
@@ -1723,8 +1759,7 @@ function PlasmicReservations__RenderFunc(props: {
                       }
 
                       $steps["updateModalOpen"] =
-                        $state.reserveData.data[currentIndex].status !=
-                        "Pending"
+                        currentItem.status != "Pending"
                           ? (() => {
                               const actionArgs = {
                                 variable: {
@@ -1761,8 +1796,7 @@ function PlasmicReservations__RenderFunc(props: {
                       }
 
                       $steps["updateModalOpen2"] =
-                        $state.reserveData.data[currentIndex].status ==
-                        "Pending"
+                        currentItem.status == "Pending"
                           ? (() => {
                               const actionArgs = {
                                 variable: {
@@ -1861,7 +1895,9 @@ function PlasmicReservations__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "mobile")
                           ? (() => {
                               try {
-                                return $state.reserveData.data[0].Id != null;
+                                return (
+                                  $state.reserveData.data[0].data[0].Id != null
+                                );
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -1874,7 +1910,9 @@ function PlasmicReservations__RenderFunc(props: {
                             })()
                           : (() => {
                               try {
-                                return $state.reserveData.data[0].Id != null;
+                                return (
+                                  $state.reserveData.data[0].data[0].Id != null
+                                );
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -1889,10 +1927,7 @@ function PlasmicReservations__RenderFunc(props: {
                         <RecordList
                           cancelledBookings={(() => {
                             try {
-                              return (
-                                $state.reserveData.data[currentIndex].status ==
-                                "Cancelled"
-                              );
+                              return currentItem.status == "Cancelled";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1909,10 +1944,7 @@ function PlasmicReservations__RenderFunc(props: {
                           )}
                           confirmedBookings={(() => {
                             try {
-                              return (
-                                $state.reserveData.data[currentIndex].status ==
-                                "Confirmed"
-                              );
+                              return currentItem.status == "Confirmed";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1926,7 +1958,7 @@ function PlasmicReservations__RenderFunc(props: {
                           currentIndex={currentIndex}
                           data={(() => {
                             try {
-                              return $state.reserveData.data[currentIndex];
+                              return currentItem;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1952,10 +1984,7 @@ function PlasmicReservations__RenderFunc(props: {
                           })()}
                           pastBookingsBox={(() => {
                             try {
-                              return (
-                                $state.reserveData.data[currentIndex].status ==
-                                "Past"
-                              );
+                              return currentItem.status == "Past";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1968,10 +1997,7 @@ function PlasmicReservations__RenderFunc(props: {
                           })()}
                           pendingBookings={(() => {
                             try {
-                              return (
-                                $state.reserveData.data[currentIndex].status ==
-                                "Pending"
-                              );
+                              return currentItem.status == "Pending";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -2230,7 +2256,8 @@ function PlasmicReservations__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                const reservations = $state.reserveData.data;
+                                const reservations =
+                                  $state.reserveData.data[0].data;
                                 if (
                                   Array.isArray(reservations) &&
                                   reservations.length > 0
@@ -2260,7 +2287,19 @@ function PlasmicReservations__RenderFunc(props: {
                 ref={ref => {
                   $refs["reserveData"] = ref;
                 }}
-                url={"https://gateway.rentamon.com/webhook/getReserve?v=2"}
+                url={(() => {
+                  try {
+                    return `https://gateway.rentamon.com/webhook/getReserve?v=2&page=${$state.reserveDataPage}`;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               >
                 {(() => {
                   try {
@@ -3152,6 +3191,175 @@ function PlasmicReservations__RenderFunc(props: {
               </AntdButton>
             </Stack__>
           </AntdModal>
+          <div
+            data-plasmic-name={"pagination2"}
+            data-plasmic-override={overrides.pagination2}
+            className={classNames(projectcss.all, sty.pagination2)}
+          >
+            {(() => {
+              const child$Props = {
+                className: classNames("__wab_instance", sty.pagination),
+                current: generateStateValueProp($state, [
+                  "pagination",
+                  "currentPage"
+                ]),
+                defaultCurrent: (() => {
+                  try {
+                    return $state.reserveData.data[0].meta.current_page;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return 1;
+                    }
+                    throw e;
+                  }
+                })(),
+                defaultPageSize: (() => {
+                  try {
+                    return $state.reserveData.data[0].meta.page_size;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return 1;
+                    }
+                    throw e;
+                  }
+                })(),
+                disabled: false,
+                onChange: async (...eventArgs: any) => {
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "currentPage",
+                    ["pagination", "currentPage"],
+                    AntdPagination_Helpers
+                  ).apply(null, eventArgs);
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "startIndex",
+                    ["pagination", "startIndex"],
+                    AntdPagination_Helpers
+                  ).apply(null, eventArgs);
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "endIndex",
+                    ["pagination", "endIndex"],
+                    AntdPagination_Helpers
+                  ).apply(null, eventArgs);
+
+                  (async (page, pageSize) => {
+                    const $steps = {};
+
+                    $steps["updateReserveDataPage"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["reserveDataPage"]
+                            },
+                            operation: 0,
+                            value: ($state.reserveDataPage =
+                              $state.pagination.currentPage)
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateReserveDataPage"] != null &&
+                      typeof $steps["updateReserveDataPage"] === "object" &&
+                      typeof $steps["updateReserveDataPage"].then === "function"
+                    ) {
+                      $steps["updateReserveDataPage"] = await $steps[
+                        "updateReserveDataPage"
+                      ];
+                    }
+                  }).apply(null, eventArgs);
+                },
+                onShowSizeChange: async (...eventArgs: any) => {
+                  generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "pageSize",
+                    ["pagination", "pageSize"],
+                    AntdPagination_Helpers
+                  ).apply(null, eventArgs);
+                },
+                pageSize: generateStateValueProp($state, [
+                  "pagination",
+                  "pageSize"
+                ]),
+                pageSizeOptions: [
+                  { pageSize: 10 },
+                  { pageSize: 20 },
+                  { pageSize: 50 },
+                  { pageSize: 100 }
+                ],
+                showQuickJumper: false,
+                simple: false,
+                size: "default",
+                total: (() => {
+                  try {
+                    return $state.reserveData.data[0].meta.total_count;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return 30;
+                    }
+                    throw e;
+                  }
+                })()
+              };
+              initializeCodeComponentStates(
+                $state,
+                [
+                  {
+                    name: "currentPage",
+                    plasmicStateName: "pagination.currentPage"
+                  },
+                  {
+                    name: "pageSize",
+                    plasmicStateName: "pagination.pageSize"
+                  },
+                  {
+                    name: "startIndex",
+                    plasmicStateName: "pagination.startIndex"
+                  },
+                  {
+                    name: "endIndex",
+                    plasmicStateName: "pagination.endIndex"
+                  }
+                ],
+                [],
+                AntdPagination_Helpers ?? {},
+                child$Props
+              );
+
+              return (
+                <AntdPagination
+                  data-plasmic-name={"pagination"}
+                  data-plasmic-override={overrides.pagination}
+                  {...child$Props}
+                />
+              );
+            })()}
+          </div>
           <div
             data-plasmic-name={"intro"}
             data-plasmic-override={overrides.intro}
@@ -7700,6 +7908,8 @@ const PlasmicDescendants = {
     "finalModal",
     "title2",
     "cancelle",
+    "pagination2",
+    "pagination",
     "intro",
     "returnButton",
     "clarityRntComponent",
@@ -7807,6 +8017,8 @@ const PlasmicDescendants = {
   finalModal: ["finalModal", "title2", "cancelle"],
   title2: ["title2"],
   cancelle: ["cancelle"],
+  pagination2: ["pagination2", "pagination"],
+  pagination: ["pagination"],
   intro: ["intro"],
   returnButton: ["returnButton"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -8033,6 +8245,8 @@ type NodeDefaultElementType = {
   finalModal: typeof AntdModal;
   title2: "div";
   cancelle: typeof AntdButton;
+  pagination2: "div";
+  pagination: typeof AntdPagination;
   intro: "div";
   returnButton: "div";
   clarityRntComponent: typeof ClarityRntComponent;
@@ -8191,6 +8405,8 @@ export const PlasmicReservations = Object.assign(
     finalModal: makeNodeComponent("finalModal"),
     title2: makeNodeComponent("title2"),
     cancelle: makeNodeComponent("cancelle"),
+    pagination2: makeNodeComponent("pagination2"),
+    pagination: makeNodeComponent("pagination"),
     intro: makeNodeComponent("intro"),
     returnButton: makeNodeComponent("returnButton"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

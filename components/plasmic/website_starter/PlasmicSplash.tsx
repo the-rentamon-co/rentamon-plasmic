@@ -86,6 +86,7 @@ export const PlasmicSplash__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSplash__OverridesType = {
   root?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   center?: Flex__<"div">;
   svg?: Flex__<"svg">;
   text?: Flex__<"div">;
@@ -186,6 +187,27 @@ function PlasmicSplash__RenderFunc(props: {
             hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
           )}
         >
+          <div className={classNames(projectcss.all, sty.freeBox__v4W4T)}>
+            <PlasmicImg__
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
+              alt={""}
+              className={classNames(sty.img)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"80px"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image140.gif",
+                fullWidth: 500,
+                fullHeight: 500,
+                aspectRatio: undefined
+              }}
+            />
+          </div>
           <div
             data-plasmic-name={"center"}
             data-plasmic-override={overrides.center}
@@ -515,7 +537,16 @@ function PlasmicSplash__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "center", "svg", "text", "sideEffect", "clarityRntComponent"],
+  root: [
+    "root",
+    "img",
+    "center",
+    "svg",
+    "text",
+    "sideEffect",
+    "clarityRntComponent"
+  ],
+  img: ["img"],
   center: ["center", "svg", "text"],
   svg: ["svg"],
   text: ["text"],
@@ -527,6 +558,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  img: typeof PlasmicImg__;
   center: "div";
   svg: "svg";
   text: "div";
@@ -594,6 +626,7 @@ export const PlasmicSplash = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    img: makeNodeComponent("img"),
     center: makeNodeComponent("center"),
     svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),

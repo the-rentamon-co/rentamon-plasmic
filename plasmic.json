@@ -3905,6 +3905,16 @@
           "id": "Qd7KadkWqtyA",
           "name": "icon - arrived.png 2",
           "filePath": "../public/plasmic/website_starter/images/iconArrivedPng2.png"
+        },
+        {
+          "id": "7DDUKE33dckc",
+          "name": "image 139",
+          "filePath": "../public/plasmic/website_starter/images/image139.gif"
+        },
+        {
+          "id": "VI-VlcD1LuXu",
+          "name": "image 140",
+          "filePath": "../public/plasmic/website_starter/images/image140.gif"
         }
       ],
       "indirect": false,
