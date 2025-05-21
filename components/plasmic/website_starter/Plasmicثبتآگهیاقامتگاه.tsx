@@ -341,9 +341,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     sty.text__yoL2I
                   )}
                 >
-                  {
-                    "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    : "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
                 </div>
               </div>
               <div
@@ -1680,7 +1680,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062a\u0648\u06cc \u06a9\u062f\u0648\u0645 \u0622\u06af\u0647\u06cc \u0628\u0630\u0627\u0631\u0645\u061f\r"
+                    "\u062a\u0648\u06cc \u0686\u0647 \u0633\u0627\u06cc\u062a\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0628\u0630\u0627\u0631\u0645\u061f\r"
                   }
                 </div>
                 <div
@@ -1708,55 +1708,107 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   sty.text__bvakH
                 )}
               >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
+                {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
+                      }
+                    </span>
+                    <React.Fragment>{"\n- "}</React.Fragment>
                     {
-                      "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__hwbso
+                        )}
+                        component={Link}
+                        href={"/best-villa-rental-sites"}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                          : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
+                      </PlasmicLink__>
                     }
-                  </span>
-                  <React.Fragment>{"\n- "}</React.Fragment>
-                  {
-                    <PlasmicLink__
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
-                        sty.link__hwbso
-                      )}
-                      component={Link}
-                      href={"/best-villa-rental-sites"}
-                      platform={"nextjs"}
+                    <React.Fragment>{"\n"}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__shuOg
+                        )}
+                        component={Link}
+                        href={"/vacation-rental-income"}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                          : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
                     >
                       {
-                        "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                        "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
                       }
-                    </PlasmicLink__>
-                  }
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  {
-                    <PlasmicLink__
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
-                        sty.link__shuOg
-                      )}
-                      component={Link}
-                      href={"/vacation-rental-income"}
-                      platform={"nextjs"}
-                    >
-                      {
-                        " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      }
-                    </PlasmicLink__>
-                  }
-                  <React.Fragment>{""}</React.Fragment>
-                </React.Fragment>
+                    </span>
+                    <React.Fragment>{"\n- "}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__hwbso
+                        )}
+                        component={Link}
+                        href={"/best-villa-rental-sites"}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                          : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{"\n"}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__shuOg
+                        )}
+                        component={Link}
+                        href={"/vacation-rental-income"}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                          : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                )}
               </div>
             </div>
             <div
@@ -1787,7 +1839,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0686\u0631\u0627 \u0628\u0627\u06cc\u062f \u0648\u06cc\u0644\u0627 \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062b\u0628\u062a \u06a9\u0646\u06cc\u0645\u061f"
+                        "\u0686\u0631\u0627 \u0628\u0627\u06cc\u062f \u0648\u06cc\u0644\u0627 \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc\u06cc \u0645\u062b\u0644 \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u062c\u0627\u062c\u06cc\u06af\u0627 \u062b\u0628\u062a \u06a9\u0646\u06cc\u0645\u061f"
                       }
                     </div>
                     <div

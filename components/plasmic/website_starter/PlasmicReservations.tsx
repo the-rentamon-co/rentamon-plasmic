@@ -488,7 +488,7 @@ function PlasmicReservations__RenderFunc(props: {
                       "مسافر قبلی": "Returning_Guest",
                       "پیام‌رسان و شبکه‌اجتماعی": "social",
                       حضوری: "offline",
-                      سایر: "other"
+                      سایر: "others"
                     };
                     return map[$state.modalData[0].platfromName] || "unknown";
                   })();
