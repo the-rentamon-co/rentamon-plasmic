@@ -226,7 +226,7 @@ function PlasmicLite__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{PlasmicLite.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -238,6 +238,32 @@ function PlasmicLite__RenderFunc(props: {
           name="twitter:title"
           content={PlasmicLite.pageMetadata.title}
         />
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicLite.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicLite.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicLite.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicLite.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicLite.pageMetadata.ogImageSrc}
+        />
+        <link rel="canonical" href={PlasmicLite.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -423,9 +449,9 @@ function PlasmicLite__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/litePng.png",
+                      src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
                       fullWidth: 600,
-                      fullHeight: 866,
+                      fullHeight: 865,
                       aspectRatio: undefined
                     }}
                   />
@@ -1487,12 +1513,27 @@ export const PlasmicLite = Object.assign(
     internalVariantProps: PlasmicLite__VariantProps,
     internalArgProps: PlasmicLite__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      ogDescription:
+        "\u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0647 \u0633\u0627\u062f\u0647\u200c\u062a\u0631\u06cc\u0646 \u0648 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631\u06cc\u0646 \u0634\u06a9\u0644 \u0645\u0645\u06a9\u0646 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u0634\u0647. \u062f\u06cc\u06af\u0647 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u062f\u0641\u062a\u0631\u0686\u0647\u060c \u0633\u0631\u0631\u0633\u06cc\u062f \u06cc\u0627 \u062a\u0642\u0648\u06cc\u0645\u200c\u0647\u0627\u06cc \u06a9\u0627\u063a\u0630\u06cc \u0646\u06cc\u0633\u062a! \u0647\u0645\u0647 \u0686\u06cc\u0632 \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633\u0647\u061b \u0627\u0632 \u0647\u0631 \u062c\u0627 \u0648 \u0631\u0648\u06cc \u0647\u0631 \u062f\u0633\u062a\u06af\u0627\u0647\u06cc.",
+      ogType: "website",
+      ogTitle:
+        "\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
+      ogUrl: "https://rentamon.com/lite/",
+      ogLocale: "fa_IR",
+      robots: "index, follow",
+      alternate: "https://rentamon.com/"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "رنتامون، تقویم آنلاین اقامتگاه",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      description:
+        "با رنتامون، مدیریت اقامتگاه به ساده‌ترین و سریع‌ترین شکل ممکن انجام میشه. دیگه نیازی به دفترچه، سررسید یا تقویم‌های کاغذی نیست! همه چیز در یک تقویم آنلاین در دسترسه؛ از هر جا و روی هر دستگاهی.",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png",
+      canonical: "https://rentamon.com/lite/"
     }
   }
 );

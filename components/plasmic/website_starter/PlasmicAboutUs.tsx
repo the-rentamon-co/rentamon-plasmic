@@ -222,6 +222,23 @@ function PlasmicAboutUs__RenderFunc(props: {
           name="twitter:title"
           content={PlasmicAboutUs.pageMetadata.title}
         />
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicAboutUs.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicAboutUs.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicAboutUs.pageMetadata.description}
+        />
+
+        <link rel="canonical" href={PlasmicAboutUs.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -2112,9 +2129,10 @@ export const PlasmicAboutUs = Object.assign(
     // Page metadata
     pageMetadata: {
       title: "درباره رنتامونی‌ها",
-      description: "",
+      description:
+        "شرکت توسعه فناوری و توانمدسازی شریف (رنتامون) به شماره ثبت ۲۲۵۷۷، با ارائه پنل مدیریت یکپارچه اقامتگاه، مدیریت وضعیت تقویم و نرخ‌گذاری رو برای صاحبین اقامتگاه خودکار و چندین برابر سریع می‌کنه. معتقدیم استفاده از این محصول توسط میزبانان، منجر به سهولت و بهبود کیفیت تعامل با پلتفرم‌ها و حتی مسافرها میشه، و نهایتا صنعت گردشگری کشور رونق پیدا می‌کنه. این هدفه که ما رو دور هم جمع کرده.",
       ogImageSrc: "",
-      canonical: ""
+      canonical: "https://rentamon.com/about-us/"
     }
   }
 );

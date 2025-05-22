@@ -234,7 +234,7 @@ function PlasmicHomepage__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -246,6 +246,32 @@ function PlasmicHomepage__RenderFunc(props: {
           name="twitter:title"
           content={PlasmicHomepage.pageMetadata.title}
         />
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicHomepage.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicHomepage.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicHomepage.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicHomepage.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicHomepage.pageMetadata.ogImageSrc}
+        />
+        <link rel="canonical" href={PlasmicHomepage.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -1840,12 +1866,36 @@ export const PlasmicHomepage = Object.assign(
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      ogType: "website",
+      ogTitle:
+        "\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
+      ogDescription:
+        "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a\u061b \u0631\u0627\u0647 \u062d\u0644 \u0639\u0627\u0644\u06cc \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631\u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0627\u0632 \u06cc\u06a9\u062c\u0627.",
+      ogUrl: "https://rentamon.com/",
+      ogImage:
+        "https://rentamon.com/plasmic/website_starter/images/rentamonFaLowPng.png",
+      ogLocale: "fa_IR",
+      twitterCard: "summary_large_image",
+      twitterTitle:
+        "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 | \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
+      twitterDescription:
+        "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a\u061b \u0631\u0627\u0647 \u062d\u0644 \u0639\u0627\u0644\u06cc \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631\u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0627\u0632 \u06cc\u06a9\u062c\u0627.",
+      twitterImage:
+        "https://rentamon.com/plasmic/website_starter/images/rentamonFaLowPng.png",
+      robots: "index, follow",
+      alternate: "https://rentamon.com/"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "رنتامون، مدیریت یکپارچه اقامتگاه",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      description:
+        "رنتامون دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/c7832bfe69a5a11cbf030c049fa35152.png",
+      canonical: "https://rentamon.com/"
     }
   }
 );

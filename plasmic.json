@@ -3915,6 +3915,11 @@
           "id": "VI-VlcD1LuXu",
           "name": "image 140",
           "filePath": "../public/plasmic/website_starter/images/image140.gif"
+        },
+        {
+          "id": "d-YRKLQTd2Yk",
+          "name": "hands-on-app-404-2-low.png",
+          "filePath": "../public/plasmic/website_starter/images/handsOnApp4042LowPng.png"
         }
       ],
       "indirect": false,

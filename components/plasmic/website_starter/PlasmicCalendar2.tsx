@@ -4950,10 +4950,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                           {
                             return (() => {
                               let action = "خالی کردن";
-                              if ($state.requestdata.request_for == "reserve") {
+                              if (
+                                $state.requestdata.request_for === "reserve"
+                              ) {
                                 action = "ثبت رزرو";
                               }
-                              if ($state.requestdata.request_for == "block") {
+                              if ($state.requestdata.request_for === "block") {
                                 action = "بستن";
                               }
                               if ($state.requestdata.discount != null) {
@@ -4965,7 +4967,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                               const flatDays =
                                 $state.requestdata.days.flat?.() ??
                                 $state.requestdata.days;
-                              if (!flatDays.length) return "";
+                              if (!flatDays.length) {
+                                return `نتیجه درخواست «${action}»`;
+                              }
                               const dates = flatDays
                                 .map(ts => {
                                   const d = new Date(ts * 1000);
@@ -4973,13 +4977,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   return d;
                                 })
                                 .sort((a, b) => a - b);
+                              let isConsecutive = true;
                               for (let i = 1; i < dates.length; i++) {
                                 const diff =
                                   (dates[i] - dates[i - 1]) /
                                   (1000 * 60 * 60 * 24);
                                 if (diff !== 1) {
-                                  return "";
+                                  isConsecutive = false;
+                                  break;
                                 }
+                              }
+                              if (!isConsecutive) {
+                                return `نتیجه درخواست «${action}»`;
                               }
                               const fmt = new Intl.DateTimeFormat(
                                 "fa-IR-u-ca-persian",

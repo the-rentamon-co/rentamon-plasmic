@@ -953,6 +953,11 @@
   border-width: 1px;
   border-style: solid;
 }
+@media (max-width: 500px) {
+  .freeBox__fN5N3 {
+    background: #ffffff;
+  }
+}
 .freeBox__jejNk {
   display: flex;
   flex-direction: column;

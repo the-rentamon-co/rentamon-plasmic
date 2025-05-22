@@ -3374,92 +3374,106 @@ function PlasmicReservations__RenderFunc(props: {
                 />
               );
             })()}
-            <div
-              className={classNames(projectcss.all, sty.freeBox__asROr)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateDataSize"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["dataSize"]
-                        },
-                        operation: 0,
-                        value: ($state.dataSize = $state.dataSize + 30)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+            {(() => {
+              try {
+                return $state.reserveData.data[0].data.length >= 30;
+              } catch (e) {
                 if (
-                  $steps["updateDataSize"] != null &&
-                  typeof $steps["updateDataSize"] === "object" &&
-                  typeof $steps["updateDataSize"].then === "function"
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
                 ) {
-                  $steps["updateDataSize"] = await $steps["updateDataSize"];
+                  return true;
                 }
-
-                $steps["updateLoading"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["loading"]
-                        },
-                        operation: 0,
-                        value: ($state.loading = true)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateLoading"] != null &&
-                  typeof $steps["updateLoading"] === "object" &&
-                  typeof $steps["updateLoading"].then === "function"
-                ) {
-                  $steps["updateLoading"] = await $steps["updateLoading"];
-                }
-              }}
-            >
+                throw e;
+              }
+            })() ? (
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wcUHs
-                )}
+                className={classNames(projectcss.all, sty.freeBox__asROr)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateDataSize"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["dataSize"]
+                          },
+                          operation: 0,
+                          value: ($state.dataSize = $state.dataSize + 30)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateDataSize"] != null &&
+                    typeof $steps["updateDataSize"] === "object" &&
+                    typeof $steps["updateDataSize"].then === "function"
+                  ) {
+                    $steps["updateDataSize"] = await $steps["updateDataSize"];
+                  }
+
+                  $steps["updateLoading"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["loading"]
+                          },
+                          operation: 0,
+                          value: ($state.loading = true)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateLoading"] != null &&
+                    typeof $steps["updateLoading"] === "object" &&
+                    typeof $steps["updateLoading"].then === "function"
+                  ) {
+                    $steps["updateLoading"] = await $steps["updateLoading"];
+                  }
+                }}
               >
-                {
-                  "\u0646\u0645\u0627\u06cc\u0634 \u0628\u06cc\u0634\u062a\u0631"
-                }
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wcUHs
+                  )}
+                >
+                  {
+                    "\u0646\u0645\u0627\u06cc\u0634 \u0628\u06cc\u0634\u062a\u0631"
+                  }
+                </div>
               </div>
-            </div>
+            ) : null}
           </div>
           <div
             data-plasmic-name={"intro"}
