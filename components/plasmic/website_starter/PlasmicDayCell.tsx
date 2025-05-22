@@ -607,6 +607,11 @@ function PlasmicDayCell__RenderFunc(props: {
           </div>
           <div
             className={classNames(projectcss.all, sty.freeBox__gKj3, {
+              [sty.freeBoxdayStatus_blocked__gKj377F30]: hasVariant(
+                $state,
+                "dayStatus",
+                "blocked"
+              ),
               [sty.freeBoxdayStatus_disabled__gKj3Okz0Z]: hasVariant(
                 $state,
                 "dayStatus",

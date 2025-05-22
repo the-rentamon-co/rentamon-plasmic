@@ -101,7 +101,6 @@ export type Plasmicراهنمایجامعدرآمدازاجارهویلا__Overr
   strDefinition3?: Flex__<"div">;
   button3?: Flex__<"div">;
   busy?: Flex__<"div">;
-  bot?: Flex__<"div">;
   busy2?: Flex__<"div">;
   bot2?: Flex__<"div">;
   cta3?: Flex__<"div">;
@@ -834,7 +833,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                 )}
               >
                 {
-                  "\u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0634\u0645\u061f\r"
+                  "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646"
                 }
               </div>
               <div
@@ -844,15 +843,31 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                   sty.text__x8ENa
                 )}
               >
-                {
-                  "\u0627\u06af\u0647 \u0642\u0635\u062f \u062f\u0627\u0631\u06cc \u062e\u0648\u0646\u0647\u060c \u0648\u06cc\u0644\u0627 \u06cc\u0627 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646\u062a \u0631\u0648 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u06cc\u060c \u0628\u0647\u062a\u0631\u0647 \u0628\u0627 \u0642\u0648\u0627\u0646\u06cc\u0646\u060c \u0645\u062c\u0648\u0632\u0647\u0627 \u0648 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0646\u0648\u0639 \u0627\u062c\u0627\u0631\u0647 \u0622\u0634\u0646\u0627 \u0628\u0627\u0634\u06cc. \u062f\u0631 \u0627\u06cc\u0646 \u0645\u0637\u0644\u0628\u060c \u0628\u0647\u200c\u0637\u0648\u0631 \u062e\u0644\u0627\u0635\u0647 \u0628\u0647 \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0646\u06a9\u0627\u062a \u0642\u0627\u0646\u0648\u0646\u06cc \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 \u0645\u06cc\u200c\u067e\u0631\u062f\u0627\u0632\u06cc\u0645."
-                }
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u0627\u06af\u0647 \u0642\u0635\u062f \u062f\u0627\u0631\u06cc \u062e\u0648\u0646\u0647\u060c \u0648\u06cc\u0644\u0627 \u06cc\u0627 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646\u062a \u0631\u0648 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u06cc\u060c \u0628\u0647\u062a\u0631\u0647 \u0628\u0627 \u0642\u0648\u0627\u0646\u06cc\u0646\u060c \u0645\u062c\u0648\u0632\u0647\u0627 \u0648 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0646\u0648\u0639 \u0627\u062c\u0627\u0631\u0647 \u0622\u0634\u0646\u0627 \u0628\u0627\u0634\u06cc. \u062f\u0631 \u0645\u0637\u0644\u0628 \u062f\u06cc\u06af\u0647\u200c\u0627\u06cc \u0628\u0647 \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0646\u06a9\u0627\u062a \u0642\u0627\u0646\u0648\u0646\u06cc \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 \u067e\u0631\u062f\u0627\u062e\u062a\u06cc\u0645. ("
+                    }
+                  </React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__ipHuo
+                      )}
+                      component={Link}
+                      href={"https://rentamon.com/rental-rules/"}
+                      platform={"nextjs"}
+                    >
+                      {"\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{")."}</React.Fragment>
+                </React.Fragment>
               </div>
-              <div
-                data-plasmic-name={"bot"}
-                data-plasmic-override={overrides.bot}
-                className={classNames(projectcss.all, sty.bot)}
-              />
             </div>
             <div
               data-plasmic-name={"busy2"}
@@ -867,7 +882,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                 )}
               >
                 {
-                  "\u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0634\u0645\u061f\r"
+                  "\u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0641\u0639\u0627\u0644 \u0628\u0634\u0645\u061f\r"
                 }
               </div>
               <div
@@ -1025,7 +1040,6 @@ const PlasmicDescendants = {
     "strDefinition3",
     "button3",
     "busy",
-    "bot",
     "busy2",
     "bot2",
     "cta3",
@@ -1047,7 +1061,6 @@ const PlasmicDescendants = {
     "strDefinition3",
     "button3",
     "busy",
-    "bot",
     "busy2",
     "bot2",
     "cta3"
@@ -1061,8 +1074,7 @@ const PlasmicDescendants = {
   button2: ["button2"],
   strDefinition3: ["strDefinition3", "button3"],
   button3: ["button3"],
-  busy: ["busy", "bot"],
-  bot: ["bot"],
+  busy: ["busy"],
   busy2: ["busy2", "bot2", "cta3"],
   bot2: ["bot2", "cta3"],
   cta3: ["cta3"],
@@ -1088,7 +1100,6 @@ type NodeDefaultElementType = {
   strDefinition3: "div";
   button3: "div";
   busy: "div";
-  bot: "div";
   busy2: "div";
   bot2: "div";
   cta3: "div";
@@ -1175,7 +1186,6 @@ export const Plasmicراهنمایجامعدرآمدازاجارهویلا = Obj
     strDefinition3: makeNodeComponent("strDefinition3"),
     button3: makeNodeComponent("button3"),
     busy: makeNodeComponent("busy"),
-    bot: makeNodeComponent("bot"),
     busy2: makeNodeComponent("busy2"),
     bot2: makeNodeComponent("bot2"),
     cta3: makeNodeComponent("cta3"),

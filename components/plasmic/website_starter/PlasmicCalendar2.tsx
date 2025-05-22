@@ -146,6 +146,7 @@ export type PlasmicCalendar2__OverridesType = {
   updateNoteModal?: Flex__<typeof AntdModal>;
   textarea2?: Flex__<typeof Textarea>;
   checkForChange?: Flex__<typeof AntdModal>;
+  buttonYes?: Flex__<"div">;
   newDiscountModal?: Flex__<typeof AntdModal>;
   textInput4?: Flex__<typeof TextInput>;
   guide?: Flex__<"div">;
@@ -573,7 +574,8 @@ function PlasmicCalendar2__RenderFunc(props: {
         path: "checkForChange.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "addingGuestInfo.open",
@@ -693,6 +695,12 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "manualReserveBookingId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -6181,6 +6189,141 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "updateStateVariable2"
                 ];
               }
+
+              $steps["createAManualReserve"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/reserve/create",
+                        undefined,
+                        (() => {
+                          try {
+                            return (() => {
+                              function gregorianToJalali(gy, gm, gd) {
+                                let g_d_m = [
+                                  0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
+                                  31
+                                ];
+
+                                let jy = gy <= 1600 ? 0 : 979;
+                                gy -= gy <= 1600 ? 621 : 1600;
+                                let gy2 = gm > 2 ? gy + 1 : gy;
+                                let days =
+                                  365 * gy +
+                                  Math.floor((gy2 + 3) / 4) -
+                                  Math.floor((gy2 + 99) / 100) +
+                                  Math.floor((gy2 + 399) / 400);
+                                for (let i = 0; i < gm; i++) {
+                                  days += g_d_m[i];
+                                }
+                                days += gd - 1;
+                                let j_days = days - 79;
+                                let j_np = Math.floor(j_days / 12053);
+                                j_days %= 12053;
+                                jy += 33 * j_np + 4 * Math.floor(j_days / 1461);
+                                j_days %= 1461;
+                                if (j_days >= 366) {
+                                  jy += Math.floor((j_days - 1) / 365);
+                                  j_days = (j_days - 1) % 365;
+                                }
+                                let jm, jd;
+                                if (j_days < 186) {
+                                  jm = 1 + Math.floor(j_days / 31);
+                                  jd = 1 + (j_days % 31);
+                                } else {
+                                  jm = 7 + Math.floor((j_days - 186) / 30);
+                                  jd = 1 + ((j_days - 186) % 30);
+                                }
+                                return {
+                                  jy,
+                                  jm,
+                                  jd
+                                };
+                              }
+                              function convertTimestampToJalali(timestamp) {
+                                let date = new Date(timestamp * 1000);
+                                let gy = date.getUTCFullYear();
+                                let gm = date.getUTCMonth() + 1;
+                                let gd = date.getUTCDate();
+                                let { jy, jm, jd } = gregorianToJalali(
+                                  gy,
+                                  gm,
+                                  gd
+                                );
+                                return `${jy}-${String(jm).padStart(
+                                  2,
+                                  "0"
+                                )}-${String(jd).padStart(2, "0")}`;
+                              }
+                              let timestamps = $state.fragmentDatePicker.values;
+                              let jalaliDates = timestamps.map(ts =>
+                                convertTimestampToJalali(ts)
+                              );
+                              return {
+                                check_in: jalaliDates[0],
+                                check_out: jalaliDates[jalaliDates.length - 1],
+                                property_id: $props.propertyId
+                              };
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["createAManualReserve"] != null &&
+                typeof $steps["createAManualReserve"] === "object" &&
+                typeof $steps["createAManualReserve"].then === "function"
+              ) {
+                $steps["createAManualReserve"] = await $steps[
+                  "createAManualReserve"
+                ];
+              }
+
+              $steps["saveBookingIdToState"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["manualReserveBookingId"]
+                      },
+                      operation: 0,
+                      value: ($state.manualReserveBookingId =
+                        $steps.createAManualReserve.data[0].b_id)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["saveBookingIdToState"] != null &&
+                typeof $steps["saveBookingIdToState"] === "object" &&
+                typeof $steps["saveBookingIdToState"].then === "function"
+              ) {
+                $steps["saveBookingIdToState"] = await $steps[
+                  "saveBookingIdToState"
+                ];
+              }
             }}
           >
             <Icon25Icon
@@ -7468,7 +7611,18 @@ function PlasmicCalendar2__RenderFunc(props: {
             )}
           >
             {
-              "\u0631\u0648\u0632\u06cc \u06a9\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0631\u062f\u06cc \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0631\u0632\u0631\u0648 \u0634\u062f\u0647 \u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u062e\u0648\u0627\u06cc \u062a\u0648\u06cc \u0628\u0642\u06cc\u0647 \u0633\u0627\u06cc\u062a \u0647\u0627 \u0627\u06cc\u0646 \u0631\u0648\u0632 \u062e\u0627\u0644\u06cc \u0628\u0634\u0647\u061f "
+              "\u0631\u0648\u0632\u06cc \u06a9\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0631\u062f\u06cc \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0631\u0632\u0631\u0648 \u0634\u062f\u0647!"
+            }
+          </div>
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__eaGkZ
+            )}
+          >
+            {
+              "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u062e\u0648\u0627\u06cc \u062a\u0648\u06cc \u0628\u0642\u06cc\u0647 \u0633\u0627\u06cc\u062a \u0647\u0627 \u0627\u06cc\u0646 \u0631\u0648\u0632 \u062e\u0627\u0644\u06cc \u0628\u0634\u0647\u061f "
             }
           </div>
           <Stack__
@@ -7476,8 +7630,10 @@ function PlasmicCalendar2__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox__uWbV)}
           >
-            <Button
-              className={classNames("__wab_instance", sty.button__yfhtr)}
+            <div
+              data-plasmic-name={"buttonYes"}
+              data-plasmic-override={overrides.buttonYes}
+              className={classNames(projectcss.all, sty.buttonYes, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -7690,8 +7846,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                 }
               }}
             >
-              {"\u0628\u0644\u0647"}
-            </Button>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gpMmw
+                )}
+              >
+                {"\u0628\u0644\u0647"}
+              </div>
+            </div>
             <AntdButton
               className={classNames("__wab_instance", sty.button__gqnsq)}
               danger={false}
@@ -9864,83 +10028,18 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/add_contact",
+                            "https://gateway.rentamon.com/webhook/complete_manual_reserve_data",
                             undefined,
                             (() => {
                               try {
                                 return (() => {
-                                  function gregorianToJalali(gy, gm, gd) {
-                                    let g_d_m = [
-                                      0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
-                                      30, 31
-                                    ];
-
-                                    let jy = gy <= 1600 ? 0 : 979;
-                                    gy -= gy <= 1600 ? 621 : 1600;
-                                    let gy2 = gm > 2 ? gy + 1 : gy;
-                                    let days =
-                                      365 * gy +
-                                      Math.floor((gy2 + 3) / 4) -
-                                      Math.floor((gy2 + 99) / 100) +
-                                      Math.floor((gy2 + 399) / 400);
-                                    for (let i = 0; i < gm; i++) {
-                                      days += g_d_m[i];
-                                    }
-                                    days += gd - 1;
-                                    let j_days = days - 79;
-                                    let j_np = Math.floor(j_days / 12053);
-                                    j_days %= 12053;
-                                    jy +=
-                                      33 * j_np + 4 * Math.floor(j_days / 1461);
-                                    j_days %= 1461;
-                                    if (j_days >= 366) {
-                                      jy += Math.floor((j_days - 1) / 365);
-                                      j_days = (j_days - 1) % 365;
-                                    }
-                                    let jm, jd;
-                                    if (j_days < 186) {
-                                      jm = 1 + Math.floor(j_days / 31);
-                                      jd = 1 + (j_days % 31);
-                                    } else {
-                                      jm = 7 + Math.floor((j_days - 186) / 30);
-                                      jd = 1 + ((j_days - 186) % 30);
-                                    }
-                                    return {
-                                      jy,
-                                      jm,
-                                      jd
-                                    };
-                                  }
-                                  function convertTimestampToJalali(timestamp) {
-                                    let date = new Date(timestamp * 1000);
-                                    let gy = date.getUTCFullYear();
-                                    let gm = date.getUTCMonth() + 1;
-                                    let gd = date.getUTCDate();
-                                    let { jy, jm, jd } = gregorianToJalali(
-                                      gy,
-                                      gm,
-                                      gd
-                                    );
-                                    return `${jy}-${String(jm).padStart(
-                                      2,
-                                      "0"
-                                    )}-${String(jd).padStart(2, "0")}`;
-                                  }
-                                  let timestamps = $state.selectedDay;
-                                  let jalaliDates = timestamps.map(ts =>
-                                    convertTimestampToJalali(ts)
-                                  );
                                   let a = {
                                     guest_name: $state.guestName.value,
                                     phone_number: $state.phoneNumber.value,
                                     amount: $state.input2.value,
                                     referrer: $state.guestReferrer.value,
-                                    guest_count: $state.guestCount.value,
-                                    property_id: $props.propertyId,
-                                    check_in: jalaliDates[0],
-                                    check_out:
-                                      jalaliDates[jalaliDates.length - 1],
-                                    all_days: jalaliDates
+                                    b_id: $state.manualReserveBookingId,
+                                    guest_count: $state.guestCount.value
                                   };
                                   return a;
                                 })();
@@ -10314,6 +10413,7 @@ const PlasmicDescendants = {
     "updateNoteModal",
     "textarea2",
     "checkForChange",
+    "buttonYes",
     "newDiscountModal",
     "textInput4",
     "guide",
@@ -10389,7 +10489,8 @@ const PlasmicDescendants = {
   textarea: ["textarea"],
   updateNoteModal: ["updateNoteModal", "textarea2"],
   textarea2: ["textarea2"],
-  checkForChange: ["checkForChange"],
+  checkForChange: ["checkForChange", "buttonYes"],
+  buttonYes: ["buttonYes"],
   newDiscountModal: ["newDiscountModal", "textInput4"],
   textInput4: ["textInput4"],
   guide: [
@@ -10502,6 +10603,7 @@ type NodeDefaultElementType = {
   updateNoteModal: typeof AntdModal;
   textarea2: typeof Textarea;
   checkForChange: typeof AntdModal;
+  buttonYes: "div";
   newDiscountModal: typeof AntdModal;
   textInput4: typeof TextInput;
   guide: "div";
@@ -10625,6 +10727,7 @@ export const PlasmicCalendar2 = Object.assign(
     updateNoteModal: makeNodeComponent("updateNoteModal"),
     textarea2: makeNodeComponent("textarea2"),
     checkForChange: makeNodeComponent("checkForChange"),
+    buttonYes: makeNodeComponent("buttonYes"),
     newDiscountModal: makeNodeComponent("newDiscountModal"),
     textInput4: makeNodeComponent("textInput4"),
     guide: makeNodeComponent("guide"),
