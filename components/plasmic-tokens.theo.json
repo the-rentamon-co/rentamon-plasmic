@@ -63,7 +63,7 @@
     {
       "name": "Basic/Text-Primary",
       "type": "color",
-      "value": "#000000",
+      "value": "#00000033",
       "category": "color",
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
@@ -433,7 +433,7 @@
     {
       "name": "Neutral/Neutral-Foreground",
       "type": "color",
-      "value": "#FCFCFC",
+      "value": "#F8F8F8",
       "category": "color",
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",

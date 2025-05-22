@@ -4943,9 +4943,74 @@ function PlasmicCalendar2__RenderFunc(props: {
                     sty.text__dfIu4
                   )}
                 >
-                  {
-                    "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
-                  }
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          {
+                            return (() => {
+                              let action = "خالی کردن";
+                              if ($state.requestdata.request_for == "reserve") {
+                                action = "ثبت رزرو";
+                              }
+                              if ($state.requestdata.request_for == "block") {
+                                action = "بستن";
+                              }
+                              if ($state.requestdata.discount != null) {
+                                action = "ویرایش تخفیف";
+                              }
+                              if ($state.requestdata.price != null) {
+                                action = "ویرایش قیمت";
+                              }
+                              const flatDays =
+                                $state.requestdata.days.flat?.() ??
+                                $state.requestdata.days;
+                              if (!flatDays.length) return "";
+                              const dates = flatDays
+                                .map(ts => {
+                                  const d = new Date(ts * 1000);
+                                  d.setHours(0, 0, 0, 0);
+                                  return d;
+                                })
+                                .sort((a, b) => a - b);
+                              for (let i = 1; i < dates.length; i++) {
+                                const diff =
+                                  (dates[i] - dates[i - 1]) /
+                                  (1000 * 60 * 60 * 24);
+                                if (diff !== 1) {
+                                  return "";
+                                }
+                              }
+                              const fmt = new Intl.DateTimeFormat(
+                                "fa-IR-u-ca-persian",
+                                {
+                                  day: "numeric",
+                                  month: "long"
+                                }
+                              );
+                              const firstDate = fmt.format(dates[0]);
+                              let dateStr = firstDate;
+                              if (dates.length > 1) {
+                                const lastDate = fmt.format(
+                                  dates[dates.length - 1]
+                                );
+                                dateStr = `${firstDate} تا ${lastDate}`;
+                              }
+                              return `نتیجه «${action}» ${dateStr}`;
+                            })();
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0646\u062a\u06cc\u062c\u0647 \u00ab\u062b\u0628\u062a \u0631\u0632\u0631\u0648\u00bb \u06f2\u06f4 \u062e\u0631\u062f\u0627\u062f \u062a\u0627 \u06f2\u06f6 \u062e\u0631\u062f\u0627\u062f";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
               </div>
               <div

@@ -103,7 +103,6 @@ export type PlasmicTransactions__OverridesType = {
   returnButton?: Flex__<"div">;
   withdraw?: Flex__<typeof AntdModal>;
   deposit?: Flex__<typeof AntdModal>;
-  modal?: Flex__<typeof AntdModal>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -205,20 +204,22 @@ function PlasmicTransactions__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : false
       },
       {
         path: "deposit.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
-      },
-      {
-        path: "modal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : false
       },
       {
         path: "modalData",
@@ -1977,68 +1978,6 @@ function PlasmicTransactions__RenderFunc(props: {
               </Button>
             </Stack__>
           </AntdModal>
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            maskClosable={false}
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={null}
-            trigger={null}
-            width={"300"}
-          >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__pj3Ha)}
-            >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__qIeb3)}
-                displayHeight={"63px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image55.svg",
-                  fullWidth: 49,
-                  fullHeight: 61,
-                  aspectRatio: 0.803279
-                }}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___2UxSl
-                )}
-              >
-                {
-                  "\u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646 \u062f\u0631\u062d\u0627\u0644 \u062a\u0648\u0633\u0639\u0647 \u0647\u0633\u062a \u0648 \u0628\u0632\u0648\u062f\u06cc \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0642\u0631\u0627\u0631 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
-                }
-              </div>
-            </Stack__>
-          </AntdModal>
           <NavigationRntFooter
             data-plasmic-name={"navigationRntFooter"}
             data-plasmic-override={overrides.navigationRntFooter}
@@ -2090,7 +2029,6 @@ const PlasmicDescendants = {
     "returnButton",
     "withdraw",
     "deposit",
-    "modal",
     "navigationRntFooter",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -2105,7 +2043,6 @@ const PlasmicDescendants = {
   returnButton: ["returnButton"],
   withdraw: ["withdraw"],
   deposit: ["deposit"],
-  modal: ["modal"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -2125,7 +2062,6 @@ type NodeDefaultElementType = {
   returnButton: "div";
   withdraw: typeof AntdModal;
   deposit: typeof AntdModal;
-  modal: typeof AntdModal;
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -2201,7 +2137,6 @@ export const PlasmicTransactions = Object.assign(
     returnButton: makeNodeComponent("returnButton"),
     withdraw: makeNodeComponent("withdraw"),
     deposit: makeNodeComponent("deposit"),
-    modal: makeNodeComponent("modal"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
