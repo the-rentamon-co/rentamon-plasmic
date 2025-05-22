@@ -10039,7 +10039,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     amount: $state.input2.value,
                                     referrer: $state.guestReferrer.value,
                                     b_id: $state.manualReserveBookingId,
-                                    guest_count: $state.guestCount.value
+                                    guest_count: $state.guestCount.value,
+                                    property_id: $props.propertyId
                                   };
                                   return a;
                                 })();
