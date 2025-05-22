@@ -704,13 +704,13 @@ function PlasmicReservations__RenderFunc(props: {
         path: "reserveDataPage",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 30
+        initFunc: ({ $props, $state, $queries, $ctx }) => 50
       },
       {
         path: "dataSize",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 30
+        initFunc: ({ $props, $state, $queries, $ctx }) => 50
       },
       {
         path: "loading",
