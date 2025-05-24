@@ -511,6 +511,11 @@
 .mainSection > * {
   grid-column: 4;
 }
+@media (max-width: 1200px) {
+  .mainSection > * {
+    grid-column: 4;
+  }
+}
 @media (max-width: 500px) {
   .mainSection > * {
     grid-column: 4;

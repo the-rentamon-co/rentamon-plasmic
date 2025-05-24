@@ -210,7 +210,7 @@ function PlasmicAboutUs__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{PlasmicAboutUs.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -237,7 +237,16 @@ function PlasmicAboutUs__RenderFunc(props: {
           name="twitter:description"
           content={PlasmicAboutUs.pageMetadata.description}
         />
-
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicAboutUs.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicAboutUs.pageMetadata.ogImageSrc}
+        />
         <link rel="canonical" href={PlasmicAboutUs.pageMetadata.canonical} />
       </Head>
 
@@ -2126,12 +2135,30 @@ export const PlasmicAboutUs = Object.assign(
     internalVariantProps: PlasmicAboutUs__VariantProps,
     internalArgProps: PlasmicAboutUs__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      description:
+        "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646) \u0628\u0647 \u0634\u0645\u0627\u0631\u0647 \u062b\u0628\u062a \u06f2\u06f2\u06f5\u06f7\u06f7\u060c \u0628\u0627 \u0627\u0631\u0627\u0626\u0647 \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0646\u0631\u062e\u200c\u06af\u0630\u0627\u0631\u06cc \u0631\u0648 \u0628\u0631\u0627\u06cc \u0635\u0627\u062d\u0628\u06cc\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648 \u0686\u0646\u062f\u06cc\u0646 \u0628\u0631\u0627\u0628\u0631 \u0633\u0631\u06cc\u0639 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0645\u0639\u062a\u0642\u062f\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u06cc\u0646 \u0645\u062d\u0635\u0648\u0644 \u062a\u0648\u0633\u0637 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u060c \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0648 \u0628\u0647\u0628\u0648\u062f \u06a9\u06cc\u0641\u06cc\u062a \u062a\u0639\u0627\u0645\u0644 \u0628\u0627 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0648 \u062d\u062a\u06cc \u0645\u0633\u0627\u0641\u0631\u0647\u0627 \u0645\u06cc\u0634\u0647\u060c \u0648 \u0646\u0647\u0627\u06cc\u062a\u0627 \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u0631\u0648\u0646\u0642 \u067e\u06cc\u062f\u0627 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0647\u062f\u0641\u0647 \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.",
+      canonical: "rentamon.com/about-us",
+      ogType: "website",
+      ogTitle:
+        "\u062f\u0631\u0628\u0627\u0631\u0647 \u062a\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646",
+      ogImage: "https://rentamon.com/assets/og-about-us.png",
+      ogLocale: "fa_IR",
+      twitterCard: "summary_large_image",
+      twitterTitle:
+        "\u062f\u0631\u0628\u0627\u0631\u0647 \u062a\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646",
+      twitterImage:
+        "https://rentamon.com/plasmic/website_starter/images/teamJpg.jpg"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "درباره رنتامونی‌ها",
       description:
         "شرکت توسعه فناوری و توانمدسازی شریف (رنتامون) به شماره ثبت ۲۲۵۷۷، با ارائه پنل مدیریت یکپارچه اقامتگاه، مدیریت وضعیت تقویم و نرخ‌گذاری رو برای صاحبین اقامتگاه خودکار و چندین برابر سریع می‌کنه. معتقدیم استفاده از این محصول توسط میزبانان، منجر به سهولت و بهبود کیفیت تعامل با پلتفرم‌ها و حتی مسافرها میشه، و نهایتا صنعت گردشگری کشور رونق پیدا می‌کنه. این هدفه که ما رو دور هم جمع کرده.",
-      ogImageSrc: "",
+      ogImageSrc:
+        "https://rentamon.com/plasmic/website_starter/images/teamJpg.jpg",
       canonical: "https://rentamon.com/about-us/"
     }
   }

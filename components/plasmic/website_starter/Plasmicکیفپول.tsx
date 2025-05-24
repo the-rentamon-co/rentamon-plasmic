@@ -124,6 +124,7 @@ export type Plasmicکیفپول__OverridesType = {
   paymentbutton?: Flex__<"div">;
   button?: Flex__<"div">;
   pricing?: Flex__<"div">;
+  ctaReferral?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
   _2?: Flex__<typeof AntdAccordionItem>;
@@ -131,7 +132,6 @@ export type Plasmicکیفپول__OverridesType = {
   _4?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
-  ctaReferral?: Flex__<"div">;
   html?: Flex__<"div">;
   goftino?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -1665,6 +1665,52 @@ function Plasmicکیفپول__RenderFunc(props: {
             </div>
           </div>
           <div
+            data-plasmic-name={"ctaReferral"}
+            data-plasmic-override={overrides.ctaReferral}
+            className={classNames(projectcss.all, sty.ctaReferral)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___45D1H,
+                "clickable"
+              )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToReferral"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/referral` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToReferral"] != null &&
+                  typeof $steps["goToReferral"] === "object" &&
+                  typeof $steps["goToReferral"].then === "function"
+                ) {
+                  $steps["goToReferral"] = await $steps["goToReferral"];
+                }
+              }}
+            >
+              {hasVariant(globalVariants, "screen", "mobile")
+                ? "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81"
+                : "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"}
+            </div>
+          </div>
+          <div
             data-plasmic-name={"qA"}
             data-plasmic-override={overrides.qA}
             className={classNames(projectcss.all, sty.qA)}
@@ -1957,52 +2003,6 @@ function Plasmicکیفپول__RenderFunc(props: {
               </div>
             </div>
             <div
-              data-plasmic-name={"ctaReferral"}
-              data-plasmic-override={overrides.ctaReferral}
-              className={classNames(projectcss.all, sty.ctaReferral)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___45D1H,
-                  "clickable"
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToReferral"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/referral` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToReferral"] != null &&
-                    typeof $steps["goToReferral"] === "object" &&
-                    typeof $steps["goToReferral"].then === "function"
-                  ) {
-                    $steps["goToReferral"] = await $steps["goToReferral"];
-                  }
-                }}
-              >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81"
-                  : "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"}
-              </div>
-            </div>
-            <div
               data-plasmic-name={"html"}
               data-plasmic-override={overrides.html}
               className={classNames(projectcss.all, sty.html)}
@@ -2254,6 +2254,7 @@ const PlasmicDescendants = {
     "paymentbutton",
     "button",
     "pricing",
+    "ctaReferral",
     "qA",
     "accordionMain",
     "_2",
@@ -2261,7 +2262,6 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "_6",
-    "ctaReferral",
     "html",
     "goftino",
     "clarityRntComponent",
@@ -2307,6 +2307,7 @@ const PlasmicDescendants = {
   paymentbutton: ["paymentbutton", "button"],
   button: ["button"],
   pricing: ["pricing"],
+  ctaReferral: ["ctaReferral"],
   qA: [
     "qA",
     "accordionMain",
@@ -2315,7 +2316,6 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "_6",
-    "ctaReferral",
     "html",
     "goftino",
     "clarityRntComponent",
@@ -2327,7 +2327,6 @@ const PlasmicDescendants = {
   _4: ["_4"],
   _5: ["_5"],
   _6: ["_6"],
-  ctaReferral: ["ctaReferral"],
   html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2366,6 +2365,7 @@ type NodeDefaultElementType = {
   paymentbutton: "div";
   button: "div";
   pricing: "div";
+  ctaReferral: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
   _2: typeof AntdAccordionItem;
@@ -2373,7 +2373,6 @@ type NodeDefaultElementType = {
   _4: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
-  ctaReferral: "div";
   html: "div";
   goftino: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -2468,6 +2467,7 @@ export const Plasmicکیفپول = Object.assign(
     paymentbutton: makeNodeComponent("paymentbutton"),
     button: makeNodeComponent("button"),
     pricing: makeNodeComponent("pricing"),
+    ctaReferral: makeNodeComponent("ctaReferral"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
     _2: makeNodeComponent("_2"),
@@ -2475,7 +2475,6 @@ export const Plasmicکیفپول = Object.assign(
     _4: makeNodeComponent("_4"),
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
-    ctaReferral: makeNodeComponent("ctaReferral"),
     html: makeNodeComponent("html"),
     goftino: makeNodeComponent("goftino"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
