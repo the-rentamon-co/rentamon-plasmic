@@ -176,7 +176,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{Plasmicمدیریتویلا.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -188,6 +188,32 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
           name="twitter:title"
           content={Plasmicمدیریتویلا.pageMetadata.title}
         />
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicمدیریتویلا.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicمدیریتویلا.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicمدیریتویلا.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicمدیریتویلا.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicمدیریتویلا.pageMetadata.ogImageSrc}
+        />
+        <link rel="canonical" href={Plasmicمدیریتویلا.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -284,9 +310,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                               sty.link__rRq0M
                             )}
                             component={Link}
-                            href={
-                              "https://rentamon.com/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7/"
-                            }
+                            href={`/best-villa-rental-sites`}
                             platform={"nextjs"}
                           >
                             {
@@ -437,7 +461,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                           sty.link__qmN1B
                         )}
                         component={Link}
-                        href={"rentamon.com"}
+                        href={`/`}
                         platform={"nextjs"}
                       >
                         {"\u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
@@ -591,9 +615,9 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                   }
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/website_starter/images/handsOnAppPng2.png",
-                    fullWidth: 456,
-                    fullHeight: 600,
+                    src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
+                    fullWidth: 600,
+                    fullHeight: 865,
                     aspectRatio: undefined
                   }}
                 />
@@ -866,12 +890,26 @@ export const Plasmicمدیریتویلا = Object.assign(
     internalVariantProps: Plasmicمدیریتویلا__VariantProps,
     internalArgProps: Plasmicمدیریتویلا__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      ogTitle:
+        "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u0628\u0627 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646",
+      ogDescription:
+        "\u0628\u0627 \u0627\u0628\u0632\u0627\u0631 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062e\u0648\u062f \u0631\u0627 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc \u06a9\u0646\u06cc\u062f \u0648 \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u06a9\u0646\u06cc\u062f.",
+      ogUrl: "https://rentamon.com/villa-management",
+      ogType: "article",
+      ogImage:
+        "https://rentamon.com/plasmic/website_starter/images/handsOnAppPng2.png"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "مدیریت ویلا",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      description:
+        "با ابزار چنل‌منیجر رنتامون، رزروهای اقامتگاه خود را در تمام سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… به‌صورت خودکار همگام‌سازی کنید و از تداخل رزروها جلوگیری کنید.",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png",
+      canonical: "rentamon.com/villa-management"
     }
   }
 );

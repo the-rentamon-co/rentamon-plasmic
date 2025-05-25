@@ -149,7 +149,6 @@ export type PlasmicHomepage__OverridesType = {
   _7?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
-  link?: Flex__<"a"> & Partial<LinkProps>;
   html?: Flex__<"div">;
   goftino?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -802,9 +801,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/handsOnAppPng2.png",
-                      fullWidth: 456,
-                      fullHeight: 600,
+                      src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
+                      fullWidth: 600,
+                      fullHeight: 865,
                       aspectRatio: undefined
                     }}
                   />
@@ -828,24 +827,45 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.text__zdLdH
                   )}
                 >
-                  <React.Fragment>
+                  {hasVariant(globalVariants, "screen", "mobile") ? (
                     <React.Fragment>
-                      {
-                        "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 "
-                      }
+                      <React.Fragment>
+                        {
+                          "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ textDecorationLine: "underline" }}
+                      >
+                        {"\u06f9\u06f0\u06f0"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
+                        }
+                      </React.Fragment>
                     </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ textDecorationLine: "underline" }}
-                    >
-                      {"\u06f8\u06f0\u06f0"}
-                    </span>
+                  ) : (
                     <React.Fragment>
-                      {
-                        " \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
-                      }
+                      <React.Fragment>
+                        {
+                          "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ textDecorationLine: "underline" }}
+                      >
+                        {"\u06f8\u06f0\u06f0"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
+                        }
+                      </React.Fragment>
                     </React.Fragment>
-                  </React.Fragment>
+                  )}
                 </div>
               </div>
               <div
@@ -1323,36 +1343,88 @@ function PlasmicHomepage__RenderFunc(props: {
                             sty.text___4RpVt
                           )}
                         >
-                          <React.Fragment>
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "smallMobile"
+                          ) ? (
                             <React.Fragment>
-                              {
-                                "\u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0647\u0645\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0647\u0645\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0645\u062b\u0644\u0627 \u0627\u06af\u0647 \u0627\u0632 \u062c\u0627\u0628\u0627\u0645\u0627 \u0631\u0632\u0631\u0648 \u0628\u06af\u06cc\u0631\u06cc\u060c \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647! "
-                              }
-                            </React.Fragment>
-                            {
-                              <PlasmicLink__
-                                data-plasmic-name={"link"}
-                                data-plasmic-override={overrides.link}
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.__wab_text,
-                                  projectcss.plasmic_default__inline,
-                                  sty.link
-                                )}
-                                component={Link}
-                                href={
-                                  "https://rentamon.com/%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d9%88%db%8c%d9%84%d8%a7/"
-                                }
-                                platform={"nextjs"}
-                              >
+                              <React.Fragment>
                                 {
-                                  "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
+                                  "\u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0647\u0645\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0647\u0645\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0645\u062b\u0644\u0627 \u0627\u06af\u0647 \u0627\u0632 \u062c\u0627\u0628\u0627\u0645\u0627 \u0631\u0632\u0631\u0648 \u0628\u06af\u06cc\u0631\u06cc\u060c \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647! "
                                 }
-                              </PlasmicLink__>
-                            }
-                            <React.Fragment>{""}</React.Fragment>
-                          </React.Fragment>
+                              </React.Fragment>
+                              {
+                                <PlasmicLink__
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.a,
+                                    projectcss.__wab_text,
+                                    projectcss.plasmic_default__inline,
+                                    sty.link__zppgr
+                                  )}
+                                  component={Link}
+                                  href={
+                                    "https://rentamon.com/villa-management/"
+                                  }
+                                  platform={"nextjs"}
+                                >
+                                  {
+                                    "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
+                                  }
+                                </PlasmicLink__>
+                              }
+                              <React.Fragment>{""}</React.Fragment>
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              <React.Fragment>
+                                {
+                                  "\u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0647\u0645\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0647\u0645\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0645\u062b\u0644\u0627 \u0627\u06af\u0647 \u0627\u0632 \u062c\u0627\u0628\u0627\u0645\u0627 \u0631\u0632\u0631\u0648 \u0628\u06af\u06cc\u0631\u06cc\u060c \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647! "
+                                }
+                              </React.Fragment>
+                              {
+                                <PlasmicLink__
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.a,
+                                    projectcss.__wab_text,
+                                    projectcss.plasmic_default__inline,
+                                    sty.link__xZKu
+                                  )}
+                                  component={Link}
+                                  href={
+                                    "https://rentamon.com/villa-management/"
+                                  }
+                                  platform={"nextjs"}
+                                >
+                                  {
+                                    "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
+                                  }
+                                </PlasmicLink__>
+                              }
+                              <React.Fragment>{""}</React.Fragment>
+                              {
+                                <PlasmicLink__
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.a,
+                                    projectcss.__wab_text,
+                                    projectcss.plasmic_default__inline,
+                                    sty.link__oJjjq
+                                  )}
+                                  component={Link}
+                                  href={
+                                    "https://rentamon.com/%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d9%88%db%8c%d9%84%d8%a7/"
+                                  }
+                                  platform={"nextjs"}
+                                >
+                                  {""}
+                                </PlasmicLink__>
+                              }
+                              <React.Fragment>{""}</React.Fragment>
+                            </React.Fragment>
+                          )}
                         </div>
                       </AntdAccordionItem>
                     </React.Fragment>
@@ -1491,7 +1563,6 @@ const PlasmicDescendants = {
     "_7",
     "_5",
     "_6",
-    "link",
     "html",
     "goftino",
     "clarityRntComponent",
@@ -1654,20 +1725,18 @@ const PlasmicDescendants = {
     "_7",
     "_5",
     "_6",
-    "link",
     "html",
     "goftino",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
-  accordionMain: ["accordionMain", "_2", "_1", "_4", "_7", "_5", "_6", "link"],
+  accordionMain: ["accordionMain", "_2", "_1", "_4", "_7", "_5", "_6"],
   _2: ["_2", "_1"],
   _1: ["_1"],
   _4: ["_4"],
   _7: ["_7"],
   _5: ["_5"],
   _6: ["_6"],
-  link: ["link"],
   html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -1733,7 +1802,6 @@ type NodeDefaultElementType = {
   _7: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
-  link: "a";
   html: "div";
   goftino: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -1855,7 +1923,6 @@ export const PlasmicHomepage = Object.assign(
     _7: makeNodeComponent("_7"),
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
-    link: makeNodeComponent("link"),
     html: makeNodeComponent("html"),
     goftino: makeNodeComponent("goftino"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

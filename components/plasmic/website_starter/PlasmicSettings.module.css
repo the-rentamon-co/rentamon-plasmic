@@ -880,6 +880,7 @@
   font-size: 17px;
   font-weight: 500;
   width: 100%;
+  padding-bottom: 0px;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -1239,11 +1240,11 @@
   font-size: 20px;
   text-align: center;
 }
-.modalActivateAutosync:global(.__wab_instance) {
+.activateAutosync:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.modalActivateAutosync__modal :global(.ant-modal-content) {
+.activateAutosync__modal :global(.ant-modal-content) {
   outline: none;
   border-radius: 100px;
 }
@@ -1256,18 +1257,18 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 22px 8px 8px;
+  padding: 0px 8px 8px;
 }
 @media (max-width: 350px) {
   .freeBox__vBeht {
     padding-right: 0px;
     padding-left: 0px;
-    padding-top: 14px;
+    padding-top: 0px;
   }
 }
 .text__waPKm {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
 }
 @media (max-width: 500px) {
@@ -1297,6 +1298,7 @@
   .freeBox__ztXba {
     padding-right: 0px;
     padding-left: 0px;
+    padding-top: 14px;
   }
 }
 .text__gDeAg {
@@ -1311,7 +1313,7 @@
 }
 @media (max-width: 350px) {
   .text__gDeAg {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .buttons {
@@ -1331,6 +1333,7 @@
     padding-left: 0px;
     justify-content: center;
     align-items: center;
+    padding-top: 12px;
   }
 }
 @media (max-width: 350px) {
@@ -1458,20 +1461,22 @@
 }
 .text__a1Ly4 {
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   padding-top: 10px;
+  background: #f8f8f8;
 }
 @media (max-width: 500px) {
   .text__a1Ly4 {
     background: #f8f8f8;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
   .text__a1Ly4 {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
-.modalActivateReservations:global(.__wab_instance) {
+.activateReservations:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -1484,18 +1489,24 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 22px 8px 8px;
+  padding: 0px 8px 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__qizG5 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 @media (max-width: 350px) {
   .freeBox__qizG5 {
     padding-right: 0px;
     padding-left: 0px;
-    padding-top: 14px;
+    padding-top: 0px;
   }
 }
 .text__sx7U5 {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   font-weight: 600;
 }
@@ -1506,14 +1517,14 @@
 }
 @media (max-width: 350px) {
   .text__sx7U5 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
     padding-top: 0px;
   }
 }
 .text__qx4BL {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2.2;
 }
 @media (max-width: 500px) {
@@ -1525,7 +1536,7 @@
 }
 @media (max-width: 350px) {
   .text__qx4BL {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.8;
     padding-top: 6px;
   }
@@ -1541,6 +1552,11 @@
   min-width: 0;
   padding: 20px 8px 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__e0XaI {
+    padding-top: 12px;
+  }
+}
 @media (max-width: 350px) {
   .freeBox__e0XaI {
     padding-right: 0px;
@@ -1550,16 +1566,16 @@
 }
 .text__byiWh {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
 }
 @media (max-width: 500px) {
   .text__byiWh {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__byiWh {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .buttons3 {
@@ -1571,7 +1587,7 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 30px 8px 8px;
+  padding: 12px 8px 8px;
 }
 @media (max-width: 500px) {
   .buttons3 {
@@ -1583,7 +1599,7 @@
 }
 @media (max-width: 350px) {
   .buttons3 {
-    padding-top: 16px;
+    padding-top: 12px;
     padding-right: 0px;
     padding-left: 0px;
   }
@@ -1662,6 +1678,11 @@
     max-width: 50%;
   }
 }
+@media (max-width: 350px) {
+  .text__swGq5 {
+    font-size: 16px;
+  }
+}
 .cancel {
   display: flex;
   flex-direction: column;
@@ -1706,13 +1727,23 @@
     max-width: 100%;
   }
 }
+@media (max-width: 350px) {
+  .text__jlwrs {
+    font-size: 16px;
+  }
+}
 .text__x2QvB {
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   padding-top: 10px;
   background: #f8f8f8;
 }
-.modalDEactivateAutosync:global(.__wab_instance) {
+@media (max-width: 350px) {
+  .text__x2QvB {
+    font-size: 16px;
+  }
+}
+.dEactivateAutosync:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -1725,7 +1756,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 22px 8px 8px;
+  padding: 0px 8px 8px;
 }
 @media (max-width: 350px) {
   .freeBox__wlTfp {
@@ -1736,7 +1767,7 @@
 }
 .text__mc9FR {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-bottom: 0px;
 }
@@ -1761,7 +1792,7 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 30px 8px 8px;
+  padding: 12px 8px 8px;
 }
 @media (max-width: 500px) {
   .buttons2 {
@@ -1898,8 +1929,9 @@
 }
 .text__nbEt {
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   padding-top: 10px;
+  background: #f8f8f8;
 }
 @media (max-width: 500px) {
   .text__nbEt {
@@ -1911,7 +1943,7 @@
     font-size: 16px;
   }
 }
-.modalDEactivateReservations:global(.__wab_instance) {
+.dEactivateReservations:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -1924,7 +1956,13 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 18px 8px 8px;
+  padding: 0px 8px 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__xe5B3 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 @media (max-width: 350px) {
   .freeBox__xe5B3 {
@@ -1935,7 +1973,7 @@
 }
 .text__nrISn {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-bottom: 0px;
   font-weight: 600;
@@ -1954,7 +1992,7 @@
 }
 .text__h1JAd {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2.2;
 }
 @media (max-width: 500px) {
@@ -1965,7 +2003,7 @@
 }
 @media (max-width: 350px) {
   .text__h1JAd {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 2.2;
   }
 }
@@ -1976,7 +2014,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 30px 8px 8px;
+  padding: 12px 8px 8px;
 }
 .buttons4 > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -2228,13 +2266,13 @@
 }
 .text__kxL1E {
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   padding-top: 10px;
   background: #f8f8f8;
 }
 @media (max-width: 350px) {
   .text__kxL1E {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 .opt14 {

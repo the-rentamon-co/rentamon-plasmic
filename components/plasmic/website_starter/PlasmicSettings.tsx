@@ -126,19 +126,19 @@ export type PlasmicSettings__OverridesType = {
   p33?: Flex__<"div">;
   p43?: Flex__<"div">;
   switch3?: Flex__<typeof Switch>;
-  modalActivateAutosync?: Flex__<typeof AntdModal>;
+  activateAutosync?: Flex__<typeof AntdModal>;
   buttons?: Flex__<"div">;
   active?: Flex__<"div">;
   deactive?: Flex__<"div">;
-  modalActivateReservations?: Flex__<typeof AntdModal>;
+  activateReservations?: Flex__<typeof AntdModal>;
   buttons3?: Flex__<"div">;
   active3?: Flex__<"div">;
   cancel?: Flex__<"div">;
-  modalDEactivateAutosync?: Flex__<typeof AntdModal>;
+  dEactivateAutosync?: Flex__<typeof AntdModal>;
   buttons2?: Flex__<"div">;
   deactive5?: Flex__<"div">;
   deactive2?: Flex__<"div">;
-  modalDEactivateReservations?: Flex__<typeof AntdModal>;
+  dEactivateReservations?: Flex__<typeof AntdModal>;
   buttons4?: Flex__<"div">;
   active4?: Flex__<"div">;
   deactive4?: Flex__<"div">;
@@ -244,25 +244,7 @@ function PlasmicSettings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "modalActivateAutosync.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : false
-      },
-      {
-        path: "modalDEactivateAutosync.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
-      },
-      {
-        path: "modalActivateReservations.open",
+        path: "activateAutosync.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -275,7 +257,33 @@ function PlasmicSettings__RenderFunc(props: {
             : false
       },
       {
-        path: "modalDEactivateReservations.open",
+        path: "dEactivateAutosync.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
+      },
+      {
+        path: "activateReservations.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
+      },
+      {
+        path: "dEactivateReservations.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -850,10 +858,7 @@ function PlasmicSettings__RenderFunc(props: {
                                   const actionArgs = {
                                     variable: {
                                       objRoot: $state,
-                                      variablePath: [
-                                        "modalActivateAutosync",
-                                        "open"
-                                      ]
+                                      variablePath: ["activateAutosync", "open"]
                                     },
                                     operation: 0,
                                     value: true
@@ -889,10 +894,7 @@ function PlasmicSettings__RenderFunc(props: {
                                 const actionArgs = {
                                   variable: {
                                     objRoot: $state,
-                                    variablePath: [
-                                      "modalDEactivateAutosync",
-                                      "open"
-                                    ]
+                                    variablePath: ["dEactivateAutosync", "open"]
                                   },
                                   operation: 0,
                                   value: $state.switch1.isSelected == false
@@ -976,9 +978,9 @@ function PlasmicSettings__RenderFunc(props: {
                         sty.text__kgxw2
                       )}
                     >
-                      {
-                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
-                      }
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f (\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646)"
+                        : "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f (\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646)"}
                     </div>
                   </div>
                   <div
@@ -1141,7 +1143,7 @@ function PlasmicSettings__RenderFunc(props: {
                                     variable: {
                                       objRoot: $state,
                                       variablePath: [
-                                        "modalActivateReservations",
+                                        "activateReservations",
                                         "open"
                                       ]
                                     },
@@ -1180,7 +1182,7 @@ function PlasmicSettings__RenderFunc(props: {
                                   variable: {
                                     objRoot: $state,
                                     variablePath: [
-                                      "modalDEactivateReservations",
+                                      "dEactivateReservations",
                                       "open"
                                     ]
                                   },
@@ -1333,12 +1335,9 @@ function PlasmicSettings__RenderFunc(props: {
                 </div>
               </div>
               <AntdModal
-                data-plasmic-name={"modalActivateAutosync"}
-                data-plasmic-override={overrides.modalActivateAutosync}
-                className={classNames(
-                  "__wab_instance",
-                  sty.modalActivateAutosync
-                )}
+                data-plasmic-name={"activateAutosync"}
+                data-plasmic-override={overrides.activateAutosync}
+                className={classNames("__wab_instance", sty.activateAutosync)}
                 defaultStylesClassName={classNames(
                   projectcss.root_reset,
                   projectcss.plasmic_default_styles,
@@ -1352,15 +1351,15 @@ function PlasmicSettings__RenderFunc(props: {
                 modalContentClassName={classNames({
                   [sty["pcls_Gd1exZqbaJW4"]]: true
                 })}
-                modalScopeClassName={sty["modalActivateAutosync__modal"]}
+                modalScopeClassName={sty["activateAutosync__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "modalActivateAutosync",
+                    "activateAutosync",
                     "open"
                   ]).apply(null, eventArgs);
                 }}
                 open={generateStateValueProp($state, [
-                  "modalActivateAutosync",
+                  "activateAutosync",
                   "open"
                 ])}
                 title={
@@ -1498,7 +1497,7 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["modalActivateAutosync", "open"]
+                                variablePath: ["activateAutosync", "open"]
                               },
                               operation: 0
                             };
@@ -1573,7 +1572,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                  "\u0648\u06cc\u0698\u06af\u06cc \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0641\u0639\u0627\u0644 \u0634\u062f",
                                   "top-center"
                                 ]
                               };
@@ -1774,10 +1773,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: [
-                                    "modalActivateAutosync",
-                                    "open"
-                                  ]
+                                  variablePath: ["activateAutosync", "open"]
                                 },
                                 operation: 0
                               };
@@ -1816,11 +1812,11 @@ function PlasmicSettings__RenderFunc(props: {
                 </div>
               </AntdModal>
               <AntdModal
-                data-plasmic-name={"modalActivateReservations"}
-                data-plasmic-override={overrides.modalActivateReservations}
+                data-plasmic-name={"activateReservations"}
+                data-plasmic-override={overrides.activateReservations}
                 className={classNames(
                   "__wab_instance",
-                  sty.modalActivateReservations
+                  sty.activateReservations
                 )}
                 defaultStylesClassName={classNames(
                   projectcss.root_reset,
@@ -1832,15 +1828,15 @@ function PlasmicSettings__RenderFunc(props: {
                 )}
                 hideFooter={true}
                 maskClosable={false}
-                modalScopeClassName={sty["modalActivateReservations__modal"]}
+                modalScopeClassName={sty["activateReservations__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "modalActivateReservations",
+                    "activateReservations",
                     "open"
                   ]).apply(null, eventArgs);
                 }}
                 open={generateStateValueProp($state, [
-                  "modalActivateReservations",
+                  "activateReservations",
                   "open"
                 ])}
                 title={
@@ -1851,9 +1847,9 @@ function PlasmicSettings__RenderFunc(props: {
                       sty.text__x2QvB
                     )}
                   >
-                    {
-                      "\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                      : "\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"}
                   </div>
                 }
                 trigger={null}
@@ -1880,10 +1876,12 @@ function PlasmicSettings__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f0 \u0646\u0645\u0627\u06cc\u0634 \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647 \r\n\u06f0 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \r\n\u06f0 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0627\u0646\r\n\u06f0 \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\r"
+                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646  \u0628\u0631\u0627\u06cc \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                      : "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646  \u0628\u0631\u0627\u06cc \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\r"}
+                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      : "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646  \u0628\u0631\u0627\u06cc \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\r"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__e0XaI)}>
@@ -2030,10 +2028,7 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: [
-                                  "modalActivateReservations",
-                                  "open"
-                                ]
+                                variablePath: ["activateReservations", "open"]
                               },
                               operation: 0
                             };
@@ -2106,7 +2101,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                  "\u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0641\u0639\u0627\u0644 \u0634\u062f",
                                   "top-center"
                                 ]
                               };
@@ -2250,14 +2245,10 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: [
-                                    "modalActivateReservations",
-                                    "open"
-                                  ]
+                                  variablePath: ["activateReservations", "open"]
                                 },
                                 operation: 0,
-                                value:
-                                  $state.modalActivateReservations.open == false
+                                value: $state.activateReservations.open == false
                               };
                               return (({
                                 variable,
@@ -2294,12 +2285,9 @@ function PlasmicSettings__RenderFunc(props: {
                 </div>
               </AntdModal>
               <AntdModal
-                data-plasmic-name={"modalDEactivateAutosync"}
-                data-plasmic-override={overrides.modalDEactivateAutosync}
-                className={classNames(
-                  "__wab_instance",
-                  sty.modalDEactivateAutosync
-                )}
+                data-plasmic-name={"dEactivateAutosync"}
+                data-plasmic-override={overrides.dEactivateAutosync}
+                className={classNames("__wab_instance", sty.dEactivateAutosync)}
                 defaultStylesClassName={classNames(
                   projectcss.root_reset,
                   projectcss.plasmic_default_styles,
@@ -2310,15 +2298,15 @@ function PlasmicSettings__RenderFunc(props: {
                 )}
                 hideFooter={true}
                 maskClosable={false}
-                modalScopeClassName={sty["modalDEactivateAutosync__modal"]}
+                modalScopeClassName={sty["dEactivateAutosync__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "modalDEactivateAutosync",
+                    "dEactivateAutosync",
                     "open"
                   ]).apply(null, eventArgs);
                 }}
                 open={generateStateValueProp($state, [
-                  "modalDEactivateAutosync",
+                  "dEactivateAutosync",
                   "open"
                 ])}
                 title={
@@ -2442,10 +2430,7 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: [
-                                  "modalDEactivateAutosync",
-                                  "open"
-                                ]
+                                variablePath: ["dEactivateAutosync", "open"]
                               },
                               operation: 0
                             };
@@ -2519,7 +2504,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                  "\u0648\u06cc\u0698\u06af\u06cc \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f!",
                                   "top-center"
                                 ]
                               };
@@ -2674,14 +2659,10 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: [
-                                    "modalDEactivateAutosync",
-                                    "open"
-                                  ]
+                                  variablePath: ["dEactivateAutosync", "open"]
                                 },
                                 operation: 0,
-                                value:
-                                  $state.modalDEactivateAutosync.open == false
+                                value: $state.dEactivateAutosync.open == false
                               };
                               return (({
                                 variable,
@@ -2718,11 +2699,11 @@ function PlasmicSettings__RenderFunc(props: {
                 </div>
               </AntdModal>
               <AntdModal
-                data-plasmic-name={"modalDEactivateReservations"}
-                data-plasmic-override={overrides.modalDEactivateReservations}
+                data-plasmic-name={"dEactivateReservations"}
+                data-plasmic-override={overrides.dEactivateReservations}
                 className={classNames(
                   "__wab_instance",
-                  sty.modalDEactivateReservations
+                  sty.dEactivateReservations
                 )}
                 defaultStylesClassName={classNames(
                   projectcss.root_reset,
@@ -2734,15 +2715,15 @@ function PlasmicSettings__RenderFunc(props: {
                 )}
                 hideFooter={true}
                 maskClosable={false}
-                modalScopeClassName={sty["modalDEactivateReservations__modal"]}
+                modalScopeClassName={sty["dEactivateReservations__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "modalDEactivateReservations",
+                    "dEactivateReservations",
                     "open"
                   ]).apply(null, eventArgs);
                 }}
                 open={generateStateValueProp($state, [
-                  "modalDEactivateReservations",
+                  "dEactivateReservations",
                   "open"
                 ])}
                 title={
@@ -2753,9 +2734,11 @@ function PlasmicSettings__RenderFunc(props: {
                       sty.text__kxL1E
                     )}
                   >
-                    {
-                      "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                      : "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"}
                   </div>
                 }
                 trigger={null}
@@ -2779,9 +2762,11 @@ function PlasmicSettings__RenderFunc(props: {
                       sty.text__h1JAd
                     )}
                   >
-                    {
-                      "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646  \u0628\u0631\u0627\u06cc \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\r\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      : "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"}
                   </div>
                 </div>
                 <Stack__
@@ -2881,10 +2866,7 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: [
-                                  "modalDEactivateReservations",
-                                  "open"
-                                ]
+                                variablePath: ["dEactivateReservations", "open"]
                               },
                               operation: 0
                             };
@@ -2960,7 +2942,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                  "\u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f!",
                                   "top-center"
                                 ]
                               };
@@ -3119,14 +3101,13 @@ function PlasmicSettings__RenderFunc(props: {
                                 variable: {
                                   objRoot: $state,
                                   variablePath: [
-                                    "modalDEactivateReservations",
+                                    "dEactivateReservations",
                                     "open"
                                   ]
                                 },
                                 operation: 0,
                                 value:
-                                  $state.modalDEactivateReservations.open ==
-                                  false
+                                  $state.dEactivateReservations.open == false
                               };
                               return (({
                                 variable,
@@ -3631,19 +3612,19 @@ const PlasmicDescendants = {
     "p33",
     "p43",
     "switch3",
-    "modalActivateAutosync",
+    "activateAutosync",
     "buttons",
     "active",
     "deactive",
-    "modalActivateReservations",
+    "activateReservations",
     "buttons3",
     "active3",
     "cancel",
-    "modalDEactivateAutosync",
+    "dEactivateAutosync",
     "buttons2",
     "deactive5",
     "deactive2",
-    "modalDEactivateReservations",
+    "dEactivateReservations",
     "buttons4",
     "active4",
     "deactive4",
@@ -3696,19 +3677,19 @@ const PlasmicDescendants = {
     "p33",
     "p43",
     "switch3",
-    "modalActivateAutosync",
+    "activateAutosync",
     "buttons",
     "active",
     "deactive",
-    "modalActivateReservations",
+    "activateReservations",
     "buttons3",
     "active3",
     "cancel",
-    "modalDEactivateAutosync",
+    "dEactivateAutosync",
     "buttons2",
     "deactive5",
     "deactive2",
-    "modalDEactivateReservations",
+    "dEactivateReservations",
     "buttons4",
     "active4",
     "deactive4",
@@ -3751,19 +3732,19 @@ const PlasmicDescendants = {
     "p33",
     "p43",
     "switch3",
-    "modalActivateAutosync",
+    "activateAutosync",
     "buttons",
     "active",
     "deactive",
-    "modalActivateReservations",
+    "activateReservations",
     "buttons3",
     "active3",
     "cancel",
-    "modalDEactivateAutosync",
+    "dEactivateAutosync",
     "buttons2",
     "deactive5",
     "deactive2",
-    "modalDEactivateReservations",
+    "dEactivateReservations",
     "buttons4",
     "active4",
     "deactive4"
@@ -3809,17 +3790,12 @@ const PlasmicDescendants = {
   p33: ["p33"],
   p43: ["p43", "switch3"],
   switch3: ["switch3"],
-  modalActivateAutosync: [
-    "modalActivateAutosync",
-    "buttons",
-    "active",
-    "deactive"
-  ],
+  activateAutosync: ["activateAutosync", "buttons", "active", "deactive"],
   buttons: ["buttons", "active", "deactive"],
   active: ["active"],
   deactive: ["deactive"],
-  modalActivateReservations: [
-    "modalActivateReservations",
+  activateReservations: [
+    "activateReservations",
     "buttons3",
     "active3",
     "cancel"
@@ -3827,8 +3803,8 @@ const PlasmicDescendants = {
   buttons3: ["buttons3", "active3", "cancel"],
   active3: ["active3"],
   cancel: ["cancel"],
-  modalDEactivateAutosync: [
-    "modalDEactivateAutosync",
+  dEactivateAutosync: [
+    "dEactivateAutosync",
     "buttons2",
     "deactive5",
     "deactive2"
@@ -3836,8 +3812,8 @@ const PlasmicDescendants = {
   buttons2: ["buttons2", "deactive5", "deactive2"],
   deactive5: ["deactive5"],
   deactive2: ["deactive2"],
-  modalDEactivateReservations: [
-    "modalDEactivateReservations",
+  dEactivateReservations: [
+    "dEactivateReservations",
     "buttons4",
     "active4",
     "deactive4"
@@ -3898,19 +3874,19 @@ type NodeDefaultElementType = {
   p33: "div";
   p43: "div";
   switch3: typeof Switch;
-  modalActivateAutosync: typeof AntdModal;
+  activateAutosync: typeof AntdModal;
   buttons: "div";
   active: "div";
   deactive: "div";
-  modalActivateReservations: typeof AntdModal;
+  activateReservations: typeof AntdModal;
   buttons3: "div";
   active3: "div";
   cancel: "div";
-  modalDEactivateAutosync: typeof AntdModal;
+  dEactivateAutosync: typeof AntdModal;
   buttons2: "div";
   deactive5: "div";
   deactive2: "div";
-  modalDEactivateReservations: typeof AntdModal;
+  dEactivateReservations: typeof AntdModal;
   buttons4: "div";
   active4: "div";
   deactive4: "div";
@@ -4023,21 +3999,19 @@ export const PlasmicSettings = Object.assign(
     p33: makeNodeComponent("p33"),
     p43: makeNodeComponent("p43"),
     switch3: makeNodeComponent("switch3"),
-    modalActivateAutosync: makeNodeComponent("modalActivateAutosync"),
+    activateAutosync: makeNodeComponent("activateAutosync"),
     buttons: makeNodeComponent("buttons"),
     active: makeNodeComponent("active"),
     deactive: makeNodeComponent("deactive"),
-    modalActivateReservations: makeNodeComponent("modalActivateReservations"),
+    activateReservations: makeNodeComponent("activateReservations"),
     buttons3: makeNodeComponent("buttons3"),
     active3: makeNodeComponent("active3"),
     cancel: makeNodeComponent("cancel"),
-    modalDEactivateAutosync: makeNodeComponent("modalDEactivateAutosync"),
+    dEactivateAutosync: makeNodeComponent("dEactivateAutosync"),
     buttons2: makeNodeComponent("buttons2"),
     deactive5: makeNodeComponent("deactive5"),
     deactive2: makeNodeComponent("deactive2"),
-    modalDEactivateReservations: makeNodeComponent(
-      "modalDEactivateReservations"
-    ),
+    dEactivateReservations: makeNodeComponent("dEactivateReservations"),
     buttons4: makeNodeComponent("buttons4"),
     active4: makeNodeComponent("active4"),
     deactive4: makeNodeComponent("deactive4"),
