@@ -190,6 +190,11 @@
     padding-top: 24px;
   }
 }
+@media (max-width: 350px) {
+  .text__isa1H {
+    font-size: 15px;
+  }
+}
 .introduction2 {
   display: flex;
   flex-direction: column;
@@ -244,6 +249,7 @@
 @media (max-width: 350px) {
   .li__eRDu {
     padding-top: 0px;
+    font-size: 15px;
   }
 }
 .ul__eCqGt {
@@ -285,9 +291,19 @@
     font-size: 16px;
   }
 }
-.ul__k35Uw {
+@media (max-width: 350px) {
+  .text__mnQ1G {
+    font-size: 15px;
+  }
+}
+.ul__sUbvs {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 350px) {
+  .ul__sUbvs {
+    padding-left: 7px;
+  }
 }
 .text__vnUgP {
   text-align: right;
@@ -298,6 +314,11 @@
 @media (max-width: 500px) {
   .text__vnUgP {
     font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__vnUgP {
+    font-size: 15px;
   }
 }
 .rentamonFooter:global(.__wab_instance) {
