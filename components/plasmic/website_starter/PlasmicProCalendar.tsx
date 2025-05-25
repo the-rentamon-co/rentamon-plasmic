@@ -117,7 +117,7 @@ export type PlasmicProCalendar__OverridesType = {
   calendar2?: Flex__<typeof Calendar2>;
   iframe?: Flex__<typeof Iframe>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
-  spacer?: Flex__<"div">;
+  spacerDontTouch?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -2361,9 +2361,9 @@ function PlasmicProCalendar__RenderFunc(props: {
               : false
           ) ? (
             <div
-              data-plasmic-name={"spacer"}
-              data-plasmic-override={overrides.spacer}
-              className={classNames(projectcss.all, sty.spacer)}
+              data-plasmic-name={"spacerDontTouch"}
+              data-plasmic-override={overrides.spacerDontTouch}
+              className={classNames(projectcss.all, sty.spacerDontTouch)}
             />
           ) : null}
           <NavigationRntFooter
@@ -2416,7 +2416,7 @@ const PlasmicDescendants = {
     "calendar2",
     "iframe",
     "userAvailableFeature",
-    "spacer",
+    "spacerDontTouch",
     "navigationRntFooter",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -2467,7 +2467,7 @@ const PlasmicDescendants = {
   calendar2: ["calendar2"],
   iframe: ["iframe"],
   userAvailableFeature: ["userAvailableFeature"],
-  spacer: ["spacer"],
+  spacerDontTouch: ["spacerDontTouch"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -2498,7 +2498,7 @@ type NodeDefaultElementType = {
   calendar2: typeof Calendar2;
   iframe: typeof Iframe;
   userAvailableFeature: typeof ApiRequest;
-  spacer: "div";
+  spacerDontTouch: "div";
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -2585,7 +2585,7 @@ export const PlasmicProCalendar = Object.assign(
     calendar2: makeNodeComponent("calendar2"),
     iframe: makeNodeComponent("iframe"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
-    spacer: makeNodeComponent("spacer"),
+    spacerDontTouch: makeNodeComponent("spacerDontTouch"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),

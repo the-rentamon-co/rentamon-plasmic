@@ -1836,6 +1836,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/notifications"
+        },
+        {
+          "id": "0cQD5g_IoH69",
+          "name": "RntRedirect",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRntRedirect.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/rnt-redirect.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRntRedirect.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/rnt-redirect"
         }
       ],
       "icons": [

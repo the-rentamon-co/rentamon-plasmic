@@ -112,7 +112,7 @@ export type PlasmicLiteCalendar__OverridesType = {
   sidebarLite?: Flex__<typeof SidebarLite>;
   calendar2?: Flex__<typeof Calendar2>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
-  spacer?: Flex__<"div">;
+  spacerDontTouch?: Flex__<"div">;
   proPanelModal?: Flex__<typeof AntdModal>;
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
@@ -1278,9 +1278,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
           />
 
           <div
-            data-plasmic-name={"spacer"}
-            data-plasmic-override={overrides.spacer}
-            className={classNames(projectcss.all, sty.spacer)}
+            data-plasmic-name={"spacerDontTouch"}
+            data-plasmic-override={overrides.spacerDontTouch}
+            className={classNames(projectcss.all, sty.spacerDontTouch)}
           />
 
           {false ? (
@@ -1362,7 +1362,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__u2A7R
+                        sty.formField__i3JpF
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1374,7 +1374,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__sNw6A
+                        sty.formField__vq4Sx
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1392,7 +1392,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___53Fi
+                          sty.text__znn1U
                         )}
                       >
                         {"Submit"}
@@ -1445,7 +1445,7 @@ const PlasmicDescendants = {
     "sidebarLite",
     "calendar2",
     "userAvailableFeature",
-    "spacer",
+    "spacerDontTouch",
     "proPanelModal",
     "form",
     "input",
@@ -1479,7 +1479,7 @@ const PlasmicDescendants = {
   sidebarLite: ["sidebarLite"],
   calendar2: ["calendar2"],
   userAvailableFeature: ["userAvailableFeature"],
-  spacer: ["spacer"],
+  spacerDontTouch: ["spacerDontTouch"],
   proPanelModal: ["proPanelModal", "form", "input", "textArea", "button"],
   form: ["form", "input", "textArea", "button"],
   input: ["input"],
@@ -1507,7 +1507,7 @@ type NodeDefaultElementType = {
   sidebarLite: typeof SidebarLite;
   calendar2: typeof Calendar2;
   userAvailableFeature: typeof ApiRequest;
-  spacer: "div";
+  spacerDontTouch: "div";
   proPanelModal: typeof AntdModal;
   form: typeof FormWrapper;
   input: typeof AntdInput;
@@ -1591,7 +1591,7 @@ export const PlasmicLiteCalendar = Object.assign(
     sidebarLite: makeNodeComponent("sidebarLite"),
     calendar2: makeNodeComponent("calendar2"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
-    spacer: makeNodeComponent("spacer"),
+    spacerDontTouch: makeNodeComponent("spacerDontTouch"),
     proPanelModal: makeNodeComponent("proPanelModal"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),

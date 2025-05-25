@@ -952,7 +952,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.spacer {
+.spacerDontTouch {
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -966,12 +966,12 @@
   padding: 8px;
 }
 @media (max-width: 500px) {
-  .spacer {
+  .spacerDontTouch {
     display: flex;
   }
 }
 @media (max-width: 350px) {
-  .spacer {
+  .spacerDontTouch {
     min-height: 72px;
     max-height: 72px;
     display: flex;

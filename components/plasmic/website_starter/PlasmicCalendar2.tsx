@@ -3310,7 +3310,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           </section>
           {(() => {
             try {
-              return $props.isFirstVisit;
+              return $props.isFirstVisit && $state.tourSteps == 2;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -3321,44 +3321,93 @@ function PlasmicCalendar2__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__drCo6)}>
-              {(() => {
-                try {
-                  return $state.tourSteps == 2;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
+            <div className={classNames(projectcss.all, sty.freeBox__zXjCk)}>
+              <div className={classNames(projectcss.all, sty.freeBox__drCo6)}>
+                {(() => {
+                  try {
+                    return $state.tourSteps == 2;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })() ? (
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kMTvf
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0627\u0632 \u0628\u06cc\u0646 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 600 }}
+                      >
+                        {
+                          "\u00ab\u067e\u0631\u00bb \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                        }
+                      </span>
+                    </React.Fragment>
+                  </div>
+                ) : null}
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox___3P2Zi)}>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__kMTvf
+                    sty.text__iFPr
                   )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function deleteCookie(name) {
+                                  document.cookie =
+                                    name +
+                                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                }
+                                deleteCookie("first_visit");
+                                console.log("delete cookie");
+                                $state.tourSteps = 10;
+                                return console.log(
+                                  "delete cookie",
+                                  $state.tourSteps
+                                );
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
                 >
-                  <React.Fragment>
-                    <React.Fragment>
-                      {
-                        "\u0627\u0632 \u0628\u06cc\u0646 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \n"
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 600 }}
-                    >
-                      {
-                        "\u00ab\u067e\u0631\u00bb \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
-                      }
-                    </span>
-                  </React.Fragment>
+                  {"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644\n"}
                 </div>
-              ) : null}
+              </div>
             </div>
           ) : null}
           <section
@@ -5907,7 +5956,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         >
           {(() => {
             try {
-              return $props.isFirstVisit;
+              return $props.isFirstVisit && $state.tourSteps != 10;
             } catch (e) {
               if (
                 e instanceof TypeError ||
