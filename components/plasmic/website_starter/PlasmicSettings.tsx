@@ -77,6 +77,9 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSettings.module.css"; // plasmic-import: Gu50HL8TWrKF/css
 
+import Icon96Icon from "./icons/PlasmicIcon__Icon96"; // plasmic-import: KF8kMPq8z-hR/icon
+import Icon97Icon from "./icons/PlasmicIcon__Icon97"; // plasmic-import: WvAcVVsrw6t2/icon
+
 createPlasmicElementProxy;
 
 export type PlasmicSettings__VariantMembers = {};
@@ -147,6 +150,7 @@ export type PlasmicSettings__OverridesType = {
   p34?: Flex__<"div">;
   apiRequestSetting?: Flex__<typeof ApiRequest>;
   _2nd2?: Flex__<"div">;
+  spacer?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   html?: Flex__<"div">;
@@ -664,22 +668,9 @@ function PlasmicSettings__RenderFunc(props: {
                     data-plasmic-override={overrides.p1}
                     className={classNames(projectcss.all, sty.p1)}
                   >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__xPWw)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image78.svg",
-                        fullWidth: 24,
-                        fullHeight: 24,
-                        aspectRatio: 1
-                      }}
+                    <Icon96Icon
+                      className={classNames(projectcss.all, sty.svg___4AdKy)}
+                      role={"img"}
                     />
                   </div>
                   <div
@@ -948,22 +939,9 @@ function PlasmicSettings__RenderFunc(props: {
                     data-plasmic-override={overrides.p12}
                     className={classNames(projectcss.all, sty.p12)}
                   >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__jtpne)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image70.svg",
-                        fullWidth: 23,
-                        fullHeight: 20,
-                        aspectRatio: 1.15
-                      }}
+                    <Icon97Icon
+                      className={classNames(projectcss.all, sty.svg___6UaXp)}
+                      role={"img"}
                     />
                   </div>
                   <div
@@ -979,8 +957,8 @@ function PlasmicSettings__RenderFunc(props: {
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f (\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646)"
-                        : "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f (\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646)"}
+                        ? "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                        : "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"}
                     </div>
                   </div>
                   <div
@@ -3329,6 +3307,11 @@ function PlasmicSettings__RenderFunc(props: {
                 )}
               </div>
             </div>
+            <div
+              data-plasmic-name={"spacer"}
+              data-plasmic-override={overrides.spacer}
+              className={classNames(projectcss.all, sty.spacer)}
+            />
           </div>
           <div
             data-plasmic-name={"returnButton"}
@@ -3633,6 +3616,7 @@ const PlasmicDescendants = {
     "p34",
     "apiRequestSetting",
     "_2nd2",
+    "spacer",
     "returnButton",
     "sideEffect",
     "html",
@@ -3697,7 +3681,8 @@ const PlasmicDescendants = {
     "p24",
     "p34",
     "apiRequestSetting",
-    "_2nd2"
+    "_2nd2",
+    "spacer"
   ],
   intro: ["intro", "_2nd"],
   _2nd: ["_2nd"],
@@ -3826,6 +3811,7 @@ const PlasmicDescendants = {
   p34: ["p34"],
   apiRequestSetting: ["apiRequestSetting"],
   _2nd2: ["_2nd2"],
+  spacer: ["spacer"],
   returnButton: ["returnButton"],
   sideEffect: ["sideEffect"],
   html: ["html"],
@@ -3895,6 +3881,7 @@ type NodeDefaultElementType = {
   p34: "div";
   apiRequestSetting: typeof ApiRequest;
   _2nd2: "div";
+  spacer: "div";
   returnButton: "div";
   sideEffect: typeof SideEffect;
   html: "div";
@@ -4020,6 +4007,7 @@ export const PlasmicSettings = Object.assign(
     p34: makeNodeComponent("p34"),
     apiRequestSetting: makeNodeComponent("apiRequestSetting"),
     _2nd2: makeNodeComponent("_2nd2"),
+    spacer: makeNodeComponent("spacer"),
     returnButton: makeNodeComponent("returnButton"),
     sideEffect: makeNodeComponent("sideEffect"),
     html: makeNodeComponent("html"),

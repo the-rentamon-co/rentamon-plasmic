@@ -74,6 +74,7 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgc
 import sty from "./PlasmicSideBar2.module.css"; // plasmic-import: 03ZPQfFyBXgI/css
 
 import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4HwqLfNb/icon
+import Icon96Icon from "./icons/PlasmicIcon__Icon96"; // plasmic-import: KF8kMPq8z-hR/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
 import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
 import Icon48Icon from "./icons/PlasmicIcon__Icon48"; // plasmic-import: EUsJ3MtRCJEN/icon
@@ -877,22 +878,9 @@ function PlasmicSideBar2__RenderFunc(props: {
             }
           }}
         >
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__spHrb)}
-            displayHeight={"29px"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"30px"}
-            loading={"lazy"}
-            src={{
-              src: "/plasmic/website_starter/images/image78.svg",
-              fullWidth: 24,
-              fullHeight: 24,
-              aspectRatio: 1
-            }}
+          <Icon96Icon
+            className={classNames(projectcss.all, sty.svg___1LXnE)}
+            role={"img"}
           />
 
           <div

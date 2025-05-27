@@ -204,6 +204,7 @@ export type PlasmicReservations__OverridesType = {
   mizbon?: Flex__<typeof PlasmicImg__>;
   homsa?: Flex__<typeof PlasmicImg__>;
   otaghak?: Flex__<typeof PlasmicImg__>;
+  settlementNotif?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultReservationsProps {}
@@ -714,6 +715,12 @@ function PlasmicReservations__RenderFunc(props: {
       },
       {
         path: "loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "settlementNotif.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -2058,10 +2065,10 @@ function PlasmicReservations__RenderFunc(props: {
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image105.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
+                            src: "/plasmic/website_starter/images/image141.svg",
+                            fullWidth: 23,
+                            fullHeight: 23,
+                            aspectRatio: undefined
                           }}
                         />
                       ) : null}
@@ -7480,10 +7487,17 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
                 {(() => {
                   try {
-                    return (
-                      $state.modalData[0].is_sattled != null &&
-                      $state.modalData[0].status == "Past"
-                    );
+                    return (() => {
+                      const { platfromName, status, is_sattled } =
+                        $state.modalData[0];
+                      const allowedSites = ["مهمانشو", "میزبون", "هومسا"];
+
+                      return (
+                        status === "Past" &&
+                        (allowedSites.includes(platfromName) ||
+                          is_sattled != null)
+                      );
+                    })();
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -7598,7 +7612,7 @@ function PlasmicReservations__RenderFunc(props: {
                     >
                       {(() => {
                         try {
-                          return $state.modalData[0].is_sattled != true;
+                          return $state.modalData[0].is_sattled == false;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -7639,10 +7653,59 @@ function PlasmicReservations__RenderFunc(props: {
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image106.svg",
-                              fullWidth: 27,
-                              fullHeight: 27,
-                              aspectRatio: 1
+                              src: "/plasmic/website_starter/images/image141.svg",
+                              fullWidth: 23,
+                              fullHeight: 23,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        </Stack__>
+                      ) : null}
+                      {(() => {
+                        try {
+                          return $state.modalData[0].is_sattled == null;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__po69A
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___85Qua
+                            )}
+                          >
+                            {"\u0646\u0627\u0645\u0634\u062e\u0635"}
+                          </div>
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__epfh2)}
+                            displayHeight={"22px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image142.svg",
+                              fullWidth: 23,
+                              fullHeight: 23,
+                              aspectRatio: undefined
                             }}
                           />
                         </Stack__>
@@ -8005,6 +8068,31 @@ function PlasmicReservations__RenderFunc(props: {
               </Button>
             </Stack__>
           </AntdModal>
+          <AntdModal
+            data-plasmic-name={"settlementNotif"}
+            data-plasmic-override={overrides.settlementNotif}
+            children={null}
+            className={classNames("__wab_instance", sty.settlementNotif)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["settlementNotif__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "settlementNotif",
+                "open"
+              ]).apply(null, eventArgs);
+            }}
+            open={generateStateValueProp($state, ["settlementNotif", "open"])}
+            title={null}
+            trigger={null}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -8111,7 +8199,8 @@ const PlasmicDescendants = {
     "mihmansho",
     "mizbon",
     "homsa",
-    "otaghak"
+    "otaghak",
+    "settlementNotif"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -8344,7 +8433,8 @@ const PlasmicDescendants = {
   mihmansho: ["mihmansho"],
   mizbon: ["mizbon"],
   homsa: ["homsa"],
-  otaghak: ["otaghak"]
+  otaghak: ["otaghak"],
+  settlementNotif: ["settlementNotif"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -8449,6 +8539,7 @@ type NodeDefaultElementType = {
   mizbon: typeof PlasmicImg__;
   homsa: typeof PlasmicImg__;
   otaghak: typeof PlasmicImg__;
+  settlementNotif: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -8609,6 +8700,7 @@ export const PlasmicReservations = Object.assign(
     mizbon: makeNodeComponent("mizbon"),
     homsa: makeNodeComponent("homsa"),
     otaghak: makeNodeComponent("otaghak"),
+    settlementNotif: makeNodeComponent("settlementNotif"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,

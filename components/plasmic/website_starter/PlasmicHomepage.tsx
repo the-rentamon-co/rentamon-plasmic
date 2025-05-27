@@ -857,7 +857,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ textDecorationLine: "underline" }}
                       >
-                        {"\u06f8\u06f0\u06f0"}
+                        {"\u06f9\u06f0\u06f0"}
                       </span>
                       <React.Fragment>
                         {
