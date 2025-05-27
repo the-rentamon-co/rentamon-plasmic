@@ -116,6 +116,11 @@
   font-weight: 600;
   min-width: 0;
 }
+@media (max-width: 350px) {
+  .text__frdDf {
+    font-size: 20px;
+  }
+}
 .introCalendarCaption {
   display: flex;
   flex-direction: column;
@@ -135,6 +140,11 @@
   max-width: 100%;
   font-size: 17px;
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__kLo {
+    font-size: 16px;
+  }
 }
 .introCalendar4 {
   display: flex;

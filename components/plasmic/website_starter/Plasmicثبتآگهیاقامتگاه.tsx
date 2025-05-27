@@ -358,9 +358,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     sty.text__tc6ZD
                   )}
                 >
-                  {
-                    "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0639\u062a\u0628\u0631 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062f\u0631\u0622\u0645\u062f \u0634\u0645\u0627 \u0631\u0648 \u062a\u0627 \u06f3 \u0628\u0631\u0627\u0628\u0631 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647."
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0639\u062a\u0628\u0631 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648\u2026 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062f\u0631\u0622\u0645\u062f \u0634\u0645\u0627 \u0631\u0648 \u062a\u0627 \u06f3 \u0628\u0631\u0627\u0628\u0631 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647."
+                    : "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0639\u062a\u0628\u0631 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648\u2026 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062f\u0631\u0622\u0645\u062f \u0634\u0645\u0627 \u0631\u0648 \u062a\u0627 \u06f3 \u0628\u0631\u0627\u0628\u0631 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647."}
                 </div>
               </div>
               <div
@@ -471,9 +471,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     displayWidth={"60px"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/image.png",
-                      fullWidth: 88,
-                      fullHeight: 88,
+                      src: "/plasmic/website_starter/images/mihmanshoPng.png",
+                      fullWidth: 140,
+                      fullHeight: 140,
                       aspectRatio: undefined
                     }}
                   />
@@ -485,7 +485,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       sty.text__frZBf
                     )}
                   >
-                    {"\u0634\u0628"}
+                    {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__z8Qky)}>
@@ -515,37 +515,6 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     )}
                   >
                     {"\u0647\u0648\u0645\u0633\u0627"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rAjPx)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__grCj)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"60px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/mihmanshoPng.png",
-                      fullWidth: 140,
-                      fullHeight: 140,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vcQil
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0645\u0647\u0645\u0627\u0646\u0634\u0648"
-                      : "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
                   </div>
                 </div>
               </div>
