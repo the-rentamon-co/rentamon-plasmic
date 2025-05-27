@@ -7659,14 +7659,27 @@ function PlasmicReservations__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateModalOpen2"] =
+                      $steps["showToastUnknown"] =
                         $state.modalData[0].is_sattled == null &&
                         $state.modalData[0].status == "Past"
                           ? (() => {
                               const actionArgs = {
                                 args: [
                                   "error",
-                                  "\u0648\u0636\u0639\u06cc\u062a \u062a\u0633\u0648\u06cc\u0647 \u0645\u0634\u062e\u0635 \u0646\u06cc\u0633\u062a.\u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647",
+                                  (() => {
+                                    try {
+                                      return `وضعیت تسویه ${$state.modalData[0].platfromName} مشخص نیست. به پشتیبانی اطلاع بده.`;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
                                   "top-center"
                                 ]
                               };
@@ -7676,12 +7689,12 @@ function PlasmicReservations__RenderFunc(props: {
                             })()
                           : undefined;
                       if (
-                        $steps["updateModalOpen2"] != null &&
-                        typeof $steps["updateModalOpen2"] === "object" &&
-                        typeof $steps["updateModalOpen2"].then === "function"
+                        $steps["showToastUnknown"] != null &&
+                        typeof $steps["showToastUnknown"] === "object" &&
+                        typeof $steps["showToastUnknown"].then === "function"
                       ) {
-                        $steps["updateModalOpen2"] = await $steps[
-                          "updateModalOpen2"
+                        $steps["showToastUnknown"] = await $steps[
+                          "showToastUnknown"
                         ];
                       }
                     }}

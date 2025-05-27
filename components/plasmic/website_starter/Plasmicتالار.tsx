@@ -977,18 +977,30 @@ function Plasmicتالار__RenderFunc(props: {
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img___8Nxz)}
-                      displayHeight={"32px"}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : "100%"
+                      }
                       displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : "100%"
+                      }
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
-                      displayWidth={"32px"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "26px"
+                          : "26px"
+                      }
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/image78.svg",
-                        fullWidth: 24,
-                        fullHeight: 24,
-                        aspectRatio: 1
+                        src: "/plasmic/website_starter/images/image143.svg",
+                        fullWidth: 80,
+                        fullHeight: 78,
+                        aspectRatio: undefined
                       }}
                     />
                   </div>

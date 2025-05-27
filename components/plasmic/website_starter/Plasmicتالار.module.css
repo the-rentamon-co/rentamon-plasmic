@@ -526,6 +526,7 @@
 }
 @media (max-width: 500px) {
   .items8 {
+    filter: blur(0px);
     padding: 0px;
   }
 }
@@ -581,12 +582,20 @@
 .img___8Nxz {
   object-fit: cover;
   max-width: 100%;
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
+  width: 26px;
+  height: 100%;
+  min-height: 0;
 }
 .img___8Nxz > picture > img {
   object-fit: cover;
+}
+@media (max-width: 350px) {
+  .img___8Nxz {
+    width: 26px;
+    height: 100%;
+    max-width: 100%;
+    min-height: 0;
+  }
 }
 .mid {
   display: flex;
