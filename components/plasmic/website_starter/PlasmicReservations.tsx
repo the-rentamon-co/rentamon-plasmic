@@ -2072,6 +2072,46 @@ function PlasmicReservations__RenderFunc(props: {
                           }}
                         />
                       ) : null}
+                      {(() => {
+                        try {
+                          return (() => {
+                            if (
+                              currentItem.is_settled == null &&
+                              currentItem.status === "Past"
+                            ) {
+                              return true;
+                            } else {
+                              return false;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__zkyxz)}
+                          displayHeight={"25px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image142.svg",
+                            fullWidth: 23,
+                            fullHeight: 23,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      ) : null}
                     </div>
                   </div>
                 );
