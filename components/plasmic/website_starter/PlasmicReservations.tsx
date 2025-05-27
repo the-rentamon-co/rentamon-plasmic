@@ -205,6 +205,8 @@ export type PlasmicReservations__OverridesType = {
   homsa?: Flex__<typeof PlasmicImg__>;
   otaghak?: Flex__<typeof PlasmicImg__>;
   settlementNotif?: Flex__<typeof AntdModal>;
+  button?: Flex__<"div">;
+  closeButton?: Flex__<"div">;
 };
 
 export interface DefaultReservationsProps {}
@@ -1063,6 +1065,30 @@ function PlasmicReservations__RenderFunc(props: {
                 typeof $steps["updateModalOpen"].then === "function"
               ) {
                 $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+              }
+
+              $steps["updateModalOpen2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (!document.cookie.includes("settlement_notif")) {
+                            return ($state.settlementNotif.open = true);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalOpen2"] != null &&
+                typeof $steps["updateModalOpen2"] === "object" &&
+                typeof $steps["updateModalOpen2"].then === "function"
+              ) {
+                $steps["updateModalOpen2"] = await $steps["updateModalOpen2"];
               }
             }}
           />
@@ -8137,7 +8163,6 @@ function PlasmicReservations__RenderFunc(props: {
           <AntdModal
             data-plasmic-name={"settlementNotif"}
             data-plasmic-override={overrides.settlementNotif}
-            children={null}
             className={classNames("__wab_instance", sty.settlementNotif)}
             defaultStylesClassName={classNames(
               projectcss.root_reset,
@@ -8148,6 +8173,7 @@ function PlasmicReservations__RenderFunc(props: {
               plasmic_plasmic_rich_components_css.plasmic_tokens
             )}
             hideFooter={true}
+            maskClosable={false}
             modalScopeClassName={sty["settlementNotif__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, [
@@ -8156,9 +8182,240 @@ function PlasmicReservations__RenderFunc(props: {
               ]).apply(null, eventArgs);
             }}
             open={generateStateValueProp($state, ["settlementNotif", "open"])}
-            title={null}
+            title={
+              <div className={classNames(projectcss.all, sty.freeBox__xnPgM)}>
+                <div
+                  data-plasmic-name={"closeButton"}
+                  data-plasmic-override={overrides.closeButton}
+                  className={classNames(projectcss.all, sty.closeButton)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie(
+                                  "settlement_notif",
+                                  "true",
+                                  720
+                                );
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+
+                    $steps["updateSettlementNotifOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["settlementNotif", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateSettlementNotifOpen"] != null &&
+                      typeof $steps["updateSettlementNotifOpen"] === "object" &&
+                      typeof $steps["updateSettlementNotifOpen"].then ===
+                        "function"
+                    ) {
+                      $steps["updateSettlementNotifOpen"] = await $steps[
+                        "updateSettlementNotifOpen"
+                      ];
+                    }
+                  }}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__mcT1D)}
+                    displayHeight={"18px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image24.svg",
+                      fullWidth: 20,
+                      fullHeight: 18,
+                      aspectRatio: 1.111111
+                    }}
+                  />
+                </div>
+              </div>
+            }
             trigger={null}
-          />
+            width={
+              hasVariant(globalVariants, "screen", "mobile") ? "340" : undefined
+            }
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___9A8GA)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qmgCc
+                )}
+              >
+                {
+                  "\u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u062a\u0633\u0648\u06cc\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u0628\u06cc\u0646\r"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__n1Jdg
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u0627\u06af\u0647 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f (\u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627) \u0647\u0646\u0648\u0632 \u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647 \u0628\u0627\u0634\u0647\u060c \u0639\u0644\u0627\u0645\u062a \ud83d\udd51 \u062f\u0627\u0631\u0647\r"
+                  : hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0627\u06af\u0647 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f (\u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627) \u0647\u0646\u0648\u0632 \u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647 \u0628\u0627\u0634\u0647\u060c \u0639\u0644\u0627\u0645\u062a \ud83d\udd51 \u062f\u0627\u0631\u0647\r"
+                  : "\u0627\u06af\u0647 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f (\u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627) \u0647\u0646\u0648\u0632 \u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647 \u0628\u0627\u0634\u0647\u060c\n\u0639\u0644\u0627\u0645\u062a \ud83d\udd51 \u062f\u0627\u0631\u0647\r"}
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__i72Br)}>
+              <div
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames(projectcss.all, sty.button)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function setCookie(name, value, hours) {
+                                let expires = "";
+                                if (hours) {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + hours * 60 * 60 * 1000
+                                  );
+                                  expires = "; expires=" + date.toUTCString();
+                                }
+                                document.cookie =
+                                  name +
+                                  "=" +
+                                  (value || "") +
+                                  expires +
+                                  "; path=/";
+                              }
+                              return setCookie("settlement_notif", "true", 720);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+
+                  $steps["updateSettlementNotifOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["settlementNotif", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateSettlementNotifOpen"] != null &&
+                    typeof $steps["updateSettlementNotifOpen"] === "object" &&
+                    typeof $steps["updateSettlementNotifOpen"].then ===
+                      "function"
+                  ) {
+                    $steps["updateSettlementNotifOpen"] = await $steps[
+                      "updateSettlementNotifOpen"
+                    ];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bYxk
+                  )}
+                >
+                  {"\u0628\u0627\u0634\u0647"}
+                </div>
+              </div>
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -8266,7 +8523,9 @@ const PlasmicDescendants = {
     "mizbon",
     "homsa",
     "otaghak",
-    "settlementNotif"
+    "settlementNotif",
+    "button",
+    "closeButton"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -8500,7 +8759,9 @@ const PlasmicDescendants = {
   mizbon: ["mizbon"],
   homsa: ["homsa"],
   otaghak: ["otaghak"],
-  settlementNotif: ["settlementNotif"]
+  settlementNotif: ["settlementNotif", "button", "closeButton"],
+  button: ["button"],
+  closeButton: ["closeButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -8606,6 +8867,8 @@ type NodeDefaultElementType = {
   homsa: typeof PlasmicImg__;
   otaghak: typeof PlasmicImg__;
   settlementNotif: typeof AntdModal;
+  button: "div";
+  closeButton: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -8767,6 +9030,8 @@ export const PlasmicReservations = Object.assign(
     homsa: makeNodeComponent("homsa"),
     otaghak: makeNodeComponent("otaghak"),
     settlementNotif: makeNodeComponent("settlementNotif"),
+    button: makeNodeComponent("button"),
+    closeButton: makeNodeComponent("closeButton"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,
