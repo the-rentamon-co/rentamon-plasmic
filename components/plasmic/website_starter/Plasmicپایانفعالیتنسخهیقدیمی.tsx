@@ -155,7 +155,7 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">
           {Plasmicپایانفعالیتنسخهیقدیمی.pageMetadata.title}
         </title>
@@ -168,6 +168,35 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
           key="twitter:title"
           name="twitter:title"
           content={Plasmicپایانفعالیتنسخهیقدیمی.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicپایانفعالیتنسخهیقدیمی.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicپایانفعالیتنسخهیقدیمی.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicپایانفعالیتنسخهیقدیمی.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicپایانفعالیتنسخهیقدیمی.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicپایانفعالیتنسخهیقدیمی.pageMetadata.ogImageSrc}
+        />
+        <link
+          rel="canonical"
+          href={Plasmicپایانفعالیتنسخهیقدیمی.pageMetadata.canonical}
         />
       </Head>
 
@@ -1303,9 +1332,11 @@ export const Plasmicپایانفعالیتنسخهیقدیمی = Object.assign(
     // Page metadata
     pageMetadata: {
       title: "پایان فعالیت نسخه‌ی پیشرفته",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
+      description:
+        "نسخه‌ی قدیمی رنتامون محدودیت‌هایی داره که باعث می‌شد نتونیم کیفیتی که شما شایسته‌اش هستید رو ارائه بدیم. به همین خاطر مجبور شدیم تصمیمی بگیریم که به نفع همه‌ست: پایان فعالیت نسخه‌ی قدیمی و تمرکز بر نسخه‌ی پیشرفته.",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png",
+      canonical: "https://rentamon.com/upgrade-to-pro/"
     }
   }
 );
