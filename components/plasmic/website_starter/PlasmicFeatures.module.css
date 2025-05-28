@@ -86,8 +86,11 @@
 }
 @media (max-width: 350px) {
   .intro {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
   }
 }
 .text__jpQ7P {
@@ -335,6 +338,7 @@
   line-height: 2.2;
   color: #444444;
   font-weight: 400;
+  padding-bottom: 0px;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -499,6 +503,7 @@
     width: 100%;
     padding-left: 6px;
     padding-right: 6px;
+    margin-top: 0px;
   }
 }
 .htmlVideo:global(.__wab_instance) {
