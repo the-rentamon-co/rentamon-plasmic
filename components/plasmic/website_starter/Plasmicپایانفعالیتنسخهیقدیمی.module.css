@@ -208,7 +208,7 @@
     align-items: stretch;
     margin-bottom: 0px;
     min-width: 0;
-    padding: 20px 20px 0px 8px;
+    padding: 20px 20px 21px 8px;
   }
 }
 @media (max-width: 500px) {
@@ -269,6 +269,7 @@
     line-height: 2.2;
     font-size: 16px;
     padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 @media (max-width: 350px) {
@@ -346,6 +347,7 @@
 @media (max-width: 1200px) {
   .freeBox__bLnJv {
     padding-right: 0px;
+    padding-bottom: 22px;
   }
 }
 @media (max-width: 350px) {
@@ -520,21 +522,29 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: 90%;
   justify-content: flex-start;
   align-items: center;
-  grid-column-start: 1 !important;
-  grid-column-end: -1 !important;
+  grid-column-start: 3 !important;
+  grid-column-end: -3 !important;
   padding: 53px 8px 8px;
+}
+@media (max-width: 1200px) {
+  .freeBox__qC9V {
+    max-width: 100%;
+  }
 }
 @media (max-width: 500px) {
   .freeBox__qC9V {
-    padding-top: 20px;
+    padding-top: 44px;
   }
 }
 @media (max-width: 350px) {
   .freeBox__qC9V {
-    padding: 0px 0px 20px;
+    width: 100%;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
+    padding: 0px 12px 20px;
   }
 }
 .text__aErZj {
@@ -546,12 +556,12 @@
   line-height: 2;
   padding-right: 0px;
   font-weight: 600;
-  text-align: center;
+  text-align: right;
   min-width: 0;
 }
 @media (max-width: 1200px) {
   .text__aErZj {
-    padding-top: 42px;
+    padding-top: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -565,6 +575,7 @@
     font-size: 18px;
     font-weight: 600;
     height: auto;
+    text-align: right;
   }
 }
 @media (max-width: 500px) {
@@ -581,7 +592,7 @@
   line-height: 2;
   padding-right: 0px;
   font-weight: 400;
-  text-align: center;
+  text-align: right;
   padding-bottom: 0px;
   min-width: 0;
 }
@@ -589,6 +600,7 @@
   .text__w6BBt {
     padding-top: 22px;
     font-weight: 400;
+    text-align: right;
   }
 }
 @media (max-width: 500px) {
@@ -599,22 +611,10 @@
 }
 @media (max-width: 350px) {
   .text__w6BBt {
-    padding-right: 8px;
+    padding-right: 0px;
     padding-top: 20px;
-    padding-left: 8px;
+    padding-left: 0px;
     font-size: 15px;
-  }
-}
-@media (max-width: 1200px) {
-  .h2__lc4Vd {
-    font-size: 18px;
-    font-weight: 600;
-    height: auto;
-  }
-}
-@media (max-width: 500px) {
-  .h2__lc4Vd {
-    height: auto;
   }
 }
 .featuresDesc2 {
@@ -725,7 +725,7 @@
   justify-content: center;
   align-items: flex-start;
   min-width: 0;
-  padding: 8px 99px 8px 8px;
+  padding: 8px 40px 8px 8px;
 }
 @media (max-width: 1200px) {
   .freeBox__dPCnl {
@@ -737,6 +737,12 @@
     max-width: 100%;
     padding-right: 12px;
     padding-left: 12px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__dPCnl {
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 .text__vkSxO {
@@ -1010,7 +1016,7 @@
   max-width: 100%;
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
-  padding: 8px;
+  padding: 8px 20px;
 }
 @media (max-width: 1200px) {
   .featuresDesc4 {
@@ -1019,8 +1025,7 @@
 }
 @media (max-width: 500px) {
   .featuresDesc4 {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding: 30px 0px 20px;
   }
 }
 @media (max-width: 350px) {
@@ -1047,7 +1052,7 @@
 }
 @media (max-width: 1200px) {
   .text__iifHp {
-    padding-top: 42px;
+    padding-top: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -1103,6 +1108,49 @@
     font-size: 15px;
   }
 }
+.freeBox__vuAbv {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 20px;
+}
+@media (max-width: 500px) {
+  .freeBox__vuAbv {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 28px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__vuAbv {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 50px;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .img {
+    border-radius: 30px;
+  }
+}
+@media (max-width: 350px) {
+  .img {
+    border-radius: 20px;
+  }
+}
 .text__umOjr {
   position: relative;
   width: 100%;
@@ -1124,7 +1172,7 @@
   .text__umOjr {
     line-height: 2.2;
     font-size: 16px;
-    padding-top: 24px;
+    padding-top: 0px;
   }
 }
 @media (max-width: 350px) {
