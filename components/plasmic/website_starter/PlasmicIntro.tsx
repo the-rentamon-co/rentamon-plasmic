@@ -365,7 +365,7 @@ function PlasmicIntro__RenderFunc(props: {
                                   expires +
                                   "; path=/";
                               }
-                              return setCookie("first_visit", "true", 24);
+                              return setCookie("first_visit", "true", 2);
                             })();
                           }
                         };

@@ -3071,6 +3071,9 @@
   height: auto;
   max-width: 100%;
   font-size: 15px;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
   min-width: 0;
 }
 .freeBox__pfOJy {
