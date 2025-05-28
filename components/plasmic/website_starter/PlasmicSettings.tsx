@@ -934,16 +934,18 @@ function PlasmicSettings__RenderFunc(props: {
                   data-plasmic-override={overrides.opt12}
                   className={classNames(projectcss.all, sty.opt12)}
                 >
-                  <div
+                  <Stack__
+                    as={"div"}
                     data-plasmic-name={"p12"}
                     data-plasmic-override={overrides.p12}
+                    hasGap={true}
                     className={classNames(projectcss.all, sty.p12)}
                   >
                     <Icon97Icon
                       className={classNames(projectcss.all, sty.svg___6UaXp)}
                       role={"img"}
                     />
-                  </div>
+                  </Stack__>
                   <div
                     data-plasmic-name={"p22"}
                     data-plasmic-override={overrides.p22}
@@ -1211,20 +1213,40 @@ function PlasmicSettings__RenderFunc(props: {
                   data-plasmic-override={overrides.opt13}
                   className={classNames(projectcss.all, sty.opt13)}
                 >
-                  <div
+                  <Stack__
+                    as={"div"}
                     data-plasmic-name={"p13"}
                     data-plasmic-override={overrides.p13}
+                    hasGap={true}
                     className={classNames(projectcss.all, sty.p13)}
                   >
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__sm3Ko)}
-                      displayHeight={"auto"}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "30px"
+                          : "auto"
+                      }
                       displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : "100%"
+                      }
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
-                      displayWidth={"auto"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : "auto"
+                      }
                       loading={"lazy"}
                       src={{
                         src: "/plasmic/website_starter/images/image71.svg",
@@ -1233,7 +1255,7 @@ function PlasmicSettings__RenderFunc(props: {
                         aspectRatio: 1
                       }}
                     />
-                  </div>
+                  </Stack__>
                   <div
                     data-plasmic-name={"p23"}
                     data-plasmic-override={overrides.p23}
