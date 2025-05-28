@@ -1850,6 +1850,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/rnt-redirect"
+        },
+        {
+          "id": "A0isQqTexssa",
+          "name": "پایانفعالیتنسخهیقدیمی",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicپایانفعالیتنسخهیقدیمی.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/upgrade-to-pro.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicپایانفعالیتنسخهیقدیمی.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/upgrade-to-pro"
         }
       ],
       "icons": [

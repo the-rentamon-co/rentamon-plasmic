@@ -7668,7 +7668,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   "error",
                                   (() => {
                                     try {
-                                      return `وضعیت تسویه ${$state.modalData[0].platfromName} مشخص نیست. به پشتیبانی اطلاع بده.`;
+                                      return `وضعیت تسویه در ${$state.modalData[0].platfromName} مشخص نیست. به پشتیبانی رنتامون اطلاع بده.`;
                                     } catch (e) {
                                       if (
                                         e instanceof TypeError ||
