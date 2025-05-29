@@ -222,430 +222,170 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
-        <div
-          data-plasmic-name={"content"}
-          data-plasmic-override={overrides.content}
-          data-plasmic-root={true}
-          data-plasmic-for-node={forNode}
-          className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens,
-            sty.content
-          )}
-        >
-          <NavbarRntHeader
-            data-plasmic-name={"navbarRntHeader"}
-            data-plasmic-override={overrides.navbarRntHeader}
-            className={classNames("__wab_instance", sty.navbarRntHeader)}
-          />
+      <div
+        data-plasmic-name={"content"}
+        data-plasmic-override={overrides.content}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        className={classNames(
+          projectcss.all,
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          plasmic_antd_5_hostless_css.plasmic_tokens,
+          plasmic_plasmic_rich_components_css.plasmic_tokens,
+          sty.content
+        )}
+      >
+        <NavbarRntHeader
+          data-plasmic-name={"navbarRntHeader"}
+          data-plasmic-override={overrides.navbarRntHeader}
+          className={classNames("__wab_instance", sty.navbarRntHeader)}
+        />
 
+        <div
+          data-plasmic-name={"mainContents"}
+          data-plasmic-override={overrides.mainContents}
+          className={classNames(projectcss.all, sty.mainContents)}
+        >
           <div
-            data-plasmic-name={"mainContents"}
-            data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            data-plasmic-name={"intro"}
+            data-plasmic-override={overrides.intro}
+            className={classNames(projectcss.all, sty.intro)}
           >
             <div
-              data-plasmic-name={"intro"}
-              data-plasmic-override={overrides.intro}
-              className={classNames(projectcss.all, sty.intro)}
+              data-plasmic-name={"top"}
+              data-plasmic-override={overrides.top}
+              className={classNames(projectcss.all, sty.top)}
             >
               <div
-                data-plasmic-name={"top"}
-                data-plasmic-override={overrides.top}
-                className={classNames(projectcss.all, sty.top)}
+                data-plasmic-name={"right"}
+                data-plasmic-override={overrides.right}
+                className={classNames(projectcss.all, sty.right)}
               >
                 <div
-                  data-plasmic-name={"right"}
-                  data-plasmic-override={overrides.right}
-                  className={classNames(projectcss.all, sty.right)}
+                  data-plasmic-name={"introTitle"}
+                  data-plasmic-override={overrides.introTitle}
+                  className={classNames(projectcss.all, sty.introTitle)}
                 >
                   <div
-                    data-plasmic-name={"introTitle"}
-                    data-plasmic-override={overrides.introTitle}
-                    className={classNames(projectcss.all, sty.introTitle)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yudQt
+                    )}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__yudQt
-                      )}
-                    >
-                      {
-                        "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u06cc\u0644\u0627\u060c \u0647\u0648\u0634\u0645\u0646\u062f \u06cc\u0627 \u0633\u0646\u062a\u06cc\u061f"
-                      }
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"introDesc"}
-                    data-plasmic-override={overrides.introDesc}
-                    className={classNames(projectcss.all, sty.introDesc)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__aF6Ny
-                      )}
-                    >
-                      <React.Fragment>
-                        <React.Fragment>
-                          {
-                            "\u06cc\u06a9\u06cc \u0627\u0632 \u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u062f\u0631 \u0686\u0646\u062f\u062a\u0627 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0645\u062b\u0644 "
-                          }
-                        </React.Fragment>
-                        {
-                          <PlasmicLink__
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__rRq0M
-                            )}
-                            component={Link}
-                            href={`/best-villa-rental-sites`}
-                            platform={"nextjs"}
-                          >
-                            {
-                              "\u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0634\u0628"
-                            }
-                          </PlasmicLink__>
-                        }
-                        <React.Fragment>
-                          {
-                            " \u0648\u2026 \u0622\u06af\u0647\u06cc \u06a9\u0646\u0647. \u0686\u0648\u0646 \u0647\u0631 \u06a9\u062f\u0648\u0645 \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0686\u0646\u062f \u0631\u0648\u0632 \u0627\u0632 \u0645\u0627\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u067e\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0646.\n\u0627\u0645\u0627 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u062a\u0648\u06cc \u0647\u0645\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u062f\u0631\u062f\u0633\u0631 \u062f\u0627\u0631\u0647\u060c \u0648 \u062e\u0637\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0627\u0632 \u062f\u0648 \u0633\u0627\u06cc\u062a \u0648 \u062c\u0631\u06cc\u0645\u0647 \u0634\u062f\u0646\u200c\u0647\u0627\u06cc \u0628\u0639\u062f\u0634\u060c \u06cc\u0647 \u0686\u0627\u0644\u0634 \u0628\u0632\u0631\u06af\u062a\u0631\u0647. \u06af\u0627\u0647\u06cc \u062d\u062a\u06cc \u0628\u0647 \u062f\u0631\u062f\u0633\u0631\u0647\u0627\u0634 \u0646\u0645\u06cc\u200c\u0627\u0631\u0632\u0647 \u0648 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u06cc\u062e\u06cc\u0627\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0645\u0633\u0627\u0641\u0631 \u06af\u0631\u0641\u062a\u0646 \u0628\u0647 \u0631\u0648\u0634\u200c\u0647\u0627\u06cc \u0633\u0646\u062a\u06cc \u0645\u062b\u0644 \u0645\u0634\u0627\u0648\u0631 \u0627\u0645\u0644\u0627\u06a9\u060c \u0648\u0627\u0633\u0637\u0647\u060c \u0645\u0633\u0627\u0641\u0631\u06af\u06cc\u0631 \u0648\u2026 \u0631\u0648 \u0645\u06cc\u0627\u0631\u0647\u060c \u06a9\u0647 \u0627\u0648\u0646\u0645 \u0631\u06cc\u0633\u06a9\u200c\u0647\u0627\u06cc\u06cc \u062f\u0627\u0631\u0647."
-                          }
-                        </React.Fragment>
-                      </React.Fragment>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"culture"}
-                data-plasmic-override={overrides.culture}
-                className={classNames(projectcss.all, sty.culture)}
-              >
-                <div
-                  data-plasmic-name={"left"}
-                  data-plasmic-override={overrides.left}
-                  className={classNames(projectcss.all, sty.left)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__ul4Nq)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"640px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image109.png",
-                      fullWidth: 706,
-                      fullHeight: 427,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
-                <div
-                  data-plasmic-name={"strDefinition"}
-                  data-plasmic-override={overrides.strDefinition}
-                  className={classNames(projectcss.all, sty.strDefinition)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ulnC)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__ccThC
-                      )}
-                    >
-                      {
-                        "\u0627\u0645\u0627 \u00ab\u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631\u00bb \u06cc\u0627 channel manager \u0645\u0634\u06a9\u0644 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u0628\u0648\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0627\u0628\u0632\u0627\u0631 \u0647\u0645\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0628\u0647\u200c\u0637\u0648\u0631 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u06cc\u0646 \u0634\u06a9\u0644 \u06a9\u0647 \u0627\u06af\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0631\u0627\u06cc \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0645\u062b\u0644 \u062c\u0627\u0628\u0627\u0645\u0627 \u0631\u0632\u0631\u0648 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\u0647\u060c \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0628\u0647 \u0627\u0634\u062a\u0628\u0627\u0647 \u0627\u0632 \u06f2 \u062c\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0631\u0632\u0631\u0648 \u0646\u0634\u0647."
-                      }
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"button2"}
-              data-plasmic-override={overrides.button2}
-              className={classNames(projectcss.all, sty.button2)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__iBKi4,
-                  "clickable"
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToHomepage"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToHomepage"] != null &&
-                    typeof $steps["goToHomepage"] === "object" &&
-                    typeof $steps["goToHomepage"].then === "function"
-                  ) {
-                    $steps["goToHomepage"] = await $steps["goToHomepage"];
-                  }
-                }}
-              >
-                {
-                  "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
-                }
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"investment"}
-              data-plasmic-override={overrides.investment}
-              className={classNames(projectcss.all, sty.investment)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__xaHrs)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__b1Xpc
-                  )}
-                >
-                  {
-                    "\u062d\u0627\u0644\u0627 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u0628\u0630\u0627\u0631\u060c \u0648 \u062f\u06cc\u06af\u0647 \u0646\u06af\u0631\u0627\u0646 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0648 \u06a9\u0646\u0633\u0644\u06cc \u0646\u0628\u0627\u0634 :\u200c)"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jsyHk
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
                     {
-                      <PlasmicLink__
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__qmN1B
-                        )}
-                        component={Link}
-                        href={`/`}
-                        platform={"nextjs"}
-                      >
-                        {"\u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
-                      </PlasmicLink__>
+                      "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u06cc\u0644\u0627\u060c \u0647\u0648\u0634\u0645\u0646\u062f \u06cc\u0627 \u0633\u0646\u062a\u06cc\u061f"
                     }
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"introDesc"}
+                  data-plasmic-override={overrides.introDesc}
+                  className={classNames(projectcss.all, sty.introDesc)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aF6Ny
+                    )}
+                  >
                     <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u06cc\u06a9\u06cc \u0627\u0632 \u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627 \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u062f\u0631 \u0686\u0646\u062f\u062a\u0627 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0645\u062b\u0644 "
+                        }
+                      </React.Fragment>
                       {
-                        " \u06cc\u06a9 \u0627\u0628\u0632\u0627\u0631 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 \u0627\u0631\u0627\u0626\u0647 \u06a9\u0631\u062f\u0647 \u06a9\u0647 \u0628\u0635\u0648\u0631\u062a \u0634\u0628\u0627\u0646\u0647\u200c\u0631\u0648\u0632\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627\u06cc \u0641\u0639\u0627\u0644 \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628\u060c \u0647\u0648\u0645\u0633\u0627\u060c \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648 \u0648 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0631\u0648 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0648 \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u060c \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0627 \u0647\u0645\u062f\u06cc\u06af\u0647 \u0647\u0645\u200c\u0633\u0627\u0646 (sync) \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062d\u062a\u06cc \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06af\u0648\u0634\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u062a\u0635\u0644 \u0628\u0627\u0634\u0647!"
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__rRq0M
+                          )}
+                          component={Link}
+                          href={`/best-villa-rental-sites`}
+                          platform={"nextjs"}
+                        >
+                          {
+                            "\u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0634\u0628"
+                          }
+                        </PlasmicLink__>
                       }
+                      <React.Fragment>
+                        {
+                          " \u0648\u2026 \u0622\u06af\u0647\u06cc \u06a9\u0646\u0647. \u0686\u0648\u0646 \u0647\u0631 \u06a9\u062f\u0648\u0645 \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0686\u0646\u062f \u0631\u0648\u0632 \u0627\u0632 \u0645\u0627\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u067e\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0646.\n\u0627\u0645\u0627 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u062a\u0648\u06cc \u0647\u0645\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u062f\u0631\u062f\u0633\u0631 \u062f\u0627\u0631\u0647\u060c \u0648 \u062e\u0637\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0627\u0632 \u062f\u0648 \u0633\u0627\u06cc\u062a \u0648 \u062c\u0631\u06cc\u0645\u0647 \u0634\u062f\u0646\u200c\u0647\u0627\u06cc \u0628\u0639\u062f\u0634\u060c \u06cc\u0647 \u0686\u0627\u0644\u0634 \u0628\u0632\u0631\u06af\u062a\u0631\u0647. \u06af\u0627\u0647\u06cc \u062d\u062a\u06cc \u0628\u0647 \u062f\u0631\u062f\u0633\u0631\u0647\u0627\u0634 \u0646\u0645\u06cc\u200c\u0627\u0631\u0632\u0647 \u0648 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u06cc\u062e\u06cc\u0627\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u06cc\u200c\u0634\u0647 \u0648 \u0628\u0631\u0627\u06cc \u0645\u0633\u0627\u0641\u0631 \u06af\u0631\u0641\u062a\u0646 \u0628\u0647 \u0631\u0648\u0634\u200c\u0647\u0627\u06cc \u0633\u0646\u062a\u06cc \u0645\u062b\u0644 \u0645\u0634\u0627\u0648\u0631 \u0627\u0645\u0644\u0627\u06a9\u060c \u0648\u0627\u0633\u0637\u0647\u060c \u0645\u0633\u0627\u0641\u0631\u06af\u06cc\u0631 \u0648\u2026 \u0631\u0648 \u0645\u06cc\u0627\u0631\u0647\u060c \u06a9\u0647 \u0627\u0648\u0646\u0645 \u0631\u06cc\u0633\u06a9\u200c\u0647\u0627\u06cc\u06cc \u062f\u0627\u0631\u0647."
+                        }
+                      </React.Fragment>
                     </React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox___5JIsE)}>
-                <Video
-                  data-plasmic-name={"htmlVideo"}
-                  data-plasmic-override={overrides.htmlVideo}
-                  autoPlay={true}
-                  className={classNames("__wab_instance", sty.htmlVideo)}
-                  controls={false}
-                  loop={true}
-                  muted={true}
-                  src={
-                    "https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"
-                  }
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wOmpp
-                  )}
-                >
-                  {
-                    "\u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u200c\u0633\u0627\u0632\u06cc \u062a\u0645\u0627\u0645 \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634"
-                  }
+                  </div>
                 </div>
               </div>
             </div>
-            <Stack__
-              as={"div"}
-              data-plasmic-name={"incomeAnual"}
-              data-plasmic-override={overrides.incomeAnual}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.incomeAnual)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__qwJsl
-                )}
-              >
-                {
-                  "\u062a\u0641\u0627\u0648\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0686\u06cc\u0647\u061f"
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___4D9Cs
-                )}
-              >
-                {
-                  "\u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0627\u0645\u06a9\u0627\u0646 \u06af\u0630\u0627\u0634\u062a\u0646 \u0622\u06af\u0647\u06cc\u060c \u0645\u0639\u0631\u0641\u06cc \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u06af\u0631\u0641\u062a\u0646 \u0645\u0633\u0627\u0641\u0631 \u0631\u0648 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u200c\u062f\u0646. \u062f\u0631\u062d\u0627\u0644\u06cc \u06a9\u0647 \u06a9\u0627\u0631\u06a9\u0631\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0647\u0645\u200c\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0647\u0645\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u06cc\u06a9\u062f\u06cc\u06af\u0647 \u0647\u0633\u062a. \u062f\u0631 \u0648\u0627\u0642\u0639 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u062a\u0633\u0647\u06cc\u0644\u06af\u0631 \u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0647\u200c\u062d\u0633\u0627\u0628 \u0645\u06cc\u0627\u062f\u060c \u0648 \u06a9\u0627\u0631\u0627\u06cc\u06cc \u0645\u0634\u0627\u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u0646\u062f\u0627\u0631\u0647."
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__kdUko
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\r\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0645\u062b\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647\u060c \u0645\u06cc\u0632\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0648 \u06cc\u0627 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0627\u062e\u062a\u06cc\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0645\u06cc\u200c\u06af\u0630\u0627\u0631\u0647. \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0645\u062b\u0627\u0644 \u0627\u0632 \u062f\u0627\u062e\u0644 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0634\u0647 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u062a\u063a\u06cc\u06cc\u0631 \u062f\u0627\u062f. ("
-                    }
-                  </React.Fragment>
-                  {
-                    <PlasmicLink__
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
-                        sty.link__xrieE
-                      )}
-                      component={Link}
-                      href={"https://rentamon.com/features/"}
-                      platform={"nextjs"}
-                    >
-                      {
-                        "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
-                      }
-                    </PlasmicLink__>
-                  }
-                  <React.Fragment>{")\r\n\r"}</React.Fragment>
-                </React.Fragment>
-              </div>
-            </Stack__>
             <div
-              data-plasmic-name={"efforts"}
-              data-plasmic-override={overrides.efforts}
-              className={classNames(projectcss.all, sty.efforts)}
+              data-plasmic-name={"culture"}
+              data-plasmic-override={overrides.culture}
+              className={classNames(projectcss.all, sty.culture)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__kV7Tt)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mSg6D
-                  )}
-                >
-                  {
-                    "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0635\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pfHU
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u200c\u062c\u0627\r\n\u2705 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u06a9\u0644\u06cc\u0647\u200c\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627"
-                    : "\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u200c\u062c\u0627\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0622\u0633\u0627\u0646 \u0648 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647\u200c\u062f\u0627\u0634\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645\u200c\u0647\u0627"}
-                </div>
-              </div>
               <div
-                data-plasmic-name={"handsOn"}
-                data-plasmic-override={overrides.handsOn}
-                className={classNames(projectcss.all, sty.handsOn)}
+                data-plasmic-name={"left"}
+                data-plasmic-override={overrides.left}
+                className={classNames(projectcss.all, sty.left)}
               >
                 <PlasmicImg__
                   alt={""}
-                  className={classNames(sty.img__byFiB)}
+                  className={classNames(sty.img__ul4Nq)}
                   displayHeight={"auto"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "80%"
-                      : "100%"
-                  }
+                  displayWidth={"640px"}
                   loading={"lazy"}
                   src={{
-                    src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
-                    fullWidth: 600,
-                    fullHeight: 865,
+                    src: "/plasmic/website_starter/images/image109.png",
+                    fullWidth: 706,
+                    fullHeight: 427,
                     aspectRatio: undefined
                   }}
                 />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__plqeO
-                  )}
-                >
-                  {
-                    "\u062a\u062c\u0645\u06cc\u0639 \u0647\u0645\u0647\u200c\u06cc \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u062f\u0631 \u06cc\u06a9 \u0628\u0631\u0646\u0627\u0645\u0647"
-                  }
+              </div>
+              <div
+                data-plasmic-name={"strDefinition"}
+                data-plasmic-override={overrides.strDefinition}
+                className={classNames(projectcss.all, sty.strDefinition)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__ulnC)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ccThC
+                    )}
+                  >
+                    {
+                      "\u0627\u0645\u0627 \u00ab\u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631\u00bb \u06cc\u0627 channel manager \u0645\u0634\u06a9\u0644 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u0628\u0648\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0627\u0628\u0632\u0627\u0631 \u0647\u0645\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0628\u0647\u200c\u0637\u0648\u0631 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u06cc\u0646 \u0634\u06a9\u0644 \u06a9\u0647 \u0627\u06af\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0631\u0627\u06cc \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0645\u062b\u0644 \u062c\u0627\u0628\u0627\u0645\u0627 \u0631\u0632\u0631\u0648 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\u0647\u060c \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0628\u0647 \u0627\u0634\u062a\u0628\u0627\u0647 \u0627\u0632 \u06f2 \u062c\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0631\u0632\u0631\u0648 \u0646\u0634\u0647."
+                    }
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            data-plasmic-name={"button"}
-            data-plasmic-override={overrides.button}
-            className={classNames(projectcss.all, sty.button)}
+            data-plasmic-name={"button2"}
+            data-plasmic-override={overrides.button2}
+            className={classNames(projectcss.all, sty.button2)}
           >
             <div
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__wUgC,
+                sty.text__iBKi4,
                 "clickable"
               )}
               onClick={async event => {
@@ -682,25 +422,281 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
               }
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <div
+            data-plasmic-name={"investment"}
+            data-plasmic-override={overrides.investment}
+            className={classNames(projectcss.all, sty.investment)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__xaHrs)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__b1Xpc
+                )}
+              >
+                {
+                  "\u062d\u0627\u0644\u0627 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u0628\u0630\u0627\u0631\u060c \u0648 \u062f\u06cc\u06af\u0647 \u0646\u06af\u0631\u0627\u0646 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0648 \u06a9\u0646\u0633\u0644\u06cc \u0646\u0628\u0627\u0634 :\u200c)"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__jsyHk
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__qmN1B
+                      )}
+                      component={Link}
+                      href={`/`}
+                      platform={"nextjs"}
+                    >
+                      {"\u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>
+                    {
+                      " \u06cc\u06a9 \u0627\u0628\u0632\u0627\u0631 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 \u0627\u0631\u0627\u0626\u0647 \u06a9\u0631\u062f\u0647 \u06a9\u0647 \u0628\u0635\u0648\u0631\u062a \u0634\u0628\u0627\u0646\u0647\u200c\u0631\u0648\u0632\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627\u06cc \u0641\u0639\u0627\u0644 \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628\u060c \u0647\u0648\u0645\u0633\u0627\u060c \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648 \u0648 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0631\u0648 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0648 \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648\u060c \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647 \u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0627 \u0647\u0645\u062f\u06cc\u06af\u0647 \u0647\u0645\u200c\u0633\u0627\u0646 (sync) \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062d\u062a\u06cc \u0646\u06cc\u0627\u0632 \u0646\u06cc\u0633\u062a \u06af\u0648\u0634\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u062a\u0635\u0644 \u0628\u0627\u0634\u0647!"
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___5JIsE)}>
+              <Video
+                data-plasmic-name={"htmlVideo"}
+                data-plasmic-override={overrides.htmlVideo}
+                autoPlay={true}
+                className={classNames("__wab_instance", sty.htmlVideo)}
+                controls={false}
+                loop={true}
+                muted={true}
+                src={
+                  "https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"
+                }
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wOmpp
+                )}
+              >
+                {
+                  "\u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u200c\u0633\u0627\u0632\u06cc \u062a\u0645\u0627\u0645 \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634"
+                }
+              </div>
+            </div>
+          </div>
+          <Stack__
+            as={"div"}
+            data-plasmic-name={"incomeAnual"}
+            data-plasmic-override={overrides.incomeAnual}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.incomeAnual)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__qwJsl
+              )}
+            >
+              {
+                "\u062a\u0641\u0627\u0648\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0686\u06cc\u0647\u061f"
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___4D9Cs
+              )}
+            >
+              {
+                "\u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0627\u0645\u06a9\u0627\u0646 \u06af\u0630\u0627\u0634\u062a\u0646 \u0622\u06af\u0647\u06cc\u060c \u0645\u0639\u0631\u0641\u06cc \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u06af\u0631\u0641\u062a\u0646 \u0645\u0633\u0627\u0641\u0631 \u0631\u0648 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u200c\u062f\u0646. \u062f\u0631\u062d\u0627\u0644\u06cc \u06a9\u0647 \u06a9\u0627\u0631\u06a9\u0631\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0647\u0645\u200c\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0647\u0645\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u06cc\u06a9\u062f\u06cc\u06af\u0647 \u0647\u0633\u062a. \u062f\u0631 \u0648\u0627\u0642\u0639 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06cc\u06a9 \u062a\u0633\u0647\u06cc\u0644\u06af\u0631 \u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0647\u200c\u062d\u0633\u0627\u0628 \u0645\u06cc\u0627\u062f\u060c \u0648 \u06a9\u0627\u0631\u0627\u06cc\u06cc \u0645\u0634\u0627\u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u0646\u062f\u0627\u0631\u0647."
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__kdUko
+              )}
+            >
+              <React.Fragment>
+                <React.Fragment>
+                  {
+                    "\r\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0645\u062b\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647\u060c \u0645\u06cc\u0632\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0648 \u06cc\u0627 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0627\u062e\u062a\u06cc\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0645\u06cc\u200c\u06af\u0630\u0627\u0631\u0647. \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0645\u062b\u0627\u0644 \u0627\u0632 \u062f\u0627\u062e\u0644 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0634\u0647 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u062a\u063a\u06cc\u06cc\u0631 \u062f\u0627\u062f. ("
+                  }
+                </React.Fragment>
+                {
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      projectcss.plasmic_default__inline,
+                      sty.link__xrieE
+                    )}
+                    component={Link}
+                    href={"https://rentamon.com/features/"}
+                    platform={"nextjs"}
+                  >
+                    {
+                      "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
+                    }
+                  </PlasmicLink__>
+                }
+                <React.Fragment>{")\r\n\r"}</React.Fragment>
+              </React.Fragment>
+            </div>
+          </Stack__>
+          <div
+            data-plasmic-name={"efforts"}
+            data-plasmic-override={overrides.efforts}
+            className={classNames(projectcss.all, sty.efforts)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__kV7Tt)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__mSg6D
+                )}
+              >
+                {
+                  "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0635\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__pfHU
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u200c\u062c\u0627\r\n\u2705 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u06a9\u0644\u06cc\u0647\u200c\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627"
+                  : "\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u200c\u062c\u0627\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0622\u0633\u0627\u0646 \u0648 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647\u200c\u062f\u0627\u0634\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645\u200c\u0647\u0627"}
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"handsOn"}
+              data-plasmic-override={overrides.handsOn}
+              className={classNames(projectcss.all, sty.handsOn)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__byFiB)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "80%"
+                    : "100%"
+                }
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
+                  fullWidth: 600,
+                  fullHeight: 865,
+                  aspectRatio: undefined
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__plqeO
+                )}
+              >
+                {
+                  "\u062a\u062c\u0645\u06cc\u0639 \u0647\u0645\u0647\u200c\u06cc \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u062f\u0631 \u06cc\u06a9 \u0628\u0631\u0646\u0627\u0645\u0647"
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          data-plasmic-name={"button"}
+          data-plasmic-override={overrides.button}
+          className={classNames(projectcss.all, sty.button)}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__wUgC,
+              "clickable"
+            )}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["goToHomepage"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToHomepage"] != null &&
+                typeof $steps["goToHomepage"] === "object" &&
+                typeof $steps["goToHomepage"].then === "function"
+              ) {
+                $steps["goToHomepage"] = await $steps["goToHomepage"];
+              }
+            }}
+          >
+            {
+              "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
+            }
+          </div>
+        </div>
+        <RentamonFooter
+          data-plasmic-name={"rentamonFooter"}
+          data-plasmic-override={overrides.rentamonFooter}
+          className={classNames("__wab_instance", sty.rentamonFooter)}
+        />
+
+        <div className={classNames(projectcss.all, sty.freeBox__snm9Z)}>
+          <ClarityRntComponent
+            data-plasmic-name={"clarityRntComponent"}
+            data-plasmic-override={overrides.clarityRntComponent}
+            className={classNames("__wab_instance", sty.clarityRntComponent)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__snm9Z)}>
-            <ClarityRntComponent
-              data-plasmic-name={"clarityRntComponent"}
-              data-plasmic-override={overrides.clarityRntComponent}
-              className={classNames("__wab_instance", sty.clarityRntComponent)}
-            />
-
-            <FaviconRntComponent
-              data-plasmic-name={"faviconRntComponent"}
-              data-plasmic-override={overrides.faviconRntComponent}
-              className={classNames("__wab_instance", sty.faviconRntComponent)}
-            />
-          </div>
+          <FaviconRntComponent
+            data-plasmic-name={"faviconRntComponent"}
+            data-plasmic-override={overrides.faviconRntComponent}
+            className={classNames("__wab_instance", sty.faviconRntComponent)}
+          />
         </div>
       </div>
     </React.Fragment>

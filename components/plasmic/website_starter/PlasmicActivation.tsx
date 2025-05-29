@@ -3574,9 +3574,9 @@ function PlasmicActivation__RenderFunc(props: {
                       sty.text___2Fcyl
                     )}
                   >
-                    {
-                      "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0647\u0631 \u0633\u0627\u06cc\u062a\u060c \u0644\u0627\u0632\u0645\u0647\n\u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"
-                    }
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u060c \u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"
+                      : "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u060c\n\u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"}
                   </div>
                 </div>
               </div>
@@ -6632,7 +6632,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/shab-verify",
+                                        "https://gateway.rentamon.com/webhook/shab-verify?v=2",
                                         undefined,
                                         (() => {
                                           try {
@@ -10339,15 +10339,6 @@ function PlasmicActivation__RenderFunc(props: {
                     : "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"}
                 </div>
               </AntdButton>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pp8Sy
-                )}
-              >
-                {"Enter some text"}
-              </div>
             </div>
           ) : null}
           {(() => {

@@ -3794,13 +3794,6 @@
     font-size: 17px;
   }
 }
-.text__pp8Sy {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .guide {
   display: flex;
   flex-direction: column;
