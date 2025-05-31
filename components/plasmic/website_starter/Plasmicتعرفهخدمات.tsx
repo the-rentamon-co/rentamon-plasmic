@@ -2724,29 +2724,29 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["goToHomepage"] = true
+                  $steps["runCode"] = true
                     ? (() => {
-                        const actionArgs = { destination: `/` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return window.open(
+                                "https://www.goftino.com/c/WgsGXv",
+                                "_blank"
+                              );
+                            })();
                           }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
                         })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
                   if (
-                    $steps["goToHomepage"] != null &&
-                    typeof $steps["goToHomepage"] === "object" &&
-                    typeof $steps["goToHomepage"].then === "function"
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
                   ) {
-                    $steps["goToHomepage"] = await $steps["goToHomepage"];
+                    $steps["runCode"] = await $steps["runCode"];
                   }
                 }}
               >

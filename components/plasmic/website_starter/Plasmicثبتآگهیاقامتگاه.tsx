@@ -2307,7 +2307,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
         "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.",
       ogImageSrc:
         "https://site-assets.plasmic.app/33c05b5a2d13ca8a5491f31ff19d2fb3.jpg",
-      canonical: "rentamon.com/list-your-property"
+      canonical: "list-your-property"
     }
   }
 );
