@@ -735,7 +735,11 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : false
       }
     ],
     [$props, $ctx, $refs]
@@ -8452,6 +8456,11 @@ function PlasmicReservations__RenderFunc(props: {
               plasmic_plasmic_rich_components_css.plasmic_tokens
             )}
             hideFooter={true}
+            maskClosable={
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? false
+                : undefined
+            }
             modalScopeClassName={sty["featureGuide__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["featureGuide", "open"]).apply(
@@ -8482,105 +8491,153 @@ function PlasmicReservations__RenderFunc(props: {
                     sty.text___5DyKu
                   )}
                 >
-                  {
-                    "\u062f\u0631\u0635\u0648\u0631\u062a \u0641\u0639\u0627\u0644 \u0628\u0648\u062f\u0646 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647\u200c\u062d\u0633\u0627\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0645\u0637\u0644\u0639 \u0628\u0634\u06cc."
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0628\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647\u200c\u062d\u0633\u0627\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0645\u0637\u0644\u0639 \u0628\u0634\u06cc."
+                    : "\u0628\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647\u200c\u062d\u0633\u0627\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0645\u0637\u0644\u0639 \u0628\u0634\u06cc."}
                 </div>
               </div>
-              <div
-                className={classNames(projectcss.all, sty.freeBox__ckwm)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateModalOpen2"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function setCookie(name, value, hours) {
-                                let expires = "";
-                                if (hours) {
-                                  const date = new Date();
-                                  date.setTime(
-                                    date.getTime() + hours * 60 * 60 * 1000
-                                  );
-                                  expires = "; expires=" + date.toUTCString();
-                                }
-                                document.cookie =
-                                  name +
-                                  "=" +
-                                  (value || "") +
-                                  expires +
-                                  "; path=/";
-                              }
-                              return setCookie("featureGuide", "true", 24);
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalOpen2"] != null &&
-                    typeof $steps["updateModalOpen2"] === "object" &&
-                    typeof $steps["updateModalOpen2"].then === "function"
-                  ) {
-                    $steps["updateModalOpen2"] = await $steps[
-                      "updateModalOpen2"
-                    ];
-                  }
-
-                  $steps["updateModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modal", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalOpen"] != null &&
-                    typeof $steps["updateModalOpen"] === "object" &&
-                    typeof $steps["updateModalOpen"].then === "function"
-                  ) {
-                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                  }
-                }}
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__xyeT)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rlPbR
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox___37GLw)}
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["updateFeatureGuideOpen"] = true
+                    $steps["updateModalOpen2"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie("featureGuide", "true", 24);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen2"] != null &&
+                      typeof $steps["updateModalOpen2"] === "object" &&
+                      typeof $steps["updateModalOpen2"].then === "function"
+                    ) {
+                      $steps["updateModalOpen2"] = await $steps[
+                        "updateModalOpen2"
+                      ];
+                    }
+
+                    $steps["goToSettings"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/settings` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToSettings"] != null &&
+                      typeof $steps["goToSettings"] === "object" &&
+                      typeof $steps["goToSettings"].then === "function"
+                    ) {
+                      $steps["goToSettings"] = await $steps["goToSettings"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6UBa0
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+                    }}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
+                      : "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__ckwm)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateModalOpen2"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie("featureGuide", "true", 24);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen2"] != null &&
+                      typeof $steps["updateModalOpen2"] === "object" &&
+                      typeof $steps["updateModalOpen2"].then === "function"
+                    ) {
+                      $steps["updateModalOpen2"] = await $steps[
+                        "updateModalOpen2"
+                      ];
+                    }
+
+                    $steps["updateModalOpen"] = true
                       ? (() => {
                           const actionArgs = {
                             variable: {
                               objRoot: $state,
-                              variablePath: ["featureGuide", "open"]
+                              variablePath: ["modal", "open"]
                             },
                             operation: 0
                           };
@@ -8601,20 +8658,66 @@ function PlasmicReservations__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["updateFeatureGuideOpen"] != null &&
-                      typeof $steps["updateFeatureGuideOpen"] === "object" &&
-                      typeof $steps["updateFeatureGuideOpen"].then ===
-                        "function"
+                      $steps["updateModalOpen"] != null &&
+                      typeof $steps["updateModalOpen"] === "object" &&
+                      typeof $steps["updateModalOpen"].then === "function"
                     ) {
-                      $steps["updateFeatureGuideOpen"] = await $steps[
-                        "updateFeatureGuideOpen"
+                      $steps["updateModalOpen"] = await $steps[
+                        "updateModalOpen"
                       ];
                     }
                   }}
                 >
-                  {"\u0628\u0627\u0634\u0647"}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rlPbR
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateFeatureGuideOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["featureGuide", "open"]
+                              },
+                              operation: 0
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateFeatureGuideOpen"] != null &&
+                        typeof $steps["updateFeatureGuideOpen"] === "object" &&
+                        typeof $steps["updateFeatureGuideOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateFeatureGuideOpen"] = await $steps[
+                          "updateFeatureGuideOpen"
+                        ];
+                      }
+                    }}
+                  >
+                    {"\u0628\u0627\u0634\u0647"}
+                  </div>
                 </div>
-              </div>
+              </Stack__>
             </div>
           </AntdModal>
         </div>
