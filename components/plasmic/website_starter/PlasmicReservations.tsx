@@ -735,7 +735,7 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile") ? false : true
+          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
       }
     ],
     [$props, $ctx, $refs]
@@ -1082,8 +1082,8 @@ function PlasmicReservations__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          if (!document.cookie.includes("settlement_notif")) {
-                            return ($state.settlementNotif.open = true);
+                          if (!document.cookie.includes("featureGuide")) {
+                            return ($state.featureGuide.open = true);
                           }
                         })();
                       }
@@ -8491,6 +8491,46 @@ function PlasmicReservations__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.freeBox__ckwm)}
                 onClick={async event => {
                   const $steps = {};
+
+                  $steps["updateModalOpen2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function setCookie(name, value, hours) {
+                                let expires = "";
+                                if (hours) {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + hours * 60 * 60 * 1000
+                                  );
+                                  expires = "; expires=" + date.toUTCString();
+                                }
+                                document.cookie =
+                                  name +
+                                  "=" +
+                                  (value || "") +
+                                  expires +
+                                  "; path=/";
+                              }
+                              return setCookie("featureGuide", "true", 24);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalOpen2"] != null &&
+                    typeof $steps["updateModalOpen2"] === "object" &&
+                    typeof $steps["updateModalOpen2"].then === "function"
+                  ) {
+                    $steps["updateModalOpen2"] = await $steps[
+                      "updateModalOpen2"
+                    ];
+                  }
 
                   $steps["updateModalOpen"] = true
                     ? (() => {

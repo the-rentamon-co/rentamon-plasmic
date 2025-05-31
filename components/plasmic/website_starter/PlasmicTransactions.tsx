@@ -1509,7 +1509,7 @@ function PlasmicTransactions__RenderFunc(props: {
                                   " - " +
                                   (currentItem.feature_name == "auto_sync"
                                     ? "بروز رسانی خودکار"
-                                    : "رزروهای من")
+                                    : "رزرو هوشمند")
                                 );
                               } catch (e) {
                                 if (

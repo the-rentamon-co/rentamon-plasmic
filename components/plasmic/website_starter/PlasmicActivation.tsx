@@ -4877,7 +4877,31 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "error",
-                                        "\u0628\u0627 \u0627\u06cc\u0646 \u0634\u0645\u0627\u0631\u0647 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627 \u062d\u0633\u0627\u0628 \u0646\u062f\u0627\u0631\u06cc",
+                                        (() => {
+                                          try {
+                                            return (
+                                              "با شماره " +
+                                              $state.form.value.jabamaphone.replace(
+                                                /[0-9]/g,
+                                                function (char) {
+                                                  return String.fromCharCode(
+                                                    char.charCodeAt(0) + 1728
+                                                  );
+                                                }
+                                              ) +
+                                              " در جاباما حساب کاربری نداری!"
+                                            );
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
                                         "top-center"
                                       ]
                                     };
